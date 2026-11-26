@@ -64,7 +64,7 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 
 
-- The public boundary scenarios consume the shared builders. Anchor: `checkpoint_landing_test_support` [4]
+- The public boundary scenarios consume the shared builders. [4]
 
 
 

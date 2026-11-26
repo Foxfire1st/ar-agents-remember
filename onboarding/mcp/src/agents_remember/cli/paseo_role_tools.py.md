@@ -68,7 +68,9 @@ The role-message facade, native held ordering, recipient identity, parent contai
 ## Evidence
 
 
+
 - The start path validates the dispatch request, checks the caller’s authority and sends it through the shared endpoint. [2]
+
 
 
 - Frozen implementation of _resolve_recipient supporting the stated file behavior. [3]
@@ -124,13 +126,17 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 
+
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
+
 
 
 - The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
 
 
+
 - Typed public start conversion includes stepUp. [15]
+
 
 
 - The extracted answer owner derives second-copy status from the applied task-server flag and recorded exclusion. [16]
@@ -141,7 +147,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 
+
 - Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption. [18]
+
 
 
 
@@ -151,6 +159,7 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 `_start_role` carries `callerHarness` into the dispatch request, so the transport's own report about its client reaches the launch instead of being reconstructed from a settings path. `_agent_override` delegates to `cli.role_agent_override.agent_override`, and before the dispatch endpoint runs, `_start_role` validates a bound free-agent override through `bound_to_caller_harness` with the caller-harness binding — on an already configured host, a model the bound provider does not offer is refused under the binding’s own sentence before preparation. At a cold root, provider binding and model validation occur after first-run preparation, whose report retains the effects already made. Every other role keeps the refusal a model given without its agent already gets.
 
 - The start path's own override rule, now owned by the caller-harness module. [19]
+
 
 
 - The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation. [20]

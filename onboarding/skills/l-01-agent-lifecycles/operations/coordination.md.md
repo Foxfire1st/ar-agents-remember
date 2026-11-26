@@ -28,7 +28,7 @@ The instruction is how coordinating roles start and message AR roles on Paseo: t
 
 When a start is refused as `intent-review-open`, the Manager waits for the Architect's `go` and does not retry the start.
 
-Read the synchronous `worktree_closeout_apply` result and inspect per-leg transaction evidence if the call is interrupted. After correcting the blocker, repeat the apply with recorded approval and explicit messages for enabled legs. If a task edit affects closeout evidence, re-prove it before retrying. For a direct landing, read the current generation and advertised action from `worktree_status` and pass that generation to `worktree_operation_control`.
+Read the synchronous `worktree_closeout_apply` result and inspect per-leg transaction evidence if the call is interrupted. After correcting the blocker, repeat the apply with the applicable authority and explicit messages for enabled legs; the Manager applies under its standing leaf authority without Orchestrator release and sends the coordinating Orchestrator the factual result or refusal. If a task edit affects closeout evidence, re-prove it before retrying. For a direct landing, read the current generation and advertised action from `worktree_status` and pass that generation to `worktree_operation_control`.
 
 ## Current composition and authoring contract
 
@@ -47,12 +47,15 @@ The file's sidecar retains the realization entries for its current anchors.
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
+
 - Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. A message to a recipient already in a turn may be held until that turn ends, and a recipient at a permission prompt is never sent a message, because that would answer the permission. The product's active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents. [1]
 
 
 
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
+
 
 
 

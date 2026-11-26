@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across role_launch_liveness.py (_reconcile_non_leaf) and role_retirement_receipt.py (settle_confirmed_replacement) and guarded by four ReplacementRetirementTests fixtures."
+  },
+  "applicability": "Native role_start launches that replace an existing non-leaf or leaf seat holder.",
+  "conditions": [
+    "Replacement reserves the earlier seat's retirement intent before archiving and carries prior rejection or retirement state forward.",
+    "Attribution (retiredBy/retireReason) and held-message endings are committed on the exact predecessor receipt only after the host acknowledges archived or gone."
+  ],
+  "exclusions": [
+    "Explicit retire_child calls, which use the direct retirement route.",
+    "Step-up launches that refuse rather than interrupt an active holder."
+  ],
+  "id": "INV-0X3E1T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 expanded evidence E4, plus the prior execution 409 fixture."
+      ],
+      "path": "l44-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R44@v1 rule 3",
+    "leaf": "261112-BUG-L44",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A replacing start reserves the earlier seat's retirement and records its attribution and held-message endings after the host confirms the exact predecessor was archived or gone.",
+  "supersedes": [],
+  "title": "Replacing starts reserve and settle predecessor retirement on host archive",
+  "writer": {
+    "at": "2026-11-26T02:42:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L44",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
+  }
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/FAQ.md (lines 28-45, 67-84, 151-172) accurately describes mirrored-path lookup, read_ar_files brief/compact rows, knowledge_read, context_packet drift/freshness, and memory.md; L38 only adds optional reconcile_shared_held_stores=False on runtime_install.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified docs/FAQ.md (lines 1-200) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): frequently asked questions on roles, memory, worktrees and setup remain accurate with no contradiction under BUG-R41@v1.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },
     {
-      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T02:58:55+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

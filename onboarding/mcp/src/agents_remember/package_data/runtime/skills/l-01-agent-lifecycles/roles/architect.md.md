@@ -36,9 +36,9 @@ A harness setting or workaround that AR agents need is recorded at once in the m
 
 For one master the Architect first starts one Manager on that master; concurrent masters start one Orchestrator that starts one Manager per master; direct coordination and a single-master Orchestrator are the developer’s choices. Native `role_start` and `role_message` preserve actual agent/report/handover IDs, exact canonical task selection and same-request recovery. Finding-specific repair returns to the same Worker.
 
-If a second master starts while a Manager works directly under the Architect, the Architect starts one Orchestrator on the sprint and gives it the existing Manager's exact agent ID, canonical master reference and current state; the Orchestrator reuses that Manager and starts no duplicate. The Architect then names the Orchestrator's agent ID to the existing Manager in one message; from then on the Manager sends matters requiring the developer to that Orchestrator, which changes its reporting recipient, not its fixed launch parent.
+If a second master starts while a Manager works directly under the Architect, the Architect starts one Orchestrator on the sprint and gives it the existing Manager's exact agent ID, canonical master reference and current state; the Orchestrator reuses that Manager and starts no duplicate. The Architect then names the Orchestrator's agent ID to the existing Manager in one message; the Orchestrator becomes its reporting recipient while its launch parent stays fixed.
 
-Briefs/readbacks preserve canonical requirements, relevant invariant families, paired/report roots and evidence class. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Under developer-chosen direct coordination, review the complete candidate, including unattributed files; under delegation the Manager owns the leaf-diff and repair loop, and the Architect reads the coordinating agent's rulings record and status file. Rule developer decisions in the own chat.
+Briefs/readbacks preserve canonical requirements, relevant invariant families, paired/report roots and evidence class. Read the rendered task-document files named in the handover with the harness's own file tools before acting; change documents through `task_doc` first (with only the bounded correct-write recovery for covered writes), because edits to copies are never read back and are lost on the next publication. Under developer-chosen direct coordination, review the complete candidate, including unattributed files; under delegation the Architect hands the Manager its execution decisions and routine closeout (delegating sprint execution and its authority to the Orchestrator), reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), aligns requirement text within the promise, and in a case ruling names only the outcome that needs the Architect while leaving Manager decisions with the Manager. Rule developer decisions in the own chat.
 
 ## Conventions
 
@@ -93,13 +93,17 @@ This packaged copy derives from the canonical roles/architect.md. The Architect 
 
 - Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
 
-- The Architect starts an Investigator with role_start without a task reference, on a sprint, or on a sprint and master, and sends the scoped concern as its first role_message to the returned agent ID. [1]
+
+- The Architect starts an Investigator with `role_start` without a task reference, on a sprint, on a standalone master, or on both, sends the scoped concern as its first `role_message` to the returned agent ID, and retires a finished Investigator with `retire_child`. [1]
+
+
 
 
 
 - The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy. [4]
 
-- The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. After the handover it releases execution coordination to the Orchestrator or Manager. [5]
+- The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. It reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), names only the outcome needing the Architect in a case ruling while leaving Manager decisions with the Manager, and releases execution coordination after handover. [5]
+
 
 - A gate or validator repair does not silently free the task under test; the serving-build and synchronization route is preserved, and only a correct-input refusal of a covered write admits the bounded correct-write recovery. [6]
 

@@ -4,7 +4,7 @@
 
 The template supplies master-document values, not a separate rule authority. A Manager starts with role_start and the master reference, naming its sprint when a sprint commands that master; the call carries no pasted brief. Source-edge selection follows execution nature and supported sync, not a guessed checkout branch. Leaf seats start individually through role_start: Worker at build, Reviewer at freeze and Curator after code PASS. One owned primary revision is compiled separately from dependency/preservation requirements, and formal handoff attempts remain distinct from internal experimental reruns. Requested review keeps a sealed, monotonic finding set with settings-bound extra-round authority; the Reviewer records CODE while the Manager retains transaction decisions. Closeout-door and queue facts do not lock valid task edits or create permission to land. The source explicitly keeps complete curator memory quality as a standing operation whose result the Git transaction carries, not an opt-in full-test rule.
 
-Host archival retains reports at leaf finalization/cleanup/abandonment, excludes Manager/Orchestrator, and retire_child belongs only to the agent that started the child.
+Host archival retains reports at leaf finalization/cleanup/abandonment, excludes Manager/Orchestrator, and `retire_child` and seat replacement follow role scope in `core/every-role.md` (Manager covers its master and leaves).
 
 ## Sealed review and transaction ordering
 
@@ -12,7 +12,7 @@ The compiled master brief preserves the monotonic sealed finding list across rou
 
 ## Closeout
 
-The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. Before apply, the Manager confirms the required curation evidence, including the Curator’s coherence validation when the checklist requires it. Apply checks task intent, super → master → leaf lineage and the knowledge gate, then records transaction evidence per leg. No release by an Orchestrator is needed. Before retrying, read the apply result and any per-leg transaction evidence. Correct the blocker and rerun the same tool with the recorded approval and explicit messages for enabled legs. Re-prove affected evidence after a task edit. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
+The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (the Manager's standing leaf authority for routine leaves, which answers the clean preview's approval question, or the developer's commit approval for final work), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. Before apply, the Manager confirms the required curation evidence, including the Curator’s coherence validation when the checklist requires it. Apply checks task intent, super → master → leaf lineage and the knowledge gate, then records transaction evidence per leg. No release by an Orchestrator is needed. Before retrying, read the apply result and any per-leg transaction evidence. Correct the blocker and rerun the same tool with the applicable authority and explicit messages for enabled legs. Re-prove affected evidence after a task edit. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
 
 ## Message/file transport
 
@@ -117,4 +117,4 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 
 
-- The Manager confirms required curation and coherence validation before synchronous apply. Apply checks task intent, lineage and the knowledge gate and records evidence per leg. The publication handoff carries the Worker’s focused checks and the complete Curator result. [6]
+- The Manager uses its standing leaf authority (or developer commit approval for final work) for routine closeout apply and confirms required curation and coherence validation before synchronous apply. Apply checks task intent, lineage and the knowledge gate and records evidence per leg. The publication handoff carries the Worker’s focused checks and the complete Curator result. [6]

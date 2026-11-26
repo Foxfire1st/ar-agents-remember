@@ -140,6 +140,22 @@
         }
       ]
     },
+    "10": {
+      "note": "`nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:44fb27697bae464c1d6ee20f845f11227ed118a55f92f3c8c669b3b2f1910921",
+            "locator": {
+              "kind": "symbol",
+              "name": "nested_detail_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Every saved detail is shape/identity/type/revision checked.",
       "targets": [
@@ -257,22 +273,6 @@
             "locator": {
               "kind": "symbol",
               "name": "_bound_baseline"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
-            "content": "sha256:44fb27697bae464c1d6ee20f845f11227ed118a55f92f3c8c669b3b2f1910921",
-            "locator": {
-              "kind": "symbol",
-              "name": "nested_detail_path"
             }
           },
           "kind": "code"

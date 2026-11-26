@@ -30,7 +30,7 @@ Memory uses `begin_review`/`record_review` with `reviewKind=memory`, separate se
 
 ## Clean-sync and repair-freeze intake
 
-Reviewer receives no freeze and opens no round for a clean sync with passing focused tests. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.
+Reviewer receives no freeze and opens no round for a clean sync with passing focused tests. The Worker reruns focused tests, and before routine closeout the Manager obtains the Curator's read for a changed pair; if paths overlap or tests fail, the Reviewer reviews only the repair. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.
 
 ## Proportional review
 
@@ -46,10 +46,8 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - Reviewer does not implement, accept tasks, start roles or publish Git. It records its ordinary review begin/result; separately recorded MEMORY reports, IDs and pass counts do not reset CODE, and scoped record-write recovery retains its own conditions. [3]
 
-- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE. [4]
-
-- Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync. [8]
-
+- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round (with the Manager obtaining the Curator's read for a changed pair before routine closeout). Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE. [4]
+- Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync (where the Manager obtains the Curator's read for a changed pair before routine closeout). [8]
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
 - Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties, and records MEMORY as a separate lane under the same settings limit. [6]
 - A baseline review reruns and repeats the Worker's focused-test search, and fix-verification applies it to the repair's own names. [9]

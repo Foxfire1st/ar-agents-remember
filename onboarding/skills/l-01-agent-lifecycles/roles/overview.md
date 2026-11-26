@@ -19,11 +19,11 @@ A native role launch selects an explicit supported role and applicable operation
 
 The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream.
 
-The Architect hands execution coordination to its Manager or Orchestrator and continues the developer conversation and status reading without waiting for execution completion. When a second master begins, an Orchestrator reuses the existing Manager; the Architect's explicit message changes that Manager's reporting recipient, not its fixed launch parent. Coordinators record operational rulings, proposed requirement-sentence changes and current seat ownership in durable notes. Ordinary interpretations within the intended promise stay with them; new or dropped scope, a changed promise and human-pinned decisions return to the developer.
+The Architect hands execution coordination to its Manager or Orchestrator and continues the developer conversation and status reading without waiting for execution completion. When a second master begins, an Orchestrator reuses the existing Manager; the Architect's explicit message changes that Manager's reporting recipient, not its fixed launch parent. Coordinators record operational rulings, proposed requirement-sentence changes and current seat ownership in durable notes. Ordinary interpretations within the intended promise stay with them; new or dropped scope, a changed promise and human-pinned decisions return to the developer. In a case ruling, the Architect names only the outcome that needs it and leaves each decision belonging to the Manager with the Manager; an Orchestrator forwards a Manager's Architect matters unchanged.
 
 For normal leaf delivery, the Manager uses individual `role_start` calls: Worker at build, Reviewer at the Worker freeze, Curator after code PASS. Worker first tells Manager to start Reviewer and then sends its freeze directly once the seat exists. Reviewer first tells Manager of code PASS, then supplies its passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator sends its memory candidate to Reviewer in a separate sealed lane. The Manager reads reports, receives the specified authority/recovery notices and readiness notice, inspects the complete diff and both verdicts, and decides acceptance and landing. It does not relay routine freezes, findings, verdicts or memory changes.
 
-When the requirement's planned structure leaves types, modules or signatures open, the Worker completes the skeleton first, without bodies, and sends it to its Manager. The Manager passes it to the Architect at once, also past an Orchestrator; the Architect shows the developer a skeleton that changes the planned shape, and the Worker writes the bodies after the Architect's answer.
+Before writing bodies, the Worker sends a skeleton to its Manager when the plan leaves types, modules or signatures open or it proposes a planned shape change, and follows the requirement's pre-edit report instructions. The Manager answers skeletons that fill only gaps the plan leaves open, and sends a skeleton directly to the Architect (also past an Orchestrator) only when the requirement asks for a pre-edit report, it changes a set placement or signature, or it adds an unlisted file, folder or public interface. The Architect shows the developer a skeleton that changes the planned shape, and the Worker writes bodies after the Manager or Architect answers.
 
 Every handover names the leaf, exact object identity, report or verdict path and whole next stretch requested. Delivery alone is insufficient: a reply or report must name that object and show the requested work or its start. A busy refusal remains pending and is retried; a message accepted as held is retained and later delivered by the product without being resent. The leaf resolver refuses two live occupants rather than choosing by age. A repeated busy refusal, empty or doubled seat, or non-work reply is reported with its actual text. Agents continue independent work and never choose an uncertain recipient or create duplicate ownership. Cross-leaf messages require a dependency named by a requirement or Manager; other cross-leaf matters go through Manager.
 
@@ -101,7 +101,7 @@ No seat absorbs another's mutation authority, accepts its own work, invents appr
 
 Within an assignment, each seat may organize harness work and helpers without a prescribed count/depth, but remains accountable, verifies and credits their contributions and alone performs boundary acts. Helpers share its permissions, working folder and assignment, hold no AR seat, start no role and cannot supply independent review of their author's work. A turn that waits for helpers or for a process the seat started ends with `WAITING FOR SUBAGENTS:` or `WAITING FOR BACKGROUND:`, and the host treats a Worker, Reviewer or Curator end as silent only when it supplies no handoff, block or such declared wait. Curator still has one admitted writer and reports one deduplicated full-intake worklist, actual support and verification. Agent-authored temporary work belongs in the real handover scratch root; what must not live under the projects home, and one short `TMPDIR`, belong in the hand-over's outside scratch root, which the product removes with the enclosure; reports use the supplied report folder. Product/test-runner scratch follows its own owner.
 
-Developer decisions go upward to the actual parent, with the question, held dependent work and recommendation; independent work continues. Busy-refused delivery stays recorded and is retried, not rerouted to the developer. Held delivery, including permission-pending delivery, is retained by the product and must not be resent; the named-chat permission notice still travels upward. Own-chat escalation is allowed without a parent or when it is genuinely unreachable, with the actual refusal stated. Parent coordinators answer within their authority or relay the unchanged question and originating identity, separating their recommendation. A relayed developer answer must identify the receiving agent and quote the developer's words; silence and the parent's own answer are not approval. Only the developer answers harness prompts in the waiting child's chat. Denied or unanswered permissions cannot be bypassed by another command, tool, helper or later turn. Permission notices travel upward unchanged; busy-refusal retries are occasion-driven. Seats add no background poller or second scheduler; the product's serving-lifetime loop delivers persisted held messages without a sender/model turn, and messages remain held while that loop is unavailable.
+Developer decisions go upward to the actual parent, with the question, held dependent work and recommendation; independent work continues. When no independent work remains, the Manager records its wait (for a pending answer or working child) in its end line and status file without sending a wait message, while other roles message their recipient; Manager routes Architect matters through an assigned Orchestrator (which forwards them unchanged) except direct qualifying skeletons. Busy-refused delivery stays recorded and is retried, not rerouted to the developer. Held delivery, including permission-pending delivery, is retained by the product and must not be resent; the named-chat permission notice still travels upward. Own-chat escalation is allowed without a parent or when it is genuinely unreachable, with the actual refusal stated. Parent coordinators answer within their authority or relay the unchanged question and originating identity, separating their recommendation. A relayed developer answer must identify the receiving agent and quote the developer's words; silence and the parent's own answer are not approval. Only the developer answers harness prompts in the waiting child's chat. Denied or unanswered permissions cannot be bypassed by another command, tool, helper or later turn. Permission notices travel upward unchanged; busy-refusal retries are occasion-driven. Seats add no background poller or second scheduler; the product's serving-lifetime loop delivers persisted held messages without a sender/model turn, and messages remain held while that loop is unavailable.
 
 ## Stage boundaries and review budget
 
@@ -125,9 +125,9 @@ Reviewer records memory begin/result with `reviewKind=memory`: separate sealed r
 
 Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
 
-Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
+Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant. A case reservation covers only what it names and leaves Manager decisions with the Manager. Manager's three-way authority split includes standing series authority for routine paired closeout across all masters (including standalone masters) when passing code/memory reviews, passing listed final checks, a clean preview, an unwaived evidence map and zero stale dependent-document rows from the Curator hold.
 
-Manager receives the clean-sync focused-test result for its own preview; no clean-sync review round is created. Curator still writes memory only after exact passed-source intake. These instruction changes transfer no gate, task-state or publication authority.
+After a clean sync, the Worker reruns focused tests and reports the code and memory pair to the Manager; for a changed pair the Manager obtains the existing Curator's refreshed dependent-document read before routine closeout while keeping the existing review, and no clean-sync review round is created. Curator still writes memory only after exact passed-source intake. These instruction changes transfer no gate, task-state or publication authority.
 
 ## Earlier Memory-Base Context
 
@@ -177,6 +177,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
 
+
 - Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]
 
 - The capsule vocabulary holds eight roles — architect, orchestrator, manager, worker, curator, reviewer, investigator and bootstrap — the same set the launcher can select; the launcher also accepts the system-specialist alias. [12]
@@ -201,6 +202,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Bound and preserved normal Curator duties. [24]
 
+
 - Taskless real concern and report-first remediation. [25]
 
 - Current native Curator launch resolves and validates the canonical master and leaf, with the sprint when one commands the master; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
@@ -209,7 +211,8 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - The canonical role owns this concern and mutation boundary. [27]
 
-- Stage boundaries, the settings-owned review budget and recorded approval duties are carried by the role instruction sources, for example the Manager's stop list. [28]
+- Stage boundaries, the settings-owned review budget, local working-child waits and recorded approval duties are carried by the role instruction sources, for example the Manager's stop list. [28]
+
 
 - Role registry and native supported-role vocabulary are distinct; the prior Investigator spelling is canonicalized on input. [29]
 
@@ -229,13 +232,15 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Developer answers require receiving identity and quoted words; unanswered/denied permissions have no bypass, and held messages are not resent. [45]
 
-- Current closeout doctrine consumes exact authority and evidence without substituting raw Git or blanket full-suite gates. [46]
+- Current closeout doctrine consumes exact authority (including the Manager's standing leaf authority for routine paired closeout) and evidence (including the Curator's refreshed dependent-document read after a pair-changing clean sync) without substituting raw Git or blanket full-suite gates. [46]
+
 
 - Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion. [49]
 
 - Worker repairs owned findings directly and retains the per-finding freeze trail. [63]
 
-- Manager settles covered precedents and adds no pre-repair go-ahead. [64]
+- Manager settles covered precedents (with non-reclaiming case reservations) and adds no pre-repair go-ahead. [64]
+
 
 - Families are authored as records with their own guarantee, members, routes and admission, name members only by identifier, and are read back through knowledge_read with view family. [3]
 
@@ -251,7 +256,8 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Sprint coordination above one Manager per master and separate evidence. [21]
 
-- Role selection checks operation applicability and selects no shared core for a dispatched role. For every card cut by the quality check, the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding. [30]
+- Role selection checks operation applicability and selects no shared core for a dispatched role. For every card cut by the quality check, the Curator cites source evidence proving the removed text untrue; text is never cut merely to clear a finding. [30]
+
 
 - Canonical skills feed the declaration-owned single package target through the shared generator; this source inventory is not a synchronization verdict. [48]
 

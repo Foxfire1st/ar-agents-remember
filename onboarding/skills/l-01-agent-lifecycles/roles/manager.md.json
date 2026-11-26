@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:9fa77236ec9290ac2508b2ab2a51b645860c7ac5c0eca87b68fa4c789b960649",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:2f3a5cf2cf500724572cc4954c70fc23f80925daaf1d4f846a86303d36fccdaa",
         "locator": {
-          "end": 72,
+          "end": 90,
           "kind": "line_range",
-          "start": 66
+          "start": 68
         }
       },
       "id": "RLZ-09EQRE",
@@ -17,12 +17,12 @@
         "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This passage lists what the Manager decides itself (leaf order, agent starts and replacements, operational problems, ordinary readings within the intended promise, landing checks, and delegated closeout and integration) and settles a matter an earlier ruling covers instead of sending it upward.",
+      "rationale": "States the Manager's three-way authority boundary (You decide including standing routine paired closeout and non-reclaiming precedent settlement, Send to the Architect, and Send to the developer).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
         "locator": {
           "end": 60,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:d30767e2a85aae5d77c891d7a58dd3c806dd78e3bf5fec0f53b1148acbc831fb",
         "locator": {
           "end": 56,
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:2c7cdd88fb7c52f4ab5f7825189150b872533a3462398f6d5aa42a9468450ed8",
         "locator": {
-          "end": 154,
+          "end": 166,
           "kind": "line_range",
-          "start": 152
+          "start": 164
         }
       },
       "id": "RLZ-64DTJW",
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
         "locator": {
           "end": 60,
@@ -98,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:19c5e708d8c46f073d06d5d7e6cf05aab206b55b098816a543c1798fe225c059",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:2c216eb11ddf54276c070214611e8c8382b206da36aeaa8b6b1e30ad0c857930",
         "locator": {
           "end": 58,
           "kind": "line_range",
@@ -117,7 +117,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:e08a4bb2825ae4718395e117020810f0d95615bc1686e8fda1ff2682d3fb5827",
         "locator": {
           "end": 26,
@@ -136,12 +136,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:0e0b2dee583b6dd2ac70db19c604bc603f602b1ab106e324f2b1f57b4ee8778c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:1c34ceba314792007439b438f1c6e265d87fae2aa11a64792220045d26a54123",
         "locator": {
-          "end": 113,
+          "end": 125,
           "kind": "line_range",
-          "start": 70
+          "start": 92
         }
       },
       "id": "RLZ-8G32JJ",
@@ -155,12 +155,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:4c95a07fe1d192bd36ee4c64e7691ed4d5a6d0c2ca0862348378e795e7f233a5",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:49d253873b5c88a2e7a6a1c67bbf287307f3bbdbbdaf9cac929a01724eb08582",
         "locator": {
-          "end": 119,
+          "end": 131,
           "kind": "line_range",
-          "start": 107
+          "start": 119
         }
       },
       "id": "RLZ-HSZ8FM",
@@ -169,17 +169,17 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The Manager states its own question route here: send to the instructed reporting recipient, else the parent, else the developer in its own chat. It records undeliverable matters and continues independent work, and points to the child-questions detail for relay and attribution and to the coordination operation for permission notices.",
+      "rationale": "Manager reporting and question section routing Architect matters (except direct qualifying skeletons), developer questions and permission notices to the recorded reporting recipient else parent ID, continuing independent work and keeping child-question relay and permission notice pointers.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:3cfe10d2d187b9d27b9f252026131e5625a0e1e21354a0d5630ba0756a206cdc",
         "locator": {
-          "end": 93,
+          "end": 113,
           "kind": "line_range",
-          "start": 93
+          "start": 113
         }
       },
       "id": "RLZ-JY5TEM",
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:17697ee779f6ec947cd466c13efb6920f3d699e91811ad41de37fac9e06be6ea",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:3911f6651ac410c07fee5cb5c220fa430b982b04c9edb4e980883c713984b64f",
         "locator": {
-          "end": 107,
+          "end": 123,
           "kind": "line_range",
-          "start": 99
+          "start": 119
         }
       },
       "id": "RLZ-M2NFTB",
@@ -207,12 +207,12 @@
         "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This passage lists the five developer-needed categories and names the once-only final report-path notice.",
+      "rationale": "Maps Architect matters (except direct qualifying skeletons), developer questions and permission notices to the recorded reporting recipient else launch parent ID, excludes status-only messages, and preserves the final report-path return.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
         "locator": {
           "end": 16,
@@ -231,12 +231,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:d29f6eb7698c215edaa2159678b4436c1b79bc02c0a506911e995709649fcdc0",
         "locator": {
-          "end": 146,
+          "end": 158,
           "kind": "line_range",
-          "start": 144
+          "start": 156
         }
       },
       "id": "RLZ-QJ4VJR",
@@ -250,12 +250,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:a9b70e431e3186c69fc60bde8756476a1d1525a47267893aae939ec068ecd796",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:879e0eeb0d2f62cd43ce0cf934819f8dd5c1a0793e6370666e7634033f31d616",
         "locator": {
-          "end": 111,
+          "end": 123,
           "kind": "line_range",
-          "start": 111
+          "start": 123
         }
       },
       "id": "RLZ-S372ZT",
@@ -264,17 +264,17 @@
         "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
+      "rationale": "Records the Architect-instructed Orchestrator as the Manager's reporting recipient for Architect matters (except direct qualifying skeletons) and developer-needed matters without native reparenting.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:f7c88ca6b3aaf646aba867fab69ed6c5036dd4e5c3c1c140c6b2635f47d1ebcd",
         "locator": {
-          "end": 119,
+          "end": 131,
           "kind": "line_range",
-          "start": 117
+          "start": 129
         }
       },
       "id": "RLZ-V9GWTW",
@@ -288,8 +288,8 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:87c250dd7599b8b3c3ffc17ff8797f33c95e8f1b8aef977c7e13b0a223503e71",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:bcd649f532341c2b33a3c412d91b7f8027cba2c8ddc686d68fc5cf0e20762d3d",
         "locator": {
           "kind": "file"
         }
@@ -300,17 +300,17 @@
         "handoffEntry": "L172-INV-C",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "The Manager's unfinished final turn sends what it awaits to its parent with role_message.",
+      "rationale": "Manager stage-end rule notifying the reporting recipient on outside-authority blocks while recording working-child waits locally in its end line and status file with no wait message sent.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:d29f6eb7698c215edaa2159678b4436c1b79bc02c0a506911e995709649fcdc0",
         "locator": {
-          "end": 146,
+          "end": 158,
           "kind": "line_range",
-          "start": 144
+          "start": 156
         }
       },
       "id": "RLZ-VZATXJ",
@@ -324,12 +324,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:6f17fc68facf1fdd20605843b11269ac6c0e4112a019fb80a9ccb49ce83c99e1",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:4b87181acc1560984adb621b023db75fcd03e228121c30196e140c15d412e195",
         "locator": {
-          "end": 134,
+          "end": 146,
           "kind": "line_range",
-          "start": 121
+          "start": 133
         }
       },
       "id": "RLZ-WDW9QT",
@@ -338,7 +338,7 @@
         "handoffEntry": "L116-W3-wording-oracle",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "The Manager's stage contract is the 'Correct your own work and respect stops' section: the whole-stage handover, own-slip repair, the four stops and the last-line rule.",
+      "rationale": "The Manager's stage contract in 'Correct your own work and respect stops': whole-stage handover, own-slip repair, stops, outside-authority block notice and local working-child named wait.",
       "role": "primary-authority"
     }
   ],
@@ -348,7 +348,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:6184b78a3a6201cc8204d3080d3e169528e06f23a1a6141bb2d6f7297c39928b",
             "locator": {
               "end": 8,
@@ -360,8 +360,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a3589c9862d0932cadf3afc969270cd9951ba1845ad647f159a760b6b5a03734",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
               "end": 52,
               "kind": "line_range",
@@ -372,12 +372,12 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
             "locator": {
-              "end": 136,
+              "end": 148,
               "kind": "line_range",
-              "start": 136
+              "start": 148
             }
           },
           "kind": "code"
@@ -389,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
               "end": 58,
@@ -415,11 +415,11 @@
       ]
     },
     "11": {
-      "note": "The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync versus overlap/failing focused tests follows the separately stated review rule.",
+      "note": "The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync (with pair reporting and Curator refresh for a changed pair) versus overlap/failing focused tests follows the separately stated review rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
             "locator": {
               "end": 44,
@@ -431,7 +431,7 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:58152b7ccfd3c05c6942971c29385db94e9e571187580ecbd8593f167d20276f",
             "locator": {
               "end": 48,
@@ -443,8 +443,8 @@
         },
         {
           "anchor": {
-            "blob": "8df1753c138980d015641171fd9ced522dfc5664",
-            "content": "sha256:ba70d383c6acf40f0082644249a1f1ef9696c59b2248cad0b15dc8427d837dee",
+            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+            "content": "sha256:e4e184db884430352c6a9e3abdde3e0d729425c1eee2f71f658c6786391a8bb2",
             "locator": {
               "end": 91,
               "kind": "line_range",
@@ -457,12 +457,12 @@
       ]
     },
     "12": {
-      "note": "The Manager sets no step for another agent; coordination, gate and publication powers stay with their owners.",
+      "note": "The Manager sets no step for another agent; skeletons within planned gaps stay with Manager while qualifying ones go directly to Architect, and coordination, gate and publication powers stay with their owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:21537092460af2ffcf03284311d088318aab626b607ab6cb17f7d7ac6ef8f893",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:e7a55fb0d5b814ac13b2aa64938847bb80e384881e9398b40e729d7f5f9ed69c",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -474,11 +474,11 @@
       ]
     },
     "13": {
-      "note": "Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests run once and closeout preview decides, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record.",
+      "note": "Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests rerun and the Manager obtains the Curator's refreshed read for a changed pair before routine closeout, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record; a case reservation covers only what it names.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
             "locator": {
               "end": 44,
@@ -490,8 +490,8 @@
         },
         {
           "anchor": {
-            "blob": "8df1753c138980d015641171fd9ced522dfc5664",
-            "content": "sha256:ba70d383c6acf40f0082644249a1f1ef9696c59b2248cad0b15dc8427d837dee",
+            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+            "content": "sha256:e4e184db884430352c6a9e3abdde3e0d729425c1eee2f71f658c6786391a8bb2",
             "locator": {
               "end": 91,
               "kind": "line_range",
@@ -503,8 +503,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:72dcb66761bb366695daf82488b144be4911337d394d599a1441e4bf3add3ea9",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:d381b528c016783c797e0b00639126697301c8b528e60bd50abd23e6f7f5f52b",
             "locator": {
               "end": 72,
               "kind": "line_range",
@@ -520,7 +520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
             "locator": {
               "end": 60,
@@ -537,7 +537,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
             "locator": {
               "end": 38,
@@ -550,7 +550,7 @@
         },
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:4540232d8d88f10e7a0847798c51b1984ffd734f1823dc407b3ff7920e6724b2",
             "locator": {
               "end": 31,
@@ -563,7 +563,7 @@
         },
         {
           "anchor": {
-            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
             "content": "sha256:da327dfdfad9358260e4e210352c609caee3c84b1a17489f5c100360dc839fec",
             "locator": {
               "end": 27,
@@ -576,7 +576,7 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:bc0b5f4010f802e06bd9a85c9dbeff55242a43d695c604b20c7df4c24e6ee794",
             "locator": {
               "end": 26,
@@ -593,7 +593,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
             "locator": {
               "end": 38,
@@ -606,7 +606,7 @@
         },
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:ba6e91793811cbf1a5b69fa29d6b6c70dbee3672f3174d887da18c01f97df458",
             "locator": {
               "end": 49,
@@ -619,8 +619,8 @@
         },
         {
           "anchor": {
-            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
-            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:b7b601d7dd1a34d739a8c1610b7eca05d6acca7cd126e930cfdd721dd6a3243b",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -632,8 +632,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a3589c9862d0932cadf3afc969270cd9951ba1845ad647f159a760b6b5a03734",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
               "end": 52,
               "kind": "line_range",
@@ -649,24 +649,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:5e69712fc810435274e37871fdbc9d929dbd95c58e750b0f833d3129a14b7864",
             "locator": {
-              "end": 156,
+              "end": 168,
               "kind": "line_range",
-              "start": 154
+              "start": 166
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
             "locator": {
-              "end": 136,
+              "end": 148,
               "kind": "line_range",
-              "start": 136
+              "start": 148
             }
           },
           "kind": "code"
@@ -674,12 +674,12 @@
       ]
     },
     "5": {
-      "note": "Manager sends developer-needed matters to the recorded parent or instructed reporting recipient, retains ordinary operational rulings, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references.",
+      "note": "Manager routes Architect matters, developer-needed matters and permission notices to the recorded reporting recipient or handover parent (routing Architect matters through an assigned Orchestrator except direct qualifying skeleton handovers), sends no status-only messages, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:f2e620a4b728e30588d7454175d5b09ff245e5d94ed08e3eba33a8d2d5f29769",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 99,
               "kind": "line_range",
@@ -690,8 +690,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:3f65e494204d0fd7d865d16616e77bad1265c965f6409586951c393b1e06990a",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:4584154ac0823d09c82d8d1b85fb48514cd479a86c792de1036b598559f131b9",
             "locator": {
               "end": 107,
               "kind": "line_range",
@@ -702,8 +702,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:ed51911646e3690672e506a9d4a0d11d78ce1bb84f631fcde6db07995405ae0e",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:272674b04d376d909a4cd7990d1539e10cfedda4379321272085d7ee1443904a",
             "locator": {
               "end": 115,
               "kind": "line_range",
@@ -719,7 +719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:cd69595e086eced8d5dc5f88915a59c371779b2b19d57619c9dd8880b2c1cf2f",
             "locator": {
               "end": 18,
@@ -731,8 +731,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a3589c9862d0932cadf3afc969270cd9951ba1845ad647f159a760b6b5a03734",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
               "end": 52,
               "kind": "line_range",
@@ -744,12 +744,12 @@
       ]
     },
     "7": {
-      "note": "The Manager may start an Investigator under its own master, naming its sprint when one commands it, for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise.",
+      "note": "The Manager may start an Investigator under its own master, naming its sprint when one commands it, for a check belonging to no leaf, sends the scoped concern first to its returned ID, and exercises its three-way authority split including standing routine paired closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:87c250dd7599b8b3c3ffc17ff8797f33c95e8f1b8aef977c7e13b0a223503e71",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:bcd649f532341c2b33a3c412d91b7f8027cba2c8ddc686d68fc5cf0e20762d3d",
             "locator": {
               "kind": "file"
             }
@@ -759,12 +759,12 @@
       ]
     },
     "8": {
-      "note": "The Manager records approval for a round beyond the settings limit, sends developer-reserved changes upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route.",
+      "note": "The Manager settles precedent-covered matters with non-reclaiming case reservations, records approval for a round beyond the settings limit, sends Architect and developer matters upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:47295de3ae5954bfe1f7c4e1f8cb4e66d80a67abca08bcff13535548a8fc89fa",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:e6e68862fe97a8e0f23506399e83b7d573203234dca32f6a44d886f0ed88a667",
             "locator": {
               "end": 74,
               "kind": "line_range",
@@ -775,12 +775,12 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:e0d9b141903ba7a9e7874110f3fbb56b86d42bccc38038a5aee52e2275685342",
             "locator": {
-              "end": 127,
+              "end": 139,
               "kind": "line_range",
-              "start": 123
+              "start": 135
             }
           },
           "kind": "code"
@@ -792,7 +792,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:b9315590192de64a04f8877ea83b8e08cd48f344098f5dab274037535101c2d5",
             "locator": {
               "end": 36,
@@ -805,7 +805,7 @@
         },
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:ba6e91793811cbf1a5b69fa29d6b6c70dbee3672f3174d887da18c01f97df458",
             "locator": {
               "end": 49,
@@ -818,24 +818,24 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
             "locator": {
-              "end": 125,
+              "end": 137,
               "kind": "line_range",
-              "start": 123
+              "start": 135
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:1168f9ea78c4048e09ea1f765ae4753ae46cb4aefec138b6332eb8c84902e805",
             "locator": {
-              "end": 74,
+              "end": 94,
               "kind": "line_range",
-              "start": 74
+              "start": 94
             }
           },
           "kind": "code"

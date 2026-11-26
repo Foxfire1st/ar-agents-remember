@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
         "content": "sha256:a1f02b392b8b038b84cfd76e62be672f007d1193f087109a9fe2df9fedf0cf9f",
         "locator": {
           "end": 29,
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
         "content": "sha256:46f9ada07cbae466cb31f360e4381b3ffc6057f9f34c6e34c42750d3dc54db6b",
         "locator": {
           "kind": "symbol",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
         "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
         "content": "sha256:8c4d848acba2ae83de73d85662dde488f228b8d30d1f766c55bd83e1978e1ddf",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
         "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
         "locator": {
           "kind": "symbol",
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
             "locator": {
               "kind": "symbol",
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
             "locator": {
               "kind": "symbol",
@@ -128,15 +128,14 @@
       ]
     },
     "3": {
-      "note": "Native retirement delegates to the existing receipt owner and wraps its answer under retire_child.",
+      "note": "Native retirement delegates to the existing receipt owner and wraps its answer under retire_child.\n\nAnchor: `retire_child_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
-            "content": "sha256:5d655a14898cf0a17601e04f41b2500ae81322783101de99d653992ad208a9c2",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
+            "content": "sha256:76794966d4940eb5870bd8dd6f9fbf36771de5c9cd4f6e4660bba2d13929356a",
             "locator": {
-              "kind": "symbol",
-              "name": "retire_child_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -144,12 +143,12 @@
       ]
     },
     "4": {
-      "note": "The payload that answers a refusal instead of raising one.\n\nAnchor: `user_settings_init_payload`",
+      "note": "The payload that answers a refusal instead of raising one.",
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
-            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
+            "content": "sha256:76794966d4940eb5870bd8dd6f9fbf36771de5c9cd4f6e4660bba2d13929356a",
             "locator": {
               "kind": "file"
             }
@@ -163,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:46f9ada07cbae466cb31f360e4381b3ffc6057f9f34c6e34c42750d3dc54db6b",
             "locator": {
               "kind": "symbol",

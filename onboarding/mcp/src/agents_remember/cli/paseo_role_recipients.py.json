@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -21,26 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
-        "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
-        "locator": {
-          "kind": "symbol",
-          "name": "_live_agents"
-        }
-      },
-      "id": "RLZ-A9DFWX",
-      "invariant": "INV-R9S24S",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Reads receipt-named agents from the host, retains the first archived ID, and stops at the first live agent only when first_only is true. The public selector sets that flag for non-leaf task-bound selections, but scans leaf-seat and taskless candidates for explicit ambiguity rather than choosing one.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
-        "content": "sha256:0739fce31f3f031e0a8bd09fb22aace57cb61faf9d22f6949fc0dcf92464ff97",
+        "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
+        "content": "sha256:08e867468f7046e6162e8636fd4a289b83d7ad4f4e323b8b8625abd2a1862105",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
         "content": "sha256:8537b3a00f61a8e35243a931c88f5adeafb1bec33dbf3b886dff697a3de13e7b",
         "locator": {
           "kind": "symbol",
@@ -74,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
         "content": "sha256:be6da47b0d113d53282861f60b1f4ffc4f6cb342652c347a3744ff10933c8461",
         "locator": {
           "kind": "symbol",
@@ -92,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
         "content": "sha256:26441e862ece572f667deb48174ae19e888bf3b89657956797cd358eee27f0a4",
         "locator": {
           "kind": "symbol",
@@ -110,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
         "content": "sha256:df479746f40db59067c80caa3325d98a172d6ae6a6c353fe6896e76f337259d3",
         "locator": {
           "kind": "symbol",
@@ -133,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+            "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
             "content": "sha256:02feb35c1294317d50604efd642515477bc0a270513f09507d7ad8034b71224b",
             "locator": {
-              "end": 148,
+              "end": 150,
               "kind": "line_range",
-              "start": 102
+              "start": 104
             }
           },
           "kind": "code"

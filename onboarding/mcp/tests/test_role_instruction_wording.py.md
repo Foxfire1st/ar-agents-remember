@@ -23,10 +23,7 @@ copy, and it compiles capsules with `role_capsules.compilation` and `skill_resou
   authority and prove the retired wording is caught when reinserted; the first case also pins the
   Investigator's manifest tool list, ten tools from `server_info` to `knowledge_integrity_check` in
   public roster order.
-- **Coordination and curation.** `test_current_coordination_and_curator_rules` and
-  `test_direct_closeout_keeps_the_architect_and_its_existing_gates` keep the current coordination rules, read
-  from the shared `CURRENT_COORDINATION_CLAUSES` table with section-bound deletion and relocation controls on each
-  `COORDINATION_ACTION_STEPS` step, and the Architect's closeout gates with its kept clause.
+- **Coordination and curation.** `test_current_coordination_and_curator_rules` and `test_direct_closeout_keeps_the_architect_and_its_existing_gates` keep the current coordination rules, read from the shared `CURRENT_COORDINATION_CLAUSES` table with section-bound deletion and relocation controls on each `COORDINATION_ACTION_STEPS` step, and the Architect's closeout gates with its kept clause and clean-preview `commit-approval-pending`/`request_commit_approval` and `intent_note` clauses.
 - **Positive obligations.** `test_every_role_organises_its_harness_work_with_seat_boundaries`,
   `test_leaf_roles_and_operations_deliver_their_own_positive_obligations` and
   `test_removing_each_affirmative_clause_is_detected_on_its_surface` require each surface to state its own
@@ -43,12 +40,8 @@ copy, and it compiles capsules with `role_capsules.compilation` and `skill_resou
   `test_the_router_names_the_host_the_two_tools_and_the_only_tool_server` and
   `test_the_orientation_says_where_the_tools_are_and_what_a_reply_is` keep every mention of an AR tool tied
   to the task tool server.
-- **Reach and return.** `test_each_role_is_told_how_to_reach_agents_and_the_developer` and
-  `test_the_capsules_send_a_return_and_never_point_at_the_agent_chat` keep `role_message` as the way
-  handovers and awaits travel; `test_the_workers_report_names_its_agent_id` keeps the Worker's report naming
-  its own agent.
-- **Sync and repair.** `test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible` pins the conditional
-  sync clause and the visible direct-repair clause at their delivered audiences.
+- **Reach and return.** `test_each_role_is_told_how_to_reach_agents_and_the_developer` and `test_the_capsules_send_a_return_and_never_point_at_the_agent_chat` keep `role_message` as the way handovers and leaf awaits travel, while the Manager notifies its reporting recipient on outside-authority blocks and records a working-child wait in its end line and status file without sending a message; `test_the_workers_report_names_its_agent_id` keeps the Worker's report naming its own agent.
+- **Sync and repair.** `test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible` pins the conditional clean-sync clauses (including the Manager obtaining the Curator's refreshed read for a changed pair before routine closeout), Manager precedent/case-reservation clauses, and visible direct-repair clauses at their delivered audiences.
 
 ### Conventions
 
@@ -66,8 +59,7 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 ## Evidence
 
 - Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager. [3]
-
-- Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep actual-parent developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption. [4]
+- Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep agent-ID and recorded-reporting-recipient developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption. [4]
 
 - The current source declares positive instruction-clause deletion controls and task-tool-server/host naming assertions; source presence supplies no executed test result or acceptance. [5]
 
@@ -75,9 +67,8 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 
 - The wording support resolves each facet through its actual addressed role, stage or declared detail and generates nonvacuous deletion controls; the delivered handoff detail must state the Git comparison of the leaf's code trees and the knowledge files in both memory trees. Current Curator tests keep foundation intake, producer checks, correct-write refusal steps and the selected-runtime writer admission; the Curator role requires admitted records to be read back. [8]
 
-- The conditional sync and visible direct-repair clauses are pinned at their delivered audiences. [9]
-
-- The Architect's flat-mode closeout gates and its kept clause stay pinned. [10]
+- The conditional sync (including the Curator's refreshed read for a changed pair before routine closeout), Manager precedent and visible direct-repair clauses are pinned at their delivered audiences. [9]
+- The Architect's flat-mode closeout gates, its kept clause, and the clean-preview `commit-approval-pending`/`request_commit_approval` and `intent_note` clauses stay pinned. [10]
 
 - The protected Manager clause separates automatic stage publication and master-row mirroring at start/finalize/abandon from task_doc set_status for an explicit correction or organizational-master completion. [12]
 
@@ -85,8 +76,7 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 
 ### Repo-Internal References (renewed)
 
-- Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. Anchor: `test_investigator_scope_report_and_authority_are_explicit` [1]
-
-- The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. Anchor: `test_investigator_scope_report_and_authority_are_explicit` [2]
+- Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. [1]
+- The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. [2]
 
 - The census pins the router, the eight launcher role files and their nine operations in delivered order. Anchor: `InstructionFileWordingTests.test_the_surfaces_are_the_router_seven_roles_and_their_eight_operations` [11]

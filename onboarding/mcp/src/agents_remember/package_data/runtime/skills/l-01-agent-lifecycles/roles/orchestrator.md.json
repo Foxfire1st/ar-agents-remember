@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
             "locator": {
               "end": 24,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
             "locator": {
               "end": 4,
@@ -55,14 +55,26 @@
       ]
     },
     "3": {
-      "note": "The Orchestrator sends the Architect only developer-requiring questions and child permission notices with role_message to the parent agent ID, keeps ordinary requirement readings and operational rulings itself, and follows the held-delivery rule when a send answers held.\n\nAnchor: `role_message`",
+      "note": "The Orchestrator keeps ordinary requirement readings and operational rulings itself, forwards the Manager's matters for the Architect unchanged and sends developer questions, child permission notices and the final report path with `role_message` to the parent agent ID (sending no status-only messages or other landing notices), and follows the held-delivery rule when a send answers held.",
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-            "content": "sha256:5b4a717f77ff9d7749fe2dee46ae3db12ce40339d99ec2fac87af5bc0da937d3",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:1183975e8324089c32584c0343e0087af1decf10b3af765961b79f889472679c",
             "locator": {
-              "end": 70,
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:67951d508eb0ef9bb480bc47aa84149ecf785726480406afa3f0e75a1ee73875",
+            "locator": {
+              "end": 68,
               "kind": "line_range",
               "start": 66
             }

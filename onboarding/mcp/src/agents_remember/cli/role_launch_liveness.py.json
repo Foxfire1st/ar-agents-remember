@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-        "content": "sha256:d67c12d7f4b52e81cc0a88c75b5d12f092803e2b71f161290a60af8422b7684a",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
         "locator": {
           "kind": "symbol",
           "name": "_apply_reading"
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
         "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
         "locator": {
-          "end": 556,
+          "end": 613,
           "kind": "line_range",
-          "start": 509
+          "start": 566
         }
       },
       "id": "RLZ-7CJ59T",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-        "content": "sha256:d67c12d7f4b52e81cc0a88c75b5d12f092803e2b71f161290a60af8422b7684a",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
         "locator": {
           "kind": "symbol",
           "name": "_apply_reading"
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
         "content": "sha256:a1ce1f9b474495a426323655e44aa00b2680df195905f8838d3b9adc57d99d23",
         "locator": {
           "kind": "symbol",
@@ -77,11 +77,11 @@
     },
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-        "content": "sha256:728c34dd23efbe1b793e5a7d312810e54461cb5720cb1dcda45e0ef786a48870",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:1d44ab80429deb2b5efbc08cc39b39549d6e4e7a3acfd8ba92f161432335b2ca",
         "locator": {
           "kind": "symbol",
-          "name": "_publish_reading"
+          "name": "_observe_host_archive"
         }
       },
       "id": "RLZ-H2H238",
@@ -90,13 +90,13 @@
         "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
         "leaf": "261112-BUG-L38"
       },
-      "rationale": "Settles a host-confirmed archived or gone seat after rechecking its stored identity and generation.",
+      "rationale": "Observes host-archived and gone states during liveness refresh without mutating unrelated active or pending-retirement receipts.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-        "content": "sha256:3d5c16e7a2848c643f372e47c8e0ffca1a3b9b9a19358474036c60dff4b0757d",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:faf62f628b6b3cc40d09e88492c3b00df4e2da3b03c163ece19db1ac6de8c808",
         "locator": {
           "kind": "file"
         }
@@ -112,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-        "content": "sha256:0c94311fa2c8b49175a712dd77a9e8de1bcbcf7528b18fd1cd8aeca4ce28f4eb",
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
         "locator": {
           "kind": "symbol",
           "name": "_reconcile_prior_execution"
@@ -127,6 +127,42 @@
       },
       "rationale": "Replays unresolved calls and returns or refreshes resolved executions.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:97dcaca2bbc0e65993436c166ca0866a7febad447b45fc5f3dcf854b22ac440c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reconcile_non_leaf"
+        }
+      },
+      "id": "RLZ-Q08YWG",
+      "invariant": "INV-0X3E1T",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 3",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Uses the existing closed predicate and reserves the replacement while preserving prior retirement and rejection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_reading"
+        }
+      },
+      "id": "RLZ-XH86VS",
+      "invariant": "INV-QDYC5F",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 4",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Re-reads the exact receipt under its lock before applying host-derived state.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -135,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
             "content": "sha256:8f610bf33cbdbf5f66608be2852fb6bff54d61089d8ea50ff98554378667e8fd",
             "locator": {
-              "end": 411,
+              "end": 476,
               "kind": "line_range",
-              "start": 376
+              "start": 441
             }
           },
           "kind": "code"
@@ -200,16 +236,37 @@
       ]
     },
     "13": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "The current source implements this file’s stated Investigator and reconciliation boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-            "content": "sha256:c7499840a293da6de2081b43aed98f7b15ec51b14ea272e0926e39795bd90724",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
             "locator": {
-              "end": 239,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_reconcile_prior_execution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:97dcaca2bbc0e65993436c166ca0866a7febad447b45fc5f3dcf854b22ac440c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_non_leaf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:d0d6ab5041ffd59de9b5f3b2c14362fdfe28f672aa3d23b48d3aac0a0bfd3fd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_leaf_occupancy"
             }
           },
           "kind": "code"
@@ -217,28 +274,26 @@
       ]
     },
     "14": {
-      "note": "Digest-bound same-request replay reconciles decisions and empty successors. Anchor: Current source; preserved L88 property 14",
+      "note": "Digest-bound same-request replay reconciles decisions, restarts eligible non-explicitly-retired closed receipts, and reconciles empty successors.",
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-            "content": "sha256:ec690f14f4967f5a3bc0ba4a83703c439cc6b3a51909744cf57a005f6c299130",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
             "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 76
+              "kind": "symbol",
+              "name": "_reconcile_prior_execution"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-            "content": "sha256:f8b367e76c8229c79831d27092473497719165d808df2ee861b50a56c7df56a2",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:cbfb829c855a25e709337be9484a12cc882aa9d1395673ff52f3e97f6429f0a5",
             "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 75
+              "kind": "symbol",
+              "name": "_restart_closed_execution"
             }
           },
           "kind": "code"
@@ -246,16 +301,37 @@
       ]
     },
     "15": {
-      "note": "Replacement authority remains while step-up adds unconditional idle/prompt checks.",
+      "note": "Ordinary leaf replacement uses caller scope (`retirement_scope_refusal`) while step-up keeps starter-only authority and unconditional idle/prompt/subagent checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-            "content": "sha256:09d1b86c5777072bbcaef909dfd66ac815fcbc1537b0c77fb477404944a8c71f",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:d0d6ab5041ffd59de9b5f3b2c14362fdfe28f672aa3d23b48d3aac0a0bfd3fd5",
             "locator": {
-              "end": 257,
-              "kind": "line_range",
-              "start": 137
+              "kind": "symbol",
+              "name": "_reconcile_leaf_occupancy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:701c27e418df874b70d8d00ad27124a7659f703e9363b78eb58785cca607609c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replacement_caller"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:66eae37ca4f1a415429f703ce00bee602c73b99ca99ec7a36d39c5c8797da79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_step_up_idle"
             }
           },
           "kind": "code"
@@ -267,24 +343,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-            "content": "sha256:0d46d328ef0398cb6dcd18226369bc3b10c1fc5dba4c504d87093b30bcd2ddaf",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:4af7c056ca00d6b0e171726f00e10457a5ba70e9a9f6c260bdcb7353182a08b9",
             "locator": {
-              "end": 338,
-              "kind": "line_range",
-              "start": 286
+              "kind": "symbol",
+              "name": "require_step_up_archive_idle"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
-            "content": "sha256:17a7eba61050a36e7e5ac1debe11d94855f7853f9cf9e57f239085816d91cdd5",
+            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "content": "sha256:3d68238261396d080e9c64c7ace8af921a4499ea73b0d311395f11fda76f9491",
             "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 158
+              "kind": "symbol",
+              "name": "_run_prepared_launch"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -324,16 +398,37 @@
       ]
     },
     "2": {
-      "note": "The current reading updates changed lifecycle fields. An unreachable reading preserves the receipt and labels the response as last known.",
+      "note": "The current reading updates changed lifecycle fields or settles host-observed archives without overwriting `retiredBy` or pending `retireIntent`. An unreachable reading preserves the receipt and labels the response as last known.",
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
-            "content": "sha256:1a1a45108939ec4f674c5aaa02b002b14dd15a6965577f19092302e048371d79",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
             "locator": {
-              "end": 482,
-              "kind": "line_range",
-              "start": 411
+              "kind": "symbol",
+              "name": "_apply_reading"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:1d44ab80429deb2b5efbc08cc39b39549d6e4e7a3acfd8ba92f161432335b2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_host_archive"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:0691f924ff029b874c82fcf8dd7950ceb50cab6070098ad653c872e9c47a1fbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_status_row"
             }
           },
           "kind": "code"
@@ -345,12 +440,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
             "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
             "locator": {
-              "end": 556,
+              "end": 613,
               "kind": "line_range",
-              "start": 509
+              "start": 566
             }
           },
           "kind": "code"

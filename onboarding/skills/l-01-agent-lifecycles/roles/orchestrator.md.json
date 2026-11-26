@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
         "content": "sha256:58807b9a9a119fa6c05339021bce2c40289a780e3116578d21540513095f8f14",
         "locator": {
-          "end": 107,
+          "end": 105,
           "kind": "line_range",
-          "start": 99
+          "start": 97
         }
       },
       "id": "RLZ-20AC2N",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
         "content": "sha256:586170f032c01e469cc206a21cc7b515199940323564ee5a8d4ea04ae9e6c6ae",
         "locator": {
           "end": 8,
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
         "content": "sha256:20e437212ad5118d6ee8bce72b784f67cb8af518be4342f9ab7fbe7a00e4a15c",
         "locator": {
-          "end": 89,
+          "end": 87,
           "kind": "line_range",
-          "start": 89
+          "start": 87
         }
       },
       "id": "RLZ-D5ZTR6",
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
         "locator": {
           "kind": "file"
         }
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
         "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
         "locator": {
           "end": 24,
@@ -113,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
         "locator": {
           "kind": "file"
         }
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
         "content": "sha256:117833b28148b422c6bef8c870335839c1ee1bfc67065b1a684128c38c7b3e4a",
         "locator": {
           "end": 54,
@@ -149,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
         "locator": {
           "kind": "file"
         }
@@ -166,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
         "locator": {
           "kind": "file"
         }
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
         "content": "sha256:301d424c52ba6e6d0bb090ee1ca7b863e654e0fc5130239d89565b587fdcb799",
         "locator": {
           "end": 48,
@@ -202,10 +202,10 @@
     },
     {
       "anchor": {
-        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-        "content": "sha256:8076689b4c5ba9d096ae4aa04f425d632d7b21dd5aa5cc33f169d40bacfb899a",
+        "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+        "content": "sha256:445b27cf99af318b2ca79af5417eea6a5745a585e348c38b7cdd6e087eebc00f",
         "locator": {
-          "end": 68,
+          "end": 66,
           "kind": "line_range",
           "start": 58
         }
@@ -216,7 +216,7 @@
         "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This paragraph bounds what reaches the Architect for a sprint coordinating agent.",
+      "rationale": "Instructs the Orchestrator to forward the Manager's Architect matters unchanged, send developer questions, permission notices and the final report path on the parent route, and send no status-only messages or other landing notices.",
       "role": "primary-authority"
     }
   ],
@@ -226,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:586170f032c01e469cc206a21cc7b515199940323564ee5a8d4ea04ae9e6c6ae",
             "locator": {
               "end": 8,
@@ -238,7 +238,7 @@
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
             "locator": {
               "end": 24,
@@ -250,7 +250,7 @@
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:8589a5349ec6cc7190254f234cd811c28e5c53530e9ee9e948344c8e8caa74de",
             "locator": {
               "end": 16,
@@ -262,12 +262,12 @@
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:20e437212ad5118d6ee8bce72b784f67cb8af518be4342f9ab7fbe7a00e4a15c",
             "locator": {
-              "end": 89,
+              "end": 87,
               "kind": "line_range",
-              "start": 89
+              "start": 87
             }
           },
           "kind": "code"
@@ -279,12 +279,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:efcd5555d0f07ddd0814e151f886796630afe2bd730a7b4d5328cd31f2103f56",
             "locator": {
-              "end": 107,
+              "end": 105,
               "kind": "line_range",
-              "start": 101
+              "start": 99
             }
           },
           "kind": "code"
@@ -292,12 +292,12 @@
       ]
     },
     "18": {
-      "note": "A parent-started Orchestrator sends upward only developer-needed matters, permission notices and one final report-path message, continues independent work when delivery is held or refused, and uses its own chat for developer decisions when dashboard-started without a parent.",
+      "note": "A parent-started Orchestrator forwards the Manager's matters for the Architect unchanged and sends developer questions, permission notices and one final report-path message on the same route (with no status-only messages or other landing notices), continues independent work when delivery is held or refused, and uses its own chat for developer decisions when dashboard-started without a parent.",
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-            "content": "sha256:5b4a717f77ff9d7749fe2dee46ae3db12ce40339d99ec2fac87af5bc0da937d3",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:0afbbf00805d9b20a497f53d55490505cfdd6b37a21dedfca92a4a83a0d841a0",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -308,7 +308,7 @@
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:1b77911b099fbe581f26c639c2d18c8db76b1823ff85105afa01ea56e64223db",
             "locator": {
               "end": 36,
@@ -325,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:61b05b05af80ffaa49730428efa8419e3a2ebfcecdc0810585adf20f0e61034d",
             "locator": {
               "end": 54,
@@ -338,11 +338,11 @@
       ]
     },
     "20": {
-      "note": "Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards.",
+      "note": "Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence, unchanged forwarding of Manager Architect matters and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
             "locator": {
               "end": 24,
@@ -354,32 +354,32 @@
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:20e437212ad5118d6ee8bce72b784f67cb8af518be4342f9ab7fbe7a00e4a15c",
             "locator": {
-              "end": 89,
+              "end": 87,
               "kind": "line_range",
-              "start": 89
+              "start": 87
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:a48e3739547892ee683e09213d50336af7dd4935dac330b5e41274d8c8a4e4b0",
             "locator": {
-              "end": 93,
+              "end": 91,
               "kind": "line_range",
-              "start": 93
+              "start": 91
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
-            "content": "sha256:80c44cdd9f2365e49c16dd8837f0f9d4b0d67c5bb0d915509f4878e9be0b5407",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:509c64b03f187177d480d31f03954dc672aaacfc931930bea3fd7a4f5e4544b3",
             "locator": {
               "end": 66,
               "kind": "line_range",
@@ -390,19 +390,19 @@
         },
         {
           "anchor": {
-            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
             "content": "sha256:9c6688ba0cb583c7ceb6ba9e2d2aed15309b5699c60e87136cf622e40d5e4909",
             "locator": {
-              "end": 137,
+              "end": 135,
               "kind": "line_range",
-              "start": 137
+              "start": 135
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
             "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
             "locator": {
               "end": 77,

@@ -7,9 +7,10 @@
   },
   "applicability": "Handover preparation and wire projection for any role started through the native role launcher.",
   "conditions": [
-    "When the launch has a parent, host.developerQuestionRoute is {mode: parent, agentId: <parent_id>} in the wire projection and host.developerQuestions in .handover.json routes every developer question to that parent via role_message.",
+    "When the launch has a parent, host.developerQuestionRoute is {mode: parent, agentId: <parent_id>} in the wire projection; in .handover.json, parented leaf and investigator handovers route host.developerQuestions directly to started_by.agent_id with role_message and never use the own-chat sentence.",
+    "Parented Manager and Orchestrator handovers route host.developerQuestions in .handover.json to the reporting recipient recorded in the report (else the launch parent's agent ID) and route Architect matters and developer questions in host.ownerRelation through the assigned reporting route, with Orchestrator forwarding Architect matters unchanged and Manager naming owning_architect_id for qualifying direct skeletons only when corroborated receipt lineage verifies that Architect.",
     "When the launch is parentless, host.developerQuestionRoute is {mode: own-chat} in the wire projection and host.developerQuestions in .handover.json states the own-chat rule.",
-    "For parented leaf roles (Worker, Reviewer, Curator), leafSeats.roleMessageArguments stands in the wire projection and host.ownerRelation in .handover.json directs routine results to sibling seats and above-leaf occasions to the parent."
+    "For parented leaf roles (Worker, Reviewer, Curator), leafSeats.roleMessageArguments stands in the wire projection and host.ownerRelation in .handover.json directs routine results to direct sibling seat routes and above-leaf occasions to the parent."
   ],
   "exclusions": [
     "Unrelated Worker, Reviewer and Curator handover text and tool requests remain unchanged.",
@@ -29,18 +30,7 @@
   },
   "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "Every parented role handover routes developer questions to its actual parent ID, and parented leaf roles route work directly to named peer seats and only above-leaf occasions to the parent. The inline handover projection carries `host.parent`, compact structured `host.developerQuestionRoute` (`parent` with `agentId`, or `own-chat`), and `leafSeats`, while the long prose fields `host.developerQuestions`, `host.ownerRelation`, `assignment`, and `canonicalTaskReportPath` remain in the immutable complete handover JSON file.",
+  "statement": "Every parented role handover routes developer questions through its role-appropriate parent channel: parented leaf and investigator roles route developer questions directly to their launch parent's agent ID, while parented Manager and Orchestrator roles route developer questions to the reporting recipient recorded in their report (else their launch parent's agent ID) and route Architect matters and developer questions through their assigned reporting route (with Orchestrator forwarding Architect matters unchanged, and Manager addressing qualifying direct skeletons to an owning Architect agent ID only when corroborated receipt lineage supplies owning_architect_id). Parented leaf roles route work directly to named peer seats and only above-leaf occasions to the parent. The inline handover projection carries `host.parent`, compact structured `host.developerQuestionRoute` (`parent` with `agentId`, or `own-chat`), and `leafSeats`, while the long prose fields `host.developerQuestions`, `host.ownerRelation`, `assignment`, and `canonicalTaskReportPath` remain in the immutable complete handover JSON file; parentless/dashboard handovers preserve own-chat wording.",
   "supersedes": [],
-  "title": "Parented handovers project compact developer-question and peer routes",
-  "writer": {
-    "at": "2026-11-25T20:08:37+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
-    "task": "261124-CAP"
-  }
+  "title": "Parented handovers project compact role-aware question and peer routes"
 }

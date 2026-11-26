@@ -10,7 +10,7 @@ Registers role launcher options/dispatch/result/frame APIs and serializes prepar
 
 ## Code Commentary
 
-After the Manager owns its starting receipt, `_record_manager_start` records an Architect address when it can identify one before native execution. For an Orchestrator starter, `_architect_behind` verifies an Architect launch receipt for the starter's recorded parent. Launch proceeds if the lookup finds no address or the write fails.
+After the Manager owns its starting receipt, the route records an Architect address when it can identify one. For an Orchestrator starter, identifying that address requires both a corroborated Orchestrator launch receipt whose `agentId` matches `started_by.agent_id` and an Architect launch receipt for that receipt's `parentAgentId`. Launch proceeds if the lookup finds no address or the write fails.
 
 ### Current Contract
 

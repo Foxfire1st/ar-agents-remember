@@ -34,7 +34,9 @@ This answer builder does not publish role facts: the obsolete post-answer plugin
 
 
 
+
 - Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption. [5]
+
 
 
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/architecture.md (lines 1-303) remains accurate after L29 added GitCommandSpec and git_command_spec to mcp/src/agents_remember/kernel/git_command.py (_batch_blobs private spool at lines 769-781 unchanged) and after the mcp/pyproject.toml 3.0.8 version bump; package commands, --config boundary, settings files, runtime/servers/ ownership, definition scopes, and read/dry-run boundaries all match live code.",
-    "task": "261112-BUG-L29",
+    "statement": "Audited docs/architecture.md line by line against synced L44 code tree ede5d128 (base 150b9778): system layers, MCP server dispatch, and role-execution boundaries remain accurate; no L44 contradiction.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
     {
-      "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+      "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -301,14 +301,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }

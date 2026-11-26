@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:05157bd34d41d798270521436acf82ced57c4cc3305fbd69c970af1b4a7e0827",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
-        "content": "sha256:bacdefd5d070cb6983a3f4e5d6779049335b42e21716be39c82125498879fb91",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -71,12 +71,12 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "Populates compact structured host.developerQuestionRoute alongside full host.developerQuestions and host.ownerRelation prose in the compiled handover.",
+      "rationale": "Compiles parented handover values using _developer_questions (role-aware coordinator vs leaf/investigator channel), _owner_relation (with optional verified owning_architect_id), and compact structured host.developerQuestionRoute alongside full prose fields in .handover.json.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -112,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -148,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:05157bd34d41d798270521436acf82ced57c4cc3305fbd69c970af1b4a7e0827",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
         "locator": {
           "kind": "symbol",
@@ -202,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
@@ -220,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:05157bd34d41d798270521436acf82ced57c4cc3305fbd69c970af1b4a7e0827",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -238,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:ad12b44aa8d3cf322c080cbac6c1ca03847216bf2dc5936bb9d47489caaf37e6",
         "locator": {
           "kind": "symbol",
@@ -256,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
         "locator": {
           "kind": "symbol",
@@ -274,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
         "locator": {
           "kind": "symbol",
@@ -292,12 +292,12 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:b87b6ecc7d7e28f1b9c34f446df57cb88dc7385093c958c95d89e1c88af1b2d0",
         "locator": {
-          "end": 253,
+          "end": 255,
           "kind": "line_range",
-          "start": 253
+          "start": 255
         }
       },
       "id": "RLZ-HZ21DS",
@@ -311,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -329,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -347,8 +347,26 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:5275f82530b42c2bdb6e27d3b104bb4067382837a26cb39266555bce010e9967",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:5542a0b02a9c96defbdc4ac031b211ac4bd0575f874106446feb8d999cd2505c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_developer_questions"
+        }
+      },
+      "id": "RLZ-KVTK0F",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-1-launch-routing",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Separates parented coordinator developerQuestions (recorded reporting recipient else launch parent ID) from leaf/investigator starter-ID routing and parentless own-chat text.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:b887bcd4995d6a305a8a1835bb81c9abcae82d2616d2532c3fda254f3bab7461",
         "locator": {
           "kind": "file"
         }
@@ -364,8 +382,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -382,8 +400,8 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-        "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "content": "sha256:db06e400a6daf483d3384241587779fe2bf2a6c647584088ed59376447ddb473",
         "locator": {
           "kind": "symbol",
           "name": "_owner_relation"
@@ -395,12 +413,12 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The ownership constructor preserves the parent identity and L72 coordinator values, adds the developer channel, and names R99 direct peers for leaf results and work questions.",
+      "rationale": "Builds role-aware ownerRelation routing Architect matters and developer questions through the assigned reporting route (Orchestrator forwarding unchanged; Manager direct qualifying skeletons to owning_architect_id only when verified) while keeping leaf peer routes and starter provenance.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -418,7 +436,7 @@
     },
     {
       "anchor": {
-        "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
         "content": "sha256:378541733deb789fdfbab42d885da34ec45bb3d3e9a81301d2604620506667ea",
         "locator": {
           "kind": "symbol",
@@ -489,7 +507,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
             "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
             "locator": {
               "kind": "symbol",
@@ -576,7 +594,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
             "content": "sha256:c0ad5b8761a4da6a95ad5469b1e425605ac63fdf93b6f1d8a86f30d0a5412c53",
             "locator": {
               "kind": "symbol",
@@ -592,7 +610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
             "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
             "locator": {
               "kind": "symbol",
@@ -619,7 +637,23 @@
         }
       ]
     },
-    "19": {
+    "2": {
+      "note": "Frozen implementation of _ar_mcp_context supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:327c2ecef707377b3d1753bab2d319f8df963473f4c308575a916c6f9c33c75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ar_mcp_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
       "note": "`_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`.",
       "targets": [
         {
@@ -647,22 +681,6 @@
         }
       ]
     },
-    "2": {
-      "note": "Frozen implementation of _ar_mcp_context supporting the stated file behavior.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
-            "content": "sha256:327c2ecef707377b3d1753bab2d319f8df963473f4c308575a916c6f9c33c75b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ar_mcp_context"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The `_resolve_workspace` implementation now lives in its extracted owner. Anchor: actual current supporting source",
       "targets": [
@@ -682,27 +700,28 @@
       ]
     },
     "4": {
-      "note": "The parented handover values: `ownerRelation` from `_owner_relation`, `developerQuestions`, and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`).",
+      "note": "The parented handover values: `ownerRelation` from `_owner_relation`, `developerQuestions` from `_developer_questions` (with parented Orchestrator/Manager reporting-recipient routing and verified `owning_architect_id` direct skeletons), and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`).",
       "targets": [
         {
           "anchor": {
-            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
-            "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:988f678f4f6ecab32b811cbbdf8fa96959851eddd08b7695626abe9d348966d4",
             "locator": {
-              "kind": "symbol",
-              "name": "_owner_relation"
+              "end": 1062,
+              "kind": "line_range",
+              "start": 954
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
-            "content": "sha256:c8b7ec62abce2fc7dfbfed04035b5e72ded89e70c8fe90d5aa56db5653d1c198",
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:b618515131ca0b96fa12b0d3a442c98e758d026376d3fa7a023b053245501711",
             "locator": {
-              "end": 783,
+              "end": 750,
               "kind": "line_range",
-              "start": 759
+              "start": 743
             }
           },
           "kind": "code"
@@ -784,7 +803,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
             "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
             "locator": {
               "kind": "symbol",

@@ -9,7 +9,8 @@
   "applicability": "Every canonical role, operation and router text of `l-01-agent-lifecycles` that states how a role agent answers, hands over or names what it awaits, and the hand-over text compiled from those sources.",
   "conditions": [
     "A message another agent sent begins with a `From` line; the agent's reply in that turn reaches the sender only when the sender waits on its own call.",
-    "Otherwise the answer, the hand-over and the statement of what is awaited, and from whom, are sent with `role_message` on `agents-remember-task` to the agent that waits; a final chat line may repeat that statement and is not its transport.",
+    "Otherwise a hand-over, a Manager's blocked-outside-authority notice, and any non-Manager role's statement of what is awaited and from whom are sent with `role_message` on `agents-remember-task` to the waiting agent; a final chat line may repeat that statement and is not its transport.",
+    "While a Manager's child works, or after the Manager sends a developer question and has no independent work left, the Manager records the seat/wait and awaited stage in its end line and status file (declaring a valid named wait for continuation checks) and sends no wait message.",
     "An agent without a parent asks the developer, and reports to the developer, in its own chat."
   ],
   "exclusions": [
@@ -29,9 +30,20 @@
     "leaf": "260928-MIK-L172",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A role agent's hand-over, and its statement of what it awaits, reach the waiting agent with role_message; its own chat text is an answer only for a sender that waits on its own call.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "A role agent's hand-over, blocked-outside-authority notice, and non-Manager statement of what it awaits reach the waiting agent with role_message; its own chat text is an answer only for a sender that waits on its own call, except that a Manager awaiting a working child or an already-sent developer question with no independent work left records that wait locally in its end line and status file (declaring a valid named wait) and sends no message for that wait.",
+  "supersedes": [],
+  "title": "Role-message hand-over transport and Manager local named-wait carve-out",
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

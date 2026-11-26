@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
+    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
     "role": "curator",
-    "statement": "docs/features.md (lines 349-379) accurately describes read-only versus mutating MCP tool trust boundaries, answer token bounds, and tool-log routing, unaffected by L38 adding sharedHeldStores to RUNTIME_INSTALL_ANSWER_FIELDS.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified docs/features.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): feature summaries of role coordination, skill packaging, worktrees, and memory quality remain accurate with no L41 contradiction.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -218,12 +218,12 @@
       "path": "mcp/src/agents_remember/memory/carryover_evidence.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+      "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T04:22:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

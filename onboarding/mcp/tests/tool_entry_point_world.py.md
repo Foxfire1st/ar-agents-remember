@@ -83,7 +83,11 @@ Current source: The ordinary benign table has 44 distinct literal keys matching 
 
 - The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding. Anchor: `_read_whole_result` [2]
 - A returned call validates the whole result under its model and judges the delivered answer as delivered. Anchor: `_returned_arm` [3]
+
 - The ordinary benign table has 44 distinct literal keys matching the 44-name PUBLIC_TOOLS tuple, including citation_note_revision and explainer_control. The citation-note stimulus names an absent sidecar, uses a zero base digest and requests dry_run. This is source preparation, not registration or execution; prior 41/42-key and addition captions remain historical. [10]
+
+
 - The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution. [11]
+
 
 - `call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. _ToolCallTimeout still reaches the ordinary sweep deadline handling and is classified as unvalidatable rather than as a product exception. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [15]

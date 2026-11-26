@@ -35,7 +35,7 @@ On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact r
 
 On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and has no `--baseline`, `--publish` or `--publish-to` option. Capsule-specific missing writer/command admission is reported as records not written; it admits no other runtime or internal writer.
 
-Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation.
+Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation. For Manager leaf closeout, the complete curation checks also call `knowledge_read` on `agents-remember-task` with `memoryRoot` and `repositoryRoot` set to the paired leaf worktrees, `codeTreeId="working-tree"`, `view="dependent"` and `staleOnly=true`, match the code and memory candidates before and after the read, finish every page, confirm or correct each row, and record the exact pair, input, response `memoryTree.treeKey`, final `counts.total` and receipt in the curation report.
 
 Before converted-memory closeout, an independent seat that authored none of the leaf's cards or records fact-checks every changed card, sidecar and record statement against final code, every history row's disposition, effect and reason against the diff, and important omissions. Blocking findings are repaired with another full-quality run. This second reader is a lifecycle duty, not a check mechanically run by closeout. It preserves separate MEMORY/CODE reports and budgets and the one admitted producer/writer.
 
@@ -98,7 +98,7 @@ No additional work is asserted by this card. Actual project publication and sema
 
 - Bound Paseo intake reads the rendered task and canonical JSON with the agent's own file tools, the knowledge writer keeps its ownership inside the selected memory root, and curation binds to the starting serving build. [8]
 
-- Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair. [9]
+- Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality checks (including the Manager leaf closeout dependent-document read) and independent fact-check before bounded repair. [9]
 
 - Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed. [10]
 
@@ -134,7 +134,7 @@ No meaningful cross-repository implementation dependency.
 
 - Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot, and context_packet and read_ar_files both use the leaf task_context.
 
-- Curation requires the complete memory-quality operation, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
+- Curation requires the complete memory-quality operation, the Manager leaf closeout dependent-document read (`view="dependent"`, `staleOnly=true`) recorded in the curation report, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
 
 - Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]
 

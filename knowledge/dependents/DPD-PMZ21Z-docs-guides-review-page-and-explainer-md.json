@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/guides/review-page-and-explainer.md (lines 760-809) accurately describes explainer_control, explainer retirement, and that task cleanup/abandon/finalize leaves the explainer workspace intact.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified docs/guides/review-page-and-explainer.md (lines 1-914) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): review surface, explainer claim/ownership and launch-route interactions remain accurate under BUG-R41@v1.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -304,5 +304,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

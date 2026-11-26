@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9a8f83c80b65c002f8b07f79bb2ee8377cdee42d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Updated in L38 (9a8f83c8), docs/reference/runtime-layout.md accurately documents all six runtime_install arguments (lines 66-68), that runtime_install leaves notes alone by default while reconcile_shared_held_stores=true writes waiting messages into closed seats launch receipts under notes/reports/paseo-native-executions/ (lines 61, 90-93), coordination-root and runtime/servers/ paths, host-home files, and per-role scratch/report folders.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified docs/reference/runtime-layout.md (lines 1-243) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): runtime directory layout, packaged skill copies and server/receipt paths remain accurate with no contradiction under BUG-R41@v1.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+      "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -164,5 +164,16 @@
       "heading": "What the install does for the host",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

@@ -70,7 +70,9 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 - The host-activity reconciliation opts into background agents and asks only open, unarchived AR role seats for subagents. [8]
 
+
 - An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone. [9]
+
 
 
 - The bridge dispatches role-registry to its dedicated history and exact-read helper. [10]

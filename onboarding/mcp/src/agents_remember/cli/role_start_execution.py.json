@@ -1,18 +1,36 @@
 {
   "path": "mcp/src/agents_remember/cli/role_start_execution.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c812eb84e3b5c0f807f8f76389156aa1a5c1986f",
+        "content": "sha256:82a96c4dbd5bb7047f2111ac575f896490c3ce7dc81f4c7311db4ba5ca729b9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_execution"
+        }
+      },
+      "id": "RLZ-JPEXMT",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-1-launch-routing",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Resolves owning_architect_id through route._architect_behind for a parented Manager and passes it into route.prepare_role_handover.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Exact replay precedes fresh preparation and validated successor reservation.",
+      "note": "Exact replay precedes fresh preparation (including `owning_architect_id` lookup for a parented Manager) and validated successor reservation.\n\nAnchor: `start_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
-            "content": "sha256:a3cd108c46833a0d03c201ec296dbb0919c60be1f704910913d16dc5d78b93d0",
+            "blob": "c812eb84e3b5c0f807f8f76389156aa1a5c1986f",
+            "content": "sha256:10ba92e3c722b278f48343455ab01be420a26893162233617bf51fde1056b80c",
             "locator": {
-              "kind": "symbol",
-              "name": "start_execution"
+              "kind": "file"
             }
           },
           "kind": "code"

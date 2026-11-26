@@ -119,7 +119,7 @@ Detail checks cover all declared role/operation pairs and require every declared
 
 - The operation-source test keeps authorized closeout at audience=all and operations/closeout.md; every other operation uses sections and begins with the common audience marker. [21]
 
-- The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round. [23]
+- The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, the Worker reruns focused tests, the Manager gets the Curator's read for a changed pair before routine closeout, overlapping paths or failing tests trigger review of exactly the repair, and a freeze lacking finding entries is returned without counting a round. [23]
 
 - The current planning text asks the developer once "go, or review first?", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. [25]
 

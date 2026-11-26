@@ -21,7 +21,7 @@ The checkpoint case starts with an ancestor lacking a root ignore file. It check
 
 ### Current Contract
 
-The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks now also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding.
+The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, leaf closeout preview approval-pending fields (`phase="commit-approval-pending"`, `nextOperation="request_commit_approval"`, `nextTool="worktree_closeout_apply"`, `intent_note` in `nextRequiredArgs`), children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding.
 
 ### Logic
 
@@ -93,4 +93,4 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 
 
-- The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks now also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding. [6]
+- The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, leaf closeout preview approval-pending fields (`phase="commit-approval-pending"`, `nextOperation="request_commit_approval"`, `nextTool="worktree_closeout_apply"`, `intent_note` in `nextRequiredArgs`), children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding. [6]

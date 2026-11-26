@@ -45,11 +45,11 @@ Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded
 - The assignment the bootstrap seat carries, which names no task. [16]
 
 - The shared preparer resolves launch choices before workspace preparation, then compiles the bound task readers and handover. [1]
-- The parented handover values: `ownerRelation` from `_owner_relation`, `developerQuestions`, and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`). [4]
+- The parented handover values: `ownerRelation` from `_owner_relation` (with verified `owning_architect_id` direct skeletons), `developerQuestions` from `_developer_questions`, and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`). [4]
 - An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. [8]
 - `_compile_handover` compiles instructions, names canonical task and copied documents, records starter and leaf peers through bound role addresses, and populates `host.developerQuestionRoute`. [10]
 - Selection validation and the native Antigravity refusal run before workspace and enclosure preparation. [11]
 - `_compose_compact_instructions` resolves the durable corpus root, calls `compose_launch_instructions(..., compact_links=True)`, emits JSON-quoted `Link roots:`, and includes the instruction digest in the immutable message binding. [13]
 - Compact nested detail composition and user-note precedence delegate to `compose_launch_instructions` and `_write_nested_detail_artifacts`. [14]
 - `_task_document_read_metadata` names `task_doc` first and conditionally deduplicates the `refused-write.md` ladder only when `shared_block` already carries it. [17]
-- `_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`. [19]
+- `_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`. [20]

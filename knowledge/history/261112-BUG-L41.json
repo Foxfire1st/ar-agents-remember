@@ -1,0 +1,4489 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L41",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T05:00:04+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L41",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T05:00:04+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L41",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "aef60f55-8a2c-5ec8-8929-4092ec4693fe",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "738962aad87df38eb1280f290a7d5a6cc644e290",
+    "verdictRef": "261112-BUG-L41-memory-review-r2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3XH6Q0",
+          "revision": 1
+        },
+        {
+          "id": "INV-4R4PF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8PGMJB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8V44VE",
+          "revision": 1
+        },
+        {
+          "id": "INV-97T18K",
+          "revision": 1
+        },
+        {
+          "id": "INV-HVXZ6N",
+          "revision": 1
+        },
+        {
+          "id": "INV-HYEKF9",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYWR60",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-01EMGX",
+      "items": [
+        "sha256:cc005d270121954ed53ab8ecf6030960d2763b1fb08f12e35f79fea9232760fd"
+      ],
+      "reason": "Examined all 8 members of FAM-MEH3SB against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-MEH3SB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-D682YJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-04C8F7",
+      "items": [
+        "sha256:5974dbec2a088f72943c29c88f9b78af484549d16515238da1a935fc0e019863"
+      ],
+      "reason": "Re-anchored touched INV-208SQT entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 5
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-0G665W",
+      "items": [
+        "sha256:c8b425f5f869451cbb842e3de90cdab10519284406597a32c61639ce25e9c76b"
+      ],
+      "reason": "Updated FAM-7AEA19 guarantee to reflect L41's coordinator developerQuestions routing (recorded reporting recipient else launch parent ID) and the Manager local named-wait carve-out after sending a developer question when no independent work remains.",
+      "revision": 3,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0HYE4Z",
+      "items": [
+        "sha256:2724d7e378e772c81e89f34f37520c98aed88bea8a7c4a79077b0cc23371fcdf"
+      ],
+      "reason": "Line 139 of skills/l-01-agent-lifecycles/operations/coordination.md adjusts cross-reference wording under BUG-R41@v1 without introducing a new invariant; behavioral rules remain covered by INV-NFV5VJ, INV-8AMSGV, and INV-CAJ09X.",
+      "subject": "hunk:sha256:2724d7e378e772c81e89f34f37520c98aed88bea8a7c4a79077b0cc23371fcdf"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
+            "content": "sha256:85bed0324081de8ea968ee0fef0e0853d62566703c401e3d1dc522b10e94f69b",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "content": "sha256:945370bb3e81b497caa81cdcea193019874b15f37f40168732ea1649c1c32559",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-8Q22MW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0KQF0H",
+      "items": [
+        "sha256:a9c8cc775122d6d12083c2a8eacefe61669fcf67fb823a58148072c2e8462f9b"
+      ],
+      "reason": "Re-anchored touched INV-760TKM entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-760TKM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-0TFF0B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0Z5MFY",
+      "items": [
+        "sha256:972f5c7dd70cac7170e9f14314324b0f348c0f3c82d00070b9514389b85c02f0"
+      ],
+      "reason": "Re-anchored touched INV-5KBX7C entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 5,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1BTZZ3",
+      "items": [
+        "sha256:21c0e37ae99abc13a54221b86a499916631d862756149c06a603365fe9c1f204",
+        "sha256:7a804eb6836de836579643bc134b4b50f257d1eab6d7440d62a923ef13b6d8f0"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_checkpoint_landing_end_to_end.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
+          "path": "mcp/tests/test_checkpoint_landing_end_to_end.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_checkpoint_landing_end_to_end.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+            "content": "sha256:38e80e48a5b6cf2c7bd749b98693e26467d7a5c5240639526a614bda56c58614",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+            "content": "sha256:6131cc9662d81e6245397385389bb90322928c3b4bc014915aaae55e99bfa1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-0E8J78"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1C7KTQ",
+      "items": [
+        "sha256:c8597cf1e40c95aa8ca07dfe9737b0080e1c724b24b3bf726f759f8fd543bf4d"
+      ],
+      "reason": "Re-anchored touched INV-HN54VG entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-HN54VG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1VGM41",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/install/pi.md; left untouched at HEAD per Manager standing order (CAP-L1 pre-existing staleness outside L41).",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1YAV3E",
+      "items": [
+        "sha256:7d4252b007c03e58d55aa3648121ac11e51f7fb86d3f553c4302a52c74714400"
+      ],
+      "reason": "Reconciled skills/l-01-agent-lifecycles/roles/overview.md prose and reauthored citations against synced L41 candidate 5c005c78.",
+      "sources": [
+        {
+          "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+          "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+        },
+        {
+          "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-20K62T",
+      "items": [
+        "sha256:3d5023f745c3f39b762644d7c6eda4030bb74805fdc2322316fb2fa52b87233f"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/operations/review.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "content": "sha256:6429ce63f6d4996657497aa9754dca6a4525b43ca84f7ea211aa8466ad2cf9bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+            "content": "sha256:c4ff0e8be8697f638534acf12fe4f19eea38c4526a572571bde6e9dd544423c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-QQR1B1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-234DS9",
+      "items": [
+        "sha256:fda6718ef84f1383798a17b53944bff6d8901f1078fe595f6651307d6bee7fed"
+      ],
+      "reason": "Re-anchored touched INV-7DMXZ3 entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+            "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        },
+        {
+          "after": {
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:95de8680982ad844fc99a05d1bb085fa3bf1c1837f38280529c5212db9ad779d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:7363f5370b24126642617c1ae874859e212932c806efd20dac9153d4c7086a9e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:bcd649f532341c2b33a3c412d91b7f8027cba2c8ddc686d68fc5cf0e20762d3d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:87c250dd7599b8b3c3ffc17ff8797f33c95e8f1b8aef977c7e13b0a223503e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:772c3eacd6ba82c381db64f235097b104abd9c406df7b8c5d2f7c515d356a67f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "content": "sha256:cc9d8feff01ce8f45d541bc6f486c47d8489ff0065635e7b9bf8cbd61b9befe2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        },
+        {
+          "after": {
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+            "content": "sha256:dad6d63bfacdeb22edc166840acc31227e9cb1fbace53b7114032a49f409c1f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-K6HJZY"
+        },
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-RT5KYP"
+        },
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YVX677"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2HCXP5",
+      "items": [
+        "sha256:d1098b10375fad722fbbc802ae5903221edb31409db75d0071143e816ce150b0"
+      ],
+      "reason": "Re-anchored touched INV-NNQR91 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3C2KW5",
+      "items": [
+        "sha256:d651581d7b0cb427ad227e4fdf3a7048dbf55b17c0b57ec18e332341778cbcbd"
+      ],
+      "reason": "Audited onboarding:skills/l-01-agent-lifecycles/pointer-actions-derived.json against synced L41 candidate ad428e04; existing prose remains accurate for the L41 changes and any drifted reference anchors were refreshed without altering card meaning.",
+      "sources": [
+        {
+          "blob": "721a4da39c42036b046685ae2413e9f027bae86b",
+          "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3PA85Z",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Examined all 8 members of FAM-N17BB4 against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3V43PG",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/install/codex.md; left untouched at HEAD per Manager standing order (CAP-L1 pre-existing staleness outside L41).",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3W13WZ",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_instruction_wording.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "content": "sha256:c62a88a1f6dde87d27c5a140efcde3a753baf56725e250553789c263280cb506",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:2d50731c884d1f7caffc7826df214a33bc63a1b8c2c7c0bfb36129ff01d2c24c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-EK96T9"
+        },
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-HRBKB6"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-ZXH055"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-45JC22",
+      "items": [
+        "sha256:15821f8cf4f184ea0924aa02255cd90de7773e00f1c57d57bfeb203c034c210d"
+      ],
+      "reason": "Re-anchored touched INV-7VZRZW entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:05157bd34d41d798270521436acf82ced57c4cc3305fbd69c970af1b4a7e0827",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-8N10TZ"
+        },
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:05157bd34d41d798270521436acf82ced57c4cc3305fbd69c970af1b4a7e0827",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-DFH2HW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-45NYVP",
+      "items": [
+        "sha256:806399888d36647891210d216d1ce57b8dfc73501bea78a592da7353f04b6428"
+      ],
+      "reason": "Re-anchored touched INV-RQ2ZB8 entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 4,
+      "subject": "INV-RQ2ZB8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 2
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 3
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-46FCMF",
+      "items": [
+        "sha256:7f7c339f7d8aaced5613bc5b1c63c382df8788f672a9b0cf96a29bf6d2e6781c"
+      ],
+      "reason": "Examined all 6 members of FAM-CR0HHJ against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 4,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 5
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4A3C4D",
+      "items": [
+        "sha256:41665460e4eac367806f6cb960f60b8d64200d998bb57ca9ba7706f04df5fc1b"
+      ],
+      "reason": "Examined all 6 members of FAM-83BTBD against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4BJ1YN",
+      "items": [
+        "sha256:e7552b831e9c71a1bdf534cd474e96ead5e1c69901da52d79b854b8ff95c320a"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_explainer_control.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "c13de1150c23c15c2d13f144bcc6e49fad5f2fb6",
+          "path": "mcp/tests/test_explainer_control.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_control.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R41",
+          "packet": "requirements/BUG-R41-v1-the-manager-decides-its-work-and-the-architect-the-rest.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-EZSG4M"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:2f3a5cf2cf500724572cc4954c70fc23f80925daaf1d4f846a86303d36fccdaa",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:9fa77236ec9290ac2508b2ab2a51b645860c7ac5c0eca87b68fa4c789b960649",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-09EQRE"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:3911f6651ac410c07fee5cb5c220fa430b982b04c9edb4e980883c713984b64f",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:17697ee779f6ec947cd466c13efb6920f3d699e91811ad41de37fac9e06be6ea",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-M2NFTB"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:8eae91f29e87b21db61424ef72e7c87614051bda1910d0cd34c9a8bbb8d6e159",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-Y1FRYJ"
+        },
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:445b27cf99af318b2ca79af5417eea6a5745a585e348c38b7cdd6e087eebc00f",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:8076689b4c5ba9d096ae4aa04f425d632d7b21dd5aa5cc33f169d40bacfb899a",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-ZP7734"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-4FP711",
+      "items": [
+        "sha256:aedf8966fa33e3b800126ab062445c08a6a9cf3377b5d978d130c7f50f7ca85b"
+      ],
+      "reason": "Updated INV-NFV5VJ and re-anchored its role realizations and proof on synced L41 candidate 5c005c78 to capture the three-way Manager boundary, non-reclaiming Architect case rulings, unchanged Orchestrator forwarding and no status-only messages.",
+      "revision": 3,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4GT234",
+      "items": [
+        "sha256:323b029b248a6cc96a270a49106036999894af4b6d86936e2a6a6e6586f8ac5f",
+        "sha256:eb1e41f714c4ecf57be6c690dc47639a05da2b019af876c55134ec2997f394bc"
+      ],
+      "reason": "Updated onboarding:mcp/test_support/agents_remember_test_support/testing/curator_instruction_delivery.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "e8110dc281b24b2a0e3d44ec208451608891b6bb",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curator_instruction_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/curator_instruction_delivery.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "content": "sha256:c62a88a1f6dde87d27c5a140efcde3a753baf56725e250553789c263280cb506",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:2d50731c884d1f7caffc7826df214a33bc63a1b8c2c7c0bfb36129ff01d2c24c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-VCT9ZR"
+        },
+        {
+          "after": {
+            "blob": "ab5447ca0ace5f80098edfeffaf51e460ec1c2af",
+            "content": "sha256:87cf6a757b2b512861db35338153f824aaead3a971e848fc3c7d1cf871fb7fcc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+            "content": "sha256:73aa0f24493fcebdb5becdc670301647433a74c3dfee604051737e42c19fdcb9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-WR7C61"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-545MTC",
+      "items": [
+        "sha256:e629414d0b7c4dc01d61d90a3236b7688a7451ee46d1d92089c5714eb8b852be"
+      ],
+      "reason": "Re-anchored touched INV-HGSFJ8 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5C1G5T",
+      "items": [
+        "sha256:88feb184effff82b663efe4a99d6b83001338ef4fe4a3aa2495031e93e408a9f"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_curator_instruction_wording.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_curator_instruction_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 5
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-CAJ09X",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-5EEWTQ",
+      "items": [
+        "sha256:00ef15e87cd9de6d6e9e310150f6e960cd4e46f37d5e046962011bc442a966a9"
+      ],
+      "reason": "Updated FAM-PNH1QS guarantee and added the new standing routine paired closeout invariant (handoff:BUG-R41.v1.rule-4) to reflect L41's three-way Manager authority split, Orchestrator unchanged forwarding of Architect matters, corroborated direct-skeleton addressing, non-reclaiming Architect case rulings and local Manager named waits; routes remain skills/l-01-agent-lifecycles and mcp/src/agents_remember/cli.",
+      "revision": 5,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R41",
+          "packet": "requirements/BUG-R41-v1-the-manager-decides-its-work-and-the-architect-the-rest.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "content": "sha256:ec6d6daff68dec353144208c6ce3f906d4d7cd7d0fe1e30e3a54684783c3d896",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_manager_first_prompt_addresses_skeleton_only_with_verified_architect"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": "absent",
+          "id": "PRF-04HD21"
+        },
+        {
+          "after": {
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "content": "sha256:9e4676d614d94bd04f3c7cccdeecdb8bbcf7654d75f45f912c65e40be5bd45d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": {
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
+            "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "id": "PRF-18H967"
+        },
+        {
+          "after": {
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "content": "sha256:f0ffb96fb8201ad950574785e2722476b170f90814864f506583edc8d7c3dc12",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": {
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
+            "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "id": "PRF-8AD3VX"
+        },
+        {
+          "after": {
+            "blob": "c13de1150c23c15c2d13f144bcc6e49fad5f2fb6",
+            "content": "sha256:0f00f3871bdd68671f5ec9600f354bfa1c01e0cfc473603945bd19758e42024e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagerStartWriterTests.test_an_orchestrator_starter_records_its_architect_parent"
+            },
+            "path": "mcp/tests/test_explainer_control.py"
+          },
+          "before": "absent",
+          "id": "PRF-9X544H"
+        },
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-2E88NK"
+        },
+        {
+          "after": {
+            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "content": "sha256:408d7429c0dba3dcf38a21e1424f50f1ef65d4e65dd81640d19aafa84649be53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_architect_behind"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JJX4PM"
+        },
+        {
+          "after": {
+            "blob": "c812eb84e3b5c0f807f8f76389156aa1a5c1986f",
+            "content": "sha256:82a96c4dbd5bb7047f2111ac575f896490c3ce7dc81f4c7311db4ba5ca729b9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JPEXMT"
+        },
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:5542a0b02a9c96defbdc4ac031b211ac4bd0575f874106446feb8d999cd2505c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_developer_questions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": "absent",
+          "id": "RLZ-KVTK0F"
+        },
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:db06e400a6daf483d3384241587779fe2bf2a6c647584088ed59376447ddb473",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-Y18EZK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-5XNX0D",
+      "items": [
+        "sha256:c132f1cd08b5b5db590e4f8eb16901d199810891e5283f4ce9fc8a9c2a2915c0"
+      ],
+      "reason": "Updated INV-8AMSGV on synced L41 candidate ad428e04, refreshed its existing realizations and proofs, and attached the corroborated _architect_behind / start_execution / _developer_questions realizations and verified-architect skeleton proofs. Evidence (BUG-R41.v1.rule-1-launch-routing): L41-W2-producer-list.json#BUG-R41.v1.rule-1; L41-R2-curator-producer-list.json#L41-R1-F1; Architect scope ruling D954",
+      "revision": 5,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-64F35J",
+      "items": [],
+      "reason": "Verified docs/install/cursor.md (lines 1-85) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): Cursor installation, Bootstrap refusal and status fields remain accurate under BUG-R41@v1.",
+      "revision": 11,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6PEFSC",
+      "items": [
+        "sha256:147047d85ed161da2839ef6300a216c78268bcdfd24a57ef0b1d36b2cfd26831"
+      ],
+      "reason": "Verified docs/reference/role-capsules.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated lines 53-57 accurately state the Manager wait carve-out—that a Manager waiting on a working child or on an already-sent developer question records that wait in its end line and status file, sends no role_message for the wait, and declares a valid named wait with that end line—and the rest of the capsule reference remains accurate.",
+      "revision": 8,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6T3DAY",
+      "items": [],
+      "reason": "Refreshed reconsider_on anchor link 3 (skills/l-01-agent-lifecycles/roles/manager.md) against synced L41 candidate ad428e04 following the still_rejected judgment on reconsider:DEC-JCDMW3#1; decision meaning is unchanged.",
+      "revision": 13,
+      "subject": "DEC-JCDMW3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:48269af74aa5de4014be897b48dc7cc2e0f229ae5864f784d9b5470d8a7ebaa2",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:de367c407f0803a066943856a19c128d648389b22f3a6972d4be2f958a317e87",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 331
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-9JM4DY"
+        },
+        {
+          "after": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:b20c04ec1b9587546203f3b557619d409ae1f11ef51a285e54104065456181a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:0c0f9da88175c56da03d6e4c7de72d1602629b0fe208039391d41043f6f0b7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-PAYF71"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6Y4A9X",
+      "items": [
+        "sha256:3645af25bb7615d6aa76735a1d576882e1dca86b471fe748b7e9770ed2621935"
+      ],
+      "reason": "Re-anchored pre-existing base-stale entries RLZ-PAYF71 and RLZ-9JM4DY of INV-WEF33P at synced L41 candidate ad428e04; task_doc_route_review preserves the invariant's exact meaning.",
+      "revision": 1,
+      "subject": "INV-WEF33P"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "content": "sha256:ca73ae5af145e68184c743bc5470fafc5bd0d816465bb52f9e842e27882dce84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+            "content": "sha256:35b775cddd63020ac6494e3236217fc7738ee3bf1d24340243a57863b2772392",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "RLZ-GPQWQP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-799YRW",
+      "items": [
+        "sha256:d4c32bfbbc971de016c2e25b42ed6f1386dd0f1707a9a28560d89705247425c4"
+      ],
+      "reason": "Re-anchored touched INV-DHKR4G entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-7H5S9N",
+      "items": [
+        "sha256:058abc9bd4644c4615d210f9ed913bbf7d6a5a70d1bad0d1f1d4c45469284008"
+      ],
+      "reason": "BUG-R41@v1 expands the single-master Manager's self-decision authority (including construction, precedent-covered matters, planned-gap skeletons and standing routine paired closeout across all masters including standalone masters), directly opposing alternative 1's reconsider_when condition ('A Manager under one master repeatedly cannot keep the work moving without an Orchestrator above it').",
+      "subject": "reconsider:DEC-JCDMW3#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7Z01GE",
+      "items": [
+        "sha256:c3366cb4927bfebace539cc1216295a629db8e9a2aad8ef84a3fbaeba9abe5c8"
+      ],
+      "reason": "mcp/tests/test_review_limit_wording.py (-159,1 +159,1): Updates the STAGE_PARTS['manager'] facet label to 'Report an outside-authority block and record a working-child wait', supporting the Manager stage-end rule already captured by INV-CV3MW4 and INV-QZW2X2.",
+      "subject": "hunk:sha256:c3366cb4927bfebace539cc1216295a629db8e9a2aad8ef84a3fbaeba9abe5c8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-822WZC",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined all 2 members of FAM-GDXSJG against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8D79TT",
+      "items": [
+        "sha256:15c7639e186c500de9323e6dbcfb0916f763f13fe9125f7812c137efafbbf8dd"
+      ],
+      "reason": "Verified docs/reference/worktrees-c09.md on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): updated lines 354-360 accurately explain how the Manager's standing leaf authority answers a clean routine closeout preview's approval stop via intent_note while keeping developer commit approval for final work and Architect holds/exceptions.",
+      "revision": 10,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8H3H0R",
+      "items": [],
+      "reason": "Verified docs/features.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): feature summaries of role coordination, skill packaging, worktrees, and memory quality remain accurate with no L41 contradiction.",
+      "revision": 27,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9Q12TY",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/install/hermes.md; left untouched at HEAD per Manager standing order (CAP-L1 pre-existing contradiction at lines 207-210 outside L41).",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-0YJ58R"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A1S9Z9",
+      "items": [
+        "sha256:88be0d82c1fc4c5845ed20861d88211a094b285dd278862aba90a744e2460bfa"
+      ],
+      "reason": "Re-anchored touched INV-A6GAKX entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-45D08P"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A400Z6",
+      "items": [
+        "sha256:66e649f6bac443fd35fb7b6da56362f0a1d3684daaa1211ab4b1c04a1f29387f"
+      ],
+      "reason": "Re-anchored touched INV-3XH6Q0 entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-3XH6Q0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+            "content": "sha256:38e80e48a5b6cf2c7bd749b98693e26467d7a5c5240639526a614bda56c58614",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+            "content": "sha256:6131cc9662d81e6245397385389bb90322928c3b4bc014915aaae55e99bfa1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        },
+        {
+          "after": {
+            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "content": "sha256:4784d11facb09568de64bb96b0a83bb6bbaab872aba5ab086366e8ee8903f4dc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-HR7SPS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A5CZNJ",
+      "items": [
+        "sha256:5c48a2077f546e4e53a8ac4a7a6bbc45f5da9ac7fb1dc5c132e39c031f3d530b"
+      ],
+      "reason": "Re-anchored touched INV-40JW44 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ACJVHJ",
+      "items": [
+        "sha256:16b843e98d833a8cb18bb5073b4c5faf0dcc9d485669579ffcda9c5850b23159"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/roles/manager.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AF7BRA",
+      "items": [
+        "sha256:084862cf55c615a68f49aeb402cb5ade641e78f6d5abf786428c8b40f08d24d5"
+      ],
+      "reason": "Audited onboarding:mcp/tests/overview against synced L41 candidate ad428e04; existing prose remains accurate for the L41 changes and any drifted reference anchors were refreshed without altering card meaning.",
+      "sources": [
+        {
+          "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
+          "path": "mcp/tests/test_checkpoint_landing_end_to_end.py"
+        },
+        {
+          "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        },
+        {
+          "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+          "path": "mcp/tests/test_developer_question_wording.py"
+        },
+        {
+          "blob": "c13de1150c23c15c2d13f144bcc6e49fad5f2fb6",
+          "path": "mcp/tests/test_explainer_control.py"
+        },
+        {
+          "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        },
+        {
+          "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+          "path": "mcp/tests/test_review_limit_wording.py"
+        },
+        {
+          "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+          "path": "mcp/tests/test_role_instruction_wording_handover.py"
+        },
+        {
+          "blob": "bd19373b674f171ae3b6cb255aae5041931bdd57",
+          "path": "mcp/tests/test_role_message_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+            "content": "sha256:5ebb8600ce3d336316c6f604cc8694a680e27ef55a662f2347f4d63d8f71edd0",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+            "content": "sha256:5aa94fa88fbd054746570c7000f262798eaaa0a38236057631dca4796cbeff29",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-7J2CP7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B2ARSQ",
+      "items": [
+        "sha256:30e2536735abe33f890a2bdcfbdebdc6d621ecb5d6b6e5c3cf6999a02932becb"
+      ],
+      "reason": "Re-anchored touched INV-5BPF6M entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-5BPF6M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "content": "sha256:c62a88a1f6dde87d27c5a140efcde3a753baf56725e250553789c263280cb506",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:2d50731c884d1f7caffc7826df214a33bc63a1b8c2c7c0bfb36129ff01d2c24c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-BNWWSD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BDCWDK",
+      "items": [
+        "sha256:ff714ceb7c5eb302267e7430ebe41dbb9749464db275caf10b824a4fd17074ba"
+      ],
+      "reason": "Re-anchored touched INV-CQCPAD entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 3,
+      "subject": "INV-CQCPAD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-8HSARZ"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SZMT6X"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BNXCPR",
+      "items": [
+        "sha256:dce6db39161b4d13bc29fca3536e03699ac102ca0c39a3f074179ef4881ffd9f"
+      ],
+      "reason": "Re-anchored touched INV-7FMDAS entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-7FMDAS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BRWPZQ",
+      "items": [
+        "sha256:8d30aa82b3e03e16852b783a242d0ef86458e2dd8c9dbb224eb341f50a309631"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_review_limit_wording.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+          "path": "mcp/tests/test_review_limit_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_limit_wording.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BZZQC1",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/reference/resolver-c08.md; left untouched at HEAD per Manager standing order (CAP-L1 pre-existing staleness outside L41).",
+      "revision": 7,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C25312",
+      "items": [
+        "sha256:21fbc206f24f7d3847edb6b618951558374cbbd1c0a3e46e03982d07ec4037d3"
+      ],
+      "reason": "Reconciled core/authority.md.md prose and citations against synced L41 candidate 5c005c78 preserving L44 retire_child scope wording.",
+      "sources": [
+        {
+          "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+          "path": "skills/l-01-agent-lifecycles/core/authority.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CC8GPE",
+      "items": [
+        "sha256:cabd1c7c7f0bddd01b040d343df202ee5371fe6eea6263d380eb40508e5bd580"
+      ],
+      "reason": "Audited onboarding:mcp/tests/test_role_message_wording.py against synced L41 candidate ad428e04; existing prose remains accurate for the L41 changes and any drifted reference anchors were refreshed without altering card meaning.",
+      "sources": [
+        {
+          "blob": "bd19373b674f171ae3b6cb255aae5041931bdd57",
+          "path": "mcp/tests/test_role_message_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_message_wording.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CJEV31",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_routes.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CKS3R0",
+      "items": [],
+      "reason": "Verified docs/guides/review-page-and-explainer.md (lines 1-914) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): review surface, explainer claim/ownership and launch-route interactions remain accurate under BUG-R41@v1.",
+      "revision": 13,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-CR6T5M",
+      "items": [
+        "sha256:838c796d961260f81456010e202ef85bff46dfd1021cd040ac260a79ebb0b5de"
+      ],
+      "reason": "BUG-R41@v1 only added optional owning_architect_id to prepare_role_handover without changing permission-mode selection, host default resolution, or Paseo mode ownership; INV-7DMXZ3 only re-anchored at unchanged revision 1, so the reconsider_when condition is not met.",
+      "subject": "reconsider:DEC-6BZSX5#1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-KABSJ7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CX1PV5",
+      "items": [
+        "sha256:59d152926e8f5a53b22ed65973064d3aaab399163ae0f403d3212535a136c978"
+      ],
+      "reason": "Re-anchored touched INV-QZP9PM entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:05157bd34d41d798270521436acf82ced57c4cc3305fbd69c970af1b4a7e0827",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-0ZG5YM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-D0BFCV",
+      "items": [
+        "sha256:a8f5a58a63b70fd549e488957fd91367452215f29fccf40b88eeb7c017424a4c"
+      ],
+      "reason": "Re-anchored touched INV-5ATS9T entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 3,
+      "subject": "INV-5ATS9T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a54825a4f3aecc6ebf4f908b81d0a63d70bea60b",
+            "content": "sha256:c5fd1069bd5ca1a2b37073db03fba9f438d38c8c72a22dcc637d3e7bade6bbc5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+            "content": "sha256:b685a0db81148b0a99222ab425a934fe31ded688b78882aafbcdaa0adf6b839f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DBFXVV",
+      "items": [
+        "sha256:4e83264b280d163278dc559d9f03960b7c3b31fe317e82019e4d54f460d4f136"
+      ],
+      "reason": "Re-anchored touched INV-Y6GVZ7 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DWY8AH",
+      "items": [
+        "sha256:1f133ffbc523ff74da8ed37cc53573c7ccaffed883f27614a381a7e243c22da3"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/operations/orientation.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+          "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/orientation.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DXXF6N",
+      "items": [
+        "sha256:890d5696a374c1477c944d9c9a1a2a7d26c7143b85f4d4cb1bf16d7779320d0a"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/roles/orchestrator.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+          "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R41",
+          "packet": "requirements/BUG-R41-v1-the-manager-decides-its-work-and-the-architect-the-rest.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-4FX9HW"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:5de2688d2b9e0c8efb3a2a13a03600bbb8b3423d158c77b0145f7d869d1a3bb7",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:b9ce7ad642d2730da9185358613f7ddf23af4dd9a16abb4ae95cfad682a61b75",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-8W0HVX"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:879e0eeb0d2f62cd43ce0cf934819f8dd5c1a0793e6370666e7634033f31d616",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:a9b70e431e3186c69fc60bde8756476a1d1525a47267893aae939ec068ecd796",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-S372ZT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-E26S0H",
+      "items": [
+        "sha256:b13cc190c8f4ce4ad84dc9dd6a6d829d80da5b9688b9e6c67ca3972f359b2d8c"
+      ],
+      "reason": "Updated INV-683GA3 and re-anchored its realizations and proof on synced L41 candidate 5c005c78 to reflect that the instructed Orchestrator becomes the Manager's reporting recipient for Architect matters (except direct qualifying skeletons) and developer-needed matters without changing fixed launch parentage.",
+      "revision": 3,
+      "subject": "INV-683GA3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+            "content": "sha256:ef0740a4db519cda54ec889c969b9aaf2a95cc344e342d13a7f24d9c4a2d7caa",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "8df1753c138980d015641171fd9ced522dfc5664",
+            "content": "sha256:5f96765bd480015dd201e0e99308c06a69fe32f205e55b2f25ffba81f75d8259",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-3QTBC5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E3W3WJ",
+      "items": [
+        "sha256:1e21bd556836e74d9187d196e855ca2a497f6f7ca1272a387ca1aa0ce9d46087"
+      ],
+      "reason": "Re-anchored touched INV-7E3JNX entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-7E3JNX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-E91NNV",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Examined all 5 members of FAM-N36SWD against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EEY83V",
+      "items": [
+        "sha256:9de69ca4fdde8361bdc35974bd2ddbb79cbf8071d6ae2de5890b6faf4881807f"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/operations/coordination.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7HBKZR",
+          "revision": 2
+        },
+        {
+          "id": "INV-AF2DN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AW14ZP",
+          "revision": 1
+        },
+        {
+          "id": "INV-CV3MW4",
+          "revision": 2
+        },
+        {
+          "id": "INV-K76Z77",
+          "revision": 1
+        },
+        {
+          "id": "INV-S9H78W",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FA7K7E",
+      "items": [
+        "sha256:a743f32470fa08b7163e06cf3a74c80bf9bb88d14a22642f81ea022120d35b48"
+      ],
+      "reason": "Examined all 6 members of FAM-K65H24 against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-K65H24"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-RFP8Q1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FAGHV8",
+      "items": [
+        "sha256:a4d7d17aacfc95110c820be53106ff53bb6c9598f2c1fdd5b532b88540e18b87"
+      ],
+      "reason": "Re-anchored touched INV-PEVJ6G entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 3,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FSPEDF",
+      "items": [
+        "sha256:df126ae31c1a803742ae22eb8517057637026ca8336a31da46c070cc20699771"
+      ],
+      "reason": "Reconciled skills/l-01-agent-lifecycles/roles/architect.md.md prose and citations against synced L41 candidate 5c005c78 preserving L44 Investigator retirement wording.",
+      "sources": [
+        {
+          "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FWW97T",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "Reauthored core/digest-map.json.md citations for renewed L41/L44 digest map against synced candidate 5c005c78.",
+      "sources": [
+        {
+          "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FYNP98",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+            "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-7N3ZTY"
+        },
+        {
+          "after": {
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:95de8680982ad844fc99a05d1bb085fa3bf1c1837f38280529c5212db9ad779d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:7363f5370b24126642617c1ae874859e212932c806efd20dac9153d4c7086a9e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-BVZVJR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FYS587",
+      "items": [
+        "sha256:4c43f65f10c32a001af1095e733fc598b5e49a1c334f5d90fa820fe8a9b16a59"
+      ],
+      "reason": "Re-anchored touched INV-T8672G entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-5448EZ"
+        },
+        {
+          "after": {
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-H64HF6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G20PZR",
+      "items": [
+        "sha256:9fb65089c812163a6989c1841b97d6e532366d4480fa3432747832ba828126a1"
+      ],
+      "reason": "Re-anchored touched INV-P2WRNQ entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-P2WRNQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "721a4da39c42036b046685ae2413e9f027bae86b",
+            "content": "sha256:c97a5cc095b73d1976384aff26d31fcd7809bb30094bed14df79506b383cd4c4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+          },
+          "before": {
+            "blob": "e79425fed5f5918f469d91674bda7768638e923d",
+            "content": "sha256:be7559846be411ee2883f73a520a56a2abdde58de4871670da4cf1c62e01b32f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+          },
+          "id": "RLZ-36SW5J"
+        },
+        {
+          "after": {
+            "blob": "a54825a4f3aecc6ebf4f908b81d0a63d70bea60b",
+            "content": "sha256:c5fd1069bd5ca1a2b37073db03fba9f438d38c8c72a22dcc637d3e7bade6bbc5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+            "content": "sha256:b685a0db81148b0a99222ab425a934fe31ded688b78882aafbcdaa0adf6b839f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": {
+            "blob": "721a4da39c42036b046685ae2413e9f027bae86b",
+            "content": "sha256:c97a5cc095b73d1976384aff26d31fcd7809bb30094bed14df79506b383cd4c4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+          },
+          "before": {
+            "blob": "e79425fed5f5918f469d91674bda7768638e923d",
+            "content": "sha256:be7559846be411ee2883f73a520a56a2abdde58de4871670da4cf1c62e01b32f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+          },
+          "id": "RLZ-QAAFFF"
+        },
+        {
+          "after": {
+            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+            "content": "sha256:38e80e48a5b6cf2c7bd749b98693e26467d7a5c5240639526a614bda56c58614",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+            "content": "sha256:6131cc9662d81e6245397385389bb90322928c3b4bc014915aaae55e99bfa1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GWAP53",
+      "items": [
+        "sha256:19a3f1dfd63eabc18a2810ba2def7f545f24c3bc23b8d0e33ed750a2eb6a6f14"
+      ],
+      "reason": "Re-anchored touched INV-EHJV8E entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H7S3ZT",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Updated capsule-budgets-current.json.md measurements (3,299 -> 3,397 Manager curation, 1,465 -> 1,470 Manager brief) and reauthored citations against synced L41 candidate 5c005c78.",
+      "sources": [
+        {
+          "blob": "a54825a4f3aecc6ebf4f908b81d0a63d70bea60b",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H809CJ",
+      "items": [
+        "sha256:69cc23179d6a3ba641a38ad9779843ef3473ecdec4b17689422ae09b0ae5365c"
+      ],
+      "reason": "Verified onboarding/mcp/overview.md against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): route topology and overview prose remain accurate with bytes unchanged.",
+      "sources": [
+        {
+          "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        },
+        {
+          "blob": "c812eb84e3b5c0f807f8f76389156aa1a5c1986f",
+          "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+        },
+        {
+          "blob": "a54825a4f3aecc6ebf4f908b81d0a63d70bea60b",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/authority.md"
+        },
+        {
+          "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/every-role.md"
+        },
+        {
+          "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/closeout.md"
+        },
+        {
+          "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "721a4da39c42036b046685ae2413e9f027bae86b",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+        },
+        {
+          "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+        },
+        {
+          "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "ab5447ca0ace5f80098edfeffaf51e460ec1c2af",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-PC91ZT"
+        },
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:1c2f6ec3cdec9676c856338672b7c4894c495199576579e73543061202b18b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:9404f28c9b94cc34cfbbd423df8400ef457ee2266028cfb6269885c6a3aa7b17",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-S4JV63"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HFHW1E",
+      "items": [
+        "sha256:44da8aeeab726a13a913d1390b84c69b15b42ab000a6b4e6b7c1bfe90158ffed"
+      ],
+      "reason": "Re-anchored touched INV-945YZ4 entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 4,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HHHAQQ",
+      "items": [
+        "sha256:3b6ed5fc3097d90959bdfec14f6d1fc7b106d7f044058bde4feb346e5e30d8fa",
+        "sha256:e43f5e5fc34895c61a33bd248af798236f6def37b85ad689b8892f93e3c743e6"
+      ],
+      "reason": "Verified docs/workflows.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated lines 161-166 accurately describe the Manager's standing leaf authority (covering leaves of all masters, including standalone masters) to run worktree_closeout_preview itself and call worktree_closeout_apply with that recorded standing authority as intent_note without presenting a dry-run preview first, while explicit-approval closeouts still present a dry-run preview.",
+      "revision": 9,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JMFEYY",
+      "items": [
+        "sha256:63c44ae1bbe77f32c52a1dc3511736f883a27c90a2b0a9702b2ebf95fdf44a7f"
+      ],
+      "reason": "Reconciled skills/l-01-agent-lifecycles/templates/manager-brief.md.md prose and reauthored citations against synced L41 candidate 5c005c78 preserving L44 retire_child scope wording.",
+      "sources": [
+        {
+          "blob": "ab5447ca0ace5f80098edfeffaf51e460ec1c2af",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5BPF6M",
+          "revision": 1
+        },
+        {
+          "id": "INV-8SBKWP",
+          "revision": 1
+        },
+        {
+          "id": "INV-KVQ91Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEF33P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K6VY2X",
+      "items": [
+        "sha256:c13b54ee7c700fdaaac1eb72af7532d8b1171043ff610428b71b854aa98ca456"
+      ],
+      "reason": "Examined all 4 members of FAM-CZZ8N4 against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-CZZ8N4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:4b87181acc1560984adb621b023db75fcd03e228121c30196e140c15d412e195",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:6f17fc68facf1fdd20605843b11269ac6c0e4112a019fb80a9ccb49ce83c99e1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-WDW9QT"
+        },
+        {
+          "after": {
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "content": "sha256:447462ffdb8d36d809ead831e0c9a8bc20f0e9f323e98d77a8c62920e8bdd117",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/tests/test_review_limit_wording.py"
+          },
+          "before": {
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "content": "sha256:f6c8eda0f3fcc573232744df8cbf57a0502c26fb6dc91c0059da961dffeaa141",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/tests/test_review_limit_wording.py"
+          },
+          "id": "RLZ-X1RT42"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K739PQ",
+      "items": [
+        "sha256:945b14c8742f940a2a8082cb544d9a4bf9e7008029285eda0046950daaa00c14"
+      ],
+      "reason": "Re-anchored touched INV-CV3MW4 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-CV3MW4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M15ZXH",
+      "items": [
+        "sha256:6337f5917f5b9558cb24f13573ca515ade74919408f2ffbfcd8059c84c419b92"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/roles/curator.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-M6NZK9",
+      "items": [],
+      "reason": "Verified docs/FAQ.md (lines 1-200) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): frequently asked questions on roles, memory, worktrees and setup remain accurate with no contradiction under BUG-R41@v1.",
+      "revision": 9,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-MYG95B",
+      "items": [
+        "sha256:6202309a59ac838368f9ad46cc588b147ca3d55c3fdb06ed41ea36ba205ca8ad"
+      ],
+      "reason": "Examined all 3 members of FAM-YGXZTQ against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N5WKJS",
+      "items": [
+        "sha256:14be9492cda38d0fbaf3de831dce3f4706b638db62ddbb2307677e2b68f4eaee"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/operations/closeout.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+          "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/closeout.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-5DAQEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NAMMRP",
+      "items": [
+        "sha256:1ed177fcd26900beebc1c7f181b7008100be904987d7300a59dbd1f4c390987c"
+      ],
+      "reason": "Re-anchored touched INV-W58B84 entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 3,
+      "subject": "INV-W58B84"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NAXY73",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/reference/settings-json.md; left untouched at HEAD per Manager standing order (L44/pre-existing staleness outside L41).",
+      "revision": 17,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NHMY4W",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/design/python-evidence-system.md; left untouched at HEAD per Manager standing order (pre-existing staleness outside L41).",
+      "revision": 17,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NRDKS7",
+      "items": [
+        "sha256:b0f6cd7ca54b0c50b403d6af785854c8e2d06afa2337a04255a92a6ac67727d8"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/operations/implementation.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PDVBGR",
+      "items": [],
+      "reason": "BUG-L41 changes do not affect docs/reference/harnesses.md; left untouched at HEAD per Manager standing order (CAP-L1 pre-existing staleness outside L41).",
+      "revision": 6,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:2c216eb11ddf54276c070214611e8c8382b206da36aeaa8b6b1e30ad0c857930",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:19c5e708d8c46f073d06d5d7e6cf05aab206b55b098816a543c1798fe225c059",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-7ZK6TT"
+        },
+        {
+          "after": {
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:bb4fca9d8a065d931aca5a2600c38ec0523e3e757193bbd4d1ecd20e768339a3",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "before": {
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:58790c13a47da2c22495dad31a3335d1ac4d44e648fb17e2735e539efa411c65",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "id": "RLZ-VV75SF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PVT83G",
+      "items": [
+        "sha256:c1b9afec6094a77fe9ffc4d75f5f542e414d50298532e4419beb36fbff551ada"
+      ],
+      "reason": "Re-anchored touched INV-ZNJ14G entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q3EBPR",
+      "items": [
+        "sha256:8b11bbade29a47a20aaa5614b520c7fb20ffc0933c44a8d108388266f97f8e6f"
+      ],
+      "reason": "Audited onboarding:mcp/test_support/agents_remember_test_support/testing/overview against synced L41 candidate ad428e04; existing prose remains accurate for the L41 changes and any drifted reference anchors were refreshed without altering card meaning.",
+      "sources": [
+        {
+          "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
+          "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+        },
+        {
+          "blob": "e8110dc281b24b2a0e3d44ec208451608891b6bb",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curator_instruction_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Q5KR04",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "Examined all 2 members of FAM-XX4TGY against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); every touched member only moved/re-anchored with unchanged meaning, so the family guarantee and routes remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ab5447ca0ace5f80098edfeffaf51e460ec1c2af",
+            "content": "sha256:87cf6a757b2b512861db35338153f824aaead3a971e848fc3c7d1cf871fb7fcc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+            "content": "sha256:73aa0f24493fcebdb5becdc670301647433a74c3dfee604051737e42c19fdcb9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-VP8NQM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q7RX3E",
+      "items": [
+        "sha256:d00d82cd6fb0e451afcacd5b6005b79352228f17d44653edb04e6192fd4ebf19"
+      ],
+      "reason": "Re-anchored touched INV-WHEFVS entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 3,
+      "subject": "INV-WHEFVS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QRT599",
+      "items": [
+        "sha256:d30c72c0993f17dc788049592f82e4d9f0b882fb86860b7613b16ceb6cdc420b"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/operations/curation.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QXHB8R",
+      "items": [
+        "sha256:8ab1b6e2bc32c68bf0bfbc3a94718e67874ba717150d3cfab542836aa5386122"
+      ],
+      "reason": "Verified docs/roles.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated passages accurately state Investigator scope including a standalone master (line 28), the Manager's Architect-reserved upward matters alongside developer-decision questions with Orchestrator unchanged forwarding and the direct route for qualifying skeletons (lines 142-147), the Manager wait carve-out recording a working-child or already-sent developer-question wait in its end line and status file with no role_message (lines 273-276), and Manager developer-question routing to an assigned Orchestrator reporting recipient while its launch parent stays fixed (lines 353-356), alongside L44 retirement scope.",
+      "revision": 13,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R41",
+          "packet": "requirements/BUG-R41-v1-the-manager-decides-its-work-and-the-architect-the-rest.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:c8cdb62001fc7bd5ee4994649538fcca62b6163c42438fed3ef44c5c333f7f7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:597d36c6d56948a3fc368f9e6f1220b886b9bae310bda2bac1a4485365b7a8fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-CN33QG"
+        },
+        {
+          "after": {
+            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+            "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-896AMD"
+        },
+        {
+          "after": {
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:95de8680982ad844fc99a05d1bb085fa3bf1c1837f38280529c5212db9ad779d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:7363f5370b24126642617c1ae874859e212932c806efd20dac9153d4c7086a9e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-CV8RK3"
+        },
+        {
+          "after": {
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+            "content": "sha256:dad6d63bfacdeb22edc166840acc31227e9cb1fbace53b7114032a49f409c1f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-EB0X1K"
+        },
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:be7333cb5ce1d8f2c114431ea4b44423526ea25f5dbb402563f449fe90994b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-TRMKTB"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:bcd649f532341c2b33a3c412d91b7f8027cba2c8ddc686d68fc5cf0e20762d3d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:87c250dd7599b8b3c3ffc17ff8797f33c95e8f1b8aef977c7e13b0a223503e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-VT0A1C"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-QZXAQX",
+      "items": [
+        "sha256:a3fade69bdc072db1f9791dd4fbd5fa9069d7e77c8ddcd1fd390187e994b3771"
+      ],
+      "reason": "Updated INV-QZW2X2 and re-anchored its realizations and proof on synced L41 candidate 5c005c78 to record the Manager local named-wait carve-out alongside role_message transport for hand-overs, outside-authority blocks and non-Manager awaits.",
+      "revision": 3,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:cafc736f1526d7ac0c7e104a6b614c9238c29479a027124a260fdbab81b39ad0",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:ea56dba9ed8435c80ed45a3e4434ccd3ea8174e546f9ddea74e200b46ea6e45e",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-TND9GX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R3GM0P",
+      "items": [
+        "sha256:1a204cff40f696f47e5b92a9a1c11c24b7bd8cb499b7937415081c34d4b61ff6"
+      ],
+      "reason": "Re-anchored touched INV-6A3N48 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-6A3N48"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RB8QG5",
+      "items": [],
+      "reason": "Verified docs/concepts.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): conceptual definitions of memory, task topology, worktrees, and role lifecycles remain accurate with no L41 contradiction.",
+      "revision": 25,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+            "content": "sha256:1ccda6fb00ce922fb03c815867a7e781e9525104d4a2aa59ba013c3d8f084cd2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+            "content": "sha256:0d42dc6e8fefde7dc9d349da15fa0e5b0cabf48e5393d7b93daa2c6ec40ccf8e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-CQCTG9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RJ4FH4",
+      "items": [
+        "sha256:e2533d3f697608fe551c174fd4d41d5285e994ff38572f17b5a442f3773f8613"
+      ],
+      "reason": "Re-anchored touched INV-AKRZAN entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-AKRZAN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RSZ0CQ",
+      "items": [
+        "sha256:0375c744564316969bfd0be5a858c349f6e7264626e00263ea6bf99b24df1514",
+        "sha256:1487a9581fd09c57b4ab1c09a0816e375349870f73bd7f88481fc1139f0d0ee1",
+        "sha256:27157ff9be325418fe48a43533505acce28650a342f05931139ac22db13bac66",
+        "sha256:bc284e7e173f865102a619613bd9a3d4b92e4b7e7c78b8278a088474541042e3",
+        "sha256:f6d2e72065c9139f504bf76e6fc923a86fe78748b633df65c108bb2dc91f76e9"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_instruction_wording_handover.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+          "path": "mcp/tests/test_role_instruction_wording_handover.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording_handover.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+            "content": "sha256:4b6c6cf0adb4a0f8a435e97c1735273834a73182f13bf55e41cd1d0daf23504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-EP4JYF"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:1c34ceba314792007439b438f1c6e265d87fae2aa11a64792220045d26a54123",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:0e0b2dee583b6dd2ac70db19c604bc603f602b1ab106e324f2b1f57b4ee8778c",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-8G32JJ"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-JK07JX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RTN3EK",
+      "items": [
+        "sha256:f4533ed57b35a269ca4b10608b2df4f9d457a879c134bc44cc6edd4dd8204e38"
+      ],
+      "reason": "Re-anchored touched INV-NC6F6V entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RWM9CD",
+      "items": [
+        "sha256:8af20e796804c48ab6fe1a06ed601f852d61a541a6faa11d5cfdc31719a69bef"
+      ],
+      "reason": "Reconciled skills/l-01-agent-lifecycles/overview.md prose and reauthored citations against synced L41 candidate 5c005c78.",
+      "sources": [
+        {
+          "blob": "a54825a4f3aecc6ebf4f908b81d0a63d70bea60b",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+          "path": "skills/l-01-agent-lifecycles/core/authority.md"
+        },
+        {
+          "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+          "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+        },
+        {
+          "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+          "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+        },
+        {
+          "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+          "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "721a4da39c42036b046685ae2413e9f027bae86b",
+          "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+        },
+        {
+          "blob": "ab5447ca0ace5f80098edfeffaf51e460ec1c2af",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a54825a4f3aecc6ebf4f908b81d0a63d70bea60b",
+            "content": "sha256:c5fd1069bd5ca1a2b37073db03fba9f438d38c8c72a22dcc637d3e7bade6bbc5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+            "content": "sha256:b685a0db81148b0a99222ab425a934fe31ded688b78882aafbcdaa0adf6b839f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RWSYMG",
+      "items": [
+        "sha256:6dbd39259c712f42904e620b8a6544e5c48e2530b47c15b69bbe2a2b6aad1921"
+      ],
+      "reason": "Re-anchored touched INV-4HZG3V entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R41",
+          "packet": "requirements/BUG-R41-v1-the-manager-decides-its-work-and-the-architect-the-rest.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+            "content": "sha256:2285fd282cb71b572436bd7e2e3a5139619905baaac54d3ec4d901df3f09990a",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:f48c0a63ffa84ad186b86c05326cc6fe2e0ec469a69b934dce1d0abb8d4c5e95",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-CJF248"
+        },
+        {
+          "after": {
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+            "content": "sha256:a7e2999b70762e5d0799f0e9397af6152703c5fbc8d047572a4b45a0677c407f",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:15bde61e6d0dc72017923683a12fbacba469eacfcea7fb7a14fd619fe271d62a",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-E9F3YP"
+        },
+        {
+          "after": {
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:49d253873b5c88a2e7a6a1c67bbf287307f3bbdbbdaf9cac929a01724eb08582",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "content": "sha256:4c95a07fe1d192bd36ee4c64e7691ed4d5a6d0c2ca0862348378e795e7f233a5",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-HSZ8FM"
+        },
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-WH4X9B"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-S597VZ",
+      "items": [
+        "sha256:d4fe91e6d5ec1d1c11476f5da4bb41c2dd3af7364a33998a6c1931c94eba6656"
+      ],
+      "reason": "Updated INV-9S49CW and re-anchored its orientation and role realizations on synced L41 candidate 5c005c78 to record the Manager local-wait carve-out after sending a developer question when no independent work remains.",
+      "revision": 3,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SCYX5R",
+      "items": [
+        "sha256:032f373c07949f7d3d7d0b7293ddeab9d48279d779d83ade2cc76f007e52d0a8",
+        "sha256:4cbcb86c01e09329b2279582015721dd7800e410c3620438f3bce5ee12ba2c0b"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_start_execution.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "c812eb84e3b5c0f807f8f76389156aa1a5c1986f",
+          "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_start_execution.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T1K8JK",
+      "items": [],
+      "reason": "Verified docs/reference/runtime-layout.md (lines 1-243) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): runtime directory layout, packaged skill copies and server/receipt paths remain accurate with no contradiction under BUG-R41@v1.",
+      "revision": 8,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "content": "sha256:c44bed67caf14c02aea98bb49ab5ae4c6bc00ad654b31774edbfd65e35938f86",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:fed9eb1908a57057bffc44fe5f38dd028d624e4a06c56d03e4c2c3df78a8193f",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-8YK88K"
+        },
+        {
+          "after": {
+            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "content": "sha256:89bf98de11bedf7490c369e42ccbbecbf302f5febdb65c82e8f30602d1d3e257",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:01ae3bdc5473b0963bfe36428c2ea853518d8a651e0451e04c61bad822ffb2e0",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-RJJN3V"
+        },
+        {
+          "after": {
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:45ac357891a585b5c8dff2b04c86b1228a446fd7a33d0f914c8383f5a04412d8",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:0f80bb1eb023a816292de706452500218a97e92f6f45b0319f7c569f0d3a29b6",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-W7BYTX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-T24TXD",
+      "items": [
+        "sha256:e2b3b7ba8e30105116114f1a54800dff98c0541aee95a7599f9bc57b0cba206d"
+      ],
+      "reason": "Re-anchored touched INV-JAACMT entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-JAACMT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TMB4RM",
+      "items": [
+        "sha256:12cb3c5240266e92da1a3816f27989b48caf1178feaf143dbe4161c69242f281"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/roles/worker.md prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VCFRYG",
+      "items": [
+        "sha256:095c7ede598d60faf8d94179fedd6b784b8d108710a5636bbe98ef30db55dec6",
+        "sha256:2043f0093b4ce6f91242435c4ad7a9855bf2e3853fa85045e75d02f900b70155",
+        "sha256:2dd57f12f6c19ba81b9523f35d398b1399bd8dab8ea214bdf494fc9e9652bbc4",
+        "sha256:3a2e160e1b437210b0634bc13717e13f5468884a05a2b824d17252cdf7e5bd02",
+        "sha256:3df52a0319b7f88142b7ac766a6ca83e2d154bc7d16449377879d803036504ef",
+        "sha256:6cb5a4aca1edd091ce95cc82e2cac675ebbc40c7f0c260eed70d95c10010b93d",
+        "sha256:8630cc8fbbdf030901ef5946e580c78f0fea40aa408f99fb8786478a0863bb28",
+        "sha256:8e5f66db994f9f27b78caf9023d8eca5185e88e358c7749ca79d379ac327efed",
+        "sha256:964bd54d5dad0532f41930905caa070492dbd08725600b697f6d507573ab209e",
+        "sha256:bfc4244f7956b26f9f9fa86ecc78c8114093c6ff04463a10ef7af95722800069",
+        "sha256:d8a7a0da9115426d7d63bcf9c20ce4f37a2e761bcf6192860d208545d86f6443"
+      ],
+      "reason": "Audited onboarding:mcp/test_support/agents_remember_test_support/testing/coordination_wording.py against synced L41 candidate ad428e04; existing prose remains accurate for the L41 changes and any drifted reference anchors were refreshed without altering card meaning.",
+      "sources": [
+        {
+          "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
+          "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+            "content": "sha256:1927b9b408dacd2c08b344d1a07211ea915748a1f69209ac92e7e0225313d724",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_task_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "before": {
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
+            "content": "sha256:be63c1b86d2fb340ea3d01c3eddbfc3dcac685c3fd0c62bc0f61231ea8c8425b",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_task_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "id": "RLZ-F6A17D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VGK5TT",
+      "items": [
+        "sha256:efe272edf6ccf026cbe6a91d777343902cbcb5a27e6a00eaf6339ce59c06dbda"
+      ],
+      "reason": "Re-anchored pre-existing base-stale entry RLZ-F6A17D of INV-7HBKZR at synced L41 candidate ad428e04; review_history.record_task_review preserves the invariant's exact meaning.",
+      "revision": 2,
+      "subject": "INV-7HBKZR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-W429KD",
+      "items": [],
+      "reason": "Verified docs/host.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): host integration and Antigravity role-agent refusal remain accurate, with stands_on[29] re-anchored to role_launch_preparation.py:236-256 after L41's optional owning_architect_id parameter.",
+      "revision": 17,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "content": "sha256:b887bcd4995d6a305a8a1835bb81c9abcae82d2616d2532c3fda254f3bab7461",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+            "content": "sha256:5275f82530b42c2bdb6e27d3b104bb4067382837a26cb39266555bce010e9967",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XMCAG6",
+      "items": [
+        "sha256:2c1e636a2c29e2227d3edfb2abe774791cb15c8c1f6f3757b722ec08672175d7"
+      ],
+      "reason": "Re-anchored touched INV-X9GE8J entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y2P4V3",
+      "items": [
+        "sha256:7ecf092d8626da2db1be10133b1dbd713c90005b181474ac68e23327a9b8cd9c"
+      ],
+      "reason": "Audited onboarding:mcp/tests/test_l84_unique_detail_pointers.py against synced L41 candidate ad428e04; existing prose remains accurate for the L41 changes and any drifted reference anchors were refreshed without altering card meaning.",
+      "sources": [
+        {
+          "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_unique_detail_pointers.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+            "content": "sha256:a86f84355538e232396a6e2e27218bc2e2ac6fb7eec249e22edfc6d1305e2830",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "8df1753c138980d015641171fd9ced522dfc5664",
+            "content": "sha256:d469d2dc23df72eb45627493074e2c93b70f5974c41016e9a1a143df08b1ab82",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-75F34B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YB5JSV",
+      "items": [
+        "sha256:6f7be00a6e178dc8881f20c3860d56abcefd62258b2de8cc73b9fe377f621ce7"
+      ],
+      "reason": "Re-anchored touched INV-ZVD184 entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-ZVD184"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YDKKNW",
+      "items": [
+        "sha256:e6f723f31c7faf352db81ad91fdd16daef84d2f970c23a024d3df4b90e080223"
+      ],
+      "reason": "skills/l-01-agent-lifecycles/operations/coordination.md (-153,1 +153,1): Cross-references the role's developer-question rule and the permission-notice procedure below, introducing no separate invariant beyond INV-9S49CW and INV-NFV5VJ.",
+      "subject": "hunk:sha256:e6f723f31c7faf352db81ad91fdd16daef84d2f970c23a024d3df4b90e080223"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bd19373b674f171ae3b6cb255aae5041931bdd57",
+            "content": "sha256:e14bff60130653e4d36a70a8f1e017952db844106de1be6d274c7462a49628cd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_message_wording.py"
+          },
+          "before": {
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+            "content": "sha256:2a7fce6d91ede58a6f7c70692195afebdf88963885595f2d912e9f8f6665148c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_message_wording.py"
+          },
+          "id": "RLZ-3BBWHC"
+        },
+        {
+          "after": {
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "RLZ-B44GTW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YMYCZG",
+      "items": [
+        "sha256:9990850e823646de80bc2e4828d575c42eb224d1a99487bf0d72350076e67507"
+      ],
+      "reason": "Re-anchored touched INV-AZTTPZ entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-AZTTPZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+            "content": "sha256:5ebb8600ce3d336316c6f604cc8694a680e27ef55a662f2347f4d63d8f71edd0",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+            "content": "sha256:5aa94fa88fbd054746570c7000f262798eaaa0a38236057631dca4796cbeff29",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-DJ7814"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YQF86B",
+      "items": [
+        "sha256:39ba4b3250345faf10b0d38ad8e0e4018a382ccc7cbe79d55448740eea3463c3"
+      ],
+      "reason": "Re-anchored touched INV-8SBKWP entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-8SBKWP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+            "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-DAEBRQ"
+        },
+        {
+          "after": {
+            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "content": "sha256:30881c99db709b245c0954c16234055d723593878436190b45caebefbb932944",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-EKQSVP"
+        },
+        {
+          "after": {
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-FKZS6D"
+        },
+        {
+          "after": {
+            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "content": "sha256:4784d11facb09568de64bb96b0a83bb6bbaab872aba5ab086366e8ee8903f4dc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-RXRS9D"
+        },
+        {
+          "after": {
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
+            "content": "sha256:95de8680982ad844fc99a05d1bb085fa3bf1c1837f38280529c5212db9ad779d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:7363f5370b24126642617c1ae874859e212932c806efd20dac9153d4c7086a9e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-ZN9615"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YV7QBX",
+      "items": [
+        "sha256:8e516fb7c34acb42e97acbca732b63630f7f7b20be32687a24396ae9cc5a9f81"
+      ],
+      "reason": "Re-anchored touched INV-GWA6VR entries against synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z3YK8H",
+      "items": [
+        "sha256:5aa3d50b611512aa30da9c7e18602104b2fb1f6fcc755653ab24e91da4a24722"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_developer_question_wording.py prose and/or nonmechanical citation notes and verified live anchors against synced L41 candidate ad428e04 (main 150b9778/d05a7e86).",
+      "sources": [
+        {
+          "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+          "path": "mcp/tests/test_developer_question_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_question_wording.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z46DJX",
+      "items": [
+        "sha256:6fc2447bb811ebbd6e6f049fa9dbe15180d2f0d0a298c48b437a3fae5e052e70"
+      ],
+      "reason": "Updated core/every-role.md.md prose and citations for BUG-R41@v1 Manager named-wait wording and D618 Option A1 2,325-word digest while preserving L44 retire_child scope wording on 5c005c78.",
+      "sources": [
+        {
+          "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+          "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/every-role.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZA2Z2R",
+      "items": [],
+      "reason": "Verified docs/install/openclaw.md (lines 1-99) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): OpenClaw installation and MCP server setup remain accurate under BUG-R41@v1.",
+      "revision": 11,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c13de1150c23c15c2d13f144bcc6e49fad5f2fb6",
+            "content": "sha256:0f00f3871bdd68671f5ec9600f354bfa1c01e0cfc473603945bd19758e42024e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagerStartWriterTests.test_an_orchestrator_starter_records_its_architect_parent"
+            },
+            "path": "mcp/tests/test_explainer_control.py"
+          },
+          "before": {
+            "blob": "c66779061135053b190ece87630bf5e09959a3ac",
+            "content": "sha256:2cbca449bba2f9e83bc8735e98e7af73612e9d3330b5d29401638e49b19a7b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagerStartWriterTests.test_an_orchestrator_starter_records_its_architect_parent"
+            },
+            "path": "mcp/tests/test_explainer_control.py"
+          },
+          "id": "PRF-ETRZ36"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZH073F",
+      "items": [
+        "sha256:5d60778589c64b22c1a7059a8d3b8db12beb6aab6c29080110aef433d9682189"
+      ],
+      "reason": "Re-anchored touched INV-E2XQHS entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-E2XQHS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
+            "content": "sha256:14716e77c11de950c79941afb83a515fc31769eb138780986d06f678b7de495f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "before": {
+            "blob": "173251288a1b57db89277d5e00b1b962a4e98a8e",
+            "content": "sha256:49ff5c4cb2196adaae7b195c8ed0a970d1f1bc2f2756cb89ef6030039e430abc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "id": "RLZ-NRDHDM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZNVRT0",
+      "items": [
+        "sha256:4f520aba66ca39f4b41a3eeec89a544fc000b2e00c7f35708a3f7cbae9d2c8a7"
+      ],
+      "reason": "Re-anchored touched INV-NDGJ3M entries against synced L41 candidate ad428e04 (main 150b9778/d05a7e86); invariant meaning, applicability, conditions and exclusions are unchanged under BUG-R41@v1.",
+      "revision": 1,
+      "subject": "INV-NDGJ3M"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:871ea35f7f3ad94abd062a06107dda68da4917b1aa27b5b0ebba86fb36a95e4a",
+      "record": "DEC-JCDMW3",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7adb20ef7ed3bb7f3b5bcce4f8224dba073c94386340045763cefef4a88e9bdc",
+      "record": "DPD-21GMJ5",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:42aba5500bdfa28385e915d38eadd28205b4751c0d7d63c2a1a893adcca6d708",
+      "record": "DPD-327MNX",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c9d9308721ea53f56b5bfb99d6b6ab7b882bdce72a814e2a0ad99c1f0591837a",
+      "record": "DPD-6528VF",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6e681cdf4612ec263e4e10da6a2031c3246683c782f7885f17f31e31ffaf1d6c",
+      "record": "DPD-71WYH4",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:68619376c69a806f2daa40c5bbf10903cf86174442e5625e3466744856784ee5",
+      "record": "DPD-71WYH4",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T04:22:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:30d0c25834f0fed715c2a30c46c59c48eacd572d0a89e7980fefc583e1034c7d",
+      "record": "DPD-9K25G8",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fcd8710fe426b269b493159c27546f4e39a5110d5afd4220baebcab9aaf65455",
+      "record": "DPD-A3XZ3Q",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:50a08d23fea10d7aaf67db50404365b0c53be6fb5b4b211f581b7b1e76e49f2f",
+      "record": "DPD-B540GW",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:098b9bb6ace92b2e4ef275e26a4703e61fcb078e9a50d8964d315703e64b2c94",
+      "record": "DPD-B540GW",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T04:22:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:40cb554d01d45c6dbd41b9b6c582dca05a2c7093d3a4c86318a14e0b2551bc36",
+      "record": "DPD-EG5TYT",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7c3b7040592e6f826795ff0b0991d7769c960a83af80887a02ec11b66faa40f1",
+      "record": "DPD-EG5TYT",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T04:22:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bc0093cbefefd05e1e97801172016f252961b30830b86e378008e1f0c12c5ea3",
+      "record": "DPD-K2QMWQ",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:596440656d9cc296ed9f8111c24ea688d31a9a3251c1d9fa5144f2e1ca0fba93",
+      "record": "DPD-K2QMWQ",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T04:22:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:855eee79e95c37db2edea58602b7a8aca2fc7a1ec6d97398e5282b74c123dcdf",
+      "record": "DPD-PMZ21Z",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:8ec7fd2749b44911a06d167caeebf5674315f30d177525562a858466c7e87021",
+      "record": "DPD-QFGFS0",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bd8d4b221915690a54795a1eb71c8cd13195f47bdf878ab6c9e24b88d52b3fe0",
+      "record": "DPD-QFGFS0",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T04:22:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a60994b489d4f6d50ee757e3169db85217254960acba67411df16d4acf7831dc",
+      "record": "DPD-XAARS1",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T04:22:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:79e3c44e4978c8d802f3b5abf0bc4f56603a9dc81147a063b50e642654501e24",
+      "record": "FAM-7AEA19",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:23cec078195e8a8d707f6c144aa33f87b6b4e9eed3ec40a88d27e76bc2b9e50c",
+      "record": "FAM-PNH1QS",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cdfc2855d00135c5399e0fd18097a4b2caef1a0388ce52d7f3e6e156e2fc551b",
+      "record": "INV-683GA3",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:388abc5485179abbca0393457615b631620cd93a51c4099d29dd848b540acb93",
+      "record": "INV-8AMSGV",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cf7b4dd5031d6c8cca5c015fe490a11290d19c26afceec96d245196d1c59d12a",
+      "record": "INV-9S49CW",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c264e2df42e3fb6c6e19175e178f0e97662b2619c3f76c1a2b92a902ae9b6947",
+      "record": "INV-CAJ09X",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:51de9d357c616d5bcd3b18aec16d87ee97126e344ffdbbf80d1db0156733bad1",
+      "record": "INV-NFV5VJ",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a94c38335bdd196402274097856eca8ecc26cde25e62654f7eeb3a8d5ad8219f",
+      "record": "INV-QZW2X2",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:58:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L41",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

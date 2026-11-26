@@ -14,7 +14,7 @@ Receipt-directory addressing is defined by `controlplane/held_store_discovery.py
 
 Receipt creation is exclusive and complete before native launch. `_execute_prepared_launch` republishes receipt-bound role facts before the native launch/replay call; this best-effort publication and host execution are separate boundaries, not one atomic transaction; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. An eligible rejected step-up with a settled predecessor and no lost successor retains its saved call for same-request retry. A saved native Antigravity Retry whose agent is absent settles as rejected and drops its saved call, including on a step-up. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
-`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. Ordinary Retry invokes restoration when the receipt carries a `handoverArtifact` dictionary or a `handoverFile` key. Restoration checks a missing or malformed companion reference. Held-seat opening calls the helper even when neither reference is recorded, so it checks saved instruction details directly in that case.
+`_read_receipt` and `read_enumerated_receipt` are implemented in `cli/role_receipt_files.py` and re-exported here alongside `RECEIPT_SCHEMA`, `_archive_receipt`, `_create_receipt`, and `_now_iso`. `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. Ordinary Retry invokes restoration when the receipt carries a `handoverArtifact` dictionary or a `handoverFile` key. Restoration checks a missing or malformed companion reference. Held-seat opening calls the helper even when neither reference is recorded, so it checks saved instruction details directly in that case.
 
 `read_enumerated_receipt` is the reader for enumerating mixed report folders: valid JSON that is not a receipt of this line returns `None`; unreadable JSON retains the ordinary receipt refusal. The direct `_read_receipt` path keeps its strict schema check.
 
@@ -22,14 +22,15 @@ Receipt creation is exclusive and complete before native launch. `_execute_prepa
 
 `_execute_prepared_launch` reads the leaf closing mark before replaying a saved call and re-checks it
 under the receipt lock after creation, so a retired start is refused instead of publishing a running
-receipt. `_write_receipt` serializes short metadata publication under the existing lock and merges
-the same request's closing marker, archive debt and refusal facts when a stale ordinary writer
-publishes, so a concurrent settlement is not erased. The existing request-ID reconciliation and
+receipt. `_write_receipt` serializes short metadata publication under the existing lock, applies
+`preserve_held_closure` and (when `prior_generation is None`) `preserve_retirement`, merges the same
+request's closing marker, archive debt and refusal facts when a stale ordinary writer publishes, and
+persists via `role_receipt_files._replace_receipt_bytes`. The existing request-ID reconciliation and
 saved-call replay semantics are otherwise unchanged.
 
 ## Predecessor reports, observed choices and public fields
 
-`_execute_prepared_launch` collects predecessor reports before running and settles them after the host answers; a settlement failure keeps the host's actual result and records the collection error instead of misreporting. The imported compatibility name `_observe_launch_choices` delegates to `role_launch_choices.observe_launch_choices`: it records requested/observed model, effort, mode and feature facts, updates a step-up’s displayed model while retaining requestedModel, and warns on stated mode/feature mismatches.  `_public_execution` additionally exposes `choices`, `instructionComposition`, `taskDocumentFiles`, `assignmentReadGrant`, `predecessorCollectionError` and `reportCollection`. `_request_digest` drops an empty feature map so old requests keep their digest, and `_archived_receipt_for_selection` returns the archived receipt so the dispatch route can record predecessor reports.
+`_run_prepared_launch` collects predecessor reports before running and delegates confirmed predecessor retirement and folder closure to `role_retirement_receipt.finish_replacing_predecessor` (also settling the predecessor's held store when `settled.predecessor_settled`). The imported compatibility name `_observe_launch_choices` delegates to `role_launch_choices.observe_launch_choices`: it records requested/observed model, effort, mode and feature facts, updates a step-up’s displayed model while retaining requestedModel, and warns on stated mode/feature mismatches.  `_public_execution` additionally exposes `choices`, `instructionComposition`, `taskDocumentFiles`, `assignmentReadGrant`, `predecessorCollectionError` and `reportCollection`. `_request_digest` drops an empty feature map so old requests keep their digest, and `_archived_receipt_for_selection` returns the archived receipt so the dispatch route can record predecessor reports.
 
 ## Current Contract — Scoped Launch And Settings Changes
 
@@ -50,7 +51,7 @@ Existing schema/read refusals, exclusive receipt creation, canonical taskless id
 - Frozen implementation of `_create_receipt` (extracted to `role_receipt_files.py` and re-exported here) supporting exclusive initial receipt creation. [2]
 
 
-- The receipt reader distinguishes absence, unreadable bytes, invalid JSON and wrong or non-object receipt schemas. [3]
+- The receipt reader (defined in `role_receipt_files.py` and re-exported here) distinguishes absence, unreadable bytes, invalid JSON and wrong or non-object receipt schemas. [3]
 
 
 
@@ -130,7 +131,7 @@ A receipt moved by Start between inspection and reading is treated as absent.
 
 
 
-- Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity. Anchor: Current source; preserved L88 property 16 [16]
+- Decision, artifacts, predecessor liveness, predecessor replacement settlement, and outcome reconciliation preserve saved identity. [16]
 
 
 
@@ -160,9 +161,8 @@ A receipt moved by Start between inspection and reading is treated as absent.
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [13]
 
 
-- The receipt executor restores stored launch artifacts when present, runs the same saved launch call and publishes the observed outcome. [1]
-
-- `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
+- The receipt executor restores stored launch artifacts when present, runs the same saved launch call, settles confirmed predecessor replacements, and publishes the observed outcome. [1]
+- `_read_receipt` (in `role_receipt_files.py`, re-exported here) distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
 - Frozen implementation of _public_execution supporting the stated file behavior. Anchor: `_public_execution` [4]
 
 - The current source implements this file’s stated Investigator boundary. [14]
