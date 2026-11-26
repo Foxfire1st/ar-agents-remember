@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+        "content": "sha256:90459a7400e00ac2a8447ef3ec028f37f5d3a70a120601b97fe67af755a50ddb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_prepared_launch"
+        }
+      },
+      "id": "RLZ-33ZN04",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-curator-attach-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Passes LaunchExecutionPolicy(mode='create', on_retry_agent=...) so a binding-confirmation retry re-publishes role-agents.json immediately for the retried agent ID.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
         "locator": {
           "kind": "symbol",
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
         "locator": {
           "kind": "symbol",
@@ -40,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-        "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+        "content": "sha256:e9295dfd22ddb548508e474041b154b09812d85fb3f27c7450913ac9f4a9b47e",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -58,7 +76,25 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+        "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+        "locator": {
+          "kind": "symbol",
+          "name": "_execute_prepared_launch"
+        }
+      },
+      "id": "RLZ-FMBHQ1",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Re-publishes role-agents.json on retry via on_retry_agent so the retried seat is immediately known to host listeners and projects bindingConfirmation in public execution payloads.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
         "locator": {
           "kind": "symbol",
@@ -76,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-        "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+        "content": "sha256:e9295dfd22ddb548508e474041b154b09812d85fb3f27c7450913ac9f4a9b47e",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -94,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-        "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+        "content": "sha256:e9295dfd22ddb548508e474041b154b09812d85fb3f27c7450913ac9f4a9b47e",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -112,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
         "locator": {
           "kind": "symbol",
@@ -130,12 +166,12 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:cb585e69486c203eb2bb4f55613f542abc9491b71041c740f4f99d35b61694bd",
         "locator": {
-          "end": 574,
+          "end": 586,
           "kind": "line_range",
-          "start": 503
+          "start": 515
         }
       },
       "id": "RLZ-Q55GKB",
@@ -149,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
         "locator": {
           "kind": "symbol",
@@ -167,7 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
         "locator": {
           "kind": "symbol",
@@ -185,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
         "locator": {
           "kind": "symbol",
@@ -203,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
         "locator": {
           "kind": "symbol",
@@ -221,8 +257,8 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-        "content": "sha256:a2412406461a5d2a87b9634e38a0f7bd09ba91b5dfa9079b3ed9282ba73eab3b",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+        "content": "sha256:5ec9ab34f5cc0e7ec890ce4380a936c07ba5042ca930deadf7191279e400aa5f",
         "locator": {
           "kind": "file"
         }
@@ -238,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+        "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
         "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
         "locator": {
           "kind": "symbol",
@@ -257,26 +293,14 @@
   ],
   "references": {
     "1": {
-      "note": "The receipt executor restores stored launch artifacts when present, runs the same saved launch call, settles confirmed predecessor replacements, and publishes the observed outcome.",
+      "note": "The receipt executor restores stored launch artifacts when present, runs the same saved launch call, settles confirmed predecessor replacements, and publishes the observed outcome.\n\nAnchor: `_execute_prepared_launch`; `_run_prepared_launch`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:5ec9ab34f5cc0e7ec890ce4380a936c07ba5042ca930deadf7191279e400aa5f",
             "locator": {
-              "kind": "symbol",
-              "name": "_execute_prepared_launch"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:3d68238261396d080e9c64c7ace8af921a4499ea73b0d311395f11fda76f9491",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_prepared_launch"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -288,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
               "end": 783,
@@ -306,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
               "end": 341,
@@ -354,28 +378,28 @@
       ]
     },
     "14": {
-      "note": "An Investigator receipt address requires its exact request UUID. The public projection normalizes the role name and retains the original request identity and retry selection.",
+      "note": "The current source implements this file’s stated Investigator boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
             "content": "sha256:7d3cdaf7135863bfc5776c36729e5f79cec12b7752933bc0a7500e2338a446e9",
             "locator": {
-              "end": 396,
+              "end": 408,
               "kind": "line_range",
-              "start": 383
+              "start": 395
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:7aeef2b154d30318f46f97f183ac17d27aa41a727684f7a7692112d3d31d37a6",
             "locator": {
-              "end": 740,
+              "end": 755,
               "kind": "line_range",
-              "start": 659
+              "start": 671
             }
           },
           "kind": "code"
@@ -439,26 +463,14 @@
       ]
     },
     "16": {
-      "note": "Decision, artifacts, predecessor liveness, predecessor replacement settlement, and outcome reconciliation preserve saved identity.",
+      "note": "Decision, artifacts, predecessor liveness, predecessor replacement settlement, and outcome reconciliation preserve saved identity.\n\nAnchor: `_execute_prepared_launch`; `_run_prepared_launch`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:5ec9ab34f5cc0e7ec890ce4380a936c07ba5042ca930deadf7191279e400aa5f",
             "locator": {
-              "kind": "symbol",
-              "name": "_execute_prepared_launch"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:3d68238261396d080e9c64c7ace8af921a4499ea73b0d311395f11fda76f9491",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_prepared_launch"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -511,12 +523,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
             "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
             "locator": {
-              "end": 656,
+              "end": 668,
               "kind": "line_range",
-              "start": 634
+              "start": 646
             }
           },
           "kind": "code"
@@ -524,16 +536,16 @@
       ]
     },
     "19": {
-      "note": "Conditional retry payload preserves original selection/reason.\n\nAnchor: Current source; preserved L88 property 19",
+      "note": "Conditional retry payload preserves original selection/reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:2a01ec9626fb0bd4fd2b29907ecafcdcc7bce10b6ccbb4f56977fde4b07a3d63",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:7aeef2b154d30318f46f97f183ac17d27aa41a727684f7a7692112d3d31d37a6",
             "locator": {
-              "end": 734,
+              "end": 755,
               "kind": "line_range",
-              "start": 653
+              "start": 671
             }
           },
           "kind": "code"
@@ -596,12 +608,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:7aeef2b154d30318f46f97f183ac17d27aa41a727684f7a7692112d3d31d37a6",
             "locator": {
-              "end": 740,
+              "end": 755,
               "kind": "line_range",
-              "start": 659
+              "start": 671
             }
           },
           "kind": "code"
@@ -613,10 +625,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-            "content": "sha256:054dffdb521b92130a38e43deb89648e515b22417fda605847a65212f315c0cc",
+            "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+            "content": "sha256:7bdfaa01b3d31260cfeac1ed9a196433061be758288093a135e3b4654b21a336",
             "locator": {
-              "end": 128,
+              "end": 130,
               "kind": "line_range",
               "start": 110
             },
@@ -626,10 +638,10 @@
         },
         {
           "anchor": {
-            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-            "content": "sha256:5194b5c48482ab0a61b66b8e38c15efcd5fd28d92f57ae018884d24883c865e7",
+            "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+            "content": "sha256:b298fef4545b308554b3a6c4cb7295f0161c05d90363959bf0e5ad60077fb11b",
             "locator": {
-              "end": 207,
+              "end": 212,
               "kind": "line_range",
               "start": 201
             },
@@ -639,12 +651,12 @@
         },
         {
           "anchor": {
-            "blob": "6b24699cdac2fcb0afb79870ba07f3d71e743f2f",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
             "content": "sha256:24f5dbcc08c40cc834391fb6fee5739797a94a0c75a18be29a055878d7fdf199",
             "locator": {
-              "end": 299,
+              "end": 360,
               "kind": "line_range",
-              "start": 291
+              "start": 352
             },
             "path": "mcp/tests/paseo_launch_test_support.py"
           },
@@ -653,15 +665,14 @@
       ]
     },
     "6": {
-      "note": "Interrupts between receipt and call and checks retry retains one agent identity.\n\nAnchor: `RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent`",
+      "note": "Interrupts between receipt and call and checks retry retains one agent identity.\n\nAnchor: `test_a_repeated_request_converges_on_the_same_agent`",
       "targets": [
         {
           "anchor": {
-            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
-            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "blob": "18d5b47231d708714a1a5efc755a1da8b429adc6",
+            "content": "sha256:f469113a526e48c009a128e927b1554b523899c3110771134c19dbec65ce8087",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_repeated_request_converges_on_the_same_agent"
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_launch_outcomes.py"
           },
@@ -691,7 +702,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+            "blob": "18d5b47231d708714a1a5efc755a1da8b429adc6",
             "content": "sha256:fad350e8510ef3d5275abfc15b970aba77dd3c03af6992e7609b01205cb07d4a",
             "locator": {
               "kind": "symbol",

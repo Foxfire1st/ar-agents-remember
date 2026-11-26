@@ -33,6 +33,24 @@
     "mcp/test_support/agents_remember_test_support/testing"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "The leaf's seats run their loop directly"
+  "title": "The leaf's seats run their loop directly",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-RSM-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-RSM",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

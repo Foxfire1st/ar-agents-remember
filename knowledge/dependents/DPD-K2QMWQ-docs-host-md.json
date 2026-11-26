@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/host.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/host.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): Paseo host lifecycle, plugin turn handling, and seat launch behavior remain accurate with L51 + Rule-21 confirmation; no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/package_data/host-harness-homes.json"
     },
     {
-      "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+      "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "b303d8c0e8e82693b482b31c72bae63fd379bd71",
+      "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -180,8 +180,8 @@
     },
     {
       "anchor": {
-        "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
-        "content": "sha256:de3748c8e518eaf23bd7a75dcd82ba7c55338795f738f9d83c2ee19b9c071a54",
+        "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
+        "content": "sha256:36aa5c232c87685b65a4dff3ed98eb90bd772ab470a3602c24c3a41a15c32ab8",
         "locator": {
           "end": 566,
           "kind": "line_range",
@@ -193,8 +193,8 @@
     },
     {
       "anchor": {
-        "blob": "b303d8c0e8e82693b482b31c72bae63fd379bd71",
-        "content": "sha256:6d3f96fe2a31cbb02bbde42b88d1b6e720a8985d9a29f6a74f755fcafeb193ea",
+        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "content": "sha256:2ba7260a1a79b25900fe8a17262fcaddb1a5f2ce0b938706cba05a890ea317f2",
         "locator": {
           "end": 737,
           "kind": "line_range",
@@ -245,14 +245,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:43:44+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
   }
 }

@@ -31,6 +31,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "The single extracted dashboard launcher preserves ordinary selected features through model/effort changes with visible default provenance. A stepped-up receipt instead labels base choices as non-applied previews and displays only reported step-up observations; speed remains separate from permission policy.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L11",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

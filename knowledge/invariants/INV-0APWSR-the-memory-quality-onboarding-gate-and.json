@@ -31,6 +31,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The memory-quality onboarding gate builds its onboarding_trace items from the leaf worklist run's own identicalChanges groups, so an item a row answers in the worklist is the item the gate raises, and at closeout those items are judged by the memory-quality attestation the closeout requires, through onboarding_trace_gate_for_context, not by a validator of the closeout's own since 260928-MIK-L56 removed validate_onboarding_traces_for_context.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L56",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

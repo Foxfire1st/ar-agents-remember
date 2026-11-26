@@ -1,0 +1,347 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L49",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T11:27:58+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L49",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T11:27:58+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L49",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "7c4e2b91-5a1f-4d8e-b3c2-9f6a1e4d8b37",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "94dff23a4d41af6007299d05476dbd67208d8621",
+    "verdictRef": "notes/reports/reviewer/7c4e2b91-5a1f-4d8e-b3c2-9f6a1e4d8b37/role-launch/261112-BUG-L49-memory-review-verdict-r2.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-6QBY1Y",
+      "items": [
+        "sha256:85bcf8b23bf3e434aa456d4b1993e50e0f366cb03388e92eddf527fbf941a0c9"
+      ],
+      "reason": "Refreshed pyproject.toml anchors [76], [130], and [368] on post-W2 candidate 105bd85c5652 via citation_fix.",
+      "sources": [
+        {
+          "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+          "path": "pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A5KBG5",
+      "items": [],
+      "reason": "Re-confirmed docs/design/python-pytest-bootstrap.md on 261112-BUG-L49 against synced post-L51 candidate d5ffb4e00525 (base a801c47d088d), anchoring stress-durability at test-evidence-lanes.toml:848-850 and shifting pyproject.toml [tool.coverage.run] from 68-73 to 73-78.",
+      "revision": 26,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GDVEJ8",
+      "items": [
+        "sha256:49a06413b6cefd83e1e9cadec7129d1e0b3075b2b4c884da5f87ed1beb19fc68",
+        "sha256:60e1a00107f9a60c0e9eaf2b90799f0bb98699d0133eb193c1ac4c6e2fa0cc17",
+        "sha256:6b6b8b47ef3a27d8f50aa7d350e16857c6bd6b6daf2607ff7b7da7512643cb69",
+        "sha256:b047e8faa737b727dfdbb2d146d7f2e464730ff56c4a799b49b617169f502ac7",
+        "sha256:b27a4385b2bba7a8dca8aabaaac7dac0738c3878c73c43818933323c6c7d5b59"
+      ],
+      "reason": "Updated the card to document PyrightScopeConfigurationTests on post-W2 candidate 105bd85c5652 (including the Pyright 1.1.414+ scripts/script_err.py coverage) and refreshed references [1]-[4] via citation_fix.",
+      "sources": [
+        {
+          "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+          "path": "mcp/tests/test_code_quality_check_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_code_quality_check_scope.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:8d01661db18ae7f7d19f4ce7ae3ae65194bf9633fdc26bb4e763b8186f0129bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "pyproject.toml"
+          },
+          "before": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "pyproject.toml"
+          },
+          "id": "RLZ-G47RTT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HAXRZG",
+      "items": [
+        "sha256:6c1150cb09c7f3b84e7bc978187f44d9631a1c0e8e83700d236752d5f852ac87"
+      ],
+      "reason": "Re-anchored RLZ-G47RTT on post-W2 pyproject.toml (blob fef83712) after [tool.pyright] expanded by five lines and updated its dot-folder comment; file_size_armed = true remains armed at line 85 without stating FILE_SIZE_HARD_LIMIT, so INV-PDCN3H's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-PDCN3H"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MGS21A",
+      "items": [
+        "sha256:f65cd86d70ddd5a0ca73f54c3b8fd5a62c77be1e6d58990b7f3a0feb766fccaf"
+      ],
+      "reason": "Re-authored stale whole-file pyproject.toml references [1819], [1820], [1826], [1827], and [1831], refreshed twenty shifted pyproject.toml anchors via citation_fix on post-W2 candidate 105bd85c5652, and repaired the encountered 119/2,119 integration-budget typo and shifted 334-335 line reference to 2000/2,000 and 339-340.",
+      "sources": [
+        {
+          "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+          "path": "mcp/tests/test_code_quality_check_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "pyproject.toml"
+          },
+          "before": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "pyproject.toml"
+          },
+          "id": "RLZ-WMQ90H"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WE6YZ4",
+      "items": [],
+      "reason": "Re-anchored RLZ-WMQ90H to line 340 of post-W2 pyproject.toml (blob fef83712); integration_case_budget = 2000 and INV-3NAQA6's meaning are unchanged.",
+      "revision": 4,
+      "subject": "INV-3NAQA6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:491f64c08426768394069607b3be0fb9b7d786a7920b9f6f8f01cd6b8d1cf425",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "pyproject.toml"
+          },
+          "before": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:491f64c08426768394069607b3be0fb9b7d786a7920b9f6f8f01cd6b8d1cf425",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "pyproject.toml"
+          },
+          "id": "RLZ-YH43T3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y0F6DF",
+      "items": [],
+      "reason": "Re-anchored RLZ-YH43T3 to line 339 of post-W2 pyproject.toml (blob fef83712); unit_case_budget = 10000 and INV-Q2VTFP's meaning are unchanged.",
+      "revision": 4,
+      "subject": "INV-Q2VTFP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YR7776",
+      "items": [],
+      "reason": "Re-confirmed CONTRIBUTING.md on 261112-BUG-L49 against synced post-L51 candidate d5ffb4e00525 (base a801c47d088d); all lane, catalog, pyproject.toml, and .githooks/_gate.sh Pyright passages match live code with zero contradictions.",
+      "revision": 18,
+      "subject": "DPD-78737N"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:43c729e273b3dd471fa3d12eebe14be20732d569eeb1cd82e3188c08d9d6ed2b",
+      "record": "DPD-78737N",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T09:58:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:105fb38a2c1b27a66870c9b75c72db91ddd6370e9e8e5d38f87a2c7114ee8460",
+      "record": "DPD-78737N",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T10:37:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:555c708071a3c405fa3e74d5ab0a81a46e6d8583299ecb0ea651886aceabdad6",
+      "record": "DPD-78737N",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T11:13:54+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5a71f36d75018f581533c09aae54d89f5a18dd8f957ba6ab995b4f3dfb8cc353",
+      "record": "DPD-ZT8YY7",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T09:58:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d14d2f60d6cbf11578bf2fc19374813838083b60dc47947de459ff3ba2bf3770",
+      "record": "DPD-ZT8YY7",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T10:37:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:72a4fe2317927f0804542eb389aed822a1c446ac90ef989191145c49b9052b69",
+      "record": "DPD-ZT8YY7",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T11:13:54+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b9b8dc8051e522703b6ffd3d351d37d5736e674dba6a3bb707a405810dad9416",
+      "record": "FAM-WDBEQS",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T11:13:54+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ab80f55065bc2846bf004ba1008027ba0a14eeb121cda250085268778ce11715",
+      "record": "INV-45HR10",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T11:13:54+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c00829888da930a292af2684a55006d3e71920dd536b277c38428b81f580519c",
+      "record": "INV-EQMWCB",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T10:37:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L49",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

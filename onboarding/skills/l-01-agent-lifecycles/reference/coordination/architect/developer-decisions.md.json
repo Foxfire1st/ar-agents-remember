@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
             "content": "sha256:4085a0cb4b127ba88a53cef92e71065292279b81ba6168e77495eb300346fc2d",
             "locator": {
-              "end": 176,
+              "end": 178,
               "kind": "line_range",
-              "start": 176
+              "start": 178
             },
             "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:9d5475340d5e38478149c544311264cc8ab47503df9529a722ee06f5be357425",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:b0c9186b5ac774f445e4639747697e77c4cc206369a28574b28b1fa0d2bb76ec",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:633c8c08df3553407d329b91fbcb568e13ac557d18a253948f535c308b51daca",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
-        "content": "sha256:7b5ea4119509e748cab072cdcb2dd9b71bfa561cafc3839db11371deb5bb2171",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "content": "sha256:af49b313ef273b099041dd612f7b29988763667e21d0382af8b16e8b39c1d245",
         "locator": {
           "kind": "file"
         }
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:fbe1cc81eef38665b89207617e8c19ad55fc8d233d4d4a9f9656a0c2c881a4ae",
         "locator": {
           "kind": "symbol",
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:f7a6652318bdd89d79a3dbcf5399d17639d1bbdc7aae785d97992a96869ad9d4",
         "locator": {
           "kind": "symbol",
@@ -164,7 +164,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:077454d067fb511e7267e0600ded9210c8a8f6f3cabee4b5175d6a33328eef5f",
         "locator": {
           "kind": "symbol",
@@ -182,7 +182,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
         "locator": {
           "kind": "symbol",
@@ -200,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
         "locator": {
           "kind": "symbol",
@@ -218,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:9d7490d94cc40499bf7ebdc95704f0abf096c6be2fd2f44bf456c10707e7e9af",
         "locator": {
           "kind": "symbol",
@@ -236,7 +236,25 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_open_held_seat"
+        }
+      },
+      "id": "RLZ-R6PF51",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Passes open-held LaunchExecutionPolicy with on_retry_agent so held seats re-confirm before their first message and update receipt state on retry or refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
         "locator": {
           "kind": "symbol",
@@ -254,7 +272,7 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
         "content": "sha256:38bc33280ed884a17b5127965c72fd643583fd316437859f9979da9e61f08ab5",
         "locator": {
           "kind": "symbol",
@@ -272,8 +290,8 @@
     },
     {
       "anchor": {
-        "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
-        "content": "sha256:bf007b4c357b9785bc13171baa4d85e51567828adcf5386c0f7b5021305d540c",
+        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
         "locator": {
           "kind": "symbol",
           "name": "_open_held_seat"

@@ -29,6 +29,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A canvas explanation receives a useful evidence packet for one exact recorded or planned review comparison. The packet names both code sides, both memory sides and any recorded conversion inputs. Additional investigation can read relevant code, tests, memory records and relationships at those bound trees. A read never silently substitutes today's checkout, another comparison or another task. Every meaningful explanatory claim has an inspectable basis and a declared classification. Recorded judgments, mechanical facts, intended behaviour and explainer interpretations retain their separate authority. On a planned comparison, a claim whose present bases are only admitted receipts of its requirement packets, own task document or leaf reference folder must be classified intended; recorded-fact and mechanical-signal are refused by name. A claim that also cites present code or memory at the tip keeps the authority its actual bases establish. The packet and its claims state scope, omissions, applicability, coverage and incomplete evidence. Unavailable data is never presented as an empty or settled population.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

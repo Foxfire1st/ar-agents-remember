@@ -22,10 +22,28 @@
   },
   "revision": 1,
   "schema": "ar-limitation/v1",
-  "status": "proposed",
   "unsupported": [
     "No adequate reading speed, production performance or cause is established by the samples.",
     "No numeric first-view limit is in the packet, and none is invented here.",
     "No equivalence between the development harness and production serving is claimed."
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L79",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

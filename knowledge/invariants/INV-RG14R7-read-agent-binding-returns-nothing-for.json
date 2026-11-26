@@ -27,6 +27,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "read_agent_binding returns nothing for a process without an agent id and otherwise requires a complete launch binding: minted UUID identities, one of the seven native roles, an absolute report path, readable canonical references and exactly the reference pattern admitted for that role. The one earlier system-specialist spelling reads as Investigator; its taskless, sprint or sprint/master references must still agree with the recorded selection.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L98",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -6,10 +6,9 @@ The native task-server environment carries the host AR_PLAYWRIGHT value when pre
 
 `StartingAgent` also carries the starter's canonical sprint/master/task references beside its native id, role and subject. Handover preparation uses those references to publish a role-addressed return route that survives parent replacement; they are not caller-supplied launch-mode authority or evidence that a host consumed a launch setting.
 
-The current source facts below replace the former operative inventory. The historical section retains the earlier launch account with two grant clauses withdrawn during BUG-R31. History row `ROW-T582Z4` points to both clauses in the base memory card.
-
 - Saved calls carry serverExclusion alongside agent/workspace.
-- A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch still sends its prompt at creation. This is product-held state, not a rewrite of the host’s idle state.
+- A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch keeps `agent.prompt` in the saved call; for eager providers with a task tool server, `run_launch_call` creates the seat prompt-free first, confirms its bound server, and then sends the prompt with `skipToolServerWait=True`. This is product-held state, not a rewrite of the host’s idle state.
+- `LaunchExecutionPolicy` (`mode` `"create"` or `"open-held"`, plus optional `on_retry_agent` callback) configures `run_launch_call` after `before_create` and `role_launch_progress.starting()`: it delegates agent creation and held-seat opening to `role_launch_confirmation.execute_confirmed_launch`, and `LaunchOutcome` carries optional `binding_confirmation` and `effective_launch_call` fields when binding confirmation or a single retry ran.
 - agent_create_input removes only agents-remember from an eligible supplied MCP map and forwards the provider options already saved in the agent definition. The internal serverExclusion record is not a host payload key. build_launch_call writes the supported Claude providerOptions.disallowedTools rule beside the host's existing deny rules.
 - serviceTier is projected into featureValues.service_tier.
 - Saved native Antigravity Retry uses a bridge-only existing-agent marker. The bridge can reconcile the exact recorded agent. A known absence returns the ACP-directed refusal before creation. The marker does not go to Paseo.
@@ -75,6 +74,7 @@ is archived and refused when the response returns. Ordinary launches without a m
 - Starts generated stdio server and checks serving build package root and binding from selected source. [7]
 
 
+
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [8]
 
 
@@ -85,3 +85,7 @@ The launch outcome carries `workspace_preparation` (`created`, `found` or `opene
 </details>
 
 - The task server receives the host AR_PLAYWRIGHT value when present so it can use the host browser module. [9]
+
+
+
+- `LaunchOutcome` carries `binding_confirmation` and `effective_launch_call`, `LaunchExecutionPolicy` configures `create` vs `open-held` confirmation, and `run_launch_call` delegates post-`before_create` execution to `role_launch_confirmation.execute_confirmed_launch`. \[13] [13]

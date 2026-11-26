@@ -29,6 +29,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Every launch stores the compiled first message once as a plain-text hand-over artifact `<report path without its suffix>.handover.txt` and the complete hand-over object once as `<report path without its suffix>.handover.json`, each at most 1,048,576 bytes and created read-only (mode 0444) by a hard link of a finished temporary file: an existing file is reused only when it holds the same bytes, different content is refused and nothing changes, and a link at the file's own name is never followed. Both files are preflighted as one pair before either is written, and both exist before the start is sent.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L185",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

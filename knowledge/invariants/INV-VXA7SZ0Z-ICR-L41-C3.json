@@ -26,6 +26,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Curator generation assessment evidence is validated at the publisher-recorded, task-confined destination, including admitted aliases, against the recorded digest instead of reconstructing a destination from citation spelling. The newly published immutable generation must pass its integrity read before canonical authority is replaced; rejection before that replacement preserves the prior authority.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L57",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -27,6 +27,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "While an open session has a declared wait with an armed check within its grace period, AR's surfaces show the seat and its task as waiting (what for, since when, check due): the host-activity record carries declaredWait without moving the host's idle state, the task projection reports activity 'waiting' with waitingSeats, the dashboard task and operations views show it, and the stall watch treats a seat whose check is still to come (plus 60 s grace) as busy; Paseo's own agent list is untouched.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:59f44cf3e5f6d6dc4e96000071a5e7eef0731ecaa57ccdcba7f944e070941063",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:28a4d014b642b2a3edf3539c52a9189dd2a1b8e1b1f7aa308f643e2b6390bedd",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
-        "content": "sha256:48dec4b52aa6ce063688a026cd8bf0f7762d538ec9054bd4a77a73c1e3b4690a",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
+        "content": "sha256:07f16aaad989be9637df5409e5f7fac7e6d4f60f2204a4b5e07dd088e0dd867b",
         "locator": {
           "kind": "symbol",
           "name": "ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable"
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
         "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
         "locator": {
           "kind": "symbol",
@@ -145,8 +145,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
-            "content": "sha256:c66e25bbd09e61a9a7433741ec00c42ada63134166600abf7cb22c1c28abd4a3",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
+            "content": "sha256:a13b78d4e5be363f2b861ee8318df2843ccc8fa29a447340509ac0a8bde51dcc",
             "locator": {
               "kind": "file"
             }
@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:1802aff8506b72d79b9a94b9b0de1ba7d5152a74b50e725354d03f2cdb0b9c14",
             "locator": {
               "end": 901,
@@ -172,10 +172,10 @@
         },
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
-            "content": "sha256:a2c22532a595a144709b079df507df6e33c837fac836c1459aa54d9917e24b21",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
+            "content": "sha256:7314286f638303b149c42d91449a32e30ddf3138f35e9c7aa4a4e7c3a8c8efb9",
             "locator": {
-              "end": 1067,
+              "end": 1072,
               "kind": "line_range",
               "start": 1038
             }

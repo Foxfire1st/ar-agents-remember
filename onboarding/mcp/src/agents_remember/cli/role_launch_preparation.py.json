@@ -653,7 +653,7 @@
         }
       ]
     },
-    "20": {
+    "21": {
       "note": "`_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`.",
       "targets": [
         {
@@ -769,7 +769,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
             "locator": {
               "end": 1016,

@@ -86,10 +86,14 @@ state and the settings file rather than on internal call order.
 
 - Source assertion: test_step_up_replay_reconciles_decision_before_host_and_survives_receipt_loss. The declaration is not an execution receipt. [17]
 
+
 - Source assertion: test_host_default_successor_model_is_observed_without_losing_requested_provenance. The declaration is not an execution receipt. [18]
 
 
+
+
 - An incomplete historical count warns without inventing tries. [19]
+
 
 
 - Source assertion: test_repository_cannot_supply_step_up. The declaration is not an execution receipt. [20]

@@ -24,6 +24,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "With an admitted task frame, a newly selected subject's failure or refusal keeps the mounted workspace and compact navigation usable. The reading area alone states that requested subject's owner problem and displays no previous-subject content; source inventory is reached through the recorded comparison-page action, with named unavailability when its range is missing.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L86",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

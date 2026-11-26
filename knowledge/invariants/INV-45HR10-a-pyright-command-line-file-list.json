@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans pyproject.toml and test_code_quality_check_scope.py, is proved by a live Pyright test, and prevents a [tool.pyright] exclude pattern from silently dropping tracked Python files from hook and wrapper file-list checks."
+  },
+  "applicability": "Explicit file-list Pyright invocations in .githooks/_gate.sh and quality_plan.py against root pyproject.toml.",
+  "conditions": [
+    "Pyright runs with --project . and explicit Python file paths passed on the command line.",
+    "Every pattern in [tool.pyright] exclude remains disjoint from tracked Python files so [tool.pyright] exclude drops zero listed tracked files (Pyright 1.1.414+'s independent default **/.* exclude applies separately to dot-folders such as .dagger/)."
+  ],
+  "exclusions": [
+    "Bare Pyright invocations with no command-line file arguments, which resolve paths through [tool.pyright] include.",
+    "Untracked or ignored files under excluded environment, dependency, build, or cache directories, and Pyright 1.1.414+'s independent default **/.* dot-folder exclusion."
+  ],
+  "id": "INV-45HR10",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer rerun: focused pytest 42 passed, 4 skipped; fast gate exit 0 with pyright PASS; evidence archive before_hook_pyright.log and after_hook_pyright.log both 0 errors; before/after wrapper logs both 2,594 checked / 3,360 parsed / 0 errors; verdict notes/reports/reviewer/7c4e2b91-5a1f-4d8e-b3c2-9f6a1e4d8b37/role-launch/261112-BUG-L49-route-review-verdict.md",
+        "W1 before/after clean-copy parity on 3336406ea1d2/6233906597db (2594 tracked .py): hook pyright exit 0 (0/0/0) and wrapper pyright --stats exit 0 (2594/3360, 0/0/0); W2 clean-copy on db236f3c6/105bd85c5652 (pyright 1.1.414, 2557 tracked .py): pytest -n 0 -v test_code_quality_check_scope.py 4 passed in 16.31s and .githooks/_gate.sh fast PASS in 158.757s (all 11 result lines PASS).",
+        "W1 before/after clean-copy parity on 3336406ea1d2/6233906597db (2594 tracked .py): hook pyright exit 0 (0/0/0) and wrapper pyright --stats exit 0 (2594/3360, 0/0/0); W2 clean-copy on db236f3c6/105bd85c5652 (pyright 1.1.414, 2557 tracked .py, 2539 non-dot checked after Pyright's independent default **/.* excludes 18 .dagger/ files): pytest -n 0 -v test_code_quality_check_scope.py 4 passed in 16.31s and .githooks/_gate.sh fast PASS in 158.757s (all 11 result lines PASS); synced onto post-L51 a801c47d/d5ffb4e00525 (2562 tracked .py, 18 under .dagger/, 2544 non-dot)."
+      ],
+      "path": "curator-handoff-l49.json"
+    },
+    "handoffEntry": "BUG-R49@v1 §2",
+    "leaf": "261112-BUG-L49",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Pyright command-line file list replaces [tool.pyright] include while Pyright still filters listed files against [tool.pyright] exclude, so the hook (.githooks/_gate.sh) and quality wrapper (quality_plan.py) file-list runs report the exact same diagnostics before and after the change because zero tracked Python files match any [tool.pyright] exclude pattern (Pyright 1.1.414+'s own default **/.* exclude applies independently to dot-folders such as .dagger/).",
+  "supersedes": [],
+  "title": "Pyright CLI file lists replace include while exclude filters listed files",
+  "writer": {
+    "at": "2026-11-26T11:13:54+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L49",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+    "task": "261112-BUG"
+  }
+}

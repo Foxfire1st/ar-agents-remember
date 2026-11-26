@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "test/fixtures/wire.ts says base values come only from the served row, but the tip's bases already hold 25 default values (and L127 adds four: form, type, headerNotes, statusNoteTruncated); nothing tests the sentence. Found by L127 Worker (notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/fixture-base-defaults-F7.md). L127 does not repair it; the Curator writes the exact sentence;"
+  "statement": "test/fixtures/wire.ts says base values come only from the served row, but the tip's bases already hold 25 default values (and L127 adds four: form, type, headerNotes, statusNoteTruncated); nothing tests the sentence. Found by L127 Worker (notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/fixture-base-defaults-F7.md). L127 does not repair it; the Curator writes the exact sentence;",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L60",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

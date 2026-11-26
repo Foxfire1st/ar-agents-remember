@@ -30,6 +30,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A `role_start` from a tool server without a binding is carried out by the dashboard's own start function under the same checks, for the selections of one table of what may be started without a parent; an Architect is started without a document, and `role_message` from such a server stays refused.",
-  "status": "accepted",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L11",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

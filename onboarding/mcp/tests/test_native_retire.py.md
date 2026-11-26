@@ -8,7 +8,7 @@ Fake-host operation and MCP-entry tests exercise scope-authorized retirement acr
 
 Confirmed host archive refusal clears `retireIntent` so future host-archive attribution remains intact; uncertain archive transport preserves `retireIntent` for identical retry; and the record-write fault test (`role_receipt_files._replace_receipt_bytes`) distinguishes a host already archived from a receipt not yet naming retirement and proves an identical authorized retry converges. The tests do not establish restoration of the removed hosted-seat path or a live-host journey.
 
-The message-attachment case places another-schema JSON beside launch receipts and asserts that authorized retirement still retires and archives its Worker. This is a fake-host source assertion, not a real-host run.
+The message-attachment case places another-schema JSON beside launch receipts and asserts that authorized retirement still retires and archives its Worker. Under eager two-call confirmed launch (`Step 1` create without prompt, `Step 3` send prompt), `test_a_reserved_agent_cannot_be_retired_during_its_first_launch` asserts `agent_id not in self.runtime.agents` only on the promptless `Step 1` creation while asserting `launch-unresolved` and zero `agent-archive` calls across both steps. This is a fake-host source assertion, not a real-host run.
 
 ## Evidence
 

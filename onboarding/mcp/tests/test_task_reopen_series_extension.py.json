@@ -356,12 +356,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 321
+              "start": 326
             },
             "path": "pyproject.toml"
           },
@@ -374,12 +374,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
             "content": "sha256:c0cd8eca27466406884f41e852fd512a37d268491102bd1e4be5f86357445538",
             "locator": {
-              "end": 795,
+              "end": 799,
               "kind": "line_range",
-              "start": 795
+              "start": 799
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

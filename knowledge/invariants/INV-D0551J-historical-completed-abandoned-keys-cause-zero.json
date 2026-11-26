@@ -30,6 +30,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A completed landing with no valid final gets one attempt per completed arc per process, including at startup, and terminal admissions are capped at four per sweep; success freezes, failure stays missing, loss of a final does not repeat history probes, and reopening resets that arc.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L166",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

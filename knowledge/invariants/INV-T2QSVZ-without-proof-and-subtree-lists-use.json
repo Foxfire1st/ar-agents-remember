@@ -29,5 +29,24 @@
   "schema": "ar-invariant/v1",
   "statement": "The compact-list rule (without-proof and subtree lists use one line per row) is true current onboarding behavior, but its proposed invariant admission (prevents_costly_mistake) was unsupported by a plausible costly failure; the record is retired and the rule remains as onboarding prose.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L79",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

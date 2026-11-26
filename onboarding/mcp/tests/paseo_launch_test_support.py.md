@@ -31,6 +31,7 @@ launch must give its agent from that request: `receipt()`, `artifact()`, `handov
   permission-feature-only payload needs no service tier. An existing-only request for an absent agent returns a typed failure before the fake creates an agent.
 - **Host authority.** `prepare_host()` writes the host authority of the installation a fixture represents into
   its config file, and `LAUNCH_COMMANDS` names the commands a launch may use.
+- **Fake server bindings.** When `write_server_bindings` is `True` (default), `FakeRuntime.__call__` calls `_record_fake_binding()` after `agent-create` for providers where `provider_starts_tool_server_at_create(provider)` (from `agents_remember.cli.paseo_seat_policy`) is `True` and whose `agents-remember-task` tool-server env carries `AR_PASEO_AGENT_ID`, `AR_REQUEST_ID`, and `AR_ROLE`, writing `fake-<agentId>.json` (`ServerBindingRecord` with `bindingState="bound"` and the current process's PID and `process_start`) under `bindings_directory(config)` so eager launch-identity confirmation succeeds in-process; `agent-archive` removes that file via `_remove_fake_binding()`. Setting `write_server_bindings = False` suppresses registration for negative binding tests.
 
 ### Conventions
 
@@ -48,4 +49,8 @@ test cannot pass on a value production would never send.
 
 - The stateful fake records calls, can fail before or after an effect, and supports incomplete live listings. Fixture message formatting uses the production artifact helper. [2]
 
+
 - Creation records supplied feature values and mode. It records a service tier only when the supplied feature map contains one. [3]
+
+
+- `FakeRuntime` writes synthetic `ServerBindingRecord` files for eager providers (`provider_starts_tool_server_at_create`) on `agent-create` when `write_server_bindings` is enabled and removes them on `agent-archive`. [4]

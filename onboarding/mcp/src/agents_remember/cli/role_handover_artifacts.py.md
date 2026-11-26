@@ -40,4 +40,4 @@ Unlike missing primary and takeover artifacts, missing detail snapshots are not 
 - Through task-bound and taskless routes checks restoration/refusal, exact advice, and unchanged receipt/foreign link target. [6]
 - `write_detail_artifacts` publishes flat/standalone `.detail-<sha256>.md` snapshots via immutable write-once custody. [7]
 - Exact reuse is protected by `cli/immutable_artifact.holds_exactly` descriptor-level regular-file and `O_NOFOLLOW` checks, reached through the imported `preflight` and `_write_once` seams. [10]
-- `first_message` appends the suffix `artifact_line`, `legacy_prefix_artifact_line` preserves legacy prefix replay, and `resolve_handover_envelope` selects the unique exact locator and digest match. [12]
+- `first_message` appends the suffix `artifact_line`, `legacy_prefix_artifact_line` preserves legacy prefix replay, and `resolve_handover_envelope` selects the unique exact locator and digest match. [13]

@@ -20,6 +20,24 @@
     },
     {
       "anchor": {
+        "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+        "content": "sha256:c35e469fd76a51416c00b5cfd82c15259c621de4b5a64025b99d0660915dadde",
+        "locator": {
+          "kind": "symbol",
+          "name": "brief_prompt"
+        }
+      },
+      "id": "RLZ-WZXA3N",
+      "invariant": "INV-D5BANQ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §3",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Emits IDENTITY_SELF_CHECK_PARAGRAPH directly after the AR tools paragraph in every launched seat's opening brief before the task-document read instruction.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
         "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
         "content": "sha256:46add1de5e42fe70fcc08dca3d33d93eb35877a8ebde2b5a92dbb814cf541c68",
         "locator": {
@@ -93,6 +111,33 @@
             "locator": {
               "kind": "symbol",
               "name": "BriefParts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`IDENTITY_SELF_CHECK_PARAGRAPH` defines the mandatory `server_info` binding self-check and `IDENTITY MISMATCH:` stop line, inserted by `brief_prompt` between the AR-tools and first-read paragraphs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+            "content": "sha256:16186a4d485dfdc38556c11d41657182d52bfa678bd7916f78b3f42e50865d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "IDENTITY_SELF_CHECK_PARAGRAPH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+            "content": "sha256:c35e469fd76a51416c00b5cfd82c15259c621de4b5a64025b99d0660915dadde",
+            "locator": {
+              "kind": "symbol",
+              "name": "brief_prompt"
             }
           },
           "kind": "code"

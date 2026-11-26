@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
             "content": "sha256:e578eb7df8257d148c701e9d1b344c75c53c02405e24fb3cd993719daae7a823",
             "locator": {
-              "end": 91,
+              "end": 93,
               "kind": "line_range",
-              "start": 87
+              "start": 89
             },
             "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
           },

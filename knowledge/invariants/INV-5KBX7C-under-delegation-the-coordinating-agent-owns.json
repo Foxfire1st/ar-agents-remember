@@ -31,6 +31,24 @@
   "revision": 5,
   "schema": "ar-invariant/v1",
   "statement": "Under delegation the Manager owns one master's leaf-diff, evidence and gate loop and gives aggregate evidence to its supervisor: it inspects the complete changed-file diff, both verdicts and applicable final-check evidence, keeps closeout, integration, explicit status correction, organizational-master completion, acceptance and landing order; native start/finalize/abandon operations own ordinary task-stage publication and mirroring without a redundant Manager status write, and relays no freeze, finding, verdict or memory change, while the leaf's Worker, Reviewer and Curator run the repair loop directly between their seats, the Architect's direct Worker duties apply only to the developer-chosen direct-coordination case, the Orchestrator verifies Manager deliveries and may inspect supplied actual diffs for its acceptance duty without taking over the loop, and every coordinating agent follows assignments until the work is complete, blocked or a true developer decision is needed instead of stopping after starting a role.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L12",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

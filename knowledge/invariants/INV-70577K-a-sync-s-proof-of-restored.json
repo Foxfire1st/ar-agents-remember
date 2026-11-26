@@ -31,6 +31,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A sync proves restoration across the complete live recorded stash, including entries beyond the journal sample, by comparing every substantive entry with its computable prescribed native reapply result; already-held edits pass, while mismatch, unreadable inventory and uncomputable expectations fail without sample acceptance.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L61",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

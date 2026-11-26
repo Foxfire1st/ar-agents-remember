@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-        "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
+        "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+        "content": "sha256:a047e5d7335531e5a9f59b777f932a71d16cc80393ae559b558ce110164023ed",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+        "blob": "f576c20da09d7302838f54a3c73261b896caff00",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+        "blob": "f576c20da09d7302838f54a3c73261b896caff00",
         "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-        "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
+        "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+        "content": "sha256:a047e5d7335531e5a9f59b777f932a71d16cc80393ae559b558ce110164023ed",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
@@ -77,10 +77,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-            "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
+            "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+            "content": "sha256:a047e5d7335531e5a9f59b777f932a71d16cc80393ae559b558ce110164023ed",
             "locator": {
-              "end": 273,
+              "end": 282,
               "kind": "line_range",
               "start": 77
             }
@@ -94,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-            "content": "sha256:3c6b8d4e03e7461dabff90d40c6daf9d7fc9a5c9137df239185810afae72b8ff",
+            "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+            "content": "sha256:117d36f57f4c5ed9a15a6ea4eed0db2e6a501981abadea56eba844bd8c32445a",
             "locator": {
               "kind": "file"
             }
@@ -105,12 +105,12 @@
       ]
     },
     "3": {
-      "note": "The launch-file census includes fixture task documents and published copies.",
+      "note": "The launch-file census includes fixture task documents, published copies, and synthetic `coordination/runtime/server-bindings/fake-<agentId>.json` binding files.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-            "content": "sha256:3c6b8d4e03e7461dabff90d40c6daf9d7fc9a5c9137df239185810afae72b8ff",
+            "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+            "content": "sha256:117d36f57f4c5ed9a15a6ea4eed0db2e6a501981abadea56eba844bd8c32445a",
             "locator": {
               "kind": "file"
             }
@@ -124,8 +124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
-            "content": "sha256:3c6b8d4e03e7461dabff90d40c6daf9d7fc9a5c9137df239185810afae72b8ff",
+            "blob": "f576c20da09d7302838f54a3c73261b896caff00",
+            "content": "sha256:117d36f57f4c5ed9a15a6ea4eed0db2e6a501981abadea56eba844bd8c32445a",
             "locator": {
               "kind": "file"
             }

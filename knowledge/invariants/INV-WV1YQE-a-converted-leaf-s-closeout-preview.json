@@ -30,6 +30,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A converted leaf's closeout preview reads the same gate verdict as apply preflight over the same two trees: a refusal shows its findings, asks for no commit approval and offers no apply; a passing preview says the gate passed. Legacy external memory is refused before the preview promises closeout, including a series format verdict before publication authority. Preview publishes no closeout to code, memory or contract; the registered call retains its own daily log and completed-call event.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L46",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

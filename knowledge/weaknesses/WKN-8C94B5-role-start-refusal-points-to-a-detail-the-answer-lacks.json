@@ -25,5 +25,24 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The next action of a refused role_start says to resolve the reason named in detail, while an answer over its bound of 300 tokens is cut to the short form and holds no detail; the stage and the list of harnesses then stand only in the log file, and the list names harnesses that are not installed."
+  "statement": "The next action of a refused role_start says to resolve the reason named in detail, while an answer over its bound of 300 tokens is cut to the short form and holds no detail; the stage and the list of harnesses then stand only in the log file, and the list names harnesses that are not installed.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L97",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

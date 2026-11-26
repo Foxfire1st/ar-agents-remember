@@ -31,6 +31,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The request-scoped capture proof re-reads only what a capture can read: the capture's own private-index census, the worktree's own index stamp and the native status that supplies HEAD and the eligible untracked names, so an eligible addition or removal, a staged or trust-flagged input, or a moved index is a doubt that re-derives the tree while a change inside an ignored directory or a HEAD the caller did not bind is not.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L177",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

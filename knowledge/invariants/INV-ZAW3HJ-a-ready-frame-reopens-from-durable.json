@@ -31,6 +31,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A retained revision carries its admitted part map. Staleness names affected parts and the reasons their claim bases moved, with a whole-page answer when the revision has no usable part map or a stale claim belongs to no part. The task-wide byte cap governs default explainer publication. A retained revision leaves the store only through the developer’s removal control.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261124-EXP-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261124-EXP",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

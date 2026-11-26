@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "No single layer guarantees seat identity alone: server registration without launch confirmation cannot block a misbound start, launch confirmation without brief self-check cannot catch post-start harness revival or lazy harnesses, brief self-check without zero-wake turn-end pass-through would be nudged back into work by silent-end wakes, and unspoofable sender attribution preserves trustworthy cross-seat evidence."
+  },
+  "guarantee": "A seat started by the product does work only under its own bound tool-server identity: each MCP server publishes its binding and process ancestry in a peer registry without altering legacy server inventory; eager launches and held-seat opens confirm one exclusive matching server under the seat's harness before sending the first message, retrying once on failure and refusing with zero live seats; every opening brief requires a first-action server_info self-check and silent termination with an IDENTITY MISMATCH: line on mismatch; the turn-end plug-in delivers that line verbatim to the parent with zero wakes so the parent archives, audits writes, and replaces the seat; and role_message derives sender attribution exclusively from the calling server's bound environment.",
+  "id": "FAM-N6S3XT",
+  "members": [
+    "INV-5MFB9S",
+    "INV-JV7S6Y",
+    "INV-D5BANQ",
+    "INV-VD1BVN",
+    "INV-BPDGMZ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "L51-family-seat-identity",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "docs/reference",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/mcp",
+    "mcp/src/agents_remember/package_data/paseo_plugin/server",
+    "mcp/src/agents_remember/serving",
+    "skills/l-01-agent-lifecycles/roles"
+  ],
+  "schema": "ar-family/v1",
+  "title": "A started seat works only under its own identity",
+  "writer": {
+    "at": "2026-11-25T22:57:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}

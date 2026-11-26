@@ -28,6 +28,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The Curator enumerates one full-intake worklist of distinct outstanding memory actions, preserving returned ids and evidence and counting each action once, while invariant and family placement, admission, changes of meaning, the one admitted writer and the full memory-quality operation stay with the seat; the harness's sub-agents are only its speed, and a harness without them can do the same work.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L99",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

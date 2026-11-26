@@ -28,6 +28,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Who may start what is decided from the caller’s binding: an Architect may start every native role except Architect; an Orchestrator may start Manager, Worker, Reviewer, Curator and Investigator only under its own sprint; a Manager may start Worker, Reviewer, Curator and Investigator only under its own master and sprint; Worker, Reviewer, Curator and Investigator start none. Investigator accepts Projects, sprint or sprint/master selections and refuses a leaf before launch; anything else is refused with the rule in words.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L98",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -32,6 +32,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Exactly one measured renewal in the current capsule-budget record is nonhistorical and contains only its authority; current skill-relative paths covered by the absent-path checker exist, historical measurement renewals retain their historicalTree, and the declared package copy matches the canonical record.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L8",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

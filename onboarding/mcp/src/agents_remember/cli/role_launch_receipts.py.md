@@ -38,7 +38,7 @@ _execute_prepared_launch honors closing barriers, reconciles the task step-up de
 
 _restore_launch_handover rebinds report access and hands the saved targets to `restore_launch_files`, which rebuilds a lost request locator, validates every frozen detail and restores or verifies the primary, takeover and complete-hand-over files before the first message is sent. Missing detail bytes require the original snapshots. Held-seat opening without either recorded artifact reference validates the saved details directly. A detail-free legacy composition remains permitted.
 
-Outcome publication and observed choice bookkeeping delegate to role_launch_outcome and role_launch_choices; this file keeps their imported and forwarding names. An eligible rejected empty step-up retains `replayRequest` when the predecessor settled and the outcome reports no lost agent. If saved native Antigravity Retry finds its recorded agent absent, the HTTP 409 refusal settles the request and drops `replayRequest`. Other resolved ordinary launches drop it, and held seats retain their opening call.
+Outcome publication and observed choice bookkeeping delegate to role_launch_outcome and role_launch_choices; this file keeps their imported and forwarding names. `_execute_prepared_launch` passes `LaunchExecutionPolicy(mode="create", on_retry_agent=...)` so a binding-confirmation retry immediately re-publishes `role-agents.json` for the retried agent ID, and `_public_execution` exposes `bindingConfirmation` when recorded on the receipt. An eligible rejected empty step-up retains `replayRequest` when the predecessor settled and the outcome reports no lost agent. If saved native Antigravity Retry finds its recorded agent absent, the HTTP 409 refusal settles the request and drops `replayRequest`. Other resolved ordinary launches drop it, and held seats retain their opening call.
 
 _request_digest includes stepUp only when explicitly present, keeping absence-compatible digests. _public_execution exposes stepUp and permits rejected-stepUp retry only with a saved call; retryPayload includes the original requested reason and overrides. This projection is not a new review verdict or unconditional permission to start.
 
@@ -55,7 +55,11 @@ Existing schema/read refusals, exclusive receipt creation, canonical taskless id
 
 
 
+
+
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
+
+
 
 
 
@@ -92,7 +96,13 @@ An Investigator receipt address requires its exact request UUID.
 
 
 
+
+
 - The public execution whitelist includes request identity, status, observed choices and eligible Result, Retry or Revive information drawn from the same receipt. [4]
+
+
+
+
 
 
 
@@ -103,11 +113,17 @@ An Investigator receipt address requires its exact request UUID.
 
 
 
+
+
+
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
 
 
+
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
+
 
 
 
@@ -131,7 +147,9 @@ A receipt moved by Start between inspection and reading is treated as absent.
 
 
 
+
 - Decision, artifacts, predecessor liveness, predecessor replacement settlement, and outcome reconciliation preserve saved identity. [16]
+
 
 
 
@@ -144,7 +162,11 @@ A receipt moved by Start between inspection and reading is treated as absent.
 - Request identity includes a supplied step-up value and normalizes an override with an empty feature map. [18]
 
 
+
+
 - Conditional retry payload preserves original selection/reason. [19]
+
+
 
 - Test source checks validator refusal before host replay. [20]
 
@@ -161,8 +183,10 @@ A receipt moved by Start between inspection and reading is treated as absent.
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [13]
 
 
+
 - The receipt executor restores stored launch artifacts when present, runs the same saved launch call, settles confirmed predecessor replacements, and publishes the observed outcome. [1]
+
 - `_read_receipt` (in `role_receipt_files.py`, re-exported here) distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
-- Frozen implementation of _public_execution supporting the stated file behavior. Anchor: `_public_execution` [4]
+
 
 - The current source implements this file’s stated Investigator boundary. [14]

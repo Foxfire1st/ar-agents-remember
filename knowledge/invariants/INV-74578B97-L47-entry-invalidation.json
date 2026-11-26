@@ -25,6 +25,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The entry summary is revalidated under the addressed leaf's lifecycle/worktree facts and shared entry generation. Navigation, explicit reviewer refresh and the matching mounted live review's memory invalidation advance that generation; an unrelated workspace analytics publication does not. A late answer for a previous leaf is dropped.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L57",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

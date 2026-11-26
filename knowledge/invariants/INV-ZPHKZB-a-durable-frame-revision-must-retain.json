@@ -28,6 +28,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The revision the page shows keeps the part map with its claims beside its own claim map, and a manifest refuses a part id declared twice, a part carrying a claim id its revision does not hold, a claim listed twice in one part, a claim in two parts, and — when any part carries claims — a revision claim no part admits.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

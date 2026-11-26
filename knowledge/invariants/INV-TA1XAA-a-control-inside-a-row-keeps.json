@@ -30,5 +30,24 @@
   "schema": "ar-invariant/v1",
   "statement": "A control inside a row keeps its press from the list, because the list chooses a row when a press starts and not at the click; the dismissal of an overdue hand-over therefore dismisses and does not choose the row. It is offered whenever the hand-over is overdue: as \"×\" beside \"check chat\" while the hand-over is the row's word, and as \"chat ×\" beside the gate's word while an open gate is the row's word, named so that it cannot be read as a dismissal of the gate; it sends the dismissal of the hand-over's inbox entry and nothing for the gate.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L144",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

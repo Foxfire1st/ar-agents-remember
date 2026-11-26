@@ -450,12 +450,12 @@
         },
         {
           "anchor": {
-            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+            "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
             "content": "sha256:b0aedec5125e7a9ab2a347fbf26618023f1a8302ba3b7c6b309cbd0a0747ac5e",
             "locator": {
-              "end": 440,
+              "end": 450,
               "kind": "line_range",
-              "start": 439
+              "start": 449
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -468,12 +468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
             "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
             "locator": {
-              "end": 656,
+              "end": 668,
               "kind": "line_range",
-              "start": 634
+              "start": 646
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

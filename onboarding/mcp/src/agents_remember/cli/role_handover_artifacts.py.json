@@ -226,7 +226,7 @@
         }
       ]
     },
-    "12": {
+    "13": {
       "note": "`first_message` appends the suffix `artifact_line`, `legacy_prefix_artifact_line` preserves legacy prefix replay, and `resolve_handover_envelope` selects the unique exact locator and digest match.",
       "targets": [
         {

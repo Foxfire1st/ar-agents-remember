@@ -47,6 +47,24 @@
           "name": "sender_line"
         }
       },
+      "id": "RLZ-KFEXAV",
+      "invariant": "INV-BPDGMZ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §5",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Formats the role_message sender line strictly from the server's bound AgentBinding fields.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
+        "content": "sha256:bf1abd8d163d47dce1d79d5ceec67be4737fe3a91b67d7d50c88f7085ff4419a",
+        "locator": {
+          "kind": "symbol",
+          "name": "sender_line"
+        }
+      },
       "id": "RLZ-S0SZP3",
       "invariant": "INV-VH983B",
       "origin": {

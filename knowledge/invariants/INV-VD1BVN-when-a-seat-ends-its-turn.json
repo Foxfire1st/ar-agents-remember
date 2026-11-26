@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across identity_mismatch.ts, turn_ended.ts, and architect/orchestrator/manager role sources, guarded by identity_mismatch.test.ts and test_launch_identity_brief.py, and ensures a mismatched seat is never nudged back into work under a foreign identity."
+  },
+  "applicability": "Every completed role-agent turn handled by the Paseo turn-end plug-in and parent recovery instructions for Architect, Orchestrator, and Manager roles.",
+  "conditions": [
+    "extractIdentityMismatchLine matches an IDENTITY MISMATCH: last line (case-sensitive, stripping outer Markdown quote/bullet/emphasis/backtick wrappers) and enforces the 300-character verbatim cap.",
+    "noteTurnEnded short-circuits before the 60-second silent-end wait and seat wake scheduling, clears pending wakes and declared waits, leaves silentEnds unincremented, and delivers the unmarked line to the parent (holding while a non-steering parent is in a turn or falling back to the master's current Manager if archived).",
+    "Architect, Orchestrator, and Manager role sources instruct the parent to archive the mismatched seat, inspect both its task folder and the reported binding's folder for writes, and start a replacement."
+  ],
+  "exclusions": [
+    "Non-matching, lowercase, mid-line, empty, or unreadable last lines continue through normal silent-end rules (INV-1ZKP4R).",
+    "Parent recovery steps are role-instruction authority rather than automated plug-in archive actions."
+  ],
+  "id": "INV-VD1BVN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "node --experimental-strip-types --test server/*.test.ts (306 passed, 0 failed including identity_mismatch.test.ts 10/10 and turn_ended.test.ts 174/174) & mcp/tests/test_launch_identity_brief.py (3 passed) on tree 9d6c1659c736677568d180e75fd23228782d1f36; L51-W1-expanded-evidence.md#bug-r51-v1"
+      ],
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R51@v1 §4",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When a seat ends its turn with an IDENTITY MISMATCH: line, the Paseo turn-end plug-in skips silent-end waits and wake messages and delivers that line verbatim (at most 300 characters) to the parent, and Architect, Orchestrator, and Manager role instructions direct the parent to archive the seat, check both task folders for writes, and start a replacement.",
+  "supersedes": [],
+  "title": "IDENTITY MISMATCH turn end bypasses wakes and triggers parent recovery",
+  "writer": {
+    "at": "2026-11-25T22:57:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}

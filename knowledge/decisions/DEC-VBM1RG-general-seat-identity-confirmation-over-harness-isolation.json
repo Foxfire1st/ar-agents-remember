@@ -1,0 +1,104 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "General cross-harness confirmation versus per-seat Antigravity data-folder isolation was explicitly weighed under D1014, and the chosen design constrains all future role-launch confirmation, brief-preamble, and turn-end mismatch handling across harnesses."
+  },
+  "alternatives": [
+    {
+      "option": "Enforce a general, harness-agnostic launch-time server-binding check (create without prompt, confirm exclusive live binding under the harness, retry once, then refuse leaving zero live seats) paired with an opening-brief server_info self-check and zero-wake IDENTITY MISMATCH: pass-through to the parent.",
+      "reason": "Developer ruling D1014 chose a general defense across every harness rather than a single-harness workaround, turning standing order D1011 into product code.",
+      "status": "chosen"
+    },
+    {
+      "option": "Isolate Antigravity seats with a harness-specific per-seat data folder or Antigravity-only launch workaround.",
+      "reason": "Developer ruling D1014 rejected a harness-specific fix because seat identity verification protects against cross-seat misbinding on any harness without maintaining per-harness storage workarounds.",
+      "reconsider_when": "A harness repeatedly fails general binding confirmation at an unacceptable refusal rate even after upstream revival fixes, and the developer explicitly authorizes harness-specific session isolation.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every eager-harness start pays a bounded server-binding confirmation poll (up to 5.0 s, skipping the legacy 6 s blind sleep on confirmation) and keeps a single automatic retry under the same requestId.",
+    "Every role seat's opening brief carries the mandatory server_info self-check and IDENTITY MISMATCH: termination rule, and the turn-end plug-in delivers mismatch lines straight to the parent without wake messages.",
+    "Hosts without /proc fall back to (agentId, requestId) confirmation without ancestry inspection and disclose ancestrySkippedReason=proc-unavailable in the launch receipt."
+  ],
+  "context": "In incident 261112-BUG-L50 (issue row 731), Antigravity 1.5.17 revived another live conversation inside a newly started seat's process, causing the new seat to receive a foreign agents-remember-task server, tools, and identity even though Agents Remember's launch inputs were correct.",
+  "decider": "Developer D1014 (option 2), translated into BUG-R51@v1 and plan ruling by Architect 97e0320d (2026-11-25).",
+  "id": "DEC-VBM1RG",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "FAM-N6S3XT"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-JV7S6Y"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-D5BANQ"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "40c750bb30a10ec4a3188c7e2bfb7c47aedba14a",
+        "content": "sha256:322029c3812ff412a14ee73ee254db39928fe0cfd1cf8fc8ece95b9c88dcd280",
+        "locator": {
+          "kind": "symbol",
+          "name": "execute_confirmed_launch"
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_confirmation.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "BUG-R51",
+        "packet": "requirements/BUG-R51-v1-a-started-seat-works-only-under-its-own-identity.md",
+        "task": {
+          "path": "261112_bug-fixes-and-issue-tracking",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "40c750bb30a10ec4a3188c7e2bfb7c47aedba14a",
+        "content": "sha256:322029c3812ff412a14ee73ee254db39928fe0cfd1cf8fc8ece95b9c88dcd280",
+        "locator": {
+          "kind": "symbol",
+          "name": "execute_confirmed_launch"
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_confirmation.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "L51-decision-d1014-general-identity-check",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T01:02:38+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}

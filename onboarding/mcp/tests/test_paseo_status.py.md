@@ -12,13 +12,17 @@ The options regression expects `catalog` and the subsequent `agent-state` read t
 
 The result route and both options requests report a launch in progress before contacting the host when the launch lock is held. Parked task-bound, Investigator and taskless legacy receipt reads allow Start to reach admission. The replacement and migration cases ensure an earlier observation cannot replace a newer or already migrated receipt. [1]
 
-The open-execution and unreadable-holder cases assert `catalog` then `agent-state`. The failed-Revive case separately checks that a plain Start is refused and a replacing Start archives the holder before creating the successor. Across those two commands it asserts `catalog`, `agent-state`, `catalog`, `agent-state`, `agent-archive`, `workspace-open`, `agent-create`.
+The open-execution and unreadable-holder cases assert `catalog` then `agent-state`. The failed-Revive case separately checks that a plain Start is refused and a replacing Start archives the holder before creating the successor. Across those two commands it asserts `catalog`, `agent-state`, `catalog`, `agent-state`, `agent-archive`, `workspace-open`, `agent-create`, `agent-create`.
+
 
 - The open-execution cases assert catalog before agent-state. The failed-Revive case checks the combined refused and replacing Start trace. [2]
+
 
 
 ## Evidence
 
 
 
+
 - Tests cover status, Revive, saved catalogue answers, lock-free host reads and launch-in-progress responses with zero host calls. [1]
+

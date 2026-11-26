@@ -72,7 +72,10 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 
 ## Refreshed current evidence
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [4]
+
+
 
 
 
@@ -94,7 +97,10 @@ Custody: the preceding sentence is detached from live reference 12; original tar
 
 - Digest-bound same-request replay reconciles decisions, restarts eligible non-explicitly-retired closed receipts, and reconciles empty successors. [14]
 - Ordinary leaf replacement uses caller scope (`retirement_scope_refusal`) while step-up keeps starter-only authority and unconditional idle/prompt/subagent checks. [15]
+
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [16]
+
+
 
 
 

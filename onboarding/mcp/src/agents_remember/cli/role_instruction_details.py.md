@@ -30,4 +30,4 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 - Held-seat opening and receipt restoration invoke `validate_instruction_detail_artifacts` before sending the opening message. [4]
 - `_bound_details` binds frozen detail internal links to absolute durable corpus and sibling frozen paths (`compact_links=False`) and re-digests the bound bytes before freezing. [6]
 - `_bound_baseline` binds baseline links along `instruction_origins` (compact `detail/` and `skill/` under `compact_links=True`, plus `compact_skill_uri_links` without origins) and refuses incomplete origins or unbound relative links. [7]
-- `nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection. [10]
+- `nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection. [11]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "73fc8a8e0c82f15e600a68e696494c112faebdd9",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): case budgets (10000/2000), lane selection, conftest isolation, and coverage/CRAP descriptions match live code after DEP + L52; re-anchored stress-durability in test-evidence-lanes.toml to lines 845-847.",
-    "task": "261112-BUG-L52",
+    "statement": "Verified on synced code 73fc8a8e (base 65911c75, post-BUG-L52/BUG-L51): docs/design/python-pytest-bootstrap.md accurately describes lane-based -m 'not integration' selection across 830 cataloged modules (680 unit-regression including test_knowledge_state_conversion_verdict_ref.py), case budgets, --certify isolation, diagnostic CRAP/coverage, and conftest isolation; stress-durability anchor updated to test-evidence-lanes.toml lines 849-851.",
+    "task": "261112-KNO-L6",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+      "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
       "kind": "file",
       "path": "pyproject.toml"
     },
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+      "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+        "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 847,
+          "end": 851,
           "kind": "line_range",
-          "start": 845
+          "start": 849
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -116,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-        "content": "sha256:920f9c91a233b6fea2889eee929b0c3dcad1799a845c7874bd4a4cb04294cb0c",
+        "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+        "content": "sha256:183f67ce31981a6266094783d57861bb179bb30c6f48a27414bdeb93b482be61",
         "locator": {
           "end": 73,
           "kind": "line_range",
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T12:12:35+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-KNO-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
-    "task": "261112-BUG"
+    "seat": "b7c84d12-6e3f-4a91-9b22-5d4f7c8e9a01",
+    "task": "261112-KNO"
   }
 }

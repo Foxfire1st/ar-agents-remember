@@ -25,5 +25,23 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "Retire archives the chat in the host first and then counts the processes that are left, so its line can read 0 processes ended although processes of the explainer ran until the press."
+  "statement": "Retire archives the chat in the host first and then counts the processes that are left, so its line can read 0 processes ended although processes of the explainer ran until the press.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

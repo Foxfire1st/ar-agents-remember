@@ -32,6 +32,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Master pages reuse the sprint Order drawing after Now, with task-entry state/activity and producer dependency waves/readiness, both dependency directions on pointer rest, and graph-ready planned tasks listed as Can start next in Now. Completed/aborted membership and task progress come from the shared entries; Order adds no independent done/abandoned graph totals. The Order drawing gives each started entry its work accent regardless of host activity; that accent is neither native activity nor start permission.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

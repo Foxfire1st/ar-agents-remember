@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
-        "content": "sha256:b0251720f8cda3c1581ad5ce4e4319e638ab9e7277003c537793f9a685e836cb",
+        "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+        "content": "sha256:23d0dac6a30a8a674652f98b02c1a4100cb83721462b5946e2be0fc0ac345331",
         "locator": {
           "kind": "file"
         }
@@ -17,16 +17,35 @@
       },
       "rationale": "The layout reference describes the retry and clear metadata in the existing file.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+        "content": "sha256:055d9570f12ee4feece62b3fbb8096ca10d443edefc1c7c362e9391d007f0137",
+        "locator": {
+          "end": 81,
+          "kind": "line_range",
+          "start": 47
+        }
+      },
+      "id": "RLZ-N5VVKX",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1-dep-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Documents the peer runtime/server-bindings/<pid>.json table row and Server binding records contract (schema fields, bindingState values, ancestry fields, and cleanup semantics).",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, and paseo-native-executions paths.\n\nAnchor: `## The coordination root`",
+      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, and paseo-native-executions paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
-            "content": "sha256:205f514af8cb346004870b244dbfce951c345980abefcfa6273d3d2781def282",
+            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+            "content": "sha256:e567094cf551a8515295dbfc9614f0aa4313303635e184f3fe49d74cb4b2d356",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -42,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
+            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
             "content": "sha256:ea78b1f23a7b0b0a574521721aabf8fe73b392625c5f1a494746468c7f2db43a",
             "locator": {
-              "end": 140,
+              "end": 168,
               "kind": "line_range",
-              "start": 124
+              "start": 152
             }
           },
           "kind": "code"
@@ -59,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
+            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
             "content": "sha256:c052360b3a3a7b7121464db09738624cc1d3cbaddc228717f33c7ad467f192ad",
             "locator": {
-              "end": 175,
+              "end": 203,
               "kind": "line_range",
-              "start": 141
+              "start": 169
             }
           },
           "kind": "code"

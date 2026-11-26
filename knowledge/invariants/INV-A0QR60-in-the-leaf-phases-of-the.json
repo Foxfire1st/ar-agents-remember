@@ -32,5 +32,24 @@
   "schema": "ar-invariant/v1",
   "statement": "In the leaf phases of the closeout parity test (`leaf_preview`, `leaf_apply`) the comparison of the world of before with the current worlds takes the three counts of `route_index_refresh` (`refreshedCount`, `unchangedCount`, `staleCount`, demanded by MIK-R110 rule 5) out of the current answers by their names, and only after both current answers are shown to hold all three; the world of before stays as it is, and the equality of the grant world and the current world is asserted before any take-out. The product's answer is not changed.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L113",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

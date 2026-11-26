@@ -74,7 +74,7 @@ Root `docs/` remains authored documentation, not one of the two runtime synchron
 
 The tool-server settings file has one home beside the user's role settings: `agents-remember-settings.json` in the user's config directory (`kernel/primitives/mcp_settings_location.py`). CLI discovery reads only that file unless `--config` names another (`cli/discovery.py`). Runtime installation copies the old workspace convention file `.claude/mcp/agents-remember-settings.json` there once, only when the destination is absent, and leaves the source unchanged (`install/mcp_settings.py`).
 
-An installed build reports its own currentness. `serving/build_currentness.py` compares the loaded Python code with the files now at its package root; `models/build_currentness.py` shares that reading between serving status and the public response envelope. When an installed build is stale, `mcp/server.py` refuses the publication writers declared in `mcp/build_staleness.py` before they run, while reads and dry runs stay usable. Each running server keeps a small live-process record under the coordination root's `runtime/servers/` (`serving/server_registry.py`), so `runtime_install` and `server_info` report the servers that need reconnecting.
+An installed build reports its own currentness. `serving/build_currentness.py` compares the loaded Python code with the files now at its package root; `models/build_currentness.py` shares that reading between serving status and the public response envelope. When an installed build is stale, `mcp/server.py` refuses the publication writers declared in `mcp/build_staleness.py` before they run, while reads and dry runs stay usable. Each running server keeps a small live-process record under the coordination root's `runtime/servers/` (`serving/server_registry.py`), so `runtime_install` and `server_info` report the servers that need reconnecting. Each running MCP server also writes a per-PID binding and process-ancestry record under `<coordination root>/runtime/server-bindings/<pid>.json` (`serving/server_bindings.py`, registered by `mcp/server.py::run_server` before serving and removed on exit), separate from `runtime/servers/` to preserve legacy readers, carrying `bound`/`unbound`/`unreadable` state and `/proc` ancestry.
 
 Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
 
@@ -229,7 +229,9 @@ Historical prior wording (superseded by the current namespace/matrix account): *
 
 ## Role Launch Alternatives And Frozen Instruction Details
 
-Role launch now has narrow extracted owners: role_launch_defaults projects per-use settings/provenance; role_step_up selects one optional user alternative; role_start_execution performs exact-request preparation/reservation; role_start_answer projects the detailed receipt answer; role_launch_choices and role_launch_outcome own observation and publication while receipts retain call seams.
+Role launch now has narrow extracted owners: role_launch_defaults projects per-use settings/provenance; role_step_up selects one optional user alternative; role_start_execution performs exact-request preparation/reservation; role_start_answer projects the detailed receipt answer; role_launch_confirmation owns eager launch-time server-binding confirmation, single retry, and held-seat re-confirmation; role_launch_choices and role_launch_outcome own observation and publication while receipts retain call seams.
+
+For eager providers (`antigravity-acp`, `codex`, `hermes`, `pi`) launched with a bound `agents-remember-task` server, `cli/role_launch_confirmation.py` runs a three-step launch: create the seat prompt-free, poll `runtime/server-bindings` under the seat's harness roots via `confirm_seat_binding` (5 s wait, 0.1 s poll, rejecting foreign, unreadable, or multiple bound servers immediately and falling back to identity-only confirmation with receipt disclosure when `/proc` is absent), then send the opening message with `skipToolServerWait=True` (`paseo_bridge.mjs`). Failed confirmation archives the seat and retries once under the same `requestId` with a freshly minted `agentId` (`:retry-1` / `:open-retry-1` idempotency key); double failure archives both attempts and refuses as `binding_confirmation_failed`, leaving zero live seats and dropping `replayRequest` (including on empty step-ups). Held-seat opening re-confirms in `mode="open-held"` and applies `bindingConfirmation` and retried-seat fields to the receipt; `_public_execution` exposes `bindingConfirmation`. Every started seat's opening brief carries `IDENTITY_SELF_CHECK_PARAGRAPH` (`cli/role_brief_message.py`), requiring `server_info` on `agents-remember-task` as its first action and an immediate `IDENTITY MISMATCH:` stop line on mismatch or missing server; `package_data/paseo_plugin/server/identity_mismatch.ts` and `turn_ended.ts` intercept that stop line before handoff, declared-wait, or seat-wake handling, cancel pending waits, log `identity-mismatch`, and forward the verbatim line straight to the parent without waking the seat.
 
 Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
 
@@ -598,7 +600,13 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
 - **Retained historical source account — superseded by the current route account:** Current declared collected-case budgets supersede historical totals [309]
+
+
+
 - The bridge's internal daemon client and its first-message delivery, and the two chat routes over them: the tree's preloaded live-agent answer and the single-document read that corrects it. [310]
+
+
+
 - The structured-value case retains a direct helper key-order equality assertion; it does not exercise a changed served field through composition or round-trip both sides. [125]
 - The current capsule test source checks compiler-owned delivery for the same admitted seat and only capsule/refused modes; removed legacy reopen and production-launch enumeration cases are not current witnesses. [163]
 - Public closeout payload delegates the current task-bound request. [165]
@@ -704,7 +712,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 
 
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
+
 
 
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
@@ -717,7 +727,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 
 
+
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [332]
+
 
 
 
@@ -880,3 +892,15 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Source bindings, membership and record models. [313]
 - The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
 - The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
+
+- `register_server_binding` writes per-PID binding/ancestry records under `runtime/server-bindings/`, `live_server_bindings` reclaims dead/recycled records, and `harness_root_pids` locates root harness PIDs via `/proc`. [426]
+
+
+
+
+- Eager-provider binding confirmation, single retry with fresh `agentId`, `skipToolServerWait` send, `open-held` re-confirmation, and receipt-apply helpers live in `role_launch_confirmation.py` and its launch callers. [427]
+
+
+
+- Opening brief identity self-check and Paseo plugin `IDENTITY MISMATCH:` turn-end interception forward the verbatim mismatch line directly to the parent without waking the seat. [428]

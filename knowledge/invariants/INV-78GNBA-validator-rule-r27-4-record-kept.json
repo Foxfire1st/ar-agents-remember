@@ -30,6 +30,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Validator rule R27.4-record-kept: every record ID a comparison base holds exists in the candidate, except a dependent record whose document this task deleted, whose removal the leaf's retired `record` row about it answers; every other kind leaves use by status retired only.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

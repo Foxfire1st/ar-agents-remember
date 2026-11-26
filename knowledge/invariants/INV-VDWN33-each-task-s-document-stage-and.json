@@ -33,6 +33,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Each task's document stage and bound-host activity determine its only stage/activity/age facts, with a permission prompt counting as work. An open agent session that works only through a running subagent counts as working from that subagent's oldest start, a started task with none of its agents working and at least one open seat with a declared wait and an eligible armed check is waiting, from the earliest of those waits' starts, in place of paused, and a started task with none of its agents working or waiting and at least one of them limited takes the served limited word in place of paused.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -26,10 +26,28 @@
   },
   "revision": 1,
   "schema": "ar-limitation/v1",
-  "status": "proposed",
   "unsupported": [
     "No claim that the candidate's layer graph is clean.",
     "No claim that the host-install work introduced these violations; they pre-date the leaf.",
     "No authority to repair them here: the report records them for the owning hierarchy."
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L96",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

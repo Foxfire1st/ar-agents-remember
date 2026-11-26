@@ -26,6 +26,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The definition's environment always carries all seven binding variables (`AR_PASEO_AGENT_ID`, `AR_ROLE`, `AR_REQUEST_ID`, `AR_REPORT_PATH`, `AR_SPRINT_REF`, `AR_MASTER_REF`, `AR_TASK_REF`), a reference the selection does not have as an empty value, and the two seat-identity variables `AR_SPAWN_ROLE` and `AR_HOSTED_SESSION_ID` emptied, so that nothing the tool server inherits from the harness that starts it takes the place of what the launch gave.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L90",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

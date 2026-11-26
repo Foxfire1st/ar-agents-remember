@@ -1,0 +1,240 @@
+{
+  "path": "mcp/src/agents_remember/serving/server_bindings.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+        "content": "sha256:eb9d04c86fbc133bb97794ba019a9cfa5a9ccf36d21e3439864d7d151495eed3",
+        "locator": {
+          "kind": "symbol",
+          "name": "harness_root_pids"
+        }
+      },
+      "id": "RLZ-K1E0K4",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Discovers live harness process roots from /proc for a seat agent ID, returning None when /proc is unavailable so callers can fall back explicitly.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+        "content": "sha256:48253511b35df926c9dc9310cb4f5433c446d14c02a251bdf21a79b4327f9779",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_server_binding"
+        }
+      },
+      "id": "RLZ-S6GY56",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Owns atomic registration, /proc ancestry capture, dead/recycled PID pruning, and idempotent cleanup of runtime/server-bindings/<pid>.json records.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+        "content": "sha256:292a0e35a633607c5997c07b22188627a6a9e185dc1c37ae6757c3b0218f6003",
+        "locator": {
+          "kind": "symbol",
+          "name": "live_server_bindings"
+        }
+      },
+      "id": "RLZ-SGF7M3",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Reads live server-binding records and reclaims stale records whose PID exited or recycled so launch confirmation observes only active servers.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Strict Pydantic models define per-PID binding, ancestry, and `bound`, `unbound`, and `unreadable` states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:f0202f8f0f30be95b5e24847ac21f8c9e2e3d8f22e5e8d8906a9ad20e4b009d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessAncestor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:bbeaef67f3cf1e02560f1b14eef53040b128cae58a50a88f16f53377f6a7ffdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundIdentityPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:ad9a58c47cb2a88c32e7514965f8a3e9ec645e1b63b5ae53c8a8d46e6e293e7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServerBindingRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Procfs stat parsing handles spaces and parentheses in `comm`, caps ancestry at 8 with a cycle guard, and falls back to `os.getppid()` when `/proc` is absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:6a66c50ba2398680a26075efbfd5f44dbd7c44fe5d844bcd040ca2b1020fb390",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_ANCESTOR_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:7bde0d7b39be3928349091cafeb6b67bf4ca704dceebb4c9bd3845cb85b27b52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_stat_fields"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:c9697951917bb25dac9c4ca17e6e36786243ef753676187257bb6102652d3994",
+            "locator": {
+              "kind": "symbol",
+              "name": "process_start"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:63876aadbad2661ca87fdc4bfc5f8c0b7eb451ef8457553175acf236e8350c8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "process_ancestors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registration atomically writes `runtime/server-bindings/<pid>.json`, logs write errors once via `_BindingWarnings`, and returns an idempotent `atexit` cleanup callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:673a4e06a5dd7f369161bfed60730fa2a362a2df7fc24030e92fc358b70b4759",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BindingWarnings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:33db78a9eb5676a7c2f86fe2136e7eb874fda0c7736c94cd168365c8a79f9f87",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:48253511b35df926c9dc9310cb4f5433c446d14c02a251bdf21a79b4327f9779",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_server_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Live-record reading checks PID liveness plus `processStart` equality, reclaiming dead or recycled records while leaving unparseable files intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:adbe43e79000b57a8ad4607107a4b883ee04bb6ddc532a14db16fc380e53addb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_alive"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:7441e288564e2b557a11abd72140a6298143722ae6c5c1f334fccd715605f44b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_binding_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:292a0e35a633607c5997c07b22188627a6a9e185dc1c37ae6757c3b0218f6003",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_server_bindings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Harness root discovery matches exact NUL-delimited `PASEO_AGENT_ID=<agent_id>`, excludes `agents_remember.mcp` processes, and filters to non-descendant roots or `None` when `/proc` is unavailable.\n\nAnchor: `_has_matching_harness_env`; `_is_mcp_server_process`; `harness_root_pids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
+            "content": "sha256:7e9a2921f4c248c88d77f0595cb35f8839fe2be450a3c6b1a2d92257c13a80df",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

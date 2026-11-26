@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "Tip 4b6a2660: commit 96c4eba4 (leaf-agent-set task) gave the launch request two fields; test_role_document_chats.py::test_read_filters_archived... fails on the tip alone. L140 adapted two test lines because its own new case hit the same failure (no product code). Also unformatted on the tip: role_launch_receipts.py, role_launch_routes.py, test_paseo_launch.py (ruff format), kin of marks 44/45."
+  "statement": "Tip 4b6a2660: commit 96c4eba4 (leaf-agent-set task) gave the launch request two fields; test_role_document_chats.py::test_read_filters_archived... fails on the tip alone. L140 adapted two test lines because its own new case hit the same failure (no product code). Also unformatted on the tip: role_launch_receipts.py, role_launch_routes.py, test_paseo_launch.py (ruff format), kin of marks 44/45.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

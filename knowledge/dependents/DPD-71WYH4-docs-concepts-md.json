@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
+    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
     "role": "curator",
-    "statement": "Audited docs/concepts.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): twelve record kinds, derived record states, per-owner history files, mandatory knowledge gate, and review/worktree concepts remain accurate with zero contradictions.",
-    "task": "261112-BUG-L52",
+    "statement": "Audited docs/concepts.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): concepts, seat-identity lifecycle, dependent deferral contract, and IDENTITY MISMATCH: carve-out remain accurate; no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 30,
+  "revision": 31,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -316,7 +316,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
     },
     {
-      "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+      "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -341,12 +341,12 @@
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+      "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+      "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -439,7 +439,7 @@
     },
     {
       "anchor": {
-        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+        "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
         "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
         "locator": {
           "kind": "symbol",
@@ -451,7 +451,7 @@
     },
     {
       "anchor": {
-        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+        "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
         "content": "sha256:bc5079ebff54878518d0de262728685e89d6d820723ee8478daa47377d0c274a",
         "locator": {
           "kind": "symbol",
@@ -468,14 +468,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T10:27:33+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
     "task": "261112-BUG"
   }
 }

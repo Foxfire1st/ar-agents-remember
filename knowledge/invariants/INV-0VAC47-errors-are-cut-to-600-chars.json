@@ -32,6 +32,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Errors in short forms are cut to 600 characters and then end-reduced against the measured 400-token target with errorCut; the error field is retained. The exact recorded-result location and final cut hint take precedence when the recorded path and its hint cannot fit after other droppable content is removed. Whole-result retention remains under the existing detail-recording contract.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

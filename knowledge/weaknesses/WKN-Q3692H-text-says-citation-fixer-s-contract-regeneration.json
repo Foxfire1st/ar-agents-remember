@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "The text says that the citation fixer's `--contract` and the regeneration of the index work for a leaf only and names no route without a task; it calls `overview.index.json` an uncommitted cache. A second agent on a fresh scaffold read it and had no route. The route without a task is built by L78 (MIK-R78); the text is corrected there and read again at L62."
+  "statement": "The text says that the citation fixer's `--contract` and the regeneration of the index work for a leaf only and names no route without a task; it calls `overview.index.json` an uncommitted cache. A second agent on a fresh scaffold read it and had no route. The route without a task is built by L78 (MIK-R78); the text is corrected there and read again at L62.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

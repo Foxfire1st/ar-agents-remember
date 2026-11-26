@@ -28,8 +28,26 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "During prepare/stage/validate against a private staging index, a validation exception exits with the real index untouched: staged private content is discarded, owned ignore-file bytes and mode are restored, and the named error propagates.",
-  "status": "proposed",
   "supersedes": [
     "INV-DZB7MC"
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L56",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

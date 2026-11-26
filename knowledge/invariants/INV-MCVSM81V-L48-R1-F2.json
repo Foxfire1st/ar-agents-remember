@@ -21,6 +21,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "When a selected subject's answer lands, focus moves to the selected tree node -- or to the workspace's main-content target-state notice when the workspace shows one (a marker target whose family membership is unknown) -- only if the reader has not moved focus elsewhere since the selection (focus still on the selecting control or fallen to body); focus the reader moved while the subject was pending is kept.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L89",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }
