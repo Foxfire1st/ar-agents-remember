@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
-        "content": "sha256:7bafa336b2e27febe2158cd3a9e81a3dd3465c184a36f94b2a13f35277198532",
+        "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
+        "content": "sha256:ac1a2421dfd84f04c62c9759a8d3a3e56fb87672bfb455781aac4b4146f70e47",
         "locator": {
           "kind": "symbol",
           "name": "action_of"
@@ -16,12 +16,12 @@
         "handoffEntry": "MIK-R84@v12 part 5 + v14 rules 1-3 / one pointer per action",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "This function derives a pointer's action from its Before/When/For clause, which the step and uniqueness checks compare.",
+      "rationale": "This function derives a pointer's action from its Before/When/For clause or Markdown table row trigger, which the step and uniqueness checks compare.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+        "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
         "content": "sha256:17e7f8823465ac02fad70742298ed6f4d9b5b35973bb908a7d425bbb1c5adb03",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
-        "content": "sha256:c764997a583da7c1a40a927755800ad49e36b082fec0fb3480ac778eddce1962",
+        "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
+        "content": "sha256:b2f8c3483430dc5b07d69568d06a262764b28d54572dbb9b6c75b296b337dd65",
         "locator": {
           "kind": "file"
         }
@@ -57,12 +57,12 @@
   ],
   "references": {
     "1": {
-      "note": "A pointer's action is its sentence's opening Before/When/For clause, or none.",
+      "note": "A pointer's action is its table-row trigger (`row: <cell>`), its sentence's opening Before/When/For clause, or none.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
-            "content": "sha256:7bafa336b2e27febe2158cd3a9e81a3dd3465c184a36f94b2a13f35277198532",
+            "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
+            "content": "sha256:ac1a2421dfd84f04c62c9759a8d3a3e56fb87672bfb455781aac4b4146f70e47",
             "locator": {
               "kind": "symbol",
               "name": "action_of"
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
             "content": "sha256:bee877427e376c9a52f183aae6f5204f913b404ed9e951590c02e3f7a39ad52f",
             "locator": {
-              "end": 289,
+              "end": 296,
               "kind": "line_range",
-              "start": 266
+              "start": 273
             }
           },
           "kind": "code"
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
             "content": "sha256:20325ae0cd3269dae094b7c495ce3fce30d1cfe7f6d4fbec78c543da25b12044",
             "locator": {
-              "end": 379,
+              "end": 386,
               "kind": "line_range",
-              "start": 343
+              "start": 350
             }
           },
           "kind": "code"

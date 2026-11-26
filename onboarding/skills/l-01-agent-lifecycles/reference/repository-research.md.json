@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The source inventory is shown and corrected before research begins.\n\nAnchor: `## Review the sources before research`",
+      "note": "The source inventory is shown and corrected before research begins.",
       "targets": [
         {
           "anchor": {
-            "blob": "233f7991d478bb0895cfcfa4ffe6a4cbc020fd22",
-            "content": "sha256:36f6992eddb203c1c58e57bfb84b7c3b28f412e57f604ac26c66fda890acf843",
+            "blob": "9e1d1f3169cd026a79b9a65550a1ecc7b24caaea",
+            "content": "sha256:9dd4851c274a5a56857e2ec7f10e8765a815b3f19a440c8b005ac2439d5d055c",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "Research scouts shallowly, assigns areas, and records resumable progress and open questions.\n\nAnchor: `## Bound the research`",
+      "note": "Research scouts shallowly, assigns areas, and records resumable progress and open questions.",
       "targets": [
         {
           "anchor": {
-            "blob": "233f7991d478bb0895cfcfa4ffe6a4cbc020fd22",
-            "content": "sha256:36f6992eddb203c1c58e57bfb84b7c3b28f412e57f604ac26c66fda890acf843",
+            "blob": "9e1d1f3169cd026a79b9a65550a1ecc7b24caaea",
+            "content": "sha256:9dd4851c274a5a56857e2ec7f10e8765a815b3f19a440c8b005ac2439d5d055c",
             "locator": {
               "kind": "file"
             }
@@ -33,12 +33,12 @@
       ]
     },
     "3": {
-      "note": "A registry entry or search hit is a pointer, not proof; research writes no memory.\n\nAnchor: `## Bound the research`",
+      "note": "A registry entry or search hit is a pointer, not proof; research writes no memory.",
       "targets": [
         {
           "anchor": {
-            "blob": "233f7991d478bb0895cfcfa4ffe6a4cbc020fd22",
-            "content": "sha256:36f6992eddb203c1c58e57bfb84b7c3b28f412e57f604ac26c66fda890acf843",
+            "blob": "9e1d1f3169cd026a79b9a65550a1ecc7b24caaea",
+            "content": "sha256:9dd4851c274a5a56857e2ec7f10e8765a815b3f19a440c8b005ac2439d5d055c",
             "locator": {
               "kind": "file"
             }

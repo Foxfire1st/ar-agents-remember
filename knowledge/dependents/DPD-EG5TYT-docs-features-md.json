@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
+    "commit": "130545f8071e7c9fd369e170b0851da63abee6f6",
     "role": "curator",
-    "statement": "Audited docs/features.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): product feature overview, role launch, and evidence/memory descriptions remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited docs/features.md (lines 1-518) against synced Attempt-5 tree d1e7bbbc and roles/{worker,reviewer}.md: role separation, Manager launch sequence, and all system/ guidelines duties for Worker and Reviewer remain accurate with no contradiction.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,12 +17,12 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+        "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
         "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
         "locator": {
           "kind": "symbol",
@@ -93,17 +93,17 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+      "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
     {
-      "blob": "1932e1048e02929da857033da376474be2f5bb19",
+      "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
     },
@@ -223,7 +223,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
+      "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -234,7 +234,7 @@
     },
     {
       "anchor": {
-        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+        "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -246,7 +246,7 @@
     },
     {
       "anchor": {
-        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+        "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
         "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T20:16:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

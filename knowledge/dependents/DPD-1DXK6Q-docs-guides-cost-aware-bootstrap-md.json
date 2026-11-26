@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
+    "commit": "d7b08155a88066fe08ba556c8230961f0042e90d",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the cost-aware bootstrap guide's claims about user_settings_init, memory_init, memory_baseline_adopt, and role_start's per-start agent, model, and effort overrides still hold because CAP-L4 only shortened MCP tool descriptions in role_agents.py and memory.py without changing tool parameters or behavior.",
-    "task": "261124-CAP-L4",
+    "statement": "Audited docs/guides/cost-aware-bootstrap.md in full (lines 1-136) against Round-4 CODE PASS tree b3131ef2: Bootstrap five written artifacts/line-1 report path, research workflow, and role settings match slimmed roles/bootstrap.md and reference/repository-research.md.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/guides/cost-aware-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,32 +51,25 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "1932e1048e02929da857033da376474be2f5bb19",
+      "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
     },
     {
-      "blob": "233f7991d478bb0895cfcfa4ffe6a4cbc020fd22",
+      "blob": "9e1d1f3169cd026a79b9a65550a1ecc7b24caaea",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/reference/repository-research.md"
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

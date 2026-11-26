@@ -45,4 +45,3 @@ Cleanup attempts process/group termination and waits up to the configured reap i
 
 - Capture enforces aggregate bytes, diagnostics and NUL-record budgets. [9]
 - Selector readiness precedes each descriptor read; the loop checks its monotonic remaining budget and rejects incomplete final records. No descriptor-nonblocking setting or universal OS-read timing bound is inferred. [10]
-

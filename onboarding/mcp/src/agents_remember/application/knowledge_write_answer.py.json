@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "448fdfb59f717baa56d555f7c4bce32edda1ded1",
-            "content": "sha256:c9c0b1b100ce23cdc812c3bb9fab6a2427540ca942ed229bec7903f222299dc1",
+            "blob": "6f726908b79ce4dcabffeeab78e267e11f0dff6e",
+            "content": "sha256:fea138bc1e2da123b38c514a4edf4f841ae2ef7a1561343bc9c6dd93b4618690",
             "locator": {
               "kind": "symbol",
               "name": "write_answer"

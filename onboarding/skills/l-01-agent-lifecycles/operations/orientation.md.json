@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:9359250171789554c452dd26998af32a77aaa53cbaba8d1a86056690a280f049",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:90084698af39cfa9e862d11d3dc90c1294e64f2dd092a99a101e85eef1856154",
         "locator": {
-          "end": 22,
+          "end": 14,
           "kind": "line_range",
-          "start": 14
+          "start": 6
         }
       },
       "id": "RLZ-6CFA2A",
@@ -17,17 +17,17 @@
         "handoffEntry": "PNT-R04@v1 §4 / F10",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Orientation uses the supplied exact taskDocReadArgs rather than another task address.",
+      "rationale": "Orientation binds the launcher's exact canonical assignment, selected rendered task files, AR-paired enclosure, and agents-remember-task server binding.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:3378b5a3cef583f3fa374ebf228a6fc935d42ef1e9e8ec0e6a224892d231615c",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:10c3ff5e423c09c324ba89ec64f62f0a3dda09663bc1c170dcea7ab2b79caf15",
         "locator": {
-          "end": 39,
+          "end": 14,
           "kind": "line_range",
-          "start": 30
+          "start": 12
         }
       },
       "id": "RLZ-BPMMTC",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:4f607318c477fc9172ba155e19ffe2c4ba75df930b80e6ec04e1334b4874cc71",
         "locator": {
-          "end": 50,
+          "end": 24,
           "kind": "line_range",
-          "start": 50
+          "start": 22
         }
       },
       "id": "RLZ-C5XM1T",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:2285fd282cb71b572436bd7e2e3a5139619905baaac54d3ec4d901df3f09990a",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:01d54e8a8f0dc85fa2799485ae422e1ca7a0ce4f276e13768e9ccc4f66c39ed2",
         "locator": {
-          "end": 94,
+          "end": 40,
           "kind": "line_range",
-          "start": 48
+          "start": 27
         }
       },
       "id": "RLZ-CJF248",
@@ -79,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:a7e2999b70762e5d0799f0e9397af6152703c5fbc8d047572a4b45a0677c407f",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:f6df33b734bd2e429d2a2815f6618791bb9e2ad7de5c2d4b370be110b09a510c",
         "locator": {
-          "end": 79,
+          "end": 35,
           "kind": "line_range",
-          "start": 53
+          "start": 27
         }
       },
       "id": "RLZ-E9F3YP",
@@ -93,13 +93,13 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "Orientation preserves the recipient-or-parent question route and the quoted-answer chain, and directly links the message-handover procedures for a message that names files and for a full-store refusal. It is not a native delivered-message witness.",
+      "rationale": "Orientation preserves the recipient-or-parent developer-question route, pending/unreachable recovery, and three-condition quoted-answer provenance; roles' Reference indexes link reference/message-handover.md for file-naming and full-store refusal transport.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:dad6d63bfacdeb22edc166840acc31227e9cb1fbace53b7114032a49f409c1f9",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:cec64492c4ea9fbcdf71060c6c08adf8313981c36bd575abb9e6b3254789dcb5",
         "locator": {
           "kind": "file"
         }
@@ -115,10 +115,10 @@
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:23a643f1f5ba4c6a5af3f8f54dd0cce88bd8b5b1d422f95f0e44b98d012cf667",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:9edfb6ab5326a906cfbdabedb6d47de0236659bf320c6c09d90d0a099429ebc8",
         "locator": {
-          "end": 10,
+          "end": 6,
           "kind": "line_range",
           "start": 6
         }
@@ -134,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:2e1112b7ef33da25daefb5371adeb4895bbb998dc151aa67272b3be24c6f8dc9",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:1f83beb0bfd172d89991d0e50ee981561a0d5c39e17e7a56b1874b4547851078",
         "locator": {
-          "end": 28,
+          "end": 14,
           "kind": "line_range",
-          "start": 14
+          "start": 4
         }
       },
       "id": "RLZ-Q1RJX3",
@@ -153,12 +153,12 @@
     },
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:67f370d932415d70f2bb9653e6a8898195b1d0e4afde9bbe4fac31ea4f588027",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:1e0108a9a11309c48312b1e899c1e3678e985ecab19c0e690f1bc17770cbf878",
         "locator": {
-          "end": 99,
+          "end": 51,
           "kind": "line_range",
-          "start": 97
+          "start": 48
         }
       },
       "id": "RLZ-SCX2F5",
@@ -173,16 +173,28 @@
   ],
   "references": {
     "1": {
-      "note": "Common orientation text is all-role, and a Curator-only section binds curation to the serving build.",
+      "note": "Common orientation text is all-role, and a Curator-only section binds curation to the serving build.\n\nAnchor: `## Bind curation to the serving build`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-            "content": "sha256:34ee80c59459674ec9d85e17b3cf364874b31cdc6789b019345c46450127b67c",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:5d253c613878c335780e86c0291a8f18e3b20580f0639962da7ad29f825eedeb",
             "locator": {
-              "end": 99,
+              "end": 6,
               "kind": "line_range",
-              "start": 94
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:1e0108a9a11309c48312b1e899c1e3678e985ecab19c0e690f1bc17770cbf878",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"
@@ -194,12 +206,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-            "content": "sha256:a957fb8d8eafe8f6e4c5137fcb93eb19b17dfa08040ba8a3dbe8d43daaa735c1",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:1e0108a9a11309c48312b1e899c1e3678e985ecab19c0e690f1bc17770cbf878",
             "locator": {
-              "end": 99,
+              "end": 51,
               "kind": "line_range",
-              "start": 96
+              "start": 48
             }
           },
           "kind": "code"

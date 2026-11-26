@@ -23,6 +23,9 @@ Publishes a prepared role launch's handover artifacts and initial execution rece
 ## Evidence
 
 - `publish_prepared_launch` publishes handover files, constructs the launch call and initial receipt, and installs the receipt inside `role_launch_enclosure.publication_scope` without calling the host. [1]
+
 - `_publish_files` applies `successor_prompt`, non-held opening message, and ACP instruction before writing artifacts via `publish_handover_files` and building `first_message`. [2]
+
 - `_prepared_launch_call` mints the agent ID and builds the serialized launch call payload via `build_launch_call(RoleLaunch(...))`. [3]
+
 - `_launch_receipt` populates `RECEIPT_SCHEMA`, `heldStoreGeneration: 0`, `status: "starting"`, digests, `acpInstruction`, `replayRequest`, and conditional held-seat fields. [4]

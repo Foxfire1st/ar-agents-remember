@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-        "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
+        "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+        "content": "sha256:c06acad4880c1573dc61ce9e5b26a7e2a5bab1fce2943727701cb7f96bd5a47b",
         "locator": {
           "kind": "symbol",
           "name": "project_handover"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-        "content": "sha256:231462c0f69b19a6c4d9fce70c209d5af66dc7649830bd96cf1dc8e16fa71a4c",
+        "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+        "content": "sha256:088f17315db42e2c84ca51b986d63b8864cacefe5521fcaf522659e4dc647e55",
         "locator": {
           "kind": "symbol",
           "name": "WORKSPACE_FIELDS"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-        "content": "sha256:d5fac2cd344face9e0e0c79a157df7570c9f162041e928544bb0e3428771b715",
+        "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+        "content": "sha256:f99fa56e09a6de53012cea034c47b180b780dd68ce564007617160a09ae3b42e",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,26 @@
     },
     {
       "anchor": {
-        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-        "content": "sha256:5a6d4cdad0e47152e929be19cda81e12ef0fba2ff5b03ac49ca0b23e00b7ce33",
+        "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+        "content": "sha256:c06acad4880c1573dc61ce9e5b26a7e2a5bab1fce2943727701cb7f96bd5a47b",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_handover"
+        }
+      },
+      "id": "RLZ-JV50SX",
+      "invariant": "INV-4BYFWJ",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 1",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Builds the deduplicated wire projection omitting nulls, duplicate document/parent/returnAddress refs, leafSeats.roleMessageArguments, redundant taskDocumentFiles defaults, and duplicate inline handoverFile while keeping task_name/slug and readerArguments.shared inline.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+        "content": "sha256:1a49c0fe3d4eabb29c7e4c9a0cc285a568cc9565a263c03fad94cd152049e4d3",
         "locator": {
           "kind": "symbol",
           "name": "first_read_paragraph"
@@ -69,17 +87,17 @@
         "handoffEntry": "cap-l2-inv-8amsgv",
         "leaf": "261124-CAP-L2"
       },
-      "rationale": "Names assignment, host.ownerRelation, and host.developerQuestions as available in handoverFile so omitted prose fields remain discoverable.",
+      "rationale": "States that omitted fields live in the complete JSON named on the trailing 'AR handover artifacts:' line (read one field per step, not whole file) so file-only prose fields remain discoverable.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "`PROJECTION_FIELDS`, `HOST_FIELDS`, `FILE_ONLY_FIELDS`, and `FILE_ONLY_NESTED` define the slim wire projection (`host.parent`, `host.developerQuestionRoute`) and keep `assignment`, `canonicalTaskReportPath`, `host.ownerRelation`, and `host.developerQuestions` exclusively in `.handover.json`.",
+      "note": "`PROJECTION_FIELDS`, `WORKSPACE_FIELDS`, `HOST_FIELDS`, `FILE_ONLY_FIELDS`, and `FILE_ONLY_NESTED` define the slim deduplicated wire projection and list all fields kept exclusively in `.handover.json` (including `leafSeats.roleMessageArguments`, `workspace.taskReportRoot`, `workspace.taskReportAccessRoot`, and `documents[0]` duplicates).",
       "targets": [
         {
           "anchor": {
-            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
             "content": "sha256:2038429ac405b1e6300c1d89899a1ce8d5dea6a72db1561ba8912e0cec40480e",
             "locator": {
               "kind": "symbol",
@@ -90,12 +108,33 @@
         },
         {
           "anchor": {
-            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-            "content": "sha256:cf344ff79925098f79f55b26a798b22cd36300856f470c2febefb05c1d8d2144",
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:088f17315db42e2c84ca51b986d63b8864cacefe5521fcaf522659e4dc647e55",
             "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 62
+              "kind": "symbol",
+              "name": "WORKSPACE_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:02084ed611a1d77aa854fe73f24dd5dd15e9adb16118d2407ed5f6c4d8a2d93f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FILE_ONLY_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:7496119425c8b1c8f40eab6b237e7ad935a01ed5700431f2646041faca761feb",
+            "locator": {
+              "kind": "symbol",
+              "name": "FILE_ONLY_NESTED"
             }
           },
           "kind": "code"
@@ -103,15 +142,59 @@
       ]
     },
     "2": {
-      "note": "`project_handover` subsets top-level, workspace, reader, host, and seat fields, dropping absent and `null` values and naming `handoverFile`.",
+      "note": "`project_handover` omits `handoverFile` by default, flattens `documents[0]`, emits only non-default `taskDocumentFiles`, collapses identical `readerArguments` to `shared`, deduplicates `host.parent` refs against `selection`, and projects `leafSeats` to `roles` only.",
       "targets": [
         {
           "anchor": {
-            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-            "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:c06acad4880c1573dc61ce9e5b26a7e2a5bab1fce2943727701cb7f96bd5a47b",
             "locator": {
               "kind": "symbol",
               "name": "project_handover"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:ec7f9e2456741200ee18029a63c92477ab0e87d055e71446a48554812f0c42e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_document_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:ea2d99a2ab15c46fc1762b76c9a16ce7e60b8f245a57cf4bfdcd0ee27033bfc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reader_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:ead4cf2603b9e61d16deedebfa41d5d5aa0ce59fc2a29eaf995933289324a889",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_host"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:9f4dff83adedc5b594c6487d0414187b52593bda4ad71f1c04262226bb1197d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_leaf_seats"
             }
           },
           "kind": "code"
@@ -119,15 +202,26 @@
       ]
     },
     "3": {
-      "note": "`first_read_paragraph` carries the unique first-read rules and names `assignment`, `host.ownerRelation`, and `host.developerQuestions` as living in `handoverFile`.",
+      "note": "`first_read_paragraph` compacts a repeated `renderedReadPath` lead to `documents[0].renderedReadPath`, states `Each contentDigest is launch snapshot; turn != acceptance.`, and directs readers to the full JSON on the trailing `AR handover artifacts:` line (`1 field/step`).",
       "targets": [
         {
           "anchor": {
-            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
-            "content": "sha256:5a6d4cdad0e47152e929be19cda81e12ef0fba2ff5b03ac49ca0b23e00b7ce33",
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:1a49c0fe3d4eabb29c7e4c9a0cc285a568cc9565a263c03fad94cd152049e4d3",
             "locator": {
               "kind": "symbol",
               "name": "first_read_paragraph"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
+            "content": "sha256:f5922ac5cc774b2ccbadcc513dc85becf6897742d8fefb8a8d46dae712c059e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_first_read"
             }
           },
           "kind": "code"
@@ -139,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
             "content": "sha256:3b9a1f80ea245cb58e9335025c26fc602acfaa9485ebc9697d5b65a93d7b83ef",
             "locator": {
               "kind": "symbol",

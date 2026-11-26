@@ -52,16 +52,16 @@
       ]
     },
     "4": {
-      "note": "The Bootstrap role points to this template before the report is written.",
+      "note": "The Bootstrap role points to this template before the report is written.\n\nAnchor: `bootstrap-report.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:69b9d360af49499e7753981a25f37d9979f03c6cbdc62b051e223081bbeed380",
+            "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+            "content": "sha256:726b655d6b6b4aa3caa29cdcbbbf46f3b8ddceeba7e65bb2124fa7a409de7704",
             "locator": {
-              "end": 32,
+              "end": 28,
               "kind": "line_range",
-              "start": 32
+              "start": 28
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
           },

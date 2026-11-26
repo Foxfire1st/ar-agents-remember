@@ -23,34 +23,29 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "skills/l-01-agent-lifecycles/roles",
     "skills/l-01-agent-lifecycles/operations",
     "skills/l-01-agent-lifecycles/templates",
     "mcp/tests",
     "mcp/src/agents_remember/cli",
-    "mcp/test_support/agents_remember_test_support/testing"
+    "mcp/test_support/agents_remember_test_support/testing",
+    "skills/l-01-agent-lifecycles/reference/curator",
+    "skills/l-01-agent-lifecycles/reference/review",
+    "skills/l-01-agent-lifecycles/reference/worker"
   ],
   "schema": "ar-family/v1",
   "title": "The leaf's seats run their loop directly",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-RSM-L1",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-RSM",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

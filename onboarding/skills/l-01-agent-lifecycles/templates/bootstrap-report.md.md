@@ -17,4 +17,5 @@ The template supplies sections and state fields only; the Bootstrap role (`roles
 - The role owns the report duty and the operation owns the evidence standard; the template supplies sections and fields. [1]
 - The report opens with its own path and records onboarding and knowledge-foundation state as read, never as made here. [2]
 - The named next step is starting the Architect, and the Boundaries checklist denies commits, branch moves, worktrees, migration and authored onboarding or knowledge. [3]
+
 - The Bootstrap role points to this template before the report is written. [4]

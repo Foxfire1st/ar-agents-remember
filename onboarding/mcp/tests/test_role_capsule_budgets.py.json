@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+        "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
         "content": "sha256:0e900cbac56698008fa166cc670908bf9ee525f0fed430c04221a15030cda7bf",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
-        "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+        "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
+        "content": "sha256:2abf9d4546b7a4abcf852a0e364d0b92f53f6813b9a74eb39782482cba9e2292",
         "locator": {
           "kind": "symbol",
           "name": "test_no_capsule_exceeds_its_recorded_budget"
@@ -39,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
-        "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+        "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
+        "content": "sha256:2abf9d4546b7a4abcf852a0e364d0b92f53f6813b9a74eb39782482cba9e2292",
         "locator": {
           "kind": "symbol",
           "name": "test_no_capsule_exceeds_its_recorded_budget"
@@ -52,7 +52,7 @@
         "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
         "leaf": "261112-BUG-L8"
       },
-      "rationale": "This test compiles the actual current matrix, measures details/digest and requires the current measurement/source/ceiling/history guard plus the separately owned handover projection checks to produce no findings; it does not execute renewal.",
+      "rationale": "This test compiles the actual current matrix, measures details/digest and requires the current measurement/source/population/history guard plus the separately owned handover projection checks to produce no findings; it does not execute renewal.",
       "role": "support"
     }
   ],
@@ -62,36 +62,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:0e900cbac56698008fa166cc670908bf9ee525f0fed430c04221a15030cda7bf",
             "locator": {
-              "end": 349,
+              "end": 346,
               "kind": "line_range",
-              "start": 344
+              "start": 341
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:abd53b56df301564da99a6ecb80d1f03cfb18c686c1597147951310683291cd3",
             "locator": {
-              "end": 88,
+              "end": 85,
               "kind": "line_range",
-              "start": 78
+              "start": 75
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:7dff536f0ef1b96ea21436fba17d9885cfa6a4abf8a2c94de1d3bad34de682c9",
             "locator": {
-              "end": 186,
+              "end": 183,
               "kind": "line_range",
-              "start": 180
+              "start": 177
             }
           },
           "kind": "test"
@@ -103,36 +103,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:369e341b62746b7c7072f8849d6ff40fb1b6155350b528851c6d7c483d620140",
             "locator": {
-              "end": 226,
+              "end": 223,
               "kind": "line_range",
-              "start": 194
+              "start": 191
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:e94d57ebaaacf8349e480ede3a6abfa44e49dfa6a0805a3614af5b726123a8df",
             "locator": {
-              "end": 321,
+              "end": 318,
               "kind": "line_range",
-              "start": 308
+              "start": 305
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:9eab46a1fa3c09090a5036575cb9396dfb712e8f42fcba9d4b55396ea4850ea1",
             "locator": {
-              "end": 505,
+              "end": 498,
               "kind": "line_range",
-              "start": 496
+              "start": 489
             }
           },
           "kind": "test"
@@ -140,28 +140,28 @@
       ]
     },
     "3": {
-      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, then compare them with renewed measurements and authored role, detail and digest ceilings. Exact populations reject omissions and orphans. Historical fixture mutation controls separately exercise exact and over-limit inputs. These are source assertions, not a fresh test run.",
+      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, then compare them with renewed measurements in `capsule-budgets-current.json` (current word ceilings are retired; only freshness and exact population completeness are checked). Exact populations reject omissions and orphans. Historical fixture mutation controls separately exercise exact and over-limit inputs. These are source assertions, not a fresh test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
-            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
+            "content": "sha256:2abf9d4546b7a4abcf852a0e364d0b92f53f6813b9a74eb39782482cba9e2292",
             "locator": {
-              "end": 493,
+              "end": 486,
               "kind": "line_range",
-              "start": 469
+              "start": 466
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
             "locator": {
-              "end": 170,
+              "end": 154,
               "kind": "line_range",
-              "start": 162
+              "start": 146
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -169,12 +169,12 @@
         },
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:308f92575be4c7d751ed5f92e80002bdfa072a13de7f664308ff5cdff0c29104",
             "locator": {
-              "end": 629,
+              "end": 622,
               "kind": "line_range",
-              "start": 509
+              "start": 502
             }
           },
           "kind": "test"
@@ -182,11 +182,11 @@
       ]
     },
     "4": {
-      "note": "The current record sets capsule ceilings of 5500 words for Architect, 4600 for Manager, 4537 for Curator, 4200 for Reviewer, 4000 for Bootstrap, 3800 for Orchestrator and 3742 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling. Registry completeness, exact renewed measurements and ceiling controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "While `capsule-budgets-current.json` retains historical word-ceiling fields (5500 Architect, 4600 Manager, 4537 Curator, 4200 Reviewer, 4000 Bootstrap, 3800 Orchestrator, 3742 other roles; 2500 step-detail; 2327 digest), `_current_area_findings` in `capsule_budget_d695.py` no longer enforces word ceilings and checks only registry completeness and exact renewed measurement freshness. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
             "content": "sha256:a498c38914da444ccf71ffa3fc2d0a4105c57881edcfec9ecd17bd9150c839ef",
             "locator": {
               "end": 6175,
@@ -199,12 +199,12 @@
         },
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:566cd4138538906715ef81f2473c8f0bfa1d6d88356c04189426646e182b1c5b",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:2d2dbc40b42e85784a1eca78117a32670bbc33b49aa4aba3f3ee8e3004322025",
             "locator": {
-              "end": 77,
+              "end": 61,
               "kind": "line_range",
-              "start": 48
+              "start": 45
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:e94d57ebaaacf8349e480ede3a6abfa44e49dfa6a0805a3614af5b726123a8df",
             "locator": {
               "kind": "symbol",
@@ -233,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
             "content": "sha256:a498c38914da444ccf71ffa3fc2d0a4105c57881edcfec9ecd17bd9150c839ef",
             "locator": {
               "end": 6175,
@@ -251,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
             "content": "sha256:f76fee3743fd30c4087e3a61ac627c50216ddb3f658dcf108751b310ed0e55a6",
             "locator": {
               "kind": "symbol",

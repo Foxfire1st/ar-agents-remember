@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
-        "content": "sha256:f284c59d1b80b9a080cc4ca8bac943b671f73be71d6c4a27da784621a9d9801e",
+        "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
+        "content": "sha256:ebdff50730cacd597966c8822348757fd6d6c18c2c55b6cbfd2a91c3c71e16ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "brief_prompt"
+        }
+      },
+      "id": "RLZ-16WQZS",
+      "invariant": "INV-4BYFWJ",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 1",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Assembles the tightened static prefix and Launch Context while still returning the lossless handoverFile reference and bytes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
+        "content": "sha256:7acff34407a927a358240bbc657b1568a4a839122bf9c9e72859bb7d475e1ca8",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
-        "content": "sha256:c35e469fd76a51416c00b5cfd82c15259c621de4b5a64025b99d0660915dadde",
+        "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
+        "content": "sha256:45d32f6e5df15ff263cb72182458754bbe0aeebbfe0e9a577f0eee82f1c4879d",
         "locator": {
           "kind": "symbol",
           "name": "brief_prompt"
@@ -38,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
-        "content": "sha256:46add1de5e42fe70fcc08dca3d33d93eb35877a8ebde2b5a92dbb814cf541c68",
+        "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
+        "content": "sha256:45d32f6e5df15ff263cb72182458754bbe0aeebbfe0e9a577f0eee82f1c4879d",
         "locator": {
           "kind": "symbol",
           "name": "brief_prompt"
@@ -61,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
-            "content": "sha256:46add1de5e42fe70fcc08dca3d33d93eb35877a8ebde2b5a92dbb814cf541c68",
+            "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
+            "content": "sha256:45d32f6e5df15ff263cb72182458754bbe0aeebbfe0e9a577f0eee82f1c4879d",
             "locator": {
               "kind": "symbol",
               "name": "brief_prompt"
@@ -72,7 +90,7 @@
         },
         {
           "anchor": {
-            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
             "content": "sha256:5434dfa0e6f9ae61fcc7992abc5c8a462c604feb949215399b52cb1dd5ecb311",
             "locator": {
               "end": 28,
@@ -89,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
             "content": "sha256:b78adeeacac8769e51e9f56a418d7b8522f3d1fdfac662157ab3465128fe3262",
             "locator": {
-              "end": 97,
+              "end": 111,
               "kind": "line_range",
-              "start": 92
+              "start": 106
             }
           },
           "kind": "code"
@@ -106,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
             "content": "sha256:0df40b0943d42446208ba1aac762b23e2e4cea96f6aa90790885597d9c6791d3",
             "locator": {
               "kind": "symbol",
@@ -122,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+            "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
             "content": "sha256:16186a4d485dfdc38556c11d41657182d52bfa678bd7916f78b3f42e50865d45",
             "locator": {
               "kind": "symbol",
@@ -133,8 +151,8 @@
         },
         {
           "anchor": {
-            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
-            "content": "sha256:c35e469fd76a51416c00b5cfd82c15259c621de4b5a64025b99d0660915dadde",
+            "blob": "62d50f1ffe4dc49949fef12de8be2ee6275ec28d",
+            "content": "sha256:45d32f6e5df15ff263cb72182458754bbe0aeebbfe0e9a577f0eee82f1c4879d",
             "locator": {
               "kind": "symbol",
               "name": "brief_prompt"

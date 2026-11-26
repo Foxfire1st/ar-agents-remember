@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
+    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
     "role": "curator",
-    "statement": "docs/getting-started.md remains accurate on 9af497f7bb99 because npm run build and npm run dev scripts, dashboard entry points, and installation steps are unchanged after swapping ESLint for oxlint and upgrading TypeScript to 7.0.2.",
-    "task": "261125-DEP-L6",
+    "statement": "Audited docs/getting-started.md in full (lines 1-263) against Round-4 CODE PASS tree b3131ef2: prerequisites, five install steps, Bootstrap three questions/boundaries, and first Architect start match slimmed operations/bootstrap.md.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
@@ -132,14 +132,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:08:02+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L6",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
-    "task": "261125-DEP"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

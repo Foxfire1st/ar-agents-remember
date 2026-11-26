@@ -230,16 +230,16 @@
       ]
     },
     "8": {
-      "note": "Selected Orientation starts from supplied assignment and forbids loading other role/core files.",
+      "note": "Orientation uses the launcher's exact role and canonical assignment and reads only selected packets and rendered task files via file tools (no `.json`, no unrelated corpus).",
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-            "content": "sha256:5d3f1bf6cdd2365ded442eb31d1adc21bc4cfa8105425e826f44cfbba2e8acfb",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:9edfb6ab5326a906cfbdabedb6d47de0236659bf320c6c09d90d0a099429ebc8",
             "locator": {
-              "end": 22,
+              "end": 6,
               "kind": "line_range",
-              "start": 22
+              "start": 6
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },

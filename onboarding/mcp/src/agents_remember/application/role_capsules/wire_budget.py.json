@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
-        "content": "sha256:14801f721a729ffd7df12cd353c3c844bd89fb88b2ed5afa61d93f809457fc2f",
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
         "locator": {
           "kind": "symbol",
           "name": "evaluate_wire_token_ceilings"
@@ -16,12 +16,30 @@
         "handoffEntry": "cap-l2-inv-zvd184",
         "leaf": "261124-CAP-L2"
       },
-      "rationale": "Checks measured Turn-1 prompt token counts against PHASE_1_WIRE_TOKEN_CEILINGS and explicit appendix-adjusted ceilings (PHASE_1_HELD_APPENDIX_ALLOWANCE=600, PHASE_1_LAUNCH_APPENDIX_ALLOWANCE=900) and reports every exceeded or unconfigured key.",
+      "rationale": "Checks measured Turn-1 prompt and compiled-capsule token counts against WIRE_TOKEN_CEILINGS (default) or COMPILED_CAPSULE_TOKEN_CEILINGS and reports every exceeded or unconfigured key.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:d543aae5b6e562d1236a3945c000f7ce64ae9f776a7e0e666c31ef07989e72c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure_compiled_capsule_tokens"
+        }
+      },
+      "id": "RLZ-VWRWKD",
+      "invariant": "INV-7RHM8E",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 5",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Defines WIRE_TOKEN_CEILINGS, COMPILED_CAPSULE_TOKEN_CEILINGS, evaluate_wire_token_ceilings, and the single-source compiled-capsule token measurer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
         "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
         "locator": {
           "kind": "symbol",
@@ -40,15 +58,26 @@
   ],
   "references": {
     "1": {
-      "note": "`PHASE_1_WIRE_TOKEN_CEILINGS` exports immutable Phase 1 base ceilings for all eight default launch pairs beside `PHASE_1_HELD_APPENDIX_ALLOWANCE` (600) and `PHASE_1_LAUNCH_APPENDIX_ALLOWANCE` (900).",
+      "note": "`WIRE_TOKEN_CEILINGS` exports immutable Turn-1 ceilings for all eight default launch pairs (2,500 / 3,000 / 3,800) beside 34-key `COMPILED_CAPSULE_TOKEN_CEILINGS` (1,500 / 2,000 / 2,600).",
       "targets": [
         {
           "anchor": {
-            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
-            "content": "sha256:9c25b53a90804c9ca32da1e4d09ccf11d6a666986f90119d0eb3f2204519ba71",
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:13bfe4ca8cf8b9ee39b3d9d0ac2846f5f3bbc4e5f5e7fedfebc90bd365512dac",
             "locator": {
               "kind": "symbol",
-              "name": "PHASE_1_WIRE_TOKEN_CEILINGS"
+              "name": "WIRE_TOKEN_CEILINGS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:f745e1a189f6304eaa54fb922f62fbc044ee06f85a2abfd3fedf6f894a9f545a",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPILED_CAPSULE_TOKEN_CEILINGS"
             }
           },
           "kind": "code"
@@ -60,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
             "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
             "locator": {
               "kind": "symbol",
@@ -72,15 +101,31 @@
       ]
     },
     "3": {
-      "note": "`evaluate_wire_token_ceilings` reports unconfigured keys and strictly over-ceiling totals without ratcheting.",
+      "note": "`evaluate_wire_token_ceilings` defaults to `WIRE_TOKEN_CEILINGS` and reports unconfigured keys and strictly over-ceiling totals without ratcheting.",
       "targets": [
         {
           "anchor": {
-            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
-            "content": "sha256:14801f721a729ffd7df12cd353c3c844bd89fb88b2ed5afa61d93f809457fc2f",
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
             "locator": {
               "kind": "symbol",
               "name": "evaluate_wire_token_ceilings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`measure_compiled_capsule_tokens` counts `o200k_base` tokens of the compact-bound role-filtered shared block plus compiled instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:d543aae5b6e562d1236a3945c000f7ce64ae9f776a7e0e666c31ef07989e72c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_compiled_capsule_tokens"
             }
           },
           "kind": "code"

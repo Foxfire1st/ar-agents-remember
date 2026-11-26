@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
-            "content": "sha256:4182b0940e3c41d282c2b450723276c08074af4f66f87da9a97141b244238236",
+            "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
+            "content": "sha256:1530649a3ca40333efa4cc9b441c30a434b6cf90f36540f6ca192578d21e0fd3",
             "locator": {
-              "end": 83,
+              "end": 22,
               "kind": "line_range",
-              "start": 83
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
           },

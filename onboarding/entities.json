@@ -412,12 +412,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
             "locator": {
-              "end": 60,
+              "end": 16,
               "kind": "line_range",
-              "start": 60
+              "start": 16
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },

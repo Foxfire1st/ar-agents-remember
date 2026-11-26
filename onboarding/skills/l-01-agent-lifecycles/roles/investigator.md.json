@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -37,10 +37,10 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:0af9bfc0c112ba4334cac30e22583e7e8cfc7a8f104d9d40c61fcebfdcf4fd17",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:2446d355be9ac295614af8fa2679f21f445e6f618d0d665c2c6964aa748d24f6",
         "locator": {
-          "end": 82,
+          "end": 18,
           "kind": "line_range",
           "start": 8
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -68,13 +68,13 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
+      "rationale": "States the Investigator's parent-first concern/question route and parentless own-chat fallback (line 8), linking message-handover in its Reference index (line 25); operations/orientation.md owns the full question/relayed-answer procedure.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -90,8 +90,8 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -107,29 +107,12 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
         "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-DX43S4",
-      "invariant": "INV-7VZRZW",
-      "origin": {
-        "handoffEntry": "R99-14-harness-work",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "The canonical Investigator states harness work autonomy and same-assignment permissions, checked/credited helpers and seat-owned boundary acts. This is role-source doctrine, not a SystemSpecialist owner or delivered-capsule witness.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:7ed2be0e3c7ebe89f48eb29c7b1896b096d32c896b31ca9d27bd68275256c5bb",
-        "locator": {
-          "end": 28,
+          "end": 12,
           "kind": "line_range",
-          "start": 28
+          "start": 12
         }
       },
       "id": "RLZ-FRP7FT",
@@ -138,17 +121,17 @@
         "handoffEntry": "KNO-R04@v1 rules 6–8",
         "leaf": "261112-KNO-L4"
       },
-      "rationale": "Names the file-tool route for available saved briefs and the whole-record route for investigation.",
+      "rationale": "Directs the Investigator to call read_ar_files (open briefs) and knowledge_read before code inspection; saved-brief and whole-record detail live in reference/knowledge/use.md.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:2c45bdb1ead3c0dfe6dcbd9682f6b7430f209d9ee5b1af5c582282570d656cb5",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:9018aee88d37ea4fee05c3cb6433890dfea2013b46bb21f717603099d1cf51dc",
         "locator": {
-          "end": 18,
+          "end": 8,
           "kind": "line_range",
-          "start": 18
+          "start": 8
         }
       },
       "id": "RLZ-JJE91B",
@@ -162,8 +145,8 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -179,8 +162,8 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -196,8 +179,8 @@
     },
     {
       "anchor": {
-        "blob": "27304d9440781768d35f81acb95b018e57259de3",
-        "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
         "locator": {
           "kind": "file"
         }
@@ -214,12 +197,12 @@
   ],
   "references": {
     "1": {
-      "note": "Investigator has Projects, sprint, standalone-master or sprint/master scope, never a leaf launch; it investigates one scoped concern, distinguishes facts from hypotheses, names code/memory owners and changes no code, memory or task state.\n\nAnchor: file",
+      "note": "Investigator has Projects, sprint, standalone-master or sprint/master scope, never a leaf launch; it investigates one scoped concern, distinguishes facts from hypotheses, names code/memory owners and changes no code, memory or task state.",
       "targets": [
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
-            "content": "sha256:851518cf23e4a1bc25139ef2663d951ea08399d679e9815a2fc005a62949c361",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
             "locator": {
               "kind": "file"
             }
@@ -233,12 +216,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
             "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
             "locator": {
-              "end": 54,
+              "end": 14,
               "kind": "line_range",
-              "start": 54
+              "start": 14
             }
           },
           "kind": "code"
@@ -302,12 +285,12 @@
         },
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
-            "content": "sha256:7ed2be0e3c7ebe89f48eb29c7b1896b096d32c896b31ca9d27bd68275256c5bb",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
             "locator": {
-              "end": 28,
+              "end": 12,
               "kind": "line_range",
-              "start": 28
+              "start": 12
             }
           },
           "kind": "code"

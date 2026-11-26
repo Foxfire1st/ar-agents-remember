@@ -24,7 +24,7 @@
     "leaf": "261112-BUG-L52",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/panels/knowledge-reader",
     "mcp/src/agents_remember/application/knowledge_gate",
@@ -36,20 +36,19 @@
     "mcp/src/agents_remember/models/knowledge_files",
     "mcp/src/agents_remember/tasks",
     "skills/l-01-agent-lifecycles/criteria",
-    "skills/l-01-agent-lifecycles/operations",
-    "skills/l-01-agent-lifecycles/roles"
+    "skills/l-01-agent-lifecycles/reference/review"
   ],
   "schema": "ar-family/v1",
   "title": "Dependent deferrals and pre-base staleness flags across writes, syncs and gates",
   "writer": {
-    "at": "2026-11-26T07:36:37+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

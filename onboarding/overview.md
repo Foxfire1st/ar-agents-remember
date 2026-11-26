@@ -184,7 +184,7 @@ Canonical lifecycle guidance now supplies one shared STE-inspired writing profil
 
 Past-epoch budget account (retained wording, not current policy): Role capsules retain whole role inputs/results/boundaries and select common/matching-role operation sections. Step-local formats/commands/check detail are named references, not a new authority or permission. Capsule and step-file budgets are capped separately at 3,700 and 2,500 words. These are source declarations, not fresh compiled-size, host, synchronization or acceptance evidence.
 
-Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.
+Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 326 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.
 
 Own-step bookkeeping is narrow: Worker marks completed matching build/evidence steps, Curator its completed curation step and Reviewer its review step only after a recorded passed final round; no matching step means no write. Manager sets no other agent's step; native operations publish task stage, while Manager retains explicit correction, organizational-master completion, acceptance and landing, and receives Worker/Curator escalation after three unsuccessful own repairs of one check/finding. Memory review uses its own `reviewKind=memory` lane, sealed findings and pass count; it opens no code round and resets no passed code review, verdict or baseline. Recorded historical rollout account: “under-way reviews finish as begun and recorded lanes apply only after landing.”
 
@@ -282,6 +282,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The Curator marks only its completed curation step done through task_doc; incomplete work is not marked done, and this act changes neither task status nor acceptance or landing. The stage ends when task knowledge is written and checked and quality is clean. [68]
 
 
+
 - The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder. Anchor: `Handle a developer-declared takeover` [86]
 
 
@@ -295,6 +296,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
 
 
+
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
 
 - Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator. [359]
@@ -305,13 +307,17 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Manager instructions assign task-stage publication and master-row mirroring to start, finalize and abandon; a separate status write does not follow those acts. task_doc set_status remains the route for an explicit correction and organizational-master completion. [337]
 
+
 - For ordinary delivery, the Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. An approved prerequisite sync may require Curator-owned memory reconciliation before ordinary delivery curation. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries, working-child local waits and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance. [347]
+
 
 
 - After a supported leaf sync with no path changed on both sides, focused tests run again and the Worker reports the code and memory pair to the Manager; mechanical checks derive again, and for a changed pair the Manager obtains the Curator's refreshed read before routine closeout without a new freeze or review round. A shared changed path or failing focused test is repaired and sent once to the same Reviewer. Memory conflict content goes to the Curator; the Manager stages the resolution and the Worker continues the supported sync. [352]
 
 
+
 - Closeout uses the bounded clean-sync predicate without weakening its other evidence checks. [353]
+
 
 
 - The runtime synchronizer declares two targets without docs — benchmarks and system; packaged docs and tool details are not a generator target. [328]
@@ -431,6 +437,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The reviewer's declaration check, mirrored into the package copy. [264]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The history-file gate's rule. [267]
 
 - The ingestion template's proof guidance. [268]
@@ -490,6 +497,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - For each quality-check card cut, the Curator cites source evidence proving the removed text untrue; text is never cut merely to clear a finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. [315]
 
 
+
 - Canonical independent non-author statement/diff/omission duty. [329]
 
 - Named validator route policies. [330]
@@ -514,7 +522,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The current 44-name roster carries the settings initializer and the mounted knowledge writer, and retains the native grant, retire_child and role_start_set boundaries; source declaration is not fresh live advertisement. [332]
 
 
+
 - Current source literal PUBLIC_TOOLS has 44 names; converted MQC status answers carry cut-card and added-file counts and bounded first rows. Complete lists are log data when retained, not a promise that an overflow kept the whole result. Static source census, no fresh live-advertisement or CODE execution. [313]
+
 
 - The measurement records spawn-to-initialize/tool-list arrival and environment/load context; no tool invocation or fresh result inferred. [360]
 
@@ -524,7 +534,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The curator role's pointer to preserving governing decisions. [258]
 
+
 - The curator role's pointer to preserving governing decisions. [304]
+
 
 - The ingestion template's no_invariant-row paragraph is mirrored into the byte-identical packaged runtime template. [302]
 
@@ -570,31 +582,44 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [339]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP. [34]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [340]
 
+
 - The frozen historical registry `capsule-budgets.json` declares 38 role-operation capsules and 27 step-detail rows, separate handover budgets (at most 3,300 tokens), a shared digest budget and per-role ceilings of its epoch: Architect 4,631, Manager 4,513, Curator 4,100, Reviewer/Bootstrap 4,000 and other roles 3,700; step files 2,700 and shared digest 1,474. Only its handover budgets are still read by the live guard; current ceilings are in `capsule-budgets-current.json`. Declarations do not prove a fresh run or acceptance. [341]
+
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [342]
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [343]
+
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [344]
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [345]
+
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [346]
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [348]
+
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [349]
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [350]
+
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [351]
 
+
 - AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest still contributes its full-source revision to capsule semantic identity without injecting the larger core doctrine into rendered instructions, while `compile_admitted_capsule` filters the separately delivered `shared_block` to the target role's audience for `CapsuleRoleSeat` via `application/role_capsules/shared_block.py::filter_shared_block`. Missing or unsupported selection fields refuse rather than being inferred from nearby documents. [366]
+
 
 
 
@@ -612,6 +637,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): Gate enforcement accepts human approval or a policy-valid delegated orchestration decision by a distinct lifecycle; unattributed or self-decided non-human approval fails, and without a matching gate the existing approval channel governs. [95]
 
 - Retained reference account (no fresh execution or acceptance inferred): Canonical role authority places Worker, Curator and every Reviewer on a hosting leaf; a Reviewer’s intake selects the candidate and seam, retaining the named master and sprint context. [97]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Route violations marked writer_reports are reported inside the writer and refused by commit routes. The route_unassigned rule separately uses migration_debt: standalone conversion reports it; at other routes only base-carried debt reports while migration is incomplete, and new debt or debt after migration completion refuses. [103]
 
@@ -642,10 +668,13 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. Anchor: `Refuse a tag whose commit has not landed on main` [278]
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality helper refuses non-linked checkouts and unresolved conflicts, resets and stages the whole task worktree, and checks a supplied candidate tree before and after staging and after any configured hook. Its gate invokes targeted Dagger quality and checks published evidence against that supplied candidate. Ordinary transaction-only closeout does not import this helper. Anchor: `prepare_staged_code`, `gate_staged_code` [279]
 - Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix and exact memory inputs. Non-retained predecessors must match the admitted candidate and current gate-local inputs; an explicitly retained initial prefix instead preserves the admitted repository and exact predecessor lineage. This core API establishes no removed-adapter binding, and ordinary closeout does not acquire a certificate automatically. Anchor: `compile_gate_certificate`, `_require_current_predecessors`, `_require_current_certificate`, `_require_retained_prefix` [287]
-- Workers build each worktree's environment as `system/tools.md` says, run every candidate command there, report commands absent from the tool notes, and record the interpreter each run used. Anchor: `system/tools.md` [310]
+
+- Workers build each worktree's environment as `system/tools.md` says, run every candidate command there, report commands absent from the tool notes, and record the interpreter each run used. [310]
+
 
 
 - Knowledge authoring is in memory; evidence and working files are outside it, with report/task and scratch custody separated. Runtime install records leftover stores of removed parts under removedPartStores and deletes none of them. [314]
+
 
 
 - For a canonical orchestration sprint, an absent `executionGraph` selects atomic execution of its commanded masters and declares no dependencies or serialization between them; graph presence selects dependency-aware scheduling. Anchor: `resolve_scheduling_mode` [318]
@@ -669,7 +698,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 - Fresh converted-leaf closeout validates and gates the exact memory tree after closing owner history. It then writes one memory-content output or reuses the unchanged tip. Recovery judges the recorded output again. [288]
 - Fresh converted-leaf closeout closes owner history and gates the exact memory output before committing it or reusing the unchanged tip. Recovery gates the already recorded output. [51]
+
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
+
 
 - The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
 
@@ -691,5 +722,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication. [46]
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication. [285]
+
 - Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings. [316]
-- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]
+
+- Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 326 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]

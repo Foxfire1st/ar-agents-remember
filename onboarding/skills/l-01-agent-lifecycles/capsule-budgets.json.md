@@ -60,8 +60,10 @@ Summary based on the earlier card account, base lines 13–49:
 
 - The registry's capsule, step-detail and handover rows keep their recorded values; the handover rows keep the capped token formula. [10]
 
-- The current check reads renewed measurements and ceilings from capsule-budgets-current.json, and handover rows from this registry; separate tests preserve historical D656 and D681 decisions. [12]
+- The current check reads renewed measurements from `capsule-budgets-current.json` and handover rows from `capsule-budgets.json`; separate tests preserve historical D656 and D681 decisions. [12]
 
-- The test checks fresh compiled sizes and renewed measurements against current ceilings. [2]
+
+- The test checks fresh compiled sizes against renewed measurements in `capsule-budgets-current.json` via `current_budget_findings`. [2]
+
 
 - All 38 capsule rows carry recorded budgets: capped eleven-tenths budgets, or the D681 table’s measured size for the 8 capsule rows among the 24 budgets that decision names. [1]

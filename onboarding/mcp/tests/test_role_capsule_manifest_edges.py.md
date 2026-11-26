@@ -40,7 +40,9 @@ Real-corpus cases bind the Investigator's instruction-shortfall review, the Arch
 
 - The every-role digest is delivered once outside the capsule instructions and seals each role's semantic digest. [12]
 
+
 - The Reviewer's complete-diff rule stands inline once in its role file and not in the knowledge-use detail. [15]
+
 - The Architect's template pointers must survive compilation; a removed or displaced pointer fails. [16]
 - The Curator's inline workflow paragraphs must reach its delivered Normal workflow; a removed paragraph fails. [17]
 
@@ -52,6 +54,8 @@ Real-corpus cases bind the Investigator's instruction-shortfall review, the Arch
 
 - The Git-root scope rule has one complete source unit and one digest home for every role. [14]
 
+
 - Real-corpus cases bind the Investigator's instruction-shortfall review, the Architect's and Manager's third-rejected-round progress judgment and the Architect's Curator-measurement detail to their declared source, roles and step and to the exact read action that links them, with clause-removal and displaced-action controls. The composed core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [9]
 
-- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [18]
+
+- The current `KNOWLEDGE_USE_CONSUMERS` fixture binds each of the five consuming roles' (`architect`, `worker`, `reviewer`, `investigator`, `curator`) index-table row triggers and link labels to `reference/knowledge/use.md`. [18]

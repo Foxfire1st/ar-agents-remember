@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
-        "content": "sha256:a060d914754c4467703f8dee47c098fc6758a311f92f68a410b9676e4bd31dd1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
+        "content": "sha256:22047b583996392983617372add9a3f9dc9209b6ce91439722f65a7310ccf6d6",
         "locator": {
           "end": 88,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
         "content": "sha256:d2d292cf3d434dceae618e92e3928f83c2f728fc69c5870453f9396bceac4558",
         "locator": {
           "end": 17,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
         "content": "sha256:9fd503c92d23d9c17fc64cede742d7030bb071e1fb01fe0a9b0ad0640bf72324",
         "locator": {
           "end": 49,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
         "content": "sha256:8d6851de48e1a690795b049d9c5f5337914441984fcd6af3db9914a5bbb876e5",
         "locator": {
           "end": 45,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
         "content": "sha256:e717f0150e0f5bc41f3dda2a34f2c630382f978d9c9b3d6e0e9a58c3fdf0df5b",
         "locator": {
           "end": 49,
@@ -98,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
-        "content": "sha256:6d51d552c8cbd05ed26f8991a500a811c84327c663843f02cd8547945421f833",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
+        "content": "sha256:2e1d31f6556dbb295b74021b8e0f161bbcdc116622232de59955b0f5c708dc50",
         "locator": {
           "end": 96,
           "kind": "line_range",
@@ -117,8 +117,8 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
-        "content": "sha256:a060d914754c4467703f8dee47c098fc6758a311f92f68a410b9676e4bd31dd1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
+        "content": "sha256:22047b583996392983617372add9a3f9dc9209b6ce91439722f65a7310ccf6d6",
         "locator": {
           "end": 88,
           "kind": "line_range",
@@ -136,7 +136,7 @@
     },
     {
       "anchor": {
-        "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+        "blob": "13fc5b315325836469ef724de5257688d11a2627",
         "content": "sha256:d0283467df357b8111906f6827eaa674e8d250731f7005c01f5393b2295cece6",
         "locator": {
           "end": 19,
@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:d0283467df357b8111906f6827eaa674e8d250731f7005c01f5393b2295cece6",
             "locator": {
               "end": 19,
@@ -177,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:2b36fb89410cdca68b85df76d89dceecedba32443a27c15de1e4726ee751d0f8",
             "locator": {
               "end": 41,
@@ -194,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:996d775b64c409d21bf6d09cdc06d5660507e6aee48231ed27c9fc917a444746",
             "locator": {
               "end": 51,
@@ -207,14 +207,14 @@
       ]
     },
     "4": {
-      "note": "Citation input format, external URLs and the rule that structural checks do not prove prose true. Lean citations use exact names, with ranged sources for plain identifiers and explicit line ranges for unverifiable scope.",
+      "note": "Citation input format, external URLs and the rule that structural checks do not prove prose true. Lean citations use exact names, with ranged sources for plain identifiers and explicit line ranges for unverifiable scope.\n\nAnchor: `Prepare citation input`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
-            "content": "sha256:bb2124180af5a961948f819fced485057bfaaba95b7f1b416542aef4d37f14d1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
+            "content": "sha256:da0a47f31a69bf88c00fcb63bdf3c1ff63d2907e00ea051d7fd9d561c7157692",
             "locator": {
-              "end": 88,
+              "end": 89,
               "kind": "line_range",
               "start": 53
             }
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:0b23341304c35237d24c9e281e787ffedbf2de818fd2ea43de4f3a0f8b72d49e",
             "locator": {
               "end": 96,
@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:809c7c7b147475213147b07e876cbf6e7c7b1ab3d0222460ca9d4ef57f29df82",
             "locator": {
               "end": 106,
@@ -262,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:cdddc85883c2a8a7c481ab4d0b6b155a20b8767d985f264744c8bfa851f10880",
             "locator": {
               "end": 124,
@@ -275,16 +275,16 @@
       ]
     },
     "8": {
-      "note": "The Curator role links the history and citation sections at their actions.",
+      "note": "The Curator role links this detail file from its Reference index.\n\nAnchor: `card-formats-and-citations.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:87b72621f2fbec01eb6feb9159ec57899011fec95486c35e8933d0730c754bb9",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:52d4838f16d0fb55b773eeb76b36080275f27719c941cbd940b0fa753a171f4b",
             "locator": {
-              "end": 85,
+              "end": 30,
               "kind": "line_range",
-              "start": 81
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },

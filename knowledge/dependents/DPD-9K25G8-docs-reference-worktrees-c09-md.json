@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
-    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
+    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
+    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
     "role": "curator",
-    "statement": "Audited docs/reference/worktrees-c09.md in full against post-sync L56 tree 71957132 (base da65eb23): worktree integration, checkpoint, and record-landing document-staleness contract remains accurate after moving master-end classification to document_staleness.py and updating landing_document_answer and record_landing_result; added document_staleness.py to stands_on.",
-    "task": "261112-BUG-L56",
+    "statement": "Audited docs/reference/worktrees-c09.md (lines 1-376) against synced Attempt-5 tree d1e7bbbc and operations/{implementation,review}.md: Reviewer route-review recording, clean-sync focused-test rerun without opening a new review round, and approval boundaries remain accurate with no contradiction.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+        "blob": "d02ab2dfa46b85ac8cfde5565f1f510161df9de8",
         "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
         "locator": {
           "kind": "symbol",
@@ -68,8 +68,8 @@
     },
     {
       "anchor": {
-        "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
-        "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+        "blob": "49e8f3fcbd671dc65a3812463561b0c2f7bd5c98",
+        "content": "sha256:dfa95e3ea27b8fcae5e86ad844967f024b668118eab35d9a291778cf88721691",
         "locator": {
           "kind": "symbol",
           "name": "_review_provenance"
@@ -80,7 +80,7 @@
     },
     {
       "anchor": {
-        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+        "blob": "535889af0914dabb5b62de8e8511b7429ab0df35",
         "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
         "locator": {
           "kind": "symbol",
@@ -234,12 +234,12 @@
       "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
     },
     {
-      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+      "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+      "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
@@ -254,7 +254,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
     },
     {
-      "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+      "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:03:01+01:00",
+    "at": "2026-11-26T20:16:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L56",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

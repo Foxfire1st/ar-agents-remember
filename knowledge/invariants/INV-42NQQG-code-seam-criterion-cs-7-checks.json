@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L60",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Code-seam criterion CS-7 checks every line a candidate adds or alters in source code, tests and product messages against system/coding-guidelines.md under workspace.memoryRoot, where it exists, including Source Comment Scope with its bounded L<leaf>-R<n>/L<leaf>-S<n> exception; doctrine D-6 is reduced to a pointer to CS-7; the Reviewer reviews code against the coding guidelines and instruction texts against the skill-writing guidelines, in two sentences; every verdict table carries a CS-7 row.",
+  "statement": "Code-seam criterion CS-7 checks every line a candidate adds or alters in source code, tests and product messages against system/coding-guidelines.md under workspace.memoryRoot, where it exists, including Source Comment Scope with its bounded L<leaf>-R<n>/L<leaf>-S<n> exception; doctrine D-6 is reduced to a pointer to CS-7; the Reviewer binds code against coding guidelines and instruction texts against skill-writing guidelines alongside its criteria catalogs; every verdict table carries a CS-7 row.",
   "supersedes": [],
+  "title": "Code-seam criterion CS-7 enforces coding guidelines across review catalogs",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L60",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

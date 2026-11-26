@@ -1,0 +1,209 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:d609389f2bc2f3b5aee197dbb9cd4b87ac33b4f9eebc6b38bc1666f922ac79f2",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-3QTBC5",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Moved from operations/implementation.md: names Worker worktree_sync and supported continuation with exact contract and resolution_action='continue' after Manager staging.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:93ec4840584dc955cedc36e76c31e536df1b655790a7ee59831f2f7e46652002",
+        "locator": {
+          "end": 44,
+          "kind": "line_range",
+          "start": 44
+        }
+      },
+      "id": "RLZ-4YAPS7",
+      "invariant": "INV-W24J6Q",
+      "origin": {
+        "handoffEntry": "R99-curator-notice-recovery",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Shared refused-handover rule for Worker, Curator and Reviewer: record failed Manager notice delivery as pending, continue independent work, retry through role_message, and never turn it into a developer question in own chat.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:9b88a40bef18bfef08be6502466713a48a6452c5906517e92ccffde8e8e577d8",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-7KXE63",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Moved from operations/implementation.md: separates Curator content-only memory conflict repair, Manager capture/verification/staging, and Worker supported continuation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:310f054711f122d54f300133c6c26c6f446ce0bed5c641d5f3d5b5640ca954eb",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 21
+        }
+      },
+      "id": "RLZ-896AMD",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Worker's Tier-2 unfinished-turn rule sends what and whom it awaits to its parent via role_message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:822575dcc6c770f1cfa66170c5b605d9403bc391c975c579986e7f01117ee5ec",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-AMVJK6",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Moved from operations/review.md (which states clean syncs open no round at line 29): retains the existing review on a clean sync while requiring the Manager to obtain the Curator's refreshed dependent-document read when clean sync changes the code or memory pair.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:b4d4189ed59d7f3f145f16f8b848763e03e0627ac828501022926e526385e56c",
+        "locator": {
+          "end": 35,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-CA7Z9P",
+      "invariant": "INV-8SBKWP",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §3",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "Moved from operations/review.md to reference/worker/sync-and-repairs.md:30-35: specifies that after a post-PASS final-check failure, the failed check and repair's focused tests run on the new tree and are recorded beside the original report rather than repeating a full run.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:241eb91a8fe002be55e1ec233e26cf554bcabac37c993cc5934ae57b76cd0a3e",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-CCM727",
+      "invariant": "INV-YGXGEC",
+      "origin": {
+        "handoffEntry": "MIK-R218.3@v1",
+        "leaf": "260928-MIK-L205"
+      },
+      "rationale": "States that focused-test selection searches tracked tests for touched names/rules/tools/IDs and applies the same search on repairs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+        "content": "sha256:f6ac9f8d6053ab04cc838b6f3c4074d41151db9fb2c0788791dc91b5c8cd62bb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EBP3C4",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Holds Worker Tier-2 sync, repair limits, post-PASS final checks, focused-test/report details, measurement/refused handovers, and stop/step-marking procedures.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`#synchronize-the-leaf` splits clean sync, overlapping/failing sync, and native memory-file conflicts across Worker, Curator (content-only), and Manager (staging/transaction).\n\nAnchor: `## Synchronize the leaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:d609389f2bc2f3b5aee197dbb9cd4b87ac33b4f9eebc6b38bc1666f922ac79f2",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Focused test selection, freeze-report evidence mapping, stop rules, three-repair stop, persistent-failure generalization, costly-repair reporting, and post-PASS final-check handling define Worker execution bounds.\n\nAnchor: `## Focused test selection and freeze report details`; `## Repair limits, costly small repairs, and record-only repairs`; `## Handle post-PASS final-check failures`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:6f22cc43d1f0ca0c5d1e0ea0a8f830507d8acce25d5b367a553fe4b2c00c6f42",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Measurement handovers, refused-handover reporting/retries, and out-of-scope weakness/dependent-document recording bind handoff routes to `curator-handoff-list.md`.\n\nAnchor: `## Make the measurement handover`; `## Report a refused handover`; `## Record out-of-scope weaknesses and dependent documents`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:bb774f04f08d8107b5d8015fdedfe47d724fb31a8faafa42ead7e5c8cb734c99",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

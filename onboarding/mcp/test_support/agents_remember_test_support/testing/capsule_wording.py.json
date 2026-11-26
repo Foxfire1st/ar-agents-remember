@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
-        "content": "sha256:8d3d7e59ac8402e13ba8a2b6238935d15441f7289d1ba4f44484f0ed088d640a",
+        "blob": "9a7c0efb9cf4d6c6348532c51a1f6f28650ce033",
+        "content": "sha256:d744b52b9d81dc9359aa7e9d7a13808a121419ce4a716ea3a35c63369ccf92e6",
         "locator": {
           "kind": "file"
         }
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
-            "content": "sha256:8d3d7e59ac8402e13ba8a2b6238935d15441f7289d1ba4f44484f0ed088d640a",
+            "blob": "9a7c0efb9cf4d6c6348532c51a1f6f28650ce033",
+            "content": "sha256:d744b52b9d81dc9359aa7e9d7a13808a121419ce4a716ea3a35c63369ccf92e6",
             "locator": {
               "kind": "file"
             }
@@ -40,8 +40,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
-            "content": "sha256:72e15b5cd6567c0cda5a671c8953f0aab2e6c919b743a617b04da28d09ba7007",
+            "blob": "9a7c0efb9cf4d6c6348532c51a1f6f28650ce033",
+            "content": "sha256:98e44483fb5006bbfe784271c96b1b27282c68508267c68f2cd124b49d4e3ef9",
             "locator": {
               "kind": "symbol",
               "name": "clause_surface"
@@ -52,16 +52,16 @@
       ]
     },
     "3": {
-      "note": "The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review Boundaries section. Before that section is used, _memory_review_surface requires shipped and checkout review-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch.",
+      "note": "The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review `Rounds` section. Before that section is used, `_memory_review_surface` requires shipped and checkout review-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
-            "content": "sha256:3366cea65b16090086abbcf20a8e7a8e7b0172dc4e28a9115319b0cd2de39b14",
+            "blob": "9a7c0efb9cf4d6c6348532c51a1f6f28650ce033",
+            "content": "sha256:d7192c3d7dfca6ca631e30139caa2081e547ac0d305071dc149283b3149c03b5",
             "locator": {
-              "end": 247,
+              "end": 256,
               "kind": "line_range",
-              "start": 237
+              "start": 229
             }
           },
           "kind": "code"

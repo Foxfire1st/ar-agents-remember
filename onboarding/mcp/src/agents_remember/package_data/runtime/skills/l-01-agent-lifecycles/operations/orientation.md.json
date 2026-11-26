@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-        "content": "sha256:dad6d63bfacdeb22edc166840acc31227e9cb1fbace53b7114032a49f409c1f9",
+        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+        "content": "sha256:cec64492c4ea9fbcdf71060c6c08adf8313981c36bd575abb9e6b3254789dcb5",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "Orientation takes an Investigator's concern from its parent's first message or, without a parent, from the developer's request, and invents no task or trust packet; existing work restores its saved assignment first.\n\nAnchor: `## Confirm the assignment`",
+      "note": "Orientation uses the launcher's exact role and canonical assignment (Projects is a workspace, not a repo), restores saved authority, reads only selected packets and rendered task files via file tools (no `.json`), verifies refs/roots/contract/report agree, and notes that dashboard roles need no parent.\n\nAnchor: `## Confirm the assignment`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-            "content": "sha256:04763548b781de7a107d41d383bc3afc4b27cee15ac3db2c87751c793d8a31b9",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:99f349fee444c8a3bad24be9030df7a157fd94ec3a3c374de477771b478681f4",
             "locator": {
-              "end": 14,
+              "end": 6,
               "kind": "line_range",
-              "start": 6
+              "start": 4
             }
           },
           "kind": "code"
@@ -38,16 +38,16 @@
       ]
     },
     "2": {
-      "note": "Developer decisions go to the instructed reporting recipient or the parent; when no independent work remains, the Manager records the wait in its end line and status file while other roles message what they await, and only an agent with neither recipient nor reachable parent asks in its own chat.",
+      "note": "Developer decisions go to the instructed reporting recipient or the parent; when no independent work remains, the Manager records the wait in its end line and status file while other roles message what they await, and only an agent with neither recipient nor reachable parent asks in its own chat.\n\nAnchor: `## Ask for a developer decision`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-            "content": "sha256:4a10dd9292eaacf6035c0e462782b03470a5b808d96cbdc390a99122ca9846cc",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:acaaead26a835264fe13759f8478cf7360f15bca787fc8ed1dbc46286ef3e1f7",
             "locator": {
-              "end": 67,
+              "end": 32,
               "kind": "line_range",
-              "start": 53
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:ccd9be17f1ef3c3d6c0b655b6f336cee8d16cef6c9f8ccf10ac253850d9a296b",
             "locator": {
               "end": 51,
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
             "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
             "locator": {
               "end": 2,
@@ -114,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
-            "content": "sha256:420d2922b101de194336479ab3e05126399d8d06851d0485d77f25f323facad2",
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:1f83beb0bfd172d89991d0e50ee981561a0d5c39e17e7a56b1874b4547851078",
             "locator": {
-              "end": 39,
+              "end": 14,
               "kind": "line_range",
-              "start": 6
+              "start": 4
             }
           },
           "kind": "code"

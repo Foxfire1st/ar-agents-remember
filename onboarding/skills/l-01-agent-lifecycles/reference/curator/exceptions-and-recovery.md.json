@@ -1,0 +1,304 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:62f02861d64d2270b255b4f5184dbacace5ff2692b81ff25d6c346a022caaa98",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-27TVRT",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Moved from operations/curation.md (which still keeps partial/refused handovers partial at line 31): keeps partial and refused handovers partial, corrects faulty input through the same tool, and keeps validator and gate findings as repairs; covered correct-write recovery is reached via core/every-role.md:27.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:478b954f861039512a4982449504235f8b2f3928aa9359e79aff0973d2729b14",
+        "locator": {
+          "end": 28,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-66VR00",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Moved from roles/curator.md (which links this file at line 32): applies bounded encountered-memory repairs whoever left them without a broad sweep, reports every repair, reruns complete checks and independent fact-check, and routes code/authority/cross-leaf issues separately.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:41834ccb3d4e53de6bcf1822066ac6547a3274f819b38c68489a96d1c1bca723",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-7B663Y",
+      "invariant": "INV-W24J6Q",
+      "origin": {
+        "handoffEntry": "R99-curator-notice-recovery",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Retains Manager transaction ownership and cross-leaf contact restrictions in the Tier-2 curation exceptions reference, while failed Manager notice recovery lives in reference/worker/sync-and-repairs.md:44.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:62f02861d64d2270b255b4f5184dbacace5ff2692b81ff25d6c346a022caaa98",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-9AWEEA",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Moved from operations/curation.md: applies bounded encountered-memory repairs beyond quality-check findings without a broad sweep, requires reporting every repair, and reruns complete checks and independent fact-check before handover.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:1bf2d226ef69d28a534591a1d84d90b0211cf24b3c367a4058146f10ec9c5c36",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-B0CM8K",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Preserves Curator bounded repairs, genuine stops and recording unfinished work via role_message when ending unfinished.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:62f02861d64d2270b255b4f5184dbacace5ff2692b81ff25d6c346a022caaa98",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-BJQYDS",
+      "invariant": "INV-QPY4KH",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 memory-tool continuation",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Single Tier-2 home requiring independent continuation through other admitted memory tools when one fails while keeping dependent refusal and provider/permission/scope/tool boundaries binding.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:3b5f76bcd73a47a1ac42f68e94f4a4bda0252f3f451196307fa1f87ba1d04c4e",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 26
+        }
+      },
+      "id": "RLZ-CV8RK3",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Curator's Tier-2 unfinished-turn rule sends what and whom it awaits to its parent via role_message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:929e185311dafbfe616296468d324347cc5c2a64d64144843b9827af47d04c7e",
+        "locator": {
+          "end": 28,
+          "kind": "line_range",
+          "start": 28
+        }
+      },
+      "id": "RLZ-D0XTAP",
+      "invariant": "INV-RKGNF8",
+      "origin": {
+        "handoffEntry": "R99-D95-curator-code-concerns",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Tier-2 curation exceptions reference requiring evidenced code concerns (including post-PASS) to go to both Worker and Reviewer, forbidding code repair or false knowledge, and routing unresolved disagreement to Manager.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:929e185311dafbfe616296468d324347cc5c2a64d64144843b9827af47d04c7e",
+        "locator": {
+          "end": 28,
+          "kind": "line_range",
+          "start": 28
+        }
+      },
+      "id": "RLZ-JKHSZ1",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-curation-questions",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A missing comparison side is asked of the Worker or the Reviewer directly; the Manager only about ownership or authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:10508631e9146f9e4fd1ff2bbd4e6ca4ddf11008e919422cfbbf6a29fcc39bf6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JW3RPA",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Holds Curator Tier-2 report-only, card-cut/external-citation, dependent-document closeout, encountered-memory healing, and recovery procedures.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:62f02861d64d2270b255b4f5184dbacace5ff2692b81ff25d6c346a022caaa98",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-MSJDKH",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Moved from operations/curation.md: partial and refused handovers stay partial ('planned' and 'refused' wrote nothing), faulty input is corrected through the same tool, and validator and gate findings still require repair.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:a516a571b7740acde2c48c5640ea0770e742c70fe6b823380cf6f3298ce6f031",
+        "locator": {
+          "end": 19,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-P04FKN",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Moved from operations/curation.md (which references exceptions at line 22): requires the Curator's exact-pair knowledge_read(view='dependent', staleOnly=true, codeTreeId='working-tree') with before/after candidate match, full pagination, and durable receipt.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+        "content": "sha256:41834ccb3d4e53de6bcf1822066ac6547a3274f819b38c68489a96d1c1bca723",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-R4SKXV",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Moved from operations/curation.md: sends Worker leaf-sync memory conflicts directly to Curator while keeping transaction steps with Manager and pointing to reference/worker/sync-and-repairs.md#synchronize-the-leaf.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Report-only assignments write only their report and upstream message without running onboarding, quality, or coherence writes; foundation reports enumerate examined/unexamined areas and outcomes.\n\nAnchor: `## Report-only assignments and foundation reports`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:fe4d2a4a619ae92042d9208cff220e7e48247e1fd55be1acf0e2f4e17fbf9b11",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Card cuts require source evidence proving removed text untrue, and external documents must be cited as `external` sidecar references named in `origin`.\n\nAnchor: `## Quality-check card cuts and external citations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:fdaa576ff3cb80137c0bd4a42e9821e4ca5f446cbe45e817fcd4e2e1dcc9ed88",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Closeout dependent-document checks specify the exact `knowledge_read` working-tree stale-dependent call and recorded receipt fields; recovery rules bound tool failures, stops, code concerns, and sync conflicts.\n\nAnchor: `## Dependent-document closeout check and requested report fields`; `## Memory-tool failures, code concerns, and sync conflicts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:e4915bc8d38f962e2f510be58789330da6370c59cef995678dbb40bbc70ec5eb",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

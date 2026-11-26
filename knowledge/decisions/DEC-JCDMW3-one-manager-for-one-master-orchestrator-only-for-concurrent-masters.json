@@ -58,12 +58,12 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
-        "content": "sha256:ee235201fb252af1c6822f053d06cc391c98dea1e9d276a0d1c2028455102c59",
+        "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+        "content": "sha256:6f4047c8011117df21dd256670e0e3b7b9becb92c9a9a8d83c4167c073082726",
         "locator": {
-          "end": 117,
+          "end": 20,
           "kind": "line_range",
-          "start": 42
+          "start": 16
         },
         "path": "skills/l-01-agent-lifecycles/roles/manager.md"
       }
@@ -77,19 +77,19 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-26T20:34:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

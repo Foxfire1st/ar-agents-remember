@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Projection pruning, brief assembly, and launch-preparation metadata span three CLI modules that can silently drift and break replay or exceed wire budgets; guarded by the first-message and wire-token matrix suites."
+  },
+  "applicability": "Every native role launch handover projection built by role_handover_projection.py and assembled by role_brief_message.py.",
+  "conditions": [
+    "Inline wire projection omits null fields, duplicate document/parent/returnAddress refs matching selection, leafSeats.roleMessageArguments, redundant taskDocumentFiles defaults, and duplicate inline handoverFile unless explicitly opted in.",
+    "Inline projection preserves task_name, slug, and copy-pasteable arMcpContext.readerArguments.shared.",
+    "Companion .handover.json remains 100% lossless and artifact_line / resolve_handover_envelope replay stays compatible."
+  ],
+  "exclusions": [
+    "Complete canonical handover files on disk, which retain every full prose and structural field.",
+    "Messages sent after the role's first message."
+  ],
+  "id": "INV-4BYFWJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_first_message.py, test_role_first_message_guards.py, test_role_handover_binding.py, test_role_instruction_wording_handover.py, test_capsule_replay_integrity.py, test_role_wire_token_budgets.py (clean-copy tree b3131ef29cf948ee4830a48540585bc841530c3a)"
+      ],
+      "path": "261124-cap-l3-curation-handoff.json"
+    },
+    "handoffEntry": "CAP-R03@v1 Rule 1",
+    "leaf": "261124-CAP-L3",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Inline wire handover projections deduplicate repeated task/document/parent/seat/handoverFile fields and tighten wrapper prose while keeping the companion .handover.json 100% lossless, preserving task_name/slug and copy-pasteable arMcpContext.readerArguments.shared inline, and keeping artifact_line and resolve_handover_envelope replay compatible.",
+  "supersedes": [],
+  "title": "Deduplicated inline handover projection preserves lossless companion JSON",
+  "writer": {
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
+  }
+}

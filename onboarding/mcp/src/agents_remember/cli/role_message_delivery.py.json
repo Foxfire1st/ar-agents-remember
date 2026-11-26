@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
         "content": "sha256:43ff80ac4a020487f8c49af37dcfe2b253d5467cc659e08c7225673203a66e42",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
         "content": "sha256:f1ec2e99a70d406bc9090d8934122faa44d6f7126c1778f76962e2a9f525aa24",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
         "content": "sha256:40a5842bcb3462106c3a0328de1bdbccab0dfab9ff88d6ccbf6f432959eec7e4",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-        "content": "sha256:c9b8d4d968fa3c6d234b108c69d1de116a8fee8332ec1e32a18c4cc6cd076069",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+        "content": "sha256:fec5ff0185f5eca2dde7542d3143c3d15b4decea37127ea5118a3524bcde96b9",
         "locator": {
           "kind": "symbol",
           "name": "_message_scope"
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
         "content": "sha256:c19bf6d917289bf4fcab60edcd341ec5e69ab145828a402fe0a4f1c82e20efa8",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-        "content": "sha256:f91c9e416bdcd8a24bc709034d4fa5726cfdd55d6a45482fba331564f0cffc50",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+        "content": "sha256:b9c20ae4d026372d5d3f41cbf4af9a5912b37782e15d930424c2d3926c3a6791",
         "locator": {
           "kind": "symbol",
           "name": "_store_message"
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
         "content": "sha256:be6da47b0d113d53282861f60b1f4ffc4f6cb342652c347a3744ff10933c8461",
         "locator": {
           "kind": "symbol",
@@ -130,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-        "content": "sha256:f91c9e416bdcd8a24bc709034d4fa5726cfdd55d6a45482fba331564f0cffc50",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+        "content": "sha256:b9c20ae4d026372d5d3f41cbf4af9a5912b37782e15d930424c2d3926c3a6791",
         "locator": {
           "kind": "symbol",
           "name": "_store_message"
@@ -148,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-        "content": "sha256:7ea6bf8c36fc2317df3cf3a9f8d89e759fac7f4c52fa594cda3aec0c34634497",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+        "content": "sha256:a066217035c87673e30f24891fc800aa8270b31120d3d871568bc581875fe63b",
         "locator": {
           "kind": "symbol",
           "name": "_refuse_over_limit"
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
         "content": "sha256:5ff8485f235d15c81552b3c5bc9dfca4b1da8b38a66c41a3d81ed191a8a56744",
         "locator": {
           "kind": "symbol",
@@ -184,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-        "content": "sha256:c98f879340a6a477969e293907205445a7ab814cd32a0071e35c2fbe3ffe5592",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+        "content": "sha256:ec6550935984049a4bde33fc951e7c15440c0329a0add54fafc39719a3ac8ae4",
         "locator": {
           "kind": "symbol",
           "name": "_archived_with_successor"
@@ -202,12 +202,12 @@
     },
     {
       "anchor": {
-        "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-        "content": "sha256:c98f879340a6a477969e293907205445a7ab814cd32a0071e35c2fbe3ffe5592",
+        "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+        "content": "sha256:4b9c866962e095a3f2a67e032e8a5f21d8abd7025f1386f6fe29cf0a5ca0decc",
         "locator": {
-          "end": 313,
+          "end": 286,
           "kind": "line_range",
-          "start": 299
+          "start": 223
         }
       },
       "id": "RLZ-XV9NR8",
@@ -216,18 +216,18 @@
         "handoffEntry": "MIK-R93@v1 rule12",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "rationale": "Contains _start_again_next_action (naming parent via role_message before parentless own chat), _host_unreachable (own-chat advice), and _archived_for returning the recipient-archived refusal.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Count only text and refuse excess without silently moving or truncating it.",
+      "note": "**Retained historical source account — superseded by the current contract:** Count only text and refuse excess without silently moving or truncating it.",
       "targets": [
         {
           "anchor": {
-            "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-            "content": "sha256:7ea6bf8c36fc2317df3cf3a9f8d89e759fac7f4c52fa594cda3aec0c34634497",
+            "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+            "content": "sha256:a066217035c87673e30f24891fc800aa8270b31120d3d871568bc581875fe63b",
             "locator": {
               "kind": "symbol",
               "name": "_refuse_over_limit"
@@ -242,8 +242,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-            "content": "sha256:c98f879340a6a477969e293907205445a7ab814cd32a0071e35c2fbe3ffe5592",
+            "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+            "content": "sha256:ec6550935984049a4bde33fc951e7c15440c0329a0add54fafc39719a3ac8ae4",
             "locator": {
               "kind": "symbol",
               "name": "_archived_with_successor"
@@ -258,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+            "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
             "content": "sha256:40a5842bcb3462106c3a0328de1bdbccab0dfab9ff88d6ccbf6f432959eec7e4",
             "locator": {
               "kind": "symbol",
@@ -274,8 +274,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
-            "content": "sha256:f91c9e416bdcd8a24bc709034d4fa5726cfdd55d6a45482fba331564f0cffc50",
+            "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+            "content": "sha256:b9c20ae4d026372d5d3f41cbf4af9a5912b37782e15d930424c2d3926c3a6791",
             "locator": {
               "kind": "symbol",
               "name": "_store_message"
@@ -290,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+            "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
             "content": "sha256:40a5842bcb3462106c3a0328de1bdbccab0dfab9ff88d6ccbf6f432959eec7e4",
             "locator": {
               "kind": "symbol",

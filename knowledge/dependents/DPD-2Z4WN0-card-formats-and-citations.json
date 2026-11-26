@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bd31c6a162e2cc11d351593680fee5ce294aa26a",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
+    "commit": "d7b08155a88066fe08ba556c8230961f0042e90d",
     "role": "curator",
-    "statement": "The Curator guide distinguishes ranged plain-identifier lookup, extended Lean names on cited Lean paths, and explicit line ranges for uncertainty.",
-    "task": "261123-SUB-L1",
+    "statement": "Audited skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md in full against Round-4 CODE PASS tree b3131ef2: CAP-L3 updated only one citation-anchor link; ranged identifier lookup, extended Lean names, explicit line ranges, and card-format rules match all four standing code anchors.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md",
@@ -17,7 +17,7 @@
     "leaf": "261123-SUB-L1",
     "task": "261123-SUB"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "f38edb131048b6babe92bde259bb2ab786de733c",
+        "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
         "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
         "locator": {
           "kind": "symbol",
@@ -70,22 +70,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261123-SUB-L1",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261123-SUB",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

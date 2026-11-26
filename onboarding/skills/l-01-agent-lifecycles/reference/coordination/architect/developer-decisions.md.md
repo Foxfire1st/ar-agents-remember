@@ -16,4 +16,5 @@ The Architect does the work it can first, then asks the developer in plain words
 
 - Ask without blocking agents, consolidate settled instructions, and send a design change only on the developer's word. [1]
 - Instruction rulings name their exact target and hand delivery to the child-questions and measurement files. [2]
+
 - The Architect role points here before relaying a developer decision. [3]

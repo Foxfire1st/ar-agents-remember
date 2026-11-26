@@ -89,14 +89,20 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
 
+
 - Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES. [1]
+
 
 - Organizational leaf and accumulated atomic-master variants account for every major route with its backing report, bound candidate and recordable packet; atomic children receive no separate route-review verdict. [2]
 
-- A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the review operation's three sanctioned routes. [3]
+
+- A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the three sanctioned post-seal routes. [3]
+
 
 - The verdict template keeps ordinary Reviewer CODE recording, the separate MEMORY lane, the decider's gate acceptance and recorded beyond-settings approval distinct; its artifact is recommendation evidence rather than a gate decision. [4]
 
+
 - Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts and any required final-check evidence. Repaired-item verification is an ordinary round within the settings limit. [5]
+
 
 - Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and narrowing of the sealed scope in ordinary successor adjudication, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate. [6]

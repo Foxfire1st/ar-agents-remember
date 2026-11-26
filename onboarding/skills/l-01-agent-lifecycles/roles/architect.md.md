@@ -2,17 +2,18 @@
 
 ## Rounds and starts
 
-Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. The Architect hands the Manager its execution decisions and routine paired closeout (`roles/manager.md#make-decisions-within-your-authority`), delegates sprint execution and its authority to the Orchestrator, reads the coordinating agent's rulings, requirement-change list and status file itself without status-only notices, aligns requirement text within the promise, sends new/dropped scope and promise changes to the developer, and in a case ruling names only the outcome that needs the Architect while leaving each decision belonging to the Manager with the Manager.
+Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. The Architect hands the Manager its execution decisions and routine paired closeout (`roles/manager.md#make-decisions-within-your-authority`), delegates sprint execution and its authority to the Orchestrator, reads the coordinating agent's rulings, requirement-change list and status file itself without status-only notices, aligns requirement text within the promise, sends new/dropped scope and promise changes to the developer, and in a case ruling names only the outcome that needs the Architect while leaving each decision belonging to the Manager with the Manager.
 
 - The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
 
+
 ## Current Source Qualification
 
-Flat mode means only the developer-chosen direct-coordination exception: when no Manager or Orchestrator owns closeout, the Architect may coordinate the paired closeout only under the already-delegated authority of `../operations/closeout.md` (the developer's explicit commit approval, or series authority recorded in the task document), after independent review and the required curation evidence exist.
+Flat mode means only the developer-chosen direct-coordination exception: when no Manager or Orchestrator owns closeout, the Architect may coordinate direct paired closeout (`worktree_closeout_preview`, `worktree_closeout_apply`) under independent review and curation evidence, following `reference/coordination/shared/closeout-recovery.md#flat-mode-direct-paired-closeout`.
 
 ## Message/file transport
 
-This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+Message-file payload and receipt rules are routed from the Architect's Reference index to `reference/message-handover.md`; the canonical source and packaged copy share this contract without changing write/start powers, peer destinations or independent acceptance authority.
 
 ## Governing Overview
 
@@ -30,15 +31,16 @@ Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Archi
 
 When the resolved memory layer holds `system/task-publication.md`, the Architect follows it: registering a leaf creates its open linked issue. Where that file is absent, it publishes nothing.
 
-A `From explainer ·` message carries the developer's words only when their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims the master with `explainer_control` on `agents-remember-task`, action `claim`.
+A `From explainer ·` message carries the developer's words only when their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims the master with `explainer_control` (`action="claim"`).
 
 - Copied developer words in a From explainer message count as those words only after their hash matches the filed developer message; an Architect not named by the master-to-architect record claims that master through explainer_control. [7]
 
-When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` on the bound task server before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
 
-For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
+When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
 
-Its detail files, each read before the action its pointer names, are `reference/coordination/architect/` (process decisions, developer decisions, models and settings, claim verification, Curator measurement), `reference/coordination/shared/` (requirement design, master state, child questions, seat recovery, third rejected round), `reference/knowledge/commands.md`, `reference/knowledge/use.md`, `reference/tasks/document-authoring.md`, `reference/sandbox-actors.md` and `reference/message-handover.md`; short rules on timing targets, page proofs, compute cost, master scope and status reads, bound briefs and side problems, and failed developer checks are written at their actions in the role file.
+For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` (bound to `agents-remember-task` via `core/every-role.md`), preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
+
+Its Reference index points to `reference/coordination/architect/` (process-decisions, developer-decisions, models-and-settings, claim-verification, curator-measurement), `reference/coordination/shared/` (requirement-design, master-state, child-questions, seat-recovery, third-rejected-round, closeout-recovery#flat-mode-direct-paired-closeout), `reference/review/advisory-reviews.md`, `reference/knowledge/commands.md`, `reference/knowledge/use.md#architect-diagnose-before-proposing-a-repair`, `reference/tasks/document-authoring.md`, `reference/sandbox-actors.md` and `reference/message-handover.md`.
 
 On an `IDENTITY MISMATCH:` notice from a child seat, the Architect archives that seat, checks both its task folder and the folder named by the reported binding for writes, and starts a replacement.
 
@@ -79,7 +81,9 @@ Before answering a child's question or returning the developer's answer, the Arc
 
 - The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them. [3]
 
+
 - When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published. [4]
+
 
 ### Docs References
 
@@ -99,9 +103,12 @@ The Architect keeps the developer conversation and may check, measure, run tests
 
 - The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority. [1]
 
+
 - Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and keeps the actual returned role identities, while it answers formal permission prompts only as far as its own seat's permissions reach. [2]
 
+
 - The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator. [6]
+
 
 - Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted. [8]
 

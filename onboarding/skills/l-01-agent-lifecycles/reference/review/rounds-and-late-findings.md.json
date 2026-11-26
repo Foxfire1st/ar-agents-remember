@@ -1,0 +1,230 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:9417fb64e8acb1b7ad098e31c7f351df82d4e6819b687738d87cf27381d74cde",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 19
+        }
+      },
+      "id": "RLZ-2TS1BF",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "This section names the three sanctioned routes, scopes reopening to the added point, assigns the successor repair and identifies the approval boundary.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:032084df484c6d9784240497f0c903f6b24953347a1eeabdd99d7de1e831862c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8Z3M8V",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Holds Reviewer Tier-2 round limits, record-only rechecks, post-seal routes, omission/whole-set/memory-change checks, and stop/step-marking procedures.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:9548d2ebaefb4f35f68d39db5a403117ddd15381159c3f0a7dcd914b6855085e",
+        "locator": {
+          "end": 55,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-EPWAGD",
+      "invariant": "INV-KJACVA",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §6",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "States the honest-agent assumption, reaching-step requirement for findings, and adversarial-review reservation in the Tier-2 review-rounds reference.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:31eee064f85cc0255c58b82d5d25894c12adf8b7e62bad9f1b7075ba9ecc5b70",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-H5BG3V",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The repair review counts and remains subject to existing beyond-limit authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:df618617c7762bfad994a7527ae64b7c296ae03d187dbe28ee580d7600a81616",
+        "locator": {
+          "end": 51,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-N6SDG2",
+      "invariant": "INV-KJACVA",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §6",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "Excludes states built by hand to defeat a check from findings and guards in the Tier-2 review-rounds reference.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:310f054711f122d54f300133c6c26c6f446ce0bed5c641d5f3d5b5640ca954eb",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 61
+        }
+      },
+      "id": "RLZ-PDE8EW",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Reviewer's Tier-2 unfinished-turn rule sends what and whom it awaits to its parent via role_message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:7e001c3730e000994493ed56d403ed76748ea721e5657b19df765bb39459f466",
+        "locator": {
+          "end": 27,
+          "kind": "line_range",
+          "start": 27
+        }
+      },
+      "id": "RLZ-TVE0C2",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W8 M02 no-round recording",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The recording procedure names addedFindings, record_review and record_route_review and states that an addition spends no round.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:9a1af76b11b93936f1bef1f0785b9017f6678f2e3077ba2fd55f5d1da8ec4597",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-TVXT3T",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Single Tier-2 OM-6 home in reference/review/rounds-and-late-findings.md:57 (linked from roles/reviewer.md:33 and operations/review.md): directs the Reviewer during memory review to inspect and sign every flagged pre-base-stale confirmation and deferral_lifted row and attach base and candidate staleOnly=true receipts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:dfbbe1e528ace4b0da870684b997e43796c09f4882aecb62a3a344745e482e8f",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-V5SQ32",
+      "invariant": "INV-S9H78W",
+      "origin": {
+        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The fix-verification-at-the-limit section states who approves a round beyond the limit, in the Architect's ruled wording.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "content": "sha256:34c8280b28a6ac4528110c65a902e8b7165c0868cad71985df97dd77b0c8dd7c",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-ZP7MHN",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Preserves record-only recheck without begin_review on unchanged candidates and task_doc refusals (review-candidate-invalid / review-kind-invalid) when the candidate changes.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Round-limit verification, unchanged-candidate record rechecks, and the three sanctioned `addedFindings` post-seal routes define exact `task_doc` admission and refusal boundaries.\n\nAnchor: `## Verify repaired findings at the round limit`; `## Recheck a repaired Worker record`; `## Post-seal routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:12e8dba803d84eaa917824cc14940ee62c0cd9f8676dfb10cc0e3b42d19fe4e4",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Protocol refusals, forged-state boundaries, proportional review (honest-agent starting-state and adversarial-review gate), omission/whole-set verification, `OM-6` memory-review checks (`cutCards`, `addedFiles`, `deferral_lifted`), and stop rules govern review conduct.\n\nAnchor: `Omission repairs, whole-set findings, and memory changes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:d8599c8e6359543fd95b30cd7d07887634d2540125cbbdc84835ace04e9a83c7",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -204,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
-            "content": "sha256:b72b5860593416a2806743b752812fe17decd773dc8e948d6b5635f905796700",
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "content": "sha256:627fdb0d40b945bf42ec9c281382fdf879187d3fe38a2e12996c5b3d4054bfa4",
             "locator": {
-              "end": 550,
+              "end": 560,
               "kind": "line_range",
-              "start": 484
+              "start": 464
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -217,12 +217,12 @@
         },
         {
           "anchor": {
-            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
             "content": "sha256:f5c487e735e506bf84e89636232d3d09d9c4fa9b21c675b058a268d843496cac",
             "locator": {
-              "end": 170,
+              "end": 242,
               "kind": "line_range",
-              "start": 153
+              "start": 225
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -235,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db44e27af544603a4ca10ea2baf8cd8e7d41087f",
+            "blob": "ebabdaf3673ea99aab08cab8589a592476701298",
             "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
             "locator": {
               "kind": "symbol",

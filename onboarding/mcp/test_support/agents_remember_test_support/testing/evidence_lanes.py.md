@@ -61,4 +61,3 @@ No external documentation owns the repository cadence taxonomy.
 ### Cross-Repo References
 
 No adjacent repository controls lane membership.
-

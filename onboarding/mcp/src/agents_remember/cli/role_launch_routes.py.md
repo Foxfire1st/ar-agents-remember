@@ -55,13 +55,18 @@ The dispatch endpoint takes `_DISPATCH_LOCK` first, runs `role_launch_admission.
 
 - The route registrar mounts the saved catalogue, frame, options, dispatch, result and progress endpoints alongside the document-chat and report readers. [1]
 - `_start_execution` wraps `role_start_execution.start_execution` while retaining route seams. [2]
+
 - `_launch_prepared_role_session` bounds direct `opening_message` via `role_opening_offload`, preflights/writes `.opening-message.md` and both handover files, records `openingMessageArtifact` and `stepUpArtifact` in the starting receipt, and builds the saved host call. [3]
+
 - `_revive_execution` verifies grant-aware leaf scope before native bridge revival. [4]
 - Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal. [9]
 - Checks size limit and refuses links without changing their target. [10]
 - The route registrar mounts the document-chat tree beside the selected read and report routes. The tree handler uses one live-agent census for its receipt-derived answer. [14]
 - The starting receipt carries task-copy metadata and warns of missing requirement copies ahead of step-up advice; later canonical task publication refreshes copies; the start answer projects identity and handover addresses while whole `role_start` can carry `productMessage`. [15]
+
 - Frozen takeover and requested reason are recorded before the host call. [18]
+
 - The Manager records an Architect address when available; an Orchestrator starter's parent receipt determines whether the address can be recorded; launch proceeds on lookup/write failure. [22]
 - The launcher invokes the notice owner after a successful dispatch response. [28]
+
 - The starting receipt retains the workspace brief advisory in preparation, and the role start answer can carry it in the warning. [29]

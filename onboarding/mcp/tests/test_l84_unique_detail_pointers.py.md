@@ -24,30 +24,44 @@ The module compiles through the helpers of `test_l84_capsule_delivery_proofs.py`
 ## Evidence
 
 - The complete per-role detail population is listed. [1]
+
 - The direct start pointers reach the complete start-and-first-intake procedure. [2]
+
 - Re-added duplicate pointers are enumerated by role, operation and source. [3]
 
+
 - Leaf authoring reaches the retained-evidence lifecycle. [9]
+
 - Architect action cues read their delivered detail and reject pointer removal. [10]
+
 
 - Only the Manager receives the refused-write detail; the other roles reach it through the served link. [11]
 
+
 - The permission owner section keeps every facet of its stop. [12]
+
 
 - Grouped actions read the whole delivered owner. [15]
 
+
 - Inline rules reach their owning sections and reject deletion. [13]
+
 
 - Short rules use the shared delivery and the removed step reads stay absent. [14]
 
+
 - Every first message has one pointer per action and the restored duplicates fail. [4]
+
 
 - Every compile delivers exactly its required details, each pointed to once per action. [5]
 
+
 - Moved action pointers reach each required compile and reject removal. [6]
+
 
 - The collaboration and authoring references equal their pointer-derived step and audiences. [7]
 
 - An extra audience or an outbound pointer in the method fails. [8]
 
-- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [16]
+
+- The moved-pointer fixture binds Curator's `Knowledge/CLI` index pointer to its named `reference/knowledge/use.md` detail. [16]

@@ -26,7 +26,7 @@ The complete curation operation is not optional or replaceable by a subset. Its 
 
 The report carries evidence; it neither stamps metadata nor performs closeout. Do not invent future code hashes or advance fingerprints to uncommitted source. Curation reconciles and writes admitted memory, while the transaction owner retains acceptance and publication. Template recipient fields do not dispatch a role or override its assignment.
 
-The current Reviewer source names impact-analysis and onboarding-coherency as durable route reports. Its baseline curation exception states that the Curator always runs complete memory quality; it does not make a reviewer-authored subset equivalent or assign that authoring operation to the Reviewer.
+The Reviewer's manifest template roster (`composition-manifest.json`) and non-leaf review detail (`reference/review/non-leaf-seams-and-catalogs.md`) retain impact-analysis and onboarding-coherency as durable route reports. Its baseline curation exception states that the Curator always runs complete memory quality; it does not make a reviewer-authored subset equivalent or assign that authoring operation to the Reviewer.
 
 Router doctrine permits harness helpers within the assignment, gives them no AR seat or independent-review authority and retains exactly one Curator writer. An explicitly requested independent review remains separate from the author's helpers.
 
@@ -38,6 +38,7 @@ The template holds no TODO and needs no sibling-repository evidence for this rep
 
 - The Reviewer compares affected onboarding with code using the Curator's handoff and the complete curation-check result from the curation operation. [1]
 
+
 - Changed files report their current trace row and reason, new files their onboarding, and governing overviews reflect the change; the report decides nothing. [2]
 
 - The report shape contains analytical author and affected scope, changed-sidecar and new-file inventories. [3]
@@ -48,14 +49,17 @@ The template holds no TODO and needs no sibling-repository evidence for this rep
 
 - Curator reconciliation and memory authoring do not own Git publication or landing. [8]
 
+
 - Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary. [9]
+
 
 - Helpers are not AR seats or independent review; Curator authoring retains one writer. [12]
 
 - Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset. [10]
 
-- Reviewer outputs include both durable route-report templates. [11]
+
 
 - Curation reconciles current intent, ruled intent and implemented reality and verifies every card sentence against code; each invariant is ingested within its Curator-authored semantic scope, while grouping and entity edits require their own justification. [6]
+
 
 - The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check, full memory quality and the Manager-leaf-closeout stale dependent-document read; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row. [7]

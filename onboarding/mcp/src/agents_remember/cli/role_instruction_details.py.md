@@ -27,7 +27,9 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 - `compose_launch_instructions` freezes details (nested symlink-confined `<stem>.details/<source>` when `compact_links=True` or flat `.detail-<sha256>.md` when `compact_links=False`) and substitutes pointers before user-note composition. [1]
 - `_require_detail_target` and `_require_nested_detail_target` accept either legacy flat `.detail-<sha256>.md` or interior-non-symlink-confined `<stem>.details/<source_path>` targets beside the saved handover's canonical directory. [3]
+
 - Held-seat opening and receipt restoration invoke `validate_instruction_detail_artifacts` before sending the opening message. [4]
+
 - `_bound_details` binds frozen detail internal links to absolute durable corpus and sibling frozen paths (`compact_links=False`) and re-digests the bound bytes before freezing. [6]
 - `_bound_baseline` binds baseline links along `instruction_origins` (compact `detail/` and `skill/` under `compact_links=True`, plus `compact_skill_uri_links` without origins) and refuses incomplete origins or unbound relative links. [7]
 - `nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection. [12]

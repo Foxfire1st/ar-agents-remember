@@ -20,4 +20,5 @@ The `detailed_receipt` fixture prepares a real worker hand-over, publishes its a
 
 - A real detailed preparation refuses a locator collision before any artifact write and leaves the foreign folder and its contents as they stood. [4]
 
+
 - A terminal group reclaims each alias exactly once and keeps every collected report byte at two and eight requests. [5]

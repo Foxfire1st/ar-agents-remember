@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-        "content": "sha256:ec6d6daff68dec353144208c6ce3f906d4d7cd7d0fe1e30e3a54684783c3d896",
+        "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+        "content": "sha256:6598c2ea1a980d46597a0006f01b3812dc6522a193ce4d04fa37297a1f960648",
         "locator": {
           "kind": "symbol",
           "name": "HandoverTextWordingTests.test_manager_first_prompt_addresses_skeleton_only_with_verified_architect"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-        "content": "sha256:9e4676d614d94bd04f3c7cccdeecdb8bbcf7654d75f45f912c65e40be5bd45d8",
+        "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+        "content": "sha256:4c731570bf7d23e941603d53198fcec22eb7b78a24fb00eea163aee8db7fcfd8",
         "locator": {
           "kind": "symbol",
           "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-        "content": "sha256:f0ffb96fb8201ad950574785e2722476b170f90814864f506583edc8d7c3dc12",
+        "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+        "content": "sha256:3298fc9ddf7be496ebe0af7ed8261abed6352f9922b2dd610df236fb37e61bc4",
         "locator": {
           "kind": "symbol",
           "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-        "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
+        "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+        "content": "sha256:6675b03c49527d7ef70519f05e7df11010c7681f5384fc21c8cc1350015ccff7",
         "locator": {
           "kind": "symbol",
           "name": "test_the_handover_names_the_tool_server_the_two_tools_and_the_host"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-        "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
+        "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+        "content": "sha256:6675b03c49527d7ef70519f05e7df11010c7681f5384fc21c8cc1350015ccff7",
         "locator": {
           "kind": "symbol",
           "name": "test_the_handover_names_the_tool_server_the_two_tools_and_the_host"
@@ -90,28 +90,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The handover test asserts Paseo and agents-remember-task host fields, the role_start/role_message tool names, scoped reader-discovery instructions and held/permission wording. The parentless control requires no invented parent; a started role records its actual starter and role/task return address. The shared handover case pins the two wording fragments and checks their once-only placement before the role capsule.",
+      "note": "The handover test asserts Paseo and agents-remember-task host fields, the role_start/role_message tool names, scoped reader-discovery instructions and held/permission wording. The parentless control requires no invented parent; a started role records its actual starter and role/task return address. The shared handover case pins the six condensed `arMcpUsage` clauses and checks once-only placement before `AR owner assignment and canonical task handover:`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:8dcb90076ca7d3297d52716d97e9a8c275de56a21b63993fa7287352ef108204",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:f5f20e9f9bd93684c9a235e505d6d87911b1c4678819e0e56b124ce9e3edfd3d",
             "locator": {
-              "end": 605,
+              "end": 674,
               "kind": "line_range",
-              "start": 434
+              "start": 510
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:d4da21666ffea9f52024c3bbe8c39b98a0fd289bb60851917287fe62f714d715",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:8000c5dabc3112c10be86bc2ecc417950f21e1cae9f85d2c35a8ad22310077e8",
             "locator": {
-              "end": 606,
+              "end": 674,
               "kind": "line_range",
-              "start": 572
+              "start": 622
             }
           },
           "kind": "test"
@@ -123,24 +123,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:e8f1f207fbc887160e0c4111a83ea298bd63d1f2ce659be0b8fef7b12329e65a",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:1855183de9e0cbc99d9a48cfd9fcde5dfe5ea29f6bace0340fe2c1ecf1af0031",
             "locator": {
-              "end": 432,
+              "end": 508,
               "kind": "line_range",
-              "start": 400
+              "start": 474
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
             "content": "sha256:113f32f25268d5149b3dc11b48e560a76a2debdc9db34946a978a3383c436787",
             "locator": {
-              "end": 710,
+              "end": 778,
               "kind": "line_range",
-              "start": 610
+              "start": 678
             }
           },
           "kind": "test"
@@ -152,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
             "content": "sha256:113f32f25268d5149b3dc11b48e560a76a2debdc9db34946a978a3383c436787",
             "locator": {
-              "end": 710,
+              "end": 778,
               "kind": "line_range",
-              "start": 610
+              "start": 678
             }
           },
           "kind": "test"

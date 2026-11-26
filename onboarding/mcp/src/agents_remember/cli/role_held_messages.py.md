@@ -36,14 +36,20 @@ A `ValueError` from `_restore_launch_handover` releases the claim and returns `c
 
 
 - Admission appends under the store lock and refuses overflow without dropping text. [1]
+
 - A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
+
 - Terminal lines are published separately from ended text and retain failure state. [3]
+
 
 
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
 
 - Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]
+
 - `_open_held_seat` runs handover restoration (`cannot-open` on `ValueError`) and `prepare_held_opening_batch` (`open-failed` on `AgenticSettingsError`/`OSError`/`ValueError`) before host launch, releasing the claim and preserving waiting messages on failure. [5]
+
 - Held-seat opening checks frozen details and restores or verifies recorded handover/opening artifact files before composing its message. [6]
+
 - The held opening inserts its product notice between the restored prompt (ending with its suffix `artifact_line`) and the bounded FIFO batch. [9]

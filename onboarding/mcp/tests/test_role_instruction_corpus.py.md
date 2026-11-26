@@ -152,15 +152,20 @@ No meaningful cross-repo references found.
 - This module declares narrow normalized-text R53 assertions over canonical plus the sole packaged copies of the Curator ingestion template and card-format reference; the propagation owner separately checks projection byte equality. [4]
 
 
+
 - Task-authoring guidance checks delegate to the shared task-document instruction contract across the canonical and declared generated roots, and a separate real task_doc fixture covers the legacy-master refusal and new JSON-master authoring. Neither is a copy-equality result or executed acceptance; existing retired-sentence controls and propagation-owner equality responsibility remain. [5]
 
+
 - Neither the lifecycle tree nor the root `AGENTS.md` names the retired job lens or reframe-research phase, and `lenses.md` is absent. [8]
+
 - Each copy of the Manager and Architect roles holds its publication clause once, names `system/task-publication.md` once and has no generic publishing sentence. [9]
+
 
 ## Current source evidence
 
 - The resolver under test reports missing manifest sources rather than silently accepting them. [1]
 
 - The handoff checks consume the canonical corpus and declared generated roots; the fragment-one control derives its surface through `fragment_one_surfaces` rather than naming a fixed skill. [6]
+
 
 - Packet-alignment and independent-preparation cases bind each clause to its actual step and reject deletion or relocation. Separate cases require knowledge worklist and landing-gate explanations at their current owners and check the admitted parser/tool surfaces; they do not grant relay artifact-inspection authority. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [7]

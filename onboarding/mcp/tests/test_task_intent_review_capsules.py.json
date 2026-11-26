@@ -1,0 +1,66 @@
+{
+  "path": "mcp/tests/test_task_intent_review_capsules.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`RoleCapsuleSyncTests` verifies intent-review clauses and byte parity between canonical `skills/` and packaged runtime copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f4cdfbf414f4455116e3b8cb46cf0d881f9d2c",
+            "content": "sha256:197006e68fad9327db14f157e15aa0eda30e890a8ddc25b55130b98b80eafeb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleSyncTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`FoundEnclosureMoveTests` proves `_resolve_workspace` stage moves, refusal safety, sealed reference/revision custody excluding `binding.json`, and `referenceWarning` fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f4cdfbf414f4455116e3b8cb46cf0d881f9d2c",
+            "content": "sha256:630e4cdf6a6fd0663b17b420032c57233caa39300712f8fc4c97ceb05a5bfadb",
+            "locator": {
+              "kind": "symbol",
+              "name": "FoundEnclosureMoveTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`AgreedRevisionResolverTests` and `MasterOrderStateTests` verify exact retained-revision digest/symlink guards and pending-intent exclusion from `ready_ids`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f4cdfbf414f4455116e3b8cb46cf0d881f9d2c",
+            "content": "sha256:784574a9b1dfbb070af70777ab87e32d67aa995908a6c005cf43510f9ea91915",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreedRevisionResolverTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1f4cdfbf414f4455116e3b8cb46cf0d881f9d2c",
+            "content": "sha256:fcf5790380e26d21c8dc926311ec81b385158d0cd261fcb448db61785c7ea0e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOrderStateTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

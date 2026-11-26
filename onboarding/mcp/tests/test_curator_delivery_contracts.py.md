@@ -22,23 +22,35 @@ The module-scoped `deliveries` fixture compiles every role/operation pair the li
 
 ## Evidence
 
-- Each detail is tied to its action sentence and carrier roles. [1]
+- Each detail is tied to its table-row group, link label, and carrier roles. [1]
+
 - Every declared role/operation pair is compiled. [2]
 
-- The role keeps truth, continuation and healing clauses and links the complete-checks section. [3]
+- The Curator role retains its truth/writer/repair clauses and links `reference/curator/exceptions-and-recovery.md`, while shared continuation stays in `core/every-role.md` + `core/authority.md` and full checks live in `operations/curation.md`'s `Checks and gates` section. [3]
+
 
 - Step details reach actual files at their actions over the complete matrix. [4]
+
 - Current truth and all-carrier repair are in the delivered reconciliation detail. [5]
+
 - All invariant definitions are in the delivered card detail. [6]
+
 - The doctrine corpus rejects own-fault-only and blanket debt routing. [7]
+
 - Writer identity and publication semantics hold in source and compilation. [8]
 - Bare-path writer examples are flagged in tables and shell blocks. [9]
 
 - No Curator delivery or followed skill carries a bare-path writer example. [10]
 
+
 - A deleted row retiring an invariant names only retire. [11]
+
 - Card-maintenance links resolve from source and compiled origins. [12]
+
 - Semantic truth, line counts and independent fact-check keep their homes. [13]
+
 - Card-maintenance links resolve from the emitted launch file. [14]
+
 - A failed memory tool keeps other admitted tools and dependent stops. [15]
+
 - Encountered-memory healing has one complete role home and delivery. [16]

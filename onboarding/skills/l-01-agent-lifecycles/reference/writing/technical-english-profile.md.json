@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:b2dd88e37cb0615e999c9062684cc8f36ea19a4ed34f10eb20068ceb64fd1bf9",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:52d4838f16d0fb55b773eeb76b36080275f27719c941cbd940b0fa753a171f4b",
             "locator": {
-              "end": 77,
+              "end": 30,
               "kind": "line_range",
-              "start": 77
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },

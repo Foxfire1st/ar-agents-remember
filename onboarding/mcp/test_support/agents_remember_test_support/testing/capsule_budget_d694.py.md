@@ -23,4 +23,4 @@ The module computes findings only; the tests decide what a finding means.
 
 ### Repo-Internal References (renewed)
 
-- The renewed d695 checker imports only current_capsule_ceiling from d694 and owns its own current-area and source findings. [5]
+- The renewed d695 checker no longer imports from d694; it owns its own current-area and source findings and pins d694's frozen helper hash in `_assert_history`. [5]

@@ -18,7 +18,10 @@ The test compiles the worker orientation capsule from the live `skills/l-01-agen
 
 - The one-home classifier for the held and refusal contracts [1]
 
+
 - The compiled capsule carries both homes once and a paraphrased duplicate in either home fails [2]
 
+
 - The held-delivery home in the shared every-role block [3]
+
 - The full-store refusal home [4]

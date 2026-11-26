@@ -63,7 +63,9 @@ The parity case compares count, actionable count and violation count across the 
 
 - The carried deleted-path case refuses carried-stale rather than new-anchor-path. The shared helper builds anchors. The split context and summary case asserts three matching violations, while the separate description case checks wording. [4]
 
+
 - The unscoped drift check, context packet and baseline status agree on count, actionable count and violation count. In a separate scoped case, the leaf check and summary agree on three `R22.6-carried-stale` violations. The carried-deletion test independently checks the leaf-base classification, and the static description case checks current guidance. [5]
+
 
 - Report and snapshot come from the same measured result. [6]
 - Converted baseline states block on violations first, then on unaccepted drift. [7]
@@ -77,7 +79,9 @@ The parity case compares count, actionable count and violation count across the 
 
 - The static description case checks measurement, currentness and duty. The workflow guide narrows accept-drift to the stale-anchor gate, and the baseline test checks the blocked-invalid rule. [11]
 
+
 - Static assertions inspect the surviving scope guidance and reject restoration of the retired drift registration. [14]
+
 
 - The context-packet leaf route binds the fixture leaf base rather than HEAD. [12]
 

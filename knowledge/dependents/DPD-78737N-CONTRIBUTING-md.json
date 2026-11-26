@@ -7,6 +7,19 @@
     "task": "261112-BUG-L55",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:26.968529Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-EBATAV",
+      "owner": "261124-CAP",
+      "passage": "CONTRIBUTING.md ## Generated copies (lines 150-152) and ### Lanes (lines 230-259)",
+      "reason": "CAP-L3 retired word ceilings in scripts/instruction_renewal/budgets.py in favor of COMPILED_CAPSULE_TOKEN_CEILINGS and WIRE_TOKEN_CEILINGS; also pre-base stale on test-evidence-lanes.toml and explicitly assigned to 261124-CAP-L5."
+    }
+  ],
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -207,14 +220,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:49:06+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L55",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

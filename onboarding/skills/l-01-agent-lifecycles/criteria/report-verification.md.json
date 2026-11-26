@@ -73,18 +73,18 @@
       ]
     },
     "4": {
-      "note": "The reviewer binding table includes report-verification in every listed review type.",
+      "note": "The reviewer binding table includes report-verification in every listed review type.\n\nAnchor: `report-verification`",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+            "content": "sha256:c487d408b028daf4e664c8f077c84ad5f97ef30fd1a8dd5ff92c6523e648ef23",
             "locator": {
-              "end": 63,
+              "end": 26,
               "kind": "line_range",
-              "start": 45
+              "start": 19
             },
-            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+            "path": "skills/l-01-agent-lifecycles/reference/review/non-leaf-seams-and-catalogs.md"
           },
           "kind": "code"
         }

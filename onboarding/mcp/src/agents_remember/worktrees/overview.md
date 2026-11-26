@@ -220,7 +220,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [117]
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
+
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
 
@@ -365,7 +367,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Only a retained merge commit failure enters hook diagnosis. [111]
 - Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
 - Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
+
 - Supported staged continuation and cancellation guidance. [41]
+
 - The commit itself runs through the shared bounded owner. [122]
 
 - Completed closeout alone freezes history; the latest owner attempt is closed with reversible exact-byte restoration. [90]

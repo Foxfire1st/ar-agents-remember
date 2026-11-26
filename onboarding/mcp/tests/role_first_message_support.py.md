@@ -24,10 +24,5 @@ The checks run on the message the host was given, not on a copy read back afterw
 - The matrix builds the real first message for every allowed role and harness through the launch route. [1]
 
 
-
 - Path and reachability checks read delimited spans whole and run at the send boundary. [2]
-
-
-
 - Only absolute paths and task-document references are allowed to stand in two places. [3]
-

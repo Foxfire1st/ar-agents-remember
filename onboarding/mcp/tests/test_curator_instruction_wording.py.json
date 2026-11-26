@@ -3,25 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
-        "locator": {
-          "kind": "symbol",
-          "name": "CuratorInstructionWordingTests.test_manifest_descriptions_follow_the_coordination_default"
-        }
-      },
-      "facet": "The four composition-manifest seat and purpose descriptions state the one-Manager/one-Orchestrator default and the developer's choice.",
-      "id": "PRF-0E0V75",
-      "invariant": "INV-A6GAKX",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -37,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -54,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -71,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -88,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -105,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -122,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -139,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -156,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:13ce59d713246c3d139fb8272105660fbbe1226781d5345705bd1fa72769df79",
+        "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+        "content": "sha256:f2091d23e50fa2be8caaa5084373ce4ca292b189f528fb525f23e5de405ecfb2",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -170,40 +153,6 @@
         "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
         "leaf": "260928-MIK-L72"
       }
-    },
-    {
-      "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:1c2f6ec3cdec9676c856338672b7c4894c495199576579e73543061202b18b11",
-        "locator": {
-          "kind": "symbol",
-          "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
-        }
-      },
-      "facet": "Pins the Curator's exact-pair dependent knowledge_read parameters, before/after candidate matching and memoryTree.treeKey/counts.total/receipt report requirements.",
-      "id": "PRF-RQFCB4",
-      "invariant": "INV-CAJ09X",
-      "origin": {
-        "handoffEntry": "BUG-R41.v1.rule-4",
-        "leaf": "261112-BUG-L41"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-        "content": "sha256:1c2f6ec3cdec9676c856338672b7c4894c495199576579e73543061202b18b11",
-        "locator": {
-          "kind": "symbol",
-          "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
-        }
-      },
-      "facet": "Requires the Curator's role and operation text to carry the writer admission by reference and the parser to refuse the retired publication options.",
-      "id": "PRF-S4JV63",
-      "invariant": "INV-945YZ4",
-      "origin": {
-        "handoffEntry": "MIK-R194@v1 rule 10",
-        "leaf": "260928-MIK-L186"
-      }
     }
   ],
   "realizes": [],
@@ -213,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-            "content": "sha256:19878f2f95006f3a6eb9411f2ee4ef0416fb0347c4e227e5d4872c4963eba1e8",
+            "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+            "content": "sha256:a93e275a834b8956847642fe06cf5cd4d7e578ff4b9c4c2ced4b09e05e844599",
             "locator": {
               "kind": "file"
             }
@@ -224,16 +173,17 @@
       ]
     },
     "2": {
-      "note": "The writer admission is pinned in the role, serving-build detail, publication report and operation texts (including the leaf `memory_quality_check` parameters, candidate matching and response receipt fields), and the parser refuses the removed options with exit 2.",
+      "note": "In split module `test_curator_instruction_wording_delivery.py`, writer admission is pinned in the role, serving-build detail, publication report, exceptions-and-recovery detail, and operation texts (including dependent `knowledge_read` parameters, candidate matching, and response receipt fields), and the parser refuses the removed options with exit 2.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-            "content": "sha256:1c2f6ec3cdec9676c856338672b7c4894c495199576579e73543061202b18b11",
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "content": "sha256:856ee056a8c25c910e47eccc52712f698feb0a24edf428ab02c57ea1e06d0886",
             "locator": {
               "kind": "symbol",
               "name": "test_the_curator_writer_is_admitted_for_the_selected_runtime"
-            }
+            },
+            "path": "mcp/tests/test_curator_instruction_wording_delivery.py"
           },
           "kind": "test"
         }
@@ -244,8 +194,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-            "content": "sha256:cceba0f912b6ae3b1d9e0a2807d0bd64d67132cfb257aa9ddacf1b5180750436",
+            "blob": "fc9af3fa511b252612b8fbb865b1cff01f806880",
+            "content": "sha256:71e3ca7b8ae67dbf451c59c90372dbfcac240c2c17ae43b700d92444ef44797f",
             "locator": {
               "kind": "symbol",
               "name": "test_foundation_intake_and_correction_keep_their_task_and_truth_boundaries"
@@ -256,33 +206,35 @@
       ]
     },
     "4": {
-      "note": "The coordination detail must be offered at each of the eight failed-scenario steps of the compiled capsules.",
+      "note": "In split module `test_curator_instruction_wording_delivery.py`, the coordination detail must be offered at each of the eight failed-scenario steps of the compiled capsules.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
-            "content": "sha256:6372bb12bab919bbcb9a627dcadaf8a4d2e294d5d40843b7948bd3bd41c687c0",
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "content": "sha256:899f4c5ad8c63194f859c45db9f994a3f5894008ffb5137f49728f271a36500b",
             "locator": {
               "kind": "symbol",
               "name": "test_coordination_detail_is_offered_at_all_eight_failed_scenario_steps"
-            }
+            },
+            "path": "mcp/tests/test_curator_instruction_wording_delivery.py"
           },
           "kind": "test"
         }
       ]
     },
     "5": {
-      "note": "The compiled-capsule helper comes from the capsule-delivery proof module.\n\nAnchor: `_compiled_outcome`",
+      "note": "In split module `test_curator_instruction_wording_delivery.py`, the compiled-capsule helper `_compiled_outcome` is imported from `test_l84_capsule_delivery_proofs`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed0f45e17b10880507bbe3c09051060c65cce256",
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
             "content": "sha256:4e298a5480a7e34d6a4b766218a8b16a81f9cd613f17dfd641bafce984120ad5",
             "locator": {
-              "end": 39,
+              "end": 44,
               "kind": "line_range",
-              "start": 39
-            }
+              "start": 44
+            },
+            "path": "mcp/tests/test_curator_instruction_wording_delivery.py"
           },
           "kind": "test"
         }

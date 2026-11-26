@@ -91,7 +91,9 @@ No configured `Domain Documentation` source applies; the doctrine under test is 
 
 - The declared roster and vocabulary must equal the actual canonical speakers in both directions. [2]
 
+
 - OWED_STATEMENTS declares each named surface's required boundary clauses; the master-handover-packet and turn-report templates owe referral clauses to `core/acceptance.md`. RELAY_REFERENCE_SURFACES names the turn-report template, checked as a referral to the acceptance owner; it is separate from the completion-truth roster and the mechanical-only reading vocabulary. [3]
+
 
 - The detector scans promise views for the declared RETIRED_CLAIMS and classifies each text as stated, absent or contradicted. Contradictions take priority over a matching mechanical-only phrase, and an in-place denial does not count as a positive statement. [4]
 
@@ -100,6 +102,7 @@ No configured `Domain Documentation` source applies; the doctrine under test is 
 - The projection-side sibling that re-asserts the boundary clauses against the canonical doctrine tree and its one declared packaged copy. [6]
 
 - The relay detector requires an attributed relay action rather than mere co-occurrence of sweep, open and packet words; active and passive artifact-inspection examples still fail. Worker handoff checks bind the Manager stage-start notice and the direct frozen-object Reviewer handover to their real sections in the Worker role, the implementation operation and the every-role core, with per-clause deletion controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [7]
+
 
 ### Cross-Repo References
 

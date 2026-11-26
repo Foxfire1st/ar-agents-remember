@@ -8,14 +8,14 @@
   },
   "applicability": "Every role a start operation launches, on every harness and in every kind of start: parentless, parented above a leaf, parented leaf seat, seat set, held seat opening, successor, step-up and the restore of a saved launch.",
   "conditions": [
-    "The projection's field list (PROJECTION_FIELDS and HOST_FIELDS) is defined once in code and excludes long prose fields retained in .handover.json.",
-    "The projection stays within its role token budget and the complete Turn-1 prompt stays within PHASE_1_WIRE_TOKEN_CEILINGS plus approved appendix allowances (600 held, 900 launch) under o200k_base.",
+    "The projection's field list (PROJECTION_FIELDS and HOST_FIELDS) is defined once in code, omits nulls and redundant selection/default duplicates, and excludes long prose fields retained in .handover.json.",
+    "The projection stays within its role token budget and the complete Turn-1 prompt stays within final WIRE_TOKEN_CEILINGS (2,500t/3,000t/3,800t, including heldOpeningPrompt prefixes, with Phase 1 appendix allowances removed) under o200k_base.",
     "The static prefix before ## Launch Context is byte-identical across launches of the same role and operation, and the artifact locator line stands last."
   ],
   "exclusions": [
     "Messages after the first.",
     "A harness's own additions to a session.",
-    "The capsule's own word budget, which its record states."
+    "The 34-key compiled capsule token ceilings, which their own record states."
   ],
   "id": "INV-ZVD184",
   "origin": {
@@ -29,20 +29,20 @@
     "leaf": "260928-MIK-L185",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A role first message places its static brief, direction, AR tool guidance, role-filtered shared block, and compiled capsule before the ## Launch Context boundary, keeps its inline handover projection within the role token budget while publishing the complete canonical handover immutably, caps direct and held opening appendices by settings.role_message_limit with immutable offload sidecars, appends the handover artifact locator line as a trailing suffix, and stays within the Phase 1 wire-token ceilings.",
+  "statement": "A role first message places its static brief, direction, AR tool guidance, role-filtered shared block, and compiled capsule before the ## Launch Context boundary, keeps its deduplicated inline handover projection within the role token budget while publishing the complete canonical handover immutably, caps direct and held opening appendices by settings.role_message_limit with immutable offload sidecars, appends the handover artifact locator line as a trailing suffix, and stays within the final WIRE_TOKEN_CEILINGS (including heldOpeningPrompt prefixes).",
   "supersedes": [],
   "title": "Turn-1 role messages lead with static instructions and bound dynamic context",
   "writer": {
-    "at": "2026-11-25T20:08:37+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
     "task": "261124-CAP"
   }
 }

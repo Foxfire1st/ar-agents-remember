@@ -28,4 +28,3 @@ This is the inspected source contract, not an execution certificate. Parent and 
 - Selected-subject judgment and proofs: `Proof` owns the described branch. [3]
 
 - Selected-subject judgment and proofs: `effectLabel` owns the described branch. [4]
-

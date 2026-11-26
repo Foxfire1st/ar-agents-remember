@@ -125,5 +125,3 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 
 - Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \ 
-
-

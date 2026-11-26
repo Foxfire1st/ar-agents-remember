@@ -206,13 +206,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "982936f5713415c91c62e5c17771f8e35b788c7d",
-            "content": "sha256:d7a9af76297cafb27a49e8e96a65f8eb12f8f888f8a1fae438ee25e57b490bc3",
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:827684f930a2e8691f74b66ee2cc36c229ddee5b68bfc361cc8a3a2f824c3024",
             "locator": {
               "kind": "symbol",
               "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
             },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+            "path": "mcp/tests/test_lifecycle_turn_truth_handovers.py"
           },
           "kind": "test"
         }
@@ -223,13 +223,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "982936f5713415c91c62e5c17771f8e35b788c7d",
-            "content": "sha256:a41cd9f3627c4301108aaf7e8e962acf4192a1b349fcc23c9d0af40d2085ebfa",
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:c0f89204befdacad16e6d177057bb647e152a65f75eca0f816302da5ac7d9243",
             "locator": {
               "kind": "symbol",
               "name": "test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
             },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+            "path": "mcp/tests/test_lifecycle_turn_truth_handovers.py"
           },
           "kind": "test"
         }
@@ -455,8 +455,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
-            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
+            "blob": "b4e32462371441086404d04a15f95b6176532696",
+            "content": "sha256:5486afe9409e6ea24118b7e2bdf02bc790ed4300c2bf4f18ad76e523f7f37169",
             "locator": {
               "kind": "symbol",
               "name": "test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"

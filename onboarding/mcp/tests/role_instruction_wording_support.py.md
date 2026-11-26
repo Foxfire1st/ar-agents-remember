@@ -26,8 +26,13 @@ The forbidden search covers the report directory segment as part of the whole te
 
 - `assert_message_handover_delivery` pins the held-delivery clause once in each non-Bootstrap role's compiled shared block (Bootstrap is only checked for an absent message-handover pointer) and checks each non-Bootstrap sender's own delivered message-handover action for the busy-refusal steps, receipt scope and no semantic acceptance from a receipt; these are source assertions, not a fresh invocation, host result or AR acceptance. [3]
 
+
 - The relocated working steps name each owning file, heading and required clauses. [4]
+
 - A repeated ordinary label is accepted while every detail-marker link must stay exact; planted mutants fail. [5]
+
 - The coordination action steps name the pre-action pointers each owning step must carry. [6]
+
 - A non-starting seat keeps its no-start boundary: the Reviewer's in its role file, the others by a start-no-role sentence. [7]
+
 - The memory-review owner-link checker rejects a missing action, wrong owner or fragment, and a repeated link. [8]

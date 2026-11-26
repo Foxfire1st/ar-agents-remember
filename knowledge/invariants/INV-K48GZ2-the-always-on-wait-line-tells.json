@@ -5,9 +5,9 @@
     ],
     "justification": "The shared line, its authority copy, the recovery detail and the size budget must agree, so one statement keeps every seat told the same way to declare a wait."
   },
-  "applicability": "The always-on wait line that every role capsule receives and its recovery detail.",
+  "applicability": "The always-on wait line that every role capsule receives via core/every-role.md and its authority/recovery references.",
   "conditions": [
-    "The line is composed from core/authority.md into each capsule."
+    "The line is composed from core/every-role.md (backed by AU10.3 in core/authority.md) into every role capsule."
   ],
   "exclusions": [
     "Role-specific wait rules, which live in their own texts."
@@ -24,27 +24,20 @@
     "leaf": "260928-MIK-L60",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The always-on wait line tells every seat, on any harness, how to declare a helper wait or a background wait (each process, pid or log, expected end, check in N minutes 1-30, default 3), that a harness wake continues its own work, and names role_message on agents-remember-task in the no-progress-message rule; its source is core/authority.md (AU10.3), and core/authority.md:100 counts a declared background wait as not silent; the recovery detail counts either declared wait as a wait.",
+  "statement": "The always-on wait line in core/every-role.md tells every seat, on any harness, how to declare a helper wait (WAITING FOR SUBAGENTS:) or a background wait (WAITING FOR BACKGROUND:, naming process, id/log, expected end, check in 1-30 min, default 3), that a harness wake continues its own work, and sends no progress role_message; its canonical authority is AU10.3 in core/authority.md, and recovery counts either declared wait as a wait.",
   "supersedes": [],
+  "title": "Always-on wait line defines helper and background wait markers uniformly",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L60",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

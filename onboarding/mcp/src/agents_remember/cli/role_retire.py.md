@@ -21,5 +21,7 @@ The scan reads mixed report folders through `read_enumerated_receipt`, passing o
 ## Evidence
 
 - `_retire_seat` locates a unique receipt, checks caller scope via `retirement_scope_refusal`, refuses unresolved launches, and handles authorized `already-retired` repeats before host archival. [1]
+
 - `_locate_seat` enumerates current and archived receipts via `read_enumerated_receipt` and refuses unknown or duplicated agent IDs before any host or disk effect. [2]
+
 - `_archive_retiree` checks open children and interruption, records `retireIntent` via `hold_retirement` before `_archive_on_host`, clears definitive refusals, and settles via `_finish_retirement` with retryable `retire-record-failed` custody. [3]

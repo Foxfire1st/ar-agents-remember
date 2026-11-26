@@ -29,31 +29,6 @@
     {
       "relation": "constrains",
       "target": "INV-ZVD184"
-    },
-    {
-      "relation": "explains",
-      "target": {
-        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
-        "content": "sha256:9c25b53a90804c9ca32da1e4d09ccf11d6a666986f90119d0eb3f2204519ba71",
-        "locator": {
-          "kind": "symbol",
-          "name": "PHASE_1_WIRE_TOKEN_CEILINGS"
-        },
-        "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
-      }
-    },
-    {
-      "alternative": 1,
-      "relation": "reconsider_on",
-      "target": {
-        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
-        "content": "sha256:539af9c48530c265749c44f73e59ee3e82bbd8515bd9ff7e44972306e36d4426",
-        "locator": {
-          "kind": "symbol",
-          "name": "PHASE_1_HELD_APPENDIX_ALLOWANCE"
-        },
-        "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
-      }
     }
   ],
   "origin": {
@@ -67,19 +42,19 @@
     "leaf": "261124-CAP-L2",
     "task": "261124-CAP"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-25T20:08:37+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
     "task": "261124-CAP"
   }
 }

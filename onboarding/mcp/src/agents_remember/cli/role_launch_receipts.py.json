@@ -348,13 +348,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "982936f5713415c91c62e5c17771f8e35b788c7d",
-            "content": "sha256:d7a9af76297cafb27a49e8e96a65f8eb12f8f888f8a1fae438ee25e57b490bc3",
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:827684f930a2e8691f74b66ee2cc36c229ddee5b68bfc361cc8a3a2f824c3024",
             "locator": {
               "kind": "symbol",
               "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
             },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+            "path": "mcp/tests/test_lifecycle_turn_truth_handovers.py"
           },
           "kind": "test"
         }
@@ -365,13 +365,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "982936f5713415c91c62e5c17771f8e35b788c7d",
-            "content": "sha256:a41cd9f3627c4301108aaf7e8e962acf4192a1b349fcc23c9d0af40d2085ebfa",
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:c0f89204befdacad16e6d177057bb647e152a65f75eca0f816302da5ac7d9243",
             "locator": {
               "kind": "symbol",
               "name": "test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
             },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+            "path": "mcp/tests/test_lifecycle_turn_truth_handovers.py"
           },
           "kind": "test"
         }
@@ -494,24 +494,24 @@
         },
         {
           "anchor": {
-            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
             "content": "sha256:bda4d8d3528c67eee8738e776e727db2e1fd0f4afca58e9dbf566869b606e5ac",
             "locator": {
-              "end": 117,
+              "end": 172,
               "kind": "line_range",
-              "start": 110
+              "start": 165
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
             "content": "sha256:f5c487e735e506bf84e89636232d3d09d9c4fa9b21c675b058a268d843496cac",
             "locator": {
-              "end": 170,
+              "end": 242,
               "kind": "line_range",
-              "start": 153
+              "start": 225
             }
           },
           "kind": "code"
@@ -574,7 +574,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db44e27af544603a4ca10ea2baf8cd8e7d41087f",
+            "blob": "ebabdaf3673ea99aab08cab8589a592476701298",
             "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
             "locator": {
               "kind": "symbol",
@@ -651,7 +651,7 @@
         },
         {
           "anchor": {
-            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "blob": "cfd0a8c02786e987d15352b4c52a791e2814e1e9",
             "content": "sha256:24f5dbcc08c40cc834391fb6fee5739797a94a0c75a18be29a055878d7fdf199",
             "locator": {
               "end": 360,
@@ -685,8 +685,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
-            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
+            "blob": "b4e32462371441086404d04a15f95b6176532696",
+            "content": "sha256:5486afe9409e6ea24118b7e2bdf02bc790ed4300c2bf4f18ad76e523f7f37169",
             "locator": {
               "kind": "symbol",
               "name": "test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
@@ -719,8 +719,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
-            "content": "sha256:9a49fbb2686ab68e1dc76b3c59ddb6a03f519fe3af76f0ee2196ba7b8d1e1766",
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+            "content": "sha256:a06578728d15416c8ee7b34b2b65febca53710e31e8588a8ea4eb9aa7306ec16",
             "locator": {
               "kind": "symbol",
               "name": "HandoverArtifactOnTheRouteTests"

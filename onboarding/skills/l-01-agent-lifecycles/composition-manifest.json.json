@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
           "end": 256,
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:39ebec63b0b851c8710bbbf714e7764228c3ae8779e69ee4095dc25ea77b22e6",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:9085b9c0a557d88c11aad6c7c2c6551ad89bb57c5d452123c45ef753c0276973",
         "locator": {
-          "end": 1235,
+          "end": 1273,
           "kind": "line_range",
-          "start": 1229
+          "start": 1267
         }
       },
       "id": "RLZ-0XJWN1",
@@ -42,7 +42,24 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-556TMN",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Registers all 6 new Tier-2 reference files as step_detail targets and derives step/audience bindings from Markdown table pointers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
           "end": 324,
@@ -61,12 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:ba5fc2d42df8d4190fc0b30461d6ea074a85e5eb8eada5acc210033391b9a59d",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:52f21a4ca9c23c5374f9f636874d8b22c3212f6874d1839f4e62d59642a3d885",
         "locator": {
-          "end": 929,
+          "end": 965,
           "kind": "line_range",
-          "start": 924
+          "start": 960
         }
       },
       "id": "RLZ-60QKQ2",
@@ -80,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 463,
@@ -99,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 331,
@@ -118,7 +135,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 377,
@@ -137,7 +154,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:2c855d9ab0ec75392b662adb2ffbffc78235c49bd18235fe256cf72e49df2990",
         "locator": {
           "end": 502,
@@ -156,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
         "locator": {
           "kind": "file"
         }
@@ -173,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 25,
@@ -192,8 +209,8 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
         "locator": {
           "kind": "file"
         }
@@ -209,7 +226,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 263,
@@ -228,7 +245,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
           "end": 34,
@@ -247,7 +264,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 422,
@@ -266,7 +283,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 507,
@@ -285,7 +302,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
           "end": 199,
@@ -304,7 +321,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 537,
@@ -323,7 +340,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
           "end": 206,
@@ -342,12 +359,12 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:ad78c06283ec1fba7b4d2a3e3a87186146d18aa6a91690eafff34f8e58a21da0",
         "locator": {
-          "end": 888,
+          "end": 924,
           "kind": "line_range",
-          "start": 881
+          "start": 917
         }
       },
       "id": "RLZ-NNHVHW",
@@ -361,8 +378,8 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
         "locator": {
           "kind": "file"
         }
@@ -378,8 +395,8 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
         "locator": {
           "kind": "file"
         }
@@ -395,7 +412,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:d6444e20cae443139bda5e4729917a083fc9c643d5e0db2eb3a0375c0d1bbb85",
         "locator": {
           "end": 160,
@@ -414,8 +431,8 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
         "locator": {
           "kind": "file"
         }
@@ -431,12 +448,12 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-        "content": "sha256:144fed9e4d7edfc82d6a386739dd16a00e1e5fd3625678af5a06f2f3cffb19ac",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+        "content": "sha256:246f634a270de4aabb57a0c455567d64e2c492b81a0cbab1ef11a6f5421e9dc0",
         "locator": {
-          "end": 948,
+          "end": 984,
           "kind": "line_range",
-          "start": 936
+          "start": 972
         }
       },
       "id": "RLZ-TTD2BQ",
@@ -450,7 +467,7 @@
     },
     {
       "anchor": {
-        "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+        "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
           "end": 54,
@@ -474,7 +491,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:82d27b986ff7e90eeecd010dc4e925c28c0cdf759215e447ac6aacfa82d63508",
             "locator": {
               "end": 5,
@@ -580,7 +597,7 @@
         },
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
             "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
             "locator": {
               "kind": "symbol",
@@ -597,7 +614,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:d34f79333165b56c5c3a6e5d47de1e853dd1a3f72a2aa9a2f5724b8e45745592",
             "locator": {
               "end": 548,
@@ -627,7 +644,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:f26dbe6f0c682f33740a4cc4008ccaec3f68f15f6d78caf8daaff58ead18b52b",
             "locator": {
               "end": 5,
@@ -644,7 +661,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
               "end": 132,
@@ -661,7 +678,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:5fc6c52df25e22af74b1e05d9f593ba8d8afff0c93c9f1090dd205347e210c46",
             "locator": {
               "end": 549,
@@ -678,7 +695,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:788c9c4de194241a286a94cfe7b7fb85d0c50c53f74294df2c3a55b3b46a52f7",
             "locator": {
               "end": 515,
@@ -695,7 +712,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
             "locator": {
               "end": 475,
@@ -712,7 +729,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
               "end": 570,
@@ -725,12 +742,12 @@
       ]
     },
     "22": {
-      "note": "The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.\n\nAnchor: `composition_order` / `references`, `Source`: `skills/l-01-agent-lifecycles/composition-manifest.json` (file).",
+      "note": "The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-            "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
             "locator": {
               "kind": "file"
             }
@@ -809,12 +826,12 @@
       ]
     },
     "27": {
-      "note": "The authored source owns this contract; the distribution copy is not a separate authority.\n\nAnchor: `\"authoritative_tree\": \"skills/\"`, `Source`: `skills/l-01-agent-lifecycles/composition-manifest.json` (file).",
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-            "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
             "locator": {
               "kind": "file"
             }
@@ -824,12 +841,12 @@
       ]
     },
     "29": {
-      "note": "All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` Anchor: `references`\n\nAnchor: `` `references` ``, `Source`: `skills/l-01-agent-lifecycles/composition-manifest.json` (file).",
+      "note": "All nine operation entries declare audience selection. The references registry contains 56 entries, 44 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result.\n\nAnchor: `references`",
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-            "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
             "locator": {
               "kind": "file"
             }
@@ -843,7 +860,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
               "end": 132,
@@ -856,12 +873,12 @@
       ]
     },
     "30": {
-      "note": "The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` Anchor: `composition_order`\n\nAnchor: `` `composition_order` ``, `Source`: `skills/l-01-agent-lifecycles/composition-manifest.json` (file).",
+      "note": "The manifest declares audience selection for all nine operations and records 56 reference entries, 44 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations.\n\nAnchor: `composition_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-            "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
             "locator": {
               "kind": "file"
             }
@@ -875,7 +892,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:a037016a32f1080d2cc9a7d8c3ae1f148bbea67f0dfa281b4749846170577014",
             "locator": {
               "end": 413,
@@ -892,7 +909,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:e4e3a50ea35309cdf447d465ce995985a7e09328998dc5c87bda3d0c3aa77ee2",
             "locator": {
               "end": 35,
@@ -904,7 +921,7 @@
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
               "end": 570,
@@ -917,24 +934,12 @@
       ]
     },
     "33": {
-      "note": "The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file.\n\nAnchor: `references` / `derived`, `Source`: `skills/l-01-agent-lifecycles/composition-manifest.json` (file).",
+      "note": "The registry contains 44 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file.",
       "targets": [
         {
           "anchor": {
-            "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
-            "content": "sha256:2ee2903983c89167939fa4a54d84ae4a30a636c02c72a289382b4d57ab835656",
-            "locator": {
-              "kind": "symbol",
-              "name": "derived"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/manifest_derived.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-            "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
             "locator": {
               "kind": "file"
             }
@@ -948,7 +953,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:9039cfc943476f39e536f4828c49143d731f895dd53e78817ce66b324d0f5b6c",
             "locator": {
               "end": 145,
@@ -978,7 +983,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:5fc6c52df25e22af74b1e05d9f593ba8d8afff0c93c9f1090dd205347e210c46",
             "locator": {
               "end": 549,
@@ -995,7 +1000,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:788c9c4de194241a286a94cfe7b7fb85d0c50c53f74294df2c3a55b3b46a52f7",
             "locator": {
               "end": 515,
@@ -1012,7 +1017,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:1ee6c9887ffbd287ea4736de38eb6836ffbc5a4aa0ce7ddfee4c1143fdeb741b",
             "locator": {
               "end": 279,
@@ -1024,7 +1029,7 @@
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:edd8462433ebc247cce4d26b71c37ce2778648817213f3fad060a58547b662fa",
             "locator": {
               "end": 387,
@@ -1036,7 +1041,7 @@
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:10da5cc5a7f68dccbd41717ed595866f5764ff5ba3ea2b1d8306fca43ffb19d7",
             "locator": {
               "end": 433,
@@ -1048,7 +1053,7 @@
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:df53c382c96ec41e75f6e1d4beff40bdfa92e6d026a68a35d418f6a4868ad681",
             "locator": {
               "end": 475,
@@ -1065,7 +1070,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
               "end": 570,
@@ -1078,12 +1083,12 @@
       ]
     },
     "9": {
-      "note": "The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.\n\nAnchor: `composition_order` / `references`, `Source`: `skills/l-01-agent-lifecycles/composition-manifest.json` (file).",
+      "note": "The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
-            "content": "sha256:24c8b9428669a5f2e3c5c9523e81fe82d8ebe23bf1a620ecfda5bdffdb232e71",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "content": "sha256:ffb5af2c1ab51e9b69f51f81ef36e27e2bea1bdacc49c3e0db23b30975ca78e0",
             "locator": {
               "kind": "file"
             }

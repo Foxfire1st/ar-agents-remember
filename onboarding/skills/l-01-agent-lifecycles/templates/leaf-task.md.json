@@ -54,16 +54,29 @@
       ]
     },
     "4": {
-      "note": "The Architect reads the leaf template before authoring a leaf.",
+      "note": "The Architect reaches this template via `reference/tasks/document-authoring.md` before authoring a leaf.\n\nAnchor: `leaf-task.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-            "content": "sha256:432028c4623c2a2dec59638bee44d005c30ed4b67e085c61e64610ab9d1fee9f",
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:1439a68523e85d3ce84463cc94cf2afec7db178b46974942c379916474c61ff5",
             "locator": {
-              "end": 56,
+              "end": 13,
               "kind": "line_range",
-              "start": 56
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "content": "sha256:f10b30eff787a545632a6c8e902f7050f5b5148e09304af62b21770643f34193",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },

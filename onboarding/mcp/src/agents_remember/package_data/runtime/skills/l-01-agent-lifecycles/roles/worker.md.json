@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-        "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+        "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+        "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
         "locator": {
           "kind": "file"
         }
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
             "locator": {
-              "end": 125,
+              "end": 15,
               "kind": "line_range",
-              "start": 125
+              "start": 15
             }
           },
           "kind": "code"
@@ -94,12 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:9691fd1d3c554b52dd4d2a9a812ad2c8309faa55906ad5fdc130cc34eaf6dd17",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
             "locator": {
-              "end": 31,
+              "end": 10,
               "kind": "line_range",
-              "start": 31
+              "start": 10
             }
           },
           "kind": "code"
@@ -107,12 +107,12 @@
       ]
     },
     "2": {
-      "note": "The Worker role file states the Worker's duties, and the supplied operation states the procedure.",
+      "note": "The packaged Worker role implements one leaf's approved requirement and preservation rules in its paired code worktree with memory read-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:26c5524067439977845bf33105a7ed49edf803137809ee57ead9185bb7d52e9d",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:ca32055cbb659de71147100743b5fce688c710d3a4af9db0cd6814a3a9929a23",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -157,34 +157,17 @@
         }
       ]
     },
-    "5": {
-      "note": "The Worker's stage ends when the candidate meets the requirement, the handover checks pass on a clean copy of the frozen candidate, the listed final checks have run once on the tree that passed review, and the reports are with the Reviewer and Manager.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:7039b2f8a5d2ed2a741683a9f319e159a80cc25968d685feda07ed7bd8dedb79",
-            "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 159
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
-      "note": "After three failed repairs of the same check or finding the Worker stops and tells the Manager; with every candidate finding closed, a remaining record-only finding is repaired on the record and checked by the same Reviewer without a new round; a finding still open after a repair needs the property written for every case and the construction shown or changed.",
+      "note": "The Worker repairs its own and instrument breaks (naming repairs in the report), fixes faulty inputs on the same tool, and stops to tell the Manager after 3 failed repairs on one item.",
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:5b4a09092e1a5906f5aa32e7aeffd074838cac0d3a3e4dce63d36ca8198354e7",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
             "locator": {
-              "end": 149,
+              "end": 15,
               "kind": "line_range",
-              "start": 143
+              "start": 15
             }
           },
           "kind": "code"
@@ -196,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
             "locator": {
               "kind": "file"
             },
@@ -207,8 +190,8 @@
         },
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:b99e6ae2bc61c97af708715a631f6c79cc9a522b62289874c1a9a448bbd88ed3",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
             "locator": {
               "kind": "file"
             }
@@ -218,33 +201,16 @@
       ]
     },
     "8": {
-      "note": "Worker intake opens the exact rendered_path and json_path handover locations with its own file tools; they are file locations, not tool-server read calls, and both context_packet and read_ar_files take the task_context with the canonical task reference and enclosure contract.\n\nAnchor: `rendered_path`",
+      "note": "Before edits or diagnosis, Worker intake calls `read_ar_files` with `task_context` (opening briefs) and `knowledge_read` with `workspace.memoryRoot` and `view=\"source_context\"`.\n\nAnchor: `read_ar_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:340c5a14780d00bd7a013a752aafaf7e863776424abd7fd05e988eb6a511a867",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
             "locator": {
-              "end": 19,
+              "end": 10,
               "kind": "line_range",
-              "start": 14
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Before repairing a sealed finding in its own files, the generated Worker role follows the shared Repair a sealed own-file finding procedure in the implementation operation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:6c0b9657fb87e4488c963aabfe161d042015d740c0e06fa60b781b243e8aec38",
-            "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 137
+              "start": 10
             }
           },
           "kind": "code"

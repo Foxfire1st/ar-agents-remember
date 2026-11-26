@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+        "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
         "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+        "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
         "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+        "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
         "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
             "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
             "locator": {
               "kind": "symbol",
@@ -72,12 +72,12 @@
       ]
     },
     "10": {
-      "note": "The role-text cases accept the scoped Curator equivalent and exercise deletion controls, plus handover-heading removal and relocation of the first sentence, on both source roots and on compiled canonical Curator/curation. Both Reviewer landing sentences are checked in the compiled role section and the emitted instructions with per-sentence deletion controls.",
+      "note": "The role-text case checks Curator's three landing sentences (with deletion, handover-heading removal, and relocation controls) in `reference/curator/exceptions-and-recovery.md` across both surviving roots (canonical and packaged) and in the compiled canonical Curator/curation capsule's delivered detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
-            "content": "sha256:8423aee990dd9dcd8d2363e0eb34c9128a121ca5e43cd0d2960dabf615ad4b2f",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
+            "content": "sha256:f65f71296d37deda5aa541771bdb480ef700d51ab7cad0462f03378e5c7750d9",
             "locator": {
               "kind": "symbol",
               "name": "test_role_texts_hold_landing_sentences_everywhere"
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
             "content": "sha256:bf3e1d57f3de03738b974243b96e6025fb0a77d6c58cdfec1488d3bdd66ee2da",
             "locator": {
               "kind": "symbol",
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
             "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
             "locator": {
               "kind": "symbol",
@@ -124,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
             "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
             "locator": {
               "kind": "symbol",
@@ -136,12 +136,12 @@
       ]
     },
     "5": {
-      "note": "Curator sources and the canonical compiled capsules retain the three protected clauses, the first inside the Produce the handover section; each discovered Reviewer root states both protected landing sentences inline in the compiled Reviewer role's Inspect and verify the candidate section and in the emitted launch instructions, with no separate memory-change detail.",
+      "note": "Each discovered Reviewer root keeps `reference/review-memory-changes.md` absent and delivers both protected landing sentences (along with `cutCards` and `addedFiles`) through the bound Tier-2 detail `reference/review/rounds-and-late-findings.md` under `## Omission repairs, whole-set findings, and memory changes`, referenced from `roles/reviewer.md` and emitted in `detailReferences` and launch instructions.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
-            "content": "sha256:dcc8501eed432eef5aeb970bd5ba64d9ab27baed631438df622b3cfe9b109b02",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
+            "content": "sha256:68db0a574d8b94f0ee1f2c4560f6de0ead121885253498da9d7efad64666d833",
             "locator": {
               "kind": "symbol",
               "name": "test_reviewer_landing_sentences_are_delivered_before_memory_review"
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
             "content": "sha256:a7ade1c9e2a0a3456ece9227da3aacd5dfce9701b7490c02ba9f49ba7f02ae66",
             "locator": {
               "kind": "symbol",
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
             "content": "sha256:777274d78a5b22e0722fe012723b952c46c63f187f3dfac9511d563d31a1e3a2",
             "locator": {
               "kind": "symbol",

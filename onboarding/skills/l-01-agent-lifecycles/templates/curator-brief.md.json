@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+        "blob": "8c4cc74276282f921c1275df954e4d241e432863",
         "content": "sha256:a9cc054045ce2b6e563e5d0cdb0a3b69ad437194db8050b9e64c91f2c203e769",
         "locator": {
           "end": 7,
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
             "content": "sha256:0fed124787b464b5f4c3984d3b43df8d1d4b967b257b5b6827b4b6d4fc19d426",
             "locator": {
               "end": 26,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
             "content": "sha256:99e9cbb30a6ebd267b967a1a1397e1d48dbe372c9dbb51c477ae4422f94059fa",
             "locator": {
               "end": 46,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
             "content": "sha256:99efeef097ed851e947c87ad6ebf51165a79502cbb68f4eb871118c9c363d456",
             "locator": {
               "end": 52,
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
             "content": "sha256:aacf0991998b2c8811344631dc87e6a19ebd1d852b5dac869c78b1a173be89e5",
             "locator": {
               "end": 93,
@@ -104,11 +104,11 @@
       ]
     },
     "6": {
-      "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. It defers code and memory lanes to the review operation, where MEMORY review is separately sealed/counted and a pass beyond the settings limit needs architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only message material, passed-candidate evidence and independent acceptance are distinct.",
+      "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. It defers code and memory lanes to the review operation, where MEMORY review is separately sealed/counted and a pass beyond the settings limit needs architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only message material, passed-candidate evidence and independent acceptance are distinct.\n\nAnchor: `reviewKind=memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
             "content": "sha256:b514bbe54a22731fed54089bd621397ad7a5d6a71149c1f3fec8089a91997a70",
             "locator": {
               "end": 52,
@@ -120,8 +120,8 @@
         },
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
-            "content": "sha256:d5150b772748c929dae29014d3ed846db37d0338f608572e4cb23bbde29a2d62",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
+            "content": "sha256:7db3a86216dfc3044c1331dfa819f2b9624e7c98c4dec079c616f21b61518ca1",
             "locator": {
               "end": 105,
               "kind": "line_range",
@@ -132,12 +132,12 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 120,
+              "end": 34,
               "kind": "line_range",
-              "start": 120
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
             "content": "sha256:1b40c16b07ee55973992efb6de3ca04482528cd312c7d1400902a0f75a0816a1",
             "locator": {
               "end": 7,
@@ -167,8 +167,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
-            "content": "sha256:c7e324024b92d3f63c62ea6f0e604002fd8b8ed94d846b04308a43b3b22273c0",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
+            "content": "sha256:3f84aa93c057abbe89f078143a4e254082e85ff31d3af04260ff3784861cbf26",
             "locator": {
               "end": 105,
               "kind": "line_range",
@@ -180,14 +180,14 @@
       ]
     },
     "9": {
-      "note": "The Manager starts the Curator stage through the coordination operation after code PASS; the Worker and Reviewer hand their inputs directly.",
+      "note": "The Manager starts the Curator stage through the coordination operation after code PASS; the Worker and Reviewer hand their inputs directly.\n\nAnchor: `## Manager's compilation checks`",
       "targets": [
         {
           "anchor": {
-            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
-            "content": "sha256:c1e43fc786fe813b986f9a51ea043c560dbac30b7ec311daaddb2041258e78f1",
+            "blob": "8c4cc74276282f921c1275df954e4d241e432863",
+            "content": "sha256:87d53a02d3bcbe04e34eae5c3008d654039218e7f6dc746cd1c5a8748fa15e05",
             "locator": {
-              "end": 99,
+              "end": 101,
               "kind": "line_range",
               "start": 89
             }

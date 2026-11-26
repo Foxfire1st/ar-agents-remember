@@ -1,0 +1,113 @@
+{
+  "path": "mcp/tests/test_role_instruction_corpus_policies.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+        "content": "sha256:21c5f99232624906e28b1151346f089bd59f120ee32e0053cfb775eaff04cbab",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_names_its_publication_moments"
+        }
+      },
+      "facet": "For the Manager and the Architect, the role's publication clause stands once in the source and once in the package copy, and the generic 'When publishing task work' sentence is refused.",
+      "id": "PRF-EPK1G4",
+      "invariant": "INV-A6TJRJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-07-architect",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+        "content": "sha256:21c5f99232624906e28b1151346f089bd59f120ee32e0053cfb775eaff04cbab",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_names_its_publication_moments"
+        }
+      },
+      "facet": "For the Manager and the Architect, the role's publication clause stands once in the source and once in the package copy, and the generic 'When publishing task work' sentence is refused.",
+      "id": "PRF-XFN1ZP",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "L84-CUR-07",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Curator hand-off list and ingestion contracts are verified across canonical and generated skill copies alongside role manifest declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:edeee161a2a6dffe3f9f3ff927a4bd14cf11c4b6417f4e90d4b9600e2b1f2388",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "JSON-primary master dependency rules are checked in both instruction contracts and native `task_doc_tool` execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:7020da9e33011db12df983119555d90e2149e62c74b13524e8cd4d13a2acee9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_new_master_then_indexed_leaf_dependencies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Packet-alignment, advisory-review, formal-permission, closeout knowledge-gate, worklist, public-command, retired-lens, and task-publication policies are pinned with mutation teeth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:7abfa53d4890e0ef993b3cdb2cfc013aeb6c2751da8e66df35391f6c82b82210",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_packet_alignment_and_advisory_review_keep_independent_preparation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:6b913a962edfb4ea09a325079537c15f5f34ee97a77e4ea4f218b32e6b82d28f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_gate_and_worklist_explanations_cover_actual_landing_steps"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:21c5f99232624906e28b1151346f089bd59f120ee32e0053cfb775eaff04cbab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_role_names_its_publication_moments"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

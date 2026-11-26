@@ -17,4 +17,5 @@ The Markdown is an authoring example, not another stored task document; field me
 - The scaffold is an authoring example for `task_doc` fields, not a stored task document. [1]
 - Requirements name the approved identifier, version and packet path, and the promise this leaf implements. [2]
 - Implementation steps are reviewable outcomes; proposed code examples give placement and body-less skeletons. [3]
-- The Architect reads the leaf template before authoring a leaf. [4]
+
+- The Architect reaches this template via `reference/tasks/document-authoring.md` before authoring a leaf. [4]

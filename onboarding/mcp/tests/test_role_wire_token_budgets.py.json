@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:9c1e6bd7df6048e946e9bedc46a81e0d92241262e06bb87eee542ddacde78f90",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:2b586aa307f25e74c68d833793298d3b6b03df159684d8aa0a3529b85a98bfc5",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-        "content": "sha256:33ce48a4adf8b97501fae183bef9f6368987fbf9b6d384d44787cfa51d3d83f8",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:97aafadbfed205a71e72fbd6572bd61cb47c274f115fd8b93285e26aeafa595c",
         "locator": {
           "kind": "symbol",
           "name": "WireTokenBudgetMatrixTests.test_kv_cache_static_prefix_byte_identical_across_all_eight_pairs"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:754c5ed0108e58123b06248737181e4af64b2732b7a9826ef964ccdac0adda77",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:f3986c8df48f48981c6a28e7759cca28df77b61529e66945ac481a42167cc69d",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:425d54709491cddcb98f70d5dc1a9bd8f15b8bff8aaaed1df810e6d50bc1ab9d",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-        "content": "sha256:f1fdaec0e47c0376afbfedd3baafac82e9c1962797203f5e5974da78c015015a",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:8b3a322493372b32ddf70b709f2a06617d93f9471e7ebc2ef2763d6060c72aec",
         "locator": {
           "kind": "symbol",
           "name": "test_filter_shared_block_seal_launcher_absent_source_and_markdown_edges"
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:8874451040e0826450dcce93250c33f473f7af7b9c17763ce5d8f87b7d698010",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:0c632ca8f145e3f929ac4c2aab0254e78e31f4412246b76d4b31bbda9d387669",
         "locator": {
           "kind": "symbol",
@@ -156,8 +156,59 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-        "content": "sha256:d061a97a3031cad60e74799cbcbc06a5d8b2b56970eafb356953c4edd4e61c7a",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:176b0845afac63185a97650aa383fca9e2234436f583a96c91ed33c420d9b0ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiled_capsule_token_ceilings_all_34_matrix_keys"
+        }
+      },
+      "facet": "Proves all 34 compiled capsule matrix keys stay within COMPILED_CAPSULE_TOKEN_CEILINGS under o200k_base.",
+      "id": "PRF-AFXWZ6",
+      "invariant": "INV-7RHM8E",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 5",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:bdc1bb78f49c076fabb30a1d6c2c17884a1d8116d2cc11d50083e10b3d458a09",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_eight_default_pairs_pass_wire_token_ceilings_and_send_links"
+        }
+      },
+      "facet": "Proves all 8 default launch pairs assemble tightened Launch Context messages within final WIRE_TOKEN_CEILINGS with valid trailing handover artifact locators.",
+      "id": "PRF-ENERB1",
+      "invariant": "INV-4BYFWJ",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 1",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:717e287768ebb540a5d2b3b0ff25053ef11ebcb0ae2785ae0427ee5d81321e36",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_wire_and_compiled_ceilings_reject_overages_and_match_launch_links"
+        }
+      },
+      "facet": "Proves both WIRE_TOKEN_CEILINGS and COMPILED_CAPSULE_TOKEN_CEILINGS reject overages and unconfigured keys.",
+      "id": "PRF-GF3Q8Q",
+      "invariant": "INV-7RHM8E",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 5",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:bdc1bb78f49c076fabb30a1d6c2c17884a1d8116d2cc11d50083e10b3d458a09",
         "locator": {
           "kind": "symbol",
           "name": "WireTokenBudgetMatrixTests.test_eight_default_pairs_pass_wire_token_ceilings_and_send_links"
@@ -173,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
         "content": "sha256:acaca9468c87ac2ea20e0fc8cfd468a2e12eb3253340c8121e9be06e81b272ba",
         "locator": {
           "kind": "symbol",
@@ -190,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-        "content": "sha256:29d6656e8ed9d8bd17885cf26875aa23c2ac78757f1e64db1a9eaac3560d686e",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:3d25bc8275dd064e14e40ca27a38c1fbf7a31d2b7daa3b077f7f5a70d49bbfdb",
         "locator": {
           "kind": "symbol",
           "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
@@ -207,8 +258,8 @@
     },
     {
       "anchor": {
-        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-        "content": "sha256:4f88449b87bc1b5674063634469b921d9107a750621cf4fcff5f335782e9135d",
+        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "content": "sha256:d7038f51fefd617d32300cd32de95d032d3c801aa315246d17524c816afffbf3",
         "locator": {
           "kind": "symbol",
           "name": "WireTokenBudgetMatrixTests.test_held_openings_and_bounded_appendices_stay_capped"
@@ -230,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
             "content": "sha256:b960be80b31ff6f0174f2ca0122924b6caccf73dabc4883ae5f4a565eb7cab2e",
             "locator": {
               "kind": "symbol",
@@ -246,8 +297,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-            "content": "sha256:29d6656e8ed9d8bd17885cf26875aa23c2ac78757f1e64db1a9eaac3560d686e",
+            "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+            "content": "sha256:3d25bc8275dd064e14e40ca27a38c1fbf7a31d2b7daa3b077f7f5a70d49bbfdb",
             "locator": {
               "kind": "symbol",
               "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
@@ -258,12 +309,12 @@
       ]
     },
     "3": {
-      "note": "`WireTokenBudgetMatrixTests` gates all 8 default fresh base launch pairs, held/launch ordinary-Latin appendix allowances with negative rejection, 8-pair KV static prefix byte equality, four-case `host.developerQuestionRoute`, and direct/held offload boundaries.",
+      "note": "`WireTokenBudgetMatrixTests` gates all 8 default fresh base launch pairs against `WIRE_TOKEN_CEILINGS` (with deterministic repeat checks), held opening prefixes against `WIRE_TOKEN_CEILINGS` and 1,000-character bounded appendix offload (including multi-byte Unicode and negative over-ceiling rejection), 8-pair KV static prefix byte equality, four-case `host.developerQuestionRoute`, and direct/held offload boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
-            "content": "sha256:ac8b99166f169db0c268e36b174a2eb83b91c06e040da6a8bb812c4a48724154",
+            "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+            "content": "sha256:c05e1631dd74c53459927577650384c35d6fde40a9e16ac352ea090076b3f6aa",
             "locator": {
               "kind": "symbol",
               "name": "WireTokenBudgetMatrixTests"

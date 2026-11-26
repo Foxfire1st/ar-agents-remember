@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
-            "content": "sha256:495af3c3743c458015fd64d25262f892fa3c2d2d2ca3aaf949833f0d5b75c26d",
+            "blob": "b8a59f3a57cfa69e21c1067c3e4c903cd8f727a5",
+            "content": "sha256:5fa25b14b327ebe635f2769e85814969733daf4a8ecbb0e5e562492484f78c3e",
             "locator": {
               "end": 5,
               "kind": "line_range",
@@ -24,30 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:d0e0460ba38d65fe64678eb333528731f34b869de31d6494b626c07772623a90",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 72,
+              "end": 21,
               "kind": "line_range",
-              "start": 72
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Reviewer outputs include both durable route-report templates.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:615905affabd52443752b0b7929ec7edec1083dc20a0ab51a62a005abc7342be",
-            "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 95
+              "start": 21
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -78,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "blob": "b8a59f3a57cfa69e21c1067c3e4c903cd8f727a5",
             "content": "sha256:2cb4c4f56b118588d0bbb54e592f2c52e7edf2affad55ef39649e3c84fd5ff72",
             "locator": {
               "end": 13,
@@ -95,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "blob": "b8a59f3a57cfa69e21c1067c3e4c903cd8f727a5",
             "content": "sha256:8ca1cb157e2a9d650b3580e9bc3149ad8ad0f501ba1bc7ef3088ecb23e72d5c4",
             "locator": {
               "end": 34,
@@ -112,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "blob": "b8a59f3a57cfa69e21c1067c3e4c903cd8f727a5",
             "content": "sha256:f4bf779b9def778a3c3834e57561b748600c16105ad5c821725669be05fa3228",
             "locator": {
               "end": 43,
@@ -129,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "blob": "b8a59f3a57cfa69e21c1067c3e4c903cd8f727a5",
             "content": "sha256:1cd46742f665d997e396f703af727cbbcbb02f475f676e1a2f30c7d07499f3b5",
             "locator": {
               "end": 52,
@@ -146,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:5fedb153c332e95b32fefe486d1da529afcc62d409d1791ce0d2a8572f4a8ac8",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:7aa0552d7a4f8c22ec003d45f12351264c2e3fa288e2ee60e93fcb1931132c8f",
             "locator": {
-              "end": 62,
+              "end": 16,
               "kind": "line_range",
-              "start": 59
+              "start": 14
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -160,18 +142,31 @@
       ]
     },
     "7": {
-      "note": "The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check, full memory quality and the Manager-leaf-closeout stale dependent-document read; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row.",
+      "note": "The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check, full memory quality and the Manager-leaf-closeout stale dependent-document read; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row.\n\nAnchor: `memory_quality_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:39ce2c62b35abf09b62bb86f1c192bc6a3bd45b7fbd3cebd30672957adeadccb",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
-              "end": 82,
+              "end": 28,
               "kind": "line_range",
-              "start": 66
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:8fa49f431a2cd762c6ca87f501d419751656212691278ffe30207e98548f3de0",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md"
           },
           "kind": "code"
         }
@@ -182,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
-              "end": 18,
+              "end": 28,
               "kind": "line_range",
-              "start": 16
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -196,16 +191,16 @@
       ]
     },
     "9": {
-      "note": "Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary.",
+      "note": "Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary.\n\nAnchor: `curator_coherence`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:7b07a2ab412f8dadb3e0a1c24dbf483baa8aa505b5c72a1603c15696abcf7bc0",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
-              "end": 108,
+              "end": 28,
               "kind": "line_range",
-              "start": 101
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

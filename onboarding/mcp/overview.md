@@ -390,7 +390,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - Citation preview adds modes to the existing declaration. [390]
 
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
+
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
+
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
 - Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
@@ -697,9 +699,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
+
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
+
 
 
 
@@ -868,8 +872,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
 
 
+
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
+
 - The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
+
 - The worktree layer checks whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner's history closed. [5]
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
 

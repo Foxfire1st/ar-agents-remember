@@ -25,15 +25,19 @@ Proves, on the shipped lifecycle corpus with no corpus or compiler patch, that t
 
 - The knowledge detail reaches its step in every consuming role/operation and nowhere else. [4]
 
+
 - The knowledge detail's views and keywords match the registered tool. [5]
 
 - The advice and reporting rules reach only their role audience. [6]
+
 - Measurement checkpoint steps reach every Worker operation. [7]
 
+
 - The Manager starts the Curator for prerequisite memory reconciliation without healing the conflict. [9]
+
 
 - Native first messages carry the real digest once. [3]
 
 - Digest homes declare audiences without injecting the map. [8]
 
-- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [10]
+- The current pointer fixtures bind the five consuming roles' knowledge index triggers to `reference/knowledge/use.md` (named fragments for Architect/Investigator and whole-detail `use` pointers for Worker/Reviewer/Curator). [10]

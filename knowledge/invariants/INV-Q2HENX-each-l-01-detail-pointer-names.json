@@ -9,7 +9,7 @@
   },
   "applicability": "Detail pointers in the l-01 role, operation and every-role texts that native roles receive in their first message.",
   "conditions": [
-    "A pointer's action is read from its Before, When or For clause."
+    "A pointer's action is derived from its Before, When or For clause or its Markdown Reference-index table row trigger."
   ],
   "exclusions": [
     "Duplicate shapes the detector does not parse: extra links inside a listed multi-link sentence, one action under two listed wordings, reference-style links, autolinks and skill:// paths with ./ segments.",
@@ -29,27 +29,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each l-01 detail pointer names one action and what its file holds, links the section for that action, and each role's native first message has one pointer per action.",
+  "statement": "Each l-01 detail pointer names one action and what its file holds (via prose clause or Markdown Reference-index table row), links the section for that action, and each role's native first message has one pointer per action.",
   "supersedes": [],
+  "title": "Each l-01 detail pointer maps one action per native first message",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

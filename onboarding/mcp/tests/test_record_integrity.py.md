@@ -277,4 +277,5 @@ revision in the project’s memory repository.
 
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]
 
+
 - The negative Git case sets a discovery ceiling inside the owned temporary scope. The canonical-document case constructs an outer worktrees ancestor and nested decoys, exercises both leaf identifier forms, and checks the direct comparison, aggregate run and command-line report. [18]

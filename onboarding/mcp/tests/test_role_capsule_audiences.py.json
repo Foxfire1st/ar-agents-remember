@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+        "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
         "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
         "locator": {
           "kind": "symbol",
@@ -17,13 +17,30 @@
         "handoffEntry": "BUG-R08@v1 rule 6",
         "leaf": "261112-BUG-L8"
       }
+    },
+    {
+      "anchor": {
+        "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+        "content": "sha256:214d22dd826c42260a8acef4d985036ccd1ad3b9326f61cd61f432e4ffa441ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiler_carries_declared_step_detail_bytes_as_separate_references"
+        }
+      },
+      "facet": "Proves the compiler carries registered Tier-2 step_detail files as separate frozen references for their declared audiences.",
+      "id": "PRF-TYRQT8",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-        "content": "sha256:8bb4e4a4d1d0eef572c497f5034f008bbc2ef2e53d33ae30db561cc7d8fb863e",
+        "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+        "content": "sha256:6c15a9a3393f8d59811a8b3ebbae282d38da2925029da4fdf2c7462f66b4bf06",
         "locator": {
           "kind": "file"
         }
@@ -44,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:91071933f1c686b8f234b0a11efb836dc1eab70ceb306a6e399c7e24b57c6653",
             "locator": {
               "kind": "symbol",
@@ -60,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:e8ceabeeced1beb4ad2d3ed532afa9ea6c76d7c9591ce5f33809ff0ad60a188d",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:722bae71bc25a699ebcced13a29a04cb71b1313040ceba9f19a855d50004f086",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_execution_support_is_an_unconditional_inline_output"
@@ -76,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:cb0062659e90e270e4d9f9368a770e2e663b4fbcbd4667ed037653e52465721d",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:1fcf6f755720842d03e52abf461c169c4c5163e450e9d42797fb8600a7a4c181",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_external_backing_output_stays_inline"
@@ -92,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:1d26b97611f3e4318e314a75821372cc452abac71010ac0bce958a630ab68827",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:b4ac68f161fb409512c00f8c68dca8394404a6983a7192fcb20ae865cf1d780a",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_bootstrap_requires_reproducibility_not_reader_execution"
@@ -108,8 +125,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:639c5931e83b26fdf3ca2f8dbf11a609e42258325cd357d7c0b95c2b3a772a2a",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:b6daa84d77e85ae6c0365a12f12b86861eea470bfd6edb60ffd411cfd23f3301",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_delivered_authoring_resolves_actual_capsule_routing"
@@ -124,12 +141,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:45c207cfd2a558a209e068f847eedc62d59c3dc054107aa8104ddc4acb911306",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:33c4e51aabdc5773aa7dde6205a8a7e2f142fe46981f89931764a9572e26b83e",
             "locator": {
-              "end": 825,
+              "end": 857,
               "kind": "line_range",
-              "start": 788
+              "start": 817
             }
           },
           "kind": "test"
@@ -137,12 +154,12 @@
       ]
     },
     "15": {
-      "note": "The Curator's delivered curation workflow is numbered one to five with the checks, fact-check and repair headings; its delivered details equal its role and curation pointer actions, each bound to its read action, and its role section carries no numbered workflow.",
+      "note": "The Curator's delivered curation workflow is numbered one to four before the `### Checks and gates` heading; its delivered details equal its role and curation pointer actions, each bound to its read action, and its role section carries no numbered workflow.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:783fd85e932b9bca1b99eebd05d6ca428a174484c688ce18dc1450340c7bdefd",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:8566b58fdf8390d9716a6ef06a7d7e2f2d1f3a42d3a720c8775a74d25a4ad87c",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_detail_names_use_only_curation_workflow_numbers_and_titles"
@@ -157,8 +174,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:9d2c15993f8cb4cf7bc74f4c1b3c21c280219c8709832d9fd4889d1d0a045fd9",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:d4da887b7fbb0d109322311f571e113d2c01ac642ebb8f04c1a6c2b339fba59a",
             "locator": {
               "kind": "symbol",
               "name": "test_nested_curator_file_names_use_the_same_operation_titles"
@@ -173,8 +190,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:f2432aeb8ed9662fb66d535d41610862ea8cc8f3cc24166151ce558731d1e3d3",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:a08e7881dac7cde8d0aa80e18f4899f1ce191e91208c1f67d989acf81383000c",
             "locator": {
               "kind": "symbol",
               "name": "test_leaf_role_texts_mark_only_their_own_completed_steps"
@@ -189,8 +206,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:ee3c00544d5c3a3f72e04e93e6e2f3fcbbbddf0101e9319fbe36b9acbf50175d",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:ef05d7ff57db19d3f12e0707e366f9e4c11da77917fed5fd96fbcfeb4fd1e050",
             "locator": {
               "kind": "symbol",
               "name": "test_every_curator_stage_keeps_the_serving_build_producer_boundary"
@@ -205,8 +222,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:a3869613bf30ae52651ea38cb3b1e4a14551aa1f1b9d41be09305c686ff5cacb",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:28c202987c2bd3922c60c55ce106c6acd73ad018c7f041197db9ebfdfe9e7cfe",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_review_instructions_select_the_independent_recorded_lane"
@@ -221,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:214d22dd826c42260a8acef4d985036ccd1ad3b9326f61cd61f432e4ffa441ae",
             "locator": {
               "end": 139,
@@ -238,12 +255,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
             "locator": {
-              "end": 1059,
+              "end": 1103,
               "kind": "line_range",
-              "start": 1027
+              "start": 1071
             }
           },
           "kind": "test"
@@ -255,12 +272,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:0da0cf976b7f6bede02f5229cd356471181722106ae9e3f67a32235522900f3a",
             "locator": {
-              "end": 1072,
+              "end": 1116,
               "kind": "line_range",
-              "start": 1062
+              "start": 1106
             }
           },
           "kind": "test"
@@ -272,8 +289,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:3a7560d2d9ca3ff634cf305bc50b8e12d0b69db3c3b78bfe9c19e2f35e901c56",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:edccb1f4289b01a239ce926e11549024faa91c7ac66cd61f8254d88837c0c7e8",
             "locator": {
               "kind": "symbol",
               "name": "test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding"
@@ -284,16 +301,16 @@
       ]
     },
     "23": {
-      "note": "The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, the Worker reruns focused tests, the Manager gets the Curator's read for a changed pair before routine closeout, overlapping paths or failing tests trigger review of exactly the repair, and a freeze lacking finding entries is returned without counting a round.",
+      "note": "The current Reviewer-addressed review paragraph says to name the leaf, candidate, path and next stretch, never read Worker chat, return reports missing per-finding entries without counting a round, open no round on clean syncs, and review overlap or test-failure repairs only.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:9420aeadd22432a0871ce235fa7690886197f61d54181f87bcd844c63f52e052",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:e951a5b34e5e615635af3096d540f830c9c8818ef55ba5ff655fa6a8d785eee6",
             "locator": {
-              "end": 81,
+              "end": 29,
               "kind": "line_range",
-              "start": 79
+              "start": 29
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -306,12 +323,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:10550187e9fe19bfe335b30824eefb735f35a8f835520452d23a5deeaad738af",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:8e16f573dbea8a12eac3013f0797651d899ef4899c03eb25b258195904f71dbb",
             "locator": {
-              "end": 47,
+              "end": 23,
               "kind": "line_range",
-              "start": 45
+              "start": 23
             },
             "path": "skills/l-01-agent-lifecycles/operations/planning.md"
           },
@@ -319,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:8051c8648bc277b1c1a20950d8ddf0e001ee6d4259e31c7f37df692e1092f27a",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:71401a678fd5759398a31e8250d27cc5e477c1bb40832a69ba49045bc64a1054",
             "locator": {
-              "end": 77,
+              "end": 36,
               "kind": "line_range",
-              "start": 77
+              "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
@@ -337,24 +354,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:2102fa0b4caf4a80dd6921007cf6a2e8b017f78e3a06ce82a99c020def2722e9",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:15c125cd22fd6f247a7f7dc4ee842d429b432073f11a865dfdb6060d656360b2",
             "locator": {
-              "end": 611,
+              "end": 609,
               "kind": "line_range",
-              "start": 576
+              "start": 574
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:50127267f544d4d72ed97ba5661b4f8a8c7562fedc8933011a79987d3e7d0ecb",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:3843cc293e69f5c4dbf4d3232edb3cb266aab1d05247ff727bfe95e4fa1b54bf",
             "locator": {
-              "end": 710,
+              "end": 726,
               "kind": "line_range",
-              "start": 625
+              "start": 637
             }
           },
           "kind": "test"
@@ -366,7 +383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:cf23f1a7e71ee7a0ed7e0ee30266b5760c4e65efe4b3a41b47bc4273aecc5e8b",
             "locator": {
               "kind": "symbol",
@@ -382,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:f31c621fc3c74a5e9810361fdca56d4a9cac811c4efb3ec5d6608124c0c02aed",
             "locator": {
               "kind": "symbol",
@@ -398,8 +415,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:176d908900c927f5e3fc0ca8dc8106ba01d5ebdb25e4a41850e813ed57ab1c4e",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:a51361fd88d69431f95eddc9738137d73d1bc3cecf8dd061bd58e66109ad26be",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries"
@@ -414,8 +431,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:4006d10f2f8c0bcea0be6ca551f74a7563ff75c3d2fc02b9152a18b04898679d",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:5dbb2fb95078ae068b8e958d78697046ca8a386c4a789a292cce9a770b4b9dce",
             "locator": {
               "kind": "symbol",
               "name": "test_manager_curation_does_not_receive_curators_card_or_writer_steps"
@@ -430,8 +447,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:ef4cac984994b64a31c01a4b181d84b819cea937f68f80f94e69b25037e6b08f",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:784c20cd09929fcda5c370824bb9bfceeb17300f2f6e576011cde5f3b6671fb0",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_real_capsules_deliver_named_step_files_as_frozen_launch_artifacts"
@@ -446,8 +463,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:12e471f73f48316f0488a30f533ca7cddf857c2c9b2f69c8a2d0175b962315f2",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:536357fb6c10cd292be8807f4556fa29358fefd159e97e1b81e5cb1aa2ed9bea",
             "locator": {
               "kind": "symbol",
               "name": "test_d301_curator_keeps_whole_handover_and_step_limits_in_capsule"
@@ -462,8 +479,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:50127267f544d4d72ed97ba5661b4f8a8c7562fedc8933011a79987d3e7d0ecb",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
+            "content": "sha256:3843cc293e69f5c4dbf4d3232edb3cb266aab1d05247ff727bfe95e4fa1b54bf",
             "locator": {
               "kind": "symbol",
               "name": "test_step_details_are_named_for_reaching_their_step_not_intake"

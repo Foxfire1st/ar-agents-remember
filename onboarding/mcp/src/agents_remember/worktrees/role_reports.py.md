@@ -28,4 +28,5 @@ The explainer's report inventory uses the canonical collection named by each sel
 - Canonical report discovery intersects cited JSON paths with eligible files in the execution collection. [5]
 
 - Group folder removal collects evidence before reclaiming the local folders. [4]
+
 - `_launch_carrier` excludes `.handover.txt`, `.handover.json`, legacy `.detail-*`, nested `.details/**`, `.opening-message.md`, and `.held-batch-*.md` launch carriers from `canonical_execution_reports`. [7]

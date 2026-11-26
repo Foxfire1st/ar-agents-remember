@@ -1,0 +1,152 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/closeout-recovery.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+        "content": "sha256:bf22d8c4f52f0e8ecc349db40468ecec6f3f947bfd14d786f3b3255a8de6590d",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 21
+        }
+      },
+      "id": "RLZ-418WGG",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "Tier-2 flat-mode direct paired closeout section keeping the developer-chosen direct-coordination exception, explicit/delegated commit approval, and starting no Manager for the step alone.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+        "content": "sha256:7d347941d040ed8441a4781ab71a957b9d217c60ecf868f24e07a6a3ed84a00d",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-8Q22MW",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Moved from operations/coordination.md (which now points here at lines 47-48): directs roles to synchronous worktree_closeout_apply results/retry and generation-bound worktree_operation_control for direct landing.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+        "content": "sha256:e0679cfc48ea6cc3cc01e41652c168b3edea62654aa7cc5895d73a6ded562846",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 35
+        }
+      },
+      "id": "RLZ-GNQNEF",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "Moved from operations/coordination.md (which now points here at lines 53-54): owns the upward child-permission notice and top-chat developer presentation duty for every coordinating role.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+        "content": "sha256:7fcbdfb52d8f7ba8d19c6a9bec9bf282d3b88abd6239b25e77d6bf215e088b38",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-KZEKN1",
+      "invariant": "INV-H4PZ9X",
+      "origin": {
+        "handoffEntry": "L7-CUR-PRESENTATION-01",
+        "leaf": "261112-BUG-L7"
+      },
+      "rationale": "Direct-landing operators read the current generation and advertised controls from status before operating that journal.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+        "content": "sha256:f41e7003afce037ed3c8421555aee57235605f0c38526291b181555113ed2d38",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R497X3",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Holds Coordinator Tier-2 closeout recovery, projection rebuilds, Orchestrator takeover/switch, permission relays, and flat-mode closeout procedures.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`#recover-an-unfinished-closeout` defines recovery for interrupted closeout, all five closeout/landing gate refusals, direct-landing `worktree_operation_control`, and Manager closeout notices.\n\nAnchor: `## Recover an unfinished closeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+            "content": "sha256:55344943d45ec9dec0f474df5d9bd043fe60a400fbb455ee0252bd185f482c6e",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`#apply-task-edits-and-rebuild-projections` keeps `task_doc` authoritative during closeout scheduling and routes incomplete `projectionEffects` to the Orchestrator.\n\nAnchor: `## Apply task edits and rebuild projections`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+            "content": "sha256:619bafda2462aa54b78d15324eaded796d62f959d06f457ca8628797abf9e2e5",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Flat-mode direct closeout, Orchestrator recipient switch, and child permission-notice escalation rules specify exact authority and required notice fields.\n\nAnchor: `## Flat-mode direct paired closeout`; `## Orchestrator recipient switch and closeout notices`; `## Relay a child's permission notice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f25fe0d0e7dcdd667174a0fce7e160a6fd4b60d",
+            "content": "sha256:4314fe8d59d0ad56d2d13d60f338138aba903d714ae7118c9f408cf21451ea09",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

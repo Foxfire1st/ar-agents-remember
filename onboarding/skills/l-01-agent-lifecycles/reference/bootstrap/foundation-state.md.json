@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:dd2ab5407d960755a08062f3d9701c82f06386bbc098fee4fd1b596ea1a42244",
+            "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+            "content": "sha256:726b655d6b6b4aa3caa29cdcbbbf46f3b8ddceeba7e65bb2124fa7a409de7704",
             "locator": {
-              "end": 24,
+              "end": 28,
               "kind": "line_range",
-              "start": 24
+              "start": 28
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
           },
@@ -57,12 +57,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
-            "content": "sha256:c8feee4c1392c33120f68868301cc3bf21cb9d4a758cb09b883e7bd9dea60869",
+            "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
+            "content": "sha256:2316ac516b3afe66e15f40eee120da64f2bc756971e492d5264217911eb9df2f",
             "locator": {
-              "end": 141,
+              "end": 20,
               "kind": "line_range",
-              "start": 141
+              "start": 20
             },
             "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
           },

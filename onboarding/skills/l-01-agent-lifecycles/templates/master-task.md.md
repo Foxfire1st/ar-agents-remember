@@ -16,4 +16,5 @@ Field and section meanings come from `reference/tasks/document-authoring.md#put-
 
 - Masters are authored through `task_doc` fields and ordered sections. [1]
 - Sub-tasks and Shared Decisions use the `subTasks` and `sharedDecisions` section kinds; Open Questions and References are freeform. [2]
-- The Architect reads the master template before authoring a master. [3]
+
+- The Architect reaches this template via `reference/tasks/document-authoring.md` before authoring a master. [3]

@@ -25,4 +25,5 @@ The profile applies to new or revised statements, guarantees, history reasons an
 - Independent facet and case comparison precedes `clarify`, and disputed drafts stay unaccepted. [5]
 - The worked example illustrates the comparison and is not pilot evidence. [6]
 - Scope of use, and no automatic semantic validator, language gate or bypass. [7]
+
 - The Curator role points here before drafting invariant statements, family guarantees or history reasons. [8]

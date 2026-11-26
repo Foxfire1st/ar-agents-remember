@@ -223,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "blob": "18d28c65cbfb75dbe7fa0235d228150fcf37a07c",
             "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
             "locator": {
-              "end": 1059,
+              "end": 1103,
               "kind": "line_range",
-              "start": 1027
+              "start": 1071
             },
             "path": "mcp/tests/test_role_capsule_audiences.py"
           },
@@ -292,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
             "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
             "locator": {
-              "end": 336,
+              "end": 346,
               "kind": "line_range",
-              "start": 309
+              "start": 319
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -305,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
             "content": "sha256:bf01b4cfe9a9ddff0257e9be358654f654a4d12a74732e1238bf18e5694a751e",
             "locator": {
-              "end": 398,
+              "end": 408,
               "kind": "line_range",
-              "start": 374
+              "start": 384
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -318,12 +318,12 @@
         },
         {
           "anchor": {
-            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
             "content": "sha256:eb7345d4fc079e261dd4ccdcb3ed61ae3cfe65bc41d803f477c155d7ea148a7b",
             "locator": {
-              "end": 439,
+              "end": 449,
               "kind": "line_range",
-              "start": 401
+              "start": 411
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -331,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
             "content": "sha256:a5bd4a6fd2dcc6ff5a853f1d1b99e516dd8a5370050380bdaead27722c897a0c",
             "locator": {
-              "end": 450,
+              "end": 460,
               "kind": "line_range",
-              "start": 442
+              "start": 452
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -344,12 +344,12 @@
         },
         {
           "anchor": {
-            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
             "content": "sha256:d30a4ab35d65243f4831bef69681de90577243916998e9dc48e4e03bfd01ce5b",
             "locator": {
-              "end": 480,
+              "end": 490,
               "kind": "line_range",
-              "start": 453
+              "start": 463
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -357,12 +357,12 @@
         },
         {
           "anchor": {
-            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
             "content": "sha256:43e607fc7ca33f080a794c760c1014fa2cbfed04c0ecea65b79028012ac92a46",
             "locator": {
-              "end": 531,
+              "end": 541,
               "kind": "line_range",
-              "start": 483
+              "start": 493
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },

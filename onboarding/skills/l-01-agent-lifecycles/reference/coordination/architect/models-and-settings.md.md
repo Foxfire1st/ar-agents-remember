@@ -17,4 +17,5 @@ When a model the developer names is missing from a list, the Architect looks it 
 - A missing named model is looked up and the harness and host versions are checked first. [1]
 - Named role sets may be switched by the Architect; any other settings change needs the developer's word. [2]
 - Seats start on the named model or role default, never a variant chosen by name. [3]
+
 - The Architect role points here before selecting a seat model and its settings. [4]

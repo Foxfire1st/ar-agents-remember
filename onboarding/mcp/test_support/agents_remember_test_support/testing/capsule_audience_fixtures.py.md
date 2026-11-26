@@ -27,12 +27,16 @@ The base source at `a2f0fced8896b92d31fd3f78351d01f5302be97e` held `ORDINARY_DET
 
 - Role pointer actions are pairs of reference path and action prefix. [1]
 
+
 - Short rules delivered in the shared digest name their owner source, clause and recipient roles. [3]
+
 
 - D656_OPERATION_SHA256 and D656_STAGE_SHA256 retain historical operation and stage hashes. [2]
 
 - A grouped detail read names several actions and keeps their owner clauses. [4]
 
+
 - The module is data only; consumer tests own compilation and assertions. [5]
 
-- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [7]
+
+- The current pointer fixtures bind `reference/knowledge/use.md` to compact table-row prefixes for Architect, Worker, Curator, Reviewer, and Investigator, with section qualifications for Architect and Investigator. [7]

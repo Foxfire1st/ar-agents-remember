@@ -5,14 +5,14 @@
     ],
     "justification": "The budget test checks every fresh compiled capsule, declared detail and the digest against the current record and the frozen registries; without it an overgrown capsule or a silently edited registry would break instruction composition unnoticed."
   },
-  "applicability": "Every compiled role, operation and launcher capsule cell, every manifest-declared step detail and the shared every-role digest, as recorded in skills/l-01-agent-lifecycles/capsule-budgets-current.json.",
+  "applicability": "Every compiled role, operation and launcher capsule cell, every manifest-declared step detail and the shared every-role digest, as recorded in skills/l-01-agent-lifecycles/capsule-budgets-current.json and wire_budget.py.",
   "conditions": [
-    "Capsule ceilings come from authored per-role values; step details use the authored shared detail ceiling and the digest uses the authored digest ceiling.",
-    "The checks compare freshly compiled sizes and source identities with generated measurements; growth under an authored ceiling has no individual item budget.",
+    "Compiled capsule ceilings come from authored COMPILED_CAPSULE_TOKEN_CEILINGS in wire_budget.py (o200k_base tokens); legacy word-ceiling enforcement and current_limits are retired while word counts remain informational in derived.current_measurements.",
+    "The checks compare freshly compiled sizes and source identities with generated measurements; growth under an authored token ceiling has no individual word budget.",
     "The retained registry, snapshot helper, predecessor record and predecessor helper are authenticated by their historical hashes."
   ],
   "exclusions": [
-    "Ordinary linked templates are measured without a detail ceiling.",
+    "Ordinary linked templates are measured without a ceiling.",
     "The digest map is renewable and is not authenticated as frozen history.",
     "The separate handover-projection token obligation retains its own record.",
     "A size check does not establish semantic, audience or acceptance correctness.",
@@ -30,27 +30,20 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-invariant/v1",
-  "statement": "The current capsule-budget record holds generated measurements for every compiled capsule cell, declared step detail and shared digest; checks reject stale or missing measurements, orphan membership and growth beyond authored role, detail or digest ceilings, while frozen historical registries and their retained checkers remain authenticated.",
+  "statement": "The current capsule-budget record holds generated measurements and source identities for every compiled capsule cell, declared step detail, ordinary template and shared digest; checks reject stale or missing measurements, orphan membership and compiled capsule token growth beyond COMPILED_CAPSULE_TOKEN_CEILINGS in wire_budget.py (with legacy word-ceiling enforcement retired), while frozen historical registries and their retained checkers remain authenticated.",
   "supersedes": [],
+  "title": "Current capsule budget record tracks fresh measurements and token ceilings",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L8",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

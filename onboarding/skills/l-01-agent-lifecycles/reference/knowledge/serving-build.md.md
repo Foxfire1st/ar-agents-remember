@@ -20,4 +20,5 @@ The file gives a shell recipe that sets the admitted interpreter and package par
 - The admitted interpreter comes from the launch receipt or server definition, and an unavailable command is reported, not inferred. [2]
 - The identity is printed and compared with the starting stamp; a mismatch is reported and does not establish the serving build. [3]
 - Public CLI commands run with the same interpreter and package path. [4]
+
 - The Curator role points here before a command-line run that decides or writes. [5]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+        "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
         "content": "sha256:6669261fe24c27fc09b5b38c3a49c639f4b04159b815db48854f39efb73a1665",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+        "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
         "content": "sha256:6669261fe24c27fc09b5b38c3a49c639f4b04159b815db48854f39efb73a1665",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+        "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
         "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+        "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
         "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+        "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
         "content": "sha256:053d694869db7f8cb46e859db5543f09414416d1db70ac63755a355f0a487ea2",
         "locator": {
           "kind": "symbol",
@@ -96,24 +96,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:d6b7d2e092b9d8daa53b591f28ba8c13dce72499d72a345ef3e2070608570e09",
             "locator": {
-              "end": 281,
+              "end": 287,
               "kind": "line_range",
-              "start": 236
+              "start": 242
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:8cee6267b28a79d32bb14a3c5aa44ec227bdfd536bd55bfec09ef19c8314f0de",
             "locator": {
-              "end": 333,
+              "end": 339,
               "kind": "line_range",
-              "start": 284
+              "start": 290
             }
           },
           "kind": "test"
@@ -125,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:1cef09cd763309befc3de7d116fa539d15c0a1d64561206d9c368666b95e464c",
             "locator": {
-              "end": 630,
+              "end": 636,
               "kind": "line_range",
-              "start": 461
+              "start": 467
             }
           },
           "kind": "test"
@@ -142,12 +142,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:9078aba742605eed90dda358b945b706ea4bf722df3cb5c1456a57fb6522d826",
             "locator": {
-              "end": 583,
+              "end": 589,
               "kind": "line_range",
-              "start": 517
+              "start": 523
             }
           },
           "kind": "test"
@@ -159,8 +159,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
-            "content": "sha256:e96e387e41dfe6b96e639b38e9747bf0c36efe6b2e4a497b7677ceb34b3fa1c1",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
+            "content": "sha256:fcb1e79c9b098fb82eeb59ad28856c5c4af174104bd60897ea8acda804d9ce8e",
             "locator": {
               "kind": "symbol",
               "name": "test_descriptions_say_what_the_check_is"

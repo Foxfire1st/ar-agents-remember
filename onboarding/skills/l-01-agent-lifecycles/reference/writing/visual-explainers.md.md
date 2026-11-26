@@ -20,4 +20,5 @@ A paraphrase keeps the exact recorded text beside or behind an explicit link and
 - Walkthroughs bind the exact candidate and keep conditions visible; promise, realization and proof stay separate. [2]
 - Paraphrases go to independent meaning review, and frozen history is never edited to match a diagram. [3]
 - An optional walkthrough replaces no check, review or acceptance record. [4]
+
 - The Worker role points here before adding an optional walkthrough. [5]

@@ -30,8 +30,10 @@ Current clause_surface resolves the busy-retry facet through the actual Worker, 
 - clause_surface resolves busy retry through the role-operation pair and message-handover detail, Curator memory facets through the memory-handover pointer, and other relocated facets through their owning sections. [2]
 
 
+
 - The helper checks affirmative clauses on delivered role/stage surfaces, compiles the owning seat's instructions, obtains moved facets through delivered_step and owning sections, and checks the exact delivered Git-comparison sentence; this source inspection executes none of those checks. [1]
+
 
 ### Repo-Internal References (renewed)
 
-- The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review Boundaries section. Before that section is used, _memory_review_surface requires shipped and checkout review-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch. [3]
+- The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review `Rounds` section. Before that section is used, `_memory_review_surface` requires shipped and checkout review-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch. [3]

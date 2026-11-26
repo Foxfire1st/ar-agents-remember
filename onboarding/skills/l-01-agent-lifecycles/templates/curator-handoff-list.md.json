@@ -171,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
-            "content": "sha256:17c1a85a9e44f513abcd905ba0ff5e835984ef55f4d2013a23c18d448fcae27d",
+            "blob": "d3ea3d44f09ba0802cfe5e4292c87fd8d1dd9010",
+            "content": "sha256:b926c968e21daa324dbe834a6df86ad3f347c62337ff91299992215ff7bef34f",
             "locator": {
               "kind": "file"
             },

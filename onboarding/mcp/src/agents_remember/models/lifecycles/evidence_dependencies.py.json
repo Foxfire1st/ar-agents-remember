@@ -178,11 +178,11 @@
       ]
     },
     "5": {
-      "note": "Route review binds code tree, task intent, per-evidence-file SHA-256, and validator.\n\nAnchor: `build_route_review` `require_current_route_review_task_intent`",
+      "note": "Route review binds code tree, task intent, per-evidence-file SHA-256, and validator.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "blob": "535889af0914dabb5b62de8e8511b7429ab0df35",
             "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
               "kind": "symbol",
@@ -194,7 +194,7 @@
         },
         {
           "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "blob": "535889af0914dabb5b62de8e8511b7429ab0df35",
             "content": "sha256:13dcb4d63e00961836664f15e7c4f4957a2e706febcc3f9f076e203251b0c909",
             "locator": {
               "kind": "symbol",
@@ -206,8 +206,8 @@
         },
         {
           "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
-            "content": "sha256:c6747a3db34199e3c4d3a4ad8a1ebed83ff454b5c8c99e630359e0f8ec7a4143",
+            "blob": "535889af0914dabb5b62de8e8511b7429ab0df35",
+            "content": "sha256:3bac3a945b14b6011a3c532851ef42a3c6222a41f019ca0c125a20ecc79f75d9",
             "locator": {
               "kind": "file"
             },

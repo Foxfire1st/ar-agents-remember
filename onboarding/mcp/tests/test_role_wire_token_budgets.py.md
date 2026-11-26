@@ -24,5 +24,7 @@ These are source-declared unit-regression tests, not live provider KV-cache meas
 ## Evidence
 
 - `_wire_tokens` normalizes fixture root, isolated HOME, checkout corpus root, UUIDs, and all 64-hex digests for zero-variance `o200k_base` measurement. [1]
+
 - Standalone filter, durable corpus, nested `.details/`, canonical report exclusion, dual-format replay, and `.opening-message.md` restore tests verify AC-1, AC-2, AC-4, and AC-6 contracts. [2]
-- `WireTokenBudgetMatrixTests` gates all 8 default fresh base launch pairs, held/launch ordinary-Latin appendix allowances with negative rejection, 8-pair KV static prefix byte equality, four-case `host.developerQuestionRoute`, and direct/held offload boundaries. [3]
+
+- `WireTokenBudgetMatrixTests` gates all 8 default fresh base launch pairs against `WIRE_TOKEN_CEILINGS` (with deterministic repeat checks), held opening prefixes against `WIRE_TOKEN_CEILINGS` and 1,000-character bounded appendix offload (including multi-byte Unicode and negative over-ceiling rejection), 8-pair KV static prefix byte equality, four-case `host.developerQuestionRoute`, and direct/held offload boundaries. [3]

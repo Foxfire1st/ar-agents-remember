@@ -54,12 +54,16 @@ The foundation and correction cases require a real task/enclosure, producer hand
 
 ## Evidence
 
-- The writer admission is pinned in the role, serving-build detail, publication report and operation texts (including the leaf `memory_quality_check` parameters, candidate matching and response receipt fields), and the parser refuses the removed options with exit 2. [2]
+- In split module `test_curator_instruction_wording_delivery.py`, writer admission is pinned in the role, serving-build detail, publication report, exceptions-and-recovery detail, and operation texts (including dependent `knowledge_read` parameters, candidate matching, and response receipt fields), and the parser refuses the removed options with exit 2. [2]
+
 - The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity. [1]
+
 
 
 
 - The foundation and correction cases require a real task/enclosure, producer handoff-check evidence and correction of every contradicted body claim. Manager publication is distinguished from organizational completion, and sentence/card scope controls remove each actual clause to prove the guard fails. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]
 
-- The coordination detail must be offered at each of the eight failed-scenario steps of the compiled capsules. [4]
-- The compiled-capsule helper comes from the capsule-delivery proof module. [5]
+
+- In split module `test_curator_instruction_wording_delivery.py`, the coordination detail must be offered at each of the eight failed-scenario steps of the compiled capsules. [4]
+
+- In split module `test_curator_instruction_wording_delivery.py`, the compiled-capsule helper `_compiled_outcome` is imported from `test_l84_capsule_delivery_proofs`. [5]

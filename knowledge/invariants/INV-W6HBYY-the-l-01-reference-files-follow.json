@@ -11,8 +11,8 @@
   "applicability": "Every Markdown link, anchor and skill:// address in the l-01 skill source and its packaged copy.",
   "conditions": [
     "Anchors follow GitHub heading slugs; headings inside fenced blocks are not anchors.",
-    "Reference files are declared in the composition manifest under their subject-folder paths.",
-    "The v13 companion's reference/coordination/shared/landings-and-master-state.md is reference/coordination/shared/master-state.md, a rename the Architect approved (task deviation 5); the other 37 paths are the companion's."
+    "Reference files (including the six CAP-R03 Tier-2 files under reference/worker, reference/review, reference/curator, and reference/coordination/shared) are declared in the composition manifest under their subject-folder paths.",
+    "The v13 companion's reference/coordination/shared/landings-and-master-state.md remains reference/coordination/shared/master-state.md."
   ],
   "exclusions": [
     "Link-like text inside fenced examples.",
@@ -30,27 +30,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The l-01 reference files follow the approved v13 layout, and every delivered link and anchor in the l-01 source and its package copy resolves to an existing file and section.",
+  "statement": "The l-01 reference files follow the approved subject-folder layout (the v13 companion layout extended by the six CAP-R03 Tier-2 reference files registered in composition-manifest.json), and every delivered link and anchor in the l-01 source and its package copy resolves to an existing file and section.",
   "supersedes": [],
+  "title": "l-01 reference layout and every delivered link and anchor resolve",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

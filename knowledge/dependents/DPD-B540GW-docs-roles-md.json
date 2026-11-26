@@ -7,6 +7,19 @@
     "task": "261112-BUG-L51",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.165390Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-YRD97K",
+      "owner": "261124-CAP",
+      "passage": "docs/roles.md ## What a role agent receives at its start (lines 214-240), ### How a long message travels (lines 299-305), ### What 'held' means (line 335), and ## Close a role agent (lines 426-433)",
+      "reason": "Directly contradicted by CAP-L1/L3: claims flat .detail-<sha256>.md files and opening AR handover artifacts line instead of nested <stem>.details/ and trailing locator; omits role-filtered shared block, 3-tier disclosure, and Poka-Yoke refusal pointers; owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/roles.md",
   "id": "DPD-B540GW",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -177,14 +190,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

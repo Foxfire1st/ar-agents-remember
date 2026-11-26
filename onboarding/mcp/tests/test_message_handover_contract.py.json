@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b332246fc987474cedb667a6fa57b589ff8e5a54",
-            "content": "sha256:cdc413448c37d968304c451442889961335b75ccad15fa300d975f8e7d33e72c",
+            "blob": "7d5ec9134e46509162a5996833e8520e22699e99",
+            "content": "sha256:1d044f50c63680ad54f55dda9dbc334043842588f356e65323d3f829c9a80957",
             "locator": {
               "kind": "symbol",
               "name": "_assert_one_receipt_contract"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b332246fc987474cedb667a6fa57b589ff8e5a54",
-            "content": "sha256:342a1dbafc1c51760f08eefb7a60d751dcd047f2639931335240a17447d8f2da",
+            "blob": "7d5ec9134e46509162a5996833e8520e22699e99",
+            "content": "sha256:3ec96cf2af78ad5d200a891d393282595c502efc332795fe8b5d8b537c0aa4af",
             "locator": {
               "kind": "symbol",
               "name": "test_receipt_contract_has_one_home_even_when_repeated_in_other_words"
@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-            "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:e3bd9cbd6d06b7c24baa2e253992c4153180725109a5b5ef4af0225f9985a03b",
             "locator": {
-              "end": 63,
+              "end": 15,
               "kind": "line_range",
-              "start": 63
+              "start": 15
             },
             "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
@@ -57,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
-            "content": "sha256:5c1f0ccf7f823e73345cfc96fdd37088e28dea92e00c7dcfc62cdec065d64ce7",
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
+            "content": "sha256:12f9b61c2bf425072d2de5cae97279cefbf5b8d10a12751964c00489d51d22dc",
             "locator": {
               "kind": "file"
             },

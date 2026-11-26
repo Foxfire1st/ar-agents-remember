@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The canonical registry in models, application re-export, and six refusal emitters across cli/worktrees/application/mcp can drift from served skill anchors; guarded by test_refusal_references.py."
+  },
+  "applicability": "models/role_capsules/refusal_references.py, application/role_capsules/refusal_references.py, and all six core lifecycle refusal families (role_message, retire_child, task_doc review, worktree sync, knowledge_write/MQC, closeout/coherence).",
+  "conditions": [
+    "REFUSAL_REFERENCES maps all 21 refusal keys to served skill://agents-remember/skills/l-01-agent-lifecycles/<relpath>#<anchor> URIs that resolve to live files and anchors.",
+    "with_refusal_reference is fail-safe and idempotent, appends pointers without changing refusal codes, states, or structured error keys, and leaves ordinary role_message holdReason holds untouched."
+  ],
+  "exclusions": [
+    "Ordinary non-refusal holds (holdReason) and non-lifecycle errors outside the six registered refusal families."
+  ],
+  "id": "INV-7CZVBD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_refusal_references.py plus refusal suites (test_held_queue.py, test_role_message_files.py, test_review_state.py, test_task_doc_review_public.py, test_worktree_sync*.py, test_writer_rule_titles.py, test_tool_answer_rows_quality.py, test_worktree_closeout*.py, test_native_retire.py; clean-copy tree b3131ef29cf948ee4830a48540585bc841530c3a)"
+      ],
+      "path": "261124-cap-l3-curation-handoff.json"
+    },
+    "handoffEntry": "CAP-R03@v1 Rule 4",
+    "leaf": "261124-CAP-L3",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A centralized fail-safe refusal_references registry maps 21 refusal keys to served skill://agents-remember/skills/l-01-agent-lifecycles/<relpath>#<anchor> URIs wired across all six core lifecycle refusal families without changing refusal codes, states, or structured error keys, and CI verifies live anchor resolution and emitter key registration.",
+  "supersedes": [],
+  "title": "Centralized fail-safe Poka-Yoke refusal_references URI registry",
+  "writer": {
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
+  }
+}

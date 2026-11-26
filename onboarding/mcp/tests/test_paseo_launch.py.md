@@ -62,4 +62,5 @@ The fixture now gives the process a short temporary home of its own, as a real a
 - Dispatch fixtures cover refusal boundaries, ACP task-server binding, feature-value merging and recovery notes at both report depths. [1]
 
 
+
 - The launch fixture reuses the shared fake runtime and connects it to catalogue, launch and status calls. [2]

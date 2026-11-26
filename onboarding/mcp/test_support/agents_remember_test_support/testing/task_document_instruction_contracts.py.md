@@ -14,7 +14,8 @@ The module checks that task-authoring entry points in the lifecycle skill point 
 
 ## Evidence
 
-- The four authoring entry points and their exact pointer sentences. [1]
+- The four authoring entry points and their exact pointer link (`roles/architect.md`) or sentences (templates). [1]
+
 - The field conventions the authoring detail must state. [2]
 
 - Pointers, clauses, template headings and manifest entries are checked on the canonical and generated surfaces. [3]

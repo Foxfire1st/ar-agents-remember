@@ -98,6 +98,7 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 
 
+
 - Door source facts use current Git and task authority. [2]
 
 
@@ -120,7 +121,9 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 - The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities. [7]
 
 - The closeout validator's gate over the authority's exact candidate. [1]
+
 - Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
+
 - Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries. [4]
 
 - The shared record builder constructs published and proposed coherence records from the observed candidate. [12]

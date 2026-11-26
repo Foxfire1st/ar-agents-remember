@@ -7,6 +7,19 @@
     "task": "261112-BUG-L25",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.083915Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-5BMGKD",
+      "owner": "261124-CAP",
+      "passage": "docs/install/pi.md ## Role agents on this harness (lines 66-88) and ## What this harness needs (lines 113-122)",
+      "reason": "Pre-base stale on agent_binding.py, role_start_answer.py, and landing_answer_shapes.py since 261112-BUG-L25; explicitly assigned to 261124-CAP-L5."
+    }
+  ],
   "document": "docs/install/pi.md",
   "id": "DPD-2B7PTY",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -67,22 +80,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L25",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

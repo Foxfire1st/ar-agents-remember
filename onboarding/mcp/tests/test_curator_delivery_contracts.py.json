@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-        "content": "sha256:0484a0e5eb28d086fc8d5f6aeb6beeb127c7953745c2d241c16fa7752103ca3f",
+        "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+        "content": "sha256:b9343c1f0ae6670a7700b94d92896d32a3291820369a076096cbb9e918299238",
         "locator": {
           "kind": "symbol",
           "name": "test_failed_memory_tool_preserves_other_admitted_tools_and_dependent_stops"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-        "content": "sha256:9204c82c1f30e8423b4a09cb75ae64bf36724a9cf69d8a6facffe7c862eb2ad2",
+        "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+        "content": "sha256:c29526b6f3e08866f90a555dc26c24961f8e1e982de6818340c28691453f5bb7",
         "locator": {
           "kind": "symbol",
           "name": "test_card_maintenance_links_resolve_from_the_actual_emitted_launch_file"
@@ -39,15 +39,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Each detail is tied to its action sentence and carrier roles.",
+      "note": "Each detail is tied to its table-row group, link label, and carrier roles.",
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:5b5c60e807926d5b02bb31437c5ee09afd946f00feca8350af05d2e4926705e1",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:69dd5b7cef7782a427b81f2bfc3c6d16c6194e2333e672febb6adf12abf4af0f",
             "locator": {
               "kind": "symbol",
-              "name": "DETAIL_ACTIONS"
+              "name": "DETAIL_INDEX_ENTRIES"
             }
           },
           "kind": "test"
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:e1467951fee71042d14e2244388efc7fd9e2d27dd3e3602251a57735b833ed58",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:05676b1d5784bd4ae5fda94178d2af51d82f5f8ec2f324252ae1bbbbc3eb58fe",
             "locator": {
               "kind": "file"
             }
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
             "content": "sha256:c244966eb0c5cce70395500c45dc719b708bc85cea45ca004828cc63f8f502ea",
             "locator": {
               "kind": "symbol",
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:41950501f762c2bbdaff3ac1229c39a2f20e4bb0697ed87df09f1290d21e2fd0",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:29d320c077e1c783f864a29acfd27e66c17f0dddfa5597bc70e38a828df9090a",
             "locator": {
               "kind": "symbol",
               "name": "test_card_maintenance_links_resolve_from_source_and_compiled_source_origins"
@@ -106,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:bf4af55576466747987dd9ce98a1fb31540d11d6d604bedda4e56ca78514e528",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:448f5ccab71aca0c91bd22c2e1b84851871cc0283e9aab7e89267fe7f29ad654",
             "locator": {
               "kind": "symbol",
               "name": "test_semantic_truth_counts_lines_and_independent_factcheck_keep_their_homes"
@@ -122,8 +122,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:9204c82c1f30e8423b4a09cb75ae64bf36724a9cf69d8a6facffe7c862eb2ad2",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:c29526b6f3e08866f90a555dc26c24961f8e1e982de6818340c28691453f5bb7",
             "locator": {
               "kind": "symbol",
               "name": "test_card_maintenance_links_resolve_from_the_actual_emitted_launch_file"
@@ -138,8 +138,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:0484a0e5eb28d086fc8d5f6aeb6beeb127c7953745c2d241c16fa7752103ca3f",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:b9343c1f0ae6670a7700b94d92896d32a3291820369a076096cbb9e918299238",
             "locator": {
               "kind": "symbol",
               "name": "test_failed_memory_tool_preserves_other_admitted_tools_and_dependent_stops"
@@ -154,8 +154,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:6a87b7169a3fdfe7b1dc5546c12e22c855adb730df70abe680f691f3ce893b8c",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:b880142b77d7bcc25c2bba1c492b2cb7a76226e0bd1f0cb330b6769fb98deaa0",
             "locator": {
               "kind": "symbol",
               "name": "test_encountered_memory_healing_has_one_complete_role_home_and_delivery"
@@ -170,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
             "content": "sha256:b1374c5d75919591a6b46510ca51a4c36d2815ac30c713aa0c2c5ad28a22352b",
             "locator": {
               "kind": "symbol",
@@ -182,12 +182,12 @@
       ]
     },
     "3": {
-      "note": "The role keeps truth, continuation and healing clauses and links the complete-checks section.",
+      "note": "The Curator role retains its truth/writer/repair clauses and links `reference/curator/exceptions-and-recovery.md`, while shared continuation stays in `core/every-role.md` + `core/authority.md` and full checks live in `operations/curation.md`'s `Checks and gates` section.",
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:ad7190b284e5ff878a49b503b3b57504076826122de9e6ee1b9d1cc476925620",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:8c9c581a076d3b78aaf73ef435cc4090d241bae44a88fcb0c6949286c572a3b7",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_role_itself_retains_complete_truth_continuation_stops_and_exceptions"
@@ -202,8 +202,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:12d477c6ab9bee8ae27fe543c6df147af93347b794a2f6e19e66dfda72a08043",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:979b81843185078916fb220b618e0e9035614b6bfa302bcbd6ffe07aeeeb6157",
             "locator": {
               "kind": "symbol",
               "name": "test_step_details_reach_actual_files_at_actions_over_the_complete_matrix"
@@ -218,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:132ab5ab4a6ac8b0bcfc93a11ef65076ce8338f947a2950480edb882ad38c8a2",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:33aef5842d99290897943326381c63ea8ac2b964f4ac05a083e57d55ae8c2f85",
             "locator": {
               "kind": "symbol",
               "name": "test_current_truth_and_all_carrier_repair_are_in_delivered_reconciliation_detail"
@@ -234,8 +234,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:11eef46535f1d8f5ebf0c7e25fc3625256cff0d8625f6f6c26af9216a93e6fec",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:46824fa3473763100a789ef2b2eda68ecdcab3ec74c5cfab8d50fc0b867b9190",
             "locator": {
               "kind": "symbol",
               "name": "test_all_invariant_definitions_and_separate_family_revision_binding_are_delivered"
@@ -250,8 +250,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
-            "content": "sha256:aaaa24b73d424eaae9fe6310dbcd464f0ca80eef4ca7ad6120f03cd8d05f7315",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
+            "content": "sha256:842fb037ca8fe721fa7abe5fface2a0f1a9db1110bbac0daba1a5410098fe7f4",
             "locator": {
               "kind": "symbol",
               "name": "test_healing_corpus_rejects_own_fault_only_and_blanket_debt_routing"
@@ -266,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
             "content": "sha256:2c29e7c19e95cd3638151543f4e2813e37ba7feee88ac154d1fcd3c671952c5d",
             "locator": {
               "kind": "symbol",
@@ -282,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+            "blob": "4913fc90265f5b0356c18a5f427050a420d37eca",
             "content": "sha256:6277d31adee5d7ff10b91b0318d7d92d531d9cfb7ed9172c4907e1e0b377f838",
             "locator": {
               "kind": "symbol",

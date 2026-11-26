@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-        "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+        "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+        "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "2": {
-      "note": "The packaged audit map records current source ranges and content digests for shared instruction units.",
+      "note": "The packaged audit map records current source ranges and content digests for shared instruction units.\n\nAnchor: \"units\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:0e497e2602984ad698fd6f11421498aa601beb6e58f55cb4a744414dfeb85433",
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:21a2865bbfc3ccf7ec19a8a754a0b1e763a4894ece1a5a49e1005c1cf43135b1",
             "locator": {
-              "end": 4850,
+              "end": 4979,
               "kind": "line_range",
-              "start": 4826
+              "start": 4964
             }
           },
           "kind": "code"

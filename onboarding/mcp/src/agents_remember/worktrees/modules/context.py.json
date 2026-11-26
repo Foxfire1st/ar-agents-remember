@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "blob": "d02ab2dfa46b85ac8cfde5565f1f510161df9de8",
             "content": "sha256:c028e5bc73e3e9185aca1a3d9c90966ef86993ee73ca273c6dcf53cde4e7573d",
             "locator": {
-              "end": 178,
+              "end": 179,
               "kind": "line_range",
-              "start": 178
+              "start": 179
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "blob": "d02ab2dfa46b85ac8cfde5565f1f510161df9de8",
             "content": "sha256:e52c3872e9cd0e33ac543095d2818953841c85185c0a7d3e878dac14cb84f100",
             "locator": {
-              "end": 919,
+              "end": 929,
               "kind": "line_range",
-              "start": 919
+              "start": 929
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
