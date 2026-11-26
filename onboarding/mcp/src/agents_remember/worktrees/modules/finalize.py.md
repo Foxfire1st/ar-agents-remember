@@ -20,8 +20,7 @@ is what makes the task edge finalization actually reachable.
 ## Code Commentary
 
 `FinalizeArgs` carries the contract path, optional leaf task document path,
-optional parent/master task document path plus subtask number, `dry_run`, and
-provider-teardown behavior. `finalize_result` loads the contract and refuses to
+optional parent/master task document path plus subtask number, and `dry_run`. `finalize_result` loads the contract and refuses to
 finalize until closeout is completed, a code commit is recorded, integration is
 completed, the landed commit (`integrated_code_commit` when present, otherwise
 `code_commit`) is an ancestor of the local `code_source_branch`, and
@@ -37,7 +36,7 @@ Cleanup is handled as part of the finalization operation, and it is the **only**
 cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:284-318):
 
 - If the contract is already cleaned, `_run_or_verify_cleanup` asks `outside_scratch.terminal_blocker` first: it removes a recorded root still on disk, reports one it could not remove as a `blocked` return code 2, and otherwise records `already-completed` with the root's entry under `outsideScratch` without calling `cleanup_result` at all.
-- Otherwise it delegates to `cleanup_result` with `approved=not dry_run` and `teardown_providers`
+- Otherwise it delegates to `cleanup_result` with `approved=not dry_run` and `dry_run`
   carried through.
 - The `except RuntimeError` branch is unchanged: a raised cleanup refusal becomes
   `returncode 2` with `state: "blocked"`, which the caller reports as `cleanup-blocked` and which
@@ -113,7 +112,6 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-
 - Final result releases exact terminal selection before root task archival, reports retryable release failure, and carries the review-artifact archive hook's report on an archived (or would-archive) root task (MIK-R25). [1]
 
 - The archive hook is carried for an archived task only; unbound is `not-bound`, and an exception is a `failed` report, never raised. [2]
@@ -131,14 +129,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 - Focused tests pin a named master's row completion and two-document rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row under the demotion rule, the dry run, the standalone cases and every refusal before any write. [10]
 
-
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned terminal operation.
 
-
 > Retained earlier citation wording: - Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup. [17]
-
 
 - The archive step runs for a series contract and its result is passed to the review-artifact hook, which acts only on an archived or would-archive task. [18]
 
@@ -242,12 +237,9 @@ tree.
 - Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup.  Anchor: `finalize_result` [17]
 
 
-
 - The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
 
 
-
 - The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [6]
-
 
 - Cleanup behavior and branch/worktree removal are delegated here. [4]

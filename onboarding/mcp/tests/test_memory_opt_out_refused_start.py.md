@@ -17,9 +17,15 @@ Rule 2 proves no producer is left: restarts after an abandoned or reopened disab
 ## Evidence
 
 - Rules 1-2 scope and companion-module split [1]
+
 - Knowledge, no-knowledge, and probe-failure refusals, dry and real [2]
+
 - Choice answer, both CLI options, unknown tokens stay invalid [3]
+
 - Missing root keeps its error; setup-first names its action [4]
+
 - First leaf refused before the series contract exists [5]
+
 - Restarts land external; live-leaf attach; terminal cleanup refused [6]
+
 - Tombstone builder, reopen args, missing-repo choices, error status [7]

@@ -95,23 +95,11 @@
       ]
     },
     "4": {
-      "note": "`McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on.\n\nAnchor: `McpRuntimeConfig` `RepositoryScope` `path_is_relative_to`",
+      "note": "`McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on.\n\nAnchor: `RepositoryScope`, `McpRuntimeConfig`, `path_is_relative_to`",
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
-            "locator": {
-              "kind": "symbol",
-              "name": "McpRuntimeConfig"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
             "content": "sha256:c5738ba3812c2824dc7dd385bd062f74ab6d608d21aed6d5e8909de37f938cca",
             "locator": {
               "kind": "symbol",
@@ -123,87 +111,23 @@
         },
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:f7e3a671dd74edaf4fb7458e477f6f647558535e95963c0686671d32dce9da45",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
             "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
             "locator": {
               "kind": "symbol",
               "name": "path_is_relative_to"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:cecffa79700d0ae2448bb1adf1f2d1ae1548ab555039ffdaa2b845ddc05f8510",
-            "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 89
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:49a31fde82caa7dea80cc9298edf31de6a4134128ea27ec4325b6ea6e8b2ebf6",
-            "locator": {
-              "end": 155,
-              "kind": "line_range",
-              "start": 133
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:7f40e2cf01fda9c57fbc6130e19151703cd18e0db46fe045118851986083ab9b",
-            "locator": {
-              "end": 857,
-              "kind": "line_range",
-              "start": 852
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:6468a6b11e8178c60ad33f3e09feaac5cabe4f72739cbfa089c511bc073c58c9",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 88
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:2de83bf327d4f8dd28e0a7fc45619ba2a9df9d0433bc3c7f116130b9ee8cdc8c",
-            "locator": {
-              "end": 835,
-              "kind": "line_range",
-              "start": 830
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },

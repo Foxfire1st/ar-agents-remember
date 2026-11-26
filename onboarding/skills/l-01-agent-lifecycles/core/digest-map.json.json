@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
-        "content": "sha256:38e80e48a5b6cf2c7bd749b98693e26467d7a5c5240639526a614bda56c58614",
+        "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+        "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "BUG-R08@v1 rule 4",
         "leaf": "261112-BUG-L8"
       },
-      "rationale": "Authored semantic units, memberships and the 39 reference audiences retain their authority; derived owns current ranges, hashes and 95 digest-unit audiences.",
+      "rationale": "Authored semantic units, memberships and the 38 reference audiences retain their authority; derived owns current ranges, hashes and 92 digest-unit audiences.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
-        "content": "sha256:38e80e48a5b6cf2c7bd749b98693e26467d7a5c5240639526a614bda56c58614",
+        "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+        "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
         "locator": {
           "kind": "file"
         }
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
             "content": "sha256:db906b4a6477f8ae43b120c2fcd1c203b2eab0b709723d58c085f67fb24ac5e4",
             "locator": {
               "end": 12,
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
             "content": "sha256:735e7170423f80ebfc9ac8cec68897590a3a0d502dbdf63a9395b4d7fca95f1f",
             "locator": {
               "end": 1608,
@@ -72,12 +72,12 @@
       ]
     },
     "3": {
-      "note": "Current units distinguish reference evidence from selected digest lines; retired units keep their record.",
+      "note": "Current units distinguish reference evidence from selected digest lines; retired units keep their record.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
-            "content": "sha256:38e80e48a5b6cf2c7bd749b98693e26467d7a5c5240639526a614bda56c58614",
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
             "locator": {
               "kind": "file"
             }
@@ -87,40 +87,40 @@
       ]
     },
     "4": {
-      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.",
+      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
-            "content": "sha256:f6c9142c58f8a3a37c3f4632de63ac1719dca4b5d5d21136649a9216014e1438",
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "content": "sha256:96f22ebbee9d1adfa19a7a94010ab4ec9e69177a92dfcf85542474e9176fc69f",
             "locator": {
-              "end": 3842,
+              "end": 7841,
               "kind": "line_range",
-              "start": 3836
+              "start": 3964
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
             "content": "sha256:90d5b394342b2ce4d54e57bbe1944cc29d0cba0658518295f9f40d0533ec3d9a",
             "locator": {
-              "end": 4714,
+              "end": 4825,
               "kind": "line_range",
-              "start": 4699
+              "start": 4810
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2bf2932e2230e3099d4b27bf28172201bfb4c0f0",
-            "content": "sha256:53216b21a6223a65d18fe8333d8db28888e7336fd5f4d2e4e8dbccc6be51fd6d",
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "content": "sha256:489c7be1ae1ca0dea02b99e37f4612660d527e34070af8ed15e0b5cc7e17d036",
             "locator": {
-              "end": 7825,
+              "end": 7841,
               "kind": "line_range",
-              "start": 7814
+              "start": 7838
             }
           },
           "kind": "code"

@@ -68,6 +68,6 @@ function alone.
 
 - The role-text cases accept the scoped Curator equivalent and exercise deletion controls, plus handover-heading removal and relocation of the first sentence, on both source roots and on compiled canonical Curator/curation. Both Reviewer landing sentences are checked in the compiled role section and the emitted instructions with per-sentence deletion controls. [10]
 
-
 - Real knowledge-gate evaluation is complete and non-refusing with the populations aboard in the disposable fixture. [7]
+
 - The closeout-quality fixture reports landed and clean counts with unchanged zero refusing findings. [8]

@@ -14,7 +14,6 @@ Converted drift fingerprints cover complete actionable findings rather than samp
 
 ## Evidence
 
-
 - Fingerprint ignores order and nonactionable rows but changes with a finding despite equal counts. [1]
 
 - Click retains the shown fingerprint; time-only refreshes stay dismissed and changed findings return. [2]
@@ -22,5 +21,7 @@ Converted drift fingerprints cover complete actionable findings rather than samp
 - Partial, malformed, unreadable and invalid-count inputs leave acknowledgement bytes intact. [4]
 - Incomplete overall census may publish good changed findings without mutating stored dismissals. [5]
 - Healthy drift and proved branch deletion reclaim only their own occurrences. [6]
+
 - Real in-process ASGI dismiss/state routes survive restart and reveal a new finding. [7]
+
 - Invalid retired-session rows are compacted and only surviving native branch subjects remain; unchanged reread does not rewrite. [8]

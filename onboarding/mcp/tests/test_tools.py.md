@@ -5,7 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Ping and typed CGC/GrepAI refusal tests were deleted.
-- server_info case expects unusedProviderKeys and excludes tools/reservedTools and harnessSkillRoot; the running server names no installed-harness skill root.
+- `server_info` cases exclude `unusedProviderKeys`, `tools`/`reservedTools` and `harnessSkillRoot`, and report legacy `providers`, `providerDegradation` and `timeoutCaps.providerSetupSeconds` keys in `unusedSettingsKeys`; the running server names no installed-harness skill root.
 - Live-registration order, per-landing models/descriptions and curator publish-field assertions remain.
 
 ### Source and authority bounds
@@ -68,7 +68,9 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Ping payload — the case was deleted at C with the ping tool; no ping payload remains.
+
 - Server info payload reports safe config summary [2]
+
 - Memory init repairs authority after config write failure [3]
 - Typed cgc payloads reject invalid inputs before provider execution [4]
 - Grepai payloads reject invalid scope and trace inputs [5]
@@ -185,6 +187,6 @@ live; the module was already registered, so this leaf added no lane row and **no
 
 ## Current source evidence
 
-- The safe-summary case excludes harnessSkillRoot while retaining unusedProviderKeys and the other safe configuration fields. [15]
+- The safe-summary case excludes harnessSkillRoot and unusedProviderKeys while asserting unusedSettingsKeys and the other safe configuration fields; a companion case verifies legacy provider keys are reported under unusedSettingsKeys. [15]
 
 - The current action-shape validator checks the nine declared publish members and rejects publication-only inputs on read actions. [16]

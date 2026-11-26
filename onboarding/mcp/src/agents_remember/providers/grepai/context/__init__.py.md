@@ -6,19 +6,4 @@
 
 ## Purpose
 
-`grepai/__init__.py` is the Docker-owned GrepAI context provider subpackage facade.
-
-## Code Commentary
-
-### Logic
-
-It re-exports GrepAI constants, layout, and workspace-config helpers from the focused GrepAI context modules for the public `providers.context` facade.
-
-### Invariants And Boundaries
-
-- This file is part of the direct `providers.context` facade implementation; there is no `context_providers.py` compatibility fallback.
-- Provider runtime paths stay under configured provider roots unless a helper explicitly validates another source path.
-
-## Evidence
-
-### Repo-Internal References
+This card records the retirement of `mcp/src/agents_remember/providers/grepai/context/__init__.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

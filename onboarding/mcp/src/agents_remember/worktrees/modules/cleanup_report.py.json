@@ -204,12 +204,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-            "content": "sha256:033a560188ccb2030f55658d9c9c6188196cf5dbba375b84f3599a150fde0d75",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
             "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 310
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -222,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
             "locator": {
               "kind": "symbol",

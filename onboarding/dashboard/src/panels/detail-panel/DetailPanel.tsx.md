@@ -21,8 +21,6 @@ navigation, not a duplicate title or ProgressFill header.
 
 Only a taskdoc-prefixed opaque entry key dispatches through TaskDocumentPanel. Addressless or unauthored entries are not converted into synthetic series documents. Entry summary supplies reader form/content; server TaskEntry supplies stage, activity, membership and counts.
 
-
-
 ### Durable hierarchy, progress and navigation
 
 Entry-key navigation preserves full-list positions. Served children/stages drive groups; unresolved or addressless targets remain inert rather than inventing slug or lifecycle fallbacks. Completed table ordering and discarded-before-start audit retain separate presentation responsibilities.
@@ -69,57 +67,24 @@ discard-before-start audit, progress ownership, durable gates and runtime spine 
 
 ### Repo-Internal References
 
-
 - Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. [3]
 
 - `state.ts` derives a qualified leaf key from the selected non-master entry and publishes it with the canonical document reference through `onViewTask`; the task reader no longer derives or places a leaf key on its wrapper. [15]
 
 - The shared qualified leaf key uses reference.repository, the reference path's master folder and the durable entry.id; it returns undefined when the reference, master folder or ID is absent. [16]
 
-
-
-
-
-
-
 - Task step progress/count is placed in the Steps table block, not a duplicate ProgressFill page header. [31]
-
 
 - ProgressFill is the shared progress display primitive. [32]
 
-
-
-
-
-
 - Index rows are positioned by their one-based place in the parent's child list, and the row uses that position only as its test identity.  Historical card provenance: the previous caption was `fullOrderPositions`. Source caption: `IndexRows` `TaskIndexRow` [33]
 
-
-
-
-
-
-
-
-
-
-
-
-
 - Each index row resolves its test identity from the row position and navigates by the served entry's task key.  Historical card provenance: the previous caption was `IndexLink` `resolveRowTarget`. Source caption: `TaskIndexRow` `RowLink` `IndexRows` [35]
-
-
-
-
-
 
 
 - The fixed page uses StepsBlock for its table/count; standalone ProgressFill remains a separate grammar primitive, not mounted as a duplicate task-page header. [37]
 
 
-
-
 - Shared block text remains Markdown and the relocated decision preview retains newest-authored semantics. [44]
-
 
 - The shared empty-state backdrop the no-selection state renders. [46]

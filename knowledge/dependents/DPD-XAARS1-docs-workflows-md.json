@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
-    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified docs/workflows.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated lines 161-166 accurately describe the Manager's standing leaf authority (covering leaves of all masters, including standalone masters) to run worktree_closeout_preview itself and call worktree_closeout_apply with that recorded standing authority as intent_note without presenting a dry-run preview first, while explicit-approval closeouts still present a dry-run preview.",
-    "task": "261112-BUG-L41",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/workflows.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,12 +56,12 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+      "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
     },
     {
-      "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+      "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
     },
@@ -91,12 +91,12 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+      "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
     {
-      "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+      "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
     },
     {
-      "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+      "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:40+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

@@ -27,11 +27,14 @@ completed-cleanup and argument-mismatch answers untouched.
 
 ## Evidence
 
+
 - The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`. [4]
+
+
 - The real-run repeat completes the contract and the terminal authority re-reads `cleanup-completed`. [5]
 - The branch-gone repeat finishes and completes without live refs. [6]
 
 > Retained earlier citation wording: - The archive-ready branch binds `kept_line = None` and invents no record.
 
 
-- The archive-ready branch binds `kept_line = None` and invents no record. Anchor: `cleanup_result` [7]
+- The archive-ready branch in `_cleanup_terminal_branch` returns `None` for `kept_line` (unpacked in `_cleanup_result` under `cleanup_result`) and invents no record. [7]

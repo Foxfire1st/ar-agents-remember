@@ -14,9 +14,6 @@ The module checks that executable names in the instruction and document corpus e
 
 ## Evidence
 
-
-
-
 - The full check applies command-table coverage and reserves entries in UNDOCUMENTED_COMMANDS outside the table. [4]
 
 - The parser, tool registration and task-document dispatcher supply executable vocabularies. [1]

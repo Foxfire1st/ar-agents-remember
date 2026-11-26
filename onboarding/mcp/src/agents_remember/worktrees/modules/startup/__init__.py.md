@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Declares the worktree-start package for contract, provider, leaf-reference, and result collaborators.
+Declares the worktree-start package for contract, leaf-reference, and result collaborators.
 
 ## Code Commentary
 
@@ -34,7 +34,7 @@ No configured Domain Documentation source applies to this package marker.
 
 ### Repo-Internal References
 
-- The package docstring names start contract, provider, leaf-ref, and result collaborators. [1]
+- The package docstring names start contract, leaf-ref, and result collaborators. [1]
 
 ### Cross-Repo References
 

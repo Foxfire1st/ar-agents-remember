@@ -30,6 +30,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Assets and generated declarations left with their last legitimate caller: provider runtime assets and mirrors are gone, while the compose templates and layout helpers the surviving stop paths render are kept and exercised.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

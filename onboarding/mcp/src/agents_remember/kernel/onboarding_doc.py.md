@@ -31,13 +31,10 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-
 - Meaningful-body normalization strips verification fields and history. [6]
 - History extraction is section-aware. [7]
 
-
 - History extraction and history-line delta parsing survive; metadata-row rewriting was removed. [1]
-
 
 - The onboarding owner imports retained Markdown table parsing, not the removed body/history classifiers. [2]
 

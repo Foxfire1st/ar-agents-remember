@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "83a31871461bb3897cd594d2f3730942fc2baf75",
-        "content": "sha256:ed23e0ae7d8316c166971e2608f70bd10982f9d0ac8dadf1cc936c853ce00f1f",
+        "blob": "4500812267cd0b85f60192559855369009c327b7",
+        "content": "sha256:1cc04205a2ec53d690803d8903741b7768b4b099d44dfeb4350e79a8840208c0",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "note": "The source defines this file's responsibility and the boundaries described here.\n\nAnchor: `CONFIG_FILES` / `source_snapshot` / `deterministic_identity` / `judged_identity`",
       "targets": [
         {
           "anchor": {
-            "blob": "83a31871461bb3897cd594d2f3730942fc2baf75",
-            "content": "sha256:ed23e0ae7d8316c166971e2608f70bd10982f9d0ac8dadf1cc936c853ce00f1f",
+            "blob": "4500812267cd0b85f60192559855369009c327b7",
+            "content": "sha256:1cc04205a2ec53d690803d8903741b7768b4b099d44dfeb4350e79a8840208c0",
             "locator": {
               "kind": "file"
             }

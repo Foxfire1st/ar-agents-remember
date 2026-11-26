@@ -1,0 +1,157 @@
+{
+  "path": "mcp/tests/test_judged_history_closing_restore.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+        "content": "sha256:36aeb6679ca8c0a0bc36b6fb55c2a4387bfa21f619485241b519b7237ace92a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_restore_runs_ignore_restore_without_short_circuit_when_history_changed"
+        }
+      },
+      "facet": "Still runs ignore_before.restore() and returns False when super().restore() returns False.",
+      "id": "PRF-C04N4K",
+      "invariant": "INV-FRMFFG",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 5",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+        "content": "sha256:b708e7f1f5a577d6b9c9c3b4f08d4b96631c4787ebbb4d0b12f732bffe42a7fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_restore_returns_true_when_both_preparations_succeed"
+        }
+      },
+      "facet": "Returns True when both super().restore() and ignore_before.restore() succeed.",
+      "id": "PRF-G86EAX",
+      "invariant": "INV-FRMFFG",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 5",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+        "content": "sha256:8ea6865fbadbf037a7833b210b5efc94a9c8a4367dbaef5eeb5ab5d9fe5a40dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_restore_returns_false_and_restores_history_when_ignore_changed"
+        }
+      },
+      "facet": "Restores history and returns False when ignore_before.restore() returns False.",
+      "id": "PRF-PVDZ9S",
+      "invariant": "INV-FRMFFG",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 5",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+        "content": "sha256:43be0abd12c77b4f1021b2ae4b47be94aaf7253dbb5061d0a20a641439212c53",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_restore_preparations_sees_bool_outcome_on_judged_closing"
+        }
+      },
+      "facet": "Polymorphic caller _restore_preparations observes the boolean restore outcome on _JudgedHistoryClosing.",
+      "id": "PRF-ZMZGH6",
+      "invariant": "INV-FRMFFG",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 5",
+        "leaf": "261125-DEP-L7"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_JudgedHistoryClosing.restore()` returns `True` and restores both `history.json` and `.gitignore` (unlinking when `previous` was `None`) when neither file changed concurrently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+            "content": "sha256:b708e7f1f5a577d6b9c9c3b4f08d4b96631c4787ebbb4d0b12f732bffe42a7fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restore_returns_true_when_both_preparations_succeed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "When `history.json` changed concurrently, `restore()` returns `False`, preserves the concurrent history bytes, and still restores `.gitignore` without short-circuiting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+            "content": "sha256:36aeb6679ca8c0a0bc36b6fb55c2a4387bfa21f619485241b519b7237ace92a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restore_runs_ignore_restore_without_short_circuit_when_history_changed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "When `.gitignore` changed concurrently, `restore()` returns `False`, restores `history.json`, and preserves the concurrent `.gitignore` edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+            "content": "sha256:8ea6865fbadbf037a7833b210b5efc94a9c8a4367dbaef5eeb5ab5d9fe5a40dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restore_returns_false_and_restores_history_when_ignore_changed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "When both files changed concurrently, `restore()` returns `False` and leaves both concurrent edits intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+            "content": "sha256:50b4a1e9f5f1845591e86a64d90b7650df92c74f4c43db77c3d45f7129ce9632",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restore_returns_false_when_both_files_changed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`closeout_external._restore_preparations` interprets `_JudgedHistoryClosing.restore()`'s `bool` return correctly across clean (`[]`), dirty-history (`[history_path]`), and dirty-ignore (`[history_path]`) scenarios.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+            "content": "sha256:43be0abd12c77b4f1021b2ae4b47be94aaf7253dbb5061d0a20a641439212c53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restore_preparations_sees_bool_outcome_on_judged_closing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

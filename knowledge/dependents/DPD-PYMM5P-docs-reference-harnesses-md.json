@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
-    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/reference/harnesses.md remains accurate: server_info_payload in mcp/src/agents_remember/mcp/tools/core.py still reports openUserSettings and the agents-remember-task role binding unchanged, and the added runtime_install sharedHeldStores reconciliation/projection does not affect harness or role settings.",
-    "task": "261124-EXP",
-    "uncommitted": false
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/harnesses.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
+    "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
   "id": "DPD-PYMM5P",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/kernel/harnesses.py"
     },
     {
-      "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+      "blob": "ea658dc71d32bc3e38d448dc67af8b4c42c14d04",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/cli/upgrade_user_settings.py"
     },
     {
-      "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
+      "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/tools/core.py"
     },
@@ -102,14 +102,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
-    "task": "261124-EXP"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

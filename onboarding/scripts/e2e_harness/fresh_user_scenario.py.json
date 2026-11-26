@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:ceea01788551f8dd778f3a2c9f47adc3aa094d6c075e514f70f86ffb16541788",
             "locator": {
               "end": 176,
@@ -20,24 +20,12 @@
       ]
     },
     "10": {
-      "note": "Anchor: Actual task topology and first atomic start.",
+      "note": "Anchor: Actual task topology and first atomic start.\n\nAnchor: Actual task topology and first atomic start.\"). (`StartExecution()` updated at L416; tidx 0 `316-386` unchanged.)",
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
-            "content": "sha256:7f51f17434e792c8f35bd7a8b4330c53499d61d4d7db662435bf79467c7caa40",
-            "locator": {
-              "end": 386,
-              "kind": "line_range",
-              "start": 316
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
-            "content": "sha256:f4e18a5a553c45cf22f957df6fa774260a161d0d863a5cd1f0a6aa7976624b06",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
+            "content": "sha256:c83357f18477993110197bf729b9b98e236fb50c5bec43d86856f1e9e8343998",
             "locator": {
               "end": 417,
               "kind": "line_range",
@@ -53,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:f0238f33d87aa10742dc38a33244b1fbf7362bee67c8e424701fecfcf9894089",
             "locator": {
               "end": 481,
@@ -70,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:0556c4cba75ee70525a4ee3f163af06579b6e79fde1743359b8f339670fecc8c",
             "locator": {
               "end": 1007,
@@ -87,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
             "locator": {
               "end": 75,
@@ -130,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:146b9ccd5d57e2ee59d46d2bf6c8ffd4735e0c2a0be79d206951e96050741ae8",
             "locator": {
               "end": 198,
@@ -142,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:28eba8b65b6d984e337f6c9c07eec0723938c4cf1be169824b57ffed6d69089f",
             "locator": {
               "end": 186,
@@ -155,12 +143,12 @@
       ]
     },
     "4": {
-      "note": "Anchor: Ordered current fixture chain without the deleted free-agent step.",
+      "note": "Ordered current fixture chain without the deleted free-agent step.\n\nAnchor: Ordered current fixture chain without the deleted free-agent step.\").",
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
-            "content": "sha256:6fa184b11c49fad4d4d20a5ff4245413935839f726560f5e8908c0e6a76a6631",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
+            "content": "sha256:f2e6d45399e62640a1e2416923575d226e858fd15435bfcec6e5762396a1f9d9",
             "locator": {
               "kind": "file"
             }
@@ -174,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
             "locator": {
               "end": 990,
@@ -191,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:395971011845bfcccfd6d826b2a1ed071a303bc8e5e5af2edc4c69fbefe8ab82",
             "locator": {
               "end": 825,
@@ -208,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:40f88859406a353b419d0078bdb03256964176f7604dab511840235e47ae0101",
             "locator": {
               "end": 848,
@@ -221,12 +209,12 @@
       ]
     },
     "9": {
-      "note": "Anchor: Blocked topology reports only the recorded attempts.",
+      "note": "Anchor: Blocked topology reports only the recorded attempts.\n\nAnchor: Blocked topology reports only the recorded attempts.\"). (`StartExecution()` updated at L887.)",
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
-            "content": "sha256:f30d84e1585938f147125d1ad89021e2308c6d181efbf33be963832f779909d9",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
+            "content": "sha256:ff533bb7408f49a397cf6e6400344f666e96a0d5a4417a4b98b99b010e3bceea",
             "locator": {
               "end": 905,
               "kind": "line_range",

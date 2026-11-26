@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ea094639068a51f0c9c71cef30a5b3f8d48e641",
-        "content": "sha256:5d263838e1c5ea4b71fb149ec48d60ed4f676a18c641f9dc6a8cd5ca2a22f1b6",
+        "blob": "365a0087830845363161865a1d3acd7f4c996a9c",
+        "content": "sha256:f62e11bb5f54f50c6aadfef76680492a2e14e7a9a91b869c0bd13a2b1b8f72e4",
         "locator": {
           "kind": "symbol",
           "name": "_abandon_with_guard"
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Archival runs inside the admitted publish step before destructive outputs. Anchor: `_abandon_with_guard`",
+      "note": "Archival runs inside the admitted publish step before destructive outputs.\n\nAnchor: `_abandon_with_guard`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea094639068a51f0c9c71cef30a5b3f8d48e641",
-            "content": "sha256:13777554f095dd2d096fdfd091f4b88345cf8a31067189706f8e742cdf0aec34",
+            "blob": "365a0087830845363161865a1d3acd7f4c996a9c",
+            "content": "sha256:5d65e99edb644822a787d71c749c4d987ac2661f3c712ba4d474598447c1dcbc",
             "locator": {
               "kind": "file"
             }
@@ -37,16 +37,14 @@
       ]
     },
     "2": {
-      "note": "Task-stage binding is checked before terminal work and again before archival/destructive outputs under current authority. Anchor: abandon preflight order",
+      "note": "Task-stage binding is checked before terminal work and again before archival/destructive outputs under current authority.\n\nAnchor: `_abandon_with_guard`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ea094639068a51f0c9c71cef30a5b3f8d48e641",
-            "content": "sha256:5d263838e1c5ea4b71fb149ec48d60ed4f676a18c641f9dc6a8cd5ca2a22f1b6",
+            "blob": "365a0087830845363161865a1d3acd7f4c996a9c",
+            "content": "sha256:5d65e99edb644822a787d71c749c4d987ac2661f3c712ba4d474598447c1dcbc",
             "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 27
+              "kind": "file"
             }
           },
           "kind": "code"

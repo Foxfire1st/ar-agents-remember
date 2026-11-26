@@ -130,29 +130,15 @@
       ]
     },
     "5": {
-      "note": "Composition: the app registers this surface.",
+      "note": "Composition: the app registers this surface.\n\nAnchor: `create_app`, `register_requirements_routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
-            "content": "sha256:3599f15e9dc10a35df95730936a73b46267c1b6c4b9f9137904be8408328550b",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+            "content": "sha256:0112f53ac6a8c48dfee7be224f560ebba39aec58e64bc79e69a1c16a1037e8e5",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 147
-            },
-            "path": "mcp/src/agents_remember/serving/app.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
-            "content": "sha256:2da2759c665b18799fab4514768ebbccecc025d8b46e04b825cc9a1e203cb2c4",
-            "locator": {
-              "end": 232,
-              "kind": "line_range",
-              "start": 232
+              "kind": "symbol",
+              "name": "create_app"
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

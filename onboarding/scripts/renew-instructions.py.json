@@ -132,16 +132,16 @@
       ]
     },
     "4": {
-      "note": "The contributor guide gives the command for instruction facts and the generated skills and tool-details copies, with a read-only check mode.",
+      "note": "The contributor guide gives the command for instruction facts and the generated skills and tool-details copies, with a read-only check mode.\n\nAnchor: `## Generated copies` / `scripts/renew-instructions.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
-            "content": "sha256:42a9e92ade669055808420d32249af664fc66fe70b463643090dacc68c31429e",
+            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
+            "content": "sha256:14bf68e3bbb9b11be95c2120cddd3eecd2aa790e66adff3046b70e0a0fcad2a9",
             "locator": {
-              "end": 159,
+              "end": 155,
               "kind": "line_range",
-              "start": 130
+              "start": 126
             },
             "path": "CONTRIBUTING.md"
           },

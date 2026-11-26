@@ -542,22 +542,6 @@
         }
       ]
     },
-    "7": {
-      "note": "Provider degradation records its own state/events and can stop a critical provider; no removed operator-inbox posting occurs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
-            "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/providers/degradation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "Guarded durable-store composition preserves coordinator containment and held-lock rewrite.\n\nAnchor: actual current supporting source",
       "targets": [

@@ -13,7 +13,6 @@ tuple from its single definition in `models`.
 
 The shared payload adapter forwards the complete result, any preselected answer and any reader-owned fitting hook to response completion.
 
-
 It declares `TRANSPORT`, an empty `RESERVED_TOOLS`, `__all__`, and `_tool_payload`.
 `PUBLIC_TOOLS` is imported and re-exported rather than redeclared. `_tool_payload` accepts an
 optional `answer` projection beside the whole application `payload` and delegates both to
@@ -70,10 +69,7 @@ None.
 
 ## Evidence
 
-
-
 - The adapter forwards the whole payload and optional answer to one finalizer. [10]
-
 
 ### Docs References
 
@@ -81,22 +77,15 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-
 - The advertised tuple names the structural public surface, and is now defined in the `models` leaf. [1]
 
 - The adapter re-exports the roster through `__all__` instead of declaring its own copy. [2]
 
 - The live registration is compared to this tuple, in order, by the inventory suite. [3]
 
-
-
-
 - The shared adapter finalizes one application result. Anchor: `_tool_payload` [4]
 
-
-
 - Registrars are the only published declaration family. [5]
-
 
 ### Cross-Repo References
 
@@ -118,7 +107,6 @@ The current source seams include the module-level vocabulary. The public schema/
 - The reserved-tool tuple is explicitly empty. [8]
 
 - The protocol adapter delegates response completion to the application boundary. [9]
-
 
 ## 260821-CLIVE Public Tool Census
 

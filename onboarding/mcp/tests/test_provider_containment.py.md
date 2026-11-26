@@ -6,15 +6,4 @@
 
 ## Purpose
 
-Pin provider disk-authority containment and truthful declaration of unchecked leaf dependencies.
-
-## Code Commentary
-
-A stale armed in-memory provider snapshot cannot override unconfigured on-disk launch authority. The retained start-result fixture stubs the underlying start to would-start and requires eligibility.requiresCheck="not-performed" with detail naming Requires lines. It does not prove that dependencies are satisfied. The deleted lifecycle-switch-required refusal and non-fleeting fixture are not current start gates. Temporary fixtures and mocked starts do not operate live providers or establish a successful task start.
-
-## Evidence
-
-- Stale armed snapshot is vetoed by disk [1]
-
-- On-disk unconfigured authority vetoes a stale armed snapshot. [3]
-- Start result explicitly names the Requires check it did not perform. [4]
+This card records the retirement of `mcp/tests/test_provider_containment.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

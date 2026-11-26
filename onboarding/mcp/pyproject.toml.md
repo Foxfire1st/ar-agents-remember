@@ -28,14 +28,14 @@ The package builds with `setuptools`, publishes as `agents-remember-mcp`, uses
 (`>=3.14,<3.15`).
 Runtime dependencies include `mcp` (`>=1.30.0,<2`), `pydantic`, `tiktoken`, `fastapi` (built-in
 `fastapi.sse`), `uvicorn`, and `websockets`: Pydantic owns public response validation,
-tiktoken backs response token accounting, and FastAPI/uvicorn serve the local dashboard. `python-multipart` is also declared as a runtime dependency. `watchfiles` (`>=1.1,<2`) is the native filesystem watcher behind the dashboard's
+tiktoken backs response token accounting, and FastAPI/uvicorn serve the local dashboard. `watchfiles` (`>=1.1,<2`) is the native filesystem watcher behind the dashboard's
 change-driven projection pacing (`serving/change_watcher.py`); the serving layer degrades
 loudly to interval-driven full refreshes when it is missing, so the dependency is core for
 adaptive behaviour, not for the daemon to run at all. The webstack is a **core** dependency (not an optional
 extra) so `agents-remember dashboard` works on a plain install. Development-only
 quality tools live under the `dev` optional dependency group: Coverage.py, httpx
 (the FastAPI `TestClient` backend), pytest, pytest-cov, pytest-xdist, Pyright, Radon, and Ruff.
-Ruff is an exact 0.16.1 pin shared with the checkout requirements, so a worktree and a package-dev
+Ruff is an exact 0.16.1 pin, so a worktree and a package-dev
 environment enforce the same stable rule set instead of interpreting the same configuration under
 different Ruff releases.
 The xdist range is deliberately bounded to major version 3 because root pytest `addopts` owns
@@ -48,7 +48,7 @@ Two console scripts are declared: the umbrella `agents-remember`
 (`agents_remember.mcp.__main__:main`, the MCP server). setuptools discovers import
 packages from `mcp/src`. The `[tool.setuptools.package-data]` block ships package-owned
 runtime assets — `package_data/**/*` plus `package_data/benchmarks/.gitignore` — so
-`runtime_install` can reconcile the runtime docs and provider assets into a coordinator
+`runtime_install` can reconcile the runtime docs and system/benchmark assets into a coordinator
 from a pip/uvx install with no source checkout. Skills remain served from the package
 rather than being copied into the coordinator. Dotfiles need their
 own explicit entry; `**/*` does not match them. The separate `cli/*.mjs` declaration
@@ -125,7 +125,7 @@ Three facts justify the exact pin:
    classifier's support claim remains an unresolved acceptance item for the owning seat — it is disclosed rather
    than narrowed silently.
 
-The pin is recorded in three places that must agree: `dependencies` here, `mcp/requirements.txt`, and the single
+The pin is recorded in two places that must agree: `dependencies` here and the single
 `apsw` entry in `mcp/uv.lock`. The in-file comment above the entry is the durable record of the reason, so a
 later reader does not have to reconstruct it from a report.
 
@@ -167,56 +167,29 @@ later reader does not have to reconstruct it from a report.
 
 - The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. [1]
 
-
-
-
-
 - Public response contracts depend on Pydantic and token accounting depends on tiktoken. [3]
 - The declared `mcp` dependency requires `>=1.30.0,<2` so installs carry `FastMCP.remove_tool` and stay on the 1.x line without the 1.29.1 advisories. [22]
 
-
 - The derived knowledge index uses an exact-pinned SQLite binding, with its schema-feature reason recorded inline above the entry. [4]
-
-- The same exact pin in the checkout requirements manifest, which must agree with this file. [5]
 
 - The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects. [6]
 
 - Production complexity scoring loads Radon and refuses when its development dependency is unavailable. [7]
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 
-
-
-
-
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
-
-
-
-
-
-
-
-
-
-
-
-
 
 - The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the What you need, Install steps, Start and stop the dashboard and the host, Tools, and More sections. [10]
 
-
-- `runtime_install` reconciles packaged runtime docs and provider assets into a coordinator; skills remain served from the package. [11]
+- `runtime_install` reconciles packaged runtime docs and runtime assets into a coordinator; skills remain served from the package. [11]
 - The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. [12]
 - The placement step whose output this recursive glob picks up at build time. [13]
 - Both generated dashboard paths are git-ignored, with the reason recorded inline. [14]
 - An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. [15]
 
-
 - Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyright language configuration. [16]
 
-
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
-
 
 - Root pytest configuration selects four workers by default. [2]
 

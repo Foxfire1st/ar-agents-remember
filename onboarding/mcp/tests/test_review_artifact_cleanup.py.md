@@ -63,7 +63,6 @@ No additional work is asserted by this card.
 
 The pinned planned-key set includes `frameRevisions`.
 
-
 The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt.
 
 ## Retained Full-Card Audit Context
@@ -94,8 +93,6 @@ The previous-set failure and current-set pass are the earlier card’s attribute
 
 ## Evidence
 
-
-
 ### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R25@v1` lives outside the repositories.
@@ -105,13 +102,20 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The plain task fixture with its leaf contract and two repositories. [1]
+
+
 - The main archive case. [2]
+
+
 - Colliding task ids. [3]
 - A record, a task document, or a planted leaf contract never reaches another task's refs. [4]
+
+
 - The cleanup reports a missing repository and a refused release. The refused pin and snapshot remain. The finalizer reports an injected hook exception. [5]
+
+
 - A planted foreign manifest releases nothing. [6]
 - Symlinks: the scan, the notes root, the generation directory. [7]
-
 
 ### Cross-Repo References
 
@@ -122,7 +126,6 @@ The cases use two disposable repositories and a temporary coordination root.
 - A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]
 
 - The interrupted archive fixture removes the workspace, old generation counter and old lock. After retry the migrated seat-generation counter path and old lock path have interrupted alreadyAbsent explainerArtifacts entries. The test does not require a workspace receipt entry. [11]
-
 
 - The receipt's planned-key set carries the frame-revision class. [10]
 

@@ -112,7 +112,7 @@
       ]
     },
     "13": {
-      "note": "Command capture, snapshot removal, observer paths and provider naming are shared primitive operations.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/command_capture.py`; `mcp/src/agents_remember/kernel/primitives/drift_snapshot.py`; `mcp/src/agents_remember/kernel/primitives/observer_paths.py`; `mcp/src/agents_remember/kernel/primitives/identity.py`",
+      "note": "Command capture, snapshot removal and observer paths are shared primitive operations.\n\nAnchor: `command_capture.py`; `drift_snapshot.py`; `observer_paths.py`",
       "targets": [
         {
           "anchor": {
@@ -142,27 +142,14 @@
         },
         {
           "anchor": {
-            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
-            "content": "sha256:996d3e4a610cb2b7e5f82bd701a6537597a4689d2856f7b30ab95ec2fe522e25",
+            "blob": "4b28d9f5bd0979aa717acb261bab08ab978fd8e7",
+            "content": "sha256:b2e75dc447072f3590ec2e0bc42c53cf274b30d27d57851088d8ee85bdf2011b",
             "locator": {
               "end": 50,
               "kind": "line_range",
               "start": 1
             },
             "path": "mcp/src/agents_remember/kernel/primitives/observer_paths.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
-            "content": "sha256:4926457f6553d0262a72b1e9261d2890c451e9b8c8ec2a3c31eca4732855be82",
-            "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
           },
           "kind": "code"
         }
@@ -334,12 +321,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
             "content": "sha256:9b1043eb9ddc361e83419d937ebf4504b960d59a7b835f21dc9caeabd0be26db",
             "locator": {
-              "end": 441,
+              "end": 331,
               "kind": "line_range",
-              "start": 417
+              "start": 307
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -374,14 +361,15 @@
       ]
     },
     "19": {
-      "note": "Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.",
+      "note": "Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. Retired providers and providerDegradation top-level sections load only as unread UNUSED_SETTINGS_SECTIONS keys.\n\nAnchor: `_LEGACY_GATE_DELEGATION_WARNED`, `_warn_legacy_gate_delegation`, `UNUSED_SETTINGS_SECTIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:17df0168b2b2c27531815ef332663c3cdb976e99e2beb68e1bc34bf630fc3f7f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_LEGACY_GATE_DELEGATION_WARNED"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -389,12 +377,38 @@
         },
         {
           "anchor": {
-            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
-            "content": "sha256:f83cf50f2ead77d7527b6ce79d9a48f72185c6adc140038550016b9838771b94",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:25d7d994183475d3a17a6be7254c44b7d3acf67e8d14343a10070e1a1b5b8061",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_warn_legacy_gate_delegation"
             },
-            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:dafd46150e303b52c0cda58d91488aff001a34d20d1fc49d0ff843161c527e54",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNUSED_SETTINGS_SECTIONS"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:45a7301add57769e2f7cda7664dce6fdcfe5f0b2dc2add24c8d48c87a2d79963",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 476
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
           "kind": "code"
         }
@@ -578,12 +592,12 @@
       ]
     },
     "5": {
-      "note": "Runtime configuration owns repository/profile parsing and reads shared host authority per use.\n\nAnchor: `mcp/src/agents_remember/kernel/primitives/runtime_config.py`",
+      "note": "Runtime configuration owns repository/profile parsing and reads shared host authority per use.\n\nAnchor: `McpRuntimeConfig`, `config_from_mapping`, `load_paseo_runtime_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:be673a5da0e4ef82c7af127236f0f481f21f6c61f6ada887bde59f396d2d909b",
             "locator": {
               "kind": "file"
             },

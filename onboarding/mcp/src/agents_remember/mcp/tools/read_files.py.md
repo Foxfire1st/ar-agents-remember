@@ -6,9 +6,6 @@
 
 ## Current source contract evidence
 
-
-
-
 ## Purpose
 
 `read_files.py` is the thin payload builder for the `read_ar_files` tool
@@ -33,37 +30,16 @@ Optional task_context is admitted to a call-local config, without mutating the s
 
 ### Repo-Internal References
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Runtime Source References
-
-
-
 
 - Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse. [5]
 
 - The application reply owns the exact context, tree observation and naming rows. [1]
-
 
 - The payload gives the reader's fitter to the shared response completion after scope resolution. [2]
 
 - The strict response permits named file rows, an optional overview list, and brief problem and omission fields. [3]
 
 - The payload applies the removed-argument refusal and shares the same completion boundary for admitted requests. [4]
-
-
 
 - The mounted adapter delegates row assembly and sends the fitter when completing the response. [6]

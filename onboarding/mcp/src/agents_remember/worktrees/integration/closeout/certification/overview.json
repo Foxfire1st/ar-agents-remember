@@ -169,12 +169,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
-              "kind": "line_range",
-              "start": 225
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },

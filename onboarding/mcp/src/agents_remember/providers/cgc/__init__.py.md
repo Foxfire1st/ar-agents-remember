@@ -6,24 +6,4 @@
 
 ## Purpose
 
-This package marker establishes `providers.cgc` as the provider-owned home for
-CodeGraphContext setup, context, and lifecycle modules.
-
-## Code Commentary
-
-### Logic
-
-The file intentionally exports no runtime behavior. Callers import concrete
-modules such as `providers.cgc.setup`, `providers.cgc.context`, or
-`providers.cgc.lifecycle`.
-
-### Invariants And Boundaries
-
-- Do not add provider orchestration to this marker file.
-- Keep provider behavior in the named child modules.
-
-## Evidence
-
-### Repo-Internal References
-
-- The package overview describes the provider-owned CGC route. 
+This card records the retirement of `mcp/src/agents_remember/providers/cgc/__init__.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

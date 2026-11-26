@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+        "content": "sha256:d7a8874b4dc33814a2657360146e1aef3c42c1a69c49a3689f9ea535d7f08034",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_chat_address_for_surfaces_bridge_import_error"
+        }
+      },
+      "facet": "A failed import of paseo_bridge raises ImportError directly instead of UnboundLocalError in the exception handler.",
+      "id": "PRF-E56D3E",
+      "invariant": "INV-TMKPZR",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 4",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+        "content": "sha256:ab18b15b2fc7ed1adf152ddc1e8bb401afc763a4ae7270147f71d933d46085dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_chat_address_for_reports_bridge_failure_detail"
+        }
+      },
+      "facet": "A raised PaseoBridgeFailure is caught and returned as a structured failure detail payload.",
+      "id": "PRF-Y25J94",
+      "invariant": "INV-TMKPZR",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 4",
+        "leaf": "261125-DEP-L7"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,10 +43,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd1f706155535694723702370bcbdfb64849c202",
-            "content": "sha256:87d585406898a9e123652bbfecdeaaa72b3cbc0d56283fbba23ad20fa8156915",
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:4f07d132857c04fdfd47298f63897424297f5e1e482920bbe9a4efad50d5774b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_an_address_is_answered_only_after_the_origin_answers"
             }
           },
           "kind": "test"
@@ -18,14 +55,64 @@
       ]
     },
     "2": {
-      "note": "An unserved origin, a 503 page and a failed owner are reported as reasons, never published as an address.",
+      "note": "An unserved origin, a 503 page and a failed owner are reported as reasons, never published as an address.\n\nAnchor: `test_a_503_from_the_origin_is_reported_not_published`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd1f706155535694723702370bcbdfb64849c202",
-            "content": "sha256:87d585406898a9e123652bbfecdeaaa72b3cbc0d56283fbba23ad20fa8156915",
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:b4267ce911a138f03c3f540ee01f084c86dc81aec962340389cdb47e13b16d96",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_dashboard_that_does_not_answer_is_reported_not_published"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:c9c09f5154f0fdc02aff81c6f35970d2611c6c52099a0cf0dd623c70ca2f00d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dashboard_owner_that_raises_is_reported_the_same_way"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:1770bf39edd600bfff39f5eeb746a95fade945cae1b4874c09cebec29fd036a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_owner_that_failed_is_not_published_over_a_listening_port"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`chat_address_for` surfaces a real `ModuleNotFoundError` when lazy-importing `paseo_bridge` fails, and catches `PaseoBridgeFailure` from `bridge_call` as `chatAddressDetail` with `chatAddress: None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:d7a8874b4dc33814a2657360146e1aef3c42c1a69c49a3689f9ea535d7f08034",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chat_address_for_surfaces_bridge_import_error"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:ab18b15b2fc7ed1adf152ddc1e8bb401afc763a4ae7270147f71d933d46085dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chat_address_for_reports_bridge_failure_detail"
             }
           },
           "kind": "test"

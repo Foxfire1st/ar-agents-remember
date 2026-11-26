@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Prepared settings differ from the template only in the recorded coordination root and dashboard port.",
+      "note": "Prepared settings differ from the template only in the recorded coordination root and dashboard port.\n\nAnchor: `` `test_prepared_settings_differ_only_in_recorded_root_and_port` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e718a35779c0d91225580bb6e84b2d9ac9e206",
-            "content": "sha256:6f7f1e114af0bae4d98462adc3530f73d80367c073b28110737430d60aa40dd3",
+            "blob": "70398ae511504afcccc5ba183345d5927d403a86",
+            "content": "sha256:a7d3429f0f518c98e829048da74eade7fe5ba66086debfc3be617ae80cb4529a",
             "locator": {
-              "kind": "file"
+              "end": 80,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "test"
@@ -18,14 +20,28 @@
       ]
     },
     "2": {
-      "note": "The developer's user settings file is never written or created, and an invalid existing authority is refused rather than replaced.",
+      "note": "The developer's user settings file is never written or created, and an invalid existing authority is refused rather than replaced.\n\nAnchor: `` `test_absent_user_settings_file_stays_absent_and_the_sandbox_holds_the_block` `test_invalid_existing_authority_is_refused_without_replacing_it` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c8e718a35779c0d91225580bb6e84b2d9ac9e206",
-            "content": "sha256:6f7f1e114af0bae4d98462adc3530f73d80367c073b28110737430d60aa40dd3",
+            "blob": "70398ae511504afcccc5ba183345d5927d403a86",
+            "content": "sha256:6db34e89f97a9f40f0059bdc0aff38f6d00f160951963d65c7e03515bc019051",
             "locator": {
-              "kind": "file"
+              "end": 104,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "70398ae511504afcccc5ba183345d5927d403a86",
+            "content": "sha256:96e21825629f64139fa796ca2a1411bacc4dc0607d0e96dfedf5acf0e4b9153f",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 180
             }
           },
           "kind": "test"

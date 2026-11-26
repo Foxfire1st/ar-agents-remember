@@ -130,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
@@ -226,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+            "blob": "20043640df430d69a0e2c17f3620f3aa74158c47",
             "content": "sha256:cb9d8a52d4de3d40ee4e4d00b08886a459bb187ce0f897a9bb10f9f8121f1e01",
             "locator": {
               "end": 15,
@@ -262,12 +262,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:56c28a24b4574bbd167a6c2db330fac203f0c5b8bbec11f82510db2ca04cb251",
             "locator": {
-              "end": 223,
+              "end": 220,
               "kind": "line_range",
-              "start": 223
+              "start": 220
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -276,16 +276,15 @@
       ]
     },
     "22": {
-      "note": "The `ResponseEnvelope` union of the strict and flexible envelope bases, both of which declare the choke-point fields `nextStep`, `next`, `log`, `logError` and `buildCurrentness`; no banner field is declared.",
+      "note": "The `ResponseEnvelope` union of the strict and flexible envelope bases, both of which declare the choke-point fields `nextStep`, `next`, `log`, `logError` and `buildCurrentness`; no banner field is declared.\n\nAnchor: `ResponseModel`, `FlexibleResponseEnvelope`, `ResponseEnvelope`",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
-            "content": "sha256:b4083410ee2a1f482b3b86b92d5364d3cde9f5502abcde32fe56c6fe036e1019",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:ad3bf78d4645f124ffffb64871cd3a6578a8abd6d974757dec64dfda336272e0",
             "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 63
+              "kind": "symbol",
+              "name": "ResponseModel"
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -293,12 +292,11 @@
         },
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
-            "content": "sha256:f3d8171cbab08074ba4a63383f6e94134be10125f7108492b5e7aa9a9abb32f3",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:a85aa5342c326f1e6683379c7639d657fb82ab1a40ad9476b09b82b81f828d84",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 96
+              "kind": "symbol",
+              "name": "FlexibleResponseEnvelope"
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -306,10 +304,10 @@
         },
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
-            "content": "sha256:929ee8d6a3f994bca8e9a10650643d735ed700fe5d25d20de3a8605bf05f966b",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:902712eb2254601b1718235eb4f7ab66acd8416023b16bd967a11680be33cf9e",
             "locator": {
-              "end": 130,
+              "end": 131,
               "kind": "line_range",
               "start": 123
             },
@@ -324,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
             "locator": {
               "kind": "symbol",
@@ -341,7 +339,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:7cf4fa3e68ddaa0bd592051a7872a2b8e810780982feb18cc56e09714e7738b1",
             "locator": {
               "kind": "symbol",
@@ -370,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:9fbb177c3c05ccb357696c55d918403d38a36d4dcbcb20f11fae961507cc4dbf",
             "locator": {
               "end": 86,
@@ -664,12 +662,12 @@
       ]
     },
     "46": {
-      "note": "One registry, TOOL_RESPONSE_MODELS, maps each public tool name to the response model its payload validates against; no separate public subset or internal-compat exclusion remains.\n\nAnchor: `INTERNAL_COMPAT_TOOL_NAMES` `TOOL_RESPONSE_MODELS` `PUBLIC_TOOL_RESPONSE_MODELS`",
+      "note": "One registry, TOOL_RESPONSE_MODELS, maps each public tool name to the response model its payload validates against; no separate public subset or internal-compat exclusion remains.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:4a2955c03025ce5e578c4efc043dc85bd51a1cd02057c6fc59b517564874378d",
             "locator": {
               "kind": "file"
             },
@@ -728,15 +726,27 @@
       ]
     },
     "49": {
-      "note": "Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped.",
+      "note": "Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped.\n\nAnchor: `server_info_payload`, `context_packet_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
-            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:3a5e133d72d4e76092eb8ea11006301fa004ffbec70ad912b2cbcd76879f2f17",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -1152,11 +1162,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
-            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:3a5e133d72d4e76092eb8ea11006301fa004ffbec70ad912b2cbcd76879f2f17",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:5b08585cd722662fbdd331b0e489b22f9ab3dbba09ea2cdb6bc617d891c9d1a0",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 54
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },

@@ -10,7 +10,6 @@ Architect owns the developer conversation, requirement meaning and semantic plan
 
 The Worker, Reviewer, Curator and Investigator retrieve briefs for their relevant files. Fuller replies can include rule text. Compact rows can retain a pointer even when the saved brief is missing. Open the current saved brief when present. Each role uses knowledge_read and its own file tools for whole records and supporting evidence.
 
-
 Worker and Bootstrap intake now obtain naming/orientation and open source/card/overview files natively; this changes reading, not grants, scratch placement, CODE/MEMORY ownership, question provenance or peer handover. Curator family authoring follows its operation and the family-obligations detail.
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
@@ -77,7 +76,7 @@ Repository-foundation curation is regular task work: after setup reports memory 
 
 Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. Bootstrap is admitted by the eight-role launcher for its taskless setup procedure.
 
-Investigator handles one scoped concern of any kind at Projects, sprint, standalone-master or sprint/master scope; a leaf may be named in the concern but is never its selected start scope. The parent's first message supplies the concern, or a parentless launch uses the developer request. It distinguishes observations from root-cause hypotheses, writes a report before any explicitly authorized provider/system remediation, and respects active prohibitions on starts. Checks belong in scratch or an admitted repository sandbox. Code, memory, task, lifecycle and Git changes remain with their owners; a separate order does not grant Worker/Curator authority. The historical `system-specialist` spelling remains a canonicalized input alias. The selected Investigator capacity owner declares eight open IDs; taskless and selected-task identity must not be conflated with primary coordinator ownership.
+Investigator handles one scoped concern of any kind at Projects, sprint, standalone-master or sprint/master scope; a leaf may be named in the concern but is never its selected start scope. The parent's first message supplies the concern, or a parentless launch uses the developer request. It distinguishes observations from root-cause hypotheses, writes a report before any explicitly authorized system remediation. Checks belong in scratch or an admitted repository sandbox. Code, memory, task, lifecycle and Git changes remain with their owners; a separate order does not grant Worker/Curator authority. The historical `system-specialist` spelling remains a canonicalized input alias. The selected Investigator capacity owner declares eight open IDs; taskless and selected-task identity must not be conflated with primary coordinator ownership.
 
 The canonical roles share file-carried message evidence and replacement-transparent role/task ordinary report returns; actual-parent-ID questions and quoted-answer provenance remain separate. Bootstrap remains free-agent setup/report-only — it creates no task, starts no role and writes no onboarding or knowledge — Investigator remains bounded read/report, and leaf peer handovers remain direct. A carrier change or a host-authored silent-turn wake gives no role a new write/start/acceptance power.
 
@@ -265,12 +264,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Families are authored as records items and external documents as card references; the file writer does not read the entry keys family and external_sources. [38]
 
-
-
-
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
-
-
 
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]
 

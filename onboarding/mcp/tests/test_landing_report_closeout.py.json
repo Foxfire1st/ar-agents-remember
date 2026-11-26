@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
-        "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
+        "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
+        "content": "sha256:0aee469f2af936eb98c2cba9d0ac090f56d47e8a31b0911a7ddc1aa1fb42aefa",
         "locator": {
           "kind": "symbol",
           "name": "test_real_closeout_phase_passes_with_landing_aboard"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+        "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
         "content": "sha256:44281868bedf9ea2c170d3da276d01c094ca58f61d833517fd45946695df1dd2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+        "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
         "content": "sha256:2684f3099605ae7e65287e66559645a084a16049c392699db7c59969170af4c7",
         "locator": {
           "kind": "symbol",
@@ -56,14 +56,37 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Every real consumer judges a landed candidate exactly as a clean one.",
+      "note": "Every real consumer judges a landed candidate exactly as a clean one.\n\nAnchor: `test_clean_check_reports_both_with_ok_true`, `test_real_closeout_phase_passes_with_landing_aboard`, `test_gate_refuses_nothing_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
-            "content": "sha256:14c0890b8bd4ec414039403fb10e7a9b896ee94389eb0d6b53749b387ea67efe",
+            "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
+            "content": "sha256:d38afe7aeb953bb0f66dd3cb9f5a5cf093b45301d6443f5b7cbe3400815313f2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_clean_check_reports_both_with_ok_true"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
+            "content": "sha256:0aee469f2af936eb98c2cba9d0ac090f56d47e8a31b0911a7ddc1aa1fb42aefa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_closeout_phase_passes_with_landing_aboard"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
+            "content": "sha256:09d99e964e359e6ec8b080106d32bb8fe39f6db7e48199f3b34fe57c37c9641b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_refuses_nothing_landing"
             }
           },
           "kind": "test"
@@ -75,10 +98,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
-            "content": "sha256:14c0890b8bd4ec414039403fb10e7a9b896ee94389eb0d6b53749b387ea67efe",
+            "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
+            "content": "sha256:81e9e4a26f33dfaa191db8de13aaede9c7000b48db66a181875115093f45e1af",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_existing_refusal_fires_identically_with_landing"
             }
           },
           "kind": "test"

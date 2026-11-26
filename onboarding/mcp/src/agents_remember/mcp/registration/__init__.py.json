@@ -65,12 +65,12 @@
       ]
     },
     "7": {
-      "note": "The live tool-list comparison checks the advertised registration against the roster.",
+      "note": "The live tool-list comparison checks the advertised registration against the roster.\n\nAnchor: `test_live_registration_matches_the_public_inventory_in_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
-            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
+            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
+            "content": "sha256:bee5e062fa3ef3355c514ba67de789acc44794781f2f91fe2b2a9828ba61c87c",
             "locator": {
               "kind": "file"
             },

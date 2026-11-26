@@ -65,25 +65,16 @@ No configured external domain-documentation source applies.
 - Lifecycle control reconstructs only canonical typed public values. [3]
 - Closeout approval, messages, and finalization documents remain separate concepts. [4]
 
-
 - Start consumes its extracted request type. [5]
-
-
-
 
 - Operation control consumes its extracted request type. [6]
 
-
-
-
 - The start tool consumes the request types this module extracts. [7]
-
 
 - Closeout apply consumes its extracted request type. [8]
 
 ### Cross-Repo References
 
 No cross-repository boundary is owned here.
-
 
 No separate external implementation source applies to this file.

@@ -1,0 +1,108 @@
+{
+  "path": "mcp/tests/test_type_hint_contracts.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+        "content": "sha256:349eb376a0c178fd9aafff397d1317caf35ee74a8f10fc36f7e01d55f8cdfc30",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_check_config_targeted_scope_type_hint_resolves"
+        }
+      },
+      "facet": "typing.get_type_hints(CheckConfig) resolves targeted_scope to TargetedScope | None without shadowing failure.",
+      "id": "PRF-BHGXVH",
+      "invariant": "INV-2Q2JKR",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 7",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+        "content": "sha256:68ac0d8b2efe89b8989abd64941abb25ff78767f321201eb5090feae9da1fab8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_row_kinds_typed_as_canonical_record_kind_tuple"
+        }
+      },
+      "facet": "Inspects authoring_rows annotations to verify RECORD_ROW_KINDS is Final[tuple[RecordKind, ...]] using canonical ids.RecordKind.",
+      "id": "PRF-QDC5JB",
+      "invariant": "INV-0YAS0P",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 8",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+        "content": "sha256:569a8583faea422fb1bb8ebf32a6f7ebd353a36525319b9a807ee1fbe9a8dd7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_enclosure_publication_artifacts_outside_scratch_type_hint_resolves"
+        }
+      },
+      "facet": "typing.get_type_hints(EnclosurePublicationArtifacts) resolves outside_scratch to the concrete OutsideScratchBinding type.",
+      "id": "PRF-TPB4J3",
+      "invariant": "INV-TYX0QS",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 6",
+        "leaf": "261125-DEP-L7"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EnclosurePublicationArtifacts.outside_scratch` keeps its public field name and resolves to `OutsideScratchRoot \\| None` under both module-scope and class-scope `get_type_hints`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+            "content": "sha256:569a8583faea422fb1bb8ebf32a6f7ebd353a36525319b9a807ee1fbe9a8dd7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_enclosure_publication_artifacts_outside_scratch_type_hint_resolves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`CheckConfig.targeted` and `CheckConfig.targeted_scope` keep their public field names and resolve to `bool` and `TargetedScopeResult \\| None` under both module-scope and class-scope `get_type_hints`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+            "content": "sha256:349eb376a0c178fd9aafff397d1317caf35ee74a8f10fc36f7e01d55f8cdfc30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_check_config_targeted_scope_type_hint_resolves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`authoring_rows.RECORD_ROW_KINDS` is non-empty, contains only canonical `RecordKind` literals, and resolves via `get_type_hints(authoring_rows)` to `Final[tuple[RecordKind, ...]]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+            "content": "sha256:68ac0d8b2efe89b8989abd64941abb25ff78767f321201eb5090feae9da1fab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_row_kinds_typed_as_canonical_record_kind_tuple"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

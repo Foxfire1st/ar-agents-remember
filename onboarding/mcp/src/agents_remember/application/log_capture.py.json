@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/application/log_capture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`tail_lines` keeps at most the final `max_lines` lines and prepends an omitted-line count marker when input exceeds the limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02ebd77fe169e4e95edd353bb7632906a7d5348a",
+            "content": "sha256:853812d0bc2e1a82d00621c3bed892936b5925e774ed57780111809f32449852",
+            "locator": {
+              "kind": "symbol",
+              "name": "tail_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`summarize_command_logs` classifies each dict node as successful on `ok is True` or `returncode == 0` and recursively trims and redacts nested dicts and lists in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02ebd77fe169e4e95edd353bb7632906a7d5348a",
+            "content": "sha256:aba8fe1525f8584264b587536f006dd9a866425f92759d5ee9cd80990bc90084",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_command_logs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_shrink_logs` empties non-empty string `stdout`/`stderr` on success while keeping keys present, and caps them with `tail_lines` on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02ebd77fe169e4e95edd353bb7632906a7d5348a",
+            "content": "sha256:b3edb9cc605e4b3f4e79cce4fcf4b0d748dd74dd727da678ff9c0074372dfab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_shrink_logs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_drop_verbose_plumbing` always removes `json`, drops `command`/`commands`/`compose`/`migration` on success, and retains redacted `command`/`commands` on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02ebd77fe169e4e95edd353bb7632906a7d5348a",
+            "content": "sha256:32993e9e62689e8b1e65906aa37a4d49c851f298a2ed58f9b6d505bcb077296c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_verbose_plumbing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_redact_commands` and `_redact_token` mask string tokens containing `PASSWORD=` to `<prefix>=***` across command lists and dicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02ebd77fe169e4e95edd353bb7632906a7d5348a",
+            "content": "sha256:a11f97eab753f9112e8a43237dc4405e43be59c68f3b275dd2134fbc0eb817e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redact_commands"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02ebd77fe169e4e95edd353bb7632906a7d5348a",
+            "content": "sha256:2c1d1518975c16b1829b7deee1a926954453fe300ac1b6eb1d6b93be0ea30e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redact_token"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`summarized_worktree_start_tool` applies `summarize_command_logs` to the `worktree_start_tool` response before transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:c28d6997924719af13049b51833cf05c35c8fc1f18e620fa9cfd46a21a7355e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarized_worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

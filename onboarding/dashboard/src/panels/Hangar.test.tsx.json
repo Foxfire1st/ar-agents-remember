@@ -22,22 +22,11 @@
       ]
     },
     "2": {
-      "note": "The shared existence-truth visibility selector.\n\nAnchor: `hasLiveWorktree`",
+      "note": "The shared existence-truth visibility selector.\n\nAnchor: `hasLiveWorktree`, `Source`: `dashboard/src/data/selectors.ts:17-21`",
       "targets": [
         {
           "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
             "content": "sha256:80b78b095e9be7afa61f1488a31a3fa5a225e37b9c7b49921030df3526df6afd",
             "locator": {
               "kind": "symbol",

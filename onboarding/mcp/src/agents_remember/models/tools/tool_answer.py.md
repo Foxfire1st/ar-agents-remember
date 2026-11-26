@@ -12,21 +12,13 @@ The retained `role_message` exception describes the normative cut/file policy fo
 - A landing answer's `staleDocuments` notice survives an over-bound answer's short form: `short_form` keeps the notice's `count` and `state` and adds `read: {view: "dependent", staleOnly: true}`, so the caller still learns the debt and where to read it. The notice's document lists are not kept.
 - The short form's fixed part keeps an answer's `buildCurrentness` whole beside `ok` and `code`, so an over-bound answer from a stale installed server still carries the build reading.
 
-
-
-
 - The fixed short part carries `ok`, a checked `code` and any build-currentness reading. [11]
-
-
 
 
 - The installation answer projection includes the running-server inventory and dashboard part. [12]
 
 
-
 - Framework keys admit buildCurrentness and warningCut on every answer row. [13]
-
-
 
 ### Current naming-reader bounds
 
@@ -83,25 +75,17 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 - The choke strips the four envelope fields from every answer. [1]
 - The twenty-entry cap recurses through retained list items and mappings. [2]
 
-
-
 - The short form reserves the recorded locator and final hint. It fits declared whole values or omission notices, then error text, warning text and optional scalars. The final fit counts the hint and omissions, shedding optional scalars first and warning text before error text. Fitting outcome and action fields appear before the locator. [3]
-
-
-
 
 - A tool resolves operation/tool exceptions, shaped bounds, explicit interim ownership and final rows before the fallback ceiling. [4]
 
 - Interim ownership is an explicit tool-to-leaf map; `direct_execution_grant` has no entry and takes its shaped 150-token bound. [5]
 
-
 - Shaped bounds include 600 tokens for role_start and 150 for direct_execution_grant, which lacks a raw interim-map entry. The role_message exception overrides its shaped row. Assembled table rows and the raw interim map have separate owners. runtime_install is the sole retained L112 final bound. [6]
-
 
 ## The settings answer's bound
 
 `SHAPED_TOOL_BOUNDS` gives `user_settings_init` a 900-token bound: its answer carries the state, the path, the two key lists, the harness of every role and its sources, and the largest measured answer is 572 characters. A bound is a ceiling on the delivered answer, not a promise that every field appears in the short form.
-
 
 - The shaped-bound table gives user_settings_init a 900-token ceiling. [9]
 

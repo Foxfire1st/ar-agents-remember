@@ -21,7 +21,7 @@ The DTO carries no authored knowledge-reconciliation field (`knowledge_resolutio
 `WorktreeArgs` is a `@dataclass(frozen=True)`. Every field carries a default, so
 any operation can construct just the subset it needs without supplying the rest;
 fields are grouped by concern (coordination/repository resolution, start inputs,
-provider setup, lifecycle flags, and normalized closeout input and integration facts). The
+lifecycle flags, and normalized closeout input and integration facts). The
 frozen dataclass means callers that need a variant produce a new instance rather
 than mutating an existing one.
 
@@ -32,10 +32,6 @@ instance via `replace`. This tolerates argparse subparsers that only populate th
 arguments they declare and tests that construct partial namespaces, so any field
 the namespace omits keeps its dataclass default rather than raising.
 
-`retry_provider_setup: bool = False` is an internal DTO field.
-Existing-contract retry refuses while a live setup heartbeat exists, then uses
-the normal provider preflight. Both retired CGC/GrepAI provider IDs are always
-disabled, so this path does not relaunch their background setup.
 
 `stale_base_choice: str | None = None`: the stale-base preflight
 recovery selector for worktree start — `fast-forward` (ff stale local source
@@ -84,24 +80,16 @@ No configured external source applies.
 
 ### Repo-Internal References
 
-
 - `WorktreeArgs` implements the retained boundary described above. The following current source boundaries establish the ledger-retirement behavior. [10]
-
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-
 - Direct-landing arguments carry the optional journal callback. Ordinary operation arguments describe the synchronous tool call. [13]
-
 
 - Public sync choice and resolution-action vocabularies are owned once by the worktree model. [14]
 
-- Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) [15]
-
-
 
 - Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. [16]
-
 
 
 - Gate delegation policy model (kernel-owned since L9). [17]
@@ -127,15 +115,9 @@ operation, process, lease, or approval identifiers.
 The current source seams include `WorktreeArgs`, `report_operation_progress`. This module remains a public execution adapter over closed admission and exact mutation-owner reread; it does not duplicate reader exception families or lifecycle authority.
 ### Reconciled Source Evidence
 
-
 - Inputs shared by the worktree application layer, CLI, and domain functions. [11]
 
-
-
-
 - Direct-landing arguments carry the optional journal callback. Ordinary operation arguments describe the synchronous tool call. [12]
-
-
 
 ## Current Landed Composition
 

@@ -32,7 +32,6 @@ The watch reads no Git objects or knowledge index, stores no projection state, a
 
 - The source regression queues a genuine native edit during registration and asserts distinct baseline/update events. [8]
 
-
 - The source HTTP-disconnect regression requires worker exit before serving shutdown. [9]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review_memory_watch.py::_admitted - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_directories - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py::_native_worker - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py::_native_changes - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py::_memory_events - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

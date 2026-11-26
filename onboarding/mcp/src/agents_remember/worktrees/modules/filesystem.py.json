@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/filesystem.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "19c0c329960ba73029a9e4af53a30cef419f39c6",
+        "content": "sha256:ae407288bc32e655fe7cdd1024bd3dd37dbea8e5d52ed1470acbb4abf2407948",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_tree"
+        }
+      },
+      "id": "RLZ-K6F1RY",
+      "invariant": "INV-FBATD2",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Owns plain directory-tree removal with explicit already-absent, would_remove, permission-denied, and OSError reporting.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`remove_tree` reports `already-absent`, `would_remove` on dry run, `removed: True` after `shutil.rmtree`, or `removed: False` with a `permission denied:` or `OSError` reason string.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19c0c329960ba73029a9e4af53a30cef419f39c6",
+            "content": "sha256:ae407288bc32e655fe7cdd1024bd3dd37dbea8e5d52ed1470acbb4abf2407948",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` asserts the absent, preview, live removal, and permission-denied return shapes of `remove_tree`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
+            "content": "sha256:180a01b39d0bb0ee8bd107b3f1108022dce563f55a93fd1e5eaddef6ddb7f92e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

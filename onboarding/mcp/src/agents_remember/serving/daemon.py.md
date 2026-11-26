@@ -108,12 +108,7 @@ protocol.
 - The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. [2]
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
 
-
-
-- The version comparator uses installed package metadata with the source-checkout release fallback.
-
-
-
+- The version comparator uses installed package metadata with the source-checkout release fallback. [4]
 
 - The endpoint carries the installed version and Python source digest. [7]
 - `probe` observes the answering dashboard, checks its root and repairs a mismatched saved record. [8]
@@ -145,5 +140,3 @@ it — an **adopted** daemon keeps the cadences it was started with.
 - The daemon ensure the dashboard calls. [5]
 
 - The spawn path the host is not part of. [6]
-
-- The version comparator is resolved from installed package metadata. [4]

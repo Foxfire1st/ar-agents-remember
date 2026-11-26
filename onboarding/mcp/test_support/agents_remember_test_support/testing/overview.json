@@ -471,8 +471,32 @@
       ]
     },
     "30": {
-      "note": "Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons.",
+      "note": "Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons.\n\nAnchor: `_assert_core_source_map` / `_assert_digest_places`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:2101e1b0cc37cfe789b26c9fa5c644525c8e4f91a2f528474dc1a30c3b612f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_core_source_map"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:84227da51fea414326f69b842b910efc3f439b41cedb4768ae0f437fd4f9d636",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_digest_places"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
@@ -483,32 +507,6 @@
               "start": 1
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
-            "content": "sha256:6131e97ff20933e42bf60a299caa962d1784844be98826b37dd64b241cb8b0af",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
-            "content": "sha256:4fe0e898722e51c7c194044ae812535ccba01e6f3cf6716a7b598d87a246ef38",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 54
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
           },
           "kind": "code"
         },

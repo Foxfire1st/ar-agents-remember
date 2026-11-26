@@ -176,9 +176,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
-
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
-
 
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
 
@@ -359,7 +357,11 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order` [53]
 
 
+
+
 - Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter. [97]
+
+
 
 
 - The source template gives the conflicting-dependent crossing request. [99]

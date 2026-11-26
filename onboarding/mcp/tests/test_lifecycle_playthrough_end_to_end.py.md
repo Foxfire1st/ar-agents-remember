@@ -13,8 +13,6 @@ fixture's structural equivalents. Each step leaves the state used by the followi
 The regression it pins is **step 8**: a leaf commanded *after* the master's first landing still
 starts. The current case asserts that the second leaf starts on a different code base commit.
 
-
-
 The run, in the module's own order: master open and unlanded with no activation selection → a leaf is
 commanded and started on the master's current line → the leaf is worked, committed and closed out →
 the leaf lands through the public `worktree_integrate` → the unfinished master publishes its
@@ -38,7 +36,6 @@ it; `tearDown` disposes the temporary directory.
 publication is a visible difference rather than a payload claim.
 
 The module's drivers: registered public tools for the status/integration/checkpoint/pause/attach steps, plus a local contract reload:
-
 
 | Driver | Public entry point |
 | --- | --- |
@@ -76,8 +73,7 @@ the run, in eight ordered beats:
   status, integrate, checkpoint, pause and resume use registered tools. The module
   docstring still attributes this split to missing harness lifecycle/provider
   scaffolding. That rationale does not describe a current start prerequisite:
-  `worktree_start_tool` creates its own stable identity, can skip provider setup,
-  and generated lifecycle settings contain no retired providers. This fixture is
+  `worktree_start_tool` creates its own stable `lifecycle_id` and carries no provider setup or provider settings. This fixture is
   still not public `worktree_start` coverage, and these facts do not establish
   that it can use that route unchanged.
 
@@ -150,7 +146,9 @@ The counts and coordinates belong to the recorded fifth freeze d59c3493; live re
 
 ## Evidence
 
-- The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale. [16]
+
+- The fixture split and public-start coverage limit remain; worktree_start_tool mints its own stable lifecycle_id and carries no provider setup or provider settings, refuting the docstring's inherited provider-scaffolding rationale. [16]
+
 
 ### Docs References
 
@@ -169,24 +167,17 @@ No external domain claim is required.
 
 - The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]
 
-
 - The public tools the master-level beats drive. [6]
-
 
 - The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
 
-
-
 - The shared world fixture and Git helper this module composes instead of re-implementing. [8]
-
-
 
 - The playthrough calls the shared `close_out_leaf` test helper to record leaf closeout. [9]
 
 - The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [12]
 
 - The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [15]
-
 
 ### Cross-Repo References
 
@@ -195,10 +186,10 @@ by the module's own fixture; no sibling repository or external system participat
 
 No meaningful cross-repo references found.
 
-
 ### Repo-Internal References (continued)
 
-
 - The `integration` lane selects `mcp/tests/test_lifecycle_playthrough_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:742`). [10] [13]
+
+
 
 - The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [11]

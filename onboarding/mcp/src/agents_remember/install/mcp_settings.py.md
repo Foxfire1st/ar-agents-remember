@@ -24,4 +24,6 @@ Copies the workspace's old MCP settings file (`.claude/mcp/agents-remember-setti
 - Exclusive creation, byte and metadata copy, and removal of an incomplete destination. [3]
 - Errors become permission or refused reports with a remedy. [4]
 - The user MCP settings file sits beside the user role settings. [5]
+
+
 - The install result carries the copy report. [6]

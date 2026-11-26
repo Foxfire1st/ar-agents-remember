@@ -54,21 +54,18 @@ catch, so no guard passes without being reached.
 
 ## Evidence
 
-
 - The split contract: surface cases here, worlds and vocabularies imported. [1]
 
-
 - Shipped corpus, manifest identity, index shape and entry completeness. [2]
-- The served catalog and both the canonical and packaged skill trees hold exactly the six retained skills. [7]
+
+
+- The served catalog and both the canonical and packaged skill trees hold exactly the one retained skill (`l-01-agent-lifecycles`). \[7] [9]
 
 
 - The real stdio exchange and its client-observed checks. [3]
 
-
 - Live-server traversal refusal and the harness-can-fail sanity check. [4]
 
-
 - Seeded-mutation guards: containment, index, name rule and idempotence. [5]
-
 
 - Altitude admission, capsule seats, nesting and the legacy rename. [6]

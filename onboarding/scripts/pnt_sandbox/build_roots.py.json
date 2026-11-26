@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
-        "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+        "blob": "f6f47b83263ab2c783225817007eceb7643da777",
+        "content": "sha256:6001cad00c7ff82b6c623019070dd76b4788379d0c53ae4fe529bcb75e96fbe7",
         "locator": {
           "kind": "symbol",
           "name": "resolve_roots"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
-        "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+        "blob": "f6f47b83263ab2c783225817007eceb7643da777",
+        "content": "sha256:6001cad00c7ff82b6c623019070dd76b4788379d0c53ae4fe529bcb75e96fbe7",
         "locator": {
           "kind": "symbol",
           "name": "resolve_roots"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+        "blob": "f6f47b83263ab2c783225817007eceb7643da777",
         "content": "sha256:152e30aa8f0075ed3a4adf3ba3d433b405004ce99756cb1b0a5a5021c725891f",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The scoped current source carries the module/document behavior described above.\n\nAnchor: `resolve_roots`",
       "targets": [
         {
           "anchor": {
-            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
-            "content": "sha256:206071c42de1aff30b9b7232be7a57b08118e5fa08026e6382edc496f618aca4",
+            "blob": "f6f47b83263ab2c783225817007eceb7643da777",
+            "content": "sha256:6334366e5eecd631c7c18e96cf50d8e2e4e12afe5166fc3957bf3dfd87514870",
             "locator": {
               "kind": "file"
             }
@@ -73,12 +73,12 @@
       ]
     },
     "2": {
-      "note": "The resolver with the product Node and cache roots.",
+      "note": "The resolver with the product Node and cache roots.\n\nAnchor: `resolve_roots`, `Source`: `scripts/pnt_sandbox/build_roots.py` (symbol `resolve_roots`, lines `116-168`).",
       "targets": [
         {
           "anchor": {
-            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
-            "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+            "blob": "f6f47b83263ab2c783225817007eceb7643da777",
+            "content": "sha256:6001cad00c7ff82b6c623019070dd76b4788379d0c53ae4fe529bcb75e96fbe7",
             "locator": {
               "kind": "symbol",
               "name": "resolve_roots"
@@ -88,20 +88,8 @@
         },
         {
           "anchor": {
-            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
-            "content": "sha256:de18813da8bbf766a554038ff506ac49a9de9c969ca3fd0aae352bac83392f81",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
-            "content": "sha256:206071c42de1aff30b9b7232be7a57b08118e5fa08026e6382edc496f618aca4",
+            "blob": "f6f47b83263ab2c783225817007eceb7643da777",
+            "content": "sha256:6334366e5eecd631c7c18e96cf50d8e2e4e12afe5166fc3957bf3dfd87514870",
             "locator": {
               "kind": "file"
             }

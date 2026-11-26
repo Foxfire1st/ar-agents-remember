@@ -10,7 +10,7 @@ Answer where a started seat is continued: the dashboard's own address once its o
 
 ## Code Commentary
 
-`dashboard_address` spells the product's own UI address — loopback on the port the settings hold (`dashboard.port`). `dashboard_address_for` asks `serving.daemon.ensure`, the dashboard owner the MCP boot hook already calls, to adopt or start the dashboard, then asks the origin for its front page: a status under 400 is the proof, because a listener that answers with an error, or a port another process holds, would pass a connect check and fail the user. Only then is `dashboardAddress` published; otherwise the answer carries no address and a `dashboardAddressDetail` naming the observed origin status and the owner's action. `chat_address` builds the host's own web route for one agent from the first `paseoRuntime.embed` entry, so a start never invents a loopback URL for the host; no configured runtime, no agent, no reported server id or no embed entry each answer `None` with its own named reason. `chat_address_for` reads the server id through the bridge lazily and reports a bridge refusal the same way.
+`dashboard_address` spells the product's own UI address — loopback on the port the settings hold (`dashboard.port`). `dashboard_address_for` asks `serving.daemon.ensure`, the dashboard owner the MCP boot hook already calls, to adopt or start the dashboard, then asks the origin for its front page: a status under 400 is the proof, because a listener that answers with an error, or a port another process holds, would pass a connect check and fail the user. Only then is `dashboardAddress` published; otherwise the answer carries no address and a `dashboardAddressDetail` naming the observed origin status and the owner's action. `chat_address` builds the host's own web route for one agent from the first `paseoRuntime.embed` entry, so a start never invents a loopback URL for the host; no configured runtime, no agent, no reported server id or no embed entry each answer `None` with its own named reason. `chat_address_for` imports `paseo_bridge` lazily before calling `bridge_call` so bridge import errors propagate directly, while invalid `paseo_runtime` settings (`ValueError`) and `PaseoBridgeFailure` refusals return `chatAddress: None` with `chatAddressDetail`.
 
 ## Evidence
 
@@ -19,3 +19,5 @@ Answer where a started seat is continued: the dashboard's own address once its o
 - The owner's own report and the origin's own status decide the answer together. [3]
 - The chat route is built from the configured embed entry and answers a named reason when it cannot. [4]
 - The origin probe takes a status under 400 as served, not a TCP accept. [5]
+
+- Lazy bridge import runs outside `except PaseoBridgeFailure` so import errors propagate directly while `PaseoBridgeFailure` reports `chatAddressDetail`. [6]

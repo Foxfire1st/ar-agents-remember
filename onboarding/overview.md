@@ -22,7 +22,7 @@ Landing cut/add observations are report-only; use the measurement owner and cano
 
 The development-only [native-agent evaluation route](scripts/agent_evals/overview.md) constructs private trials, captures native evidence and separates deterministic grading from independent rubric judgments. Its CLI calls the concrete trial orchestrator; accounting keeps tooling checks outside measurement results. Retained transcript fixtures support regression checks and establish no fresh native run or landing acceptance.
 
-Resolve the configured repository and its coordination, code, memory, task and temporary roots before trusting onboarding. Repository guidance belongs in the resolved memory layer's `system/` files, including settings, tools, sources and coding guidelines; root runtime defaults are examples rather than the active policy of this checkout. Context packets compose repository, paths, memory, worktree, providers, drift, freshness and diagnostics. The packet has no provider-selection argument and does not query the retired search providers. Freshness is opt-in: without it no freshness fetch occurs; with it the reader compares configured code and eligible memory branches with their upstreams.
+Resolve the configured repository and its coordination, code, memory, task and temporary roots before trusting onboarding. Repository guidance belongs in the resolved memory layer's `system/` files, including settings, tools, sources and coding guidelines; root runtime defaults are examples rather than the active policy of this checkout. Context packets compose repository, paths, memory, worktree, drift and freshness (plus optional index). The packet has no provider-selection argument and does not query the retired search providers. Freshness is opt-in: without it no freshness fetch occurs; with it the reader compares configured code and eligible memory branches with their upstreams.
 
 Retrieve the smallest useful route packet. Generated `overview.index.json` supplies source scope, child routes, covered files, routing terms and hot-path hints. A source absent from its route index is still probed for an eligible converted card and remains readable; the answer discloses the stale index and the refresh it needs rather than requiring a refresh before the read, and that fallback is distinct from the out-of-scope, missing, unreadable and source-absent boundaries. Read overview prose when the index is insufficient, then confirm named source anchors. Stop when the packet establishes the responsibility, immediate cause, user consequence and relevant contract; widen only for a named unresolved question.
 
@@ -54,7 +54,7 @@ A memory commit attributes its code commit through a `Code-Commit` trailer. `mem
 
 Directness is an external canonical-leaf grant, not a harness setting or task-document flag. Developer dashboard and launch-bound architect are the pre-start mutation owners. A granted leaf reuses existing master series checkouts without an enclosure, with separate role report/scratch folders and current canonical reader/revival binding. Explicit direct publication separates existing-code verification from exact-pair create/generation recovery; ordinary closeout and integration keep their own transaction boundaries.
 
-Root `skills/` owns authored skill instructions. `scripts/renew-instructions.py` renews current instruction facts and propagates declared copies, using `scripts/sync-skills.py` as the skills projection owner for the sole packaged serving copy; installed harness skill trees and their sync/render pipeline are retired. After an instruction edit, `mcp/.venv/bin/python scripts/renew-instructions.py` renews measured facts and copies canonical skills and tool details together. The tool server serves skills as resources. Root `benchmarks/`, `providers/` and `system/` remain canonical runtime assets selected by `scripts/sync-runtime.py`. This source checkout carries no harness starter packages; harness configuration belongs to user-level harness settings, and `examples/mcp/server.example.json` is the one tool-server registration example each harness adapts. Generated copies are not independent authorities. Runtime installation also copies the packaged tool-detail documentation into the coordination root's `docs/` tree.
+Root `skills/` owns authored skill instructions. `scripts/renew-instructions.py` renews current instruction facts and propagates declared copies, using `scripts/sync-skills.py` as the skills projection owner for the sole packaged serving copy; installed harness skill trees and their sync/render pipeline are retired. After an instruction edit, `mcp/.venv/bin/python scripts/renew-instructions.py` renews measured facts and copies canonical skills and tool details together. The tool server serves skills as resources. Root `benchmarks/` and `system/` remain canonical runtime assets selected by `scripts/sync-runtime.py`. This source checkout carries no harness starter packages; harness configuration belongs to user-level harness settings, and `examples/mcp/server.example.json` is the one tool-server registration example each harness adapts. Generated copies are not independent authorities. Runtime installation also copies the packaged tool-detail documentation into the coordination root's `docs/` tree.
 
 `mcp/src/agents_remember/` holds runtime implementation. `kernel` owns shared filesystem, configuration, confinement, Git and attribution primitives; `models` owns wire vocabulary. `certification` owns repository-neutral schemas, validation, planning, content identity, bounded admission and typed terminal results. `controlplane` owns durable interaction records and their policy. `tasks` owns task schema, store, canonical references and deterministic rendering. `worktrees` owns enclosure contracts and lifecycle transitions. `memory_quality` owns integrity diagnostics and gates; `memory` owns repository initialization, baseline/carryover and the derived knowledge index. Application services compose these owners; MCP and CLI adapt them to their public transports.
 
@@ -68,7 +68,7 @@ The public MCP roster is defined once in `models/tools/public_roster.py`. The L1
 
  It includes context and paired reads, runtime installation and starter-authorized child retirement; dispatch_agent is removed. It retains, memory/citation/index operations, worktree operations, task documents, coherence, closeout queue, role start/set/message and knowledge read/diff/integrity. Public-surface validation requires agreement among this roster, response registry, live ordered advertisement and dispatch schema. Internal compatibility models and retained implementation modules do not advertise tools. The retired `spawn_agent_session` is absent from the current response registry. Historical `drift_check`, lifecycle/gate tools, parent/child messaging, skill discovery/install, provider query/lifecycle and benchmark MCP rows must not be read as the current public roster.
 
-Provider setup retains code and historical settings, but the shared enable predicate returns false for `codegraphcontext-code` and `grepai-memory`. Runtime install reports enabled old keys as unused, attempts the explicit old-watcher stop, reports a failed stop and continues. It does not reactivate provider installation, preparation, seeding, watcher start or status. Only explicit provider removal owns deletion of provider runtime folders. Retained installation knobs do not regain behavior merely because their names remain accepted.
+The CodeGraphContext and GrepAI provider package (`providers/`), `install/provider_watchers.py`, and `providers-remove` are deleted (`DEC-ZGGT0G`). `runtime_config.py` loads legacy `retirement`, `providers`, `providerDegradation`, and `timeoutCaps.providerSetupSeconds` keys unread under `unused_settings_keys`, and `runtime_install` reports leftover `providers/`, `logs/providers/`, and `logs/observer/providers/` directories under `removedPartStores` without deleting them; `agents-remember removed-stores` owns explicit deletion.
 
 AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. The retained `role_start_set` tool prepares Worker, Reviewer and Curator as sibling leaf seats under the owning Manager: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest still contributes its full-source revision to capsule semantic identity without injecting the larger core doctrine into rendered instructions, while `compile_admitted_capsule` filters the separately delivered `shared_block` to the target role's audience for `CapsuleRoleSeat` via `application/role_capsules/shared_block.py::filter_shared_block`. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.
 
@@ -90,7 +90,7 @@ Startup qualification has its own measurement owner. `scripts/measure-ar-server-
 
 MIK-R109: use AR reads to name governing knowledge and its computed state, then open source, cards, overviews and records with harness-native file tools. `read_ar_files` keeps up to twenty paths, can include nearest-first governing overviews in a fuller reply and has no session carry or continuation; `knowledge_read` keeps bounded continuation but emits record names, and `knowledge_diff` files the whole comparison and names its report. Mounted `context_packet` supplies slim roots/task/actions/build/pair; settings/mode/policy authority stays with the source-bound settings and retained internal resolver, not guessed from a compact answer.
 
-Root `docs/` owns authored documentation but is not one of scripts/sync-runtime.py's three runtime targets. Instruction renewal separately copies canonical `docs/tool-details.md` to `mcp/src/agents_remember/package_data/runtime/docs/tool-details.md`; that named document is a renewal copy source without making the whole docs tree a sync-runtime target. Retired mirror cards had no realization/proof entries: their copy-identity accounts remain historical in Git and the renewal intake archive, while canonical docs and their existing governing memory remain authoritative.
+Root `docs/` owns authored documentation but is not one of scripts/sync-runtime.py's two runtime targets. Instruction renewal separately copies canonical `docs/tool-details.md` to `mcp/src/agents_remember/package_data/runtime/docs/tool-details.md`; that named document is a renewal copy source without making the whole docs tree a sync-runtime target. Retired mirror cards had no realization/proof entries: their copy-identity accounts remain historical in Git and the renewal intake archive, while canonical docs and their existing governing memory remain authoritative.
 
 Maintained converted knowledge is judged wherever a pair is published or recorded, not merely at the earlier closeout. Leaf routes share exact-pair judgment; master routes enforce leaf/parent-only chain and authentic newly closed history. Curator MQC/coherence remain pre-closeout authoring evidence, not broad checks invoked by landing.
 
@@ -166,7 +166,7 @@ The two test catalogs remain canonical classification/lifecycle data, union-merg
 
 This proposal examines the complete incoming card prose and bounded present source at the stated checkout. It supplies no test execution, native-host, whole-build, certification, landing, cleanup or memory acceptance. Original reference keys/targets and excluded status, coverage and route metadata remain under parent custody. Citation presence is not currentness, accessible historical evidence or a successful operation.
 
-MIK-R112 supersedes the old provider/tool inventory: harness-native retrieval is current; retired provider enable keys drive nothing. Retained provider code, fixtures, Docker layouts and commands do not restore public tools. Historical provider accounts preserve PostgreSQL/Ollama GrepAI and FalkorDB CGC storage, configured provider roots, disk re-read launch authority, unreadable-settings launch refusal, ungated stop/cleanup, host-scoped non-dry preparation locking, GrepAI stall-watchdog cloning without a total-duration cap, bounded CGC seed export/import and the named probe/indexing states. Those old operational witnesses were not replayed here, and their historical success or present runtime behavior is not adjudicated.
+MIK-R112 supersedes the old provider/tool inventory: harness-native retrieval is current; retired provider enable keys drive nothing. Provider code, Docker layouts, and provider commands have been deleted and no public provider tools remain. Historical provider accounts preserve PostgreSQL/Ollama GrepAI and FalkorDB CGC storage, configured provider roots, disk re-read launch authority, unreadable-settings launch refusal, ungated stop/cleanup, host-scoped non-dry preparation locking, GrepAI stall-watchdog cloning without a total-duration cap, bounded CGC seed export/import and the named probe/indexing states. Those old operational witnesses were not replayed here, and their historical success or present runtime behavior is not adjudicated.
 
 The earlier supported-disabled claim is superseded by MIK-R50's external-only mode. The original memory path rules, repository conversion status, published `3.0.0rc8` Python 3.13 artifact, native session acceptance and historical delivery receipts were not independently established from this restricted source/card comparison. They remain named historical qualifications rather than fresh facts about this candidate.
 
@@ -184,7 +184,7 @@ Canonical lifecycle guidance now supplies one shared STE-inspired writing profil
 
 Past-epoch budget account (retained wording, not current policy): Role capsules retain whole role inputs/results/boundaries and select common/matching-role operation sections. Step-local formats/commands/check detail are named references, not a new authority or permission. Capsule and step-file budgets are capped separately at 3,700 and 2,500 words. These are source declarations, not fresh compiled-size, host, synchronization or acceptance evidence.
 
-Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,325 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.
+Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.
 
 Own-step bookkeeping is narrow: Worker marks completed matching build/evidence steps, Curator its completed curation step and Reviewer its review step only after a recorded passed final round; no matching step means no write. Manager sets no other agent's step; native operations publish task stage, while Manager retains explicit correction, organizational-master completion, acceptance and landing, and receives Worker/Curator escalation after three unsuccessful own repairs of one check/finding. Memory review uses its own `reviewKind=memory` lane, sealed findings and pass count; it opens no code round and resets no passed code review, verdict or baseline. Recorded historical rollout account: “under-way reviews finish as begun and recorded lanes apply only after landing.”
 
@@ -199,8 +199,6 @@ Generated instruction carriers follow their canonical role/operation owners. Cle
 ## Retained historical wording
 
 These superseded descriptions retain their historical wording; the current account and the re-authored evidence below govern.
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): the provider-database data roots of the retired pgvector and falkordb backends; settings emits no provider block at C and neither backend remains.
 
@@ -217,8 +215,6 @@ Earlier capsule composition account:
 > A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions.
 
 ## Retained Evidence Context
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): the dashboard answers a published action against the current projection, recording an attention-item dismissal through the control plane and refusing an item the projection does not publish.
 
@@ -255,8 +251,6 @@ Recorded prior account (unnumbered): Independent MEMORY review reaches its rule 
 Recorded prior account (unnumbered): Manager instructions assign native stage publication and master-row mirroring to start/finalize/abandon; explicit corrections retain their separate route. Recorded source custody: `skills/l-01-agent-lifecycles/roles/manager.md`, blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 22–22, selected content `sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27`. This preserves the recorded association without newly certifying the old sentence from it.
 
 - Manager instructions assign task-stage publication and master-row mirroring to start, finalize and abandon; a separate status write does not follow those acts. task_doc set_status remains the route for an explicit correction and organizational-master completion.
-
-
 
 > Retained earlier citation wording: - Role/operation and step-detail budgets are declared here, with historical declarations for completion-only step marking, serving-build Curator authoring and the separately recorded memory-review lane; declarations do not prove execution or acceptance.
 
@@ -298,8 +292,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree. [93]
 
 
-
-- The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. Anchor: `A separate order never grants this role Worker or Curator authority` [146]
+- The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
 
 
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
@@ -320,7 +313,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Closeout uses the bounded clean-sync predicate without weakening its other evidence checks. [353]
 
-- The runtime synchronizer declares three targets without docs — benchmarks, providers and system; packaged docs and tool details are not a generator target. [328]
+
+- The runtime synchronizer declares two targets without docs — benchmarks and system; packaged docs and tool details are not a generator target. [328]
+
 
 - Finalization resolves a leaf’s immediate parent master and exact row, and refuses a missing leaf/master/row binding rather than treating the leaf as standalone. [1]
 
@@ -338,14 +333,11 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's family-routes subsection. [23]
 
-
-
 - Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read. Anchor: `converted_memory_tree` [25]
 
 
-
-
 - Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`. [31]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The layering checker loads that one contract, rejects undeclared package directories and reports an invalid dependency direction. [32]
 
@@ -353,12 +345,13 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality owner prepares the staged candidate, runs the targeted quality gate and requires published evidence for exactly that tree. [39]
 
-- Retained reference account (no fresh execution or acceptance inferred): The MCP settings example: coordination root, workspace root, transcript root, repositories, providers, timeout caps, and the dashboard, provider-degradation and retirement settings. [42]
+
+- Retained reference account (no fresh execution or acceptance inferred): The MCP settings example: coordination root, workspace root, transcript root, repositories, timeout caps (toolSeconds), benchmarksEnabled, and the dashboard, retirement and toolLog settings (no providers or providerDegradation blocks). [42]
+
 
 - Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically. [48]
 
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
 
@@ -370,10 +363,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite. [71]
 
-
 - The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap. [73]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
 
@@ -383,7 +373,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The judgement of a terminal master that the task routes and the closeout queue read. [79]
 
-- The runtime asset targets: benchmarks, providers and system, each copied into its own package-data folder. [80]
+
+- The runtime asset targets: benchmarks and system, each copied into its own package-data folder. [80]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The supported memory modes and the refusal of the removed one. [83]
 
@@ -407,12 +399,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The file-writer route of the two commands and the crossing route. [104]
 
-- Retained reference account (no fresh execution or acceptance inferred): The host-scoped provider setup lock. [107]
-
-- Retained reference account (no fresh execution or acceptance inferred): The CodeGraphContext seed export is bounded by the provider-setup cap. [110]
-
-- Retained reference account (no fresh execution or acceptance inferred): The states of the CodeGraphContext graph probe. [111]
-
 - Retained reference account (no fresh execution or acceptance inferred): The serving layer is transport over the observer projection. [117]
 
 - Retained reference account (no fresh execution or acceptance inferred): The dashboard bundle placement, its freshness proof and its check mode. [121]
@@ -434,7 +420,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The lane loader refuses a catalog that is not in canonical form. [140]
 
 - Retained reference account (no fresh execution or acceptance inferred): The lifecycle loader refuses a catalog that is not in canonical form. [141]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The shared host entry the install composes. [144]
 
@@ -468,12 +453,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. Anchor: `Code Quality` [284]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls. [291]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. [292]
 
@@ -483,9 +465,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal. [309]
 
-
 - The invariant gate reuses a compatible observed verdict or recomputes from exact sides. Open items, incomplete inputs and refusing validator violations are repair findings. The local legacy applicability rule leaves cutover refusal to its own owner. [317]
-
 
 - Whole-sprint archive is an additional explicit authority with terminal/readiness predicates, recorded moves and cleanup retry. [319]
 
@@ -493,11 +473,15 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Gate-less admission preserves existing approval; applied approval recovers only its bound operation. [321]
 
+
 - Report retention is write-time, five files/seven days; this writer alone does not establish whole-read-path enforcement. [324]
+
 
 - Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically. [326]
 
+
 - Source charters distinguish strict dependency order from future package construction and the named sequencing deviation. [327]
+
 
 - Retrieval uses `read_ar_files` for up to twenty paths. Fuller rows can carry rule text. Use native file tools for current saved briefs and named source files. [311]
 
@@ -506,29 +490,19 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - For each quality-check card cut, the Curator cites source evidence proving the removed text untrue; text is never cut merely to clear a finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. [315]
 
 
-
-
 - Canonical independent non-author statement/diff/omission duty. [329]
 
 - Named validator route policies. [330]
 
-
 - Historical source-bound reference account. A converted review compares four Git trees. Live recording pins the uncommitted candidate trees and preserves their recorded memory-base binding. [102]
-
-
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
 
-
 - The server builds entries from authored documents and declared relations, independently binding worktrees. [335]
-
-
 
 - Host authority requires a complete current-boot reconciliation and armed supervisor observation before role-agent task binding. [336]
 
-
 - The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority. [338]
-
 
 - Canonical skills have one generated packaged serving destination. [355]
 
@@ -574,17 +548,14 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map. [35]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): Development commands, budgets, diagnostic metrics and isolation. [44]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers. [45]
 
 - The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`. [276]
 
 
-- The runtime layout reference states that no part of the product starts, indexes or queries a search provider. [282]
-
+- The runtime layout reference states that runtime_install leaves leftover providers/, logs/providers/ and logs/observer/providers/ folders unread and undeleted, reporting them as removed stores for agents-remember removed-stores. [282]
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers. [122]
@@ -625,7 +596,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest still contributes its full-source revision to capsule semantic identity without injecting the larger core doctrine into rendered instructions, while `compile_admitted_capsule` filters the separately delivered `shared_block` to the target role's audience for `CapsuleRoleSeat` via `application/role_capsules/shared_block.py::filter_shared_block`. Missing or unsupported selection fields refuse rather than being inferred from nearby documents. [366]
 
 
+
 - Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts. [369]
+
 
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt retains the execution reference and does not update task, review, curation or Git state. [137]
@@ -642,10 +615,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The worklist kind for an invariant that was already stale at the base. [105]
 
-- Retained reference account (no fresh execution or acceptance inferred): The GrepAI clone has a stall watchdog and no total-time cap. [109]
-
-- Retained reference account (no fresh execution or acceptance inferred): Launch-capable provider operations re-read the providers map from disk. [142]
-
 - A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files. [293]
 
 - **Historical source-bound reference account, not an operative override:** Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary. [323]
@@ -658,12 +627,11 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main. [37]
 
-- Context freshness is opt-in, and this packet disables provider discovery. [322]
+
+- Context freshness is opt-in, and ContextPacketV2 composes repo, paths, memory, worktree, drift and freshness with no providers block. [322]
 
 
 - The source roster contains 44 public tools, including knowledge_write and user_settings_init. Converted memory quality replies show cut and added counts with bounded first rows. The whole result holds the complete lists, and the detail log exposes them when it was retained. [358]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval. Anchor: `It is not the live` [33]
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index. Anchor: `worktree_candidate_tree` [126]
@@ -673,13 +641,19 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The staged-quality helper refuses non-linked checkouts and unresolved conflicts, resets and stages the whole task worktree, and checks a supplied candidate tree before and after staging and after any configured hook. Its gate invokes targeted Dagger quality and checks published evidence against that supplied candidate. Ordinary transaction-only closeout does not import this helper. Anchor: `prepare_staged_code`, `gate_staged_code` [279]
 - Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix and exact memory inputs. Non-retained predecessors must match the admitted candidate and current gate-local inputs; an explicitly retained initial prefix instead preserves the admitted repository and exact predecessor lineage. This core API establishes no removed-adapter binding, and ordinary closeout does not acquire a certificate automatically. Anchor: `compile_gate_certificate`, `_require_current_predecessors`, `_require_current_certificate`, `_require_retained_prefix` [287]
 - Workers build each worktree's environment as `system/tools.md` says, run every candidate command there, report commands absent from the tool notes, and record the interpreter each run used. Anchor: `system/tools.md` [310]
-- Knowledge authoring is in memory; evidence and working files are outside it, with report/task and scratch custody separated. The retired `codegraphcontext-code` and `grepai-memory` providers are disabled by `provider_enabled`. Installation reports enabled provider keys as unused and continues when the old-watcher stop returns a failed or partial result. Anchor: `workspace.outsideScratchRoot`, `provider_enabled`, and install watcher phase [314]
+
+
+- Knowledge authoring is in memory; evidence and working files are outside it, with report/task and scratch custody separated. Runtime install records leftover stores of removed parts under removedPartStores and deletes none of them. [314]
+
+
 - For a canonical orchestration sprint, an absent `executionGraph` selects atomic execution of its commanded masters and declares no dependencies or serialization between them; graph presence selects dependency-aware scheduling. Anchor: `resolve_scheduling_mode` [318]
 
 
 
 
-- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,325 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]
+
+- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]
+
 
 
 
@@ -695,9 +669,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Fresh converted-leaf closeout closes owner history and gates the exact memory output before committing it or reusing the unchanged tip. Recovery gates the already recorded output. [51]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 
-
-
-
 - The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
@@ -709,5 +680,8 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - A continued sync commit is bounded, logged, conditionally stamped when a runnable hook exists, and refused with the staged merge intact. [372]
 - Retained reference account (no fresh execution or acceptance inferred): When staged isolation is needed and safe, the fast tier parks unstaged and untracked content and attempts restoration on exit; a failed restoration retains recovery instructions. [123]
 - Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs. [124]
+
 - Contributor guidance separates host feedback from Dagger-owned certifying evidence. [281]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]

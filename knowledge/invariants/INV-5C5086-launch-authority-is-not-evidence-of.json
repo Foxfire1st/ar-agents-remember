@@ -31,6 +31,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Launch authority is not evidence of fleet retirement, so the original periodic sample/record/degradation/compact sequence observes labelled leftovers regardless of page interest, empty/revoked authority, restart or decoding failure, while launch refusal stays separate.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

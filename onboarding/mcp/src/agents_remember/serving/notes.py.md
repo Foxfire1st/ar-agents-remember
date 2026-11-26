@@ -64,8 +64,6 @@ The JSON handlers return a
 `JSONResponse` they built themselves, and FastAPI applies `response_model` only to values it
 serializes for you; the declarations alone do not validate those emitted bodies at runtime. The declaration remains the contract. The former broad conformance suite was removed in IAS testing cleanup; this card does not claim that it still validates emitted bodies. Strict model validation rejects undeclared keys when explicitly invoked.
 
-
-
 ### Logic
 
 L9 review follow-up (L9R-1): the shared status mapper now also catches `ValueError` from `Path.resolve()` (e.g. an embedded null byte in `path`) and answers `400 bad-path` instead of an uncaught 500 — malformed input gets the same wire answer as a confinement breach.
@@ -135,59 +133,37 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References
 
-
-
 - The app factory registers notes routes during app assembly. [1]
 
-
-
 - The `confine_rel` realpath confinement this module reuses for reads. [2]
-
 
 
 - `McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement. [4]
 
 
-
-
-
 - The browser client for these endpoints. [7]
-
 
 - The repo allow-list authority guard (`require_repo`). [3]
 - `language_for` supplies the listing and read `language` field. [5]
 - The changeset route's single-segment master confinement helper (moved to the new selection module by 260921-ICR-L13; `changeset.py` imports it). [6]
 
-
 - One folder answers in parts with total, offset, limit and remaining. [8]
-
 
 - Folders open through held descriptors without following symlinks. [9]
 
-
 - Rows sort directories first, case-folded, exact name breaking ties. [10]
-
 
 - Each row is examined without following symlinks. [11]
 
-
 - Bare names never resolve an escaping link. [12]
-
 
 - Each reference resolves to a notes path or null in one request. [13]
 
-
 - Bare filenames resolve only at the notes root. [14]
-
 
 - The part ceiling bounds every folder answer. [15]
 
-
-
-
 - The module's folder tests prove parts, order, confinement and bounds. [16]
-
-
 
 - A readable-but-unsearchable folder answers present with no children since failed entry stats are skipped; EACCES from the folder open or listing itself propagates (searchable-unreadable and neither keep baseline 500). [18]
 

@@ -165,13 +165,7 @@ No relevant external or domain documentation was found for this repository-local
 
 - The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. [2]
 
-
-
-- `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback.
-
-
-
-
+- `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback. [3]
 
 - The cockpit compares and renders the serving/client identity. [4]
 
@@ -181,10 +175,12 @@ No relevant external or domain documentation was found for this repository-local
 - The canonical selector list identifies inherited Git variables to remove. [8]
 
 
+- The Git environment removes canonical repository selectors before execution. [9]
 
 
 
 
+- The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`. [10]
 
 
 
@@ -200,8 +196,3 @@ The reviewed behavior is wholly repository-local.
 Serving build identity now distinguishes a proven dirty checkout from an unprovable one. Only a successful `git status --porcelain` with output emits `dirty`; probe failure omits the claim instead of fabricating a clean build state.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-- `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). [3]
-
-- The Git environment removes canonical repository selectors before execution. [9]
-- The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`. [10]

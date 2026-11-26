@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+        "content": "sha256:dedebe36a32647d4ceebfacf8a5fb9a1caf1866df401462b7df1e3505198d730",
+        "locator": {
+          "kind": "symbol",
+          "name": "FinalCodexExecutionEngine._admit_authority"
+        }
+      },
+      "id": "RLZ-H372EW",
+      "invariant": "INV-0TK9W7",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 items 2-3",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Passes AUTHORITY_SCHEMA_VERSION instead of continuation_snapshot.schema_version into DaggerHostDeclaration on continuation without # type: ignore[arg-type].",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Certifying repetitions bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure.",
+      "note": "Certifying repetitions bind the frozen R12 host authority (using `AUTHORITY_SCHEMA_VERSION` for continuation declarations) and never select, copy, replace, or privately provision infrastructure.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
-            "content": "sha256:258eaa5d6fe4ade56e39b13f9b7c46d1962ef159f76272cf4d1099f8f9bb78f2",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+            "content": "sha256:dedebe36a32647d4ceebfacf8a5fb9a1caf1866df401462b7df1e3505198d730",
             "locator": {
               "kind": "symbol",
               "name": "_admit_authority"
@@ -65,16 +84,15 @@
       ]
     },
     "4": {
-      "note": "The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence.\n\nAnchor: \"class GateResultManifest\"",
+      "note": "The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence.",
       "targets": [
         {
           "anchor": {
             "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
-            "content": "sha256:5632dd982f1758da5b27af1f1d9ceaf0d37cec772bc3101501a482f87789020f",
+            "content": "sha256:02bfb2ef935ea082c5bc4d1796e006f9f90b2e67340b81566859b2a496244cc0",
             "locator": {
-              "end": 433,
-              "kind": "line_range",
-              "start": 411
+              "kind": "symbol",
+              "name": "GateResultManifest"
             },
             "path": "mcp/src/agents_remember/certification/models.py"
           },
@@ -134,12 +152,12 @@
         },
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
             "content": "sha256:51056314c7bca395c54b0101dc3f0a7b9f0db61687c234c3235dd41d14ca52af",
             "locator": {
-              "end": 195,
+              "end": 196,
               "kind": "line_range",
-              "start": 179
+              "start": 180
             }
           },
           "kind": "code"
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
             "content": "sha256:2aedc78e7ea59dcb914e7d09acfae1f7cac2317a13da94f5fbb831148218cdda",
             "locator": {
               "kind": "symbol",
@@ -162,7 +180,7 @@
         },
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
             "content": "sha256:198b72f287311aaf88ac3b1fd2b243c3fe6dc3210f7db7cb327984a166048bcf",
             "locator": {
               "kind": "symbol",
@@ -178,24 +196,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
             "content": "sha256:4df37ebd88c4ab7753debb683337401b8d6398a599aeb913be109fea374f75e0",
             "locator": {
-              "end": 354,
+              "end": 355,
               "kind": "line_range",
-              "start": 346
+              "start": 347
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
             "content": "sha256:de522b50d64f3de22b802816d323eaf34f105da857b09e0c2813b76974d3992c",
             "locator": {
-              "end": 258,
+              "end": 259,
               "kind": "line_range",
-              "start": 237
+              "start": 238
             }
           },
           "kind": "code"

@@ -22,41 +22,18 @@ Direct tool/apply probes seed their canonical leaf grant rather than enable a se
 
 ## Evidence
 
-
-
 - Retained disabled-memory tests separate readable surfaces, admission refusal and knowledge-gate refusal. [1]
-
-
-
 
 - Rule 3 retains status and attach answers, including legacy series and unknown-cell contracts. [2]
 
-
-
-
 - Admission refusal retains the abandon-first way out and names the raw unknown cell. [3]
-
-
-
 
 - Abandon retains dry/real escape and its own legacy-contract refusals. [4]
 
-
-
-
 - A disabled series names the new-master escape. [5]
-
-
-
 
 - Named lifecycle routes refuse disabled-memory authority; the direct-landing case compares preview with apply. [6]
 
-
-
-
 - Knowledge gates and behind-entry sites name disabled-contract refusal rather than nothing-to-judge. [7]
-
-
-
 
 - Closeout and public reopen/cleanup/finalize guards retain named disabled-contract refusals. [8]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
-        "content": "sha256:bd3af273ef1b49c2098d6c4bfbb2f9840ac49b7906c9cba912bef8f3410ed7dd",
+        "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
+        "content": "sha256:b0251720f8cda3c1581ad5ce4e4319e638ab9e7277003c537793f9a685e836cb",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,14 @@
   ],
   "references": {
     "1": {
-      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, and paseo-native-executions paths.",
+      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, and paseo-native-executions paths.\n\nAnchor: `## The coordination root`",
       "targets": [
         {
           "anchor": {
-            "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
-            "content": "sha256:0dd373eba9e248d409998a3e9a6aba76506833793b38b554a768ee27b62d4b60",
+            "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
+            "content": "sha256:205f514af8cb346004870b244dbfce951c345980abefcfa6273d3d2781def282",
             "locator": {
-              "end": 63,
+              "end": 53,
               "kind": "line_range",
               "start": 11
             }
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
+            "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
             "content": "sha256:ea78b1f23a7b0b0a574521721aabf8fe73b392625c5f1a494746468c7f2db43a",
             "locator": {
-              "end": 150,
+              "end": 140,
               "kind": "line_range",
-              "start": 134
+              "start": 124
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
+            "blob": "69d1a2ae4fec296c6c8884018f59178a185cf371",
             "content": "sha256:c052360b3a3a7b7121464db09738624cc1d3cbaddc228717f33c7ad467f192ad",
             "locator": {
-              "end": 185,
+              "end": 175,
               "kind": "line_range",
-              "start": 151
+              "start": 141
             }
           },
           "kind": "code"

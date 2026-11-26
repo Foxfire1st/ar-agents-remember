@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:16053c92f8380b4ed0cb75c194d15173264a16112e1284269646e1f9a3fd12ab",
             "locator": {
               "end": 18,
@@ -86,12 +86,12 @@
       ]
     },
     "2": {
-      "note": "The sanctioned-site registry separates retained decode sites, fixture narrowing, the legacy-provider retirement probe and compiler suppression.",
+      "note": "The sanctioned-site registry separates retained decode sites, fixture narrowing, and compiler suppression.",
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
-            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
+            "content": "sha256:da3c912f898893b9be554792bc94473ac9d2ce5842bd9f64fe2bdca1d27f6310",
             "locator": {
               "kind": "symbol",
               "name": "SANCTIONED_WIRE_SITES"
@@ -106,12 +106,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "blob": "5261524ecbf02649b02234195b2f62477b93262c",
             "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
             "locator": {
-              "end": 657,
+              "end": 627,
               "kind": "line_range",
-              "start": 657
+              "start": 627
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -119,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "blob": "5261524ecbf02649b02234195b2f62477b93262c",
             "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
             "locator": {
-              "end": 657,
+              "end": 627,
               "kind": "line_range",
-              "start": 657
+              "start": 627
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -166,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:f361358cf34b5ea79891cef1a9371928a9d955207dce0d01815b4830b1cfbc81",
             "locator": {
               "kind": "symbol",
@@ -182,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:f9d2c04d8392b75bf6b6fd975b013471d78da87a660d55826b32d97958317314",
             "locator": {
-              "end": 265,
+              "end": 259,
               "kind": "line_range",
-              "start": 256
+              "start": 250
             }
           },
           "kind": "test"
@@ -199,12 +199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:c027e994d18fbf901b4c6318faf3a5a32bdf47ae3b0b0b4e89b2d3c8962d3573",
             "locator": {
-              "end": 290,
+              "end": 284,
               "kind": "line_range",
-              "start": 268
+              "start": 262
             }
           },
           "kind": "test"
@@ -212,14 +212,15 @@
       ]
     },
     "6": {
-      "note": "The virtual planted modules and honest forms.\n\nAnchor: `PLANTED_FILES`",
+      "note": "The virtual planted modules and honest forms.\n\nAnchor: `PLANTED_FILES`, `Source`: `dashboard/src/test/wireFixtureGuard.test.ts:192-316`",
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
-            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
+            "content": "sha256:41da5f7ac574d5946583e4bf34265193f59dc4aef5c99c3569a656dd3ba34e26",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PLANTED_FILES"
             }
           },
           "kind": "test"
@@ -231,12 +232,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:c90d73b850c625a1dab0eac5cee0a7b93f9d1707dc4d8fa86fbf88f2b1176ac2",
             "locator": {
-              "end": 449,
+              "end": 443,
               "kind": "line_range",
-              "start": 337
+              "start": 331
             }
           },
           "kind": "test"
@@ -248,12 +249,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:5124f65ebaeeab7af633cb70837a72d4c6a38867de241718eaf7c5e73f2d92bb",
             "locator": {
-              "end": 458,
+              "end": 452,
               "kind": "line_range",
-              "start": 451
+              "start": 445
             }
           },
           "kind": "test"
@@ -265,12 +266,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:b69b3a519a95ce49481e35e962d28f88755bcf61d2967e9e047fc7fd20572d09",
             "locator": {
-              "end": 491,
+              "end": 485,
               "kind": "line_range",
-              "start": 460
+              "start": 454
             }
           },
           "kind": "test"

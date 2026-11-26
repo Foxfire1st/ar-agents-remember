@@ -36,8 +36,8 @@ AgentBinding.environment emits all seven binding variables and clears hosted-sea
 - Frozen implementation of AgentBinding supporting the stated file behavior. [1]
 
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [3]
-- Starts generated stdio server and checks serving build package root and binding from selected source. [4]
 
+- Starts generated stdio server and checks serving build package root and binding from selected source. [4]
 
 - `read_agent_binding` checks the minted IDs, role, absolute report path and role-specific reference pattern. [2]
 
@@ -47,21 +47,10 @@ AgentBinding.environment emits all seven binding variables and clears hosted-sea
 
 - Investigator permits a taskless selection, a sprint, a standalone master or both sprint and master. [6]
 
-
-
-
 ## Investigator scope and request identity
 
 The earlier system-specialist spelling is normalized to Investigator on reads while the recorded role value and addresses remain intact. Investigator accepts Projects, sprint, standalone master or sprint/master reference patterns; minted actor/request UUIDs, absolute report path and readable canonical topology remain mandatory. A role name or folder never supplies missing references.
 
-
-
-
-
-
 ## Refreshed current evidence
-
-
-
 
 </details>

@@ -1,0 +1,40 @@
+{
+  "anchor": {
+    "blob": "3cddf1a23d0626d6703551ad0b7c0dd0c2f2897c",
+    "content": "sha256:dc5f741a294d9a6774075f557499f583dba894ed09b582397c669ab004286b73",
+    "locator": {
+      "kind": "symbol",
+      "name": "_authority"
+    },
+    "path": "mcp/tests/test_terminal_refusal_leaves_everything.py"
+  },
+  "id": "WKN-RHCVCW",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "wkn-terminal-refusal-op-ignore",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261125-DEP-L7"
+  },
+  "state": "open",
+  "statement": "The _authority test helper types operation as str and suppresses the Literal mismatch against _TerminalMutationAuthority with # type: ignore[arg-type].",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

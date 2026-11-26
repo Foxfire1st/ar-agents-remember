@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b60f09508b968b94502bfe295188d0da57858fb1",
-    "commit": "70a18acd683e44e6b99bbee07fe3fb6e07c505ed",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Confirmed against CAP-L2 candidate b60f0950: docs/reference/skills.md remains accurate because CAP-L2 made zero edits to skills/l-01-agent-lifecycles Markdown or the skill reference catalog.",
-    "task": "261124-CAP-L2",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/skills.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -26,7 +26,7 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+      "blob": "8a146dddeee47245c130f0596de59022608bb40f",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
+      "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
     },
@@ -70,16 +70,5 @@
       "kind": "file",
       "path": "scripts/instruction_renewal/plan.py"
     }
-  ],
-  "writer": {
-    "at": "2026-11-25T20:08:37+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
-    "task": "261124-CAP"
-  }
+  ]
 }

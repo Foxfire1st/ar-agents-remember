@@ -24,9 +24,6 @@ Every tree is disposable under `tmp_path`; nothing here writes into the checkout
 - A converted memory is identified by the `ar-memory-layout/v2` marker it holds. [1]
 
 
-
 - Anchors are built from the file's git blob id and content identity, and the stale one carries zeros. [2]
-
-
 
 - The no-write fingerprint covers HEAD, the index tree, porcelain status and every file's bytes. [3]

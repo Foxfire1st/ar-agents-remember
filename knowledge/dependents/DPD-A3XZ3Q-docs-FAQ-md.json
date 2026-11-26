@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified docs/FAQ.md (lines 1-200) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): frequently asked questions on roles, memory, worktrees and setup remain accurate with no contradiction under BUG-R41@v1.",
-    "task": "261112-BUG-L41",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/FAQ.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
     },
     {
-      "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+      "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

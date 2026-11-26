@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e73ee50fe78554cccea91aea7b1e5b4015e57a9",
+        "blob": "9b04146eae6d9eb25d5e958b21f82aca15a00303",
         "content": "sha256:3cad2c7a67e9a6ff9254dd0dfb536be82bf09dc3fb668f27b39f1de62a7bab45",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0e73ee50fe78554cccea91aea7b1e5b4015e57a9",
-        "content": "sha256:e0ed9882c16b988f78e1cd7a9245a7b8d1e6aa29ec7bb69c7e09026130f5d9c3",
+        "blob": "9b04146eae6d9eb25d5e958b21f82aca15a00303",
+        "content": "sha256:941f2c1cd3c2dcedffce527ba4ada6265026292648114576a5f690601dbdbaf9",
         "locator": {
           "kind": "file"
         }
@@ -39,16 +39,14 @@
   ],
   "references": {
     "1": {
-      "note": "Anchor: Actual explicit export list.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e73ee50fe78554cccea91aea7b1e5b4015e57a9",
-            "content": "sha256:b30c9d5a5415bb21fc165d1c179951ef4f5593bf34c2805e8aaa3c6d04a5f2d6",
+            "blob": "9b04146eae6d9eb25d5e958b21f82aca15a00303",
+            "content": "sha256:4a413c135765bbf933cd7cdb2b8798fe87a8396c65ef03b1e8da6054bf19224a",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 92
+              "kind": "symbol",
+              "name": "__all__"
             }
           },
           "kind": "code"
@@ -56,16 +54,14 @@
       ]
     },
     "2": {
-      "note": "Anchor: The facade __all__ keeps ownership with defining modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e73ee50fe78554cccea91aea7b1e5b4015e57a9",
-            "content": "sha256:b30c9d5a5415bb21fc165d1c179951ef4f5593bf34c2805e8aaa3c6d04a5f2d6",
+            "blob": "9b04146eae6d9eb25d5e958b21f82aca15a00303",
+            "content": "sha256:4a413c135765bbf933cd7cdb2b8798fe87a8396c65ef03b1e8da6054bf19224a",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 92
+              "kind": "symbol",
+              "name": "__all__"
             }
           },
           "kind": "code"
@@ -73,12 +69,12 @@
       ]
     },
     "3": {
-      "note": "Token-count exports remain in the package vocabulary and are resolved from the canonical models.tokens module on first access; importing the model package alone no longer loads tiktoken.\n\nAnchor: `__getattr__`",
+      "note": "Token-count exports remain in the package vocabulary and are resolved from the canonical models.tokens module on first access; importing the model package alone no longer loads tiktoken.\n\nAnchor: `_TOKEN_NAMES`, `__getattr__`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e73ee50fe78554cccea91aea7b1e5b4015e57a9",
-            "content": "sha256:e0ed9882c16b988f78e1cd7a9245a7b8d1e6aa29ec7bb69c7e09026130f5d9c3",
+            "blob": "9b04146eae6d9eb25d5e958b21f82aca15a00303",
+            "content": "sha256:941f2c1cd3c2dcedffce527ba4ada6265026292648114576a5f690601dbdbaf9",
             "locator": {
               "kind": "file"
             }

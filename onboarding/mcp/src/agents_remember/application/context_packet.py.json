@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+        "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
         "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
         "locator": {
           "kind": "symbol",
@@ -23,15 +23,16 @@
   ],
   "references": {
     "1": {
-      "note": "`ContextPacketV2` and nested summary models define the response shape.",
+      "note": "`ContextPacketV2` and nested summary models define the response shape.\n\nAnchor: `` `ContextPacketV2` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
+            "content": "sha256:ef279ff2efd8fb6b8514f0926536a597225298a09611bf82b26ef1dc933101d8",
             "locator": {
-              "kind": "symbol",
-              "name": "ContextPacketV2"
+              "end": 117,
+              "kind": "line_range",
+              "start": 109
             },
             "path": "mcp/src/agents_remember/models/context_packet.py"
           },
@@ -44,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
             "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
             "locator": {
               "kind": "symbol",
@@ -56,15 +57,16 @@
       ]
     },
     "11": {
-      "note": "Rich V2 assembly remains internal and optionally includes index facts.",
+      "note": "Rich V2 assembly remains internal and optionally includes index facts.\n\nAnchor: `` `build_context_packet` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:6db5c236188b2c1c146c22e8a6b535408bbb48cf2c382dd6645a280789b322dc",
             "locator": {
-              "kind": "symbol",
-              "name": "build_context_packet"
+              "end": 120,
+              "kind": "line_range",
+              "start": 78
             }
           },
           "kind": "code"
@@ -72,32 +74,15 @@
       ]
     },
     "12": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:e056980d0267b3460e8d876e1b6e3ff08da1dc6510401b86e05cdc1ffac36901",
             "locator": {
               "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Provider summary projection keeps context compact and points details at diagnostics.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
-            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "provider_summary"
-            },
-            "path": "mcp/src/agents_remember/providers/status.py"
           },
           "kind": "code"
         }
@@ -108,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+            "blob": "81b0e3d2947f32ed2a6e3a9fc97433196e6659a5",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -120,7 +105,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
               "kind": "symbol",
@@ -168,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
             "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
             "locator": {
               "kind": "symbol",
@@ -202,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:4d2a3b44d5eca0a3f8a6e952cb503bbbd7ba32a0f7aa43d4ce2faac56f0dd03a",
             "locator": {
               "kind": "symbol",
@@ -215,12 +200,12 @@
       ]
     },
     "8": {
-      "note": "The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary.\n\nAnchor: `ContextPacketError` `ContextPacketRequest` `build_context_packet`",
+      "note": "The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:e056980d0267b3460e8d876e1b6e3ff08da1dc6510401b86e05cdc1ffac36901",
             "locator": {
               "kind": "file"
             }
@@ -234,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
             "content": "sha256:f745faa8f76bfefd6c2f7176bee019bfde535bf578c5852dbf5b590d818e6b64",
             "locator": {
               "kind": "symbol",

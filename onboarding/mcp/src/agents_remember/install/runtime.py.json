@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:4783839ffb9f4263ff8babc726eeee096a034b7e538f7e4d6ac6d0ab385adf70",
         "locator": {
-          "end": 894,
+          "end": 712,
           "kind": "line_range",
-          "start": 894
+          "start": 712
         }
       },
       "id": "RLZ-13ZE2T",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:0d4616c9c928bd4215f0cb657bfa5b9ec8bd5764b1eb62c24befb667145c76db",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+        "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
         "content": "sha256:0a1920a2dc1e0b2cc2579092042bd0ceee94bb1fc401b9038a32668a90e8d710",
         "locator": {
           "kind": "symbol",
@@ -147,23 +147,6 @@
         }
       ]
     },
-    "10": {
-      "note": "Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
-            "content": "sha256:24784ec382a0622aa53aff7e6fcbcc57a92c1de1193288f4472025f942830656",
-            "locator": {
-              "kind": "symbol",
-              "name": "record_provider_watcher_lifecycle"
-            },
-            "path": "mcp/src/agents_remember/install/provider_watchers.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
       "note": "The application entry that composes the host step onto the lower service result.\n\nAnchor: `install_host`",
       "targets": [
@@ -187,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
             "locator": {
               "kind": "symbol",
@@ -203,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
             "locator": {
               "kind": "symbol",
@@ -214,7 +197,7 @@
         },
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
             "locator": {
               "kind": "symbol",
@@ -230,12 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:2ef38c918d540dc4358ecdd3376fb5320f8fe435146e03808c8d10e624feb0a0",
             "locator": {
-              "end": 740,
+              "end": 599,
               "kind": "line_range",
-              "start": 740
+              "start": 599
             }
           },
           "kind": "code"
@@ -243,15 +226,16 @@
       ]
     },
     "15": {
-      "note": "The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal.",
+      "note": "The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal.\n\nAnchor: `` `removed_part_stores` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
-            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+            "content": "sha256:f37a3ef714f628548e6d3cbf9c1499fc3852a29c8d5bd11995f0789112e7cd35",
             "locator": {
-              "kind": "symbol",
-              "name": "removed_part_stores"
+              "end": 240,
+              "kind": "line_range",
+              "start": 207
             },
             "path": "mcp/src/agents_remember/install/removed_stores.py"
           },
@@ -264,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:5d9c5e9b23bf1ebd2591444a99b45bd6a3dcb5c14ea375393c4d5521cc611c84",
             "locator": {
               "kind": "symbol",
@@ -280,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:12806b18d77784455a5a12d4bb5375195bd0db2501210f860cc12a9491151241",
             "locator": {
               "kind": "symbol",
@@ -292,15 +276,16 @@
       ]
     },
     "18": {
-      "note": "The install pass that writes the scaffold and no skill tree.",
+      "note": "The install pass that writes the scaffold and no skill tree.\n\nAnchor: `` `_install_runtime` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:48d2a7fd0ef42986a9ec3e7c52a3fd10726d7ef7e0c1557a34c6fca70f100256",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "content": "sha256:5552c36fbc0d5767c7dc66133a7f60156eff82aa35214e13cf0aa8544f767b5c",
             "locator": {
-              "kind": "symbol",
-              "name": "_install_runtime"
+              "end": 666,
+              "kind": "line_range",
+              "start": 618
             }
           },
           "kind": "code"
@@ -312,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
               "kind": "symbol",
@@ -324,16 +309,16 @@
       ]
     },
     "2": {
-      "note": "`RuntimeInstallScope` carries an optional experiment selection, and both public entry points funnel through one private installer.",
+      "note": "`RuntimeInstallScope` carries an optional experiment selection, and both public entry points funnel through one private installer.\n\nAnchor: `` `RuntimeInstallScope` `install_runtime` `install_experimental_runtime` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:95e0be886d78f206aeb81e2b4cf47e735b6d9a1f2328f6d72dbcf1717d4ced2f",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "content": "sha256:09204618668957ae5998edb89049de83be77d49bd3c750b4b198fd1b3034b742",
             "locator": {
-              "end": 689,
+              "end": 571,
               "kind": "line_range",
-              "start": 637
+              "start": 522
             }
           },
           "kind": "code"
@@ -341,16 +326,16 @@
       ]
     },
     "20": {
-      "note": "The install result carries the MCP settings copy outcome.\n\nAnchor: `copy_mcp_settings`",
+      "note": "The install result carries the MCP settings copy outcome.\n\nAnchor: `\"copy_mcp_settings\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:04fbf5329c29670620a4617c8ccbf988d1dadcae8d3119a76b5a89909cd1e3c0",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "content": "sha256:d07d9d965620bdf4e3ebc30680a0f8720e546e2d1cffe5ab9281aac7e64c2962",
             "locator": {
-              "end": 896,
+              "end": 715,
               "kind": "line_range",
-              "start": 887
+              "start": 708
             }
           },
           "kind": "code"
@@ -380,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
               "kind": "symbol",
@@ -396,12 +381,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:a5b1cb83478f813c2f73aa99a54b77277b7d78efd1d1f651906e74bc2a6a8935",
             "locator": {
-              "end": 799,
+              "end": 652,
               "kind": "line_range",
-              "start": 796
+              "start": 649
             }
           },
           "kind": "code"
@@ -413,57 +398,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:abfc956b9e0b363f04aa3a43dbb6fe7a376111e20d784182ec579cca5383d00e",
             "locator": {
               "kind": "symbol",
               "name": "resolve_experiment_install"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Provider settings generation derives lifecycle settings from MCP authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_settings_from_config"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_settings_from_config"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The install stores a provider watcher rebind report, attempts the old-watcher stop before the provider refresh and continues on a failed stop.\n\nAnchor: `stop_provider_watchers_before_refresh`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:5da672fca24830b7c8cd2336508eb1a01245adcb6511a4bd59cfd921c62c0da7",
-            "locator": {
-              "end": 830,
-              "kind": "line_range",
-              "start": 813
             }
           },
           "kind": "code"

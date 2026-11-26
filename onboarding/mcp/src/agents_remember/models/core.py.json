@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+        "blob": "f437a93d6575f762951b746989665273da2c78fb",
         "content": "sha256:45ffbe1b4a8d2c53e47faf3813a9e55327c9275517a33a1343634c7615b3d2f7",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+        "blob": "f437a93d6575f762951b746989665273da2c78fb",
         "content": "sha256:31e849517de49785a1ce5990a0438928a52a6743dc861cf44ce51d5aa119dbcb",
         "locator": {
-          "end": 92,
+          "end": 89,
           "kind": "line_range",
-          "start": 92
+          "start": 89
         }
       },
       "id": "RLZ-GKJ29T",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+        "blob": "f437a93d6575f762951b746989665273da2c78fb",
         "content": "sha256:06a3e9b0b6efbc9b7b07ac83ead9c71c812c8d1bea91b3712d9ba11e05eea41c",
         "locator": {
           "end": 29,
@@ -61,12 +61,12 @@
   ],
   "references": {
     "1": {
-      "note": "Core payload builders serialize these models.",
+      "note": "Core payload builders serialize these models.\n\nAnchor: `server_info_payload`, `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
-            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:3a5e133d72d4e76092eb8ea11006301fa004ffbec70ad912b2cbcd76879f2f17",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
@@ -77,25 +77,26 @@
         },
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
-            "content": "sha256:3dac1809e31b19e52cf548b1fdddd896cc1c6351d1d6b748470cb4f51bd981ee",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 23
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
             },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:5b08585cd722662fbdd331b0e489b22f9ab3dbba09ea2cdb6bc617d891c9d1a0",
             "locator": {
-              "kind": "file"
+              "end": 100,
+              "kind": "line_range",
+              "start": 54
             },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
           "kind": "code"
         }
@@ -106,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
             "content": "sha256:a6a3dc6a1fe961cae3f0047ee5735dcdddbcb9d94d288137268b1e4335540f16",
             "locator": {
               "kind": "symbol",
@@ -122,8 +123,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
-            "content": "sha256:aeaf44b190df047b5532841ea959c6223e28860888b1795fd8b08a2892acb62c",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
+            "content": "sha256:743f17a6286f408627fcf6ff0284586f568ea57709bea462edd2c8bbaa672c21",
             "locator": {
               "kind": "symbol",
               "name": "ServerInfoResponse"
@@ -138,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
             "content": "sha256:343622eff86e1e1d78b873b5e9263fad2122c3a5f1d3a33f893c44342e4c0b6c",
             "locator": {
               "end": 77,
@@ -155,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
             "content": "sha256:9b9d2bf08c051b4d8c9c8dec2286050649bb82493a92c20fd3aca1c2206a9746",
             "locator": {
               "end": 43,
@@ -172,11 +173,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
-            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:3a5e133d72d4e76092eb8ea11006301fa004ffbec70ad912b2cbcd76879f2f17",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:5b08585cd722662fbdd331b0e489b22f9ab3dbba09ea2cdb6bc617d891c9d1a0",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 54
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -189,8 +203,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
-            "content": "sha256:aeaf44b190df047b5532841ea959c6223e28860888b1795fd8b08a2892acb62c",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
+            "content": "sha256:743f17a6286f408627fcf6ff0284586f568ea57709bea462edd2c8bbaa672c21",
             "locator": {
               "kind": "symbol",
               "name": "ServerInfoResponse"
@@ -205,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
             "content": "sha256:efe79a5a96f0dbe54d30c3e9845a4684b6592bb9a5aa49e06319aeab55d3e89f",
             "locator": {
               "kind": "symbol",
@@ -221,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "blob": "f437a93d6575f762951b746989665273da2c78fb",
             "content": "sha256:31e849517de49785a1ce5990a0438928a52a6743dc861cf44ce51d5aa119dbcb",
             "locator": {
               "kind": "symbol",

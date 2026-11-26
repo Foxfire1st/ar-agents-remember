@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
             "locator": {
               "end": 6,
@@ -206,12 +206,12 @@
         },
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:c071edfea9721d39eacdb2b408dd88a2e6680fc35a5ee8090960dcdba31e2178",
             "locator": {
-              "end": 386,
+              "end": 384,
               "kind": "line_range",
-              "start": 372
+              "start": 370
             },
             "path": "mcp/tests/test_memory_branch_authority.py"
           },

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:677cb0c06e5fbd1b309876b27fb2ded12dcdba005b300d1915c2f9ec372e603a",
             "locator": {
-              "end": 864,
+              "end": 685,
               "kind": "line_range",
-              "start": 860
+              "start": 681
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

@@ -124,16 +124,16 @@
       ]
     },
     "6": {
-      "note": "The install result carries the copy report.\n\nAnchor: `copy_mcp_settings`",
+      "note": "The install result carries the copy report.\n\nAnchor: `\"copy_mcp_settings\"` (or `` `install_runtime_from_config` ``)",
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:04fbf5329c29670620a4617c8ccbf988d1dadcae8d3119a76b5a89909cd1e3c0",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "content": "sha256:e2520405fa74b6f276a3af0653398460cc3f2b32870af00a006231309fd8a67a",
             "locator": {
-              "end": 896,
+              "end": 722,
               "kind": "line_range",
-              "start": 887
+              "start": 708
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

@@ -30,6 +30,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "R112's old-install protections survive intact: legacy keys still parse and report once as unused, the retired providers stay never-enabled, the old-watcher stop still runs and records a failure, leftover folders are reported by size and removed only on explicit consent, and the busy-process, stop-failure and containment refusals still refuse.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

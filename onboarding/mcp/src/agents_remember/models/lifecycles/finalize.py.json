@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
               "end": 15,
@@ -63,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
             "locator": {
-              "end": 114,
+              "end": 112,
               "kind": "line_range",
-              "start": 114
+              "start": 112
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -105,16 +105,15 @@
       ]
     },
     "4": {
-      "note": "`lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run and provider-teardown flags, and answers that result.",
+      "note": "`lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run flag, and answers that result.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:b8faaf2501a5033229fa895857ad0fa63834078ab0ae0949c4f02042f7dff1ee",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:2168526df675af4e03f114b9201b7219844679cab9a794f483c8a74e89c80131",
             "locator": {
-              "end": 838,
-              "kind": "line_range",
-              "start": 812
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_tool"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

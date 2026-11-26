@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "86e0e98043eb3a379da256f0960e8bdbd3ca78ff",
+        "blob": "2409b9fd7a5bbf30e548ba4d1e04d7179b603cd7",
         "content": "sha256:a72a9a12db6fe382d9e242ef7726333c49051268dc248bab22d026c0bcf1bdb0",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Unreadable recorded code blocks without publication.\n\nAnchor: `test_record_landing_with_unreadable_recorded_code_refuses_without_writing`",
+      "note": "Unreadable recorded code blocks without publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "86e0e98043eb3a379da256f0960e8bdbd3ca78ff",
-            "content": "sha256:4a771c375b9bdc6c849ad84cfd346c6afa89437d4ed0245f0a5c68d690f31ed5",
+            "blob": "2409b9fd7a5bbf30e548ba4d1e04d7179b603cd7",
+            "content": "sha256:a72a9a12db6fe382d9e242ef7726333c49051268dc248bab22d026c0bcf1bdb0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_record_landing_with_unreadable_recorded_code_refuses_without_writing"
             }
           },
           "kind": "test"
@@ -41,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86e0e98043eb3a379da256f0960e8bdbd3ca78ff",
+            "blob": "2409b9fd7a5bbf30e548ba4d1e04d7179b603cd7",
             "content": "sha256:670d4c7ef1e8a02eb53702d508351fc46884a0136035b2d535ef15a277fc26d4",
             "locator": {
               "kind": "symbol",
@@ -53,14 +54,15 @@
       ]
     },
     "3": {
-      "note": "The original BOGUS invalid-input literal and complete no-write snapshot remain. Exact returned code, returncode and error-detail assertions describe the answered refusal without replacing its original stimulus.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The original BOGUS invalid-input literal and complete no-write snapshot remain. Exact returned code, returncode and error-detail assertions describe the answered refusal without replacing its original stimulus.",
       "targets": [
         {
           "anchor": {
-            "blob": "86e0e98043eb3a379da256f0960e8bdbd3ca78ff",
-            "content": "sha256:4a771c375b9bdc6c849ad84cfd346c6afa89437d4ed0245f0a5c68d690f31ed5",
+            "blob": "2409b9fd7a5bbf30e548ba4d1e04d7179b603cd7",
+            "content": "sha256:a72a9a12db6fe382d9e242ef7726333c49051268dc248bab22d026c0bcf1bdb0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_record_landing_with_unreadable_recorded_code_refuses_without_writing"
             }
           },
           "kind": "test"

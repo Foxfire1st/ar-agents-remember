@@ -8,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:c459f7625e439bd7cd3d386dcba1c6886221e3390ab625f46bbbd147b00b5a10",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:de5df3329e36596ea337b524294bf7c688692d7f345903ba3be15e1ecf15e733",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task"
@@ -118,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
             "content": "sha256:e6e1dac341d2f9320dfc6df77c23a0721ce53a5a182fdc79390f7b16f089f263",
             "locator": {
               "end": 38,
@@ -330,16 +330,15 @@
       ]
     },
     "33": {
-      "note": "The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep.",
+      "note": "The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep.\n\nAnchor: `_register_closeout_queue_tools` .. `register_task_tools`, `_TASK_DOC_TOOL_DESCRIPTION`",
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
             "content": "sha256:1911efab1f6c8bf56adac39d52e2be7fe3edb1cbc4f728aef347708efa68a700",
             "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 18
+              "kind": "symbol",
+              "name": "_register_closeout_queue_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -347,77 +346,23 @@
         },
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:4f46bbc93a60a389d3684b0f89ab35ec6659071328ac2deb30fbe433be8cc6fc",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 25
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:501b67ea4718ceb479ab68e31b47419709109ee7fe7d5536dcdbf6db1d709079",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 32
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:5e58a4782791d359e8740d344388fb795ab89e806d759672ccd753cb427a3cf5",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 39
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
-            "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 64
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 67
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
             "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 112
+              "kind": "symbol",
+              "name": "register_task_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TASK_DOC_TOOL_DESCRIPTION"
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -426,16 +371,15 @@
       ]
     },
     "38": {
-      "note": "The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.",
+      "note": "The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.\n\nAnchor: `register_closeout_tools`, `PUBLIC_TOOLS`, `register_task_tools`, `register_role_agent_tools`, `register_worktree_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
-            "content": "sha256:5a92a75af4fd4e6bbcbf6e21057793c74d7e978eab8071e4dd7b2e38c86630e1",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 28
+              "kind": "symbol",
+              "name": "register_closeout_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -444,11 +388,10 @@
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -456,12 +399,11 @@
         },
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "register_task_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -480,8 +422,8 @@
         },
         {
           "anchor": {
-            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
-            "content": "sha256:4c72fef695d81ccc401635211e1968a82a65af56cea16faaf396fe6de2786c1a",
+            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "content": "sha256:a4543c48577f503ae05e09521ac61a49632ba8e0930e5dd04e511e08b33cdcbb",
             "locator": {
               "kind": "file"
             },

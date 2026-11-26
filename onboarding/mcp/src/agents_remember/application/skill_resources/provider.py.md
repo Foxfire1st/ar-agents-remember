@@ -57,7 +57,7 @@ No external documentation governs the location of this repository's generated pa
 - The case that keeps same-named skills from two servers distinct. [8]
 
 - The corpus root and manifest travel together as one admission; publishing origin is declared separately. [2]
-- `durable_composition_corpus_root` resolves direct filesystem package data or atomically materializes archive packages into a digest-keyed durable cache with non-symlink `O_NOFOLLOW` verification. [9]
+- `durable_composition_corpus_root` resolves direct filesystem package data or atomically materializes archive packages into a digest-keyed durable cache with non-symlink `O_NOFOLLOW` verification. [10]
 
 ### Cross-Repo References
 

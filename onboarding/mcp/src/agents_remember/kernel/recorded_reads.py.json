@@ -325,12 +325,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74519f758d6faf1f95c7cd79d9e1a22174238cf2",
+            "blob": "040e62b22663a8a8863684ba6ccb89d9bc054897",
             "content": "sha256:5bae2b601a32ad52c309042834bab9db010b8ecb0c5f31b4a592b44e74cfe2c6",
             "locator": {
-              "end": 1018,
+              "end": 1015,
               "kind": "line_range",
-              "start": 985
+              "start": 982
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },

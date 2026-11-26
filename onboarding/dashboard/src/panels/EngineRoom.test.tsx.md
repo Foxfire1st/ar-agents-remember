@@ -4,10 +4,9 @@
 
 [panels/ overview](overview.md)
 
-
 ## Current enclosure-only composition
 
-The suite reads task status from the TaskEntry owning the process worktree while retaining the separate operation phase. A paused→works→completed task delta changes header/card status without replacing that phase. Provider-strip/fallback absence, phase-active flags, source lineage, leaf-first identity and narrowed model rebuild assertions remain.
+The suite reads task status from the TaskEntry owning the process worktree while retaining the separate operation phase. A paused→works→completed task delta changes header/card status without replacing that phase. Fallback-chrome absence, phase-active flags, source lineage, leaf-first identity and narrowed model rebuild assertions remain.
 
 ### Maintenance boundaries
 
@@ -17,15 +16,13 @@ Source/test/fixture inspection is not a fresh mounted capture or a passing test 
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-> > - Task status and operation phase remain separate; provider strip and fallback are absent in the rendered component fixture. [6] [7]
+> > - Task status and operation phase remain separate; fallback chrome is absent while the enclosure canvas renders in the rendered component fixture. [6] [7]
 
 ## Historical superseded account (non-operative)
 
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Vitest + `@testing-library/react` render test for slice 5f S5's lifecycle-phase motion: the Engine Room
 header flags `data-phase-active` when the selected enclosure is in a human-gated lifecycle phase (sync /
@@ -69,18 +66,16 @@ do not assert or reshape the enclosure canvas' workspace-engine rendering.
 
 ### Repo-Internal References
 
-
 - The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. [1]
-
 
 - The `GALLERY` projection seed + the store `applySnapshot`. [4]
 
 - The honest-motion gate the pulse reads. [5]
 
-- The current EngineRoom case asserts no official provider strip or fallback, while the enclosure canvas remains present; its title records the MIK-R112 provider-engine surface removal. [6]
+- The current EngineRoom case asserts that engine-room-fallback is absent while enclosure-canvas renders. [6]
 
 
-- The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires the official provider strip and fallback absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof. [7]
+- The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires fallback chrome absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof. [7]
 
 
 ## Current L5I Maintenance

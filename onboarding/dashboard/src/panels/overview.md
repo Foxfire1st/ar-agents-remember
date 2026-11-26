@@ -15,7 +15,6 @@ Panels present canonical task hierarchy, structural document-and-role seats, cur
 
 Family-center member order follows the sidebar's served outline under the same stored order, while retaining per-revision content and a no-outline fallback. Currentness state marks keep their exact entry/state/side words with supplied reasons beside them outside disclosures. Selected one-sided statements and non-authored field rows retain the explicit absent/unreadable/recorded-empty distinctions in the main reading area; Technical details remains an identity/provenance owner.
 
-
 ## Hot Path Summary
 
 Ordinary masters now compose Now then the shared derived Order and ready-next rows. Task heads show both dependency directions; optional Non-goals and Acceptance occupy fixed slots. The complete native task identity/state/head chrome precedes Objective; there is no separate selected lifecycle/series page. Compact progress uses major steps only with cached pointer-rest child details and full nested task reading. Completed master lists use completion time, a newest-five preview and ephemeral reversible sorting; these are display, not start/closeout authority.
@@ -185,7 +184,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 taskReader renders one Direct execution switch only on a document-backed subTask's own page when its native entry stage is planned, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
 
-
 ## Current Behavior
 
 the detail panel's change-set bar now aborts its own counter read on a task switch and renders no failure for it. The task-reuse and task-switch cases pin the other side: the left page's change set, summary and body end with the selection, while a revisited task is answered from the body the first visit retained with no second request. The mounted chat case pins the operation-level promise that the newly selected task's chat is dispatched and bound while four abandoned page producers remain slow.
@@ -268,7 +266,9 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 - DetailPanel resolves the selected native entry through its state owner and renders TaskDocumentPanel, rather than separate lifecycle/series reader targets. [53]
 
+
 - Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary. [54]
+
 
 - Native entry fixture defaults copy specific sampled identities while explicitly declaring planned/count/collection defaults; there is no current lifecycle factory or claim that every value is server-derived. [55]
 
@@ -288,7 +288,6 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 - The leaf-scoped facts and re-validation generation. [117]
 
-
 - An incoming link from a history row names the record the row is about. [121]
 
 - The worklist panel: status line, degraded knowledge sides, currentness, worklist groups and gate linkage, with changed knowledge files opened in the change-set viewer. [125]
@@ -298,7 +297,6 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 - The notice says that it is computing, as a status region. [128]
 
 - The notice names the failure and its action. [129]
-
 
 - The read cycle: the read state bound to its question, and the task-context frame. [133]
 
@@ -321,7 +319,6 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 - The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue. [60]
 
 - `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission. [61]
-
 
 > Retained earlier citation wording: - Artifact reader includes task reports and whole decision logs [165]
 
@@ -363,9 +360,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner. [192]
 
-
 - The hand-kept snapshot payload provides the generated timestamp. [57]
-
 
 - **The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.** [112]
 
@@ -381,7 +376,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence. [180]
 
-
 - Current shell owners for the review page account. [200]
 
 - Current navigation owners for the review page account. [201]
@@ -394,40 +388,27 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - Current tray owners for the review page account. [205]
 
-
 - Current cache owners for the review page account. [207]
 
 - Current model owners for the review page account. [208]
 
-
 - Current tree owners for the review page account. [210]
 
-
 - Current source owners for the review page account. [212]
-
-
 
 - Current sort owners for the review page account. [215]
 
 - Current traversal owners for the review page account. [216]
 
-
 - Current layout owners for the review page account. [218]
 
 - Current focus owners for the review page account. [219]
-
-
-
-
-
 
 - useChangeSet owns leaf-wide trees, shown-invariant cards, summary and lane; one model feeds both columns. [127]
 
 - useChangeSet supplies one comparison-scoped lane read to page content and held comparison-page facts. [13]
 
 - Operations’ ReviewMain mounts the optional-subject/history reviewer beside the stable shared task chat. [130]
-
-
 
 - changeSetModel applies the shared sort to subjects/locations without inventing semantic or source facts. [138]
 
@@ -455,12 +436,9 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - ReviewTree’s compact rows are navigation over the shared model; semantic records remain in reading subject slots. [161]
 
-
 - ReviewSurface owns the keyboard zone; ReadingColumn or stacked ReviewMain owns vertical scrolling. [169]
 
 - Block traversal excludes unknown/unchanged blocks and admits loaded lane hunks in file order. [173]
-
-
 
 - Compact tree row labels and reasons come from the shared model, preserving one line and complete accessible names. [18]
 
@@ -471,7 +449,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - changeSetModel groups shared regions and gives one order to tree and reading content. [25]
 
 - Page card reads are tree-comparison-bound; worklist marks use the matching leaf-wide comparison. [26]
-
 
 - The task document head offers one canonical-reference task pick only when that reference exists. [220]
 
@@ -491,10 +468,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - The persistent Chats layer mounts one RoleChatsPane; no SessionsView selected-context wiring is mounted. Anchor: `RoleChatsPane` [43]
 
-
-
 - `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
-
 
 - ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content. [8]
 - Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters. [11]

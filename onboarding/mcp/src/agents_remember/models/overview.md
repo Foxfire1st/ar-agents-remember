@@ -21,7 +21,6 @@ role_capsules/contracts.py retains source-addressed needs/gives endpoints, valid
 
 Direct landing can report a brief refresh advisory separately from ledger diagnostics and the exact commits.
 
-
 `read_files.py` declares named file rows with optional compact briefs. A fuller brief can carry rule text and local knowledge. The counts form can include counts with the brief pointer. A compact row can carry the pointer and saved freshness without counts. `tools/knowledge_responses.py` declares bounded writer notes and the full report location.
 The MIK-R109 naming fields still identify locations and state. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. The review models carry the resolved four-tree comparison, the leaf's highest recorded comparison number and the delivered notice value, which names the pair a landed leaf delivered and whether the comparison on screen is that pair; carrying them reviews nothing. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
 
@@ -66,7 +65,7 @@ The recorded-meaning review models separate eligible steps, readable none and un
 
 The enduring vocabulary rule is one declaration consumed by producers and readers. Ownership can be at a producer or at this lower wire layer when importing the producer would create a cycle. Worktree lifecycle and guidance aliases now live in `models/worktree.py`; Git state/freshness and readable memory mode are imported from their kernel owners. The leaf-reference refusal vocabulary (`LeafRefStatus`) and its type-derived `VALID_LEAF_REF_STATUSES` membership set are owned by `worktrees/leaf_refs.py`; no model in this package consumes them. The historical drift-repair examples explain why a copied status set can reject a producer's real payload after its operation already occurred; they do not establish present exhaustive coverage.
 
-`ContextPacketV2` owns compact startup context, with storage path rules nested in the memory storage shape rather than duplicated at top level. A retained inconsistency needs explicit description: `ContextDiagnosticsHint.providerDiagnosticsTool` still defaults to `provider_diagnostics`, while that name is absent from the public roster and response registry. This default is present schema wording, not an actionable public-tool recommendation. Provider summary/detail models may survive without making deleted provider tools public.
+`ContextPacketV2` owns compact startup context, with storage path rules nested in the memory storage shape rather than duplicated at top level.
 
 **Offline token accounting.** `tokens.py` constructs the default exact `o200k_base` counter at module scope. Before loading the encoding it verifies the shipped vocabulary's presence, supported encoding name, and SHA-256. Only then does it temporarily point `TIKTOKEN_CACHE_DIR` to the verified file's parent, under a reentrant lock, restoring the previous environment value afterward. The filename is derived from the source URL's SHA-1 cache key. Verification must precede the library load: the inherited intent is to refuse missing or byte-wrong package data rather than permit a startup download or rewrite. The lock coordinates participating callers only; unrelated threads can still observe or modify the process-global environment. `ApproximateTokenCounter` exists as a separately selectable implementation, but the default exact counter does not automatically fall back to it on vocabulary failure. Whole-result accounting includes its metadata through a stable-count loop.
 
@@ -192,8 +191,6 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 ## Retained Evidence Context
 
-
-
 - The packet shapes bind one comparison and refuse an inconsistent collection or coverage count.
 
 - A frame manifest refuses an inconsistent asset digest, an unlisted entrypoint and a non-older parent.
@@ -252,7 +249,6 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The shared route-directory type. [23]
 
-
 - The four census schemas registered for dispatch. [25]
 
 - The latest status entry across every census governs. [26]
@@ -263,9 +259,7 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The onboarding-trace row and its `markers` list. [29]
 
-
 - The one continuation token and what it binds. [32]
-
 
 - The integrity response's optional fields. [35]
 
@@ -285,16 +279,13 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The response kinds a token pages, and the public queue cap. [44]
 
-
 - At least two alternatives, exactly one chosen. [46]
 
 - Superseded is derived from later decisions' `supersedes`. [47]
 
 - The reconsider links and MIK-R14's subject. [48]
 
-
 - The ref namespace and the durable record. [49]
-
 
 - The subjects, the row subject and the gate predicate. [51]
 
@@ -312,17 +303,17 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The entry's facts describe exactly its returned members. [63]
 
-
-
-
 - Public MCP payload builders validate through the response model registry. [67]
-
 
 - The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
 
 - The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [69]
 
+
+
 - The registry maps every modeled builder and the advertised public subset to response models. [70]
+
+
 
 - Contract tests prove public tool coverage and schema generation. [71] [77]
 
@@ -338,7 +329,9 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - Strict envelope fields retain contract guidance and answer/log accounting without notifier banners. [317]
 
+
 - Flexible envelope fields use the same current guidance/answer/log header without restoring removed declared banner fields. [318]
+
 
 - The wire-test module documents the 165-of-213 `context_packet` baseline. [82]
 
@@ -348,10 +341,7 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`). [86]
 
-
-
 - Direct landing returns cache observations separately from commits. [87]
-
 
 - Public message transport names only code and memory. [88]
 
@@ -360,8 +350,6 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 - Strict lifecycle operation record/projection. [90]
 
 - Queue candidate projection. [91]
-
-
 
 - The provenance envelope and its normalized-UTC requirement. [98]
 
@@ -375,15 +363,13 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The trust statement is a constant and a declared tool set is observed, never applied. [106]
 
-- The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate. Anchor: `TOOL_RESPONSE_MODELS` [107]
+
+- The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate. [107]
 
 
 - The retained graph subset is exact membership and authored role vocabulary. [109]
 
-
-
 - The selected tree's revision state is derived outside authored revision payload seals. [112]
-
 
 - The family module reads exact sealed index revisions; canonical writers are retired. [116]
 
@@ -441,10 +427,7 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
 
-
-
 - The strict file-reader response declares named files, governing overviews, observed state and optional brief status. Anchor: `ReadArFilesResponse` [242]
-
 
 - The strict envelope base the field joined. [244]
 
@@ -480,20 +463,15 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The base every file model inherits. [262]
 
-
 - Schema dispatch refuses unknown schemas. [264]
-
 
 - The freeze predicate. [267]
 
-
 - The history row ID kind. [269]
-
 
 - All of an owner's history files read as one. [272]
 
 - The attempt-qualified history path. [273]
-
 
 - Current imported source owns this scoped route boundary. [275]
 - Current imported source owns this scoped route boundary. [277]
@@ -513,7 +491,9 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The overload failure carries the code reviewer_busy. [285]
 
+
 - The response shape. [286]
+
 
 - `TaskReopenResponse` lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape. [287]
 
@@ -533,7 +513,9 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
 
+
 - One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance. [295]
+
 
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
 
@@ -541,14 +523,11 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - Shaped bounds, final rows, interim ownership and exceptions each participate in bound resolution. [298]
 
-- Provider diagnostics remains a schema default despite public removal. [299]
-
 - Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
 
 - Refusal declarations live in a focused module and are re-exported. [301]
 
 - Activation record state includes vacant; selection and observed vocabularies differ. [302]
-
 
 - Shared worklist predicates preserve different covered/uncovered answers. [304]
 
@@ -562,17 +541,13 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - **Retained historical source account — superseded by the current route account:** The one spelling of a link target, and the gate's predicate. [65]
 
-
 - **Retained historical source account — superseded by the current route account:** Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations. [294]
-
-- **Retained historical source account — superseded by the current route account:** Provider diagnostics remains a schema default despite public removal. [299]
 
 - **Retained historical source account — superseded by the current route account:** Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
 
 - **Retained historical source account — superseded by the current route account:** Refusal declarations live in a focused module and are re-exported. [301]
 
 - **Retained historical source account — superseded by the current route account:** Activation record state includes vacant; selection and observed vocabularies differ. [302]
-
 
 - **Retained historical source account — superseded by the current route account:** Measurement coverage and measured disagreement determine assessment binding status. [305]
 
@@ -632,18 +607,15 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - The current tree-review payload carries a judgment pane and no assessment-count display. The earlier card described unassessed as absence in those counts; that account is historical. [233]
 
-
 - The frozen base and identifier boundary: UUID values render canonical text; string inputs are stripped and lowercased, then rejected if the cleaned spelling is not canonical lowercase hyphenated UUID text. [95]
 
 - The retained operation and refusal-code Literal vocabulary, with the typed KnowledgeRefusal value. The graph, candidate-change, snapshot, merge, judgment and detection extensions are historical contributions, not a declaration of live canonical-database write operations. [100]
-
 
 - Historical candidate-boundary contribution: the two refusal codes and three operation members added by that leaf remain in the retained Literal vocabulary; their declaration does not establish a live write API. [138]
 
 - The retained operation Literal includes the historical candidate-boundary contribution; it does not establish current candidate write operations. [139]
 
 - **Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API. [153]
-
 
 - **Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API. [164]
 
@@ -730,8 +702,6 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
 - The history file: one owner, one row per subject, a strict `closed` flag. [265]
 - The reconsideration row retains its own subject and disposition grammar. [66]
-
-
 
 - The models declare optional compact file briefs, optional stored titles and product start notice reports. [346]
 - `compact_tool_schema` returns a lossless, deep-copied MCP tool JSON Schema that strips only schema-level `title`, redundant `default: null`, and immediate top-level `$defs` model descriptions while preserving literal property names and all wire constraints. [343]

@@ -98,7 +98,6 @@ the production path to drive.
 
 ## Evidence
 
-
 Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
 
 > `TestPublisherCallerAddress` (`:759-836`)
@@ -107,7 +106,6 @@ Superseded card wording retained for custody (not certified as true of any sourc
 
 > `_tool_publish_bare_name` (`:839-878`)
 
-
 ### Repo-Internal References
 
 > Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = ["
@@ -115,11 +113,6 @@ Superseded card wording retained for custody (not certified as true of any sourc
 > Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = ["
 
 > Retained earlier citation wording: - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
-
-
-
-
-
 
 ### Repo-Internal References (renewed)
 
@@ -165,8 +158,6 @@ closeout entry point the rest of the integration suite uses.
 At that `260921-ICR-L15` source epoch, the recorded account was: the module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
 assessment, and the same `curator_coherence_subject_assessment_state` projection under test.
 
-
-
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
@@ -174,7 +165,12 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 - The `integration` lane selects `mcp/tests/test_curator_review_assessment_publication.py`. [1] [2]
 
 
+
+
 - The lifecycle catalog lists `mcp/tests/test_curator_review_assessment_publication.py` among the exact consumers of `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [3]
+
+
+
 
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py`.
 - The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]

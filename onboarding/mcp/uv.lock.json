@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
-        "content": "sha256:d5a8e1e6271f728c24f98fcac92de295a4138c9ec737b76bd0abb2873c06027f",
+        "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+        "content": "sha256:2706c5cf78f6bb225e4b439ee08b7a68851f562687540b46ea40092947c4a10d",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
-        "content": "sha256:78e23f4944acc887d7f764cc88538a528e0b4678901332e212a01f4ce2e527ac",
+        "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+        "content": "sha256:5bf2c1bb5c49e302a051084439c001f17b8800fea8c00695cd6baa73cb485c78",
         "locator": {
           "kind": "file"
         }
@@ -40,14 +40,14 @@
   ],
   "references": {
     "2": {
-      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.",
+      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.\n\nAnchor: `[[package]]` / `name = \"agents-remember-mcp\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "9111f219d7dcf97021d6681ad2dd742c85a47091",
-            "content": "sha256:eea3d05fb5ef33afcbb90880e935f807d5804264ba63c97a8e5a1bddfeb6faa9",
+            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+            "content": "sha256:136fee7a3e654708671380e5c00e511efe31cff61d86ec8a8420ee0fc472b9bb",
             "locator": {
-              "end": 24,
+              "end": 23,
               "kind": "line_range",
               "start": 1
             }

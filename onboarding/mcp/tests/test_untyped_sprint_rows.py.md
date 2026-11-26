@@ -39,4 +39,3 @@ not a fresh Curator execution.
 - The skipped-row control completes an in-progress master and preserves the sprint source pair. [3]
 
 - Navigation of raw whole application results stays direct and does not reinstate a retired public reader. The later rule-14 repair changes only the skipped-row completion predicate and its comment; other row, file, linkage and retirement assertions remain unchanged. [4]
-

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
-    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: SECURITY.md (lines 1-160) accurately describes the local stdio tool server, loopback dashboard/host defaults, request guards, server_info reporting, and secret-handling boundaries.",
-    "task": "261112-BUG-L38",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), SECURITY.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/serving/write_guard.py"
     },
     {
-      "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+      "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/app.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
     {
-      "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
+      "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/tools/core.py"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -117,14 +117,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T22:06:22+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

@@ -1,14 +1,45 @@
 {
   "path": "mcp/tests/test_removed_stores.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a9cfe150c6ab2e921ccae57b23d04291511a16ba",
+        "content": "sha256:f8698e7c52a57fab3b5405dfac2563362ae39c764812d7dac92c1f4f3a82c230",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_provider_trees_including_empty_dir_are_reported_and_removed"
+        }
+      },
+      "facet": "Legacy providers, logs/providers, and logs/observer/providers directories (including empty directories) are reported as removed stores and removed only by removed-stores.",
+      "id": "PRF-6FXFDW",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §2",
+        "leaf": "261125-DEP-L2"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Removed-store reporting and explicit deletion tests: implementation/assertion boundary described above.\n\nAnchor: `test_the_registered_install_files_the_stores_and_answers_their_count`",
+      "note": "Removed-store reporting and explicit deletion tests: implementation/assertion boundary described above.\n\nAnchor: `` `test_the_registered_install_files_the_stores_and_answers_their_count` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "296117d80139f8ec043d8af5744e643dc0c56939",
-            "content": "sha256:015b28885335e4f63630c7335c80cfd6f9241189432243f74869eae618d51f72",
+            "blob": "a9cfe150c6ab2e921ccae57b23d04291511a16ba",
+            "content": "sha256:e2d3c22ffb066c41d780c63f983e29a79596d0fc76cfcb28ad6c703b2499ffdb",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9cfe150c6ab2e921ccae57b23d04291511a16ba",
+            "content": "sha256:e520134382c13b7a0afcf5df75b501a11682e5bd3c5cb78ca26d6bf15d229e23",
             "locator": {
               "kind": "file"
             }
@@ -22,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "296117d80139f8ec043d8af5744e643dc0c56939",
+            "blob": "a9cfe150c6ab2e921ccae57b23d04291511a16ba",
             "content": "sha256:9c1bcdfee527e27cf530cb4d2c75185291b3447eb021a01a77144196f0f4bbfd",
             "locator": {
               "kind": "symbol",
@@ -38,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "296117d80139f8ec043d8af5744e643dc0c56939",
+            "blob": "a9cfe150c6ab2e921ccae57b23d04291511a16ba",
             "content": "sha256:d8c23e6f2894b2c61c6e78b0d113c16a5178d7da7128d6183f35934ca21acd9a",
             "locator": {
               "kind": "symbol",

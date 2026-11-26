@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56033cbab370647c1152aefbc52572442f49be9d",
+            "blob": "8cb96d00f7f7d056a3860cc61442f5e58f0ec6d3",
             "content": "sha256:d621c93a02f66af7a3988d02f24fca759027f38d2113ee60548158c7f6a31cc4",
             "locator": {
               "kind": "symbol",
@@ -146,7 +146,7 @@
         },
         {
           "anchor": {
-            "blob": "56033cbab370647c1152aefbc52572442f49be9d",
+            "blob": "8cb96d00f7f7d056a3860cc61442f5e58f0ec6d3",
             "content": "sha256:defc4cfae29454292a31880a353b85ccb127493ebc0da727d638bce58b2f451b",
             "locator": {
               "kind": "symbol",
@@ -163,12 +163,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:37427aa1cc2f1304794c07ff376813311070b7b149da51558d766fea9c9a082a",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:295af77a79ed7e289b35fc237245cb18d60a6292d73281a552b45bf7434d458c",
             "locator": {
-              "end": 541,
-              "kind": "line_range",
-              "start": 517
+              "kind": "symbol",
+              "name": "start_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -177,16 +176,27 @@
       ]
     },
     "12": {
-      "note": "start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request.  Anchor: `start_result`",
+      "note": "start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request.  Anchor: `start_result`\n\nAnchor: `start_result`, `_admitted_start_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:37427aa1cc2f1304794c07ff376813311070b7b149da51558d766fea9c9a082a",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:295af77a79ed7e289b35fc237245cb18d60a6292d73281a552b45bf7434d458c",
             "locator": {
-              "end": 541,
-              "kind": "line_range",
-              "start": 517
+              "kind": "symbol",
+              "name": "start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:5d5feeddb947085aedeb9ef830e26f226616aa668db464e0ebedd7484f9bb0be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_start_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -199,12 +209,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:d4daffb6bad4b41d0826b198c5fafaefaf36f6bde9ce08666c592fab7ad09e0b",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:ded16f1f9c6ed1544cb278b842fa80fbebe2fcab09de6a79775571499eb277c1",
             "locator": {
-              "end": 741,
-              "kind": "line_range",
-              "start": 705
+              "kind": "symbol",
+              "name": "_create_start_enclosure"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -212,25 +221,12 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:d675f016ff245bd67eafa6a925f861a7a08e5661812f73177edaf3b16da1adea",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:1387e93e4293d7c82852b22e1a37355aca13d5a216dd28053456414aa7fd8d20",
             "locator": {
-              "end": 554,
+              "end": 542,
               "kind": "line_range",
-              "start": 554
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:01f55406dba16dbe4ee91b173a634e001eb1f526cc438bf457ba04026268ff0a",
-            "locator": {
-              "end": 741,
-              "kind": "line_range",
-              "start": 517
+              "start": 542
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

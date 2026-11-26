@@ -14,7 +14,6 @@ The runtime-install answer may omit its host block. In that case the helper read
 
 ## Evidence
 
-
 ## 260928-MIK-L96 The public install receipts
 
 `Operations.runtime_install` retires the previous current receipt into history before its child runs and records fresh cut, timeout and malformed outcomes with the underlying error and the real receipt and server-log paths, instead of leaving an old success visible.
@@ -23,9 +22,7 @@ The runtime-install answer may omit its host block. In that case the helper read
 
 ## Current source evidence
 
-
 - A compact install response reads its confined whole report without overwriting the response outcome. [3]
-
 
 - The scoped current source carries the module/document behavior described above. [1]
 

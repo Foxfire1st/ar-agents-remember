@@ -16,7 +16,7 @@ Discovery reads only `$XDG_CONFIG_HOME/agents-remember/agents-remember-settings.
 
 The install cases copy an older `.claude/mcp/agents-remember-settings.json` once to the user-config path with its bytes and mode, report `copied`, `already-present`, `would-copy` or `no-source`, and leave every harness folder and user-owned workspace file exactly as they were. A copy that cannot open, probe, create or finish its destination reports `permission` or `refused` with the source and user paths and a developer remedy, removes only its own incomplete destination, never widens directory permissions, and the rest of the install still completes.
 
-The help cases walk the umbrella CLI parser through `_config_help_by_command`. The `--config` help of `memory-citations`, `providers-remove`, `removed-stores` and `knowledge-bootstrap` must name the user settings file `~/.config/agents-remember/agents-remember-settings.json` (under `XDG_CONFIG_HOME` when set), whatever the current directory; no `--config` help may claim discovery from the working or current directory; and the dashboard `--daemon` help must say that it restarts a daemon whose version, Python source digest, host or port differs.
+The help cases walk the umbrella CLI parser through `_config_help_by_command`. The `--config` help of `memory-citations`, `removed-stores` and `knowledge-bootstrap` must name the user settings file `~/.config/agents-remember/agents-remember-settings.json` (under `XDG_CONFIG_HOME` when set), whatever the current directory; no `--config` help may claim discovery from the working or current directory; and the dashboard `--daemon` help must say that it restarts a daemon whose version, Python source digest, host or port differs.
 
 The registration-example case (L84-LC-03) reads `examples/mcp/server.example.json` and splits its `args` with `_uvx_split`, a model of uvx's argument order: uvx options first, where a value-taking option such as `--refresh-package` consumes the next argument, then one package command, then the command's own arguments. It asserts the command is `uvx`, the only uvx option is `--refresh-package agents-remember-mcp`, the command is `agents-remember-mcp@latest` and the command receives `--config` with the settings path; it also shows the split refusing the earlier form `--refresh-package agents-remember-mcp@latest --config …`, where `--config` would land on uvx itself. The case needs no network and no uv binary.
 
@@ -64,8 +64,13 @@ The retained source anchors below support the fixture roles and assertion bounda
 - An interrupted copy removes only its own incomplete destination. [14]
 - Every settings-copy OS error is reported as permission or refused while the install completes. [15]
 - Every `--config` help of the umbrella parser is collected by subcommand. [16]
-- The `--config` help of four subcommands names the user settings file whatever the current directory. [17]
+
+
+- The `--config` help of three subcommands (`memory-citations`, `removed-stores`, `knowledge-bootstrap`) names the user settings file whatever the current directory. \[17] [21]
+
+
 - No `--config` help claims discovery from the working or current directory. [18]
+
 - The dashboard `--daemon` help names the restart on a differing Python source digest. [19]
 
 ### Cross-Repo References

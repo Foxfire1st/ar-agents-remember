@@ -81,6 +81,7 @@ None. This behavior is repository-owned.
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
 - Immutable inputs and no coverage-floor setting [1]
+
 - Ordered fixed checks and pytest plan [2]
 - Admitted exact selection and coverage arguments [3]
 - Atomic mutable progress distinct from evidence authority [4]

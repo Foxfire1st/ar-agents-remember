@@ -6,9 +6,6 @@
 
 ## Current source contract evidence
 
-
-
-
 ## Purpose
 
 Strict ToolResponse contracts for the four mounted knowledge operations: knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write. These shapes declare the wire envelope; they neither author knowledge nor reinterpret a view's payload.
@@ -149,69 +146,7 @@ No configured domain documentation could be checked.
 - Where the four classes are imported and mapped to their tool names in the registry. [36]
 
 
-
 - The four advertised knowledge tool names in the public roster. The module's own `__all__` re-exports three of them, and `KnowledgeWriteResponse` is defined and registered without being listed there. [37]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The four models are two declarations in one: the operation column and the base envelope. The module's `__all__`
 re-exports three of them; `KnowledgeWriteResponse` is defined here and registered in the tool registry without
@@ -222,39 +157,15 @@ projection is pinned to `PUBLIC_TOOLS` in `mcp/public_surface.py`, and the handl
 whose dicts these models validate live in `mcp/tools/knowledge.py`. Every row below is a measured range
 in the working candidate.
 
-
 - The module's `__all__` re-exports three of the four mounted knowledge response models; `KnowledgeWriteResponse` is defined here and registered without being listed there. [16]
-
-
-
-
-
 
 - The strict Git-tree diff response names revisions, trees, counts, bounded decision records and their total beside a report, without carried patch/completeness/omission fields. [19]
 
-
-
-
-
-
 - The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract. [53]
-
 
 - The choke point that validates a handler's plain dict against the registered model, so an undeclared key is a validation error. [27]
 
-
-
-
-
-
-
-
-
 - The closed view refusal vocabulary the read handler's `unknown_view` code comes from, which these models carry as a plain string rather than re-declare. [33]
-
-
-
-
 
 ### Cross-Repo References
 
@@ -267,22 +178,12 @@ No meaningful cross-repo references found.
 
 - The docstring paragraph on the route-chain rows, `routeChain` and the family seed. [38]
 
-
 - The docstring paragraph on the leaf read and family names. [39]
 
 - The docstring paragraph on proofs beside the view. [40]
 - The docstring paragraph on currentness beside the view. [41]
 - The docstring paragraph on a memory tree's bounded page. [42]
 - The module docstring's statement that a memory tree is named, never hidden, and that a partial index is never presented as complete. [43]
-
-
-
-
-
-
-
-
-
 
 - The optional `routeChain` field on the read model, for a path's refusal. [49]
 - The optional `families` field on the read model. [50]

@@ -217,22 +217,11 @@
       ]
     },
     "107": {
-      "note": "The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
@@ -2393,7 +2382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
             "locator": {
               "kind": "symbol",
@@ -2410,12 +2399,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
             "locator": {
-              "end": 88,
+              "end": 86,
               "kind": "line_range",
-              "start": 88
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -3401,8 +3390,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
-            "content": "sha256:8f93e5820eb7e2025cb1c2766775afceef103d359a7e142b1734e6ca3e6d020c",
+            "blob": "c55a4880d11f2ca4041ee9b383e25fb052ffa76e",
+            "content": "sha256:c0ce4f6155821640b0a5dbd8ec0ab640f770b7cb19501b6899be008590136aa8",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallResponse"
@@ -3435,7 +3424,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
             "locator": {
               "end": 79,
@@ -3511,7 +3500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",
@@ -3643,12 +3632,12 @@
       ]
     },
     "295": {
-      "note": "One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:4a2955c03025ce5e578c4efc043dc85bd51a1cd02057c6fc59b517564874378d",
             "locator": {
               "kind": "file"
             },
@@ -3711,7 +3700,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:461007092af6980f587ac3f4247b21c30e23eb0438420eed416cbec5434274ef",
             "locator": {
               "kind": "symbol",
@@ -3723,7 +3712,7 @@
         },
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -3735,7 +3724,7 @@
         },
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:f360f64a90ef6927ceb594662430a3251db55814dc532d30176a727033283cb9",
             "locator": {
               "kind": "symbol",
@@ -3747,7 +3736,7 @@
         },
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
               "kind": "symbol",
@@ -3759,30 +3748,13 @@
         },
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
               "name": "bound_for"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "299": {
-      "note": "**Retained historical source account — superseded by the current route account:** Provider diagnostics remains a schema default despite public removal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:0c2a961b4cfbd1bdbd16e6072c2e8dd5861fa1f032ec63a8c156d137355e0f4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContextDiagnosticsHint"
-            },
-            "path": "mcp/src/agents_remember/models/context_packet.py"
           },
           "kind": "code"
         }
@@ -4218,7 +4190,7 @@
         },
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:461007092af6980f587ac3f4247b21c30e23eb0438420eed416cbec5434274ef",
             "locator": {
               "kind": "symbol",
@@ -4266,7 +4238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:ad3bf78d4645f124ffffb64871cd3a6578a8abd6d974757dec64dfda336272e0",
             "locator": {
               "end": 87,
@@ -4284,8 +4256,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
-            "content": "sha256:e80a9fb2edd6a8227f338379dfabb4ea9996f9ab0179d2604bfe499149a7f967",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:a85aa5342c326f1e6683379c7639d657fb82ab1a40ad9476b09b82b81f828d84",
             "locator": {
               "kind": "symbol",
               "name": "FlexibleResponseEnvelope"
@@ -4877,7 +4849,7 @@
         },
         {
           "anchor": {
-            "blob": "48a4226f37c02f8008dab228b140cf929d60b0e1",
+            "blob": "38e81da039d6205395dbfa341d5d680fdbcd5f85",
             "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
             "locator": {
               "end": 267,
@@ -4895,7 +4867,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+            "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
             "content": "sha256:333201f187b41ee930ef52be503736779fc0ce24c41edcaa97b8cc87bc728a44",
             "locator": {
               "end": 177,
@@ -5044,12 +5016,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:680194208c0a8dff954647deac098f8475435d3bdd0cd1e2f9a9cb0a0acc9f62",
             "locator": {
-              "end": 484,
+              "end": 479,
               "kind": "line_range",
-              "start": 471
+              "start": 466
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5959,12 +5931,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
-              "end": 411,
+              "end": 406,
               "kind": "line_range",
-              "start": 405
+              "start": 400
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5972,12 +5944,12 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
-              "end": 440,
+              "end": 435,
               "kind": "line_range",
-              "start": 429
+              "start": 424
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -5986,33 +5958,11 @@
       ]
     },
     "70": {
-      "note": "The registry maps every modeled builder and the advertised public subset to response models.\n\nAnchor: `TOOL_RESPONSE_MODELS` `PUBLIC_TOOLS`",
+      "note": "The registry maps every modeled builder and the advertised public subset to response models.\n\nAnchor: `TOOL_RESPONSE_MODELS`, `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
@@ -6070,12 +6020,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:40e17c3ab65b443487b3121cf92765cba97377bcba5b0d5bf58e572f937dffbd",
             "locator": {
-              "end": 538,
+              "end": 533,
               "kind": "line_range",
-              "start": 534
+              "start": 529
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -6088,12 +6038,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
             "locator": {
-              "end": 519,
+              "end": 514,
               "kind": "line_range",
-              "start": 515
+              "start": 510
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -6106,86 +6056,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:f2c810dba127b09c8bc2d87e915ae66ef665f488cd18dfce21f51486fa9c173d",
-            "locator": {
-              "end": 96,
-              "kind": "line_range",
-              "start": 96
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:01af6e42a47b12232d6faf1b520edee21250408fde1b9786fd06f6956ab54ad1",
-            "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 97
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:5c7b7e0ddc023f486f0aec9a3bea7bffb0c01fd4183176511735b104c7b06c73",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 103
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:68b4d35c93f9dd39275c0f04513efb6cab5208fbda6493cf9ef7216549a6353b",
-            "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:6c3988db7ad9f6da8a9998c47ddd4a091f5fd0cd383bc5c98556c37a6936453c",
-            "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 95
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:0f79bb847ed5060158f2c4df54ee729a2eca0589470352309fea91584f1c0b6f",
-            "locator": {
-              "end": 102,
-              "kind": "line_range",
-              "start": 102
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:1fa0e137fb7a625fecb48d92744a661fc5fb3a05fbad6c7dc46e0efdda5298ba",
             "locator": {
               "end": 94,
               "kind": "line_range",
@@ -6197,12 +6069,90 @@
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:fcd08cb2085b842e309edbce6d4f9965dd019c2dba710c44a95280a9f6b33199",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:01af6e42a47b12232d6faf1b520edee21250408fde1b9786fd06f6956ab54ad1",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:5c7b7e0ddc023f486f0aec9a3bea7bffb0c01fd4183176511735b104c7b06c73",
             "locator": {
               "end": 101,
               "kind": "line_range",
               "start": 101
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:68b4d35c93f9dd39275c0f04513efb6cab5208fbda6493cf9ef7216549a6353b",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:6c3988db7ad9f6da8a9998c47ddd4a091f5fd0cd383bc5c98556c37a6936453c",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:0f79bb847ed5060158f2c4df54ee729a2eca0589470352309fea91584f1c0b6f",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:1fa0e137fb7a625fecb48d92744a661fc5fb3a05fbad6c7dc46e0efdda5298ba",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:fcd08cb2085b842e309edbce6d4f9965dd019c2dba710c44a95280a9f6b33199",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -6379,7 +6329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:0a037e0cf7b0ccc2fc9deac106b627b65d267663a63891182a0842eb313b6bb2",
             "locator": {
               "end": 9,
@@ -6392,7 +6342,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:69f346189d793262fd56c3cfed8eeb7ec83832e5f500dd6c788fb2d3a3a7cd62",
             "locator": {
               "end": 38,
@@ -6410,7 +6360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
               "end": 47,
@@ -6423,7 +6373,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:e81ad413706118d9812ccbb48039cd61a58b25ddbadefe20a520cb1c7924bb37",
             "locator": {
               "end": 56,
@@ -6436,7 +6386,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:60c082da986f1df921d8415fd7403fc61c689d99feff4c1b7751169780bf0297",
             "locator": {
               "end": 78,
@@ -6454,7 +6404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:243974cc7452f180152758ccfad8fa0818c2f6a3b9cede132a151225b7e86f00",
             "locator": {
               "end": 10,

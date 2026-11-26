@@ -153,8 +153,7 @@ The publication and reclamation tools forward flat:
   requires the same explicit developer approval as `worktree_integrate`; captures the master's own
   live code and memory work-branch tips and proves source ancestry; records `checkpointed`,
   retires nothing, runs no cleanup. It is not the pause: a pause publishes nothing and moves no ref.
-- `worktree_cleanup(contract_path, dry_run, teardown_providers=True)` — removes worktrees and merged
-  task branches **after** integration, and by default reclaims the worktree's isolated provider stack.
+- `worktree_cleanup(contract_path, dry_run)` — archives lifecycle evidence and removes worktrees, merged task branches, reports, and enclosure **after** integration.
 - `worktree_abandon(contract_path, dry_run, force)` — discards a task without integrating it. Unlike
   cleanup it needs no completed integration; without `force` it refuses dirty worktrees and unmerged
   branches and reports the commits, with `force=true` it discards them
@@ -205,13 +204,7 @@ No additional file-local TODO is established by this candidate review.
 
 The closeout preview and apply descriptions state that worktree closeout checks candidate trees through the invariant gate and that `knowledge-gate-refused` carries findings (apply also reports delivered-vs-reviewed status). This is a registration-description change; the declaration introduces no additional transaction, quality suite or authority.
 
-
-
-
 - Closeout docstrings name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. [13]
-
-
-
 
 ## Evidence
 
@@ -224,8 +217,6 @@ No configured external domain source applies.
 
 ### Repo-Internal References
 
-
-
 Retained authoring-row wording:
 
 Finding: Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.
@@ -234,12 +225,9 @@ Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
-
 - The payload builders these forward to. [2]
 
-
 - The checkpoint-landing tool declaration and the payload builder it forwards to. [3]
-
 
 - `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. [4]
 - Refuse to stage anywhere except a task's own throwaway worktree. [5]
@@ -257,7 +245,6 @@ No external implementation source applies.
 ### Docs References
 
 No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
-
 
 ### Cross-Repo References
 
@@ -282,9 +269,7 @@ Worktree closeout and direct landing expose optional message fields syntacticall
 
 ### Reconciled Source Evidence
 
-
 - The registrar composes four command groups and mounts task-addressed control with retired-journal guidance. Enclosure adoption belongs to the separate worktree registrar. [10]
-
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -317,21 +302,8 @@ Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
-
-
-
 - Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. [1]
 
-
-
-
-
-
 - This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof. [11]
-
-
-
-
-
 
 - Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call. [12]

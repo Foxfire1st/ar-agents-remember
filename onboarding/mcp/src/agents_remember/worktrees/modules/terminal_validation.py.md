@@ -38,7 +38,6 @@ Module-level surface:
 - `_branch_presence` (function, lines 502-508)
 - `_checked_out_paths` (function, lines 511-523)
 - `_remote_branch_preflight` (function, lines 526-550)
-- `_provider_blockers` (function, lines 553-572)
 - `_result_blockers` (function, lines 575-587)
 - `_done_blockers` (function, lines 590-606)
 - `_nested_blockers` (function, lines 609-622)
@@ -70,7 +69,7 @@ The change makes a reasonless blocker unrepresentable and gives a surviving non-
 reason; it adds no teardown capability, and a genuinely blocked teardown still blocks with its own
 reason.
 
-`TerminalResult` bundles one terminal operation's four (or five, with `drift_snapshots`) output
+`TerminalResult` bundles one terminal operation's three (or four, with `drift_snapshots`) output
 collections with `preview`, and `TerminalExpectation` states per collection which field proves
 reclamation, whether that collection is a preview, and which reasons are benign.
 `terminal_result_blockers(result)` reads a preview through `TerminalExpectation(preview=True)`,
@@ -115,8 +114,8 @@ None.
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
 
-
 - External-memory preflight excludes the root cache while preserving other dirtiness. [1]
+
 
 
 - Defines the class `BranchTarget`. [2]
@@ -124,20 +123,29 @@ This module defines the top-level symbols cited below; each row points at the ex
 - The series child census fails closed on a non-canonical worktree group; the legacy guard preserves a colliding child `reports` enclosure only for legacy-shape contracts. [4]
 
 
-- Defines the function `terminal_preflight`. Anchor: `terminal_preflight` [5]
+
+- Defines the function `terminal_preflight`. [5]
+
 
 
 - `TerminalExpectation` states what one collection must show: the field that proves reclamation, whether it is a preview, and the benign reasons. [6]
+
+
 - `TerminalResult` bundles one terminal operation's output collections with whether they are a preview or what happened. [7]
+
+
+
 - Defines the function `terminal_result_blockers`. [8]
+
+
 
 
 - Defines the function `_worktree_preflight`. [9]
 
 
 
-
 - Builds the exact code and optional external-memory terminal branch targets owned by the validated contract. [10]
+
 
 
 - Defines the function `_branch_preflight`. [11]
@@ -147,7 +155,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 - Defines the function `_branch_checkout_refusal`. [15]
 
 
+
 - Defines the function `_cleanup_branch_preflight`. [16]
+
 
 
 - Defines the function `_abandon_branch_preflight`. [17]
@@ -155,17 +165,21 @@ This module defines the top-level symbols cited below; each row points at the ex
 - Defines the function `_checked_out_paths`. [19]
 - Defines the function `_remote_branch_preflight`. [20]
 
-- Defines the function `_provider_blockers`; every provider, container and network blockage it emits goes through `_blocker`. [21]
-
 
 - Defines the function `_result_blockers`, which reads each collection through a `TerminalExpectation`. [22]
+
 
 - Every entry the expectation says must have been reclaimed and was not. [23]
 - The remote half of a branch entry, reported separately from the local half. [24]
 - Answers a result item's reason, or why it carries none: `invalid-result` for a malformed item, operator language for a reasonless one. [25]
 - The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason instead of emitting an anonymous blocker. [26]
 - Defines the function `_blocked`. [27]
-- The focused cases that pin the reasonless result and the refusal of an unnameable reason. [28]
+
+
+
+- The focused cases that pin reasonless non-removal reporting and the refusal of an unnameable blocker reason. [28]
+
+
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
@@ -177,8 +191,8 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 drift-snapshot collection was the only one whose expectation omitted `preview=result.preview`
 (`T62`/`D49`). `_done_blockers` reads the *pending* key off that flag, and this collection's
 producer answers a dry run with `would_remove`
-(`kernel/primitives/drift_snapshot.py::_remove_snapshot_file`) exactly as the worktree, directory
-and provider collections beside it do. Without the flag the entry was neither reclaimed, nor
+(`kernel/primitives/drift_snapshot.py::_remove_snapshot_file`) exactly as the worktree and directory
+collections beside it do. Without the flag the entry was neither reclaimed, nor
 pending, nor reasoned, so `_blocker` (`:647-665`) raised and **every preview of a task that has a
 drift snapshot crashed on its own producer's output** — the repair is the one keyword argument at
 `:285-292`, and the three cases that hold it (a preview, a real reasonless result, and the

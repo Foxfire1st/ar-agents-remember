@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A unit test proves typing.get_type_hints resolves the public outside_scratch field instead of failing on class-body shadowing of the outside_scratch module."
+  },
+  "applicability": "Class-scope type annotation resolution on EnclosurePublicationArtifacts in lifecycle_operation_location.py.",
+  "conditions": [
+    "Runtime or static callers resolve annotations on EnclosurePublicationArtifacts via typing.get_type_hints."
+  ],
+  "exclusions": [],
+  "id": "INV-TYX0QS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_type_hint_contracts.py::test_enclosure_publication_artifacts_outside_scratch_type_hint_resolves"
+      ],
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R07@v1 item 6",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "EnclosurePublicationArtifacts keeps its public outside_scratch field while importing the outside_scratch module under an alias so typing.get_type_hints resolves outside_scratch in class scope.",
+  "supersedes": [],
+  "title": "EnclosurePublicationArtifacts aliases outside_scratch for type hints",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

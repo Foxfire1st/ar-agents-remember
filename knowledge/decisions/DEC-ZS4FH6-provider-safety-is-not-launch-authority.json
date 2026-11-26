@@ -30,18 +30,6 @@
     {
       "relation": "constrains",
       "target": "INV-5C5086"
-    },
-    {
-      "relation": "constrains",
-      "target": {
-        "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
-        "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
-        "locator": {
-          "kind": "symbol",
-          "name": "_metrics_loop"
-        },
-        "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-      }
     }
   ],
   "origin": {
@@ -55,8 +43,19 @@
     "leaf": "260928-MIK-L166",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

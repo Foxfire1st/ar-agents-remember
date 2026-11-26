@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
         "content": "sha256:0e9e766c8340ff7875bf5d51602b28b28bf4db298606c2722b49ec966c455513",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-        "content": "sha256:7a8bc800a87e292fd8e32256ca718365cedf95d4154527b973cc9785fba22229",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+        "content": "sha256:6c2443065d75f4c847c19e2a22e81b77fbc2c3d82443b070c0ea55e817492a25",
         "locator": {
           "kind": "symbol",
           "name": "_finish_abandon_without_remains"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
         "content": "sha256:041abe27538738bde04e44d55fed90807a912c4ffe40c64d7356ec59ae9cade6",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-        "content": "sha256:c15c995930ca31bdc5683cab6df878a9f9093926c581d04bc7d58245b931f64f",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+        "content": "sha256:5b68fd4bf220abc249cb68679d13410b781f5d209bd50bec5e982c841a8725f5",
         "locator": {
           "kind": "file"
         }
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
         "content": "sha256:22bf37eb5fcf04e074994d4ff4942c4e2b8dcea156f5cf4af6ce765202373aa0",
         "locator": {
           "kind": "symbol",
@@ -128,12 +128,12 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
         "content": "sha256:367c79d12a1064456921fa57c7b3d8ff8509efb2c529a25cc538d0e4b13fb901",
         "locator": {
-          "end": 371,
+          "end": 355,
           "kind": "line_range",
-          "start": 368
+          "start": 352
         }
       },
       "id": "RLZ-PJVT0S",
@@ -142,13 +142,13 @@
         "handoffEntry": "L168-CUR-M1-21-A013-01",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "_finish_abandon_without_remains plans the abandoned task/parent stage and returns task_stage_refusal before provider teardown; this enforces preflight before destructive terminal work.",
+      "rationale": "_finish_abandon_without_remains plans the abandoned task/parent stage and returns task_stage_refusal before directory removal; this enforces preflight before destructive terminal work.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-        "content": "sha256:def45ae4e1c84de55bbb63486136d4b5fa2db340d16fe804ee56f159372ece05",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+        "content": "sha256:d90367de87775a6e6b3f0f958af14a80c0bfc091e1311270fa7929f30d47cfce",
         "locator": {
           "kind": "symbol",
           "name": "_abandon_directories"
@@ -165,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-        "content": "sha256:1ba9c0dffa1ddd34f2b4662131cc43b9fdf361c1bef09a63a8b9068027459139",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+        "content": "sha256:2b1ee644d9d68097e91d320e030705b8547ff207429ab43bb4011474bf67df0a",
         "locator": {
           "kind": "symbol",
           "name": "_already_abandoned"
@@ -183,8 +183,26 @@
     },
     {
       "anchor": {
-        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-        "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+        "content": "sha256:d90367de87775a6e6b3f0f958af14a80c0bfc091e1311270fa7929f30d47cfce",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_directories"
+        }
+      },
+      "id": "RLZ-ZQPYZ3",
+      "invariant": "INV-FBATD2",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Reclaims any leftover <worktree_group>/provider-runtime directory directly via remove_tree during both series and leaf abandon.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+        "content": "sha256:8d8150576e3db60eb49d356cca3468bd453a435e5b39ac9eef850e8111fa4a6a",
         "locator": {
           "kind": "symbol",
           "name": "_publish_abandon"
@@ -206,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
             "content": "sha256:af7d9d6a32c120c161bbaa8d687a897ccd429fa7de09243fdafb289843c029ba",
             "locator": {
               "kind": "symbol",
@@ -270,7 +288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
             "content": "sha256:22bf37eb5fcf04e074994d4ff4942c4e2b8dcea156f5cf4af6ce765202373aa0",
             "locator": {
               "kind": "symbol",
@@ -286,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "blob": "049ba22ee42762f40b121e45e21f8d67eccc21c7",
             "content": "sha256:e17908e803a0963f77a43608b2d5adbd3cee3f03d892f343615f641b7a3d6fe3",
             "locator": {
               "kind": "symbol",
@@ -299,11 +317,11 @@
       ]
     },
     "14": {
-      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged` and `delete_branch_force` (from `terminal_branch_retirement`), and `remove_terminal_group` (from `terminal_group`) are reused through the terminal owners; `remove_empty_dir` remains only for `_abandon_directories`.",
+      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged` and `delete_branch_force` (from `terminal_branch_retirement`), and `remove_terminal_group` (from `terminal_group`) are reused through the terminal owners; `remove_empty_dir` remains only for `_abandon_directories`.\n\nAnchor: `remove_registered_worktree`, `remove_empty_dir`",
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -315,24 +333,11 @@
         },
         {
           "anchor": {
-            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:668fe963c9e63a21e06c992b1bd8e1d7925cb58f97ed82e22a1e645824a62ef7",
             "locator": {
               "kind": "symbol",
-              "name": "remove_terminal_group"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
-            "content": "sha256:18bbdf51031a00fed4c1d4c96c8b3f9bfd16c4a3e066ae07aa8c4da709a09ca4",
-            "locator": {
-              "end": 275,
-              "kind": "line_range",
-              "start": 224
+              "name": "remove_empty_dir"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -345,12 +350,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
-            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
+            "content": "sha256:19edd83cd339ae79dfda59760f928474d121cbe02b9ff9e75180dec801e67a6b",
             "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "WorktreeArgs"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -359,15 +363,27 @@
       ]
     },
     "16": {
-      "note": "Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.",
+      "note": "Abandon evaluates terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-            "content": "sha256:b06956e3484d8be45bc988d911c3cc804be80123b1df938433ab7abed48d84f6",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:ef9d3405ddadd9686e704d2779a5fc45986e75ea57bee1f7c64fe5def6699039",
             "locator": {
               "kind": "symbol",
               "name": "_abandon_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:9c641d340da256d01252dc7b98dee4625ae6801e4b3c762c24f8f5726f7d6bfd",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 218
             }
           },
           "kind": "code"
@@ -379,11 +395,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-            "content": "sha256:7a8bc800a87e292fd8e32256ca718365cedf95d4154527b973cc9785fba22229",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:6c2443065d75f4c847c19e2a22e81b77fbc2c3d82443b070c0ea55e817492a25",
             "locator": {
               "kind": "symbol",
               "name": "_finish_abandon_without_remains"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:66258dcf28a37a6eee18684e8a73e8b11d35f731ed1b88389dc1b1d565a4c3e6",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 323
             }
           },
           "kind": "code"
@@ -395,12 +423,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-            "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:8d8150576e3db60eb49d356cca3468bd453a435e5b39ac9eef850e8111fa4a6a",
             "locator": {
-              "end": 577,
-              "kind": "line_range",
-              "start": 518
+              "kind": "symbol",
+              "name": "_publish_abandon"
             }
           },
           "kind": "code"
@@ -445,12 +472,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-            "content": "sha256:88745092ffd1f6826305c5e1e88502233ec853e6d0d956e35eb197425d93354a",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:d90367de87775a6e6b3f0f958af14a80c0bfc091e1311270fa7929f30d47cfce",
             "locator": {
-              "end": 913,
-              "kind": "line_range",
-              "start": 892
+              "kind": "symbol",
+              "name": "_abandon_directories"
             }
           },
           "kind": "code"
@@ -458,11 +484,11 @@
         {
           "anchor": {
             "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
-            "content": "sha256:733fbe053eda73215af05b87422174ab0c5f72fae6ce6e94e8fa82d9a5b44a2d",
+            "content": "sha256:0c1d6e2ed75afcf4e0314dc9b9e95b2459580c50cdb346210b5ca75018438e5b",
             "locator": {
-              "end": 111,
+              "end": 110,
               "kind": "line_range",
-              "start": 68
+              "start": 67
             },
             "path": "mcp/src/agents_remember/worktrees/modules/kept_tool_calls.py"
           },
@@ -475,29 +501,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
-            "content": "sha256:d42faeb161f85770a298f8d66b60d41701008e07c21c0b2bb247deeddb766065",
+            "blob": "bcb0a4aeea66ec242883d723a49fff39d4c8ae0d",
+            "content": "sha256:816696a3012c1082547f0241a3efa2088e2f26c90d130e01e0755a40da482ea0",
             "locator": {
               "kind": "symbol",
               "name": "_abandon_outputs_result"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Provider teardown is delegated to the provider-runtime teardown function.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
-            "content": "sha256:2aa48a21f45fe58ab4750793d6e04cb30fa24541e46271d4235ebc8f95b8b1ea",
-            "locator": {
-              "kind": "symbol",
-              "name": "teardown_worktree_providers"
-            },
-            "path": "mcp/src/agents_remember/application/provider_runtime.py"
           },
           "kind": "code"
         }
@@ -508,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "blob": "049ba22ee42762f40b121e45e21f8d67eccc21c7",
             "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
             "locator": {
               "kind": "symbol",
@@ -525,12 +534,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
-            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
+            "content": "sha256:19edd83cd339ae79dfda59760f928474d121cbe02b9ff9e75180dec801e67a6b",
             "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "WorktreeArgs"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -543,12 +551,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
             "locator": {
-              "end": 215,
+              "end": 211,
               "kind": "line_range",
-              "start": 215
+              "start": 211
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -561,7 +569,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
             "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
             "locator": {
               "kind": "symbol",
@@ -578,7 +586,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
             "locator": {
               "end": 37,

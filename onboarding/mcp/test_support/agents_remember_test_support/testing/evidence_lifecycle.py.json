@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:d1239c912abee5456ba73fdd307891463ec886dcfb5f2ed325957ba7114f2ab8",
             "locator": {
-              "end": 200,
+              "end": 201,
               "kind": "line_range",
-              "start": 192
+              "start": 193
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
           },

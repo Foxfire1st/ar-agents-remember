@@ -51,14 +51,9 @@ Scenario reset uses the canonical dashboard-store reset rather than a second res
 
 - The current overview reader retains its scoped CloseoutQueue independently of optional graph/Order content, including graphless sprint pages. [3]
 
-
 - Wave grouping and segment/lump construction retain producer order; each box uses the qualified task entry for its task word and accessible name, independently of the dependency badge. [1]
 
-
-
-
 - Current shell/component sources define reachability, graphless queue access, canonical reset, entry-owned words/tones with live updates and qualified missing entries, plus responsive declarations; no Curator execution is claimed. [4]
-
 
 - The wire shape and current serving/observer builders supply graph nodes, waves, graph-frontier facts, leaf titles and predecessor reasons, not a second task-status authority. [5]
 
@@ -66,10 +61,7 @@ Scenario reset uses the canonical dashboard-store reset rather than a second res
 
 - The deterministic dev surface applies its seeded task-entry/queue projection and opens the real DetailPanel; this is not a fresh screenshot or runtime result. [7]
 
-
-
 - Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word. [8]
-
 
 
 - The wave grid declares three columns and a single column at widths of 720px or less. Box titles and leaf lines use ellipsis. The dependency style recipe declares ready, waiting and cycle states. The dashboard manifest declares no @xyflow/react dependency. [2]

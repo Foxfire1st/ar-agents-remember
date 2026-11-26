@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A unit test pins that RECORD_ROW_KINDS carries the canonical Final[tuple[RecordKind, ...]] annotation matching MemoryState.record_by_origin instead of widening to str."
+  },
+  "applicability": "The RECORD_ROW_KINDS constant in application/knowledge_writer/authoring_rows.py.",
+  "conditions": [
+    "Knowledge-writer row indexing passes each kind from RECORD_ROW_KINDS to MemoryState.record_by_origin."
+  ],
+  "exclusions": [],
+  "id": "INV-0YAS0P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_type_hint_contracts.py::test_record_row_kinds_typed_as_canonical_record_kind_tuple"
+      ],
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R07@v1 item 8",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "RECORD_ROW_KINDS is annotated as Final[tuple[RecordKind, ...]] using models.knowledge_files.ids.RecordKind so record_by_origin receives the canonical RecordKind type.",
+  "supersedes": [],
+  "title": "RECORD_ROW_KINDS is annotated with canonical ids.RecordKind",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

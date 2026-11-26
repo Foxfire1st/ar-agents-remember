@@ -14,7 +14,7 @@ Build server information, scoped slim orientation and runtime-installation answe
 
 ## Code Commentary
 
-`server_info_payload` receives the boot-resolved serving build, reports unusedProviderKeys and
+`server_info_payload` receives the boot-resolved serving build, reports `unusedSettingsKeys` and
 optional launch agentBinding/toolServer, and does not publish tools/reservedTools or remeasure the
 serving-build identity. It adds `buildCurrentness` — the loaded build compared with the Python files
 now at its package root, inspected for a checkout build too (`inspect_checkout=True`) and omitted
@@ -32,8 +32,7 @@ and supplies that report's path. Compaction projects only declared RUNTIME_INSTA
 `runningServers` inventory and `dashboard` result;
 for a list of messages it retains string entries among the first five original entries,
 truncates each to the short-string bound plus an ellipsis when needed, and reports overflow
-from original list length. The rebind digest retains attempted/ok and phase/action/ok for
-mapping-shaped runs. For an executed install, full detail can be reopened in its filed
+from original list length. The `removedPartStores` summary keeps its count, size, and command sentences while omitting the full stores list (kept in the filed report). For an executed install, full detail can be reopened in its filed
 report. Retained response logs are separate custody, not a per-call report for a preview;
 the compactor's overflow wording does not establish that an unfiled preview has a report.
 The module holds no ping or skill-installation adapter and supplies no generic restart tool.
@@ -70,19 +69,21 @@ validation and forwarding stay transport-thin.
 
 ## Evidence
 
-
-
 ### Runtime Source References
 
+
 - `server_info_payload` reports the server identity, roots, unused keys, serving build, build currentness, running servers and any agent binding. [1]
+
 
 - Frozen implementation of context_packet_payload supporting the stated file behavior. [2]
 
 ## Server info names no harness skill root
 
-`server_info_payload` reports no harness skill root: no skill folder is resolved or installed, so there is no root to name, and `ServerInfoResponse` declares no such field. It reports the roots, allowed repo ids and unused provider/settings keys.
+`server_info_payload` reports no harness skill root: no skill folder is resolved or installed, so there is no root to name, and `ServerInfoResponse` declares no such field. It reports the roots, allowed repo ids and unused settings keys.
+
 
 - The server-info answer carries no harness skill root. [8]
+
 
 - `server_info` reports the process's build currentness, inspecting a checkout build too. [9]
 - `server_info` lists the running-server registry's live records. [10]

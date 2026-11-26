@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+            "blob": "064d79a33354b30c2f57bdb64a82c4e35b925e75",
             "content": "sha256:7733a555a1297852106ced30906c742d861f55f254b26f7cc4af05c6eade0505",
             "locator": {
               "end": 108,
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+            "blob": "064d79a33354b30c2f57bdb64a82c4e35b925e75",
             "content": "sha256:a50361e4b8631cafac958b9518a404ff1d6383fceb9c96dbb0335d1492606493",
             "locator": {
               "end": 134,
@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+            "blob": "064d79a33354b30c2f57bdb64a82c4e35b925e75",
             "content": "sha256:a50361e4b8631cafac958b9518a404ff1d6383fceb9c96dbb0335d1492606493",
             "locator": {
               "kind": "symbol",
@@ -48,12 +48,12 @@
       ]
     },
     "3": {
-      "note": "The store reads the injected legacy publication as proven. The terminal-archive result succeeds and names the stored operation record among its canonical entries.",
+      "note": "The store reads the injected legacy publication as proven. The terminal-archive result succeeds and names the stored operation record among its canonical entries.\n\nAnchor: `` `test_operation_store_and_cleanup_terminal_archive_read_a_legacy_record` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
-            "content": "sha256:c5fe3c6430898c7fc741fab25b42248cc3af09bc77508d14e0a9c573225268ab",
+            "blob": "064d79a33354b30c2f57bdb64a82c4e35b925e75",
+            "content": "sha256:7f674bcfcaa131347ccf184175de702c975dba637c3b25c4d31f3c1c78f7d8d5",
             "locator": {
               "end": 204,
               "kind": "line_range",

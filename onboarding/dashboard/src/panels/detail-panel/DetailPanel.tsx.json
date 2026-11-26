@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "blob": "7f590e9e0692a8f355f6653ec1373f7535c408ce",
             "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
             "locator": {
               "end": 45,
@@ -126,14 +126,15 @@
       ]
     },
     "37": {
-      "note": "The fixed page uses StepsBlock for its table/count; standalone ProgressFill remains a separate grammar primitive, not mounted as a duplicate task-page header.\n\nAnchor: `StepsBlock` `ProgressFill`",
+      "note": "The fixed page uses StepsBlock for its table/count; standalone ProgressFill remains a separate grammar primitive, not mounted as a duplicate task-page header.\n\nAnchor: `StepsBlock` (`taskBlocks.tsx:129+`), `ProgressFill` (`ProgressFill.tsx:27-45`), `Source`: `dashboard/src/panels/detail-panel/taskBlocks.tsx:129-160` and `dashboard/src/grammar/ProgressFill.tsx:27-45`",
       "targets": [
         {
           "anchor": {
             "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
-            "content": "sha256:adc44e360658873af21f7327e0dd12bfddfe1d21078e62e2b9f117e0ec706b6b",
+            "content": "sha256:5733369f99dfb2a77bb688a4eed4f0fb25fd2e6437a68692057b5ccb7da82590",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "StepsBlock"
             },
             "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
           },
@@ -141,10 +142,11 @@
         },
         {
           "anchor": {
-            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
-            "content": "sha256:27b1ce7c5112d328546cf0e714d8e3e93eca7c6943912e2aaacbbee11009dc50",
+            "blob": "7f590e9e0692a8f355f6653ec1373f7535c408ce",
+            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ProgressFill"
             },
             "path": "dashboard/src/grammar/ProgressFill.tsx"
           },

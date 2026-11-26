@@ -87,7 +87,6 @@ The inherited statement that no external Domain Documentation source or cross-re
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
-
 | Source File | Onboarding | Status |
 | --- | --- | --- |
 | `__init__.py` | [__init__.py.md](__init__.py.md) | covered |
@@ -115,11 +114,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 ## Evidence
 
+
 - Retained reference account (no fresh execution or acceptance inferred): `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. [1]
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. [2]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. [3]
 
@@ -131,9 +130,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Retained reference account (no fresh execution or acceptance inferred): Persist complete actual terminal catalogs, including red and interrupted gates. [9]
 
-
 - Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report. [11]
-
 
 - Explicit not-applicable repository gates contribute bounded applicability authority; applicable rail contracts are preserved. [12]
 
@@ -160,14 +157,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
 
 
-
 - Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings. [15]
 
 
 - A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
-
-
-
-
 
 - Curator preparation uses source-bound converted onboarding traces; a memory side that cannot be established is incomplete and is reported as a finding, never a pass, and the onboarding refresh refuses an incomplete side instead of falling back. [21]

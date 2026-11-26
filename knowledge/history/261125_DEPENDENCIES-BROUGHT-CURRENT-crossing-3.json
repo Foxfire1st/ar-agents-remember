@@ -1,0 +1,40 @@
+{
+  "closed": true,
+  "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-3",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-841EZP",
+      "items": [],
+      "reason": "Reconfirmed docs/reference/mcp-tools.md across the clean merge of BUG-L53 (8ccdd6fab) and DEP master (8722a0b18); both parents audited disjoint stands_on files.",
+      "revision": 25,
+      "subject": "DPD-X6G7K3"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 24
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:7f9516097d302630b2194424bc2ad4d4c8a15f52a6c110bb0707e146df211c7f",
+      "record": "DPD-X6G7K3",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T06:24:57+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

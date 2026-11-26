@@ -5,7 +5,7 @@
     ],
     "justification": "A row for one of the ten in the agents' command table would present that command to every role that reads the table, so the check refuses the row. Refusing a mention would be the opposite mistake: it would fail the three guide lines that tell knowledge-convert to the user of a memory repository cloned before memory_init, so the check requires no mention and refuses none."
   },
-  "applicability": "The eleven command names of the set UNDOCUMENTED_COMMANDS, in the instruction consistency check and the CLI parser.",
+  "applicability": "The ten command names of the set UNDOCUMENTED_COMMANDS, in the instruction consistency check and the CLI parser.",
   "conditions": [
     "The names are registered commands.",
     "The check refuses no mention of them: two guide pages name knowledge-convert in three lines, and the install page and the guide name explainer-browser.",
@@ -28,9 +28,19 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "The eleven command names of the set UNDOCUMENTED_COMMANDS are registered commands outside the agents' command table: the consistency check requires no row and no mention for them and refuses a row for one of them in that table. knowledge-convert is told in three lines of two guide pages, for a memory repository that was cloned before memory_init; explainer-browser is told on the install page and in the guide, because a person at the installation runs it and no role has a step for it.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The ten command names of the set UNDOCUMENTED_COMMANDS are registered commands outside the agents' command table: the consistency check requires no row and no mention for them and refuses a row for one of them in that table. knowledge-convert is told in three lines of two guide pages, for a memory repository that was cloned before memory_init; explainer-browser is told on the install page and in the guide, because a person at the installation runs it and no role has a step for it.",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

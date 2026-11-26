@@ -22,14 +22,39 @@
   ],
   "references": {
     "1": {
-      "note": "Anchor: Current precomputed enclosure availability and workspace shape.",
+      "note": "Anchor: Current precomputed enclosure availability and workspace shape.\n\nAnchor: `ActionAvailability`, `EnclosureNode`, `WorkspaceProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ActionAvailability"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:6675e6e29ad874b2806a74cb669fc11217d9577fe7d301d9c1488b8659a5560e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

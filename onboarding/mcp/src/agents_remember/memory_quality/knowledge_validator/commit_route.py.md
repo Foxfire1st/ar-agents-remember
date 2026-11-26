@@ -52,10 +52,7 @@ No configured live documentation source was available for this pass.
 
 The adapter, the port it implements and its binding.
 
-
 - The adapter, with its optional base converter. [1]
-
-
 
 - An unconverted base of a converted candidate is replaced by its conversion before the rules run, inside `_validate`, which `_refusal` calls for both entry points. [2]
 
@@ -65,13 +62,10 @@ The adapter, the port it implements and its binding.
 
 - The commit route validates against the conversion of an unconverted base. [5]
 
-
 - The port it implements. [6]
 
 
-
-
-- The default composition binds it. Anchor: `build_default_worktree_services` [7]
+- The default composition binds it. [7]
 
 
 - The adapter refuses naming every violation. [8]
@@ -79,7 +73,6 @@ The adapter, the port it implements and its binding.
 - A leaf publication carries the commits whose closed history files are frozen. [9]
 
 - The trees are read and validated; the frozen commits contribute their history files only. [10]
-
 
 ### Cross-Repo References
 

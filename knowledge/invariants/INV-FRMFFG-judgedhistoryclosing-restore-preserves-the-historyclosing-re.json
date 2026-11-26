@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Four regression tests verify that _JudgedHistoryClosing.restore executes both restores without short-circuiting and returns a boolean matching HistoryClosing.restore so polymorphic callers never skip ignore cleanup or see None."
+  },
+  "applicability": "Restoration of prepared history and memory-ignore artifacts in worktrees/direct_landing.py::_JudgedHistoryClosing.restore.",
+  "conditions": [
+    "Both the base HistoryClosing preparation and ignore_before preparation are active on a judged closing."
+  ],
+  "exclusions": [
+    "Plain HistoryClosing instances that have no ignore_before preparation."
+  ],
+  "id": "INV-FRMFFG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_judged_history_closing_restore.py::test_restore_returns_true_when_both_preparations_succeed; mcp/tests/test_judged_history_closing_restore.py::test_restore_runs_ignore_restore_without_short_circuit_when_history_changed; mcp/tests/test_judged_history_closing_restore.py::test_restore_returns_false_and_restores_history_when_ignore_changed; mcp/tests/test_judged_history_closing_restore.py::test_restore_preparations_sees_bool_outcome_on_judged_closing"
+      ],
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R07@v1 item 5",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "_JudgedHistoryClosing.restore preserves the HistoryClosing.restore boolean contract by running both super().restore() and self.ignore_before.restore() without short-circuiting and returning False if either failed.",
+  "supersedes": [],
+  "title": "_JudgedHistoryClosing.restore runs both restores and returns bool",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

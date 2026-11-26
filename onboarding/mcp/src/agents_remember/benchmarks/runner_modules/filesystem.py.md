@@ -13,15 +13,12 @@ exposure.
 
 ### Logic
 
-`filesystem.py` owns safe path removal, copying packaged
-provider assets, removing the retired coordinator startup files, rendering root markers, creating benchmark-local
+`filesystem.py` owns safe path removal, removing the retired coordinator startup files, rendering root markers, creating benchmark-local
 coordination scaffolding. Skills reach the workspace harness from the tool server's
 package copy; no benchmark-local skill tree is written. Cross-platform long-path normalization (the Windows
 `\\?\` prefix logic) is not inlined here; both `removable_path` and the
 copy helpers delegate to the shared `long_path` helper imported from
-`agents_remember.install.assets`. The benchmark runtime scaffold creates central
-`logs/mcp` and `logs/providers/...` directories alongside provider data and
-runner roots.
+`agents_remember.install.assets`. The benchmark runtime scaffold creates central `logs` and `logs/mcp` directories alongside `memory-repos`, `tasks`, `worktrees`, `notes`, and `temp`.
 
 ### Invariants And Boundaries
 
@@ -47,11 +44,10 @@ No configured sibling repository is required for this module.
 
 ## Runtime assets without a skill copy
 
-`sync_runtime_assets` removes each retired coordinator startup file (`install.experiment.RETIRED_STARTUP_TARGETS`: `AGENTS.md`, `system/AGENTS.md`, `tasks/AGENTS.md`) from the coordination root, or prints the removal under `dry_run`, and then replaces the provider assets; it writes no instruction file. No helper copies a skill tree, because a coordination-root or `.codex` skill folder would be a second distribution surface with no reader.
+`sync_runtime_assets` removes each retired coordinator startup file (`install.experiment.RETIRED_STARTUP_TARGETS`: `AGENTS.md`, `system/AGENTS.md`, `tasks/AGENTS.md`) from the coordination root, or prints the removal under `dry_run`, and then ensures the benchmark coordination directories (`memory-repos`, `tasks`, `worktrees`, `notes`, `temp`, `logs`, `logs/mcp`); it writes no instruction file. No helper copies a skill tree, because a coordination-root or `.codex` skill folder would be a second distribution surface with no reader.
 
 - The runtime-asset sync that writes no skill tree. [3]
 
-- The sync removes the retired coordinator startup files before replacing provider assets [5]
+- The sync removes the retired coordinator startup files before ensuring benchmark coordination directories. [5]
 
-
-- The benchmark scaffold creates the central `logs/mcp` and `logs/providers/...` directories beside provider data and runner roots. [4]
+- The benchmark scaffold creates the central `logs/mcp` directory beside the coordination directories (`memory-repos`, `tasks`, `worktrees`, `notes`, `temp`, `logs`). [4]

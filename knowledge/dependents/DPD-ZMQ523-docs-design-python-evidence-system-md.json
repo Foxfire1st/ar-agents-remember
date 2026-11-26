@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9f929793777342bb337f88fd64f8262d987313a2",
-    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Confirmed against synced EXP-L2 candidate 9f929793 (base 91bb8c5f, combining master crossing-5/BUG-L44 and EXP-L2): docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes, canonical catalog ordering, and source-derived lifecycle rules across all 833 cataloged modules (681 unit-regression including test_githooks_l29_repairs.py, test_sync_commit_check.py, and test_explainer_staging_and_checks.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability) and 18 contracts / 122 artifacts in evidence-lifecycle.toml.",
-    "task": "261124-EXP-L2",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes and source-derived lifecycle contracts across 261124-EXP, DEP-L7, and DEP-L2 provider removals.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/test_support/agents_remember_test_support/testing/cadence_runner.py"
     },
     {
-      "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+      "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
     },
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+      "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+      "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:51:07+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-EXP-L2",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
-    "task": "261124-EXP"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

@@ -1,18 +1,36 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+        "content": "sha256:f85730f23d0f43c033b52ee177e0dbf4d93bde791f14cd3e5a5f06a1179d5af0",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiagnosticExecutionEngine._admit_authority"
+        }
+      },
+      "id": "RLZ-4BJP3S",
+      "invariant": "INV-0TK9W7",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 items 2-3",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Passes AUTHORITY_SCHEMA_VERSION instead of continuation_snapshot.schema_version into DaggerHostDeclaration on continuation without # type: ignore[arg-type].",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Diagnostics bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure.\n\nAnchor: \"def _admit_authority(\"; \"def admit_dagger_authority(\"",
+      "note": "Diagnostics bind the frozen R12 host authority (using `AUTHORITY_SCHEMA_VERSION` for continuation declarations) and never select, copy, replace, or privately provision infrastructure.",
       "targets": [
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
-            "content": "sha256:5155ce8ad1b357209a28f2ea7490363ce4704c5d04c1710258743049b8783f50",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "content": "sha256:f85730f23d0f43c033b52ee177e0dbf4d93bde791f14cd3e5a5f06a1179d5af0",
             "locator": {
-              "end": 329,
-              "kind": "line_range",
-              "start": 271
+              "kind": "symbol",
+              "name": "_admit_authority"
             }
           },
           "kind": "code"
@@ -20,11 +38,10 @@
         {
           "anchor": {
             "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:507451629885641898aae9e07e06447962f0c075b52d399f27054432e0202b66",
+            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
             "locator": {
-              "end": 995,
-              "kind": "line_range",
-              "start": 948
+              "kind": "symbol",
+              "name": "admit_dagger_authority"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
           },
@@ -160,24 +177,24 @@
         },
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
             "content": "sha256:28a125c4d7fe8cf761c96c43f68513b45023fe2ec0ad69cf8d0d2836677da9a5",
             "locator": {
-              "end": 545,
+              "end": 546,
               "kind": "line_range",
-              "start": 535
+              "start": 536
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
             "content": "sha256:9c2f072cab9ebcbb04c5977590ef653a405351658b40bcb0ed0e2e9572fa831b",
             "locator": {
-              "end": 563,
+              "end": 564,
               "kind": "line_range",
-              "start": 547
+              "start": 548
             }
           },
           "kind": "code"
@@ -202,12 +219,12 @@
         },
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
             "content": "sha256:43b97fce4896279ede72f42c4f8e369050c933363cd1140eaf9c56f69d4023c0",
             "locator": {
-              "end": 193,
+              "end": 194,
               "kind": "line_range",
-              "start": 176
+              "start": 177
             }
           },
           "kind": "code"
@@ -219,24 +236,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
             "content": "sha256:ae8142f729a9f97f7a553e4412f400dcdd22bfce8a2810ada5ffc866234d924f",
             "locator": {
-              "end": 329,
+              "end": 330,
               "kind": "line_range",
-              "start": 321
+              "start": 322
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
             "content": "sha256:9913aee99313f1a7f7ac7b311c32c06db98de9926d14b86dcf7d5e6bc76bf7d8",
             "locator": {
-              "end": 430,
+              "end": 431,
               "kind": "line_range",
-              "start": 422
+              "start": 423
             }
           },
           "kind": "code"

@@ -24,7 +24,6 @@ The five install steps stand under the heading `Install steps` and keep the numb
 - The body states six capabilities and shows the product in three pictures, each followed by one sentence about what is seen. [2]
 - The five install steps keep the number, order, titles and command lines of the getting-started page. [3]
 
-
 - The Status section gives package version 3.0.8 and Python 3.14, then directs readers to the release notes before installation. [4]
 
 - A file under docs/ that is no page is reached when the front page shows or links it by a relative path; a page stays out of this set. [5]

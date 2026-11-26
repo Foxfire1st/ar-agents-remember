@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-        "content": "sha256:e86f85f2632f9f79f0760f656fe0cb21900cd24f5cc4deb71fe589aae5b47b97",
+        "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+        "content": "sha256:83d4754bdd27c3db9adeb00fe0bd52039df020676021b2ab568d544c71d623de",
         "locator": {
           "kind": "symbol",
           "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:09c4ee4362647b98e1faa647e0adb1f25f18f7cc5edde728b02cc856a3607716",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:4980187d983779be294e87db53a9dd3d4f2ce6459a32b2d9b541b7b52912740e",
             "locator": {
               "kind": "symbol",
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:8e4896bb264f5ef916243664350414fcfbb7b1c1d6071458a78e49b7e45fc4d4",
             "locator": {
-              "end": 306,
+              "end": 305,
               "kind": "line_range",
-              "start": 303
+              "start": 302
             }
           },
           "kind": "code"
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:20fad3c44b7d355b4ca354acac3801d7580599e9c82c345e9678a0fa1431ab94",
             "locator": {
               "kind": "symbol",
@@ -87,12 +87,12 @@
       ]
     },
     "7": {
-      "note": "The layering declaration names all four consumers",
+      "note": "The layering declaration names all four consumers\n\nAnchor: `REPOSITORY_TEST_INPUT_CONSUMERS`, `Source`: `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` (symbol `REPOSITORY_TEST_INPUT_CONSUMERS`, lines 53-142).",
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-            "content": "sha256:e86f85f2632f9f79f0760f656fe0cb21900cd24f5cc4deb71fe589aae5b47b97",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:83d4754bdd27c3db9adeb00fe0bd52039df020676021b2ab568d544c71d623de",
             "locator": {
               "kind": "symbol",
               "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
@@ -102,12 +102,10 @@
         },
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-            "content": "sha256:9bacf89cab7c109542268500df6c0281d35a377ecc8306d2e92b25a19cb3fd0e",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:fb79bb5e7bf1b75ea20d268eae73e85d4110d1e8b6c7c45c140ec15bf8ffb874",
             "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 59
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -21,7 +21,6 @@ code trees differ at, what a **real** write to the candidate does to a continuat
 
 ## Code Commentary
 
-
 The source declares fifteen test functions. They cover requested-tree expansion, visible unattributed gaps, side-specific realization evidence, display paging with whole-union totals, missing or changed snapshot/selector refusals, payload-field comparisons and separation of record changes from source observations. A read page is not reused as the comparison scope.
 
 Serialized response checks exclude strengthening/harmlessness verdicts, mounted UI state, approval and severity. Paired unavailable/available probe substitutions distinguish an unmade observation from a measured gap. Index-shaped fixtures use test-only RowStore/revision helpers; payload substitution isolates the comparison projection and is not evidence of canonical writer duplicate_identity admission.
@@ -46,7 +45,6 @@ and assertion census, not a new reached-probe execution count. Real Git-pair fix
 and default production observation support the integration classification.
 
 **What each group of cases protects:**
-
 
 | Group | Nodes | The property |
 | --- | --- | --- |
@@ -110,9 +108,7 @@ The single-field comparison matrix includes a lifecycle value of reviewed. The c
 
 ## Evidence
 
-
 - A test-only mutation adds one invariant and one revision and changes the candidate digest. After the continuation is refused, the candidate counters account for those two additions and show no change in the other counted tables. [51]
-
 
 ### Docs References
 
@@ -128,10 +124,6 @@ No Domain Documentation source is configured for this slice.
 
 - The continuation case opens its candidate fixture with the test-only row store and creates one invariant with one revision. [31]
 
-
-
-
-
 ### Docs References
 
 No Domain Documentation entries are configured in this memory root. The statements below are grounded in
@@ -139,40 +131,27 @@ repository source and package-local evidence only.
 
 No configured domain documentation could be checked.
 
-
 ### Repo-Internal References (continued)
-
 
 - The integration marker, per-test fixture, typed request builder and application comparison driver. [33]
 
-
 - The two readers that let a case name a record rather than a position. [34]
-
-
-
-
 
 - **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** [36]
 - The moved obligation's source observed on the side that claims it. [37]
 - **A small display budget paging the comparison without shrinking its totals.** [38]
 - **A missing side refusing and substituting no other snapshot.** [39]
 
-
 - The continuation-mutation helper adds an invariant and one revision through test-only text mutation/index rebuild; the continuation then refuses the changed snapshot. No public canonical-store admission is claimed. [40]
-
 
 - **A continuation against another selector refusing and returning no page.** [41]
 > Earlier R22 note: a side naming another snapshot of its own file refused before any page.
 
 - When a side names another logical snapshot of its own file, the comparison refuses with snapshot_unavailable and returns neither a page nor an expansion. [42]
 
-
-
 - The verdict test searches the serialized response for all nine listed words and checks for a known source-observation field and a changed source observation. [43]
 
-
 - The two change statements kept apart, and the record comparison reporting exactly the field that changed. [44]
-
 
 - The input-substitution and scope-rewording helpers the last group of cases uses. [45]
 
@@ -180,9 +159,7 @@ No configured domain documentation could be checked.
 
 - The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission). [47]
 
-
 - The injected available probe supplies one changed path. The application exposes that path as the exact unattributed gap and declares the corresponding limitation. [48]
-
 
 - run_diff omits a probe override, and the application defaults to git_tree_difference_probe; this source-described route is not a fresh execution count. [49]
 
@@ -209,5 +186,7 @@ No configured cross-repository evidence is claimed.
 
 - The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
 - Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
+
+
 
 - The integration lane selects `mcp/tests/test_knowledge_diff_boundaries.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_boundaries.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [50]

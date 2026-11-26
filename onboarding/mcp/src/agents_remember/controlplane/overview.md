@@ -36,8 +36,6 @@ These former current claims are retained as history, not as instructions or pres
 
 - The structural gate facade re-exports kernel vocabulary only, not removed public gate-response operations or a native task-state model. [4]
 
-- Provider degradation records its own state/events and can stop a critical provider; no removed operator-inbox posting occurs. [7]
-
 - Guarded durable-store composition preserves coordinator containment and held-lock rewrite. [8]
 
 - Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. [10]

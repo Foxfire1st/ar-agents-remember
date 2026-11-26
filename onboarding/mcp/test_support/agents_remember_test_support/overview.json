@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:e146e2871f698c7f60efbbede1cd1420f1a8129a2f7d672a412c931ebcbd35e6",
             "locator": {
               "kind": "symbol",
@@ -62,16 +62,16 @@
       ]
     },
     "12": {
-      "note": "Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations.\n\nAnchor: `changed_catalog_consumers`",
+      "note": "Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations.\n\nAnchor: `` `REPOSITORY_TEST_INPUT_CONSUMERS` `` / `` `changed_catalog_consumers` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-            "content": "sha256:0e731958b83fac41f0f763efd42be7ae979cbc685606300b198461b8fc42a12b",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:83d4754bdd27c3db9adeb00fe0bd52039df020676021b2ab568d544c71d623de",
             "locator": {
-              "end": 176,
+              "end": 142,
               "kind": "line_range",
-              "start": 55
+              "start": 53
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -328,12 +328,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:276519340d6bbbbf2f426c48c03c834eca4031a6cd6a98290b364aac2ffc8de6",
             "locator": {
-              "end": 73,
+              "end": 72,
               "kind": "line_range",
-              "start": 60
+              "start": 59
             },
             "path": "mcp/pyproject.toml"
           },
@@ -341,12 +341,12 @@
         },
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:c3566bb76d04bb29fb5df72925d693a3e7a0aaa01f9c4f0c1603935ac690ea1c",
             "locator": {
-              "end": 89,
+              "end": 88,
               "kind": "line_range",
-              "start": 88
+              "start": 87
             },
             "path": "mcp/pyproject.toml"
           },

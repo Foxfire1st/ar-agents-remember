@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Forces one append into the read-to-replace compaction window of eight real JSONL stores. It is shared test support, not an assertion suite. Six controlplane adapters and two provider adapters call each store’s actual write/reclaim owners; the harness reports receipts versus durable records.
+Forces one append into the read-to-replace compaction window of two real control-plane JSONL stores. It is shared test support, not an assertion suite. Two control-plane adapters (`GateAdapter` and `AttentionAdapter`) call each store’s actual write/reclaim owners; the harness reports receipts versus durable records.
 
 ## Code Commentary
 
@@ -29,10 +29,10 @@ attempted count and errors.
 ### Invariants And Boundaries
 
 - The anchor is never counted and keeps reclamation on the rewrite path instead of empty-log deletion.
-- All eight adapters exercise real store behavior; no copied reclaim algorithm substitutes for it.
+- Both control-plane adapters exercise real store behavior; no copied reclaim algorithm substitutes for it.
 - Historical source extraction, model-path compatibility, stress loops and measurement CLI were removed.
 - There is no import fallback for GateState; the canonical structural model is imported directly.
-- Current controlplane/provider durability tests own the assertions, not this harness.
+- Current control-plane durability tests own the assertions, not this harness.
 
 ## Evidence
 
@@ -46,8 +46,6 @@ The exact source declarations below establish the current behavior; this invento
 
 - Shared real-store write/reclaim boundary [1]
 
-- Provider stores share the same instrument [2]
-
 - Independent durable-record/torn-line accounting [3]
 
 - Controlled actual rewrite rendezvous [4]
@@ -55,7 +53,6 @@ The exact source declarations below establish the current behavior; this invento
 - Per-root receipt isolation [5]
 
 - Forked append/reclaim orchestration and bounded joins [6]
-
 
 ### Cross-Repo References
 

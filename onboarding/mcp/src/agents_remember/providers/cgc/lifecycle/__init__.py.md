@@ -6,29 +6,4 @@
 
 ## Purpose
 
-`cgc/lifecycle/__init__.py` is the CodeGraphContext lifecycle export facade. It groups
-the split CGC implementation modules behind one import surface for `providers.lifecycle`.
-
-## Code Commentary
-
-### Logic
-
-The module re-exports CGC core settings/layout, Compose, backend, runner, installation
-and process-control functions. It intentionally contains no behavior beyond those
-exports.
-
-### Invariants And Boundaries
-
-- Keep this module import-only.
-- Put CGC implementation in the focused `cgc_*` modules.
-
-## Evidence
-
-### Repo-Internal References
-
-- The parent lifecycle facade imports this CGC facade. [1]
-- The CGC core module in the exported surface. [2]
-- The CGC backend module in the exported surface. [3]
-- The CGC runner module in the exported surface. [4]
-- The CGC installation module in the exported surface. [5]
-- The CGC process-control module in the exported surface. [6]
+This card records the retirement of `mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

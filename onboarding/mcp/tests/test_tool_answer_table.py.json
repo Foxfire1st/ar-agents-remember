@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "467ff826a1ea2af53b2ab37ab3a385d33c551234",
+            "blob": "58bd1e56beea77baaf7fed254705f07dc1e434ee",
             "content": "sha256:be26165859dfe0965812002585f16cc0f47d2314b4f5ad0a17c66813d33473f9",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "467ff826a1ea2af53b2ab37ab3a385d33c551234",
+            "blob": "58bd1e56beea77baaf7fed254705f07dc1e434ee",
             "content": "sha256:42177258d3478085014935889d03303ecb36215c82f8d7cf1fff986ea1718da4",
             "locator": {
               "kind": "symbol",
@@ -106,12 +106,12 @@
       ]
     },
     "4": {
-      "note": "Produced install answers read the sandbox MCP authority, without an XDG user-settings precondition.\n\nAnchor: `_produced_install_compact`",
+      "note": "Produced install answers read the sandbox MCP authority, without an XDG user-settings precondition.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
-            "content": "sha256:bac198d8e64a01f148de9a3029f50320c02a66dc5cade17ec412111fc93fef3b",
+            "blob": "73de600ee8a091007157f8a1f411e6bb1ec4bcdd",
+            "content": "sha256:7351bbaa6af2a111434286aa162d49485be41ee02358bfab5541a1d62dde7a48",
             "locator": {
               "kind": "file"
             },
@@ -139,15 +139,29 @@
       ]
     },
     "7": {
-      "note": "Ordinary and largest install fixtures pin copiedFiles=15 and createdDirs=42/41 as projection-equality fixtures under the existing answer bounds.",
+      "note": "Ordinary and largest install fixtures pin copiedFiles=2 and createdDirs=10/9 as projection-equality fixtures under the existing answer bounds.\n\nAnchor: `` `_INSTALL_ORDINARY_CASE` `_INSTALL_LARGEST_CASE` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "467ff826a1ea2af53b2ab37ab3a385d33c551234",
-            "content": "sha256:60587bbfa242367e2461e25750cd754b1150e45ea60011ac3654bd85fb5d2491",
+            "blob": "58bd1e56beea77baaf7fed254705f07dc1e434ee",
+            "content": "sha256:520d62a40d2867090b4100215dbe9e4f6624a4fa40933c785554b61b4e9d7a11",
             "locator": {
-              "kind": "symbol",
-              "name": "_INSTALL_ORDINARY_CASE"
+              "end": 173,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/tests/tool_answer_table_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58bd1e56beea77baaf7fed254705f07dc1e434ee",
+            "content": "sha256:eea5d6a2c290c4b7553407505897564e9bfc272e426e0d108bad44f95863c030",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 181
             },
             "path": "mcp/tests/tool_answer_table_support.py"
           },

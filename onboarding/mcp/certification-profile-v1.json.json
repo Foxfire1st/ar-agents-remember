@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
-        "content": "sha256:a20fcaf7636e6afb989c47e68737063f9b672ab3dfbe339e46cdb1f024862be2",
+        "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+        "content": "sha256:1a306faf4cbd71ae81d4ff8e036017c8c21e258180a6bbeeb651de7471614f32",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
             "locator": {
               "end": 34,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:2e266c65d9aeca93ca4feb785a367111684ee867e75a347b5a7390ee591b48ff",
             "locator": {
               "end": 57,
@@ -55,16 +55,16 @@
       ]
     },
     "3": {
-      "note": "The declaration carries its own canonical profile digest.\n\nAnchor: `profileDigest`",
+      "note": "The declaration carries its own canonical profile digest.\n\nAnchor: `` `profileDigest` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
-            "content": "sha256:560f2ff8d6d25f60b1f1ba8e6c047ab3932126df87adeb7fd02422a4676502ee",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "content": "sha256:94fc631b7ba720c5262d0eeb6bceac9e80d10ac58e92ab0eff9a19925b4a3e59",
             "locator": {
-              "end": 114,
+              "end": 112,
               "kind": "line_range",
-              "start": 114
+              "start": 112
             }
           },
           "kind": "code"
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:db184c36e3c8755a38fbe31e8e2112568c357833bfb47bc8041492df3f52b4f8",
             "locator": {
-              "end": 530,
+              "end": 528,
               "kind": "line_range",
-              "start": 116
+              "start": 114
             }
           },
           "kind": "code"
@@ -93,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:4218a7eb4a43e1687045cc2f07b4e748286c12fa8be5c5c76e4311fbd2cb8379",
             "locator": {
-              "end": 3238,
+              "end": 3236,
               "kind": "line_range",
-              "start": 2636
+              "start": 2634
             }
           },
           "kind": "code"
@@ -110,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
             "locator": {
-              "end": 3239,
+              "end": 3237,
               "kind": "line_range",
-              "start": 3239
+              "start": 3237
             }
           },
           "kind": "code"
@@ -123,14 +123,14 @@
       ]
     },
     "7": {
-      "note": "Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks, providers and system) and generated-skills (the packaged skills tree); no generated-harness input is declared.\n\nAnchor: `generatedInputs`",
+      "note": "Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks and system) and generated-skills (the packaged skills tree); no generated-harness input is declared.\n\nAnchor: `` `generatedInputs` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
-            "content": "sha256:3c23342dec13a6c93473e3fa058d931db7b9ced31b1f973517d0edc81254d6c6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "content": "sha256:cedc8b41b5a7c649564198b11581c36de8c8b488bfdda0e173395a34244cae35",
             "locator": {
-              "end": 113,
+              "end": 111,
               "kind": "line_range",
               "start": 58
             }
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:8ad62a1372fedc962f0c7131c3852cb8b8e8047c7c273c03730df3c4480a9c52",
             "locator": {
-              "end": 1475,
+              "end": 1473,
               "kind": "line_range",
-              "start": 1460
+              "start": 1458
             }
           },
           "kind": "code"

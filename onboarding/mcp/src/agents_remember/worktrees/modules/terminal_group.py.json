@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:df91c0b73b6b0ec6f6aaeced2bff9b9a788e09df7440f9342cf685936e7a0147",
         "locator": {
           "kind": "symbol",
           "name": "preview_group_removal"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:9148ab0181c56138b385afc01c1a8af72eafef1c54b27a93457cdd821da784fe",
         "locator": {
           "kind": "symbol",
           "name": "prepare_terminal_group"
@@ -39,26 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:f671bd2ee9ccd845bc99f9397ba14caf008c6d567b38db1ff66d6b78041cc913",
-        "locator": {
-          "kind": "symbol",
-          "name": "preview_unpublished_provider_skip"
-        }
-      },
-      "id": "RLZ-A50BNC",
-      "invariant": "INV-PB6BZ0",
-      "origin": {
-        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
-        "leaf": "261112-BUG-L38"
-      },
-      "rationale": "Names provider state before a fresh request can bind the teardown argument.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:9148ab0181c56138b385afc01c1a8af72eafef1c54b27a93457cdd821da784fe",
         "locator": {
           "kind": "symbol",
           "name": "prepare_terminal_group"
@@ -75,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:c1f8db4c44703994f7d3db951ff2135258f7463262fa069460b6a54237a269f6",
         "locator": {
           "kind": "symbol",
           "name": "remove_terminal_group"
@@ -93,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
         "content": "sha256:40c67791e171a555e72027c9ecaac0a1f3d1a3dbc2c47ae697db28a1cad6a243",
         "locator": {
           "kind": "symbol",
@@ -111,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:c1f8db4c44703994f7d3db951ff2135258f7463262fa069460b6a54237a269f6",
         "locator": {
           "kind": "symbol",
           "name": "remove_terminal_group"
@@ -129,26 +111,26 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:c1f8db4c44703994f7d3db951ff2135258f7463262fa069460b6a54237a269f6",
         "locator": {
           "kind": "symbol",
-          "name": "preview_group_removal"
+          "name": "remove_terminal_group"
         }
       },
-      "id": "RLZ-P5S8G4",
-      "invariant": "INV-PB6BZ0",
+      "id": "RLZ-Q28FMG",
+      "invariant": "INV-FBATD2",
       "origin": {
-        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
-        "leaf": "261112-BUG-L38"
+        "handoffEntry": "DEP-R02@v1 §1-w3",
+        "leaf": "261125-DEP-L2"
       },
-      "rationale": "Names the provider owner prerequisite and saved false retry when a previously accepted cleanup is blocked.",
-      "role": "presentation"
+      "rationale": "Removes the finished worktree_group folder in full (including any leftover provider-runtime tree) directly via filesystem.remove_tree after move-out and seat archival.",
+      "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:df91c0b73b6b0ec6f6aaeced2bff9b9a788e09df7440f9342cf685936e7a0147",
         "locator": {
           "kind": "symbol",
           "name": "preview_group_removal"
@@ -165,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
         "content": "sha256:3777083fe6e327eb6a60e84791e88233774c55272932bbfe0568cf59e67b072e",
         "locator": {
           "kind": "symbol",
@@ -183,8 +165,44 @@
     },
     {
       "anchor": {
-        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-        "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:3b0edb35bc445aedfd0972ede279ba422cc60365ba0fdc157d89c311eb20c067",
+        "locator": {
+          "kind": "symbol",
+          "name": "legacy_series_directories"
+        }
+      },
+      "id": "RLZ-S605NT",
+      "invariant": "INV-FBATD2",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1-w3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Reclaims legacy-series reports, lifecycle, logs, outside scratch, and any leftover provider-runtime directory directly via filesystem.remove_tree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:df91c0b73b6b0ec6f6aaeced2bff9b9a788e09df7440f9342cf685936e7a0147",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_group_removal"
+        }
+      },
+      "id": "RLZ-TBVRF4",
+      "invariant": "INV-FBATD2",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1-w3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Previews whole-folder removal and checks permission/directory blockers including any leftover provider-runtime directory without a provider teardown step.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+        "content": "sha256:9148ab0181c56138b385afc01c1a8af72eafef1c54b27a93457cdd821da784fe",
         "locator": {
           "kind": "symbol",
           "name": "prepare_terminal_group"
@@ -202,15 +220,14 @@
   ],
   "references": {
     "1": {
-      "note": "`preview_group_removal` dispatches legacy series groups, checks provider-skip and recursive directory permission blockers, and combines outside-scratch and dry-run move-out checks.",
+      "note": "`preview_group_removal` dispatches legacy series groups, checks recursive directory permission blockers (including any leftover `provider-runtime` tree), and combines outside-scratch and dry-run move-out checks.\n\nAnchor: `preview_group_removal`",
       "targets": [
         {
           "anchor": {
-            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-            "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+            "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+            "content": "sha256:2077e1aa3f814ab5b0f397e9c14e22794fd281a16483ff1d4867f16300f4aae9",
             "locator": {
-              "kind": "symbol",
-              "name": "preview_group_removal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -218,15 +235,14 @@
       ]
     },
     "2": {
-      "note": "`remove_terminal_group` collects reports and tool calls, removes outside scratch and report locators, and removes the whole `worktree_group` via `provider_lifecycle.remove_tree`.",
+      "note": "`remove_terminal_group` collects reports and tool calls, removes outside scratch and report locators, and removes the whole `worktree_group` directly via `filesystem.remove_tree`.\n\nAnchor: `remove_terminal_group`",
       "targets": [
         {
           "anchor": {
-            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+            "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+            "content": "sha256:2077e1aa3f814ab5b0f397e9c14e22794fd281a16483ff1d4867f16300f4aae9",
             "locator": {
-              "kind": "symbol",
-              "name": "remove_terminal_group"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -234,15 +250,14 @@
       ]
     },
     "3": {
-      "note": "`_group_observation` guards against symlinked parents, non-directory paths, the repo's shared worktree root, and unwritable parents, reporting `already-absent` when missing.",
+      "note": "`_group_observation` guards against symlinked parents, non-directory paths, the repo's shared worktree root, and unwritable parents, reporting `already-absent` when missing.\n\nAnchor: `_group_observation`",
       "targets": [
         {
           "anchor": {
-            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-            "content": "sha256:e639361c45bc0d973372295f2644b5711d0b3044c2f545486a18da179cd42c5a",
+            "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+            "content": "sha256:2077e1aa3f814ab5b0f397e9c14e22794fd281a16483ff1d4867f16300f4aae9",
             "locator": {
-              "kind": "symbol",
-              "name": "_group_observation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -250,15 +265,14 @@
       ]
     },
     "4": {
-      "note": "`prepare_terminal_group` sequences removal preview, terminal agent archiving/blocker checks, and live move-out into a `GroupPreparation` result.",
+      "note": "`prepare_terminal_group` sequences removal preview, terminal agent archiving/blocker checks, and live move-out into a `GroupPreparation` result.\n\nAnchor: `prepare_terminal_group`",
       "targets": [
         {
           "anchor": {
-            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-            "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+            "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+            "content": "sha256:2077e1aa3f814ab5b0f397e9c14e22794fd281a16483ff1d4867f16300f4aae9",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_terminal_group"
+              "kind": "file"
             }
           },
           "kind": "code"

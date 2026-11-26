@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+        "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
         "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A bound first call through the registered handler carries the caller and its facts.\n\nAnchor: `test_f08_bound_first_call_through_registered_handler`",
+      "note": "A bound first call through the registered handler carries the caller and its facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
-            "content": "sha256:91a1512b9992f6786821aabc6baa09ebfdead6627dc06381caba51b509aca8c3",
+            "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
+            "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_f08_bound_first_call_through_registered_handler"
             }
           },
           "kind": "test"
@@ -37,14 +38,15 @@
       ]
     },
     "2": {
-      "note": "A fresh process writes its first call through startup.\n\nAnchor: `test_f08_fresh_process_first_call_through_registered_handler`",
+      "note": "A fresh process writes its first call through startup.",
       "targets": [
         {
           "anchor": {
-            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
-            "content": "sha256:91a1512b9992f6786821aabc6baa09ebfdead6627dc06381caba51b509aca8c3",
+            "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
+            "content": "sha256:c690c865a430adb2b93db666f983b7406c842f5ad0b8c59404319fc8bdd6541c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_f08_fresh_process_first_call_through_registered_handler"
             }
           },
           "kind": "test"
@@ -56,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+            "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
             "content": "sha256:0f69719ddb53afcb9760221cddb54cad35c91bbf229c57a75221a2b1d3a56ffa",
             "locator": {
               "kind": "symbol",

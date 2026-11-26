@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:22ef1aef188c52d0e92ee8363abd3de03d7873af12b8c1a024d22409cb7d56d2",
             "locator": {
-              "end": 166,
+              "end": 118,
               "kind": "line_range",
-              "start": 158
+              "start": 110
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -106,12 +106,12 @@
         },
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
-              "end": 704,
+              "end": 587,
               "kind": "line_range",
-              "start": 692
+              "start": 575
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -194,12 +194,12 @@
         },
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
-              "end": 704,
+              "end": 587,
               "kind": "line_range",
-              "start": 692
+              "start": 575
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

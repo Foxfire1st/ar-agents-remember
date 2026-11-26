@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The header states the engine view has no entry and no URL, that no spec can mount it, and that the spec censuses reachable entries instead.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:1-10`",
+      "note": "The header states the engine view has no entry and no URL, that no spec can mount it, and that the spec censuses reachable entries instead.\n\nAnchor: header comment, `Source`: `dashboard/e2e/engine-room-retirement.spec.ts:1-10`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
-            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:47490b4ec7e109cfa6fd797ad080921ea2ddd47737dc28da2a6f185a44f96c21",
             "locator": {
-              "kind": "file"
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -18,14 +20,15 @@
       ]
     },
     "2": {
-      "note": "The assertion helpers: no `/engine/i` button or link, four engine/provider test ids at zero, four provider text tokens absent.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:12-30`",
+      "note": "The assertion helper requires zero buttons and zero links whose accessible name matches /engine/i.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
-            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:3ae95d798aca45fd524fb6c556e2048449638b4c74b7fa4efbf2a9b8391b43f5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "expectNoEngineEntry"
             }
           },
           "kind": "test"
@@ -33,14 +36,16 @@
       ]
     },
     "3": {
-      "note": "The cockpit-root and dev-harness-index cases.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:32-44`",
+      "note": "The cockpit-root and dev-harness-index cases.\n\nAnchor: `cockpit root`, `dev harness index`, `Source`: `dashboard/e2e/engine-room-retirement.spec.ts:20-30`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
-            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:2b3ec59980ed5645a3522bf5c12fc77540a46391a8d9cd6d40763ff459abe35d",
             "locator": {
-              "kind": "file"
+              "end": 30,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "test"
@@ -48,14 +53,15 @@
       ]
     },
     "4": {
-      "note": "The three timelines, with `memory-block` as the degraded beat and the note that the provider arcs went with the providers.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:46-53`",
+      "note": "The three timelines, with memory-block as the degraded pre-contract failure mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
-            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:eafbb189fa3f72ae5454a7deef432ad9c0f7d6fbb858612dacff184a51843ba8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TIMELINES"
             }
           },
           "kind": "test"
@@ -63,14 +69,26 @@
       ]
     },
     "5": {
-      "note": "The timeline loop presses the exact play control and settles on the end caption before asserting absence.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:55-71`",
+      "note": "The timeline loop presses the exact play control and settles on the end caption before asserting absence.\n\nAnchor: `TIMELINES` loop (`play`), `Source`: `dashboard/e2e/engine-room-retirement.spec.ts:39-54`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
-            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:eafbb189fa3f72ae5454a7deef432ad9c0f7d6fbb858612dacff184a51843ba8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TIMELINES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:0d89edcebb17eea37e4b034060d5842b90aa4e92a5a736d72be5bfac4bc4952c",
+            "locator": {
+              "kind": "symbol",
+              "name": "play"
             }
           },
           "kind": "test"
@@ -78,14 +96,15 @@
       ]
     },
     "6": {
-      "note": "The calm resting state and the two dev pages.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:73-89`",
+      "note": "The calm resting state and the two dev pages.\n\nAnchor: `DEV_PAGES`, `Source`: `dashboard/e2e/engine-room-retirement.spec.ts:56-70`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
-            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "blob": "b214acd1f905e89ac8b178d13e32f6d1531237af",
+            "content": "sha256:464b9897d2d77101043104136b27be3dc4c2091a4873db4519c366a283e3554b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "DEV_PAGES"
             }
           },
           "kind": "test"

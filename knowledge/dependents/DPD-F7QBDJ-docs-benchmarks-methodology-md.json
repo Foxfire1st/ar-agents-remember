@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "docs/benchmarks-methodology.md (lines 48-59) accurately describes runtime_install(include_benchmarks=true) renewing benchmarks/ while preserving user-runs/; L38 only adds default-false reconcile_shared_held_stores.",
-    "task": "261112-BUG-L38",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/benchmarks-methodology.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/benchmarks-methodology.md",
@@ -17,21 +17,21 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
+      "blob": "0705657fbdcdf581c3c67cb0a5c85fdf4e124322",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
     },
     {
-      "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
+      "blob": "8b42895d7bbdb10687ee6e46ed8c8d989546c01e",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py"
     },
     {
-      "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
+      "blob": "232a354e175ed7dce1a51a4a04685b34967bc96f",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py"
     },
@@ -41,17 +41,17 @@
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/analysis.py"
     },
     {
-      "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+      "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
     },
     {
-      "blob": "058b38584bb8c501173d9793dbaeba6a983041e5",
+      "blob": "b2ceba0218303430dd9ea7e088aa1042d8cf6881",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/services.py"
     },
     {
-      "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
+      "blob": "c850334b91dd3b57babb5c9d5dd68b2b1fc014e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
     },
@@ -61,30 +61,30 @@
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/roots.py"
     },
     {
-      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
     {
-      "blob": "019a87725e9c3d11fb5c479ff128adb76c8ec41d",
+      "blob": "fe0c97bc3f1bfc178ed524c5817f98fa9297d1f2",
       "kind": "file",
       "path": "benchmarks/cases/tensorflow-check-numerics-xla/case.json"
     },
     {
-      "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+      "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
       "kind": "file",
       "path": "scripts/sync-runtime.py"
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

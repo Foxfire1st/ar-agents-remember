@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+        "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
         "content": "sha256:ce11b30237099bab337b37aa26ff64e62e565ec7c8efc8513b39676bdbaa6cde",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+        "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
         "content": "sha256:ee75c2931740e75cec001fcb99949c68d7c028c03d7338502de28a8225e83bf2",
         "locator": {
           "kind": "symbol",
@@ -39,11 +39,11 @@
   "realizes": [],
   "references": {
     "13": {
-      "note": "The suite mounts the shell and switches views through the mode bar.",
+      "note": "The suite mounts the shell and switches views through the mode bar.\n\nAnchor: `rails Operations and gives File Viewer the full width`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:493-518`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:43826bb4fef8b57bcf6e58bad88b4b391c448f2711fabe050e3eee927ec7f52f",
             "locator": {
               "end": 518,
@@ -52,25 +52,15 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "The layout matrix sources the retained pages only through their injected views.",
+      "note": "The layout matrix sources the retained pages only through their injected views.\n\nAnchor: `preserves the %s layout through initialView` / `visible tab contract (MIK-R79)`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:520-538` and `dashboard/src/cockpit/Cockpit.test.tsx:729-747`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:7a9b8b3c5a1f030f253645e24c8773873d4be96a5d6eba11b975a015fd2834e8",
             "locator": {
               "end": 538,
@@ -82,22 +72,12 @@
         },
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:8480f1ccc96bbe32bc150d323a9f40e87471142b4d3b0dda2d4a28092ba7c629",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:7d77a5fe6533e11b895fe6c1c3a97fcc972487c24b2e802000a38085ed09b6eb",
             "locator": {
-              "end": 746,
+              "end": 747,
               "kind": "line_range",
               "start": 729
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -140,26 +120,15 @@
       ]
     },
     "29": {
-      "note": "`GALLERY` fixtures + the `applySnapshot` hydration pattern.",
+      "note": "`GALLERY` fixtures + the `applySnapshot` hydration pattern.\n\nAnchor: `seed`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:34-38`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:0006f532816355515ca7b8825f236bddaa6c76fc721f96234f8f71b2e07b3932",
             "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 34
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "seed"
             }
           },
           "kind": "test"
@@ -189,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:fd961a5cbd96d3f97343942a049d1058c1275f3122a3c4a8fc650d0e3a650996",
             "locator": {
               "end": 298,
@@ -202,26 +171,16 @@
       ]
     },
     "32": {
-      "note": "The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence.",
+      "note": "The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence.\n\nAnchor: `directly shows one persistent Role chats pane without an old-chat selector`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:699-727`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:9cc625bbffb74f914b8257dd4a266dd55c8cc98753b43fd6df8fc6c924e224b5",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:bc44ba107280a2fd6b36d76ca59c06324c9943f182e7256a26596210693ea54a",
             "locator": {
-              "end": 726,
+              "end": 727,
               "kind": "line_range",
-              "start": 700
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
+              "start": 699
             }
           },
           "kind": "test"
@@ -251,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:3f9f761b58dc7cb58b79c22ed925e1649e6b500736c3f4567e966a47074577d0",
             "locator": {
               "end": 372,
@@ -264,26 +223,26 @@
       ]
     },
     "35": {
-      "note": "`railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole(\"img\", { name: \"Severity: warn\" })` + `getByRole(\"option\", …)`, and the scoped `axe.run`.",
+      "note": "`railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole(\"img\", { name: \"Severity: warn\" })` + `getByRole(\"option\", …)`, and the scoped `axe.run`.\n\nAnchor: `railProjection`, `WARN_ROW`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:799-875`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:a024e86a781f0c22f9577e04fee511117f7e13e8a6f7c2f13ac8c7b818431bb4",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:b4791650566375b4260bb00f2228c3f52491151add3ae1afcf15afcb81f545d4",
             "locator": {
-              "end": 873,
-              "kind": "line_range",
-              "start": 797
+              "kind": "symbol",
+              "name": "railProjection"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:34744b157af119c726b54cc658ac875eec45ffd02167c4c0da73b1224c0aa82a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "WARN_ROW"
             }
           },
           "kind": "test"
@@ -359,24 +318,24 @@
         },
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:723c09ea8948930577ca4d755bae6a32d95e1f1d30f6ecc96b6691deb10d50e5",
             "locator": {
-              "end": 853,
+              "end": 852,
               "kind": "line_range",
-              "start": 833
+              "start": 832
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:82326f1f5504d8b79c95d04b5f8a1f48c8f638b901e9faa1fb8fec7fa26f78c7",
             "locator": {
-              "end": 841,
+              "end": 840,
               "kind": "line_range",
-              "start": 822
+              "start": 821
             }
           },
           "kind": "test"
@@ -406,26 +365,16 @@
       ]
     },
     "40": {
-      "note": "The toggle cases assert the same document-chat node across the River/Chat switch.",
+      "note": "The toggle cases assert the same document-chat node across the River/Chat switch.\n\nAnchor: `hides the single-instance chat behind the Event River instead of unmounting it`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:579-606`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:98668b7a36c7e131bbedebb741dd6b836afab17a0c61aa0168eb4d2da5900fba",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:27259aef247b4a9f86929f408a7b392f622b9f184e80a80dcc93cb2011191f70",
             "locator": {
               "end": 606,
               "kind": "line_range",
-              "start": 580
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
+              "start": 579
             }
           },
           "kind": "test"
@@ -433,26 +382,16 @@
       ]
     },
     "41": {
-      "note": "Both rail asides stay mounted under full-bleed views.",
+      "note": "Both rail asides stay mounted under full-bleed views.\n\nAnchor: `keeps both rail asides mounted (hidden, never unmounted) on a full-bleed view`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:541-577`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:4d2908f50470d73a99f994dc1aabfdc8e72c6205292014d3c63eb2f1b0abaa07",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:dedd356da114612fba633256dd98292913781ccccbdd3cd047d01e1dc86db8c7",
             "locator": {
-              "end": 576,
+              "end": 577,
               "kind": "line_range",
-              "start": 542
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
+              "start": 541
             }
           },
           "kind": "test"
@@ -460,26 +399,16 @@
       ]
     },
     "42": {
-      "note": "The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze.",
+      "note": "The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze.\n\nAnchor: `draws no layer over the application and keeps no rule for one`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:374-389`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:ea6c45cc5e51243992d6a899e4fcb33efbf386152e6e71252ede6953b5518422",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:51debc9bcc2b8aab744770bb307591f0d6bfc8783df4dc89a5b32d97526252c5",
             "locator": {
-              "end": 388,
+              "end": 389,
               "kind": "line_range",
-              "start": 377
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
-            "locator": {
-              "kind": "file"
+              "start": 374
             }
           },
           "kind": "test"
@@ -491,24 +420,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:83e78d5f862d6cd2e82b5ae2a54d4bf832eebdbbe1f51917d1a98b348fbcb087",
             "locator": {
-              "end": 894,
+              "end": 893,
               "kind": "line_range",
-              "start": 875
+              "start": 874
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:5d0b9ab9e2276e64483183d44dc40946af82bd4791d8038215bec19e7535c0e7",
             "locator": {
-              "end": 882,
+              "end": 881,
               "kind": "line_range",
-              "start": 863
+              "start": 862
             }
           },
           "kind": "test"
@@ -520,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:ee75c2931740e75cec001fcb99949c68d7c028c03d7338502de28a8225e83bf2",
             "locator": {
               "end": 330,
@@ -532,7 +461,7 @@
         },
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
             "content": "sha256:ce11b30237099bab337b37aa26ff64e62e565ec7c8efc8513b39676bdbaa6cde",
             "locator": {
               "end": 371,

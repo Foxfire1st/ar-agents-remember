@@ -55,14 +55,27 @@
       ]
     },
     "102": {
-      "note": "Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped.",
+      "note": "Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped.\n\nAnchor: `build_parser`, `_run_finite_command`",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_parser"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_finite_command"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -892,14 +905,27 @@
       ]
     },
     "6": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam.\n\nAnchor: `build_context_packet`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam.\n\nAnchor: `build_context_packet`, `_drift_packet`",
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:6db5c236188b2c1c146c22e8a6b535408bbb48cf2c382dd6645a280789b322dc",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_context_packet"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:53f7692ba3488a898eb92c114675e4c0daaf75a9b6a84576e07035c12ba7e80e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drift_packet"
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },

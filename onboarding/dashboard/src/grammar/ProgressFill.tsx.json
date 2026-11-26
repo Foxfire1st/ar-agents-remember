@@ -3,28 +3,27 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retained component renders completed/total progress; former detail-panel and provider-seed uses are named by its source comment, not by a current caller.",
+      "note": "The retained component renders completed/total progress; its source comment names only the detail panel's former task-step progress use, with no current caller under dashboard/src.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
-            "content": "sha256:b2559c8dbb7752d10e95278e260fa9f27832850a325cb0edad79cc4b36114794",
+            "blob": "7f590e9e0692a8f355f6653ec1373f7535c408ce",
+            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
             "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 3
+              "kind": "symbol",
+              "name": "ProgressFill"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
-            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
+            "blob": "7f590e9e0692a8f355f6653ec1373f7535c408ce",
+            "content": "sha256:6e592399c15cebd3626a6b58e53eb73969ba2a68bfac86538f350966da759064",
             "locator": {
-              "end": 45,
+              "end": 4,
               "kind": "line_range",
-              "start": 27
+              "start": 3
             }
           },
           "kind": "code"

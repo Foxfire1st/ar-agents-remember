@@ -55,9 +55,7 @@ The adapter and the port it implements.
 - The port, its request and its view. [2]
 
 
-
-- The default composition binds it. Anchor: `build_default_worktree_services` [3]
-
+- The default composition binds it. [3]
 
 
 ### Cross-Repo References
@@ -65,7 +63,6 @@ The adapter and the port it implements.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
-
 
 - The plan binds product stamp time to the two input commits. [7]
 

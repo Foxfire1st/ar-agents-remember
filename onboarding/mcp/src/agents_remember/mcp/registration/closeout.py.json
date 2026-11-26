@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+        "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
         "content": "sha256:b81fa01ac7d524b80576efc62e9cc0ece53b751d838062a0fd5bae97495af362",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+        "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
         "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
-        "content": "sha256:a487e3a33774258b07409b92c3dbcab68aa843b8657937d70323437675168786",
+        "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+        "content": "sha256:952000fce6cbf02aae6d6273fddaec9741911d3149dd6654637921a0e5fe0ed5",
         "locator": {
           "kind": "file"
         }
@@ -58,16 +58,26 @@
   ],
   "references": {
     "1": {
-      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.",
+      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.\n\nAnchor: `register_closeout_tools` through `_register_reclamation_command_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
-            "content": "sha256:5a92a75af4fd4e6bbcbf6e21057793c74d7e978eab8071e4dd7b2e38c86630e1",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 28
+              "kind": "symbol",
+              "name": "register_closeout_tools"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:a9f8fee08cb565bfe94e7a37f1abaf2c822c1903d0fcf4a24306a8749b0a62cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_reclamation_command_tools"
             }
           },
           "kind": "code"
@@ -79,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
               "end": 33,
@@ -91,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:0878111df3841152f48711073ccac31571e5a53ae197fbc2f1c81f3ab4875368",
             "locator": {
               "end": 201,
@@ -103,12 +113,12 @@
         },
         {
           "anchor": {
-            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
             "content": "sha256:5c9bf6e4e020ee6a2696c5e214c98564d6dce0d00af3ad50a9fce6a991abea81",
             "locator": {
-              "end": 104,
+              "end": 100,
               "kind": "line_range",
-              "start": 83
+              "start": 79
             },
             "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
           },
@@ -117,16 +127,26 @@
       ]
     },
     "11": {
-      "note": "This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof.",
+      "note": "This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof.\n\nAnchor: `register_closeout_tools` through `_register_reclamation_command_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
-            "content": "sha256:5a92a75af4fd4e6bbcbf6e21057793c74d7e978eab8071e4dd7b2e38c86630e1",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 28
+              "kind": "symbol",
+              "name": "register_closeout_tools"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:a9f8fee08cb565bfe94e7a37f1abaf2c822c1903d0fcf4a24306a8749b0a62cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_reclamation_command_tools"
             }
           },
           "kind": "code"
@@ -134,16 +154,26 @@
       ]
     },
     "12": {
-      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.",
+      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.\n\nAnchor: `register_closeout_tools` through `_register_reclamation_command_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
-            "content": "sha256:5a92a75af4fd4e6bbcbf6e21057793c74d7e978eab8071e4dd7b2e38c86630e1",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
-              "end": 219,
-              "kind": "line_range",
-              "start": 28
+              "kind": "symbol",
+              "name": "register_closeout_tools"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "content": "sha256:a9f8fee08cb565bfe94e7a37f1abaf2c822c1903d0fcf4a24306a8749b0a62cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_reclamation_command_tools"
             }
           },
           "kind": "code"
@@ -155,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:b81fa01ac7d524b80576efc62e9cc0ece53b751d838062a0fd5bae97495af362",
             "locator": {
               "end": 115,
@@ -168,11 +198,11 @@
       ]
     },
     "2": {
-      "note": "The payload builders these forward to.",
+      "note": "The payload builders these forward to.\n\nAnchor: `worktree_closeout_preview_payload`, `worktree_closeout_apply_payload`, `worktree_integrate_payload`, `worktree_checkpoint_landing_payload`, `worktree_record_landing_payload`, `worktree_operation_control_payload`, `worktree_cleanup_payload`, `worktree_abandon_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:d29499dd32149fef8bc8418afe3baad9a315b452ccb6a07494567469f0845ec1",
             "locator": {
               "kind": "symbol",
@@ -184,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:6b0cf06a256f613fe4834271910e905309fc29f5b1b7601bf8cda29f45b7afce",
             "locator": {
               "kind": "symbol",
@@ -196,7 +226,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:0e21a70c7ddbff6a8947db1fa44ef8aaa34a68085202c501f70efa6518f2002c",
             "locator": {
               "kind": "symbol",
@@ -208,7 +238,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:0430ae7f2b7ed259a2576820fc33c35146f0b5cb2f57e00492c4fc4291314798",
             "locator": {
               "kind": "symbol",
@@ -220,7 +250,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:4b08a1f122026f5d3ce5012d93a4796f8b12aa73ec9c93b654ceace8e0b7b5e8",
             "locator": {
               "kind": "symbol",
@@ -232,7 +262,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:7cf4fa3e68ddaa0bd592051a7872a2b8e810780982feb18cc56e09714e7738b1",
             "locator": {
               "kind": "symbol",
@@ -244,8 +274,8 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:d1d4a089f69c8817115b4a75cc35f458dd988976000533d6c80e2368a7ce446a",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
+            "content": "sha256:ae7712b4b4d63eae5f93ead7901307e205921e6e9104cbfb3a3b1ab4ca47588d",
             "locator": {
               "kind": "symbol",
               "name": "worktree_cleanup_payload"
@@ -256,7 +286,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:a013547477b416cf54076ecb821baf1a24bf5b99ea3310e7276f322a7726ca35",
             "locator": {
               "kind": "symbol",
@@ -273,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:e645def706db273be4a8fc86f2a25d1d732fa06a6f772cf519fb5aa1789f0bf3",
             "locator": {
               "end": 156,
@@ -285,7 +315,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:0430ae7f2b7ed259a2576820fc33c35146f0b5cb2f57e00492c4fc4291314798",
             "locator": {
               "end": 169,
@@ -303,7 +333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
             "locator": {
               "kind": "symbol",
@@ -315,7 +345,7 @@
         },
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:66d866b8ec052ac7ddab8696a358a74fa7191a06bfbe35b4d56044b8e23208e6",
             "locator": {
               "kind": "symbol",
@@ -383,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
             "content": "sha256:5b75019b3ffbc4d3e4a39bd0fb07638657128f43d4db984d5218401220ac7e24",
             "locator": {
               "kind": "symbol",

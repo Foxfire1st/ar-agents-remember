@@ -16,15 +16,13 @@ The description probe registers the product's actual registrar set, collapses wh
 
 The argument check visits each advertised tool's input schema. It checks the current node before descending through properties, model definitions, `allOf`, `anyOf`, `oneOf`, `items` and `additionalProperties`. The separate pure model control distinguishes the 121-character rejection from the 120-character boundary without a server fixture. A declared check is not evidence that all live published models already pass it.
 
-The pointer recognizer accepts documentation files, named skills and skill URIs. Files and named skills resolve to checkout paths and are checked for existence; a skill URI is recognized but has no local filesystem target in this helper. The shipped reference has a stronger file-specific chain: the moved-detail inventory checks that omitted calling material survives, a packaged-copy test requires byte equality, and a disposable install reads back the installed reference. Its watcher operation is patched; this is not a real-provider or host-ambient-exclusion witness.
+The pointer recognizer accepts documentation files, named skills and skill URIs. Files and named skills resolve to checkout paths and are checked for existence; a skill URI is recognized but has no local filesystem target in this helper. The shipped reference has a stronger file-specific chain: the moved-detail inventory checks that omitted calling material survives, a packaged-copy test requires byte equality, and a disposable install reads back the installed reference. The disposable install calls `install_runtime.install_runtime(..., dry_run=False)` into a temporary coordination root and reads back `docs/tool-details.md`; this is not a host-ambient-exclusion witness.
 
 ## Evidence
 
 - The dedicated registered closeout case requires single-call wording and rejects polling language. [6]
 
-
 - The registered description check compares the advertised roster, enforces the recorded ceilings for interim-owned descriptions and checks the ordinary ceiling and longer-explanation pointer. [1]
-
 
 - The walker checks descriptions at each visited schema node and descends through properties, model definitions, allOf, anyOf, oneOf, items and additionalProperties. [2]
 
@@ -33,4 +31,4 @@ The pointer recognizer accepts documentation files, named skills and skill URIs.
 - Pointer interpretation distinguishes local documentation/skill paths from the recognized URI spelling without a local filesystem target. [4]
 
 
-- Moved material, packaged byte equality and disposable installed-reference read-back protect the longer explanation; the install probe patches watcher operations. [5]
+- Moved material (including unusedSettingsKeys), packaged byte equality and disposable installed-reference read-back protect the longer explanation. [5]

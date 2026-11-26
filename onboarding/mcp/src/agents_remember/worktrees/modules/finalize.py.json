@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-        "content": "sha256:e87a6de9f58d5c1f93635715c5e87e37bdc6fe1fbcdbbc5628b6b494ed021013",
+        "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+        "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
         "locator": {
           "kind": "symbol",
           "name": "_run_or_verify_cleanup"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-        "content": "sha256:ba19a3eb1a8075fa4bbee3edf1814b9bc96f06776db39de9d7a8d36b8ef691bf",
+        "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+        "content": "sha256:96866cea1414279deee0496bd8b9fe9415aa479792e9c4de807bec309128c8a1",
         "locator": {
           "kind": "file"
         }
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -86,12 +86,12 @@
       ]
     },
     "11": {
-      "note": "Parent resolution dispatches on the leaf’s `master`; a leaf naming none is resolved through the folder master, and a leaf with no folder master or leaf row is refused rather than finalized alone.\n\nAnchor: `_resolve_parent_target`",
+      "note": "Parent resolution dispatches on the leaf’s `master`; a leaf naming none is resolved through the folder master, and a leaf with no folder master or leaf row is refused rather than finalized alone.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -102,12 +102,12 @@
       ]
     },
     "12": {
-      "note": "A named master: expected path, assertions, read, exactly one row.\n\nAnchor: `_named_parent`",
+      "note": "A named master: expected path, assertions, read, exactly one row.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -118,12 +118,12 @@
       ]
     },
     "13": {
-      "note": "A leaf naming none: the master sync’s helper, the same named-master checks, and the named refusal when the folder master or its row is absent.\n\nAnchor: `_folder_parent`",
+      "note": "A leaf naming none: the master sync’s helper, the same named-master checks, and the named refusal when the folder master or its row is absent.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:7b08e7624c9f3038b0ce0b3f3a269f33d9744b1da922f2ba16c6ffac63b0ef98",
             "locator": {
               "kind": "symbol",
@@ -150,7 +150,7 @@
         },
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
             "locator": {
               "kind": "symbol",
@@ -163,12 +163,12 @@
       ]
     },
     "15": {
-      "note": "The completed row goes through the master demotion rule.\n\nAnchor: `_parent_completion_candidate`",
+      "note": "The completed row goes through the master demotion rule.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -201,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
               "end": 133,
@@ -218,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -230,12 +230,12 @@
       ]
     },
     "19": {
-      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: `resolve_series_targets`",
+      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -250,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -266,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
             "locator": {
               "kind": "symbol",
@@ -300,12 +300,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
             "locator": {
-              "end": 815,
+              "end": 769,
               "kind": "line_range",
-              "start": 812
+              "start": 766
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -318,12 +318,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-            "content": "sha256:033a560188ccb2030f55658d9c9c6188196cf5dbba375b84f3599a150fde0d75",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
             "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 310
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
             }
           },
           "kind": "code"
@@ -366,12 +365,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:c773772c477e0a2152a0edb5e62dff7715402b045b5c6b15b82d3f173b053fdd",
             "locator": {
-              "end": 197,
+              "end": 194,
               "kind": "line_range",
-              "start": 197
+              "start": 194
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },

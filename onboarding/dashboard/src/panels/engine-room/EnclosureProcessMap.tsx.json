@@ -201,12 +201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:08d8e3e098f8e770d4dc28221e0bc00012794c953b8fdda3d9498dc2aa484f18",
             "locator": {
-              "end": 338,
+              "end": 323,
               "kind": "line_range",
-              "start": 330
+              "start": 315
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },

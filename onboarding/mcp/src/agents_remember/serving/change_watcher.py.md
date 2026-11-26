@@ -21,27 +21,21 @@ The existing recursive watcher explicitly passes `force_polling=False` on suppor
 
 Completion preserves rest through max(existing floor, now + max(interval,min(duration,3s))). Once per rest window, task/host invalidation may spend an early pass at arrival+interval and last-wake floor; a quick tick preserves original rest. Pending domains survive failures and health changes until successful acknowledgement. Heartbeat is scheduling, not total-freshness or periodic host read.
 
-
-
 ## Code Commentary
 
 ProjectionInputWatcher watches planned projection-input roots and feeds accepted domain/path invalidations to ChangePacer; ChangePacer debounces and schedules change, heartbeat or full-refresh wakes.
 
 Accepted native paths reach the projection refresh, with explicit incompleteness falling back to full reconciliation. Pending own-write effects are judged after completion; completed identity/event-kind checks do not certify unknown foreign writes. Discovery/refresher/native-child death share one reported outage/retry path. Failure origins remain separate: root-refresher loss queues ALL after child drain; native-lane failure before registration preserves ordinary HEALING without adding host activity; registered native loss queues ALL after drain. The existing registration flag, stop/drain, exception reporting, stable downSince and default thirty-second retry retain their owners. If both failure buckets are populated, the root failure is reported first. Independent full healing preempts partial traffic; only successful full publication advances its clock.
 
-
 ### Logic
 
 Existing roots cover `tasks`, the configured host-publication workspace, workspace dismissals, drift, `temp/worktree-start`, `temp/tool-reports` and, when configured, the activity directory, plus since MIK-R200 the `controlplane` activation records and terminal notice store and the temporary held-message queue. Central provider `logs/providers/{status,setup}` are **not** roots: no surviving projection reader reads them and they carry no `projection_domains_for_paths` entry, so an event there would fail open to every domain and rebuild from state nothing displays. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
 
 **Nothing under `worktrees/` is a native watch root.** The source records the reasons: about
-50k checkout directories would recreate the scan cost, and each task's `provider-runtime` can
-contain Postgres/grepai data unreadable to the daemon and churning on container/WAL writes.
+50k checkout directories would recreate the scan cost, and the worktree state it holds can be unreadable to the daemon and churn on WAL writes.
 Recursive watching previously crashed on permission-denied and would also wake projection for
 those unrelated writes. Central provider status/setup is **not** watched under `logs/providers`, for the
-reason the source gives in place: no surviving reader, no domain entry. The independent
-provider-safety sampler keeps its own loop and needs no watch root. Worktree
-provider/setup files retain their existing non-host safety/heartbeat owners.
+reason the source gives in place: no surviving reader, no domain entry.
 `ProjectionInputWatcher._watch_once` additionally passes `ignore_permission_denied=True`, so an
 unreadable subdirectory of an admitted root is skipped rather than killing the whole watch.
 The original card recorded a dedicated no-worktree-root regression in `test_change_watcher.py`;
@@ -169,7 +163,7 @@ No configured external domain documentation source.
 
 ### Repo-Internal References
 
-- The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree. 
+- The source records why recursive worktree watching would repeat scan cost, crash on permission-denied over daemon-unreadable worktree state and react to WAL churn; admitted roots exclude that tree.
 - Native watching skips unreadable subdirectories as defence-in-depth. [14]
 - Defaults are 0.1-second debounce and 15-second heartbeat; max delay defaults to interval and the pacer starts degraded. [15]
 - Debounce/max-delay/heartbeat deadlines retain interval and completion floors, subject to the one-use task/host rest exception and due full healing. [16]
@@ -187,9 +181,7 @@ The watch roots are derived from — and must stay in lock-step with — the rea
 `project_and_write`; the projector consumes the pacer; `create_app` decides when a watcher exists;
 the CLI/daemon own the `--heartbeat` knob's plumbing.
 
-
 - Projector wiring and fail-open watcher completion retain actual ownership. [7]
-
 
 | Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
 | Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
@@ -207,24 +199,17 @@ Accepted watcher paths map to explicit projection reader domains. `ChangePacer` 
 domains through debounce/max-wait and returns a `ProjectionWake`; an unmapped accepted path returns
 all domains so correctness fails open to a full refresh.
 
-
-- Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded. [1]
-
+- Reader-derived roots and every-directory input filtering; `worktrees/` trees are excluded. [1]
 
 - Accepted paths map to reader domains; unknown accepted paths request every domain.
 
-
 - Typed wake reason/domains, structural watcher seams and complete pacer scheduling. [3]
-
 
 - Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. 
 
-
 - Shared lock naming and transaction mechanics keep filtering aligned. [5]
 
-
 - Projection source readers determine the input surface. [6]
-
 
 - The live-input model selects actual watcher participation. [8]
 
@@ -232,19 +217,17 @@ all domains so correctness fails open to a full refresh.
 
 - Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once` [10]
 
-
 - The real completion floor preserves accumulated domains.  Anchor: `ChangePacer.projection_completed` [11]
 
-
 - Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline` [12]
-
 
 - After child drain, root-refresher loss or established native-watch loss reconciles all domains; pre-registration native failure keeps ordinary degraded healing. The existing outage and retry owner remains.
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:852-889 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/change_watcher.py:891-951 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b; mcp/src/agents_remember/serving/change_watcher.py:886-923 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5e34b4fe25c386dde75b04f6b63d3c64e62afe39; mcp/src/agents_remember/serving/change_watcher.py:925-985 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [25]
 
 
-- The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree. [13]
+- The source records why recursive worktree watching would repeat scan cost, crash on permission-denied over daemon-unreadable worktree state, and react to WAL churn; admitted roots exclude that tree. [13]
+
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:234-280 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/serving/change_watcher.py::ProjectionInputWatcher - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/change_watcher.py::projection_input_roots - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
 

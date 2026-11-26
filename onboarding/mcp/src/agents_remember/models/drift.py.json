@@ -20,16 +20,15 @@
       ]
     },
     "2": {
-      "note": "Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`.\n\nAnchor: \"drift=DriftSummary.model_validate\"; \"def _drift_packet\"; \"-> DriftSummaryPacket\"",
+      "note": "Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`.\n\nAnchor: `build_context_packet` (`drift=DriftSummary.model_validate`), `_drift_packet` (`-> DriftSummaryPacket`)",
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:6db5c236188b2c1c146c22e8a6b535408bbb48cf2c382dd6645a280789b322dc",
             "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 120
+              "kind": "symbol",
+              "name": "build_context_packet"
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -37,64 +36,11 @@
         },
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:42dc01e6a5b3c6e6acd56fd8b693dc265774948e58ae547146c624a40b1ee2e3",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
+            "content": "sha256:53f7692ba3488a898eb92c114675e4c0daaf75a9b6a84576e07035c12ba7e80e",
             "locator": {
-              "end": 423,
-              "kind": "line_range",
-              "start": 423
-            },
-            "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:31c600d2f9b2d4d43d26092a825f042c693d4f34efaf34aff27818aceecf2333",
-            "locator": {
-              "end": 427,
-              "kind": "line_range",
-              "start": 427
-            },
-            "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:076b41541537dfb038105a4df9772b7ff18fc9576011fe16b792812be8beab0a",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:738ccd6022d5a7b9d08c84d6909d5f341bcbe79b1cf3b738d11b083e9268a564",
-            "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 194
-            },
-            "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:035ddf3cc6c2c36dffc84abaf1a424d593d1d21d5daea44b5e022152c80ea836",
-            "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 198
+              "kind": "symbol",
+              "name": "_drift_packet"
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },

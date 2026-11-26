@@ -20,15 +20,13 @@ Start with `settings.example.json` for the repository/profile and runtime settin
 
 ### Authority settings
 
-The JSON template names one coordination root, one workspace root and the transcript-log root, then declares repository and provider IDs. The `agents-remember` repository entry selects `mcp/certification-profile-v1.json` beside a null `contractPath`; it is a reference to the checked-in profile, not another executor. Configured repository roots derive from `workspaceRoot/<repo-id>`, and external memory derives from `coordinationRoot/memory-repos/ar-<repo-id>`.
+The JSON template names one coordination root, one workspace root and the transcript-log root, then declares repository IDs. The `agents-remember` repository entry selects `mcp/certification-profile-v1.json` beside a null `contractPath`; it is a reference to the checked-in profile, not another executor. Configured repository roots derive from `workspaceRoot/<repo-id>`, and external memory derives from `coordinationRoot/memory-repos/ar-<repo-id>`.
 
-The provider entries are empty per-provider settings objects, not an empty providers map. The parser derives the supported providers' runtime and log locations and instance identity; callers do not insert container/data-root/watch configuration into those objects. The retained template and parser vocabulary do not by themselves promise that any provider setup, watcher or backend tool is an available active operation.
+The example carries no `providers` or `providerDegradation` block; `runtime_config.py` lists `retirement`, `providers` and `providerDegradation` in `UNUSED_SETTINGS_SECTIONS` so older files still load while reporting those keys as unused.
 
-`benchmarksEnabled` is false. Dashboard supervision is opt-in in the template (`autoStart: false`, `port: 8765`). Timeout caps use `toolSeconds` and `providerSetupSeconds`; the old `providerSeconds` spelling is refused. The setup cap is distinct from indexing or seed duration, which the parser's refusal explicitly identifies as uncapped.
+`benchmarksEnabled` is false. Dashboard supervision is opt-in in the template (`autoStart: false`, `port: 8765`). Timeout caps illustrate `toolSeconds` only; `parse_timeout_caps` admits only `toolSeconds`, ignores retired `providerSetupSeconds` (reporting it as unused), and rejects unknown keys.
 
-The retained `providerDegradation` illustration enables the detector and failsafe and sets the memory ratios to 0.8 and 0.92. These conservative settings are parsed by the focused `kernel/primitives/provider_degradation_settings.py` owner; their presence is configuration vocabulary, not a report of live provider health or measurement.
-
-The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize` and `autoCloseCompletedSeats`. The parser accepts the older `autoRetireOnIntegration` and `autoRetireOnFinalize` aliases, while current keys take precedence. Tool-log retention is also illustrated separately by `keepDays`, `maxBytes` and `enclosureMaxBytes`.
+The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize` and `autoCloseCompletedSeats`. `runtime_config.py` lists `retirement` in `UNUSED_SETTINGS_SECTIONS` so the section loads unread and is reported in `unused_settings_keys`. Tool-log retention is also illustrated separately by `keepDays`, `maxBytes` and `enclosureMaxBytes`.
 
 ### Server registration
 
@@ -44,12 +42,14 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 
 ## Evidence
 
-- The public JSON example contains the repository/profile reference, empty per-provider objects and the named default illustrations. [1]
+- The public JSON example contains the coordination/workspace/transcript roots, repository/profile reference, timeoutCaps.toolSeconds, benchmarksEnabled, dashboard, retirement and toolLog illustrations, with no providers or providerDegradation blocks. [1]
+
 - The guideline example separates source responsibilities and uses Application entry point terminology. [2]
 - External memory roots derive from the coordination root and reject the removed repository-local layout. [3]
-- Supported provider entries derive runtime/log roots and reject unsupported per-provider fields. [4]
 - Gate delegation's standard settings home outranks the warning-bearing authority fallback. [6]
-- The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary. [7]
-- Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary. [8]
+
+
+- parse_timeout_caps admits only toolSeconds, silently skips retired providerSetupSeconds (reported by unused_settings_keys), and rejects any other key as an unsupported timeout cap. [7]
+
 
 - The common registration example runs `uvx` with the published package and an absolute user-config settings path. [9]

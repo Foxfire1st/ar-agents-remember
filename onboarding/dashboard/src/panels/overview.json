@@ -3727,11 +3727,11 @@
       ]
     },
     "54": {
-      "note": "Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary.",
+      "note": "Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary.\n\nAnchor: `TaskState`, `TaskEntry`, `Source`: `mcp/src/agents_remember/observer/projection.py:459-473` and `mcp/src/agents_remember/observer/projection.py:508-526`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
             "content": "sha256:fe9ca863cfcf6e071b01eec7e19ab0cc07db6748f5a092ed6d0343dcfd714514",
             "locator": {
               "kind": "symbol",
@@ -3743,10 +3743,11 @@
         },
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:7e86ecdfc99f96b724303c17d58559d17e5b01ccfe537c8396fe0e15745918af",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TaskEntry"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -3804,7 +3805,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "blob": "1541aea74b7669a700a5eb337062ba13d34ffdc3",
             "content": "sha256:1d879072ff5faf6f25c5aae9a0e0491e510a598b9e6e0487812f29c2a196f766",
             "locator": {
               "end": 8,

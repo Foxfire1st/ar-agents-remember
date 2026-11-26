@@ -168,52 +168,28 @@
   ],
   "references": {
     "10": {
-      "note": "The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value.\n\nAnchor: `McpRuntimeConfig`",
+      "note": "The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value.\n\nAnchor: `register_knowledge_tools`, `McpRuntimeConfig`",
       "targets": [
         {
           "anchor": {
             "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
-            "content": "sha256:c81044bcca1bebd8e9882cf2186e6a9e265245c2c3a5d233d233422ff01f1e94",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 80
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:f7e3a671dd74edaf4fb7458e477f6f647558535e95963c0686671d32dce9da45",
             "locator": {
               "kind": "symbol",
               "name": "McpRuntimeConfig"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
-            "content": "sha256:68c92743fa0578a21f3a218d54838b2a109c91279fc3153c3b97fc99cb509649",
-            "locator": {
-              "end": 76,
-              "kind": "line_range",
-              "start": 71
-            }
           },
           "kind": "code"
         }
@@ -386,7 +362,7 @@
       ]
     },
     "17": {
-      "note": "The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster.\n\nAnchor: `TOOL_REGISTRARS` `test_live_registration_matches_the_public_inventory_in_order`",
+      "note": "The registry registering the knowledge family in TOOL_REGISTRARS (before register_explainer_tools) and the live-registration test that compares the resulting order against the advertised roster.\n\nAnchor: `TOOL_REGISTRARS`, `test_live_registration_matches_the_public_inventory_in_order`",
       "targets": [
         {
           "anchor": {
@@ -402,42 +378,7 @@
         },
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:81b381ab8ef9d70679dc502b1e04ec59f307345d6a59cad1ab4ae0f7ad132988",
-            "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 24
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
-            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_tools.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
             "content": "sha256:9b5dae6c11fe566eb7b371edc887037e07c8a9706b502cc29849e48a4b701248",
             "locator": {
               "kind": "symbol",
@@ -511,12 +452,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:6097689f38804f991da7fac414a2d2002f37af6fd432bfdd4fcc9b744507ba9d",
             "locator": {
-              "end": 126,
+              "end": 124,
               "kind": "line_range",
-              "start": 124
+              "start": 122
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -524,12 +465,12 @@
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:72d64292840bc0a101731ce071a40da0ac5b2da6b2b95c39cd456f4ad74a2247",
             "locator": {
-              "end": 125,
+              "end": 123,
               "kind": "line_range",
-              "start": 123
+              "start": 121
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -537,12 +478,12 @@
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:37d525e2cd534b34d4a8aaba57562488748596ca549d2949971767866232f7b5",
             "locator": {
-              "end": 122,
+              "end": 120,
               "kind": "line_range",
-              "start": 120
+              "start": 118
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

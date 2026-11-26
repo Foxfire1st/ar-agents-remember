@@ -139,12 +139,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:3a9ed852bded5a0be69300f9238acb27569c8e4621028fc2de9200cdf5ef2c08",
             "locator": {
-              "end": 224,
+              "end": 221,
               "kind": "line_range",
-              "start": 201
+              "start": 198
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -152,7 +152,7 @@
         },
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -247,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
             "locator": {
               "end": 142,
@@ -260,7 +260,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:5f5ac63f2e8b18c1ff054ae79e46cc68fddfe9eee61fccd4602df1999dff952f",
             "locator": {
               "end": 366,

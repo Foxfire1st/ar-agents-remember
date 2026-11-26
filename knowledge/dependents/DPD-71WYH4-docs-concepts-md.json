@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "299008b8cc40e627ae89e165f925796332f94efc",
-    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/concepts.md remains accurate across core memory, task-topology, worktrees, role-lifecycle, briefs, index, gate contracts, tool answers, archived role agents (recipient-archived), message filing, held messages, archive-before-enclosure-removal, tool-log cancellation recording, and the explainer flow including _copy_package_folder in explainer_workspace.py unlinking a stray regular file before reseeding while still refusing symlinks; no BUG-L41 contradiction.",
-    "task": "261124-EXP-L2",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/concepts.md accurately defines memory, task-topology, worktree, role-lifecycle, briefs, explainer, and landing contracts across both 261124-EXP and DEP-R02@v1 provider removal with no search-provider, CodeGraphContext, or GrepAI claims.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 29,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
     {
-      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
     {
-      "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+      "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+      "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
@@ -281,7 +281,7 @@
       "path": "mcp/src/agents_remember/models/lifecycles/door.py"
     },
     {
-      "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+      "blob": "51871436855781243536127657a2fea10f02324f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
     },
@@ -321,7 +321,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+      "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
@@ -361,7 +361,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+      "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -420,7 +420,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -448,7 +447,6 @@
         },
         "path": "mcp/src/agents_remember/mcp/server.py"
       },
-      "heading": "Tool log",
       "kind": "anchor"
     },
     {
@@ -461,7 +459,6 @@
         },
         "path": "mcp/src/agents_remember/mcp/server.py"
       },
-      "heading": "Tool log",
       "kind": "anchor"
     },
     {
@@ -471,14 +468,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T05:37:56+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-EXP-L2",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
-    "task": "261124-EXP"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

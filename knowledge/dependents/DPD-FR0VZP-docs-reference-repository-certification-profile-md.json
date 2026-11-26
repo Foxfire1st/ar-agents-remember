@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "docs/reference/repository-certification-profile.md remains accurate after the mcp>=1.30.0,<2 floor update in mcp/pyproject.toml because certification profiles, Dagger modes, and closeout boundaries are unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/repository-certification-profile.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/errors.py"
     },
     {
-      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+      "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -128,20 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
     "task": "261125-DEP"
   }
 }

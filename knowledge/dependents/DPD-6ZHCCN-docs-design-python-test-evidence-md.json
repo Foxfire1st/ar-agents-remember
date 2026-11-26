@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/design/python-test-evidence.md (lines 13-17, 34-76) remains accurate after L29 refactored landing_commit_check.py onto commit_check_process.py and added lockfile-matched dashboard/node_modules borrowing; closeouts and landings still run only the knowledge gate and the repository pre-commit hook with no test or Dagger certification, and all listed evidence consumers and uncalled quality gates match live code.",
-    "task": "261112-BUG-L29",
+    "statement": "docs/design/python-test-evidence.md remains accurate on the synced DEP-L7 candidate because aliasing the targeted import in quality_plan.py preserves CheckConfig's public fields and every test-evidence planning boundary.",
+    "task": "261125-DEP-L7",
     "uncommitted": true
   },
   "document": "docs/design/python-test-evidence.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+      "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
     },
@@ -77,14 +77,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:27:57+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
-    "task": "261112-BUG"
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
   }
 }

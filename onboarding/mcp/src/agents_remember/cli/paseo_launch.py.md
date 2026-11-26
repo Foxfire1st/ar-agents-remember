@@ -22,9 +22,7 @@ For a provider that accepts MCP definitions, role creation attaches its own boun
 
 ### Source and authority bounds
 
-
 - The repeatable call binds the selected provider, session choices, workspace and configured tool-server identity. [10]
-
 
 - The recovery note keeps its complete locator and digest within the 600-character bound. [11]
 
@@ -51,7 +49,6 @@ Builds the exact saved native workspace/agent launch call and classifies its res
 
 RoleLaunch carries minted identity, canonical selection, actual folder/workspace and selected provider options. tool_server_definition uses this interpreter/source/settings and exact binding; recovery_note retains artifact path/digest within its bound. The saved call keeps first message as JSON data and native parent/mode/feature inputs: model, effort, mode and feature values go to the runtime at creation. A reply is accepted only for the minted agent and expected server/workspace; unconfirmed replies remain retryable rather than reminting.
 
-
 **L184 — NEW-R192-EXTRA-ARGS.** The launch is where a plan becomes provider options, so the separation between taken and noted arguments is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## Creation inputs and read grant
@@ -69,26 +66,16 @@ is archived and refused when the response returns. Ordinary launches without a m
 
 - Frozen implementation of tool_server_definition supporting the stated file behavior. [1]
 
-
-
 - The launch call preserves the selected provider, session choices, seat binding and first-message state for creation. [2]
-
-
-
-
-
 
 - The runtime opens the saved workspace, checks the leaf closing boundary, submits the saved agent call and classifies the reply. [3]
 
-
-
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [6]
+
 - Starts generated stdio server and checks serving build package root and binding from selected source. [7]
 
 
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [8]
-
-
 
 
 ## MIK-R95 Preparation Outcome And Phase
@@ -96,6 +83,5 @@ is archived and refused when the response returns. Ordinary launches without a m
 The launch outcome carries `workspace_preparation` (`created`, `found` or `opened`) taken from the public open result, and `role_launch_progress.starting()` moves the one working notice to the starting phase once the workspace call returns. Task placement therefore reports a real created/found outcome, while a Projects open reports `opened` and no invented creation outcome.
 
 </details>
-
 
 - The task server receives the host AR_PLAYWRIGHT value when present so it can use the host browser module. [9]

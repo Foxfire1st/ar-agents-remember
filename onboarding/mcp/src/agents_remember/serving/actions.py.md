@@ -27,13 +27,10 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 - Anchor: Current precomputed enclosure availability and workspace shape. [1]
 
+
 - [2]
 - [3]
 
-
-
 - Anchor: Retained compact attention acknowledgements. [5]
-
-
 
 - Dismiss actions bypass target lookup but require a nonempty itemId, an item published in the attention queue and an exactly matching kind. Missing itemId yields 400, unknown item yields 404 and kind mismatch yields 400. Every published kind is dismissible; a match returns 202 plus a DismissalIntent carrying the published actionable fingerprint. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 if absent or disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption. [6]

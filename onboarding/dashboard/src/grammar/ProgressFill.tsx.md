@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`ProgressFill` is a retained presentational bottom-up cyan charge fill inside an outline (note 08 progress grammar). Its source comment names former task-step and provider-seed uses; it has no current caller under `dashboard/src`. The comment does not restore provider-seed progress.
+`ProgressFill` is a retained presentational bottom-up cyan charge fill inside an outline (note 08 progress grammar). Its source comment names only the detail panel's former task-step progress use; it has no current caller under `dashboard/src`.
 
 ## Code Commentary
 
@@ -26,8 +26,8 @@ Presentational; the only inline style is the dynamic fill height. Cyan = the pro
 ### Repo-Internal References
 
 
+- The retained component renders completed/total progress; its source comment names only the detail panel's former task-step progress use, with no current caller under dashboard/src. [1]
 
-- The retained component renders completed/total progress; former detail-panel and provider-seed uses are named by its source comment, not by a current caller. [1]
 
 ## Historical former uses
 

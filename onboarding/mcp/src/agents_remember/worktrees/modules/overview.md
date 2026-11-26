@@ -17,7 +17,7 @@ Finalization preserves existing task/master decision arrays instead of appending
 
 The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority.
 
-Start resolves the canonical task identity and branch plan through `startup/`, admits task-derived ancestry and configured repository authority, plans memory/provider work, and materializes only on apply. Manager bootstrap and first-leaf start share the master-series contract owner. Its apply preflight observes the bootstrap journal-to-contract handoff under the same per-master mutex used for publication; dry-run observes without that lock or publication. Existing edge mismatches produce typed expected/observed admission facts instead of repairing the contract. Planned first-leaf parent authority reaches preview through `startup/start_plan.py`; it is a validated plan, not a published contract or implementation grant.
+Start resolves the canonical task identity and branch plan through `startup/`, admits task-derived ancestry and configured repository authority, plans memory work, and materializes only on apply. Manager bootstrap and first-leaf start share the master-series contract owner. Its apply preflight observes the bootstrap journal-to-contract handoff under the same per-master mutex used for publication; dry-run observes without that lock or publication. Existing edge mismatches produce typed expected/observed admission facts instead of repairing the contract. Planned first-leaf parent authority reaches preview through `startup/start_plan.py`; it is a validated plan, not a published contract or implementation grant.
 
 `start_task_publication.py` now owns the shared task-fact publication: start promotes planning or an admitted abandoned successor to `inProgress`, while attach binds the enclosure without promoting stage. Exact existing facts make retries no-ops; dry-run publishes nothing. Master-series activation is composed through `startup/series_contract_activation.py`, whose task/parent preflight precedes bootstrap mutation and whose admitted result publishes its native stage. A terminal task's ordinary reopen/finalize authority is not replaced by start.
 
@@ -49,7 +49,7 @@ A private kept index can serve successive captures. The native request owns its 
 
 checkout_holding_branch selects the actual non-bare, non-detached owner of the named branch so a series code mutation has a concrete intent/proof checkout. It reads repository facts; it is not a grant, code publisher or quality gate.
 
-`start.py` coordinates start/status/attach and provider requests. `startup/start_contract.py` owns durable structural bootstrap; `master_series_admission.py` owns persisted edge comparison and bounded refusal projection; `leaf_ref_start.py`, `start_memory.py`, `start_provider_preflight.py`, `start_plan.py`, `start_result.py` and `series_attach.py` isolate resolution, planning, admission and response construction. Provider setup/teardown execution belongs to `application/provider_runtime.py`, reached through service ports, rather than the deleted local provider modules. Synchronous provider preflight remains, but the shared predicate never enables CGC or GrepAI; ordinary start and retry return the non-enabled plan before the retained background-launch branch. Legacy progress/status readers, the live-setup retirement guard and teardown remain; their presence does not restore provider provisioning, and dry-run must not launch setup.
+`start.py` coordinates start/status/attach. `startup/start_contract.py` owns durable structural bootstrap; `master_series_admission.py` owns persisted edge comparison and bounded refusal projection; `leaf_ref_start.py`, `start_memory.py`, `start_plan.py`, `start_result.py` and `series_attach.py` isolate resolution, planning, admission and response construction.
 
 `args.py` supplies the frozen cross-layer argument DTO, including nested task selectors and normalized effective closeout input. `cli.py` converts namespaces and prints operation results. The historical explicit leaf-id heal command is a migration invocation, not normalization on ordinary contract reads. Legacy synchronous closeout apply is not an alternate delivery authority.
 
@@ -78,7 +78,7 @@ The read-local baseline memo now carries an optional capture observer, restored 
 
 Task-fact projection receives exact canonical JSON-path/document pairs, including finalize's selected leaf/parent, rather than guessing document paths from the contract folder. Abandon validates its task/parent stage before destructive output and rechecks after the terminal reread. Its existing guard publishes contract abandonment with task/parent stage and provides task-source/contract restoration on that publication's failure; this does not promise rollback of worktrees already reclaimed. Projection failures retain the shared task-fact publisher's separate reported-effect semantics.
 
-`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. `terminal_group.py` owns move-out, preview, and whole-folder removal, and `terminal_retry.py` owns completed-generation residue retry. For leaf (forced or not) and modern series contracts, cleanup and abandon remove the entire `worktree_group` folder in full after move-out rather than checking emptiness; only a legacy series (`worktree_group == task_root / "enclosures"`) retains subfolder removal. Preview inspects directory writability, move-out blockers, `provider-runtime/` when `teardown_providers=False`, and seat readiness before anything is deleted. Move-out preserves role reports, any real `messages` directory, and a leaf's own tool-call lines (in master notes, omitting `detail` and replacing removed paths with the leaf ID); any move-out or keep failure blocks before deletion and leaves the folder intact. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
+`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. `terminal_group.py` owns move-out, preview, and whole-folder removal, and `terminal_retry.py` owns completed-generation residue retry. For leaf (forced or not) and modern series contracts, cleanup and abandon remove the entire `worktree_group` folder (including any leftover `provider-runtime/` directory directly without a provider teardown step) in full after move-out rather than checking emptiness; only a legacy series (`worktree_group == task_root / "enclosures"`) retains subfolder removal. Preview inspects directory writability, move-out blockers, and seat readiness before anything is deleted. Move-out preserves role reports, any real `messages` directory, and a leaf's own tool-call lines (in master notes, omitting `detail` and replacing removed paths with the leaf ID); any move-out or keep failure blocks before deletion and leaves the folder intact. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
 
 `terminal_agents.py` inspects (on preview) and archives (on apply) recorded seats for both leaf and modern series contracts before destructive output, and `terminal_agent_blockers` turns `not-bound` (when launch receipts exist), `failed`, `owed`, or `leftAlone` outcomes into terminal blockers that prevent folder removal; completed cleanup and abandon retries re-check and finish remaining seats and residue through `terminal_retry.py`. The review-artifact archive hook likewise runs only for an actual/would-be archive, uses the task-root name for the review namespace, and reports unbound/failure rather than raising after a task has moved. Current series finalization receives the archive owner's skip, so hook existence is not evidence that a master was archived.
 
@@ -154,25 +154,21 @@ These superseded descriptions retain their historical wording; the current accou
 
 ## Evidence
 
-
 - **Retained historical source account — superseded by the current route account:** Future-code identity uses system-temporary capture and complete equality.
 
 - **Historical source-bound reference account, not an operative override:** Future-code identity uses system-temporary capture and complete equality.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:79-106 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 806649b91bdce18f7b915bfbbf6727967f4e7a88. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. Anchor: `_line_converted` `_knowledge_gate_refusal` [2]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Master and checkpoint landing wait for valid, current knowledge. [3]
 
 - Parent resolution validates the named or exact folder master and refuses a missing leaf, master or matching row; standalone completion is not an admitted fallback. [4]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The folder master through the master sync's helper, with the named-master checks. [5]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The placement guard on the leaf and on every master read. [6]
 
@@ -198,22 +194,23 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Real release guards over refs and named custody. [19]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The package is imported through the public worktree manager facade. [20]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Focused worktree tests exercise the facade and operation payloads. [21]
 
 - Historical MIK-R38 reference account, not the current R55.9 permission: the earlier tests included standalone success. Current missing-master/row cases assert refusal before any write; no test execution is inferred here. [22]
 
 
+
 - Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [23]
+
 
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
 
-
-
 - The explicit route-index builder takes code, onboarding, repository and storage authority and honors dry_run. [25]
-
 
 - The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. [50]
 
@@ -222,7 +219,6 @@ These superseded descriptions retain their historical wording; the current accou
 - Retained reference account (no fresh execution or acceptance inferred): Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. [27]
 
 - Retained reference account (no fresh execution or acceptance inferred): `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. [28]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Carryover completion is actual memory ancestry. [31]
 
@@ -244,16 +240,13 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. [40]
 
-
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Fail-closed cleanup result.  Anchor: `cleanup_result` [42]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. [43]
 
-- Retained reference account (no fresh execution or acceptance inferred): Start helpers now live below the dedicated startup package marker. [44]
+
+- Retained reference account (no fresh execution or acceptance inferred): Start helpers now live below the dedicated startup package marker. \[44] [102]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4. [45]
 
@@ -261,15 +254,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
 
-
-
 - Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
 
-
-
 - Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf/master judgment even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies. [53]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The onboarding gate reads all of a leaf's history files. [54]
 
@@ -278,17 +265,14 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [58]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [59]
 
 - Retained reference account (no fresh execution or acceptance inferred): The finalization result carries the archive step's skip for a series contract. [60]
 
 - Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records. [63]
 
-
 - Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
-
-
-
 
 - Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
 
@@ -296,9 +280,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
 
-
 - Record landing probes conversion first and freezes parents only for recorded closed-out output. Anchor: `_knowledge_gate_refusal` `_landing_request` [72]
-
 
 - Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 
@@ -309,7 +291,9 @@ These superseded descriptions retain their historical wording; the current accou
 - Master folders are retained through the archive owner's series skip. [78]
 
 
+
 - Admitted terminal transactions reread archive authority and run `prepare_terminal_group` (folder preview, seat archival/blocking, and move-out) before destructive outputs. [79]
+
 
 
 - Abandon authority includes carried memory resources even under the removed mode. [80]
@@ -324,11 +308,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Source-bound item construction and stored predicate. [85]
 
-
 - **Retained historical source account — superseded by the current route account:** Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
-
-
-
 
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
 
@@ -348,17 +328,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 - **Retained historical source account — superseded by the current route account:** Master folders are retained through the archive owner's series skip. [78]
 
-
 - **Retained historical source account — superseded by the current route account:** Abandon authority includes carried memory resources even under the removed mode. [80]
 
 - **Retained historical source account — superseded by the current route account:** Bootstrap apply preflight and journal/contract publication use the same per-master exclusion owner. [81]
 
 - **Retained historical source account — superseded by the current route account:** Explicit quality admission uses a configured profile; strict publication reader declares schema 3.1. [82]
-
-
-
-
-
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Final memory staging removes and excludes the cache. [30]
 
@@ -384,12 +358,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 - start_result and attach_result place canonical intent-review checks before their admitted create/re-entry paths, with planning-only attach behavior and a second pre-create guard. [92]
 
-- Start and retry share the retired-provider gate and return before the retained background setup branch. [93]
-
-
-
 - External closeout reads the review before closing history, closes before derived refresh and calls the closing's restore operation if refresh fails. [96]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
 - Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
@@ -398,9 +367,6 @@ These superseded descriptions retain their historical wording; the current accou
 - External closeout selects the substantive memory output and refreshes the cache afterwards. [29]
 - A fresh leaf closeout checks the cutover lock if its memory is unconverted. Recovery of an already recorded memory output takes the recovery path first. [51]
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
-
-
-
 
 - Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
 - Fresh leaf closeout checks unconverted-memory cutover, closes owner history, commits or reuses the admitted memory output, and refreshes the cache. Converted recovery separately gates an already recorded output. [66]

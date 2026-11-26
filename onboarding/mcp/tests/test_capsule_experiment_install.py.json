@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
             "locator": {
               "kind": "symbol",
@@ -24,24 +24,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:689fb5402a092a089cc8a8a4048a83e555718dca07a1d146acaff5bb2b40a135",
             "locator": {
-              "end": 102,
+              "end": 99,
               "kind": "line_range",
-              "start": 89
+              "start": 86
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:2b6068c44b9fdd2166d64da6d833f394c782e1f521292e4f8d24bca4fd6706aa",
             "locator": {
-              "end": 470,
+              "end": 444,
               "kind": "line_range",
-              "start": 448
+              "start": 422
             }
           },
           "kind": "test"
@@ -53,8 +53,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
-            "content": "sha256:5cd80a90394094cf079605ad6a776ead849da2aa066f6b158de0ffab9f0527e8",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "content": "sha256:bbaf5799ffec782b24dea0b6d81f38ba1714f677b04c7eaddcca7f57b31901ba",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unselected_run_leaves_no_retired_startup_files"
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:f05a60ef6230eaebd8674281faf2cb9a1d4cdd5def95671a3558c73d508c028d",
             "locator": {
               "kind": "symbol",
@@ -85,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:766594bf2331c151977cceb388835470f8dec5ee005c6e45ecc6260bf0de96c5",
             "locator": {
               "kind": "symbol",
@@ -101,12 +101,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
-            "content": "sha256:f37094a2942b39c4a9c53f302dece4c94a28a46f8fcbfea60f427afc37b4058a",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "content": "sha256:dbcac2e722060e8517940810a3bfb9c3089f54ac20764ba7236bb2d5657f2e36",
             "locator": {
-              "end": 828,
-              "kind": "line_range",
-              "start": 817
+              "kind": "symbol",
+              "name": "test_benchmark_asset_sync_retires_the_same_startup_files"
             }
           },
           "kind": "test"
@@ -118,12 +117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:bbff97fa61c0c1ab4af6bc14e2b8bdcc4dbc05a7b044f633a995501aedad25b3",
             "locator": {
-              "end": 424,
+              "end": 398,
               "kind": "line_range",
-              "start": 405
+              "start": 379
             }
           },
           "kind": "test"
@@ -148,12 +147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:0e3f3bf103063d34a9ae0c7e32f941c0d73818f32b9ff94ed1be062f297fbe10",
             "locator": {
-              "end": 630,
+              "end": 604,
               "kind": "line_range",
-              "start": 609
+              "start": 583
             }
           },
           "kind": "test"
@@ -165,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
-            "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "content": "sha256:c8fb108849e7b07e634d5af0b147d18d7e48336fe80c4a40f2a8cfed86a7b780",
             "locator": {
               "kind": "symbol",
               "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"
@@ -177,12 +176,12 @@
       ]
     },
     "4": {
-      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical.",
+      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
-            "content": "sha256:00268aba3b3a94eff7c6ec0108c36fd8d2454e2c70589c9979737afad7adf0c1",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "content": "sha256:bc7cc0909773bdfaacbecc5e576124411444110528851449ff27535c02a457cd",
             "locator": {
               "kind": "file"
             }
@@ -196,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:db83a658a4a89834ac51046b654a2c9f6a8be80650931768d4d104bc109119a3",
             "locator": {
-              "end": 716,
+              "end": 687,
               "kind": "line_range",
-              "start": 709
+              "start": 680
             }
           },
           "kind": "test"
@@ -209,60 +208,14 @@
       ]
     },
     "6": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_experiment_install.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
             "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 169
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:3f79104065023d1f73f4c0322e881eb7d882869fa3c37624b9ad0923df5d26c9",
-            "locator": {
-              "end": 2660,
-              "kind": "line_range",
-              "start": 2556
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_experiment_install.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
-            "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 169
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:3f79104065023d1f73f4c0322e881eb7d882869fa3c37624b9ad0923df5d26c9",
-            "locator": {
-              "end": 2660,
-              "kind": "line_range",
-              "start": 2556
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -275,12 +228,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
             "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
             "locator": {
-              "end": 606,
+              "end": 580,
               "kind": "line_range",
-              "start": 531
+              "start": 505
             }
           },
           "kind": "test"
@@ -292,8 +245,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
-            "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
+            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "content": "sha256:c8fb108849e7b07e634d5af0b147d18d7e48336fe80c4a40f2a8cfed86a7b780",
             "locator": {
               "kind": "symbol",
               "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"

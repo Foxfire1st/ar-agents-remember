@@ -3,28 +3,26 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Fixture loading and temporary-root setup.\n\nAnchor: workspace fixture load and fresh-root materialization",
+      "note": "Fixture loading and temporary-root setup.\n\nAnchor: `_materialize_surfaces`, `build_sim`",
       "targets": [
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
-            "content": "sha256:2e88fe96349249644b2d0e6840ced8849c82aec0cf6a2415a07a5071c95b09a4",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
+            "content": "sha256:df29566ce4f138dfcb23923a9dd3e5495c44cb53ca7c3737a65e41447d6fef96",
             "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 65
+              "kind": "symbol",
+              "name": "_materialize_surfaces"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
-            "content": "sha256:025fd337f37d7913642cfaadecfa3f0a84f506b619559f36fd3b8327016ebf9f",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
+            "content": "sha256:edbcd91403e6862f63abe2fc188008af20a93bbbfbd100ebe5b65ff9ff764cdf",
             "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 123
+              "kind": "symbol",
+              "name": "build_sim"
             }
           },
           "kind": "code"
@@ -36,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:c3717b3cdb3cbf73f40d0c30b59e8baf2457e2cacbc97b970682eb64f2cb3ca9",
             "locator": {
               "kind": "symbol",
@@ -47,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:38f14febabbc119d5c9a9a0525188b03eacba51923b32e0b72dee44ed3be0715",
             "locator": {
               "kind": "symbol",
@@ -58,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:9ae11f98b8a7381eee51134ff5e8b6e4038808c6cda9443c80e2570e06ab675f",
             "locator": {
               "end": 60,
@@ -70,7 +68,7 @@
         },
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:5f478ee7eec1bc40b184e79e32ea3a987a71f5a909cf37cdbcf86369b9af09ba",
             "locator": {
               "end": 82,
@@ -87,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:977a92a0408fc8c9e0c564e0f9fb764bf5cff8d919991f9a50288430966ef9d8",
             "locator": {
               "kind": "symbol",
@@ -98,7 +96,7 @@
         },
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:0c4a71ab5e0d5cad923a541e48d7c61f4b82118eab5a5218dd71f43ddaa36d93",
             "locator": {
               "end": 104,
@@ -115,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:b76f939b9f05fb5a99fe828271819dad976268305eae8d33eab9d1b55d13b038",
             "locator": {
               "kind": "symbol",
@@ -126,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "34537c0f8a4a53668e4be0706eceb1ef6865afc7",
+            "blob": "4cedf9c27c06cfd0391c7215c6d19f9c30232a54",
             "content": "sha256:274f4fc0b0daf3cf361f56e08161a7947f45fc4ef6587811aa24378328998c78",
             "locator": {
               "end": 118,

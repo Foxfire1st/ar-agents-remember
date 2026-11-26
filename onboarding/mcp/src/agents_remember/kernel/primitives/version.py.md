@@ -39,32 +39,11 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-
-
-
-
-- Package metadata and source-checkout fallback are selected through the explicit resolver.
-
-
-
-
-
-
-
-
-- Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.
-
-
-
-
-
-
+- Package metadata and source-checkout fallback are selected through the explicit resolver. [1]
+- Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. [2]
 
 ### Cross-Repo References
 
 No cross-repository implementation participates.
 
 No meaningful cross-repo references found.
-
-- Package metadata and source-checkout fallback are selected through the explicit resolver. [1]
-- Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. [2]

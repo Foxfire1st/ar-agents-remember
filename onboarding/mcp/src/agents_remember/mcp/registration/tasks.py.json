@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2359df429c0d22338e319ed30232007a7559250f",
-        "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+        "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+        "content": "sha256:58b2d7342e62a7b7c769f37ef096450b57a883f06d4715e2e450f06fca633c7c",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "2359df429c0d22338e319ed30232007a7559250f",
+        "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
         "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
         "locator": {
           "kind": "symbol",
@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
             "content": "sha256:59024859859a75b210005e367c13660aed8b93ef556d4bc1f49adb908de066f5",
             "locator": {
-              "end": 59,
+              "end": 57,
               "kind": "line_range",
-              "start": 54
+              "start": 52
             }
           },
           "kind": "code"
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
-            "content": "sha256:1401ce89181b17dff2611b4f0e8f325b4a79dc9190966ebb4fd77cab54c32db4",
+            "blob": "20043640df430d69a0e2c17f3620f3aa74158c47",
+            "content": "sha256:37485982100b0345093f40fbb556287166175c905ee79cbc3752226f8bea182e",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_payload"
@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:2aa6972042cf46b4dcdffedd6f3ee2dea1f7eda2e67ac094f909a60deb7467cb",
             "locator": {
-              "end": 145,
+              "end": 143,
               "kind": "line_range",
-              "start": 145
+              "start": 143
             },
             "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
           },
@@ -125,12 +125,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_TASK_DOC_TOOL_DESCRIPTION"
             }
           },
           "kind": "code"
@@ -138,16 +137,26 @@
       ]
     },
     "6": {
-      "note": "The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities.",
+      "note": "The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities.\n\nAnchor: `_TASK_DOC_TOOL_DESCRIPTION`, `_register_task_document_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_TASK_DOC_TOOL_DESCRIPTION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_task_document_tools"
             }
           },
           "kind": "code"
@@ -155,28 +164,26 @@
       ]
     },
     "7": {
-      "note": "Descriptions include keyed open-question writes and require master authority for finalization.",
+      "note": "Descriptions include keyed open-question writes and require master authority for finalization.\n\nAnchor: `_register_task_finalizer_tools`, `_TASK_DOC_TOOL_DESCRIPTION`",
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:8c744c1be714fd841870f7dd9310d4d0736d6980a96f8fe35b8badd3ccd72015",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:1cf5b9d7d49792a96ac58ec3a4936eda5557bbbbc55f932221e6220b3ddd640a",
             "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 39
+              "kind": "symbol",
+              "name": "_register_task_finalizer_tools"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 64
+              "kind": "symbol",
+              "name": "_TASK_DOC_TOOL_DESCRIPTION"
             }
           },
           "kind": "code"
@@ -184,16 +191,15 @@
       ]
     },
     "8": {
-      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.",
+      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.\n\nAnchor: `register_task_tools` and `_register_*`",
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "register_task_tools"
             }
           },
           "kind": "code"
@@ -205,12 +211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
-              "end": 64,
+              "end": 61,
               "kind": "line_range",
-              "start": 64
+              "start": 61
             }
           },
           "kind": "code"

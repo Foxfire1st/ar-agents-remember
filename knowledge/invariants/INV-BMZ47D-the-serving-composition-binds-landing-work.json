@@ -13,9 +13,9 @@
     "Interest is rechecked after awaited discovery and at semaphore admission."
   ],
   "exclusions": [
-    "Explicit unbound refresh callers retain their API.",
-    "Already admitted worker operations are not cancelled merely on subscriber departure.",
-    "Provider safety and local projection/healing are not stopped by landing disinterest."
+    "Explicit unbound HTTP/reader calls that intentionally ask for fresh state outside the state-stream listener cadence.",
+    "Unreadable or missing repository/worktree inputs, which remain explicit rather than silently dropped.",
+    "Local projection and healing are not stopped by landing disinterest."
   ],
   "id": "INV-BMZ47D",
   "origin": {
@@ -29,9 +29,19 @@
     "leaf": "260928-MIK-L166",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The serving composition binds landing work to the actual Projector subscriber set and admits no contract discovery or remote probe without a subscriber, rechecking interest after discovery and before each semaphore-admitted probe.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

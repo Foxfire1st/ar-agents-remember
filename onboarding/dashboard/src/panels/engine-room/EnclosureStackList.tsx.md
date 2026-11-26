@@ -30,14 +30,16 @@ The module exports `BoundTaskStatus` and `EnclosureStackList`. `BoundTaskStatus(
 
 ### Repo-Internal References
 
-
 - `EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`) [1]
-
 
 - Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange` [2]
 
 - Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName [3]
 - `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) [6]
+
+
 - `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes [7]
+
+
 - `stackList` layout keeps the enclosure rail vertically scrollable [8]
 - `chip` styles define the compact status-chip presentation [9]

@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Suppress only this process's certified completed filesystem effects from its native projection watcher. Pending announcements defer judgment; descriptor identity, event kind and optional payload digest distinguish outside writes. Missing/error/expired identities fail open; bounded drop-oldest maps expose reclamation.",
+      "note": "Suppress only this process's certified completed filesystem effects from its native projection watcher. Pending announcements defer judgment; descriptor identity, event kind and optional payload digest distinguish outside writes. Missing/error/expired identities fail open; bounded drop-oldest maps expose reclamation.\n\nAnchor: `` `OwnWriteRegistry` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6504ccc5cb280d49d843014ff96a8bab41dc9f06",
-            "content": "sha256:c3e63d26295573d663d66851a708ec2b6d58a17394f71c17f922135ff7ff423d",
+            "blob": "9cb41eae3cb1b92a5e9b1ae8dc2577d54bed6d56",
+            "content": "sha256:57f335471463702d615b4a30d6f032d351162b63250c4b739681c45c8a59e663",
             "locator": {
-              "kind": "file"
+              "end": 415,
+              "kind": "line_range",
+              "start": 72
             }
           },
           "kind": "code"

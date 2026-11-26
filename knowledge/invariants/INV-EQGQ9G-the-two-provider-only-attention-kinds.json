@@ -6,16 +6,15 @@
     ],
     "justification": "Realized in four places that must agree: the attention reducer, the dismissal admission validator, the projection inputs and the client selector. The tests prove the negative cases: a legacy row is dropped and suppresses nothing, and a retired kind cannot be displayed or dismissed. The generated types and the served schema refuse retired provider fields, not retired kind strings."
   },
-  "applicability": "The operational attention queue: what may be observed, recovered, admitted to a dismissal, projected or shown.",
+  "applicability": "The server-side operational attention queue: what may be observed, recovered, admitted to a dismissal, or projected.",
   "conditions": [
-    "A legacy dismissal row or observation naming a retired kind may still exist on disk.",
-    "An unknown future kind must still pass through untouched."
+    "A legacy dismissal row naming a retired provider kind may still exist on disk and must be dropped without suppressing live items.",
+    "An unknown future kind stays an open string in the wire schema."
   ],
   "exclusions": [
-    "A replacement alarm derived from the safety loop.",
-    "actionable-drift and blocked-start, which keep their kinds, ordering and dismissal semantics.",
-    "`ProviderLimit` and `LimitedSeat`, which the same generated types do declare — L184's model-provider limit, not a search provider, and not one of the two retired attention kinds.",
-    "A retired kind string refused by the generated types or the served schema; neither constrains a string value, and the client selector is what drops it."
+    "actionable-drift, blocked-start, and the five native attention kinds (permission-wait, held-message, task-stalled, task-landed, task-abandoned), which keep their publication and dismissal semantics.",
+    "ProviderLimit and LimitedSeat in the generated types, which are model-provider usage limits rather than search-provider attention kinds.",
+    "Client-side filtering of pre-retirement snapshot payloads, which 261125-DEP-L2 removed from dashboard/src/data/selectors.ts."
   ],
   "id": "INV-EQGQ9G",
   "origin": {
@@ -30,9 +29,19 @@
     "leaf": "260928-MIK-L192",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The two provider-only attention kinds are retired at every producer, admission and display boundary: the reducer builds only actionable drift and blocked-start, the dismissal record validator admits only those two and reconciles a legacy row away, and the client selector filters the two retired strings out of a legacy payload. An attention item's kind stays an open string, so a retired value is filtered out, not rejected by a type or a schema.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The two provider-only attention kinds (provider-down and failed-setup) are retired at every server producer, dismissal admission, and projection-input boundary: the reducer publishes only surviving operational and native kinds, the dismissal record validator rejects the retired kinds and reclaims legacy rows on disk, and projection inputs and schemas carry no provider attention state. An attention item's kind remains an open string in the wire schema.",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

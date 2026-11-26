@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
+    "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
     "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
     "locator": {
       "kind": "symbol",
@@ -18,12 +18,23 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "Six commands that serve only an installation of an earlier version are still registered (providers-remove, knowledge-census, knowledge-copies, memory-backfill, upgrade-user-settings, removed-stores), and no public page describes them. A seventh outside the agents' command table, knowledge-convert, is told in three lines of two guide pages, for a memory repository cloned before memory_init."
+  "statement": "Five earlier-installation commands remain registered (knowledge-census, knowledge-copies, memory-backfill, upgrade-user-settings, removed-stores): no public page describes the first four, and removed-stores is named only for legacy provider folders. A sixth, knowledge-convert, is told briefly in two guides.",
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

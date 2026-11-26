@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "654d5eacb7b3070e1a3e17aa50a5cc9a44be6c09",
-    "commit": "babbd912757d905a69e7b9409b0b89bd528f4db3",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "On synced code 654d5eac (base babbd9127) the contributor guide passages touched in L29 are accurate: lines 40-50 name PUBLIC_TOOLS, ROLE_TOOL_ALLOWLISTS, tools_for_role, EXPLAINER_SURFACE, and the whole-list and server_info fallbacks matching mcp/server.py:399-408 and models/tools/role_tool_scope.py:25,186-203, and lines 330-337 and 370-387 match the R1-R6 hook repairs, continued-sync commitCheckTimeoutSeconds ownership, and Commit-Check-Pass trailer; the document's other sections were not reread for this confirmation.",
-    "task": "261112-BUG-L29",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), CONTRIBUTING.md accurately matches the codebase: lines 22 (runtime-asset table row) and 139 (copy-table row) list only system/ and benchmarks/ as runtime asset folders without providers/ and match scripts/sync-runtime.py, lines 40-50 carry BUG-L29's corrected tool-registration account, and the seven test lanes (824 modules: 674 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness, 1 stress-durability) and certification profile match live code.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+      "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -81,7 +81,7 @@
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
     {
-      "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+      "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -106,7 +106,7 @@
       "path": "scripts/sync-projection-types.py"
     },
     {
-      "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+      "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
       "kind": "file",
       "path": "scripts/sync-runtime.py"
     },
@@ -121,12 +121,12 @@
       "path": "scripts/test-under-load.sh"
     },
     {
-      "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
+      "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
       "kind": "file",
       "path": "dashboard/package.json"
     },
     {
-      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
@@ -156,7 +156,7 @@
       "path": "scripts/pnt_sandbox/cli.py"
     },
     {
-      "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+      "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
       "kind": "file",
       "path": "scripts/pnt_sandbox/operations.py"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T23:13:05+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

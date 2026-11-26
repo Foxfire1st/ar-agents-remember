@@ -104,16 +104,15 @@
       ]
     },
     "5": {
-      "note": "The store stays repository-neutral and is consumed by the trusted R12 launcher through the run controller.\n\nAnchor: `FinalCodexManifestStore`",
+      "note": "The store stays repository-neutral and is consumed by the trusted R12 launcher through the run controller.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
-            "content": "sha256:65805b88f164c2accca73efb41dc1b032cbf8428a0385a5c99adf3b6ef352da6",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+            "content": "sha256:d5d3fbee398c1c08864cd5bf13d634ea0cb13748342acdc70b95ef1849ff192b",
             "locator": {
-              "end": 600,
-              "kind": "line_range",
-              "start": 179
+              "kind": "symbol",
+              "name": "FinalCodexExecutionEngine"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
           },

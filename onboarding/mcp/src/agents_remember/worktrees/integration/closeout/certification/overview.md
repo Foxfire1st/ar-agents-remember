@@ -1,6 +1,5 @@
 # Selected Closeout Certification
 
-
 ## Governing Overview
 
 [Closeout integration overview](../overview.md)
@@ -41,14 +40,10 @@ Read `selection.py` for exact stored object type checks, original terminal publi
 
 - Exact original terminal readback verifies retained publication/evidence and constructs terminal selections, without complete-graph journal CAS. [4]
 
-
-
 - Default application composition retains rails and knowledge adapters but no prepared-closeout continuation or producer. [7]
-
 
 - The surviving observation utility recursively projects typed finding evidence and raises structured refusal. [10]
 
 - Original terminal readback recompiles results, verifies publication/evidence and requires a green result for a selected certificate. [11]
-
 
 - Ordinary converted-memory gates and legacy cutover refusal survive outside the retired prepared-closeout path. [14]

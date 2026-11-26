@@ -1,0 +1,40 @@
+{
+  "anchor": {
+    "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+    "content": "sha256:f85730f23d0f43c033b52ee177e0dbf4d93bde791f14cd3e5a5f06a1179d5af0",
+    "locator": {
+      "kind": "symbol",
+      "name": "DiagnosticExecutionEngine._admit_authority"
+    },
+    "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+  },
+  "id": "WKN-P93A5H",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "wkn-continuation-error-wrap",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261125-DEP-L7"
+  },
+  "state": "open",
+  "statement": "Continuation admission calls reuse_authority_for_continuation outside the DaggerRuntimeAuthorityError handler in DiagnosticExecutionEngine and FinalCodexExecutionEngine, letting continuation barrier refusals escape unwrapped.",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

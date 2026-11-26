@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+      "note": "The file realizes its current contract at the corrected candidate.\n\nAnchor: `_reopened_contract`, `_clear_frozen_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
-            "content": "sha256:6085b330ab5b4fc6db305405d7023a189fbfabc28f0ec00e1cfb8d3d8d90eef6",
+            "blob": "f6b9454f93495b54295a0c28dd720a720c26ca68",
+            "content": "sha256:89b364f4b793a7e135cc5c44bb6671e7789b93d8889a8b5d3985065c2061bee9",
             "locator": {
               "kind": "file"
             }

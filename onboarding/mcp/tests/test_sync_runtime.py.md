@@ -7,12 +7,11 @@
 ## Purpose
 
 Checks sync-runtime target replacement removes stale files and excludes cache directories. The
-current target roster is exactly `benchmarks`, `providers` and `system`, confined
+current target roster is exactly `benchmarks` and `system`, confined
 to MCP package data rather than harness starter directories. The missing-canonical-source case
 refuses to call two absent trees synchronized and accepts matching present trees.
 These are temporary-tree fixture assertions, not proof that installed runtime projections have
 just been refreshed.
-
 
 ## Code Commentary
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified docs/tool-details.md on synced L44 code tree ede5d128 (base 150b9778) after Worker 1796d73e fixed lines 442-450: retire_child and role-agent tool details accurately reflect scope-based any-role retirement (Architect, Orchestrator, Manager), open-child refusal, interrupt_turn permission, and host-refresh retirement settlement.",
-    "task": "261112-BUG-L44",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/tool-details.md accurately matches the codebase: server_info and runtime_install omit unusedProviderKeys, install_provider_deps, no_cache, leftover_provider_folders and watcher-stop claims, retain BUG-L38's reconcile_shared_held_stores and BUG-L44's retire_child scope guidance, report legacy provider folders as removed stores for agents-remember removed-stores, and retain provider-runtime/dev-ar-coordination for disposable worktree checkouts.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -103,12 +103,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
+      "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/tools/core.py"
     },
     {
-      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -143,7 +143,7 @@
       "path": "mcp/src/agents_remember/models/build_currentness.py"
     },
     {
-      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
@@ -176,16 +176,6 @@
       "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
-    },
-    {
-      "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/install/provider_watchers.py"
-    },
-    {
-      "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/providers/setup_common.py"
     },
     {
       "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
@@ -264,17 +254,22 @@
         "path": "mcp/src/agents_remember/cli/shared_held_store_reconciliation.py"
       },
       "kind": "anchor"
+    },
+    {
+      "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/removed_stores.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:42:00+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L44",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

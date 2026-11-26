@@ -105,8 +105,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. [4]
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. [5]
 
-
-
 - Direct projections derive current controls and recovery facts. Older closeout and integration projections preserve their saved outcome and state for audit. [7]
 
 - Retained reference account (no fresh execution or acceptance inferred): The landing output carrier has only code and memory-content commits. [8]
@@ -122,33 +120,17 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Public integration evaluates handover and converted knowledge before ancestry preview/apply. [17]
 
-
-
-
 - Landing admits two outputs and performs ordered CAS, retaining partial code landing on memory race. Anchor: `IntegratedCommits` `prepare_integration_ref_move` `merge_integrated_commits` [18]
-
-
-
-
 
 - Checkpoint publication requires the captured candidate and revalidates it against live capture. [19]
 
-
-
-
 - The canonical lifecycle journal validates schema 3.0 and the operation kind for its path. Its authority lock serializes record transitions, which preserve the generation identity and durable input. [20]
-
-
-
 
 - Ordinary closeout and integration run in their tools. Direct landings keep generation-bound journal controls. [21]
 
 
 
-
-
 - Default services bind the current memory/gate ports without a prepared producer or continuation; separately, explicit core finalization authority requires exact green Gates 1–5 and current Gate-5 memory inputs. These contracts do not make certification an ordinary closeout prerequisite. [22]
-
 
 
 
@@ -158,41 +140,23 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Terminal enclosure evidence checks the exact stored disposition and preserved ownership. [25]
 
-
 > Retained earlier citation wording: - Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects. [26]
 
 - Sync explicitly permits conflict resolution between calls without a lock held across the call. [27]
 
-
-
 - The internal leaf-enclosure adapter starts this build in a child process, passes the backend-held repository roots, and accepts only a successful JSON reply. [14]
-
-
 
 - Configured-contract mutation authority rereads the canonical contract, re-proves configured repository identity, and requires its matching lifecycle location before returning current authority. [13]
 
-
-
-
 - Direct memory writes exclude the consumer cache. [10]
-
-
-
-
 
 - Direct memory writes exclude the consumer cache. [11]
 
-
 - Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects.  Anchor: `_integrated_result` `finalize_result` [26]
-
 
 - Locator-manifest-journal authority and all publication I/O/state transitions. [3]
 
-
-
 - Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings. [28]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery. [6]
 

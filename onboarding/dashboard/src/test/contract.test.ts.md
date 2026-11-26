@@ -52,7 +52,6 @@ A vacuous check remains a failure: absorbing-node reach and each vocabulary loop
 
 Schema/stale-output checks own nullable-field and exhaustive vocabulary parity. A manual sample proves neither producer provenance nor nominal distinction between structurally equal models.
 
-
 This contract case is sample reach, assignability and sampled-vocabulary coverage over the hand-maintained fixture; exhaustive producer/client schema parity belongs to the code generator and its stale-output check, and `projection.tasks[].providerLimit` is one of the paths this sample guard genuinely cannot reach.
 
 ## Evidence
@@ -71,10 +70,10 @@ Two external behaviours are load-bearing: pydantic's `exclude_none` serializatio
 rule that an unused `@ts-expect-error` is itself an error. Both rows anchor on the in-repo fact that
 makes the behaviour load-bearing HERE.
 
-
 - The lifecycle-operation phase registry lists no ledger publication phase; sample membership and coverage checks apply to it. [1]
 
 - Persisted projection state is written by `write_projection` with omitted `None` values. [2]
+
 - The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance. [3]
 
 - The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. [4]
@@ -85,14 +84,9 @@ makes the behaviour load-bearing HERE.
 
 - AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 10 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and gate/ask sites are absent; drift counts are present. [7]
 
-
 - `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
 
-
-
-
 - Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. [9]
-
 
 - The vocabulary registry binds the build currentness mode and state paths to their value sets. [23]
 
@@ -101,10 +95,6 @@ makes the behaviour load-bearing HERE.
 - The generated mirror's metric and analytics declarations. [12]
 
 - The sanctioned narrowing the fixture enters through. [14]
-
-
-
-
 
 - The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. [20]
 
@@ -125,7 +115,6 @@ recovery-tool vocabulary against fixture samples and the server schema.
 ## Projection Contract Boundary
 
 The generated dashboard contract stays aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
-
 
 ## Execution-Graph Vocabulary
 

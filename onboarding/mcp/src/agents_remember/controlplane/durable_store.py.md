@@ -14,7 +14,6 @@ This concentration was introduced after independent store implementations lost w
 
 Dashboard-owned appends announce before mutation and capture the writing descriptor's identity while the existing cooperating-writer lock is held. Empty batches record no effect. A writer ignoring that lock can land in the flush-to-fstat window; accepted behavior recovers this named race through independent full healing, not an immediate identity-perfect guarantee.
 
-
 ### Historical 260731-EFA-L5 Evidence Account
 
 The original curation recorded base-commit rates as historical source claims, not retained run artifacts. The detailed historical module docstring has since been reduced to the current contract, so the rates below are preserved as earlier observations; they are not claims that the present docstring contains those measurements. The original account and its qualification remain in Update History. The current harness sensitivity and durability assertions remain separately checkable.
@@ -179,7 +178,6 @@ tolerant stores drives its rewrites from its tolerant `read`. The tolerant three
 drop an unparseable row on compaction — which is safe only because none of them carries authority,
 and would stop being safe the moment one of them did.
 
-
 </details>
 
 ### The Process-Wide Mutex — What It Adds And What It Does Not
@@ -283,7 +281,6 @@ No configured external domain documentation source.
 
 ### Repo-Internal References
 
-
 - Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning. [12]
 
 - The lock-at-replacement check cannot prove the earlier read was inside the same hold; retained gate delete/compact do hold across the full sequence. [13]
@@ -291,12 +288,9 @@ No configured external domain documentation source.
 
 The current owner map is verified against the prepared source. Kernel mechanics, coordinator authorization, and caller-specific host registry policy are separate.
 
-
-
 - The host registry has its own domain policy over the same exclusion primitive. [9]
 
 - Undeclared host admission leaves live coordinator lock and append writes refused. [11]
-
 
 ### Cross-Repo References
 
@@ -316,9 +310,7 @@ longer rely on the earlier undeclared-process bypass.
 
 - Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. [2]
 
-
 - Guarded coordinator entry translates the shared capability failure. [3]
-
 
 - The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
 
@@ -326,5 +318,6 @@ longer rely on the earlier undeclared-process bypass.
 - Current raw read, single/batched durable append and atomic rewrite. [6]
 Historical reference 7 in the preserved F001 card records the removed explicit migration helper; it is not a current callable or migration instruction.
 - Per-call temporary names and atomic publication have one kernel owner. [8]
+
 
 - Watcher exclusion derives the shared lock suffix and filters every directory. [10]

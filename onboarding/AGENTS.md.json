@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e3913163be3b91297066e21703964f8104d4e507",
-        "content": "sha256:910c6fff49b66f5cbc08b8f44dd785debc028f8046727162bebb967d929972bf",
+        "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
+        "content": "sha256:91e4690f9c5144d86185429d4b7b973fc3323038f8fe4631431a3963ec7ba3a0",
         "locator": {
           "kind": "file"
         }
@@ -16,13 +16,13 @@
         "handoffEntry": "L192-W-R199-09",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The root instruction copies only an admitted parameter into its context_packet call (AGENTS.md:58-62) and says the retired search providers take no provider selection, which is what the entry asserts.",
+      "rationale": "The root instruction copies only an admitted parameter into its context_packet call (AGENTS.md:55-57), without prescribing the removed context_packet parameter.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3913163be3b91297066e21703964f8104d4e507",
-        "content": "sha256:910c6fff49b66f5cbc08b8f44dd785debc028f8046727162bebb967d929972bf",
+        "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
+        "content": "sha256:91e4690f9c5144d86185429d4b7b973fc3323038f8fe4631431a3963ec7ba3a0",
         "locator": {
           "kind": "file"
         }
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
             "content": "sha256:66d508d9e3e5ec41bf4b4375c840db5848e77f2a28b9eac008f0e0ddf93b3c83",
             "locator": {
               "end": 46,
@@ -56,14 +56,14 @@
       ]
     },
     "2": {
-      "note": "Resolved memory and retrieval strategy.",
+      "note": "Resolved memory and retrieval strategy.\n\nAnchor: `## Memory And Onboarding` / `### Memory Retrieval Strategies`",
       "targets": [
         {
           "anchor": {
-            "blob": "e3913163be3b91297066e21703964f8104d4e507",
-            "content": "sha256:7a60e05f64afa47f724d7559bc983d5b7c06cafe83f26c356ba16f95154e4739",
+            "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
+            "content": "sha256:5f34698cbd649f508ac8d21ae66c185076374b2ecfb99392fed2a7ec527b3596",
             "locator": {
-              "end": 95,
+              "end": 87,
               "kind": "line_range",
               "start": 47
             }
@@ -73,16 +73,16 @@
       ]
     },
     "3": {
-      "note": "Canonical sources and generated-copy boundaries.",
+      "note": "Canonical sources and generated-copy boundaries.\n\nAnchor: `## Source Layout` / `## Boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "e3913163be3b91297066e21703964f8104d4e507",
-            "content": "sha256:ec2e0de80e44697ae998d70c1a8608960e840e3381b25ec7af14ed8c62701cc1",
+            "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
+            "content": "sha256:ef066cb7e49f05d5b61eba611d01fb2c34e063c9a3ba6ef664e050530552001f",
             "locator": {
-              "end": 136,
+              "end": 127,
               "kind": "line_range",
-              "start": 96
+              "start": 88
             }
           },
           "kind": "code"
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 193,
+              "end": 184,
               "kind": "line_range",
-              "start": 137
+              "start": 128
             }
           },
           "kind": "code"

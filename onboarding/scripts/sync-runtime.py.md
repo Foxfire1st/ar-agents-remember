@@ -6,19 +6,17 @@
 
 ## Purpose
 
-`scripts/sync-runtime.py` keeps the three canonical runtime asset folders (`benchmarks/`, `providers/`, `system/`) synchronized with their generated MCP package-data copies.
+`scripts/sync-runtime.py` keeps the two canonical runtime asset folders (`benchmarks/`, `system/`) synchronized with their generated MCP package-data copies.
 
 ## Code Commentary
 
 ### Logic
 
 The script resolves the repository root from its own path, declares the MCP
-package-data root, and defines three explicit `RuntimeTarget` mappings:
+package-data root, and defines two explicit `RuntimeTarget` mappings:
 
 - `benchmarks/` to `mcp/src/agents_remember/package_data/benchmarks/`
-- `providers/` to `mcp/src/agents_remember/package_data/runtime/providers/`
 - `system/` to `mcp/src/agents_remember/package_data/runtime/system/`
-
 
 ### Comparison boundaries
 
@@ -45,10 +43,10 @@ Ignore local/generated filesystem noise: `.DS_Store`, cache directories, `__pyca
 
 ### Invariants And Boundaries
 
-- The three root runtime asset folders are canonical. Root docs remain authored documentation, not a target of this synchronizer.
+- The two root runtime asset folders are canonical. Root docs remain authored documentation, not a target of this synchronizer.
 - The matching MCP package-data folders are generated.
 - The helper refuses to sync a target path onto its own source path.
-- The helper does not sync docs, skills or user-owned installed runtime files. The packaged `tool-details.md` is separate from these three generator targets.
+- The helper does not sync docs, skills or user-owned installed runtime files. The packaged `tool-details.md` is separate from these two generator targets.
 - **A target whose canonical source is absent is never reported in sync**, and the generated
   package-data folders are never hand-edited; the read-only `--check` is their currency proof.
 
@@ -66,10 +64,9 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The three canonical-to-package-data runtime targets: benchmarks, providers and system. [1]
+- The two canonical-to-package-data runtime targets: benchmarks and system. [1]
 
 - Digest comparison reports missing, extra, and changed files for `--check`, and refuses to call an absent canonical source in sync. [2]
-
 
 - Normal sync refuses self-sync, performs copy-then-swap replacement, and rechecks targets. [3]
 

@@ -16,7 +16,7 @@ root, and a repository's certification profile or contract path must stay inside
 ### Logic
 
 `write_json()` and `settings_payload()` build a settings document, and `McpConfigTests` loads it through the
-real primitive (`runtime_config`, `providers.settings`, `paseo_runtime_settings`). `OrchestrationSettingsTests`
+real primitives (`runtime_config`, `paseo_runtime_settings`). `OrchestrationSettingsTests`
 loads the global orchestration file.
 
 - **Identity.** `test_two_repository_ids_cannot_share_one_git_common_dir` and

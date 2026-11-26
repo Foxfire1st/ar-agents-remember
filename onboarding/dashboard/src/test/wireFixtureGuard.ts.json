@@ -96,14 +96,15 @@
       ]
     },
     "14": {
-      "note": "The registry, planted bypasses and vacuity checks this module deliberately does not own.\n\nAnchor: `SANCTIONED_WIRE_SITES`",
+      "note": "The registry, planted bypasses and vacuity checks this module deliberately does not own.\n\nAnchor: `SANCTIONED_WIRE_SITES`, `PLANTED_FILES`, `Source`: `dashboard/src/test/wireFixtureGuard.test.ts:51-92` and `dashboard/src/test/wireFixtureGuard.test.ts:105-316`",
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
-            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
+            "content": "sha256:da3c912f898893b9be554792bc94473ac9d2ce5842bd9f64fe2bdca1d27f6310",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
             },
             "path": "dashboard/src/test/wireFixtureGuard.test.ts"
           },
@@ -111,11 +112,11 @@
         },
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
-            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
+            "content": "sha256:41da5f7ac574d5946583e4bf34265193f59dc4aef5c99c3569a656dd3ba34e26",
             "locator": {
               "kind": "symbol",
-              "name": "SANCTIONED_WIRE_SITES"
+              "name": "PLANTED_FILES"
             },
             "path": "dashboard/src/test/wireFixtureGuard.test.ts"
           },

@@ -75,12 +75,12 @@
       ]
     },
     "103": {
-      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.",
+      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -770,7 +770,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:6b0cf06a256f613fe4834271910e905309fc29f5b1b7601bf8cda29f45b7afce",
             "locator": {
               "kind": "symbol",
@@ -787,7 +787,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 27,
@@ -795,24 +795,6 @@
               "start": 22
             },
             "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "169": {
-      "note": "The same pin in the requirements manifest.\n\nAnchor: \"apsw==3.53.4.0\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e755e6453e0f09911bbe4a91cdcc31f9b2b61b58",
-            "content": "sha256:46a04c2b98321faec862575eb95fefbd5596b21464b7114c968a8701099d74aa",
-            "locator": {
-              "end": 2,
-              "kind": "line_range",
-              "start": 2
-            },
-            "path": "mcp/requirements.txt"
           },
           "kind": "code"
         }
@@ -839,12 +821,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:00d440558bd114fff2b419abbdeeb9bb03fa80ef5048aa4a8cb0484ea4784960",
             "locator": {
-              "end": 222,
+              "end": 221,
               "kind": "line_range",
-              "start": 206
+              "start": 205
             },
             "path": "layers.toml"
           },
@@ -1008,12 +990,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
             "content": "sha256:e669e0d6d224ab2ead67e219cbde590be1a3421836c5127052544722903612f9",
             "locator": {
-              "end": 190,
+              "end": 183,
               "kind": "line_range",
-              "start": 184
+              "start": 177
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1021,12 +1003,12 @@
         },
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
             "content": "sha256:8799ab5f946f88897082b48845edb7765e952ce9b376663a4451f91412100bdf",
             "locator": {
-              "end": 241,
+              "end": 232,
               "kind": "line_range",
-              "start": 235
+              "start": 226
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1490,12 +1472,12 @@
         },
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
             "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
             "locator": {
-              "end": 239,
+              "end": 230,
               "kind": "line_range",
-              "start": 233
+              "start": 224
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -2620,16 +2602,27 @@
       ]
     },
     "285": {
-      "note": "The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner.",
+      "note": "The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner.\n\nAnchor: `_register_task_reopen_tools` / `register_task_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
-            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:501b67ea4718ceb479ab68e31b47419709109ee7fe7d5536dcdbf6db1d709079",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_register_task_reopen_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_task_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -2760,40 +2753,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "291": {
-      "note": "**Retained historical source account — superseded by the current route account:** Generated lifecycle providers are empty independently of configuration",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_settings_from_config"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "292": {
-      "note": "**Retained historical source account — superseded by the current route account:** Old-watcher stop failure is reported and installation continues",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
-            "content": "sha256:967380606118586ca8fa1d43eeaf5d493ea2ce732de5d4c82dd7a326254278ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "stop_provider_watchers_before_refresh"
-            },
-            "path": "mcp/src/agents_remember/install/provider_watchers.py"
           },
           "kind": "code"
         }
@@ -3127,7 +3086,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:b28201e37edc84ad3d469c3fc9825fdd6e6605b505dd2f65425503a2c469f0bb",
             "locator": {
               "end": 133,
@@ -3140,7 +3099,7 @@
         },
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:e6e3bb584b4477d674d73f570d731af043aeb7006d9127b26776448ae2137d37",
             "locator": {
               "end": 64,
@@ -3153,7 +3112,7 @@
         },
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:0afd302bcef7414ad5aad30607ccc626405b2bcf3f9caf16f217482702c319f9",
             "locator": {
               "kind": "symbol",
@@ -3589,7 +3548,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
             "content": "sha256:c5d308a941ddba3ca571f06eb4fbecb5a95ae8ab7ff83965f6c85dc84b90dc8a",
             "locator": {
               "kind": "symbol",
@@ -4289,7 +4248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -4307,12 +4266,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:e545c2c758708e1517ea39bc74d3e2395f2a9584017883b7e1ee19a2f9fb579f",
             "locator": {
-              "end": 223,
+              "end": 222,
               "kind": "line_range",
-              "start": 206
+              "start": 205
             },
             "path": "layers.toml"
           },
@@ -4543,12 +4502,12 @@
         },
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
             "content": "sha256:e669e0d6d224ab2ead67e219cbde590be1a3421836c5127052544722903612f9",
             "locator": {
-              "end": 190,
+              "end": 183,
               "kind": "line_range",
-              "start": 184
+              "start": 177
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -4556,12 +4515,12 @@
         },
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
             "content": "sha256:0040e48daaeae2e64a9bbd610c309fc149e048df9d9363102a69e8432222bbb4",
             "locator": {
-              "end": 182,
+              "end": 175,
               "kind": "line_range",
-              "start": 176
+              "start": 169
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -4790,7 +4749,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
             "content": "sha256:83134ee5dc47b605c8a1ca03b4b36d2212655972487faec7b23598b73d442c88",
             "locator": {
               "kind": "symbol",
@@ -4803,12 +4762,12 @@
       ]
     },
     "379": {
-      "note": "The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command.",
+      "note": "The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -5342,12 +5301,12 @@
       ]
     },
     "401": {
-      "note": "The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py.",
+      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: scripts/sync-runtime.py.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
-            "content": "sha256:dceaaeb409c88e3dab61c281e08b69e072d58e379f9433a71a12e8bdd1676aec",
+            "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
+            "content": "sha256:0385e87d7f176bf84e95f695dbe8832e02bf4d5984b7b83dd2d4b4e75ea23ade",
             "locator": {
               "kind": "file"
             },
@@ -5358,12 +5317,12 @@
       ]
     },
     "402": {
-      "note": "The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target.",
+      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "586b49eb166a7fe6ae774691cd3abe460b58ae9d",
-            "content": "sha256:e1feed1e7c365d6bffcb84cbf55136981b8fc44b432e284e0e0243fe25fcd5ce",
+            "blob": "f48989e6eec787374e9231801e5d4a212e873e72",
+            "content": "sha256:78d8575e5249f8c4d3ad75e047cd37c09b2d119d491f692a0c173f97c1d98633",
             "locator": {
               "kind": "file"
             },
@@ -5596,12 +5555,12 @@
         },
         {
           "anchor": {
-            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "blob": "ea658dc71d32bc3e38d448dc67af8b4c42c14d04",
             "content": "sha256:194d1b7b154648b320a7be0b7e0f5e63bfed7f43d41e01ee812d9781c1bb81fb",
             "locator": {
-              "end": 378,
+              "end": 377,
               "kind": "line_range",
-              "start": 357
+              "start": 356
             },
             "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
           },
@@ -6375,12 +6334,12 @@
       ]
     },
     "69": {
-      "note": "**Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command.",
+      "note": "**Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -6522,12 +6481,12 @@
       ]
     },
     "80": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -6572,12 +6531,12 @@
       ]
     },
     "83": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -6620,12 +6579,12 @@
       ]
     },
     "86": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -6668,12 +6627,12 @@
       ]
     },
     "9": {
-      "note": "**Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent.\n\nAnchor: `_resolve_parent_target`",
+      "note": "**Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -6684,12 +6643,12 @@
       ]
     },
     "90": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },
@@ -6751,12 +6710,12 @@
       ]
     },
     "95": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
             "locator": {
               "kind": "file"
             },

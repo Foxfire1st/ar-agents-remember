@@ -41,7 +41,6 @@ Module-level tests use the small constructed contract where only projection is a
 >   `validate` must run now, because a step named without its reason is the step the next operator skips —
 >   which is the defect (D-25) the case exists for.
 
-
 ### Todos
 
 No new file-local follow-up is identified by this source reconciliation.
@@ -63,7 +62,6 @@ These current source spans identify the implementation owners and the specific a
 - Checkpoint guidance remains still-working. [3]
 
 - Production completion and post-integration guidance owner. [4]
-
 
 ### Cross-Repo References
 

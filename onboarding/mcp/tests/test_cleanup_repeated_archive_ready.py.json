@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
+        "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
+        "content": "sha256:d0bd921ad632bcfafe38ebccda5806d20fce4cbdf47e5fc6146d4c14e0db4a03",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pre_removal_cleanup_archive_with_teardown_providers_validates_and_retries_cleanly"
+        }
+      },
+      "facet": "A stored pre-removal archive carrying teardown_providers verifies its SHA-256 cleanupRequestId, validates, and emits resume nextArgs without teardown_providers.",
+      "id": "PRF-1BCD33",
+      "invariant": "INV-TDHAD1",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §3",
+        "leaf": "261125-DEP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
         "content": "sha256:3aca38e8d8e7b7e64481205bd6f17b1d892c06ca229c54f94c4fbf83392ab1eb",
         "locator": {
           "kind": "symbol",
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
-        "content": "sha256:11693da24789d1d355b5297ebc94857b2f237ace8f46c336d20f33d60249f269",
+        "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
+        "content": "sha256:7aa03d4ea0c774baffa0f523eebcb16bb4d5fbf09f2d7f08e6d9797253e14b82",
         "locator": {
           "kind": "symbol",
           "name": "test_repeated_cleanup_with_archive_ready_finishes"
@@ -37,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
+        "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
+        "content": "sha256:d0bd921ad632bcfafe38ebccda5806d20fce4cbdf47e5fc6146d4c14e0db4a03",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pre_removal_cleanup_archive_with_teardown_providers_validates_and_retries_cleanly"
+        }
+      },
+      "facet": "A published terminal archive (including one carrying a legacy teardown_providers field) preserves its saved operation and cleanupArguments across retries.",
+      "id": "PRF-BYDW34",
+      "invariant": "INV-PB6BZ0",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1-pb6bz0",
+        "leaf": "261125-DEP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
         "content": "sha256:2d61b01b4203356d0f6b2f872571c5f1e1ec3eafd58b982b788e7ce83fdf0c72",
         "locator": {
           "kind": "symbol",
@@ -60,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
-            "content": "sha256:11693da24789d1d355b5297ebc94857b2f237ace8f46c336d20f33d60249f269",
+            "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
+            "content": "sha256:7aa03d4ea0c774baffa0f523eebcb16bb4d5fbf09f2d7f08e6d9797253e14b82",
             "locator": {
               "kind": "symbol",
               "name": "test_repeated_cleanup_with_archive_ready_finishes"
@@ -76,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
+            "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
             "content": "sha256:2d61b01b4203356d0f6b2f872571c5f1e1ec3eafd58b982b788e7ce83fdf0c72",
             "locator": {
               "kind": "symbol",
@@ -92,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
+            "blob": "838243faf746bcca2aa29e2bd23db6c15b897ac8",
             "content": "sha256:3aca38e8d8e7b7e64481205bd6f17b1d892c06ca229c54f94c4fbf83392ab1eb",
             "locator": {
               "kind": "symbol",
@@ -104,16 +138,15 @@
       ]
     },
     "7": {
-      "note": "The archive-ready branch binds `kept_line = None` and invents no record. Anchor: `cleanup_result`",
+      "note": "The archive-ready branch in `_cleanup_terminal_branch` returns `None` for `kept_line` (unpacked in `_cleanup_result` under `cleanup_result`) and invents no record.\n\nAnchor: `_cleanup_terminal_branch`, `cleanup_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
-            "content": "sha256:b8c6346ce2a325136102784548291469d6356c351c087e6ca151407fad81506c",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:a4dc021e997574c3cd28c94591b4d44cc14668a24c22ac79890b45cb5c6ea456",
             "locator": {
-              "end": 667,
-              "kind": "line_range",
-              "start": 610
+              "kind": "symbol",
+              "name": "_cleanup_terminal_branch"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -121,12 +154,37 @@
         },
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
-            "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
             "locator": {
-              "end": 809,
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:c9a0278def157e6ba8b3ddcef833c49697c2937f8acdafbab989442d47e9da3b",
+            "locator": {
+              "end": 714,
               "kind": "line_range",
-              "start": 780
+              "start": 677
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:4f8ab2a3b991e5a4b005661bd2e99a04413cc317325e31d6a204d1c99b9bcfdd",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 806
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },

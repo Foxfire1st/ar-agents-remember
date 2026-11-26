@@ -6,26 +6,4 @@
 
 ## Purpose
 
-`runtime_environment.py` defines retained provider lifecycle environment helpers.
-The removed CLI no longer uses its root/stdio defaults; command execution still uses `subprocess_env`.
-
-## Code Commentary
-
-### Logic
-
-The module infers the coordination root from the installed package
-location, configures stdout/stderr for UTF-8, and builds subprocess
-environments that force UTF-8 Python IO.
-
-### Invariants And Boundaries
-
-- Environment helpers are provider-agnostic.
-- Command execution belongs in `command_runner.py`; this module only supplies
-  environment defaults.
-
-## Evidence
-
-### Repo-Internal References
-
-
-- Command execution uses the subprocess environment helper. [2]
+This card records the retirement of `mcp/src/agents_remember/providers/lifecycle/runtime_environment.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

@@ -45,12 +45,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:a3cfdc3dc0ff41d7674d4bf929c93574c9fb91987297d4fc04f8b5eacde3148c",
             "locator": {
-              "end": 109,
+              "end": 107,
               "kind": "line_range",
-              "start": 109
+              "start": 107
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -58,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:1f09c3d97285c8257b4370e9e3a45d4cdd73659f40201cd348e0a09e8d7f530e",
             "locator": {
-              "end": 108,
+              "end": 106,
               "kind": "line_range",
-              "start": 108
+              "start": 106
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -71,12 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
             "locator": {
-              "end": 105,
+              "end": 103,
               "kind": "line_range",
-              "start": 105
+              "start": 103
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -185,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
             "locator": {
               "kind": "symbol",

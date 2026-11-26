@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
             "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
             "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
               "kind": "symbol",
@@ -31,24 +31,37 @@
       ]
     },
     "10": {
-      "note": "erFrame wraps a named Engine Room scenario into a full projection and throws on an unknown name; build-up has four frames and SCENARIOS omits the removed provider timelines.",
+      "note": "erFrame wraps a named Engine Room scenario into a full projection and throws on an unknown name; build-up has four frames and SCENARIOS omits the removed provider timelines.\n\nAnchor: `erFrame`, `buildUp`, `SCENARIOS`, `Source`: `dashboard/src/dev/scenarios.ts:30-48` and `dashboard/src/dev/scenarios.ts:151-160`",
       "targets": [
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
+            "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "erFrame"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
+            "content": "sha256:e685af48372589e8192b1f03364c6c7950af029a673adf7dca82026b8c1b9b73",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "buildUp"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
+            "content": "sha256:ddf632780f5613ca695a6040e19556ddc8d46c6be43f47f1697fe125a6c3bb5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCENARIOS"
             }
           },
           "kind": "code"
@@ -122,30 +135,16 @@
         }
       ]
     },
-    "2": {
-      "note": "The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`.\n\nAnchor: `reindexReroute`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
-      "note": "`SCENARIOS` — timelines first, then the folded-in resting frames.\n\nAnchor: `SCENARIOS`",
+      "note": "`SCENARIOS` — timelines first, then the folded-in resting frames.\n\nAnchor: `SCENARIOS`, `Source`: `dashboard/src/dev/scenarios.ts:151-160`",
       "targets": [
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
+            "content": "sha256:ddf632780f5613ca695a6040e19556ddc8d46c6be43f47f1697fe125a6c3bb5f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SCENARIOS"
             }
           },
           "kind": "code"
@@ -153,12 +152,12 @@
       ]
     },
     "6": {
-      "note": "`EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra=\"forbid\"` model.",
+      "note": "`EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra=\"forbid\"` model.\n\nAnchor: `EngineProcessEdge`, `Source`: `mcp/src/agents_remember/observer/projection.py:295-315`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:d936091ae23a461972e677f948e783aaceb44425c5a6e4530b0b7487b4c0b8d8",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"

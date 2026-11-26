@@ -1,0 +1,40 @@
+{
+  "anchor": {
+    "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
+    "content": "sha256:4a85466d7fa7767c876600a5d31fc077bf00fe4f4cd2dab5ed241b51de336c36",
+    "locator": {
+      "kind": "symbol",
+      "name": "_apply_create_landing"
+    },
+    "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+  },
+  "id": "WKN-HG91TA",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "wkn-direct-create-no-restore",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261125-DEP-L7"
+  },
+  "state": "open",
+  "statement": "_apply_create_landing calls _operation_candidate after _close_gated_leaf without restoring closing on an unexpected exception, unlike _prepare_direct_landing_candidate.",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

@@ -149,16 +149,16 @@
   ],
   "references": {
     "26": {
-      "note": "The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.",
+      "note": "The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
-            "content": "sha256:d3821d8d0d28a9b17b1aec2d54fe4a8756bd51a47224ff8c789bd7fd655b576b",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "content": "sha256:7301c8eeff8b4eecb3cab4738e1629dd7a527227649c252f7f3efd8d4b1401d8",
             "locator": {
-              "end": 882,
+              "end": 879,
               "kind": "line_range",
-              "start": 1
+              "start": 64
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -212,12 +212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:45f51aced2c7283a60cf8b5c5697df4cc9a00bbee3393481209618d19a26bf67",
             "locator": {
-              "end": 173,
+              "end": 172,
               "kind": "line_range",
-              "start": 160
+              "start": 159
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -230,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:7fb8ae1059b9ac3e7c42d3afdf0d06ef83bc911039d0953530d7c82ecd73a85a",
             "locator": {
               "end": 111,
@@ -268,16 +268,16 @@
       ]
     },
     "31": {
-      "note": "The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call.",
+      "note": "The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "387507cf826bf8255675d217a08ca53916808aed",
-            "content": "sha256:f95b61e76f1c3ad0dcde646d37acb0a7cd18d95a4831a36ffcc3c25cc3a17c5d",
+            "blob": "2c6c45f83a868bc2f87d4b31a5920b84ba3a8fde",
+            "content": "sha256:b915fa134295b44110f514ee263dbe74ba95eaf79ebb32d3623639012560245c",
             "locator": {
-              "end": 916,
+              "end": 913,
               "kind": "line_range",
-              "start": 384
+              "start": 383
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -290,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:16b4329e12c469029cb8e311e40f5322414bdd609caf29357403eaf5e8bb91c9",
             "locator": {
               "end": 135,
@@ -303,12 +303,12 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
             "locator": {
-              "end": 192,
+              "end": 191,
               "kind": "line_range",
-              "start": 176
+              "start": 175
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -321,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:e82398eff1871ba43158e52b3097b1c69e36f61323f88e2a02aad2956b747866",
             "locator": {
               "end": 92,
@@ -417,12 +417,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:171ddebacbf664d00fdcf83eaa546bb02da4596111fc8eb2e16c6cc0785397b1",
             "locator": {
-              "end": 651,
+              "end": 643,
               "kind": "line_range",
-              "start": 651
+              "start": 643
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -459,26 +459,16 @@
       ]
     },
     "42": {
-      "note": "The registry whose models classify a payload that does not validate.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "The registry whose models classify a payload that does not validate.\n\nAnchor: `` `TOOL_RESPONSE_MODELS` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
+              "end": 128,
+              "kind": "line_range",
+              "start": 83
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -553,7 +543,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:d21b9c16579e150220ef490d74b6e70b5c3279caed4014709e6112af560cc1e0",
             "locator": {
               "end": 53,
@@ -566,12 +556,12 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:9e176dc5a4e88c08a56c8417563f0ed588a59f9d983c21c5876e57016e2d194c",
             "locator": {
-              "end": 478,
+              "end": 476,
               "kind": "line_range",
-              "start": 422
+              "start": 420
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -597,12 +587,12 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:9e176dc5a4e88c08a56c8417563f0ed588a59f9d983c21c5876e57016e2d194c",
             "locator": {
-              "end": 478,
+              "end": 476,
               "kind": "line_range",
-              "start": 422
+              "start": 420
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -645,7 +635,7 @@
       ]
     },
     "49": {
-      "note": "The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result.",
+      "note": "The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
@@ -661,12 +651,12 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
-            "content": "sha256:d3821d8d0d28a9b17b1aec2d54fe4a8756bd51a47224ff8c789bd7fd655b576b",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "content": "sha256:7301c8eeff8b4eecb3cab4738e1629dd7a527227649c252f7f3efd8d4b1401d8",
             "locator": {
-              "end": 882,
+              "end": 879,
               "kind": "line_range",
-              "start": 1
+              "start": 64
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -675,16 +665,16 @@
       ]
     },
     "50": {
-      "note": "The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.",
+      "note": "The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
-            "content": "sha256:d3821d8d0d28a9b17b1aec2d54fe4a8756bd51a47224ff8c789bd7fd655b576b",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "content": "sha256:7301c8eeff8b4eecb3cab4738e1629dd7a527227649c252f7f3efd8d4b1401d8",
             "locator": {
-              "end": 882,
+              "end": 879,
               "kind": "line_range",
-              "start": 1
+              "start": 64
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -739,7 +729,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "387507cf826bf8255675d217a08ca53916808aed",
+            "blob": "2c6c45f83a868bc2f87d4b31a5920b84ba3a8fde",
             "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
             "locator": {
               "kind": "symbol",
@@ -791,12 +781,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:cdbb6dd9c7ccc74f5e839b769fc874eeac369f4ed852fcb2edda56b2566abeb2",
             "locator": {
-              "end": 308,
+              "end": 307,
               "kind": "line_range",
-              "start": 299
+              "start": 298
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -804,12 +794,12 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:085ecc8fc2c5cee5697884a127337702d7c5b0eb793590ff1e26e6ff5369ceaf",
             "locator": {
-              "end": 381,
+              "end": 379,
               "kind": "line_range",
-              "start": 366
+              "start": 364
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -822,12 +812,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:fa52c047c0c71d6253d0a055c220806b72ae00326b490bfb4daa4198809183fb",
             "locator": {
-              "end": 762,
+              "end": 759,
               "kind": "line_range",
-              "start": 750
+              "start": 747
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -836,16 +826,16 @@
       ]
     },
     "57": {
-      "note": "ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration.",
+      "note": "ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
-            "content": "sha256:d3821d8d0d28a9b17b1aec2d54fe4a8756bd51a47224ff8c789bd7fd655b576b",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "content": "sha256:7301c8eeff8b4eecb3cab4738e1629dd7a527227649c252f7f3efd8d4b1401d8",
             "locator": {
-              "end": 882,
+              "end": 879,
               "kind": "line_range",
-              "start": 1
+              "start": 64
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -878,16 +868,16 @@
       ]
     },
     "58": {
-      "note": "Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt.",
+      "note": "Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
-            "content": "sha256:d3821d8d0d28a9b17b1aec2d54fe4a8756bd51a47224ff8c789bd7fd655b576b",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "content": "sha256:7301c8eeff8b4eecb3cab4738e1629dd7a527227649c252f7f3efd8d4b1401d8",
             "locator": {
-              "end": 882,
+              "end": 879,
               "kind": "line_range",
-              "start": 1
+              "start": 64
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -920,7 +910,7 @@
       ]
     },
     "59": {
-      "note": "The main probe retains exact equality between observed raisers and the current pin. Anchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`",
+      "note": "The main probe retains exact equality between observed raisers and the current pin.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
@@ -936,12 +926,12 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
-            "content": "sha256:d3821d8d0d28a9b17b1aec2d54fe4a8756bd51a47224ff8c789bd7fd655b576b",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "content": "sha256:7301c8eeff8b4eecb3cab4738e1629dd7a527227649c252f7f3efd8d4b1401d8",
             "locator": {
-              "end": 882,
+              "end": 879,
               "kind": "line_range",
-              "start": 1
+              "start": 64
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },

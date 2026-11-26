@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+        "blob": "2fe7659a726a2c4ea5367c362a4558d880b5256c",
         "content": "sha256:1d5b70c44cba43d536c59a80d8cf8a3895a22f10045427cc69aae85f75c87f32",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Distinguishes the fresh request from one whose archive bytes already fix the operation and arguments.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2fe7659a726a2c4ea5367c362a4558d880b5256c",
+        "content": "sha256:dd85ec6fb3d62a0e1c9ced1e4e96c1bdf0c686b9834ce848df78734b2ad0a03d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_terminal_action_args"
+        }
+      },
+      "id": "RLZ-EJHGRX",
+      "invariant": "INV-TDHAD1",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Strips legacy teardown_providers from resume nextArgs emitted when observing a stored pre-removal cleanup archive.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+            "blob": "2fe7659a726a2c4ea5367c362a4558d880b5256c",
             "content": "sha256:75a77fa2d5815ca7184865a79f11b4348562a0ca43b9251caedcdf292b4ed855",
             "locator": {
               "kind": "symbol",
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+            "blob": "2fe7659a726a2c4ea5367c362a4558d880b5256c",
             "content": "sha256:7b167e9d5b7d98e5937478d9ba759c81ff92f854f5a3505184fa4445d32882d6",
             "locator": {
               "kind": "symbol",

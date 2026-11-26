@@ -1,13 +1,86 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+        "content": "sha256:448599767e96e2c461034304caf642a1bc190d199c01e6d4c42167874b26c8f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify_organizational_repair_evidence"
+        }
+      },
+      "id": "RLZ-0YWCMH",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Classifies a reset contract whose live door is still claimed as reset-door-pending instead of reset so interrupted door publication is recovered on retry.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+        "content": "sha256:bf3629636176dc00c707e6d2ea5c2c89c8bf7262171ca2514542030e03a28d96",
+        "locator": {
+          "kind": "symbol",
+          "name": "_quality_repair_contract"
+        }
+      },
+      "id": "RLZ-6QRWEE",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Validates the live claimed closeout door via _successor_repair_door and builds the reopened WorktreeContract without passing the removed closeout_door keyword to dataclasses.replace.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+        "content": "sha256:4d4782c4ab5b1c7ba616bbeea1ed25d86285f807f3ed63ae52ced63eb0706e9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_complete_pending_repair_door"
+        }
+      },
+      "id": "RLZ-7844YN",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Completes the pending successor waiting door publication on retry after an interruption between the reset contract write and door journal publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+        "content": "sha256:8ab723479a401212e3f04eb2b93fe97362541f36a10e527931a081efe2ecf134",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_reset"
+        }
+      },
+      "id": "RLZ-KCT6SP",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Pre-validates the successor waiting door with prepare_door_publication before writing the reset contract and publishes and verifies it via _write_repair_door.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The legacy evidence writer binds repair evidence at the exact failed-operation seam.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:5abd2be3ce4b84dd08899e3043795098297166a69169657cc38cc211b3733e8c",
             "locator": {
               "kind": "symbol",
@@ -19,12 +92,12 @@
       ]
     },
     "10": {
-      "note": "Classification describes accepted, reset or conflicting contract state.",
+      "note": "Classification describes `not-applicable`, `accepted`, `reset`, `reset-door-pending`, or `developer-decision` contract and door state.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
-            "content": "sha256:483538b09744784853200ef8ebee608969c133678e45bf7294dcaa3e55841bfc",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:520ef20f6f02bd91ae5992e90298c702d25146f5a51b043664e9e308302132f0",
             "locator": {
               "kind": "symbol",
               "name": "OrganizationalRepairState"
@@ -34,11 +107,11 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
-            "content": "sha256:9b99b87d24b2490b956e9f84b045f3de7f91e0e6cae9156f908320ebed705eee",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:448599767e96e2c461034304caf642a1bc190d199c01e6d4c42167874b26c8f2",
             "locator": {
               "kind": "symbol",
-              "name": "_write_reset_contract"
+              "name": "_classify_organizational_repair_evidence"
             }
           },
           "kind": "code"
@@ -50,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:297495f387048208438400a336f6205b09f5f3b5cbd15cf3e734aaf31f5f0458",
             "locator": {
               "kind": "symbol",
@@ -62,11 +135,11 @@
       ]
     },
     "2": {
-      "note": "The durable reset identity contains the code/memory pair and exact contract hashes.",
+      "note": "The durable reset identity records the code/memory pair and SHA-256 hashes of `contract_publication_text`.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:184556f4eba48da2a60a65f7e05976a05f6dc0e3aa94367cbea9214d13a13c35",
             "locator": {
               "kind": "symbol",
@@ -77,11 +150,11 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
-            "content": "sha256:9b99b87d24b2490b956e9f84b045f3de7f91e0e6cae9156f908320ebed705eee",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:9fd948783657276e919704a6bec38aa76f9ecabbe748806d1849db07363124d3",
             "locator": {
               "kind": "symbol",
-              "name": "_write_reset_contract"
+              "name": "_contract_sha256"
             }
           },
           "kind": "code"
@@ -89,12 +162,12 @@
       ]
     },
     "3": {
-      "note": "Preparation proves cancelled ownership, matching pair/task binding and exact reset state.",
+      "note": "Preparation proves cancelled ownership, matching pair/task binding, and exact reset state, or completes a pending waiting-door publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
-            "content": "sha256:38b9e780f065433b2c8c71cfa0ce3631a729cd0558f1b1d0ee337a4c76f18b1b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:e7be197dc8e2f25ec566be8a5890337b11b0d322e64f7d69d21f09fe57ced46d",
             "locator": {
               "kind": "symbol",
               "name": "prepare_organizational_completion_repair"
@@ -104,11 +177,22 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:99834dd42b0124405634fd85a2637020fd5cad3bfaf741902f4140cb70f8f02e",
             "locator": {
               "kind": "symbol",
               "name": "_require_matching_repair_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:4d4782c4ab5b1c7ba616bbeea1ed25d86285f807f3ed63ae52ced63eb0706e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_pending_repair_door"
             }
           },
           "kind": "code"
@@ -120,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:6b70e9a0f076707d66f8c2b4b241384091042795ddfb15ef166073564c6e5145",
             "locator": {
               "kind": "symbol",
@@ -131,7 +215,7 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:51323d5b409d55f036434ee892411d17d5a072b5f11f8af0488f6e43b1f3b01b",
             "locator": {
               "kind": "symbol",
@@ -142,7 +226,7 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:7af1eed3311fdd8b8a0bea649a11ade4383c408c23500abbf1eca1bc10c8fbe2",
             "locator": {
               "kind": "symbol",
@@ -158,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:64081a8085457f8d3fbce642489bcf4c3c6c7b66b87e4f18f7f8cd6cb15bbffb",
             "locator": {
               "kind": "symbol",
@@ -170,12 +254,12 @@
       ]
     },
     "6": {
-      "note": "The reset clears only the accepted closed pair/state and creates the waiting successor.",
+      "note": "`_quality_repair_contract` clears only the accepted closed pair/state without setting `closeout_door` on `WorktreeContract`, while `_successor_repair_door` derives the waiting successor published to the door journal.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
-            "content": "sha256:ba1757cf25d67323b50232795454745bd4fc8c9f439ec94d1b8bce14ecb52734",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:bf3629636176dc00c707e6d2ea5c2c89c8bf7262171ca2514542030e03a28d96",
             "locator": {
               "kind": "symbol",
               "name": "_quality_repair_contract"
@@ -185,7 +269,7 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:be97af694e05d08ab0a84af89dc875d1274f855fcee7ae8a8f3a07fc54cec1f7",
             "locator": {
               "kind": "symbol",
@@ -197,12 +281,12 @@
       ]
     },
     "7": {
-      "note": "Publication requires unchanged integration refs, unmoved sources and accepted/reset contract bytes.",
+      "note": "Publication requires unchanged integration refs and unmoved sources, writes exact reset contract bytes, and publishes the waiting successor door with typed interruption/conflict errors.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
-            "content": "sha256:31f366af2c68dafcf60747f927ba29889c7d243483aee76363d05e2337de3c02",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:8ab723479a401212e3f04eb2b93fe97362541f36a10e527931a081efe2ecf134",
             "locator": {
               "kind": "symbol",
               "name": "_publish_reset"
@@ -212,11 +296,22 @@
         },
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:9b99b87d24b2490b956e9f84b045f3de7f91e0e6cae9156f908320ebed705eee",
             "locator": {
               "kind": "symbol",
               "name": "_write_reset_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+            "content": "sha256:4492ae4b2af99c42b2881b34d132815cf71fd0d2227141a14b819cc43b057963",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_repair_door"
             }
           },
           "kind": "code"
@@ -228,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:836198a603e1e0a3ec01784051e49a81235395e62ed162d02eb313cb1316150f",
             "locator": {
               "kind": "symbol",
@@ -244,7 +339,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
             "content": "sha256:74ba15ad7c650feb4def18db7d283aa083ebfc133eb5526cf58fdf1889c1705a",
             "locator": {
               "kind": "symbol",

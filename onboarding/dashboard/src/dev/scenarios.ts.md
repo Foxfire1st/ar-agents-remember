@@ -4,7 +4,6 @@
 
 [dashboard/src overview](../overview.md)
 
-
 ## Current enclosure-only composition
 
 ScenarioFrame remains a full WorkspaceProjection plus caption, optional events and duration. Build-up now has four beats: the official line, code checkout, memory checkout/contract, and nominal. The seed-fault, reindex-reroute and provider-block timelines are removed. Memory-block and stale-base recover through ledger mapping and worktree creation without provider seed/clone beats; the retained registry also includes tear-down, live-sync, integration-conflict, abandon and the folded-in gallery states.
@@ -17,7 +16,9 @@ Source/test/fixture inspection is not a fresh mounted capture or a passing test 
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
+
 - erFrame wraps a named Engine Room scenario into a full projection and throws on an unknown name; build-up has four frames and SCENARIOS omits the removed provider timelines. [10]
+
 
 - The paired diagnostics owner renders phase, health, refs, source lineage, actions, missing facts and sources; optional summary, next action and memory refs remain, without the removed setup/progress rows. [11]
 
@@ -30,8 +31,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Slice 5i — the scenario MODEL behind the dev bench. A scenario is an ordered list of `ScenarioFrame`s,
 each a FULL `WorkspaceProjection` plus a caption; the `ScenarioPlayer` applies one complete frame at a
@@ -141,23 +140,18 @@ No configured Domain Documentation source exists for this file.
 
 - `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. [1]
 
-- The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. [2]
-
-
 - `SCENARIOS` — timelines first, then the folded-in resting frames. [3]
 
 - The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. 
 - `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. 
+
 - `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. [6]
 
 - `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). [7]
 
-
 - Consumed by the player transport + the bench picker. [8]
 
-
 - `WorkspaceProjection` / `ObserverEvent` types each frame carries. [9]
-
 
 ### Cross-Repo References
 

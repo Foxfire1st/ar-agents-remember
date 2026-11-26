@@ -21,14 +21,9 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 - Printing the report or its JSON. [2]
 - Inputs, the out-of-scope answer and the exit statuses. [3]
 
-
-
-
 - Current source assertions distinguish the fixture pass with `--base` (carried legacy report) from the baseless malformed-marker JSON refusal (both marker and legacy debt refuse); no command was run for this account. [5]
 
-
 - Current source delta inspected statically: Add the preserved help-table policy and correct the stale blanket fixture-pass caption while retaining arguments, read-only/no-skip behavior and exit codes. [6]
-
 
 ## Inherited source-epoch account (non-operative)
 
