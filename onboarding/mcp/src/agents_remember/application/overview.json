@@ -1979,12 +1979,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:7d21b4b91cc06b4564b507277a082a02550f797f8dd8c8671cfd9ab47c0b816a",
             "locator": {
-              "end": 330,
+              "end": 335,
               "kind": "line_range",
-              "start": 302
+              "start": 307
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -2340,7 +2340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -4738,7 +4738,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -6177,7 +6177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
               "end": 109,

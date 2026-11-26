@@ -201,7 +201,6 @@ No configured domain documentation could be checked.
 
 
 
-- Published intent delegates its source pair to the held code-tree owner. That owner uses the shared Git runner for the HEAD tree and checkout status before it selects the commit tree or captures a dirty worktree. [34]
 
 
 - The scope-selection rule the read reports when a seed selects nothing, and the recorded-but-real selection it serves instead of refusing. [35]
@@ -244,3 +243,5 @@ No meaningful cross-repo references found.
 - The refusal and item shapes this route renders without re-spelling. [37]
 
 - Selection derives its external index from a converted directory without editing the memory. [50]
+
+- Published intent delegates its source pair to the held code-tree owner. That owner uses the shared Git runner for the HEAD tree and checkout status before it selects the commit tree or captures a dirty worktree. [34]

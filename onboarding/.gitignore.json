@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "95431a313a1cfebcf2d81d41eba27781f3fdcf05",
+        "blob": "e85f0cf6144ccf924223f8660dda786411a4fda0",
+        "content": "sha256:5fa6af30957f9e5ef72598b0c4f9be1803f2ae85e2a5e4273c36d54ea93a00f1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3W9RKP",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Ignores .eslintcache repository-wide so warm hook caches never stage or trip closeout checks.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e85f0cf6144ccf924223f8660dda786411a4fda0",
         "content": "sha256:08239aadebf9a9b105e2efecca3129f9198067993418529ddc8117d41997b7ec",
         "locator": {
           "end": 11,
@@ -27,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95431a313a1cfebcf2d81d41eba27781f3fdcf05",
+            "blob": "e85f0cf6144ccf924223f8660dda786411a4fda0",
             "content": "sha256:9570d858420a629f9e5695297afbf7636c8034b483549125c2e8c22190fa91fe",
             "locator": {
               "end": 17,
@@ -54,6 +71,23 @@
             "path": "mcp/tests/test_worktree_own_environment.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ignore rules exclude the hook's content-addressed `.eslintcache` beside the other tool caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e85f0cf6144ccf924223f8660dda786411a4fda0",
+            "content": "sha256:a67d7c0ca0083968aaef5d0cd17eecb97e854fa43cf37e88a837a7eda22c5f19",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
         }
       ]
     }

@@ -174,14 +174,14 @@
       ]
     },
     "8": {
-      "note": "The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer.\n\nAnchor: `resolveJsonModule`",
+      "note": "The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f027a65aa121e2a9a127e28e4eb04a66dc8789d8",
-            "content": "sha256:d89bf5e0b4263f9b850993985c00d2b5b364890384b4ab4f08a14eb5fc37b5a3",
+            "blob": "d9793c71824bc26c5fd6f59c6265b339b604a681",
+            "content": "sha256:8b4268a2dd6f8b2536ab22b770767ef1687a5215ce2e067208f24630f7dfc945",
             "locator": {
-              "end": 22,
+              "end": 24,
               "kind": "line_range",
               "start": 2
             },
@@ -196,10 +196,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1ea2e6f91bd3c1c003efdfca601339ed02b9a2f",
-            "content": "sha256:c78171de288e4e746010720618cb435cc63bf9bb901d3b0463b9678aed5f42f7",
+            "blob": "1ff60438e45a8fe67d8d880efcaada8633031c8b",
+            "content": "sha256:0204e7830cc3e9b7af1df7e9bcf2090d1b68be813e7da5dc1750c9c96e721c85",
             "locator": {
-              "end": 24,
+              "end": 26,
               "kind": "line_range",
               "start": 1
             },

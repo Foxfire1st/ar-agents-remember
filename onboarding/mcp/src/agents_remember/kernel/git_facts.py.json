@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "end": 225,
+              "end": 234,
               "kind": "line_range",
-              "start": 170
+              "start": 179
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:5736f26e501829b927f3ec0a34e374e5efc5a275e4525a777ce9ab8182fc831a",
             "locator": {
-              "end": 238,
+              "end": 247,
               "kind": "line_range",
-              "start": 174
+              "start": 183
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -33,8 +33,8 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
-            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "content": "sha256:cff56c1e48688443de04b3a25b57a097726ea2116abbea17f7e6c5cdbc188862",
             "locator": {
               "kind": "file"
             },
@@ -49,7 +49,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:4e9712efdc5e47916c2dbb622ba70183d1df366b5fb155e7aaba5c37c0972fe0",
             "locator": {
               "kind": "symbol",
@@ -100,12 +100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "end": 225,
+              "end": 234,
               "kind": "line_range",
-              "start": 170
+              "start": 179
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -113,12 +113,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:5736f26e501829b927f3ec0a34e374e5efc5a275e4525a777ce9ab8182fc831a",
             "locator": {
-              "end": 238,
+              "end": 247,
               "kind": "line_range",
-              "start": 174
+              "start": 183
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -126,8 +126,8 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
-            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "content": "sha256:cff56c1e48688443de04b3a25b57a097726ea2116abbea17f7e6c5cdbc188862",
             "locator": {
               "kind": "file"
             },
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:6b700b6d640532159f80c4d7e857af95377c99168c6b43785fab4db3ca3e224d",
             "locator": {
               "end": 100,
@@ -200,12 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:5b48d403e31ae7439e549002866d4ceb8acd033bda8895257a8b82430610b111",
             "locator": {
-              "end": 142,
+              "end": 151,
               "kind": "line_range",
-              "start": 122
+              "start": 131
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

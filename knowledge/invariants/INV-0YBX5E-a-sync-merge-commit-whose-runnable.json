@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Condition 1 is realized in landing_commit_check.py (_borrow_dashboard_node_modules and _lockfile_borrow_refusal) and Condition 2 is realized across _code_merge_commit.py (sync_merge_commit_args) and _merge.py (_commit_staged_merge), and all five R8 tests in test_sync_commit_check.py and test_landing_commit_check.py guard both conditions."
+  },
+  "applicability": "Sync merge commits that run a repository pre-commit hook and landing or integration commit checks that run in a linked or temporary checkout carrying dashboard/package.json.",
+  "conditions": [
+    "Commit-Check-Pass is appended via git commit -m onto the comment-stripped MERGE_MSG only when resolve_commit_check_hook resolves a runnable hook.",
+    "dashboard/node_modules borrowing runs only when dashboard/package.json exists, candidate dashboard/node_modules is absent, primary dashboard/node_modules exists, both dashboard/package-lock.json files are byte-identical, and dashboard/node_modules/ is gitignored."
+  ],
+  "exclusions": [
+    "Non-conflicting code merges in start_side_merge, which run plain git merge --no-edit with no Commit-Check-Pass stamp.",
+    "Repositories without dashboard/package.json or checkouts that already have their own dashboard/node_modules."
+  ],
+  "id": "INV-0YBX5E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer R3 PASS WITH NOTES on 05acc9a7 (L29-W3-final-checks-05acc9a7.log: 243 passed, 84 subtests passed; R8 tests (i)-(v) in test_sync_commit_check.py and test_landing_commit_check.py)"
+      ],
+      "path": "L29-curator-handoff-r8"
+    },
+    "handoffEntry": "BUG-R29@v1 §3 (R8)",
+    "leaf": "261112-BUG-L29",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A sync merge commit whose runnable pre-commit hook passed records Commit-Check-Pass: tree=<tree> hook=<actual hook>, and no stamp is written when the repository has no runnable hook or the hook is disabled; a commit check running in a temporary or linked checkout borrows the primary checkout's dashboard/node_modules only when the candidate and primary dashboard/package-lock.json are byte-identical and dashboard/node_modules/ is gitignored, unlinking the symlink in finally, and otherwise refuses pre-spawn as unrunnable with no npm install and no leftover link.",
+  "supersedes": [],
+  "title": "Synced hooks carry tree-bound stamps; temp checkouts borrow matching deps",
+  "writer": {
+    "at": "2026-11-25T18:10:27+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
+}

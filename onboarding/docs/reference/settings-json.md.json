@@ -1,0 +1,45 @@
+{
+  "path": "docs/reference/settings-json.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50a3b4fbf399f7e1b85f4368f9aa20d80bd0dbca",
+        "content": "sha256:64d70515f2e6e264a6c3f1105be60d3622c0a764e1c2d22d59f43c0993404207",
+        "locator": {
+          "end": 481,
+          "kind": "line_range",
+          "start": 481
+        }
+      },
+      "id": "RLZ-2FEMJA",
+      "invariant": "INV-RXGZM9",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §5",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Updates the repository settings table to reflect that commitCheckTimeoutSeconds applies to both landing and continued code-sync commit checks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "50a3b4fbf399f7e1b85f4368f9aa20d80bd0dbca",
+        "content": "sha256:ae567a364dc0f50d8eff1c90069a47cd12515f3fd2995e160ca642105c8c4ec2",
+        "locator": {
+          "end": 932,
+          "kind": "line_range",
+          "start": 925
+        }
+      },
+      "id": "RLZ-XE5WW1",
+      "invariant": "INV-RXGZM9",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §5",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Updates the orchestration.landing reference section to describe continued code-side sync commit checks and sync-commit-check-failed timeout recovery.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

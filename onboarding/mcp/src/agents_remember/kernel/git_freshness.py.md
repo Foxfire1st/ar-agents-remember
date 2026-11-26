@@ -119,7 +119,6 @@ No relevant external documentation found.
 - The metadata bound is 30 seconds. [3]
 
 
-- The shared Git runner applies caller-selected bounds and isolated repository environment. [4]
 
 
 - Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. [5]
@@ -133,3 +132,5 @@ No meaningful cross-repo references found.
 No meaningful cross-repo references found.
 
 - Freshness probes choose their per-command timeout and package it for the shared runner. \[8] [8]
+
+- The shared Git runner applies caller-selected bounds and isolated repository environment. [4]

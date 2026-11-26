@@ -56,7 +56,6 @@ No relevant external documentation is needed.
 
 
 
-- `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. [1]
 
 
 - Cross-repo entries are parsed from settings before this module resolves repository state. [2]
@@ -68,3 +67,5 @@ No relevant external documentation is needed.
 No separate repository evidence is needed; the module reports adjacent repo facts at runtime.
 
 No static cross-repo references are required.
+
+- `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. [1]

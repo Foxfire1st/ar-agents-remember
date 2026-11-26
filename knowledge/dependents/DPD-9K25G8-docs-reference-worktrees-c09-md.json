@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
+    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
     "role": "curator",
-    "statement": "docs/reference/worktrees-c09.md (lines 104-113, 317-349) accurately describes exact-pair closeout/landing, terminal archive verification, and archived cleanupArguments retries without asserting a subfolder inclusion list or empty-only guard.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/reference/worktrees-c09.md (lines 165-187, plus worktree_sync references at 159-163, 225-228, 270-279, 368-371) remains accurate after L29; publication-owner hook resolution, refusal conditions including unrunnable and commitCheckTimeoutSeconds, closeout and direct_landing Commit-Check-Pass with hook=none when absent, worktree_integrate trailer acceptance and scratch-worktree fallback, unchanged-side skipping, and memory_baseline_adopt Code-Commit-only behavior all match live code.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -33,7 +33,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
@@ -285,14 +285,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T00:49:11+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L29",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
     "task": "261112-BUG"
   }
 }

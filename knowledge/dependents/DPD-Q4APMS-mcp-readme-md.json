@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
-    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
+    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
+    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
     "role": "curator",
-    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: mcp/README.md accurately lists all 44 public MCP tools and 4 explainer tools, package layout, and setup instructions.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): mcp/README.md (lines 1-132) remains accurate after L29 worktree_sync commit-check documentation update in docs/reference/mcp-tools.md and the mcp/pyproject.toml 3.0.8 version bump; all 44 public tools in 8 matching groups, 4 explainer tools, --config CLI commands, and install/dashboard/host instructions match live code and docs/reference/mcp-tools.md.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -56,20 +56,20 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+      "blob": "335d4461282e2836f4af863df677d07e72ff461a",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }
   ],
   "writer": {
-    "at": "2026-11-25T22:06:22+01:00",
+    "at": "2026-11-26T00:49:11+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L29",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
     "task": "261112-BUG"
   }
 }

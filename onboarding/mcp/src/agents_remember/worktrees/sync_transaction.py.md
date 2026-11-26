@@ -18,6 +18,8 @@ Code settles before memory; _paired_code supplies its result for structural memo
 
 A retained merge reaches repository-hook diagnosis only after the commit command fails. A failed staged comparison keeps its Git diagnostic and returns `sync-resolution-incomplete`. If hook diagnosis itself fails, its distinct diagnostic is added to the original evidence.
 
+A continued code-side commit that reaches the commit-check bound, or whose hook changes a tracked file, is caught as a typed `BoundedSyncCommitError` and `_commit_check_stopped` answers `sync-commit-check-failed`. The summary names the limit, the retained hook log, the staged paths the check judged, the tracked files the hook changed and any surviving escaped PIDs, and offers `continue` or `cancel`; `HEAD`, `MERGE_HEAD` and the pinned index remain the merge's.
+
 Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored. [5]
 
 
@@ -125,6 +127,8 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 ### Repo-Internal References
 
+- The bounded commit stop answers `sync-commit-check-failed` with the limit, log, judged paths, changed files and recovery calls, keeping the merge staged. [51]
+
 - Current input and journal routing. [1]
 
 - Real content conflict continuation scenario. [18]
@@ -184,6 +188,11 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Settled code pairing. [6]
 
+
+### Cross-Repo References
+
+No additional configured cross-repository contract is asserted.
+
 - Retained merge classifies the hook only after a failed commit command and retains comparison diagnostics. [50]
 - Moving candidate park. [2]
 - The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. [35]
@@ -192,7 +201,3 @@ No external Domain Documentation entries are configured. Source and test asserti
 - The driver uses one paired-code/owner context for merge and resumed capture. [47]
 - Structural report journaling. [5]
 - Current continuation. [9]
-
-### Cross-Repo References
-
-No additional configured cross-repository contract is asserted.
