@@ -28,7 +28,7 @@ refusal is a typed `DaggerRuntimeAuthorityError` raised before any Dagger comman
 
 ### Logic
 
-`DaggerHostDeclaration` is the sole parsed declaration: connection-only endpoint, absolute reusable layer-store path, pinned engine version and source. `_sha256` supplies sorted compact-JSON digests; the declaration and `DaggerAuthoritySnapshot` render immutable manifests. `DockerEngineInspector` uses connection-only `docker inspect` facts and best-effort version observation; it never provisions an engine or store. Parsing refuses unsupported, malformed, repository-local, provisioning-capable and ambient-conflicting declarations. `authority_environment` pins the admitted endpoint and authority digest.
+`DaggerHostDeclaration` is the sole parsed declaration: connection-only endpoint, absolute reusable layer-store path, pinned engine version and source. `_sha256` supplies sorted compact-JSON digests; the declaration and `DaggerAuthoritySnapshot` render immutable manifests. `DockerEngineInspector` uses connection-only `docker inspect` facts and best-effort version observation; it never provisions an engine or store. Parsing refuses unsupported, malformed, repository-local, provisioning-capable and ambient-conflicting declarations (both `_EXPERIMENTAL_DAGGER_RUNNER_HOST` and legacy `DAGGER_HOST`, with malformed endpoints rejected before any probe). Runner-environment construction and selector stripping live in `dagger_runner.py` (re-exported here as `authority_environment`, `native_dagger_environment`, and `AMBIENT_RUNNER_HOST_ENV`): `authority_environment` pins `_EXPERIMENTAL_DAGGER_RUNNER_HOST` and authority digest, drops legacy `DAGGER_HOST`, and strips overriding Docker/host selectors while recording their names (never values) as `dropped_selectors` on `AdmittedDaggerAuthority`.
 
 `AuthorityRegistry` owns `state.json`, `owners.json` and resource path `authority.lock`. Its `exclusive_access` delegates to the kernel's single `exclusive_file_lock` primitive, preserving the existing physical `authority.lock.lock` path. It translates `LockCapabilityError` to `DaggerRuntimeAuthorityError` with finding `runtime-authority-registry-lock-unsafe`. This host policy does not use `StoreOwnership`, does not call the checkout coordinator guard, and does not confer a process execution role.
 
@@ -40,8 +40,7 @@ refusal is a typed `DaggerRuntimeAuthorityError` raised before any Dagger comman
 
 ### Conventions
 
-The declaration source is the sole authority; ambient or per-worktree `DAGGER_HOST` values never
-merge with the admitted snapshot. Admission, continuation and release hold `AuthorityRegistry.exclusive_access` across their complete registry transactions, and every stored digest is validated 64-hex before use. No module in this file ever
+The declaration source is the sole authority; ambient or per-worktree `_EXPERIMENTAL_DAGGER_RUNNER_HOST` or legacy `DAGGER_HOST` values never merge with the admitted snapshot. Admission, continuation and release hold `AuthorityRegistry.exclusive_access` across their complete registry transactions, and every stored digest is validated 64-hex before use. No module in this file ever
 copies or deletes the reusable layer store, retires an engine owned elsewhere, or provisions a
 private engine or volume.
 
@@ -78,11 +77,19 @@ No configured external domain documentation source.
 
 The declaration, registry and frozen continuation are production owners. The focused test provides coordinator containment and lock composition evidence; the engine inspector double does not prove live engine health.
 
+
 - Strict declaration, live inspection and immutable authority snapshot. [1]
+
+
 - Declaration parsing, host location and connection-only endpoint policy. [2]
+
+
 - Launch environment is bound to the admitted snapshot. [3]
+
 - Host registry transaction entry, domain refusal, census, barriers and exact owner mutations. [4]
+
 - Admission freezes one authority and changes registry state under its lock. [5]
+
 - Continuation and terminal release share the same physical registry lock. [6]
 - Process-start liveness and operation-scoped owner identities. [7]
 - Host-local registry root configuration. [8]

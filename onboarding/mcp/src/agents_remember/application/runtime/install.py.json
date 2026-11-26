@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -91,6 +91,24 @@
       },
       "rationale": "The public install continues through host, dashboard and server inventory after its runtime settings result.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_runtime_install"
+        }
+      },
+      "id": "RLZ-Z2P900",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The runtime install application includes the inventory under the selected repository authority.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -164,8 +182,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -180,8 +198,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"

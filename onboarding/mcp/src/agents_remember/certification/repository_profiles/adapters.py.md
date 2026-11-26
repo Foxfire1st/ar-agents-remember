@@ -97,7 +97,9 @@ artifact. The old hardcoded result inventory it replaces was deleted in
 - The generic executor/decoder protocol and the concrete Dagger + JSON implementations. [3]
 - The profile report command selects the admitted executor and renders it through DaggerModuleExecutorAdapter. [4]
 - The success payload uses the shared gate-command renderer and reports the admitted profile identity. [5]
+
 - The clean executor runs the admitted adapter against the exact candidate. [6]
+
 - The clean executor publishes the exported execution outcome. [7]
 - The configured result decoder determines the exported pipeline exit status. [8]
 - Render an exact journal selection after full original-object and artifact readback. [9]

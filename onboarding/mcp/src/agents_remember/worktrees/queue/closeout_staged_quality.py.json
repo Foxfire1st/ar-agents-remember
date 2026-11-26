@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:978c67478e11663ed940c6e0265ad11166d276984ba64df13d377a560b36c101",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:4e32a4467681e52e96db1ebbcaa00484efc4304fb67941857e9ffb0244b34ac4",
             "locator": {
-              "end": 562,
+              "end": 565,
               "kind": "line_range",
-              "start": 548
+              "start": 551
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -32,8 +32,8 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
-            "content": "sha256:3ab849260a52960a4ab8ac1cf2a6cab88fe6c349b1e5cae774746cc5905f0f23",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
+            "content": "sha256:baabef87610d90a323cf0b24257769bcb8a07c1fbe8ba3afe86d8155358a4620",
             "locator": {
               "kind": "file"
             },
@@ -174,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
             "locator": {
               "kind": "symbol",
@@ -186,7 +186,7 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:ec47c057b29b773e37b111630980ebbc724ecf79a307ff782e9cda7b2737c82e",
             "locator": {
               "end": 322,

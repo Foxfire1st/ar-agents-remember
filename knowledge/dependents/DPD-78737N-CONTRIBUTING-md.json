@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d52a38f510c2bbc1a129cf2f4a34a6221b1c055d",
-    "commit": "8ea21d6bf4eac04aeef8e299c205f5350152cbcd",
+    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
+    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
     "role": "curator",
-    "statement": "Audited CONTRIBUTING.md on synced 261112-BUG-L54 candidate d52a38f5 (base 8ea21d6b): seven-lane manifest (834 total / 684 unit-regression), evidence-lifecycle catalog (18 contracts / 123 artifacts), and canonicalization descriptions remain accurate after adding mcp/tests/test_memory_verdict_ref.py, with zero contradictions.",
-    "task": "261112-BUG-L54",
+    "statement": "CONTRIBUTING.md accurately documents the uv-managed Python 3.14 and uv 0.13 minor-line runtime contract, bootstrap and hook checks, and Dagger endpoint validation, _EXPERIMENTAL_DAGGER_RUNNER_HOST handoff, and dropped-selector reporting on synced post-L54 base 8fe83ceb2352 (noting line 553 summarizes PNT start's --ensure step as creating a missing mcp/.venv without repeating stale-venv replacement).",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,22 +26,17 @@
       "path": "pyproject.toml"
     },
     {
-      "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+      "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
       "kind": "file",
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
     {
-      "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
-      "kind": "file",
-      "path": "scripts/install-python-runtime.sh"
-    },
-    {
-      "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+      "blob": "1396a3a4921117f658fbd9193c31ee72a12c5049",
       "kind": "file",
       "path": "scripts/check-python-runtime.py"
     },
     {
-      "blob": "181c81f78275cfbda8aad2b96e8db82ddfacf341",
+      "blob": "bb4b93181fb580f55d46574b8619b6f1f5d15903",
       "kind": "file",
       "path": "scripts/python-runtime-contract.env"
     },
@@ -51,7 +46,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+      "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,7 +56,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+      "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -71,17 +66,17 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+      "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
     {
-      "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+      "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -136,12 +131,12 @@
       "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
     },
     {
-      "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+      "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
     },
     {
-      "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+      "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
     },
@@ -156,7 +151,7 @@
       "path": "scripts/pnt_sandbox/cli.py"
     },
     {
-      "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+      "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
       "kind": "file",
       "path": "scripts/pnt_sandbox/operations.py"
     },
@@ -204,17 +199,27 @@
       "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
       "kind": "file",
       "path": "scripts/instruction_renewal/manifest.py"
+    },
+    {
+      "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py"
+    },
+    {
+      "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:41:46+01:00",
+    "at": "2026-11-26T21:50:20+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

@@ -12,7 +12,7 @@ Shared Dagger authority snapshot and exact-owner release tests.
 
 ### Logic
 
-Repeated admission of one declared shared engine/store yields the same snapshot digest and bound environment. A changed inspected source changes identity. Release rejects missing, foreign or stale owners while preserving the valid active owner census.
+Repeated admission of one declared shared engine/store yields the same snapshot digest and bound environment (`_EXPERIMENTAL_DAGGER_RUNNER_HOST`, without legacy `DAGGER_HOST`). A changed inspected source changes identity. Additional tests cover dotted container references in `docker-container://` endpoints, refusing malformed endpoints before probing Docker, refusing conflicting ambient `_EXPERIMENTAL_DAGGER_RUNNER_HOST` or `DAGGER_HOST` values, and naming stripped ambient selector variables in `dropped_selectors` without exposing their values. Release rejects missing, foreign or stale owners while preserving the valid active owner census.
 
 ### Conventions
 
@@ -38,7 +38,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Admits one shared authority and binds a deterministic snapshot. [1]
+
 - Release only the exact owner and reject stale or foreign owners. [2]
 
 ### Cross-Repo References

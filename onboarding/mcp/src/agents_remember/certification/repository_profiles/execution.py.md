@@ -86,7 +86,9 @@ artifact definitions; the profile and plan identity therefore remain tied to tha
 
 - One-call selection/plan/executor/decoder/artifact admission for an exact candidate. [2]
 - The sandbox admits the profile execution against its prepared candidate tree. [3]
+
 - The sandbox manifest records profile execution and frozen runtime authority. [4]
+
 
 ### Cross-Repo References
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "56daf6642402898075d164df4e26178499116006",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/repository-certification-profile.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "docs/reference/repository-certification-profile.md remains accurate across L33's uv-managed Dagger base, refreshed profile digests, and dropped-selector reporting on synced base 65911c75 / candidate 56daf664 because it documents the profile schema, gate rules, and manifest flow without pinning legacy runtime builds or digests.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,17 +66,17 @@
       "path": "mcp/src/agents_remember/models/certification/base.py"
     },
     {
-      "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+      "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
     },
     {
-      "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+      "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
     },
     {
-      "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+      "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
@@ -91,12 +91,12 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+      "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+      "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
     },
     {
-      "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
@@ -128,20 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T12:39:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

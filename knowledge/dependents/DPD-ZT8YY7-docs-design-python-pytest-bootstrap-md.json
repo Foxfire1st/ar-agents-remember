@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d52a38f510c2bbc1a129cf2f4a34a6221b1c055d",
-    "commit": "8ea21d6bf4eac04aeef8e299c205f5350152cbcd",
+    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
+    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md on synced 261112-BUG-L54 candidate d52a38f5 (base 8ea21d6b): case budgets, lane structure (834 total / 684 unit-regression), shifted stress-durability anchor (test-evidence-lanes.toml:853-855), conftest isolation, and coverage/CRAP descriptions match live code with zero contradictions.",
-    "task": "261112-BUG-L54",
+    "statement": "docs/design/python-pytest-bootstrap.md remains accurate after L33 added two test files to mcp/tests/test-evidence-lanes.toml on synced post-L54 base 8fe83ceb2352, with the stress-durability selection anchor re-pointed to identical content at lines 855-857.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 31,
+  "revision": 32,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+      "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+        "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 855,
+          "end": 857,
           "kind": "line_range",
-          "start": 853
+          "start": 855
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:41:46+01:00",
+    "at": "2026-11-26T21:50:20+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

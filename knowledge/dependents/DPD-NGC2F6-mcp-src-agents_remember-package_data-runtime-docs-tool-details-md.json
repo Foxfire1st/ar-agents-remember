@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "56daf6642402898075d164df4e26178499116006",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited package_data/runtime/docs/tool-details.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): tool contracts, role_start/role_start_set/role_message semantics, and server_info descriptions remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "The packaged mirror mcp/src/agents_remember/package_data/runtime/docs/tool-details.md is byte-identical to docs/tool-details.md and accurately documents runtime_install's checkoutEnvironments inventory across preview, apply, overflow log, and reportPath on synced base 65911c75 / candidate 56daf664.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "c342ab3846bfb67446708744fc550fd0050a7d05",
+      "blob": "40638134662ff715f51b378d410ab63214cb8c71",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
@@ -75,7 +75,7 @@
       "path": "mcp/src/agents_remember/install/experiment.py"
     },
     {
-      "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+      "blob": "291cc67f698b65a8dd99df019974eecda278698e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/runtime/install.py"
     },
@@ -200,8 +200,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -226,17 +226,27 @@
       "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/removed_stores.py"
+    },
+    {
+      "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/checkout_environments.py"
+    },
+    {
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T12:39:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

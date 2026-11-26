@@ -202,12 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
             "content": "sha256:25d21be4173050c2479907b804510a10b2ed8dc7cd1c5e7e16d9e6df29e3c172",
             "locator": {
-              "end": 111,
+              "end": 106,
               "kind": "line_range",
-              "start": 110
+              "start": 105
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },

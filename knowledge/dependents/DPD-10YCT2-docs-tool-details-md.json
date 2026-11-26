@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "56daf6642402898075d164df4e26178499116006",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Verified docs/tool-details.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 389-396 accurately document task memory_quality_check non-blocking reportOnlyFindings covering landing-cut-card, landing-added-file, and the four dependent_flags findings (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning) wired through converted_check.py and controller.py.",
-    "task": "261112-BUG-L52",
+    "statement": "docs/tool-details.md accurately documents runtime_install's checkoutEnvironments answer field (staleCheckouts, checkout, bootstrapCommand, instruction, error, log overflow, and applied reportPath) against install.py, checkout_environments.py, and tool_answer.py on synced base 65911c75 / candidate 56daf664.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+        "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
         "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
         "locator": {
           "kind": "symbol",
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/install/experiment.py"
     },
     {
-      "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+      "blob": "291cc67f698b65a8dd99df019974eecda278698e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/runtime/install.py"
     },
@@ -233,8 +233,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -259,17 +259,27 @@
       "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/removed_stores.py"
+    },
+    {
+      "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/checkout_environments.py"
+    },
+    {
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T09:02:22+01:00",
+    "at": "2026-11-26T12:39:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

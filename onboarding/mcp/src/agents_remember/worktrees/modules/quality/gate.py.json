@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
+        "content": "sha256:3aa5e05283c95b460b52c5be7403371592094fa72f84c53d9e79f32ade6b447b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_test_results_report"
+        }
+      },
+      "id": "RLZ-JVT6T6",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The current strict result report renders the names when the launch had an ambient selector.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Required profile authority governs execution and preview.",
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
             "locator": {
               "end": 144,
@@ -19,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
             "locator": {
               "end": 190,
@@ -31,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:e9ca03946d2923d4ce55995942e3b11e30b47495807d3ae942507146148a0e57",
             "locator": {
               "end": 137,
@@ -43,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:350f536fbffa070e1938018a7e420d7b4e39fd9d4b8a62817da541d7ba5f1114",
             "locator": {
               "end": 183,
@@ -60,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
             "locator": {
               "end": 364,
@@ -72,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:ec47c057b29b773e37b111630980ebbc724ecf79a307ff782e9cda7b2737c82e",
             "locator": {
               "end": 322,
@@ -89,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:fc7019a6ffe44757b66782b7380868dd2e8a2a3f3159084b672650392c0d1365",
             "locator": {
               "end": 393,
@@ -106,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:5581d84289751fc5b19d748c23ea9dfd2d452ba33050eb1fdfa407e9beb06fad",
             "locator": {
               "end": 444,
@@ -123,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:5e730a5b427814bece8267aa3794103ed3852f336931a83a6724aca09392c5ea",
             "locator": {
               "end": 457,
@@ -218,7 +237,7 @@
         },
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
             "locator": {
               "end": 364,

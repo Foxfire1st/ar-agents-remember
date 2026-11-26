@@ -36,7 +36,9 @@ This module declares no memory-mode field. Runtime install may retain flexible p
 
 ### Repo-Internal References
 
+
 - Runtime install application entry point produces the installer response payload. [1]
+
 
 - The retired coordination tool's former computation, kept for its one remaining script caller and not registered as an MCP tool. [2]
 

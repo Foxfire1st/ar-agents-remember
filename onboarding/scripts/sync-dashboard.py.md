@@ -127,7 +127,9 @@ No relevant external or domain documentation exists for this repository-local bu
 
 - The script refuses an absent or non-current `dist`, places the tree, then writes the sidecar. [1]
 - Vite compiles the same fingerprint into the bundle as `__AR_DASHBOARD_BUILD__`, which is the literal `bundle_is_current` searches for. [2]
+
 - The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar. [3]
+
 
 - The serving resolver mounts what this script placed, or answers 503 when nothing was placed. [4]
 

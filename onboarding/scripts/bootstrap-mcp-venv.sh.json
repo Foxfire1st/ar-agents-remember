@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-        "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
         "locator": {
-          "end": 84,
+          "end": 81,
           "kind": "line_range",
-          "start": 55
+          "start": 52
         }
       },
       "id": "RLZ-1HQYX3",
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R139@v1 rule 3",
         "leaf": "260928-MIK-L139"
       },
-      "rationale": "The gate runs before the installer and any venv movement; all three refusals print minimum, finding and path.",
+      "rationale": "The gate runs before Python installation and any venv movement; all three refusals print minimum, finding and path.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-        "content": "sha256:9435392e002571bf961c4280acc5c771813e2b7e52c1b75ff70e0b9ba29f1e28",
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:8698ab0f9c7d27d65418142750265fd8db50d2dd1201a54859cb0392dfc42533",
         "locator": {
-          "end": 102,
+          "end": 119,
           "kind": "line_range",
-          "start": 102
+          "start": 111
         }
       },
       "id": "RLZ-3QQKJD",
@@ -36,17 +36,51 @@
         "handoffEntry": "MIK-R91@v1-managed-runtime-selection",
         "leaf": "260928-MIK-L91"
       },
-      "rationale": "This line selects the interpreter every later venv command runs under; deriving it from AR_PYTHON_MINOR keeps the venv on the contract's runtime after a contract bump.",
+      "rationale": "Installs and discovers uv-managed CPython 3.14 via AR_PYTHON_MINOR and checks the minor-link base before venv creation.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-        "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:5ae607e9ae7c0b52cd26b7aa9bac5ed60b1983b9bca66d66e395e9dced4b788f",
         "locator": {
-          "end": 84,
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-47KDJ2",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The bootstrap uses the existing replacement and restore sequence for a stale cfg home and keeps explicit replacement for a current env.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:5ae607e9ae7c0b52cd26b7aa9bac5ed60b1983b9bca66d66e395e9dced4b788f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8CBSKX",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Task intake, clean checkouts and lock-changing syncs share this checkout-local venv producer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
+        "locator": {
+          "end": 81,
           "kind": "line_range",
-          "start": 55
+          "start": 52
         }
       },
       "id": "RLZ-A242KW",
@@ -60,12 +94,50 @@
     },
     {
       "anchor": {
-        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-        "content": "sha256:27b1ee6fecc1e365bd0e2d5c04d6343c2cea475bab24fb75bfb5a3d4c6e8447c",
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:03b3aa7cfb7230120e743ff5acc3ca5a007ec15bcd783720c6c733722bb225b5",
         "locator": {
-          "end": 169,
+          "end": 100,
           "kind": "line_range",
-          "start": 86
+          "start": 95
+        }
+      },
+      "id": "RLZ-CPYM7B",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Each backup has a private reservation parent, so a directory or symlink can be restored through an unoccupied path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:3959e30bfb81fb5f553990106fd3a6db8067f659fca8ab904dae7b1a7aa3de90",
+        "locator": {
+          "end": 184,
+          "kind": "line_range",
+          "start": 102
+        }
+      },
+      "id": "RLZ-GK62C4",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The operation owns a stable checkout lock through inspection, venv replacement and rollback.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:3959e30bfb81fb5f553990106fd3a6db8067f659fca8ab904dae7b1a7aa3de90",
+        "locator": {
+          "end": 184,
+          "kind": "line_range",
+          "start": 102
         }
       },
       "id": "RLZ-MNKE2T",
@@ -79,12 +151,12 @@
     },
     {
       "anchor": {
-        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-        "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+        "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
         "locator": {
-          "end": 84,
+          "end": 81,
           "kind": "line_range",
-          "start": 55
+          "start": 52
         }
       },
       "id": "RLZ-N2K860",
@@ -98,12 +170,12 @@
     },
     {
       "anchor": {
-        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
         "content": "sha256:eb9c84a74c19b105670437f575050a2ac4b325eb8f9df35f927f4472a1834fc1",
         "locator": {
-          "end": 49,
+          "end": 46,
           "kind": "line_range",
-          "start": 32
+          "start": 29
         }
       },
       "id": "RLZ-RCRAQF",
@@ -118,16 +190,16 @@
   ],
   "references": {
     "1": {
-      "note": "The source-built interpreter is installed and capability-probed before venv mutation.\n\nAnchor: `main`",
+      "note": "The uv-managed interpreter is installed, located through uv's minor link, and capability-probed before venv mutation.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-            "content": "sha256:790d070778d784e01660d4616f919c778b300480e804a256c1ecbe0b89bd9d04",
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:271262e370a45cfd671cb75a65504c6eda771654579f2588051d910a66e662ca",
             "locator": {
-              "end": 109,
+              "end": 120,
               "kind": "line_range",
-              "start": 99
+              "start": 102
             }
           },
           "kind": "code"
@@ -135,16 +207,16 @@
       ]
     },
     "2": {
-      "note": "Existing environments require explicit replacement; backup names distinguish worktree directories, and failed recreation restores the predecessor.\n\nAnchor: `main`",
+      "note": "Replacement acquires an exclusive lock on `mcp/`, reuses a current venv under `--ensure`, requires `--replace` for a current venv, replaces a stale-base venv automatically, and rolls back on failure while retaining the failed candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-            "content": "sha256:f3f525852453978f9661c4e15e35f3cd28f813345bbe38a77fcb4ebc076646b1",
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:5b2a37b6b3a24231d7b77a1aad892aec651f183f30d1fa05c5165c38760eda2f",
             "locator": {
-              "end": 142,
+              "end": 158,
               "kind": "line_range",
-              "start": 111
+              "start": 121
             }
           },
           "kind": "code"
@@ -152,16 +224,16 @@
       ]
     },
     "3": {
-      "note": "uv consumes the worktree's frozen lock and exact interpreter; successful runtime and dependency proof precede removal of the replaced backup.\n\nAnchor: `main`",
+      "note": "`uv sync` runs with `--managed-python --no-python-downloads --frozen --all-extras`; post-sync runtime proof and `uv pip check` precede removal of the replaced backup.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-            "content": "sha256:4f3e19b4a52927ee818c2b6f91c773072ab22fe7b900654f0f26096d0086fa46",
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:684fda7f5d37cce1af8450f0a1196a22852161bed4783079ec95772b72f33134",
             "locator": {
-              "end": 168,
+              "end": 184,
               "kind": "line_range",
-              "start": 144
+              "start": 159
             }
           },
           "kind": "code"
@@ -169,16 +241,16 @@
       ]
     },
     "4": {
-      "note": "Hook environment selection retains its separate local-then-shared policy and probes runtime and quality imports before selection.\n\nAnchor: `dev_python_ready`",
+      "note": "Hook environment selection retains its separate local-then-shared policy and probes minor-line runtime and quality imports before selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
-            "content": "sha256:6339e324331abc4a751b5e2afaf6d5755334b353b121f4245bb978a4aff7aa40",
+            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "content": "sha256:fa42e92a3cd4fadb18e2c0b41d05aecce61c6669f36ba4dfbe7d8023397491fc",
             "locator": {
-              "end": 80,
+              "end": 82,
               "kind": "line_range",
-              "start": 53
+              "start": 55
             },
             "path": ".githooks/_gate.sh"
           },
@@ -187,16 +259,16 @@
       ]
     },
     "5": {
-      "note": "A qualifying PATH uv is selected without installation before runtime/venv mutation, with minimum and observed identity in diagnostics.\n\nAnchor: `resolve_uv`",
+      "note": "A qualifying PATH uv is selected without installation before runtime/venv mutation, with minimum and observed identity in diagnostics.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-            "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
             "locator": {
-              "end": 84,
+              "end": 81,
               "kind": "line_range",
-              "start": 55
+              "start": 52
             }
           },
           "kind": "code"
@@ -208,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
             "content": "sha256:6a5bd62fa977d3a2d4f8828c971a811cecb68a2c02ddf3da8c782d698c71ba94",
             "locator": {
               "end": 89,

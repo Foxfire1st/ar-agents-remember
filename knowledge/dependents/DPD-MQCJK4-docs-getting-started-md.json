@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
+    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
     "role": "curator",
-    "statement": "docs/getting-started.md remains accurate on 9af497f7bb99 because npm run build and npm run dev scripts, dashboard entry points, and installation steps are unchanged after swapping ESLint for oxlint and upgrading TypeScript to 7.0.2.",
-    "task": "261125-DEP-L6",
+    "statement": "docs/getting-started.md accurately documents uv-managed Python 3.14 package and checkout wheel installation, the >=3.14,<3.15 requirement, and tool-answer overflow behavior on synced post-L54 base 8fe83ceb2352.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -126,20 +126,20 @@
       "path": "dashboard/package-lock.json"
     },
     {
-      "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+      "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
       "kind": "file",
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:08:02+01:00",
+    "at": "2026-11-26T21:50:20+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L6",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
-    "task": "261125-DEP"
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

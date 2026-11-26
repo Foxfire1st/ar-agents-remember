@@ -1,0 +1,43 @@
+{
+  "path": ".dagger/src/agents_remember_quality/main.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+        "content": "sha256:9fee6b1197e090c5aa91aa6bb9043bb26171706b886d42a4a7309e3bedf479f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_canonical_python_base"
+        }
+      },
+      "id": "RLZ-3JA90P",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Copies /uv from ghcr.io/astral-sh/uv:${AR_UV_VERSION} (Route B), records both resolved sha256 image digest and uv --version in both exported runtime proofs, and keeps UV_PYTHON_INSTALL_DIR fixed across HOME.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+        "content": "sha256:c404a93523cefb50363c667e624e64e578fd94bd4b047faf2c71572b58ae3acc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bind_candidate_attempt"
+        }
+      },
+      "id": "RLZ-XJ6WD5",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The candidate venv check supplies the proof files the run exports.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

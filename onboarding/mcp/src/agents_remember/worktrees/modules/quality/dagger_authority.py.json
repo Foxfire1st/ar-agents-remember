@@ -1,14 +1,69 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+        "content": "sha256:44be373072b7769396b6771ce8a811547e1d82d3789e228930fc5b2dbd2beb9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "authority_snapshot"
+        }
+      },
+      "id": "RLZ-G6YZWH",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The snapshot keeps the exact declared endpoint and inspected engine reference in its digest input.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+        "content": "sha256:bad48f940b4b1456a445eae1d86a69ea9661a884fb0a84812d08af4e2743e992",
+        "locator": {
+          "kind": "symbol",
+          "name": "admit_dagger_authority"
+        }
+      },
+      "id": "RLZ-QV5AJT",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The default inspector consumes the same environment that admission projects into the Dagger child.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+        "content": "sha256:c436694f8820148493ae51185aa81cc791b67c2604cd41125d72f2f670fd521c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_endpoint_engine_name"
+        }
+      },
+      "id": "RLZ-WQM9JV",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The declaration and inspector share one full-match grammar and preserve the written container reference for the snapshot.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Strict declaration, live inspection and immutable authority snapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:fd49157d567eeec0d83ecaa600159d19d1db0378f93ee067b96f5f5053096af0",
             "locator": {
               "kind": "symbol",
@@ -19,8 +74,8 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:1737af1dccdf00177621a0e46b242f839bce2ed5e9c6757f01a7310c82e90bb5",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+            "content": "sha256:51cd0da61ce3db17efdbf4756006ec799d23230b0df4ab8950805974e67c6022",
             "locator": {
               "kind": "symbol",
               "name": "DockerEngineInspector"
@@ -30,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:c88c949f7d40f6b36d51da0d17c839a414c2025d9ae054f9ae4a23e86baa66e3",
             "locator": {
               "kind": "symbol",
@@ -41,7 +96,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:44be373072b7769396b6771ce8a811547e1d82d3789e228930fc5b2dbd2beb9b",
             "locator": {
               "kind": "symbol",
@@ -86,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:1b56caa53bc086d7959126ad15d599b540da8cc2f487a6df9faffee8b03959b2",
             "locator": {
               "kind": "symbol",
@@ -97,7 +152,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:6f3696e8bdb328fe6fb129685e946ca2c732feea5d193ea5403a6c0bd23c9bc0",
             "locator": {
               "kind": "symbol",
@@ -108,8 +163,8 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:8aec7810fe0d0b0d045b2e1d4475960d4d52c83976f1e16e7e43b76914ebafa4",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+            "content": "sha256:606692172c6269fe081379c5b6277554759670258538be55e0282faee013b416",
             "locator": {
               "kind": "symbol",
               "name": "_endpoint_value"
@@ -124,18 +179,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:342cbacc6e43c0087a8731c61fd65080c1108d0cec0b86151a0fed7bdb60914b",
+            "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+            "content": "sha256:fde692a285636a0bdc544a6e6f6cdece8af6e347412c0f54aff2b902dc9ce07f",
             "locator": {
               "kind": "symbol",
               "name": "authority_environment"
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:6defffb8db7b8e52981e3fe3a4816db3a14deca8d29315fd9d15dac5c51e97af",
             "locator": {
               "kind": "symbol",
@@ -151,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:e1559ace39aa897386513e4fa11b0b38b52e80867efaafdd6111e9c718955ef9",
             "locator": {
               "kind": "symbol",
@@ -167,8 +223,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+            "content": "sha256:bad48f940b4b1456a445eae1d86a69ea9661a884fb0a84812d08af4e2743e992",
             "locator": {
               "kind": "symbol",
               "name": "admit_dagger_authority"
@@ -178,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:23b4815ea32e96f9a95ddafe72e334f9fdee9a64e668c6bc54e2c445281c42aa",
             "locator": {
               "kind": "symbol",
@@ -194,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:6902f2dfacc147cf2d200760c7008ee1bc305d7b18a5c0cbbe6c0e5b8613b91f",
             "locator": {
               "kind": "symbol",
@@ -205,7 +261,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:92b9fa197273c4529dd9ae6f6d6fe4908cf69b55ab497e32eb34c722fcb587ff",
             "locator": {
               "kind": "symbol",
@@ -221,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:08b900d641c357a50cfc950372bb514bfcaf721004164e13c5196971e230867f",
             "locator": {
               "kind": "symbol",
@@ -232,7 +288,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:6f2b69e0e674270978b23c179e86fb34e0e82648528427b5f783384dcea945ee",
             "locator": {
               "kind": "symbol",
@@ -243,7 +299,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:0d681c710cc3ba1486d74989ec1d3106c7d1e2de8009fb2af6779a391d0588fc",
             "locator": {
               "kind": "symbol",
@@ -254,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:5b2967cd32445cb99e7c1eb87027fa1d0d4427704e027735271ca30162e56ae5",
             "locator": {
               "kind": "symbol",
@@ -270,7 +326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:3e84f6880ff84c4db20211504da77d89908e3f6e0092d18f6e374678918b3e89",
             "locator": {
               "kind": "symbol",

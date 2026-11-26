@@ -221,31 +221,40 @@ scripts/bootstrap-mcp-venv.sh
 ```
 
 After a sync that changed the lock file (`mcp/uv.lock`), the same script with
-the explicit recreation flag (an existing environment is never overwritten
-implicitly):
+the explicit recreation flag (an existing environment already on the current
+uv-managed minor base is never overwritten implicitly without `--replace`; a
+stale environment pointing at a different base is moved to backup and recreated
+automatically, and `--ensure` exits 0 when a current environment is already
+ready):
 
 ```text
 scripts/bootstrap-mcp-venv.sh --replace
 ```
 
 Run it at intake, before the first command on the candidate, and again after
-such a sync. The script reuses the shared canonical Python runtime after
-verifying it (no write there when it is valid; rebuilt from verified source
-only when it is not) and writes the environment itself below the worktree
-only, at `mcp/.venv`. With `--replace` the previous environment is moved
-aside under a name carrying the worktree's directory name and the second
-(`agents-remember/venv-backups` under the cache home) and removed again after
-the successful recreation, so no backup of the run is left; a failed
-recreation keeps its candidate there for diagnosis under the same naming.
-That cache, like `uv`'s own package cache, is tool scratch, not the candidate.
-Rule 1 in short: a run touches nothing of the primary checkout and nothing of
-another worktree. The `uv` on PATH must be `AR_UV_VERSION` from
-`scripts/python-runtime-contract.env` or newer; the script compares decimal
-version parts, prints the used version/path, and installs no uv. Self-updating
-installs (for example snap) are supported. Missing, older, unreadable or
-failed version output is refused before environment creation or movement,
-without an interpreter fallback. The certified container keeps installing
-exactly the contract uv, and the exact Python runtime checks are unchanged.
+such a sync. The script ensures uv-managed CPython for `AR_PYTHON_MINOR`
+(`uv python install --no-bin "$AR_PYTHON_MINOR"`), locates its minor symlink
+with `uv python find --system --managed-python --no-python-downloads`, verifies
+that base with `scripts/check-python-runtime.py`, and writes the environment
+itself below the worktree only, at `mcp/.venv`. When replacing an existing
+environment (under `--replace` or automatic stale-base migration), the previous
+environment is moved aside under a name carrying the worktree's directory name
+and the second (`agents-remember/venv-backups` under the cache home) and removed
+again after the successful recreation, so no backup of the run is left; a failed
+recreation keeps its candidate there for diagnosis under the same naming and
+restores the predecessor. That cache, like `uv`'s own package cache, is tool
+scratch, not the candidate. Rule 1 in short: a run touches nothing of the
+primary checkout and nothing of another worktree. The `uv` on PATH must be
+`AR_UV_VERSION` from `scripts/python-runtime-contract.env` or newer; the script
+compares decimal version parts, prints the used version/path, and installs no
+uv. Self-updating installs (for example snap) are supported. Missing, older,
+unreadable or failed version output is refused before environment creation or
+movement, without an interpreter fallback. CI workflows (`astral-sh/setup-uv`
+with `${AR_UV_VERSION}.x`) and the Dagger image (`ghcr.io/astral-sh/uv:${AR_UV_VERSION}`)
+install the newest patch in the contract uv minor line and record the exact uv
+obtained, and Python runtime checks verify the contract minor line
+(`AR_PYTHON_MINOR`) and uv minor symlink rather than an exact patch or source
+build.
 
 Run every command on the candidate with the worktree's own interpreter,
 `<code worktree>/mcp/.venv/bin/python`:

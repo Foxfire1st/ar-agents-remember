@@ -304,6 +304,7 @@
       "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
       "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
       "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
       "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
       "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
@@ -501,6 +502,7 @@
     ],
     "file:mcp/src/agents_remember/application/runtime/install.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
       "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
     "file:mcp/src/agents_remember/application/skill_resources/catalog.py": [
@@ -936,6 +938,11 @@
     ],
     "file:mcp/src/agents_remember/errors.py": [
       "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/install/checkout_environments.py": [
+      "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
     "file:mcp/src/agents_remember/install/experiment.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
@@ -1485,10 +1492,12 @@
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/models/tools/tool_answer.py": [
+      "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-EG5TYT-docs-features-md.json",
       "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
       "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/models/tools/tool_answer_short_fields.py": [
@@ -1888,7 +1897,11 @@
     "file:mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
     ],
+    "file:mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
     "file:mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
       "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
     ],
     "file:mcp/src/agents_remember/worktrees/modules/quality/gate.py": [
@@ -2074,7 +2087,9 @@
       "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
     ],
     "file:scripts/bootstrap-mcp-venv.sh": [
-      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-ZMQVXY-scripts-pnt-sandbox-readme-md.json"
     ],
     "file:scripts/check-host-contract.py": [
       "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
@@ -2083,9 +2098,6 @@
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
     ],
     "file:scripts/check-python-runtime.py": [
-      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
-    ],
-    "file:scripts/install-python-runtime.sh": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
     ],
     "file:scripts/instruction_renewal/budgets.py": [
@@ -2116,11 +2128,13 @@
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
     ],
     "file:scripts/pnt_sandbox/operations.py": [
-      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-ZMQVXY-scripts-pnt-sandbox-readme-md.json"
     ],
     "file:scripts/python-runtime-contract.env": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
-      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-ZMQVXY-scripts-pnt-sandbox-readme-md.json"
     ],
     "file:scripts/renew-instructions.py": [
       "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
@@ -2129,6 +2143,7 @@
       "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
     ],
     "file:scripts/sync-dashboard.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
       "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
     ],

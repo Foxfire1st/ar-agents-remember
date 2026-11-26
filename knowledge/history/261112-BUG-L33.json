@@ -1,0 +1,4136 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L33",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T22:14:45+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L33",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T22:14:45+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L33",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "41fd4391-262d-4ea0-853b-aec2a5028986",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 4,
+    "tree": "3700ade148e0bf0d282793b03fbff52720e98db7",
+    "verdictRef": "notes/reports/reviewer/41fd4391-262d-4ea0-853b-aec2a5028986/role-launch/261112-BUG-L33-MR4-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-08VC36",
+      "items": [
+        "sha256:60e8d3446d265f839ee7d278365a56fb067adf453788452353da840733d49983"
+      ],
+      "reason": "Import of `dropped_dagger_selectors` from `dagger_runner` in diagnostic_executor.py; dropped-selector reporting behavior is anchored by INV-NC2ZCP on `DiagnosticExecutionEngine._admit_authority`.",
+      "subject": "hunk:sha256:60e8d3446d265f839ee7d278365a56fb067adf453788452353da840733d49983"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-AFA5WS",
+          "revision": 1
+        },
+        {
+          "id": "INV-BT9HFV",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEBRX0",
+          "revision": 1
+        },
+        {
+          "id": "INV-S18ZC5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0T1BTG",
+      "items": [
+        "sha256:dbbb1299fd3a450ee109471af2ed32038ee9332dd90655bbfccd9bacd783c780"
+      ],
+      "reason": "Examined INV-FEBRX0, INV-AFA5WS, INV-S18ZC5, and INV-BT9HFV after run_runtime_install re-anchoring; user-config settings home and copy rules are unchanged.",
+      "revision": 1,
+      "subject": "FAM-P7XS4J"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0THE7W",
+      "items": [
+        "sha256:b332f641643cd18920838d256aba660edaa5e4486740eb0182eaedacf16edd66"
+      ],
+      "reason": "Replaced removed source-build CLI flags (`--source-url`, `--source-sha256`, `--builder-commit`) with `--uv-version` and `--uv-image-digest` in check-python-runtime.py `_parser`.",
+      "subject": "hunk:sha256:b332f641643cd18920838d256aba660edaa5e4486740eb0182eaedacf16edd66"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-12AW48",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reviewed evidence-lifecycle.toml.md on synced post-L54 base 8fe83ceb2352 / candidate f175245ee5d1: contract count (18), artifact count (123), schema v3, and named consumer descriptions match live code after L33's 5 inserted consumer lines; all shifted catalog references were refreshed via citation_fix.",
+      "sources": [
+        {
+          "blob": "aa513b895151d1974046b6c030d57fd81fcc5903",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-13SW6M",
+      "items": [
+        "sha256:1336cfe0ac02b657d7cad0684fa727388cdcfb25c556f74c2e5985eedff68a41"
+      ],
+      "reason": "README.md accurately states the 3.0.8 package version, Python 3.14 requirement, and uv --managed-python installation command matching mcp/pyproject.toml and scripts/python-runtime-contract.env on synced post-L54 base 8fe83ceb2352.",
+      "revision": 16,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1APM6A",
+      "items": [],
+      "reason": "docs/reference/mcp-tools.md remains accurate with respect to L33's tool_answer.py change on synced post-L54 base 8fe83ceb2352 (short_form is byte-identical and runtime_install answer fields are delegated to docs/tool-details.md), noting the pre-existing non-L33 outside-docs relative link at line 276.",
+      "revision": 31,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1BRY00",
+      "items": [
+        "sha256:b7b076d451d499b692298577a7a60228336223436444640c1b9873e98e6a172a"
+      ],
+      "reason": "Module docstring update in check-python-runtime.py reflecting uv-managed Python validation.",
+      "subject": "hunk:sha256:b7b076d451d499b692298577a7a60228336223436444640c1b9873e98e6a172a"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1DCAF4",
+      "items": [
+        "sha256:703dccc3dccceef4cff4f98f836bd2614807d7334bd17a6fe4ead47a62a9d2c6"
+      ],
+      "reason": "docs/llms.txt accurately summarizes the Python 3.14 requirement and uv --managed-python installation command matching mcp/pyproject.toml and docs/getting-started.md on synced base 65911c75 / candidate 56daf664.",
+      "revision": 17,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1TQAA1",
+      "items": [],
+      "reason": "L33 does not confirm DPD-ZMQ523 (docs/design/python-evidence-system.md, kept strictly untouched at HEAD rev 26): docs/design/python-evidence-system.md:102-104 carries a verified pre-existing contradiction claiming 'and one fixture model in the test tree' uses exact-source, whereas all four exact-source artifacts live in scripts/e2e_harness/ and mcp/tests/anchor_fixture_models.py uses exact/shared-support (tracked for 261112-BUG master end per D167/D617/BUG-R52@v2 and Architect f8972358 ruling); L33's runtime/catalog updates introduce no new drift.",
+      "revision": 26,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1XAXMK",
+      "items": [
+        "sha256:38b4895356a29ba1802634bf63c1dda479f71e83d5cf90ec5c65ccbf5a332f8c"
+      ],
+      "reason": "docs/getting-started.md accurately documents uv-managed Python 3.14 package and checkout wheel installation, the >=3.14,<3.15 requirement, and tool-answer overflow behavior on synced post-L54 base 8fe83ceb2352.",
+      "revision": 19,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1XX5B1",
+      "items": [
+        "sha256:04382c008261e32f43f5c8c2ee05948189c94c93e50a5b697aa127a8e7fe0659",
+        "sha256:5cb93e3aa6e337cb2f746ca46d7fb6ea4fa6ecb5688f0e0a3c05e5936838e844",
+        "sha256:5f27d55a907d0c30ff9440b52c3fdf6eed5d6db3e0e32aaf52fe0f8bc6bcffc6",
+        "sha256:75b940308bbe84f52e281fd8d0852d0b090835abb18b7a1966cee00f4d38cd08",
+        "sha256:9c64aef1b4907915c25a1226c7e3afe7be14f9fe481b8f29a6bec0908d01a87b",
+        "sha256:f833bcee285c32d9474d6b9a19381c0b06011f32a99994cbf73f3c4bd52a743b",
+        "sha256:f8509b5221b2408e59c070190ea7a045e287944d8be789b110d5679355f3ad89"
+      ],
+      "reason": "Updated test_dagger_runtime_authority.py.md to document the four new authority tests (dotted container ref, malformed endpoint refusal before probe, conflicting ambient runner/host refusal, names-only `dropped_selectors`) and refreshed ref [1].",
+      "sources": [
+        {
+          "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
+          "path": "mcp/tests/test_dagger_runtime_authority.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_dagger_runtime_authority.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-27YZ4M",
+      "items": [
+        "sha256:652766005ac431f3c37d0c1e19ad4cb4746fa62eb87da64bfd953e476f5b833e"
+      ],
+      "reason": "Reviewed models/overview.md: route-level model vocabulary summary remains accurate; the new `checkoutEnvironments` field in `RUNTIME_INSTALL_ANSWER_FIELDS` is documented on tool_answer.py.md. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TH629",
+      "items": [
+        "sha256:b9e21030f14873bd4467913a7e5f2c60ac76634aa31703d66f85dba6b8672b60"
+      ],
+      "reason": "Standard-library `import sys` needed for `sys.path` import of `agents_remember.python_runtime` in scripts/pnt_sandbox/operations.py.",
+      "subject": "hunk:sha256:b9e21030f14873bd4467913a7e5f2c60ac76634aa31703d66f85dba6b8672b60"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33MYEB",
+      "items": [
+        "sha256:a5aa805ebc1ad8c37c719d483a070af673266b6d2d52075fc1a70de6f7d1f29b",
+        "sha256:a9f46e890f18eecdaa3f3b2e3a4408f09957d7c45c8875ad6442e3e7d69bc902"
+      ],
+      "reason": "Reviewed test_final_codex_models.py.md: final-codex model test summary remains accurate after updating `engine_environ` for `_EXPERIMENTAL_DAGGER_RUNNER_HOST` (ref [21] refreshed).",
+      "sources": [
+        {
+          "blob": "dffc36d4a11503bd67c02337d4f9a9451e868e10",
+          "path": "mcp/tests/test_final_codex_models.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_final_codex_models.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+            "content": "sha256:c9323b9d98eb66cb8cdab215960e086be4aa49aa4f1e25e6d502fa7760b846fc",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": {
+            "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+            "content": "sha256:c395a4ad65c8772db9682edbaf1d4656a729a74d0246f7b4a88715efbb3cc7ae",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "id": "RLZ-9F0JC0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-35YX94",
+      "items": [
+        "sha256:9d8a47c44c605f659e48dc355d8ddbe91450cb65656ab9d4e18c2b111f2816cf"
+      ],
+      "reason": "Re-anchored RLZ-9F0JC0 to Operations (scripts/pnt_sandbox/operations.py:99-473) after adding _matches_runtime_contract and UV_PYTHON_INSTALL_DIR preservation on synced base 65911c75 / candidate 56daf664; scrubbed sandbox environment isolation is unchanged.",
+      "revision": 2,
+      "subject": "INV-B6R816"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3EMVGK",
+      "items": [
+        "sha256:935e7bfadc7e6ea7e6828454d85a176bd4aa60bb050653ebf71f7d591e8651ca"
+      ],
+      "reason": "Updated final_codex_executor.py.md to record `dropped_selectors` on `FinalCodexAttempt` and `_admit_authority`, updated line ranges, and refreshed refs [1] and [2]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3JJ2FH",
+      "items": [
+        "sha256:3049db06818fed8f050458f66c4048cc24b650e6f57f2455653a547e0704ea5f",
+        "sha256:47c8b1340d706a05133b05ba16d4455a8411086fe87b59819c7b93eb51586da0",
+        "sha256:53474342a64f595c80090599d69d9c36cc3f0d0a28fc1e04662581733a8fcf3a",
+        "sha256:669b9d5a042609210e26744e63c64914ab03fbbdbeaaae43a5eca15692a32779",
+        "sha256:68ecadbd6a41c1772db5a219862a4c2d2c9a994b703a6f9f16823aa0f4a41ce6",
+        "sha256:77d95fd7c37ac46b9bcbda8498024678bb175c7163dacc092da6496b810c3f42",
+        "sha256:7cc5f51f16c715f50dbdb03c3af4067f8198eee380fdabd997f9373a7fea252a",
+        "sha256:7d8a19a88b5e382938fe057bb97c8ba05abd680f8c9b27895a85679704cf720c",
+        "sha256:8381d8b95e2c6abf3a61e9bf16d9f2a4399a369ec4480b82e9808b6e137badef",
+        "sha256:9bd5bc6d6b50d8b99ba5af0309d2651279f14591edba24a0bdce92c33e540133",
+        "sha256:b862399128634fba76ef72f0b60232f1833cc123fe3e03d927dc01feaa124d54",
+        "sha256:bad4b53cae7a5e2db8a43f5466c2660e65cd4efc65dc96fd696aa72055ceb72e",
+        "sha256:bc332ea665b116474d69a9b030da34e10c96c8d4f5342b9af9a2e827e4a6d2f4",
+        "sha256:c94f0f586dc63c16d6428d8c0f6947e77885f54a5f735cc502ca23cfda505a2b",
+        "sha256:cc58aa8b8aacc18972519baeab3f51696cd5f0cdba19080c2135a4d2997ffa02",
+        "sha256:d07aac01acd29d91eb30d988bb94c72dc8b5f6ca20f3058cc6285c5daacb78d0",
+        "sha256:e466f065ea119eba8ea226b23976820ad20acd4be52e9a5892a3af5b3cb9c97e",
+        "sha256:f3025b7a4b995f3f5ac6259ec7b99b006cc037a2b53d2166f1d3b707a43ee701"
+      ],
+      "reason": "Reviewed `.dagger/src/agents_remember_quality/main.py` (uncovered outside file-card rules): updated to install newest patch of `AR_UV_VERSION` minor line and uv-managed Python `AR_PYTHON_MINOR` with provenance args; governing overviews `onboarding/overview.md` and `onboarding/mcp/overview.md` and invariants `INV-XG226D`, `INV-NQZ17H`, `INV-Y2SXDZ` carry the runtime contract.",
+      "sources": [
+        {
+          "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+          "path": ".dagger/src/agents_remember_quality/main.py"
+        }
+      ],
+      "subject": "onboarding:.dagger/src/agents_remember_quality/main.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-3SF4GG",
+      "items": [
+        "sha256:3d16e931add23a0f6fb8d812e5e625fd2305cebdca20398e13628ff716d9a738"
+      ],
+      "reason": "docs/host.md accurately adds post-upgrade step 4 describing runtime_install's stale-checkout listing and uv-managed Python 3.14 bootstrap recreation against install.py, checkout_environments.py, and scripts/bootstrap-mcp-venv.sh on synced base 65911c75 / candidate 56daf664.",
+      "revision": 20,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-41WJT4",
+      "items": [
+        "sha256:79db409031f434a50a0a2858314f7917630394812bbed012103cc9fffdb2ccde"
+      ],
+      "reason": "Header comment wording update in scripts/python-runtime-contract.env naming local bootstrap, Git hooks, GitHub workflows, and Dagger; contract assignments are anchored by INV-NQZ17H.",
+      "subject": "hunk:sha256:79db409031f434a50a0a2858314f7917630394812bbed012103cc9fffdb2ccde"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-MVRA3T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-45DK4T",
+      "items": [
+        "sha256:972631ef07e16820956acaaba72f263b9961ad546e235bea11c6a581a02f5489"
+      ],
+      "reason": "Re-anchored RLZ-MVRA3T on run_runtime_install after L33 added read-only checkoutEnvironments reporting on synced base 4bf4b66ed / candidate 1aa55902; opt-in shared-store reconciliation is unchanged.",
+      "revision": 1,
+      "subject": "INV-J8FGWF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-49PD67",
+      "items": [],
+      "reason": "L33 does not claim or confirm docs/install/codex.md: its stale CAP-L1 links remain outside L33 scope on CAP's deferred stale list (D167), and L33's comment-only edit in mcp/pyproject.toml introduces no new drift.",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-49PPBS",
+      "items": [
+        "sha256:092662f557b285bf4289d7f7e3b533761a2f5aaed8ed76da40ecd34a69676283"
+      ],
+      "reason": "Updated mcp/tests/overview.md counts to 836 distinct test modules (with 18 contracts and 123 lifecycle artifacts) on synced post-L54 base 8fe83ceb2352 / candidate f175245ee5d1, and refreshed all shifted/updated catalog references via citation_fix.",
+      "sources": [
+        {
+          "blob": "aa513b895151d1974046b6c030d57fd81fcc5903",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "cbbe5800c24d33d586ba47f1a87e50c7bfd8f232",
+          "path": "mcp/tests/pnt_sandbox_test_support.py"
+        },
+        {
+          "blob": "026407746343a513ce9704705fd5898636f53681",
+          "path": "mcp/tests/repository_profile_test_support.py"
+        },
+        {
+          "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+          "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+        },
+        {
+          "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
+          "path": "mcp/tests/test_clean_quality_executor.py"
+        },
+        {
+          "blob": "c35e31aacbff8846fb0d52fdf4a8fe6bec1d7e6b",
+          "path": "mcp/tests/test_cli_discovery.py"
+        },
+        {
+          "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
+          "path": "mcp/tests/test_dagger_runtime_authority.py"
+        },
+        {
+          "blob": "dffc36d4a11503bd67c02337d4f9a9451e868e10",
+          "path": "mcp/tests/test_final_codex_models.py"
+        },
+        {
+          "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+          "path": "mcp/tests/test_pnt_sandbox_prepare_python.py"
+        },
+        {
+          "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+          "path": "mcp/tests/test_python_runtime_contract.py"
+        },
+        {
+          "blob": "81c1fcc359fea1fcec0bd4e510dfaa2fad19f627",
+          "path": "mcp/tests/test_runtime_checkout_environments.py"
+        },
+        {
+          "blob": "704b8efd2e058fcc5210efdc3e79519550cbb569",
+          "path": "mcp/tests/tool_answer_table_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-4EXVRC",
+      "items": [
+        "sha256:67b5de37cb7dbf4b342faf63517d229d38dfd9da08f495b79ed4f854d3990bf6"
+      ],
+      "reason": "The packaged mirror mcp/src/agents_remember/package_data/runtime/docs/tool-details.md is byte-identical to docs/tool-details.md and accurately documents runtime_install's checkoutEnvironments inventory across preview, apply, overflow log, and reportPath on synced base 65911c75 / candidate 56daf664.",
+      "revision": 22,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4HNCA7",
+      "items": [
+        "sha256:1e1c407234ea59d9ad95eb800d36b5b7217860db7c492a11a727fbf77736c72f"
+      ],
+      "reason": "Fallback `getattr(readline, '__file__', 'built-in')` in check-python-runtime.py so uv-managed Python builds with built-in readline report cleanly instead of raising AttributeError.",
+      "subject": "hunk:sha256:1e1c407234ea59d9ad95eb800d36b5b7217860db7c492a11a727fbf77736c72f"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c35e31aacbff8846fb0d52fdf4a8fe6bec1d7e6b",
+            "content": "sha256:f3a909d73ceb114dfacd7ae73be4d48ffaaad6032dab194c09b596911430ebdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_example_registration_parses_as_uvx_options_then_the_package_command"
+            },
+            "path": "mcp/tests/test_cli_discovery.py"
+          },
+          "before": {
+            "blob": "3b4085fe0442525a0433c75aec8e99027c3bd4cd",
+            "content": "sha256:8f03f91ac85cefb01daf3e6c5bfce765b958cf975096d02518fd57f53e85261f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_example_registration_parses_as_uvx_options_then_the_package_command"
+            },
+            "path": "mcp/tests/test_cli_discovery.py"
+          },
+          "id": "PRF-X82R56"
+        },
+        {
+          "after": {
+            "blob": "c2c5e0c8a66db17838d36103d6687e8ea68e9fc6",
+            "content": "sha256:fabb57af9c0c75618ddd87525c11a18d182c5518bab1b31c0af8a48f04946fb2",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "examples/mcp/server.example.json"
+          },
+          "before": {
+            "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
+            "content": "sha256:4113f8979ab19d317df14fd31e30783834ec0622e52b3b0e01af1171c1ddd3d8",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "examples/mcp/server.example.json"
+          },
+          "id": "RLZ-TPCEGA"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-4NJ2GG",
+      "items": [
+        "sha256:7b767b87da562462e8f3d9ee114ce2cbbb555060ad425853f02ab0486d8c8a71"
+      ],
+      "reason": "Updated statement and condition to include --managed-python --python 3.14 before --refresh-package agents-remember-mcp; re-anchored RLZ-TPCEGA (examples/mcp/server.example.json:3-12) and PRF-X82R56 on synced post-L54 base 8fe83ceb2352.",
+      "revision": 2,
+      "subject": "INV-VWK5HY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-DYK0F8",
+          "revision": 1
+        },
+        {
+          "id": "INV-F4X256",
+          "revision": 2
+        },
+        {
+          "id": "INV-NQZ17H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-55ZSQN",
+      "items": [
+        "sha256:cce2f2d46b6fdba24ebac3f65601c7e740b113d46c1c1e25b6a71b2809dbc586"
+      ],
+      "reason": "Examined INV-NQZ17H, INV-F4X256, and INV-DYK0F8 after updating container exclusion text for uv 0.13; the host PATH uv numeric floor and pre-mutation refusal guarantee is unchanged.",
+      "revision": 1,
+      "subject": "FAM-E740SD"
+    },
+    {
+      "considered": [
+        "FAM-Z69A94",
+        "FAM-E740SD",
+        "FAM-H734XJ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-56RPJ5",
+      "items": [
+        "sha256:9ddb6027c4f914fd5c065f322edeba71df993b49304c4b0f8871e4f0fe0e20e1"
+      ],
+      "reason": "INV-NC2ZCP governs the Dagger CLI launch-environment contract (_EXPERIMENTAL_DAGGER_RUNNER_HOST wiring, legacy DAGGER_HOST removal, and overriding ambient selector stripping with names-only reporting). FAM-Z69A94 owns the Python/uv runtime contract family, FAM-E740SD owns MCP runtime install/settings surfaces, and FAM-H734XJ owns quality-gate certification/manifest framing; none of those families shares this host runner-environment seam, so INV-NC2ZCP remains standalone.",
+      "revision": 1,
+      "subject": "membership:INV-NC2ZCP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "content": "sha256:6a688885c51c7934bd49327961a23180e03812f78bbd626335ccdfc34bcd141c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "content": "sha256:22974cbb04a70d77890ea1e9481702ec747a41d225c3bd2174540f3a6a33634d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-TKDWW5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5MY5GM",
+      "items": [
+        "sha256:6d6451c2b376deb986fd217a9ac63be96584d56af8a0d66c316a68f14259303d"
+      ],
+      "reason": "Re-anchored file-level anchor RLZ-TKDWW5 on .githooks/_gate.sh on synced post-L54 base 8fe83ceb2352; instruction-renewal diagnostic is unchanged.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5T8NK5",
+      "items": [
+        "sha256:67737ff1c07bb101b213ca95f3b7b9cf2e1a2ce669382ea191077c2228c75fee",
+        "sha256:787679bc3390d23a6606e2905c846c8984faa127c9286996ce55969e5318f3da",
+        "sha256:981ca3ceb0771a82651bf01df3334ca757797b49a682c85b176cdc840cc3521e",
+        "sha256:a723f3cd545130ebfb031edac73c0247024248d4ca65209f8f5716e8edcda0fc",
+        "sha256:ace34fdd57300aeeec07610b594d0e6d3f508c9a687515c329568365d8161a97",
+        "sha256:e2aa7d458eb2d329bf5c0a1753cd14d8e94dfa3947d57bcbf9a319b2edf9bf41",
+        "sha256:edac98076db1e9ccb85439bfdda21fa9ccdf4fa0ab0ee736d18b1561eb703fb7"
+      ],
+      "reason": "Updated test_clean_quality_executor.py.md to document the new shared Docker client and dropped-selector receipt/outcome tests and refreshed refs [1] and [3].",
+      "sources": [
+        {
+          "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
+          "path": "mcp/tests/test_clean_quality_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_clean_quality_executor.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5TPT5Z",
+      "items": [
+        "sha256:265cb951c80eaf245da6752bd7088d1ac6d8cabdf7d4f2a680d2aa1d15915333",
+        "sha256:28c3cdd8d809026dd9edcc26f498126cda93ef0f77cf5e072086cee322c60b97",
+        "sha256:3606268e0d784228dc750b97cf93ee2e4cf5e4a7d9b8588be7b9d6f6d8238d47",
+        "sha256:3a796f764663843ed06a8a60ef32f3f7574df2303744c732dcb9e3e9a0940fd4",
+        "sha256:4b1bea5ba27591e61f38b525212386acf45b4d9c9be43111daa6652ce7320455",
+        "sha256:4cf4265085900bfad6b665469dbb872f6545a02d9aa167aa45aef16832a67c24",
+        "sha256:834a699242a882f1686a4041b4ae79656b6cc61b73c3fc6b67c88fb505bbb3d8",
+        "sha256:8c0e2db34280549d273590b7d4873dfd88c653c29feb0d01afdecf3184fd6a1e",
+        "sha256:a55bb843285d47d8799d9c7e38f1ff3e51acd4cc6bcba37d59ddada36884be94",
+        "sha256:d24758bad60f4adb720619c46fcb5cfb54a0e1ecdf5b47400200967ca98fa2d0",
+        "sha256:ecc56f4ddc3d4959c9da885f542d137525b9dbf09cc4a1d120208bed3352be42"
+      ],
+      "reason": "Updated clean_executor.py.md to document `CleanQualityOutcome.dropped_selectors` propagation from the admitted Dagger runner environment and refreshed refs [1], [3], and [11].",
+      "sources": [
+        {
+          "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+            "content": "sha256:359b01eabe68fd8a7f695b815f371827fdfede314f91b1ed9ba43b841a185bbf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "aa513b895151d1974046b6c030d57fd81fcc5903",
+            "content": "sha256:bcd58ee83e557f32a409bec20d137ed9023ee9e74e9ad4b44acd83a495a5c1c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+            "content": "sha256:eb1166df14c684e9dabf52b2fe9385d49b5cdeb56cd68cafeb137eb7d8132718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6B0X00",
+      "items": [
+        "sha256:0a00ac342c76184b91de010e44f131df01c44857b44c4bffebfc0039adbbf35a"
+      ],
+      "reason": "Re-anchored file-level catalog entries RLZ-BNMQ79 and RLZ-GEMVNE on synced post-L54 base 8fe83ceb2352; silent turn-end obligation is unchanged.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "content": "sha256:a4cb690be93d8f7848bdb7afe25cea36ad241287dbe85e75ccc451a806657fa4",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "before": {
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "id": "RLZ-VNYJ8D"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-6SN889",
+      "items": [
+        "sha256:866a719fe89a8c407c31cb610f4de89af9220693996cdf2f712ee0d30b913051"
+      ],
+      "reason": "Updated statement, scope, and admission.justification from exact 3.14.8 pin to uv-managed Python 3.14 minor contract (L33-M01 fix) while preserving separation from package requires-python metadata and noting that origin.handoff.evidence is writer-preserved historical L91 provenance; re-anchored RLZ-VNYJ8D at mcp/pyproject.toml:11-17 on synced post-L54 base 8fe83ceb2352.",
+      "revision": 2,
+      "subject": "INV-7VGMWY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-76W4FN",
+      "items": [
+        "sha256:20c24e9c91e02e7a4a953640942c5beb447a48b0eaae0b369b3c751e9adf1894"
+      ],
+      "reason": "JSON report `modules.readline` uses `readline_origin` to handle built-in readline cleanly.",
+      "subject": "hunk:sha256:20c24e9c91e02e7a4a953640942c5beb447a48b0eaae0b369b3c751e9adf1894"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-WMH9SZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7S5FT1",
+      "items": [
+        "sha256:5eda5e6e38d6c369d61b11fc562e68259beace215bbbf7ac39faaaae8cabe6eb"
+      ],
+      "reason": "Re-anchored RLZ-WMH9SZ on run_runtime_install after adding checkoutEnvironments reporting on synced base 65911c75 / candidate 56daf664; settings-copy permission refusal handling is unchanged.",
+      "revision": 1,
+      "subject": "INV-BT9HFV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7WVMB9",
+      "items": [
+        "sha256:e3373a8cc3aa2afced9001f5f2e595e203ecb0470f980dc04849b2a1f7526e96"
+      ],
+      "reason": "Typing import (`NoReturn`) and `sys.path` import of `is_uv_minor_base`/`read_venv_home` so check-python-runtime.py can run from a bare uv-managed base before package installation.",
+      "subject": "hunk:sha256:e3373a8cc3aa2afced9001f5f2e595e203ecb0470f980dc04849b2a1f7526e96"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7ZJFVH",
+      "items": [
+        "sha256:036d04a1d8ed1662b8a02d3cfbad65d5cc46197b253c8246309b78f8ffcf4ed6",
+        "sha256:08c069a8b0568ec8988be01286280417e7b084157747b805f8ee711ff91121bc",
+        "sha256:1707c22b04fc2988c2e5503667aa827c6b4cddf3fd7436610fcc441fa4189d3c",
+        "sha256:3367d593e402547ddc05a0946fe4ccdd761a26ebd4080758b3f5962a72a1c5b7",
+        "sha256:3a45a72c3f5d387cbabf8bc64ec00910fececf1d1a5186d8c7372b6e20924277",
+        "sha256:4895f91fb6af9a2ae238c577f2a12079039bee0828ce2c3fb89155889f4a8cfd",
+        "sha256:5c3489f5b15f43957258dddb1a92ab8d4cf7f27fe51d935d754ae1c0cc373f6a",
+        "sha256:88a74d957eb1cd7c6f7db108cd3be409e75084ee766374a70be8271c0c1b40be",
+        "sha256:ae0c069bc3568a55839e1f5cc2415ae3a9023d914f0f71e174e0c533b6e1475d",
+        "sha256:b843a563628939878ddfed27ae666fe7496a025a4189afb43441bec48094d3c3",
+        "sha256:c7633f076f6d55539273adf101e9bbe876dbf6fe46f141b51b7a6632b47714f0",
+        "sha256:e433face547edfd7828be7aec7520b4b1d7678ac0a7d05eccabf6e9f64c27481",
+        "sha256:eaf67471c6f308d67cd19ea943d54c4e4191441233fb1425e07a19c61c7e1da8"
+      ],
+      "reason": "Rewrote test_python_runtime_contract.py.md for the eight current uv-managed Python contract, workflow, and Dagger helper tests, removed deleted builder refs [1]/[2], and authored fresh refs.",
+      "sources": [
+        {
+          "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+          "path": "mcp/tests/test_python_runtime_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_python_runtime_contract.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-7VGMWY",
+          "revision": 2
+        },
+        {
+          "id": "INV-XG226D",
+          "revision": 2
+        },
+        {
+          "id": "INV-XWNDYE",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y2SXDZ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-80QET6",
+      "items": [
+        "sha256:b0a8c6f0c9af35e209a4ee7a26910d9b3b86d6cc0d56b7cac8f8a88c3a6acc06"
+      ],
+      "reason": "Updated guarantee from exact source-built 3.14.8 contract to uv-managed Python 3.14 and uv 0.13 minor lines with minor-link checking and added INV-XWNDYE on synced post-L54 base 8fe83ceb2352; kept route '.'.",
+      "revision": 3,
+      "subject": "FAM-Z69A94"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8208SF",
+      "items": [
+        "sha256:004a2c9d430fa4e802868848cc434de7c03a6ab7e3df1dd3dcc131abab5d6fd0"
+      ],
+      "reason": "Reviewed worktrees/modules/overview.md: route-level quality orchestration summary remains accurate; Dagger runner-host/selector changes are documented on dagger_runner.py.md, dagger_authority.py.md, clean_executor.py.md, sandbox.py.md, and gate.py.md (ref [47] refreshed). Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+        },
+        {
+          "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+        },
+        {
+          "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py"
+        },
+        {
+          "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+        },
+        {
+          "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+        },
+        {
+          "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8J0X94",
+      "items": [
+        "sha256:54d65d1c003eb5f7f933a37f9a5ed74d0ab7d4db3a57a7356071e1a23e43e29f"
+      ],
+      "reason": "JSON report field `basePrefix` now serializes the validated uv-managed `base` path from `_base_prefix` (INV-Y2SXDZ owns `_base_prefix` enforcement).",
+      "subject": "hunk:sha256:54d65d1c003eb5f7f933a37f9a5ed74d0ab7d4db3a57a7356071e1a23e43e29f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "before": {
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "id": "RLZ-A4TZZ0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-96G94X",
+      "items": [],
+      "reason": "Re-anchored RLZ-A4TZZ0 at mcp/pyproject.toml:6-7 on synced base 65911c75 / candidate 56daf664; package version identity is 3.0.8.",
+      "revision": 4,
+      "subject": "INV-BQFZCR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9KMSME",
+      "items": [
+        "sha256:4099bbe120304e9ccdeecdf366182e2581713082d7bf49facbdad0bc5adc3419"
+      ],
+      "reason": "Rewrote check-python-runtime.py.md for major.minor and uv-managed minor-link validation, `--base-interpreter`/`--expected-base-prefix`, and uv/pythonBuild/uvImageDigest provenance.",
+      "sources": [
+        {
+          "blob": "1396a3a4921117f658fbd9193c31ee72a12c5049",
+          "path": "scripts/check-python-runtime.py"
+        }
+      ],
+      "subject": "onboarding:scripts/check-python-runtime.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-9MHAB6",
+      "items": [],
+      "reason": "docs/features.md remains accurate on synced post-L54 base 8fe83ceb2352 because adding checkoutEnvironments to RUNTIME_INSTALL_ANSWER_FIELDS in tool_answer.py does not alter the documented tool-answer token bounds or log-pointer behavior.",
+      "revision": 34,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9TQ5MH",
+      "items": [
+        "sha256:183b13305b116bb6cb176fa1668c940767f3dfbeb2c91f6d56dbe60ccbf05f37"
+      ],
+      "reason": "Examined all 8 members of FAM-7EBNVZ after re-anchoring INV-XX08QF on run_runtime_install (synced base 4bf4b66ed / candidate 1aa55902); stale-build reporting, publication refusal, server inventory, and dashboard replacement guarantees are unchanged.",
+      "revision": 2,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B1A2VZ",
+      "items": [
+        "sha256:af52dd2cb10a0fbd68ac0eee388d04663cb61e5c8eadfaa762f9dc68eb44a884"
+      ],
+      "reason": "JSON report `capabilities` entry now references the dict returned by `_pidfd_capabilities` rather than duplicating inline expressions.",
+      "subject": "hunk:sha256:af52dd2cb10a0fbd68ac0eee388d04663cb61e5c8eadfaa762f9dc68eb44a884"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-B9KFRT",
+      "items": [
+        "sha256:89d1f6ba5cd5e32eb24f773ea8845815d3056156e1b571f4728b4e4b73624bf4"
+      ],
+      "reason": "docs/release-checklist.md accurately reflects the uv-managed Python 3.14 wheel build, clean-environment smoke checks, version locations (3.0.8), GitHub workflows, hook gate, and PNT sandbox release verification on synced post-L54 base 8fe83ceb2352.",
+      "revision": 11,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C6EZGN",
+      "items": [
+        "sha256:2b26a7067e675afd5defb36af5cc4d6c149b6c7cadead41cc23c11d74d1d3a9f"
+      ],
+      "reason": "Updated tool_answer.py.md to list `checkoutEnvironments` in RUNTIME_INSTALL_ANSWER_FIELDS and refreshed ref [12]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C7A3XP",
+      "items": [
+        "sha256:8b3d6dd028c697ce42c7eb835be68cde84b9d028aec186f355c1a204ff8b480b"
+      ],
+      "reason": "Updated server.example.json.md prose and ref [1] to record `--managed-python --python 3.14` ahead of `--refresh-package agents-remember-mcp`.",
+      "sources": [
+        {
+          "blob": "c2c5e0c8a66db17838d36103d6687e8ea68e9fc6",
+          "path": "examples/mcp/server.example.json"
+        }
+      ],
+      "subject": "onboarding:examples/mcp/server.example.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-CEBZ8V",
+      "items": [
+        "sha256:97ef8236eca5e4c96cbe205f6747646c947532ec80dc1b06a8769a6c81c42271"
+      ],
+      "reason": "mcp/README.md accurately states the uv-supplied Python 3.14 prerequisite and uv tool install --managed-python command matching mcp/pyproject.toml on synced base 65911c75 / candidate 56daf664.",
+      "revision": 26,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CHYW80",
+      "items": [
+        "sha256:132367dd4177c50b39ce589a496cbbe936c696c4330294368ad62bf683fa7d24"
+      ],
+      "reason": "Retired and removed onboarding card and sidecar for deleted scripts/install-python-runtime.sh after migrating RLZ-NY6TTR / INV-XG226D enforcement to scripts/bootstrap-mcp-venv.sh.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "scripts/install-python-runtime.sh"
+        }
+      ],
+      "subject": "onboarding:scripts/install-python-runtime.sh"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-CJXHN3",
+      "items": [],
+      "reason": "docs/README.md remains accurate on synced base 65911c75 / candidate 56daf664 because its documentation index and high-level uv install step are unaffected by mcp/pyproject.toml's comment update (version 3.0.8).",
+      "revision": 11,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CQ1CFT",
+      "items": [],
+      "reason": "L33 does not claim or confirm docs/install/pi.md: its stale CAP-L1 links remain outside L33 scope on CAP's deferred stale list (D167), and L33's comment-only edit in mcp/pyproject.toml introduces no new drift.",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CT8GQK",
+      "items": [
+        "sha256:b037e62d4a75ba33350adc80019815c62116948aaccdb5a8a94709273169a4f3"
+      ],
+      "reason": "Updated mcp/pyproject.toml.md lines 67-71 to replace exact Python 3.14.8 pin wording with uv-managed Python 3.14 per scripts/python-runtime-contract.env, and refreshed refs [10] and [17]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CV4VGP",
+      "items": [
+        "sha256:1dc7682fe3daf544d5dd84d91a2c2e201adc07b0ceb4b23324b9eea342e87588",
+        "sha256:25d7114248d0b5e792fb24ec81d2ab61a1d059cc289a7c39bf96491cd703f190",
+        "sha256:2eb11e55ef5665b430e8888a6f8971c25fbce90d648e96f5827f658ba860f3d0",
+        "sha256:2fc980480a292104c29bac9d6f8d4d3c86c770e0421d4ac49cc4389840800ba5",
+        "sha256:3b91bebd35c4f3650a3ddc162aa3ed96972805c0ac4eeb60bccad16f2b343be4",
+        "sha256:3de59681c0e6f57254be11709045d6d5dd53735538c24c17face1e537387dd60",
+        "sha256:5654821ea8962cc24b3ee64995fd7fec82e555a39aa47e39dd75f82bdb45e782",
+        "sha256:604e102e64129782d727d8ae8999770d17eb9017ca388aeb7898fd061b8097f7",
+        "sha256:6ed11be96096cefdce2c7435d53d174474feb2aa9001cbc77ece16da6afddf6d",
+        "sha256:86e438667a1bbe4dfb6fdd919c3d169e5e37beeb866cedb30692b73b254ac724",
+        "sha256:8a889ddb5ac51002081edf083f82d9866ff9be35483afef8a2e38726e2bd2a42",
+        "sha256:cea2e7edb46d407605dfbb951e4482c6d77f912e5eafa3b7b6221750399ba83b",
+        "sha256:d18fe9c055bc66c71017f267e43a2db1dc80be8ef2bb3787d1b838e5907282e0",
+        "sha256:dc4d787bb9fd0a82005e1053d1cdbc5c0b141fc92d667b8921f45b1313fb8359",
+        "sha256:e080afb085df2a921b17ad684e4f354500c16a4e84c88004ca7bea3c6a19b676",
+        "sha256:f322b192317d024dbdacd4a7c11669c16551add991edec585dac8b7d25b043d7",
+        "sha256:f4ecf039e50ef5291fe714463b97fb1f80da8d5da16d8e145d4a71a09ee96210"
+      ],
+      "reason": "Updated dagger_authority.py.md to record extraction of `authority_environment` to dagger_runner.py, `_EXPERIMENTAL_DAGGER_RUNNER_HOST` / legacy `DAGGER_HOST` conflict policy, and `dropped_selectors`, and re-anchored refs [1], [2], [3], and [5].",
+      "sources": [
+        {
+          "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D0H0J9",
+      "items": [
+        "sha256:9af1fbdf35b27249103ea1056c46c6309c53ef27f18fec034776aecb8b72cbed"
+      ],
+      "reason": "Created new onboarding card and sidecar for new test module test_pnt_sandbox_prepare_python.py.",
+      "sources": [
+        {
+          "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+          "path": "mcp/tests/test_pnt_sandbox_prepare_python.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_pnt_sandbox_prepare_python.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D2D1BT",
+      "items": [
+        "sha256:608134587bbf683c9d403ac8f723128c02a288311962e1e7969006b65c9e46a6"
+      ],
+      "reason": "Updated Linux pidfd refusal remediation text in check-python-runtime.py to direct operators to `scripts/bootstrap-mcp-venv.sh` instead of deleted `scripts/install-python-runtime.sh`.",
+      "subject": "hunk:sha256:608134587bbf683c9d403ac8f723128c02a288311962e1e7969006b65c9e46a6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DDXP5H",
+      "items": [
+        "sha256:377677f71f4d5b616703fbe20c2b69b31e6b05e4db7dba647320dfa7789e03f0"
+      ],
+      "reason": "Updated gate.py.md to note the `Dropped Dagger selectors:` line written to the completed test report when `outcome.dropped_selectors` is non-empty.",
+      "sources": [
+        {
+          "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "content": "sha256:6a688885c51c7934bd49327961a23180e03812f78bbd626335ccdfc34bcd141c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "content": "sha256:22974cbb04a70d77890ea1e9481702ec747a41d225c3bd2174540f3a6a33634d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-T3VYFT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DE8TWE",
+      "items": [
+        "sha256:07fcf9d5023a54a3a33b03cb8833756abae7ceda916fae6bec7e3f73ed8f02e4"
+      ],
+      "reason": "Re-anchored file-level RLZ-T3VYFT on .githooks/_gate.sh after L33 switched hook runtime validation to AR_PYTHON_MINOR on synced post-L54 base 8fe83ceb2352; hook xargs batching, concurrency, and caching contract are unchanged.",
+      "revision": 2,
+      "subject": "INV-AFVK1G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-DJQNZS",
+      "items": [
+        "sha256:dcdc3b2f4ef3f09958868a8ce797f892d6048efc7a04252f1f427b71678209c9"
+      ],
+      "reason": "docs/tool-details.md accurately documents runtime_install's checkoutEnvironments answer field (staleCheckouts, checkout, bootstrapCommand, instruction, error, log overflow, and applied reportPath) against install.py, checkout_environments.py, and tool_answer.py on synced base 65911c75 / candidate 56daf664.",
+      "revision": 20,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-A242KW"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-DMW7CB",
+      "items": [
+        "sha256:d43319206638d0e20f7a4c7cbeace80846e69e0bba65bd5df150e4fb49fdef9d"
+      ],
+      "reason": "Updated exclusion 2 from exact container uv installation to newest 0.13 minor-line installation in CI and Dagger while preserving the host no-uv-download obligation; re-anchored RLZ-A242KW to lines 52-81 on synced post-L54 base 8fe83ceb2352.",
+      "revision": 2,
+      "subject": "INV-F4X256"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-03M6ZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-0PAKA9",
+          "revision": 3
+        },
+        {
+          "id": "INV-7HC1QH",
+          "revision": 1
+        },
+        {
+          "id": "INV-96C24X",
+          "revision": 1
+        },
+        {
+          "id": "INV-BGV9YT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CB36W0",
+          "revision": 1
+        },
+        {
+          "id": "INV-E4E4N1",
+          "revision": 1
+        },
+        {
+          "id": "INV-EQH5X6",
+          "revision": 1
+        },
+        {
+          "id": "INV-FM3V0M",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAZREV",
+          "revision": 1
+        },
+        {
+          "id": "INV-PB8GDK",
+          "revision": 1
+        },
+        {
+          "id": "INV-RW4566",
+          "revision": 1
+        },
+        {
+          "id": "INV-WK67MP",
+          "revision": 1
+        },
+        {
+          "id": "INV-YXP2R0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DZ8N5R",
+      "items": [
+        "sha256:a1045ce5e09e40012a6f606583e579c90d0544535b30fbfcf3db4873e70046ee"
+      ],
+      "reason": "Examined all 14 members of FAM-QDY93G after run_runtime_install added checkoutEnvironments reporting; build-owned host lifecycle and explicit provision rules are unchanged.",
+      "revision": 3,
+      "subject": "FAM-QDY93G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-E3TFG4",
+      "items": [],
+      "reason": "docs/architecture.md remains accurate on synced base 65911c75 / candidate 56daf664 because mcp/pyproject.toml's comment update (version 3.0.8) leaves the package name, commands, and packaged contents unchanged.",
+      "revision": 22,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E61JWH",
+      "items": [
+        "sha256:672da062e4e29149c728ba763b613fdbe4a002dd11d54b1d9ef99014784c73af"
+      ],
+      "reason": "Delete-only hunk removing obsolete source-build Python runtime variables (`AR_PYTHON_VERSION` / `install-python-runtime.sh` path) from bootstrap-mcp-venv.sh under DEC-EG81BC.",
+      "subject": "hunk:sha256:672da062e4e29149c728ba763b613fdbe4a002dd11d54b1d9ef99014784c73af"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-GV3NYM",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ790A",
+          "revision": 1
+        },
+        {
+          "id": "INV-J8FGWF",
+          "revision": 1
+        },
+        {
+          "id": "INV-M7BT2R",
+          "revision": 1
+        },
+        {
+          "id": "INV-R850AZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-E6A8AD",
+      "items": [
+        "sha256:cce0576bc7921240af07639c3d816efcc8284e6a451be0028cf08c2c09b06f95"
+      ],
+      "reason": "Examined all 6 members of FAM-TE2628 after re-anchoring INV-J8FGWF and INV-XX08QF on run_runtime_install (synced base 4bf4b66ed / candidate 1aa55902); closed-seat held-store fencing and opt-in shared-store reconciliation guarantees are unchanged.",
+      "revision": 1,
+      "subject": "FAM-TE2628"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EE58Q1",
+      "items": [
+        "sha256:e5ff6b45a25029fd4c669e847472fc1b06fe5af9b559662dec198a052dbc8436"
+      ],
+      "reason": "Updated diagnostic_executor.py.md to record `dropped_selectors` on `DiagnosticAttempt` and `_admit_authority`, updated line ranges, and refreshed refs [1] and [2]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EEWNZM",
+      "items": [
+        "sha256:41b375d592f500d3596ea9c640fca3f2c176cf26def8418433225b441ee7338d"
+      ],
+      "reason": "Moved `not all(capabilities.values())` check into `_pidfd_capabilities` helper in check-python-runtime.py; preserves existing Linux pidfd enforcement.",
+      "subject": "hunk:sha256:41b375d592f500d3596ea9c640fca3f2c176cf26def8418433225b441ee7338d"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-ENZNPK",
+      "items": [],
+      "reason": "docs/design/python-pytest-bootstrap.md remains accurate after L33 added two test files to mcp/tests/test-evidence-lanes.toml on synced post-L54 base 8fe83ceb2352, with the stress-durability selection anchor re-pointed to identical content at lines 855-857.",
+      "revision": 32,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:bce2d887704302504bbf6cd270d245871ec4e06787fe3f89eb10c96a24c51cf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_builtin_readline_is_reported"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-258ZF6"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+            "content": "sha256:8dc43e1a3027e3e54e6c4d335297d3addf82f4b14d3e24198a16d6bb5e4ff7cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "id": "PRF-2Y3QFT"
+        },
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:35c80751ac6ed30837a7d8c081f7897d40e562fbef4173ed7889589392416883",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_minor_link_outside_uv_directory_is_refused"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-482H60"
+        },
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:85bc3032dd275feedc0447e88e54c86edabd2e725c5ea227a30ef84461bb1396",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_minor_is_named_before_importing_new_stdlib_modules"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-ESZX28"
+        },
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:6d8d4d98ef081a548bdb27a512fcaee6e6c9c3b60a35496b91d9b565af59cc8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_uv_version_and_image_digest_are_recorded_in_provenance"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-J4WK7C"
+        },
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:9fe22d5ed0a0b4198cbd909324b7f559035501d04c19177af104da8abce86059",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_different_patch_of_the_managed_minor_is_accepted"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-MC3V17"
+        },
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:2e27ee30f7c0c23bd944f6125401adaecdbb2eb1988acd5e55894d7b6407d9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_patch_directory_is_refused_even_when_it_is_the_link_target"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-N6SZTG"
+        },
+        {
+          "after": {
+            "blob": "cbb927538eefcdf61ef241586f6d0e1a88c87752",
+            "content": "sha256:ba70fe5170ddd5180ac94527585f9e228f54a22896f756f919d512ab3e156d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_pidfd_exit_invalidates_once_and_releases_the_subscription"
+            },
+            "path": "mcp/tests/test_host_supervisor.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZKCHGB"
+        },
+        {
+          "after": {
+            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "content": "sha256:6a688885c51c7934bd49327961a23180e03812f78bbd626335ccdfc34bcd141c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": "absent",
+          "id": "RLZ-8XKYCQ"
+        },
+        {
+          "after": {
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+            "content": "sha256:175d08c35c2eb075a61fc55a9fb45a6dd38c03c62814efa473a28315832b1d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "before": "absent",
+          "id": "RLZ-8ZDDHS"
+        },
+        {
+          "after": {
+            "blob": "1396a3a4921117f658fbd9193c31ee72a12c5049",
+            "content": "sha256:c035857ea7cf95ba4e42ac6da7599925255ea0a44017b63454d8b0010c9df2be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_prefix"
+            },
+            "path": "scripts/check-python-runtime.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PF1M48"
+        },
+        {
+          "after": {
+            "blob": "1396a3a4921117f658fbd9193c31ee72a12c5049",
+            "content": "sha256:8e73a1a96a89d7128d0717ab66afa553d269c7b097e335b2e832d32364be0b86",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "scripts/check-python-runtime.py"
+          },
+          "before": {
+            "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+            "content": "sha256:e4afc3af3be7b8fad1bd00b5fbea0032f3e562bc14b84372dfaf6df1ae321d05",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "scripts/check-python-runtime.py"
+          },
+          "id": "RLZ-PYW0SC"
+        },
+        {
+          "after": {
+            "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+            "content": "sha256:2be758e33356a8052f023d5bef9c377a12d197ea1223fbb905ebf33cd84857ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_uv_minor_base"
+            },
+            "path": "mcp/src/agents_remember/python_runtime.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TAZCYR"
+        },
+        {
+          "after": {
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "content": "sha256:c404a93523cefb50363c667e624e64e578fd94bd4b047faf2c71572b58ae3acc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_candidate_attempt"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "before": "absent",
+          "id": "RLZ-XJ6WD5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-F5M3S9",
+      "items": [
+        "sha256:3a1a8e31dc2832bfe8b2d297a476c6d2de74e8a3464e2678541f4d29d355932f"
+      ],
+      "reason": "Replaced the exact-version checker statement with the minor-version and uv minor-link contract, re-anchored RLZ-PYW0SC to _check_version/_base_prefix (lines 44-67), removed renamed PRF-2Y3QFT, and attached Worker rule-3 realizations and proofs on synced post-L54 base 8fe83ceb2352. Evidence (BUG-R33@v3 rule 3): Carried E3 and E4 re-exercised inside Light E9 on managed Python 3.14.10, plus new provenance digest test.",
+      "revision": 2,
+      "subject": "INV-Y2SXDZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FDNHTH",
+      "items": [
+        "sha256:1164b3e554bdd36bfb30f9e130179e8eca301a4023119ec3e4671787f474a2af"
+      ],
+      "reason": "Test allowlist update in test_cli_discovery.py adding `--managed-python` to admitted `uvx` flags matching the updated `examples/mcp/server.example.json` registration command.",
+      "subject": "hunk:sha256:1164b3e554bdd36bfb30f9e130179e8eca301a4023119ec3e4671787f474a2af"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:ceaa8b4379fa0292baf3688ae742b65f3bc077857c19068a4ac8022a00836058",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_uses_a_newer_uv_as_it_is"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "before": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_uses_a_newer_uv_as_it_is"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "id": "PRF-EFMSJW"
+        },
+        {
+          "after": {
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:41b40fd276ffa34c62e253107103b1e17aeabe89bae6eb53f9e72387de8dbbf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_version_comparison_is_numeric"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "before": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_version_comparison_is_numeric"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "id": "PRF-VSQ4CR"
+        },
+        {
+          "after": {
+            "blob": "bb4b93181fb580f55d46574b8619b6f1f5d15903",
+            "content": "sha256:5c54c906b5a85ca3b5b9c0206914583db1b3a991ed232f22066453074327693f",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "scripts/python-runtime-contract.env"
+          },
+          "before": {
+            "blob": "181c81f78275cfbda8aad2b96e8db82ddfacf341",
+            "content": "sha256:63476b82e620f6504da59b1e5624eec205b5c57d03d912d601b50ca3382443c5",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "scripts/python-runtime-contract.env"
+          },
+          "id": "RLZ-1SE3GJ"
+        },
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-N2K860"
+        },
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:eb9c84a74c19b105670437f575050a2ac4b325eb8f9df35f927f4472a1834fc1",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:eb9c84a74c19b105670437f575050a2ac4b325eb8f9df35f927f4472a1834fc1",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-RCRAQF"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-FQSK6E",
+      "items": [
+        "sha256:62252808b82dec2eab73e20886f7ecacaf97136711459df84552642326711199"
+      ],
+      "reason": "Updated exclusions from exact container uv pin and exact Python runtime checks to uv 0.13 minor-line installs in CI/Dagger and Python 3.14 minor-link checks; re-anchored RLZ-1SE3GJ (lines 7-8), RLZ-N2K860 (lines 52-81), RLZ-RCRAQF (lines 29-46), and proofs PRF-EFMSJW and PRF-VSQ4CR on synced post-L54 base 8fe83ceb2352.",
+      "revision": 2,
+      "subject": "INV-NQZ17H"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-G594EY",
+      "items": [],
+      "reason": "docs/reference/resolver-c08.md remains accurate on synced base 65911c75 / candidate 56daf664 because L33's tool_answer.py change only adds checkoutEnvironments to RUNTIME_INSTALL_ANSWER_FIELDS and leaves context_packet's answer shape and log behavior unchanged.",
+      "revision": 9,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H7DFET",
+      "items": [
+        "sha256:2273b0c0f1672771f68c2e0c043887fe74a1b8a6ca7a2180de0798c2c5d026f6"
+      ],
+      "reason": "Reviewed certification-profile-v1.json.md: only `runtimeDigest` and `profileDigest` values rotated after `.dagger/` updates; card prose accurately describes schema and adapter semantics (refs [2] and [3] refreshed via citation_fix). Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+          "path": "mcp/certification-profile-v1.json"
+        }
+      ],
+      "subject": "onboarding:mcp/certification-profile-v1.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "91f56bd60ef8d6b641af46a5d7a8f436acdada88",
+            "content": "sha256:9acf5a579ac98645f29ca4159550a9c3e99a9b0586c81c00c859a6beb66c4284",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/release-checklist.md"
+          },
+          "before": {
+            "blob": "b79471742cbf709d5dc406cb17677202909d3b0d",
+            "content": "sha256:fcbcd53b8295835c24f8bd4f733310fa16810ff242aa8a308c3f24be0b8098e2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/release-checklist.md"
+          },
+          "id": "RLZ-Q12QM2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H9GAXX",
+      "items": [
+        "sha256:df91b71ab931ae14357ff80907758bafc4d3ad2841c4966b8de2929474e6ba26"
+      ],
+      "reason": "Re-anchored file-level anchor RLZ-Q12QM2 on docs/release-checklist.md after updating wheel steps to uv-managed Python 3.14; instruction-renewal procedure is unchanged.",
+      "revision": 1,
+      "subject": "INV-J2CHWZ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-H9TQPV",
+      "items": [
+        "sha256:4d141cc67b1a8fe3f807acd99676d5f478b23942369417e589a7d6c6c781f114"
+      ],
+      "reason": "CONTRIBUTING.md accurately documents the uv-managed Python 3.14 and uv 0.13 minor-line runtime contract, bootstrap and hook checks, and Dagger endpoint validation, _EXPERIMENTAL_DAGGER_RUNNER_HOST handoff, and dropped-selector reporting on synced post-L54 base 8fe83ceb2352 (noting line 553 summarizes PNT start's --ensure step as creating a missing mcp/.venv without repeating stale-venv replacement).",
+      "revision": 24,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HCZJ5R",
+      "items": [
+        "sha256:e2e38e234f85627a3233107bfc042d63404a1a1f8430700553484f29b5873b28"
+      ],
+      "reason": "Test fixture helper extraction (`isolated_workspace_harness_markers` context manager) in pnt_sandbox_test_support.py; preserves existing harness-marker isolation without a new invariant.",
+      "subject": "hunk:sha256:e2e38e234f85627a3233107bfc042d63404a1a1f8430700553484f29b5873b28"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-HD72Y9",
+      "items": [],
+      "reason": "Updated consequence 2 to replace exact-container-uv and exact-Python-check wording with uv 0.13 minor-line installs and Python 3.14 minor-link checks on synced post-L54 base 8fe83ceb2352.",
+      "revision": 2,
+      "subject": "DEC-XMFHHR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HGFZQF",
+      "items": [
+        "sha256:20adbe9c6c64e7f7120699461ae2042d2e220163f66a35b6cba9f1a8689f1b00"
+      ],
+      "reason": "Reviewed tool_answer_table_support.py.md: general tool-answer table support description remains accurate after adding the `checkoutEnvironments` field-use entry. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "704b8efd2e058fcc5210efdc3e79519550cbb569",
+          "path": "mcp/tests/tool_answer_table_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_answer_table_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HKJC24",
+      "items": [
+        "sha256:15d369ef768f726c3198c93e17b44206044d97d3eb24828c45ff820abe331666"
+      ],
+      "reason": "Verified new onboarding card and sidecar for test_runtime_checkout_environments.py on synced base 4bf4b66ed / candidate 1aa55902 (including Worker's post-sync cleanup edit) and refreshed its citations via citation_fix.",
+      "sources": [
+        {
+          "blob": "81c1fcc359fea1fcec0bd4e510dfaa2fad19f627",
+          "path": "mcp/tests/test_runtime_checkout_environments.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_runtime_checkout_environments.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "aa513b895151d1974046b6c030d57fd81fcc5903",
+            "content": "sha256:bcd58ee83e557f32a409bec20d137ed9023ee9e74e9ad4b44acd83a495a5c1c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+            "content": "sha256:eb1166df14c684e9dabf52b2fe9385d49b5cdeb56cd68cafeb137eb7d8132718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+            "content": "sha256:359b01eabe68fd8a7f695b815f371827fdfede314f91b1ed9ba43b841a185bbf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HNPD8S",
+      "items": [
+        "sha256:2bee9b4f0192019696dceda109b52e89e9c70d88df141d1545dde93cb42c1fee"
+      ],
+      "reason": "Re-anchored file-level catalog anchors RLZ-8RHQED and RLZ-MC12B0 on synced post-L54 base 8fe83ceb2352; catalog uniqueness/consumer contract is unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HV0PNN",
+      "items": [
+        "sha256:6ad9b3c3a6ee60c1b2a4c81fc252a7a877015c45fb3a70ee8f6d774b68d4bf8e"
+      ],
+      "reason": "Tightened `_refuse` return annotation from `None` to `NoReturn` in check-python-runtime.py for type-checking accuracy; no behavioral change.",
+      "subject": "hunk:sha256:6ad9b3c3a6ee60c1b2a4c81fc252a7a877015c45fb3a70ee8f6d774b68d4bf8e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HYXWCX",
+      "items": [
+        "sha256:52bc6603d03f8720e584cc26934f2d347fc1dcabe60db029a6ec9a04af426bba"
+      ],
+      "reason": "Reviewed code_quality/overview.md: route-level clean-room CLI summary remains accurate; dropped-selector stderr output is documented on clean_room.py.md.",
+      "sources": [
+        {
+          "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HZC34J",
+      "items": [
+        "sha256:61c19e9f1cf8c8eb302df8092e1e2d96a052c84fdfc8efe3e44ac6b8f8cdd6f8"
+      ],
+      "reason": "Created new onboarding card and sidecar for new source file dagger_runner.py covering `authority_environment`, `native_dagger_environment`, and overriding selector stripping.",
+      "sources": [
+        {
+          "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-GP2N7C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-J5T0BV",
+      "items": [
+        "sha256:4c7f3774297e95d851c0bbff1bb62e823f7523b9e674481c6715cc85c0112a5e"
+      ],
+      "reason": "Re-anchored RLZ-GP2N7C on run_runtime_install after adding checkoutEnvironments reporting on synced base 65911c75 / candidate 56daf664; dry-run vs real host preview parity is unchanged.",
+      "revision": 1,
+      "subject": "INV-WK67MP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5XTD6",
+      "items": [
+        "sha256:02b4bcfb2e4837be92db80b88f1e72d3284316db8efd1d5de900a29869aac5bb"
+      ],
+      "reason": "Type import addition (`Iterator` alongside `Callable`) for `isolated_workspace_harness_markers` in pnt_sandbox_test_support.py; typing plumbing only.",
+      "subject": "hunk:sha256:02b4bcfb2e4837be92db80b88f1e72d3284316db8efd1d5de900a29869aac5bb"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticExecutionEngine._admit_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "before": {
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "content": "sha256:f85730f23d0f43c033b52ee177e0dbf4d93bde791f14cd3e5a5f06a1179d5af0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticExecutionEngine._admit_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "id": "RLZ-4BJP3S"
+        },
+        {
+          "after": {
+            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "content": "sha256:78119eb809028149425bac4f248a8d987f4e3a4dfc0f308aa183fbdfb2f6ce0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexExecutionEngine._admit_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+          },
+          "before": {
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+            "content": "sha256:dedebe36a32647d4ceebfacf8a5fb9a1caf1866df401462b7df1e3505198d730",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexExecutionEngine._admit_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+          },
+          "id": "RLZ-H372EW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-J6Y3F0",
+      "items": [
+        "sha256:b07e390ba75cb59c16d462b95a028aa20d8f9615958939cfb11eb84ffb70f40d"
+      ],
+      "reason": "Re-anchored RLZ-4BJP3S (DiagnosticExecutionEngine._admit_authority) and RLZ-H372EW (FinalCodexExecutionEngine._admit_authority) after L33 added dropped_dagger_selectors reporting on synced base 4bf4b66ed / candidate 1aa55902; AUTHORITY_SCHEMA_VERSION continuation admission is unchanged.",
+      "revision": 1,
+      "subject": "INV-0TK9W7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J8XJ4Q",
+      "items": [
+        "sha256:0cbf81b587e8d11debc52f77f6d116ae6c839f06fd09c1c0c8dceca086a2e614",
+        "sha256:420e41558e0030323b8d471fbda7d9d77a86b05428c3d18c564d87c89cf11a32",
+        "sha256:663d51b5b92568426dea76e11c264a129efde7c3825e920e6b2ebad05d5cf5a0",
+        "sha256:7085a4b2e4ae277602df9250d20af4a4d5192e66b92cc324800830efd3b0eb2d",
+        "sha256:8c3aeff2b31ad97d24893fd1a502a9d07dfc813bb041925b347160af7c0fb7d5",
+        "sha256:a0c83c73e730af2b932f5767aa2a7e928efb1058e4098f793405c26d45593e4e",
+        "sha256:e204034812bc33349bfc48fec37c77abeb4588d51c64f67885e2a5dbf009315b"
+      ],
+      "reason": "Updated test_bootstrap_uv_minimum_version.py.md to reflect the rewritten parametrized directory/symlink `test_sync_failure_names_both_uv_versions` test using `run_driver` and fake shims, and re-anchored refs [1], [2], [4], and [5].",
+      "sources": [
+        {
+          "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+          "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_bootstrap_uv_minimum_version.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:3959e30bfb81fb5f553990106fd3a6db8067f659fca8ab904dae7b1a7aa3de90",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:27b1ee6fecc1e365bd0e2d5c04d6343c2cea475bab24fb75bfb5a3d4c6e8447c",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-MNKE2T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K6C2JJ",
+      "items": [
+        "sha256:f35848a37c63388a087f7d1074366846f7b57fd16196c10d18d0f569ad53ce76"
+      ],
+      "reason": "Re-anchored RLZ-MNKE2T to scripts/bootstrap-mcp-venv.sh:102-184 on synced post-L54 base 8fe83ceb2352; candidate worktree environment ownership is unchanged.",
+      "revision": 1,
+      "subject": "INV-2FS4D1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K6SQ8R",
+      "items": [
+        "sha256:75f31952d1a8692be8992661b2b2d18aa7cd87c231361fbc212b63cf93b1ba9e"
+      ],
+      "reason": "Rewrote bootstrap-mcp-venv.sh.md for uv-managed Python 3.14, `--ensure`, `flock` serialization, and automatic stale-base venv replacement, and re-anchored refs [1]-[5].",
+      "sources": [
+        {
+          "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+          "path": "scripts/bootstrap-mcp-venv.sh"
+        }
+      ],
+      "subject": "onboarding:scripts/bootstrap-mcp-venv.sh"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
+            "content": "sha256:64a11d94602cc5607fa2c9698baaf4a1c70746bbe30a9d99524954187516ca29",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "before": {
+            "blob": "888c97f459639da664eed21b762a6b549e8a2f94",
+            "content": "sha256:64a11d94602cc5607fa2c9698baaf4a1c70746bbe30a9d99524954187516ca29",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-5R1WWT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KK30KA",
+      "items": [],
+      "reason": "Re-anchored RLZ-5R1WWT at README.md:192-194 on synced base 65911c75 / candidate 56daf664; public Status version sentence is 3.0.8.",
+      "revision": 4,
+      "subject": "INV-MG3HK1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KRDKQM",
+      "items": [],
+      "reason": "L33 does not claim or confirm docs/install/hermes.md: its stale CAP-L1 links remain outside L33 scope on CAP's deferred stale list (D167), and L33's comment-only edit in mcp/pyproject.toml introduces no new drift.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MBQPPE",
+      "items": [
+        "sha256:5bc81b2f436d1864caeee09952f73c867e75f435e8022e5396f71d293ede50c5"
+      ],
+      "reason": "Created new onboarding card and sidecar for new source file checkout_environments.py covering read-only primary checkout and active worktree Python runtime diagnosis.",
+      "sources": [
+        {
+          "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+          "path": "mcp/src/agents_remember/install/checkout_environments.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/install/checkout_environments.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MM6RBH",
+      "items": [
+        "sha256:4c19d60945a3b7bb9b24786905a0f4389a86279fa4d6423a18081a3037df70f5"
+      ],
+      "reason": "Docstring wording update in `FinalCodexExecutionEngine.reserve_run` noting malformed host declaration refusal; endpoint grammar refusal is anchored by INV-NC2ZCP.",
+      "subject": "hunk:sha256:4c19d60945a3b7bb9b24786905a0f4389a86279fa4d6423a18081a3037df70f5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MP7EZ6",
+      "items": [
+        "sha256:d8eb62235ba0d1ca353165855c71fa74815aa663ac097a96a61407f2456ff7cc"
+      ],
+      "reason": "Docstring wording update in `DiagnosticExecutionEngine.reserve_attempt` noting malformed host declaration refusal; endpoint grammar refusal is anchored by INV-NC2ZCP.",
+      "subject": "hunk:sha256:d8eb62235ba0d1ca353165855c71fa74815aa663ac097a96a61407f2456ff7cc"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+            "content": "sha256:175d08c35c2eb075a61fc55a9fb45a6dd38c03c62814efa473a28315832b1d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "before": {
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "content": "sha256:1a306faf4cbd71ae81d4ff8e036017c8c21e258180a6bbeeb651de7471614f32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "id": "RLZ-SM460F"
+        },
+        {
+          "after": {
+            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+            "content": "sha256:359b01eabe68fd8a7f695b815f371827fdfede314f91b1ed9ba43b841a185bbf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MX5Z5D",
+      "items": [
+        "sha256:3d62bfe33555bf6a556d0f60fc3033d54095a3e1f132a4266d5faf1ef892829b"
+      ],
+      "reason": "Re-anchored file-level anchors RLZ-SM460F and RLZ-XQXYDT on synced post-L54 base 8fe83ceb2352; rail/catalog validity obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MY5NV1",
+      "items": [
+        "sha256:a9892594ad65297ebdbd3a5960733ab424fd0e9925db8e8ae5f583b38f01556d"
+      ],
+      "reason": "Reviewed pnt_sandbox_test_support.py.md: fixture harness-isolation and FakeOperations descriptions remain accurate after extracting `isolated_workspace_harness_markers` and copying runtime scripts (refs [1] and [2] refreshed via citation_fix).",
+      "sources": [
+        {
+          "blob": "cbbe5800c24d33d586ba47f1a87e50c7bfd8f232",
+          "path": "mcp/tests/pnt_sandbox_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/pnt_sandbox_test_support.py"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-N2XH8H",
+      "items": [],
+      "reason": "Re-pointed obsolete scripts/python-runtime-contract.env:13 link to file-level scripts/python-runtime-contract.env on synced post-L54 base 8fe83ceb2352; superseded by DEC-EG81BC.",
+      "revision": 2,
+      "subject": "DEC-4ZE5PJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N3M1Y3",
+      "items": [
+        "sha256:77babd7790e1891d013de0caf57c413cfd7637d6f04c7683cc197b3d8767fde6"
+      ],
+      "reason": "Delete-only hunk removing redundant earlier assignment line in bootstrap-mcp-venv.sh after switching to uv-managed Python discovery.",
+      "subject": "hunk:sha256:77babd7790e1891d013de0caf57c413cfd7637d6f04c7683cc197b3d8767fde6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N3YTNT",
+      "items": [
+        "sha256:2d651ef81fbc3cd8ed102aac7e5b9d84f268ec3e7a1a268d92c9da4ac0aa9701"
+      ],
+      "reason": "Updated test_cli_discovery.py.md to record `--managed-python` among the admitted `uvx` flags verified against the registration example. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "c35e31aacbff8846fb0d52fdf4a8fe6bec1d7e6b",
+          "path": "mcp/tests/test_cli_discovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_cli_discovery.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N7997Y",
+      "items": [
+        "sha256:f959640aa3b8330927a7381c3126b6d0bbfba78eafbbb13cf22a2edc28629c71"
+      ],
+      "reason": "`_matches_runtime_contract` helper predicate in scripts/pnt_sandbox/operations.py checking whether a checkout uses the current uv-managed Python contract before invoking `--ensure`; the checkout-pairing boundary is recorded as decision DEC-APZQEP and realized in `prepare_python`.",
+      "subject": "hunk:sha256:f959640aa3b8330927a7381c3126b6d0bbfba78eafbbb13cf22a2edc28629c71"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-ND7FA3",
+      "items": [],
+      "reason": "SECURITY.md remains accurate on synced base 65911c75 / candidate 56daf664 because mcp/pyproject.toml's comment update (version 3.0.8) does not change the package identity, local service bindings, or security policy scope.",
+      "revision": 16,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NF06FC",
+      "items": [
+        "sha256:f61fba7d97f4786d4652e85d865b157fbcfc772fee4388bfeaebf437c2781009"
+      ],
+      "reason": "Restored L33 prose on onboarding/overview.md lines 39 and 159 for uv-managed Python 3.14, --ensure / automatic stale-venv replacement, and CI/Dagger uv 0.13 minor-line installs on synced post-L54 base 8fe83ceb2352 / candidate f175245ee5d1, and refreshed all 5 references via citation_fix.",
+      "sources": [
+        {
+          "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+          "path": ".dagger/src/agents_remember_quality/main.py"
+        },
+        {
+          "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+          "path": ".githooks/_gate.sh"
+        },
+        {
+          "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
+          "path": ".github/workflows/publish-mcp-to-pypi.yml"
+        },
+        {
+          "blob": "4ca27cb70382e40f54fc6f1f7f1c37d509d03071",
+          "path": ".github/workflows/quality-checks.yml"
+        },
+        {
+          "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+          "path": "scripts/bootstrap-mcp-venv.sh"
+        },
+        {
+          "blob": "1396a3a4921117f658fbd9193c31ee72a12c5049",
+          "path": "scripts/check-python-runtime.py"
+        },
+        {
+          "blob": "absent",
+          "path": "scripts/install-python-runtime.sh"
+        },
+        {
+          "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+          "path": "scripts/pnt_sandbox/operations.py"
+        },
+        {
+          "blob": "bb4b93181fb580f55d46574b8619b6f1f5d15903",
+          "path": "scripts/python-runtime-contract.env"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NVRJKW",
+      "items": [
+        "sha256:5b7401cbb21f00bec92647ba5c5d0a6d1a74fa13510383c95fbb902c1088aedf"
+      ],
+      "reason": "Orchestration wiring in check-python-runtime.py `main` calling `_check_version`, `_base_prefix`, `_pidfd_capabilities`, and building `provenance` dict (core checks anchored by INV-Y2SXDZ).",
+      "subject": "hunk:sha256:5b7401cbb21f00bec92647ba5c5d0a6d1a74fa13510383c95fbb902c1088aedf"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P5JQ59",
+      "items": [
+        "sha256:0445d270afab551ab6dff3a1dfa5818cf89ab328ec86126535fee671d63cdf22"
+      ],
+      "reason": "Created new onboarding card and sidecar for new source file python_runtime.py covering uv_python_directory, is_uv_minor_base, and read_venv_home.",
+      "sources": [
+        {
+          "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+          "path": "mcp/src/agents_remember/python_runtime.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/python_runtime.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PX86D3",
+      "items": [
+        "sha256:65ba95b0da19a6efd112564ef2066e7ef08a1fba7fb81ba63804b91bc9fae042"
+      ],
+      "reason": "Import of `inspect_checkout_environments` in application/runtime/install.py; behavioral contract is anchored by INV-VWK5HY on `run_runtime_install` and `inspect_checkout_environments`.",
+      "subject": "hunk:sha256:65ba95b0da19a6efd112564ef2066e7ef08a1fba7fb81ba63804b91bc9fae042"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q2S84T",
+      "items": [
+        "sha256:e34b330f66fb8b7d4cfce4453b3eef200a4d538901c4cd45445d226b1828e46e"
+      ],
+      "reason": "Test fixture setup copying `scripts/python-runtime-contract.env` and `scripts/bootstrap-mcp-venv.sh` into the synthetic sandbox checkout so sandbox tests exercise the current runtime contract.",
+      "subject": "hunk:sha256:e34b330f66fb8b7d4cfce4453b3eef200a4d538901c4cd45445d226b1828e46e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QFSPJR",
+      "items": [
+        "sha256:9c792eda03f1f62b4c10511eaa4e34de57d2114f33dd37fef33e513bec1b9a3e"
+      ],
+      "reason": "Import of `uv_python_directory` from `agents_remember.python_runtime` in scripts/pnt_sandbox/operations.py to resolve the uv Python install directory for sandbox runs.",
+      "subject": "hunk:sha256:9c792eda03f1f62b4c10511eaa4e34de57d2114f33dd37fef33e513bec1b9a3e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QNKWZC",
+      "items": [
+        "sha256:325437217d34dbb36ae2c01c0f810c03612a5ddd8f25b0c28143e0f437bb1d67"
+      ],
+      "reason": "Reviewed quality/execution/overview.md: route-level sandbox preparation summary remains accurate; `droppedDaggerSelectors` detail is documented on sandbox.py.md (ref [5] refreshed).",
+      "sources": [
+        {
+          "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/execution/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RQSRGP",
+      "items": [
+        "sha256:fa108ac851d4bfeda544c58ce49ccf7ac6aeefeb094c4db4b546ce7fb3863f82"
+      ],
+      "reason": "Reviewed application/runtime/overview.md: route-level runtime install composition prose remains accurate; checkoutEnvironments detail lives on install.py.md and checkout_environments.py.md (refs [2] and [4] refreshed via citation_fix). Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+          "path": "mcp/src/agents_remember/application/runtime/install.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RTAGTC",
+      "items": [
+        "sha256:017d5d1797ba984f94793dc6a998b415d006e42b07e69f187cd91fac6f4381ac"
+      ],
+      "reason": "Return of `capabilities` and `_read_build(base)` helper reading the uv-managed Python `BUILD` file for provenance output in check-python-runtime.py.",
+      "subject": "hunk:sha256:017d5d1797ba984f94793dc6a998b415d006e42b07e69f187cd91fac6f4381ac"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-RVB0MP",
+      "items": [],
+      "reason": "docs/reference/repository-certification-profile.md remains accurate across L33's uv-managed Dagger base, refreshed profile digests, and dropped-selector reporting on synced base 65911c75 / candidate 56daf664 because it documents the profile schema, gate rules, and manifest flow without pinning legacy runtime builds or digests.",
+      "revision": 8,
+      "subject": "DPD-FR0VZP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-RVQ6CF",
+      "items": [],
+      "reason": "docs/design/python-test-evidence.md remains accurate on synced base 65911c75 / candidate 56daf664 because L33's Dagger runner-environment and dropped-selector changes in clean_executor.py and gate.py leave the CertifyingTestEvidence authority boundary and enforcing function owners unchanged.",
+      "revision": 4,
+      "subject": "DPD-6ZHCCN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RY30WY",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml.md counts to 836 distinct modules (685 unit-regression, 3 public-contract, 124 integration, 23 architecture-fitness, 1 stress-durability; test_state_conversion_worklist.py line 590, test_tool_schema_compaction.py line 660) on synced post-L54 base 8fe83ceb2352 / candidate f175245ee5d1, refreshed catalog references via citation_fix, and revised ref [913] note via citation_note_revision.",
+      "sources": [
+        {
+          "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-RYKWBT",
+      "items": [],
+      "reason": "docs/install/README.md remains accurate against mcp/pyproject.toml (>=3.14,<3.15, Linux/macOS) and the updated --managed-python examples/mcp/server.example.json on synced base 65911c75 / candidate 56daf664 because it delegates exact install commands to getting-started.md and per-harness pages.",
+      "revision": 11,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S1FJ1H",
+      "items": [
+        "sha256:eff0d3c57c725bfcc957bd7bbcdfd9d17ea4ce5c33de69d7a53e99eed56c352f"
+      ],
+      "reason": "Updated clean_room.py.md to document stderr reporting of non-empty `result.dropped_selectors` variable names and refreshed refs [1] and [2].",
+      "sources": [
+        {
+          "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T9XT4M",
+      "items": [
+        "sha256:c1866dc87ea4cbbb4f2afc45716f3475c379dd5eaf7bc0ac0ab3fa71ac3609b0"
+      ],
+      "reason": "Import of `dropped_dagger_selectors` from `dagger_runner` in final_codex_executor.py; dropped-selector reporting behavior is anchored by INV-NC2ZCP on `FinalCodexExecutionEngine._admit_authority`.",
+      "subject": "hunk:sha256:c1866dc87ea4cbbb4f2afc45716f3475c379dd5eaf7bc0ac0ab3fa71ac3609b0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TEHHP7",
+      "items": [
+        "sha256:e4f670a1fc0841f58e044c14aa1e350eb7d85f832c6577bf4491d6aa90e761aa"
+      ],
+      "reason": "Updated mcp/overview.md lines 89-91 to reflect CI/Dagger installing the newest patch in the contract uv minor line with uv-managed Python 3.14, and refreshed refs [251] and [402]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+          "path": "mcp/certification-profile-v1.json"
+        },
+        {
+          "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+          "path": "mcp/pyproject.toml"
+        },
+        {
+          "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+          "path": "mcp/src/agents_remember/install/checkout_environments.py"
+        },
+        {
+          "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+          "path": "mcp/src/agents_remember/python_runtime.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TJ2WR6",
+      "items": [
+        "sha256:8372f9a7e5ac2c4d7954fe0f7ed1957414e56ca0be7945496f3a4bd39d285f37",
+        "sha256:8633546fb1ceff12430549f6aaf9847d783c8c98ffa013533919566c0cc0dc05",
+        "sha256:d2867a1d6695c0250469a815165144b14fe125e4dee2236061e14b0d7ca09ee0",
+        "sha256:de02af8589d49aa54d89d1c73f9a6f2b3c1c281317807c68ea492979371b3d97",
+        "sha256:e509c696f961db4b2bdba0358b1355bbdaf25cc2cc8bdfbae2167abe94eb8046"
+      ],
+      "reason": "Reviewed repository_profile_test_support.py.md: `FakeContainer` detached-graph double prose remains accurate after L33 Dagger helper updates (refs [7] and [14] refreshed via citation_fix).",
+      "sources": [
+        {
+          "blob": "026407746343a513ce9704705fd5898636f53681",
+          "path": "mcp/tests/repository_profile_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/repository_profile_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TM1NCV",
+      "items": [
+        "sha256:8830e0eb449cc1d8604fbddfccf5d87578ef6b58e7dc5b15806c600ee9ab5d1c"
+      ],
+      "reason": "Updated sandbox.py.md to document `droppedDaggerSelectors` in `_write_sandbox_manifest` and refreshed ref [3].",
+      "sources": [
+        {
+          "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+            "content": "sha256:359b01eabe68fd8a7f695b815f371827fdfede314f91b1ed9ba43b841a185bbf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "aa513b895151d1974046b6c030d57fd81fcc5903",
+            "content": "sha256:bcd58ee83e557f32a409bec20d137ed9023ee9e74e9ad4b44acd83a495a5c1c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+            "content": "sha256:eb1166df14c684e9dabf52b2fe9385d49b5cdeb56cd68cafeb137eb7d8132718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TY813D",
+      "items": [
+        "sha256:d0e4b5b355d00d5e5a1150c941bc5011bdbb0b819b91c5c1f044954bae6f1f98"
+      ],
+      "reason": "Re-anchored file-level catalog anchors RLZ-BJ41EY and RLZ-H44S0N on synced post-L54 base 8fe83ceb2352; outside-scratch-root obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VBHX9P",
+      "items": [
+        "sha256:133d4c310586724895d73e86fa978338f54471de2c8290b2c8b59c9231878e97"
+      ],
+      "reason": "Optional `uvImageDigest` provenance key attachment in check-python-runtime.py `main`; provenance reporting plumbing supporting INV-Y2SXDZ.",
+      "subject": "hunk:sha256:133d4c310586724895d73e86fa978338f54471de2c8290b2c8b59c9231878e97"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2FS4D1",
+          "revision": 1
+        },
+        {
+          "id": "INV-4AQ26N",
+          "revision": 2
+        },
+        {
+          "id": "INV-RCFXFA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VHXYP7",
+      "items": [
+        "sha256:a2b81fa37f4086f17663644ec30f466df6174bd5cbb2c3b618214968b015299a"
+      ],
+      "reason": "Examined INV-2FS4D1, INV-4AQ26N, and INV-RCFXFA after bootstrap re-anchoring; worktree-local candidate environment delegation and exclusion from transaction inventories are unchanged.",
+      "revision": 2,
+      "subject": "FAM-H734XJ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-VRP8XK",
+      "items": [],
+      "reason": "docs/concepts.md remains accurate on synced post-L54 base 8fe83ceb2352 because mcp/pyproject.toml's comment update (version 3.0.8) and tool_answer.py's added checkoutEnvironments field do not alter the documented package commands or tool-answer overflow concepts.",
+      "revision": 33,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VS0XV3",
+      "items": [
+        "sha256:8a900e384d3adda27aad69e25836ca5b752950e961fe0c83861a3f2894f50309"
+      ],
+      "reason": "Updated scripts/pnt_sandbox/operations.py.md to document `UV_PYTHON_INSTALL_DIR` preservation, `_matches_runtime_contract`, and `bootstrap-mcp-venv.sh --ensure`, and refreshed ref [1]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+          "path": "scripts/pnt_sandbox/operations.py"
+        }
+      ],
+      "subject": "onboarding:scripts/pnt_sandbox/operations.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:4719b7556c8c076028b54628e1a2a316daed8ba975077613054b9af95c64a2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_older_uv_is_refused_before_anything_is_touched"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "before": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:14d56426a0e123bd49eb278a274f35823b16d06b3074cbc2f908242ec61d2474",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_older_uv_is_refused_before_anything_is_touched"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "id": "PRF-76GYQ5"
+        },
+        {
+          "after": {
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:f51420e3af28cc485bf896a5b23e402f054624f923a5eac5c070192ed857e819",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_version_is_refused_with_its_text"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "before": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:98e0608f07a2967960a96a6a1e1dabd32ab9c2849286f00186f367379fdb74b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_version_is_refused_with_its_text"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "id": "PRF-AQHQ3Z"
+        },
+        {
+          "after": {
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:34e2609eb5d3d64390e5f895c2f3b94f2786894c73182c5760dfd1ae61fcba87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_uv_is_refused"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "before": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:428753c848f23bca61213c85f076ba7ae43b918409899d3d783387c967129763",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_uv_is_refused"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "id": "PRF-TB9JAQ"
+        },
+        {
+          "after": {
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:4e6d7ef818d5bd4eb72e6f8d79f9a1d401617d49d2b3c9df7937f666a1a25f59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refusal_leaves_an_existing_environment_alone"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "before": {
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:919b4c229d33f0528235da33afcbb7f5cf52b0f9ea03a03e85d8bb727a9632b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refusal_leaves_an_existing_environment_alone"
+            },
+            "path": "mcp/tests/test_bootstrap_uv_minimum_version.py"
+          },
+          "id": "PRF-VSSAYC"
+        },
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:6fe9c5c707956259be9553aec86d3738d7da90c91f46f0a4dea9c5c896f1ae0d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-1HQYX3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W3T2QJ",
+      "items": [
+        "sha256:4a63146937b68c0ec9233a5f59c7746cbd9a912467eb07f9dd4760321e818706"
+      ],
+      "reason": "Re-anchored resolve_uv gate (lines 52-81) and four moved proofs in test_bootstrap_uv_minimum_version.py after uv 0.13 minor-line updates on synced post-L54 base 8fe83ceb2352; refusal contract is unchanged.",
+      "revision": 1,
+      "subject": "INV-DYK0F8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WF9FHS",
+      "items": [
+        "sha256:3192f388789c94c9137d1960ffc21aad4dade8128068cd7fab4a6900ed79c065"
+      ],
+      "reason": "CLI parser arguments `--expected-base-prefix` (Path) and `--base-interpreter` flag in check-python-runtime.py feeding `_base_prefix` (anchored by INV-Y2SXDZ).",
+      "subject": "hunk:sha256:3192f388789c94c9137d1960ffc21aad4dade8128068cd7fab4a6900ed79c065"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WHQRPA",
+      "items": [
+        "sha256:9b435c878c237afcdf0c3bdaba3842459fc7c2c2bd7f8a61b92b41f091dba371"
+      ],
+      "reason": "Formatting blank line after runtime import block in scripts/pnt_sandbox/operations.py.",
+      "subject": "hunk:sha256:9b435c878c237afcdf0c3bdaba3842459fc7c2c2bd7f8a61b92b41f091dba371"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WXRVZY",
+      "items": [
+        "sha256:87ace487686a605df883ce35ef9520d6bd59bddc7ebe4bbd00965a253aa7ba1b"
+      ],
+      "reason": "Test contract-table description entry for `checkoutEnvironments` on `runtime_install`; behavioral contract is already anchored by INV-VWK5HY on tool_answer.py and install.py.",
+      "subject": "hunk:sha256:87ace487686a605df883ce35ef9520d6bd59bddc7ebe4bbd00965a253aa7ba1b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X1Y46B",
+      "items": [
+        "sha256:421ee80597115de3007fad48da3469184da4ebab5d702c19f21c8637e7b09e94"
+      ],
+      "reason": "Updated examples/mcp/overview.md line 35 to include `--managed-python --python 3.14` before `--refresh-package agents-remember-mcp` in the uvx registration example and refreshed ref [9].",
+      "sources": [
+        {
+          "blob": "c2c5e0c8a66db17838d36103d6687e8ea68e9fc6",
+          "path": "examples/mcp/server.example.json"
+        }
+      ],
+      "subject": "onboarding:examples/mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X4C547",
+      "items": [
+        "sha256:1e6f41c3d52a3d65637352bdfb5f7926fc057e87f3ecf52df2d65a5c2b385bb7"
+      ],
+      "reason": "Replaced inline ancestor-marker patch in `SandboxCase.setUp` with a call to the extracted `isolated_workspace_harness_markers(self.root)` helper; test refactor only.",
+      "subject": "hunk:sha256:1e6f41c3d52a3d65637352bdfb5f7926fc057e87f3ecf52df2d65a5c2b385bb7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-1XKQEK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XFTXC6",
+      "items": [
+        "sha256:f0d5142e6b23a9a1548779d628e923f812caabd666caff89a09866f4c9d1ea7c"
+      ],
+      "reason": "Re-anchored RLZ-1XKQEK on run_runtime_install after L33 added read-only checkoutEnvironments reporting on synced base 4bf4b66ed / candidate 1aa55902; dry-run settlement counting and state preservation are unchanged.",
+      "revision": 1,
+      "subject": "INV-XX08QF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y63Z4D",
+      "items": [
+        "sha256:d9e73b08c9d907c8452c0f59900290fdd3385504738e65fa9f6fff3a63622513"
+      ],
+      "reason": "Export of `isolated_workspace_harness_markers` in `__all__` of pnt_sandbox_test_support.py test support module; no runtime invariant change.",
+      "subject": "hunk:sha256:d9e73b08c9d907c8452c0f59900290fdd3385504738e65fa9f6fff3a63622513"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-NWX29V"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YG6Y4V",
+      "items": [
+        "sha256:8fc885c23042e755a343b4793a8215689b75e46e78b1b5d763d38b529a91a3f4"
+      ],
+      "reason": "Re-anchored RLZ-NWX29V on run_runtime_install after adding checkoutEnvironments reporting on synced base 65911c75 / candidate 56daf664; single host-provision composition is unchanged.",
+      "revision": 1,
+      "subject": "INV-GAZREV"
+    },
+    {
+      "because": [
+        "DEC-EG81BC"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:f2aea79da0a99908d8a2aa92609498d434f58f21b19bccc65b9de303968bff73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workflows_install_uv_minor_line_and_record_resolved_version"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-0HGK13"
+        },
+        {
+          "after": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:96924f8b6553f354c370d3d45f56ffebfd9c99f83f4cf8ba468898dafd30c4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dagger_uv_minor_and_image_digest_helpers"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-ARXW3T"
+        },
+        {
+          "after": {
+            "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+            "content": "sha256:de144439b19652f9b060765fee0767bd93d22cc369a02292e63a799f009b2f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_mismatched_runtime_before_environment_work"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_prepare_python.py"
+          },
+          "before": "absent",
+          "id": "PRF-B5JEC7"
+        },
+        {
+          "after": {
+            "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+            "content": "sha256:c315bc2619309182a9d995bec1015ccd771b96a8e18e84c50f9fb31f30783ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepare_python_preserves_uv_install_dir_for_checkout_bootstrap"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_prepare_python.py"
+          },
+          "before": "absent",
+          "id": "PRF-T0TB0D"
+        },
+        {
+          "after": {
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+            "content": "sha256:f049c1c821853d20ce834ae2b8c6b9bcebc9213ed1cdc9ef0e84271d836b0aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "Operations.prepare_python"
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": "absent",
+          "id": "RLZ-13KZE2"
+        },
+        {
+          "after": {
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
+            "content": "sha256:53d370d2baadd9938fcebd61dc2793a1bc0999f5e1e5ffc3c889c7dbac1f7a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "before": "absent",
+          "id": "RLZ-1S1T4K"
+        },
+        {
+          "after": {
+            "blob": "4ca27cb70382e40f54fc6f1f7f1c37d509d03071",
+            "content": "sha256:0cf56c728595d47e93ebb962fe8d0908570df17a6a34b6c636d64898541776c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".github/workflows/quality-checks.yml"
+          },
+          "before": "absent",
+          "id": "RLZ-3A3VV4"
+        },
+        {
+          "after": {
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "content": "sha256:9fee6b1197e090c5aa91aa6bb9043bb26171706b886d42a4a7309e3bedf479f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_python_base"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3JA90P"
+        },
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:8698ab0f9c7d27d65418142750265fd8db50d2dd1201a54859cb0392dfc42533",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:9435392e002571bf961c4280acc5c771813e2b7e52c1b75ff70e0b9ba29f1e28",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-3QQKJD"
+        },
+        {
+          "after": {
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+            "content": "sha256:09c5504d66cbb619dbe894c9dbb16fe27a9766af6f19e4ced45d588c7b16b134",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_refusal"
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": "absent",
+          "id": "RLZ-666FHF"
+        },
+        {
+          "after": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:5ae607e9ae7c0b52cd26b7aa9bac5ed60b1983b9bca66d66e395e9dced4b788f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": "absent",
+          "id": "RLZ-8CBSKX"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
+            "content": "sha256:8f102a3527f31b86aae97b2522e8f43e52c893643ecfe4667ab56e70ff603020",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/install-python-runtime.sh"
+          },
+          "id": "RLZ-NY6TTR"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-YQY4ZK",
+      "items": [
+        "sha256:3c24f0bf9f709fc8d4f32e20043e49500fa94734d953aa00f16c9253369e1550"
+      ],
+      "reason": "Replaced the two-script source-build invariant with the uv-managed Python 3.14 and uv 0.13 minor-line contract, removed deleted RLZ-NY6TTR (scripts/install-python-runtime.sh), re-anchored RLZ-3QQKJD in scripts/bootstrap-mcp-venv.sh (lines 111-119), and attached Worker rule-2 realizations and proofs on synced post-L54 base 8fe83ceb2352. Evidence (BUG-R33@v3 rule 2): E2, W4 E9 across 54 named focused files (625/627 passed: 538 unit + 64 integration + 23 public_docs; 2 pre-existing base public_docs failures proven on 185de807), carried live Heavy E5 Dagger Route B PASS on untouched production code (uv 0.13.10 + sha256:a3ea1357…774f + CPython 3.14.10 + pidfd); W4 pre-freeze fast hook held for Manager release and post-PASS local publish/PR checks remain gated.",
+      "revision": 2,
+      "subject": "INV-XG226D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZBJ9EV",
+      "items": [
+        "sha256:ac20538faa7b5c0afdb0c92a2ee8c503cd14caf8e927c3134c0ec8c7c3f65191"
+      ],
+      "reason": "Updated install.py.md prose to document read-only `result['checkoutEnvironments']` attachment via `inspect_checkout_environments(repository.path)` when `agents-remember` is configured, and refreshed refs [4] and [6]. Re-verified and bound to synced base 4bf4b66ed / candidate 1aa55902.",
+      "sources": [
+        {
+          "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+          "path": "mcp/src/agents_remember/application/runtime/install.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/install.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:69603241abef3a8eb9fa5f8ab545b6a5dcc89147b92ee414927eddbde27fb9dd",
+      "record": "DEC-4ZE5PJ",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:03b05d116e2a50490766f6dd62b97a30faf80690a285ecb02e452105289cbea9",
+      "record": "DEC-APZQEP",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c44555a1aff4aaf0ca5aacccb9f5dbda11d6ab9c0ce6f1114aba77bec078a2ce",
+      "record": "DEC-EG81BC",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bd18140a9b8cb3d9fa6603a579a7354b0d9268fffd33819938b8582729579e90",
+      "record": "DEC-XMFHHR",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3cc602c084defe138c773e7453010dffcf767ed4eb969b8fd1e101c81deb9eb7",
+      "record": "DPD-06057Y",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c2f6abf2500db22118e3f3cd4fa4e6c7e679bc89d95ff3016544080a8af97a86",
+      "record": "DPD-06057Y",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3b89f35a05c46f63e15cd0be10cc4a892a403cef13f0298fee1bff4fcbc869a4",
+      "record": "DPD-0K35N0",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ce4832d4260bab7751c9badb3a88f88757e12f8b25806eba0a0c6b8fe9a9daf9",
+      "record": "DPD-0K35N0",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2f5ecf3bc8678ac758f5fdda66174704bcbce46cb12ad8cf5eff1d9105b4435f",
+      "record": "DPD-0K35N0",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c67eea1ae9b7af85ce4a6ddb15bb3f71c88564653c291195cc53c0ddd4249190",
+      "record": "DPD-10YCT2",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:212e478a84bd77568a84bf81bdd55928ba570dee05fdaf87b3e82a9f1a3348b5",
+      "record": "DPD-10YCT2",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c53066f93e753a512f1a2205a74f2ef29951c31db85fceb7c0b9cef3a522f198",
+      "record": "DPD-633P3W",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3a9249c6966ce1c032c517c6becc8b99ca7289b37ba31bcb95067584974265ea",
+      "record": "DPD-633P3W",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3a42a9eba2d917f5f1dc76c13a0d667b8860ece673b60481e68948359febcd70",
+      "record": "DPD-6ZHCCN",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:157cc537410b2fadb33648fd053459e464fe27359bd3014d58ce38833a0209fb",
+      "record": "DPD-6ZHCCN",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1c1a7381eca11616261be8d1f4d1b46b6eb4296703f3bee26ba43384d46050d9",
+      "record": "DPD-71WYH4",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cd06325b671a7f2599e373197c0625cba6cb10f1a5a6041427ba71fbdb193424",
+      "record": "DPD-71WYH4",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f29280ec10d7fcd4abec28b6eac32eaf59e878025a82d5a094f3c3501eebb65e",
+      "record": "DPD-71WYH4",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bbe357a73d6ecd2ccdbe7336e5885b16d268333c3d2756b74858b702728fa9f0",
+      "record": "DPD-78737N",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ec763ab27080021eca71a1f34d16dafe15121cd483585e51e78f77cff2f24896",
+      "record": "DPD-78737N",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e6d2a6b65a1c2d323dbe54ead34f1627ff0b9182d4feb58fb86a1496bfdbfabd",
+      "record": "DPD-78737N",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:445beb9c8168d556b013efbef15835136e08324698b3f7c40431877050411b72",
+      "record": "DPD-86HJGF",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f981780abba7b8bd6e5a8cab5067e499254941a0eb95416b9699ef65da442ce5",
+      "record": "DPD-86HJGF",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9096ed085f47e93cc76275141992ed895707422b3a053bf6194dd4818ed5cd35",
+      "record": "DPD-8PE0G9",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a2b8457896611bd8d3bdbc2a94c900bed7a2ab2e4e7309adf04be50bb313df36",
+      "record": "DPD-8PE0G9",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:73e41a2d3251805dce148f31e27a3d75fbaaebc73e5da3ca7245982227ac84af",
+      "record": "DPD-CZBR1Q",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2412760e07619be479ce8d4b43ae853c1c25b870a04ac05ce840097caad166b5",
+      "record": "DPD-CZBR1Q",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:debc09f1a8b2ba8808c14b30da0effcb00fb680d40bdc4329f4f604aa6890b68",
+      "record": "DPD-CZBR1Q",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:989b68c4e959f0e79c20454b223194acde60491c96a44bc50e416e650dd529bb",
+      "record": "DPD-EG5TYT",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:eaf99aeec7970733e91459e8224baba5a719367cdff74068c1fd21cb71a7347a",
+      "record": "DPD-EG5TYT",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:683e796c538c061ccb440ec4e8eb6de3ec5c10cbac7f0f93e91535a1164106c0",
+      "record": "DPD-EG5TYT",
+      "revision": 34,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c7ca0c300d463209b01c7a9d380708ca71b89a7cf7b470ae87c82b6e66a82388",
+      "record": "DPD-EJ2Y7Z",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:78399de0590e9f881505f0bfdaad877ba982f63060da47b5ae713019bfbc8efb",
+      "record": "DPD-EJ2Y7Z",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0c5fd9d54ef2cf31c1ea1424fc7499e13901f46a2f4111f7be01b8f7b61abf5c",
+      "record": "DPD-FR0VZP",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2387035b9d620e05b0db97c7adf4e7d57cd9169640a145e8d0d4f7577277df34",
+      "record": "DPD-FR0VZP",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7101d38677fae7f386f6c41c9433a5e4357445caea8813394d974b1d5bae3a5b",
+      "record": "DPD-K2QMWQ",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:56213e0ef6a5a3bbaec8d1a701850c3722fb6a2a448f75689e485490f0c111f3",
+      "record": "DPD-K2QMWQ",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:26aba9b551f42c376b970209889f3ddfcc6b540b0f1a68e4d99d2a8965bf9404",
+      "record": "DPD-MQCJK4",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:af20b9a7b2c79d5ee043de461313908f04b2382f258efd5daa7517802bd4ab46",
+      "record": "DPD-MQCJK4",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:56c691e71bca6a8615d77ee86c57c88d0c7ca7c872c970abab67981710e46b8e",
+      "record": "DPD-MQCJK4",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a6a5ccfa8a7e936bc38b23a94deeb01942ba0a559617515b1630419452858d0c",
+      "record": "DPD-NGC2F6",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:34fbf2ef44ca318a8bb20b208c5357e19a94aeceffb81141ba08c1426232b48f",
+      "record": "DPD-NGC2F6",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:8e88eb53a5dd0898d0c75eb73c5b3816752291621d547f8cc3f156c74ddaa386",
+      "record": "DPD-Q4APMS",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:196c2842e304f1274cc4970f63c7a2e9fb68dc94d71e6671cc4f70ea627e67fc",
+      "record": "DPD-Q4APMS",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:77686c2391b71ef326ccc38c77490f92899cbdb145f0c86c14826a40b04745ac",
+      "record": "DPD-X6G7K3",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:871d2c85f50d58e1fff7209fe4050589e5d81c55437907ccc5f5798c602b91b8",
+      "record": "DPD-X6G7K3",
+      "revision": 30,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fa6cd9dcdef304c7f68b0e4da915f707f76d03e80dad7669d7827d4e184314ed",
+      "record": "DPD-X6G7K3",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:75e3489778c2eae10c2cf1cd6f5387439bab6aabec06b46a537e20f9c6fefc97",
+      "record": "DPD-XV7QBE",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e9969b9532e1ca2b8f17daf772417182bfeeceabb65f1f71e0f51d460bcd2b1b",
+      "record": "DPD-XV7QBE",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:74e42b11c3e3df8de58ee9b208d8ce4a77d492a00147294e52657c3fc69ab65a",
+      "record": "DPD-ZMQ523",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:26dd36347cb0efaa52af42dc2ed7d6345d3afee1b695547b8f404714b8bb2830",
+      "record": "DPD-ZMQ523",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:78f54af9c3056a4fd8316b654984d02e1fb0f0e18d58e99256ae46bdd0d1cc60",
+      "record": "DPD-ZMQVXY",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T13:02:54+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:77f78e6c3dc38337131b635ca57900c562665288e56f945e026961b96e094486",
+      "record": "DPD-ZT8YY7",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:8ee67af4d2a7506f7bfd337a425f4eec07fc46081cae0014b6911dd751c19d71",
+      "record": "DPD-ZT8YY7",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T12:39:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:589467218798f87388350abbda34112c9ca3f76ce01361d3d5c77cbd0fcc3b8b",
+      "record": "DPD-ZT8YY7",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:877bd677f6d9e4c0a7e138f2ca313b1a66e7cd1e8ba09f99c41e3eb58673e213",
+      "record": "FAM-Z69A94",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ca5b5fd80124ecfdb89bae30c28053a84da3ca705fc05ccbb2488668e229fe88",
+      "record": "INV-7VGMWY",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bbf5e97758cd752b02565d2319bb5cbbb9687f37edae3e70650960234eb2d7bb",
+      "record": "INV-F4X256",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fca443ee061476079e80c468ef12aaf87624bf6bbe19f1ed44658328824b6bb5",
+      "record": "INV-NC2ZCP",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4f544a3a8c264518d9bc6e04c4b4b38cce64e5cf40e7472b431443004bb3ce3c",
+      "record": "INV-NQZ17H",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cce272951abebcef13959cb1344395312e5f1303dd3fa2b8d1f9e8ec2bc68c31",
+      "record": "INV-VWK5HY",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fb91868305cbe8485c46ac904825a20cf2e0bbf23a636aa421fa44db67a1afe3",
+      "record": "INV-XG226D",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b34958f448f3a58eff019ae0e443929a1eb9b9041052facd2967ac4dbd69de9a",
+      "record": "INV-XWNDYE",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:757041bdc86fcdbc144468e599406a72ea69621115c9c8233009429dc4b1826a",
+      "record": "INV-Y2SXDZ",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T21:50:20+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bb724baec958a96e880a9bfdadf608b5d92fa8f2072c2d72f8aea720e2ed664d",
+      "record": "WKN-452VE7",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T19:35:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L33",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

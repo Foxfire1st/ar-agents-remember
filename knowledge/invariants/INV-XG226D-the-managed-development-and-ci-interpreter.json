@@ -6,14 +6,16 @@
     ],
     "justification": "The single-authority rule is realized in the installer and in the venv bootstrap, and a literal in either script would let one consumer lag a contract bump and select an interpreter the contract does not name."
   },
-  "applicability": "The two host scripts that start the managed CPython build from the canonical runtime contract, on every platform they support.",
+  "applicability": "All product environment producers: host worktree bootstrap, PNT sandbox Python preparation, Dagger candidate base, GitHub quality and publish workflows, manual release checks, and documented tool installs.",
   "conditions": [
-    "The contract file is sourced before the interpreter path is built, and it defines the exact release, the minor line and the package range.",
-    "The runtime checker validates the exact release and the base prefix of the interpreter the scripts select."
+    "scripts/python-runtime-contract.env declares AR_PYTHON_MINOR=3.14, AR_PYTHON_REQUIRES='>=3.14,<3.15', and AR_UV_VERSION=0.13 with no exact patch pin or source-build fields.",
+    "Host bootstrap installs and discovers CPython 3.14 through uv's managed-only commands and creates mcp/.venv through uv's minor symlink without taking system or PATH Python.",
+    "CI workflows install the newest 0.13 patch via commit-pinned astral-sh/setup-uv with AR_UV_VERSION.x and Dagger copies /uv from ghcr.io/astral-sh/uv:AR_UV_VERSION, keeping UV_PYTHON_INSTALL_DIR fixed across HOME changes and recording resolved uv version and image digest.",
+    "PNT sandbox refuses pre-migration product checkouts lacking --ensure or declaring AR_PYTHON_SOURCE_URL before any environment work."
   ],
   "exclusions": [
-    "The quality workflows and the Dagger image state the release separately, as literals; the checker's contract comparison is what ties those statements to the contract.",
-    "The package's supported range is a project-file declaration, not an interpreter selection."
+    "The CodeGraphContext provider image, the Dagger SDK's own interpreter, portable certification images, agent-eval probes of /usr/bin/python3, and Hermes's own environment.",
+    "The package's requires-python metadata, which is tracked by INV-7VGMWY."
   ],
   "id": "INV-XG226D",
   "origin": {
@@ -27,27 +29,20 @@
     "leaf": "260928-MIK-L91",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Both scripts that start the managed development and CI interpreter select its binary from the canonical runtime contract's minor value rather than a literal, and the runtime checker refuses an interpreter whose version or base prefix disagrees with that contract.",
+  "statement": "Every product environment (checkout, PNT, Dagger, CI workflows, manual release, and documented installs) uses uv-managed CPython 3.14; CI uses setup-uv with minor wildcard 0.13.x and Dagger copies /uv from ghcr.io/astral-sh/uv:0.13 and records resolved digest and uv version.",
   "supersedes": [],
+  "title": "Every product environment uses uv-managed Python 3.14 and uv 0.13 line",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L91",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T21:50:20+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

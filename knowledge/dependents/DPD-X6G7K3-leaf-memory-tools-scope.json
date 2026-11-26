@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
-    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
+    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
+    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
     "role": "curator",
-    "statement": "Audited docs/reference/mcp-tools.md in full against post-sync L56 tree 71957132 (base da65eb23): tool names, short fields, and record_landing / worktree_integrate descriptions remain accurate after _landing_request adopted master_document_base.",
-    "task": "261112-BUG-L56",
+    "statement": "docs/reference/mcp-tools.md remains accurate with respect to L33's tool_answer.py change on synced post-L54 base 8fe83ceb2352 (short_form is byte-identical and runtime_install answer fields are delegated to docs/tool-details.md), noting the pre-existing non-L33 outside-docs relative link at line 276.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 30,
+  "revision": 31,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -348,7 +348,7 @@
     },
     {
       "anchor": {
-        "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+        "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
         "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
         "locator": {
           "kind": "symbol",
@@ -423,14 +423,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:03:01+01:00",
+    "at": "2026-11-26T21:50:20+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L56",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

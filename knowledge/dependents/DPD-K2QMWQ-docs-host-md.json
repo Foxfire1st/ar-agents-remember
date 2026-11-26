@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "56daf6642402898075d164df4e26178499116006",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited docs/host.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): Paseo host lifecycle, plugin turn handling, and seat launch behavior remain accurate with L51 + Rule-21 confirmation; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "docs/host.md accurately adds post-upgrade step 4 describing runtime_install's stale-checkout listing and uv-managed Python 3.14 bootstrap recreation against install.py, checkout_environments.py, and scripts/bootstrap-mcp-venv.sh on synced base 65911c75 / candidate 56daf664.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -242,17 +242,37 @@
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
       },
       "kind": "anchor"
+    },
+    {
+      "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/runtime/install.py"
+    },
+    {
+      "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/checkout_environments.py"
+    },
+    {
+      "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+      "kind": "file",
+      "path": "scripts/bootstrap-mcp-venv.sh"
+    },
+    {
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-26T12:39:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

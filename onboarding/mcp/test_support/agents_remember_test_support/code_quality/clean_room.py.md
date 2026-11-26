@@ -12,7 +12,7 @@ This is the narrow CLI boundary for the pinned Dagger clean-Linux quality execut
 
 ### Logic
 
-`build_parser` defines the public arguments (now including the two required repository-identity/profile flags). `main` resolves paths, builds `CleanQualityRequest` with `repository_id` and `profile_reference`, runs the canonical executor, streams its transcript, and reports invalid environment or request state as a refusal.
+`build_parser` defines the public arguments (now including the two required repository-identity/profile flags). `main` resolves paths, builds `CleanQualityRequest` with `repository_id` and `profile_reference`, runs the canonical executor, writes any non-empty `result.dropped_selectors` variable names to stderr, streams its transcript, and reports invalid environment or request state as a refusal.
 
 ### Conventions
 
@@ -38,10 +38,14 @@ No configured external documentation is cited by this internal adapter.
 
 ### Repo-Internal References
 
+
 - The parser and main routine preserve the exact executor inputs and exit status. [1]
+
 
 ### Cross-Repo References
 
 No cross-repository contract is owned here.
 
+
 - The adapter is confined to one resolved code worktree and enclosure. [2]
+

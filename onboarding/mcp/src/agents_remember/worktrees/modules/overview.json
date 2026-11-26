@@ -706,7 +706,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:ae8bad3301bb799b5e21dfce4791e72aab81744957e079921db5887e9d34463f",
             "locator": {
               "end": 359,
@@ -1120,12 +1120,12 @@
       ]
     },
     "47": {
-      "note": "The prepared sandbox reobserves actual comparison source selection before manifest publication.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
-            "content": "sha256:3d594ab559ced4191d7a7a82941a00770ac4f0c1d9b4281bf747b47f97f7d20c",
+            "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
+            "content": "sha256:3776cfa692467bcba4e81d6ef1dba9466685cd468b37cf88b079a39a9c1832a7",
             "locator": {
               "kind": "symbol",
               "name": "_write_sandbox_manifest"
@@ -1874,7 +1874,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
             "locator": {
               "kind": "symbol",

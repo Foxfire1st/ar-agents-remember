@@ -3,65 +3,240 @@
   "proves": [
     {
       "anchor": {
-        "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
-        "content": "sha256:8dc43e1a3027e3e54e6c4d335297d3addf82f4b14d3e24198a16d6bb5e4ff7cc",
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:f2aea79da0a99908d8a2aa92609498d434f58f21b19bccc65b9de303968bff73",
         "locator": {
           "kind": "symbol",
-          "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+          "name": "test_workflows_install_uv_minor_line_and_record_resolved_version"
         }
       },
-      "facet": "The checker ends in the exact named refusal, with empty stdout, before it can import a standard-library module the interpreter lacks.",
-      "id": "PRF-2Y3QFT",
+      "facet": "Verifies both GitHub workflows install uv via astral-sh/setup-uv at AR_UV_VERSION.x and record the resolved uv version.",
+      "id": "PRF-0HGK13",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:bce2d887704302504bbf6cd270d245871ec4e06787fe3f89eb10c96a24c51cf3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_builtin_readline_is_reported"
+        }
+      },
+      "facet": "Verifies the checker reports built-in readline without AttributeError when readline has no __file__.",
+      "id": "PRF-258ZF6",
       "invariant": "INV-Y2SXDZ",
       "origin": {
-        "handoffEntry": "MIK-R91@v1-checker-names-unsupported-version",
-        "leaf": "260928-MIK-L91"
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:35c80751ac6ed30837a7d8c081f7897d40e562fbef4173ed7889589392416883",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_minor_link_outside_uv_directory_is_refused"
+        }
+      },
+      "facet": "Verifies a minor symlink located outside uv_python_directory() is refused.",
+      "id": "PRF-482H60",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:96924f8b6553f354c370d3d45f56ffebfd9c99f83f4cf8ba468898dafd30c4f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dagger_uv_minor_and_image_digest_helpers"
+        }
+      },
+      "facet": "Verifies Dagger derives the minor-line uv image ref ghcr.io/astral-sh/uv:<AR_UV_VERSION> and extracts its resolved sha256 image digest.",
+      "id": "PRF-ARXW3T",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:85bc3032dd275feedc0447e88e54c86edabd2e725c5ea227a30ef84461bb1396",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unsupported_minor_is_named_before_importing_new_stdlib_modules"
+        }
+      },
+      "facet": "Verifies the checker refuses a wrong Python minor version with expected minor, observed version, and executable before importing 3.14-only stdlib modules.",
+      "id": "PRF-ESZX28",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:6d8d4d98ef081a548bdb27a512fcaee6e6c9c3b60a35496b91d9b565af59cc8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_uv_version_and_image_digest_are_recorded_in_provenance"
+        }
+      },
+      "facet": "Verifies observed uvVersion and optional uvImageDigest are recorded in the emitted runtime proof provenance.",
+      "id": "PRF-J4WK7C",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:9fe22d5ed0a0b4198cbd909324b7f559035501d04c19177af104da8abce86059",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_different_patch_of_the_managed_minor_is_accepted"
+        }
+      },
+      "facet": "Verifies any patch release of the configured Python minor under uv's minor symlink is accepted.",
+      "id": "PRF-MC3V17",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+        "content": "sha256:2e27ee30f7c0c23bd944f6125401adaecdbb2eb1988acd5e55894d7b6407d9c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_patch_directory_is_refused_even_when_it_is_the_link_target"
+        }
+      },
+      "facet": "Verifies an environment whose pyvenv.cfg home names a patch directory instead of uv's minor symlink is refused.",
+      "id": "PRF-N6SZTG",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
       }
     }
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Runtime builder is fully cloned atomically published and reused",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
-            "content": "sha256:6113fc67bbd8947f6a8188eafbc25c401083dc984e717cc0452c7da81fb8a68b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_runtime_builder_is_fully_cloned_atomically_published_and_reused"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Existing foreign builder is refused and preserved",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
-            "content": "sha256:0cf273e554c9aa942ef912af9876e49b520b03bce8f6974a2bbcbb6a1b6ae3cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_existing_foreign_builder_is_refused_and_preserved"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
-      "note": "The negative admission witness proves the named refusal precedes any newer standard-library import.\n\nAnchor: `test_unsupported_version_is_named_before_importing_new_stdlib_modules`",
+      "note": "The negative admission witness proves the named minor refusal precedes any newer standard-library import.",
       "targets": [
         {
           "anchor": {
-            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
-            "content": "sha256:3fc3cb2ac06c35bff06ea04435e9e54f121f15a8ab5c1ff25b121f5eb29627dd",
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:85bc3032dd275feedc0447e88e54c86edabd2e725c5ea227a30ef84461bb1396",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_unsupported_minor_is_named_before_importing_new_stdlib_modules"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Built-in `readline`, alternate patches, patch-directory refusal, outside-uv-directory refusal, and provenance recording are verified against `scripts/check-python-runtime.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:bce2d887704302504bbf6cd270d245871ec4e06787fe3f89eb10c96a24c51cf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_builtin_readline_is_reported"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:9fe22d5ed0a0b4198cbd909324b7f559035501d04c19177af104da8abce86059",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_different_patch_of_the_managed_minor_is_accepted"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:2e27ee30f7c0c23bd944f6125401adaecdbb2eb1988acd5e55894d7b6407d9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_patch_directory_is_refused_even_when_it_is_the_link_target"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:35c80751ac6ed30837a7d8c081f7897d40e562fbef4173ed7889589392416883",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_minor_link_outside_uv_directory_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:6d8d4d98ef081a548bdb27a512fcaee6e6c9c3b60a35496b91d9b565af59cc8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_uv_version_and_image_digest_are_recorded_in_provenance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Workflow minor-line uv setup and Dagger minor-line image/digest helpers are verified against the tracked workflow and Dagger files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:f2aea79da0a99908d8a2aa92609498d434f58f21b19bccc65b9de303968bff73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workflows_install_uv_minor_line_and_record_resolved_version"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eed317acdc3304d07a452b728f453fdce53ca2a1",
+            "content": "sha256:96924f8b6553f354c370d3d45f56ffebfd9c99f83f4cf8ba468898dafd30c4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dagger_uv_minor_and_image_digest_helpers"
             }
           },
           "kind": "test"

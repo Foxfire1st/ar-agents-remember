@@ -252,6 +252,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Retained transport membership and byte limits come from frozen producer declarations. [46]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
 
 - `_leaf_landing_lock` rejudges a converted landed or landing-line memory pair and falls back to `leaf_cutover_refusal` only when neither side is converted. [52]

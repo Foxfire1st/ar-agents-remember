@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/install/checkout_environments.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+        "content": "sha256:31f420282aaca3d328a7282c20ab75451427fe5216a19525642304c3649b3a06",
+        "locator": {
+          "kind": "symbol",
+          "name": "inspect_checkout_environments"
+        }
+      },
+      "id": "RLZ-2ZD8A5",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Inventory enumerates every registered checkout in the configured product repository and reads its raw cfg without rebuilding it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`inspect_checkout_environments` reads `AR_PYTHON_MINOR`, enumerates NUL-delimited Git worktrees, and reports stale environments and errors without mutating checkouts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+            "content": "sha256:31f420282aaca3d328a7282c20ab75451427fe5216a19525642304c3649b3a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_checkout_environments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_is_stale_environment` checks only existing `mcp/.venv` directories against `read_venv_home` and `is_uv_minor_base`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+            "content": "sha256:c39dd35cb4a97119b631018a0dd2a429a58bb360cfe61e82d5de81a4a3c231e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_stale_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_migration_row` formats the shell-quoted per-checkout `scripts/bootstrap-mcp-venv.sh` command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+            "content": "sha256:07cae4d04273dc4a8f5385cab963b302808572ece1cd756b168c1e4320688379",
+            "locator": {
+              "kind": "symbol",
+              "name": "_migration_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

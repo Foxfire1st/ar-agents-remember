@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
-    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
+    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
+    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
     "role": "curator",
-    "statement": "Audited docs/concepts.md on 261112-BUG-L54 candidate 814fd2eb: report-folder, enclosure, closeout, and review concepts remain accurate after adding COLLECTED_REPORT_DIRECTORY, collected_report_ref, and is_collected_report_ref in worktrees/role_reports.py, with zero contradictions.",
-    "task": "261112-BUG-L54",
+    "statement": "docs/concepts.md remains accurate on synced post-L54 base 8fe83ceb2352 because mcp/pyproject.toml's comment update (version 3.0.8) and tool_answer.py's added checkoutEnvironments field do not alter the documented package commands or tool-answer overflow concepts.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -468,14 +468,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T14:04:00+01:00",
+    "at": "2026-11-26T21:50:20+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

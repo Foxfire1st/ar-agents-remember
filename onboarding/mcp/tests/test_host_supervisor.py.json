@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_host_supervisor.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cbb927538eefcdf61ef241586f6d0e1a88c87752",
+        "content": "sha256:ba70fe5170ddd5180ac94527585f9e228f54a22896f756f919d512ab3e156d39",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_pidfd_exit_invalidates_once_and_releases_the_subscription"
+        }
+      },
+      "facet": "Verifies the Linux pidfd exit subscription runs on the contract interpreter.",
+      "id": "PRF-ZKCHGB",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

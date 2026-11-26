@@ -1,0 +1,24 @@
+{
+  "path": ".github/workflows/publish-mcp-to-pypi.yml",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
+        "content": "sha256:53d370d2baadd9938fcebd61dc2793a1bc0999f5e1e5ffc3c889c7dbac1f7a32",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1S1T4K",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Publish build job resolves newest 0.13 patch via setup-uv version 0.13.x, records resolved uv-version and uv --version, and creates a managed 3.14 wheel smoke venv.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

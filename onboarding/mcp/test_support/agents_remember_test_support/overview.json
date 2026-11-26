@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
-            "content": "sha256:a6fdf020a130643ded458b7c7f1476a3750e8faedfe9301d241584f1451ac500",
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "content": "sha256:ac953c2640b7cbaf4311827febc888c55354aee72dfd2f0cb9e7b622ad66eca3",
             "locator": {
-              "end": 64,
+              "end": 161,
               "kind": "line_range",
-              "start": 50
+              "start": 158
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -208,12 +208,25 @@
         },
         {
           "anchor": {
-            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "content": "sha256:94c7c81c1baee3096c70b650f98c3f3d7832e2230adc4c1014f8aed8cf34399d",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
             "content": "sha256:0a43c8d5259c19788d88e03b08769ef39af3456bb44248728aab0fcd8e3e7dc0",
             "locator": {
-              "end": 226,
+              "end": 241,
               "kind": "line_range",
-              "start": 207
+              "start": 222
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -328,7 +341,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:276519340d6bbbbf2f426c48c03c834eca4031a6cd6a98290b364aac2ffc8de6",
             "locator": {
               "end": 72,
@@ -341,7 +354,7 @@
         },
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:c3566bb76d04bb29fb5df72925d693a3e7a0aaa01f9c4f0c1603935ac690ea1c",
             "locator": {
               "end": 88,
@@ -367,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
             "content": "sha256:04e6c1cfb80d069095215884792aee4145606659458cd0ac6627d63db7534797",
             "locator": {
-              "end": 224,
+              "end": 239,
               "kind": "line_range",
-              "start": 221
+              "start": 236
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },

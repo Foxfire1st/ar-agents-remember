@@ -12,21 +12,21 @@ The CCR-R14 run controller that consumes the exact trusted R12 host authority. T
 
 ### Logic
 
-- `FinalCodexHardFailure` (lines 91-111) is a typed infrastructure/parser failure carrying a `FinalCodexFailureRecord` plus bounded teardown evidence; it produces a hard-failure repetition result and never a pass.
-- `FinalCodexScenarioEvidence` (lines 114-120) is one complete fresh scenario repetition: full checkpoint catalog plus teardown facts.
-- `FinalCodexScenarioRunner` (lines 123-135) is the injection protocol: `run_once` executes the canonical rails exactly once against the admitted environment/snapshot with fresh state.
-- `FinalCodexRunSpec` (lines 138-154) freezes the compiled plan identity one two-repetition run certifies.
-- `FinalCodexEngineOptions` (lines 157-164) injects environ, inspector, clock, and nonce source; defaults are production.
-- `FinalCodexAttempt` (lines 167-177) is one live run bound to its frozen authority snapshot.
-- `FinalCodexExecutionEngine` (lines 180-601) is the run control:
-  - `admit` (lines 200-236) requires the exact candidate's certifying Gate-1..3 manifests to be green against the frozen plan (`require_gates_one_to_three_green`), derives two fresh repetition identities, reserves the attempt, and freezes the R12 authority (`_admit_authority`, lines 296-355: fresh admission via `admit_dagger_authority` or continuation reuse via `reuse_authority_for_continuation`, constructing `DaggerHostDeclaration` with `AUTHORITY_SCHEMA_VERSION` so the declaration schema version, manifest, and digest stay valid); on store refusal it releases the owner. Refusals before any scenario step include live authority-transition barriers, missing/malformed/provisioning-capable hosts, ambient/profile conflicts, an in-flight run, and the retry-disabled same-plan terminal run.
-  - `run` (lines 238-259) executes each fresh repetition exactly once (`_run_repetition`, lines 374-391) and releases the owner only after both slots publish; a `FinalCodexHardFailure` terminalizes the interrupted slot as a typed hard failure.
-  - `abort` (lines 261-292) publishes aborted results for every unpublished slot with teardown evidence, releases the exact owner, and never fabricates a pass.
-  - `_publish_catalog` (lines 393-448) builds rail results, compiles the certifying Gate-4 result manifest, derives the scenario failure from the red enforcing rail, and publishes the repetition.
-  - Draft/record construction (lines 497-601) binds candidate/plan identity, fresh repetition identity, environment binding, and the frozen runtime-authority binding copy from the snapshot - never selecting or provisioning.
+- `FinalCodexHardFailure` (lines 92-112) is a typed infrastructure/parser failure carrying a `FinalCodexFailureRecord` plus bounded teardown evidence; it produces a hard-failure repetition result and never a pass.
+- `FinalCodexScenarioEvidence` (lines 116-122) is one complete fresh scenario repetition: full checkpoint catalog plus teardown facts.
+- `FinalCodexScenarioRunner` (lines 124-136) is the injection protocol: `run_once` executes the canonical rails exactly once against the admitted environment/snapshot with fresh state.
+- `FinalCodexRunSpec` (lines 140-155) freezes the compiled plan identity one two-repetition run certifies.
+- `FinalCodexEngineOptions` (lines 159-166) injects environ, inspector, clock, and nonce source; defaults are production.
+- `FinalCodexAttempt` (lines 169-178) is one live run bound to its frozen authority snapshot and `dropped_selectors`.
+- `FinalCodexExecutionEngine` (lines 181-600) is the run control:
+  - `admit` (lines 201-237) requires the exact candidate's certifying Gate-1..3 manifests to be green against the frozen plan (`require_gates_one_to_three_green`), derives two fresh repetition identities, reserves the attempt, and freezes the R12 authority (`_admit_authority`, lines 297-354: fresh admission via `admit_dagger_authority` or continuation reuse via `reuse_authority_for_continuation`, constructing `DaggerHostDeclaration` with `AUTHORITY_SCHEMA_VERSION` so the declaration schema version, manifest, and digest stay valid and unpacking `(env, dropped_selectors)` from `authority_environment`); on store refusal it releases the owner. Refusals before any scenario step include live authority-transition barriers, missing/malformed/provisioning-capable hosts, ambient/profile conflicts, an in-flight run, and the retry-disabled same-plan terminal run.
+  - `run` (lines 239-260) executes each fresh repetition exactly once (`_run_repetition`, lines 373-390) and releases the owner only after both slots publish; a `FinalCodexHardFailure` terminalizes the interrupted slot as a typed hard failure.
+  - `abort` (lines 262-293) publishes aborted results for every unpublished slot with teardown evidence, releases the exact owner, and never fabricates a pass.
+  - `_publish_catalog` (lines 392-447) builds rail results, compiles the certifying Gate-4 result manifest, derives the scenario failure from the red enforcing rail, and publishes the repetition.
+  - Draft/record construction (lines 496-600) binds candidate/plan identity, fresh repetition identity, environment binding, and the frozen runtime-authority binding copy from the snapshot - never selecting or provisioning.
 - `FinalCodexRunOptions` (lines 604-610) freezes environment/scenario/plan versions.
-- `build_final_codex_run_spec` (lines 613-641) compiles the plan record and resolves the exact Gate-4 plan into the run spec.
-- `FinalCodexAdmissionRefused` (lines 644-649) wraps an R12 `DaggerRuntimeAuthorityError` as a typed `CertificationContractError`.
+- `build_final_codex_run_spec` (lines 612-641) compiles the plan record and resolves the exact Gate-4 plan into the run spec.
+- `FinalCodexAdmissionRefused` (lines 643-648) wraps an R12 `DaggerRuntimeAuthorityError` as a typed `CertificationContractError`.
 
 ### Conventions
 
@@ -49,11 +49,16 @@ None.
 
 No Domain Documentation source is configured for this memory root. CCR-R14@v3 requires every Dagger-backed certifying repetition to consume and bind the exact R12 host runner/store authority; the R12 authority contract is implemented by dagger_authority.py (CCR-R12). Task artifact paths are not repo-relative citations, so clauses are recorded as prose.
 
+
 - Certifying repetitions bind the frozen R12 host authority (using `AUTHORITY_SCHEMA_VERSION` for continuation declarations) and never select, copy, replace, or privately provision infrastructure. [1]
+
+
 
 ### Repo-Internal References
 
+
 - The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. [2]
+
 - Validate a complete terminal catalog and publish one immutable gate disposition. [3]
 
 - The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. [4]

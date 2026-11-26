@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:1ff9bce01dddda1c3f38b2917221ab9dea479b2b31b75488b80d75d47b593eab",
             "locator": {
-              "end": 638,
+              "end": 641,
               "kind": "line_range",
-              "start": 624
+              "start": 627
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
             "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
             "locator": {
               "end": 66,

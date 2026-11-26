@@ -3,14 +3,15 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The package's admitted range alone says nothing about what development and CI run; the contract pin alone says nothing about what a consumer may install; and neither refuses a wrong interpreter. Only together do they state and enforce one runtime."
+    "justification": "The package range, uv-managed environment producers, minor-link checker without invoking uv, and stale-checkout migration inventory together ensure every product environment runs on one upgradeable Python 3.14 minor line; no single member provides that whole boundary."
   },
-  "guarantee": "The product runs on Python 3.14 as one stated runtime: the built package admits every 3.14 release, the managed development and CI runtime follows one exact 3.14.8 contract, and the runtime checker refuses any other interpreter by name before it can import a newer standard-library module.",
+  "guarantee": "The product runs on uv-managed Python 3.14 as one stated runtime: package metadata admits >=3.14,<3.15, every product environment uses uv-managed CPython 3.14 and the uv 0.13 minor line with no source build or patch pin, the hook and checker verify the minor and unresolved uv minor symlink without running uv, and bootstrap plus runtime_install migrate and report stale registered checkouts.",
   "id": "FAM-Z69A94",
   "members": [
     "INV-XG226D",
     "INV-7VGMWY",
-    "INV-Y2SXDZ"
+    "INV-Y2SXDZ",
+    "INV-XWNDYE"
   ],
   "origin": {
     "handoff": {
@@ -20,28 +21,21 @@
     "leaf": "260928-MIK-L91",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "."
   ],
   "schema": "ar-family/v1",
   "title": "One Python runtime stated and enforced",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T21:50:20+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "confirmed": {
+    "codeTree": "1aa55902d490257cde6384aaedcf38ed4580162f",
+    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
+    "role": "curator",
+    "statement": "scripts/pnt_sandbox/README.md accurately documents the uv-managed Python contract pairing refusal and bootstrap-mcp-venv.sh --ensure create/reuse/replace/restore flow against synced operations.py, python-runtime-contract.env, and bootstrap-mcp-venv.sh on synced base 4bf4b66ed / candidate 1aa55902 (noting lines 185-190 and 278 describe sandbox_environment's eight variables and uv cache without separately naming Operations.__init__'s UV_PYTHON_INSTALL_DIR preservation).",
+    "task": "261112-BUG-L33",
+    "uncommitted": true
+  },
+  "document": "scripts/pnt_sandbox/README.md",
+  "id": "DPD-ZMQVXY",
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L33-phase-a-records-and-invariants"
+    },
+    "handoffEntry": "BUG-R33-dependent:scripts/pnt_sandbox/README.md",
+    "leaf": "261112-BUG-L33",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+      "kind": "file",
+      "path": "scripts/pnt_sandbox/operations.py"
+    },
+    {
+      "blob": "bb4b93181fb580f55d46574b8619b6f1f5d15903",
+      "kind": "file",
+      "path": "scripts/python-runtime-contract.env"
+    },
+    {
+      "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+      "kind": "file",
+      "path": "scripts/bootstrap-mcp-venv.sh"
+    }
+  ],
+  "writer": {
+    "at": "2026-11-26T13:02:54+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
+  }
+}

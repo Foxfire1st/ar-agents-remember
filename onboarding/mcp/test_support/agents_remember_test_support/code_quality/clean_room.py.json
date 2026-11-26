@@ -1,14 +1,33 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
+        "content": "sha256:e5e1fb227c3e94984cb8882cc99311edba354f0fb821b9683b6fa134a03fe357",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-7KS3XG",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The certification CLI exposes the omissions to the operator by name.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The parser and main routine preserve the exact executor inputs and exit status.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
-            "content": "sha256:957f7d208d245909602746c29e4aeb73d50b4058c07902ff05cacc3d5b24986e",
+            "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
+            "content": "sha256:e5e1fb227c3e94984cb8882cc99311edba354f0fb821b9683b6fa134a03fe357",
             "locator": {
               "kind": "symbol",
               "name": "main"
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+            "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
             "content": "sha256:2823ae22a4e1aad03fad6e50ba999f74199677d1570d0b23ee0190f4ceaf5a90",
             "locator": {
               "end": 42,
@@ -35,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
-            "content": "sha256:957f7d208d245909602746c29e4aeb73d50b4058c07902ff05cacc3d5b24986e",
+            "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
+            "content": "sha256:e5e1fb227c3e94984cb8882cc99311edba354f0fb821b9683b6fa134a03fe357",
             "locator": {
               "kind": "symbol",
               "name": "main"
@@ -46,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+            "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
             "content": "sha256:eb2b4add9af00b8f0704a2607f7f8416ca045399bc65bc4e9fb46e3bcb93338e",
             "locator": {
               "end": 42,

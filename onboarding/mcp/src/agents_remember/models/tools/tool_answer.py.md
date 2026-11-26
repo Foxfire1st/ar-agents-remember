@@ -7,7 +7,7 @@ explainer_control is attributed to L183 in the retained interim answer vocabular
 The retained `role_message` exception describes the normative cut/file policy for waited replies; it does not implement character cutting or full-text storage. Its 4000-token bound and common envelope/list shaping remain; overflow shaping retains the recorded-result location and ends with a cut hint. The composed unheld dispatcher calls the delivery helper when a filed identity exists, while the held-drain wait merges its result without that helper. This table therefore does not prove every waited reply is character-bounded and filed; the implementation gap remains Owner/Worker-owned rather than a narrowed requirement.
 
 - L112_FINAL_BOUNDS has one final row, runtime_install=600. No retained bound/comment advertises the retired dispatch tool.
-- RUNTIME_INSTALL_ANSWER_FIELDS keeps `host`, `runningServers`, `dashboard` and removedPartStores in the delivered installation answer, alongside report/recovery fields; the removed-store report obligation is not dropped during shaping.
+- RUNTIME_INSTALL_ANSWER_FIELDS keeps `host`, `runningServers`, `dashboard`, `checkoutEnvironments`, and `removedPartStores` in the delivered installation answer, alongside report/recovery fields; the removed-store report obligation is not dropped during shaping.
 - FRAMEWORK_ANSWER_KEYS holds the ordinary answer framework keys plus `buildCurrentness` and `warningCut`, and includes no agentNotifierBanner or supervisorBanner. The four stripped envelope keys and the ordinary short-form framework remain; session banners are not preservation exceptions.
 - A landing answer's `staleDocuments` notice survives an over-bound answer's short form: `short_form` keeps the notice's `count` and `state` and adds `read: {view: "dependent", staleOnly: true}`, so the caller still learns the debt and where to read it. The notice's document lists are not kept.
 - The short form's fixed part keeps an answer's `buildCurrentness` whole beside `ok` and `code`, so an over-bound answer from a stale installed server still carries the build reading.
@@ -15,7 +15,10 @@ The retained `role_message` exception describes the normative cut/file policy fo
 - The fixed short part carries `ok`, a checked `code` and any build-currentness reading. [11]
 
 
+
 - The installation answer projection includes the running-server inventory and dashboard part. [12]
+
+
 
 
 - Framework keys admit buildCurrentness and warningCut on every answer row. [13]

@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
-        "content": "sha256:4113f8979ab19d317df14fd31e30783834ec0622e52b3b0e01af1171c1ddd3d8",
+        "blob": "c2c5e0c8a66db17838d36103d6687e8ea68e9fc6",
+        "content": "sha256:fabb57af9c0c75618ddd87525c11a18d182c5518bab1b31c0af8a48f04946fb2",
         "locator": {
-          "end": 9,
+          "end": 12,
           "kind": "line_range",
           "start": 3
         }
@@ -23,12 +23,12 @@
   ],
   "references": {
     "1": {
-      "note": "The example declares `uvx` with `--refresh-package agents-remember-mcp`, the package command `agents-remember-mcp@latest` and a user-config `--config` path passed to that command.",
+      "note": "The example declares `uvx` with `--managed-python`, `--python 3.14`, `--refresh-package agents-remember-mcp`, the package command `agents-remember-mcp@latest`, and a user-config `--config` path passed to that command.",
       "targets": [
         {
           "anchor": {
-            "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
-            "content": "sha256:9658e928f6bca748ad6a7fcf2bcca1c0a89d8e59156031b22489aec568b27951",
+            "blob": "c2c5e0c8a66db17838d36103d6687e8ea68e9fc6",
+            "content": "sha256:650c971c83b1ec25c5e70e5ce2e56ab33aa96cff0508b157177c285508a5fa5e",
             "locator": {
               "kind": "file"
             }

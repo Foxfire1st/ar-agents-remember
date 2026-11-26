@@ -24,7 +24,7 @@ terminalization; the published quality manifest advanced to schema 3.1 with `run
 
 `CleanQualityRequest` carries the code worktree, worktree group, `repository_id`,
 `profile_reference`, mode, diff base, optional memory cap, and optional attestation.
-`CleanQualityOutcome` wraps the process result with governed evidence and the published manifest.
+`CleanQualityOutcome` wraps the process result with governed evidence, the published manifest, and `dropped_selectors` (names only of stripped overriding ambient selectors from the admitted Dagger runner environment).
 
 `run_clean_quality(request, *, authority=...)` validates mode and Windows-interop, admits the host-level
 shared Dagger authority when none is passed (registering one exact live owner), prepares the sandbox
@@ -98,12 +98,16 @@ None.
 
 ### Docs References
 
+
 - Only the admitted executable is resolved for the profile adapter. [1]
+
 - An unavailable admitted executor produces a typed prerequisite failure. [2]
 
 ### Repo-Internal References
 
+
 - The executor admits authority, materializes the candidate and executes the profile adapter. [3]
+
 - Exported decoder bytes determine the pipeline result and whether certifying evidence exists. [4]
 - Publish one immutable evidence generation, then atomically point readers at it. [5]
 - Export inventory validation checks the declared report members before publication. [6]
@@ -116,7 +120,9 @@ None.
 
 The external execution boundary is the profile-declared Dagger runtime; its declaration is resolved through the native platform boundary. This file does not define a separate cross-repository protocol.
 
+
 - The exact admitted executor and frozen authority determine the launch command. [11]
+
 
 ## 260821-DAGQC-L2 And 260824-PDLS Historical Notes
 

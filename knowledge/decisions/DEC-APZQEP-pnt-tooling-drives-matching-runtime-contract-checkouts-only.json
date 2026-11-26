@@ -1,0 +1,73 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Explicitly rejected a dual legacy compatibility branch in PNT operations and constrains how future PNT runs pair with historical product checkouts."
+  },
+  "alternatives": [
+    {
+      "option": "Refuse pre-migration product checkouts in checkout_refusal before any environment work and direct the caller to drive historical checkouts with the PNT tooling of their own revision.",
+      "reason": "Architect ruling on L33-F03 (2026-11-24T17:19:44Z) enforces one uv-managed runtime route without carrying a dual legacy AR_PYTHON_VERSION branch.",
+      "status": "chosen"
+    },
+    {
+      "option": "Maintain a legacy compatibility branch in current PNT tooling to drive pre-migration source-built checkouts.",
+      "reason": "Preserves the dual runtime route D938/D945/D950 set out to remove; historical targets keep their own recorded PNT tooling.",
+      "reconsider_when": "The developer explicitly overrules L33-F03 and requires current PNT tooling to drive pre-L33 checkouts directly.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "scripts/pnt_sandbox/operations.py::checkout_refusal refuses checkouts whose contract declares AR_PYTHON_SOURCE_URL or whose bootstrap lacks --ensure before creating sandbox state."
+  ],
+  "context": "PNT sandbox prepare_python now invokes scripts/bootstrap-mcp-venv.sh --ensure on target product checkouts, which pre-migration checkouts (declaring AR_PYTHON_SOURCE_URL or lacking --ensure) reject.",
+  "decider": "Architect ruling on L33-F03 (2026-11-24T17:19:44Z)",
+  "id": "DEC-APZQEP",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "49234c33fa9fdc5f4f700663e7836715b78ab23c",
+        "content": "sha256:09c5504d66cbb619dbe894c9dbb16fe27a9766af6f19e4ced45d588c7b16b134",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_refusal"
+        },
+        "path": "scripts/pnt_sandbox/operations.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-XG226D"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:scripts/pnt_sandbox"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L33-phase-a-records-and-invariants"
+    },
+    "handoffEntry": "dec:pnt-matching-runtime-contract",
+    "leaf": "261112-BUG-L33",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T19:35:39+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
+  }
+}

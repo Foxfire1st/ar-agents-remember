@@ -12,23 +12,23 @@ The CCR-R13 run controller that consumes the exact trusted R12 host authority. T
 
 ### Logic
 
-- `DiagnosticHardFailure` (lines 91-108) is a typed infrastructure/parser failure carrying a `DiagnosticFailureRecord` and bounded teardown evidence; it produces a hard-failure result and never a pass.
-- `ScenarioReplicationEvidence` (lines 111-116) is one complete scenario replication: full checkpoint catalog plus teardown facts.
-- `ScenarioReplicationRunner` (lines 119-130) is the injection protocol: `run_once` executes the canonical rails once against the admitted environment/snapshot.
-- `DiagnosticRunSpec` (lines 133-150) freezes the compiled plan identity one attempt replicates (candidate, registry, certifying/diagnostic plans, gate plan, plan record, environment identity, profile, scenario gate 4, plan version).
-- `DiagnosticEngineOptions` (lines 153-161) injects environ, inspector, clock, nonce source, and an optional telemetry sink. No telemetry callback is installed by default.
-- `DiagnosticAttempt` (lines 164-174) is one live attempt bound to its frozen authority snapshot.
-- `DiagnosticExecutionEngine` (lines 177-564) is the run control:
-  - `admit` (lines 198-227) requires the exact candidate's certifying Gate 1-3 manifests to be green and complete (`_require_gates_one_to_three_green`, lines 630-663: exact (1,2,3) gate tuple, exact candidate binding, certifying altitude, green disposition), reserves the next attempt with an R16 diagnostic nonce, and freezes the R12 authority (`_admit_authority`, lines 272-330). Fresh admission goes through `admit_dagger_authority`; continuation reuses a frozen snapshot via `reuse_authority_for_continuation` and constructs `DaggerHostDeclaration` with `AUTHORITY_SCHEMA_VERSION` so the declaration schema version, manifest, and digest stay valid. Refusals before any scenario step include a live authority-transition barrier, missing/malformed/provisioning-capable host declarations, ambient or profile conflicts, and an already-live diagnostic attempt. If the store refuses reservation/mark-running, the exact owner is released (`release_dagger_authority`).
-  - `run` (lines 229-251) executes at most one replication (`_require_live_attempt`, lines 332-345 refusing a second replication or abort on a terminal attempt) and terminalizes pass/fail from the complete diagnostic-altitude manifest (`_terminalize_catalog`, lines 349-402: build_rail_result per observation, compile_gate_result_manifest at diagnostic altitude, derive the scenario failure from the red enforcing rail, build teardown and draft, publish) or terminalizes a typed hard failure (`_terminalize_hard_failure`, lines 404-421).
-  - `abort` (lines 253-268) terminalizes an interrupted attempt with teardown evidence, released owner, and no pass.
-  - `_publish` (lines 423-431) publishes the terminal through the store and releases the exact diagnostic owner.
-  - Draft/record construction (lines 435-517) binds the attempt reservation identity, environment binding, and runtime-authority binding copies from the frozen snapshot (never selecting or provisioning), then renders the closed result payload.
-  - Telemetry/nonce helpers (lines 521-564) derive the diagnostic nonce from candidate + plan + attempt number + entropy. When `on_telemetry` is supplied they compile R16 started/terminal events and call that sink; with no sink they emit nothing. Durable telemetry storage is not constructed by this module.
+- `DiagnosticHardFailure` (lines 92-109) is a typed infrastructure/parser failure carrying a `DiagnosticFailureRecord` and bounded teardown evidence; it produces a hard-failure result and never a pass.
+- `ScenarioReplicationEvidence` (lines 113-118) is one complete scenario replication: full checkpoint catalog plus teardown facts.
+- `ScenarioReplicationRunner` (lines 120-131) is the injection protocol: `run_once` executes the canonical rails once against the admitted environment/snapshot.
+- `DiagnosticRunSpec` (lines 135-151) freezes the compiled plan identity one attempt replicates (candidate, registry, certifying/diagnostic plans, gate plan, plan record, environment identity, profile, scenario gate 4, plan version).
+- `DiagnosticEngineOptions` (lines 155-163) injects environ, inspector, clock, nonce source, and an optional telemetry sink. No telemetry callback is installed by default.
+- `DiagnosticAttempt` (lines 166-175) is one live attempt bound to its frozen authority snapshot and `dropped_selectors`.
+- `DiagnosticExecutionEngine` (lines 178-564) is the run control:
+  - `admit` (lines 199-228) requires the exact candidate's certifying Gate 1-3 manifests to be green and complete (`_require_gates_one_to_three_green`, lines 629-662: exact (1,2,3) gate tuple, exact candidate binding, certifying altitude, green disposition), reserves the next attempt with an R16 diagnostic nonce, and freezes the R12 authority (`_admit_authority`, lines 273-329, unpacking `(env, dropped_selectors)` from `authority_environment`). Fresh admission goes through `admit_dagger_authority`; continuation reuses a frozen snapshot via `reuse_authority_for_continuation` and constructs `DaggerHostDeclaration` with `AUTHORITY_SCHEMA_VERSION` so the declaration schema version, manifest, and digest stay valid. Refusals before any scenario step include a live authority-transition barrier, missing/malformed/provisioning-capable host declarations, ambient or profile conflicts, and an already-live diagnostic attempt. If the store refuses reservation/mark-running, the exact owner is released (`release_dagger_authority`).
+  - `run` (lines 230-252) executes at most one replication (`_require_live_attempt`, lines 331-345 refusing a second replication or abort on a terminal attempt) and terminalizes pass/fail from the complete diagnostic-altitude manifest (`_terminalize_catalog`, lines 348-401: build_rail_result per observation, compile_gate_result_manifest at diagnostic altitude, derive the scenario failure from the red enforcing rail, build teardown and draft, publish) or terminalizes a typed hard failure (`_terminalize_hard_failure`, lines 403-420).
+  - `abort` (lines 254-269) terminalizes an interrupted attempt with teardown evidence, released owner, and no pass.
+  - `_publish` (lines 422-431) publishes the terminal through the store and releases the exact diagnostic owner.
+  - Draft/record construction (lines 434-517) binds the attempt reservation identity, environment binding, and runtime-authority binding copies from the frozen snapshot (never selecting or provisioning), then renders the closed result payload.
+  - Telemetry/nonce helpers (lines 520-564) derive the diagnostic nonce from candidate + plan + attempt number + entropy. When `on_telemetry` is supplied they compile R16 started/terminal events and call that sink; with no sink they emit nothing. Durable telemetry storage is not constructed by this module.
 - `DiagnosticRunOptions` (lines 567-573) freezes scenario options (environment identity, plan version, gate).
-- `build_diagnostic_run_spec` (lines 576-618) compiles the diagnostic plan and freezes the `DiagnosticPlanRecord` plus the `DiagnosticRunSpec` for one scenario gate.
-- `require_gates_one_to_three_green` (lines 621-627) is the public wrapper of the gate precondition check.
-- `DiagnosticAdmissionRefused` (lines 666-671) wraps an R12 `DaggerRuntimeAuthorityError` as a `CertificationContractError` carrying its findings.
+- `build_diagnostic_run_spec` (lines 575-618) compiles the diagnostic plan and freezes the `DiagnosticPlanRecord` plus the `DiagnosticRunSpec` for one scenario gate.
+- `require_gates_one_to_three_green` (lines 620-626) is the public wrapper of the gate precondition check.
+- `DiagnosticAdmissionRefused` (lines 665-670) wraps an R12 `DaggerRuntimeAuthorityError` as a `CertificationContractError` carrying its findings.
 
 ### Conventions
 
@@ -53,11 +53,18 @@ None.
 
 No Domain Documentation source is configured for this memory root. CCR-R13@v2 (frozen digest f0387b1627c5e8f48073b55d40dc362065e46943c5688f0f863fddb480770d3a) requires every Dagger-backed diagnostic route to consume and bind the exact R12v4 host runner/store authority; the R12 authority contract is implemented by dagger_authority.py (CCR-R12@v4). Task artifact paths are not repo-relative citations, so clauses are recorded as prose.
 
+
 - Diagnostics bind the frozen R12 host authority (using `AUTHORITY_SCHEMA_VERSION` for continuation declarations) and never select, copy, replace, or privately provision infrastructure. [1]
+
+
 
 ### Repo-Internal References
 
+
+
 - The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. [2]
+
+
 - Validate a complete terminal catalog and publish one immutable gate disposition. [3]
 - The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. [4]
 - The durable diagnostic manifest store owns reservation, running, publish, and abandon. [5]

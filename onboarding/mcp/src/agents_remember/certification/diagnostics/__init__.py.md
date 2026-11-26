@@ -42,7 +42,11 @@ The approved CCR-R13@v2 requirement packet (requirements/CCR-R13-v2-non-certifyi
 - Diagnostic-altitude plan projection from the canonical R11 scenario rails. [3]
 - Optional-lane readiness projection (not-requested-optional, running, newest-terminal blocking). [4]
 - Durable isolated candidate manifest store with CAS publication. [5]
+
+
 - The R12-run-controlled executor consumes these contracts through the trusted authority launcher. [6]
+
+
 - The outer certification facade re-exports the same diagnostic surface. [7]
 
 ### Cross-Repo References
