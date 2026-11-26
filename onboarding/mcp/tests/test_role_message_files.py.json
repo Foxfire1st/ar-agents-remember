@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Boundary settings and reload assertions separate the bounded wake text from the file payload.\n\nAnchor: `MessageLimitTests`",
+      "note": "Boundary settings and reload assertions separate the bounded wake text from the file payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
-            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:b6986708450be49bdb2a53d40d23960c8ae1354adefb3614486dc950b4c93418",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MessageLimitTests"
             }
           },
           "kind": "test"
@@ -18,14 +19,15 @@
       ]
     },
     "2": {
-      "note": "Message fixtures inspect stored payloads, pointers, reply files and workspace links.\n\nAnchor: `MessageFileTests`",
+      "note": "Message fixtures inspect stored payloads, pointers, reply files and workspace links.",
       "targets": [
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
-            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:a5fa3bee4820f90595c9805ba6786d4d2c25936a97efabae91d6a141a20b8155",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MessageFileTests"
             }
           },
           "kind": "test"
@@ -37,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
-            "content": "sha256:caae0475b3c9189baf871c50e95d79bd9b5ba544e6269a198933f2190cc25b93",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:8264855c5909f59c3b489c04ef9631d712fea65ea7c6f92f0bf010cd1eb97d64",
             "locator": {
               "kind": "symbol",
               "name": "TransactionTests"
@@ -48,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
             "content": "sha256:303f44eb9c69744a4356a19a5d646a5b93def7afb102d5247a4d0fe584472977",
             "locator": {
               "kind": "symbol",
@@ -60,14 +62,26 @@
       ]
     },
     "4": {
-      "note": "Successor guidance and strict refusal fields stay separate from automatic retargeting.\n\nAnchor: `SuccessorAndReturnTests` `RegisteredRefusalTests`",
+      "note": "Successor guidance and strict refusal fields stay separate from automatic retargeting.",
       "targets": [
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
-            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:827822cd540f77b406c509dea1072ef35a2cf253bbb50ab5691f7eaf9e2f1725",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SuccessorAndReturnTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:4f8fc1334c4c07b50c374016d92b9fa06eedd32898f095d54a58875ea0c69795",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredRefusalTests"
             }
           },
           "kind": "test"
@@ -79,12 +93,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
-            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:8304337c3d46cedac3dbe7682b7e7ea3d95ab00e9cf7cf17d74f9faa7d6b20f3",
             "locator": {
-              "end": 670,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -96,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
-            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "content": "sha256:8304337c3d46cedac3dbe7682b7e7ea3d95ab00e9cf7cf17d74f9faa7d6b20f3",
             "locator": {
               "kind": "file"
             }
