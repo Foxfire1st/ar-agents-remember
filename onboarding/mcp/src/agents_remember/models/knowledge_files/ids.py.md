@@ -11,8 +11,7 @@ ID is `<KIND>-<body>` in Crockford base32. New IDs are **minted at random** (6 c
 what makes them safe across parallel leaves that never coordinate; IDs of records and entries
 exported from the legacy knowledge database are **derived** (8 characters) from legacy identity so
 every line that converts the same claim computes the same ID (MIK-R24 rules 4 and 6). This module
-also holds the one table of record kinds and their prefixes, the two entry kinds, and (since
-MIK-R07) the history row kind.
+also holds the one table of record kinds and their prefixes, the two entry kinds, the history row kind, and the dependent deferral kind (`deferral`→`DFR`).
 
 ## Code Commentary
 
@@ -22,14 +21,14 @@ MIK-R07) the history row kind.
   `incident`→`INC`, `assumption`→`ASM`, `limitation`→`LIM`, `failure_mode`→`FLM`, `scenario`→`SCN`,
   `diagnostic`→`DGN`, `term`→`TRM`, `weakness`→`WKN`, `dependent`→`DPD`); `ENTRY_PREFIXES` maps
   `realization`→`RLZ` and `proof`→`PRF`;
-  `ROW_PREFIXES` maps the one row kind `history_row`→`ROW` (MIK-R07 rule 1; the `ROW-` spelling was
-  chosen by the L07 worker, the packet names no prefix).
+  `ROW_PREFIXES` maps the one row kind `history_row`→`ROW`; `DEFERRAL_PREFIXES` maps `DeferralKind`
+  (`deferral`→`DFR`).
 - `id_pattern(*prefixes)` builds the anchored regex: prefix, `-`, six Crockford characters, optionally
   two more. `RECORD_ID_PATTERN`, `REALIZATION_ID_PATTERN`, `PROOF_ID_PATTERN`, `ENTRY_ID_PATTERN`
-  (either entry prefix) and `ROW_ID_PATTERN` are built from it and used by `shapes.py`,
-  `sidecars.py`, `documents.py` and `history.py`.
-- `mint_id(kind)` accepts a record, entry or row kind and draws six characters with
-  `secrets.choice`. An unknown kind raises `ValueError`. Row IDs are minted, never derived:
+  (either entry prefix), `ROW_ID_PATTERN`, and `DEFERRAL_ID_PATTERN` are built from it and used by `shapes.py`,
+  `sidecars.py`, `documents.py`, `records.py` and `history.py`.
+- `mint_id(kind)` accepts a record, entry, row or deferral kind (`_ALL_PREFIXES`) and draws six characters with
+  `secrets.choice`. An unknown kind raises `ValueError`. Row and deferral IDs are minted, never derived:
   `derived_id` still takes only record and entry kinds.
 - `crockford_base32(data, length)` encodes the leading `length*5` bits most-significant first;
   `derived_id(kind, material)` takes SHA-256 of the material and keeps 8 characters (40 bits).
@@ -78,9 +77,12 @@ The patterns built here are the only ID spellings the rest of the package accept
 
 - The kind tables, declared once. [1]
 
+
 - The entry and row ID patterns history rows use. [2]
 - The ID regex: six characters, optionally eight. [3]
+
 - Random minting, for record, entry and row kinds. [4]
+
 - SHA-256, first 40 bits, most significant first. [5]
 - The pinned realization material and its new-form locator rule. [6]
 - Golden values pin the derivation. [7]

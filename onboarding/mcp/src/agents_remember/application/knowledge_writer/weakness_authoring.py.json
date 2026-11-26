@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
-            "content": "sha256:92fc2c96174e7d68f805566a59bb0d0f9eb971d8c02bb092e10532b5078f014a",
+            "blob": "0dcb19a85407326cce0a0c572b16e2e278a5665c",
+            "content": "sha256:489800b4933f3a91f5860e2255f6f194fcc0de9232281aa4c52880a4bc4128d8",
             "locator": {
-              "end": 453,
+              "end": 464,
               "kind": "line_range",
-              "start": 414
+              "start": 425
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
           },
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
+            "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
             "content": "sha256:5cd2080047a44536e4d5ce6d980404ecc045113e6eecc0c272913b7d5267b2a3",
             "locator": {
               "kind": "symbol",
@@ -118,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
+            "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
             "content": "sha256:efbc8e3e0ffc23c65dc4b951d64c09036a3b2ce0d86e8e8c16f605d39b029901",
             "locator": {
               "kind": "symbol",

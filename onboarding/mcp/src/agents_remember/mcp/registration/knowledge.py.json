@@ -496,10 +496,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
-            "content": "sha256:e5464ff0a8d01c017910a5500c6559110c4eaf511038b4ddd254f271b0df809f",
+            "blob": "ed6084cdd2c0aa929393cb96209640906339a761",
+            "content": "sha256:5e51f1856d20a49f6767ccc99dc8215c45e15b05919f1f30d7a3ae6bbfb8d376",
             "locator": {
-              "end": 144,
+              "end": 145,
               "kind": "line_range",
               "start": 79
             },
@@ -509,12 +509,12 @@
         },
         {
           "anchor": {
-            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "blob": "ed6084cdd2c0aa929393cb96209640906339a761",
             "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
-              "end": 177,
+              "end": 178,
               "kind": "line_range",
-              "start": 147
+              "start": 148
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
@@ -522,12 +522,12 @@
         },
         {
           "anchor": {
-            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "blob": "ed6084cdd2c0aa929393cb96209640906339a761",
             "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
-              "end": 212,
+              "end": 213,
               "kind": "line_range",
-              "start": 180
+              "start": 181
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
@@ -535,8 +535,8 @@
         },
         {
           "anchor": {
-            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
-            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
+            "blob": "ed6084cdd2c0aa929393cb96209640906339a761",
+            "content": "sha256:dc3eaa6406baabc7496e477856a589fa49a3abc139ac4f64d62499e5e6aa2d1c",
             "locator": {
               "kind": "file"
             },

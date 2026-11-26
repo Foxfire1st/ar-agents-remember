@@ -299,7 +299,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator. [359]
 
-- Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings. [316]
+
 
 - A converted sidecar change counts only when its references move beyond mechanical anchor fields; `realizes`/`proves`-only changes and unreadable candidate sidecars do not count. [367]
 
@@ -536,11 +536,11 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The decision section's reorder refusal. [306]
 
-- Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [46]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The interactive catalog names missing authority without eligibility. [47]
 
-- Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` [285]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Interactive catalog names missing authority without eligibility. [286]
 
@@ -652,7 +652,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
-- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]
+
 
 
 
@@ -685,3 +685,8 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]
+
+- Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication. [46]
+- Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication. [285]
+- Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings. [316]
+- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]

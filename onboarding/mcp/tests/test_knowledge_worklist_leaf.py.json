@@ -441,16 +441,16 @@
       ]
     },
     "40": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.\n\nAnchor: source",
+      "note": "The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
             "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
             "locator": {
-              "end": 430,
+              "end": 432,
               "kind": "line_range",
-              "start": 430
+              "start": 432
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -458,12 +458,12 @@
         },
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
             "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
             "locator": {
-              "end": 2911,
+              "end": 2934,
               "kind": "line_range",
-              "start": 2911
+              "start": 2934
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

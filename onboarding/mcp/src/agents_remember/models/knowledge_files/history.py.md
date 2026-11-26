@@ -67,9 +67,9 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
   section below.
 - `MembershipRow` (MIK-R53, `membership:<INV>`): `no_family`, invariant candidate revision and
   unique `considered` family IDs (possibly empty); separate from invariant/family judgment rows.
-- `RecordRow` (MIK-R53): decision, incident, assumption, limitation, failure-mode, scenario, diagnostic,
-  term, weakness or dependent ID; candidate revision, `changed`/`retired`/`no_impact`, optional `because`. `changed` needs
-  an effect, `retired` needs `retire`, and `no_impact` carries no effect.
+- `RecordRow` (MIK-R53, extended with DPD-only deferral dispositions): decision, incident, assumption, limitation, failure-mode, scenario, diagnostic,
+  term, weakness or dependent ID; candidate revision, `changed`/`retired`/`no_impact` (plus `DEFERRAL_RECORD_DISPOSITIONS`: `deferred`, `re_deferred`, `deferral_lifted` for `DPD-` subjects only, carrying no `effect`), optional `because`, and optional unique `deferralIds` (`DFR-` IDs, `DPD-` subjects only). `changed` needs
+  an effect, `retired` needs `retire`, and `no_impact` / deferral dispositions carry no effect.
 - `HISTORY_ROW_KINDS` now has eight kinds: `invariant`, `family`, `onboarding_trace`, `planned`,
   `unexplained`, `reconsideration`, `membership`, `record`. `row_kind_for_subject`/`parse_row` dispatch
   by disjoint subject form and refuse unclaimed subjects; tests compare a set, not landing order.
@@ -281,8 +281,11 @@ repository layout it declares, and calls no sibling repository or external servi
 No cross-repo boundary is crossed by this file.
 
 - The onboarding row: `updated`/`no_impact`, unique source paths, required updated binding and moved markers. [21]
+
 - Eight registered kinds and subject dispatch, including MIK-R53 membership and decision/facet record rows. [22]
+
 - Current source delta inspected statically: Replace stale single-disposition/six-kind model and captions, add source-blob shape, membership/record models and per-winning-file closure provenance, while preserving frozen history, covers and FamilyRow compatibility. [39]
+
 
 ## Current account — the reconsideration row's re-point
 

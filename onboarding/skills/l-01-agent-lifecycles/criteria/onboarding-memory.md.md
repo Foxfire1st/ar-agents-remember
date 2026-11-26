@@ -8,6 +8,8 @@
 
 Standing and exploratory memory-review criteria for an adversarial non-author second reader. The catalog distinguishes a baseline review from sealed fix-verification and binds converted-memory fact-check/admission obligations through their requirements.
 
+Defines `OM-6 — Dependent-document confirmations and lifted deferrals`, requiring a signed whole-document Reviewer verdict with base and candidate `knowledge_read(view="dependent", staleOnly=true)` receipts for every flagged pre-base-stale confirmation and every `deferral_lifted` row.
+
 ## Code Commentary
 
 OM-1 checks every current body claim against actual shipped code, including removed or renamed behavior, and checks that historical accounts sit in history rows rather than cards. OM-2 is an independent statement-by-statement fact-check of every changed card, sidecar and record against final code, every history disposition/effect/reason against the diff, and important omissions. A blocking finding is repaired before closeout. The reviewer must have written none of those cards or records; read-only helpers do not supply that independent role acceptance.
@@ -25,6 +27,7 @@ OM-1 also checks affected paired notes and sibling cards found by a bounded sear
 
 - Plausible admission is judged under OM-4; baseline exploration and the promotion/fix-verification boundaries come from the shared catalog rules. [3]
 
+
 ## Canonical Source Ownership
 
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
@@ -38,5 +41,6 @@ OM-5 asks the reviewer to judge a `repoint` as a judgment: the new target is the
 - Current body claims are checked against shipped code under OM-1. [1]
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
 
 - OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and keep true statements about the current state. The independent second reader still checks statements, history meaning and important omissions before closeout. [6]

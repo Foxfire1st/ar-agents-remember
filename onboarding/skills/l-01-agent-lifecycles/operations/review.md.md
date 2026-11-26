@@ -16,6 +16,8 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 
 Independent review that runs only when requested: one pass/block recommendation per requirement with coverage, findings and checks, handed directly to the Worker — and code PASS directly to the Curator — with the memory check kept as a separate sealed lane.
 
+Under the reviewer-scoped `Boundaries` block, memory verdicts must sign every `OM-6` flagged confirmation and `deferral_lifted` row with base and candidate `staleOnly=true` receipts and block if unverified or confirming a deferred document without an edit.
+
 ## Code Commentary
 
 A baseline covers the complete candidate diff; fix-verification checks only the sealed outstanding IDs. Ordinary rounds follow the live settings limit; beyond-limit work requires recorded Architect-or-developer words, which the Manager records. An Architect-only section lets the Architect commission any number of advisory Investigators, started without a task reference, each given the Reviewer's material and its own folder and reporting only to the Architect; the Architect sends the Reviewer one questions file of the findings it did not make, which the Reviewer rules on like a Curator code finding, and the Reviewer's verdict remains the grade. The Reviewer opens each ordinary leaf round itself, records its own verdict, and never edits, accepts, starts a role or publishes. After code and memory PASS and settlement of any listed final checks, it tells the Manager once that the leaf is ready for closeout. It supplies the passed freeze and both verdicts. If the requirement lists final checks, it includes the original final-check report and any successful targeted repair results. Curator code findings are answered directly even after code PASS, by taking the point into the findings or stating why it does not hold. In a baseline review the Reviewer reruns the Worker's recorded focused-test list and repeats its search on the frozen candidate, where a test file the search finds but the Worker did not run is a finding; fix-verification applies the search to the repair's own touched names, where an unrun matching test keeps the repaired finding open and is not a new finding.
@@ -48,6 +50,9 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round (with the Manager obtaining the Curator's read for a changed pair before routine closeout). Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE. [4]
 - Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync (where the Manager obtains the Curator's read for a changed pair before routine closeout). [8]
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
+
 - Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties, and records MEMORY as a separate lane under the same settings limit. [6]
+
 - A baseline review reruns and repeats the Worker's focused-test search, and fix-verification applies it to the repair's own names. [9]

@@ -15,6 +15,8 @@ its conversion when `HEAD` is unconverted and the candidate is converted, and du
 
 A committing leaf forwards its admitted owner to file publication. When records or onboarding changed, publication includes a required briefs ignore line with the memory changes. The mounted route uses the resulting changed paths to refresh the affected source briefs.
 
+`WriteRequest` adds optional `repo_name`, and `write_knowledge` resolves `_base_code_blobs(request, snapshot)` at `request.code_base` and passes `repo_name` and `base_code_blobs` into `Authoring` for dependent document-edit checks and task-fact validation.
+
 ## Code Commentary
 
 ### Logic
@@ -118,12 +120,12 @@ No configured live documentation source was available for this pass.
 
 The operation and its stages.
 
-- The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [44]
 
 
-- The writer passes the resolved stamp to virtual authoring before validation and file publication. [45]
 
-- The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [46]
+
+
+
 
 - Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection. [26]
 - Uncovered unexplained items contribute a sorted union of matching member paths; supplied blob values are not adopted. [27]
@@ -132,7 +134,7 @@ The operation and its stages.
 - The refusal text for an unconverted memory tree. [1]
 
 
-- The operation reads and authors, carries entries, checks history, renders, validates the entire candidate and finishes or refuses. [3]
+
 
 
 - After validation, a committing run submits raised questions before knowledge-file publication. A refused append prevents file publication. [28]
@@ -182,7 +184,7 @@ No cross-repo boundary is crossed by this file.
 - The writer builds trace links, source sets and counted flags from admitted worklist items. It uses the counted flag for the subject when the recorded card comparison base is unavailable. [35]
 
 
-- Card-comparison inputs, operation validation, writer reports and file restoration have their own checks. The report preserves already-published questions. [36]
+
 
 ## Current writer publication and refusal contract
 
@@ -202,9 +204,8 @@ The current converted writer checks persisted leaf worklist shape and authored i
 - Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
 
 
-- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [36]
 
-- A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
+
 
 
 - New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not [15]
@@ -219,7 +220,6 @@ The current converted writer checks persisted leaf worklist shape and authored i
 
 
 
-- Read, author, check history, render, validate, then finish or refuse. [3]
 
 
 
@@ -227,4 +227,9 @@ The current converted writer checks persisted leaf worklist shape and authored i
 
 - The committing writer supplies the admitted owner to file publication. A leaf mutation that changes a record or onboarding bytes participates in the tracked brief ignore preparation. [47]
 
+- The operation reads and authors, carries entries, checks history, renders, validates the entire candidate and finishes or refuses. [3]
 - A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
+- The writer gives recorded card-comparison inputs to authoring and validates the produced tree against the operation’s bases. The report registry governs writer findings. A file publication refusal preserves question receipts and distinguishes verified restoration from incomplete or unverifiable rollback. [36]
+- The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [44]
+- The writer passes the resolved stamp to virtual authoring before validation and file publication. [45]
+- The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [46]

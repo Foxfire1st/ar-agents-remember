@@ -20,7 +20,7 @@ wrapping second line beneath the title. Invariants are reached through files and
   repository's path root, and the Records branch. `useRootCounts` reads the without-proof total and
   the census count independently and shows `reading…` until each answers.
 - `useKnowledgeLoader` resolves rows per directory: root rows; the Records kinds (excluding
-  invariants) and their records from the shared `loadRecords` answer; and `pathRows` for a path
+  invariants, and mapping `DPD` prefixes under the `Dependents` kind label) and their records from the shared `loadRecords` answer; and `pathRows` for a path
   directory, which asks one `tree` read for that directory. `recordRows` uses
   `recordStandingText` for Records branch rows. `KnowledgeTree` passes that text to
   `ExplorerTree`, whose row detail wraps below the title. The family detail's member rows

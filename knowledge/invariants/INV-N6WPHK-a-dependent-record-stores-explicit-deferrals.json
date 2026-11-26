@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans DependentDeferral/DeferralCondition/DependentRecord in records.py, DEFERRAL_PREFIXES in ids.py, and IDENTIFIED_ENTRY_KEYS in canonical.py, and is guarded by byte-identity serialization tests."
+  },
+  "applicability": "Every ar-dependent/v1 record serialized or parsed in a converted memory tree.",
+  "conditions": [
+    "Each deferral carries a unique minted DFR- ID, non-blank passage, reason, owner, createdAt, createdByLeaf, and a condition naming at least one of task or file.",
+    "fileBlob is present if and only if condition.file is set.",
+    "When no deferral is open, the deferrals key is omitted completely."
+  ],
+  "exclusions": [
+    "Non-dependent record kinds, which do not admit deferrals.",
+    "Derived deferral state (open, due, orphaned) and age, which are computed on read and never stored."
+  ],
+  "id": "INV-N6WPHK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals.py::test_17_record_without_deferrals_is_byte_identical"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §1",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dependent record stores explicit deferrals keyed by minted DFR- IDs with passage, reason, task-and/or-file condition, fileBlob when a file is named, owner, createdAt and createdByLeaf, and omits deferrals when empty so records without deferrals remain byte-identical.",
+  "supersedes": [],
+  "title": "Dependent records store explicit DFR- deferrals and omit empty lists",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

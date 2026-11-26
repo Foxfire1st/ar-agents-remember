@@ -24,7 +24,9 @@ link is a navigation (rule 5). The tree row carries optional `hasKnowledge`, `ha
   `PathViewAnswer` declares optional numeric `deeperEntries`; `TimelineEvent.attempt` is optional and
   nullable. `Timeline` declares optional string `state`, `code` and `detail`, nullable optional
   `continuation`, and optional `page` with numeric `start`, `rowsOnPage` and `total`. `CodeAnswer` also declares optional `mediaType` and byte `size`. These are DTO
-  fields; their declarations do not establish which fields a panel renders. `RecordSummary` also
+  fields; their declarations do not establish which fields a panel renders. `RecordViewAnswer` additionally
+  declares optional `dependent?: DependentPartView` alongside `DependentState`, `DeferralState`,
+  `DependentDeferralView`, and `DependentMovedLinkView` for dependent-record rendering. `RecordSummary` also
   carries optional nullable `recordState` and `writer` for the record view and its summary rows.
   `recordState` is the selected revision's derived state. The display-facing writer shape names
   role, harness and model.

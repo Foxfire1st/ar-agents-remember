@@ -79,7 +79,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module's own statement that a decision is shown whole wherever it appears. [1]
+
 - The title field per kind. [2]
+
 - A record's summary, or `missing`. [3]
 - Every decision of the tree read once; the superseding map. [4]
 - A decision in full: alternatives, stored and derived status, supersession, governs. [5]
@@ -89,6 +91,7 @@ No configured live documentation source was available for this pass.
 - A link target's kind; one indexed link with its record ends summarised. [7]
 
 
+
 - Numbered references, every target resolved. [8]
 - Linking records, each once. [9]
 
@@ -96,6 +99,7 @@ No configured live documentation source was available for this pass.
 
 
 - A history row's incoming link carries the record the row is about. [11]
+
 
 - A decision's incoming link from a history row names the row's subject. [12]
 

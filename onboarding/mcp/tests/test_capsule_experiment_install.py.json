@@ -208,12 +208,12 @@
       ]
     },
     "6": {
-      "note": "The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.\n\nAnchor: source",
+      "note": "The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
-            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "content": "sha256:9fdd40e506ee313555421868cce1c5c1986922fed910c147e4db89349933644f",
             "locator": {
               "kind": "file"
             },

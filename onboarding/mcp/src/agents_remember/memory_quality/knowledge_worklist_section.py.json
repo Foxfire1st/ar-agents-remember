@@ -206,12 +206,12 @@
         },
         {
           "anchor": {
-            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
             "content": "sha256:20152df7ce4245153a0799242867d9f63e8d19e1406ec6edbc7b7c13a4b8025b",
             "locator": {
-              "end": 431,
+              "end": 432,
               "kind": "line_range",
-              "start": 429
+              "start": 430
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -395,12 +395,12 @@
         },
         {
           "anchor": {
-            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
             "content": "sha256:20152df7ce4245153a0799242867d9f63e8d19e1406ec6edbc7b7c13a4b8025b",
             "locator": {
-              "end": 431,
+              "end": 432,
               "kind": "line_range",
-              "start": 429
+              "start": 430
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -489,12 +489,12 @@
         },
         {
           "anchor": {
-            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
             "content": "sha256:20152df7ce4245153a0799242867d9f63e8d19e1406ec6edbc7b7c13a4b8025b",
             "locator": {
-              "end": 431,
+              "end": 432,
               "kind": "line_range",
-              "start": 429
+              "start": 430
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },

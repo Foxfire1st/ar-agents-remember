@@ -38,10 +38,15 @@ models refuse the fields that would give it a second owner.
   It has no priority or proposal field: a weakness that belongs to no file is not recorded here.
 - `DependentRecord` (`ar-dependent/v1`, MIK-R124) records one document of the code repository and
   every place it stands on: `document`, at least one `stands_on` link — an anchor naming its file, a
-  file with its `blob`, or a record ID with its `revision`, each with an optional `heading` — and
-  `confirmed` (`{task, role, commit, codeTree?, uncommitted?, statement?}`). It refuses two links
+  file with its `blob`, or a record ID with its `revision`, each with an optional `heading` —
+  `confirmed` (`{task, role, commit, codeTree?, uncommitted?, statement?}`), and optional non-empty
+  `deferrals` (`tuple[DependentDeferral, ...] | None`, omitted when empty so un-deferred records stay
+  byte-identical). Each `DependentDeferral` carries a unique minted `DFR-` `id` (`DeferralId`), required
+  `passage`, `reason`, `condition` (`DeferralCondition` with `task`, `file`, and optional `note`, requiring
+  at least one of `task` or `file`), `fileBlob` (required if and only if `condition.file` is set), `owner`,
+  `createdAt`, and `createdByLeaf`. It refuses two links
   that repeat the same kind and value — a `heading` does not tell them apart — an empty
-  `stands_on`, an anchor link with no path, and extra fields. It stores neither the document's text
+  `stands_on`, duplicate deferral IDs, an empty `deferrals` list, an anchor link with no path, and extra fields. It stores neither the document's text
   nor whether the document is stale; that is derived.
 - `RECORD_MODELS` maps kind → model; `schema_name(kind)` spells `ar-<kind>/v1` with `-` for `_`;
   `record_status(record)` returns a weakness's own state or a kind's stored lifecycle word. It returns empty for legacy standing words and for a dependent, whose currency is computed when read.
@@ -117,4 +122,5 @@ No cross-repo boundary is crossed by this file.
 - The invariant model permits an optional display title and refuses relationship fields owned elsewhere. [6]
 
 - The per-kind relation vocabulary. [1]
+
 - The kind → model table. [8]

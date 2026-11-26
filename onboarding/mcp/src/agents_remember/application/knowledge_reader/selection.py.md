@@ -19,6 +19,8 @@ Three spellings are accepted:
 - `leaf:<scope>`: the memory worktree of an active leaf enclosure whose worktree group is `<scope>`, in its
   captured state.
 
+`ReaderSelection` carries optional `leaf_id`, populated from active leaf enclosure metadata in `_leaf_selection` and forwarded through `_directory_selection` so dependent deferral views can resolve the active reading leaf.
+
 ## Code Commentary
 
 ### Logic
@@ -110,6 +112,7 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - The module's own statement of the three spellings and the code-tree rule. [1]
 
 - **Historical reference account; not current evidence:** The recent-commit convenience list remains forty; accepted names include memory commits and branches. (historical reference 2)
@@ -120,18 +123,24 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - Published and leaf spellings dispatch explicitly; other names, including branches, resolve as concrete Git commits. NUL and unresolved names return invalid-request guidance. [6]
+
 
 
 - A leaf only when an active enclosure has the scope. [7]
 
+
 - Published and leaf: not-converted first, the captured tree, `HEAD`, the pin when clean. [8]
+
 
 
 - A commit: the layout marker, the Git-tree index, the paired code tree. [9]
 
 
+
 - `HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none. [10]
+
 
 - The selector's choices, and a commit list that cannot be read named. [11]
 - Active leaves exclude foreign task-document nonmembers with a named warning before the existing repository and liveness filters. [12]

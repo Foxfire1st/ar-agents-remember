@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "6ed3e42315fdc9b59cfcc1e89ab5a1a7cad93223",
+    "commit": "8ccdd6fab4805894de5375e51c16ec3ff96628d2",
     "role": "curator",
-    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior. The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) records, history, hand-off and writer now carry writer stamps, derived states, invariant titles and review facts, which the reference's title paragraph and 'State, writer and review' section describe; the governing-row and family-effect rules moved unchanged to history_governing_rows.py and family_effect.py; _continue_memory_merge settles a generated-briefs .gitignore conflict and still runs the staged check, as 'Memory merges in a sync' says.",
-    "task": "261112-KNO-L4",
+    "statement": "Verified docs/reference/knowledge-system.md in full against L52 candidate 6ed3e423 (base 8ccdd6fa): lines 353-361 accurately describe task memory_quality_check reportOnlyFindings including landing-cut-card, landing-added-file, and all four dependent_flags entries (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning), and lines 504-508 accurately state that crossing sync merges records by field while merging DependentRecord.deferrals by deferral ID (DFR-*, omitting when empty).",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
+      "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
     {
-      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+      "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -107,7 +107,7 @@
       "path": "mcp/src/agents_remember/kernel/generated_copies.py"
     },
     {
-      "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+      "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
     },
@@ -187,7 +187,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
+      "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
     },
@@ -227,7 +227,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
     },
     {
-      "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
+      "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
     },
@@ -257,7 +257,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
     },
     {
-      "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+      "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
@@ -379,7 +379,7 @@
     },
     {
       "anchor": {
-        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
         "content": "sha256:7d21b4b91cc06b4564b507277a082a02550f797f8dd8c8671cfd9ab47c0b816a",
         "locator": {
           "kind": "symbol",
@@ -390,5 +390,16 @@
       "heading": "Staged memory merge check",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
 }

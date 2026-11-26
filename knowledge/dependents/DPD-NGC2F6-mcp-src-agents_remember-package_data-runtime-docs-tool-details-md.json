@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), the packaged mcp/src/agents_remember/package_data/runtime/docs/tool-details.md is byte-identical to docs/tool-details.md and accurately matches the provider-free server_info, runtime_install, and BUG-L44 retire_child documentation.",
-    "task": "261125-DEP-L2",
+    "statement": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): byte-identical runtime mirror of docs/tool-details.md with lines 389-396 accurately describing landing-cut-card, landing-added-file, and the four dependent_flags reportOnlyFindings.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "f48989e6eec787374e9231801e5d4a212e873e72",
+      "blob": "c342ab3846bfb67446708744fc550fd0050a7d05",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
@@ -110,7 +110,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
     },
     {
-      "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+      "blob": "d592744457672d63c98c24155c44b0b334a464fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
     },
@@ -229,14 +229,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T09:02:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L52",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
   }
 }

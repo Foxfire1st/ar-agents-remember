@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -160,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -172,12 +172,12 @@
         },
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:6a715d528af54912cb5e19cbbb9267475531b5cf87e46a27f8391883c9d1a0a5",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 328
+              "start": 329
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -185,12 +185,12 @@
         },
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:b44e71007fa0a88f6ec17177f8979cd313678136b1e847464815851f03a9d461",
             "locator": {
-              "end": 343,
+              "end": 344,
               "kind": "line_range",
-              "start": 337
+              "start": 338
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans RecordRow in history.py, _deferral_only_dependent_change in touched_records.py, and record_row_open in predicates.py, and is guarded by writer and gate tests."
+  },
+  "applicability": "Deferral-only writes on existing dependent records and their corresponding history rows and worklist/gate checks.",
+  "conditions": [
+    "Deferral dispositions (deferred, re_deferred, deferral_lifted) and deferralIds are admitted only on DPD- RecordRow subjects and carry no effect.",
+    "A dependent record modified only in deferrals (plus revision and writer) raises a touched_record item with deferralOnly=True answered by a deferral disposition at the candidate revision.",
+    "Edited documents continue to require a changed RecordRow and fresh confirmation under changed_document_open."
+  ],
+  "exclusions": [
+    "Non-dependent RecordRow subjects, which reject deferral dispositions and deferralIds.",
+    "Edited-document confirmation writes, which refresh stands_on and confirmed."
+  ],
+  "id": "INV-NW74GN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals.py::test_02_defer_redefer_lift_preserve_confirmation_and_bump_revision and test_03_history_validator_accepts_deferral_rows_and_rule5_gate_matches"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §2",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Writing, re-deferring or lifting a deferral leaves a dependent record's stands_on and confirmed untouched, increments revision, records a DPD-only RecordRow with disposition deferred, re_deferred or deferral_lifted and no effect, and preserves rule-5 confirmation matching on edited documents.",
+  "supersedes": [],
+  "title": "Deferral operations preserve confirmation and use DPD-only history rows",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

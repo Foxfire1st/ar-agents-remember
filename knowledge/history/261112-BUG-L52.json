@@ -1,0 +1,4164 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L52",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T09:42:14+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L52",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T09:42:14+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L52",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "4a8f1d52-7e3c-4b9a-8c14-2e9f5a7b6c52",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "37e5e8619f33ced700ab90ca5523b45fd77dcb31",
+    "verdictRef": "notes/reports/reviewer/4a8f1d52-7e3c-4b9a-8c14-2e9f5a7b6c52/261112-BUG-L52-Memory-R3-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-00D83A",
+      "items": [
+        "sha256:9fe8792a2c3128078feb4367385b6dfb2ee5e74abc220f7874a61428801ac8c8"
+      ],
+      "reason": "Adds an optional keyword-only code parameter to dependent_state so callers can reuse an already opened code tree.",
+      "subject": "hunk:sha256:9fe8792a2c3128078feb4367385b6dfb2ee5e74abc220f7874a61428801ac8c8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:6648cd0e9c274dd0e7e2ec5000cc78be3719edbaa6e83d6dc1e12c363a838a66",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:cf22cae63f8be9619cecf7cc4a30699695388c1c25c0e16a3044fb241ef56ce0",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-SQ8RXD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-077B34",
+      "items": [
+        "sha256:67e46d820fa5cc6c1df101e7516e53de0de3025a8abd3b00b7f32def0d7a19fa"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-SQ8RXD against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-5BPF6M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "content": "sha256:004f9169c96b4e4353424f1e7591afb9844f98387c14664da26152fbfeb23b12",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "content": "sha256:50c4b8610fe3d8f199b4c8b4564c35ee7c6c644e8577bd7a360183d1f7d51c52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "content": "sha256:9fdd40e506ee313555421868cce1c5c1986922fed910c147e4db89349933644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0BHMJC",
+      "items": [
+        "sha256:a2c6243beeae49685775e36519e18191393910dd8c56e6637f66744daa67c885"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-BNMQ79, RLZ-GEMVNE against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0JCR3J",
+      "items": [
+        "sha256:4b3108a2229f428eca786efb7926114819633e3d40fc102f556d65aeeaae888a"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/models/knowledge_files/records.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
+          "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/records.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0N68VS",
+      "items": [
+        "sha256:f51c25647605b5b74b132fc780e40556a7aa37e4922ffcab9f32f00c56b42dd8"
+      ],
+      "reason": "Widens the mint_id parameter type annotation to accept DeferralKind.",
+      "subject": "hunk:sha256:f51c25647605b5b74b132fc780e40556a7aa37e4922ffcab9f32f00c56b42dd8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0N6GM8",
+      "items": [
+        "sha256:cf45681a7fb925d93ff1f3f56e0522200958aecc5ac29a7b873c626dc447b52b"
+      ],
+      "reason": "Verified _differs_only_by_the_product_version in application/knowledge_reader/marks.py (lines 498-537): symbol bytes are byte-identical to the recorded anchor content and the weakness still stands open.",
+      "revision": 1,
+      "subject": "WKN-E1Z3YT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0N6M24",
+      "items": [
+        "sha256:0d94cefcf7bd63121819d7f166e5fabb6569af0068b1fedfb757adabe7345dff"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/src/agents_remember/memory_quality/dependent_flags.py.",
+      "sources": [
+        {
+          "blob": "f1db9013d3b32f0c5f6c9d09a40bb25bd933c580",
+          "path": "mcp/src/agents_remember/memory_quality/dependent_flags.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/dependent_flags.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0WQ8EK",
+      "items": [
+        "sha256:3a08483eb06efde9a620a407fe0130088bea992c04d0f10ef4549601dc1f5232"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/tests/dependent_deferrals_test_support.py.",
+      "sources": [
+        {
+          "blob": "67852a19f5baeb12856284567420e1b8689f0f19",
+          "path": "mcp/tests/dependent_deferrals_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/dependent_deferrals_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0XS6XF",
+      "items": [
+        "sha256:da03aba31d4d0e915cad7a4a972f6c6d4d6f94de61c9a143a2bfb6ebbc889aeb"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_gate/gate.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-19EQ61",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Merged DEP (767635ae) and L52 catalog facts (18 contracts, 123 artifacts including dependent_deferrals_test_support.py) and refreshed citations against 48c17102.",
+      "sources": [
+        {
+          "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1KXA9J",
+      "items": [
+        "sha256:5fbc52faa8206b9f8d06fdcf226a71930e71e407941e04f49fc91be8f21cad6a"
+      ],
+      "reason": "Includes DEFERRAL_PREFIXES in the _ALL_PREFIXES lookup table used by _prefix and mint_id.",
+      "subject": "hunk:sha256:5fbc52faa8206b9f8d06fdcf226a71930e71e407941e04f49fc91be8f21cad6a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1S73NF",
+      "items": [
+        "sha256:c5b81591a3ff333c6c838001da3d3ec3f4d24dfa909567f64a2c3ebd3757afdc"
+      ],
+      "reason": "Verified HistoryRowAuthoring._write_rows in application/knowledge_writer/authoring_rows.py (lines 176-197): symbol bytes are byte-identical to the recorded anchor content and the weakness still stands open.",
+      "revision": 2,
+      "subject": "WKN-J9VT2X"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1X14G7",
+      "items": [
+        "sha256:185bf55f0e371899c2faf282ab20f331a0211eb7966e941f3f552018460bf676"
+      ],
+      "reason": "Reviewed mcp/overview against DEP-synced candidate 48c17102; citations refreshed and existing overview prose remains accurate.",
+      "sources": [
+        {
+          "blob": "92b2601325fc9c34bf222aef6fc619933e63cd85",
+          "path": "mcp/src/agents_remember/cli/handoff_check.py"
+        },
+        {
+          "blob": "481142136fc63cf1ed24f5a8453f87839fb838cd",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "afbbb0650d938ecaaa73441b303646f03dfcf88e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1YZDQ1",
+      "items": [
+        "sha256:f19cda3343240463f0ca8ee873b726c98a344255bac368b415175ce60a227556"
+      ],
+      "reason": "Declares the DeferralKind Literal['deferral'] type alias alongside RecordKind, EntryKind, and RowKind.",
+      "subject": "hunk:sha256:f19cda3343240463f0ca8ee873b726c98a344255bac368b415175ce60a227556"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2AC02W",
+      "items": [
+        "sha256:facfe971d51af68776208307f0ee4897d6741d93aec43abcf0c067dc199c083e"
+      ],
+      "reason": "Imports DependentFlagInputs, DependentFlagScope, and collect_dependent_report_only_findings from memory_quality.dependent_flags.",
+      "subject": "hunk:sha256:facfe971d51af68776208307f0ee4897d6741d93aec43abcf0c067dc199c083e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2DX66F",
+      "items": [
+        "sha256:924c60c1980586f6acbcd2ff6b18059d62dadd600f3174423d8fed8177a532d8"
+      ],
+      "reason": "Refreshed shifted citation anchors in mcp/src/agents_remember/application/memory_quality/controller.py against L52 candidate 6ed3e423; existing card prose remains accurate.",
+      "sources": [
+        {
+          "blob": "d592744457672d63c98c24155c44b0b334a464fc",
+          "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_quality/controller.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2H3E48",
+      "items": [
+        "sha256:1adc913ed353d648fc8f80c924cd4add335c73a8279cfc625d951372be28102f",
+        "sha256:57a46cf8644479e54721cc9892799835741f64967fe4dba5294a662a97795e44"
+      ],
+      "reason": "Refreshed shifted citation anchors in mcp/src/agents_remember/models/tools/knowledge_responses.py against L52 candidate 6ed3e423; existing card prose remains accurate.",
+      "sources": [
+        {
+          "blob": "ed6084cdd2c0aa929393cb96209640906339a761",
+          "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/knowledge_responses.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2KH8EG",
+      "items": [
+        "sha256:256e86226150db93e375e1fc9a8efeabf8ade533068b3ba4c974574066a458fb"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/memory/conversion/crossing.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "ea6b58ce8bda712ebe1ab73d240b6c1102350129",
+          "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/crossing.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2N4S9N",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent (docs/install/codex.md); L52 touches neither the document nor its stands_on links; left strictly untouched at HEAD 605fa6b0 per standing order.",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-31RGAQ",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined all 2 members of FAM-GDXSJG; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-37NG7M",
+      "items": [
+        "sha256:9649a9e58bae501c14438f94ab42032436bb10c3230db998d4363a684a8ba762"
+      ],
+      "reason": "Builds DEFERRAL_ID_PATTERN from id_pattern(DEFERRAL_PREFIXES['deferral']) for schema regex validation.",
+      "subject": "hunk:sha256:9649a9e58bae501c14438f94ab42032436bb10c3230db998d4363a684a8ba762"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3CJ0KV",
+      "items": [
+        "sha256:f610f5321e2005835bd708a1ebe6f89dc7b2c0dd2c5445e61998789df91e668b"
+      ],
+      "reason": "Imports TaskFact for typing the cached Authoring._task_facts field.",
+      "subject": "hunk:sha256:f610f5321e2005835bd708a1ebe6f89dc7b2c0dd2c5445e61998789df91e668b"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0J9FS1",
+          "revision": 2
+        },
+        {
+          "id": "INV-ADT7XM",
+          "revision": 1
+        },
+        {
+          "id": "INV-B644A4",
+          "revision": 1
+        },
+        {
+          "id": "INV-CRWXXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-F8QQYN",
+          "revision": 1
+        },
+        {
+          "id": "INV-FRG5GT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXFA2F",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q0NS0N",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6QBYB",
+          "revision": 1
+        },
+        {
+          "id": "INV-XHSR3S",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3RH8FM",
+      "items": [
+        "sha256:fdb36bfc8a053ec3b015ac3b8f2c528bed606611485c21d7005dcf0e6016e163"
+      ],
+      "reason": "Examined all 10 members of FAM-Q0MQAE; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 1,
+      "subject": "FAM-Q0MQAE"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7ACVBS",
+          "revision": 1
+        },
+        {
+          "id": "INV-WTF0AW",
+          "revision": 1
+        },
+        {
+          "id": "INV-YV9C44",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3W1QD7",
+      "items": [
+        "sha256:89a62c0669c1fd6b3d241f750bcbac40bd849b935e126768f227bb11a2b1b8ff"
+      ],
+      "reason": "Examined all 3 members of FAM-3GN42V; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 1,
+      "subject": "FAM-3GN42V"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 5
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 5
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 2
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 2
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HR2JKQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 5
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WC2EYG",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 3
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 3
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3XKND8",
+      "items": [
+        "sha256:693614bf920d94eabefa627bb2fd720aaf1e5804c98dcbd17bca7f8db0c922b1"
+      ],
+      "reason": "Examined all 23 members of FAM-61DY2V; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 8,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4099J6",
+      "items": [
+        "sha256:2bbb3bd258a820ba1e81ee1484968736bf4d50b65ace873fbb3b4a596c1368d0"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/memory/overview against L52 candidate 6ed3e423; existing card prose remains accurate with only parameter forwarding or regenerated measurements.",
+      "sources": [
+        {
+          "blob": "ea6b58ce8bda712ebe1ab73d240b6c1102350129",
+          "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-40TZ21",
+      "items": [
+        "sha256:5d51a5e75a1b121b20e8e3896cac841bdf11e0cf2980686f84d3be5261eaff54",
+        "sha256:648af47dece152ef4762ab3277eb300f00401ae05188e66248b3a2bfb445a7fc",
+        "sha256:9d3fa8906c5ba6c19309338098fed97af90517de0fe142ab00ed7dcbba0c4866",
+        "sha256:ae502574fcb946074d4ccd293a5651afcdaca4b3907eab8238329e90122e33f9",
+        "sha256:bfd5336def39404b05a99fbb11dcdacb343b6ff296eeac32ae60eb6614006797"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_worklist/touched_records.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4CN73T",
+      "items": [
+        "sha256:1f5d540aaea089d501f8ed14d48d4a2ba716d7faa79d49eeee66055e69888acf"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file dashboard/src/panels/knowledge-reader/TruthView.dependent.test.tsx.",
+      "sources": [
+        {
+          "blob": "1988d17aee3463fc9493cdb199601e185e4198b1",
+          "path": "dashboard/src/panels/knowledge-reader/TruthView.dependent.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/knowledge-reader/TruthView.dependent.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4DDR5W",
+      "items": [
+        "sha256:5b816ac580565f9d5dcd9a8b09ceefefc32aa36abbb605576bd46377a1b157e9"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_gate/predicates.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "before": {
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "id": "RLZ-JS3Y20"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4J975C",
+      "items": [
+        "sha256:dde4ca80b31c770314558795c84eb605745f222d4c28c46361a5744d78c783f2"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-JS3Y20 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-7ACVBS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4KSTG4",
+      "items": [
+        "sha256:17f4be3462932e5237e83ce15450e15bb6db6e89fd3639d7a21ae271393222e7"
+      ],
+      "reason": "Widens the _prefix parameter type annotation to accept DeferralKind.",
+      "subject": "hunk:sha256:17f4be3462932e5237e83ce15450e15bb6db6e89fd3639d7a21ae271393222e7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4MBAYA",
+      "items": [
+        "sha256:bdab566b63d12f9f5f127ba61ac684b44dac55df745e818f58670331bfceee95"
+      ],
+      "reason": "Forwards the pre-opened code tree into dependent_movement when supplied instead of calling open_code_tree again.",
+      "subject": "hunk:sha256:bdab566b63d12f9f5f127ba61ac684b44dac55df745e818f58670331bfceee95"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4N3SC1",
+      "items": [
+        "sha256:28f3d39aa0560812ea698f206dd4ad6955865470e48cf66622928bd7b49d423e",
+        "sha256:2f3557125bb9c40ee8615a409b5c003fc977bc0d6ad6b4dcf11d1b772aff62d6",
+        "sha256:3008c78a5aa3abbe0e13e1cf56786b5ec3631e23ac5b7915227b8fc8e50c18ae",
+        "sha256:61e3b1a0f921991b3919dc964487f70e784100dd1561cc8af78a444d53b48a3b",
+        "sha256:66735a4a2904df02ed0474540818a5a0fdae3a7b061d3f382ef1f8fb22f5e1a2",
+        "sha256:6f5778d4bb2945bfce4911245a914c3184b356da4a4ae7137d545cfd1f7c7eae"
+      ],
+      "reason": "Updated test_landing_report.py onboarding card for D1033 curator_sentence_variants usage in _assert_curator_landing_text at candidate f95ac723.",
+      "sources": [
+        {
+          "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+          "path": "mcp/tests/test_landing_report.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_landing_report.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4PEAEX",
+      "items": [
+        "sha256:867829f66212ac5d65d06d30bfd2723363001d2faf786c7f12ede0f6c6b7070b"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_reader/marks.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/marks.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4VPYZP",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Examined all 5 members of FAM-N36SWD; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "content": "sha256:9fdd40e506ee313555421868cce1c5c1986922fed910c147e4db89349933644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "content": "sha256:004f9169c96b4e4353424f1e7591afb9844f98387c14664da26152fbfeb23b12",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "content": "sha256:50c4b8610fe3d8f199b4c8b4564c35ee7c6c644e8577bd7a360183d1f7d51c52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-50H53T",
+      "items": [
+        "sha256:1b6a427f4b5f38e49fb575a59177d0ca9cb094586359c94c56bce6ee85676a6c"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-8RHQED, RLZ-MC12B0 against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+            "content": "sha256:34f5742eae2de147f69aee6f5a2b00d45685c890a19fab03d03af04be41b288d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-535SRC",
+      "items": [
+        "sha256:c64f18b121b2e23b6b936d93909622dc42f7d3bc7e0aa3608bfdc72831a48b30"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-BZ71PH against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-542N3G",
+      "items": [
+        "sha256:e07710e273bfd756a5c47f3fd001179cb2f7b962d44255952d5a3f664624c4c5"
+      ],
+      "reason": "Adds an optional preloaded context parameter to _item_findings so judge can share one GateContext across item and deferral checks.",
+      "subject": "hunk:sha256:e07710e273bfd756a5c47f3fd001179cb2f7b962d44255952d5a3f664624c4c5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-57H52A",
+      "items": [
+        "sha256:b70f9db897d2a21dbf8b7aebbfbcb3e25ee8c27c1121a7afb3d5e51160e4c4be"
+      ],
+      "reason": "Updated application/overview for BUG-R52@v2 deferral modules and bound current blobs at 48c17102.",
+      "sources": [
+        {
+          "blob": "3204aeb7c6078c9866d1b57ed5128d4e778cbdb2",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/deferrals.py"
+        },
+        {
+          "blob": "3027ef0193fed1134ecf9454d3cbe139c5a1a5ca",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py"
+        },
+        {
+          "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+        },
+        {
+          "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+        },
+        {
+          "blob": "1db32145634b8c44291cbddad7ce2192fc7484f3",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/deferrals.py"
+        },
+        {
+          "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+        },
+        {
+          "blob": "b835a6a73975887fabfb96d60be772a55a87c3e0",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/records.py"
+        },
+        {
+          "blob": "7b4d5e0c7dc880f6c63d8691ae924823e7b2de23",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/selection.py"
+        },
+        {
+          "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+        },
+        {
+          "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
+        },
+        {
+          "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        },
+        {
+          "blob": "0dcb19a85407326cce0a0c572b16e2e278a5665c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        },
+        {
+          "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        },
+        {
+          "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+        },
+        {
+          "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+        },
+        {
+          "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        },
+        {
+          "blob": "d592744457672d63c98c24155c44b0b334a464fc",
+          "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-58HXTG",
+      "items": [
+        "sha256:275d877d171cf055a493224cab1083f7cbf0df4e500dae23120f00c18d6f9f4f"
+      ],
+      "reason": "Reuses the caller-supplied GateContext in _item_findings instead of re-loading _candidate when already resolved.",
+      "subject": "hunk:sha256:275d877d171cf055a493224cab1083f7cbf0df4e500dae23120f00c18d6f9f4f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-58KZCB",
+      "items": [
+        "sha256:3a605b6983893b07587c5e2464dd9aefb19eb12c7ccedd5be04c194b4ed68cbd"
+      ],
+      "reason": "Maps dependent records to their document field in _TITLE_FIELDS for record summary titles.",
+      "subject": "hunk:sha256:3a605b6983893b07587c5e2464dd9aefb19eb12c7ccedd5be04c194b4ed68cbd"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-59WVJY",
+      "items": [],
+      "reason": "Audited docs/design/python-pytest-bootstrap.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): case budgets (10000/2000), lane selection, conftest isolation, and coverage/CRAP descriptions match live code after DEP + L52; re-anchored stress-durability in test-evidence-lanes.toml to lines 845-847.",
+      "revision": 24,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+            "content": "sha256:4d7d5d6899c727c333834e06537101c53d062c95287760df1f0db2de48725f97",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "before": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:1d608a739ddd16bdad6b8fa9ff55c769d5eeaa56bdc641df8a10b9772aac2ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "id": "RLZ-BF4RTT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5A0XAR",
+      "items": [
+        "sha256:ccbb2d414f26260206c095c608451873f4078c5648af260517dee23f5df4ccc5"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-BF4RTT against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-6WBDM3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5BPWA3",
+      "items": [
+        "sha256:bcc80742e9c27896bc7d3eef9537ca52acaeaee10af6048102b74df08b30f8fa"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for skills/l-01-agent-lifecycles/criteria/onboarding-memory.md to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "afbbb0650d938ecaaa73441b303646f03dfcf88e",
+          "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5TJM2C",
+      "items": [
+        "sha256:59f055e59a952334f87463ba49ec2b6fd720382fb35a390bc154bc030ce92f0a"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/src/agents_remember/application/knowledge_gate/deferrals.py.",
+      "sources": [
+        {
+          "blob": "3204aeb7c6078c9866d1b57ed5128d4e778cbdb2",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/deferrals.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6ERG73",
+      "items": [
+        "sha256:71e678f7bbf4373384d368561f412e6ecb8430b01febcfacff9996081acd23aa",
+        "sha256:de96a4bba85755bfcd1648cb1bfd399319b9693a159cb94301e499243deae221"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/models/knowledge_files/canonical.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "cb60640677dd53e2a22deaa0397ea6bfeae4e6e5",
+          "path": "mcp/src/agents_remember/models/knowledge_files/canonical.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/canonical.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+            "content": "sha256:5dc069776be3d234a5ba07458fcda83e9ddbb5da52db74734d52ca0fc89bbdb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "before": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:bedb2af9a11bbabae30bd314cc95d43d8850d3a4d6a0792a3af507e0d0d16eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "id": "RLZ-P0P9C1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6XNWGB",
+      "items": [
+        "sha256:5bff84357c8c6882cda264b8976668a9cc6739324d811a677310f26dde55484b"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-P0P9C1 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-AG8G8C"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7A9MM1",
+      "items": [
+        "sha256:f52d69455c5cb017082150ebafcaa9c4d0cffa712042a766ed3482ff9d40a349"
+      ],
+      "reason": "Updated authoring_rows.py onboarding card for BUG-R52@v2 deferral history rows and bound current blob at 48c17102.",
+      "sources": [
+        {
+          "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7GGVXQ",
+      "items": [
+        "sha256:526c0ebb78175533a9a303b2ebf2458777914fefa09c466edc2ead228ef9e919"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for dashboard/src/panels/overview to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "3d9d16ace8ae82e51ffaeb5fa4a2ae7ed6643ce9",
+          "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+        },
+        {
+          "blob": "1988d17aee3463fc9493cdb199601e185e4198b1",
+          "path": "dashboard/src/panels/knowledge-reader/TruthView.dependent.test.tsx"
+        },
+        {
+          "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+          "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-809R6C",
+      "items": [],
+      "reason": "Audited docs/features.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): high-level role, memory, dashboard four-tab, explainer, and guardrail descriptions remain accurate after L52 OM-6 memory-review additions in roles/reviewer.md.",
+      "revision": 31,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-82EZ1B",
+      "items": [
+        "sha256:f51d6dbf26a6510f809fd510b51a5b1d0ea12d78c18304e85e44bfe5a7be6618"
+      ],
+      "reason": "Adds optional repo_name field to WaveTarget so wave write routes can forward repository scope to WriteRequest.",
+      "subject": "hunk:sha256:f51d6dbf26a6510f809fd510b51a5b1d0ea12d78c18304e85e44bfe5a7be6618"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-8J4DQ1",
+      "items": [],
+      "reason": "Audited README.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 68-71 and 84-86 accurately describe mandatory closeout/landing knowledge-gate checks without waivers alongside current 3.0.8 packaging and install guidance.",
+      "revision": 14,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-8RS4PH",
+      "items": [],
+      "reason": "Audited CONTRIBUTING.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): the seven test lanes, evidence-lifecycle.toml and test-evidence-lanes.toml descriptions (lines 230-259), per-role tool scoping, and hook/runtime/certification sections match live code with zero contradictions.",
+      "revision": 16,
+      "subject": "DPD-78737N"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
+            "content": "sha256:6b046bc1018e19ebaa723ebf386459f55547a7b3025fce2ea57cad8b1c2df776",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evaluate"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "before": {
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
+            "content": "sha256:8ec53f452c0572d14b16bb2fbfdf1b8f6e27294c504eb60fd3f58647d9d4c2d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evaluate"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "id": "RLZ-MN92E8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-90ZZGA",
+      "items": [
+        "sha256:b9b7d7f16ee8cd1e7f9441462af8b2a1234486d1096da688a75b46719ade6cc6"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-MN92E8 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-YV48D0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+            "content": "sha256:9bc86f53f5a5117af072c51bf2733db46a08c9985ea8f9d02895af369833f80c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "before": {
+            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+            "content": "sha256:784de798a8c3c9191340ec2722592cdc36fef6983f1813b9d399c957259d1844",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "id": "RLZ-9R6X1J"
+        },
+        {
+          "after": {
+            "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
+            "content": "sha256:c3cb938eb20a230aa9f4700d985f6c552029124b5f499e3a4d39adaf60627b4f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "before": {
+            "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
+            "content": "sha256:46bc829c346c7c688094994892fb090ef97f833dbc7a122fd0aa148746ffc215",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "id": "RLZ-ZKPQ4B"
+        },
+        {
+          "after": {
+            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+            "content": "sha256:889b956c3e138c5aa35ba80b4dbaa7a0b60d7efe4f94d25cfb8449b7a4b25d56",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "before": {
+            "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+            "content": "sha256:10c1a6cba3b329049ea5f650881d8ecda0febb6092ae398c67e0752fae68fc82",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "id": "RLZ-ZPN2WQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-92Z6J9",
+      "items": [
+        "sha256:c607c7083c51943d2fdc67ebac879ce941ec424f2fe8cf32aceac8e3aed6e837"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-9R6X1J, RLZ-ZKPQ4B, RLZ-ZPN2WQ against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 2,
+      "subject": "INV-MKZ0EA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9PR4PG",
+      "items": [
+        "sha256:860c1d502ef9c2f5f1654cfb31e3a2669a6c6a402e6f7ef7fe9e6a42e00764ea"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_reader/selection.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "7b4d5e0c7dc880f6c63d8691ae924823e7b2de23",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/selection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/selection.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R52",
+          "packet": "requirements/BUG-R52-v2-a-stale-document-is-deferred-explicitly-and-a-false-confirmation-is-flagged.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0dcb19a85407326cce0a0c572b16e2e278a5665c",
+            "content": "sha256:bf8d35ce208c9553b219673cd87d8ad417bac781bf3f4a6ac5a6445bd7e37df6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "before": {
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:a90eb6c48f7c3efc3556c8c137175b17f797aa9ea49ea5d6c2c6e01fbaf53552",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "id": "RLZ-87J2WX"
+        },
+        {
+          "after": {
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+            "content": "sha256:1fd232dba5490a49298f00437fdae56b8d2be44c98b0c21cae58ebb218653de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": {
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
+            "content": "sha256:56abb365e5944eac9e3ff16d666289951f1567bdca708e7b5789911aa1edd0fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-999BVN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-9Q9BNC",
+      "items": [
+        "sha256:b73e88dc6158d52420863e6c82aaa93ea234e306ac2889c5e98c83e46a8fb25a"
+      ],
+      "reason": "Re-anchored RLZ-87J2WX and RLZ-999BVN against DEP-synced L52 candidate 48c17102 under the BUG-R52@v2 two-mode dependent authoring replacement.",
+      "revision": 2,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "before": {
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "id": "RLZ-2SM0BY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9WEW5R",
+      "items": [
+        "sha256:2e7f18b70c77251230c9196836bc34f465b67043cacab6e161a28eb2f69c723a"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-2SM0BY against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-NRXFWN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A7SMR3",
+      "items": [
+        "sha256:7ba538bdf4d81e7a4e94157b85448baeadab716b78853a698701c5fe35606047"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for dashboard/src/panels/knowledge-reader/TruthView.tsx to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+          "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/knowledge-reader/TruthView.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AHFZAJ",
+      "items": [
+        "sha256:57c56bfef2fad5382076a10d22744c51f96cbac303ec101dcb79e1c72a6392a2"
+      ],
+      "reason": "Imports DeferralRecordOps, author_dependent, and verify_lifted_deferral_rows from knowledge_writer.deferrals.",
+      "subject": "hunk:sha256:57c56bfef2fad5382076a10d22744c51f96cbac303ec101dcb79e1c72a6392a2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+            "content": "sha256:34f5742eae2de147f69aee6f5a2b00d45685c890a19fab03d03af04be41b288d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-0E8J78"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AT3T80",
+      "items": [
+        "sha256:1380965598e93384b31111af2dde5bf931c222c3c18e3a8b19462fa49b95d738"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-0E8J78 against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-HN54VG"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R52",
+          "packet": "requirements/BUG-R52-v2-a-stale-document-is-deferred-explicitly-and-a-false-confirmation-is-flagged.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
+            "content": "sha256:646e7c86964f954b5cf0b4f19ea474c0ab599ecbd7644fff9c0152c62e18d066",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependentRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "before": {
+            "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
+            "content": "sha256:7dd8741ced510f2612b5bd82d4383f62d49dcc63766118d845fbb74e5dd8e4ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependentRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "id": "RLZ-WP85HN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-AYM0HR",
+      "items": [
+        "sha256:8c72524fc9df22a3251b31565bb25ae354424620cce281638d44fd50e2c6ac50"
+      ],
+      "reason": "Extended DependentRecord with optional non-empty uniquely identified deferrals (omitted when empty for byte-identity) and updated the curator-writer condition to cover deferral condition.file blob resolution alongside confirmation links.",
+      "revision": 2,
+      "subject": "INV-ZEV1G9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BFD4QM",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent (docs/reference/settings-json.md); L52 touches neither the document nor its stands_on links; left strictly untouched at HEAD 605fa6b0 per standing order.",
+      "revision": 17,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-BNWNB1",
+      "items": [],
+      "reason": "Audited docs/concepts.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): twelve record kinds, derived record states, per-owner history files, mandatory knowledge gate, and review/worktree concepts remain accurate with zero contradictions.",
+      "revision": 30,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C23RW6",
+      "items": [
+        "sha256:68a570474471be07fe11cbe6282a01e8d56788c518ba13c2da8a40972712aa50"
+      ],
+      "reason": "Exports dependent_detail in the module's __all__ list.",
+      "subject": "hunk:sha256:68a570474471be07fe11cbe6282a01e8d56788c518ba13c2da8a40972712aa50"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:c21ff79789e258ccb096fd76a2ca088e4c21cfa13694fee329d5fdc37dde2d2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PDE8EW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C5M05Z",
+      "items": [
+        "sha256:866e4d87b50fc917438e18a21e1e8eb27bbb1cae060dc12748d5467a130ad588"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-PDE8EW against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 3,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CCBJ46",
+      "items": [
+        "sha256:3d5023f745c3f39b762644d7c6eda4030bb74805fdc2322316fb2fa52b87233f"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for skills/l-01-agent-lifecycles/operations/review.md to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DHQBJ9",
+      "items": [
+        "sha256:a4a48a185bf846bf8c277a7ce115339d4a2a5e4bc01d304414ebc8b12203e93c"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/tests/test_dependent_deferrals_gate_and_replay.py.",
+      "sources": [
+        {
+          "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+          "path": "mcp/tests/test_dependent_deferrals_gate_and_replay.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_dependent_deferrals_gate_and_replay.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DSYM3Z",
+      "items": [
+        "sha256:468c69fe9b274f77f7f6be4c2f7926412544d0816f510bbf0a81c5a814be3e6c"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/models/knowledge_files/ids.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "667f7cc7d10faf620694ff5fbe5279e0b3998350",
+          "path": "mcp/src/agents_remember/models/knowledge_files/ids.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/ids.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R52",
+          "packet": "requirements/BUG-R52-v2-a-stale-document-is-deferred-explicitly-and-a-false-confirmation-is-flagged.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DVBGCP",
+      "items": [
+        "sha256:3957446cfe2caddbb162969153c91d342ce81ba80fa7ae77adea0bb51d3f5735",
+        "sha256:cb0d5d63260d3621dd9856d9cad58fc26cfbfaf1764637399dac2832262856d2"
+      ],
+      "reason": "Verified docs/tool-details.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 389-396 accurately document task memory_quality_check non-blocking reportOnlyFindings covering landing-cut-card, landing-added-file, and the four dependent_flags findings (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning) wired through converted_check.py and controller.py.",
+      "revision": 19,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E1RBA0",
+      "items": [
+        "sha256:f88eaa997002ead36749545040a31f1486e56e35493bcbfcbf5cc9a4ba669ca9"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for dashboard/src/data/knowledgeReader.ts to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "2dcf7bf4ece2514ec24b04d2adbf5ee4742e5a12",
+          "path": "dashboard/src/data/knowledgeReader.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/knowledgeReader.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E6SNS1",
+      "items": [
+        "sha256:9d617bf3f0f52edf0fd7bd0e33fa270d57978c94300bda8697ac565c11dbe74b"
+      ],
+      "reason": "Refreshed shifted citation anchors in mcp/src/agents_remember/application/knowledge_write_route.py against L52 candidate 6ed3e423; existing card prose remains accurate.",
+      "sources": [
+        {
+          "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_write_route.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:c21ff79789e258ccb096fd76a2ca088e4c21cfa13694fee329d5fdc37dde2d2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E8HAZZ",
+      "items": [
+        "sha256:115b73926684b743afb8427d59bb1c83dab1ba33e2707b9d38118f857c1652af"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-BKYWR9 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EXZ2KA",
+      "items": [
+        "sha256:b58591a00f88a1a1b92d80004f2b47aa38650f5e86684e0dcdf02bc5e91613e4"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/tests/test_dependent_deferrals.py.",
+      "sources": [
+        {
+          "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+          "path": "mcp/tests/test_dependent_deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_dependent_deferrals.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:c9da318e2c934c62ac280274054ae7e63e034536dd532dd242dfc258b1d52be3",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:f3bd4d72a07e3ae891a957703af7088fefcc8a794e9144c5d4cf1190d92a7ce7",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-JH0BAQ"
+        },
+        {
+          "after": {
+            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+            "content": "sha256:7e81014696e3c8542f82571ea2555f7826deb6a3abc41126378f20e3646451e9",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "before": {
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:bb4fca9d8a065d931aca5a2600c38ec0523e3e757193bbd4d1ecd20e768339a3",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "id": "RLZ-VV75SF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EYTZ2Y",
+      "items": [
+        "sha256:7a19cff6a7e64a8e0c121f49244b7e7bae7ec781549c7fa032a0c960b8ef5808"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-JH0BAQ, RLZ-VV75SF against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F7ZRP5",
+      "items": [
+        "sha256:9a51975a77d11312c8d10f7b351bd04400e308006b520822a4439b99f04a4d38"
+      ],
+      "reason": "Adds _base_code_blobs helper to read request.code_base blobs (or reuse snapshot.blobs when commits match) for Authoring document-edit checks.",
+      "subject": "hunk:sha256:9a51975a77d11312c8d10f7b351bd04400e308006b520822a4439b99f04a4d38"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-F9TAG8",
+      "items": [],
+      "reason": "Audited docs/guides/review-page-and-explainer.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 216-229 (nine effects) and 265-270 (invariant, family, and membership dispositions) match live models/knowledge_files/history.py and records.py unchanged by DPD-only deferral dispositions.",
+      "revision": 17,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "content": "sha256:004f9169c96b4e4353424f1e7591afb9844f98387c14664da26152fbfeb23b12",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "content": "sha256:50c4b8610fe3d8f199b4c8b4564c35ee7c6c644e8577bd7a360183d1f7d51c52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FC4E2M",
+      "items": [
+        "sha256:5cd57160bdfaad471e0f86d3ff19fba22533f63b60b3b0a7701ffe08a9415029"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-XQXYDT against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-030V4M",
+          "revision": 1
+        },
+        {
+          "id": "INV-MHQBEE",
+          "revision": 1
+        },
+        {
+          "id": "INV-VGBBBK",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZK0X8M",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZZF7K5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-G1T64E",
+      "items": [
+        "sha256:9c968ba294d25c966eea8ee0d8dc198a988057518b549b86d79ee063caed1cdc"
+      ],
+      "reason": "Examined all 5 members of FAM-PBAB60; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 1,
+      "subject": "FAM-PBAB60"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G5VYE8",
+      "items": [
+        "sha256:73942b54ea04269c78514ef653a73481a62a66a0f22af91f622f76b1bff70492"
+      ],
+      "reason": "Forwards contract.coordination_root and contract.repo_name into GateTrees during direct landing gate evaluation.",
+      "subject": "hunk:sha256:73942b54ea04269c78514ef653a73481a62a66a0f22af91f622f76b1bff70492"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GBFBVZ",
+      "items": [
+        "sha256:7908dcbbddc2badb1b3151b22ab146b606264004c60d1238e890db378f60d9bd"
+      ],
+      "reason": "Reviewed dashboard/src/data/overview against L52 candidate 6ed3e423; existing card prose remains accurate with only parameter forwarding or regenerated measurements.",
+      "sources": [
+        {
+          "blob": "2dcf7bf4ece2514ec24b04d2adbf5ee4742e5a12",
+          "path": "dashboard/src/data/knowledgeReader.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-GGV8K2",
+      "items": [],
+      "reason": "Audited docs/reference/worktrees-c09.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): closeout knowledge-gate refusal, route-review and clean-sync rules, staleDocuments landing boundary, and Manager approval boundary remain accurate.",
+      "revision": 12,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "content": "sha256:4f1e7debc21d868a2233da359fbee83030fc2b00c7ef6b0096ef2e42181acadb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "before": {
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:6664f46c59516eceb6fdd8acb4b538d5ae59ff2627d66dca0462d5ea1ddc8f41",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "id": "RLZ-6KMKCS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GJA4GY",
+      "items": [
+        "sha256:7b3e121e7d39e2f16b5ee8d8e8d603c3aaba8eb5d2461b3bd3e4b57155a781fa"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-6KMKCS against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-DFA51A"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:eeed639b566c1ff1e50cd5c8b948cedbe251300b1e19fb1311e6796d2cda752c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-63V8FT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GSKYPJ",
+      "items": [
+        "sha256:8d084e0ccb139794574b75b0b92743ecc72af9e6708d1394576e36e140d38f70"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-63V8FT against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-RS2QK8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GY57J2",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent (docs/reference/harnesses.md); L52 touches neither the document nor its stands_on links; left strictly untouched at HEAD 605fa6b0 per standing order.",
+      "revision": 6,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3d9d16ace8ae82e51ffaeb5fa4a2ae7ed6643ce9",
+            "content": "sha256:c6370bbd1c05086e352bc4450243532e105669c24e1148395715e2c4826113a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "before": {
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:dcc316e5573cb6e252fc3cc09adfb2e033a0b132e31660922c09d6992c552942",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "id": "RLZ-49T61G"
+        },
+        {
+          "after": {
+            "blob": "2dcf7bf4ece2514ec24b04d2adbf5ee4742e5a12",
+            "content": "sha256:9b24625be0829554863eab2a472032e0a3822b42a821165e1a93d9fcc2be384c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "before": {
+            "blob": "808f7191ea17fef54b1ec1cd95885ed34c33cc16",
+            "content": "sha256:b734cbcd38710dc9d568884c0d057d23c9d77cf550840f06782742f6c35c3a1e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "id": "RLZ-5WQHKC"
+        },
+        {
+          "after": {
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+            "content": "sha256:207fd367d45ffb217f5e8d2b54529d8fe9eee7cc12f4890c945f6c9765fdc7f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "before": {
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "content": "sha256:741db78a9b9b52cb1fe80a4f91660b1e692a06bc4dead9b32262ee300d0f0cc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "id": "RLZ-8V05MM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GYK4JC",
+      "items": [
+        "sha256:1c6657ee479f41d17453e8c8f546486fd9f44afb0ce948f69140d00a4799e72f"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-49T61G, RLZ-5WQHKC, RLZ-8V05MM against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-TRMMZA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H3V4TP",
+      "items": [
+        "sha256:5df687f132aa04c2448b8bf1eb867e0f0460ec78c95ddb8ffdb7565ecc750a32"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/memory_quality/converted_check.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+          "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/converted_check.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HH7AD2",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent (docs/install/pi.md); L52 touches neither the document nor its stands_on links; left strictly untouched at HEAD 605fa6b0 per standing order.",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J16FVX",
+      "items": [
+        "sha256:3eed6165b9bebf1d2554ea25bf45f93069376888ff8e30625492c42c9bb372c1"
+      ],
+      "reason": "Adds the optional leaf_id field to ReaderSelection to carry an active leaf enclosure's task ID.",
+      "subject": "hunk:sha256:3eed6165b9bebf1d2554ea25bf45f93069376888ff8e30625492c42c9bb372c1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5CQ47",
+      "items": [
+        "sha256:3935f3ac1e86405a7f8fe72c67ab04f97f2b6bb5110279067acbeadb3f139cb1"
+      ],
+      "reason": "Imports apply_record_row_deferrals from knowledge_writer.deferrals.",
+      "subject": "hunk:sha256:3935f3ac1e86405a7f8fe72c67ab04f97f2b6bb5110279067acbeadb3f139cb1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J7ZAYS",
+      "items": [
+        "sha256:60e18a35d2077cfbe649d79f964144c01fb9441861f2d5d86b2a50b640af55ee"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/src/agents_remember/application/knowledge_writer/deferrals.py.",
+      "sources": [
+        {
+          "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JFFBC8",
+      "items": [
+        "sha256:9f3b3429a118f8eeed52ff80879d818a40d3e35afccd33421d6a0bfcb5c4db6a"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/application/knowledge_gate/direct.py against L52 candidate 6ed3e423; existing card prose remains accurate with only parameter forwarding or regenerated measurements.",
+      "sources": [
+        {
+          "blob": "3027ef0193fed1134ecf9454d3cbe139c5a1a5ca",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/direct.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R52",
+          "packet": "requirements/BUG-R52-v2-a-stale-document-is-deferred-explicitly-and-a-false-confirmation-is-flagged.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JKKHT6",
+      "items": [
+        "sha256:46e9244d8ccbebcae4fd163151742fcd22330285413aa4331462459142df27d6",
+        "sha256:d4705a5ab1e527b7a85d2880cdacf047d4fbbe86f88c475b4ef10075f9289e56"
+      ],
+      "reason": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): byte-identical runtime mirror of docs/tool-details.md with lines 389-396 accurately describing landing-cut-card, landing-added-file, and the four dependent_flags reportOnlyFindings.",
+      "revision": 20,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JWBARH",
+      "items": [],
+      "reason": "Audited docs/roles.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): Reviewer code/memory review duties and all role/message/host contracts remain accurate with zero contradictions against L52 OM-6 additions in roles/reviewer.md.",
+      "revision": 15,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
+            "content": "sha256:c3cb938eb20a230aa9f4700d985f6c552029124b5f499e3a4d39adaf60627b4f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "before": {
+            "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
+            "content": "sha256:46bc829c346c7c688094994892fb090ef97f833dbc7a122fd0aa148746ffc215",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "id": "RLZ-1ABWE8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JWVNSX",
+      "items": [
+        "sha256:6aa7c99c28bde57521e15dbc1bbc00ce4e4877bdd7538f5c94a1b5220f15c73a"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-1ABWE8 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-B79B38"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "481142136fc63cf1ed24f5a8453f87839fb838cd",
+            "content": "sha256:339731ea41a0e32e74cb00f98f0fea8d2ddb40676b9e23ae342468cca4860b17",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "5a5eaa37b6c731ea1fdf8975bbd4e4c2c029445d",
+            "content": "sha256:afa8a7b9751b662ebe813c60bc071b986a2fe98b6bb1cc4bbcf0062c9ffb8be1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K0VE9S",
+      "items": [
+        "sha256:2739ef0addb7903f29fc046e8eeacd580c1eef43b829757d736db1973536cb86"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-RHRQZQ against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1SS32",
+      "items": [
+        "sha256:7f5853d2c60543761c5713e7b4cb6e06da2f237639a219bc70f236fdcd63eb2b"
+      ],
+      "reason": "Declares _OMIT_WHEN_EMPTY_LISTS and _KEYED_LISTS constants so _merge_json and _keyed dispatch deferrals to id-keyed collection merging.",
+      "subject": "hunk:sha256:7f5853d2c60543761c5713e7b4cb6e06da2f237639a219bc70f236fdcd63eb2b"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 5
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K2VAN2",
+      "items": [
+        "sha256:41665460e4eac367806f6cb960f60b8d64200d998bb57ca9ba7706f04df5fc1b"
+      ],
+      "reason": "Examined all 6 members of FAM-83BTBD; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 2,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+            "content": "sha256:4a91494de48bddbc85c362469d76e2d481947decdaed7e964cd9ad4b03aeca46",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._onboarding_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": {
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
+            "content": "sha256:66304b2213740ebaac3f0843141f15d491b0d6927a6012990cf18ff0d798bd5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._onboarding_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-051AWY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K5JFEA",
+      "items": [
+        "sha256:8cf4663599095f15c5b6a61002d042b728953c0e1b225641a6e9b40625d6b259"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-051AWY against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 4,
+      "subject": "INV-7V4K9G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "content": "sha256:4f1e7debc21d868a2233da359fbee83030fc2b00c7ef6b0096ef2e42181acadb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "before": {
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:6664f46c59516eceb6fdd8acb4b538d5ae59ff2627d66dca0462d5ea1ddc8f41",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "id": "RLZ-E734EQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KE4FA9",
+      "items": [
+        "sha256:65ebe5e87658c1648abe237155b3dcf2a8b92b1a0fd52aaa350a8278a9b5e51a"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-E734EQ against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-3TJKFH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KKNKVM",
+      "items": [
+        "sha256:996624b92933eb47c260b24a135a62f5a4c01c14036974fce2856c40058615d5"
+      ],
+      "reason": "Imports AnchorResolutionError alongside CodeSnapshot from code_anchors for base-blob lookup fallback handling.",
+      "subject": "hunk:sha256:996624b92933eb47c260b24a135a62f5a4c01c14036974fce2856c40058615d5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:eeed639b566c1ff1e50cd5c8b948cedbe251300b1e19fb1311e6796d2cda752c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-6258J4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KQAZF3",
+      "items": [
+        "sha256:431dee29a783a9282ed4b5948d48a2fbcaf2ad85968f414ee247e4586d1b6f85"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-6258J4 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-BTXVZP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7b4d5e0c7dc880f6c63d8691ae924823e7b2de23",
+            "content": "sha256:06b5471542e23e8fb19da90fb14c532996a186b109becebb5e782dd0566325da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_directory_selection"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/selection.py"
+          },
+          "before": {
+            "blob": "2b76df1ff55e0cabb0559b678d3e790727f4f6df",
+            "content": "sha256:15fdf1bdba214dca54d3911c454e39d5ce66d2154c03ca8728ce4f6cc90692ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_directory_selection"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/selection.py"
+          },
+          "id": "RLZ-ZAM7P3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KX1HC1",
+      "items": [
+        "sha256:37b83878be71478b688d35e1f2432437b4f7251364bc322bd08facb6c63a3938"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-ZAM7P3 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-09H4VC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
+            "content": "sha256:34d2dddef06dd27be9a82135ec40077a5e2c92be877d4f5c0bc2d0caafab3831",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowRequest"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "before": {
+            "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
+            "content": "sha256:877078cb8ce0609792a85cd9031174880499cf2aa932168c838629c0d2ec7eb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowRequest"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "id": "RLZ-2NP5ND"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KXFJNK",
+      "items": [
+        "sha256:b591db92264850fee8b5e29752d906ac7e5d33d7d705f96dfa7a03069302c2bc"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-2NP5ND against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-054R7P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M3JMH0",
+      "items": [
+        "sha256:3d7f82f0ed5b726cf68e582d0229b20f313aecfdf491a037f52c78ffe6fcef22"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_writer/authoring.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "0dcb19a85407326cce0a0c572b16e2e278a5665c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "content": "sha256:004f9169c96b4e4353424f1e7591afb9844f98387c14664da26152fbfeb23b12",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "content": "sha256:50c4b8610fe3d8f199b4c8b4564c35ee7c6c644e8577bd7a360183d1f7d51c52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "content": "sha256:9fdd40e506ee313555421868cce1c5c1986922fed910c147e4db89349933644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        },
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:c21ff79789e258ccb096fd76a2ca088e4c21cfa13694fee329d5fdc37dde2d2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-WFV931"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MDT1XV",
+      "items": [
+        "sha256:ff0e3b2c5dff9c6c380cf7afcf9b6b05dfebc9941286d64afad4d4a61232dd25"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-BJ41EY, RLZ-H44S0N, RLZ-WFV931 against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MFWNZZ",
+      "items": [
+        "sha256:77445278cd0fccc5ff6473999f84492416be6c636369cf2002926a98e58742e5"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for skills/l-01-agent-lifecycles/roles/overview to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MM9HC3",
+      "items": [
+        "sha256:39a18e05bc67b11e4fa0800a0ccda3c3570e06312fc8e8d58a50662a07c6a07d"
+      ],
+      "reason": "Imports TaskFact and load_task_facts from tasks.task_facts for deferral state derivation.",
+      "subject": "hunk:sha256:39a18e05bc67b11e4fa0800a0ccda3c3570e06312fc8e8d58a50662a07c6a07d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MPEJ1R",
+      "items": [
+        "sha256:24bd2958a4b98e865be7f6d200de42586c001e437a817b6aea7bda47bf27250d"
+      ],
+      "reason": "Adds optional repo_name field to WriteRequest to scope task-fact lookups under coordination_root/tasks/.",
+      "subject": "hunk:sha256:24bd2958a4b98e865be7f6d200de42586c001e437a817b6aea7bda47bf27250d"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0APWSR",
+          "revision": 2
+        },
+        {
+          "id": "INV-2FA2B5",
+          "revision": 2
+        },
+        {
+          "id": "INV-7V4K9G",
+          "revision": 4
+        },
+        {
+          "id": "INV-HGJNDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-HYZSDK",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-MYQJ0W",
+      "items": [
+        "sha256:5f5dceb03775914d15359300950b1cdb5041704243100f98db7f19e930f6cc9f"
+      ],
+      "reason": "Examined all 5 members of FAM-DGPZ0R; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 2,
+      "subject": "FAM-DGPZ0R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NJMBN4",
+      "items": [
+        "sha256:4b35d2e8c4022a1fbe7d87afe262b3d166f95aaa4ac1cb19cda3c103419db42d"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/models/knowledge_files/history.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+          "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/history.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NZTM4T",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent (docs/install/hermes.md); L52 touches neither the document nor its stands_on links; left strictly untouched at HEAD 605fa6b0 per standing order.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PB2RC2",
+      "items": [
+        "sha256:519a514f4f6ec929042814e79a5cde03a4f904497e88833cd4ca9517dc69e0a0"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/tasks/overview to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "3e30e3f5b6df3a0e6574e7a06be2f1fd8a257538",
+          "path": "mcp/src/agents_remember/tasks/task_facts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PEGFCD",
+      "items": [
+        "sha256:b464ab0c44d4d913231271848f258406bd0ded4dd06815ccc68930eb8f11bd1a"
+      ],
+      "reason": "Updated skills/l-01-agent-lifecycles/overview for BUG-R52@v2 OM-6 rules and bound current blobs at 48c17102.",
+      "sources": [
+        {
+          "blob": "481142136fc63cf1ed24f5a8453f87839fb838cd",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "afbbb0650d938ecaaa73441b303646f03dfcf88e",
+          "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q3JQE4",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Merged DEP (767635ae) and L52 lane catalog facts (826 distinct modules / 676 unit-regression including both L52 deferral suites) and refreshed citations against 48c17102.",
+      "sources": [
+        {
+          "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "481142136fc63cf1ed24f5a8453f87839fb838cd",
+            "content": "sha256:339731ea41a0e32e74cb00f98f0fea8d2ddb40676b9e23ae342468cca4860b17",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "5a5eaa37b6c731ea1fdf8975bbd4e4c2c029445d",
+            "content": "sha256:afa8a7b9751b662ebe813c60bc071b986a2fe98b6bb1cc4bbcf0062c9ffb8be1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": {
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+            "content": "sha256:34f5742eae2de147f69aee6f5a2b00d45685c890a19fab03d03af04be41b288d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q67ASD",
+      "items": [
+        "sha256:627c401c608ea9da280a20604a9e014dd82e0c68c6efb502a649a59094403f28"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-9J6CEC, RLZ-WZZ5BF against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+            "content": "sha256:a9c42371fdfb9d2fb83bd052db17f776233976b6ed698c5f8f73870b7363333c",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "before": {
+            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
+            "content": "sha256:813c2d4504f24fef18400e1057971e174e0620a4e4af8c484e84755472c20aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "id": "RLZ-EYFZY9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QK4AKB",
+      "items": [
+        "sha256:e2de7ba390233406fd8be2a8c93f757557a990c24d1c5eb2a81fc96dd91597b9"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-EYFZY9 against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-A6571D"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QPFE0Q",
+      "items": [
+        "sha256:687867fa697fca645bedeef20807d2d137a4a753cbab8ebac275f2978ce04b85"
+      ],
+      "reason": "Passes the resolved local GateContext variable into _decided after introducing the optional context parameter.",
+      "subject": "hunk:sha256:687867fa697fca645bedeef20807d2d137a4a753cbab8ebac275f2978ce04b85"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5BPF6M",
+          "revision": 1
+        },
+        {
+          "id": "INV-8SBKWP",
+          "revision": 1
+        },
+        {
+          "id": "INV-KVQ91Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEF33P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QZYC5D",
+      "items": [
+        "sha256:c13b54ee7c700fdaaac1eb72af7532d8b1171043ff610428b71b854aa98ca456"
+      ],
+      "reason": "Examined all 4 members of FAM-CZZ8N4; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 1,
+      "subject": "FAM-CZZ8N4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R26H5G",
+      "items": [
+        "sha256:0badafccb65e39cb8f9e266e3f146f37a647edefd38192c41e411d1a9f22769d",
+        "sha256:86cc6b2cabf39bac08dd59af0bb451c0f279ae6408a08435b56e6f1195722932",
+        "sha256:9fc7798e4e5ad19e5eb74a657552db6cf7d71b828a942458b007373b1d0c56db",
+        "sha256:c58e03005544ffe91ac5f92ab32880b7d09464d8beb6a8f45617715e03c29b61"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/memory_quality/check.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+          "path": "mcp/src/agents_remember/memory_quality/check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/check.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R9VX7Y",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Reviewed skills/l-01-agent-lifecycles/capsule-budgets-current.json against DEP-synced candidate 48c17102; regenerated capsule measurements require no prose change.",
+      "sources": [
+        {
+          "blob": "481142136fc63cf1ed24f5a8453f87839fb838cd",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "before": {
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "id": "RLZ-CXVFS4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RAEZDN",
+      "items": [
+        "sha256:54dc7e0f3f5d574a0ef157e24c3bda4c461636e83abf448dcc676e9bd2163bb1"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-CXVFS4 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RF6GFQ",
+      "items": [
+        "sha256:6f4da2a16e1e07cd4891f768f20b9c599fe7b437ecaa87695a872c1184c256db"
+      ],
+      "reason": "Adds optional coordination_root and repo_name fields to the GateTrees input dataclass for deferral task-fact lookups.",
+      "subject": "hunk:sha256:6f4da2a16e1e07cd4891f768f20b9c599fe7b437ecaa87695a872c1184c256db"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RPZPH4",
+      "items": [
+        "sha256:1d2f5bc6c90545cac8ea5d369d945ef504e269391dd2c5b9952ca3b2da058f91"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/memory_quality/overview to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+          "path": "mcp/src/agents_remember/memory_quality/check.py"
+        },
+        {
+          "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+          "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+        },
+        {
+          "blob": "f1db9013d3b32f0c5f6c9d09a40bb25bd933c580",
+          "path": "mcp/src/agents_remember/memory_quality/dependent_flags.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RT7RF1",
+      "items": [
+        "sha256:fd47c4b43c5e99f7aca2692ec5c7bf372dfd1380c057c7dd5b85554a4bbab06f"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_writer/writer.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/writer.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+            "content": "sha256:f31ed7cb55ac9584c156b724bbc3041663c10f9925f8ca3a3dfc1c7d8f33c69e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TruthView"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "before": {
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
+            "locator": {
+              "kind": "symbol",
+              "name": "TruthView"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "id": "RLZ-KFQ1K1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RYP5YV",
+      "items": [
+        "sha256:e908a6e3e7974e81d85cd17fa94a97443f9075e1433a98a1f263139a5d71f3ef"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-KFQ1K1 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-94DCJ5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3EVBW",
+      "items": [
+        "sha256:c7e327c4488249375bfadb8b110f21996b29a04ae4685cbc6e72234fb4b19a3d"
+      ],
+      "reason": "Refreshed shifted citation anchors in mcp/src/agents_remember/application/knowledge_reader/records.py against L52 candidate 6ed3e423; existing card prose remains accurate.",
+      "sources": [
+        {
+          "blob": "b835a6a73975887fabfb96d60be772a55a87c3e0",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/records.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/records.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S9JENF",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "Reviewed skills/l-01-agent-lifecycles/core/digest-map.json against DEP-synced candidate 48c17102; regenerated digests require no prose change.",
+      "sources": [
+        {
+          "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0R04WY",
+          "revision": 1
+        },
+        {
+          "id": "INV-1QE8YM",
+          "revision": 1
+        },
+        {
+          "id": "INV-5GEDEX",
+          "revision": 1
+        },
+        {
+          "id": "INV-69M737",
+          "revision": 1
+        },
+        {
+          "id": "INV-AV04NY",
+          "revision": 1
+        },
+        {
+          "id": "INV-B79B38",
+          "revision": 1
+        },
+        {
+          "id": "INV-BNDKC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-G8AX2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KPK1WT",
+          "revision": 1
+        },
+        {
+          "id": "INV-PD5ZD5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TRMMZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-X8FRT8",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0FRT0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-T6391W",
+      "items": [
+        "sha256:8bb1cfc9b589fac65e00b073b53d4facf9eb198f86a18a2fe8fa516bd3bfb9ef"
+      ],
+      "reason": "Examined all 13 members of FAM-7NBVYB; no member invariant changed meaning under BUG-R52@v2 and the family guarantee and routes remain intact.",
+      "revision": 1,
+      "subject": "FAM-7NBVYB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TNBCXT",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent (docs/reference/resolver-c08.md); L52 touches neither the document nor its stands_on links; left strictly untouched at HEAD 605fa6b0 per standing order.",
+      "revision": 7,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
+            "content": "sha256:3e1ea4cbced6254257fe6513d912770b6ab8e99d8496f23e28660b49a3f612d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "before": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "id": "RLZ-RHYER2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V4D49V",
+      "items": [
+        "sha256:775b6b993193eec883b95e3787adadf309bb70b79304921e60e6d4cbac59e307"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-RHYER2 against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-3PHJ0H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
+            "content": "sha256:57577420488fdbb4bac3111d1ab8ff45d32989f08fb7fba9b8901562d21b1fe6",
+            "locator": {
+              "kind": "symbol",
+              "name": "judge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "before": {
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
+            "content": "sha256:1bdaf20eba2683f61a7c70c38e03cadf404c58ac35756da2b13dc2622c14afec",
+            "locator": {
+              "kind": "symbol",
+              "name": "judge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "id": "RLZ-KN37RY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V7JQ0M",
+      "items": [
+        "sha256:8cc4e761900bfed0ea751ad466c7ae3ab00a12757132e0ef8b189248c17205f1"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-KN37RY against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-WC2EYG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ea6b58ce8bda712ebe1ab73d240b6c1102350129",
+            "content": "sha256:ce87dcfc816843df35fdbf6421589ec104c2f5cb8962b550a14e3d93a61f60a3",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+          },
+          "before": {
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:5c824cbd643cb3f8fe2fce7dcf6b767af6664d2370a0121c8ec34990610d02f1",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+          },
+          "id": "RLZ-603WBV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VH71ZK",
+      "items": [
+        "sha256:5bdd0665061f2a78688160e48c1f0f7b65c4c03afc55ea6f391f4df389befd17"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-603WBV against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-CRWXXC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W7YMFC",
+      "items": [
+        "sha256:2b9e235b3ebc24ea1170d78f260f3087141846f507cdd8f90801a5e8bc1daeed",
+        "sha256:682b2e45c8f9834d0f047d1fcca2a6cb4ed2a94ffb7194df0c1793072e0c0cc3",
+        "sha256:a1f0c51e0394cfa97d9daff782e46cba0b3a21681492ff0b905a91050f031c31",
+        "sha256:e846fc26d5a6cdd37d7dfea0c021b9e137b06f83efcfc41594873555c7ac4da4",
+        "sha256:f5ca3604507cee45d2efb876229a63ac0f9acf8f067a75a9ef6249ee83acf53c"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/cli/handoff_check.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "92b2601325fc9c34bf222aef6fc619933e63cd85",
+          "path": "mcp/src/agents_remember/cli/handoff_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/handoff_check.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WDJW1F",
+      "items": [
+        "sha256:1a56e19d2dbc4ea45eec19d61d3d138c9662274c8602f0c22de902e7c0b8eb53",
+        "sha256:232c2f008c1e3029b0167b741554fb8a1546b77669a39348359159a34010a7bf",
+        "sha256:52eb062d3bf61669e5150ca722785f1633502a13578c6d1b982ec83be59f8735",
+        "sha256:994163054db924703f99a71edda8de1921a66d8d5fbdc81e7e08f981ab68653d"
+      ],
+      "reason": "Updated landing_report_test_support.py onboarding card for D1033 curator_sentence_variants and merged cut-card wording equivalent in CURATOR_SENTENCE_EQUIVALENTS at candidate f95ac723.",
+      "sources": [
+        {
+          "blob": "c872b225a4a00b1386698a9d4919512eb48e92ed",
+          "path": "mcp/tests/landing_report_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/landing_report_test_support.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-WEGSVH",
+      "items": [],
+      "reason": "Audited docs/reference/path-rules.md in full against L52 candidate 6ed3e423 (base 8ccdd6fa): path-rule keys, matching semantics, and memory_quality/controller.py consumers remain unchanged and accurate.",
+      "revision": 4,
+      "subject": "DPD-T3PEFV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WMHYSC",
+      "items": [
+        "sha256:d0921e2fdd468ddd6d9a3a550c3a47e9d3cdde5afdf987542c37e0cfdd894320"
+      ],
+      "reason": "Refreshed citations and bound current blobs for D1033 2-test-file delta (landing_report_test_support.py and test_landing_report.py) in mcp/tests/overview at candidate f95ac723.",
+      "sources": [
+        {
+          "blob": "67852a19f5baeb12856284567420e1b8689f0f19",
+          "path": "mcp/tests/dependent_deferrals_test_support.py"
+        },
+        {
+          "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "c872b225a4a00b1386698a9d4919512eb48e92ed",
+          "path": "mcp/tests/landing_report_test_support.py"
+        },
+        {
+          "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+          "path": "mcp/tests/test_dependent_deferrals.py"
+        },
+        {
+          "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+          "path": "mcp/tests/test_dependent_deferrals_gate_and_replay.py"
+        },
+        {
+          "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
+          "path": "mcp/tests/test_landing_report.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WNVPR2",
+      "items": [
+        "sha256:a50e187ce9dbcf765994ebc2fce783ef6fe7ea85a87eb8c658137af2dcefa6ce"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_reader/truth.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/truth.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WW3ZV9",
+      "items": [
+        "sha256:838f5afcc58a716683d2b4d35954441026eeb1f98bea9171e54a1b0cb79d90df"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/application/knowledge_writer/handoff.py to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:c21ff79789e258ccb096fd76a2ca088e4c21cfa13694fee329d5fdc37dde2d2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-1MJ3JN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X1WYKR",
+      "items": [
+        "sha256:e1292ac1fe522d1b20e025ef74c5287d15b94d1f7dd79e75bc0090d3324c2de4"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-1MJ3JN against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X4VJNQ",
+      "items": [
+        "sha256:a4f5295d340f224ecb6f2541fc5482c40eae897c420b477d1c7728ca015cead5"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/src/agents_remember/application/knowledge_reader/deferrals.py.",
+      "sources": [
+        {
+          "blob": "1db32145634b8c44291cbddad7ce2192fc7484f3",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/deferrals.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XBCGBQ",
+      "items": [
+        "sha256:6ec28fe3927dc09be24ae0f386540bb3932d119d2c90089ff91c049c63bd9cf7"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "3d9d16ace8ae82e51ffaeb5fa4a2ae7ed6643ce9",
+          "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XBCZ0A",
+      "items": [
+        "sha256:643e8280c37379a01e91151538a9972fd64f32642b0543d13e0bffac817b40e5"
+      ],
+      "reason": "Created new onboarding card and authored verified source citations for newly added L52 file mcp/src/agents_remember/tasks/task_facts.py.",
+      "sources": [
+        {
+          "blob": "3e30e3f5b6df3a0e6574e7a06be2f1fd8a257538",
+          "path": "mcp/src/agents_remember/tasks/task_facts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/task_facts.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+            "content": "sha256:b4991ae5adb1ab25b1739551b453e6efcd9c1d410e5472b4a18fdf68b3c667d1",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 516
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "before": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:965ad4804ab1dc97631b571e2c1688256ccd404047e0121f89f8b1aa52137657",
+            "locator": {
+              "end": 537,
+              "kind": "line_range",
+              "start": 513
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "id": "RLZ-696Y32"
+        },
+        {
+          "after": {
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+            "content": "sha256:4d7d5d6899c727c333834e06537101c53d062c95287760df1f0db2de48725f97",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "before": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:1d608a739ddd16bdad6b8fa9ff55c769d5eeaa56bdc641df8a10b9772aac2ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "id": "RLZ-VRSVJP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XBDP8Y",
+      "items": [
+        "sha256:28aa32f3dfadcbd860c123b896f1caab9ed683c2cf4157f2cdeae6a4d1781cbc"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-696Y32, RLZ-VRSVJP against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-G8AX2H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+            "content": "sha256:1ed5ca972fd729804f76f31330ead6a3f20ea27daf5bc94c7df8ca0d098d8884",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "before": {
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:a6a7b96934b06a3cb2dcf34004152409f9a6842a11f572d1d94c36d4b3efb82e",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "id": "RLZ-R5RASM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XESQXX",
+      "items": [
+        "sha256:a2e217dd4436fbfac39b3f44e6065750eb226f12ff6834e27d2ddcf23c6681f6"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-R5RASM against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R52",
+          "packet": "requirements/BUG-R52-v2-a-stale-document-is-deferred-explicitly-and-a-false-confirmation-is-flagged.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YC6JC1",
+      "items": [
+        "sha256:8a0e8303c0692cd7ad156a8a43cdc65ee4158d4f3a162d869eb697619884ac05"
+      ],
+      "reason": "Verified docs/reference/knowledge-system.md in full against L52 candidate 6ed3e423 (base 8ccdd6fa): lines 353-361 accurately describe task memory_quality_check reportOnlyFindings including landing-cut-card, landing-added-file, and all four dependent_flags entries (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning), and lines 504-508 accurately state that crossing sync merges records by field while merging DependentRecord.deferrals by deferral ID (DFR-*, omitting when empty).",
+      "revision": 9,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "481142136fc63cf1ed24f5a8453f87839fb838cd",
+            "content": "sha256:339731ea41a0e32e74cb00f98f0fea8d2ddb40676b9e23ae342468cca4860b17",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "5a5eaa37b6c731ea1fdf8975bbd4e4c2c029445d",
+            "content": "sha256:afa8a7b9751b662ebe813c60bc071b986a2fe98b6bb1cc4bbcf0062c9ffb8be1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YJWE98",
+      "items": [
+        "sha256:cb072b763e2299be2faf20df0f3cfc205fa4e13dbbf3148dc5950826f2b02794"
+      ],
+      "reason": "Re-anchored realization(s) RLZ-9FX5WR against DEP-synced L52 candidate 48c17102; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-YTKH9B",
+      "items": [],
+      "reason": "Audited docs/reference/mcp-tools.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): memory_quality_check report-only summary, knowledge_read seven views and arguments, knowledge_write routes/status rules, and closeout gate descriptions remain accurate with zero L52 contradictions.",
+      "revision": 28,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YZAE0V",
+      "items": [
+        "sha256:dc097259bbca269775c08c364ddfd9d63d43ae883c5a85d9c5b0ea2305fd897d"
+      ],
+      "reason": "Imports DEFERRAL_ID_PATTERN alongside RECORD_PREFIXES and RecordKind from models.knowledge_files.ids.",
+      "subject": "hunk:sha256:dc097259bbca269775c08c364ddfd9d63d43ae883c5a85d9c5b0ea2305fd897d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "content": "sha256:d6202ce2490710b9e6edeff594e0421d3fd9fb8d5aa059030b85557af8566c2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "before": {
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:42d1689332e335ab8aa631adcdce364e4421b43753d4e2ab80435f6d5f402692",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "id": "RLZ-YHME1A"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z3VHCY",
+      "items": [
+        "sha256:d5fb55d09909670b0dbea4c9b56abe9e3e74d56e1f7e78bdf86aad806069652d"
+      ],
+      "reason": "Re-anchored touched realization(s) RLZ-YHME1A against L52 candidate 6ed3e423; invariant meaning and obligations remain unchanged under BUG-R52@v2.",
+      "revision": 1,
+      "subject": "INV-ZK0X8M"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z4TJVP",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for skills/l-01-agent-lifecycles/roles/reviewer.md to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-ZKW99M",
+      "items": [],
+      "reason": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against DEP-synced L52 candidate 48c17102 (base 599cfaf8, where 261125-DEP-L2 confirmed rev 23): pins no artifact or test counts and accurately describes the seven accepting lanes, canonical catalog form, lifecycle rules, and source-derived consumers after L52 added dependent_deferrals_test_support.py and its two unit-regression suites.",
+      "revision": 24,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZM4NNX",
+      "items": [
+        "sha256:3d3ee3f614734d130fdbc621c96fc957f29545e791a17868f1ddcd8bc14686f6"
+      ],
+      "reason": "Imports derive_deferrals, infer_reading_leaf, and opened_code_files from knowledge_reader.deferrals.",
+      "subject": "hunk:sha256:3d3ee3f614734d130fdbc621c96fc957f29545e791a17868f1ddcd8bc14686f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZNVA16",
+      "items": [
+        "sha256:e6032f3526f0d7a0e3ea3d6210de9961e2a97eb094531614c71355f6e3185424"
+      ],
+      "reason": "Imports DependentFlagScope from memory_quality.dependent_flags.",
+      "subject": "hunk:sha256:e6032f3526f0d7a0e3ea3d6210de9961e2a97eb094531614c71355f6e3185424"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZXAGV8",
+      "items": [
+        "sha256:452f617590aa918511eab6caa6c186887d6270ccd93b2d450afed5ee1a522e8f"
+      ],
+      "reason": "Updated onboarding card prose and refreshed citations for mcp/src/agents_remember/models/overview to reflect BUG-R52@v2 deferral, gate, flag, reader, and OM-6 changes.",
+      "sources": [
+        {
+          "blob": "cb60640677dd53e2a22deaa0397ea6bfeae4e6e5",
+          "path": "mcp/src/agents_remember/models/knowledge_files/canonical.py"
+        },
+        {
+          "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+          "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+        },
+        {
+          "blob": "667f7cc7d10faf620694ff5fbe5279e0b3998350",
+          "path": "mcp/src/agents_remember/models/knowledge_files/ids.py"
+        },
+        {
+          "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
+          "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+        },
+        {
+          "blob": "ed6084cdd2c0aa929393cb96209640906339a761",
+          "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:cd5315cb001c5ac732985dabe89692a688863719ffc9a0d04c020ed675d92e30",
+      "record": "DPD-10YCT2",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1675e4f3e1ebf5a4f61c85d26d2c3bbbf82d9fdbdec18059679d650f58481b0f",
+      "record": "DPD-10YCT2",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T09:02:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:edf74913dec20e6214b70a1d4396f3b6685a6d56960c48b9a137e64b7bb69870",
+      "record": "DPD-71WYH4",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9715a41a1a0a346a666a8f23f381614945ce343880b4c3cdabd979b0aeec2664",
+      "record": "DPD-71WYH4",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c34d57e8fccf7a0194fa194037a248cb4ac556b96973ff15d5fa5f9391b15b40",
+      "record": "DPD-71WYH4",
+      "revision": 30,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6889c1c943bd9f9ee296cb9248c99d9649a3159ecd6f1cdaa9a1281bf72b7782",
+      "record": "DPD-78737N",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7e0ab807d5127e523bfcd04d04cbe7134e8024a7e240db05963db585c85a0325",
+      "record": "DPD-78737N",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cb6deeeccaf1046121fc9b4a823f4c81ff08b06b657d5b565535396912c6156c",
+      "record": "DPD-9K25G8",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:67971487b7ee32ee10759ee9e7c9fedaadeb13b7a9f7028160a5d0eff9d6455d",
+      "record": "DPD-9K25G8",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3aa08d23d39ffcdc91c3d8241666eccfb5822b379bf407e950e4afee444b8f0c",
+      "record": "DPD-B540GW",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c2ed088b1d3da5bd75b13dc71f43be02593bb079fcaf1197bd1b2cad8fb8941c",
+      "record": "DPD-B540GW",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a603750d25652203110c8447d9cf9c7aee6db45cc80b9aa91df037d64573fd49",
+      "record": "DPD-CZBR1Q",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d32ad21ed9f01b0c9bfb4a25477ef5c1d90685377388709dcdab2c72dea5ec9a",
+      "record": "DPD-CZBR1Q",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3e728549e9f16f4d533fd19f4f82682b5e2ff887cd86e9a0048de735a564f7f9",
+      "record": "DPD-EG5TYT",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:76ef79bd934668afe49deff847114f0d06d24dece615805467c776341face399",
+      "record": "DPD-EG5TYT",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5bf3a24e86927f2ef8cc729c8a4e48ea8efe540190b7b2ed266f6ec8e4b9ec33",
+      "record": "DPD-EG5TYT",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4e5e157508b0acf752417a6a55af800fd5c58fc219e9b63091f7ccd883d25b52",
+      "record": "DPD-NGC2F6",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2b56c93e3b8f517fbaeca3d3ec539c583d515540425ae604629df9797a50b3da",
+      "record": "DPD-NGC2F6",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T09:02:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ce70f5116399aa9836c97794e0d36e8d33216df2e591ac3d132e3e9a47952b28",
+      "record": "DPD-PMZ21Z",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:693b6f40a82018299613b895c526f9701016aab94fd8740df0296a98080c67f8",
+      "record": "DPD-PMZ21Z",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0abd1964544a1de0e5553f5694d5ff76a3b44c57611848a5017184cb0bc5998b",
+      "record": "DPD-PMZ21Z",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a987fff5a196f29043d577fcf1cf0b7cc15c69103dc16b095027aa00870f7a04",
+      "record": "DPD-T3PEFV",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:91a155328665f48f6ddd5ed77d52aea471afb7cf1db47132fe599836acbaa8f1",
+      "record": "DPD-TXRND9",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ffb034bbabeca99c9b909916ed682c119fa672f412a6380daef7181ed36223e4",
+      "record": "DPD-X6G7K3",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:71eb5ee89415532bfcf6e38625b5f237271448ca2f128ae39148fdae68d85fe5",
+      "record": "DPD-X6G7K3",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:01ffb129cec9c1741d2ab84dc84f93de4a810f7e2d548a1329d94ecc73ced189",
+      "record": "DPD-X6G7K3",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f78766520eed94d62117a4e405a7dbfd5cbd7bb6488c86c2311cc74f2e6aa4da",
+      "record": "DPD-ZMQ523",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:da419691b41738a18582e440a20fd49d8d48c4be483a010dc58745f0eb10276e",
+      "record": "DPD-ZMQ523",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0988fde20e231e029ec26112bfa8da9fe3fe9677d6572af1fef0c7ede2c45a4f",
+      "record": "DPD-ZT8YY7",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a74a74944fcbb29461f41bcd3d04a1399d3a47725a9cf51cefd712c1de747538",
+      "record": "DPD-ZT8YY7",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T08:02:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:98903896ef579fe0dff80280282753a5d60072c87c16197614a59d5ed1563bea",
+      "record": "DPD-ZT8YY7",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T08:25:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:000e84a0cc241674215457497ea2d6931a4b88698cf69672080428ad3107881d",
+      "record": "FAM-FQ8TF2",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:334a43913fabc870f0ba2466e62296a962b71a5a4a4fbbbc563ab125a1aeb9ee",
+      "record": "INV-82NDFH",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6b236cd0d23f6fa0fd3241225741a722f78463d01e2a237cf31a6927dcb49a9b",
+      "record": "INV-8CNH3X",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7b64375172788f6cf67621193f49c07d99efbc6f6bb4805e26328588a3dcb638",
+      "record": "INV-MH7M10",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1a199456f616b3d2eb77fe1c62990d16ad785ec7c706bb248a05e7eb580bcd73",
+      "record": "INV-N6WPHK",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:962da547fdd3e85eaeb99187648adc1cb4adb947d1612135af52c694a84b8a90",
+      "record": "INV-NW74GN",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5e0b8b6e4ea92f7d1f8a411e6fa075cd52e96e80da6d6174b651665901d78442",
+      "record": "INV-Q2KM31",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a85d9e4ce89aec63f6e51306b2272738cbb5c03b51ce3eeeecd54ada5ad98076",
+      "record": "INV-VWRJR7",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a1233a9e3cc381291dd0e65ca7b1cdcbe40caffdab9836c4ee1756cda304761c",
+      "record": "INV-XT13GK",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:20bef8f7cf8a093b9f41ee1f3646b6bb0cbf68f09340bf93e06090d1d82a9210",
+      "record": "INV-ZEV1G9",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T07:36:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L52",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

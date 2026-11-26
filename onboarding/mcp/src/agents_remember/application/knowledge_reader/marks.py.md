@@ -20,6 +20,8 @@ File attribution names the newest path commit only when its value matches the ob
 
 dependent_list supports folder, stale-only and standing-on-code filters and emits each moved link. dependent_counts counts documents per distinct anchor/file path. Record-link movement is a memory revision fact, not a code commit. dependent_state_at returns absent for no dependent, unverifiable for invalid/read-failed data and otherwise the derived state.
 
+`dependent_list` and `dependent_detail` project open deferrals through `derive_deferrals`, `infer_reading_leaf`, and `load_task_facts`, marking deferred dependents with `state: "deferred"` (while preserving `stalenessState` and `deferred: True` and surfacing them under `staleOnly=True`); `dependent_state_at` returns `"deferred"` when deferrals are open, and `dependent_state` accepts an optional pre-opened `code` tree.
+
 ## Invariants And Boundaries
 
 No function writes a record or stores derived staleness. Card counts carry quantities, not weakness sentences or dependent text. The new index-taking helper performs the same validated open-record count as the ordinary selection reader and lets focused cards reuse the bound after index already open.
@@ -43,6 +45,8 @@ No function writes a record or stores derived staleness. Card counts carry quant
 
 
 - Only exact committed provenance can select history for attribution. [4]
+
 - Dependent filters, per-path counts and single-record failure labels remain derived. [5]
+
 
 - Closed weakness rows use the shared closure display without changing the stored record. [6]

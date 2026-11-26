@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents spurious merge conflicts or silently dropped deferrals across concurrent leaf syncs, and is guarded by bidirectional merge and post-sync closeout tests."
+  },
+  "applicability": "Three-way structural JSON merges of ar-dependent/v1 records in crossing.py during memory syncs.",
+  "conditions": [
+    "Distinct deferral IDs added on opposite sides merge cleanly in both directions without conflict.",
+    "A deferral removed on one side and unchanged on the other resolves as removed, and an empty merged list omits the deferrals key.",
+    "Differently edited deferrals sharing one ID remain an explicit crossing-conflict."
+  ],
+  "exclusions": [
+    "Non-keyed record fields, which continue to merge by field name."
+  ],
+  "id": "INV-Q2KM31",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals_gate_and_replay.py::test_14_sync_merges_deferrals_by_id_both_directions_and_catches_invalid_confirmation_at_closeout"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §6",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The structural crossing merge treats DependentRecord.deferrals as a keyed list by id, merging concurrent additions in both directions without conflict, carrying one-sided resolution via 3-way delete-vs-unchanged, and omitting the deferrals key when empty.",
+  "supersedes": [],
+  "title": "Crossing merge merges DependentRecord.deferrals by ID and omits empty lists",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

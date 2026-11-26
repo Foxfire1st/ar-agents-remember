@@ -1,0 +1,195 @@
+{
+  "path": "mcp/tests/test_dependent_deferrals.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:42430e5a148509fcf490265719a6474062361900c5297c3830bfadae74f35f5b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_04_confirming_deferred_document_without_edit_is_refused_naming_deferral"
+        }
+      },
+      "facet": "Verifies confirming an existing deferred dependent without editing its document is refused with every open deferral named.",
+      "id": "PRF-2XTPZA",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:3e9d0c3e9d82088a56c061d7c5ac87e9e77fb5c4af229f55306d193dc2b0a8a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_05_partial_resolve_ends_one_deferral_keeps_other_and_record_stays_deferred"
+        }
+      },
+      "facet": "Verifies partial resolveDeferrals on an edited document resolves only the named deferral and keeps the remaining deferral blocking unedited confirmations.",
+      "id": "PRF-4GEYRC",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:d2e4a1f15ea28d7431a50d85caea9c7a2bf5895dd8e1a21ebc5772e6cd45f424",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_10_redefer_refuses_note_only_allows_same_file_on_changed_blob_until_next_change"
+        }
+      },
+      "facet": "Verifies note-only re-deferral is refused while same-file re-deferral after a blob change updates fileBlob and clears due status until the next change.",
+      "id": "PRF-78CSMB",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:624e53cd72c9287430f9c82163c6f15bbda87352b39ca7d2a3cb8c4a9d333066",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_01_deferral_validation_refuses_invalid_inputs"
+        }
+      },
+      "facet": "Verifies defer refuses empty condition, note-only condition, blank passage/reason, and unknown, terminal, or master task IDs.",
+      "id": "PRF-7STR3P",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:dc75be352064e49393d1a8b13a260d83db6247c58a2a702993817ba770147114",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_03_history_validator_accepts_deferral_rows_and_rule5_gate_matches"
+        }
+      },
+      "facet": "Verifies the history validator accepts DPD deferral rows, touched_records marks deferralOnly=True, and rule-5 changed_document_open still requires a changed confirmation.",
+      "id": "PRF-8DEHXK",
+      "invariant": "INV-NW74GN",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §2",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:6b153fe2c8eba238dac68e5ef080f4242b2bdc5c74d0dadf1d938ccabd93d578",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_11_w0t9v9_cap_and_bug_deferrals_partial_resolve_and_redefer_allows_closeout"
+        }
+      },
+      "facet": "Verifies a leaf can resolve its own deferral and re-defer another owner's deferral on the same edited file to pass closeout.",
+      "id": "PRF-C616DN",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:4bf6410bdf6569bd96a145071aa45917d53ed87a72a5eb89be2e856d4e742607",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_new_dependent_with_confirmation_and_deferral_without_edit_is_refused"
+        }
+      },
+      "facet": "Verifies creating a new dependent with confirmation and an open deferral without editing the document is refused while plain and edited writes succeed.",
+      "id": "PRF-DHJSR9",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:cd1a1c213c65694fa6fd0ba6a56f17d2602edf7b9605b6238e35a132b2e5ffcd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_02_defer_redefer_lift_preserve_confirmation_and_bump_revision"
+        }
+      },
+      "facet": "Verifies defer, redefer, and lift leave stands_on and confirmed unchanged while incrementing revision and recording deferralIds.",
+      "id": "PRF-DR5P3R",
+      "invariant": "INV-NW74GN",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §2",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:e2fe7e6aaf3be443145e8686ebcae28eab004e355967d9c577ad42d2dcd01083",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lift_requires_deferral_lifted_row_and_surfaces_in_multi_op_write"
+        }
+      },
+      "facet": "Verifies any lift without a deferral_lifted row or combined with confirmation is refused, and multi-op lift+defer writes surface the lift in MQC.",
+      "id": "PRF-JN3XJJ",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "content": "sha256:45b90daf9034ad7ae63d1c38fb205ba8c4124b96d9512d2bf6cd680a42273711",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_17_record_without_deferrals_is_byte_identical"
+        }
+      },
+      "facet": "Verifies pre-L52 dependent records parse unchanged and records with all deferrals lifted omit the deferrals key byte-identically.",
+      "id": "PRF-PH2C5Q",
+      "invariant": "INV-N6WPHK",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §1",
+        "leaf": "261112-BUG-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module tests deferral validation, preservation of confirmation fields, partial resolution, re-deferral rules, byte-identity, lift row enforcement, and new-record confirmation refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+            "content": "sha256:624e53cd72c9287430f9c82163c6f15bbda87352b39ca7d2a3cb8c4a9d333066",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_01_deferral_validation_refuses_invalid_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

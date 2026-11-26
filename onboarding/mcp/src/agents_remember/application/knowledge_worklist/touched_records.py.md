@@ -8,6 +8,8 @@
 
 This module registers `touched_record` and detects exact JSON or Markdown changes to decisions and facet records that existed in the memory base. Its facts carry both sides' revisions and statuses; the satisfying leaf `record` row must match the candidate revision and the kind of change.
 
+`_deferral_only_dependent_change` detects when a `DependentRecord` changed only in `deferrals` (plus `revision`/`writer`) with unchanged Markdown and marks its `touched_record` item with `facts["deferralOnly"] = True`.
+
 ## Code Commentary
 
 ### Logic

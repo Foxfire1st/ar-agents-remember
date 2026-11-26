@@ -692,7 +692,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
 
-- Source bindings, membership and record models. [313]
+
 
 - Non-author statement/diff/omission fact-check. [314]
 
@@ -768,8 +768,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [31]
 - The root configuration declares the current selected-case ceilings of 10000 unit and 2000 integration; deliberate raises update the declaration and its independent screens together. [287]
-- **Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.  Anchor: `_onboarding_refresh_gate` [60]
-- **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [152]
+
+
+
 - **Retained historical source account — superseded by the current route account:** Interactive catalog names missing authority without eligibility. [153]
 
 - **Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
@@ -804,7 +805,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
-- The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
 
 
 
@@ -853,7 +854,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
 
-- The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
+
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
 - The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
 - The worktree layer checks whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner's history closed. [5]
@@ -873,3 +874,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - `git_command_spec` supplies the sanctioned Git argv without spawning, and the shared commit-check runner owns the hook session and log. [424]
 - The continued sync commit and the landing share one bounded runner. [425]
+
+- **Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates. [60]
+- **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication. [152]
+- Source bindings, membership and record models. [313]
+- The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
+- The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]

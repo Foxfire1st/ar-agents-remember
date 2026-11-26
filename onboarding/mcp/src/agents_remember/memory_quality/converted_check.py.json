@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-        "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+        "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+        "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_knowledge_check"
+        }
+      },
+      "id": "RLZ-63ZT6V",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Appends dependent_flags output to reportOnlyFindings without flipping ok or findingCount.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
         "content": "sha256:3ad84e0e8d01ad283b4dce64157c5bc56b113bcdbb925e88996fecd7200e5655",
         "locator": {
           "kind": "symbol",
@@ -40,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-        "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+        "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"
@@ -58,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
         "content": "sha256:e8c735e2c57dda2f3dddf3e6b3e0a17629d04f5f9542f2e7a20f823dd61296a0",
         "locator": {
           "end": 6,
@@ -77,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-        "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+        "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"
@@ -95,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
         "content": "sha256:3464a8a1b074f5a636063b2700da63e952c9a8a9ab7072c561dd43af44c295b6",
         "locator": {
           "kind": "symbol",
@@ -118,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
             "content": "sha256:4f4d571509f070b6b194d8cc2e2e4397b1c13948dd9445303efc599732feb22d",
             "locator": {
               "kind": "symbol",
@@ -130,12 +148,12 @@
       ]
     },
     "3": {
-      "note": "The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only.\n\nAnchor: `converted_knowledge_check`",
+      "note": "The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:83d2a9d76ce3b5100176d3c8fecd9814d2e7385cf7058cd4c738998e3ef7ba0e",
             "locator": {
               "kind": "file"
             }
@@ -145,12 +163,12 @@
       ]
     },
     "4": {
-      "note": "The runner's dispatch to this module.\n\nAnchor: `_converted_check`",
+      "note": "The runner's dispatch to this module.",
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:49d726c9c9fe9fcb6525f4ed64500bbc35a3ba5315850fb077f5c147e3ac0954",
             "locator": {
               "kind": "file"
             },
@@ -182,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
             "content": "sha256:3464a8a1b074f5a636063b2700da63e952c9a8a9ab7072c561dd43af44c295b6",
             "locator": {
               "kind": "symbol",
@@ -193,7 +211,7 @@
         },
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
             "content": "sha256:2ea7090ba8f226dac8a812a416add05ecbe607a0b29ca776b4ae8d61b1231d28",
             "locator": {
               "kind": "symbol",
@@ -209,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"
@@ -220,8 +238,8 @@
         },
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:83d2a9d76ce3b5100176d3c8fecd9814d2e7385cf7058cd4c738998e3ef7ba0e",
             "locator": {
               "kind": "file"
             }
@@ -235,8 +253,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"
@@ -246,8 +264,8 @@
         },
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:2e69db208aa0490529b32c66de182289095715d38cbf757016d93656ac044482",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:83d2a9d76ce3b5100176d3c8fecd9814d2e7385cf7058cd4c738998e3ef7ba0e",
             "locator": {
               "kind": "file"
             }
@@ -261,8 +279,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"

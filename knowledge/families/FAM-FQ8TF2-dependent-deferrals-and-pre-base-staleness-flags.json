@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Deferral schema and deferral-only writes prevent silent confirmation only together with writer unedited-confirmation refusals, closeout due gating, ID-keyed crossing merges, MQC report-only flagging with OM-6 review sign-off, and reader/dashboard state projection."
+  },
+  "guarantee": "A stale dependent document left for later carries explicit deferrals that never silently confirm it, survive crossing syncs by ID, block closeout only where due, surface in reads and quality flags, and require signed whole-document Memory Reviewer verification whenever a pre-base stale confirmation or lift occurs.",
+  "id": "FAM-FQ8TF2",
+  "members": [
+    "INV-N6WPHK",
+    "INV-NW74GN",
+    "INV-8CNH3X",
+    "INV-XT13GK",
+    "INV-Q2KM31",
+    "INV-82NDFH",
+    "INV-MH7M10"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "fam-dependent-deferrals",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels/knowledge-reader",
+    "mcp/src/agents_remember/application/knowledge_gate",
+    "mcp/src/agents_remember/application/knowledge_reader",
+    "mcp/src/agents_remember/application/knowledge_worklist",
+    "mcp/src/agents_remember/application/knowledge_writer",
+    "mcp/src/agents_remember/memory/conversion",
+    "mcp/src/agents_remember/memory_quality",
+    "mcp/src/agents_remember/models/knowledge_files",
+    "mcp/src/agents_remember/tasks",
+    "skills/l-01-agent-lifecycles/criteria",
+    "skills/l-01-agent-lifecycles/operations",
+    "skills/l-01-agent-lifecycles/roles"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Dependent deferrals and pre-base staleness flags across writes, syncs and gates",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}
