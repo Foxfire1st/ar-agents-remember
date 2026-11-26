@@ -7,24 +7,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
-            "content": "sha256:444b3c1935e385f395d793859351f9d1afa026a7f680fafa8ce69bbcd9fc75d1",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "content": "sha256:fd778ebfe1fda36f9185499e2a60a53ed26f4f9bee58d905ffe2327a45893e6e",
             "locator": {
-              "end": 101,
+              "end": 160,
               "kind": "line_range",
-              "start": 56
+              "start": 69
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
             "content": "sha256:dcde1f198c2c832d22e722ef5888cac2191fa5abf1580d83cefe487ec535958f",
             "locator": {
-              "end": 369,
+              "end": 430,
               "kind": "line_range",
-              "start": 234
+              "start": 295
             }
           },
           "kind": "test"
@@ -36,36 +36,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
-            "content": "sha256:444b3c1935e385f395d793859351f9d1afa026a7f680fafa8ce69bbcd9fc75d1",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "content": "sha256:fd778ebfe1fda36f9185499e2a60a53ed26f4f9bee58d905ffe2327a45893e6e",
             "locator": {
-              "end": 101,
+              "end": 160,
               "kind": "line_range",
-              "start": 56
+              "start": 69
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
             "content": "sha256:98eec091e67093e668374bf075c8c3332a09b7210ce94094d13bca30d05c8926",
             "locator": {
-              "end": 179,
+              "end": 240,
               "kind": "line_range",
-              "start": 173
+              "start": 234
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
             "content": "sha256:bdf14b8771ce3cbcf957705221e97bb0c6d84b995dd10fed111ad4791d048ea2",
             "locator": {
-              "end": 289,
+              "end": 350,
               "kind": "line_range",
-              "start": 284
+              "start": 345
             }
           },
           "kind": "test"
@@ -77,12 +77,61 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
             "content": "sha256:fd6c853b89536f46d29cdf3a490cab0e2c58ecc451491bfc2535434322d047e9",
             "locator": {
-              "end": 163,
+              "end": 224,
               "kind": "line_range",
-              "start": 127
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`FakeRuntime` writes synthetic `ServerBindingRecord` files for eager providers (`provider_starts_tool_server_at_create`) on `agent-create` when `write_server_bindings` is enabled and removes them on `agent-archive`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "content": "sha256:ea6e48d592125a4f64ef15dc7e80e3515f5a96af68368bcdb3d27ca0f4d67ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_fake_binding"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "content": "sha256:d9942d9691e7f05709b6ee9e7b4ae1dd01ed1cfe61779f4cfddbb706d68630ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_fake_binding"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "content": "sha256:3976b372b7e8f2bf57a45fc54975b63a18f9f13783f990a807eb1bfa31cee4e1",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "content": "sha256:0eb320d79a1542633df83213a9e80e16e6054f51fec312706db0a0266f330407",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

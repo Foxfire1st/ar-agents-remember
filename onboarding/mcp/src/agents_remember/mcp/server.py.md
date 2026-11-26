@@ -53,7 +53,7 @@ A native invocation opens a lazy request memo and clears its shared owner map af
    other registered tool through FastMCP's `remove_tool`, so the survivors keep their registration
    order, compacted schemas and read-only annotations. A present but unreadable binding keeps only `server_info`.
 
-`run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), runs `create_server(config).run()`, and calls the returned cleanup when serving ends; the cleanup removes the record and is also registered to run at normal process exit.
+`run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), then writes this server's per-PID binding and process-ancestry record under `<coordination-root>/runtime/server-bindings/<pid>.json` through `_register_process_binding(config)` → `serving/server_bindings.register_server_binding` (distinguishing `bound` with `BoundIdentityPayload`, `unbound`, and `unreadable` with `unreadable_reason`) before calling `create_server(config).run()`. In `finally`, it runs both idempotent cleanups (removing the binding record first, then the server registry record), and both cleanups are also registered with `atexit` for normal process exit.
 
 ### Dispatch at the public transport boundary
 
@@ -65,7 +65,7 @@ Inside the tool-call context, a server with config reads its build currentness o
 
 - A stale installed build's publication writes are refused before dispatch; other calls dispatch under the carried currentness reading. [13]
 
-- `run_server` registers the process as an `"mcp"` server and runs the cleanup when serving ends. [14]
+- `run_server` registers both the `"mcp"` running-server record and the per-PID binding/ancestry record (`bound`, `unbound`, or `unreadable`) via `_register_process_binding` before serving and runs both cleanups when serving ends. [14]
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 

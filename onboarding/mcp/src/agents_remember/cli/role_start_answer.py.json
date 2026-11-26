@@ -198,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:713d1c3e6675f84a4221f91b50e2af624f0c65f41ef1e9f45cc0cb24e6dd8349",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:839bffcc6edea9158629bd8f2fa442a200bdc46ec2e5453c1e977598ba14894f",
             "locator": {
-              "end": 200,
+              "end": 224,
               "kind": "line_range",
-              "start": 127
+              "start": 131
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -241,27 +241,14 @@
       ]
     },
     "7": {
-      "note": "A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published.",
+      "note": "A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published.\n\nAnchor: `test_a_bootstrap_start_answers_with_its_seat_and_the_place_it_is_continued`; `test_a_dashboard_that_does_not_answer_is_reported_instead_of_published`",
       "targets": [
         {
           "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
+            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_bootstrap_start_answers_with_its_seat_and_the_place_it_is_continued"
-            },
-            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:c7da8e8fa7cc958ef689e00a5ffbe736605b98329d7f1acf81a66b0be5e714fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_dashboard_that_does_not_answer_is_reported_instead_of_published"
+              "kind": "file"
             },
             "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
           },

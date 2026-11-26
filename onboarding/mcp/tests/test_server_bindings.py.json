@@ -1,0 +1,185 @@
+{
+  "path": "mcp/tests/test_server_bindings.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+        "content": "sha256:666056fc18e76f02ddc99040f14196fc971315c58ed6078986417543f88bea55",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_run_server_registers_and_cleans_up_both_records"
+        }
+      },
+      "facet": "Demonstrates run_server registers both runtime/servers/<pid>.json and runtime/server-bindings/<pid>.json before serving and cleans up both in nested finally blocks.",
+      "id": "PRF-ADRSC5",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+        "content": "sha256:6a84bddb7b84d88c9e83a61a988ccbeabfb7a4931e8956d4d46a781f82258c0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_register_and_cleanup_bound_unbound_and_unreadable_records"
+        }
+      },
+      "facet": "Demonstrates atomic registration, bound/unbound/unreadable payload shapes, and idempotent cleanup of runtime/server-bindings/<pid>.json records.",
+      "id": "PRF-JG6QCA",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+        "content": "sha256:e6530dc03cd7aba18c5d9b64c780937ed4355103ae78f270e7487cb79101c92f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_older_server_inventory_sees_only_pid_record_unchanged"
+        }
+      },
+      "facet": "Demonstrates older live_servers readers see the exact legacy runtime/servers/<pid>.json schema and directory contents unaffected by peer server-bindings records.",
+      "id": "PRF-N4TTP0",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+        "content": "sha256:70d900a5b404681059c74aa791621fe8424194f2078dcc56b7a4881082e117d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dead_and_recycled_pid_reclamation_at_two_population_sizes"
+        }
+      },
+      "facet": "Demonstrates dead and recycled PID binding records are reclaimed during live_server_bindings scans at two population sizes.",
+      "id": "PRF-W524ZD",
+      "invariant": "INV-5MFB9S",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §1",
+        "leaf": "261112-BUG-L51"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tests register, read, and idempotently clean up `bound`, `unbound`, and `unreadable` binding records and verify `atexit` registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:6a84bddb7b84d88c9e83a61a988ccbeabfb7a4931e8956d4d46a781f82258c0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_register_and_cleanup_bound_unbound_and_unreadable_records"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tests `run_server` dual registration and cleanup across all three modes, exception cleanup, and legacy `runtime/servers/` compatibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:666056fc18e76f02ddc99040f14196fc971315c58ed6078986417543f88bea55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_run_server_registers_and_cleans_up_both_records"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:92962ab1766a4a8de0f35e2946162e72a456c857155e96b28d0044972169b112",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_run_server_cleans_up_both_records_when_server_raises"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:e6530dc03cd7aba18c5d9b64c780937ed4355103ae78f270e7487cb79101c92f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_older_server_inventory_sees_only_pid_record_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tests dead and recycled PID reclamation at populations 4 and 16 while preserving corrupt/other-schema files, and verifies once-only write-error logging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:70d900a5b404681059c74aa791621fe8424194f2078dcc56b7a4881082e117d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dead_and_recycled_pid_reclamation_at_two_population_sizes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:d3bdaed122f6414ac6dc1cc3f01094c2cea0888b64028e78edba3aebef552ab7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registration_write_failures_logged_once_without_stopping_server"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Tests ancestry depth capping, parenthesized `comm`, cycle termination, absent `/proc`, and `harness_root_pids` environment, cmdline, and hierarchy filtering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:8fb9e9f4c70a7475727c146246c443301878d8ee829a66a2731e26b550e0a873",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_process_ancestors_handles_depth_limit_cycles_parens_and_absent_proc"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2e6064586904f430fbe530dd7f0ba4e7d6e2a42",
+            "content": "sha256:26a5b4eaeedccd47c5afd9da3ce90ec0f909357ad65308f262c3956b49227162",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_harness_root_pids_absent_proc_and_synthetic_proc_filtering"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -56,6 +56,8 @@ Current source: FirstMessageMatrixTests derives its start cases from imported ro
 
 - The shared helper reads emitted whole paths from delimited message text and structured projection values. [4]
 
+
 - FirstMessageMatrixTests derives its start cases from imported role, harness, parent, leaf and taskless tables and checks emitted or held-opening messages for parentless, parented, held-seat, set-start, successor, step-up and restored launches. Separate controls require an admitted shared block exactly once and no heading when the source is undeclared. [1]
+
 
 - `composition_corpus` supplies real copied corpus and manifest bytes while leaving production admission and compilation intact. Declared every-role bytes reach both task-bound Worker and taskless Architect exactly once; an undeclared shared source emits no shared block. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]

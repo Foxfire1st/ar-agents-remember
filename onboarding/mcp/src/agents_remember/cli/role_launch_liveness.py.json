@@ -188,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
               "end": 341,
@@ -339,26 +339,24 @@
       ]
     },
     "16": {
-      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.",
+      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.\n\nAnchor: `require_step_up_archive_idle`; `_run_prepared_launch`",
       "targets": [
         {
           "anchor": {
             "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
-            "content": "sha256:4af7c056ca00d6b0e171726f00e10457a5ba70e9a9f6c260bdcb7353182a08b9",
+            "content": "sha256:faf62f628b6b3cc40d09e88492c3b00df4e2da3b03c163ece19db1ac6de8c808",
             "locator": {
-              "kind": "symbol",
-              "name": "require_step_up_archive_idle"
+              "kind": "file"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:3d68238261396d080e9c64c7ace8af921a4499ea73b0d311395f11fda76f9491",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:5ec9ab34f5cc0e7ec890ce4380a936c07ba5042ca930deadf7191279e400aa5f",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_prepared_launch"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -457,8 +455,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "337ed34917a2c7ccf781661eaad5d7831d2a8d1a",
-            "content": "sha256:1b566df85c7f3854fe127e81d1037fd73413bd79875f2cc5d3918ab28f02497b",
+            "blob": "722fb4f8dc0b92a6f76e15006137b41da1fcdb47",
+            "content": "sha256:30225a4eaaad093cae24e00ca352399e24ca3f1f28f6b40774fcd9e794653574",
             "locator": {
               "kind": "file"
             },
@@ -473,7 +471,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
             "locator": {
               "end": 155,
@@ -491,7 +489,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:c1cdf40fe6e3e7b91fcf5007ec8f0be6e5eccb500957bd94db2c9232b7c58f59",
             "locator": {
               "end": 1037,
@@ -509,12 +507,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
             "locator": {
-              "end": 1083,
+              "end": 1084,
               "kind": "line_range",
-              "start": 1069
+              "start": 1070
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -527,7 +525,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
               "end": 783,

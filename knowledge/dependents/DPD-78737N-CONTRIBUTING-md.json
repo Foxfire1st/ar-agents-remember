@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
+    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
     "role": "curator",
-    "statement": "Audited CONTRIBUTING.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): the seven test lanes, evidence-lifecycle.toml and test-evidence-lanes.toml descriptions (lines 230-259), per-role tool scoping, and hook/runtime/certification sections match live code with zero contradictions.",
-    "task": "261112-BUG-L52",
+    "statement": "Audited CONTRIBUTING.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): tool registration, role allowlists, pre-commit rails, and test catalog references remain accurate after L52 + L51 updated test-evidence-lanes.toml; no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+      "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T10:27:33+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
     "task": "261112-BUG"
   }
 }

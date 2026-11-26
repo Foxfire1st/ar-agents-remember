@@ -20,6 +20,12 @@ The launch-definition case pins `AR_PLAYWRIGHT` in the explicit carried-environm
 ## Evidence
 
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
+
 - New real report folders and retained alias receipts have distinct retry controls. [2]
+
+
 - The launch-definition case pins `AR_PLAYWRIGHT` in the explicit carried-environment register and checks that the host's module path appears unchanged in the tool-server definition. This is a definition-level environment assertion, not a browser load or page-publication result. [3]
+

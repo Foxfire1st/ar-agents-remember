@@ -26,7 +26,9 @@ The request id is the identity of a start, not a new one per attempt: it is asse
 - A parentless chat uses the dashboard role table. The fixture names a selection outside the admitted table. [1]
 
 
+
 - Dispatch names the caller as parent. An exact request ID is repeatable by its starter and the launcher. [2]
+
 
 
 - Concurrent Starts serialize. A Start that exceeds the wait names the retry action. [3]

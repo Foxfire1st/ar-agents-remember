@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), ROADMAP.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited ROADMAP.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): roadmap concepts and links remain accurate after L51 updated docs/concepts.md for the IDENTITY MISMATCH: carve-out; no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "aefe351d8943d134fc20fcc9459bb1478636426c",
+      "blob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
       "kind": "file",
       "path": "docs/concepts.md"
     },
@@ -42,14 +42,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:43:44+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
   }
 }

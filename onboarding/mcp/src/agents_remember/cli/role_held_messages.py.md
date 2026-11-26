@@ -28,7 +28,7 @@ Before a resend, a message attempted under a host id goes alone and under that i
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-`_open_held_seat` invokes the receipt owner’s `_restore_launch_handover` with the saved launch call. The artifact-backed path validates frozen details and verifies the primary handover and any takeover material. With neither artifact reference, the helper validates the frozen details directly. A held leaf Reviewer or Curator receives its applicable product notice between the frozen handover and the claimed waiting messages.
+`_open_held_seat` invokes the receipt owner’s `_restore_launch_handover` with the saved launch call and runs `run_launch_call` with `LaunchExecutionPolicy(mode="open-held", on_retry_agent=...)` so eager-harness held seats re-confirm exclusive `agents-remember-task` binding before receiving their first message (re-publishing `role-agents.json` on retry). The artifact-backed path validates frozen details and verifies the primary handover and any takeover material. With neither artifact reference, the helper validates the frozen details directly. A held leaf Reviewer or Curator receives its applicable product notice between the frozen handover and the claimed waiting messages. When binding confirmation fails twice or the seat is lost (`is_held_seat_lost`), `_open_held_seat` settles waiting messages through `held_seat_lost_settlement` and `settle_held_store`, and `apply_drain_to_receipt` applies `apply_held_open_confirmation` for `bindingConfirmation` and retried `agentId`/`replayRequest` updates.
 
 A ValueError releases the claim and returns cannot-open with the specific recovery detail; no host opening occurs and waiting messages remain. Existing successful opening stages terminal metadata before removal, and existing FIFO, batching, store limits, permission guards and bounded sweep contracts remain unchanged.
 
@@ -37,7 +37,13 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 
 
 
+
+
 - Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message` [1]
+
+
+
+
 
 
 
@@ -49,7 +55,13 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 
 
 
+
+
+
+
 - Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt` [3]
+
+
 
 
 
@@ -58,13 +70,21 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted
 
 
+
+
 - Handover validation precedes prompt construction and host launch. Invalid handover details release the claim while preserving the waiting batch. [5]
 
 
 
 
 
+
+
+
+
 - Held-seat opening checks frozen details before composing its message. If artifact references are present, the helper also restores or verifies their files. [6]
+
+
 
 
 
@@ -80,7 +100,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
+
+
 - The held opening inserts its product notice between the restored prompt and the FIFO batch. [9]
+
+
 
 
 - Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]

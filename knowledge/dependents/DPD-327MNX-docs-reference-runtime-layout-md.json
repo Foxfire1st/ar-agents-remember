@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/runtime-layout.md accurately matches the codebase: the coordination-root tree and runtime_install sections omit all search-provider folders and watcher/safety prose, note that pre-existing providers/, logs/providers/ and logs/observer/providers/ are reported as removed stores without deletion, and preserve host and model-provider limit layout.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/reference/runtime-layout.md (lines 1-231, including runtime/server-bindings/<pid>.json table row at line 47 and Server binding records section at lines 55-81) on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): runtime layout, server-binding contract, and cleanup semantics remain accurate; no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:43:44+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
   }
 }

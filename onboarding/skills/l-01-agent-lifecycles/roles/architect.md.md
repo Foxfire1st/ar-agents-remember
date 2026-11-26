@@ -40,6 +40,8 @@ For work inside one master, the Architect first starts one Manager on that canon
 
 Its detail files, each read before the action its pointer names, are `reference/coordination/architect/` (process decisions, developer decisions, models and settings, claim verification, Curator measurement), `reference/coordination/shared/` (requirement design, master state, child questions, seat recovery, third rejected round), `reference/knowledge/commands.md`, `reference/knowledge/use.md`, `reference/tasks/document-authoring.md`, `reference/sandbox-actors.md` and `reference/message-handover.md`; short rules on timing targets, page proofs, compute cost, master scope and status reads, bound briefs and side problems, and failed developer checks are written at their actions in the role file.
 
+On an `IDENTITY MISMATCH:` notice from a child seat, the Architect archives that seat, checks both its task folder and the folder named by the reported binding for writes, and starts a replacement.
+
 Briefs and task reads preserve exact requirement revisions, relevant families, paired/report roots and evidence class. Use supplied task-read arguments and the returned canonical document path rather than loading the full hierarchy. Developer decisions remain in the Architect’s own chat. A dashboard-started role needs no parent, and a finished turn is neither independent review, curation, semantic acceptance nor paired-Git publication.
 
 The architect compiles and cold-reads the complete requirement corpus before creating task
@@ -102,3 +104,6 @@ The Architect keeps the developer conversation and may check, measure, run tests
 - The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator. [6]
 
 - Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted. [8]
+
+
+- On an `IDENTITY MISMATCH:` notice from a child seat, the Architect archives that seat, checks its task folder and the reported binding's folder for writes, and starts a replacement. \[9] [9]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-        "content": "sha256:fd77869720451152883208bbc8d7e70b85ccebbf8909cf1d18b24a2d25599433",
+        "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+        "content": "sha256:41262a471699f4a98405f0fe933167705b0e5258bdbfa9d7f593cdbbd2952f4b",
         "locator": {
           "kind": "file"
         }
@@ -17,19 +17,36 @@
       },
       "rationale": "Owns assembly of the once-only shared opening, first-read instructions and bounded role message.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+        "content": "sha256:c35e469fd76a51416c00b5cfd82c15259c621de4b5a64025b99d0660915dadde",
+        "locator": {
+          "kind": "symbol",
+          "name": "brief_prompt"
+        }
+      },
+      "id": "RLZ-WZXA3N",
+      "invariant": "INV-D5BANQ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §3",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Emits IDENTITY_SELF_CHECK_PARAGRAPH directly after the AR tools paragraph in every launched seat's opening brief before the task-document read instruction.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The message is assembled in one fixed order and each part stands once.",
+      "note": "The message is assembled in one fixed order and each part stands once.\n\nAnchor: `brief_prompt`",
       "targets": [
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-            "content": "sha256:d682fec14d370a47ea5ba4e06a50e6366ad7f9937227203df3f78739289193b0",
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+            "content": "sha256:41262a471699f4a98405f0fe933167705b0e5258bdbfa9d7f593cdbbd2952f4b",
             "locator": {
-              "kind": "symbol",
-              "name": "brief_prompt"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -41,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
             "content": "sha256:a9af34c98c62049e3b6986b5dfdc8518eddb51a7a4b2f2ea179937bffdef062e",
             "locator": {
-              "end": 88,
+              "end": 99,
               "kind": "line_range",
-              "start": 83
+              "start": 94
             }
           },
           "kind": "code"
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
             "content": "sha256:39ffcb74027a5e0dfbce72f3af075023d94fe19a0d673d76712fc91d3cadb4e5",
             "locator": {
               "kind": "symbol",
@@ -69,12 +86,39 @@
         },
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
             "content": "sha256:24243f3304fed2fe78bab0b292aa348b2aeb79fe185b698b3519816b93c6004d",
             "locator": {
-              "end": 44,
+              "end": 54,
               "kind": "line_range",
-              "start": 31
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`IDENTITY_SELF_CHECK_PARAGRAPH` defines the mandatory `server_info` binding self-check and `IDENTITY MISMATCH:` stop line, inserted by `brief_prompt` between the AR-tools and first-read paragraphs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+            "content": "sha256:16186a4d485dfdc38556c11d41657182d52bfa678bd7916f78b3f42e50865d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "IDENTITY_SELF_CHECK_PARAGRAPH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9839845e31ea8d7a5c7b6e652c1c51dabb27b4a4",
+            "content": "sha256:c35e469fd76a51416c00b5cfd82c15259c621de4b5a64025b99d0660915dadde",
+            "locator": {
+              "kind": "symbol",
+              "name": "brief_prompt"
             }
           },
           "kind": "code"

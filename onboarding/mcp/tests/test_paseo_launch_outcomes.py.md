@@ -14,7 +14,7 @@ The launch's outcomes against the fake bridge: what is written to a receipt, whi
 
 ## Invariants And Boundaries
 
-The refused conflict cases preserve the existing receipt and agent. Saved native Antigravity Retry reuses the recorded agent if present. An absent recorded agent produces HTTP 409 with ACP guidance and leaves the host agent set unchanged. The ACP regression checks the saved create payload, including its task server, is replayed exactly. The oversized first message is sent as data, not truncated into the prompt path.
+The refused conflict cases preserve the existing receipt and agent. Saved native Antigravity Retry reuses the recorded agent if present. An absent recorded agent produces HTTP 409 with ACP guidance and leaves the host agent set unchanged. The ACP regression checks two-step eager launch confirmation on retry: first the saved promptless `agent-create` payload (including its task server) is replayed identically, then a second `agent-create` sends `prompt` with `skipToolServerWait: True`; the 300,000-byte message retry and convergence retry likewise assert the promptless first create followed by the prompt send with `skipToolServerWait: True`, and the post-rejected and replacing-start traces end with two `agent-create` calls. The oversized first message is sent as data, not truncated into the prompt path.
 
 ## Fresh catalog reads before outcomes
 
@@ -26,6 +26,9 @@ A new start asks catalog metadata before the retained holder/refusal, archive or
 
 
 - The bridge outcome is stored in the receipt. Timeout without a usable answer leaves the tested launch retryable. [1]
+
+
+
 
 
 

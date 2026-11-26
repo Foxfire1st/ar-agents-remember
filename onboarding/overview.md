@@ -593,7 +593,11 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [351]
 
+
+
 - AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents. [366]
+
+
 
 
 
@@ -659,6 +663,10 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
+
+
+
 - Instruction renewal uses the declared skills copy owner, projects the certification profile and copies canonical tool details into packaged runtime docs. [370]
 
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
@@ -689,4 +697,5 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication. [46]
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication. [285]
 - Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings. [316]
+
 - Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,295 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]

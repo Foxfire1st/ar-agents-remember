@@ -148,7 +148,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 
+
 - Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption. [18]
+
 
 
 

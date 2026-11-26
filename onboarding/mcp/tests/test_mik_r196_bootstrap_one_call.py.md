@@ -79,4 +79,6 @@ the selection validation and the dispatch endpoint, and everything else runs as 
   destination and a destination that appeared after the preview.
 - The address helper case constructs the dashboard URL and host chat route from explicit inputs and checks named missing-input reasons; it does not start a seat or inspect a registered start response. The registered response/created-identity assertion is in the separate delivery case.
 
+
+
 - This address case invokes construction helpers with explicit server/agent inputs, while the separate registered delivery test requires returned identity and continuation to match its created seat; neither source reading is a native execution witness. [1]

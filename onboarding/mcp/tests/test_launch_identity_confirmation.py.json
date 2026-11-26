@@ -1,0 +1,252 @@
+{
+  "path": "mcp/tests/test_launch_identity_confirmation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:d261edb9e59c2b79cf168075d714ea8fa292ab911f2da81beee7f0af3632ea45",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sender_line_comes_solely_from_agent_binding_environment"
+        }
+      },
+      "facet": "Demonstrates sender_line constructs attribution strictly from the bound AgentBinding fields.",
+      "id": "PRF-8VDRZ1",
+      "invariant": "INV-BPDGMZ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §5",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:db6c5f786f081df38c1c644faeb54a76f5a6678dc6b732f094ab03fce390b4f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_proc_absent_confirms_by_identity_only_and_records_skipped_ancestry"
+        }
+      },
+      "facet": "Demonstrates /proc-absent fallback confirms by (agentId, requestId) only and records ancestrySkippedReason=proc-unavailable in the receipt.",
+      "id": "PRF-95E6F6",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:a10f35afdc7f18c4e382c96c828b5de597b7467abcafcaa47602b84dfb04b7ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_foreign_binding_on_both_attempts_refuses_with_zero_live_seats"
+        }
+      },
+      "facet": "Demonstrates repeated foreign bindings on both attempts archive both seats and refuse with binding-confirmation-failed leaving zero live seats.",
+      "id": "PRF-KAJZ1H",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:23e8c25c00f9b85edb6e5838f31fc350b3b5bde98e55e7354332f1145aae189d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_bound_servers_under_one_harness_refuse_immediately"
+        }
+      },
+      "facet": "Demonstrates two bound tool servers under one harness root (the L50 incident pattern) fail confirmation immediately instead of passing.",
+      "id": "PRF-MZMFDN",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:e7a543dbb75afd8738ed4ceff6f95eaab6e81e3ee17f4aa875dfa5f8657efcf2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_foreign_binding_retries_once_and_succeeds_when_retry_confirms"
+        }
+      },
+      "facet": "Demonstrates a foreign binding on attempt 1 archives the failed seat, retries once under the same requestId with a fresh agentId, and succeeds when attempt 2 confirms.",
+      "id": "PRF-PGCR1F",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:10e7d6727f90c3f3411f0591e2b06ff57d097f779b4efcef8d41b7bdbe5906b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_missing_registration_retries_once_and_refuses_with_zero_live_seats"
+        }
+      },
+      "facet": "Demonstrates missing server registration within the wait window triggers one retry and refuses leaving zero live seats.",
+      "id": "PRF-RT4EP7",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:b3abc7cde873284822f4960af79c105794aea858f4768bcad460b4b29d58326d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bridge_skips_6s_wait_when_skip_tool_server_wait_is_true"
+        }
+      },
+      "facet": "Demonstrates paseo_bridge.mjs skips the 6-second toolServerStart sleep when skipToolServerWait is true.",
+      "id": "PRF-S35658",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:66c3e272ee793b27d1d086b7bf96343aeacb62daadc51577d146f3c268a6a42b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_send_role_message_uses_bound_server_identity_despite_spoofed_text_and_env"
+        }
+      },
+      "facet": "Demonstrates role_message ignores spoofed message text and non-binding environment values and signs with the bound server identity.",
+      "id": "PRF-WRH272",
+      "invariant": "INV-BPDGMZ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §5",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "content": "sha256:d225ef625ddf931184d05ac6390e8f471debbc874965bab9497b257f61b585d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_held_seat_confirmed_at_create_and_reconfirmed_at_open_with_skip_wait"
+        }
+      },
+      "facet": "Demonstrates held seats confirm binding at creation and re-confirm before first message delivery with skipToolServerWait=true.",
+      "id": "PRF-XMXVZ0",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Foreign binding on attempt 1 archives attempt 1 and retries once under the same `requestId` (`:retry-1`); double failure refuses HTTP 502 with zero live seats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:7de3beac66a26641bdfd952e6808d91d28e1834955ab6ab9e1e6f9aada538494",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestForeignBindingAndSingleRetry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing registration retries once then refuses; duplicate bound servers (under harness root or shared parent PID) and unreadable servers refuse immediately while unbound servers pass.\n\nAnchor: `TestTimeoutAndMultipleServers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:82ffd3054c47ae0c5ca2d67cb9db9cf2a1cf120e11519453fbd85c96bba49aff",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Absent `/proc` confirms by identity only (`proc-unavailable`) and lazy `claude` skips Step 2 confirmation in one `agent-create` call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:a3cc4fbf35de8b13d24895509295af98264c6705b6e1cfccd679f9dd8d4d0e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestProcAbsentAndLazyHarness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Held seats confirm at create and re-confirm at open with `skipToolServerWait=True`, retry once when the prior binding disappears, and archive both on double failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:e97a94b43742f880266875b617f565ba66b3fbf46678518d897d5debb0d635a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestHeldSeatReconfirmation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Real `paseo_bridge.mjs` skips `TOOL_SERVER_START_MS` when `skipToolServerWait=True`, and `role_message` and `sender_line` derive sender strictly from `AgentBinding`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:63ede3fb8e90606a46a7c7a55958fbd4d480bba642e3d2bb3f03b25d6d801f7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestBridgeSkipToolServerWait"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:c846556c0debdefa986854dcdebc00a9355cacf3bad79cf06cdb61c98fbee734",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestRule5SenderIdentityFromBinding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

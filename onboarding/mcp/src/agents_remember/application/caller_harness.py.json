@@ -52,27 +52,14 @@
       ]
     },
     "4": {
-      "note": "A model-only bootstrap call is served on the calling chat's own harness, and a provider the bound harness does not offer is refused before a seat exists.",
+      "note": "A model-only bootstrap call is served on the calling chat's own harness, and a provider the bound harness does not offer is refused before a seat exists.\n\nAnchor: `test_a_model_only_bootstrap_call_binds_the_callers_own_harness`; `test_a_model_the_bound_provider_does_not_offer_is_refused_before_the_seat`",
       "targets": [
         {
           "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:44511f1ef4cf9dffca62132dc78e2d53b843dc5e46cea5187b4c36d9573e159f",
+            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_model_only_bootstrap_call_binds_the_callers_own_harness"
-            },
-            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:10547776d7bf7332e1d5007e8cb719e24b2a82f157d23287d054426f193ba042",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_model_the_bound_provider_does_not_offer_is_refused_before_the_seat"
+              "kind": "file"
             },
             "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
           },

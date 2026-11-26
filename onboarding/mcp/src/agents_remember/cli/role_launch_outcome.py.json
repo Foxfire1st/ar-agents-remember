@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
+        "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
         "content": "sha256:deec7c55a3c740540045f59d404a5587b6d96b8d1fcf752debfc43928d64541e",
         "locator": {
-          "end": 71,
+          "end": 92,
           "kind": "line_range",
-          "start": 71
+          "start": 92
         }
       },
       "id": "RLZ-36FEFX",
@@ -20,16 +20,70 @@
       },
       "rationale": "Records the refusal and frees the selection for an ACP start.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
+        "content": "sha256:fa28967c902869afdcf43800c14b9dfb2d13fcd734d398975c4ca890953289c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_confirmation_fields"
+        }
+      },
+      "id": "RLZ-THG2CS",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-curator-attach-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Persists bindingConfirmation and retried agentId/applied-agent fields onto the launch receipt before status publication.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
+        "content": "sha256:795193d696e1ee7c2831f44f48e509116b702b17c1217116f875fe6ec1b3afa7",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_launch_outcome"
+        }
+      },
+      "id": "RLZ-WS25Z3",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Persists bindingConfirmation and retried agentId/toolServer/replayRequest fields onto the launch receipt and renders operator-legible double-failure refusals.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
+        "content": "sha256:810677752676f694684b07c7dc3df4836c4d62102c81aaf6a0411d11c1fe3669",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refused_outcome"
+        }
+      },
+      "id": "RLZ-Y0FBHF",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-curator-attach-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Surfaces operator-legible binding-confirmation-failed refusal detail without treating double-failure refusals as empty step-up retries.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "Created/held/unknown results preserve prior lifecycle semantics.\n\nAnchor: `publish_launch_outcome`",
+      "note": "Created/held/unknown results preserve prior lifecycle semantics.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
-            "content": "sha256:6ef8e50b42bacc6c624c3559c082efb69c320c460c36a739153705d87fecce8c",
+            "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
+            "content": "sha256:1f8c5ccd29b4fa995225bc852bcf0468b907b2dabbf4cdf6ed54654f829ab0e5",
             "locator": {
               "kind": "file"
             }
@@ -43,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
-            "content": "sha256:b69209b0f2b51bdb330077f3072bbb731d4fa1675a05023ed214116575c763c2",
+            "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
+            "content": "sha256:810677752676f694684b07c7dc3df4836c4d62102c81aaf6a0411d11c1fe3669",
             "locator": {
-              "end": 101,
+              "end": 126,
               "kind": "line_range",
-              "start": 68
+              "start": 89
             }
           },
           "kind": "code"
@@ -60,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
-            "content": "sha256:8613ced8228899a6849b989ca0556c09178660f421016e3721bd2575df4f3985",
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:839bffcc6edea9158629bd8f2fa442a200bdc46ec2e5453c1e977598ba14894f",
             "locator": {
-              "end": 205,
+              "end": 224,
               "kind": "line_range",
-              "start": 127
+              "start": 131
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -78,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "320680f4d45704242a250f487e308bc53310e821",
+            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
             "content": "sha256:fd2c5cf04335daed3a340cf6fba262fd1e8bb319e6196168572be09a80f5838c",
             "locator": {
               "kind": "symbol",

@@ -42,7 +42,7 @@ Architect authors requirements, plans, tasks and rulings, preserving exact stabl
 
 Copied developer words in a `From explainer ·` message count as those words only after their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims that master with `explainer_control` on `agents-remember-task`, action `claim`.
 
-Manager coordinates one selected master, its leaves, readiness and landing order. Orchestrator coordinates the accepted sprint objective through Managers and verifies their aggregate delivery without absorbing the leaf repair loop. Both preserve task, candidate, role-agent, report and publication identities, keep acceptance separate from review recommendations, and use existing AR task/data and paired-Git owners. An uncertain start is reconciled with the same request ID; a refused coordinating start is reported and never silently replaced by direct coordination.
+Manager coordinates one selected master, its leaves, readiness and landing order. Orchestrator coordinates the accepted sprint objective through Managers and verifies their aggregate delivery without absorbing the leaf repair loop. Both preserve task, candidate, role-agent, report and publication identities, keep acceptance separate from review recommendations, and use existing AR task/data and paired-Git owners. An uncertain start is reconciled with the same request ID; a refused coordinating start is reported and never silently replaced by direct coordination. When a child seat reports an `IDENTITY MISMATCH:` notice, Architect, Manager, and Orchestrator each archive that seat, inspect both its task folder and the folder named by the reported binding for writes, and start a replacement.
 
 Native start, finalize and abandon publish task stage and mirror the parent's row; Manager does not follow them with a redundant status write. Explicit corrections and organizational-master completion still use `task_doc set_status` under their existing authority. This instruction does not let Worker or Curator make task-state decisions, does not merge review with acceptance, and does not turn edits to rendered copies into canonical publication.
 
@@ -176,7 +176,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; code, gate, lifecycle and closeout writes stay outside the seat, and task-document edits stay within its own assignment. [9]
 
+
 - Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
+
 
 
 - Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]
@@ -195,7 +197,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Taskless subject and one coordinating agent under the Architect. [19]
 
+
 - Master coordination under the Architect and exact paired scope. [20]
+
 
 - Bound uncommitted Worker duty. [22]
 
@@ -290,3 +294,6 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream. [66]
 
 - Curator authors scope, reads the full knowledge_diff before semantic changes and completes full MQC and candidate-bound coherence; Reviewer owns the Git base/candidate handover comparison, with no separate Curator Git comparison. [39]
+
+
+- Architect, Manager, and Orchestrator share the child `IDENTITY MISMATCH:` recovery rule: archive the seat, check both its task folder and the reported binding's folder for writes, and start a replacement. \[70] [70]

@@ -238,12 +238,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+            "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
             "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
             "locator": {
-              "end": 470,
+              "end": 480,
               "kind": "line_range",
-              "start": 406
+              "start": 416
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -251,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
-            "content": "sha256:2dd623abba26df9376ce6bb82460c1aefa37aef3710f08032563a7f9534b28bf",
+            "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
+            "content": "sha256:7fe9f47637dc74c2f9eb2bf08459170749a826fbcdea86824b20421693fccff8",
             "locator": {
-              "end": 686,
+              "end": 709,
               "kind": "line_range",
-              "start": 617
+              "start": 627
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },

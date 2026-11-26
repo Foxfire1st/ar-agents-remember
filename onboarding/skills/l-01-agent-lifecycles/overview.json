@@ -660,12 +660,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
-              "end": 52,
+              "end": 54,
               "kind": "line_range",
-              "start": 52
+              "start": 54
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1306,12 +1306,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
-              "end": 58,
+              "end": 60,
               "kind": "line_range",
-              "start": 58
+              "start": 60
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1486,12 +1486,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
             "locator": {
-              "end": 44,
+              "end": 46,
               "kind": "line_range",
-              "start": 44
+              "start": 46
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1641,12 +1641,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:d381b528c016783c797e0b00639126697301c8b528e60bd50abd23e6f7f5f52b",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
-              "start": 72
+              "start": 74
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1760,7 +1760,7 @@
         },
         {
           "anchor": {
-            "blob": "5f32fe4602837fd71667cae27abe48f8f784815c",
+            "blob": "58b380c9c08fb16e5459569b4c1ec2b13ad3a892",
             "content": "sha256:f6cad09e64771c0562f477176bbac5e6e3164496fcb291278e0e64b4a8f49f9a",
             "locator": {
               "end": 110,

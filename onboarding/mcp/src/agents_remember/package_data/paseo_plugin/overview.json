@@ -118,6 +118,72 @@
         }
       ]
     },
+    "14": {
+      "note": "Pure `IDENTITY MISMATCH:` line extraction and parent-line composition in `identity_mismatch.ts` are wired in `turn_ended.ts` before handoff, declared-wait, and seat-wake paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb6055b074ff090db41960cb498070113888327f",
+            "content": "sha256:bb1442bcdea7e06112ff533a2dd2cf16612ed39935e6c571a3f2398500dfa970",
+            "locator": {
+              "kind": "symbol",
+              "name": "extractIdentityMismatchLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/identity_mismatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb6055b074ff090db41960cb498070113888327f",
+            "content": "sha256:bfcfad766734371ecd75b013c43ca447880464c115ba918085cea4847a9fde8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeIdentityMismatchParentLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/identity_mismatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+            "content": "sha256:553b2e07f070b74ef2f4c4535590d8e07b8547318aeeaa14144627ec7fd1893b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+            "content": "sha256:b0311a1352568da9ececf304d7462eff728e55056b39c28362a0486e1ce2880d",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteParentLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb6055b074ff090db41960cb498070113888327f",
+            "content": "sha256:9c96af2d4571d5385cbfb1242d057ad34e098a82b6e9f55e2fc88b4c1b304f80",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/identity_mismatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible.",
       "targets": [
@@ -254,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
             "content": "sha256:f398551e0b60aa224a1d5ba84482bc93af74e39c65a541bf971f2a6db206062c",
             "locator": {
-              "end": 1456,
+              "end": 1462,
               "kind": "line_range",
-              "start": 1445
+              "start": 1451
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },

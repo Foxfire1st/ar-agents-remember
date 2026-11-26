@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by mcp/tests/test_launch_identity_confirmation.py and prevents a seat from spoofing another role's sender attribution in coordination messages."
+  },
+  "applicability": "Every role_message delivery whose sender line is formatted by sender_line in paseo_role_caller.py.",
+  "conditions": [
+    "sender_line derives the sender identity exclusively from the calling tool server's bound AgentBinding environment.",
+    "Spoofed identity text in message content or caller arguments cannot alter the formatted sender line."
+  ],
+  "exclusions": [
+    "Does not prevent a process whose own OS environment carries another seat's binding variables from presenting that server's bound identity; launch confirmation (BUG-R51@v1 §2) and self-check (BUG-R51@v1 §3) prevent cross-seat binding."
+  ],
+  "id": "INV-BPDGMZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_launch_identity_confirmation.py (Rule 5 sender-identity tests passed on tree 9d6c1659c736677568d180e75fd23228782d1f36); L51-W1-expanded-evidence.md#bug-r51-v1"
+      ],
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R51@v1 §5",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role_message call derives its sender line exclusively from the calling tool server's bound agent environment and cannot be spoofed by message text or caller arguments.",
+  "supersedes": [],
+  "title": "role_message sender line comes strictly from bound server environment",
+  "writer": {
+    "at": "2026-11-25T22:57:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}
