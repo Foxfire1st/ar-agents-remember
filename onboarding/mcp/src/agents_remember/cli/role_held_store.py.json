@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
         "content": "sha256:cff092aa000362fb3fdcd3becf62c5f48a756c509d8007f4bc18f15d24e2c010",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
         "content": "sha256:053f8bc231535bc49f915e05529f3b86fc7eb8e4a30a8433900f333e27d546b1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
+        "content": "sha256:8c7353e82783a46ea7592ba015bdbeda6655f7a1091ee6377ddd87bce135d445",
+        "locator": {
+          "kind": "symbol",
+          "name": "preserve_held_closure"
+        }
+      },
+      "id": "RLZ-40KPVW",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-curator-attach-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Allows an L51-R2 same-request binding retry to advance agentId without tripping receipt-moved while preserving stored heldStoreClosures and retiredBy fields.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
         "content": "sha256:af727706768a3fcf37e2a6aa2b0f72e54f91abc38a3caa8ddb44a263763db3cb",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
         "content": "sha256:693557f736f9dda1be1d000249c7c703fb21dbb579c37a9e0d152a5524e0380e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
         "content": "sha256:af727706768a3fcf37e2a6aa2b0f72e54f91abc38a3caa8ddb44a263763db3cb",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,25 @@
     },
     {
       "anchor": {
-        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
+        "content": "sha256:0aba34b3a107bda87124468877e1188ceab55010aeec3b2f7db741dd8a79efc3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_is_same_request_binding_retry"
+        }
+      },
+      "id": "RLZ-EDW5GW",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-curator-attach-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Recognizes an L51-R2 same-request binding retry advancing agentId from an archived attempt on starting/unknown/held receipts.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
         "content": "sha256:7f6605cb0e83cc8027d72a1ef893382d3915c3c0fde658535f1b5b0a2c03a9b2",
         "locator": {
           "kind": "symbol",
@@ -116,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+            "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
             "content": "sha256:af727706768a3fcf37e2a6aa2b0f72e54f91abc38a3caa8ddb44a263763db3cb",
             "locator": {
               "kind": "symbol",
@@ -132,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+            "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
             "content": "sha256:cff092aa000362fb3fdcd3becf62c5f48a756c509d8007f4bc18f15d24e2c010",
             "locator": {
               "kind": "symbol",
@@ -148,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+            "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
             "content": "sha256:c1107178c055d83f9dda19f3f07b6026ecb78ece34f2495756df1aec903f285d",
             "locator": {
               "kind": "symbol",
@@ -164,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+            "blob": "7df379799e9c31512f799d0233fa01e3e6dc6f78",
             "content": "sha256:693557f736f9dda1be1d000249c7c703fb21dbb579c37a9e0d152a5524e0380e",
             "locator": {
               "kind": "symbol",

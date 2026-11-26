@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
+    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
     "role": "curator",
-    "statement": "Audited docs/roles.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): Reviewer code/memory review duties and all role/message/host contracts remain accurate with zero contradictions against L52 OM-6 additions in roles/reviewer.md.",
-    "task": "261112-BUG-L52",
+    "statement": "Audited docs/roles.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): role responsibilities and IDENTITY MISMATCH: zero-wake parent recovery carve-out remain accurate; no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
     },
     {
-      "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+      "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
     },
     {
-      "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+      "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
@@ -126,12 +126,12 @@
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+      "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
     {
-      "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+      "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -177,14 +177,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T10:27:33+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
     "task": "261112-BUG"
   }
 }

@@ -110,6 +110,7 @@ protocol.
 
 - The version comparator uses installed package metadata with the source-checkout release fallback. [4]
 
+
 - The endpoint carries the installed version and Python source digest. [7]
 - `probe` observes the answering dashboard, checks its root and repairs a mismatched saved record. [8]
 - The install preview and the install-time ensure of a running dashboard. [9]

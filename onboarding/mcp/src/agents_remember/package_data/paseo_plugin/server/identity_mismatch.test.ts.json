@@ -1,0 +1,214 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/identity_mismatch.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:56d0732b0494a1da79b5919edb30a533de76a2cd8a5882d97cac39b313703fba",
+        "locator": {
+          "kind": "symbol",
+          "name": "IDENTITY MISMATCH: while parent is in a turn is held and flushed when parent turn ends, with zero seat wakes"
+        }
+      },
+      "facet": "Demonstrates a mismatch line is held while a non-steering parent is in a turn and flushed on parent turn end with zero seat wakes.",
+      "id": "PRF-6JFT9V",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:61d45b0a72bc82478c1fe40a54bf2f36eac9d06d80ea8328103db66cf13ec27f",
+        "locator": {
+          "end": 131,
+          "kind": "line_range",
+          "start": 101
+        }
+      },
+      "facet": "Demonstrates worker, reviewer, and curator turns ending with IDENTITY MISMATCH: deliver immediately to the idle parent with zero wakes, no 60s wait, and unincremented silentEnds.",
+      "id": "PRF-6TEHD1",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:fc2ce571378b11e6a0d5752c045c8e39934e78056e369228aa80eb5d1a261be8",
+        "locator": {
+          "kind": "symbol",
+          "name": "IDENTITY MISMATCH: falls back to current Manager of master when recorded parent is archived"
+        }
+      },
+      "facet": "Demonstrates fallback delivery of the mismatch notice to the master's current Manager when the recorded parent is archived.",
+      "id": "PRF-74R3FP",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:5e4d3497b5616cbc1cb6b19b2162884b1f7c09a614d3fcf348097c3196b4ff4b",
+        "locator": {
+          "kind": "symbol",
+          "name": "a normal silent leaf turn without IDENTITY MISMATCH: still waits 60s and wakes the seat"
+        }
+      },
+      "facet": "Demonstrates a normal silent leaf turn without an IDENTITY MISMATCH: line still waits 60 seconds and sends the seat wake message.",
+      "id": "PRF-76RD4Q",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R-L51-update",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:a9d9d9262bffd07d6f774092a3634fa9fd86425eb528be3c811dc659783beb78",
+        "locator": {
+          "kind": "symbol",
+          "name": "extractIdentityMismatchLine ignores non-matching, lowercase, empty, and unreadable text"
+        }
+      },
+      "facet": "Demonstrates lowercase, mid-line, normal, empty, and unreadable turn text do not trigger identity-mismatch pass-through.",
+      "id": "PRF-7RC35Q",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:9bd677b5e8c27a323e891d74a27b089a9e3870237cffc022eb1a297238625580",
+        "locator": {
+          "kind": "symbol",
+          "name": "IDENTITY MISMATCH: cancels any prior pending seat wake or open declared wait"
+        }
+      },
+      "facet": "Demonstrates an IDENTITY MISMATCH: end clears prior pending wake timers and open declared waits on the seat.",
+      "id": "PRF-A6ZFSS",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:b67c68d479e26069347027b70390a90c5b9739020078f98565f508f8e42afc34",
+        "locator": {
+          "kind": "symbol",
+          "name": "wrapped IDENTITY MISMATCH: line strips outer quote/backticks cleanly and preserves silentEnds count"
+        }
+      },
+      "facet": "Demonstrates Markdown-wrapped mismatch lines compose the unmarked parent notice without incrementing an existing silentEnds count.",
+      "id": "PRF-DKTMYG",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+        "content": "sha256:69d24359d3a5ac1dc7330e57a10f036865fd89927ce3280846fae4e05c7850f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "extractIdentityMismatchLine recognizes plain and Markdown-wrapped prefixes, preserving payload"
+        }
+      },
+      "facet": "Demonstrates plain and Markdown-wrapped IDENTITY MISMATCH: lines extract cleanly while preserving interior backticks and enforcing the 300-character limit.",
+      "id": "PRF-EM8Z16",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Extraction tests cover plain, trimmed, and Markdown-wrapped prefixes, interior backtick preservation, 300-character truncation, and lowercase, mid-line, empty, and unreadable rejections.\n\nAnchor: `extractIdentityMismatchLine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+            "content": "sha256:285c3f06a0961f84188870bebc96b4422ad087c5753377f8426ee387c3fbca0d",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "All three leaf roles (`worker`, `reviewer`, `curator`) deliver mismatch lines immediately to an idle parent with zero timers, zero seat wakes, unchanged `silentEnds`, and an `identity-mismatch` log row.\n\nAnchor: `noteTurnEnded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+            "content": "sha256:8bf8e1ff661f35c7754a72803159bf2207eb689106dfc815641d0b36e263a928",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wrapped mismatch lines strip symmetric outer quotes and backticks cleanly, preserve pre-existing `silentEnds`, and match `composeIdentityMismatchParentLine`.\n\nAnchor: `composeIdentityMismatchParentLine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+            "content": "sha256:b67c68d479e26069347027b70390a90c5b9739020078f98565f508f8e42afc34",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Parent-routing cases verify hold-and-flush while the parent is in a turn, Manager fallback when the parent is archived, cancellation of an open declared wait, and intact 60 s silent-end handling.\n\nAnchor: `noteTurnStarted`; `noteAgentArchived`; `openDeclaredWait`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9812ce4594a4b5d3d1f8130aa415d8b7d94caa46",
+            "content": "sha256:d4ce6804d4e16b1e99ae91d60f6573fb93a4978c31b4a3f2d73b058e6e0a69f0",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "320680f4d45704242a250f487e308bc53310e821",
+            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
             "content": "sha256:09ddf7997e7441f52d855ad48ef90df41fc343122a77b4d00054467b218e6505",
             "locator": {
               "kind": "symbol",
@@ -87,15 +87,14 @@
       ]
     },
     "5": {
-      "note": "Test source preserves unrelated same-label prose and requested-vs-observed destination.",
+      "note": "Test source preserves unrelated same-label prose and requested-vs-observed destination.\n\nAnchor: `test_host_default_successor_model_is_observed_without_losing_requested_provenance`",
       "targets": [
         {
           "anchor": {
-            "blob": "320680f4d45704242a250f487e308bc53310e821",
-            "content": "sha256:ec4577dac37ddfc486c2922347ed637d56a64c09035bbd602f69e3103b287903",
+            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
+            "content": "sha256:6f5f239f1f87086f445b7f9172f69fa82ee1ac768715b07b4f7515fc77982635",
             "locator": {
-              "kind": "symbol",
-              "name": "test_host_default_successor_model_is_observed_without_losing_requested_provenance"
+              "kind": "file"
             },
             "path": "mcp/tests/test_role_step_up.py"
           },

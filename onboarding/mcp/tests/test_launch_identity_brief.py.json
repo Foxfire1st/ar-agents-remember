@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_launch_identity_brief.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+        "content": "sha256:3355277f0159c08b81ff09b690e8e52bc25e0b56c1786914511ea7635352a05a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiled_first_messages_across_roles_include_identity_self_check"
+        }
+      },
+      "facet": "Demonstrates compiled opening briefs across all launched roles include the server_info identity self-check and IDENTITY MISMATCH termination rule.",
+      "id": "PRF-DHB5CZ",
+      "invariant": "INV-D5BANQ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §3",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+        "content": "sha256:d9a6dec295cc4acc7e0466c756df6c6e1b687cd72fa6e2a0d902d58097b21ef3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_brief_prompt_places_identity_self_check_in_preamble"
+        }
+      },
+      "facet": "Demonstrates brief_prompt places IDENTITY_SELF_CHECK_PARAGRAPH directly after the AR tools paragraph and before the task-document read instruction.",
+      "id": "PRF-PCARM8",
+      "invariant": "INV-D5BANQ",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §3",
+        "leaf": "261112-BUG-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+        "content": "sha256:2ece15f3a21c3ed0ecf517fddd1ce2e49f17644ef1e143ba4b1696da8e172cea",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parent_role_sources_carry_identity_mismatch_handling_rule"
+        }
+      },
+      "facet": "Demonstrates Architect, Orchestrator, and Manager role sources carry the archive, write-check, and replacement rule for IDENTITY MISMATCH notices.",
+      "id": "PRF-Y0ZJWW",
+      "invariant": "INV-VD1BVN",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §4",
+        "leaf": "261112-BUG-L51"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies all `server_info` identity self-check clauses and exact preamble ordering in `brief_prompt` between the AR-tools paragraph and first-read/instructions/handover sections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "content": "sha256:c1650f5bbe4b56060728dcb450ee16dc9ddbaa78861360b968f8b36b688ce942",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_self_check_clauses"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "content": "sha256:d9a6dec295cc4acc7e0466c756df6c6e1b687cd72fa6e2a0d902d58097b21ef3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_brief_prompt_places_identity_self_check_in_preamble"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Compiles canonical capsules via `_compile_handover` for all six roles (`architect`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`), checking preamble placement, projection fields, and parent recovery rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "content": "sha256:3355277f0159c08b81ff09b690e8e52bc25e0b56c1786914511ea7635352a05a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compiled_first_messages_across_roles_include_identity_self_check"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies `architect.md`, `orchestrator.md`, and `manager.md` each carry `EXPECTED_PARENT_RULE` with exactly one `IDENTITY MISMATCH:` occurrence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "content": "sha256:556ed2a39725de8744835b247c083cdb6380b26371529eceb1e69200015ce6c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENT_ROLE_FILES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "content": "sha256:2ed0bb03a00a94bb420f949214a56f5935838e00c3931a22b250d8bf3a92a9fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPECTED_PARENT_RULE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "content": "sha256:2ece15f3a21c3ed0ecf517fddd1ce2e49f17644ef1e143ba4b1696da8e172cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parent_role_sources_carry_identity_mismatch_handling_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

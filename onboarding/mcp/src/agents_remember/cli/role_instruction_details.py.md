@@ -32,7 +32,11 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 
 
+
+
 - Held-seat opening calls restoration before sending the opening message. With neither recorded artifact reference, the helper validates the saved instruction details directly. [4]
+
+
 
 
 

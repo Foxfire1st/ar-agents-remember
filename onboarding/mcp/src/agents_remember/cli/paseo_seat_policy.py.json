@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+        "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
         "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+        "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
         "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+        "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
+        "content": "sha256:f4fc3914f3499269c16ed60a20ca7089fce6476d3546064baf437b10f424eb89",
+        "locator": {
+          "kind": "symbol",
+          "name": "provider_starts_tool_server_at_create"
+        }
+      },
+      "id": "RLZ-EC38Q0",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-rule21-seat-policy",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Classifies eager launch-time server-binding confirmation fail-closed (True for every non-empty provider except lazy claude and native antigravity under D890) without hardcoding provider rosters in confirmation code (Rule 21).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
         "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
         "locator": {
           "kind": "symbol",
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+            "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
             "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
             "locator": {
               "end": 46,
@@ -79,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+            "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
             "content": "sha256:c70fe330d7e5e240c90e5e33e504814a8aa1e7a8383b5c7e76fdec94c8a060b4",
             "locator": {
-              "end": 432,
+              "end": 442,
               "kind": "line_range",
-              "start": 421
+              "start": 431
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -110,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+            "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
             "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
             "locator": {
               "end": 57,
@@ -130,6 +148,21 @@
               "start": 79
             },
             "path": "docs/install/codex.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`provider_starts_tool_server_at_create` returns `True` for every non-empty provider except lazy `claude` and native `antigravity` (D890), gating eager binding confirmation fail-closed (`BUG-R51@v1`).\n\nAnchor: `provider_starts_tool_server_at_create`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
+            "content": "sha256:c07b4036c6b6e43d601b2128821aeca1f25a56a5b6c2878ea6762e50e5c1f561",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

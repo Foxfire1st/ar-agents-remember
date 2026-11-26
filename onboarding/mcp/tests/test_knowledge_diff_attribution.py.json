@@ -363,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
               "end": 244,
@@ -381,7 +381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+            "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
               "end": 244,
@@ -394,7 +394,7 @@
         },
         {
           "anchor": {
-            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
               "end": 374,
@@ -407,12 +407,12 @@
         },
         {
           "anchor": {
-            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 935,
+              "end": 938,
               "kind": "line_range",
-              "start": 935
+              "start": 938
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -420,12 +420,12 @@
         },
         {
           "anchor": {
-            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 1421,
+              "end": 1424,
               "kind": "line_range",
-              "start": 1421
+              "start": 1424
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -433,12 +433,12 @@
         },
         {
           "anchor": {
-            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 2876,
+              "end": 2879,
               "kind": "line_range",
-              "start": 2876
+              "start": 2879
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -446,12 +446,12 @@
         },
         {
           "anchor": {
-            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 3804,
+              "end": 3810,
               "kind": "line_range",
-              "start": 3804
+              "start": 3810
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -459,12 +459,12 @@
         },
         {
           "anchor": {
-            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 3858,
+              "end": 3864,
               "kind": "line_range",
-              "start": 3858
+              "start": 3864
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

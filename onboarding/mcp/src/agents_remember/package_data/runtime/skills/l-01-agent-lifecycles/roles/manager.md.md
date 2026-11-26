@@ -74,8 +74,12 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 ### Repo-Internal References
 
+
 - Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. [10]
+
+
 - The packaged Manager is the master-scoped owner of the leaf closeout chain. [11]
+
 
 
 - Its hosted child dispatch uses structural task document and role. Source caption: `role_start`
@@ -105,7 +109,9 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 
 
 - The Manager decides routine paired closeout under standing series authority (covering leaves of all masters, including standalone masters, with passing reviews, final checks, clean preview, full evidence map and Curator's zero-stale dependent-document read) and integration within delegated authority, sends non-routine closeouts and other Architect matters to the Architect, and requests beyond-settings rounds through its reporting route and records the approval. [7]
+
 - The packaged Manager coordinates one selected master and does not own the portfolio; it sends its final report path to its launch parent's role and task references, and routes Architect matters (except direct qualifying skeleton handovers), developer-needed questions and permission notices to an Architect-instructed reporting recipient when recorded, otherwise its launch parent ID. [2]
+
 
 
 - The Manager uses the exact sprint and master references, requirement packets, execution choice, candidate and report paths in its handover and reads only the selected master and the leaf documents needed for the current decision. [3]

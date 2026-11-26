@@ -312,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
             "content": "sha256:22bc349351bd8af2100aeac13fc4c7778bbc399dba5194344c66299f8b6c8f59",
             "locator": {
               "end": 201,
@@ -325,7 +325,7 @@
         },
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
               "end": 202,
@@ -338,7 +338,7 @@
         },
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
             "content": "sha256:2d438796aceb5e76ff5fad176adea4f38eac4e80cd423f215e2fc9fa0092eb2f",
             "locator": {
               "end": 193,
@@ -370,12 +370,12 @@
       ]
     },
     "5": {
-      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.\n\nAnchor: `ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it`",
+      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
+            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
+            "content": "sha256:d555adca7c53c7b1261c0e18eb6f8a6433f443d25c2109de813b250ab2956e40",
             "locator": {
               "kind": "file"
             },

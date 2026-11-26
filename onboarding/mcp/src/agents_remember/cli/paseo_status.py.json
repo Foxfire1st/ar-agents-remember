@@ -249,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
             "locator": {
               "end": 155,
@@ -267,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:c1cdf40fe6e3e7b91fcf5007ec8f0be6e5eccb500957bd94db2c9232b7c58f59",
             "locator": {
               "end": 1037,
@@ -285,12 +285,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
             "locator": {
-              "end": 1083,
+              "end": 1084,
               "kind": "line_range",
-              "start": 1069
+              "start": 1070
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -303,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
               "end": 783,
@@ -321,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
               "end": 341,

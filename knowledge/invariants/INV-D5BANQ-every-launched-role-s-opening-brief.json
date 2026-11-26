@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by mcp/tests/test_launch_identity_brief.py and prevents a seat whose harness silently attached a foreign tool server from mutating another task's worktree or memory before noticing the identity mismatch."
+  },
+  "applicability": "Every role seat launched through brief_prompt across all roles and harnesses.",
+  "conditions": [
+    "IDENTITY_SELF_CHECK_PARAGRAPH appears in the opening brief preamble directly after the AR tools paragraph and before the task-document read instruction.",
+    "The preamble directs the seat to verify server_info agentBinding against its handover requestId, role, and task documents while distinguishing host.parent.agentId as the parent.",
+    "On any mismatch or missing agents-remember-task server, the preamble directs the seat to do no work, make no writes, send no role_message, and end with one IDENTITY MISMATCH: line of at most 300 characters."
+  ],
+  "exclusions": [
+    "This invariant governs the compiled brief text delivered to every seat; runtime enforcement of the seat's response is behavioral and paired with turn-end pass-through (BUG-R51@v1 §4)."
+  ],
+  "id": "INV-D5BANQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_launch_identity_brief.py (3 passed on tree 9d6c1659c736677568d180e75fd23228782d1f36); L51-W1-expanded-evidence.md#bug-r51-v1"
+      ],
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R51@v1 §3",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every launched role's opening brief preamble requires a first-action server_info identity self-check against the handover's requestId, role, and task documents (explicitly distinguishing host.parent.agentId as the parent), and directs the seat to do no work, make no write, send no role_message, and end with a single IDENTITY MISMATCH line of at most 300 characters on mismatch or missing server.",
+  "supersedes": [],
+  "title": "Opening brief requires first-action server_info identity self-check",
+  "writer": {
+    "at": "2026-11-25T22:57:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}

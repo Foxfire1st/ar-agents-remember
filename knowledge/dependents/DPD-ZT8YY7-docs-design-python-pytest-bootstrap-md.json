@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
+    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): case budgets (10000/2000), lane selection, conftest isolation, and coverage/CRAP descriptions match live code after DEP + L52; re-anchored stress-durability in test-evidence-lanes.toml to lines 845-847.",
-    "task": "261112-BUG-L52",
+    "statement": "Audited docs/design/python-pytest-bootstrap.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): lane structure and stress-durability description remain accurate after L52 + L51 updated test-evidence-lanes.toml (stress-durability at lines 848-850); no contradiction.",
+    "task": "261112-BUG-L51",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+      "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,8 +103,8 @@
     },
     {
       "anchor": {
-        "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
-        "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
+        "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+        "content": "sha256:80e611aab5f5ee5aa6d18c9358f26ada92a21f18b22337658d332fa6d910df90",
         "locator": {
           "end": 847,
           "kind": "line_range",
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T10:27:33+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L51",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
     "task": "261112-BUG"
   }
 }

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
+        "blob": "faf1a3ea05fcfc4796ec398df792b17c5583a6f9",
         "content": "sha256:842cb14dd4dee97ccd5a5a8bc05d99d9d734df461e6994754b46e1be3cf37a86",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
+        "blob": "faf1a3ea05fcfc4796ec398df792b17c5583a6f9",
         "content": "sha256:7d8a23be405c82eee3c6591866ef040826e3f6a6858e1fc69e0037f3d130b71d",
         "locator": {
           "kind": "symbol",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
-            "content": "sha256:ae1e0d48fad39baf42a2c16c49c1eb94c8fcf6fb2ab7c1128db4989567a25983",
+            "blob": "faf1a3ea05fcfc4796ec398df792b17c5583a6f9",
+            "content": "sha256:72c1cc81e935d09d176d039832d19c449e62bae13d5ceb557d5514455728e0bd",
             "locator": {
               "kind": "file"
             }
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
+            "blob": "faf1a3ea05fcfc4796ec398df792b17c5583a6f9",
             "content": "sha256:7e7417f305e99bebbb282e4c928b98eba9c576375a946033e4ec6a46673e4f5b",
             "locator": {
-              "end": 540,
+              "end": 547,
               "kind": "line_range",
-              "start": 402
+              "start": 409
             }
           },
           "kind": "test"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
+            "blob": "faf1a3ea05fcfc4796ec398df792b17c5583a6f9",
             "content": "sha256:358372c986016199f6cc63c500dbec88edd5b40eb8b26955488786b7885facfe",
             "locator": {
-              "end": 933,
+              "end": 963,
               "kind": "line_range",
-              "start": 909
+              "start": 939
             }
           },
           "kind": "test"

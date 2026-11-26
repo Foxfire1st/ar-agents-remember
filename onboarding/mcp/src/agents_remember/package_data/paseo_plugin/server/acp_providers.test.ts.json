@@ -159,12 +159,12 @@
         },
         {
           "anchor": {
-            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
             "content": "sha256:e69418213740b5846279b4c1a68541ea548ce8ef4a9787697bb63e83ba88fa12",
             "locator": {
-              "end": 1416,
+              "end": 1422,
               "kind": "line_range",
-              "start": 1411
+              "start": 1417
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },

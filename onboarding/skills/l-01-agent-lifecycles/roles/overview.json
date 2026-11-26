@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
-            "content": "sha256:6184b78a3a6201cc8204d3080d3e169528e06f23a1a6141bb2d6f7297c39928b",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
+            "content": "sha256:08237e5e6f78c36af971e09575fc7ff8832eacc47c488d01fb0adc292ac75378",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -39,7 +39,7 @@
         },
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:bc0b5f4010f802e06bd9a85c9dbeff55242a43d695c604b20c7df4c24e6ee794",
             "locator": {
               "end": 26,
@@ -52,12 +52,12 @@
         },
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
-              "end": 52,
+              "end": 54,
               "kind": "line_range",
-              "start": 52
+              "start": 54
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -242,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
             "content": "sha256:abc4c8156c501146eafe38c2a33f08bcb0519935c335c6cb3e306419ff819e63",
             "locator": {
               "end": 8,
@@ -255,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
             "content": "sha256:12bc87aebfa288099e708f4152b8e5423235a7a8d5a15582b35cbf9d1a385207",
             "locator": {
               "end": 86,
@@ -291,8 +291,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
-            "content": "sha256:6184b78a3a6201cc8204d3080d3e169528e06f23a1a6141bb2d6f7297c39928b",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
+            "content": "sha256:08237e5e6f78c36af971e09575fc7ff8832eacc47c488d01fb0adc292ac75378",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -304,8 +304,8 @@
         },
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
-            "content": "sha256:7f37d65dd1afb6a4c72370caccac84e609e51e6a4aafdbc86aaf04ddc0c2ffa4",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
+            "content": "sha256:869c3af1c31b50ba523298405ec94518425310552654e481b0d542eeb33dcd2d",
             "locator": {
               "end": 20,
               "kind": "line_range",
@@ -322,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
             "content": "sha256:586170f032c01e469cc206a21cc7b515199940323564ee5a8d4ea04ae9e6c6ae",
             "locator": {
               "end": 8,
@@ -335,7 +335,7 @@
         },
         {
           "anchor": {
-            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
             "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
             "locator": {
               "end": 24,
@@ -348,12 +348,12 @@
         },
         {
           "anchor": {
-            "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
+            "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
             "content": "sha256:a48e3739547892ee683e09213d50336af7dd4935dac330b5e41274d8c8a4e4b0",
             "locator": {
-              "end": 91,
+              "end": 93,
               "kind": "line_range",
-              "start": 91
+              "start": 93
             },
             "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
           },
@@ -578,12 +578,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:4ca7753981c38556efc27a33ed2f42017e5ba0df4ca3c69ef750ed4749a52419",
             "locator": {
-              "end": 136,
+              "end": 138,
               "kind": "line_range",
-              "start": 121
+              "start": 123
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -720,7 +720,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
             "content": "sha256:ac120bb11619e3b43663010e5b1925471525ce7c6a0bf24038db1fbe0e26fc39",
             "locator": {
               "end": 88,
@@ -1274,12 +1274,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
-              "end": 58,
+              "end": 60,
               "kind": "line_range",
-              "start": 58
+              "start": 60
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1496,12 +1496,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
             "locator": {
-              "end": 44,
+              "end": 46,
               "kind": "line_range",
-              "start": 44
+              "start": 46
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1509,12 +1509,12 @@
         },
         {
           "anchor": {
-            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
             "content": "sha256:d381b528c016783c797e0b00639126697301c8b528e60bd50abd23e6f7f5f52b",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
-              "start": 72
+              "start": 74
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1527,7 +1527,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
             "content": "sha256:4645d96250a3ca6931b97ec902012c1b7c19881f126b7a3f1bf3c99e206deabe",
             "locator": {
               "end": 18,
@@ -1714,6 +1714,48 @@
               "start": 115
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Architect, Manager, and Orchestrator share the child `IDENTITY MISMATCH:` recovery rule: archive the seat, check both its task folder and the reported binding's folder for writes, and start a replacement. [70]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
+            "content": "sha256:9f730060211a5cbc77fa7bc68b604b7a1a4e496b49eee6d4f467dcef011103b3",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
+            "content": "sha256:3e78e3bc10ed8a6d5f3015e465fb5eeac4f1c62d8f17a6866be8e33296a5aa5a",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
+            "content": "sha256:2a016012e4d8b0490062e3eb9c8d74992ac2ff62f07ae53948c7ac1fb7260079",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },
           "kind": "code"
         }

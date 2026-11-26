@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across role_launch_confirmation.py, paseo_bridge.mjs, paseo_launch.py, role_launch_outcome.py, role_launch_receipts.py, and role_held_messages.py, guarded by mcp/tests/test_launch_identity_confirmation.py, and prevents a newly started seat from receiving its opening assignment while wired to another seat's tool server."
+  },
+  "applicability": "Every eager-harness role launch and every held-seat open executed through Paseo launch confirmation.",
+  "conditions": [
+    "Launch creates the seat without its first prompt, polls live server bindings for up to 5.0 seconds to verify one bound server matching (agentId, requestId) under the seat's harness with zero foreign or unreadable bindings, and only then delivers the first message with skipToolServerWait=true.",
+    "On confirmation failure, launch archives the failed seat and retries once under the same requestId with a freshly minted agentId; a second failure archives both seats and refuses leaving zero live seats.",
+    "When /proc is unavailable, confirmation verifies (agentId, requestId) without process ancestry and records ancestrySkippedReason=proc-unavailable in the receipt."
+  ],
+  "exclusions": [
+    "Non-eager harnesses that start tool servers lazily only on the first turn skip pre-prompt confirmation and keep the legacy bridge startup path.",
+    "Does not prevent a harness bug from reviving an unrelated conversation after the launch check; opening-brief self-check (BUG-R51@v1 §3) guards runtime turns."
+  ],
+  "id": "INV-JV7S6Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_launch_identity_confirmation.py (14 passed on tree 9d6c1659c736677568d180e75fd23228782d1f36); L51-W1-expanded-evidence.md#bug-r51-v1",
+        "Worker Rule-21 fix (20261126T071052Z); paseo_seat_policy.py::provider_starts_tool_server_at_create on DEP-synced L51 code tree 56ba4a434418f6ed69deca0f0d9e1f852852cdf8"
+      ],
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R51@v1 §2",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every eager-harness role launch and held-seat open confirms that a live bound agents-remember-task server carrying the seat's exact agentId and requestId runs under its harness with no foreign or unreadable bindings before delivering the first message, retries once under the same requestId with a freshly minted agentId on failure, and otherwise archives both attempts and refuses leaving zero live seats; fail-closed eager classification treats every non-empty provider except lazy claude and native antigravity (D890) as eager.",
+  "supersedes": [],
+  "title": "Eager launch and held-seat open confirm exclusive seat binding",
+  "writer": {
+    "at": "2026-11-26T08:43:44+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}

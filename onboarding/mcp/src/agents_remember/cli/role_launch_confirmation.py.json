@@ -1,0 +1,295 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_confirmation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+        "content": "sha256:c4861bdc3dc550ae5886d1eef66344b52c411b735233dbb26e296c9ea8498e36",
+        "locator": {
+          "kind": "symbol",
+          "name": "held_seat_lost_settlement"
+        }
+      },
+      "id": "RLZ-AJZ5Z2",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-curator-attach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Builds the detail, receipt updates, removed fields, and extras tuple so settle_held_store settles waiting messages on a lost or unconfirmed held seat.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+        "content": "sha256:dbc6ad22f3be79bc53ab8f6c82f07ab2f7d8b9d26aee31f3dab0fb02c16a5e99",
+        "locator": {
+          "kind": "symbol",
+          "name": "confirm_seat_binding"
+        }
+      },
+      "id": "RLZ-BTD7P2",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Polls live server bindings within the 5.0 s wait window, enforces same-harness exclusivity against foreign or unreadable bindings, and falls back to identity-only confirmation with receipt disclosure when /proc is unavailable.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+        "content": "sha256:322029c3812ff412a14ee73ee254db39928fe0cfd1cf8fc8ece95b9c88dcd280",
+        "locator": {
+          "kind": "symbol",
+          "name": "execute_confirmed_launch"
+        }
+      },
+      "id": "RLZ-ZT7VE1",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Implements the three-step eager launch (create without prompt, confirm binding, send prompt with skipToolServerWait), held-seat open re-confirmation, single automatic retry under the same requestId, and double-failure refusal with zero live seats.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Polling defaults (5 s / 0.1 s), refusal code, and `confirmation_skip_reason` (gating `existingOnly` reconciles, absent task tool server, and `provider_starts_tool_server_at_create` fail-closed eager classification) govern Step 2 gating.\n\nAnchor: `provider_starts_tool_server_at_create`; `BINDING_CONFIRM_WAIT_S`; `BINDING_CONFIRM_POLL_S`; `BINDING_CONFIRMATION_FAILED_CODE`; `confirmation_skip_reason`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
+            "content": "sha256:c07b4036c6b6e43d601b2128821aeca1f25a56a5b6c2878ea6762e50e5c1f561",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:abcd813c8795bc0f96a3b3e87ff1ae55ebc1c811dfb07117e7065425d47fc741",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Snapshot evaluation enforces harness-root ancestry, refuses unreadable, foreign, or multiple bound servers immediately, permits unbound servers, and handles `/proc`-absent and rootless sibling fallbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:0512833ba4242f9f0c88eb2330149101021a807a1bbf0357b44e56912f88d395",
+            "locator": {
+              "kind": "symbol",
+              "name": "_under_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:106073560892c740fb9fabe77b92376ef0a60e0965cdf6cfa7c0557e6613baa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evaluate_under_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:4b5d2d2e7d604b622651a9bf2fccfc0a822d024a8ce81c119e6ce7bc8a083844",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evaluate_without_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:a7de77fda6aa7569ebc4949e428535d0bcf9cdb6b6a3f44b5551b88c8cbbf714",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evaluate_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:efe51fd67d6e8a87de37ffac2e10e92036db8b91cc5c83aa735b48829a99c701",
+            "locator": {
+              "kind": "symbol",
+              "name": "_timeout_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:dbc6ad22f3be79bc53ab8f6c82f07ab2f7d8b9d26aee31f3dab0fb02c16a5e99",
+            "locator": {
+              "kind": "symbol",
+              "name": "confirm_seat_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Single retry clones the call with a fresh `agentId`, same `requestId`, and `:retry-1` / `:open-retry-1` idempotency key, archives failed attempts, and refuses with zero live seats on double failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:4d21a33ebf2f0583c6220ce63cc956c8e033ae9749bb52e1ad749e4caee45203",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_launch_call"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:b4fd85d90de0e9e768e53bf35b429526b7a6c3378f9c37e4d020c6411eba0aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confirmation_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:b07e4828184206a6ad0d5d076857d75e8eeeba81d2e3df1dda8f8386795858a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_message"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:281bdd76e29e54ead01b7f1a0b573e09cc261485d327dfc0530ba4059278950d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archive_attempt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:75f7b6f018c388a3fdb6df28322d0c45c154ab14ddeb8143f3d163816fc74e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_confirm_and_send"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:d992237bc0749f3989f7c51c5dd3793911fa1f1f9cd1a72d43b7caae311d8e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_after_failure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Main launch entry executes the skip path, `open-held` re-confirmation with `skipToolServerWait=True`, or three-step create-confirm-send.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:322029c3812ff412a14ee73ee254db39928fe0cfd1cf8fc8ece95b9c88dcd280",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_confirmed_launch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Held-seat receipt helpers carry `bindingConfirmation` and `effectiveLaunchCall`, classify lost seats, and rewrite receipt `agentId`, `replayRequest`, and `hostAgentExists`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:33ab97f52e73af0e4a3a3c85af537e1b44b59033c1c6a706c8960490b949fa64",
+            "locator": {
+              "kind": "symbol",
+              "name": "held_open_outcome_extras"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:db7719c460cc46ec430aa672b45efcbc561656402d5d332d734c8d9923a1d7cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_held_seat_lost"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:f09b71b2ac115fd7598ffb96aa7fb1cef8d01f29efa0bb4d544c27f707fa2a05",
+            "locator": {
+              "kind": "symbol",
+              "name": "held_seat_lost_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02211b949e24615e4fb520eea4058620cc27c20",
+            "content": "sha256:5f29080ea66f81ac788d84e517b4bcb5ba93ce1c9b3f4c62fee02e05f12784c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_held_open_confirmation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

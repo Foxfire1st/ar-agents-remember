@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-        "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
+        "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+        "content": "sha256:f54a10906ebc85e48535cb057e569294d10893ba22a04a909c470e7a9f03b4c7",
         "locator": {
           "kind": "symbol",
           "name": "test_a_bootstrap_start_answers_with_its_seat_and_the_place_it_is_continued"
@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A start answers with the seat it made and the address at which the user continues it, and a repeat reconciles that seat.\n\nAnchor: `FreeSeatDeliveryTests`",
+      "note": "A start answers with the seat it made and the address at which the user continues it, and a repeat reconciles that seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:1d1a8200e637330fc912f50d4b0359943c06deb98bd077eb6d2e5e746a9824b6",
+            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "A model-only choice binds the caller's own harness, and an unoffered model is refused before a seat exists.\n\nAnchor: `FreeSeatOverrideTests`",
+      "note": "A model-only choice binds the caller's own harness, and an unoffered model is refused before a seat exists.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:1d1a8200e637330fc912f50d4b0359943c06deb98bd077eb6d2e5e746a9824b6",
+            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
             "locator": {
               "kind": "file"
             }
@@ -52,12 +52,12 @@
       ]
     },
     "3": {
-      "note": "A preparation refusal reports the files already written and each returned effect's identity.\n\nAnchor: `test_an_occupied_worktrees_file_returns_a_refusal_with_partial_effects`",
+      "note": "A preparation refusal reports the files already written and each returned effect's identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
-            "content": "sha256:1d1a8200e637330fc912f50d4b0359943c06deb98bd077eb6d2e5e746a9824b6",
+            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
             "locator": {
               "kind": "file"
             }

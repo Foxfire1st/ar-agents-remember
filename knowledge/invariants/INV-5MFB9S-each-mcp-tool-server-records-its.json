@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across mcp/src/agents_remember/serving/server_bindings.py and mcp/src/agents_remember/mcp/server.py, guarded by mcp/tests/test_server_bindings.py, and required so launch confirmation can observe each live server's launch binding without breaking legacy server inventory readers."
+  },
+  "applicability": "Every MCP tool server started via run_server under a trusted runtime config.",
+  "conditions": [
+    "The server writes runtime/server-bindings/<pid>.json atomically before FastMCP transport startup with bindingState bound, unbound, or unreadable plus /proc process ancestry when readable.",
+    "The legacy runtime/servers/<pid>.json record keeps its unchanged schema and directory contents for older readers.",
+    "Cleanup runs in nested finally blocks on exit, and live_server_bindings prunes dead or PID-recycled records."
+  ],
+  "exclusions": [
+    "Hosts without /proc omit process ancestry and return None from harness_root_pids rather than guessing process parentage.",
+    "Write failures to the binding file are logged and leave the server running rather than aborting transport startup."
+  ],
+  "id": "INV-5MFB9S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_server_bindings.py (8 passed on tree 9d6c1659c736677568d180e75fd23228782d1f36); L51-W1-expanded-evidence.md#bug-r51-v1",
+        "Architect 97e0320d plan ruling #3 (2026-11-25T19:38:29Z); docs/reference/runtime-layout.md:57-95 on tree 9d6c1659c736677568d180e75fd23228782d1f36",
+        "Architect 97e0320d plan ruling #3; docs/reference/runtime-layout.md:47-81 on DEP-synced L51 code tree 56ba4a434418f6ed69deca0f0d9e1f852852cdf8"
+      ],
+      "path": "L51-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R51@v1 §1",
+    "leaf": "261112-BUG-L51",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each MCP tool server records its launch binding state (bound, unbound, or unreadable with reason) and process ancestry in a peer server-bindings registry before serving, without altering the legacy servers inventory schema or directory contents.",
+  "supersedes": [],
+  "title": "Peer MCP server-binding registry preserves legacy server inventory",
+  "writer": {
+    "at": "2026-11-26T08:43:44+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L51",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "task": "261112-BUG"
+  }
+}

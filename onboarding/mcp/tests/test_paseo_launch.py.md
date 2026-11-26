@@ -60,7 +60,10 @@ The fixture now gives the process a short temporary home of its own, as a real a
 ## Evidence
 
 
+
+
 - Dispatch fixtures cover refusal boundaries, ACP task-server binding, feature-value merging and recovery notes at both report depths. [1]
+
 
 
 

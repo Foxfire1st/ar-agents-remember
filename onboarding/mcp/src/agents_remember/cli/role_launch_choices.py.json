@@ -54,12 +54,12 @@
       ]
     },
     "3": {
-      "note": "A created outcome invokes the imported receipt seam.\n\nAnchor: `publish_launch_outcome`",
+      "note": "A created outcome invokes the imported receipt seam.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
-            "content": "sha256:6ef8e50b42bacc6c624c3559c082efb69c320c460c36a739153705d87fecce8c",
+            "blob": "b3017688eb1bbdc4729ef8af8ea0d5c5e397212f",
+            "content": "sha256:1f8c5ccd29b4fa995225bc852bcf0468b907b2dabbf4cdf6ed54654f829ab0e5",
             "locator": {
               "kind": "file"
             },
@@ -70,15 +70,14 @@
       ]
     },
     "4": {
-      "note": "Test source preserves requested default, observed model and same-request correction.",
+      "note": "Test source preserves requested default, observed model and same-request correction.\n\nAnchor: `test_host_default_successor_model_is_observed_without_losing_requested_provenance`",
       "targets": [
         {
           "anchor": {
-            "blob": "320680f4d45704242a250f487e308bc53310e821",
-            "content": "sha256:ec4577dac37ddfc486c2922347ed637d56a64c09035bbd602f69e3103b287903",
+            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
+            "content": "sha256:6f5f239f1f87086f445b7f9172f69fa82ee1ac768715b07b4f7515fc77982635",
             "locator": {
-              "kind": "symbol",
-              "name": "test_host_default_successor_model_is_observed_without_losing_requested_provenance"
+              "kind": "file"
             },
             "path": "mcp/tests/test_role_step_up.py"
           },

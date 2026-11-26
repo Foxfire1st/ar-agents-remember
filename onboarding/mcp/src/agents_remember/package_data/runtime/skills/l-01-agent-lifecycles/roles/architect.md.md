@@ -94,7 +94,10 @@ This packaged copy derives from the canonical roles/architect.md. The Architect 
 - Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
 
 
+
 - The Architect starts an Investigator with `role_start` without a task reference, on a sprint, on a standalone master, or on both, sends the scoped concern as its first `role_message` to the returned agent ID, and retires a finished Investigator with `retire_child`. [1]
+
+
 
 
 
