@@ -152,8 +152,8 @@ The explainer's page is a separate document the reader works in. The dashboard g
 
 - Every animation stops under `html[data-effects="off"]`; script motion also honours
   `prefers-reduced-motion` (`panels/engine-room/useShouldAnimate.ts`). Captures run with effects
-  off. The effects switch does not reach the explanation frame; the page follows only
-  `prefers-reduced-motion` (Open differences, item 6).
+  off. The effects switch and reduced-motion checks apply to the dashboard application.
+  Explanation pages use their own still forms in the markup (Open differences, item 6).
 - At most 3 flashes per second; a pulse is a slow ease-in-out of opacity, never on-off blinking.
 - Control colour changes take 120 ms; mockup: jump flash 1.6 s, new chip 1.2 s, progress 0.4 s
   (mock:200, 362, 336).
@@ -189,5 +189,5 @@ Below 40rem the view tabs wrap (`grammar/ModeBar.tsx`).
    No shared segmented control exists yet. The mockup draws no tray minimised line (D397's
    "⊕ Attached · n" wins) and no error state.
 6. **Explanation frame.** The landed frame is 34rem high (`RevisionFrame.tsx`, `page`); L201's
-   candidate gives it the column's free height and a full-screen switch. Neither passes the
-   effects switch into the page.
+   candidate gives it the column's free height and a full-screen switch. The frame presents a
+   standalone explanation page. The effects switch controls the dashboard application.

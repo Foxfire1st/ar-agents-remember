@@ -1,13 +1,50 @@
 {
   "path": "dashboard/src/panels/review/explainer/explainerModel.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
+        "content": "sha256:f88d6eee21804a53a4c1a9467ee5f328a2b78bdd421c6bda5fe01831e2dd8e83",
+        "locator": {
+          "kind": "symbol",
+          "name": "standfirstText"
+        }
+      },
+      "id": "RLZ-AVWKP2",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Renders the revision inventory line beside interactions checked in the explainer revision header, and omits shows: when inventory was left out for the storage limit.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
+        "content": "sha256:63bc1a678a8725b8a27b3e981195cc2f10f17dc54816ea14215d2a44ef3da453",
+        "locator": {
+          "kind": "symbol",
+          "name": "inventoryOmittedText"
+        }
+      },
+      "id": "RLZ-JR3VK0",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Returns the plain reason line shown in ExplanationView when a revision published without its inventory sidecar because the task storage limit was reached.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "A planned binding is labelled planned and never a number, and an absent one is stated as such\n\nAnchor: `export function bindingLabel(`",
       "targets": [
         {
           "anchor": {
-            "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
+            "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
             "content": "sha256:e960270889128c4d1489a5c4895f96395a26b3de11ebc7b2e6946968e334b9d8",
             "locator": {
               "end": 44,
@@ -24,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
+            "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
             "content": "sha256:4005456902965c6eeb7aa971cae77060aa7dbe9ad3b0902b69779c584c908842",
             "locator": {
               "end": 89,
@@ -41,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
+            "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
             "content": "sha256:47439795554b01a51f851df2b80402fa8105a38ea430b6a72ca87d764416a126",
             "locator": {
               "end": 81,
@@ -58,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
+            "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
             "content": "sha256:87b143750306f5a90010924f47b95c4c8fe9e955b801b1b7a0814b0bf985532b",
             "locator": {
               "end": 195,
@@ -75,10 +112,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
-            "content": "sha256:52d6a084767b321f9b22edfb68714cf170be73a7abd30960c96478d1100ab6bf",
+            "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
+            "content": "sha256:7abf8a5a3619341d97e98ca903e6d71253af40a0d9cbdbc753d42573b95ec844",
             "locator": {
-              "end": 384,
+              "end": 182,
               "kind": "line_range",
               "start": 164
             }
@@ -88,16 +125,16 @@
       ]
     },
     "6": {
-      "note": "The standfirst states time, revision, binding, kind and retirement from the shown row\n\nAnchor: `export function standfirstText(`",
+      "note": "The shown revision supplies time, binding, kind and retirement in the standfirst. Its known interaction coverage and inventory can add their own summary.",
       "targets": [
         {
           "anchor": {
-            "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
-            "content": "sha256:653ecc8970fad7409aa5c26772c7c98218e2c02b27b6277e2f0ccfd568cb9445",
+            "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
+            "content": "sha256:762590d4cb47e22536e40d755e21fa4b928caeff7de249ac0f334a0bebc31709",
             "locator": {
-              "end": 384,
+              "end": 409,
               "kind": "line_range",
-              "start": 373
+              "start": 349
             }
           },
           "kind": "code"

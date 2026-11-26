@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/canvas_browser_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper resolves the installed module and configures the test process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7340ff41343bd66e0c3160d1076bdb4b05580f24",
+            "content": "sha256:59d3429e3538da22c034f1c2325c119b67fa967d5e7d4584514c60b3af3ab798",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

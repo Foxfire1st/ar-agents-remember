@@ -4,6 +4,8 @@
 
 [Route overview](../../overview.md)
 
+The mounted cases cover present, incomplete and omitted revision inventories. A dashboard Effects preference change leaves the already mounted isolated revision’s ordinary binding independent.
+
 ## Purpose
 
 Measures the mounted explanation page against a stubbed transport: what the saved, failed and comparing states render, that a page opens with no model, and which channel a navigation revokes.

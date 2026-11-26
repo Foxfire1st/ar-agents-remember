@@ -1,7 +1,7 @@
 # Explainer treatment
 
-This repository's treatment guides the presentation of the completed essay and any figures that
-support it. The explainer capability governs the authoring stages, evidence and isolation.
+The explainer uses this repository's treatment to present its essay and figures. Its capability
+governs the authoring stages, evidence and isolation.
 Techniques and their numbers are in `TECHNIQUES.md`. The dashboard around the page is in
 `DESIGN.md`.
 
@@ -18,9 +18,10 @@ Use the code and memory records to ground each claim. An invariant, known weakne
 belongs beside the account it helps explain. Keep the explanation in the markup so a reader can
 follow it with motion or script off.
 
-Finish the essay before planning or making visuals. Choose a figure where it helps the reader
-follow a part of the essay. Build it from the bound material, such as a real call path, recorded
-measurements, or the relevant code. Then assemble the page from the essay and those assets.
+Show the central mechanism with at least one figure the reader drives from `TECHNIQUES.md`. For
+a planned binding, mark the illustrated mechanism as intended. Use the bound material, such as a
+real call path, recorded measurements, or the relevant code. Plan each figure's states, inputs
+and kit parts before assembling the page from the essay and those assets.
 
 ## Who reads, and in what order
 
@@ -32,22 +33,23 @@ reader who stops early still holds a true picture:
    explaining the objective and who it affects. Add an outcome figure if it helps.
 2. **What happened.** Explain the problem, what was found, what changed and what was measured.
    Attribute measurements to their reports. A timeline can support the sequence where it helps.
-3. **How it works now.** Explain the mechanism and the before and after in prose. A chosen figure
-   may help the reader trace a path or compare the same input in both states.
+3. **How it works now.** Explain the mechanism and the before and after. The reader can trace a
+   path, compare the same input in both states, or drive another figure that shows the mechanism.
 4. **What it means for the guarantees.** Explain which guarantees changed, how they hold, and
    which weaknesses the work closed or left open. Place the record mark beside the claim it grounds.
-5. **Where to look first.** Ordered entry points into the code, one reason each, each opening its
-   excerpt in place. Say that the order is yours.
+5. **Where to look first.** Ordered entry points into the code, one reason each. Each opens its
+   kit-highlighted excerpt in place. Say that the order is yours.
 6. **Risks and open questions,** marked as your reading.
 7. **Not covered.** What was not read, not comparable or unavailable.
 
 A focused explanation keeps this order inside its part. Skip a step with nothing to say; never pad
 one.
 
-## Supporting figures and controls
+## Figures and controls
 
-- **Choose one job.** Where a figure helps, show a sequence, comparison, or path from this
-  binding. A mechanism may use a step, scrub, condition toggle, or before-and-after switch.
+- **Choose one job.** Give each figure a sequence, comparison, rule or path to explain from this
+  binding. Use a step, scrubber, condition toggle, before-and-after switch or Sandbox for the
+  central mechanism as the technique table describes.
 - **Link.** Link a claim to its cited lines and to its figure nodes where a figure exists. Hover
   or focus highlights the linked elements, a click pins them, and Escape clears the pin.
 - **Descend.** A ladder of abstraction: the whole change, a part, its hunk. Detail opens in place
@@ -59,8 +61,9 @@ one.
 
 ## Character and voice
 
-Use clear, direct prose and let paragraph length follow the reasoning. A figure supports its
-part of the essay. Plain sentences, present tense, active voice. Name the owner of each judgment.
+Use clear, direct prose and let paragraph length follow the reasoning. Keep evidence marks inline
+with the text they ground. Use plain sentences, present tense and active voice. Name the owner
+of each judgment.
 Say "the record shows" only when the basis shows it, "the report measured" for a number from a
 report, and "I read this as" for your own inference. No superlatives, urgency, rhetorical
 questions, exclamation marks or emoji.
@@ -105,14 +108,14 @@ figure labels and step counts. No web fonts.
 
 ## Motion and response
 
-A supporting figure may use motion to show an order, a propagation, a sequence in time, or
+Use motion to show how a state changes, for example a propagation, a sequence, a code morph, or
 a measured change. The developer's motion vocabulary in `kit/ar-video/23fd71bf/` is the house
 style. Motion Canvas in the same kit supports timed scenes. A scripted moving figure plays
 once in view, then waits for the reader to replay, pause, step or scrub from the keyboard. It
 ends on its final state.
 
-A WebM or MP4 video plays on reader action, with controls and without autoplay or looping. In
-reduced motion, show a still frame and list its steps.
+A WebM or MP4 video plays once on reader action with controls. Supply a still frame and listed
+steps in the markup.
 
 Reserve a figure's box before it draws, and open detail below its control. Keep the layout,
 text and scroll position stable. Run one figure at a time. The still form supplies the labeled
@@ -140,14 +143,11 @@ state and steps.
 - No name or logo of the tool that wrote the page; the page speaks for the repository.
 - No WebGL or shaders by default; HTML, CSS, SVG and Canvas2D suffice.
 
-## Still, reduced, narrow
+## Still, narrow and keyboard
 
 **Still form.** The markup holds the full essay before any script runs. Include ordered steps
 and labeled states for figures where they apply. A canvas figure has a markup equivalent.
 Script may add interaction to the same material.
-
-**Reduced motion.** Show scripted figures in their final labeled state with steps listed.
-Show a still frame and listed steps for video. Keep visible controls and evidence links operable.
 
 **Narrow.** 600–700px is a normal width. Below 560px: one column, before above after, a sticky
 figure becomes a figure above each step, labels shortened, tables as key/value rows, code wrapped.

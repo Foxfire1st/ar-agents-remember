@@ -8,7 +8,7 @@
   "applicability": "Explainer authoring for a recorded or planned binding.",
   "conditions": [
     "The six private files name the binding and later stages read the earlier files.",
-    "The page uses the evidence-bearing essay and any visuals chosen for it."
+    "The page assembles the evidence-bearing essay and its figures from the private stages."
   ],
   "exclusions": [
     "Retained drafts and revisions can predate a new authoring run.",
@@ -26,7 +26,7 @@
     "leaf": "261112-BUG-L13",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The explainer writes six numbered intermediate artifacts in stages/ and produces drafts/assets/index.html as the seventh artifact.",
   "status": "proposed",

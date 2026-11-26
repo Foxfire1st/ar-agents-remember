@@ -6,6 +6,8 @@ Ordinary registration declares payload handlers lazily through registration.lazy
 
 [overview](../../../../../overview.md)
 
+The explainer render registration keeps revision and run identity in the core answer and treats inventory and carried assets as optional bounded report sections.
+
 ## Purpose
 
 `mcp/registration/` composes the advertised MCP tool families and the skill resource/protocol surface. Public Python signatures and registered descriptions live here; application behavior and response completion belong to their delegates. The server constructs its transport and application wiring, then invokes the ordered `TOOL_REGISTRARS` tuple.

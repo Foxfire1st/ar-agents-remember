@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+        "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
+        "content": "sha256:988f1aebecefe31e283e33649a6eb62c85e852bc0fce3d02ecaf3bb91134629d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_and_state_return_host_workspace_id_from_provenance"
+        }
+      },
+      "facet": "The fixture supplies a recorded Paseo workspace ID and checks that Build, its nested Seat and State carry the host identity separately from the filesystem path.",
+      "id": "PRF-DS3DC7",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
         "content": "sha256:666bd2fb9eeeb6116196a46f6842baf671e8b6aad29310a2772dc13808b489fd",
         "locator": {
           "kind": "symbol",
@@ -26,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
             "content": "sha256:f8aefad88d807c0ef504e1fc04aa566ca41d6571b732788016519571e44c9f92",
             "locator": {
               "kind": "symbol",
@@ -42,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
             "content": "sha256:e74fdd14914e52113d76c510e7a6372d89a392f5155484990f11c1463bf89bc4",
             "locator": {
               "kind": "symbol",
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
             "content": "sha256:c54c8f0032c71f1de86cf23183d0782d074c87b51c2ca855e4a5ac9e23ead1b6",
             "locator": {
               "kind": "symbol",
@@ -74,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
             "content": "sha256:4d3871aa26c89c1075e7defba6abe97b0c299a8ef2c892e1d3267683d0b356c0",
             "locator": {
               "kind": "symbol",
@@ -90,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
             "content": "sha256:a4f96c496537f4b0f1389f9f34887df0063dfed1d10f9da88ee0cb5672cac7c0",
             "locator": {
               "kind": "symbol",
@@ -106,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
             "content": "sha256:9f8aac8d848e9edd55e1c08dd0c960598cdb6b7757f265c6d922abac1a809258",
             "locator": {
               "kind": "symbol",
@@ -118,14 +135,32 @@
       ]
     },
     "7": {
-      "note": "The cancel route forwards the exact seat/request pair from the leaf ledger, reports stopped-turn and prevented-publication facts from its host reply, marks a request the ledger never saw uncertain, and rejects a missing request ID. This fixture-level route assertion does not certify a live host cancellation.\n\nAnchor: `test_the_cancel_route_targets_the_exact_seat_and_request`",
+      "note": "The cancel route forwards the exact seat/request pair from the leaf ledger, reports stopped-turn and prevented-publication facts from its host reply, marks a request the ledger never saw uncertain, and rejects a missing request ID. This fixture-level route assertion does not certify a live host cancellation.",
       "targets": [
         {
           "anchor": {
-            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
-            "content": "sha256:6d6f9e5384d4484ec2b38e66636c9dd893361dc498ecb1af6a76d7254eacb86d",
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
+            "content": "sha256:666bd2fb9eeeb6116196a46f6842baf671e8b6aad29310a2772dc13808b489fd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_cancel_route_targets_the_exact_seat_and_request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Build and State fixture writes Paseo workspace provenance and asserts that both routes return that host workspace ID separately from the physical workspace path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a16c56c1ff13dbe88c46815bb0cf1dd071f2611",
+            "content": "sha256:988f1aebecefe31e283e33649a6eb62c85e852bc0fce3d02ecaf3bb91134629d",
+            "locator": {
+              "end": 1191,
+              "kind": "line_range",
+              "start": 1156
             }
           },
           "kind": "test"

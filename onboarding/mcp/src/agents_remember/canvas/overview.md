@@ -10,7 +10,7 @@ The canvas package owns the execution environment for a generated review page an
 
 ## Hot Path Summary
 
-A viewer opens a frame from one admitted revision; the host creates a session bound to that frame, revision and comparison, and serves the revision's own bytes under the policy whose digest the shipped proof must name. Generated scripts are enabled only while that proof covers the policy now served. The frame speaks one protocol version and five frame operations, with a separately validated host stale-part notice; an evidence request resolves against the revision's own admitted packet or is refused by name. The first explicit Send builds or attaches one derived explainer seat, prepares its bound environment and records the request; publication still goes through the frame store after readiness and a model-free prospective load. Opening the page starts nothing. Kit files are carried under the manifest's contract path when an attempt is authored, compared with the manifest as they are carried.
+A viewer opens a frame from one admitted revision; the host creates a session bound to that frame, revision and comparison, and serves the revision's own bytes under the policy whose digest the shipped proof must name. Generated scripts are enabled only while that proof covers the policy now served. The frame speaks one protocol version and five frame operations, with a separately validated host stale-part notice; an evidence request resolves against the revision's own admitted packet or is refused by name. The first explicit Send builds or attaches one derived explainer seat, prepares its bound environment and records the request; publication still goes through the frame store after readiness and a model-free prospective load. Opening the page starts nothing. An explainer revision carries pinned kit files at the paths its admitted sources reference.
 
 ## Isolation Policy And The Proof Gate
 
@@ -40,11 +40,13 @@ The leaf’s environment lives outside worktrees, memory repositories and task f
 
 ## Readiness And The Prospective Load
 
-`check_page` is the static check a prospective revision passes before it is offered as ready: it follows the document’s own references, refuses one that leaves the revision or names no admitted asset, and reports reduced-motion and evidence-reference facts. It also derives the part map from static `data-part` and claim-id marks, refuses invalid parts, unknown or unmapped claims and unresolved bases, and carries the map into publication. A page declaring no parts is answered whole-page. `BrowserProspectiveLoad` performs the load itself in the selected browser through the package-owned runner, stages the exact prospective bytes, and downgrades a claim of success that contradicts its own observations. Before it stages a run, a product load makes its browser ready through `canvas.explainer_browser`: Playwright and its Chromium are fetched at that first explanation into one folder the product owns under the user's data home, with the Node the product already installs, and a load that cannot get them is `unavailable` with nothing published and no run folder left behind. A load that names its own Node is instrumented and fetches nothing, and a module a user names in `AR_PLAYWRIGHT` is used as given. During its bounded post-load observation window the runner collects basis references and claim IDs in separate inventories, including values added by scripts. Python accepts the full string inventories and resolves them against the bound packet. A revision whose load fails or is unavailable is refused with the failure named to the presenter; the check says nothing about how good an explanation is.
+`check_page` is the static check a prospective revision passes before it is offered as ready. It follows the document’s own references and refuses one that leaves the revision or names no admitted asset. It also derives the part map from static `data-part` and claim-id marks, refuses invalid parts, unknown or unmapped claims and unresolved bases, and carries the map into publication. A page declaring no parts is answered whole-page. `BrowserProspectiveLoad` performs the load itself in the selected browser through the package-owned runner, stages the exact prospective bytes, and downgrades a claim of success that contradicts its own observations. Before it stages a run, a product load makes its browser ready through `canvas.explainer_browser`: Playwright and its Chromium are fetched at that first explanation into one folder the product owns under the user's data home, with the Node the product already installs, and a load that cannot get them is `unavailable` with nothing published and no run folder left behind. A load that names its own Node is instrumented and fetches nothing, and a module a user names in `AR_PLAYWRIGHT` is used as given. During its bounded post-load observation window the runner collects basis references and claim IDs in separate inventories, including values added by scripts. Python accepts the full string inventories and resolves them against the bound packet. A revision whose load fails or is unavailable is refused with the failure named to the presenter.
+
+The explainer uses the ordinary frame binding and browser load. Reduced-motion and Effects controls belong to the dashboard application. The interaction sweep reports unvisited controls as coverage, and `render()` reports figures, code highlighting, kit use and unused assets as advisory inventory.
 
 ## The Pinned Kit
 
-The kit collector verifies selected shipped files against the shipped manifest and adds them under their contract paths. A page names a kit library by its relative path. The page asset route later reads from the live session’s revision and uses that revision’s recorded media type.
+A draft refers to a pinned kit file by a path relative to the HTML, CSS or JavaScript module that names it. `render()` resolves those paths, verifies any draft copy under `kit/`, stages the referenced files with the pinned kit's required companion and notice files, and refuses publication as `kit-problem` when `kit_result.kit_problems` reports a missing notice or kit defect; request-scoped staging, draft admission (`stage_and_begin_draft`), and finished-staging pruning (`prune_finished_staging`) stay confined inside the workspace under the task lock, surfacing path or symlink escapes as `path-held`. The page asset route reads the published assets from the live session’s revision and uses each asset's recorded media type.
 
 ## Dashboard Write Guard
 
@@ -54,9 +56,9 @@ The dashboard is local and unauthenticated, which is a deployment posture and no
 
 The explainer’s categories and grades remain its judgment, separate from change badges and accepted knowledge. Grades bind to block fingerprints and the comparison at which they were made; unresolved target reads mark parts or grades stale with a reason. The target is the environment binding unless the view explicitly selects another comparison or reads after Retire. Stale grades keep their value in the judgment sort, and a stale-page message regenerates nothing until the developer sends it.
 
-Recorded and planned explanations use six private files for reading, selected changes, selected parts, individual explanations, the essay and the visual plan. The evidence-bearing essay precedes visual work. The explainer assembles the page from that essay and any helpful visual assets. A planned binding uses the current code and memory and describes the requirement's intended effects.
+Recorded and planned explanations use six private files for reading, selected changes, selected parts, individual explanations, the essay and the visual plan. The explainer assembles the page from the evidence-bearing essay and its figures. The central mechanism is a figure the reader drives, with the full explanation and still forms in the markup. A planned binding uses the current code and memory and marks the illustrated mechanism as intended.
 
-Readiness checks actual media attributes. The prospective load and publication both serve WebM and MP4 with their video media types.
+Both static readiness (`readiness.py`) and the browser prospective load (`canvas-prospective-load.mjs`, `prospective.py`, and `explainer_server.py`) check `audio` and `video` media controls, refusing autoplay, looping, or missing controls before publication. The prospective load and publication both serve WebM and MP4 with their video media types.
 
 ## Evidence
 
@@ -92,7 +94,7 @@ Readiness checks actual media attributes. The prospective load and publication b
 
 - Publication loads the exact prospective revision once without a model before any ready pointer moves. [12]
 
-- The static readiness check refuses a page that names something its revision does not carry. [13]
+- Static readiness checks subresource containment and availability and verifies any draft kit assets against shipped bytes. [13]
 
 
 
@@ -104,3 +106,6 @@ Readiness checks actual media attributes. The prospective load and publication b
 
 - Collecting shipped kit assets verifies each selected file against the shipped manifest and adds it under its contract path. [15]
 - Asset serving opens the live session’s revision and uses that revision’s recorded media type. [21]
+
+- Request-scoped staging, draft admission, and pruning remain confined inside the workspace under one task lock, surfacing `PathRefused` as `path-held`, and `render()` refuses publication as `kit-problem` when kit notices are missing. [22]
+- Prospective browser loading probes rendered and script-inserted `audio`/`video` elements and reports non-conforming media faults to block publication alongside static readiness. [23]

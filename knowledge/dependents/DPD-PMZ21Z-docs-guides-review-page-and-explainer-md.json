@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "299008b8cc40e627ae89e165f925796332f94efc",
+    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "Verified docs/guides/review-page-and-explainer.md (lines 1-914) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): review surface, explainer claim/ownership and launch-route interactions remain accurate under BUG-R41@v1.",
-    "task": "261112-BUG-L41",
+    "statement": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/guides/review-page-and-explainer.md remains accurate across recorded and planned explanations (private inputs, first-request selected history, staged essay/figures/isolation, reference-only kit carry, complete still form, and capped advisory inventory), explainer_control plus the explainer's four dedicated tools and host-profile settings, review surface and explainer claim/ownership and launch-route interactions (remember_master_architect in role_launch_routes.py), and explainer_server.py and explainer_workspace.py (including _copy_documents) for workspace preparation, staging, and publish-time media control checks; no BUG-L41 contradiction.",
+    "task": "261124-EXP-L2",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "dashboard/src/panels/review/explainer/RevisionSelector.tsx"
     },
     {
-      "blob": "8226535713632fabfb41a99f2a5939827f8b47fc",
+      "blob": "beb917331aa14f2b8bc2280e1a01851499a7d9bb",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/explainerModel.ts"
     },
@@ -96,7 +96,7 @@
       "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
     },
     {
-      "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+      "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
       "kind": "file",
       "path": "dashboard/src/explainer/model.ts"
     },
@@ -131,12 +131,12 @@
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
     {
-      "blob": "99662226cca319589b818f5083eff3400d12ae14",
+      "blob": "6b6b5bcc16b8e1f874cae855057079820f53ebaa",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },
@@ -181,12 +181,12 @@
       "path": "dashboard/src/panels/changeset/DiffPane.tsx"
     },
     {
-      "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+      "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
       "kind": "file",
       "path": "dashboard/src/explainer/columnState.ts"
     },
     {
-      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+      "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
     },
     {
-      "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
+      "blob": "660d761b7f74047d78b9cb8ddd43e8ed1ad18544",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/review_frame_store.py"
     },
@@ -236,12 +236,12 @@
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
     {
-      "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+      "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
@@ -282,14 +282,15 @@
     },
     {
       "anchor": {
-        "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
-        "content": "sha256:a944503f0a793990c545d10b39d41a29fb496ca1874a34698600c5395d9a3590",
+        "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
+        "content": "sha256:ebc012bcaad05179d840344a2c1c1c83c8839665f32b68dbca203748bf16f344",
         "locator": {
           "kind": "symbol",
           "name": "handle_build"
         },
         "path": "mcp/src/agents_remember/serving/explainer_routes.py"
       },
+      "heading": "The intent review before work starts",
       "kind": "anchor"
     },
     {
@@ -302,18 +303,43 @@
         },
         "path": "mcp/src/agents_remember/canvas/explainer_service.py"
       },
+      "heading": "The intent review before work starts",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
+        "content": "sha256:d73ff9f95167be72653452b5b743a38721425f51c6b7b3066cc63e3bd0de4092",
+        "locator": {
+          "kind": "symbol",
+          "name": "_copy_documents"
+        },
+        "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+        "content": "sha256:edeebf24017b5b360c833c992c4d353a34f77003648509e37df26a303e4858b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_packed"
+        },
+        "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+      },
       "kind": "anchor"
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-26T05:37:56+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261124-EXP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
   }
 }

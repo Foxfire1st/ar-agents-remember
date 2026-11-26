@@ -4,6 +4,8 @@
 
 [overview](../../overview.md)
 
+An active explainer column in Operations follows state changes for its leaf and selects the ready seat using its host workspace identity. The existing chat frame can recover a transient unavailable agent on its supported control channel.
+
 ## Purpose
 
 A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. The launcher labels the base mode, notes and feature chips as non-applied after step-up. The receipt supplies the model and its step-up source, and the status shows the host’s observed mode when available. A receipt without an observed mode shows “Mode/features unreported”. This adds no chat navigation or acceptance authority.

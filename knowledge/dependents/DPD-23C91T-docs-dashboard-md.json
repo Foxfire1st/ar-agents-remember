@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "docs/dashboard.md (lines 560-561) accurately states that finalizing, cleaning up, or abandoning a task archives its role agents on the host and that an archived agent is not a document's chat; L38 enforces seat closure before whole-folder removal.",
-    "task": "261112-BUG-L38",
-    "uncommitted": true
+    "statement": "On settled tree 049d3961 (commit ed29e40b), the dashboard guide accurately describes the Operations table rules (requiring an open session for helper-only work or a declared wait with an armed check, and pausing when known host activity shows neither), the Effects control plus manual Retry reloading an unavailable embedded chat control alongside the bounded retry for a selected agent and workspace, and lines 560-561 stating that finalizing, cleaning up, or abandoning a task archives its role agents on the host and that an archived agent is not a document's chat (with L38 enforcing seat closure before whole-folder removal).",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/dashboard.md",
   "id": "DPD-23C91T",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+      "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -116,7 +116,7 @@
       "path": "dashboard/src/cockpit/roleChatResult.ts"
     },
     {
-      "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+      "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
       "kind": "file",
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
@@ -335,6 +335,7 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
+      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -348,6 +349,7 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
+      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -361,6 +363,7 @@
         },
         "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
       },
+      "heading": "The buttons",
       "kind": "anchor"
     },
     {
@@ -374,6 +377,7 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
+      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -387,19 +391,21 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
+      "heading": "The buttons",
       "kind": "anchor"
     },
     {
       "anchor": {
         "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
-        "content": "sha256:17b15511b4cbbaf380fd59450858321e052ec9081293c050537f3efc417fd394",
+        "content": "sha256:04d56886385a9cd5a5ce52d3223fe4b4255316b4ef9cf14632bb3d2995c98cf7",
         "locator": {
           "end": 234,
           "kind": "line_range",
-          "start": 219
+          "start": 213
         },
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
+      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -440,14 +446,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T00:51:29+01:00",
     "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
   }
 }

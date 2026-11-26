@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+        "blob": "948b6c3366b76d4f5b044acee6df260a111d469f",
         "content": "sha256:ef729c9534a31d55d9aff5dbeb2bbdbfbb84522b3c5359a5bc4f2bafd724c928",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+        "blob": "948b6c3366b76d4f5b044acee6df260a111d469f",
+        "content": "sha256:1f6c94d1c60c50527f43be5ce89fb5edafd02c90bf2f4fb56e979926a7c7493b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PS3YHS",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Documents the unbounded per-revision file count and 512 MiB task-wide byte cap that the store actually enforces.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "948b6c3366b76d4f5b044acee6df260a111d469f",
         "content": "sha256:ebad952d94900b1a34819a298dcfcda7371703bac06547d079c94cfc4e595040",
         "locator": {
           "kind": "symbol",

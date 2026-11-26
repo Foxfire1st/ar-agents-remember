@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+        "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
         "content": "sha256:9827c478391c0e9792555bd54d8ba202828eacff6bfb76c4f050ceecf76eba5b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+        "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
         "content": "sha256:0fa4068acfa2ba2e916bcd9077be61483105346919b552afd27d216968c60a7f",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+        "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
         "content": "sha256:f8fd3aa6bca0cae6b97bcc03c526d3f22eb5d0c0795516114f41ea2a2c108dfe",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+        "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
         "content": "sha256:865f074f981acf78796aa868885e84eb2e56391e85eb4693a75e087c74232cd8",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+        "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
         "content": "sha256:991c7f915c7bed89590825e30ecee6719dd88f3a3c54f052ca8768cbdc6d59aa",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
-        "content": "sha256:ba7cbc5e700ef93919a94cb1bbfca0d3e17c7d49a2fe0b1a023d6931522fc79a",
+        "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
+        "content": "sha256:471676bdec0bd0d87bedab98959257750be228e1a16fb3dd8e87ff1f11ad647b",
         "locator": {
           "kind": "symbol",
           "name": "test_every_response_carries_its_policy_headers"
@@ -107,12 +107,12 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "The case `test_every_response_carries_its_policy_headers` protects this behaviour.",
+      "note": "The header case checks document and asset policy, opaque script sandboxing and no cookie header. It also asserts the 512 MiB task cap and the absence of default per-revision asset and byte limits.",
       "targets": [
         {
           "anchor": {
-            "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
-            "content": "sha256:ba7cbc5e700ef93919a94cb1bbfca0d3e17c7d49a2fe0b1a023d6931522fc79a",
+            "blob": "6d364ecaba7cad6da769e6d5176300c58ddf8d2c",
+            "content": "sha256:471676bdec0bd0d87bedab98959257750be228e1a16fb3dd8e87ff1f11ad647b",
             "locator": {
               "kind": "symbol",
               "name": "test_every_response_carries_its_policy_headers"

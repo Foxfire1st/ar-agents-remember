@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Package distribution, workspace preparation and closed readiness and browser cases jointly keep a readable starter and README for each pinned library."
+  },
+  "applicability": "The product’s shipped canvas starters and private explainer workspace preparation.",
+  "conditions": [
+    "One standalone runnable starter accompanies each pinned kit library.",
+    "The shipped README gives the starter choices and adaptation guidance. The workspace refreshes the starter directory for the explainer to read.",
+    "The starters refer to the pinned kit and stay outside the published draft assets."
+  ],
+  "exclusions": [
+    "The fictional exemplar’s separate content and its measured techniques.",
+    "The accepted publication of a specific starter or authored draft."
+  ],
+  "id": "INV-V4YCC7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_starters_exemplar.py::test_each_starter_passes_readiness_and_browser_checks_alone; mcp/tests/test_canvas_starters_exemplar.py::test_shipped_starters_and_exemplar_browser_behaviors; mcp/tests/test_canvas_kit_references.py::test_workspace_copies_starters_and_exemplar_and_skips_kit_when_seeding_draft",
+        "A7 shipping witness. The unmocked workspace Build and Update copy the packaged starter README byte-for-byte (6,842 bytes, SHA-256 c64b821765f22f82f376d641f9731fbf64c44d2041979e95ac1f1ef5495b8ace). Worker freeze /home/firefox/projects/ar-coordination/worktrees/agents-remember/01_an-explainer-page-explains-a-change-w-ff9bd50d39-ar/role-reports/worker/e748683c-988a-4e8f-9716-82faa9e05b59/role-launch/r7-cur-f01-freeze-report.md, section 2. Independent Build witness /home/firefox/projects/ar-coordination/worktrees/agents-remember/01_an-explainer-page-explains-a-change-w-ff9bd50d39-ar/role-reports/reviewer/bbf1e33a-243d-4fc3-9332-237e6af33262/role-launch/round-7/a7/verdict.md, Workspace delivery and readiness."
+      ],
+      "path": "curation-successor-handoff.json"
+    },
+    "handoffEntry": "EXP-R01@v2 §4",
+    "leaf": "261124-EXP-L1",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product ships four self-contained interactive starters plus a README in package_data/canvas/starters/, copied into each explainer workspace as starters/ without altering the pinned kit.",
+  "status": "proposed",
+  "supersedes": []
+}

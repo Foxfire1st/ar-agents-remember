@@ -239,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:e473f371233a736a99a0a4575250a4869b9a483dcbeacbb284753c2c11148217",
             "locator": {
-              "end": 290,
+              "end": 291,
               "kind": "line_range",
-              "start": 262
+              "start": 263
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -252,12 +252,12 @@
         },
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:5e982b6cf07ee24a3f0f043f09eed8bdda684da002e89c772ced4ff25c038a8c",
             "locator": {
-              "end": 733,
+              "end": 734,
               "kind": "line_range",
-              "start": 715
+              "start": 716
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -340,12 +340,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:4d23723268c3a9cd278fff9b81a13c978be1f47923c422b5a611ceb7f62d7970",
             "locator": {
-              "end": 744,
+              "end": 745,
               "kind": "line_range",
-              "start": 692
+              "start": 693
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -353,12 +353,12 @@
         },
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:2b01a1361fc0df1d8555788d19af33dbf64dc15d1fd518cd472ea382e63caad4",
             "locator": {
-              "end": 603,
+              "end": 604,
               "kind": "line_range",
-              "start": 586
+              "start": 587
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

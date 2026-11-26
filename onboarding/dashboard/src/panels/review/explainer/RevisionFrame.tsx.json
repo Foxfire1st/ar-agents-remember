@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+        "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
         "content": "sha256:0d552c63ec17d08a8be846b97fd8fa5d448dd93fe7401e6064b6142ee5b9dea8",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,43 @@
       },
       "rationale": "Opens the exact retained revision in a host session and separates compared frame lifetimes by slot instead of running a model.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+        "content": "sha256:89c7106994488332fa3ce142f3a83602bdbfc7cbc5042903b68e1897925dbc4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFrameBinding"
+        }
+      },
+      "id": "RLZ-82V2NJ",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Removes useShouldAnimate and the effects field from ar-canvas-binding/v1 so dashboard quiet/reduced-motion toggles stay on the dashboard application and never message explainer iframes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+        "content": "sha256:faa7eb02193aae8d965f4649d301671e3505eb77e5e530181186da250b604222",
+        "locator": {
+          "end": 731,
+          "kind": "line_range",
+          "start": 704
+        }
+      },
+      "id": "RLZ-GK0MJ3",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Constructs the ordinary binding payload for the loaded revision and excludes dashboard Effects preferences. The frame's load handler owns the first-load boundary.",
+      "role": "support"
     }
   ],
   "references": {
@@ -26,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
             "content": "sha256:4f9561698f61705452d10d0745efc8e6970f89b193aba93fcfd07613f2bc6b56",
             "locator": {
-              "end": 192,
+              "end": 191,
               "kind": "line_range",
-              "start": 158
+              "start": 157
             }
           },
           "kind": "code"
@@ -39,14 +76,16 @@
       ]
     },
     "2": {
-      "note": "A stale part id must be a nonempty bounded lowercase id other than page; membership is checked when a nonempty knownPartIds list is supplied, while an omitted or empty list leaves only the shape checks.\n\nAnchor: `isValidPartId`",
+      "note": "Stale-part IDs have a bounded lowercase form and exclude page. A nonempty known-part set also constrains membership.",
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
-            "content": "sha256:499ee05eefa470052e1e3be7a394434303a0913800ea85edd2f3e85ce954feca",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:56cbd51ee7c8740af05ee4c9738f9bee09a288e931142faac06fa6d28d0261de",
             "locator": {
-              "kind": "file"
+              "end": 176,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "code"
@@ -58,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
             "content": "sha256:184203608cfcb9cd995d884aa454b0c817f0c4f948f9180fe13514e689fe9557",
             "locator": {
-              "end": 403,
+              "end": 402,
               "kind": "line_range",
-              "start": 327
+              "start": 326
             }
           },
           "kind": "code"
@@ -71,14 +110,40 @@
       ]
     },
     "4": {
-      "note": "The frame listener accepts only its own frame window, bounds forwarding and rejects mismatching supplied protocol/session/revision/comparison fields and repeated string request ids before forwarding; absent optional identity fields remain subject to the host’s validator.\n\nAnchor: `useRevisionFrameProtocol`",
+      "note": "The listener accepts its own frame window, bounds forwarding, rejects mismatches in supplied identity fields and rejects repeated string request IDs.",
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
-            "content": "sha256:499ee05eefa470052e1e3be7a394434303a0913800ea85edd2f3e85ce954feca",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:9cbe83cf1a554b8e20deb0afd2e750bff4c59f10cb6d74f85bcb41f5fbb75e85",
             "locator": {
-              "kind": "file"
+              "end": 280,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:24b96982870a151cb8d1130f5554c6cacc4ed9d0e7eaf727714c46ab9e769a0d",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 524
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:efc78ace1e014f1337491ac2a94b2ef2f29d0ded59486450e45242fa42810297",
+            "locator": {
+              "end": 579,
+              "kind": "line_range",
+              "start": 535
             }
           },
           "kind": "code"
@@ -90,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
             "content": "sha256:3a6e0d01154eb7282ad7d4e212b6ae1c0e283ee632f2217260a8b7ac5b3b16c1",
             "locator": {
-              "end": 491,
+              "end": 490,
               "kind": "line_range",
-              "start": 486
+              "start": 485
             }
           },
           "kind": "code"
@@ -107,12 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
             "content": "sha256:0d552c63ec17d08a8be846b97fd8fa5d448dd93fe7401e6064b6142ee5b9dea8",
             "locator": {
-              "end": 896,
+              "end": 890,
               "kind": "line_range",
-              "start": 824
+              "start": 818
             }
           },
           "kind": "code"
@@ -120,14 +185,69 @@
       ]
     },
     "7": {
-      "note": "Binding checks here reject mismatching supplied protocol/session/revision/comparison fields and repeated string request ids; they do not require each optional field to exist. The host protocol remains the final validator of a forwarded envelope. Trusted stale-part envelopes keep the true total while sending at most 32 valid ids and naming dropped/truncated items.\n\nAnchor: `checkIdentityMismatch`, `validateEnvelopeBinding`, `useRevisionFrameProtocol`",
+      "note": "The frame bounds the stale list and reports omitted or truncated parts. Forwarded messages reject mismatching supplied identities and repeated string request IDs.",
       "targets": [
         {
           "anchor": {
-            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
-            "content": "sha256:499ee05eefa470052e1e3be7a394434303a0913800ea85edd2f3e85ce954feca",
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:16aa1eb133b5f4f069a3d8092e47eda413bf980aa84287dd2941dccd1bf35cc2",
             "locator": {
-              "kind": "file"
+              "end": 194,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:9cbe83cf1a554b8e20deb0afd2e750bff4c59f10cb6d74f85bcb41f5fbb75e85",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:e8f40691d517e2bcd706b19cc98155d3fe7636288beebced2462d6645fa74ae1",
+            "locator": {
+              "end": 579,
+              "kind": "line_range",
+              "start": 563
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The first iframe load for a session sends the ordinary binding. A later load in that session is a departure that revokes that frame’s channel and reopens the saved revision. The dashboard owns its Effects preference, and the binding carries no effects field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:faa7eb02193aae8d965f4649d301671e3505eb77e5e530181186da250b604222",
+            "locator": {
+              "end": 731,
+              "kind": "line_range",
+              "start": 704
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
+            "content": "sha256:2eacc7622ab87ce56cc0639c74319906682d1f66fe584fae4fb4c3ff79221a1a",
+            "locator": {
+              "end": 758,
+              "kind": "line_range",
+              "start": 743
             }
           },
           "kind": "code"

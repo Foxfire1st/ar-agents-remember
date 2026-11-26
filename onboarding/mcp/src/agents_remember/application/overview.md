@@ -11,6 +11,8 @@ Reference maintenance is composed here by `memory_tools`: `census_inputs` captur
 
 The current account is the converted-text and native role route after MIK-R74 and MIK-R112. The earlier KS/ICR database, publication, generation-freeze and supporting-record accounts explain inherited intent and historical defects; they do not establish that retired capabilities remain public or that their earlier deliveries were freshly accepted. Internal provider services and retained lifecycle modules likewise do not establish public registration.
 
+Revision publication uses the shared task lock, physical usage meter and an optional inventory staging decision. The application ports include the comparison-bound inventory reader alongside the frame and evidence readers.
+
 ## Hot Path Summary
 
 Worktree closeout apply and integration execute synchronously through their worktree owners. Worktree status preserves saved closeout and integration rows and reports compact running state only for direct landing.

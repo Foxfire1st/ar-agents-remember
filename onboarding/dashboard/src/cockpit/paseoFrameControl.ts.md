@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+A transient agent-not-found on the supported ready channel can retry the same selection within a bounded progressive schedule. The retry checks scope, agent, host workspace, pending identity and already-shown state. A matching supported ready can resend immediately. Switching the target or ending the channel cancels the retry.
+
 ## Purpose
 
 Steer one existing native frame and own its bounded control-channel lifetime and tray-channel attachment.
@@ -33,14 +35,14 @@ Tray reporting does not navigate the native frame or change the launcher's selec
 
 ## Evidence
 
-- Ready changes message immediately; readiness-held changes and unavailable trailing settlement differ. [1]
-- Ready capability negotiation attaches tray reporting and sends the latest held target. [2]
+- A ready frame sends the selected agent and workspace immediately. Held readiness and unavailable targets settle through separate paths. [1]
+- Ready capability negotiation attaches tray reporting and sends the latest held target. An eligible transient retry can send the matching selection immediately. [2]
 - URL loading remains bounded by unavailable state and outstanding readiness. [3]
 - One load produces one generation and its own readiness wait. [4]
 - All accepted control and tray messages require exact frame origin and window. [5]
 - Missing readiness probes before unavailable control. [6]
 - A late answered request stays pending without resending its open. [7]
-- Only the pending agent settles on drawn chat or the native load-failed pane. [8]
-- Startup distinguishes ordinary document load from hidden preload. [9]
+- A drawn chat or native load-failure answer settles only the pending selection. Settlement clears its retry. [8]
+- Frame startup distinguishes ordinary document load and hidden preload. [9]
 - Tray attachment is replaced on readiness and cleared on stop. [10]
 - Native showing reports and bounded older selection inference publish the frame's chat independently. [11]

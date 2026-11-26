@@ -6,7 +6,7 @@
 
 ## Purpose
 
-A boolean `useState` backed by `localStorage` — the same calm-cockpit pattern `Cockpit.tsx` uses — so a
+A boolean `useState` backed by `localStorage` — the same calm-cockpit pattern `EffectsToggle.tsx` uses — so a
 view-mode choice (split/single) survives both a page reload and a file switch, because the value lives
 outside the file-scoped component state. Exports `usePersistedFlag` and its numeric sibling
 `usePersistedNumber` (used by the Cockpit resizable rails to persist their pixel widths).

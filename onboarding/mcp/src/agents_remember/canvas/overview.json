@@ -36,15 +36,29 @@
       ]
     },
     "13": {
-      "note": "The static readiness check refuses a page that names something its revision does not carry.",
+      "note": "Static readiness checks subresource containment and availability and verifies any draft kit assets against shipped bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:d9d0bc21723a5a058e6badce5473bd3ad067fa63a87f3a1ff22471559d8597c9",
             "locator": {
-              "kind": "symbol",
-              "name": "check_page"
+              "end": 202,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:529f73ba8da4fb47078f91a4dba2a9eeeba3b89a4a0e4738c3bbccf4043e6a18",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 448
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
           },
@@ -109,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:2f6dba4c2388a559af96ff7ebc318e5bb32679e422495f794b8d9569b85f5471",
             "locator": {
-              "end": 528,
+              "end": 328,
               "kind": "line_range",
-              "start": 498
+              "start": 250
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
           },
@@ -170,6 +184,88 @@
               "start": 506
             },
             "path": "mcp/src/agents_remember/serving/canvas.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Request-scoped staging, draft admission, and pruning remain confined inside the workspace under one task lock, surfacing `PathRefused` as `path-held`, and `render()` refuses publication as `kit-problem` when kit notices are missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:b19b70f484b5883eebfeb4930d9b29528ebd9a9b22594a96487fc6683be7cf0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_and_begin_draft"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:916f479213fbf818bbf2772414c72f5bb38673ac31118e146b24e1172b188e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_finished_staging"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_and_publish"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Prospective browser loading probes rendered and script-inserted `audio`/`video` elements and reports non-conforming media faults to block publication alongside static readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:fa5f3f622b52e89778a5afe8955ba94800769fe904fab7aa311a866d1e171b6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "mediaControlFaults"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:63e31a5defa726c236bc74f8d3d2ff55374b488b369fab6a1e49b19c59f562ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_media_faults"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
           },
           "kind": "code"
         }

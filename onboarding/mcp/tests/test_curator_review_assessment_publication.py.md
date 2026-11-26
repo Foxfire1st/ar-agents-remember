@@ -77,7 +77,7 @@ the production path to drive.
 ### Conventions
 
 - The cases stand up real repositories and an external-memory enclosure.
-- The current lifecycle catalog has **18 contracts and 121 artifacts**. The earlier 13/54 consumer-addition account describes the creating leaf's source epoch.
+- The current lifecycle catalog has **18 contracts and 122 artifacts**. The earlier 13/54 consumer-addition account describes the creating leaf's source epoch.
 - `_tool_publish` and `_tool_publish_bare_name` reach the **application** boundary
   (`curator_coherence_tool`) for returned refusal-code assertions. The author-field case instead
   checks request-model `ValidationError`; direct evidence-byte cases inspect

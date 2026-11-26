@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
         "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,43 @@
       },
       "rationale": "Registers existing tool implementations on the normal seat server.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+        "content": "sha256:2070982438b76d7d3f1cca33e166f40102c58e2cb7f229a0f37ab7a804a6c2a8",
+        "locator": {
+          "end": 187,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-FQ1S9S",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Preserves omission and revision identity in the core response and gives complete optional sections or full report locations within its response budget.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+        "content": "sha256:edeebf24017b5b360c833c992c4d353a34f77003648509e37df26a303e4858b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_packed"
+        }
+      },
+      "id": "RLZ-YVAZJC",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Packs complete optional kitAssets, inventory and summary sections and whole errors within the render answer budget and points to overflow in the run report. The earlier render_answer step retains omission as core identity.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -26,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
             "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
             "locator": {
-              "end": 252,
+              "end": 283,
               "kind": "line_range",
-              "start": 221
+              "start": 252
             }
           },
           "kind": "code"
@@ -43,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
             "content": "sha256:505de2315ee3a77ab21a7a47668ef15276a01c5f75e07a421d3757d87b1d1780",
             "locator": {
-              "end": 218,
+              "end": 249,
               "kind": "line_range",
-              "start": 164
+              "start": 195
             }
           },
           "kind": "code"
@@ -60,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
             "content": "sha256:888e527860e5594e4064179b595c219f661568fce558e798b2d8dff499f987ef",
             "locator": {
               "end": 94,
@@ -77,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
             "content": "sha256:4e0e710da0fddd38776bb8c5417242448a5daa8210b0353574eb1c50a4ec86a3",
             "locator": {
-              "end": 117,
+              "end": 129,
               "kind": "line_range",
-              "start": 115
+              "start": 127
             }
           },
           "kind": "code"
@@ -94,12 +131,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
             "content": "sha256:cda415c70994cde47959d8afe56b6bf0e5ef15f89186e0b71d5b9f5536829732",
             "locator": {
               "end": 75,
               "kind": "line_range",
               "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reply first keeps core run, report, picture, interaction, publication and optional browser identity and any inventory omission. It then admits complete summary, inventory and carried-kit sections in order, followed by whole errors. A moved pointer names the complete section in the run report if the inline budget leaves anything out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "content": "sha256:59aff11fd94e16d1790069a17794d68a7dc1d212b25bcb12cec8365d009bd58a",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "content": "sha256:7b0afcadf65e264db60395c3046f956ddeb15d8ba3af65bb72bc72612800b585",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "code"

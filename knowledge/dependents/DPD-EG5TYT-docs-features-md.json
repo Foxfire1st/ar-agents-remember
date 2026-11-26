@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
-    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
+    "codeTree": "cc5ebb4ba64525d4aac92d7131bd7edfb1c7cf72",
+    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "Verified docs/features.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): feature summaries of role coordination, skill packaging, worktrees, and memory quality remain accurate with no L41 contradiction.",
-    "task": "261112-BUG-L41",
-    "uncommitted": true
+    "statement": "On settled crossing-6 tree cc5ebb4b (commit 92391d7a, combining crossing-5/EXP-L1 and BUG-L41 a772c901/8b648028), docs/features.md accurately describes feature summaries, skill-tree packaging, role coordination, worktrees, memory quality, closeout/role capabilities, private evidence-bearing explainer essay/figure/page assembly, and read-only versus mutating MCP tool trust boundaries, typed tool boundaries, answer token bounds, and tool-log locations; no BUG-L41 contradiction.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/features.md",
   "id": "DPD-EG5TYT",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -286,23 +286,24 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
+      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:40+01:00",
+    "at": "2026-11-26T05:26:51+01:00",
     "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
   }
 }

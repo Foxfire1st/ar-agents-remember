@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The host state, paired route response, live column and frame control cooperate to reveal the requested seat. The Python tests cover initialization and identity, and the mounted dashboard tests cover the end-to-end visibility and retry."
+  },
+  "applicability": "A started explainer seat shown in the current Operations view after its environment is ready.",
+  "conditions": [
+    "An initializing seat already counts as live and in turn.",
+    "Build and State give the distinct host workspace ID when the fixture or host provenance supplies it. Build’s workspaceId falls back to the physical path when needed, while State can report null for the absent host ID.",
+    "The active column follows relevant change events and the selected, mounted frame can retry a transient unavailable agent."
+  ],
+  "exclusions": [
+    "Starting a new seat as an automatic retry.",
+    "Changing views or reloading the selected iframe for that transient error."
+  ],
+  "id": "INV-72AP2W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_host.py::test_the_seat_state_reads_the_hosts_own_agent_view; mcp/tests/test_explainer_routes.py::test_build_and_state_return_host_workspace_id_from_provenance; dashboard/src/explainer/ExplainerColumn.test.tsx; dashboard/src/explainer/model.test.ts; dashboard/src/explainer/client.test.ts; dashboard/src/cockpit/PaseoChatFrame.test.tsx; dashboard/src/cockpit/PaseoChatFrame.retry.test.tsx; dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx; dashboard/src/cockpit/reviewExplainerColumn.test.tsx",
+        "dashboard/src/explainer/ExplainerColumn.test.tsx::\"transitions from Operations placeholder through build to live seat and recovers from transient agent-not-found on an early supported ready without reloading the iframe\"",
+        "dashboard/src/explainer/ExplainerColumn.test.tsx::\"refreshes on review.explainer.changed and shows the live chat without toggling active\"",
+        "dashboard/src/cockpit/PaseoChatFrame.retry.test.tsx::\"automatically retries ar.open for an unchanged mounted explainer agent after transient agent-not-found without reloading the iframe\""
+      ],
+      "path": "EXP-L1 independent curated records and source judgments"
+    },
+    "handoffEntry": "EXP-R01@v2 §8",
+    "leaf": "261124-EXP-L1",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A started explainer chat appears immediately in the Operations view once its environment is ready without leaving the view by treating initializing seats as live, returning Paseo's real workspaceId, subscribing to explainer change events, and retrying transient frame-open failures.",
+  "status": "proposed",
+  "supersedes": []
+}

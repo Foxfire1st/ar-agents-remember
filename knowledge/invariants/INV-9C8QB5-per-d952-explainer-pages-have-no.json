@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The ordinary browser runner, document binding, report resume and dashboard frame sender share the standalone boundary. The mounted render and binding tests exercise those surfaces."
+  },
+  "applicability": "The standalone explainer document, its publication checks and its per-load binding.",
+  "conditions": [
+    "Static readiness, ordinary browser load and media controls still apply.",
+    "The ordinary iframe binding still supplies the admitted revision and session.",
+    "A resumed interaction report retains current ordinary-pass progress."
+  ],
+  "exclusions": [
+    "The dashboard document’s own effects and reduced-motion behavior.",
+    "Approval of new media sources or access beyond the frame policy."
+  ],
+  "id": "INV-9C8QB5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_motion.py::test_render_publishes_continuous_css_and_canvas_motion_without_motion_remark; mcp/tests/test_canvas_motion.py::test_render_publishes_carried_shiki_magic_move_css_without_reduced_motion_rule; mcp/tests/test_canvas_motion.py::test_bound_document_delivers_binding_without_effects_bridge_in_browser; mcp/tests/test_canvas_motion.py::test_interactive_resume_drops_legacy_motion_fields_while_preserving_progress; mcp/tests/test_canvas_prospective.py::test_bound_document_omits_effects_flag_and_dataset_bridge; dashboard/src/panels/review/explainer/RevisionFrameProtocol.test.tsx; dashboard/src/panels/review/explainer/ExplanationView.test.tsx; dashboard/src/panels/engine-room/useShouldAnimate.test.ts",
+        "dashboard/src/panels/review/explainer/RevisionFrameProtocol.test.tsx::\"sends the binding once without an effects field even when dashboard effects start as %s and toggle\""
+      ],
+      "path": "EXP-L1 independent curated records and source judgments"
+    },
+    "handoffEntry": "EXP-R01@v2 §2",
+    "leaf": "261124-EXP-L1",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Per D952, explainer pages have no reduced-motion or quiet-mode check: the static prefers-reduced-motion word gate, explainer reduced-motion and effects-off browser passes, motion detector, and explainer ar-canvas-binding/v1 effects flag and dataset.effects bridge are removed so CSS, Web Animations, canvas, rAF, and controlled video publish without motion refusal or remark while the dashboard application keeps its own reduced-motion and quiet behavior unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

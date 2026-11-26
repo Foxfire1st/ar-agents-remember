@@ -288,10 +288,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:feed64f4bad628307a3fc82a461bee90c237900c18d76e5cc078efbb73157274",
             "locator": {
-              "end": 202,
+              "end": 203,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
+            "content": "sha256:99a1bcdfad490dc9f09de0a7f1d3794a1f4714c67b66552e2eba4cc952554eea",
+            "locator": {
+              "end": 204,
               "kind": "line_range",
               "start": 201
             },
@@ -301,25 +314,12 @@
         },
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
-            "content": "sha256:99a1bcdfad490dc9f09de0a7f1d3794a1f4714c67b66552e2eba4cc952554eea",
-            "locator": {
-              "end": 203,
-              "kind": "line_range",
-              "start": 200
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:ba13004499f259af97850159df67b9aaa952720ad3bc7f15b0222afdaa3282fc",
             "locator": {
-              "end": 733,
+              "end": 734,
               "kind": "line_range",
-              "start": 723
+              "start": 724
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -340,12 +340,12 @@
         },
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:0bc7e102d5d0320aa01152ab96f80761578200cdcfeab2d5b98782ba42543f7f",
             "locator": {
-              "end": 327,
+              "end": 328,
               "kind": "line_range",
-              "start": 293
+              "start": 294
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

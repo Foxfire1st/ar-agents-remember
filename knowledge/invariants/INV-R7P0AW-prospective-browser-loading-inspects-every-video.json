@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across canvas-prospective-load.mjs, prospective.py, and explainer_server.py, proved by test_browser_render_refuses_script_inserted_nonconforming_media_and_publishes_conforming, preventing script-inserted autoplay, looping, or control-less media from bypassing static checks."
+  },
+  "applicability": "Every audio and video element present in an explainer page DOM during and after the prospective browser load window, whether declared in static HTML or inserted by JavaScript.",
+  "conditions": [
+    "The browser probe inspects observed media elements for autoplay, loop, and controls, and Python re-derives faults in ProspectiveResult before admitting a loaded result or publishing."
+  ],
+  "exclusions": [
+    "Pre-script static HTML readiness checks in readiness.py, which remain an independent earlier check layer."
+  ],
+  "id": "INV-R7P0AW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_staging_and_checks.py::test_browser_render_refuses_script_inserted_nonconforming_media_and_publishes_conforming"
+      ],
+      "path": "261124-EXP-L2-curator-ingest"
+    },
+    "handoffEntry": "EXP-R02@v1 Item 6",
+    "leaf": "261124-EXP-L2",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Prospective browser loading inspects every video and audio element in the DOM after scripts run for autoplay, loop, and controls, reports non-conforming media faults through ProspectiveResult, and blocks publication in explainer_server.",
+  "supersedes": [],
+  "title": "Prospective browser load checks rendered media controls and blocks faults",
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
+}

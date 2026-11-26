@@ -16,7 +16,7 @@ They sit beside this file in `system/`:
   the element-to-token mapping, measures, density, states, control patterns, widths, and what the
   dashboard owes the explanation frame. The engine-room pod stage keeps
   `dashboard/public/_proto/DESIGN.md`.
-- **`TREATMENT.md`:** presentation of the explainer's essay and supporting figures.
+- **`TREATMENT.md`:** presentation of the explainer's essay and figures.
 - **`TECHNIQUES.md`:** the explainer's technique table, with numbers, still forms and status.
 
 The product ships examples of all four for guidance. Nothing falls back to them.
@@ -49,8 +49,8 @@ trees and call chain. For a planned binding, use the bound code and the stated i
 4. **List the states:** default, hover, focus, pressed or selected, disabled, empty, loading,
    stale and error, as far as they apply, at each width, each with a fixed fixture.
 5. **List the interactions:** for each control, what it changes, which reader's question it
-   answers, its keys, and its reduced-motion and narrow forms. A control that answers no question
-   is cut here.
+   answers, its keys and its narrow form. Include its reduced-motion form for dashboard controls.
+   A control that answers no question is cut here.
 6. **Find the controls that exist** and reuse them. A new control needs a reason and is built as a
    shared one.
 
@@ -61,13 +61,15 @@ trees and call chain. For a planned binding, use the bound code and the stated i
   mapping table catches that, not a linter.
 - Follow the reference for type, width, and the behavior of expansions and excerpts. Keep the
   complete explanation readable in the page.
-- For comparison shots keep the reference's data, fonts, viewport and state, animations off.
+- For comparison shots keep the reference's data, fonts, viewport and state. Use effects off for
+  dashboard captures.
 
 ### Explanation Pages
 
-Use `TREATMENT.md` and `TECHNIQUES.md` to present the completed essay. Choose a figure only
-where it helps an essay part. Link claims to their code and link figure nodes where they exist.
-Keep the full explanation in the markup and provide a still form for each moving figure.
+Use `TREATMENT.md` and `TECHNIQUES.md` to present the essay and figures. In "How it works", show
+the central mechanism with a figure the reader drives. Mark it as intended for a planned binding.
+Highlight quoted code with the kit. Link claims, excerpts and figure nodes, and keep evidence
+marks inline with the prose. Put the full explanation and the still forms in the markup.
 Propose a missing technique or a corrected number in the report.
 
 ### Check In The Browser: Look, Then Operate
@@ -91,13 +93,13 @@ whether a control explains anything.
    motion ends on a final state.
 2. **By keyboard alone.** Tab reaches it with a visible focus ring; its keys work (←, →, Space,
    Home, End, Escape); focus is never lost or trapped.
-3. **With reduced motion** (`prefers-reduced-motion: reduce` emulated): each figure shows its
-   still form, and the controls available in that form work.
+3. **Dashboard with reduced motion** (`prefers-reduced-motion: reduce` emulated): check the
+   dashboard's controls and resulting states.
 4. **Narrow,** at 560 and 390px: nothing scrolls sideways, controls stay usable.
 5. **Before script runs:** the markup holds the same content.
 
-For an explanation page, read the full explanation with motion off. Check that each figure
-helps the reader follow the part of the essay it supports.
+For an explanation page, read the full explanation before script runs. Then operate the figures
+in the ordinary frame and check that they help the reader follow the mechanism.
 
 The explainer operates its page with what its tools give. Where they give only a load and a
 picture, it reads the picture and names in its report the controls, widths and forms it could not
@@ -129,14 +131,14 @@ are not proof.
 - **Record.** It covers every state, control and width.
 - **Eye.** In its own browser, beside the reference: a visible difference neither repaired nor
   named is a finding, with location and severity.
-- **Operation.** It operates every control by pointer and keyboard, with reduced motion and at
-  narrow width. A control that fails, traps focus, shifts content under the reader or lacks a
-  still form is a finding.
-- **Explanation pages.** The essay carries the explanation and its evidence. A supporting figure
-  serves its essay part and uses the bound evidence. Check that each control answers a question,
-  links agree with the cited material, code-derived figures are identified, models are marked as
-  the explainer's reading, and still forms work. Check that the essay explains what happened or is
-  intended and how it relates to the objective.
+- **Operation.** It operates every control by pointer and keyboard and at narrow width. It also
+  checks reduced motion on dashboard application surfaces. A control that fails, traps focus,
+  shifts content under the reader or lacks a still form is a finding.
+- **Explanation pages.** Check that a driven figure shows the central mechanism and that the
+  markup holds the full explanation. Controls answer the reader's questions. Links agree with
+  the cited material, code-derived figures identify their source, and models are marked as the
+  explainer's reading. Check that the explanation relates the recorded or intended outcome to
+  the objective.
 - **Readouts** trace to the reference, not the implementation. **Reuse:** no second control for
   one job. **Tokens:** no raw values. **Baselines:** none changed without approval.
 
@@ -158,11 +160,11 @@ as its "How the table is kept" says.
   with its state URLs and shots.
 - **Widths:** the dashboard at 1920 × 1080 and 1440 × 900; an explanation page at the frame's
   width, 560 and 390px.
-- **Animations off:** `html[data-effects="off"]` in the dashboard; in an explanation page only
-  `prefers-reduced-motion`, which the dashboard's switch does not reach.
+- **Dashboard motion preferences:** `html[data-effects="off"]` and `prefers-reduced-motion` apply
+  to the dashboard application. Check explanation pages in their ordinary standalone frame.
 - **Browser:** Playwright, as `system/tools.md` ("Browser Tooling For Frontend Work") says:
   Playwright MCP for click-and-look sessions, the `playwright-cli` skill for scripted shots,
-  reduced motion (`page.emulateMedia({ reducedMotion: 'reduce' })`) and widths.
+  widths, and reduced motion (`page.emulateMedia({ reducedMotion: 'reduce' })`) for the dashboard.
 - **Automated visual lanes:** the dashboard's Playwright configs run only in the lifecycle's
   Dagger lanes.
 - **Evidence:** the freeze report holds the record; shots go in the task's enclosure.

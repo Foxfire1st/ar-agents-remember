@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "8c536ee9345e6ade67b325fd7db6725d79f0705f",
+    "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/design/python-pytest-bootstrap.md (lines 1-94) remains accurate after L29 added test_githooks_l29_repairs.py and test_sync_commit_check.py to unit-regression in mcp/tests/test-evidence-lanes.toml; case budgets (10000/2000), -m not integration lane selection (integration and stress-durability), --certify/coverage isolation, diagnostic-only CRAP/diff-coverage, and conftest isolation all match live code (stress-durability anchor re-anchored to lines 846-848).",
-    "task": "261112-BUG-L29",
+    "statement": "Confirmed against synced EXP-L2 candidate 8c536ee9 (base a1a08ec0, combining master crossing-4/BUG-L29 and EXP-L2): docs/design/python-pytest-bootstrap.md accurately describes lane-based -m 'not integration' selection across 833 cataloged modules (681 unit-regression including test_githooks_l29_repairs.py, test_sync_commit_check.py, and test_explainer_staging_and_checks.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability), case budgets (10000/2000), --certify/coverage isolation, diagnostic-only CRAP/diff-coverage, conftest isolation, and the stress-durability bounded-memory stdio test's uninstrumented child coverage boundary (re-anchored to test-evidence-lanes.toml lines 852-854).",
+    "task": "261124-EXP-L2",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+      "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -75,6 +75,7 @@
         },
         "path": "mcp/tests/mcp_memory_bounded_fixture.py"
       },
+      "heading": "Uninstrumented warm-index child",
       "kind": "anchor"
     },
     {
@@ -87,6 +88,7 @@
         },
         "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
       },
+      "heading": "Uninstrumented measured server",
       "kind": "anchor"
     },
     {
@@ -99,19 +101,21 @@
         },
         "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
       },
+      "heading": "Measured workload",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "c883e9093950ad17c032342760a1509dfd09b128",
-        "content": "sha256:d260a189b1f723925c426c8572cfa123b2a1e7074f7d3a225ec6bd0e2f464611",
+        "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+        "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 848,
+          "end": 854,
           "kind": "line_range",
-          "start": 846
+          "start": 852
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
+      "heading": "Stress-durability case selection",
       "kind": "anchor"
     },
     {
@@ -125,7 +129,19 @@
         },
         "path": "pyproject.toml"
       },
+      "heading": "Default Coverage subprocess configuration",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T04:04:59+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
 }

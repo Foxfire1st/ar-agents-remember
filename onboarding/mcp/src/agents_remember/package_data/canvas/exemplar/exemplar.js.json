@@ -1,0 +1,36 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/exemplar/exemplar.js",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Kit imports and six startup calls activate the six supplied figures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84102802a24f738a6c9809bd7ab9cd48bf20409e",
+            "content": "sha256:983a03cfb1c618e730c570d925d75d6227435d5a8d38c5e40c7fd280c5b9686d",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84102802a24f738a6c9809bd7ab9cd48bf20409e",
+            "content": "sha256:72402be09e0363ca5f0e6363ceb5ff0e2ac5ad2e6593c27bd5fc4318877e30bf",
+            "locator": {
+              "end": 873,
+              "kind": "line_range",
+              "start": 867
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

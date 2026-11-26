@@ -4,6 +4,8 @@
 
 [governing route overview](overview.md)
 
+Default explainer publication uses the task-wide 512 MiB physical-byte cap. Its default policy declares no independent per-revision asset-count or byte cap.
+
 ## Purpose
 
 States the isolation policy one admitted page executes under, once, so the served bytes, the browser proof and the runtime gate cannot drift apart. It also reads the shipped proof record and decides whether scripts may be served.

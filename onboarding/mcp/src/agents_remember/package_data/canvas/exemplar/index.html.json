@@ -1,0 +1,84 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/exemplar/index.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exemplar identifies its illustrative status and includes its initial explanation and coordinated figure markup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "773b220cc80303e6017fed4985f4c92b3b194507",
+            "content": "sha256:d50c3e9f80bc91cadfdc04e32cf5334f999e5d6794e598f611970de4bce0cdb4",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773b220cc80303e6017fed4985f4c92b3b194507",
+            "content": "sha256:1a06daf381a456a6c252c5cd429c474c5f09c516306742627749e4dfea4da2c5",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773b220cc80303e6017fed4985f4c92b3b194507",
+            "content": "sha256:51c3dd318e9ce563dc5c295e2c2b9e20e66feabe525007497f705ebd2b715ffe",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773b220cc80303e6017fed4985f4c92b3b194507",
+            "content": "sha256:c52ebe2cbd49a98bc1af3e0d38fe83b81335d29d6bc2be047d6a8f07ee77ca8f",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773b220cc80303e6017fed4985f4c92b3b194507",
+            "content": "sha256:f226197c292664415801892c87a26ea4f441ff3b2417da6913902ceb4f0d5723",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773b220cc80303e6017fed4985f4c92b3b194507",
+            "content": "sha256:75d1ff54d2252b5c1e554c4c6879cccc2910738000e15b815d5791255db7c38e",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 437
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

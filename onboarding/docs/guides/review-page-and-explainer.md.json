@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+        "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
         "content": "sha256:239d8736693b0d677a23a006f7ec1fbcd590ca8b81c2195abc450e7b13ea9a4b",
         "locator": {
-          "end": 546,
+          "end": 564,
           "kind": "line_range",
-          "start": 538
+          "start": 556
         }
       },
       "id": "RLZ-A0P8QT",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
-        "content": "sha256:8e40f263daff58e1a2e6b8006f305fbf21fc4ff704470c033eeb256dfa66d390",
+        "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
+        "content": "sha256:1d6284987e938d06427555e6ca89078063e2e2b1352c66a6496a93e07900921f",
         "locator": {
           "kind": "file"
         }
@@ -40,16 +40,28 @@
   ],
   "references": {
     "1": {
-      "note": "The guide gives the per-report provenance, private stage files, and separate draft asset and admitted evidence inputs.",
+      "note": "The guide follows bound task copies and in-place reports through the essay, figures and assembly. The central mechanism is reader-driven, the still explanation is complete and render carries the referenced kit.",
       "targets": [
         {
           "anchor": {
-            "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
-            "content": "sha256:5196a247d7c5cfab5f90b1d1064b603b1c9fde243944009f15d543ddede58463",
+            "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
+            "content": "sha256:b9c3e7605951f360b1355070b7512ac46d69bac41b5f3ce83175a5d4caada1bc",
             "locator": {
-              "end": 480,
+              "end": 486,
               "kind": "line_range",
               "start": 466
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
+            "content": "sha256:6f0359e45dd28394fb2de831d7d8c5732c17a6ddbe56f7956c6bb24785481f36",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 490
             }
           },
           "kind": "code"
@@ -61,24 +73,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+            "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
             "content": "sha256:5c3c7a814270eacc1083651817fd73c29058d1d2b19a29c8542d1a48e09d0865",
             "locator": {
-              "end": 840,
+              "end": 864,
               "kind": "line_range",
-              "start": 833
+              "start": 857
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
             "locator": {
-              "end": 216,
+              "end": 217,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             },
             "path": "mcp/src/agents_remember/serving/explainer_routes.py"
           },
@@ -117,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+            "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
             "content": "sha256:defccfbfebd6f722843b7df4e981f5aff26de37428c241022ee7fef2068c9f4d",
             "locator": {
               "end": 10,

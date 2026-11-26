@@ -4,6 +4,8 @@
 
 [governing route overview](overview.md)
 
+The standalone binding delivers the admitted revision identity and claims. Dashboard effects preferences are scoped to the dashboard document.
+
 ## Purpose
 
 Delivers the channel binding to the admitted document itself, never to a navigated window. The bootstrap runs before generated scripts; leaving the document announces revocation even when navigation happens while parsing.

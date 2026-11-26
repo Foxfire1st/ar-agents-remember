@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
-        "content": "sha256:7e4d589221ed230128e199fcf17807340b453e4d7f473e3c32f426e5aeeef9b6",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:196f3389f284be74eaaad7195f5647981b5ba96b620efd2e20408416373b6aff",
         "locator": {
-          "end": 250,
+          "end": 124,
           "kind": "line_range",
-          "start": 212
+          "start": 118
+        }
+      },
+      "id": "RLZ-07SYEF",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Collects measured loaded asset names for the inventory's observed-use classification.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:80f4eb0d9b05c4495da622d3f242aeab4e8002a0496aebf1da6319eabc35da53",
+        "locator": {
+          "end": 301,
+          "kind": "line_range",
+          "start": 254
         }
       },
       "id": "RLZ-713HTD",
@@ -22,12 +41,48 @@
     },
     {
       "anchor": {
-        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:ea1a088ca7dbf82dd6b75f0ef79c7bdba63b0ac5f9a94c251799712f12eb8e11",
+        "locator": {
+          "end": 414,
+          "kind": "line_range",
+          "start": 341
+        }
+      },
+      "id": "RLZ-9PK2MJ",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "The ordinary browser records unique console, page and request errors, verifies initial visible content and follows delayed evidence marks during the bounded observation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:b870f4ef6473ebc6649e9861489a8e3631b47020e723c4a9ecf0b8a677d65536",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BCE698",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Loads the draft once in Chromium at 1280x720 under ordinary defaults without prefers-reduced-motion: reduce, without an effects-off pass, and without motion fault/hint detection; checks dynamic citations, DOM inventory via canvas-dom-inventory.mjs, loadedAssets, and visible painted content (visibleContentOk).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:5c3e336aa38f1bb9c975ef9c19e575d4b7445ac16b9a6b0fbfd09edf4869e82e",
         "locator": {
-          "end": 44,
+          "end": 45,
           "kind": "line_range",
-          "start": 30
+          "start": 31
         }
       },
       "id": "RLZ-NDTCG2",
@@ -41,12 +96,31 @@
     },
     {
       "anchor": {
-        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
-        "content": "sha256:c8defcc4e5bc2874591abcf998d20afbb46e8c60f3d64f4f9610561b4f745f93",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:fb86c475c8f6c5254930791d5ad4d0eba3d0b1a20e6a359d741ab9e3ef159428",
         "locator": {
-          "end": 363,
+          "end": 373,
           "kind": "line_range",
-          "start": 318
+          "start": 360
+        }
+      },
+      "id": "RLZ-Q43REH",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Includes observed successful response paths in the asset inventory.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:d8af6f1e366c299d28bef673e8e4697936c0137e4ef55a2c3e066bc10d6eccd6",
+        "locator": {
+          "end": 481,
+          "kind": "line_range",
+          "start": 417
         }
       },
       "id": "RLZ-QQ4TZ4",
@@ -60,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
-        "content": "sha256:4856cafdbe73ebb1342c888b1e7bb6d731f83adfb70ae9e43aaa5c384581c65a",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
         "locator": {
-          "end": 187,
+          "end": 205,
           "kind": "line_range",
-          "start": 154
+          "start": 165
         }
       },
       "id": "RLZ-TV9FAW",
@@ -76,6 +150,42 @@
       },
       "rationale": "The DOM observation separates nonempty basis references from claim IDs and reports empty attributes as unresolved.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:c335395aeb3ce76e0758e37fac7c356e96e57188d71ded0378b3f56863b71597",
+        "locator": {
+          "end": 156,
+          "kind": "line_range",
+          "start": 136
+        }
+      },
+      "id": "RLZ-Z5Y352",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Records the served asset after staged-path admission, preserving observation of what the browser actually fetched.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:b870f4ef6473ebc6649e9861489a8e3631b47020e723c4a9ecf0b8a677d65536",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZK7MRN",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Probes every audio and video element in the rendered DOM before and after the post-load window for autoplay, loop, and controls, computes mediaControlFaults, and marks the prospective load failed when faults are present.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -84,12 +194,107 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
             "content": "sha256:5c3e336aa38f1bb9c975ef9c19e575d4b7445ac16b9a6b0fbfd09edf4869e82e",
             "locator": {
-              "end": 44,
+              "end": 45,
               "kind": "line_range",
-              "start": 30
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ordinary browser load reports page/console errors, failed or outside requests, rendered content, claims, basis references, DOM inventory, loaded assets, visible paint, and browser-observed `mediaElements`/`mediaFaults`; registered render gates publication on both this load and static `check_page`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:cec5f522a1fc296ecbecff71eb93b1adad160bf8ba24754cc1214a2e9f5c4557",
+            "locator": {
+              "kind": "symbol",
+              "name": "observeInBrowser"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:e43163e27b4fbb1bd79911fd59454d063d3641088b2fccff15a572dfc0f4ac1b",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:99e5b3c9b4c6a109b57c9a66e54bb1abf833a39edace72d49338f652de143dd1",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:def53f2b8c26899166c96bafb6577fd016b7110e0c3e747aad7500955f623f51",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 551
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:903744bb5e998297c571b8a8df512acf0fd285e078bbe3277cff28431c04229e",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 419
+            },
+            "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`observe` collects every rendered `audio` and `video` element's `autoplay`, `loop`, and `controls` state, and `mediaControlFaults` reports non-conforming media rules that fail the browser load.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:fa5f3f622b52e89778a5afe8955ba94800769fe904fab7aa311a866d1e171b6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "mediaControlFaults"
             }
           },
           "kind": "code"

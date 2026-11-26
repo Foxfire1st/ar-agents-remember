@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+        "blob": "fb8ca5a3867a44ee59b8c5107076aeff9b4b37c9",
         "content": "sha256:c276d9b9b9f625cb34918ecdc83502b351ed3df6be3b26b27fdd89af2dbafb53",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,40 @@
         "handoffEntry": "L183-CUR-FE04-saved-reading",
         "leaf": "260928-MIK-L183"
       }
+    },
+    {
+      "anchor": {
+        "blob": "fb8ca5a3867a44ee59b8c5107076aeff9b4b37c9",
+        "content": "sha256:896c7b75006a2a00239967176c0aa128abaf036c8a9c7e319dc2dd4db93c0730",
+        "locator": {
+          "kind": "symbol",
+          "name": "surfaces an incomplete revision inventory marker in the standfirst"
+        }
+      },
+      "facet": "The mounted saved revision renders its incomplete advisory inventory label in the standfirst.",
+      "id": "PRF-A1SY8F",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb8ca5a3867a44ee59b8c5107076aeff9b4b37c9",
+        "content": "sha256:d7d89cd7706323becb373bb2d21ee5728f33dab1e80215cded19d261bb760488",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows a saved revision without an inventory and one plain reason line when storage-limit omitted it"
+        }
+      },
+      "facet": "Renders the actual saved revision without an advisory inventory and shows the single plain storage-limit omission reason.",
+      "id": "PRF-X11C3Q",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      }
     }
   ],
   "realizes": [],
@@ -26,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
-            "content": "sha256:5ae7ef93a7cef86ae7339f8ff4c2efbd8c3570ad125379ee2e9606f56a26269d",
+            "blob": "fb8ca5a3867a44ee59b8c5107076aeff9b4b37c9",
+            "content": "sha256:c276d9b9b9f625cb34918ecdc83502b351ed3df6be3b26b27fdd89af2dbafb53",
             "locator": {
-              "end": 1044,
+              "end": 190,
               "kind": "line_range",
-              "start": 160
+              "start": 161
             }
           },
           "kind": "test"
@@ -43,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+            "blob": "fb8ca5a3867a44ee59b8c5107076aeff9b4b37c9",
             "content": "sha256:2f69972b38d0ac6dd7444a4f63bd5445bc2e052fea1f4486aafa4e8ed5454d58",
             "locator": {
-              "end": 1044,
+              "end": 1170,
               "kind": "line_range",
-              "start": 913
+              "start": 1039
             }
           },
           "kind": "test"

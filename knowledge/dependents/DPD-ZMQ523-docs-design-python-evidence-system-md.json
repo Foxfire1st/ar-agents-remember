@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "9f929793777342bb337f88fd64f8262d987313a2",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "docs/design/python-evidence-system.md (lines 62-144) pins no test counts and accurately describes the seven accepting lanes, canonical catalog form, and source-derived consumers updated by L38.",
-    "task": "261112-BUG-L38",
+    "statement": "Confirmed against synced EXP-L2 candidate 9f929793 (base 91bb8c5f, combining master crossing-5/BUG-L44 and EXP-L2): docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes, canonical catalog ordering, and source-derived lifecycle rules across all 833 cataloged modules (681 unit-regression including test_githooks_l29_repairs.py, test_sync_commit_check.py, and test_explainer_staging_and_checks.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability) and 18 contracts / 122 artifacts in evidence-lifecycle.toml.",
+    "task": "261124-EXP-L2",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
+      "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+      "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -105,5 +105,16 @@
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T04:51:07+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
 }

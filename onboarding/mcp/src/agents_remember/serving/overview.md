@@ -9,6 +9,8 @@ The serving package composes the local dashboard, projection/event streams and r
 
 Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 44 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer adds its four tools to that ordinary roster. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
 
+The explainer’s state, stale and revision reads project saved inventory or its recorded omission from the addressed frame. Build prefers the provenance host workspace ID and falls back to the physical path. State keeps the physical path separate and may have no host ID.
+
 ## Hot Path Summary
 
 `app.create_app` builds app-scoped collaborators and registers retained reader/action/grant routes before the static mount. Projection version 2 serves reference-keyed `tasks` (TaskEntry), `taskCounts`, unbound enclosures and retained analytics; state SSE uses task/task.removed/taskCounts rather than lifecycle rows. `/api/task-document` returns separately requested TaskSummary content, not another status authority. The retained action path acknowledges/dismisses attention and the developer grant route calls shared grant authority; gate-decision and operator-inbox routes are absent.

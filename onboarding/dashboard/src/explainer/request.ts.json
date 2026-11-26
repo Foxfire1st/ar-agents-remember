@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "blob": "d35a78ed97100f86bd145a788ef8d7856231af67",
             "content": "sha256:92e405b40c1b3db7eb6cf357d9061d55b41c83aa4c7e6e1dfbd1d51f959178df",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "blob": "d35a78ed97100f86bd145a788ef8d7856231af67",
             "content": "sha256:cc51869358e72d72475f86d52c7c22ff22ce3bb6b4394050bb20b3cea3c910b7",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "blob": "d35a78ed97100f86bd145a788ef8d7856231af67",
             "content": "sha256:e09b157fbb9d8c5bddc8b35bfc2aa43528b11485099577a7ea1ed01a40f9661c",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "blob": "d35a78ed97100f86bd145a788ef8d7856231af67",
             "content": "sha256:6536f87a84a12fb7e268053840bcf876669bf075821b1606887c9014f4ca2ef1",
             "locator": {
               "kind": "symbol",
@@ -67,16 +67,30 @@
       ]
     },
     "5": {
-      "note": "Cancel or Send ends the ask for that address",
+      "note": "Clearing removes a matching pending slot and broadcasts the supplied address to all clear listeners.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
-            "content": "sha256:b4e270079358e896bba6063c814ada45f867a5fa7b5a455f4a7611f8d957d9c4",
+            "blob": "d35a78ed97100f86bd145a788ef8d7856231af67",
+            "content": "sha256:21a29c9895a65032eb217758f1ebd418ba92ea4e651b6244ff5efdd5ce6b0091",
             "locator": {
-              "kind": "symbol",
-              "name": "clearFirstRequest"
+              "end": 125,
+              "kind": "line_range",
+              "start": 101
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+            "content": "sha256:8ee4594ab10b6b203c9ae5c9f0d1462e34c8f589b7ce37776cca59cea9460fba",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/explainer/columnState.ts"
           },
           "kind": "code"
         }
@@ -87,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "blob": "d35a78ed97100f86bd145a788ef8d7856231af67",
             "content": "sha256:d38c9944b395d2332a42d4770ab76baf9e87ede2dfbac470a148d3dffe2dfb64",
             "locator": {
               "kind": "symbol",
