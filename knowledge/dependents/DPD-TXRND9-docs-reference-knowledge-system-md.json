@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "13efa4c0afbefba5de92e2a722a8e96f9d250e1a",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
+    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
     "role": "curator",
-    "statement": "Audited docs/reference/knowledge-system.md in full against post-CAP synced L57 candidate 13efa4c0afbe (base 4559dabe83cb): knowledge_write, worklist, family-row gate, dependent-staleness, and CAP-L3 ingestion rules remain accurate after wiring reached_family_facts through writer.py and extracting family_rows.py, with zero contradictions.",
-    "task": "261112-BUG-L57",
+    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: docs/reference/knowledge-system.md remains accurate with zero contradictions after L59 added the pre-short-circuit contract-abandoned guard in record_landing.py.",
+    "task": "261112-BUG-L59",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -262,7 +262,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+      "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     },
@@ -276,7 +276,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -289,7 +288,6 @@
         },
         "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
       },
-      "heading": "Measured coherence",
       "kind": "anchor"
     },
     {
@@ -348,7 +346,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Derived index and reads",
       "kind": "anchor"
     },
     {
@@ -361,7 +358,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Derived index and reads",
       "kind": "anchor"
     },
     {
@@ -374,7 +370,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Derived index and reads",
       "kind": "anchor"
     },
     {
@@ -387,7 +382,6 @@
         },
         "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
       },
-      "heading": "Staged memory merge check",
       "kind": "anchor"
     },
     {
@@ -397,14 +391,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:32:27+01:00",
+    "at": "2026-11-27T00:41:03+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L57",
+    "leaf": "261112-BUG-L59",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
     "task": "261112-BUG"
   }
 }

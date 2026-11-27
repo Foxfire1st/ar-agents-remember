@@ -185,11 +185,40 @@
         },
         {
           "anchor": {
-            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
             "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
             "locator": {
               "kind": "symbol",
               "name": "_landing_request"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "`finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+            "content": "sha256:6c6aec573c4ff9721f7e01774ce1209e1d193bc8d4937fa129b571abdd959a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_readiness"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -393,7 +422,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -474,7 +503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
             "locator": {
               "kind": "symbol",
@@ -1252,7 +1281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -1399,7 +1428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -1659,7 +1688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -1671,7 +1700,7 @@
         },
         {
           "anchor": {
-            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
             "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
             "locator": {
               "kind": "symbol",
@@ -1760,12 +1789,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
-              "end": 133,
+              "end": 140,
               "kind": "line_range",
-              "start": 40
+              "start": 47
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -1822,7 +1851,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",

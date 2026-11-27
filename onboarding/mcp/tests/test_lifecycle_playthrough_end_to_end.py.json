@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
               "end": 765,
@@ -32,76 +32,6 @@
               "start": 765
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
-            "locator": {
-              "end": 481,
-              "kind": "line_range",
-              "start": 481
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
-            "locator": {
-              "end": 1141,
-              "kind": "line_range",
-              "start": 1141
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
-            "locator": {
-              "end": 1327,
-              "kind": "line_range",
-              "start": 1327
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
-            "locator": {
-              "end": 3010,
-              "kind": "line_range",
-              "start": 3010
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
-            "locator": {
-              "end": 5260,
-              "kind": "line_range",
-              "start": 5260
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }
@@ -130,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
               "end": 765,
@@ -198,6 +128,103 @@
               "kind": "line_range",
               "start": 25
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]\n\nAnchor: `pause_result`; `_already_stopped_result`; `require_parent_series`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "content": "sha256:e3b5d57b068db1fa5920c16ee57d4475709457a9bb1c6f134027a458e71cbca2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 481
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 1142,
+              "kind": "line_range",
+              "start": 1142
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 1328,
+              "kind": "line_range",
+              "start": 1328
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 3011,
+              "kind": "line_range",
+              "start": 3011
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 5263,
+              "kind": "line_range",
+              "start": 5263
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }
@@ -306,69 +333,6 @@
         }
       ]
     },
-    "5": {
-      "note": "The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master.\n\nAnchor: `pause_result` `_already_stopped_result` `require_parent_series`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
-            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
-            "content": "sha256:adb98b4ad2b137027edeb544d7102ea297d86c01140eeb6d0b93872a03d22800",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
-            "content": "sha256:5eb081b2a6b4f19a91c06da0b3f76d64df22d06de7ff5f1b3a5b50a9181f684a",
-            "locator": {
-              "kind": "symbol",
-              "name": "pause_result"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
-            "content": "sha256:d4cdf1af96e72e5393d1de752b059d54cc3c9ece7beec88523fc43db26e49a08",
-            "locator": {
-              "kind": "symbol",
-              "name": "_already_stopped_result"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
-            "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_parent_series"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "The public tools the master-level beats drive.",
       "targets": [
@@ -431,12 +395,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:2c69b6bf4581ce6c8ec6582f505f09bf2096ad16dba0a9edb9002bb063828879",
             "locator": {
-              "end": 264,
+              "end": 291,
               "kind": "line_range",
-              "start": 264
+              "start": 291
             },
             "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
           },

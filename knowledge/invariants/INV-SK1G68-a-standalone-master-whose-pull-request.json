@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized jointly in standalone_pr_landing.py::is_pr_landed_standalone_candidate and integration_branch_authority.py::standalone_master_status, proved by test_checkpoint_sprint_master_and_pr_leaf_keep_todays_refusals, and required to bound the standalone PR end family."
+  },
+  "applicability": "Worktree contracts evaluated for pull-request-landed standalone master finalization or pre-Completed cleanup admission.",
+  "conditions": [
+    "The contract has kind == 'series', integration_strategy == 'pr', integration_status == 'completed', and closeout_status != 'completed'.",
+    "Integration branch authority proves sprint_ref is None through standalone_master_status or _master_authority."
+  ],
+  "exclusions": [
+    "Leaf contracts (kind != 'series'), which keep existing closeout readiness checks.",
+    "Sprint-commanded masters (sprint_ref is not None), which keep existing closeout and Completed-before-cleanup checks.",
+    "Checkpointed series (integration_status == 'checkpointed'), which remain blocked by integration-not-complete.",
+    "Series that already closed out (closeout_status == 'completed'), which keep the closed-out finalization route."
+  ],
+  "id": "INV-SK1G68",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_pr_finalize.py::test_checkpoint_sprint_master_and_pr_leaf_keep_todays_refusals (pytest exit 0, 144 passed)"
+      ],
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R59@v1 Rule 1",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A standalone master whose pull-request landing is recorded is a series contract with no commanding sprint (sprint_ref is None), integration_strategy == 'pr', integration_status == 'completed', and closeout_status != 'completed'.",
+  "supersedes": [],
+  "title": "PR-landed standalone master eligibility predicate",
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

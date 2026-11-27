@@ -49,17 +49,19 @@ refs through `require_series_contract_authority`; any other contract kind refuse
 guard enables the source-pair selecting transaction without making a protected series branch an
 ordinary workbench or weakening its task-derived ownership.
 
-## 260831-LOCR-L30 Abandon Refuses A Checkpointed Master
+## Series Terminal Admission And Standalone PR Finalization
 
-`_require_series_task_terminal` cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-278) is the guard shared by the cleanup and abandon arms of
-`require_terminal_worktree`. It refuses to retire a series' integration branch when the master's task
+`standalone_master_status(contract)` (`integration_branch_authority.py:235-249`) resolves `_master_authority(_scope(contract))` for a `kind == "series"` contract, returns `None` if `authority.sprint_ref is not None` or if authority/document resolution fails, and otherwise returns the standalone master document's `status`. `finalize.py::_readiness` calls it to prove no sprint commands the master before routing into `standalone_pr_landing.pr_landed_standalone_blockers`.
+
+`_require_series_task_terminal` cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:252-302) is the guard shared by the cleanup and abandon arms of
+`require_terminal_worktree`. On its `worktree_cleanup` arm (lines 273-285), a non-`Completed` master is refused unless `authority.sprint_ref is None`, `is_pr_landed_standalone_candidate(contract)` holds, and `pr_landed_standalone_blockers(contract, master_status=status)` is empty; this admits a pull-request-landed standalone master to direct `worktree_cleanup` and `lifecycle_finalize_task` cleanup before its master document reads `Completed`, while keeping sprint-commanded masters, locally integrated series, checkpoints, and abandoned masters refused. On its `worktree_abandon` arm, it still requires the master document to read `Completed` or `abandoned` and refuses to retire a series' integration branch when the master's task
 document is `abandoned` **and** `contract.integration_status` is in `{"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265).
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:291-291).
 
 Abandoning a master asserts that none of its work was taken. Once part of it landed — finally
 (`completed`) or at a checkpoint of a master that is still open (`checkpointed`) — that assertion is
 false, and the honest terminal route is completion: mark the rows that never integrated `abandoned`
-and complete the master. The refusal message was widened with the value to match: it now reads "this
+and complete the master. The refusal message reads "this
 master already landed work into its source branch", because `checkpointed` is precisely the case a
 partial landing used to hide — the master's line was already upstream while the contract still read
 `not-started`, and that is what made a partial master's retirement look safe.
@@ -67,10 +69,10 @@ partial landing used to hide — the master's line was already upstream while th
 ## Child-Admission Seal Removal And The `require_parent_series` Rename
 
 The function formerly named `require_parent_series_accepting_leaves` is now
-`require_parent_series` (code lines 309-330), and the seal call inside it is gone. The helper resolves
+`require_parent_series` (code lines 335-370), and the seal call inside it is gone. The helper resolves
 an atomic leaf's exact parent series and validates its identity: it returns `None` for organizational
 direct-super work under a sprint graph
-cit:(["authority.sprint_ref is not None and authority.execution_nature == \"organizational\""], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:317-317),
+cit:(["authority.sprint_ref is not None and authority.execution_nature == \"organizational\""], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:345-345),
 refuses a non-atomic master through `_require_atomic_master`, requires a persisted parent in default/durable use and raises `"{operation} requires its exact parent series contract"` when that authority is missing. Explicit start preview alone may carry the same owner-validated planned parent at a genuinely absent canonical path; loaded or carried values pass the same exact identity guard. It no longer
 decides whether that series accepts leaves, because the guard it used to call — the deleted
 `worktrees/atomic_series_seal.py::require_series_accepting_leaves` — is gone together with its import.
@@ -114,7 +116,9 @@ still starts.
 - The exact parent guard reloads existing artifacts, admits the owner-validated planned parent only in explicit dry run at a genuinely absent canonical path, and preserves organizational and durable default authority. [5]
 
 - The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. [7]
-- The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. [8]
+
+- The terminal-task guard admits PR-landed standalone masters (`sprint_ref is None` with empty `pr_landed_standalone_blockers`) on the `worktree_cleanup` branch before `Completed`, and keeps refusing abandon once `integration_status` is `completed` or `checkpointed`. [8]
+- `standalone_master_status` proves via `_master_authority` that no sprint commands a series contract and returns the standalone master's document status. [12]
 
 ### Docs References
 

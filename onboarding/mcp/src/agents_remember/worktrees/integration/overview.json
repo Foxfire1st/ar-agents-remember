@@ -259,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
             "locator": {
               "kind": "symbol",
@@ -716,12 +716,12 @@
         },
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:7972b4c3a85720af04c1adbcc0d7821ffdc3785b6c25d8fc7f510e6bd3f92317",
             "locator": {
-              "end": 214,
+              "end": 221,
               "kind": "line_range",
-              "start": 40
+              "start": 47
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -888,6 +888,47 @@
               "start": 320
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "`standalone_pr_landing.py` centralizes PR-landed standalone master eligibility, readiness blockers, and the `contract-abandoned` refusal, and `integration_branch_authority.py` admits that class on `worktree_cleanup` before `Completed` while preserving `worktree_abandon`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:da5e8204c929403132b05ce03e55522f1b01fbdbb3aa1b4c683117aba43b5e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_pr_landed_standalone_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:51aec3ccf5d578ba6cb61eb96fd62f5813fa316de031840716994448e17ae694",
+            "locator": {
+              "kind": "symbol",
+              "name": "pr_landed_standalone_blockers"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "content": "sha256:d7b9e66f6a600ab02723ce52819df9b3de74fab29893827e117b1a3e4bf39fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_series_task_terminal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
           },
           "kind": "code"
         }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
-    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
+    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
+    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
     "role": "curator",
-    "statement": "Audited docs/reference/worktrees-c09.md (lines 1-376) against synced Attempt-5 tree d1e7bbbc and operations/{implementation,review}.md: Reviewer route-review recording, clean-sync focused-test rerun without opening a new review round, and approval boundaries remain accurate with no contradiction.",
-    "task": "261124-CAP-L3",
+    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: docs/reference/worktrees-c09.md remains accurate with zero contradictions after L59 added the pre-short-circuit contract-abandoned guard in record_landing.py.",
+    "task": "261112-BUG-L59",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "anchor": {
-        "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+        "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
         "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
         "locator": {
           "kind": "symbol",
@@ -116,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
-        "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:16:07+01:00",
+    "at": "2026-11-27T00:41:03+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-BUG-L59",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
   }
 }

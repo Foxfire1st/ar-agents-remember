@@ -1,0 +1,1200 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L59",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T01:08:07+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L59",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T01:08:07+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L59",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "0fb6cc20-2db2-52c9-aa69-ac4e83d04d4c",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "8e58eda409b2621b566efdc3d5d6aa39af249430",
+    "verdictRef": "notes/reports/reviewer/0fb6cc20-2db2-52c9-aa69-ac4e83d04d4c/role-launch/261112-BUG-L59-MR1-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-PCZ0N8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-048CMW",
+      "items": [
+        "sha256:b312be3fa60a27bb439d2bbcd49d585ce2edd335f9efbcc8c65c53cbe4215548"
+      ],
+      "reason": "L59 inserted the abandoned-contract guard before already-recorded in record_landing_result without altering stale-entry debt acceptance, payloads, or contract persistence; re-anchored RLZ-PCZ0N8 without changing rule meaning.",
+      "revision": 2,
+      "subject": "INV-6H0QQG"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-39FYQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-6GBJC6",
+          "revision": 1
+        },
+        {
+          "id": "INV-8R2CRC",
+          "revision": 1
+        },
+        {
+          "id": "INV-95NQR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-V3N6NW",
+          "revision": 1
+        },
+        {
+          "id": "INV-WKM7SS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0BVJT5",
+      "items": [
+        "sha256:18323e2657c6aa1fbce7f4a9da93b3a9f7c72b9fd4ae1494cfc2a1e88d06fba0"
+      ],
+      "reason": "Examined all 6 members after INV-95NQR7 re-anchored in record_landing_result: disabled-contract refusal remains strictly first in both record_landing_result and _finalize_result ahead of all L59 checks, leaving the family guarantee, membership, and routes unchanged.",
+      "revision": 2,
+      "subject": "FAM-Q5J2ZC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "content": "sha256:50a5a28c7bc0d503a881957734bc0288fcbc435f7c0b9d69e3a02ff24687501c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1XF74M",
+      "items": [
+        "sha256:b4af1d75a7f79e0e002df95660f1974c9d84c02459e6703797d19a809263af1c"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 regenerated packaged capsule-budgets-current.json byte-for-byte via scripts/renew-instructions.py after master-state.md grew to 451 words; re-anchored RLZ-9J6CEC.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 5
+        },
+        {
+          "id": "INV-3BGCAT",
+          "revision": 2
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 3
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 2
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2BNHF8",
+      "items": [
+        "sha256:c8269efe450443aab9db687b248fa2735bf88d5266e4d8aa5de2216c87a4611c"
+      ],
+      "reason": "Examined all 10 members after INV-HAQRFD re-anchored in record_landing_result: L59's contract-abandoned refusal precedes landing pair judgment and standalone PR finalize/cleanup runs after recording, so pair judgment, master chain proofs, pre-commit admission, membership, and routes are unchanged.",
+      "revision": 3,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2SED2T",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Post-CAP+L57 sync: updated evidence-lifecycle card and sidecar for test_standalone_master_pr_finalize.py (lines 788, 3318, 4993; 846 / 846 / 16 consumers across 18 contracts / 123 artifacts), updated shifted line references, and refreshed all 131 stale anchors.",
+      "sources": [
+        {
+          "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4VVQ9C",
+      "items": [
+        "sha256:c06056724af600d2648de1d3db24f1cdcaf879245771bde0b2a222517076ef25"
+      ],
+      "reason": "Onboarding card and sidecar remain current on synced candidate tree 6a6fd4266b85 for the new shared PR-landed standalone master module.",
+      "sources": [
+        {
+          "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+          "path": "mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6F8RQ5",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Post-CAP+L57 sync: updated capsule-budgets-current card to note master-state.md 451-word measurement and refreshed stale references [2] and [8].",
+      "sources": [
+        {
+          "blob": "40c052d64222aefefec595b81974c250ab95c717",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-4NWKSS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-97Y6E4",
+      "items": [
+        "sha256:043145853c7ec70de85083078bdc434b8880c7614f85ec8b178e00684f15abf4"
+      ],
+      "reason": "is_disabled_contract -> opt_out_refusal_result remains strictly first in record_landing_result ahead of the new abandoned-contract refusal; re-anchored RLZ-4NWKSS without changing rule meaning.",
+      "revision": 1,
+      "subject": "INV-95NQR7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9W71S9",
+      "items": [],
+      "reason": "Post-CAP+L57 sync: reconfirmed docs/design/python-pytest-bootstrap.md on candidate tree 6a6fd4266b85 (846 distinct modules) and re-anchored stress-durability in test-evidence-lanes.toml to lines 865-867.",
+      "revision": 35,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+            "content": "sha256:8fd67c397445441c28b3ce4a4fc39c661594807fb95f040d3ac3fb14f141eadd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "before": {
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "content": "sha256:96866cea1414279deee0496bd8b9fe9415aa479792e9c4de807bec309128c8a1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "id": "RLZ-RSCVS1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ABNV2B",
+      "items": [
+        "sha256:61a02e97e0ea0beccb42e67440232890aa169668f0cdfebefb8ea8a45346c988"
+      ],
+      "reason": "L59 edited only _readiness and imports in finalize.py, leaving with_outside_scratch_reconcile and _run_or_verify_cleanup outside-scratch removal untouched; re-anchored RLZ-RSCVS1 without changing rule meaning.",
+      "revision": 1,
+      "subject": "INV-BDYV4D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ACJ11R",
+      "items": [
+        "sha256:23ceb13aed7b97c450e77b4bfa5fae7634500d61e0c2718c8efce443cb7fc8e4"
+      ],
+      "reason": "Updated record_landing card and sidecar to document the pre-short-circuit contract-abandoned refusal, PR_STRATEGY move to standalone_pr_landing.py, and shifted inline line references.",
+      "sources": [
+        {
+          "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+          "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AGHRB4",
+      "items": [],
+      "reason": "Post-CAP+L57 sync: reconfirmed docs/reference/knowledge-system.md on candidate tree 6a6fd4266b85 after L59 edited record_landing.py.",
+      "revision": 13,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B6PKCD",
+      "items": [],
+      "reason": "Left strictly untouched at 165432db09a4 rev 31: carries open 261124-CAP-L5 deferral DFR-YQ7ENB (already base-stale on 20088100b964 on paseo_role_tools.py and review_history.py); L59 introduces no contradiction in docs/reference/mcp-tools.md.",
+      "revision": 31,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CWFS9D",
+      "items": [],
+      "reason": "Left strictly untouched at 165432db09a4 rev 34: carries open 261124-CAP-L5 deferral DFR-Y5Q4JY (already base-stale on 20088100b964 across 9 non-L59 links); L59 introduces no contradiction in docs/concepts.md.",
+      "revision": 34,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DM9HYQ",
+      "items": [
+        "sha256:4fa8f5d6e730248dc0f9d4205b251e09c9b594c39c01ec8be39f1b7f77d42ec0"
+      ],
+      "reason": "Updated finalize card and sidecar to document _readiness routing PR-landed standalone masters through standalone_master_status and pr_landed_standalone_blockers, and corrected shifted inline line references.",
+      "sources": [
+        {
+          "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+          "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/finalize.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DSYJ6J",
+      "items": [
+        "sha256:d16f71e9c040289a5cc65860a69cf37a499950683b6e9e61edb41024b81f9bff"
+      ],
+      "reason": "Import statement adding CONTRACT_ABANDONED_CODE, PR_STRATEGY, and abandoned_contract_reason from standalone_pr_landing in record_landing.py; structural import plumbing only, with the refusal rule attributed to BUG-R59@v1 Rule 4.",
+      "subject": "hunk:sha256:d16f71e9c040289a5cc65860a69cf37a499950683b6e9e61edb41024b81f9bff"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EDCGSN",
+      "items": [
+        "sha256:3102794c6cbaeff51da106918f8cb055deed179d608692f06c58bff53180c9aa"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 added existing test module mcp/tests/test_standalone_master_pr_finalize.py to integration in test-evidence-lanes.toml (846 distinct modules); every listed module exists on the tree and certification rails are unchanged; re-anchored RLZ-XQXYDT.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ENAQZT",
+      "items": [
+        "sha256:0781076e259d2c102f3c920e056d132801b366a69bf4668e4bf15fe7a8ef9a7d"
+      ],
+      "reason": "Onboarding card and sidecar remain current on synced candidate tree 6a6fd4266b85 for the six-test integration suite covering BUG-R59@v1 Rules 1-5 and Evidence 1-2.",
+      "sources": [
+        {
+          "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+          "path": "mcp/tests/test_standalone_master_pr_finalize.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_standalone_master_pr_finalize.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F7KKWT",
+      "items": [],
+      "reason": "Left strictly untouched at 165432db09a4 rev 25: carries open 261124-CAP-L5 deferral DFR-RBZQP6 (already base-stale on 20088100b964 on scripts/instruction_renewal/budgets.py); L59 introduces no contradiction in CONTRIBUTING.md.",
+      "revision": 25,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HBHYF2",
+      "items": [
+        "sha256:858516b9e0515f3db4b9628b50f31455c09a638fd0078a524abf22dd2a6ddeb7"
+      ],
+      "reason": "Updated worktrees/modules overview with a current-account paragraph and evidence citation for PR-landed standalone master finalize readiness and record_landing's contract-abandoned refusal.",
+      "sources": [
+        {
+          "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+          "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+        },
+        {
+          "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+          "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HPANN8",
+      "items": [],
+      "reason": "Post-CAP+L57 sync: reconfirmed docs/reference/worktrees-c09.md on candidate tree 6a6fd4266b85 after L59 edited record_landing.py.",
+      "revision": 15,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HZF445",
+      "items": [
+        "sha256:aace81eb1609b0acfa524ee7453f4d90300bfe60249adc6a9a1212a86976c4fa"
+      ],
+      "reason": "Import statement adding is_pr_landed_standalone_candidate and pr_landed_standalone_blockers from standalone_pr_landing in integration_branch_authority.py; structural import plumbing only, with the behavioral rules attributed to BUG-R59@v1 Rules 1 and 3.",
+      "subject": "hunk:sha256:aace81eb1609b0acfa524ee7453f4d90300bfe60249adc6a9a1212a86976c4fa"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J5ER20",
+      "items": [
+        "sha256:e3d518781f77eeaf9c61b243bc3b30c98cebef0cf7dfc0ec60b0100f4b5296ec"
+      ],
+      "reason": "Updated overview to introduce standalone_pr_landing.py and qualify the series-cleanup Completed requirement for PR-landed standalone masters.",
+      "sources": [
+        {
+          "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+          "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+        },
+        {
+          "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+          "path": "mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+            "content": "sha256:f2aed1893e623d61ef13f27fc4b8329ef2048020523be96a8b1d6584009fc2cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JPNWMH",
+      "items": [
+        "sha256:69cde1494ccf5673489a89eeb7a49c6ab11ede616aafead75993275b303ebd13"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 appended test_standalone_master_pr_finalize.py to test-evidence-lanes.toml (846 modules) and evidence-lifecycle.toml (18 contracts / 123 artifacts) without touching test_provider_limit_hold.py or test_held_delivery_tick_cost.py; re-anchored RLZ-BNMQ79 and RLZ-GEMVNE.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KTCNVJ",
+      "items": [
+        "sha256:b267172a6ea282df19d29a98acd9056895778f38a08f80e71c094038b35af67a"
+      ],
+      "reason": "Updated tool_answer_l111_test_support card and sidecar to document RECORD_LANDING_REFUSAL_CODES including contract-abandoned.",
+      "sources": [
+        {
+          "blob": "fbb85c130b4dc2c7e9ad01e971ef3f01456ffa7d",
+          "path": "mcp/tests/tool_answer_l111_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_answer_l111_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MZKNFG",
+      "items": [
+        "sha256:65ed162a6ad115708169bdec582e3925a3678e2199ca2b0c09f9d6d5064fb5de"
+      ],
+      "reason": "Post-CAP+L57 sync: audited skills/l-01-agent-lifecycles/overview.md against synced capsule-budgets-current.json and master-state.md; zero stale anchors or outdated counts, and standalone master end route remains local to master-state.md.",
+      "sources": [
+        {
+          "blob": "40c052d64222aefefec595b81974c250ab95c717",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
+          "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+            "content": "sha256:f2aed1893e623d61ef13f27fc4b8329ef2048020523be96a8b1d6584009fc2cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N4Y23F",
+      "items": [
+        "sha256:e1fd53ebf240589120c24bb3b6d8f052aeafd08ebe3c252473cece9b2f8ab348"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 registered mcp/tests/test_standalone_master_pr_finalize.py in test-evidence-lanes.toml (846 modules) and canonicalized its three exact artifact consumer entries in evidence-lifecycle.toml with no duplicates; re-anchored RLZ-8RHQED and RLZ-MC12B0.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-AQ9CB7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-P4HTPD",
+      "items": [
+        "sha256:4d1bcd1d4fe3aef8a9402fc5b6a4a7da347e434f6f0573d690029125c01fe124"
+      ],
+      "reason": "L59 added the early contract-abandoned refusal in record_landing_result before already-recorded; non-abandoned converted leaf pairs still delegate identically to _record_preconditions and refuse missing memory bases by name; re-anchored RLZ-AQ9CB7.",
+      "revision": 1,
+      "subject": "INV-HAQRFD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PHCW6R",
+      "items": [
+        "sha256:c73a99d343261316d95b1ba8b1d7279509580e2f10d61732a91979a8654f367f"
+      ],
+      "reason": "Post-CAP+L57 sync: updated mcp/tests overview prose and sidecar notes to 846 selected modules (125 integration), documented test_standalone_master_pr_finalize.py, refreshed all 42 stale catalog anchors, and refreshed overview.index.json.",
+      "sources": [
+        {
+          "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+          "path": "mcp/tests/test_standalone_master_pr_finalize.py"
+        },
+        {
+          "blob": "fbb85c130b4dc2c7e9ad01e971ef3f01456ffa7d",
+          "path": "mcp/tests/tool_answer_l111_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "content": "sha256:50a5a28c7bc0d503a881957734bc0288fcbc435f7c0b9d69e3a02ff24687501c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q4HABZ",
+      "items": [
+        "sha256:dafe04516d723b9944994560aa491b7ee58fb71151f9e4147f26eb11843ef677"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 renewed derived measurements and hashes for master-state.md (451 words) in capsule-budgets-current.json while leaving ceilings, schema, and frozen historical registries untouched; re-anchored RLZ-9FX5WR.",
+      "revision": 7,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QWEW9D",
+      "items": [
+        "sha256:4b69141a13aebe2d3f1d0bf6877e7e08cf98c7a763add6b55c3065a14aa9616d"
+      ],
+      "reason": "Post-CAP+L57 sync: updated End a standalone master line reference to 15-21 and re-anchored ref[3] to skills/l-01-agent-lifecycles/roles/manager.md:41 after CAP compacted manager.md.",
+      "sources": [
+        {
+          "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
+          "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RA1T54",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Post-CAP+L57 sync: updated test-evidence-lanes card prose and all sidecar notes to 846 distinct modules (693 unit-regression / 3 public-contract / 125 integration with test_standalone_master_pr_finalize.py at L807 / 24 architecture-fitness / 1 stress-durability at L865-867) and refreshed all stale anchors.",
+      "sources": [
+        {
+          "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RHTD8B",
+      "items": [
+        "sha256:07700753dcd9e6f51b28986e6020502df3b5589cd5cf136a77b3ca40dbc483a7"
+      ],
+      "reason": "Post-CAP+L57 sync: audited mcp/overview.md against synced packaged capsule-budgets-current.json and master-state.md; zero stale anchors or outdated counts, and existing finalization summary holds.",
+      "sources": [
+        {
+          "blob": "40c052d64222aefefec595b81974c250ab95c717",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "content": "sha256:50a5a28c7bc0d503a881957734bc0288fcbc435f7c0b9d69e3a02ff24687501c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RQRD03",
+      "items": [
+        "sha256:1a11cab1bac1edcfcd38d0c70c7e49f8861987a0d48a46d43977596e731fa1aa"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 regenerated derived measurements and source digests in skills/l-01-agent-lifecycles/capsule-budgets-current.json via renew-instructions (master-state.md 451 words) while leaving authored ceilings untouched; re-anchored RLZ-RHRQZQ.",
+      "revision": 3,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TM6TZD",
+      "items": [
+        "sha256:5846f700e29b228aa3c07f5f095ee12239c99bce963fa7cf8ac9ca3255969cb2"
+      ],
+      "reason": "Delete-only hunk removing the local PR_STRATEGY constant definition from record_landing.py after moving the single-sourced constant into standalone_pr_landing.py.",
+      "subject": "hunk:sha256:5846f700e29b228aa3c07f5f095ee12239c99bce963fa7cf8ac9ca3255969cb2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+            "content": "sha256:f2aed1893e623d61ef13f27fc4b8329ef2048020523be96a8b1d6584009fc2cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WQ1HR5",
+      "items": [
+        "sha256:c87b5eaac0ccfce4c58633449a856784db089aac255afa62bd58b384a4dd7a57"
+      ],
+      "reason": "Post-CAP+L57 sync onto 20088100b964 / 6a6fd4266b85: L59 appended test_standalone_master_pr_finalize.py to test-evidence-lanes.toml and evidence-lifecycle.toml while keeping test_outside_scratch_root.py and test_worktree_start_preview.py registered; re-anchored RLZ-BJ41EY and RLZ-H44S0N.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-X74MWV",
+      "items": [],
+      "reason": "Post-CAP+L57 sync: re-read all 221 lines of README.md and reconfirmed DPD-CZBR1Q on candidate tree 6a6fd4266b85 after L59 edited record_landing.py.",
+      "revision": 18,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XG5EGX",
+      "items": [],
+      "reason": "Post-CAP+L57 sync: reconfirmed docs/workflows.md on candidate tree 6a6fd4266b85 after L59 edited finalize.py and record_landing.py.",
+      "revision": 15,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y3MCZH",
+      "items": [
+        "sha256:3bda314c82165d871a031fca0e696ce26947828cc3bd27e2ec0949f8d80a8e1b"
+      ],
+      "reason": "Updated card and sidecar to document standalone_master_status and _require_series_task_terminal's worktree_cleanup admission for PR-landed standalone masters before Completed, and corrected shifted inline line references.",
+      "sources": [
+        {
+          "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+          "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:89cf9df22c4611251e38eec0c044a45de5888b17f48ef514bf6968a006a54235",
+      "record": "DEC-F3277N",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:348d6a7d8bbc16687918156c4fed317cc84d858415382f532013a106f62b7310",
+      "record": "DPD-71WYH4",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e25cdd6e59bf5a5333f11ce5f58c2385a83580354cf392e04f0e12655444a041",
+      "record": "DPD-78737N",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f764ae523a632635fbcbf90a31a4e8f41f0d9f55b9a2167f219c07922adfc697",
+      "record": "DPD-9K25G8",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:aa0c28b047c2bea9cb7401adbfc096a6f878eb62b89549e415dc003482dd4e4a",
+      "record": "DPD-9K25G8",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T00:41:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4fe47b86ebc95b10076e5b27462f709bf48cefd11d4fc7e98c0daaf9be4cdbf4",
+      "record": "DPD-CZBR1Q",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:64d36a0eeb24ee25eaf0f4778c539a2c8c13f50f79bee6fa188a8b8d28de5cb6",
+      "record": "DPD-CZBR1Q",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T00:41:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3184ed7c86c16d29e2505b337cad08c7b525772346598f79fc099c4bb97dfd22",
+      "record": "DPD-TXRND9",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4c902ccf76a6380643d6445fc7474f3cb5d448c36cd3ebb5d9dd3ed4dbc02d19",
+      "record": "DPD-TXRND9",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-27T00:41:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:37f600ed86836b8230766fe64e85fb5e3b3b11261b3552188e72e037972e1e6b",
+      "record": "DPD-X6G7K3",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b9ed44d4bfc72c9bda939a7e967ba9db852af5484feab6d9f4615d952c56965f",
+      "record": "DPD-XAARS1",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:af2528ae58d015416f3d8297dcbad288a309977854494e46edf7ab0a79917791",
+      "record": "DPD-XAARS1",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T00:41:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2f26d249bd2e36751e5614ca4cc337a6a3ee271fc1f76a6329fa26091e5a2dc8",
+      "record": "DPD-ZT8YY7",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:09d8e00bbe030ac201fd5e96d16765b13631fd73d97140c7f87742f600fa5402",
+      "record": "DPD-ZT8YY7",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T00:41:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:88ad1dcdfc69f915c08e8540dc9f39381682c2d8b6e2d18083f30f533641abb0",
+      "record": "FAM-GE1MEV",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d5c09453a80866ba0258ad515a694aa1eebda75ea7c340a35b59fafc5ea97f95",
+      "record": "INV-BZXP67",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:28823188165c69a5d3b0bc84620dc06438c9756690deca265d9d07f84bfbaf8a",
+      "record": "INV-CWFT4B",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:eee20ee724b0996c1980141243595390e2ff185a6a5d5fd452c622043f0db774",
+      "record": "INV-H93WMT",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:63ae5941c679228ff03dcf60852e8a60d9592fe4a662511e103593e7aab89984",
+      "record": "INV-SK1G68",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1cc2d06aa940f1988d922ca8d9a9450458760300abea777f9672c92d24a92cb3",
+      "record": "INV-V6R1JB",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T22:17:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

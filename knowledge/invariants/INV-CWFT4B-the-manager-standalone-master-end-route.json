@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Proved end-to-end by test_pr_landed_standalone_master_end_to_end_records_finalizes_and_retires, needed for the standalone PR end family, and prevents Managers from manually editing status before finalization or omitting retire_master."
+  },
+  "applicability": "Manager coordination instructions in skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md for ending a PR-landed standalone master.",
+  "conditions": [
+    "The Manager runs worktree_record_landing, lifecycle_finalize_task without calling task_doc set_status first, and task_doc operation='retire_master' (dry run first) in order.",
+    "Finalization never archives a series master; retire_master moves the completed master folder into 0_archive/."
+  ],
+  "exclusions": [
+    "Sprint-commanded masters, which retire through their commanding sprint.",
+    "Abandoned masters, which follow the abandon section rather than the PR-landed end route."
+  ],
+  "id": "INV-CWFT4B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md#end-a-standalone-master; scripts/renew-instructions.py --check PASS; test_role_capsule_budgets.py and test_l84_unique_detail_pointers.py PASS"
+      ],
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R59@v1 Rule 5",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Manager standalone-master end route documents the three-step sequence worktree_record_landing, lifecycle_finalize_task, and task_doc retire_master in master-state.md without calling task_doc set_status before finalization.",
+  "supersedes": [],
+  "title": "Manager three-step end route for a PR-landed standalone master",
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

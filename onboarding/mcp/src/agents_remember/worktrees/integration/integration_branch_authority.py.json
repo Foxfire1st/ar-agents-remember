@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+        "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+        "content": "sha256:c9425e207656d5f68153ca8c0fcd7771e549c68e38d053d2f0c197901d9963d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "standalone_master_status"
+        }
+      },
+      "id": "RLZ-9QF01T",
+      "invariant": "INV-SK1G68",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 1",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Resolves integration branch authority to confirm sprint_ref is None and returns the standalone master's task-document status without admitting sprint-commanded masters.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
         "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+        "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
         "content": "sha256:a97942f0024878dd1f863a3c90a5fd7ad116144489f8a3ed8466d8a8d5d6b1df",
         "locator": {
           "kind": "symbol",
@@ -36,6 +54,24 @@
       },
       "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+        "content": "sha256:d7b9e66f6a600ab02723ce52819df9b3de74fab29893827e117b1a3e4bf39fac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_series_task_terminal"
+        }
+      },
+      "id": "RLZ-VXXNQX",
+      "invariant": "INV-V6R1JB",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 3",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Admits non-Completed standalone masters during worktree_cleanup only when sprint_ref is None, is_pr_landed_standalone_candidate holds, and pr_landed_standalone_blockers is empty, without altering the abandon branch.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:a4400fc1b4b5db186c15f621dba7ede09a9dd8aa4bc22ccc4cb7514591c45cbf",
             "locator": {
               "kind": "symbol",
@@ -55,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:978eb22e58854450668bdfc55d19867dd09b5b83c0e8947640f9e1f71ab3ba98",
             "locator": {
               "kind": "symbol",
@@ -71,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
             "locator": {
               "kind": "symbol",
@@ -87,11 +123,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:d862c24819b16241646771e809a3e0010666daf7b6e323bdedb53d0f1fac716c",
             "locator": {
               "kind": "symbol",
               "name": "_require_series_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`standalone_master_status` proves via `_master_authority` that no sprint commands a series contract and returns the standalone master's document status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "content": "sha256:c9425e207656d5f68153ca8c0fcd7771e549c68e38d053d2f0c197901d9963d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "standalone_master_status"
             }
           },
           "kind": "code"
@@ -103,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:845a494aec8d39137d130582abc02cf6f4180872974b8919d92f1ae2029201fe",
             "locator": {
               "kind": "symbol",
@@ -114,7 +166,7 @@
         },
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:082efac41ec540c9dcc5f335b1ec54895f56a1bf5f1df8fac9cfecc89457f700",
             "locator": {
               "kind": "symbol",
@@ -130,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:d8d22ee79ceceaf96ab5c157877d935b48b99f9c0a54d88b3befaeea054c8bc8",
             "locator": {
               "kind": "symbol",
@@ -146,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:2b90f7ae0e8a575f862a317b90259275ab352203f7b3bab25177d29f913141fe",
             "locator": {
               "kind": "symbol",
@@ -162,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
             "locator": {
               "kind": "symbol",
@@ -178,36 +230,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
             "locator": {
-              "end": 343,
+              "end": 370,
               "kind": "line_range",
-              "start": 308
+              "start": 335
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:00b74655699e34aa17db156c6340c56f1dbc579fa53fc9ca3da686440df99ad2",
             "locator": {
-              "end": 834,
+              "end": 861,
               "kind": "line_range",
-              "start": 830
+              "start": 857
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:761798d628f3469768a9f48b9791e60e610fb314153e7f7fe9be6cbbba7b4942",
             "locator": {
-              "end": 835,
+              "end": 862,
               "kind": "line_range",
-              "start": 822
+              "start": 849
             }
           },
           "kind": "code"
@@ -232,12 +284,12 @@
       ]
     },
     "8": {
-      "note": "The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state.\n\nAnchor: \"contract.integration_status in {\\\"completed\\\", \\\"checkpointed\\\"}\"",
+      "note": "The terminal-task guard admits PR-landed standalone masters (`sprint_ref is None` with empty `pr_landed_standalone_blockers`) on the `worktree_cleanup` branch before `Completed`, and keeps refusing abandon once `integration_status` is `completed` or `checkpointed`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
-            "content": "sha256:1e197b6149a772806531bf7f977cd1fab40aec99483c96ca8862b7def50a6cbd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "content": "sha256:d7b9e66f6a600ab02723ce52819df9b3de74fab29893827e117b1a3e4bf39fac",
             "locator": {
               "kind": "symbol",
               "name": "_require_series_task_terminal"
@@ -252,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
             "content": "sha256:845a494aec8d39137d130582abc02cf6f4180872974b8919d92f1ae2029201fe",
             "locator": {
               "kind": "symbol",

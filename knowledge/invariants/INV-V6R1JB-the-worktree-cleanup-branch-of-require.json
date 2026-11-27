@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Proved by two integration tests, needed for the standalone PR end family, and prevents marking a master Completed before cleanup succeeds over an uncleaned worktree or broken sprint row."
+  },
+  "applicability": "The worktree_cleanup branch of integration_branch_authority._require_series_task_terminal for direct worktree_cleanup and lifecycle_finalize_task cleanup.",
+  "conditions": [
+    "A non-Completed series master is admitted to worktree_cleanup only when authority.sprint_ref is None, is_pr_landed_standalone_candidate(contract) holds, and pr_landed_standalone_blockers(contract, master_status=status) is empty.",
+    "lifecycle_finalize_task continues to run cleanup before marking task documents Completed, leaving documents untouched on cleanup refusal."
+  ],
+  "exclusions": [
+    "The worktree_abandon branch of _require_series_task_terminal, which remains unchanged.",
+    "Sprint-commanded masters, locally integrated series, checkpoints, and abandoned masters, which remain refused by master-not-completed."
+  ],
+  "id": "INV-V6R1JB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_pr_finalize.py::test_pr_landed_standalone_master_is_directly_cleanable_before_completed and test_finalize_cleanup_failure_leaves_master_document_unchanged (pytest exit 0, 144 passed)"
+      ],
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R59@v1 Rule 3",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The worktree_cleanup branch of _require_series_task_terminal admits a pull-request-landed standalone master passing Rule 2 while leaving the worktree_abandon branch and finalize's cleanup-before-task-documents order unchanged.",
+  "supersedes": [],
+  "title": "Cleanup admits PR-landed standalone masters before Completed",
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

@@ -317,12 +317,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:adb6a73a5c29cea2c41da8b8e765ac71fe71e154b6e37b41eb3a5ff6d2720935",
             "locator": {
-              "end": 200,
+              "end": 207,
               "kind": "line_range",
-              "start": 185
+              "start": 192
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -330,12 +330,12 @@
         },
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:d48fab6a38c37bf3502307e25fdbf6024b76617b0ce6536b417570e97a6184d6",
             "locator": {
-              "end": 371,
+              "end": 382,
               "kind": "line_range",
-              "start": 347
+              "start": 358
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },

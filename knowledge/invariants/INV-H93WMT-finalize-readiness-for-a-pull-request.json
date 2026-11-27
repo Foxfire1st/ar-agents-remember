@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across standalone_pr_landing.py and finalize.py::_readiness, proved by test_finalize_refusals_for_missing_unlanded_and_abandoned_standalone_master, and required to keep standalone PR finalization safe without closeout cells."
+  },
+  "applicability": "lifecycle_finalize_task readiness evaluation for a pull-request-landed standalone master matching Rule 1.",
+  "conditions": [
+    "closeout_status == 'completed' and non-empty code_commit are not required.",
+    "master-abandoned blocks when the master task document or contract.cleanup reads abandoned.",
+    "landed-commit-missing blocks when integrated_code_commit is empty or, for external memory, integrated_memory_content_commit is empty or not an ancestor of memory_source_branch.",
+    "not-landed-on-target-branch blocks when integrated_code_commit is not an ancestor of code_source_branch.",
+    "memory-carryover-incomplete blocks when carryover_done(contract) is false."
+  ],
+  "exclusions": [
+    "Squash-merged landings where commit ancestry cannot prove the work branch tip on the target branch.",
+    "Contracts outside the PR-landed standalone master class, which retain closeout-not-complete and code-commit-missing readiness checks."
+  ],
+  "id": "INV-H93WMT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_pr_finalize.py::test_finalize_refusals_for_missing_unlanded_and_abandoned_standalone_master (pytest exit 0, 144 passed)"
+      ],
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R59@v1 Rule 2",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalize readiness for a pull-request-landed standalone master does not require closeout_status == 'completed' or code_commit, refuses missing integrated_code_commit or missing/unreachable external integrated_memory_content_commit with landed-commit-missing, refuses integrated_code_commit not an ancestor of code_source_branch with not-landed-on-target-branch, refuses an abandoned master document or contract cleanup with master-abandoned, and keeps memory-carryover-incomplete.",
+  "supersedes": [],
+  "title": "Finalize readiness blockers for PR-landed standalone masters",
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "BUG-R59@v1 weighed marking masters Completed before cleanup against admitting PR-landed standalone masters inside _require_series_task_terminal, and the chosen cleanup-first order constrains future series finalization changes."
+  },
+  "alternatives": [
+    {
+      "option": "Admit pull-request-landed standalone masters (sprint_ref is None, integration_strategy == 'pr', integration_status == 'completed', closeout_status != 'completed', empty pr_landed_standalone_blockers) inside _require_series_task_terminal's worktree_cleanup branch while keeping cleanup before task-document completion.",
+      "reason": "Preserves finalize's cleanup-before-task-documents order and promise ('Cleanup did not complete; task documents were not changed') for every series, also makes such masters directly cleanable by worktree_cleanup, and keeps worktree_abandon and sprint-commanded masters unchanged.",
+      "status": "chosen"
+    },
+    {
+      "option": "Mark the master task document Completed before running cleanup inside lifecycle_finalize_task.",
+      "reason": "Would change the execution order for every series and could leave a master or commanding sprint row marked Completed when cleanup refuses.",
+      "reconsider_when": "Only if series cleanup and task-document completion are unified into a single atomic rollback-safe transaction or cleanup refusals can reliably roll back completed sprint rows.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Finalize keeps its universal cleanup-before-task-documents order and preserves 'Cleanup did not complete; task documents were not changed.' on cleanup refusal.",
+    "standalone_pr_landing.py owns the shared eligibility predicate and readiness blockers read by finalize.py, integration_branch_authority.py, and record_landing.py."
+  ],
+  "context": "A pull-request-landed standalone master holds cleanup: pending and a non-Completed master document after worktree_record_landing, so lifecycle_finalize_task previously failed at cleanup because _require_series_task_terminal required status == 'Completed' before retiring the integration branch.",
+  "decider": "Developer D1042 / Architect BUG-R59@v1",
+  "id": "DEC-F3277N",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "FAM-GE1MEV"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-V6R1JB"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+        "content": "sha256:d7b9e66f6a600ab02723ce52819df9b3de74fab29893827e117b1a3e4bf39fac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_series_task_terminal"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_pr_finalize.py::test_pr_landed_standalone_master_is_directly_cleanable_before_completed and test_finalize_cleanup_failure_leaves_master_document_unchanged (pytest exit 0, 144 passed)"
+      ],
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R59@v1 Rule 3",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

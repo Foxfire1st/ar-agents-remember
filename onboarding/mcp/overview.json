@@ -3100,12 +3100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:b28201e37edc84ad3d469c3fc9825fdd6e6605b505dd2f65425503a2c469f0bb",
             "locator": {
-              "end": 133,
+              "end": 140,
               "kind": "line_range",
-              "start": 73
+              "start": 80
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -3113,12 +3113,12 @@
         },
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:e6e3bb584b4477d674d73f570d731af043aeb7006d9127b26776448ae2137d37",
             "locator": {
-              "end": 64,
+              "end": 71,
               "kind": "line_range",
-              "start": 31
+              "start": 38
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -3126,7 +3126,7 @@
         },
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:0afd302bcef7414ad5aad30607ccc626405b2bcf3f9caf16f217482702c319f9",
             "locator": {
               "kind": "symbol",
