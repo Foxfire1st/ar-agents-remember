@@ -198,8 +198,15 @@ No cross-repo boundary is crossed by this file.
 - The history-row registrations: `R09-history-rows` carries `writer_reports=True` while `R09-history-rows-merged` carries `merge_reports=True`, not plain report-only. [7]
 
 
+
 - Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness. [20]
 
+
+
 - Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing. [19]
+
+
 - Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here. [21]
+
+
 - The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge. [5]

@@ -11,7 +11,7 @@
   "applicability": "Every Markdown link, anchor and skill:// address in the l-01 skill source and its packaged copy.",
   "conditions": [
     "Anchors follow GitHub heading slugs; headings inside fenced blocks are not anchors.",
-    "Reference files (including the six CAP-R03 Tier-2 files under reference/worker, reference/review, reference/curator, and reference/coordination/shared) are declared in the composition manifest under their subject-folder paths.",
+    "Reference files (including the CAP-R03 Tier-2 files under reference/worker, reference/review, reference/curator, and reference/coordination/shared plus reference/consolidation-pass.md) are declared in the composition manifest under their subject-folder paths.",
     "The v13 companion's reference/coordination/shared/landings-and-master-state.md remains reference/coordination/shared/master-state.md."
   ],
   "exclusions": [
@@ -30,20 +30,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The l-01 reference files follow the approved subject-folder layout (the v13 companion layout extended by the six CAP-R03 Tier-2 reference files registered in composition-manifest.json), and every delivered link and anchor in the l-01 source and its package copy resolves to an existing file and section.",
+  "statement": "The l-01 reference files follow the approved subject-folder layout (the v13 companion layout extended by the CAP-R03 Tier-2 reference files and reference/consolidation-pass.md registered in composition-manifest.json), and every delivered link and anchor in the l-01 source and its package copy resolves to an existing file and section.",
   "supersedes": [],
   "title": "l-01 reference layout and every delivered link and anchor resolve",
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

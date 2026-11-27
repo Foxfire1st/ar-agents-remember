@@ -27,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
-            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
+            "blob": "a972ce4ce0b8955ea2a85aa521b5b8750e8a181d",
+            "content": "sha256:f89917f6b1d9a9216545fa82da6a31e6b62ef9f23e833040c66c281393905789",
             "locator": {
               "end": 316,
               "kind": "line_range",
@@ -41,12 +41,12 @@
       ]
     },
     "2": {
-      "note": "The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule.",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
-            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
+            "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
+            "content": "sha256:2fa2d4d15f3995e5fec3b3228c3c38e953b1c3e14aca6ed7c0ec0b4c66cbd557",
             "locator": {
               "end": 87,
               "kind": "line_range",
@@ -63,8 +63,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
-            "content": "sha256:ed096b2b398d49533c76cf87064ea4d4ce85adea063aadade3bbbfadf4d7e83b",
+            "blob": "67fd827411b726fc622af1a177534644708fdd00",
+            "content": "sha256:19baade80eb926ef21010e183e601dadb3b5d8bf997ecdf2f9c8e263c4338b34",
             "locator": {
               "kind": "file"
             },
@@ -109,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "blob": "67fd827411b726fc622af1a177534644708fdd00",
             "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
             "locator": {
-              "end": 131,
+              "end": 133,
               "kind": "line_range",
-              "start": 118
+              "start": 120
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },

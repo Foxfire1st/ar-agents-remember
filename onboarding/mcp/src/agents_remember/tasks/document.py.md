@@ -38,6 +38,8 @@ freeform `sections` (R4), and forbid `codeExamplesNote` alongside non-empty `cod
 A master may also carry `orchestrates: list[str]` (the orchestration-command relation): a
 master doc with a non-empty list **is** an orchestration task, and each entry names a master task
 it commands (its task folder, doc id, or title — the dashboard matches forgivingly). Additive by
+
+A task document may also carry optional `consolidationList: ConsolidationList` (`{families?, rules?}` naming at least one `FAM-…` or `INV-…` ID, defined in `tasks/consolidation_list.py`), which marks the leaf as a memory-only consolidation pass; `master` documents forbid `consolidationList`. Expected-knowledge-effects validation lives in `tasks/expected_effects_check.py`.
 design — `default_factory=list`, no new `DocKind`, no migration; docs without the field validate
 and serialize exactly as before, and masters named nowhere stay top-level.
 
@@ -215,7 +217,9 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
 
 - One declaration: subject form, effect label and requirement reference. [3]
 
+
 - The refusals: a master document, an empty list, a requirementRef naming no packet, and a repeated subject and effect. [4]
+
 
 - The shared patterns. [7]
 - The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
@@ -232,7 +236,9 @@ The document API re-exports the review-addition request and amended-round types 
 
 ## Evidence
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [24]
+
 - Launch scope opts in to review-only tolerance and forwards the same request reason. [25]
 
 - Child start enters the review-tolerance scope after root validation. Context variables do not cross exec. [26]
@@ -241,7 +247,9 @@ The document API re-exports the review-addition request and amended-round types 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [28]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [29]
 
+
 - Expected effect requirement references must name a listed stableId/version when typed packet references are present; no packet is resolved by this schema check. [22]
+
 
 ### Docs References
 
@@ -323,6 +331,8 @@ Current finalization does not append that exact decision; it stamps own `complet
 
 - IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode. [30]
 
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [23]
+
 
 - The route-review record validates its typed dependency declaration and self-digest. [13]

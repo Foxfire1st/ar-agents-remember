@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
         "content": "sha256:84d0e88860ed7df4ce699749fee31e2f7f2524b418a500da8a38888b0608f1c9",
         "locator": {
           "end": 36,
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-        "content": "sha256:2ebc6cb756bc4375b282337dcf8472558e110d12dbe052cc362695a92b5138d2",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:5c1c4fe02e88a332a58dd03af15b7ac52e1623d2d640a0a363097325d0f7644f",
         "locator": {
           "kind": "file"
         }
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
         "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
         "locator": {
           "end": 15,
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:4ebb2af948f50d1a4e8eae25415d661d12168ae70cfcb7fb5a916c1631cd43e5",
         "locator": {
           "end": 8,
           "kind": "line_range",
@@ -78,8 +78,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:cab8154b6376ed70f2c4c02b889e1efa1409e95536110831078b44ded6815b6e",
         "locator": {
           "end": 19,
           "kind": "line_range",
@@ -97,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:cab8154b6376ed70f2c4c02b889e1efa1409e95536110831078b44ded6815b6e",
         "locator": {
           "end": 19,
           "kind": "line_range",
@@ -116,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
         "locator": {
           "end": 21,
           "kind": "line_range",
@@ -135,7 +135,7 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
         "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
         "locator": {
           "end": 36,
@@ -154,7 +154,7 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
         "content": "sha256:d3857964a7b0bf5879ff9e0ca9e986a8e1cd24da00de793f0971c99bfb143fdd",
         "locator": {
           "end": 10,
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:3f52a4546303520f008bfeecfe63fd51d3a69684465130ee350b45f6d2460451",
         "locator": {
           "end": 15,
           "kind": "line_range",
@@ -192,7 +192,7 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
         "content": "sha256:8b6ab72f97d979079dce4e12a581d709150dda9b7a417ce5d5c5dd00a99660dc",
         "locator": {
           "end": 13,
@@ -211,8 +211,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:d52cdd82ad54ea280d29c15b098ffe7347d78378e85e79f18b284f4b52b829a0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:98280725f4f215ac7718af24c6a725b3b4181a0d105096511ba98ba95066d529",
         "locator": {
           "end": 21,
           "kind": "line_range",
@@ -230,7 +230,7 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
         "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
         "locator": {
           "end": 36,
@@ -249,8 +249,8 @@
     },
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
         "locator": {
           "end": 21,
           "kind": "line_range",
@@ -269,12 +269,12 @@
   ],
   "references": {
     "1": {
-      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.\n\nAnchor: \"Adjudicate revisions\"",
+      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -290,8 +290,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:4ebb2af948f50d1a4e8eae25415d661d12168ae70cfcb7fb5a916c1631cd43e5",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -302,7 +302,7 @@
         },
         {
           "anchor": {
-            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
             "content": "sha256:9edfb6ab5326a906cfbdabedb6d47de0236659bf320c6c09d90d0a099429ebc8",
             "locator": {
               "end": 6,
@@ -316,12 +316,12 @@
       ]
     },
     "11": {
-      "note": "Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them.\n\nAnchor: `## Bind the seam and catalogs`",
+      "note": "Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:b38be0da5b5edaa43ce4a72007945aa5a40f4c389cb16eb5797611951137dc59",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:a3511d2a8b261c1f009e1cc70357461f1056d27f068ac5017af05f683bdf743d",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -346,12 +346,12 @@
       ]
     },
     "12": {
-      "note": "Reviewer inspects every changed and unattributed file of the candidate diff, reads the linked review-baseline detail, and requires a full memory_quality_check on curation (blocking on Curator-actionable findings).\n\nAnchor: `## Bind the seam and catalogs`",
+      "note": "Reviewer inspects every changed and unattributed file of the candidate diff, reads the linked review-baseline detail, and requires a full memory_quality_check on curation (blocking on Curator-actionable findings).",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:773828dc64e1be52a8ee6847a16742202a9d73c54c958e52c514352b85c1b8fe",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:be42bb4a7c791485d0753f7b34bf214b92fafd1d90af1f16073fbd6ebe8378ad",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -362,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:3e8818385f268753c9b20f68d4df069d91eef0021d6c4d15706f15b07f693dd4",
             "locator": {
               "end": 34,
@@ -379,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
             "locator": {
               "end": 15,
@@ -391,7 +391,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:3e8818385f268753c9b20f68d4df069d91eef0021d6c4d15706f15b07f693dd4",
             "locator": {
               "end": 34,
@@ -403,8 +403,8 @@
         },
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:9d2c5ff396c5da2871681d8892da67c88dbbf87ab266cba100d4fc5be5523374",
             "locator": {
               "end": 14,
               "kind": "line_range",
@@ -430,12 +430,12 @@
       ]
     },
     "14": {
-      "note": "Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.\n\nAnchor: \"append immutable Reviewer journal record\"",
+      "note": "Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -451,8 +451,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:9d2c5ff396c5da2871681d8892da67c88dbbf87ab266cba100d4fc5be5523374",
             "locator": {
               "end": 14,
               "kind": "line_range",
@@ -464,8 +464,8 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:4d16a7569b3abe181922320b217e780100da99104f1323faf263521315cea0da",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:c466d6fba695b67a86ced544fa94f7e642df357a65fda32331adab0e1ce8295a",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -476,7 +476,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
             "locator": {
               "end": 35,
@@ -507,12 +507,12 @@
       ]
     },
     "17": {
-      "note": "The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.\n\nAnchor: `## Rounds`",
+      "note": "The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:93959e5bf29033e28ec85d658fe80baf971d79d3ba5092161501d41e256c7f15",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:7234272d61eeaefadb2258c86d3c76b6354732e5ce87ca6f2b513c1e1730cbe3",
             "locator": {
               "end": 34,
               "kind": "line_range",
@@ -529,7 +529,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
             "content": "sha256:9a3679ff1f4256818b52bbfdffe4b2f75b450cc34b0de2a1178d0d26e7c2fd2b",
             "locator": {
               "end": 49,
@@ -542,7 +542,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:0f217ae27d9b8ccfdfc73a4ba3dacd58114db2d76abb0efbe1d95edceaa2ee91",
             "locator": {
               "end": 33,
@@ -555,11 +555,11 @@
       ]
     },
     "19": {
-      "note": "Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.\n\nAnchor: `task_doc(set_step)`",
+      "note": "Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -571,7 +571,7 @@
         },
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
             "content": "sha256:310f054711f122d54f300133c6c26c6f446ce0bed5c641d5f3d5b5640ca954eb",
             "locator": {
               "end": 61,
@@ -584,8 +584,8 @@
         },
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:9d2c5ff396c5da2871681d8892da67c88dbbf87ab266cba100d4fc5be5523374",
             "locator": {
               "end": 14,
               "kind": "line_range",
@@ -620,7 +620,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -632,7 +632,7 @@
         },
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
             "content": "sha256:34c8280b28a6ac4528110c65a902e8b7165c0868cad71985df97dd77b0c8dd7c",
             "locator": {
               "end": 17,
@@ -650,8 +650,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -662,7 +662,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
             "locator": {
               "end": 35,
@@ -674,7 +674,7 @@
         },
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
             "content": "sha256:f365fa2b998a370dbe27c259ddbc109672edee5c5e7b9bd0630c56989ecd15e0",
             "locator": {
               "end": 26,
@@ -688,12 +688,12 @@
       ]
     },
     "5": {
-      "note": "Leaf binding never uses the hosting enclosure; the full five-seam table (organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit) and intake candidate identity rule live in reference/review/non-leaf-seams-and-catalogs.md.\n\nAnchor: `## Review seams and criteria catalogs`",
+      "note": "Leaf binding never uses the hosting enclosure; the full five-seam table (organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit) and intake candidate identity rule live in reference/review/non-leaf-seams-and-catalogs.md.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:cab8154b6376ed70f2c4c02b889e1efa1409e95536110831078b44ded6815b6e",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -704,7 +704,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:0f217ae27d9b8ccfdfc73a4ba3dacd58114db2d76abb0efbe1d95edceaa2ee91",
             "locator": {
               "end": 33,
@@ -734,8 +734,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:e3588177fc1fbf110ba76a3dc4da21a37893632b85ae281adb76da8a93b838b7",
             "locator": {
               "end": 34,
               "kind": "line_range",
@@ -747,7 +747,7 @@
         },
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
             "content": "sha256:23e6dc0abe23a8ae4a02c70ec7aa0bce08e7f1ecb1135ad7227182bc4ed4fab2",
             "locator": {
               "end": 9,
@@ -765,8 +765,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -777,7 +777,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -789,8 +789,8 @@
         },
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:9d2c5ff396c5da2871681d8892da67c88dbbf87ab266cba100d4fc5be5523374",
             "locator": {
               "end": 14,
               "kind": "line_range",
@@ -802,7 +802,7 @@
         },
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
             "content": "sha256:34c8280b28a6ac4528110c65a902e8b7165c0868cad71985df97dd77b0c8dd7c",
             "locator": {
               "end": 17,
@@ -815,8 +815,8 @@
         },
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
-            "content": "sha256:b8760e26308d14276296b7bc73f8b543d8f38ad3d340196155bc555242f5e8fa",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
+            "content": "sha256:b28f4b66e0a42cc880b4c772e5a80d6784b2b3b217787f5ee7e90f3886eca394",
             "locator": {
               "end": 61,
               "kind": "line_range",
@@ -846,7 +846,7 @@
         },
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
             "content": "sha256:0c52fca2d6d2fb9df85aae4b314eda370236c1e3934f3c8410c856462aa06ea1",
             "locator": {
               "end": 27,
@@ -859,8 +859,8 @@
         },
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:ae5364c0e4462ef592f09267f85ee3063553b9e75da24a385a8313b5b14c7948",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:ee123e037bf214f31fb1e6a983269a761ba4eaaca595f40fb2209435f79d082e",
             "locator": {
               "end": 38,
               "kind": "line_range",

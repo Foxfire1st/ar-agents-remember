@@ -266,7 +266,7 @@
       ]
     },
     "37": {
-      "note": "The task-state mark labels itself Task progress: <statusLabel(taskStatusKey(entry))> with no phase suffix. Presentation takes the served activity when present, otherwise the served stage. The Cockpit accessibility case asserts a React Aria option named Task progress: paused before opening the attention layer, preserving the row-name absorption behavior rather than a lifecycle-phase label.\n\nAnchor: `RowMark` `STATUS_WORDS` `taskStatusKey` `statusLabel`",
+      "note": "The task-state mark labels itself Task progress: <statusLabel(taskStatusKey(entry))> with no phase suffix. Presentation takes the served activity when present, otherwise the served stage. The Cockpit accessibility case asserts a React Aria option named Task progress: paused before opening the attention layer, preserving the row-name absorption behavior rather than a lifecycle-phase label.\n\nAnchor: `RowMark`, `STATUS_WORDS`, `taskStatusKey`, `statusLabel`",
       "targets": [
         {
           "anchor": {
@@ -282,7 +282,7 @@
         },
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
             "content": "sha256:d4d0864b642360c1a7ab1cb9d9408389932f9cb076bac8a1b52e47b0935bfd56",
             "locator": {
               "kind": "symbol",
@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
             "content": "sha256:f2ccc90ae1fbf51d56c915f447ab5d530d7049097bf043321fe76909ef9611bb",
             "locator": {
               "kind": "symbol",
@@ -306,7 +306,7 @@
         },
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
             "content": "sha256:c745e1a522d931fd98a81ec77a24002f1a4238eec0b2000f47d70b41b55256f3",
             "locator": {
               "kind": "symbol",
@@ -353,8 +353,8 @@
         },
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
-            "content": "sha256:c4c01fea27bb0930b922c2397a93d401757edb6784435aefcb88c1f093c5c713",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
+            "content": "sha256:977c874181f0b6cf702a7e5eda43878cee847eef8686a6c26ff58a0643716142",
             "locator": {
               "kind": "file"
             },

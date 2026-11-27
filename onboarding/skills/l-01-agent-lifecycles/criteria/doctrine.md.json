@@ -40,7 +40,7 @@
       ]
     },
     "2": {
-      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.\n\nAnchor: `doctrine`",
+      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.",
       "targets": [
         {
           "anchor": {
@@ -57,8 +57,8 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:cab8154b6376ed70f2c4c02b889e1efa1409e95536110831078b44ded6815b6e",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
             "locator": {
               "end": 15,

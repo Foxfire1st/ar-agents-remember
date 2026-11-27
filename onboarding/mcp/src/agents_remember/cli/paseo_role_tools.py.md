@@ -104,13 +104,17 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 ## Refreshed current evidence
 
+
 - Frozen implementation of start_rule_violation supporting the stated file behavior. [1]
+
 
 
 ## Refreshed current evidence
 
 
+
 - Checks every caller/target pair in the role-start matrix against the exact allowed table. [4]
+
 
 
 

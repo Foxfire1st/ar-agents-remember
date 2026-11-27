@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Defines cross-seat launch knob precedence for consolidation-pass independent review and is guarded by consolidation settings-row unit tests."
+  },
+  "applicability": "Role launch settings resolution for a Reviewer seat on a consolidation leaf.",
+  "conditions": [
+    "orchestration.roles.consolidation-reviewer overlays orchestration.roles.reviewer field by field whenever the task document carries consolidationList, regardless of start order.",
+    "Explicit per-start caller overrides take precedence over both settings rows, and absent or empty consolidation-reviewer falls back to reviewer."
+  ],
+  "exclusions": [
+    "Ordinary leaves without consolidationList, whose Reviewer reads only orchestration.roles.reviewer."
+  ],
+  "id": "INV-HE32N8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_consolidator_role.py (variant row precedence, fallback, explicit override, reviewer-before-consolidator) and sbx-e8 Evidence 8 live run (consolidation-reviewer antigravity-acp/gemini-4-neon-high took precedence over reviewer hermes/deepseek-v4.1-flash)."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 2",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Settings key orchestration.roles.consolidation-reviewer overrides orchestration.roles.reviewer field by field for a consolidation leaf's Reviewer (whether started before or alongside the Consolidator) while preserving explicit start overrides and falling back to reviewer when absent.",
+  "supersedes": [],
+  "title": "consolidation-reviewer settings overlay for consolidation leaf Reviewer",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

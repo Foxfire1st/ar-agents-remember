@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
-        "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+        "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+        "content": "sha256:c0813043012fba1904d1ec050e89502fc1a1d467826ea579a5e8827a08edf53b",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
-        "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+        "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+        "content": "sha256:c0813043012fba1904d1ec050e89502fc1a1d467826ea579a5e8827a08edf53b",
         "locator": {
           "kind": "file"
         }
@@ -39,25 +39,25 @@
   ],
   "references": {
     "1": {
-      "note": "Repository/altitude defaults and alternative projection are one per-use read.\n\nAnchor: `role_defaults`",
+      "note": "Repository/altitude defaults and alternative projection are one per-use read.",
       "targets": [
         {
           "anchor": {
-            "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
-            "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+            "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+            "content": "sha256:82d709e0e67ee8055e9a4e24efaa9442836f3dbf97cdeefff4948afdb79df70b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "role_defaults"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
-            "content": "sha256:185979bfa70fed7866d04e986bce991efe5f127f4422f91de2430aea9979c968",
+            "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+            "content": "sha256:c0813043012fba1904d1ec050e89502fc1a1d467826ea579a5e8827a08edf53b",
             "locator": {
-              "kind": "symbol",
-              "name": "role_defaults"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
             "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
             "locator": {
               "kind": "symbol",

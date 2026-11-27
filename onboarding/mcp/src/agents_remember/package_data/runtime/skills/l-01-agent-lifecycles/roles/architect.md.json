@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
-        "content": "sha256:d3bfe1b26da3064cbb8de7ff8fb99bc0ed5048e3409f3c2b2154032fcdb173f5",
+        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
         "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
         "locator": {
           "end": 16,
@@ -45,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
-            "content": "sha256:d3bfe1b26da3064cbb8de7ff8fb99bc0ed5048e3409f3c2b2154032fcdb173f5",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
             "locator": {
               "kind": "file"
             }
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
             "content": "sha256:4104d9271e630345b80d1841ec49ace38f4207770d99c58816ad7b113cdf933c",
             "locator": {
               "end": 3,
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
             "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
             "locator": {
               "end": 6,
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
             "content": "sha256:fe564fde6efd69cb7a28a9f39f5f10b7d2da0dd411636b37dafc2f95ce7cabfa",
             "locator": {
               "end": 30,
@@ -108,12 +108,12 @@
       ]
     },
     "5": {
-      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. It reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), names only the outcome needing the Architect in a case ruling while leaving Manager decisions with the Manager, and releases execution coordination after handover.\n\nAnchor: `## Delegate and decide`",
+      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. It reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), names only the outcome needing the Architect in a case ruling while leaving Manager decisions with the Manager, and releases execution coordination after handover.",
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
-            "content": "sha256:5184f98f789d016572e257162d5dcb934913f4987c116bdcf05a3a8cbbbda56d",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:68b5b28b5589549b78d51d077be1dd41b84db43b80a2a154f6e8d6f1434cdda9",
             "locator": {
               "end": 26,
               "kind": "line_range",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
             "content": "sha256:1c53373d869db14c575059e4094b29154a95bab56e314cda239d40c4b8063aa6",
             "locator": {
               "end": 12,
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
             "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
             "locator": {
               "end": 14,

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
         "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
         "content": "sha256:97edf8baa55a0bc6ced1a095d16ddb6f54df877a79677ec3f72679cce84f5720",
         "locator": {
-          "end": 337,
+          "end": 326,
           "kind": "line_range",
-          "start": 327
+          "start": 316
         }
       },
       "id": "RLZ-2A04MT",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-        "content": "sha256:548cc48d416cc8b29f75672695bab02bc4373273102615b15023521708c3003a",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+        "content": "sha256:789de0d3e2c8df936ed2f04d2af1c0025cdbaf90b0eb977b3bc3c2bdb9a0ce4e",
         "locator": {
           "kind": "symbol",
           "name": "start_leaf_set"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
         "content": "sha256:abd8d2ff3ba2ae76819edcfe569cc5228b1732f97797006da1b82761dfc2ee1e",
         "locator": {
           "kind": "symbol",
@@ -76,44 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-        "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
-        "locator": {
-          "kind": "symbol",
-          "name": "MAY_START"
-        }
-      },
-      "id": "RLZ-ERFERN",
-      "invariant": "INV-5TT40M",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §4",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Defines exact caller-to-child role pairs.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-        "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
-        "locator": {
-          "kind": "symbol",
-          "name": "MAY_START"
-        }
-      },
-      "id": "RLZ-RHVKF4",
-      "invariant": "INV-68QN0P",
-      "origin": {
-        "handoffEntry": "MIK-R98@v1 §7",
-        "leaf": "260928-MIK-L98"
-      },
-      "rationale": "The table grants only the specified callers.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-        "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+        "content": "sha256:5289953892804e2e8f37b69db34b8274f7e338386cdff2c89830d0bf231e9b72",
         "locator": {
           "kind": "symbol",
           "name": "start_rule_violation"
@@ -130,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -148,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-        "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+        "content": "sha256:5289953892804e2e8f37b69db34b8274f7e338386cdff2c89830d0bf231e9b72",
         "locator": {
           "kind": "symbol",
           "name": "start_rule_violation"
@@ -171,8 +135,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-            "content": "sha256:659f19f6d58fa6cda5a452d62c5132b67d8d8092fd0b4f90b94516529a2a12d6",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+            "content": "sha256:de33abbc18d1d8c0c1ff2bc64483b3b57a9d1a98c926a2e2f8f08017356cb496",
             "locator": {
               "kind": "file"
             }
@@ -186,24 +150,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
             "content": "sha256:7b333b378a876d7d31a639417ee9e0bd1307a7960ea6f796ae4faf8a59e088c2",
             "locator": {
-              "end": 146,
+              "end": 140,
               "kind": "line_range",
-              "start": 134
+              "start": 128
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
             "content": "sha256:97edf8baa55a0bc6ced1a095d16ddb6f54df877a79677ec3f72679cce84f5720",
             "locator": {
-              "end": 337,
+              "end": 326,
               "kind": "line_range",
-              "start": 327
+              "start": 316
             }
           },
           "kind": "code"

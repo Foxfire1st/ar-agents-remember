@@ -1,0 +1,24 @@
+{
+  "path": "docs/workflows.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c820ea75f09f18817cfa8c47f140f9b44509ad94",
+        "content": "sha256:b2a90a068ee4750b16720b141fd4a84738aecdd3bedad1c927642d8203a460fb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2AJ1MS",
+      "invariant": "INV-3ZXAD9",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 12",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Documents the consolidation task variant (Consolidator and Reviewer with no Worker and no Curator) in workflow steps 5-6 and leaf-role lists.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

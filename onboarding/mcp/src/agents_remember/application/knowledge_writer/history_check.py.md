@@ -68,7 +68,9 @@ refusal instead; a hand-closed file the base still holds open keeps the re-autho
 remedy and gains the reopen step.
 
 
+
 - Drift refuses until the row is named again at the current revision. [9]
+
 
 
 ### Writable-history item validation
@@ -98,14 +100,20 @@ The check and its per-row messages.
 - The two remedies. [1]
 
 
+
 - Every row of the owner's file, as problems. [2]
+
+
 
 
 - Invariant and family row checks. [3]
 
 
 
+
+
 - A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy. [4]
+
 
 
 - The revision a row's change counts from: the higher merge side's for an unmerged record. [5]

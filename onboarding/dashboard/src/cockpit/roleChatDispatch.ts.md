@@ -26,7 +26,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+
 
 - Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot. [6]
 
@@ -39,5 +41,6 @@ This account is bound to the candidate source, not a claim of a running serving 
 - dispatchRoleAction is a current owner of the behavior described above. [1]
 - applyDispatchReceipt is a current owner of the behavior described above. [2]
 - failDispatchOffline is a current owner of the behavior described above. [3]
+
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]

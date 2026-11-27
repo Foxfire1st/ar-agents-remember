@@ -80,7 +80,9 @@ No configured live documentation source was available for this pass.
 
 - The direct verdict binds the explicit or inferred owner; only an exact no-publication replay skips a fresh gate. [11]
 
+
 - The worklist over the series sides, failing closed. [12]
+
 
 
 

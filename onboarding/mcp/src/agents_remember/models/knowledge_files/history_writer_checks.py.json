@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/history_writer_checks.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "06776f05e17a5d6d3f0ebbdce326b3db09152074",
+        "content": "sha256:fa31f779dcb201d142f2a43f63cbaa8d79eeb4b35609c7d55ebb0a659f9799c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "invariant_revision_violation"
+        }
+      },
+      "id": "RLZ-VKQY7S",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Binds a row's revision for the writer: a changed row is the base revision plus one, except when the candidate, the base and the leaf's earlier governing changed row are all at one revision, which is a restatement and no second change.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`reanchor_mismatches` compares every covered entry's `after` value against `candidate_anchors` (defaulting absent entries to `ABSENT`) and returns mismatched entry IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06776f05e17a5d6d3f0ebbdce326b3db09152074",
+            "content": "sha256:b2e2a06519fda78775f3d3c8e5bc78520ceffced8dbf30b7fda7bba09c2a8101",
+            "locator": {
+              "kind": "symbol",
+              "name": "reanchor_mismatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`unknown_subjects` checks `InvariantRow`, `FamilyRow`, `RecordRow`, and `MembershipRow` record references against `known_record_ids`, ignoring worklist-only rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06776f05e17a5d6d3f0ebbdce326b3db09152074",
+            "content": "sha256:767f112759851150df371639440fb0d9a4917da3dfa909331b8c6f880e5dc208",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknown_subjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`invariant_revision_violation` enforces `row.revision == candidate_revision`, single-step `+1` increments for `changed` (with the `restated_revision` exception), and unchanged revision for non-`changed`/`deleted` dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06776f05e17a5d6d3f0ebbdce326b3db09152074",
+            "content": "sha256:fa31f779dcb201d142f2a43f63cbaa8d79eeb4b35609c7d55ebb0a659f9799c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_revision_violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`stale_examined_members` returns examined members present in `candidate_revisions` whose K_C revision differs from the row's recorded member revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06776f05e17a5d6d3f0ebbdce326b3db09152074",
+            "content": "sha256:dffd0e4a0f3434b2b1b4172bc2216cbf3250eee0a2c4086ec8e9a5ac8d80b72f",
+            "locator": {
+              "kind": "symbol",
+              "name": "stale_examined_members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -62,5 +62,3 @@ No cross-repository implementation boundary is owned here.
 
 
 - The store stays repository-neutral and is consumed by the trusted R12 launcher through the run controller. [5]
-
-

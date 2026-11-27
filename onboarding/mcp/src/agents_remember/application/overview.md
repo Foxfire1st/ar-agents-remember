@@ -29,7 +29,7 @@ Task application authoring is distinct from observation: removed get/read_steps 
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
-A role launch resolves canonical sprint/master/leaf selections through task topology. An Orchestrator is sprint-bound. A Manager names a master, and its sprint when a sprint commands that master. A Worker, Reviewer or Curator names a master and a task, with the sprint when one commands the master. A master that no sprint commands is named alone, and a sprint named for it is refused. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects, a sprint, a master that no sprint commands, or a sprint and master, and refuses leaf selection.
+A role launch resolves canonical sprint/master/leaf selections through task topology. An Orchestrator is sprint-bound. A Manager names a master, and its sprint when a sprint commands that master. A Worker, Reviewer, Curator or Consolidator names a master and a task, with the sprint when one commands the master; Consolidator requires `consolidationList` on the task document, while Worker and Curator refuse it. A master that no sprint commands is named alone, and a sprint named for it is refused. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects, a sprint, a master that no sprint commands, or a sprint and master, and refuses leaf selection.
 
 `read_files.py` composes the registered `read_ar_files` naming route: source existence, governing card location or no card, record-state counts and actionable IDs/kinds/states/card headings. A fuller answer can list governing overviews once and add bounded rule text and a brief pointer for eligible paths. If the minimum full rows exceed the answer budget, compact rows keep every path and its available brief pointer and freshness. The reader reports a missing, older or unrecognized saved brief without writing memory files. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. The source, card and overview bodies remain in their files. The reader uses no `published_intent`, session-delivery state or continuation. An unconverted tree is named as `memoryState="unconverted"` and supplies no card; source existence is independent of whether a governing card can be named.
 Source existence is checked before card lookup, so a source-absent row has no card, card-state counts or brief. The separate weakness and dependent-document counts can be returned before the existence check. `read_files_format` remains an internal format owner, not the retired body-serving response contract.
@@ -133,7 +133,7 @@ Requirement endpoint resolution is reporting: unresolved links remain authored a
 
 ### Knowledge reads and currentness
 
-Public `knowledge_read` provides `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent` and `writers`. The first three use tree-bound paging. `weakness` and `dependent` list their record kinds with `rows:<n>` mark cursors; `record` is an unpaged projection selected by a `recordId` text identity (for example `INV-…` or `FAM-…`). The record view serves a bounded field, link-state and timeline projection with the record's location and no record prose; the paged views and the record view share one truth delegation, so the mounted answer and the dashboard record view cannot disagree about a link's state. Factored shared writer, report and code-observation owners keep their own guards: moving writer construction into the application module transfers no admission, refusal or report boundary to the mounted route. Removed review-matrix/curation-queue mechanisms and canonical supporting-record tables are not reintroduced by surviving read helpers. Derived-index storage has its own declared schema rather than a registry of openable canonical generations. Historical generation migration, mixed-generation comparison and portable export/import claims remain history.
+Public `knowledge_read` provides eleven views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers` (including consolidation pass outcome columns), and `consolidation_proposal` (`masterId`). The first three use tree-bound paging. `weakness` and `dependent` list their record kinds with `rows:<n>` mark cursors; `record` is an unpaged projection selected by a `recordId` text identity (for example `INV-…` or `FAM-…`). The record view serves a bounded field, link-state and timeline projection with the record's location and no record prose; the paged views and the record view share one truth delegation, so the mounted answer and the dashboard record view cannot disagree about a link's state. Factored shared writer, report and code-observation owners keep their own guards: moving writer construction into the application module transfers no admission, refusal or report boundary to the mounted route. Removed review-matrix/curation-queue mechanisms and canonical supporting-record tables are not reintroduced by surviving read helpers. Derived-index storage has its own declared schema rather than a registry of openable canonical generations. Historical generation migration, mixed-generation comparison and portable export/import claims remain history.
 
 Record standing and source currentness answer different questions. The selected memory index supplies the derived `recordState` and writer of the shown revision. The selected code tree determines whether its attributed source evidence is current, stale or unverifiable. Compact tool rows use a role/model string. Dashboard record summaries carry the writer's role, harness and model. The `writers` view counts revisions by role, harness and model and retains the complete per-writer rows and contributing revision IDs in a caller-readable report. The tool answer keeps a bounded subset, totals and the report's path.
 
@@ -486,7 +486,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 
 - The two readings of proofs. [273]
+
 - The evidence parser's two forms and the bare test module. [274]
+
 - The bare test module is reported `unresolvable`. [275]
 - The package map. [277]
 - The writer's carry. [279]
@@ -564,14 +566,20 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The exact-blob rule and the hunk classes. [357]
 - The gate's non-text linkage, unknown over a side not read whole (F3). [358]
 
+
 - The worklist and reviewer share `change_hunks` for text hunks and file-level changes. The worklist uses `non_text_linked` for file-level linkage. [360]
 
+
 - The gate over a leaf's exact candidate: probe, tip, memo, recorded evaluation. [363]
+
 - Rule 2's invariant and family rows. [365]
+
 
 - The gate memo’s key binds the recorded memory base and the judged memory commit or observed leaf HEAD. Reuse rechecks the reads consumed by the verdict. [366]
 
+
 - The symmetric linkage. [369]
+
 - The facts computed once per read over the lane; a dataset review unchanged. [370]
 - Implementation (a) with only the carry exempt, and (b) through the lane's links. [371]
 - The one carry rule, shared with the worklist. [372]
@@ -583,7 +591,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - A seed the tree does not hold is refused. [377]
 - The history file an owner writes, with a reopened leaf's attempt. [378]
 - The gate reads the leaf's memory HEAD and keys its memo on it. [380]
+
 - An invariant the leaf changed is answered only by its changed row. [381]
+
 - The inherited row owner fills item IDs from the worklist. [382]
 - The inherited row owner updates an entry rationale from its authored cover. [383]
 - A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat with no scheduled deletion writes none. [385]
@@ -610,8 +620,12 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - The limits: two children, eight computations, sixty seconds, and the child's own deadline. [413]
 
+
 - This source owns the route’s Investigator selection or execution boundary. [414]
+
+
 - **Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy. [456]
+
 
 - The route association, with the existence question asked before the route question. [416]
 - Historical account — the Eve carrier this line described was removed before this leaf's base; the current application tree holds no Eve owner, and native role launch composes generic capsules. [429]
@@ -637,7 +651,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [488]
 - **Retained historical source account — superseded by the current route account:** Projection scope includes explicit role and launcher rows. [461]
 
+
 - **Retained historical source account — superseded by the current route account:** Each gate kind has its own predicate and changed records require governing rows. [463]
+
 - **Retained historical source account — superseded by the current route account:** Every retained revision is a head; multiple heads remain ambiguous. [464]
 - **Retained historical source account — superseded by the current route account:** Claim-only page revisions participate in exact roster membership projection. [466]
 - **Retained historical source account — superseded by the current route account:** Family sources carry resolver ranges and refuse missing stored rationale/role. [467]
@@ -656,7 +672,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - Complete response validation and logging remain separate from caller-sized status projection. [478]
 
+
 - **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. [480]
+
 
 
 
@@ -664,9 +682,13 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
 - The onboarding kind's five facts including sourceBlobs. [286]
 - Current typed onboarding and distinct membership/record predicates. [482]
+
 - Sorted planning-marked membership and record items. [483]
+
 - Membership view and history provenance. [484]
+
 - Foreign-owner evidence preservation. [486]
+
 - **Historical source-bound reference account, not an operative override:** The content read hands the inventory to the admission owner before reading any byte. [12]
 - The current review namespace comes only from the derived knowledge index, with the requested repository as fallback. Receipt and baseline-generation precedence are retired historical mechanisms. [14]
 - **Historical source-bound reference account, not an operative override:** **The ten catalogue cases and the re-contracted mechanism case.** [28]
@@ -709,7 +731,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** The lane and file reads dispatched; a focused answer. [361]
 - **Historical source-bound reference account, not an operative override:** The entry's count on the summary. [362]
 
+
 - The leaf worklist accepts exact candidate trees. Direct landing supplies its own explicit sides to the same worklist composition. [368]
+
 
 - **Historical source-bound reference account, not an operative override:** The composition's one call. [373]
 - **Historical source-bound reference account, not an operative override:** Each owner's row about a subject from its latest attempt file. [384]

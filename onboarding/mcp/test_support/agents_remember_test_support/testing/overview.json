@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+            "blob": "f1ac492ff1ddabbedd45058ed2a3a1bae8432aa9",
             "content": "sha256:559a620ddf3cecf6031fca15109270df200731fea2295943100dabd6cf7ba67e",
             "locator": {
               "kind": "symbol",
@@ -491,7 +491,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
             "content": "sha256:2101e1b0cc37cfe789b26c9fa5c644525c8e4f91a2f528474dc1a30c3b612f80",
             "locator": {
               "kind": "symbol",
@@ -503,7 +503,7 @@
         },
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
             "content": "sha256:84227da51fea414326f69b842b910efc3f439b41cedb4768ae0f437fd4f9d636",
             "locator": {
               "kind": "symbol",
@@ -598,12 +598,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
+            "blob": "0eb5e2036359f2d18cda99bb1a2416780c0213d4",
             "content": "sha256:bf80377e15c35922b6d4fc8fc6be344ed221e11261ab5f4ea0f9ca2b46de60ad",
             "locator": {
-              "end": 312,
+              "end": 313,
               "kind": "line_range",
-              "start": 273
+              "start": 274
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
           },
@@ -677,12 +677,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d5b9aebcc4efbe7dd91b0d056f89047678d5075",
+            "blob": "709f73b46611317e14a9dfff317e2a61903c8003",
             "content": "sha256:5ef507864cd40ea48879786f0371ce0caff83faaf6a326455f0a542fb5c8ff3a",
             "locator": {
-              "end": 388,
+              "end": 392,
               "kind": "line_range",
-              "start": 316
+              "start": 320
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/knowledge_crossing_standing.py"
           },
@@ -695,7 +695,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "blob": "60e4053e5a29db9b44e0941b688ee13d3cb9d7e8",
             "content": "sha256:5b094ea565106d8229f98d8e51f01b8d813b5c16017f187614b02ca9d553518c",
             "locator": {
               "end": 29,
@@ -708,7 +708,7 @@
         },
         {
           "anchor": {
-            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "blob": "60e4053e5a29db9b44e0941b688ee13d3cb9d7e8",
             "content": "sha256:c880f48902b3114220d46eda54a7946b96bf2ef6a67ba6873221343f391a93ec",
             "locator": {
               "end": 190,
@@ -721,8 +721,8 @@
         },
         {
           "anchor": {
-            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
-            "content": "sha256:30d2180a3affb4d82f55591d1ad519499d5821b6185b73ccd3221ba1513ab4f8",
+            "blob": "60e4053e5a29db9b44e0941b688ee13d3cb9d7e8",
+            "content": "sha256:f23645618a2aff67ff3d784c3c1e193071f63d4fea9ba86da8434da558a421e6",
             "locator": {
               "end": 224,
               "kind": "line_range",
@@ -734,12 +734,12 @@
         },
         {
           "anchor": {
-            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "blob": "60e4053e5a29db9b44e0941b688ee13d3cb9d7e8",
             "content": "sha256:2627cdaad19c4fe09396d3b87c43c1af789ff5aba3c27ede4454256f586ed98e",
             "locator": {
-              "end": 395,
+              "end": 416,
               "kind": "line_range",
-              "start": 390
+              "start": 411
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
           },
@@ -747,12 +747,12 @@
         },
         {
           "anchor": {
-            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "blob": "60e4053e5a29db9b44e0941b688ee13d3cb9d7e8",
             "content": "sha256:37ab10dcd269257247ec0281f281bc1ec08dd922a91f0fa379403eed330ee112",
             "locator": {
-              "end": 445,
+              "end": 466,
               "kind": "line_range",
-              "start": 441
+              "start": 462
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
           },

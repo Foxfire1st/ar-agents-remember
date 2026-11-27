@@ -17,7 +17,9 @@
 - Since MIK-R28 two more lookups: `proofs_of(invariant_ids)` (the `proof` entries of those invariants) and `invariants_without_proof()` (the live invariants no proof entry names). See the section below.
 - Since MIK-R25, `record_ids(kind)` answers every record ID of one kind in the tree, sorted: the reviewer's per-side currentness (`application/review_tree_knowledge.side_currentness`) asks it for every `invariant` and `family`.
 - Since MIK-R29, five lookups serve the path-based knowledge reader: `entries_under(directory)`, `entries_in_directory(directory)`, `live_entry_paths_under(directory)`, `links_to_path(path)` and `records_of_kind(kind)`. See the section below. `_incoming` now delegates to a shared `_links(where, parameters)` with the same SQL and the same `ORDER BY`, so the MIK-R05 and MIK-R25 callers are unaffected.
-- `standing` and `standings` read current revision state and writer from `ix_record`. The batch form makes one query for the selected page's distinct IDs. `writer_revisions` reads named revisions and each record's current revision and retirement flag for writer aggregation.
+- `standing` and `standings` read current revision state and writer from `ix_record`.
+
+Index queries also expose consolidation outcomes from `ix_revision` and `ix_record` for `writer_table` and the `consolidation_proposal` view. The batch form makes one query for the selected page's distinct IDs. `writer_revisions` reads named revisions and each record's current revision and retirement flag for writer aggregation.
 - `text_id(projected_uuid)` reads `ix_uuid`, the reverse of the projection's identity map.
 - `database_path` is the file itself — the dataset the reused read code opens — and `repository_id` is the index's constant namespace.
 - `history_row(row_id)` (MIK-R74 rule 4) answers every row filed under that ID, each with the path of the file that holds it: two closed files may hold the same row ID, so the lookup names every match and the caller picks by path. The reader uses it to name the
@@ -137,7 +139,9 @@ No cross-repo boundary is crossed by this file.
 
 - SELECT-only declaration and reverse maps support naming without Answer wrappers. [21]
 
+
 - Standing lookups batch supplied IDs and the writer view reads indexed named revisions. [23]
+
 
 - The proofs of a set of invariants. [1]
 - The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map). [17]

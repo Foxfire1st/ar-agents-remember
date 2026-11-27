@@ -156,7 +156,9 @@ No configured live documentation source was available for this pass.
 - The standalone cold recomputation computes the worklist without reading an earlier persisted document. [27]
 
 
+
 - Direct landing computes its worklist over exact sides before judging. [28]
+
 
 - The registered row predicate keeps the two-argument satisfying-function call. [29]
 

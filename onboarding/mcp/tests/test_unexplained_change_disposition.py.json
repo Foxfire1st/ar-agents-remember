@@ -315,12 +315,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 674,
+              "end": 678,
               "kind": "line_range",
-              "start": 674
+              "start": 678
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -329,12 +329,12 @@
       ]
     },
     "14": {
-      "note": "The lifecycle catalog lists `test_unexplained_change_disposition.py` among the exact consumers of `reconsideration_test_support.py`.",
+      "note": "The lifecycle catalog lists this module as an exact consumer of `mcp/tests/reconsideration_test_support.py`.",
       "targets": [
         {
           "anchor": {
-            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
-            "content": "sha256:83a7ef3da405598ccb546894b26334584c030ec16b10545f05a804457522a82b",
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:acd55f94a024d1b0dda32407bbb029dbc3bd1d5cd653259b9df983a8e80d6d01",
             "locator": {
               "end": 4679,
               "kind": "line_range",

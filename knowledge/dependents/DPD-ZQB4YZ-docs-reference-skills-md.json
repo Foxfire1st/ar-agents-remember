@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/reference/skills.md on CAP-L5 tree af88a85d to document core/ and reference/ folders, three-tier progressive disclosure, durable Link roots skill-corpus resolution, and six-family Poka-Yoke skill:// refusal pointers; resolved DFR-JB7N46.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/reference/skills.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 three-tier progressive disclosure and .cache/skill-corpus/ docs alongside KNO-R05@v3 9-role/10-op surface.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+      "blob": "44016dc9a9474a64e3eb33a2b6270c65e4d14c00",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+      "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },
@@ -72,14 +72,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:45:16+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

@@ -297,8 +297,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
-            "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+            "content": "sha256:5289953892804e2e8f37b69db34b8274f7e338386cdff2c89830d0bf231e9b72",
             "locator": {
               "kind": "symbol",
               "name": "start_rule_violation"
@@ -363,12 +363,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
             "content": "sha256:ad9666c4654130de6c0d003278b0167fd2369ddae3e4b212fc792f1ff42c923f",
             "locator": {
-              "end": 325,
+              "end": 314,
               "kind": "line_range",
-              "start": 257
+              "start": 246
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
@@ -461,7 +461,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
             "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
             "locator": {
               "kind": "symbol",
@@ -478,12 +478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
             "content": "sha256:e8e48e7f5234f83a0bfb46bbf6d5c63963a8d8f007a052d27b9c079bc50301c0",
             "locator": {
-              "end": 335,
+              "end": 324,
               "kind": "line_range",
-              "start": 257
+              "start": 246
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
@@ -496,12 +496,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+            "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
             "content": "sha256:e8e48e7f5234f83a0bfb46bbf6d5c63963a8d8f007a052d27b9c079bc50301c0",
             "locator": {
-              "end": 335,
+              "end": 324,
               "kind": "line_range",
-              "start": 257
+              "start": 246
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
@@ -522,12 +522,12 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
             "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
             "locator": {
-              "end": 277,
+              "end": 278,
               "kind": "line_range",
-              "start": 238
+              "start": 239
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -568,8 +568,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45df6e18cbcfa3e20cc67f96d102e98faa98c0c2",
-            "content": "sha256:a65a05a8019b67b8070acda0cab30c5dff2f84b10f0cdaa8a3269b85e773ac42",
+            "blob": "b35991d8bad3285be64f7af364cb627ab160bf0f",
+            "content": "sha256:a05207532d693a393d2ecbcdf67644d53d0556909f179f10fb0acdc0e6129c20",
             "locator": {
               "kind": "symbol",
               "name": "test_each_role_may_start_exactly_the_roles_the_rule_names"
@@ -585,7 +585,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45df6e18cbcfa3e20cc67f96d102e98faa98c0c2",
+            "blob": "b35991d8bad3285be64f7af364cb627ab160bf0f",
             "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
             "locator": {
               "kind": "symbol",

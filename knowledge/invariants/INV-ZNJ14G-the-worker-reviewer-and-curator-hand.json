@@ -5,7 +5,7 @@
     ],
     "justification": "The direct loop is realized independently in the worker, reviewer, curator and manager role texts and in the coordination operation; those multiple independent realizations support the statement."
   },
-  "applicability": "Every leaf whose Worker, Reviewer and Curator are started for one canonical task document.",
+  "applicability": "Every leaf whose Worker, Reviewer and Curator (or Consolidator and Reviewer on a consolidation leaf) are started for one canonical task document.",
   "conditions": [
     "A hand-over names the leaf, the exact object and the recipient's whole next stretch.",
     "The Manager keeps starts, replacements, the gate, status, closeout, integration and landing order."
@@ -26,27 +26,19 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Worker, Reviewer and Curator hand exact freezes, findings, verdicts and memory changes directly between their leaf seats, while the Manager receives only its named occasions and retains gate, transaction and landing authority.",
+  "statement": "The leaf seats — Worker, Reviewer and Curator on ordinary leaves, or Consolidator and Reviewer on consolidation leaves — hand exact freezes, findings, verdicts and memory changes directly between their leaf seats, while the Manager receives only its named occasions and retains gate, transaction and landing authority.",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L99",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

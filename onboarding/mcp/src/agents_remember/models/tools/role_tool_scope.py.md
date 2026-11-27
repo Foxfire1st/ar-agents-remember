@@ -10,7 +10,7 @@ Holds `ROLE_TOOL_ALLOWLISTS`, the one canonical table of the MCP tools each AR r
 
 ## Code Commentary
 
-Each of the eight role entries is a tuple of tool names in the exact order of `PUBLIC_TOOLS`, and the union of the eight entries is the whole public roster. The table is a read-only `MappingProxyType`. The entry sizes are Architect 26, Orchestrator 27, Manager 32, Worker 8, Curator 17, Reviewer 11, Investigator 10 and Bootstrap 8. Bootstrap holds no `role_message`, and only Architect, Orchestrator and Manager hold `role_start`.
+Each of the nine role entries is a tuple of tool names in the exact order of `PUBLIC_TOOLS`, and the union of the nine entries is the whole public roster. The table is a read-only `MappingProxyType`. The entry sizes are Architect 26, Orchestrator 27, Manager 32, Worker 8, Curator 17, Consolidator 13, Reviewer 11, Investigator 10 and Bootstrap 8. Bootstrap holds no `role_message`, and only Architect, Orchestrator and Manager hold `role_start`.
 
 `tools_for_role` normalizes the role through `canonical_role`, so `system-specialist` returns the Investigator entry. It raises `ValueError` naming a role the table does not hold, instead of returning the public roster. `role_tool_roster` returns `PUBLIC_TOOLS` for `None` and otherwise the role's entry.
 
@@ -20,7 +20,9 @@ Each of the eight role entries is a tuple of tool names in the exact order of `P
 
 ## Evidence
 
+
 - The table holds one ordered allowlist per canonical role, each a subsequence of the public roster. [1]
+
 - An alias resolves to its canonical role and an unknown role raises instead of receiving the public roster. [2]
 - A seat without a role keeps the public roster. [3]
 - The task server narrows a role-bound process to its role's entry, and the Codex seat policy grants the same roster. [4]

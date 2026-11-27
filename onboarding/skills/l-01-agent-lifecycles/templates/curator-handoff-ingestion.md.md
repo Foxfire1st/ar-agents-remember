@@ -18,9 +18,13 @@ The handoff leaves revision standing and the current writer stamp to the product
 
 When both sides of a master merge changed a dependent, the Curator plans the resolution through `knowledge_write` with the master contract, open crossing identifier and authorization reference. The handoff names the existing dependent ID, resolved links and confirmation. The plan uses `commit: false` and the reviewed apply uses `commit: true`. The template lists both `dependent` and `weakness` among the accepted record kinds.
 
+The ingestion template also documents consolidation-pass authoring: `stands` and `unresolved` dispositions with `testsRun`/`testsNotRun`/`noProofRecorded` on invariant and family rows, `consolidationSubjects` stamped by the writer, and listed-target scope.
+
 ## Evidence
 
+
 - The producer contract keeps the thirteen entry fields; this file holds the Curator-authored keys and writer input. [1]
+
 - Curator-authored `scope` is required before an entry becomes an invariant, and missing scope is reported per entry. [2]
 - Joint obligations are `family` records, not entry keys. [3]
 
@@ -35,7 +39,9 @@ When both sides of a master merge changed a dependent, the Curator plans the res
 
 - Knowledge records are one JSON file per record under the kind directory. [4]
 
+
 - The knowledge-ingest command and `knowledge_write` share the curator file writer and require the knowledge layout marker. [5]
+
 
 
 - The Curator authors a title for a new rule. A legacy revision may remain untitled, and title-only edits preserve revision identity. [11]

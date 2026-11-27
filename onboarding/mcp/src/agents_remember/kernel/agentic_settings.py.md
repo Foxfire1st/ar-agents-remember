@@ -126,7 +126,9 @@ Absent input retains the typed defaults: all-human gate policy, maxRounds=5, rev
 - Loop defaults remain separate from step-up thresholds. [8]
 
 
+
 - Typed settings retain their independent defaults. [9]
+
 
 
 - Only effective IDs and accepted-unused execution keys remain. [10]

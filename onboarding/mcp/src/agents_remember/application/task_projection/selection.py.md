@@ -18,7 +18,7 @@ Two declared tables carry the whole decision:
 
 - **`_READ_ALTITUDES`** is keyed by `(seat kind, own altitude, parent bucket)` and is **total** over the declared role and launcher combinations, so there is no default branch and no pair that silently falls back to a wider read. The
   `_PARENT_BUCKETS` vocabulary is `master`/`sprint`/`none`, where `none` describes a master without a commanding sprint and every sprint; a low-level table row does not grant no-master leaf authoring authority.
-- **`_OPERATION_CHANNELS`** maps each of the eight frozen `CapsuleOperation` members to the channel
+- **`_OPERATION_CHANNELS`** maps each of the ten frozen `CapsuleOperation` members (including `consolidation`) to the channel
   set that operation's projection carries. `operation_channels` **raises**
   `projection-operation-unsupported` for an unknown operation rather than returning an empty tuple:
   an operation with no channels would be indistinguishable from a seat with no obligations.
@@ -74,10 +74,14 @@ consumes the plan.
 - The total altitude table — the load-bearing rule that a leaf never reads a sprint. [1]
 
 - Who admits portfolio facts, and the launcher's thin channel set. [2]
+
 - The per-operation channel table and the refusal that guards it. [3]
+
 - The plan builder that resolves the plan with no default branch. [4]
 
+
 - The frozen operation and role vocabularies this table must cover exactly. [5]
+
 
 - The single enforcement point that hands the projection only the planned documents. [6]
 - The case that proves sprint history reaches an orchestrator but never a leaf. [7]

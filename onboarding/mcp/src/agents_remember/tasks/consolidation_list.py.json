@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/tasks/consolidation_list.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c6a40e6f8d7368a86702e6e51127953fbd616a16",
+        "content": "sha256:4c7d954b1f656eaef793faa93ba54d657c6eafdd82f0a838a3d86a2c1bba245f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationList"
+        }
+      },
+      "id": "RLZ-AQMJC1",
+      "invariant": "INV-1PBH5A",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Defines and validates the canonical consolidationList task-document field.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`ListedFamily` and `ListedRule` validate family and invariant ID syntax using `id_pattern` without consulting knowledge records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a40e6f8d7368a86702e6e51127953fbd616a16",
+            "content": "sha256:d1f6015acf45c7a7678b0b7ba2799b494df79d5d9d75c6d8fcbb7f1e0f878256",
+            "locator": {
+              "kind": "symbol",
+              "name": "ListedFamily"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ConsolidationList` forbids unknown keys, requires at least one listed ID and per-list uniqueness via `_require_ids`, and returns families-first IDs via `listed_ids()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a40e6f8d7368a86702e6e51127953fbd616a16",
+            "content": "sha256:4c7d954b1f656eaef793faa93ba54d657c6eafdd82f0a838a3d86a2c1bba245f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConsolidationList"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`check_consolidation_list` rejects any non-`None` `consolidationList` on a `master` document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a40e6f8d7368a86702e6e51127953fbd616a16",
+            "content": "sha256:7f2d4a13644047e5e74572bb096cb8f89933f91f6668b6ca0eb40e768a260954",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_consolidation_list"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

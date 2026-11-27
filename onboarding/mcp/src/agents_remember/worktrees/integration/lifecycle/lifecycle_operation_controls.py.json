@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
             "content": "sha256:af3a43997e5a6d21aace827cc88ef71f98fde2ce4d8f10516965c75f6b090768",
             "locator": {
-              "end": 341,
+              "end": 364,
               "kind": "line_range",
-              "start": 337
+              "start": 360
             },
             "path": "docs/reference/mcp-tools.md"
           },

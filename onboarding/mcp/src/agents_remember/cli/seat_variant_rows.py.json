@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/cli/seat_variant_rows.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0cfb2971cce26e1f7ede9896183c89120308cc57",
+        "content": "sha256:8ffbde924b52e0e71ec9769e77be1642d9a530c2fa069aaa2110996cdfdb9e7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "seat_variant_row"
+        }
+      },
+      "id": "RLZ-GP4YPF",
+      "invariant": "INV-HE32N8",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 2",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Overlays orchestration.roles.consolidation-reviewer field by field over orchestration.roles.reviewer for consolidation leaves.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0cfb2971cce26e1f7ede9896183c89120308cc57",
+        "content": "sha256:2bc4dd6bfb8416830e7d3be6fd4daa3fce9213cc2888b539d0b0470cc0c04276",
+        "locator": {
+          "kind": "symbol",
+          "name": "seat_launch_knobs"
+        }
+      },
+      "id": "RLZ-ZH7R58",
+      "invariant": "INV-HE32N8",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 2",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Resolves effective harness/model/effort/serviceTier knobs while preserving explicit caller overrides.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`seat_variant_row` selects `CONSOLIDATION_REVIEWER_ROW` exclusively for a `reviewer` whose task document names a `consolidationList`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cfb2971cce26e1f7ede9896183c89120308cc57",
+            "content": "sha256:8ffbde924b52e0e71ec9769e77be1642d9a530c2fa069aaa2110996cdfdb9e7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "seat_variant_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`seat_launch_knobs` resolves the role's level-scoped settings and overlays the bound variant row via `overlay_role_knobs`, leaving the seat row unchanged when no variant applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cfb2971cce26e1f7ede9896183c89120308cc57",
+            "content": "sha256:2bc4dd6bfb8416830e7d3be6fd4daa3fce9213cc2888b539d0b0470cc0c04276",
+            "locator": {
+              "kind": "symbol",
+              "name": "seat_launch_knobs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_bound_over` inherits the base row's provider and compatible model into variant choice origins so effort or feature overrides authored without repeating harness/model survive launch selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cfb2971cce26e1f7ede9896183c89120308cc57",
+            "content": "sha256:7c558e4586546d4774e1de28024c1b421f013bbb34a6f968dcd354ad5d957011",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_over"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

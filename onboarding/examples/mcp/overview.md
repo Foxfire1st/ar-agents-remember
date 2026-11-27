@@ -54,4 +54,3 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 
 
 - The common registration example runs `uvx` with the published package and an absolute user-config settings path. [9]
-

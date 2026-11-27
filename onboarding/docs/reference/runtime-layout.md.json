@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
-        "content": "sha256:32a7c039e55a60cb98c1ce69fb3d43a23af2daa345760f8f4d4d1ed59a272bdf",
+        "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+        "content": "sha256:b31f6715eea5dce41f07acff07fdafe92e5e4cdeb7c5cae1fd3aeacfd318f1c2",
         "locator": {
           "kind": "file"
         }
@@ -20,10 +20,10 @@
     },
     {
       "anchor": {
-        "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
-        "content": "sha256:5582ac32de35bcbce85354ca46852727f7f844750459c4bfb035425ad551fd7e",
+        "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+        "content": "sha256:ddbe4c41800cbbe166d5a4d1e67e8c1c7de6cc6126397d00529f8d8e8a732ceb",
         "locator": {
-          "end": 81,
+          "end": 82,
           "kind": "line_range",
           "start": 47
         }
@@ -44,10 +44,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
-            "content": "sha256:a6f74517b95eaf03b71b76c507f7806ca4fb7e9d2aeb229711c6c396e21bdb3c",
+            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+            "content": "sha256:95f38cdc128c0860c8fa2eb1225cd7d0848fe349626b28754ce1948ef6c7354b",
             "locator": {
-              "end": 54,
+              "end": 55,
               "kind": "line_range",
               "start": 11
             }
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
             "content": "sha256:ea78b1f23a7b0b0a574521721aabf8fe73b392625c5f1a494746468c7f2db43a",
             "locator": {
               "end": 169,
@@ -74,14 +74,14 @@
       ]
     },
     "3": {
-      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.\n\nAnchor: `## Scratch folders`",
+      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
-            "content": "sha256:9ea282ada002f17bf144dc3484c53ed2944d171217ec64fbe3f7c232b2436604",
+            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+            "content": "sha256:ffd1e61c7696111f81a8e87d8671075812e535db6a078c8b1a52c0d7ba2a5fcb",
             "locator": {
-              "end": 207,
+              "end": 208,
               "kind": "line_range",
               "start": 170
             }

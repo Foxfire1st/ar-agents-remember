@@ -28,15 +28,27 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 
 ## Evidence
 
+
 - Workers read failed tries from typed code rounds and Curators from typed memory rounds. A record-only correction revises the existing round without counting as another try. Incomplete typed history leaves the count unknown. [4]
+
+
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 
+
 - The caller harness name comes from MCP initialization. Role start forwards `step_up` into `RoleStartCall` and delegates launch through the shared request thread. [6]
+
 - The registrar declares typed start/set/message inputs and delegates to their payload owners. The current `role_message` description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
+
+
 - The typed role start, role start set and role message declarations expose the public inputs and compact descriptions. The payload owners retain launch, message and receipt policy. [3]
+
+
 - The registration that mounts the role tools and the settings initializer. [8]
+
+
 - The role registrars build typed calls and delegate to their payload owners. Both start handlers use the shared request-thread helper, which drains blocking work before propagating cancellation. [9]
+
 
 - The settings initializer and role messages run through the detached request-thread helper. [11]
 

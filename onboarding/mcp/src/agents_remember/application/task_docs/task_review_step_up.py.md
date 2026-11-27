@@ -10,7 +10,7 @@ Post-publication step-up advice for successful review recordings; it decorates t
 
 ## Current Contract
 
-with_review_step_up is active only for ok task_doc.record_review/record_route_review answers with remaining findings. reviewKind chooses the state/role: code Worker or memory Curator. It reads current settings and the typed failed-try census, names unavailable history instead of guessing, and at a configured afterTries threshold says the seat's starter calls role_start anew. It opens/grants no round and starts no actor. A settings AgenticSettingsError or OSError after publication appends a warning and an explicit do-not-repeat-recording recovery nextAction while preserving success and state. Clean/pass answers return before the settings read; other operations return unchanged.
+with_review_step_up is active only for ok task_doc.record_review/record_route_review answers with remaining findings. reviewKind chooses the state/role: code selects Worker, and memory selects Consolidator when the leaf carries `consolidationList` or Curator otherwise. It reads current settings and the typed failed-try census, names unavailable history instead of guessing, and at a configured afterTries threshold says the seat's starter calls role_start anew. It opens/grants no round and starts no actor. A settings AgenticSettingsError or OSError after publication appends a warning and an explicit do-not-repeat-recording recovery nextAction while preserving success and state. Clean/pass answers return before the settings read; other operations return unchanged.
 
 ## Invariants And Boundaries
 
@@ -22,8 +22,13 @@ The governing workflow opens an independent memory review after CODE PASS on the
 ## Evidence
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
+
 - Record-only memory identity comes from memory authority, never the sibling code root. [3]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [4]
+
+
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]

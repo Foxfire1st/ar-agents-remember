@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/roles.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) for three-tier role-capsule launch files (replacing Three kinds of files and flat .detail-<sha256>.md), trailing AR handover artifacts locator, slimmed handover projection, and skill:// refusal pointers on role_message and retire_child, remaining consistent with BUG-L54 report collection and reviewer.md updates; resolved DFR-YRD97K.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/roles.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 three-tier role-capsule updates alongside KNO-R05@v3 Consolidator role, nine-role roster, and consolidation task rules.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,26 +17,26 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+      "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
     {
-      "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+      "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_identity.py"
     },
     {
-      "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+      "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/role_launch_context.py"
     },
     {
-      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+      "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+      "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
     },
     {
-      "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+      "blob": "c2c9b4346f852ba071706f09c32a57bc41fb72e8",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
     },
     {
-      "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+      "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
@@ -126,17 +126,17 @@
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+      "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
     {
-      "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
+      "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
     {
-      "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+      "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
@@ -156,7 +156,7 @@
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+      "blob": "c00c5dac1e5fd90bd5ff10544a8780fc50a582d5",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },
@@ -171,20 +171,20 @@
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+      "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:55:00+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

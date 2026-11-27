@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:9417fb64e8acb1b7ad098e31c7f351df82d4e6819b687738d87cf27381d74cde",
         "locator": {
           "end": 29,
@@ -22,8 +22,27 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
-        "content": "sha256:032084df484c6d9784240497f0c903f6b24953347a1eeabdd99d7de1e831862c",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
+        "content": "sha256:0fe41ab7e71e1670dd3d5589fe73aa46e8ad30a41b55ee55c5820fee23ed3a4d",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-3CSFQK",
+      "invariant": "INV-J4MDWS",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 10 & Evidence 8 review binding",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Tier-2 memory-review detail specifies exact 40-character memory Git tree candidateTree and task-relative verdictRef on record_review(reviewKind='memory').",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
+        "content": "sha256:0e8f110659e7c79f656f0efc4dc2df26b49dc311ce17ee40f6a003bcc46a8c6e",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:9548d2ebaefb4f35f68d39db5a403117ddd15381159c3f0a7dcd914b6855085e",
         "locator": {
           "end": 55,
@@ -58,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:31eee064f85cc0255c58b82d5d25894c12adf8b7e62bad9f1b7075ba9ecc5b70",
         "locator": {
           "end": 11,
@@ -77,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:df618617c7762bfad994a7527ae64b7c296ae03d187dbe28ee580d7600a81616",
         "locator": {
           "end": 51,
@@ -96,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:310f054711f122d54f300133c6c26c6f446ce0bed5c641d5f3d5b5640ca954eb",
         "locator": {
           "end": 61,
@@ -115,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:7e001c3730e000994493ed56d403ed76748ea721e5657b19df765bb39459f466",
         "locator": {
           "end": 27,
@@ -134,8 +153,8 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
-        "content": "sha256:9a1af76b11b93936f1bef1f0785b9017f6678f2e3077ba2fd55f5d1da8ec4597",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
+        "content": "sha256:0fe41ab7e71e1670dd3d5589fe73aa46e8ad30a41b55ee55c5820fee23ed3a4d",
         "locator": {
           "end": 57,
           "kind": "line_range",
@@ -153,7 +172,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:dfbbe1e528ace4b0da870684b997e43796c09f4882aecb62a3a344745e482e8f",
         "locator": {
           "end": 9,
@@ -172,7 +191,7 @@
     },
     {
       "anchor": {
-        "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+        "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
         "content": "sha256:34c8280b28a6ac4528110c65a902e8b7165c0868cad71985df97dd77b0c8dd7c",
         "locator": {
           "end": 17,
@@ -196,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
             "content": "sha256:12e8dba803d84eaa917824cc14940ee62c0cd9f8676dfb10cc0e3b42d19fe4e4",
             "locator": {
               "end": 29,
@@ -209,12 +228,12 @@
       ]
     },
     "2": {
-      "note": "Protocol refusals, forged-state boundaries, proportional review (honest-agent starting-state and adversarial-review gate), omission/whole-set verification, `OM-6` memory-review checks (`cutCards`, `addedFiles`, `deferral_lifted`), and stop rules govern review conduct.\n\nAnchor: `Omission repairs, whole-set findings, and memory changes`",
+      "note": "Protocol refusals, forged-state boundaries, proportional review (honest-agent starting-state and adversarial-review gate), omission/whole-set verification, `OM-6` memory-review checks (`cutCards`, `addedFiles`, `deferral_lifted`), and stop rules govern review conduct.",
       "targets": [
         {
           "anchor": {
-            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
-            "content": "sha256:d8599c8e6359543fd95b30cd7d07887634d2540125cbbdc84835ace04e9a83c7",
+            "blob": "b47080ef700a024673e2fa745ce4495f344b2581",
+            "content": "sha256:8fe47e495e4f14d471df603843f18fedc0c67ec0aa6237b2271a22ee4af86a90",
             "locator": {
               "end": 61,
               "kind": "line_range",

@@ -23,6 +23,8 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 
 `RoleStartSetCall` carries one set request UUID and exact leaf references with separate Worker/Reviewer/Curator choices, optional Reviewer first work and replacement IDs. `SeatLaunchOverride` carries speed choices only. Both single starts and set replacement carry explicit interruption permission. `RoleStartStatus` and `RoleMessageStatus` admit `held`: a held seat exists without a turn, and a held message is product-stored rather than host-accepted. Message output names waiting IDs/counts, retained terminal lines and held-seat opening; withdrawal is a distinct input. `RoleStartSetResponse` reports each seat and partial completion without implying task acceptance.
 
+For consolidation leaves (`consolidationList` present), `RoleStartSetCall` accepts optional `consolidator` overrides alongside `reviewer`, and `RoleStartSetResponse` reports the two-seat Consolidator/Reviewer set with no Worker or Curator.
+
 ## Current Contract
 
 RoleStartCall carries optional step_up reason beside the existing selection, UUID, overrides and replacement intent; it does not validate a reason sentence itself. RoleStartResponse declares optional stepUp metadata on the strict rich response. The requested reason and the reported application result are distinct. Mode and permission features are still user-owned, the ordinary no-step-up route is unchanged, and this DTO neither counts review failures nor certifies applied host choices. The composed-branch caveats about filed bodies and cut replies remain as recorded; the earlier message-field incompleteness about the held answer no longer applies.
@@ -33,13 +35,19 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [9]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
 
 - Frozen implementation of RoleStartCall supporting the stated file behavior. [1]
+
 - Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. Anchor: RoleMessageCall [2]
+
+
 - Frozen implementation of RoleStartResponse supporting the stated file behavior. [3]
+
 
 - Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence. [4]
 
@@ -53,7 +61,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 The public message refusal vocabulary includes investigator-capacity. This names a completed selected-task recipient’s unavailable slot before native delivery or resume; it adds no message-owned queue or start authority.
 
 
+
 - The current source implements this file’s stated Investigator boundary. [5]
+
 
 ## Current second-server observation
 
@@ -78,8 +88,12 @@ requested-versus-observed semantics remain unchanged.
 
 - The start call, which carries the caller's own harness name. [12]
 - The strict environment preparation block declares the optional `briefsProblem` advisory and `firstRun` report. [13]
+
 - The start answer, which declares the seat's continuation. [14]
 
+
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [8]
+
 
 - The role start response declares the product notice report and its delivery states. [17]

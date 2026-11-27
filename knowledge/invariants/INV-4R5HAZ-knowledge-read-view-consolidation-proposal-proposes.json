@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans ProposalStore indexing, proposal.for_master selection, and proposal_view response/report projection, guarded by consolidation proposal unit tests."
+  },
+  "applicability": "knowledge_read(view='consolidation_proposal') across its four seed modes: masterId, recordId (family), sourcePath (folder), and oldest-first default.",
+  "conditions": [
+    "Unaffiliated rules are attached to a proposed family only when realized in the exact files (entry.path) where that family's member invariants are realized.",
+    "Combining conflicting selectors or naming an unknown master refuses explicitly."
+  ],
+  "exclusions": [
+    "Folder-level route matching for unaffiliated rule attachment, rejected under D1049."
+  ],
+  "id": "INV-4R5HAZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_consolidation_proposal.py and real-memory Evidence 6 run under D1049 (median=11.5, max=67, FAM-AWDGE2=29 attached rules)."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 5 (D1049)",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_read view consolidation_proposal proposes families and attached unaffiliated rules by masterId, recordId (family), sourcePath (folder), or oldest-first default, attaching unaffiliated rules realized in the exact files (entry.path) where a family's members are realized.",
+  "supersedes": [],
+  "title": "consolidation_proposal view with same-file attached unaffiliated rules",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

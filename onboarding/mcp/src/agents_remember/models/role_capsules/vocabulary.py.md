@@ -14,8 +14,8 @@ authority that makes a manifest edit fail instead of minting a new role.
 
 ### Logic
 
-`CapsuleRole` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:31-40) is the eight-name
-lifecycle-role literal and `CapsuleOperation` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:43-53) the nine-name operation literal; `CAPSULE_ROLES` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:75-84) and
+`CapsuleRole` is the nine-name
+lifecycle-role literal (including `consolidator`) and `CapsuleOperation` the ten-name operation literal (including `consolidation`); `CAPSULE_ROLES` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:75-84) and
 `CAPSULE_OPERATIONS` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:89-99) are explicit runtime tuples; the literal/tuple agreement test keeps their names and order in step.
 `get_args` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:27-27; mcp/src/agents_remember/models/role_capsules/vocabulary.py:69-69) derives `CAPSULE_SEAT_KINDS`, not those two tuples.
 `CAPSULE_SEAT_KINDS` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:58-58; mcp/src/agents_remember/models/role_capsules/vocabulary.py:69-69) is the seat-kind
@@ -32,7 +32,7 @@ that renamed or added a role or operation **fails compilation** rather than quie
 one. A caller-controlled string must never acquire another role.
 
 ``launcher`` is **deliberately absent** from `CAPSULE_ROLES`. The ambient launcher is a
-routing condition, not a ninth role; it is reached through `CAPSULE_LAUNCHER_MODE` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:66-66) and
+routing condition, not a tenth role; it is reached through `CAPSULE_LAUNCHER_MODE` (mcp/src/agents_remember/models/role_capsules/vocabulary.py:66-66) and
 composes its own core block.
 
 ``bootstrap`` is **present and last** in the registry order: it is the new user's first-hour seat and
@@ -56,18 +56,18 @@ file, **and** the generated copies must move together. The shipped check is what
 
 ### Invariants And Boundaries
 
-- The vocabulary is closed at **eight roles and nine operations**. An unknown role or operation is
+- The vocabulary is closed at **nine roles and ten operations**. An unknown role or operation is
   an explicit error, never a silent fallback.
 - These tuples are the authority the manifest is validated *against*. Never invert that by
   reading the vocabulary out of the manifest.
 - `launcher` is a `CapsuleSeatKind`, not a `CapsuleRole`. Do not add it to `CAPSULE_ROLES` to
   "simplify" seat handling — `CapsuleLauncherSeat` exists precisely so it needs no role.
-- `bootstrap` is the eighth role **and a free agent**. Its presence here makes it compilable; it does
+- `bootstrap` is the ninth role **and a free agent**. Its presence here makes it compilable; it does
   not make it a task seat, and its absent task altitude is the ruling rather than a missing field.
 - The literal types and explicit runtime tuples must keep the same names and order;
   the literal/tuple agreement test guards this deliberate duplication.
 - A role published here must be configurable. `kernel/_agentic_settings_core.py` `KNOWN_ROLES`
-  currently lists the same eight names as `CAPSULE_ROLES`; the free-agent authority test checks
+  currently lists the same nine names as `CAPSULE_ROLES`; the free-agent authority test checks
   Bootstrap’s recognition by settings while keeping it outside the task-altitude sets.
 
 ### Todos
@@ -95,7 +95,9 @@ No relevant documentation found after checking live sources.
 
 - The canonical authored metadata that must agree with these tuples. [5]
 
+
 - The capsule role registry ends with bootstrap; no task-binding set supplies admission. [7]
+
 
 ### Cross-Repo References
 
@@ -107,8 +109,13 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard. [1]
+
+- The nine-role/ten-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard. [1]
+
+
 
 - The independent role census this module's runtime tuple is compared against. [2]
 
-- The settings registry lists the same eight role names as the compiler vocabulary; the free-agent authority case separately checks Bootstrap’s settings recognition. [6]
+
+
+- The settings registry lists the same nine role names as the compiler vocabulary; the free-agent authority case separately checks Bootstrap’s settings recognition. [6]

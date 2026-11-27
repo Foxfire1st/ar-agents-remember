@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
-    "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe combining BUG-L33/L54 and CAP-L3 confirmations: docs/llms.txt remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
-    "task": "261112-BUG",
-    "uncommitted": false
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "role": "curator",
+    "statement": "Verified docs/llms.txt against post-CAP-L5 synced tree e273d1c9: nine-role roster including Consolidator remains accurate while preserving pre-existing KNO-R07 DFR-WQXFSQ under 261112-KNO.",
+    "task": "261112-KNO-L5",
+    "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/llms.txt",
-        "note": "Update docs/llms.txt lines 49-56 to describe knowledge_read's ten views (including verbatim records, impact, search, and compact dependent) and location.current brief-honesty gating."
+        "note": "Update docs/llms.txt lines 49-56 for all eleven knowledge_read views (including verbatim records, impact, search, compact dependent, and consolidation_proposal) and brief freshness gating."
       },
-      "createdAt": "2026-11-27T01:47:08.347586Z",
-      "createdByLeaf": "261112-KNO-L7",
-      "fileBlob": "bd96b2d4a697c46c7330dac87140ae57d65118d8",
-      "id": "DFR-S6CEKP",
+      "createdAt": "2026-11-27T05:21:52.740873Z",
+      "createdByLeaf": "261112-KNO-L5",
+      "fileBlob": "599b6a37cc0028e09d228770c19e6384491de241",
+      "id": "DFR-WQXFSQ",
       "owner": "261112-KNO",
       "passage": "docs/llms.txt lines 49-56 (read_ar_files brief guidance and knowledge_read returns names and locations only)",
-      "reason": "KNO-R07 adds verbatim batch full-text records, impact, search, and compact dependent views on knowledge_read plus location.current gating on read_ar_files brief notices, directly contradicting the claim that knowledge_read returns names and locations only; Curator cannot edit docs/ files in code root."
+      "reason": "KNO-R05@v3 updated docs/llms.txt role counts to nine roles, moving its blob, while pre-existing KNO-R07 lines 49-56 remain deferred under 261112-KNO (accepted by Reviewer in KNO-L5-F07)."
     }
   ],
   "document": "docs/llms.txt",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -63,7 +63,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+      "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -73,25 +73,25 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+      "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
     {
-      "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+      "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/read_files_briefs.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
     "task": "261112-KNO"
   }
 }

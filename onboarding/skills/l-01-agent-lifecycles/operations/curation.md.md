@@ -36,7 +36,9 @@ Audience markers (`<!-- ar:roles all -->`, `<!-- ar:roles manager -->`, `<!-- ar
 ## Evidence
 
 
+
 - Current curation keeps Manager transaction ownership separate, requires full memory_quality_check, the Manager-leaf-closeout stale dependent-document read (detailed in reference/curator/exceptions-and-recovery.md) and the independent OM-2 fact-check, and pairs with separate MEMORY review (operations/review.md). Bounded repairs and genuine stops live in reference/curator/exceptions-and-recovery.md and scoped correct-write recovery in core/every-role.md; none of this grants Git, closeout or acceptance authority. [4]
+
 
 
 
@@ -45,7 +47,9 @@ Audience markers (`<!-- ar:roles all -->`, `<!-- ar:roles manager -->`, `<!-- ar
 - Current curation verifies card sentences against source, delegates bounded encountered-memory repairs (beyond quality-check findings, named, without a broad sweep) to reference/curator/exceptions-and-recovery.md, routes code concerns, requirement decisions and cross-leaf work to their owners, and requires full checks and the independent OM-2 fact-check before handover. [14]
 
 
+
 - MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance. [1]
+
 
 
 - Foundation authoring is regular work in the real Architect task, with its leaf admission, actual enclosure and task/Manager ownership; no incidental code delta is required. Setup reads and reports state. [3]

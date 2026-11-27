@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans task schema (consolidation_list.py), worklist/gate evaluation (knowledge_worklist/consolidation.py), and writer shape admission (worklist_checks.py), guarded by consolidation pass tests."
+  },
+  "applicability": "Task document consolidationList schema, leaf worklist computation, writer worklist shape checks, and closeout gate evaluation.",
+  "conditions": [
+    "consolidationList ({families, rules}) lives only on task documents (not masters), is classified as a LIFECYCLE field, and raises one deduplicated consolidation_target item per listed family and reached rule beside ordinary worklist items.",
+    "Writer worklist shape checks admit consolidation_target string facts.record values, and the closeout gate holds until every listed and reached consolidation_target item is closed."
+  ],
+  "exclusions": [
+    "Unlisted unchanged memory records, which raise no consolidation_target items."
+  ],
+  "id": "INV-1PBH5A",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_consolidation_pass.py (including test_persisted_consolidation_target_worklist_passes_writer_shape_check) and sbx-e8 Evidence 8 live runs on SBX-C1-L1 and SBX-C1-L2."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A consolidation leaf task document stores consolidationList ({families, rules}) as a LIFECYCLE field, raises exactly one consolidation_target worklist item per listed family and reached rule beside ordinary worklist items, admits consolidation_target in writer worklist shape checks, and holds the closeout gate until every listed and reached item is closed.",
+  "supersedes": [],
+  "title": "consolidationList LIFECYCLE field, consolidation_target worklist and gate",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

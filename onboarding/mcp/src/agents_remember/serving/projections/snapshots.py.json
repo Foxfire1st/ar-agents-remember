@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "blob": "b30c1dfc28a78b8493d6e1e31c22a03730026703",
             "content": "sha256:f38ee32cdbc0dc2b782dc72be96e3b4699b06fe9cd4312d14492d0ed8351a5b6",
             "locator": {
-              "end": 174,
+              "end": 175,
               "kind": "line_range",
-              "start": 136
+              "start": 137
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -116,12 +116,12 @@
       ]
     },
     "5": {
-      "note": "The extracted parser retains addressed unknown-field pruning without forgiving other malformed data.\n\nAnchor: `_projected_document`",
+      "note": "The extracted parser retains addressed unknown-field pruning without forgiving other malformed data.",
       "targets": [
         {
           "anchor": {
-            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
-            "content": "sha256:ff5ac511e0d698f5f84ad870b6a061f08c95a504abeea453f0ee998e356b059f",
+            "blob": "b30c1dfc28a78b8493d6e1e31c22a03730026703",
+            "content": "sha256:4169665c76d138929c2b086f218d0128b300eb7ca5b4613511865de34d6260f9",
             "locator": {
               "kind": "file"
             },

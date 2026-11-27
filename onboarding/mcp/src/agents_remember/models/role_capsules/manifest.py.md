@@ -59,7 +59,7 @@ Earlier card account retained from memory base `81cfe4a89f5ffb222bd09640410d268d
 > - The compiler vocabulary is closed at ten roles and nine operations, including Bootstrap. A manifest that
 >   disagrees fails compilation instead of extending the vocabulary. These compiler populations are not a claim that ten native task roles can be launched.
 
-The current compiler declares eight roles and nine operations; the quoted base account does not define the current vocabulary.
+The current compiler declares nine roles (including `consolidator`) and ten operations (including `consolidation`); the quoted base account does not define the current vocabulary.
 
 ### Conventions
 
@@ -70,7 +70,7 @@ or source path that the parser rejects is meant to be rejected.
 ### Invariants And Boundaries
 
 - This module parses bytes; it never opens a file, resolves a root, or reads a source.
-- The compiler vocabulary is closed at eight roles and nine operations, including Bootstrap. A manifest that
+- The compiler vocabulary is closed at nine roles and ten operations, including Consolidator and Bootstrap. A manifest that
   disagrees fails compilation instead of extending the vocabulary. Compiler vocabulary does not establish which native task roles can be launched.
 - Exactly one source per instruction. Two identities routed at one path is a defect, not a
   deduplication opportunity.
@@ -92,7 +92,7 @@ None recorded.
 
 ## Current Contract
 
-CapsuleOperationEntry has audience="all" as a direct-construction default, but authored operation parsing now requires a nonblank audience field. Actual all/sections mode and marker validation belong to audiences.py during composition, not to this parser. CapsuleCompositionManifest carries parsed detail_references, default empty for direct construction; parse_composition_manifest obtains them from parse_detail_declarations. The frozen compiler vocabulary contains eight roles and nine operations, including Bootstrap; it is not the native dispatched-task-role roster.  One-source-per-instruction, operation applicability and declared-skill checks remain unchanged. Merely listing ordinary references does not make a launch attachment.
+CapsuleOperationEntry has audience="all" as a direct-construction default, but authored operation parsing now requires a nonblank audience field. Actual all/sections mode and marker validation belong to audiences.py during composition, not to this parser. CapsuleCompositionManifest carries parsed detail_references, default empty for direct construction; parse_composition_manifest obtains them from parse_detail_declarations. The frozen compiler vocabulary contains nine roles and ten operations, including Consolidator and Bootstrap; it is not the native dispatched-task-role roster.  One-source-per-instruction, operation applicability and declared-skill checks remain unchanged. Merely listing ordinary references does not make a launch attachment.
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
@@ -121,10 +121,14 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
+
 - The frozen vocabulary this parser is validated against. [1]
 
 
-- The frozen compiler vocabulary declares eight roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct. [17]
+
+
+- The frozen compiler vocabulary declares nine roles and ten operations including Consolidator and Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct. [17]
+
 
 - The canonical authored metadata this module parses. [2]
 - The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. [3]

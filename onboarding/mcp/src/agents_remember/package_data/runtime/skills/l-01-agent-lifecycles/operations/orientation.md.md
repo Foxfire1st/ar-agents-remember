@@ -10,7 +10,7 @@ Recover the selected native role assignment and canonical inputs without derivin
 
 ## Current Contract
 
-The role launcher supports these eight role IDs: `architect`, `investigator`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`, and `bootstrap`; `bootstrap` is the taskless setup role the one start call reaches. `system-specialist` is the earlier ID of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, on a master that no sprint commands, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created. Existing work recovers durable requirements, rulings, approvals, agent IDs and reports; reconnects do not invalidate supplied approval.
+The role launcher supports these nine role IDs: `architect`, `investigator`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`, `consolidator`, and `bootstrap`; `bootstrap` is the taskless setup role the one start call reaches. `system-specialist` is the earlier ID of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, on a master that no sprint commands, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created. Existing work recovers durable requirements, rulings, approvals, agent IDs and reports; reconnects do not invalidate supplied approval.
 
 Task-bound reads use the rendered task-document files named in the handover and the harness’s own file tools before acting. For canonical task-document edits admitted to the role, use `task_doc` first; only a covered correct-input write refusal follows the declared same-tool/input-class recovery. Rendered copies are never parsed back and are refreshed by the owner’s next task_doc publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree. Missing admission/capability and read, validation, sync, guard, gate and permission stops remain unchanged.
 
@@ -38,7 +38,9 @@ Earlier card custody: the base card grouped taskless/approved-scope intake, sele
 
 ### Repo-Internal References
 
+
 - Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery. [6]
+
 
 
 ### Docs References
@@ -53,13 +55,17 @@ No relevant documentation found after checking live sources.
 
 
 
+
 - The operation block's declared purpose, source path, and applicable roles. [3]
+
 
 - The canonical source of this block. [4]
 
 ### Role launcher and alias
 
-- The launcher supports these eight role IDs, including the taskless `bootstrap` setup role. [5]
+
+- The launcher supports these nine role IDs, including `consolidator` and the taskless `bootstrap` setup role. [5]
+
 
 ### Cross-Repo References
 

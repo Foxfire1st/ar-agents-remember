@@ -5,7 +5,7 @@
     ],
     "justification": "Writer binding, exact closeout fact recording, revision selection and reader projection together keep the credited review tied to the content that remains readable after conversion or a crossing."
   },
-  "guarantee": "The selected memory tree preserves who wrote the retained revision and awards review credit only when that tree contains compatible review evidence for its retained meaning, with recorded memory verdictRef paths validated against existing files and persisted in history as the durable collected notes/reports/<rel> copy (or explicitly named when a pre-existing reference cannot map).",
+  "guarantee": "The selected memory tree preserves who wrote the retained revision and awards review or consolidated credit only when that tree contains compatible review evidence for its retained meaning (including qualifying Consolidator writes and keeps), counts the five consolidation outcomes per writer of the revision read, and validates recorded memory verdictRef paths against existing files persisted in history as the durable collected notes/reports/<rel> copy (or explicitly names a pre-existing unmappable reference).",
   "id": "FAM-7NBVYB",
   "members": [
     "INV-G8AX2H",
@@ -33,7 +33,7 @@
     "leaf": "261112-KNO-L3",
     "task": "261112-KNO"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/grammar",
@@ -57,14 +57,14 @@
   "schema": "ar-family/v1",
   "title": "Review credit follows the retained revision",
   "writer": {
-    "at": "2026-11-26T19:00:52+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
-    "task": "261112-BUG"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

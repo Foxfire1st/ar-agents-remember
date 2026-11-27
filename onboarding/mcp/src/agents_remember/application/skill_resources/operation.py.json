@@ -67,8 +67,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:44b075eb2e448ef6320631af36d2b5602905b53a49d4c8ee26fee08bd6fd3bcd",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_OPERATIONS"
@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "blob": "dbcd85a3b374bac09d024df88c56b8febde167e0",
             "content": "sha256:3457497d1f83653411517625d1ef81417210b9171d8c2fb902e8e7475cd7d598",
             "locator": {
               "kind": "symbol",

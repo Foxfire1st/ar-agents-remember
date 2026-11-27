@@ -35,7 +35,10 @@ Current source: The first-message control rejects forbidden host strings across 
 - The handover test asserts Paseo and agents-remember-task host fields, the role_start/role_message tool names, scoped reader-discovery instructions and held/permission wording. The parentless control requires no invented parent; a started role records its actual starter and role/task return address. The shared handover case pins the six condensed `arMcpUsage` clauses and checks once-only placement before `AR owner assignment and canonical task handover:`. [1]
 
 
+
 - The first-message control rejects forbidden host strings across generated role prompts. The description control checks three role-agent tool descriptions—role_start, role_message and role_start_set—and separately checks user_settings_init; no stored description or first-message assertion proves host delivery. [2]
+
+
 
 
 - The compact role_message description stays within 600 characters and states the host mid-turn promise, queued held delivery and no resend of held messages. Host acceptance or consuming-turn completion is distinct from AR acceptance; the source check remains separate from live message delivery. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

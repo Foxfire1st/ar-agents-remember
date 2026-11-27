@@ -24,7 +24,10 @@ After a clean synchronization the reviewed result stands; the procedure is read 
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [1]
+
+
 
 
 - The recovery instruction keeps same-identity recovery and the clean-sync reviewed-result rule, and sends the Curator to the serving-build binding before resuming a memory decision or write. [2]

@@ -103,7 +103,9 @@ TaskDependencyNode requires id/title; its canonical reference is optional. A fil
 - The generated TaskEntry wire type carries optional structured list disagreements beside its canonical membership and cached summary. [22]
 
 
+
 - TaskSummary separates required reader fields from optional branch/note/review, content and graph additions. [19]
+
 - TaskStepNode requires note/outcome truncation booleans beside optional prose; TaskSubStepNode has optional note without a truncation flag. [20]
 - A present TaskReviewStateNode requires openFindings and totalFindings independently of its findings array. [21]
 

@@ -127,7 +127,9 @@ No relevant documentation found after checking live sources.
 - The operation block the role carries: workflow, failure inventory and authority gates. [7]
 
 
+
 - The capsule vocabulary appends bootstrap to both CAPSULE_ROLES and CAPSULE_OPERATIONS, publishing the role and its operation. [11]
+
 
 
 - The shipped source checks publish bootstrap as a free-agent role while excluding it from sprint/master/leaf role sets, inspect the source declarations for the same exclusion, and require a nonblank manifest altitude outside those task altitudes. These three cases do not assert a taskless launch/admission route. [12]

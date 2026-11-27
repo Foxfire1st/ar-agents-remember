@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard.",
+      "note": "The nine-role/ten-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
-            "content": "sha256:1729ebbdf3e2e1f72b157fe8add6a179b376f9b258a3a0568e13b0c36a8e75bc",
+            "blob": "1f18f24c98ca3465d84f99ae5e78af2530f9e417",
+            "content": "sha256:b082fa7de8fd8abf86d29f080f820b9091a44b7dec8bd85732c1bdbd7f9cce3d",
             "locator": {
               "end": 142,
               "kind": "line_range",
@@ -21,12 +21,12 @@
         },
         {
           "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "blob": "1f18f24c98ca3465d84f99ae5e78af2530f9e417",
             "content": "sha256:2621e56d55e0fb0455d1af05b2d3a65bafd1c0f7b69d33b0656132c56ad1e1ed",
             "locator": {
-              "end": 149,
+              "end": 151,
               "kind": "line_range",
-              "start": 145
+              "start": 147
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -34,12 +34,12 @@
         },
         {
           "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "blob": "1f18f24c98ca3465d84f99ae5e78af2530f9e417",
             "content": "sha256:5fd6ab94aea5614649efeb8e41ec50f350635e96e8bd58f436f9a45b43addd3b",
             "locator": {
-              "end": 155,
+              "end": 157,
               "kind": "line_range",
-              "start": 152
+              "start": 154
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -52,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
-            "content": "sha256:c09f88cdc76bed96c2e5f65d6aada85dc64d8f52df4091725c171cd9da011974",
+            "blob": "1f18f24c98ca3465d84f99ae5e78af2530f9e417",
+            "content": "sha256:e6bb10a3841e6f88d8b11ffb0426ab215a1a6ba3b9df9ec9ec043bb5bb368e48",
             "locator": {
               "end": 77,
               "kind": "line_range",
@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
             "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
             "locator": {
               "end": 6,
@@ -177,12 +177,12 @@
       ]
     },
     "6": {
-      "note": "The settings registry lists the same eight role names as the compiler vocabulary; the free-agent authority case separately checks Bootstrap’s settings recognition.",
+      "note": "The settings registry lists the same nine role names as the compiler vocabulary; the free-agent authority case separately checks Bootstrap’s settings recognition.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0866515684aa632f534294be7451aa0a58b5589",
-            "content": "sha256:b599dd4d95a0adb65135879093ce0cf5b66aa3aa951fbf75678ed89810af434c",
+            "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
+            "content": "sha256:6ecd46478fd013e9c5cb52a3019a294c558eb70f77fb230218318f6e68120cbb",
             "locator": {
               "end": 105,
               "kind": "line_range",
@@ -194,8 +194,8 @@
         },
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:1928921101d2e5e5d6cb143fe8cdc816061da7ccae4be712de000814b6d3dc04",
             "locator": {
               "end": 84,
               "kind": "line_range",
@@ -224,8 +224,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:fbf404b74f40cb8713a3521f2ced6bdb34fe450c533e21a92c51de30f7b85f60",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/consolidation_outcomes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d81905605c742581a47b9f8b23fa258aae8c8fb0",
+        "content": "sha256:bed3eb6ffebf4c86739c523b75b294aab7b39113814780b88577a68eadf4c16e",
+        "locator": {
+          "kind": "symbol",
+          "name": "consolidation_outcomes"
+        }
+      },
+      "id": "RLZ-CE3XT5",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Computes per-revision consolidation outcomes for the five writer-table columns.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`OUTCOME_COLUMNS` maps the five `Outcome` literals to writer-table column names, and `_WEIGHT` ranks `corrected`/`merged`/`retired` above `unresolved` above `kept`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d81905605c742581a47b9f8b23fa258aae8c8fb0",
+            "content": "sha256:55855ca0967c85a55277acb31ed97f11431096148b05c22549f62731dca0101b",
+            "locator": {
+              "kind": "symbol",
+              "name": "OUTCOME_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`consolidation_outcomes` filters to history files with `consolidation_subjects`, attributes `corrected` rows to `row.revision - 1` (requiring `>= 1`), and resolves multi-pass conflicts by `_WEIGHT`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d81905605c742581a47b9f8b23fa258aae8c8fb0",
+            "content": "sha256:bed3eb6ffebf4c86739c523b75b294aab7b39113814780b88577a68eadf4c16e",
+            "locator": {
+              "kind": "symbol",
+              "name": "consolidation_outcomes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_outcome` classifies `unresolved`, `changed` (`corrected`), retiring rows into `merged` (when superseded by an `InvariantRecord`) or `retired`, and all other rows as `kept`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d81905605c742581a47b9f8b23fa258aae8c8fb0",
+            "content": "sha256:91413f7b09825a4c5e88d4d45e52f9cd42442d67aaaf05b9920356e2d88adcc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

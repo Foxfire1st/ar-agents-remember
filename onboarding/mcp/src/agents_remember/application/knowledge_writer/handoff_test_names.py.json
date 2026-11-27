@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/handoff_test_names.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Regex definitions recognize JS/TS `path::\"title\"` cases, Python `path.py::name` IDs, single-identifier `path.py -k name` selections (excluding boolean expressions), and bare `test_*.py`/`*_test.py` file mentions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72a27b2e12fae138517e3e20334febb789249746",
+            "content": "sha256:f18e8775dc6b11f5de6771683feee536d758ab915fd8d9f0443393ffe5984b7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TEST_ID"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`TestReference.spelling` formats Python dotted symbols back to `path::Class::method` while preserving non-Python case titles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72a27b2e12fae138517e3e20334febb789249746",
+            "content": "sha256:eb90012f40cb3ecd0899c84bfc4755f1204018b43c50699896ef8ae5b3f2e10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`TestFileMention` represents a bare test file mention from which no specific proof can be prepared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72a27b2e12fae138517e3e20334febb789249746",
+            "content": "sha256:23dfd8ed108bc3d03ae7f96897fd0d906f00d098127d0e14edabb5cf0ffa5c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestFileMention"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`tests_named_in` returns deduplicated `TestReference` and unshadowed `TestFileMention` items in evidence appearance order without resolving against C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72a27b2e12fae138517e3e20334febb789249746",
+            "content": "sha256:f42204b0cbe7a7987fd2fd272f6071e6a413e71ed24344411c83b06748d4b0b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "tests_named_in"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,175 @@
+{
+  "path": "mcp/tests/test_consolidator_role.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+        "content": "sha256:f7d56c57c544619a6e2bbeaa709737a296fdc7a34a2d694ffbb1bfea51758720",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidatorStartTests.test_the_manager_of_its_master_starts_a_consolidator"
+        }
+      },
+      "facet": "Verifies owning Manager starts a Consolidator on a consolidation leaf.",
+      "id": "PRF-0HZ6PG",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+        "content": "sha256:57fd1f718299aefad0563c9817d432a81d2afd64f024fb75a74b321f15376720",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidatorStartTests.test_a_role_that_may_not_start_a_worker_may_not_start_a_consolidator"
+        }
+      },
+      "facet": "Verifies leaf roles that cannot start Worker cannot start Consolidator.",
+      "id": "PRF-3X8B6H",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+        "content": "sha256:351a7f36422963145a2437791b1a3723ec829d5e90940a1d3de746186a29f43b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationSettingsRowTests.test_the_reviewer_of_a_consolidation_task_takes_the_new_row_field_by_field"
+        }
+      },
+      "facet": "Verifies field-by-field overlay of consolidation-reviewer over reviewer on a consolidation leaf.",
+      "id": "PRF-4A2YG6",
+      "invariant": "INV-HE32N8",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 2",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+        "content": "sha256:137aeefa0be943afadf35196198e32f9c32a21c85665ece888e1820d131567d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidatorStartTests.test_the_architect_starts_a_consolidator"
+        }
+      },
+      "facet": "Verifies Architect starts a Consolidator on a consolidation leaf.",
+      "id": "PRF-9GXWD2",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+        "content": "sha256:7b7510372d05c911997d65871da878feb74c57c831444bf68134fb4850b32225",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationSettingsRowTests.test_a_model_named_at_the_start_wins_over_both_rows"
+        }
+      },
+      "facet": "Verifies explicit start-call overrides win over both settings rows.",
+      "id": "PRF-MP24ZJ",
+      "invariant": "INV-HE32N8",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 2",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+        "content": "sha256:46a7746f0c8b116ca303a9535ff7b9da740a3c078951f9788959acf286a8f20d",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationSettingsRowTests.test_an_empty_row_gives_the_reviewers_row"
+        }
+      },
+      "facet": "Verifies fallback to orchestration.roles.reviewer when consolidation-reviewer is empty.",
+      "id": "PRF-WS3XGP",
+      "invariant": "INV-HE32N8",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 2",
+        "leaf": "261112-KNO-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ConsolidatorStartTests` proves Architect, own-sprint Orchestrator, and Manager can launch `consolidator`, while Worker, Reviewer, and foreign-sprint Orchestrator are refused without creating agents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+            "content": "sha256:2aa1341a0469fb08e84a4b84459244735ac3f3570527ac9ee1947d67f3b24d3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConsolidatorStartTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies `load_agentic_settings` admits all 11 role rows (including `consolidator` `stepUp`, `consolidation-reviewer` `extraArgs`, and leaf-level overrides) and rejects typos like `consolidation-reviewr`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+            "content": "sha256:895e0773dffeed1f381cacd9cad48302b45a5ba637a3755b84a75a5d86adebbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_settings_take_every_row_they_took_and_the_two_new_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies a consolidation task's Reviewer inherits the `reviewer` model while taking `effort` from `consolidation-reviewer`, even when started before any Consolidator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+            "content": "sha256:351a7f36422963145a2437791b1a3723ec829d5e90940a1d3de746186a29f43b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reviewer_of_a_consolidation_task_takes_the_new_row_field_by_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Verifies `leaf_seats` exposes only `[\"consolidator\", \"reviewer\"]` (and single-sibling `roleMessageArguments`) on a consolidation leaf versus `[\"worker\", \"reviewer\", \"curator\"]` on an ordinary leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764f40d3105c1cc9f185bbeab7a1521100caab73",
+            "content": "sha256:204476cb8960f739bde5934b551c7f3dba3e736e32dae6751ac0693c2c0ee824",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_consolidation_tasks_seats_message_only_each_other"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

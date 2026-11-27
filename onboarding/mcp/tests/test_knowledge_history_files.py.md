@@ -94,13 +94,17 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 
 - Re-anchoring against the candidate. [6]
 
+
 - The revision binding. [7]
+
 
 - The freeze predicate. [8]
 - The parallel merge in a real repository. [9]
 
 
+
 - The governing-row rules for a changed invariant and a family with a changed guarantee. [11]
+
 
 ### Cross-Repo References
 
@@ -110,7 +114,9 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
+
 - The registry set includes eight kinds, with MIK-R53 membership/record; decision dispatch and unclaimed hunk/legacy invariant subjects are explicit. [3]
+
 - Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits. [12]
 
 - Writer and validator token tests distinguish new full-hash admission. [13]
@@ -119,5 +125,8 @@ No cross-repo boundary is crossed by this file.
 
 - The unit-regression lane selects mcp/tests/test_knowledge_history_files.py. [10]
 
+
 - File shape, owner and uniqueness. [2]
+
+
 - Family rows. [5]

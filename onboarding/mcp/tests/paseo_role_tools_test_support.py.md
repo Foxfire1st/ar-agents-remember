@@ -10,7 +10,7 @@ The fixture both role-tool case modules import (PNT-R06): the fake host's wiring
 
 ## Code Commentary
 
-`ROLES` names the seven roles, `REFS` and `CALL_REFS` map the three document references to binding fields and to tool-call keyword arguments, and `binding` and `selection_of` derive both from `ROLE_REFS`. `RoleToolsTestCase` extends the status fixture: it patches `bridge_call` in the role-tool, wait, held-message and retirement modules, replaces `resolve_role_launch_context` and `TaskDocumentTopology`, and installs `agent_send` and `agent_wait`. `agent_send` applies the delivery rules in order (not-found, archived, closed, a pending permission decision, and a recipient in a turn whose provider takes no steer unless the host says it does), records the received text and the message id, and marks the agent running; `agent_wait` advances a fake clock by `waitMs` and answers queued waits or a still-running turn. `start`, `message`, `started`, `received`, `message_ids`, `waited` and `refusal` are the case helpers.
+`ROLES` names the eight task-bound/launcher roles (`architect`, `investigator`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`, `consolidator`), `REFS` and `CALL_REFS` map the three document references to binding fields and to tool-call keyword arguments, and `binding` and `selection_of` derive both from `ROLE_REFS`. `RoleToolsTestCase` extends the status fixture: it patches `bridge_call` in the role-tool, wait, held-message and retirement modules, replaces `resolve_role_launch_context` and `TaskDocumentTopology`, and installs `agent_send` and `agent_wait`. `agent_send` applies the delivery rules in order (not-found, archived, closed, a pending permission decision, and a recipient in a turn whose provider takes no steer unless the host says it does), records the received text and the message id, and marks the agent running; `agent_wait` advances a fake clock by `waitMs` and answers queued waits or a still-running turn. `start`, `message`, `started`, `received`, `message_ids`, `waited` and `refusal` are the case helpers.
 
 ## Invariants And Boundaries
 
@@ -20,7 +20,10 @@ The receipt of a message id is recorded but not deduplicated, matching the host:
 
 ### Repo-Internal References
 
+
 - The fake host refuses by class: absent, archived, closed, permission-pending, and a running provider that takes no steer. [1]
+
+
 
 
 - One fixture serves both case modules, with the role tables and request helpers defined once. [2]

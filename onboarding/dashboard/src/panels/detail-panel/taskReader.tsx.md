@@ -27,7 +27,9 @@ No authored document-model mutation, lifecycle acceptance or native review occur
 
 ## Direct execution on the selected task
 
-Only a planned subTask's own page composes TaskDirectGrant from directGrant.tsx after DocHead and before the body notice, ReaderHead and objective: one Direct execution label, a track-and-knob switch and given-by words when granted. Pending disables the switch without moving its served position. directGrant.tsx owns canonical adapter requests, served-state synchronization by document key and giver/time content, typed notice and late-answer suppression; refusals retain the actual grant.
+Only a planned subTask's own page composes TaskDirectGrant from directGrant.tsx after DocHead and before the body notice, ReaderHead and objective:
+
+When a `subTask` carries `consolidationList`, `TaskPage` renders the `Consolidation` block (`consolidationBlock.tsx`) showing listed entries, outcome badges, and the unread-memory `"{total} listed · outcomes not known yet"` summary with `"listed"` badges per D1052. one Direct execution label, a track-and-knob switch and given-by words when granted. Pending disables the switch without moving its served position. directGrant.tsx owns canonical adapter requests, served-state synchronization by document key and giver/time content, typed notice and late-answer suppression; refusals retain the actual grant.
 
 Other granted subTask states render bare Direct · given by words and no control; grantless states show nothing. Masters and sprints render neither a row control nor a row mark. This deliberately replaces the old rowDirectGrant/LeafExtra and preserved text-button presentation under the developer's revised scope. It does not change the external grant store, backend start-evidence gate or permission owner.
 
@@ -63,7 +65,9 @@ Other granted subTask states render bare Direct · given by words and no control
 
 
 
+
 - Only a planning subTask receives the switch; other granted states receive bare words. [8]
+
 
 
 

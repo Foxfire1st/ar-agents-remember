@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
-    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Confirmed CAP-L5 edits to docs/concepts.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): all CAP-L5 passages (3-tier role capsules, slimmed wire projection, >1,000-char offloading, trailing AR handover artifacts locator, Poka-Yoke skill:// pointers) are accurate and CAP deferrals resolved; pre-existing line 425 KNO-R07 contradiction remains openly deferred under DFR-A19SP8 (owner 261112-KNO).",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/concepts.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 role-capsule and handover updates alongside KNO-R05@v3 Consolidator/hand-off/step-up updates while re-deferring pre-existing KNO-R07 DFR-A19SP8 (line 425) under 261112-KNO.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/concepts.md",
-        "note": "Update docs/concepts.md line 425 for KNO-R07 verbatim batch records view and 5,000-token knowledge_read ceiling."
+        "note": "Update docs/concepts.md line 425 for KNO-R07 records/impact/search/compact-dependent views and 5,000-token ceiling."
       },
-      "createdAt": "2026-11-27T04:33:25.233800Z",
-      "createdByLeaf": "261124-CAP-L5",
-      "fileBlob": "a4cd8f85d3c687f5538b0215ce749f90d773af10",
-      "id": "DFR-A19SP8",
+      "createdAt": "2026-11-27T06:28:50.317700Z",
+      "createdByLeaf": "261112-KNO-L5",
+      "fileBlob": "d29016fdc9804af42c05cc0a88358040daf3211d",
+      "id": "DFR-YZFEY8",
       "owner": "261112-KNO",
-      "passage": "docs/concepts.md line 425 (knowledge_read returns names and locations only)",
-      "reason": "KNO-R07 (landed in 1063f65132b1) raises the knowledge_read tool-answer exception ceiling to 5,000 tokens in tool_answer.py and adds verbatim batch full-text records plus impact/search/compact-dependent views, directly contradicting line 425; codeRoot is frozen at Code Round 4 PASS and Curator cannot edit docs/ files."
+      "passage": "docs/concepts.md line 425 ('knowledge_read returns names and locations only')",
+      "reason": "KNO-L5 merged docs/concepts.md onto CAP-L5 (e273d1c9), advancing its blob; pre-existing KNO-R07 line 425 contradiction remains deferred under 261112-KNO (accepted in KNO-L5-F07)."
     }
   ],
   "document": "docs/concepts.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 35,
+  "revision": 36,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
     {
-      "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+      "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/tasks/store.py"
     },
     {
-      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+      "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -121,7 +121,7 @@
       "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
     },
     {
-      "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+      "blob": "01afa70c008ae34ebf1f81b0ffab4bb47952036b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -191,7 +191,7 @@
       "path": "mcp/src/agents_remember/kernel/harnesses.py"
     },
     {
-      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
     },
@@ -226,7 +226,7 @@
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
     {
-      "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+      "blob": "97c8f09833f38b5d7d420d5cdc36af16c805817b",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/render.py"
     },
@@ -261,7 +261,7 @@
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
     {
-      "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+      "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_step_up.py"
     },
@@ -331,7 +331,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
     },
     {
-      "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+      "blob": "c2c9b4346f852ba071706f09c32a57bc41fb72e8",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -351,17 +351,17 @@
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+      "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+      "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+      "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -483,14 +483,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:42:30+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

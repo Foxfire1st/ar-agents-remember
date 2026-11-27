@@ -65,7 +65,9 @@ No relevant external documentation source is configured for this repository-loca
 
 - The real sprint page surface rendered. [2]
 
+
 - The master reader mounts the queue independently of the optional graph section. [3]
+
 
 - The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains. [4]
 

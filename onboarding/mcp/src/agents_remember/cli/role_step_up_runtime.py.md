@@ -10,7 +10,7 @@ Wire task/receipt step-up selection, predecessor provenance and bounded immutabl
 
 ## Current Contract
 
-Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
+Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator and Consolidator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
 
 For a non-taskless role with an effective task, selected_defaults prefers current receipt stepUp, then a recognized durable task decision. Architect and Investigator use TASKLESS_ROLES and do not probe a request-less singleton receipt even when the context has an effective master; their receipts remain request-scoped at the receipt owner. Unreadable or incomplete typed review count warns and uses base choices absent an explicit/prior selection; explicit or prior selection remains with an unknown count warning. With receipt loss, only a durably observed destination may be called an applied predecessor; an unconfirmed requested destination stays unknown.
 
@@ -24,11 +24,15 @@ Cleanup attempts process/group termination and waits up to the configured reap i
 
 ## Evidence
 
+
 - Only non-taskless roles with an effective task inspect singleton receipt/prior decision; review-count warnings and explicit/prior choices remain qualified. [1]
+
 - Per-root inventory constants explicitly bound capture time, bytes, NUL records, diagnostics and bounded reap wait. [8]
 - Cleanup attempts process/group termination and bounded waiting, closes pipes and can return unconfirmed termination; an earlier read reason takes precedence. [11]
 
+
 - The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity. [12]
+
 
 
 

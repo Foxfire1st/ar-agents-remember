@@ -164,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3027ef0193fed1134ecf9454d3cbe139c5a1a5ca",
-            "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
+            "blob": "fa4d3f95c8965368e5462086f84d9d1a1a35fc94",
+            "content": "sha256:dca6357e78b53c4494f58e37ea69d2ce737ff44d1c082412601fcc8077e5d5d6",
             "locator": {
               "kind": "symbol",
               "name": "_worklist"
@@ -181,12 +181,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+            "blob": "ceb7522bd6fc0d82fd14dd7a603e3fd782707f36",
             "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
             "locator": {
-              "end": 603,
+              "end": 626,
               "kind": "line_range",
-              "start": 594
+              "start": 617
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },

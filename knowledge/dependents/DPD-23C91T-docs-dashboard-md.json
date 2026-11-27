@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
-    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "On settled tree 049d3961 (commit ed29e40b), the dashboard guide accurately describes the Operations table rules (requiring an open session for helper-only work or a declared wait with an armed check, and pausing when known host activity shows neither), the Effects control plus manual Retry reloading an unavailable embedded chat control alongside the bounded retry for a selected agent and workspace, and lines 560-561 stating that finalizing, cleaning up, or abandoning a task archives its role agents on the host and that an archived agent is not a document's chat (with L38 enforcing seat closure before whole-folder removal).",
-    "task": "261124-EXP",
-    "uncommitted": false
+    "statement": "Verified docs/dashboard.md against 17c064d8 (including Round 5 KNO-L5-F07 Consolidation block table row at line 484 and shifted role_launch_routes.py anchor 214-235).",
+    "task": "261112-KNO-L5",
+    "uncommitted": true
   },
   "document": "docs/dashboard.md",
   "id": "DPD-23C91T",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
     },
     {
-      "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+      "blob": "67fd827411b726fc622af1a177534644708fdd00",
       "kind": "file",
       "path": "dashboard/src/cockpit/roleLaunchModel.ts"
     },
@@ -46,7 +46,7 @@
       "path": "dashboard/src/cockpit/paseoFrameModel.ts"
     },
     {
-      "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+      "blob": "ea1b923bbbb4b420f986af77d41e35d3fdcd693f",
       "kind": "file",
       "path": "dashboard/src/cockpit/document-chat/model.ts"
     },
@@ -56,12 +56,12 @@
       "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
     },
     {
-      "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+      "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
       "kind": "file",
       "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
     },
     {
-      "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+      "blob": "6c52d16e5f50441880f5f5902cc6bbce081f6843",
       "kind": "file",
       "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
     },
@@ -121,7 +121,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+      "blob": "f8bc35784fb9693af38d3c477b1fc7ebc18ef01f",
       "kind": "file",
       "path": "dashboard/src/panels/eventSummary.ts"
     },
@@ -164,7 +164,7 @@
     },
     {
       "anchor": {
-        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+        "blob": "932147f1ec94bc0228c0709d7722b56a9ee1203c",
         "content": "sha256:34b956fc0cc8e53f661805c9b9c3cf97f635f7166966600af1f083303699f396",
         "locator": {
           "kind": "symbol",
@@ -396,12 +396,12 @@
     },
     {
       "anchor": {
-        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
         "content": "sha256:04d56886385a9cd5a5ce52d3223fe4b4255316b4ef9cf14632bb3d2995c98cf7",
         "locator": {
-          "end": 234,
+          "end": 235,
           "kind": "line_range",
-          "start": 213
+          "start": 214
         },
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
@@ -446,14 +446,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
-    "task": "261124-EXP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

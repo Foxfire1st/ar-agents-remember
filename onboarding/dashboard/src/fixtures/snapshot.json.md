@@ -128,7 +128,9 @@ absent from the file rather than present as `null`.
 
 - The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. [10]
 
+
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
+
 
 - INDEX_SIGNATURE_SITES is a closed, exhaustive record naming every current absorbing node with its reason. [12]
 

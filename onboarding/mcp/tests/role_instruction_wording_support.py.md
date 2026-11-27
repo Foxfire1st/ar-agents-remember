@@ -31,7 +31,9 @@ The forbidden search covers the report directory segment as part of the whole te
 
 - A repeated ordinary label is accepted while every detail-marker link must stay exact; planted mutants fail. [5]
 
+
 - The coordination action steps name the pre-action pointers each owning step must carry. [6]
+
 
 - A non-starting seat keeps its no-start boundary: the Reviewer's in its role file, the others by a start-no-role sentence. [7]
 

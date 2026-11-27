@@ -140,12 +140,16 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 - Restated guarantees carry an authored effect; the writer fills the revision.
 
 
+
 - The memory-review pass limit is the settings limit and a pass beyond it needs Architect or developer instruction recorded by the Manager; the role keeps its stage and authority boundaries. [9]
 
 
 
 
+
+
 - The Curator batches citation checks and repairs, completes the full quality/coherence operation and hands memory directly to the independent Reviewer. Faulty inputs are corrected through the same tool; a covered correct-input write refusal uses the scoped recovery procedure with explicit provenance. Permission, validation, unowned-state, meaning and outside-surface stops remain. Extra memory passes require Architect/developer authority recorded by Manager. [10]
+
 
 
 
@@ -167,7 +171,9 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - A changed family guarantee carries a Curator-authored effect. The writer fills the revision. [8]
+
 
 
 

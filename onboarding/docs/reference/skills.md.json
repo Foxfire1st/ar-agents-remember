@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "85f35fd2f1f699b7812b01b0850e39740b5528d1",
-        "content": "sha256:38e4e806eb43d387cd4c215656c7028d724715ef22532be9cfb06509bcb73821",
+        "blob": "092d6fb838245f42a046b0c70cd6044b1de447f8",
+        "content": "sha256:2354df8e414ed02537ec0736123defe3322ea26e166f37aa036f5d1e65b090c6",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,23 @@
       },
       "rationale": "The skills reference tells contributors to renew the generated skill copy with mcp/.venv/bin/python scripts/renew-instructions.py and points them to CONTRIBUTING.md for contributor rules.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "092d6fb838245f42a046b0c70cd6044b1de447f8",
+        "content": "sha256:2354df8e414ed02537ec0736123defe3322ea26e166f37aa036f5d1e65b090c6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TC6K2P",
+      "invariant": "INV-3ZXAD9",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 12",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Documents 9 role files and 10 operation files including consolidation.md.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -25,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f35fd2f1f699b7812b01b0850e39740b5528d1",
+            "blob": "092d6fb838245f42a046b0c70cd6044b1de447f8",
             "content": "sha256:7a42bab6dee564b263329e4bf084b4af5fb3659a66c225c2b6780b64dfc9d972",
             "locator": {
               "end": 19,

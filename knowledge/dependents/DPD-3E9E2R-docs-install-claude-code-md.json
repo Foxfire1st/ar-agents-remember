@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Verified docs/install/claude-code.md against KNO-R07 candidate: Claude Code install/setup instructions and CLI entrypoints remain accurate after adding agents-remember memory-briefs.",
-    "task": "261112-KNO-L7",
+    "statement": "Verified docs/install/claude-code.md against 17c064d8: Claude Code install and MCP wiring instructions remain accurate after KNO-R05@v3.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
     },
@@ -82,14 +82,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
     "task": "261112-KNO"
   }
 }

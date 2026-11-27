@@ -38,6 +38,8 @@ no items.
    K_C entry's range there (`linkage._linked`). A change without text hunks, and the mode fact of a mode change,
    are linked at file level, by an entry with a `file` locator at the path (`non_text_linked`).
 7. **Unexplained changes and reconsideration.** `unexplained_items` applies exact generated-copy filtering and equal-change grouping before raising the remaining unlinked hunk/non-text items; `reconsideration_candidates` raises one for each decision alternative whose linked
+
+8. **Consolidation passes.** When `consolidation_list` is supplied on `WorklistInputs`, `_Run` delegates to `knowledge_worklist/consolidation.py` (`consolidation_pass`) to emit one `consolidation_target` item per listed family and reached rule and mark listed subjects with `consolidationListed`.
    target changed.
 
 The document holds the pairing, the scope counts, the classified entries, the changes with their linkage,
@@ -211,19 +213,27 @@ is inferred from this source-only addition.
 
 ## Evidence
 
+
 - What one run reads. [34]
+
 - The one representation of unreadable input. [35]
 - The entry point and the three failures it turns into an incomplete document. [36]
 - The change inventory and the renames, each named when unavailable. [37]
 - Classification, knowledge changes, reached families and their members, once. [39]
 
+
 - A changed path's hunks with their linkage, or its file-level linkage. [40]
+
+
 
 
 - A hunk is linked by changed lines on their own side only. [41]
 
 
+
+
 - A non-text change is linked by a file-locator entry. [42]
+
 
 - A failed or timed-out Git call is the input named git. [43]
 - The read-ahead is one batch and never fails the run. [44]
@@ -246,7 +256,9 @@ No configured live documentation source was available for this pass.
 
 - The schema name. [46]
 - One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`). [47]
+
 - The run's inputs, with MIK-R10's route coverage and MIK-R14's coordination root last. [48]
+
 - The one representation of unreadable input. [49]
 - Inventory and renames; a partial inventory is incomplete, naming the paths. [50]
 
@@ -257,7 +269,9 @@ No configured live documentation source was available for this pass.
 - Step 3: families reached by a touched member or a changed record. [54]
 - The `touched_invariant` facts and identities. [55]
 
+
 - The `stale_invariant` item. [56]
+
 
 - The `reached_family` items and their member identities. [57]
 - The leaf's declarations, one input of the run. [58]
@@ -266,15 +280,21 @@ No configured live documentation source was available for this pass.
 - Step 8 in the docstring: MIK-R14's reconsideration candidates. 
 
 
+
 - A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry). [65]
+
 
 - A Git call that failed or timed out is `incomplete` naming `git` (MIK-R09). [66]
 - The insertion-only symmetry at the gate. [67]
 
+
 - Gate linkage, text and file level. [68]
 
 
+
+
 - The non-text predicate the gate and the lane share (MIK-L32). [69]
+
 
 - A body edit raises one invariant and its family and carries the rest of the file. [70]
 - A comment between functions raises nothing; one inside raises. [71]
@@ -296,7 +316,10 @@ No cross-repo boundary is crossed by this file.
 
 
 
+
 - Current orchestration includes link-target items, grouped-change facts and selective mechanical route context [38]
+
+
 
 
 
@@ -304,13 +327,20 @@ No cross-repo boundary is crossed by this file.
 - Planned reconciliation and the final combined-list marks, `planned_untouched`, sort and summary. [59]
 
 
+
+
 - Historical step 6 outline: route conditions of reached families and killed routes; current assembly also marks route items. [60]
+
+
 
 
 - Step 7: one linkage, marked unexplained items in the one sort, `changes` and `unexplained`. [62]
 
 
+
+
 - Step 8: the run's classifier bound once and reused; marked candidates join the one sort; the `reconsideration` key. [64]
+
 
 
 - Current source delta inspected statically: Replace stale no-mark and blanket new-record exemptions with the executable combined-list contract; preserve deterministic identity, one-pass family reach and named incomplete-input behavior. [77]
@@ -327,7 +357,9 @@ These spans and input-card identities were independently rechecked after the sup
 
 
 
+
 - Current assembly includes removed-link-target items, equal-change groups and selected mechanical route context. [78]
+
 
 
 - Stale-entry facts preserve the optional unavailable recorded-blob reason. [79]
@@ -341,17 +373,25 @@ These spans and input-card identities were independently rechecked after the sup
 - Route-chain context is a mechanical projection over the parsed candidate.
 
 
+
 - The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage. [83]
+
 
 - The classification context clears classifier, candidate, pairing and path references on exit, including failures; no active context makes share_classifier inert. [84]
 
 
-Anchor: `_Run` [45]
+
+- Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items. Anchor: `_Run` [45]
 
 
-Anchor: `_Run` [51]
 
 
-Anchor: `_Run` [63]
+- The document: the items of every step, one sort and the digest. Anchor: `_Run` [51]
+
+
+
+
+- Step 8 in the docstring: MIK-R14's reconsideration candidates. Anchor: `_Run` [63]
+
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/route_context.py:71-117 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0b30d9358b6ef00be9af1bdeb6c22eb802bf8d1e; mcp/src/agents_remember/application/knowledge_worklist/route_context.py:70-116 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/knowledge_worklist/compute.py::_Run - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

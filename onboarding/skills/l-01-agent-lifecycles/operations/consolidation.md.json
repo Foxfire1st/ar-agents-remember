@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/consolidation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+        "content": "sha256:36d2755cd5bb91508757b461e22a83e8b16915cb021d48167f4e7a59146a07ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G7BA18",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Canonical Tier-1 operation text for consolidation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The operation header scopes a consolidation pass to one leaf's `consolidationList` with an unchanged code tree, no route review, and mandatory knowledge-gate and coherence checks.\n\nAnchor: `# Operation — Consolidation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+            "content": "sha256:eebd0eaeb12d9aee6046b401f24b41728dbc63bb5144fa51af44f7aaedf48556",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`## Workflow` orders worklist persistence, family-first reading and named proof-test execution, `knowledge_write` (`commit: false` -> `true`), clean-tree/integrity/stale checks, `curator_coherence`, and Reviewer handover via `role_message`.\n\nAnchor: `## Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+            "content": "sha256:0bd81b5f442dc6c05f90b555937d165a4291da6a6abe6d11b856a6acba5fa847",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`## Notices` directs Manager escalation for seat/delivery, authority, beyond-limit passes, disputes, reserved sync, and `unresolved`/gap items routed to the Architect.\n\nAnchor: `## Notices`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+            "content": "sha256:949db6cfc98d76f39f1f07bbbb93c00cd2682175ef8cf32b10f2e282cc0c973e",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

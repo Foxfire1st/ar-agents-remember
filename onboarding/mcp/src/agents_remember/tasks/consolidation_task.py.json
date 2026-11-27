@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/tasks/consolidation_task.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "77ac250d2c4b015108bf697f9352133d52941ebc",
+        "content": "sha256:d056a56515c26f82b401206849b89e2fe7de1fa82c96a928015f73996ce48516",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_seat_roles"
+        }
+      },
+      "id": "RLZ-APKZ2P",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Selects the leaf seat set (consolidator + reviewer for consolidation leaves vs worker + reviewer + curator for ordinary leaves) from the task document's consolidationList.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`CONSOLIDATION_LEAF_SEATS` defines `(\"consolidator\", \"reviewer\")` beside `ORDINARY_LEAF_SEATS` (`(\"worker\", \"reviewer\", \"curator\")`) and `CONSOLIDATION_LIST_KEY`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ac250d2c4b015108bf697f9352133d52941ebc",
+            "content": "sha256:634622c8565a3d1e856c1c9bc8ea6ad04668b113d15b9f47c00c9ce9265bab31",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSOLIDATION_LEAF_SEATS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`names_consolidation_list` inspects either a `TaskDocument` or a raw JSON mapping for a non-empty `consolidationList`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ac250d2c4b015108bf697f9352133d52941ebc",
+            "content": "sha256:10771c6984f5900f1e04dc3925d1950d691dad4ed26a705aa5f451469fcf23eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "names_consolidation_list"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`is_consolidation_task` reads the document file directly and returns `False` on `OSError`, UTF-8, or JSON parse errors rather than masking downstream resolution errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ac250d2c4b015108bf697f9352133d52941ebc",
+            "content": "sha256:beb7fd3e9d554c823900636b6cc9004eaba87db49628fd071f44162de6292e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_consolidation_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`leaf_seat_roles_of` resolves a `TaskDocumentRef` via `TaskDocumentTopology` and falls back to `ORDINARY_LEAF_SEATS` on `TaskDocumentRefError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ac250d2c4b015108bf697f9352133d52941ebc",
+            "content": "sha256:c47c174de14d5f6b898765fab94d00695235c2bbf9669dcfbe198a0bb0967124",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_seat_roles_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

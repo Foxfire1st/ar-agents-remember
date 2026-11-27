@@ -174,5 +174,7 @@ No cross-repo boundary is crossed by this file.
 
 - The `unit-regression` lane selects `mcp/tests/test_unexplained_change_disposition.py`. [13]
 
+
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/reconsideration_test_support.py`. [14]
+
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.

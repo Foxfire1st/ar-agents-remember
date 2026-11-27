@@ -142,13 +142,19 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 
 - Retained reference account (no fresh execution or acceptance inferred): Its header line. [17]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The declaration refusals: a master document, an empty list, a requirementRef naming no listed packet when the requirements list packets, and a repeated subject and effect. [18]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The field on the task document. [19]
+
 - Retained reference account (no fresh execution or acceptance inferred): Its normative classification. [20]
+
 - Retained reference account (no fresh execution or acceptance inferred): The optional intent slot, absent when undeclared. [21]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The header block. [22]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The strict lookup and the decision answer. [23]
 - Retained reference account (no fresh execution or acceptance inferred): The one rule for a leaf naming no master, and the sync's own call. [24]
@@ -167,11 +173,15 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Parent-row stage mirrors the native task document directly, not a step-derived rollup or an independent landing verdict. [39]
 - Master-to-sprint mirroring uses the native commanding census and exact typed/legacy row correlation with named ambiguity/unreadability refusals. [54]
 
+
 - Kind separation and leaf-only expected effects are explicit in the TaskDocument after-validator, which also checks sprint rows and seats. [40]
+
 
 - Registration can replace a mismatched enclosure, while missing derived links are separately filled [41]
 - Canonical placement guards derived write targets [42]
+
 - Maintenance scope is lifecycle; declarations are normative; invalidation classes are limited [43]
+
 - Exact requirements remain mandatory beside packets; resolution and confinement precede packet bytes [44]
 - Partial review content addressing refuses and record canonical digest is checked [45]
 
@@ -193,4 +203,5 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool` [5]
 
 - The exhaustive field taxonomy classifies the stamp as evidence. [57]
+
 - Code `reviewState` and the candidate’s pre-closeout `memoryReviewState` are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]

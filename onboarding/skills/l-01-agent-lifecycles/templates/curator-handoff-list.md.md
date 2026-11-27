@@ -68,4 +68,5 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - Changed family rows need an authored effect; the revision is the writer's. [16]
 
+
 - The producer contract keeps the entry, its shape and the producer rules; the Curator-authored keys, writer input, admission and decision records sit in the ingestion template. [31]

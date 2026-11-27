@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:bdc1bb78f49c076fabb30a1d6c2c17884a1d8116d2cc11d50083e10b3d458a09",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_eight_default_pairs_pass_wire_token_ceilings_and_send_links"
+        }
+      },
+      "facet": "Verifies all 9 default launch pairs including consolidator/consolidation stay within Turn-1 wire token ceilings.",
+      "id": "PRF-1AS1M4",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:9c1e6bd7df6048e946e9bedc46a81e0d92241262e06bb87eee542ddacde78f90",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:2b586aa307f25e74c68d833793298d3b6b03df159684d8aa0a3529b85a98bfc5",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:97aafadbfed205a71e72fbd6572bd61cb47c274f115fd8b93285e26aeafa595c",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:754c5ed0108e58123b06248737181e4af64b2732b7a9826ef964ccdac0adda77",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:f3986c8df48f48981c6a28e7759cca28df77b61529e66945ac481a42167cc69d",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:425d54709491cddcb98f70d5dc1a9bd8f15b8bff8aaaed1df810e6d50bc1ab9d",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:8b3a322493372b32ddf70b709f2a06617d93f9471e7ebc2ef2763d6060c72aec",
         "locator": {
           "kind": "symbol",
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:8874451040e0826450dcce93250c33f473f7af7b9c17763ce5d8f87b7d698010",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:0c632ca8f145e3f929ac4c2aab0254e78e31f4412246b76d4b31bbda9d387669",
         "locator": {
           "kind": "symbol",
@@ -156,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
-        "content": "sha256:176b0845afac63185a97650aa383fca9e2234436f583a96c91ed33c420d9b0ef",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:90863487bc35529aa7a3b0cf5e59ef14f2194d8e3d7be424a5b73316fe0488c3",
         "locator": {
           "kind": "symbol",
           "name": "test_compiled_capsule_token_ceilings_all_34_matrix_keys"
@@ -173,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:bdc1bb78f49c076fabb30a1d6c2c17884a1d8116d2cc11d50083e10b3d458a09",
         "locator": {
           "kind": "symbol",
@@ -190,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:717e287768ebb540a5d2b3b0ff25053ef11ebcb0ae2785ae0427ee5d81321e36",
         "locator": {
           "kind": "symbol",
@@ -207,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:bdc1bb78f49c076fabb30a1d6c2c17884a1d8116d2cc11d50083e10b3d458a09",
         "locator": {
           "kind": "symbol",
@@ -224,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:acaca9468c87ac2ea20e0fc8cfd468a2e12eb3253340c8121e9be06e81b272ba",
         "locator": {
           "kind": "symbol",
@@ -241,8 +258,42 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
-        "content": "sha256:3d25bc8275dd064e14e40ca27a38c1fbf7a31d2b7daa3b077f7f5a70d49bbfdb",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:bdc1bb78f49c076fabb30a1d6c2c17884a1d8116d2cc11d50083e10b3d458a09",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_eight_default_pairs_pass_wire_token_ceilings_and_send_links"
+        }
+      },
+      "facet": "Verifies reviewer/review Tier-1 prompt with the candidateTree/verdictRef instruction stays within its wire ceiling.",
+      "id": "PRF-TGRRP9",
+      "invariant": "INV-J4MDWS",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 10 & Evidence 8 review binding",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:90863487bc35529aa7a3b0cf5e59ef14f2194d8e3d7be424a5b73316fe0488c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiled_capsule_token_ceilings_all_34_matrix_keys"
+        }
+      },
+      "facet": "Verifies all 37 compiled capsule matrix keys including consolidator/{orientation,consolidation,recovery} stay within token ceilings.",
+      "id": "PRF-XQ2VF7",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:3209ea7629079ec7d54aaf1cfcddc0888d2244eea876b68156f6b7f6da65c5fd",
         "locator": {
           "kind": "symbol",
           "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
@@ -258,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:d7038f51fefd617d32300cd32de95d032d3c801aa315246d17524c816afffbf3",
         "locator": {
           "kind": "symbol",
@@ -281,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+            "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
             "content": "sha256:b960be80b31ff6f0174f2ca0122924b6caccf73dabc4883ae5f4a565eb7cab2e",
             "locator": {
               "kind": "symbol",
@@ -297,8 +348,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
-            "content": "sha256:3d25bc8275dd064e14e40ca27a38c1fbf7a31d2b7daa3b077f7f5a70d49bbfdb",
+            "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+            "content": "sha256:3209ea7629079ec7d54aaf1cfcddc0888d2244eea876b68156f6b7f6da65c5fd",
             "locator": {
               "kind": "symbol",
               "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
@@ -313,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eaf13b48d66937b95586528d38d0ac1d9dcbf24",
+            "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
             "content": "sha256:c05e1631dd74c53459927577650384c35d6fde40a9e16ac352ea090076b3f6aa",
             "locator": {
               "kind": "symbol",

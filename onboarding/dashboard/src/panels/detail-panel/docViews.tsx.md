@@ -21,9 +21,14 @@ Own views receive the addressed DocumentTaskEntry and TaskSummary, not a synthet
 ## Evidence
 
 
+
 - Shared content-view dispatch preserves form-specific collection ownership. [1]
 
 
+
+
 - Reference views retain server-resolved artifact handlers rather than flattening links. [2]
+
+
 
 - Record views preserve complete section bodies and whole-round review counts. [3]

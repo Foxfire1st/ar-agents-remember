@@ -65,7 +65,7 @@ Memory quality receives one mode-discriminated request and dispatches sync/start
 
 The knowledge family selects converted memory roots rather than exposing database-path or caller-namespace inputs. Read receives the workspace default repository and coordination-root cache location separately; the caller's `repositoryRoot` is forwarded as supplied. Diff receives `coordination_root` for writing the full comparison report; integrity takes the server alone. The registered family contains no change or project tool. The family mounts four operations: read, diff, integrity and write. `knowledge_write` carries the command's leaf, crossing and wave target selection, takes server settings for a raise, plans by default and writes only with the explicit file-write flag, then returns the report or a refusal — the same plan, write, refusal and report behaviour as the command route, with its admission boundary and no Git commit.
 
-The read description advertises `Read memory. Views:` naming ten views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, and `writers` — notes automatic code-tree pairing via `repo_id`/`contractPath`/`memoryRoot` with `repositoryRoot`/`codeTreeId` override, notes `recordId`/`recordIds` accept text IDs (`INV-`/`WKN-`/`DPD-`), names the CLI write commands (`agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`), and points to `docs/reference/mcp-tools.md`. Stable ordering, paging, continuations, route-chain rows, and family-complete internal selection remain owned by the knowledge reader application layer.
+The read description advertises `Read memory. Views:` naming eleven views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, and `consolidation_proposal` (`masterId`) — notes automatic code-tree pairing via `repo_id`/`contractPath`/`memoryRoot` with `repositoryRoot`/`codeTreeId` override, notes `recordId`/`recordIds` accept text IDs (`INV-`/`WKN-`/`DPD-`), names the CLI write commands (`agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`), and points to `docs/reference/mcp-tools.md`. Stable ordering, paging, continuations, route-chain rows, and family-complete internal selection remain owned by the knowledge reader application layer.
 
 Integrity now accepts `memoryRoot`, `codeRoot`, `contractPath`, and `baseCommits`, constructing `IntegrityCheckRequest`. Its description names validator output and the leaf's latest change-to-knowledge worklist. The former `databasePath`/`repositoryId` and `runId`/`inputDigest` registration accounts no longer describe this wire signature.
 
@@ -194,15 +194,21 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
  mcp/src/agents_remember/models/tools/public_roster.py — code file; mcp/src/agents_remember/mcp/registration/tasks.py — code file; mcp/src/agents_remember/mcp/registration/worktrees.py — code file; mcp/src/agents_remember/mcp/registration/closeout.py — code file; mcp/src/agents_remember/mcp/registration/role_agents.py — code file
  mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools
 
+
 - The role-agent registrar mounts `role_start`, `role_start_set`, `user_settings_init`, and `role_message`; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
 
+
 - The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
+
 
 
 - The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
 
 
+
+
 - register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners. [40]
+
 
 - One registered citation operation forwards the extended signature. [42]
 
@@ -235,6 +241,7 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 - `citation_fix` repairs moved citation anchors and authors sidecar references in a leaf memory worktree. [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
+
 
 
 - The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations. [22]

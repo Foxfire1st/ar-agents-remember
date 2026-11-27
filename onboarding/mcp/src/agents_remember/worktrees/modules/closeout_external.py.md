@@ -134,7 +134,9 @@ enforcement cannot disagree.
 - The last recorded memory round supplies a fact only with a passing result, usable verdict reference and exact reviewed memory tree. [56]
 - The closing writes its optional review fact with the flag and preserves closed histories. [57]
 
+
 - A newly closed history without a fact returns `NO_PASS_SENTENCE`, and one whose `verdictRef` could not map to `notes/reports/<rel>` returns `unmapped_verdict_ref_note` naming it. [58]
+
 
 - Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows. [50]
 

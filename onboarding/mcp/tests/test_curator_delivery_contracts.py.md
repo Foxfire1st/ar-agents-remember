@@ -22,14 +22,18 @@ The module-scoped `deliveries` fixture compiles every role/operation pair the li
 
 ## Evidence
 
+
 - Each detail is tied to its table-row group, link label, and carrier roles. [1]
+
 
 - Every declared role/operation pair is compiled. [2]
 
 - The Curator role retains its truth/writer/repair clauses and links `reference/curator/exceptions-and-recovery.md`, while shared continuation stays in `core/every-role.md` + `core/authority.md` and full checks live in `operations/curation.md`'s `Checks and gates` section. [3]
 
 
+
 - Step details reach actual files at their actions over the complete matrix. [4]
+
 
 - Current truth and all-carrier repair are in the delivered reconciliation detail. [5]
 
@@ -40,7 +44,9 @@ The module-scoped `deliveries` fixture compiles every role/operation pair the li
 - Writer identity and publication semantics hold in source and compilation. [8]
 - Bare-path writer examples are flagged in tables and shell blocks. [9]
 
+
 - No Curator delivery or followed skill carries a bare-path writer example. [10]
+
 
 
 - A deleted row retiring an invariant names only retire. [11]

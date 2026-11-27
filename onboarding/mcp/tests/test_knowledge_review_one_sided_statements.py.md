@@ -167,7 +167,10 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
 
 
+
 - The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module. [16]
+
+
 
 
 

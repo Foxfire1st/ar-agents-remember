@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
-    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Re-confirmed updated CONTRIBUTING.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1, KNO-L7): test isolation matches mcp/tests/conftest.py (_user_settings_home sets XDG_DATA_HOME via tmp_path_factory.mktemp('user-data') beside XDG_CONFIG_HOME), and seven-lane manifest passages pin no counts after KNO-L7 updated test-evidence-lanes.toml.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified CONTRIBUTING.md against post-CAP-L5 synced tree e273d1c9 after CAP-L5 resolved its deferral: role-scoped allowlists, compiled capsule ceilings, and test-evidence-lanes.toml guidance remain accurate.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+      "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -212,14 +212,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:33:23+01:00",
+    "at": "2026-11-27T07:33:39+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

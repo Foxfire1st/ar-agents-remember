@@ -19,5 +19,7 @@ Split from `mcp/tests/test_curator_instruction_wording.py`. Uses `_compiled_outc
 ## Evidence
 
 - `_deliver_indexed_detail` proves compiled detail-pointer emission, byte parity with canonical skills, and launch-instruction link rewriting. [1]
+
 - Coordination-route, Git-comparison, and cross-role message-handover helpers verify compiled shared-block clauses and detail links with mutation checks. [2]
+
 - `CuratorInstructionWordingDeliveryTests` pins the 8 failed scenario steps, Reviewer intake wait, refused-write ladder, manifest role descriptions/tools, and `knowledge-ingest` CLI admission. [3]

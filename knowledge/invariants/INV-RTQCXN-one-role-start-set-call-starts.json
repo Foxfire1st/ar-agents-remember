@@ -7,8 +7,8 @@
   },
   "applicability": "One owning Manager’s set request for a canonical leaf and receipt-bound held-seat opening.",
   "conditions": [
-    "The set request derives stable per-role seat request identities and retries partial creation without a fourth agent.",
-    "Optional Reviewer work opens Reviewer; ordinary preparation leaves Reviewer and Curator without turns.",
+    "The set request derives stable per-role seat request identities and retries partial creation without duplicating seats.",
+    "Optional Reviewer work opens Reviewer; ordinary preparation leaves Reviewer (and Curator on ordinary leaves) without turns.",
     "One unarchived agent holds a leaf seat, including while closed; explicit authorized replacement and ambiguous-resolver refusal retain that rule."
   ],
   "exclusions": [
@@ -28,27 +28,19 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "One role_start_set call starts the leaf's Worker open at once with Reviewer and Curator held, repeat sends are identical, held seats open via role_message with held receipts, and one-seat occupancy with resolver refusal holds.",
+  "statement": "One role_start_set call starts the leaf's lead seat open at once with its sibling seats held (Worker open with Reviewer and Curator held on an ordinary leaf; Consolidator open with Reviewer held on a consolidation leaf carrying consolidationList), repeat sends are identical, held seats open via role_message with held receipts, and one-seat occupancy with resolver refusal holds.",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L100",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

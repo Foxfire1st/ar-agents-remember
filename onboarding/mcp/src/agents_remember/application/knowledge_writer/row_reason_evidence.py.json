@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/row_reason_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EVIDENCE_MARKER` fixes `\" Evidence (\"` as the delimiter for writer-appended foreign-evidence segments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caf44633959456f74fa434444a1e1cd7aaba25b7",
+            "content": "sha256:22ee4cb61a937bc357a310106ffd1c25649b75cf3f3b97449c390632f71ae9f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_MARKER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`carried_evidence_segments` scans `reason` using `str.find` to recover every appended segment byte-exact, including a trailing bare marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caf44633959456f74fa434444a1e1cd7aaba25b7",
+            "content": "sha256:5423f9934566c9bee4f21f407a82a8aa498c51b5b358a6ac38ed0421d1abeef0",
+            "locator": {
+              "kind": "symbol",
+              "name": "carried_evidence_segments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`with_carried_evidence` appends each prior segment from `carry` missing from `reason` without duplicating already-carried segments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caf44633959456f74fa434444a1e1cd7aaba25b7",
+            "content": "sha256:ba18fc08824e98dcc7707f97a04f2aadd2a5fd9cd217ac589b5d197b899cd6c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_carried_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

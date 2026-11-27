@@ -10,7 +10,7 @@ This canonical router reference describes how a native role capsule is selected 
 
 ## Logic
 
-The native launcher supports eight roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, on a master that no sprint commands, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
+The native launcher supports nine roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator, Consolidator and Bootstrap. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, on a master that no sprint commands, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
 
 Paseo hosts the role agents, keeps their sessions and shows their chats. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. A reply in the same turn reaches a sender only when that sender waits on its own call; otherwise the answer goes with `role_message`. A developer question goes to the reporting recipient the role instructs, or otherwise the actual parent in `host.parent`; without either, the agent asks in its own chat. Orientation also permits own-chat escalation only when that recipient cannot be reached at all: the agent names the refusal and reason and ends after independent work is exhausted. Dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
 
@@ -89,9 +89,13 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
+
 - One explicit supported role and applicable operation select the role and operation files; the first message adds the every-role digest and the handover facts, and no other core file is loaded. [11]
 
-- The native launcher names eight role IDs, including Bootstrap. [12]
+
+
+- The native launcher names nine role IDs, including Consolidator and Bootstrap. [12]
+
 
 - Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location. [13]
 
@@ -107,7 +111,9 @@ The following requirement and attempt references retain their source-epoch evide
 
 ## Current intake and developer-question evidence
 
+
 - Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named. [17]
+
 
 
 
@@ -115,7 +121,9 @@ The following requirement and attempt references retain their source-epoch evide
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent. [18]
+
 
 - `curator-handoff-list.md` is the producers' contract for the Curator hand-off: Workers and Reviewers send their own lists directly, and Managers and Orchestrators relay none. [19]
 

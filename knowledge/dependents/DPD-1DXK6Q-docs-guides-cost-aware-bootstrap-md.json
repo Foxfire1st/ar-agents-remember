@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
-    "commit": "d7b08155a88066fe08ba556c8230961f0042e90d",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Audited docs/guides/cost-aware-bootstrap.md in full (lines 1-136) against Round-4 CODE PASS tree b3131ef2: Bootstrap five written artifacts/line-1 report path, research workflow, and role settings match slimmed roles/bootstrap.md and reference/repository-research.md.",
-    "task": "261124-CAP-L3",
+    "statement": "Verified docs/guides/cost-aware-bootstrap.md against 17c064d8: cost-aware bootstrap and role-settings guidance remain accurate after KNO-R05@v3.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/guides/cost-aware-bootstrap.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+      "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -62,14 +62,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

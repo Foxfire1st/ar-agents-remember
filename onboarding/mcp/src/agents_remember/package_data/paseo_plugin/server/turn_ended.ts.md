@@ -35,10 +35,14 @@ Every decision row the current generation emits is offered to the plugin's own f
 An early clear does not wait for the recorded deadline. While at least one resume or parent flush is pending, `provider_limit_check.ts` reads one snapshot every fifteen seconds; a seat whose `clearedSeats` entry is current and whose limit is gone fires its resume with that marker's `clearedAt`, and the cleared parents are flushed in one ordered pass. A clear sampled before the last limited read is applied after publication, and a seat that left the role record is dropped rather than resumed. The natural deadline timer stays and a later `until` re-arms it.
 
 
+
 - A pending resume fires from a current early-clear marker instead of the old deadline. [5]
 
 
+
+
 - Cleared parents are claimed and flushed in one ordered pass from the shared snapshot. [6]
+
 
 
 ## Boundaries

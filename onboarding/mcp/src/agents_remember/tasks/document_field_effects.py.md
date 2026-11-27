@@ -16,6 +16,8 @@ until the new field is classified.
 
 intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields.
 
+`consolidationList` (`ConsolidationList.families` and `ConsolidationList.rules`) is classified under `TASK_DOCUMENT_FIELD_EFFECTS` so consolidation-list edits invalidate projections on the same schema-derived planes without widening unrelated fields.
+
 ### Logic
 
 `TaskDocumentFieldEffect` defines the closed planes: structural topology, normative intent,
@@ -109,7 +111,9 @@ RouteReviewRecord.baseCommit is classified EVIDENCE beside candidateTree. The fi
 
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [13]
+
 - Record-only memory identity comes from memory authority, never the sibling code root. [14]
 
 ### Docs References
@@ -155,9 +159,18 @@ None; this is the task-schema authority inside agents-remember.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/tasks/document_field_effects.py::validate_task_document_field_effects - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [12]
 
+
+
 - R04 taxonomy and task-first projection scope remain separate owners; the root map now classifies completedAt as audit, waitsFor as topology, and nonGoals/acceptance as intent. Invalidation follows recursive classified deltas, never operation-name inference. [1]
+
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+
+
 - intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields. [17]
+
+
 - The exhaustive map covers root and nested persisted models, including the four new root fields; display-only major counting does not weaken nested readiness memberships. [5]

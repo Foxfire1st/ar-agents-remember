@@ -23,7 +23,9 @@ The module compiles through the helpers of `test_l84_capsule_delivery_proofs.py`
 
 ## Evidence
 
+
 - The complete per-role detail population is listed. [1]
+
 
 - The direct start pointers reach the complete start-and-first-intake procedure. [2]
 
@@ -53,10 +55,14 @@ The module compiles through the helpers of `test_l84_capsule_delivery_proofs.py`
 - Every first message has one pointer per action and the restored duplicates fail. [4]
 
 
+
 - Every compile delivers exactly its required details, each pointed to once per action. [5]
 
 
+
+
 - Moved action pointers reach each required compile and reject removal. [6]
+
 
 
 - The collaboration and authoring references equal their pointer-derived step and audiences. [7]

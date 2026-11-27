@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "The review operation's rounds section holds the memory lane's separate reports, identifiers and pass count.\n\nAnchor: `MEMORY`",
+      "note": "The review operation's rounds section holds the memory lane's separate reports, identifiers and pass count.",
       "targets": [
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:93959e5bf29033e28ec85d658fe80baf971d79d3ba5092161501d41e256c7f15",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:7234272d61eeaefadb2258c86d3c76b6354732e5ce87ca6f2b513c1e1730cbe3",
             "locator": {
               "end": 34,
               "kind": "line_range",

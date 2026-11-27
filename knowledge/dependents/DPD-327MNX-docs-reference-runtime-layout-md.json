@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/reference/runtime-layout.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) to document <coordination-root>/.cache/skill-corpus/ archive materialization and role-launch/ nested <stem>.details/ and offload sidecar layout alongside Server binding records and L54 COLLECTED_REPORT_DIRECTORY/ROLE_REPORT_DIRECTORY constants; resolved DFR-GNDY45.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/reference/runtime-layout.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 .cache/skill-corpus/ and role-launch/ offload layout (DFR-GNDY45 resolved on main) alongside KNO-R05@v3 layout notes.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+      "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+      "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_identity.py"
     },
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:55:00+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

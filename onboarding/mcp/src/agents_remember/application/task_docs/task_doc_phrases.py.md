@@ -18,14 +18,19 @@ Step updates describe only `_STEP_UPDATE_KEYS`; parent and id address the step a
 
 The shared allowlist now includes `nonGoals`, `acceptance`, and `waitsFor`. `_phrase_set_field` still claims only allowlisted keys; dependency validation and write authorization do not live in this presentation owner.
 
+`consolidationList` is likewise in the shared mutable-field allowlist so `task_doc set_field` reports updates to a consolidation leaf's target list.
+
 ## Evidence
 
 - A displayed new value has a fixed character clipping rule, independent of the delivered token guard. [1]
 - Step phrases separate addressing keys from allowed changes. [2]
 
+
 - Field phrases omit keys outside the shared allowlist, now also containing `nonGoals`, `acceptance`, and `waitsFor`; this is a presentation filter, not dependency admission. [3]
 
 
+
 - Operation-specific phrase builders have one dispatch owner and an explicit fallback. [4]
+
 
 - intentReview is an admitted mutable native field, so set_field records the developer answer instead of silently ignoring it. [5]

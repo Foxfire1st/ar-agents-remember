@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/reference/harnesses.md line 40 on CAP-L5 tree af88a85d to state role-bound agents-remember-task serves only ROLE_TOOL_ALLOWLISTS[role] and fails closed to server_info on an unreadable binding while keeping full-roster secondCopyLoaded semantics accurate.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/reference/harnesses.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 role-bound allowlist/fail-closed binding prose alongside KNO-L5 Round 5 afterTries (worker, curator, consolidator).",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,12 +31,12 @@
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
     {
-      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
     },
     {
-      "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+      "blob": "9c254c77ef570d89c9a32e66bd3e83f22204317d",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/user_settings_location.py"
     },
     {
-      "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+      "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+      "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_step_up.py"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "4275baa402a6f13e77dcd678521ef0f41bc31980",
+      "blob": "be36b6d9766fa2a00d38b425eae2b2a2e732b099",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_review_step_up.py"
     },
@@ -102,14 +102,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:45:16+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

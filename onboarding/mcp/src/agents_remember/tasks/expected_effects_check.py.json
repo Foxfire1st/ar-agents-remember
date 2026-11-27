@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/tasks/expected_effects_check.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "718986fe97e145905b569d2763b43a657d16516a",
+        "content": "sha256:7697f4fb9bcf2c79dbca6899d2ac403ab1fb63560689db3bac279261bfc8f701",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_expected_knowledge_effects"
+        }
+      },
+      "id": "RLZ-23MZX6",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 5",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This model boundary checks declared requirement references against the leaf’s own packet references.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_Declared` defines the structural protocol (`subject`, `effect`, `requirementRef`) expected on each declared effect item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "718986fe97e145905b569d2763b43a657d16516a",
+            "content": "sha256:ee2e8ff5c3f6e92116da77ff6814bc1413366ca619d8e5ead44f9293fdc249c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Declared"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_Packet` defines the structural protocol (`stableId`, `version`) used to build the set of declared requirement references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "718986fe97e145905b569d2763b43a657d16516a",
+            "content": "sha256:1147cbe162dd5d1a069cd930d45878d39fe67cb9d0074ed477918ef2ed5584bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`check_expected_knowledge_effects` refuses master documents, empty effect lists, `requirementRef` values missing from non-empty `packets`, and duplicate `<subject>#<effect>` keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "718986fe97e145905b569d2763b43a657d16516a",
+            "content": "sha256:7697f4fb9bcf2c79dbca6899d2ac403ab1fb63560689db3bac279261bfc8f701",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_expected_knowledge_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

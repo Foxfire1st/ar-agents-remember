@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+        "blob": "64355fed355055fd3553cae6847c4e1964d55719",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+        "blob": "64355fed355055fd3553cae6847c4e1964d55719",
         "content": "sha256:856ee056a8c25c910e47eccc52712f698feb0a24edf428ab02c57ea1e06d0886",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+        "blob": "64355fed355055fd3553cae6847c4e1964d55719",
         "content": "sha256:856ee056a8c25c910e47eccc52712f698feb0a24edf428ab02c57ea1e06d0886",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "blob": "64355fed355055fd3553cae6847c4e1964d55719",
             "content": "sha256:89722bf5c2571a258603dda9a9f229ea6c318771d732aa42c96d7a2698c1464a",
             "locator": {
               "kind": "symbol",
@@ -72,11 +72,11 @@
       ]
     },
     "2": {
-      "note": "Coordination-route, Git-comparison, and cross-role message-handover helpers verify compiled shared-block clauses and detail links with mutation checks.",
+      "note": "Coordination-route, Git-comparison, and cross-role message-handover helpers verify compiled shared-block clauses and detail links with mutation checks.\n\nAnchor: `assert_coordination_routes`, `assert_message_handover_delivery`",
       "targets": [
         {
           "anchor": {
-            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "blob": "64355fed355055fd3553cae6847c4e1964d55719",
             "content": "sha256:ad23eafda28ab2967b950e6c7d85a9d8f5cfb518d932b63e976cf6cdbdfc1367",
             "locator": {
               "kind": "symbol",
@@ -87,8 +87,8 @@
         },
         {
           "anchor": {
-            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
-            "content": "sha256:674552f2e428761d62fa9123ab4e79952f9f6fa97489e670d4d16f11f12fbca8",
+            "blob": "64355fed355055fd3553cae6847c4e1964d55719",
+            "content": "sha256:b8281d6c10abe49ebedc9ad4cb128f0b199fd774ea49d6314fe45639f5cf6cdf",
             "locator": {
               "kind": "symbol",
               "name": "assert_message_handover_delivery"
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "blob": "64355fed355055fd3553cae6847c4e1964d55719",
             "content": "sha256:5121cd2348a7ee11d27ea592621e08cfb30b0f455fbb02fa303fb9713787a0db",
             "locator": {
               "kind": "symbol",
