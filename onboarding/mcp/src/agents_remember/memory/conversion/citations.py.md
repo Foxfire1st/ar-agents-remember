@@ -75,7 +75,9 @@ The row-to-reference rules.
 - Test paths give `test` targets. [1]
 - A range a symbol target lies inside, or that contains it, is covered. [3]
 - Ranges, whole files, URLs and unresolved sources. [4]
+
 - The reference: targets, a no-target fallback, and the note. [6]
+
 - Anchor text no target carries is kept byte for byte in the note. [7]
 - The fixture rows: several anchors, covered ranges, a quoted anchor, a removed path, a range past the end. [8]
 

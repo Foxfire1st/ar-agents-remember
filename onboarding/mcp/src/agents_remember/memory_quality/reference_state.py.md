@@ -91,6 +91,7 @@ The format test, the anchor states, the check and the fixer.
 
 
 
+
 - References are checked, and only mechanical moves are fixed. Anchor: `test_references_are_checked_and_only_mechanical_moves_are_fixed` [6]
 
 
@@ -98,7 +99,9 @@ The format test, the anchor states, the check and the fixer.
 
 
 
+
 - Only sidecars holding references are counted or observed; empty maps are skipped, malformed ones unreadable. [11]
+
 
 - The named-document test checks that each fix lists only that card’s stale references. The compact reply delivers the first ten status rows with full counts and the detailed result retains the complete lists. [10]
 
@@ -112,4 +115,5 @@ No cross-repo boundary is crossed by this file.
 - A stale reference is reported to the curator and refused at publication by the validator's anchor guard. [4]
 
 - A sidecar that is not valid JSON is named and skipped. [8]
+
 - The reference check scoped to one sidecar. [9]

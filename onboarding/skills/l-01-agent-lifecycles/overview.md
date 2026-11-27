@@ -187,7 +187,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 
 
+
 - The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes. [27]
+
 
 
 
@@ -195,6 +197,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 
 - The Curator role and orientation operation keep the writer boundary and serving-build binding for deciding and writing memory, while the curation operation keeps the writer-output and no-Git boundaries. [36]
+
 
 
 
@@ -216,6 +219,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - This source owns the route’s Investigator selection or execution boundary. [57]
 
 
+
 - The Curator reconciles one leaf's intent and implementation, writes and checks its affected memory, and hands over the structured coherence record. [45]
 
 
@@ -230,6 +234,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 
 - Bound curation intake and capabilities, including the writer-output and writer-ownership boundaries. [54]
+
 
 
 
@@ -266,11 +271,14 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 
 
+
 - The Worker marks only its own completed build and evidence step, never review, curation, task status or acceptance. [83]
 
 
 
+
 - The Curator marks only its completed task-document step; incomplete, blocked, progress or escalation reports mark nothing done. [84]
+
 
 
 
@@ -325,6 +333,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 
 
+
 - The onboarding-row history form in the writer's input sections. [10]
 
 - Both evidence forms, and the facet authored beside the statement draft. [11]
@@ -340,6 +349,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - `incidental` has no spelling in the file format. [16]
 
 - Family coverage is authored only where evidence and intent justify a joint obligation, with the family's own guarantee, members, routes and admission; a member change prompts a fresh examination, and the family is read back through `knowledge_read`. [17]
+
 
 - The canonical per-target rationale section. [18]
 
@@ -366,7 +376,8 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The bootstrap operation's completion facts carry the knowledge foundation's recorded identity, or the named state showing it is not recorded. [33]
 
 
-- The knowledge read route binds the assigned memory tree, its paired code checkout and the exact code tree, and names record files that the reader opens with its own tools. [40]
+- The knowledge read route binds the assigned memory tree with automatic code-tree pairing across 11 views, returns text-bearing `impact`, `search`, and `records` rows plus compact `dependent` triage, and reserves native file opens for source code, tests, briefs, and uncarried documents. [40]
+
 
 - The shared acceptance frame defines the builder's mandatory acceptance block for its one primary requirement revision. [48]
 

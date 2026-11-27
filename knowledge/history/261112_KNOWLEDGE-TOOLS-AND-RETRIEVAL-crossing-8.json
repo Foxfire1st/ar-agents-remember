@@ -1,0 +1,181 @@
+{
+  "closed": true,
+  "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-5511RT",
+      "items": [],
+      "reason": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: docs/design/canvas-host.md remains accurate with both review-presenter.md Stage 1 knowledge_read guidance and serving/app.py optional held_reset_delivery lifespan port.",
+      "revision": 12,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-7M1G9B",
+      "items": [],
+      "reason": "Crossing-8 merge of 261112-KNO-L10 and 261112-BUG-L32 onto a96cc14d2: updated test-evidence-lanes.toml stress-durability anchor to lines 878-880 (859 total: 705 unit-regression including test_held_reset_delivery.py and test_language_set_and_tags_engine.py, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability); docs/design/python-pytest-bootstrap.md remains accurate.",
+      "revision": 43,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-BMH4VF",
+      "items": [],
+      "reason": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: merged docs/reference/mcp-tools.md carries both KNO-R14@v1 eleven knowledge_read views (line 203, lines 217-247) and BUG-R32@v1 16-worker reset-scheduler prose (lines 822-829); retains narrowed deferral DFR-6EWRE4 on line 31 (4,000-token ceiling) bound to merged blob without lifting it.",
+      "revision": 36,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-T4DGG2",
+      "items": [],
+      "reason": "Crossing-8 merge of 261112-KNO-L14/L10 and 261112-BUG-L32 onto a96cc14d2: docs/architecture.md accurately documents knowledge_read views, read_ar_files briefs, extents.py::definition_scope, and serving ResetDeliveryPorts boundaries.",
+      "revision": 27,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-X9RPQB",
+      "items": [],
+      "reason": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: mcp/README.md remains accurate against merged mcp/pyproject.toml, cli/dashboard.py, and docs/reference/mcp-tools.md.",
+      "revision": 32,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-ZFT4GR",
+      "items": [],
+      "reason": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L34 onto a96cc14d2: docs/guides/review-page-and-explainer.md remains accurate with updated review-presenter.md, role_launch_routes.py, and paseo_catalog.py.",
+      "revision": 23,
+      "subject": "DPD-PMZ21Z"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-7YCJ2B",
+      "revision": 11
+    },
+    {
+      "record": "DPD-PMZ21Z",
+      "revision": 22
+    },
+    {
+      "record": "DPD-Q4APMS",
+      "revision": 31
+    },
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 35
+    },
+    {
+      "record": "DPD-ZT8YY7",
+      "revision": 42
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:34bc46e24d973b4582a4722f3c39c265167f699201e3975690689c8adad6df96",
+      "record": "DPD-7YCJ2B",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T22:57:01+01:00",
+        "by": "agent",
+        "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:719c28d81febe8b091b90e47f9ac5388c295caa837b3a6dfde16db3f0f3cffe6",
+      "record": "DPD-86HJGF",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-27T22:57:01+01:00",
+        "by": "agent",
+        "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:57818ed68a2792e845af7bda4b8c530b00fd4727ea631fb7b2a8d73cd3b77422",
+      "record": "DPD-PMZ21Z",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T22:57:01+01:00",
+        "by": "agent",
+        "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d6ed2de0040f8f0bf9ccd26fa6526524dcb832a2b5cc8106bf23db4a64c27b12",
+      "record": "DPD-Q4APMS",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-27T22:57:01+01:00",
+        "by": "agent",
+        "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ade2a2bf4f62cb4699e8eb4ab3e130fd5b44dfe520fe8c235768f96126194a6d",
+      "record": "DPD-X6G7K3",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T22:57:01+01:00",
+        "by": "agent",
+        "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:5a4eb3842414e534e2b9f9d0454f21dc329d784fabc46d0c513ad84be40a6b59",
+      "record": "DPD-ZT8YY7",
+      "revision": 43,
+      "writer": {
+        "at": "2026-11-27T22:57:01+01:00",
+        "by": "agent",
+        "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

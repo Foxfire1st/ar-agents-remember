@@ -16,7 +16,7 @@ The shipped explainer instructions, identical to the canonical canvas copy and b
 - It carries the kit map: which tool suits which explanation, with search keywords rather than addresses.
 - It is byte-identical to the checkout copy the capsule text test reads.
 
-The explainer reads the evidence, selects changes and parts, and writes a self-contained explanation for each. It completes the evidence-bearing essay before planning or making figures, then assembles the page. A reader-driven figure shows the central mechanism, and the complete explanation reads in still markup. The first six files are private; `drafts/assets/index.html` is the seventh artifact. A planned binding explains current behavior and labels the requested effects as intended. Stale regeneration renews the affected explanations and the essay before their visuals.
+The explainer reads the evidence—using `knowledge_read` (`impact`, `search`, `records`) on bound `trees/memory` paired with `trees/code` to read touched invariants, families, and their facets without leaving the bound trees or treating today's checkout as evidence—selects changes and parts, and writes a self-contained explanation for each. It completes the evidence-bearing essay before planning or making figures, then assembles the page. A reader-driven figure shows the central mechanism, and the complete explanation reads in still markup. The first six files are private; `drafts/assets/index.html` is the seventh artifact. A planned binding explains current behavior and labels the requested effects as intended. Stale regeneration renews the affected explanations and the essay before their visuals.
 
 ## Evidence
 

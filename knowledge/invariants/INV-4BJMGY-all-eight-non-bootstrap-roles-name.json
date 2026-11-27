@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans twelve Tier-1 role and operation instruction files plus pointer-uniqueness enforcement; omitting tool-named knowledge_read view cues causes agents to skip text-bearing retrieval or overgrow compiled capsule and Turn-1 wire token ceilings."
+  },
+  "applicability": "Canonical Tier-1 role and operation instruction capsules compiled for the eight non-Bootstrap roles (Architect, Orchestrator, Manager, Worker, Reviewer, Investigator, Curator, and Consolidator) and enforced by wire-budget and pointer-uniqueness tests.",
+  "conditions": [
+    "Compiled capsules remain within all 37 COMPILED_CAPSULE_TOKEN_CEILINGS and role WIRE_TOKEN_CEILINGS.",
+    "Manager's Reference index routes to reference/knowledge/commands.md via the unique [`knowledge_read`] pointer label."
+  ],
+  "exclusions": [
+    "Bootstrap role, core/every-role.md, and shared operations/coordination.md remain untouched.",
+    "Packaged runtime copies are regenerated via scripts/renew-instructions.py rather than hand-edited."
+  ],
+  "id": "INV-4BJMGY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "22-file targeted pytest suite PASS and .githooks/_gate.sh targeted PASS on clean copy tree 58741cf122bf63ea3bb6dfc88afc8f302b0375f4 (attempt A2, fixing R14-C1); report /home/firefox/projects/ar-coordination/worktrees/agents-remember/14_role-instructions-and-explainer-for-kno-l7-views-ar/role-reports/worker/9c52f08d-1b32-51f7-bd11-d45d0d4e7081/role-launch/261112-KNO-L14-worker-9c52f08d-1b32-51f7-bd11-d45d0d4e7081.md"
+      ],
+      "path": "kno-l14-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R14@v1 R1",
+    "leaf": "261112-KNO-L14",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "All eight non-Bootstrap roles name knowledge_read and their role-appropriate views (impact, search, records, and dependent(compact=true) triage where applicable) in Tier-1 capsules within all 37 compiled capsule ceilings and all wire token ceilings without touching Bootstrap, core/every-role.md, or shared operations/coordination.md.",
+  "supersedes": [],
+  "title": "Tier-1 role capsules cue knowledge_read views within token ceilings",
+  "writer": {
+    "at": "2026-11-27T18:29:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L14",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
+  }
+}

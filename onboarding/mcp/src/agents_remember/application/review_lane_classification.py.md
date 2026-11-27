@@ -209,9 +209,13 @@ repository sources below, not a source registry or a copied code comment as inde
 - One entry placed, one side of a path, one hunk and one file's result with its counts. [5]
 - The lane observes the addressed code pair inventory, retaining its own denominator. [6]
 - Path bucketing obtains side readings without reading hunks. [7]
+
 - The exact-blob rule and the other reasons an entry supplies no range. [8]
+
 - Direct classification and shared-worklist projection assemble the same file result and separate non-text fact. [9]
-- Shared worklist placements pass through the reviewer exact-recorded-blob checks before use; missing supplied placements remain unresolved rather than triggering a fallback lookup. [24]
+
+- Shared worklist placements pass through the reviewer exact-recorded-blob checks before use; missing supplied placements remain unresolved rather than triggering a fallback lookup. Anchor: `TreeLane._place`; `TreeLane._reading`; `TreeLane.from_worklist` [24]
+
 - Projected gate intersections are filtered by entries the reviewer can actually supply, while changed-side unknown reasons retain the common result rule. [25]
 
 ### Cross-Repo References

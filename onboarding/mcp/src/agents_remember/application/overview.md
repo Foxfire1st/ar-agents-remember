@@ -143,7 +143,7 @@ Mounted `knowledge_read` legacy tree-view pages (`source_context`, `invariant`, 
 
 Whole-file dependent links share their derived movement rule between knowledge reads and landing. When exact confirmation and selected-tree metadata supply the old and new `project.version`, a changed blob stays current only if each complete version token is unchanged or is that exact old-to-new substitution, its existing empty/v/V prefix stays unchanged, and every other byte stays identical. Changed epochs, further release components, prerelease/postrelease/development/local suffixes, other bytes and missing exact provenance receive no exemption. Text alone cannot distinguish a dependency that has the same complete old/new version pair as the product; that remains an open weakness, not semantic package-ownership detection. Anchor-content and record-revision links retain their own movement rules.
 
-Currentness keeps current, stale and unverifiable separate. No tree is unverifiable; absent regular path is stale; unchanged blob is current before locator support is considered, except that a symbol anchor in a file that is not valid UTF-8 is unverifiable. Changed blobs require supported, uniquely resolving locators and matching content. Failed Git reads are marked as failed observations; unavailable historical objects/grammars remain named unverifiable causes. Proofs are observed alongside realizations and stale proofs can make an invariant stale. The bounded 8,192-entry observation cache stores answers, not failed observations, with blob/complete locator/path/extractor identity. Reads report currentness; they do not re-anchor or manufacture an authored judgment. Without-proof inventory is informational rather than curator actionability.
+Currentness keeps current, stale and unverifiable separate. No tree is unverifiable; absent regular path is stale; unchanged blob is current before locator support is considered, except that a symbol anchor in a file that is not valid UTF-8 is unverifiable. Changed blobs require supported, uniquely resolving locators and matching content. Failed Git reads are marked as failed observations; unavailable historical objects/grammars remain named unverifiable causes. Proofs are observed alongside realizations and stale proofs can make an invariant stale. The bounded 8,192-entry observation cache stores answers, not failed observations, with blob/complete locator/path and `active_extractor_version()` (derived from the active `LanguageSet`, pinned versions, and `.scm` query digests), while `review_memo_store._grammar_identity` likewise binds the default `LanguageSet` `extractor_version` and `code_anchors._symbol_range` resolves paths through `grammars.active_language_set()`. Reads report currentness; they do not re-anchor or manufacture an authored judgment. Without-proof inventory is informational rather than curator actionability.
 
 The path-based knowledge_reader supplies taskless selection, directory/path/subtree, record/truth, code and timeline questions. Invariant views include membership-history documents with owner, ownerKind, closed, history path, row identity, subject and disposition; their timelines merge those rows with record-id history. Published/commit/leaf reads retain selected code-tree provenance; pairing and checkout HEAD are distinct. Directory/subtree views stay bounded at their selected tree. Absent, binary, too-large and unavailable facts remain distinct; decisions retain full alternatives and derived status. Unreadable links stay visible, and unsigned continuation tokens remain a design limit. The directory view includes eligible cards below dot directories when computing presence and coverage. The memory inventory filters generated route-index cache files.
 
@@ -564,11 +564,14 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The questions reach the task document before any file. [354]
 - The carry's mapping, reused by the refresh. [355]
 - The one classification: where it differs from the gate, stated once. [356]
+
 - The exact-blob rule and the hunk classes. [357]
+
 - The gate's non-text linkage, unknown over a side not read whole (F3). [358]
 
 
 - The worklist and reviewer share `change_hunks` for text hunks and file-level changes. The worklist uses `non_text_linked` for file-level linkage. [360]
+
 
 
 - The gate over a leaf's exact candidate: probe, tip, memo, recorded evaluation. [363]
@@ -729,7 +732,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** Reopen from tree ids, naming every tree Git can no longer produce. [322]
 - **Historical source-bound reference account, not an operative override:** The live pair dispatches a converted leaf to trees. [325]
 - **Historical source-bound reference account, not an operative override:** The leaf route settles uncovered items and keeps needed rows. [330]
-- **Historical source-bound reference account, not an operative override:** History rows by the item's subject and its `facts.row`. [342]
+
+- **Historical source-bound reference account, not an operative override:** History rows by the item's subject and its `facts.row`. Anchor: `_row_subjects` [342]
+
 - **Historical source-bound reference account, not an operative override:** The lane and file reads dispatched; a focused answer. [361]
 - **Historical source-bound reference account, not an operative override:** The entry's count on the summary. [362]
 
@@ -738,7 +743,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 
 - **Historical source-bound reference account, not an operative override:** The composition's one call. [373]
-- **Historical source-bound reference account, not an operative override:** Each owner's row about a subject from its latest attempt file. [384]
+
+- **Historical source-bound reference account, not an operative override:** Each owner's row about a subject from its latest attempt file. Anchor: `_governing` [384]
+
 
 - **Historical source-bound reference account, not an operative override:** Recording a new comparison takes turns inside one process. [396]
 
@@ -756,14 +763,17 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** The reviewer's diff reads do not depend on the user's Git configuration. [406]
 - **Historical source-bound reference account, not an operative override:** A kept view ignores every task document it did not read. [407]
 - **Historical source-bound reference account, not an operative override:** A task document that changes while the view is computed makes it compute again. [408]
+
 - **Historical source-bound reference account, not an operative override:** The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409]
+
 - **Historical source-bound reference account, not an operative override:** A live comparison's worklist comes from the isolated computation over the captured trees. [410]
 - **Historical source-bound reference account, not an operative override:** The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [432]
+
 - **Historical source-bound reference account, not an operative override:** The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [440]
+
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450]
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [451]
 - **Historical source-bound reference account, not an operative override:** The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
-- **Historical source-bound reference account, not an operative override:** The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409] [440]
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450] [451]
 
 
@@ -800,6 +810,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Existing trace authority precedes uncovered grouped source selection; the collector supplies member paths. [515]
 
 - The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]
+
 
 - The current module constructs only the review read’s refusal and read-only submission states. `refused(repository_id, refusal_value)` returns a refused result carrying the supplied named refusal and no supplied payload. `submission(stale)` uses the caller’s boolean: `disabled_stale` asks for a new comparison; otherwise `unavailable` says the review is read-only and directs authoring through the existing writer with author/task/authority provenance. Both branches carry the existing proposed-disposition vocabulary. No record collections are composed here. Historical predecessor claim (superseded): **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [517]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [518]

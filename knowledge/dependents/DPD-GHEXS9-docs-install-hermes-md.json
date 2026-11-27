@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Audited docs/install/hermes.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-8 sync conflict for docs/install/hermes.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
     "task": "261125-DEP-L3",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/install/hermes.md",
   "id": "DPD-GHEXS9",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
+      "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -61,12 +61,12 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+      "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+      "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -81,12 +81,12 @@
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
     {
-      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+      "blob": "e505a5027f45cf753855a75f1e924f042c617489",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -106,20 +106,20 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+      "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

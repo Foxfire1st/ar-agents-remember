@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Audited docs/reference/repository-certification-profile.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-8 sync conflict for docs/reference/repository-certification-profile.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
     "task": "261125-DEP-L3",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/reference/repository-certification-profile.md",
   "id": "DPD-FR0VZP",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "291c1c315d2f471aebb3e65c165de9c63a626daf",
+      "blob": "94aeef70ebe94f4b3f4042c781b5461a3352a908",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+      "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
     },
     {
-      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+      "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
@@ -128,20 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

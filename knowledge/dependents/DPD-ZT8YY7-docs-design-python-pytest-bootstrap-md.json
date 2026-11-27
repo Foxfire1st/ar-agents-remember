@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
-    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Resolved crossing-7 sync conflict for docs/design/python-pytest-bootstrap.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
+    "statement": "Resolved crossing-8 sync conflict for docs/design/python-pytest-bootstrap.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
     "task": "261125-DEP-L3",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 43,
+  "revision": 45,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,12 +26,12 @@
       "path": "pyproject.toml"
     },
     {
-      "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+      "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
       "kind": "file",
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+      "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+        "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 879,
+          "end": 881,
           "kind": "line_range",
-          "start": 877
+          "start": 879
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,9 +129,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:47:55+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

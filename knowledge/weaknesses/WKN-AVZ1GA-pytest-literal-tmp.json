@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
+    "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
     "content": "sha256:54f824e9151d19eb5521b4673ae91316fa7ec6e6c0da9bb51118eed115f9006e",
     "locator": {
       "kind": "symbol",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L197",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -34,22 +34,14 @@
   "state": "open",
   "statement": "The test suite creates its shared temporary directory at the literal path /tmp, so a run's TMPDIR cannot redirect that directory; on the host measured here /tmp is tmpfs, and one ordinary lane there died with ENOSPC on tmpfs inode exhaustion while its own TMPDIR and XDG_CONFIG_HOME were correctly set.",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L197",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

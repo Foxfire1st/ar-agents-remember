@@ -12,6 +12,8 @@ Language-aware declaration resolution for citation repair.
 
 ### Logic
 
+`PinnedDependencyTests` verifies `language_catalog.load_language_catalog().tree_sitter.version` against `mcp/pyproject.toml`, `mcp/uv.lock`, and the installed `tree-sitter` distribution, asserts zero `tree-sitter-*` grammar dependencies in `pyproject.toml` and `uv.lock`, and checks that every declared provider in `grammars.default_language_set()` compiles its `tags.scm` (and optional `tests.scm`) queries. The former `grammars.MEASURED_VERSIONS` table and unused `OFFLINE_PROBE` string have been removed.
+
 `TestCaseDefinitionTests` adds plain test/spec title extraction across the supported JavaScript-family extensions. Nested describe titles bind qualified names and unique bare case names; a non-test filename does not acquire those case definitions. Plain-string escapes decode, UTF-16 pairs agree with scalar titles, lone units remain represented, and duplicate occurrences remain ambiguous even on one line. Comment extras do not replace the semantic first argument: computed/nonstring first arguments do not borrow a later string. Unsupported forms refuse with a reason: skip, todo, skipIf, runIf and fails cases get no range offer, while each, for and computed-title forms are offered a `line_range`. These added source cases do not claim a parser run or support for the refused forms.
 
 Current tests derive named declaration spans from grammars.bindings. Python decorator/class/member and TypeScript/TSX/JavaScript binding cases remain. Removed pure-move repair, URL quote matching and pooled-interface repair fixtures are historical, not current runtime-repair guarantees.
@@ -44,6 +46,9 @@ No configured domain evidence applies to the file-local claims above.
 ### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+- `PinnedDependencyTests` checks `language_catalog.load_language_catalog().tree_sitter.version` against `pyproject.toml`, `uv.lock`, and the installed `tree-sitter` wheel, asserts zero `tree-sitter-*` grammar deps, and verifies query compilation across every catalog provider. [13]
+
 
 - A decorated definition is stamped from its first decorator. [4]
 - A class and its methods and attributes all bind. [5]

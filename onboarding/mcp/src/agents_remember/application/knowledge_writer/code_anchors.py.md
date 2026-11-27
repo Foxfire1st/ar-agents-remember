@@ -57,7 +57,7 @@ through `models/knowledge_files/anchor_content.py`.
 
 ### Strict symbol decoding and case diagnostics
 
-For a supported language, `_symbol_range` strictly decodes the candidate blob as UTF-8 before extracting definitions. A decoding failure is translated to `AnchorResolutionError` naming the source path. An unavailable grammar is also translated to that error type. If extraction returns no spans, the writer checks for an uncertain Lean scope first, then asks `grammars.test_case_refusal(path, lines, name)` for a script test-case diagnostic. The ordinary refusal says the path at C does not define the requested name. Multiple spans still refuse with their line ranges, and exactly one span is returned.
+For a supported language in the active `LanguageSet`, `_symbol_range` resolves the path through `grammars.active_language_set()` and `provider_for(grammar)` and strictly decodes the candidate blob as UTF-8 before extracting definitions. A decoding failure is translated to `AnchorResolutionError` naming the source path. An unavailable grammar is also translated to that error type. If extraction returns no spans, the writer checks for an uncertain Lean scope first, then asks `grammars.test_case_refusal(path, lines, name)` for a script test-case diagnostic. The ordinary refusal says the path at C does not define the requested name. Multiple spans still refuse with their line ranges, and exactly one span is returned.
 
 This decoding rule is specific to symbol extraction. File and line-range locators continue to bind the selected entry bytes, and the early symlink-symbol refusal remains before blob parsing. A case-specific refusal is diagnostic evidence, not proof that a test ran or that a dynamic case acquired a bindable extent.
 
@@ -79,27 +79,24 @@ No configured live documentation source was available for this pass.
 
 Capture and resolution.
 
+- The captured tree C and its blobs. Anchor: `CodeSnapshot` [2]
+
+- A symbol must bind exactly once. Anchor: `_symbol_range` [6]
+
+
+- The writer resolves the path via the active `LanguageSet` and passes the selected grammar to shared qualified lookup. Lean keys are exact. Other readers can use dotted containment after an exact-key miss. [7]
+
+- The crossing snapshot uses the resolved commit ID for both recorded identity and tree lookup. Anchor: `CodeSnapshot.at_commit` [8]
+
+- Symbol extraction rejects invalid UTF-8 with a named anchor error and uses case-specific diagnostics when no definition binds. [11]
+- The writer refuses an unverifiable Lean key with a line-range remedy and reports full-name choices for a multiply bound alias. [14]
+
 - A locator that does not resolve at C. [1]
-
-
-
 - A `file:` row subject must name the path's object at C, or `absent` (MIK-R10). [3]
 - Capture through the private-index candidate tree. [4]
 
-
-
-
-
-
-
-
-
-- Symbol extraction rejects invalid UTF-8 with a named anchor error and uses case-specific diagnostics when no definition binds. [11]
 - Symlink symbols refuse before blob parsing; file and line-range anchors still hash the selected entry bytes. [12]
 
-- The crossing snapshot uses the resolved commit ID for both recorded identity and tree lookup. [8]
-- The captured tree C and its blobs. [2]
-- A symbol must bind exactly once. [6]
 
 ### Cross-Repo References
 
@@ -110,13 +107,5 @@ No cross-repo boundary is crossed by this file.
 
 
 - Resolve file/line-range locators against entry bytes; refuse symlink symbols before parsing. [5]
-
-
 - Both constructors read regular files and symlink entries of one tree, retaining a symlink path set. [9]
-
-
 - Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding. [10]
-
-- The writer passes the selected grammar to shared qualified lookup. Lean keys are exact. Other readers can use dotted containment after an exact-key miss. [7]
-
-- The writer refuses an unverifiable Lean key with a line-range remedy and reports full-name choices for a multiply bound alias. [14]

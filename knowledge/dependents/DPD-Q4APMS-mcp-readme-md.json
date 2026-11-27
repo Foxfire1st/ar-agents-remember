@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
-    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Resolved crossing-7 sync conflict for mcp/README.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
+    "statement": "Resolved crossing-8 sync conflict for mcp/README.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
     "task": "261125-DEP-L4",
     "uncommitted": false
   },
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 33,
+  "revision": 34,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
+      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -56,15 +56,15 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+      "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:47:55+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

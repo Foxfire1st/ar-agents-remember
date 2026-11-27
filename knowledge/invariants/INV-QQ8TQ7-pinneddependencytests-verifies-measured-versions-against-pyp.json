@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans PinnedDependencyTests dependency/query guard and read_anchors/extents shared qualified holder containment, guarded by dependency-pin and shared-containment tests."
+  },
+  "applicability": "Catalog tree-sitter dependency pin checks in PinnedDependencyTests and qualified symbol lookups in read_anchors._defining_extents and extents.qualified_spans.",
+  "conditions": [
+    "language_catalog.load_language_catalog().tree_sitter.version aligns tree-sitter at 0.26.1 with mcp/pyproject.toml, mcp/uv.lock, and the installed distribution, with zero tree-sitter-* grammar package dependencies.",
+    "PinnedDependencyTests verifies the catalog tree-sitter pin, dependency purity, and default catalog provider query compilation without dead OFFLINE_PROBE code.",
+    "read_anchors._defining_extents delegates to extents.qualified_spans so recorded-anchor reads apply the same enclosing-holder containment as writer and conversion."
+  ],
+  "exclusions": [
+    "Exact-binding providers such as Lean resolve exact keys only and do not apply dotted holder containment."
+  ],
+  "id": "INV-QQ8TQ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_citation_grammars.py::PinnedDependencyTests, mcp/tests/test_language_set_and_tags_engine.py::test_read_anchors_and_extents_share_holder_containment_for_qualified_names; clean-copy tree e122f928d620ee2485100752a3d16ed709100bac"
+      ],
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R10@v1 §4",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "PinnedDependencyTests verifies the bundled language catalog's tree-sitter pin (0.26.1) against pyproject.toml, uv.lock, and the installed wheel, enforces zero privileged tree-sitter-* grammar dependencies, checks query compilation across default catalog providers without dead OFFLINE_PROBE, and read_anchors._defining_extents shares extents.qualified_spans holder-containment semantics.",
+  "supersedes": [],
+  "title": "Catalog tree-sitter pin matches lock/wheel and read_anchors shares containment",
+  "writer": {
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
+  }
+}

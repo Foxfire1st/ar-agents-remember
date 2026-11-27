@@ -70,7 +70,8 @@ No configured live documentation source was available for this pass.
 - The four groups. [6]
 - The cards' planning marks and the hunk linkage. [7]
 
-- The server's matching row lookup. [8]
+- The server's matching row lookup. Anchor: `_row_subjects` [8]
+
 
 
 ### Cross-Repo References

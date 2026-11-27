@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
-        "content": "sha256:bf7b281388fd9bdf14847fd42909e75ca4286ba961540e6d830fc77efd84d0ee",
+        "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+        "content": "sha256:82b49fd73b289ac731afbcd1742e9ef6bd7f3e94fa884df15fc531200620a410",
         "locator": {
           "kind": "symbol",
           "name": "range_proof"
@@ -26,10 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
-            "content": "sha256:bf7b281388fd9bdf14847fd42909e75ca4286ba961540e6d830fc77efd84d0ee",
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+            "content": "sha256:82b49fd73b289ac731afbcd1742e9ef6bd7f3e94fa884df15fc531200620a410",
             "locator": {
-              "end": 51,
+              "end": 52,
               "kind": "line_range",
               "start": 34
             }
@@ -39,14 +39,14 @@
       ]
     },
     "2": {
-      "note": "The case check is the grammar module's, run over the candidate bytes with the snapshot's name question.\n\nAnchor: `test_case_range`",
+      "note": "The case check is the grammar module's, run over the candidate bytes with the snapshot's name question. Anchor: `test_case_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
-            "content": "sha256:2db25c60b140544559f8a7c19bc07cdc3b536e01c7ce531eb5117afda8b8b545",
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+            "content": "sha256:bfa57715a59293d187bd109ecd7482e0f745ec442c6366d4e00bd6c92a8c8472",
             "locator": {
-              "end": 46,
+              "end": 47,
               "kind": "line_range",
               "start": 43
             }
@@ -60,10 +60,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
-            "content": "sha256:c8f02b94b97875f896d3836dcb7d3b7ae51d4596db90c8953ae32a8aa6b58236",
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+            "content": "sha256:5011ebaad7ead6a776eec7e2a13e97baf8038e652aa4abd7498d7f81e0d9e224",
             "locator": {
-              "end": 48,
+              "end": 49,
               "kind": "line_range",
               "start": 39
             }
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
             "content": "sha256:37bed07fc4b682170b58dd412f9d9bf3a58f057e75eeccacf67c4ea8b3f00df9",
             "locator": {
-              "end": 76,
+              "end": 77,
               "kind": "line_range",
-              "start": 69
+              "start": 70
             }
           },
           "kind": "code"
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
             "content": "sha256:dda09cc84b9b6084fc322c07f699fd2e577ad8eeebff920f9c99ba992438c47b",
             "locator": {
-              "end": 97,
+              "end": 98,
               "kind": "line_range",
-              "start": 91
+              "start": 92
             }
           },
           "kind": "code"
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
             "content": "sha256:96fe70ea981b18f6bdcabcc47d4a715bbe62d9fc8bbe710a651e1d96bdee5824",
             "locator": {
-              "end": 97,
+              "end": 98,
               "kind": "line_range",
-              "start": 97
+              "start": 98
             }
           },
           "kind": "code"

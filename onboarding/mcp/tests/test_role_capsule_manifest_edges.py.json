@@ -34,6 +34,23 @@
         "handoffEntry": "cap-l2-inv-40jw44",
         "leaf": "261124-CAP-L2"
       }
+    },
+    {
+      "anchor": {
+        "blob": "4478e1f80847fafc1cf681abe9f797d9bb0960ce",
+        "content": "sha256:67a8f678d97218d5a5a757654b3a0a22f06bc5679868785e3ea681dc7ad4d367",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_inherited_step_details_reach_only_the_seats_that_use_them"
+        }
+      },
+      "facet": "Verifies Tier-2 detail files stay bound exclusively to the role seats declared to consume them.",
+      "id": "PRF-R98XT0",
+      "invariant": "INV-YSQJ5K",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R2",
+        "leaf": "261112-KNO-L14"
+      }
     }
   ],
   "realizes": [

@@ -22,7 +22,7 @@ The shared planning contract requires bounded approved canonical packets, groupe
 
 The `expectedKnowledgeEffects` declaration is selected only for Architect: when a leaf packet names a recorded invariant/family effect, Architect records it before implementation; no named effect means no declaration. The Orchestrator, the other planning role, does not receive it; the common planning and permission boundaries stay in the all-role text.
 
-Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed.
+Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state (populated via `knowledge_read` `impact`/`search`), code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed.
 
 A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out under the shared every-role rule, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect.
 
@@ -31,6 +31,7 @@ The Architect reports an hour-long small item or a second repair round/freeze th
 ## Evidence
 
 - One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception. [1]
+
 
 
 ## Canonical Source Ownership
@@ -46,10 +47,12 @@ The authored file is the canonical contract; its measured byte-equal package cop
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
 
 
+
 - Planning marks the Architect-only alignment sweep, knowledge-effect declaration, intent-review and cold-read Prepared-context work explicitly, with all-role requirement, ownership, Prepared-context and plan-boundary text outside that audience slice. [5]
+
 
 
 - Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go. [6]
 
 
-- Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a full-store refusal, the named message-handover section owns the pending handover, single retry and second-refusal report. [7]
+- Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state (populated via `knowledge_read` `impact`/`search`), code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a full-store refusal, the named message-handover section owns the pending handover, single retry and second-refusal report. [7]

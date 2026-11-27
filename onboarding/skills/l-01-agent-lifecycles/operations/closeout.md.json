@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
-        "content": "sha256:cfc01bf450803399743e193702d871f0ceffc597def2fe9b0a3b83c5a2f37120",
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+        "content": "sha256:4eb72720cad9cc7f8f493d20f98643ea0fb071d37c344842b0c4db95da4c19a4",
         "locator": {
           "end": 11,
           "kind": "line_range",
@@ -22,8 +22,27 @@
     },
     {
       "anchor": {
-        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
-        "content": "sha256:6d8f09d9e611039b575a6d6ffceca76febf365f213ae7a67d9481f017adbf397",
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+        "content": "sha256:4eb72720cad9cc7f8f493d20f98643ea0fb071d37c344842b0c4db95da4c19a4",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-8JP1J9",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Names knowledge_read dependent(staleOnly=true, compact=true) for closeout triage while reserving full rows when an evidence receipt requires them.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+        "content": "sha256:862076e2d3db41e62171c2f7ba2bd29c09a82c3df538d18ae5292763fc9e1697",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
         "content": "sha256:fe53a80f96392d8650bb4004c1f445621cfdb9159c5b2e370a8ab6a5e2d166b4",
         "locator": {
           "end": 7,
@@ -58,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
-        "content": "sha256:cfc01bf450803399743e193702d871f0ceffc597def2fe9b0a3b83c5a2f37120",
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+        "content": "sha256:4eb72720cad9cc7f8f493d20f98643ea0fb071d37c344842b0c4db95da4c19a4",
         "locator": {
           "end": 11,
           "kind": "line_range",
@@ -77,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
-        "content": "sha256:f326b83ea7a98ad959068364262389dfdfb06c6f060a6cd70b5c6979e7ed49b4",
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+        "content": "sha256:62f387ba4a172c25e34677afe724c6f67997dbdef6e369b68453b4c9cc67d909",
         "locator": {
           "end": 11,
           "kind": "line_range",
@@ -96,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
         "content": "sha256:bfd95c5e64d2a89f92d8a38f211b3aa7510ed82b8e0b8f30f0f9f95b9da1fc68",
         "locator": {
           "end": 23,
@@ -120,8 +139,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
-            "content": "sha256:6d8f09d9e611039b575a6d6ffceca76febf365f213ae7a67d9481f017adbf397",
+            "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+            "content": "sha256:862076e2d3db41e62171c2f7ba2bd29c09a82c3df538d18ae5292763fc9e1697",
             "locator": {
               "kind": "file"
             }

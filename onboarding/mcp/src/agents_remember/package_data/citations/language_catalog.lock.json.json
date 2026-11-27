@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
+        "content": "sha256:59bde6253a8d48912a24fc69f8098ea1b1df761157252500c35cd549235b57bd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SY26S8",
+      "invariant": "INV-559QV5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §1",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Declares the schema-validated global hash-pinned catalog lock with exact PyPI wheel SHA-256 hashes, query SHA-256 digests, wrappers, destructuring specs, reserved suffixes, ambiguous suffixes, and languagePack pin.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The lockfile pins `schema` (`ar-language-catalog/v1`), `treeSitter` version `0.26.1` (`abiMin: 13`, `abiMax: 15`), reserved `.lean`, ambiguous `.h`/`.m`/`.v`, and `languagePack` wheels alongside uniform `languages` entries (`python`, `typescript`, `tsx`, `javascript`, `lean`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
+            "content": "sha256:59bde6253a8d48912a24fc69f8098ea1b1df761157252500c35cd549235b57bd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

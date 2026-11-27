@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
-        "content": "sha256:6cc33ab00859e2e907ba7a5f362bf3ee0b4b38495b055e90e4fc9ca1c24de212",
+        "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+        "content": "sha256:9b4bd10acb21d3150d3ffdbf277c975c4d530cefe966e2a57b355427d776e3ad",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+        "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
         "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
         "locator": {
           "end": 6163,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+        "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
         "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
         "locator": {
           "end": 5103,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
-        "content": "sha256:6cc33ab00859e2e907ba7a5f362bf3ee0b4b38495b055e90e4fc9ca1c24de212",
+        "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+        "content": "sha256:9b4bd10acb21d3150d3ffdbf277c975c4d530cefe966e2a57b355427d776e3ad",
         "locator": {
           "kind": "file"
         }
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -92,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
             "content": "sha256:e0384fd7a2fb1b964c2b6d2a3453d3456017a6a0751411176817ae3633b28718",
             "locator": {
               "end": 6163,
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
             "content": "sha256:23ad49cb57e0865d9303685542438541f8b8e3934ed67448a2ad38e8e4f30301",
             "locator": {
               "end": 6684,
@@ -126,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
-            "content": "sha256:949e5f7a6572846a164ce43edd72a6f3c5f4b3a4069a4e42c269e7677d34f58d",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+            "content": "sha256:e72235aae3b77cc86ff885629486b8e2bb11f76360fa27845993b7345209ec5d",
             "locator": {
               "end": 6286,
               "kind": "line_range",
@@ -139,12 +139,12 @@
       ]
     },
     "3": {
-      "note": "Generated approved source sizes record the Manager brief at 1,463 words and its exact source SHA-256; current generated measurements include ordinary linked templates.\n\nAnchor: `manager-brief.md`",
+      "note": "Generated approved source sizes record the Manager brief at 1,542 words and its exact source SHA-256; current generated measurements include ordinary linked templates.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
-            "content": "sha256:d5665e2c65318e40ccc91514b74628dbfded3687336c223c4480798ddcc8464c",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+            "content": "sha256:ba07118ef71ef4bb22c3aac786916a3ff0ca49f24986873567230ba3e0bbb66c",
             "locator": {
               "end": 6704,
               "kind": "line_range",
@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
             "content": "sha256:f8f8b8c92cf7bbc546918ecbd81a64ce055160bc40252f448e919df93cc9d4ed",
             "locator": {
               "end": 6177,
@@ -227,14 +227,14 @@
       ]
     },
     "8": {
-      "note": "The generated size record holds the current curation capsule (412 Curator, 724 Manager) and judgment detail (355) measurements.",
+      "note": "The generated size record holds the current curation capsule (411 Curator, 724 Manager) and judgment detail (355) measurements.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
-            "content": "sha256:5442e81b12622487a44dd53c794f127d84bd46f6758f74f6d5a62b366b38de15",
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+            "content": "sha256:35bec1b20f8ad93d347b2c6e6759e091fa987a44f3a33add1b4e1ed817d92ebb",
             "locator": {
-              "end": 6245,
+              "end": 6244,
               "kind": "line_range",
               "start": 6202
             }

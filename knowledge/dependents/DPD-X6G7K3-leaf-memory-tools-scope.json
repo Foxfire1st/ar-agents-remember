@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
-    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/reference/mcp-tools.md on L32 candidate 52e47cca: lines 794-801 accurately document independent 16-worker reset scheduling, the D987 ~30s/~300 and ~11/s ceiling, and the 512-entry/24-hour queue bound; pre-existing KNO-R07 deferral on lines 31 and 203 is re-deferred onto the new blob without lifting.",
-    "task": "261112-BUG-L32",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: merged docs/reference/mcp-tools.md carries both KNO-R14@v1 eleven knowledge_read views (line 203, lines 217-247) and BUG-R32@v1 16-worker reset-scheduler prose (lines 822-829); retains narrowed deferral DFR-6EWRE4 on line 31 (4,000-token ceiling) bound to merged blob without lifting it.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/reference/mcp-tools.md",
-        "note": "Update docs/reference/mcp-tools.md line 31 (5,000-token knowledge_read ceiling) and line 203 (all eleven knowledge_read views including records/impact/search/compact/consolidation_proposal, auto-pairing, and post-landing brief refresh)."
+        "note": "Update docs/reference/mcp-tools.md line 31 from 4,000-token ceiling to 5,000-token ceiling for knowledge_read and note post-landing brief refresh where appropriate."
       },
-      "createdAt": "2026-11-27T20:15:49.363802Z",
-      "createdByLeaf": "261112-BUG-L32",
-      "fileBlob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
-      "id": "DFR-9JY22K",
+      "createdAt": "2026-11-27T17:29:51.671043Z",
+      "createdByLeaf": "261112-KNO-L14",
+      "fileBlob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+      "id": "DFR-6EWRE4",
       "owner": "261112-KNO",
-      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read lists 7 views and states open named files for record text)",
-      "reason": "Re-deferred from BUG-L60 DFR-XP94XS onto L32 candidate blob of docs/reference/mcp-tools.md: L32 edited only lines 794-801 (provider-limit reset scheduling, 16-worker pool, D987 Option A ceiling, and 512/24h queue bound) and did not modify lines 31 or 203; preserving 261112-KNO deferral intact until lines 31 and 203 are updated."
+      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token higher bound ceiling)",
+      "reason": "Narrowed from DFR-XP94XS and preserved across crossing-8 onto merged blob of docs/reference/mcp-tools.md (combining KNO-R14@v1 lines 203 & 217-247 with BUG-R32@v1 lines 822-829, superseding DFR-9JY22K): line 31 still states a 4,000-token higher bound ceiling."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 35,
+  "revision": 36,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -438,14 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:15:46+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

@@ -137,28 +137,14 @@
       ]
     },
     "23": {
-      "note": "The resolver supplies structured ranges for established symbol and line-range locators on their exact recorded blob.",
+      "note": "The resolver supplies structured ranges for established symbol and line-range locators on their exact recorded blob. Anchor: `_observed_symbol`, `_observed_line_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
-              "kind": "symbol",
-              "name": "_observed_symbol"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:a503652955f6dfd31cbfd0eb47bbd1e7bf66fee39157dd488833e7be2300bd7d",
-            "locator": {
-              "end": 231,
-              "kind": "line_range",
-              "start": 226
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },

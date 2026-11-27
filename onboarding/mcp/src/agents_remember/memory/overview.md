@@ -13,7 +13,7 @@ The route includes baseline adoption, converted recovery-leaf carryover, convers
 
 A successful new converted baseline can refresh source briefs, folder indexes and the tree stamp after durable publication. The refresh uses the paired code source and requires effective exclusion of the derived folder.
 
-Recorded Lean symbol reads use whole-name lookup and preserve uncertain exact keys as unsupported locators with no ranges. The definitions memo retains scope metadata and separates script test-file classes. Native converted-card citation authoring uses the live reader. Legacy format 1 selects its historical reader before span lookup.
+Recorded Lean symbol reads use whole-name lookup and preserve uncertain exact keys as unsupported locators with no ranges; `_defining_extents` delegates to `extents.qualified_spans` so recorded anchor reads share holder-containment semantics with writer and conversion. The definitions memo retains scope metadata and keys by active provider version and script test-file class, and `CodeObjects` restricts process-global `SYMBOL_SPANS` reuse to the default `LanguageSet`. Native converted-card citation authoring uses the live reader. Legacy format 1 selects its historical reader before span lookup.
 
 MIK-R109 adds reverse-locator queries on `KnowledgeIndex`: `entry_sidecar`/`entry_sidecars` identify declaring sidecars, `record_paths` identifies authoritative record files, and `uuid_text_ids` resolves projected UUIDs to text IDs. They read the existing index tables; schema, derived-cache custody and text authority stay unchanged. Caller-visible naming/state projection remains in the application layer.
 
@@ -185,7 +185,8 @@ Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
 
 - Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
 
-- A recorded symbol observation returns the defining extents when the selected key is established. [19]
+- A recorded symbol observation returns the defining extents when the selected key is established, sharing `extents.qualified_spans` containment. [19]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
 
@@ -341,7 +342,8 @@ Numbered findings [116] and [149] describe converted carryover planning, convers
 - Selection freezes directly containing families before expansion; paging preserves total and cumulative counts. [157]
 
 
-- A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. [158]
+- A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. Anchor: `_observed_entry`, `_recorded_lines`, `_blob_definitions` [158]
+
 
 
 - Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence. [159]

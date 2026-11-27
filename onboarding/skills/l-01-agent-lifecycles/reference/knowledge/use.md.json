@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b6c43393f56d9096b0de25d176301c178162a896",
+        "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
         "content": "sha256:b6c59a6eae3d3bbe1c83e40fba8fc2c26f4827f108e5491203c53cec52f4839d",
         "locator": {
-          "end": 29,
+          "end": 28,
           "kind": "line_range",
-          "start": 29
+          "start": 28
         }
       },
       "id": "RLZ-HFFGHH",
@@ -22,8 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "b6c43393f56d9096b0de25d176301c178162a896",
-        "content": "sha256:0fc4768a76075386cb7852dab353afd3a0ee65f9ca293922d01bebfc4f121a65",
+        "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+        "content": "sha256:feb043b8a547edd5349bab15c7076b38ea26c959571946b9cb3f3e739768b453",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PBWG69",
+      "invariant": "INV-YSQJ5K",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R2",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Provides the unified impact/search -> records -> dependent(compact=true) workflow, preserves INV-47NR7E brief guidance, and defines per-role boundaries for all eight non-Bootstrap roles.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+        "content": "sha256:7432ba316cc012d7d4a181d0d8bff62a803dafce7ce5245d824cb0c13833286a",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -46,8 +63,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
-            "content": "sha256:19012c1d4b391b64b343e0cd2e64e796b003cc67a8a9f7a197edc897524d7b72",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+            "content": "sha256:3b879a2b0c408e083de217ca7950b0c2a6d36c7d5c4926a70692ab11b441ba24",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -59,14 +76,14 @@
       ]
     },
     "2": {
-      "note": "Reads bind the selected memory and code pair, page to completion and open named records, siblings, proofs and code.\n\nAnchor: `continuation`",
+      "note": "Reads bind the selected memory root with automatic code-tree pairing, use text-bearing `impact`, `search`, and `records` views plus compact `dependent` triage, page to completion, and reserve native file opens for source code, tests, briefs, and uncarried documents.",
       "targets": [
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
-            "content": "sha256:ef66b633bf750bece0f2dad580a1259471c071a93239f6c422a6ffd2c153d83d",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+            "content": "sha256:6b90ad192eab20bf91989ff1deab80e8d1910fc090d1c1e4fe5069178b5a3617",
             "locator": {
-              "end": 25,
+              "end": 28,
               "kind": "line_range",
               "start": 11
             }
@@ -80,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
             "content": "sha256:2c76c3eef6ae563704aac4b0345e7779468e83acfc1fb8c307cc59f0c521040a",
             "locator": {
-              "end": 29,
+              "end": 28,
               "kind": "line_range",
-              "start": 27
+              "start": 26
             }
           },
           "kind": "code"
@@ -97,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
             "content": "sha256:e07994749484189f4f01e220b70b550bf96f66dcd9e8b259ac974c628a4447da",
             "locator": {
-              "end": 33,
+              "end": 32,
               "kind": "line_range",
-              "start": 31
+              "start": 30
             }
           },
           "kind": "code"
@@ -110,16 +127,16 @@
       ]
     },
     "5": {
-      "note": "Role sections apply attribution to diagnosis, investigation, editing, failing tests and review without filtering the diff.",
+      "note": "Per-role sections apply `knowledge_read` across all eight non-Bootstrap roles (Architect, Orchestrator, Manager, Worker, Reviewer, Investigator, Curator, and Consolidator) with anti-overreach boundaries and without filtering the review diff.",
       "targets": [
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
-            "content": "sha256:d52fe755f52601f5e0b2b58ad4ad4d22a9aafb6b943c22d30aab13d43a6e8944",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+            "content": "sha256:7417f4a9b80b091d438ca16584e1390cfb902c72e3f8edb1ca24e645c20490c8",
             "locator": {
-              "end": 55,
+              "end": 70,
               "kind": "line_range",
-              "start": 35
+              "start": 34
             }
           },
           "kind": "code"
@@ -131,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
             "content": "sha256:3e8818385f268753c9b20f68d4df069d91eef0021d6c4d15706f15b07f693dd4",
             "locator": {
               "end": 34,
@@ -149,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -201,8 +218,8 @@
         },
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
-            "content": "sha256:0fc4768a76075386cb7852dab353afd3a0ee65f9ca293922d01bebfc4f121a65",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+            "content": "sha256:7432ba316cc012d7d4a181d0d8bff62a803dafce7ce5245d824cb0c13833286a",
             "locator": {
               "end": 7,
               "kind": "line_range",
@@ -213,8 +230,8 @@
         },
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
             "locator": {
               "end": 10,
               "kind": "line_range",

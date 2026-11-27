@@ -1,0 +1,270 @@
+{
+  "closed": true,
+  "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-06057Y",
+      "revision": 15
+    },
+    {
+      "record": "DPD-0K35N0",
+      "revision": 12
+    },
+    {
+      "record": "DPD-78737N",
+      "revision": 28
+    },
+    {
+      "record": "DPD-CZBR1Q",
+      "revision": 23
+    },
+    {
+      "record": "DPD-FR0VZP",
+      "revision": 9
+    },
+    {
+      "record": "DPD-K2QMWQ",
+      "revision": 25
+    },
+    {
+      "record": "DPD-PMZ21Z",
+      "revision": 23
+    },
+    {
+      "record": "DPD-Q4APMS",
+      "revision": 33
+    },
+    {
+      "record": "DPD-XV7QBE",
+      "revision": 15
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:b79cb9de210f4e1f2c9818d7d2a0d6e9f92375e35f64bb2f58b02d177c9888b1",
+      "record": "DPD-06057Y",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:4324b47d24488ec999a27e10a053437dd6058ca8fc209683d484521d40290fcb",
+      "record": "DPD-0K35N0",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:37d708dc7b3cd6dee3f7aac604461b2a6c191bb0800e62d814d13e85d3f009ef",
+      "record": "DPD-78737N",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:4000a28ea53af579ef9e0bd771782c986035e6ac1f19769020b9d93597565d90",
+      "record": "DPD-86HJGF",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0c220f045db7f956ffacbadc26fd8f62c149d11b40d006a4089146c7d2603006",
+      "record": "DPD-8PE0G9",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:2186e0238b362533f8d4e1a87d4ef11c07703418e9ade0080a0d0cdb275cb8f7",
+      "record": "DPD-A3XZ3Q",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:6d5e0aad52ca3fe461a9f447cb6e5a0df20bf3baf41a3391171f708ace5e1c17",
+      "record": "DPD-CZBR1Q",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:94683c4a0fb9c4adcaca9342c0221eec8f049afdceaffbedabdd1cd6cb2f3319",
+      "record": "DPD-FR0VZP",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:838ea9441e8c1f196dfa878b680c8225461bdc585f793b565ddcb414aea13521",
+      "record": "DPD-GHEXS9",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:631ceac7ab9301231e84f9f7ed7c027b751ba0f999f1b5279e4d39bdc7dc18b5",
+      "record": "DPD-K2QMWQ",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:494e796b301168f98c013b6ccb4d800f359a9b8e194c561272d1b7b3f739f1a7",
+      "record": "DPD-PMZ21Z",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:8edf23e3b4a187c893f70d9e60cfc8e5e0b8e90f5fa4bb867aecf72c6ae5ec40",
+      "record": "DPD-Q4APMS",
+      "revision": 34,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9478d5e1343a4d98345a8e6af132274382bb7b7536552bfcc6c5ce84131b7a50",
+      "record": "DPD-XV7QBE",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9fe8337455e11a4c3d573e2718d32d2cd3af10858389c148264af190554bc87d",
+      "record": "DPD-ZT8YY7",
+      "revision": 45,
+      "writer": {
+        "at": "2026-11-28T00:08:30+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

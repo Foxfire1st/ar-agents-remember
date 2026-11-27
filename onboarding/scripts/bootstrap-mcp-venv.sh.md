@@ -16,7 +16,7 @@ The script loads `scripts/python-runtime-contract.env`, resolves the PATH `uv` b
 
 It then ensures uv-managed CPython with `uv python install --no-bin "$AR_PYTHON_MINOR"`, locates its minor symlink with `uv python find --system --managed-python --no-python-downloads "$AR_PYTHON_MINOR"`, and probes the base interpreter with `scripts/check-python-runtime.py --base-interpreter --require-linux-pidfd --uv-version "$observed_uv"`.
 
-Before inspecting or mutating `mcp/.venv`, the script acquires an exclusive `fcntl.flock` on `$repo_root/mcp` (file descriptor 9). It supports optional `[--replace | --ensure]`: if `mcp/.venv` already points to `$runtime_base/bin` (`current_venv` via `agents_remember.python_runtime.read_venv_home`), `--ensure` returns 0 when `mcp/.venv/bin/python` is executable, ordinary mode refuses without `--replace`, and `--replace` moves the existing venv aside; if an existing `mcp/.venv` points at a stale base, it is moved aside and recreated automatically even without `--replace`. Each backup path uses a private `mktemp -d` reservation under `${XDG_CACHE_HOME:-$HOME/.cache}/agents-remember/venv-backups` carrying the worktree directory name and UTC second, so directory and symlink predecessors restore cleanly on failure while retaining the failed candidate for diagnosis. After `uv sync --project "$repo_root/mcp" --python "$AR_PYTHON_MINOR" --managed-python --no-python-downloads --frozen --all-extras`, `scripts/check-python-runtime.py`, and `uv pip check` succeed, the replaced backup is removed.
+Before inspecting or mutating `mcp/.venv`, the script acquires an exclusive `fcntl.flock` on `$repo_root/mcp` (file descriptor 9). It supports optional `[--replace | --ensure]`: if `mcp/.venv` already points to `$runtime_base/bin` (`current_venv` via `agents_remember.python_runtime.read_venv_home`), `--ensure` returns 0 when `mcp/.venv/bin/python` is executable, ordinary mode refuses without `--replace`, and `--replace` moves the existing venv aside; if an existing `mcp/.venv` points at a stale base, it is moved aside and recreated automatically even without `--replace`. Each backup path uses a private `mktemp -d` reservation under `${XDG_CACHE_HOME:-$HOME/.cache}/agents-remember/venv-backups` carrying the worktree directory name and UTC second, so directory and symlink predecessors restore cleanly on failure while retaining the failed candidate for diagnosis. After `uv sync --project "$repo_root/mcp" --python "$AR_PYTHON_MINOR" --managed-python --no-python-downloads --frozen --all-extras`, `scripts/check-python-runtime.py`, and `uv pip check` succeed, the replaced backup is removed. After that venv transaction finishes, the script pre-warms the external grammar cache for this repository's languages by running `agents-remember languages warm --repo "$repo_root"` (writing only to the external language cache, never into `mcp/.venv`).
 
 ### Conventions
 
@@ -63,6 +63,7 @@ No external source is required for the repository-owned bootstrap sequence.
 
 
 - `uv sync` runs with `--managed-python --no-python-downloads --frozen --all-extras`; post-sync runtime proof and `uv pip check` precede removal of the replaced backup. [3]
+
 
 
 

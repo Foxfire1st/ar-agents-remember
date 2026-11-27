@@ -96,4 +96,5 @@ This packaged copy derives from the canonical roles/orchestrator.md. The Orchest
 
 
 
+
 - The Orchestrator keeps ordinary requirement readings and operational rulings itself, forwards the Manager's matters for the Architect unchanged and sends developer questions, child permission notices and the final report path with `role_message` to the parent agent ID (sending no status-only messages or other landing notices), and follows the held-delivery rule when a send answers held. [3]

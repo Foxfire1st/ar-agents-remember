@@ -105,7 +105,7 @@ Before handling a child's question or returning the developer's answer, the Mana
 
 Manager retains one-master coordination, role starts/replacements, report-based state, delegated gate acceptance, transaction ownership and landing order. Manager sets no step for another agent. Worker, Reviewer and Curator completion bookkeeping does not transfer acceptance or publication authority to those roles; task stage is published by its native owner, with Manager correction/organizational-completion authority as the landed account states.
 
-The individual stage starts and direct peer handovers are stated in the role and the coordination operation. Its Reference index routes detailed procedures to `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake`, `reference/worker/sync-and-repairs.md#synchronize-the-leaf`, `reference/coordination/shared/closeout-recovery.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/third-rejected-round.md`, `reference/coordination/shared/master-state.md`, `reference/tasks/document-authoring.md`, `reference/refused-write.md#apply-the-procedure-to-a-task-document-or-folder`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/sandbox-actors.md`, `reference/coordination/shared/child-questions.md`, `templates/curator-brief.md` and `templates/manager-brief.md`; the lane failure count (from `FAILED`, `SUBFAILED` and `ERROR` lines, grouped by test node) is stated inline.
+The individual stage starts and direct peer handovers are stated in the role and the coordination operation. Its Reference index routes detailed procedures to `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake`, `reference/worker/sync-and-repairs.md#synchronize-the-leaf`, `reference/coordination/shared/closeout-recovery.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/third-rejected-round.md`, `reference/coordination/shared/master-state.md`, `reference/tasks/document-authoring.md`, `reference/refused-write.md#apply-the-procedure-to-a-task-document-or-folder`, `reference/knowledge/commands.md` (linked via the ``[`knowledge_read`]`` index pointer), `reference/message-handover.md`, `reference/sandbox-actors.md`, `reference/coordination/shared/child-questions.md`, `templates/curator-brief.md` and `templates/manager-brief.md`; the lane failure count (from `FAILED`, `SUBFAILED` and `ERROR` lines, grouped by test node) is stated inline.
 
 ## Settle precedents without adding repair stops
 
@@ -154,6 +154,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 - Normal leaf starts are individual stages: Worker at build, Reviewer at freeze and Curator after code PASS. Peer candidate, producer-list and memory handovers remain direct; Curator receives candidate-bound inputs and the Manager reads both verdicts and owns gate and transaction decisions. [3]
+
 
 
 

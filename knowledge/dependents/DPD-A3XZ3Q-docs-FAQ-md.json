@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355",
-    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Audited docs/FAQ.md against 261125-DEP-L4 tree 39b7bfbd (DEP-R04@v2 public-API-only mcp 2.3.0 boundary): read_ar_files brief behavior, anchor measurement, and memory workflow guidance remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-8 sync conflict for docs/FAQ.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L14 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
     "task": "261125-DEP-L4",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/FAQ.md",
   "id": "DPD-A3XZ3Q",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },
     {
-      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+      "blob": "e505a5027f45cf753855a75f1e924f042c617489",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:28:23+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L4",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

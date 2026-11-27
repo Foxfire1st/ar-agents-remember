@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/design/python-evidence-system.md against post-CAP-L5 synced tree e273d1c9: evidence-lane and lifecycle design remains accurate after CAP-L5 and KNO-L5.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited docs/design/python-evidence-system.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): evidence-lane and lifecycle catalog design remain accurate with 860 lane modules and 123 governed artifacts.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 31,
+  "revision": 32,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,17 +66,17 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+      "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+      "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
     {
-      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+      "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

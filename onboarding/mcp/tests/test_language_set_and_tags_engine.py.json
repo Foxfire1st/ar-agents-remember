@@ -1,0 +1,190 @@
+{
+  "path": "mcp/tests/test_language_set_and_tags_engine.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+        "content": "sha256:343d1736eac3d872956b7cef84b52826ed85794fb43645ff18a3c1cdbf6ad6d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_suffix_is_permanently_reserved_from_tree_sitter_providers"
+        }
+      },
+      "facet": "Verifies LanguageSet refuses binding .lean to a TreeSitterLanguageProvider and resolves .lean to LeanLanguageProvider in the default set.",
+      "id": "PRF-1SWE9J",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+        "content": "sha256:2eba54eac478ab9bdb53a04759957812ea188fe9a806fb5ff5fb820a66eb664a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_language_set_derives_extractor_version_and_isolates_caches"
+        }
+      },
+      "facet": "Verifies extractor_version derivation from tree-sitter 0.26.1 and query digests, and isolates extents, observe, CodeSnapshot, CodeObjects, and read_anchors across default vs scoped LanguageSet.",
+      "id": "PRF-34323P",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+        "content": "sha256:b0323973c97f76e3f3ed88c49a25eaa3f8bcc42e03aec3baa143423651c4e12e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_tags_engine_ignores_doc_and_local_captures_and_preserves_document_order"
+        }
+      },
+      "facet": "Verifies upstream @doc and @local.definition captures are tolerated without extra bindings and merge_entries preserves pre-order document order.",
+      "id": "PRF-PRQW7Z",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+        "content": "sha256:e85c79541e5fedd388d935fe1ec58bf1ff2b09eb8d748b791c7e5093fd63f0cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_tags_engine_handles_wrappers_destructuring_errors_and_exclusions"
+        }
+      },
+      "facet": "Verifies decorator/export widening, declaration-line preservation, bound-side destructuring, error skipping, and import/key/default/attribute exclusions for Python and TSX.",
+      "id": "PRF-SF3DKN",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+        "content": "sha256:d80beb2d35fa6a065fc8a27142e5e2bd3a513643b67659f6dbebc3af2e411d4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_read_anchors_and_extents_share_holder_containment_for_qualified_names"
+        }
+      },
+      "facet": "Verifies read_anchors.observe_anchor and extents.qualified_spans resolve Holder.method to the same enclosing-holder span.",
+      "id": "PRF-WBQ3SQ",
+      "invariant": "INV-QQ8TQ7",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §4",
+        "leaf": "261112-KNO-L10"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Asserts `.lean` cannot be bound to a tree-sitter provider and resolves to `LeanLanguageProvider` in the default set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:343d1736eac3d872956b7cef84b52826ed85794fb43645ff18a3c1cdbf6ad6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_suffix_is_permanently_reserved_from_tree_sitter_providers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Asserts `LanguageSet.extractor_version` derivation and cache-key isolation across `extents`, `observe`, `CodeSnapshot`, `CodeObjects`, and `read_anchors`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:2eba54eac478ab9bdb53a04759957812ea188fe9a806fb5ff5fb820a66eb664a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_language_set_derives_extractor_version_and_isolates_caches"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Asserts declarative `tags.scm` wrapper widening, destructuring, `has_error` skipping, and import/key/default/attribute exclusions on Python and TSX.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:e85c79541e5fedd388d935fe1ec58bf1ff2b09eb8d748b791c7e5093fd63f0cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tags_engine_handles_wrappers_destructuring_errors_and_exclusions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Asserts `model.anchors_in` accepts an explicit `language_set` scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:4ccf46246f49c2e1202994e779647fbe1cd11600440555389f6cabf62612108c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_model_anchors_in_accepts_explicit_language_set"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Asserts `read_anchors.observe_anchor` shares `extents.qualified_spans` holder-containment semantics for qualified names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:d80beb2d35fa6a065fc8a27142e5e2bd3a513643b67659f6dbebc3af2e411d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_anchors_and_extents_share_holder_containment_for_qualified_names"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Asserts upstream `@doc` and `@local.definition` captures are ignored and `merge_entries` preserves document order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:b0323973c97f76e3f3ed88c49a25eaa3f8bcc42e03aec3baa143423651c4e12e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tags_engine_ignores_doc_and_local_captures_and_preserves_document_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

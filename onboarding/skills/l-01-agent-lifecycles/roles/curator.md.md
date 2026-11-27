@@ -18,11 +18,11 @@ The Curator seat opens only on a leaf task document. Repository foundation is re
 
 `roles/curator.md` is a concise Tier-1 role manual (32 lines) stating Curator's leaf-only start, contract-scoped MCP and brief-opening rules, `ar:needs producer-list` intake contracts, producer-field preservation, single-writer (`knowledge_write` or serving-build CLI `--commit`/`commit: true`) and product-owned state boundaries, 3-repair stop, and `task_doc(set_step)` completion rule. Detailed procedures sit behind its `## Reference index` table: `reference/knowledge/{use,commands,serving-build}.md`, `templates/curator-handoff-ingestion.md`, `reference/curator/{intent-reconciliation,worklist,knowledge-ingest,publication-report,family-obligations,change-routing,encountered-records,current-prose-and-history,card-sentence-decisions,card-formats-and-citations,governing-sources,coherence-judgments,memory-handover,exceptions-and-recovery,repository-foundation}.md`, `reference/writing/technical-english-profile.md`, `reference/message-handover.md`, `reference/worker/sync-and-repairs.md#synchronize-the-leaf`, `reference/sandbox-actors.md`, and `operations/orientation.md#ask-for-a-developer-decision`.
 
-The Curator opens briefs via `read_ar_files`/`context_packet` (`task_context`) and calls `knowledge_read` (`workspace.memoryRoot`) before checking code and memory. MCP calls are scoped with the leaf contract (unscoped `route_index_refresh` blocks `worktree_start`), verify `onboardingRoot`, and preview with `dry_run=true`.
+The Curator opens briefs via `read_ar_files`/`context_packet` (`task_context`) and calls `knowledge_read` (`workspace.memoryRoot`), using `knowledge_read` `impact`/`search`/`records` before authoring. MCP calls are scoped with the leaf contract (else refresh blocks start), check `onboardingRoot`, and preview with `dry_run=true`.
 
-Producer fields remain owned by their producer (no `disposition` re-judging); Curator owns Curator fields (initialized `null`) and requires a passing `handoff-check`. `knowledge_write` / serving-build CLI (`commit: true` / `--commit`) writes `onboarding/` and `knowledge/` files in the leaf memory worktree without a Git commit; derived indexes are never edited by hand. Falsified claims are withdrawn; discoveries use `capture-candidate`, never current intent. Product sets `proposed`/`reviewed`/`consolidated` (`knowledge_write` refuses them); `status: retired` is written only to retire (decisions keep their own status). One Curator writer lane owns placement, admission, meaning, checks, and handover with no helper writers.
+Producer fields remain owned by their producer (no re-judge); Curator owns Curator fields (initialized `null`) and requires a passing `handoff-check`. `knowledge_write` / serving-build CLI (`commit: true` / `--commit`) writes `onboarding/` and `knowledge/` files in the leaf memory worktree without a Git commit; derived indexes are never edited by hand. Falsified claims are withdrawn; discoveries use `capture-candidate`, never current intent. Product sets status (`retired` to retire; decisions keep their own status). One Curator writer lane owns placement, admission, meaning, checks, and handover with no helper writers.
 
-The Curator does not run Git writes, edit code/gate/lifecycle/contract/closeout state, start roles, invent hashes, advance uncommitted fingerprints, add silencing attestations, or set `harness`/`model`/`effort`/`serviceTier`. It fixes faulty inputs on the same writer, repairs own/tool/coherence faults, stops after 3 failed repairs on one item and tells Manager, and marks curation `done` via `task_doc(set_step)`.
+The Curator does not run Git writes, edit code/gate/lifecycle/contract/closeout state, start roles, create fake hashes/attestations, or set model/harness keys. It fixes faulty inputs on the same writer, repairs own/tool/coherence faults, stops after 3 failed repairs on one item and tells Manager, and marks curation `done` via `task_doc(set_step)`.
 
 ### Current onboarding judgment and second-reader duties
 
@@ -94,7 +94,9 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - Before ingest, earlier subject rows are read and invariant disposition meanings stay distinct from family/onboarding schemas, alongside the Curator's candidate-bound intake, single-writer, own-step, three-repair stop and linked detail rules. [18]
+
 
 
 
@@ -110,7 +112,9 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - The Curator reads the required task, change-set, producer handoff and affected memory inputs. [1]
+
 
 
 
@@ -120,6 +124,7 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 - The curator’s prohibited writes and source-stamp boundary. [3]
+
 
 
 
@@ -137,6 +142,7 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - Restated guarantees carry an authored effect; the writer fills the revision.
 
 
@@ -148,7 +154,9 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - The Curator batches citation checks and repairs, completes the full quality/coherence operation and hands memory directly to the independent Reviewer. Faulty inputs are corrected through the same tool; a covered correct-input write refusal uses the scoped recovery procedure with explicit provenance. Permission, validation, unowned-state, meaning and outside-surface stops remain. Extra memory passes require Architect/developer authority recorded by Manager. [10]
+
 
 
 
@@ -172,10 +180,11 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - A changed family guarantee carries a Curator-authored effect. The writer fills the revision. [8]
 
 
 
 
 
-- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [30]
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree. [30]

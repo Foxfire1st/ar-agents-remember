@@ -13,7 +13,7 @@ through the shipped extractor.
 
 ## Code Commentary
 
-Shared symbol extents are keyed by repository, complete blob ID, source path and symbol. The memo allows 65,536 entries and a retained charge of 32 MiB. The qualified lookup selects the reader's grammar before admitting a lookup to the shared memo. It reads the blob through its object reader before looking for a retained answer.
+Shared symbol extents in `SYMBOL_SPANS` are keyed by repository, complete blob ID, source path and symbol, and are read or populated only when `grammars.is_default_language_set()` holds so scoped `LanguageSet` overrides never read or contaminate the process-global memo. The memo allows 65,536 entries and a retained charge of 32 MiB. The qualified lookup selects the reader's grammar before admitting a lookup to the shared memo. It reads the blob through its object reader before looking for a retained answer.
 
 ### Logic
 
@@ -47,7 +47,7 @@ Shared symbol extents are keyed by repository, complete blob ID, source path and
   catches `CodeObjectError`) instead of silently treating the blob as absent. This is one of L09's stated exceptions
   to "inert until the cutover": it is not behind a marker probe.
 - `symbol_span(path, blob, name, *, top_level=False)` returns the one extent the extractor binds.
-  Each code-object reader parses definitions once per (blob, grammar, path) (`extents.definitions`, then `extents.qualified_spans`), so filename-dependent test-case eligibility cannot leak between paths sharing a blob.
+  Each code-object reader parses definitions once per `(blob, grammar, provider.version, path)` (`extents.definitions`, then `extents.qualified_spans`), so neither filename-dependent test-case eligibility nor scoped `LanguageSet` overrides can leak between lookups sharing a blob.
   A file outside the selected reader's supported suffixes has no symbol binding. `top_level` is the export's reading of a recorded claim whose
   name binds more than once (a module-level `def run` and a local `run = …`): if exactly one span is nested
   in no other definition of the file (`_outermost`), that span is the claim's construct.
@@ -94,57 +94,29 @@ No configured live documentation source was available for this pass.
 
 The object store's read-only surface.
 
+- `CodeObjects` reads code objects and keeps raw blob bytes, blob-keyed split lines, and provider-version-keyed definitions in its instance while restricting `SYMBOL_SPANS` reuse to the default `LanguageSet`. Anchor: `CodeObjects` [1]
 
-- The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored. 
+- `CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit. Anchor: `CodeObjects.commit` [2]
 
+- `CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix. Anchor: `CodeObjects.commits_with_prefix` [3]
 
-
-
-- `CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit. [2]
-
-
-
-
-- `CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix. [3]
-
-
-
-
-- A commit's regular-file and symlink blob map remains read-only and mode-aware. [4]
-
-
-
-- Git's not-found exit, and a Git failure named rather than read as absent (R3-2).
-
-
-- `CodeObjects.has_blob` treats Git’s existence-probe exit 1 as absence and raises `CodeObjectError` for other reported failures. A timeout propagates to the caller. [5]
-
-
-
-
-- `CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`. [6]
-
-
-- Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims.
-
-- Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory. [12]
-
-
-- Whole-file content hashes the blob; symbol and line-range content reuse the instance's split lines through the inclusive-range helper. [8]
-
+- `CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`. Anchor: `CodeObjects.prefetch` [6]
 
 - The shared binding rule preserves qualified symbol extents and unique binding. [9]
 
+- The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored.
+- A commit's regular-file and symlink blob map remains read-only and mode-aware. [4]
+- Git's not-found exit, and a Git failure named rather than read as absent (R3-2).
+- `CodeObjects.has_blob` treats Git’s existence-probe exit 1 as absence and raises `CodeObjectError` for other reported failures. A timeout propagates to the caller. [5]
+- Symbol extraction is cached by blob, grammar, active provider version, and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims.
+- Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory. [12]
+- Whole-file content hashes the blob; symbol and line-range content reuse the instance's split lines through the inclusive-range helper. [8]
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
-
-
-
-- `CodeObjects` reads code objects and keeps raw blob bytes and blob-keyed split lines in its instance. [1]
 
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/conversion/code_objects.py:219-260 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/src/agents_remember/memory/conversion/code_objects.py:203-244 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c052b2593b85d9baf425cc1d5c46f384b13fc9ea; mcp/src/agents_remember/memory/conversion/code_objects.py::CodeObjects - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

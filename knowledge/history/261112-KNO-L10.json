@@ -1,0 +1,2118 @@
+{
+  "closed": true,
+  "leaf": "261112-KNO-L10",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T18:26:19+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-KNO-L10",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+      "task": "261112-KNO"
+    },
+    "reviewer": {
+      "at": "2026-11-27T18:26:19+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-KNO-L10",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "24718df4-21ab-52dc-aadb-b88bea4b8149",
+      "task": "261112-KNO",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "ce7328ad67158e469d7a7d2d37cca2faf5b7e691",
+    "verdictRef": "notes/reports/reviewer/24718df4-21ab-52dc-aadb-b88bea4b8149/memory-round-1/verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-00D2EE",
+      "items": [
+        "sha256:9ddc34fb50ff13d7da3add456102c50e0369d8f9efa161d9ca9e190a52f34928"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:9ddc34fb50ff13d7da3add456102c50e0369d8f9efa161d9ca9e190a52f34928"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-02D1K6",
+      "items": [
+        "sha256:5b0c7a2a20e5f7984cddde66425e450c323c961576f66b9607b6841b13512415"
+      ],
+      "reason": "Updated memory/overview.md prose and re-authored citations [19], [158] for provider-versioned definition memos, default-LanguageSet SYMBOL_SPANS gating, and shared holder containment.",
+      "sources": [
+        {
+          "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        },
+        {
+          "blob": "145151185996395878dd19a4227261b393a6da2b",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "content": "sha256:2aa1e08f165e633bb2abd48490f1bebb7876d1e8e8d07f8bf079b05a7e63140b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "content": "sha256:9385c1faf9dfe98ca553b3a98b666069bfdaed6c9e777ffa7b90edd8232aca96",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-VDX96S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-02TG2J",
+      "items": [
+        "sha256:e6617d2814d15567b309638ec32c0a8ae3ef75fc8b92e500951f7fd3eba3139a"
+      ],
+      "reason": "KNO-R10@v1 keyed CodeObjects._definitions by provider version and gated SYMBOL_SPANS on is_default_language_set(); per-instance single blob splitting and table scan bounds are preserved.",
+      "revision": 1,
+      "subject": "INV-V2QBEP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0FP6XA",
+      "items": [
+        "sha256:608d5d092d47cf4a8014b1b9df06759594cfd3fdb372f8dd9288828cb4b8d70f"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:608d5d092d47cf4a8014b1b9df06759594cfd3fdb372f8dd9288828cb4b8d70f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1HSJVA",
+      "items": [
+        "sha256:63751eb5d3d0d4e19f9e2fc9a322da7817ebf4f9cf84e22d708f066936ed57c6"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:63751eb5d3d0d4e19f9e2fc9a322da7817ebf4f9cf84e22d708f066936ed57c6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1QC9JW",
+      "items": [
+        "sha256:7e0c86b3125612a01799000335135d492392079a71826bee31f91a0c246683d7"
+      ],
+      "reason": "Updated model.py card prose and re-authored citation [11] for optional language_set scope on anchors_in.",
+      "sources": [
+        {
+          "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/model.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1R9FG7",
+      "items": [
+        "sha256:93cfbce8b2015c9afc653ca86c80d4b583ca668f9f293c9983c28adbde4d147f"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:93cfbce8b2015c9afc653ca86c80d4b583ca668f9f293c9983c28adbde4d147f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1Z1S1K",
+      "items": [
+        "sha256:4ef2022ef2191bdc75907507606fe0dc9c2bf6db664d2999d475138df75364eb"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:4ef2022ef2191bdc75907507606fe0dc9c2bf6db664d2999d475138df75364eb"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-2WHJT7"
+        },
+        {
+          "after": {
+            "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+            "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "before": {
+            "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
+            "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "id": "RLZ-D2GF84"
+        },
+        {
+          "after": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_defining_extents"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_defining_extents"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-FFM155"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2FE4Z8",
+      "items": [
+        "sha256:c4117d6bb2892a71d028713b8a19f2461e13571dd6861e1ecf8fd28243caef8c"
+      ],
+      "reason": "KNO-R10@v1 routed _symbol_range through active_language_set(), unified _defining_extents on extents.qualified_spans, and checked provider.uses_exact_bindings; exact Lean binding and ambiguity reporting are unchanged.",
+      "revision": 1,
+      "subject": "INV-XA55TP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-2PHKZ0",
+      "items": [],
+      "reason": "Confirmed docs/design/python-pytest-bootstrap.md at candidate tree e122f928 after KNO-R10@v1 updated test-evidence-lanes.toml (704 unit-regression, 858 total; stress-durability shifted to lines 877-879); all documented pytest bootstrap rules remain accurate.",
+      "revision": 42,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2VEY95",
+      "items": [
+        "sha256:34033d91853ca4d15ef571cfd0954b2298d314904d9f65cc519e3e63f4624bf4"
+      ],
+      "reason": "Updated code_objects.py card prose and re-authored citations [1], [2], [3], [6], [9] for provider-version-keyed _definitions and default-LanguageSet SYMBOL_SPANS gating.",
+      "sources": [
+        {
+          "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/code_objects.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2YS749",
+      "items": [
+        "sha256:ca17bc0a68af3a55fbe8c7de8c2cd5685afe1070c84cd16572d526302b1389f3"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:ca17bc0a68af3a55fbe8c7de8c2cd5685afe1070c84cd16572d526302b1389f3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3DZ504",
+      "items": [
+        "sha256:021df2cb830d6c7412caf4ddeb46b42645b9e8ff7392182b1d090b3cd85072dd"
+      ],
+      "reason": "Updated mcp/tests/overview.md prose counts/line numbers, added test_language_set_and_tags_engine.py summary, and re-authored all 14 stale references.",
+      "sources": [
+        {
+          "blob": "52bf71b2641bf32d400fe8b434c0447c7107a1a1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "8bf34abd28279aa9502fcf44c8b9fa8d0f3b50b7",
+          "path": "mcp/tests/test_language_set_and_tags_engine.py"
+        },
+        {
+          "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+          "path": "mcp/tests/test_memory_citation_grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3PPSH6",
+      "items": [
+        "sha256:11a0de8356bdb42da975466e973a1e3e15a2cb36904f681bbee7f9c2ef7a76fb"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:11a0de8356bdb42da975466e973a1e3e15a2cb36904f681bbee7f9c2ef7a76fb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4FS2GH",
+      "items": [
+        "sha256:3b3615ffcc2305d8a6d594c4b6365078f2bfffe89e3452f74013ff5b833dfe1a"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:3b3615ffcc2305d8a6d594c4b6365078f2bfffe89e3452f74013ff5b833dfe1a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4MXK9E",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated evidence-lifecycle.toml card prose counts/line numbers, added test_language_set_and_tags_engine.py consumer note, and re-authored all 70 stale references.",
+      "sources": [
+        {
+          "blob": "52bf71b2641bf32d400fe8b434c0447c7107a1a1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+            "content": "sha256:d09cab15088d938c3f50765dfaba63ab00dd1ae808df9009976c1693af46bf6e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "52bf71b2641bf32d400fe8b434c0447c7107a1a1",
+            "content": "sha256:09e552f91e03956952d78b3fc6acb67a35ce0a3a81e6cb9efedbd79bc629d4f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4QRCHF",
+      "items": [
+        "sha256:a92c5c07bfb0066ec7a2fa2589d28d71f8aa284f7ba5ab2e1e56e18c73266afb"
+      ],
+      "reason": "KNO-R10@v1 added test_language_set_and_tags_engine.py to evidence-lifecycle.toml and test-evidence-lanes.toml; outside-scratch root generation and test registrations are unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4R90HP",
+      "items": [
+        "sha256:bdbedf632da756b28e072bca7a999a81db17e2a842e31d9ca0c77835556dfb86"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:bdbedf632da756b28e072bca7a999a81db17e2a842e31d9ca0c77835556dfb86"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4XBZ74",
+      "items": [
+        "sha256:07bb8d6adfd830a6e5d4d79a42d86d1567693eecc5d1abe33b7ae4edc681844c"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:07bb8d6adfd830a6e5d4d79a42d86d1567693eecc5d1abe33b7ae4edc681844c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6GPG70",
+      "items": [
+        "sha256:77de3c39a2067416ba94d63a90d2e91878d8227747dc2b466f1f49b5aac51f7e"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:77de3c39a2067416ba94d63a90d2e91878d8227747dc2b466f1f49b5aac51f7e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6N6AHY",
+      "items": [
+        "sha256:a58c468c0053d79560c16b782c743e0fdaf2d9a0abced60caaf31cc846fad1d4"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:a58c468c0053d79560c16b782c743e0fdaf2d9a0abced60caaf31cc846fad1d4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "content": "sha256:66e31f9e204b9907081813aef8b907f9dc9de92398b59c6bdce205d0ab444883",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "content": "sha256:b38e95474d7cc30b4547a7981fae5376bd0f4cac2e8802ad3cf5cfcb2a50c0a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-AZ5367"
+        },
+        {
+          "after": {
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+            "content": "sha256:4b181122983e03f89d82cd51a4b2d2d46995feef22d5d72e3806233e4dde9052",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationReader"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+          },
+          "before": {
+            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "content": "sha256:4b181122983e03f89d82cd51a4b2d2d46995feef22d5d72e3806233e4dde9052",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationReader"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+          },
+          "id": "RLZ-EYPFNA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-71KA9J",
+      "items": [
+        "sha256:2ca976516fb1fc80cb1add5ab34cda1d57aab90ecfeefd337c5d1280bf3ad135"
+      ],
+      "reason": "KNO-R10@v1 gated process-global SYMBOL_SPANS reuse on is_default_language_set() and added optional language_set to model.anchors_in while preserving CitationReader.FORMAT_1 historical Lean conversion bytes.",
+      "revision": 1,
+      "subject": "INV-4Y2AN9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+            "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeanLanguageProvider.extract_bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:15717ca60fe9464d4cbd1e464d8ed8c7143620f49b67821bc7c463da994b3842",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lean_bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-3W13Z8"
+        },
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-GHNZS9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-77WVB9",
+      "items": [
+        "sha256:c3e9fb8469304b242b8519ece382c59a03540f95d2cc03d3dcda3812c081f33b"
+      ],
+      "reason": "KNO-R10@v1 moved Lean binding extraction from deleted grammars._lean_bindings to language_set.LeanLanguageProvider.extract_bindings behind LanguageProvider while preserving exact Lean name precedence and declaration extents.",
+      "revision": 1,
+      "subject": "INV-WZ8R0Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-79HBQM",
+      "items": [
+        "sha256:dc7246c3c0bae2f53ae97bcbb5393e6f2df073d6ef7c36e40e64098aa9b2bb1b"
+      ],
+      "reason": "Deletes superseded bespoke AST walker/helper code from grammars.py after replacing extraction with declarative tags.scm/tests.scm queries and LeanLanguageProvider under KNO-R10@v1 §1-§3.",
+      "subject": "hunk:sha256:dc7246c3c0bae2f53ae97bcbb5393e6f2df073d6ef7c36e40e64098aa9b2bb1b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "definition_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "definition_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-BXK94W"
+        },
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:9470ed3912c77900163c64625b404bdc0733f9b3f0d0ee3111a9d7806c09229f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parsing_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:2b0b8c99d53f4dd8d589fcb9b4733318eb93a7d0f4c047a796c443a09c412c1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parsing_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-WTX2BJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7QPWYT",
+      "items": [
+        "sha256:fb96df1455cfa7bdd216809697bf63fac6166aba4751e4ec4feb1dca31e80ffc"
+      ],
+      "reason": "KNO-R10@v1 added optional language_set scoping and provider-version cache keys to definition_scope and parsing_scope; one parse per distinct (path, content, grammar, provider version) inside a call scope is preserved.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1RWT3JRR",
+          "revision": 1
+        },
+        {
+          "id": "INV-6W74GGC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-716Q6QMV",
+          "revision": 1
+        },
+        {
+          "id": "INV-ENTFR23T",
+          "revision": 1
+        },
+        {
+          "id": "INV-RANN4DC0",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-7XGXPC",
+      "items": [
+        "sha256:5231d35b257f5e787d5f759ad506434f5cfa5692828d3f2f79b1d9e1e277a8b1"
+      ],
+      "reason": "Examined all five members after KNO-R10@v1 threaded active provider version into BLOB_DEFINITIONS and delegated _defining_extents to extents.qualified_spans: exact recorded-blob region attribution in family review holds unchanged.",
+      "revision": 2,
+      "subject": "FAM-BWQ4XYF9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7XTCTF",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml card prose counts/line numbers (704 unit-regression, 858 total), added test_language_set_and_tags_engine.py note, re-authored all stale references, and revised ref [913] note.",
+      "sources": [
+        {
+          "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "52bf71b2641bf32d400fe8b434c0447c7107a1a1",
+            "content": "sha256:09e552f91e03956952d78b3fc6acb67a35ce0a3a81e6cb9efedbd79bc629d4f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+            "content": "sha256:d09cab15088d938c3f50765dfaba63ab00dd1ae808df9009976c1693af46bf6e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-80SJT9",
+      "items": [
+        "sha256:b35032ca2c6a3e6ae34e117eec3b8b6e02edd1d5af1eecfef53598b09cc88710"
+      ],
+      "reason": "KNO-R10@v1 added test_language_set_and_tags_engine.py to test-evidence-lanes.toml and its three exact consumer lists in evidence-lifecycle.toml in canonical order.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8CV3XA",
+      "items": [
+        "sha256:c1fbd98cfde82ca3e35de009d1645ab89ac70070c85b2529e41035341f9a39cf"
+      ],
+      "reason": "Updated application/overview.md to record active_extractor_version(), review_memo_store._grammar_identity extractor-version binding, and active_language_set() anchor lookup.",
+      "sources": [
+        {
+          "blob": "c56edbf19a601ce8f703cb7c2e6c284b9e2348ad",
+          "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+        },
+        {
+          "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        },
+        {
+          "blob": "9202f81fb89cde5dbc8910168d1386435cebc108",
+          "path": "mcp/src/agents_remember/application/review_memo_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8KMM61",
+      "items": [
+        "sha256:9e1f35cfab6b721987af9e46463e951eff498b60bd6ce2645d923ab3af180bdf"
+      ],
+      "reason": "Deletes superseded bespoke AST walker/helper code from grammars.py after replacing extraction with declarative tags.scm/tests.scm queries and LeanLanguageProvider under KNO-R10@v1 §1-§3.",
+      "subject": "hunk:sha256:9e1f35cfab6b721987af9e46463e951eff498b60bd6ce2645d923ab3af180bdf"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:39e53668a40407fc6d862ccbaa2d0ea7a63201fa4235d2e2fa9d9f0ace98c221",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-CG0HFE"
+        },
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:1c1600e3d6946320fed314492c2aea995907f1e5b0916b30b9097ea1476a29f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-H9QDPT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-98EANA",
+      "items": [
+        "sha256:091b7945c90f6fbc9b892352494b50b02406b58f8f1d464220661c31f039b535"
+      ],
+      "reason": "KNO-R10@v1 keyed extents.definitions by active provider version and switched test_case_refusal to declarative tests.scm call sites from the call-owned parsed source; independent observation with shared call-local parses is preserved.",
+      "revision": 1,
+      "subject": "INV-2NCG51"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9S2BQP",
+      "items": [
+        "sha256:53effa4086ce4d2ee1970bbddea1b00b46134e1fc76111f845537afbaac52e43"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:53effa4086ce4d2ee1970bbddea1b00b46134e1fc76111f845537afbaac52e43"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9TY3KC",
+      "items": [
+        "sha256:80df38f924cbbd45c2847f31b3abf00dfa36c528cddd787429f4e6045bc3af10"
+      ],
+      "reason": "Created onboarding card and sidecar for new unit-regression suite test_language_set_and_tags_engine.py.",
+      "sources": [
+        {
+          "blob": "8bf34abd28279aa9502fcf44c8b9fa8d0f3b50b7",
+          "path": "mcp/tests/test_language_set_and_tags_engine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_language_set_and_tags_engine.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0KYRK9",
+          "revision": 1
+        },
+        {
+          "id": "INV-CK3F9Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZ8R0Q",
+          "revision": 1
+        },
+        {
+          "id": "INV-XA55TP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-A0BMY5",
+      "items": [
+        "sha256:f084c2c5affb11eb5e0e4fd5a2c553d6b428de2cad8cbcf89d2eba53a519adc0"
+      ],
+      "reason": "Examined all four members after KNO-R10@v1 moved Lean binding extraction behind LeanLanguageProvider and permanently reserved .lean from tree-sitter providers: writer, recorded reader, and live citation paths continue to share one source declaration identity and uncertain-scope line-range fallback.",
+      "revision": 1,
+      "subject": "FAM-04M3Z0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A3MAEZ",
+      "items": [
+        "sha256:56a46d0c6a0a92b160d37f22d41e43748174df6360d98666e631f89ccc8036a4"
+      ],
+      "reason": "Created onboarding card and sidecar for new declarative tags.scm/tests.scm extraction engine module tags_engine.py.",
+      "sources": [
+        {
+          "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A54XV9",
+      "items": [
+        "sha256:8ada8e310465e22ee15ca1284a91c84cd3aed0867f2fca82aae9942765aa1214"
+      ],
+      "reason": "Updated read_anchors.py card prose and re-authored citations [7], [8], [11], [12], [13], [22], [23] for provider-versioned BLOB_DEFINITIONS and shared extents.qualified_spans containment.",
+      "sources": [
+        {
+          "blob": "145151185996395878dd19a4227261b393a6da2b",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ATS24C",
+      "items": [
+        "sha256:d80317f3d702907ffaaf045e42d361908da25d762fe978c63fa1847a4444939d"
+      ],
+      "reason": "Updated extents.py card prose and re-authored citations [26], [29], [35], [36], [51], [52], [53] for language_set_scope, provider-versioned _DefinitionCache, and shared qualified_spans holder containment.",
+      "sources": [
+        {
+          "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+            "content": "sha256:d09cab15088d938c3f50765dfaba63ab00dd1ae808df9009976c1693af46bf6e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "52bf71b2641bf32d400fe8b434c0447c7107a1a1",
+            "content": "sha256:09e552f91e03956952d78b3fc6acb67a35ce0a3a81e6cb9efedbd79bc629d4f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BCF0K9",
+      "items": [
+        "sha256:4d29f083c5f0f78657e0f518328c0fa12d9ebea9e8df188f0738d6f9fbc2e893"
+      ],
+      "reason": "KNO-R10@v1 registered test_language_set_and_tags_engine.py in test-evidence-lanes.toml and evidence-lifecycle.toml; silent turn-end wake policy and test registrations are unchanged.",
+      "revision": 9,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C4XD9A",
+      "items": [
+        "sha256:62cb4d5dea54b35406f7d569d026a9dc58f35989093a971be99056a2f620f609"
+      ],
+      "reason": "Exports active_extractor_version and derives EXTRACTOR_VERSION from grammars.extractor_version() in support of KNO-R10@v1 §1 observation_key cache isolation.",
+      "subject": "hunk:sha256:62cb4d5dea54b35406f7d569d026a9dc58f35989093a971be99056a2f620f609"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CKKQ9W",
+      "items": [
+        "sha256:92d7177be746cf04170c90a9f8c7e059523e5d92749c58e538f67f36da6855d3"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:92d7177be746cf04170c90a9f8c7e059523e5d92749c58e538f67f36da6855d3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CW5KMD",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "Updated testing/overview.md prose and re-authored citations [19], [28] for tags_engine.compile_query process-state reset registration.",
+      "sources": [
+        {
+          "blob": "e9afae233389503558811590710d1ee5bae9fdca",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D8J914",
+      "items": [
+        "sha256:32d0255750f5638387f805f646a8fd6dd9e424bc1bf93014d5a434b257a0b1a6"
+      ],
+      "reason": "Imports collections.abc.Sequence for test_cases.refusal's declarative call-site parameter type in support of KNO-R10@v1 §3.",
+      "subject": "hunk:sha256:32d0255750f5638387f805f646a8fd6dd9e424bc1bf93014d5a434b257a0b1a6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E4F50V",
+      "items": [
+        "sha256:f8c3d70815a8ba899d64311ba1153b52b1baac8aa69ab7a28ad7528a8ae4cfde"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:f8c3d70815a8ba899d64311ba1153b52b1baac8aa69ab7a28ad7528a8ae4cfde"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EH1Y5K",
+      "items": [
+        "sha256:d8ae70aca86d5a06cc041ac82ab894b666fe227df005ce10e41c7b26c06ec14d"
+      ],
+      "reason": "Packaged .scm tree-sitter test-call query asset is outside onboarding storage.pathRules.fileTypes (no standalone file card); documented in mcp/overview.md and tags_engine.py.md.",
+      "sources": [
+        {
+          "blob": "3a55d8b87a8edad00d89234260ebc1094e8803a8",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/typescript/tests.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/typescript/tests.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F329RQ",
+      "items": [
+        "sha256:915e40545bf2285364b63d93d86eb1327ee94db6e650587ce7f81ff0da104e08"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:915e40545bf2285364b63d93d86eb1327ee94db6e650587ce7f81ff0da104e08"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F3D991",
+      "items": [
+        "sha256:e735f74c4fc7c1359f467968416f9775d2306f98cfdaa6b1b319f64aad8db852"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:e735f74c4fc7c1359f467968416f9775d2306f98cfdaa6b1b319f64aad8db852"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:4c5f5ca27498f435eb98fb474b15b59b187f36f4a6cb1eb68b9751a8b1b862a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-1X4SZQ"
+        },
+        {
+          "after": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-GB76X8G2"
+        },
+        {
+          "after": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-HG48GKN1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-F6KNT5",
+      "items": [
+        "sha256:f1f4c26b07807d7ecd3350d6b21041fed83757c2ba7d07ae7da74b73d5131627"
+      ],
+      "reason": "KNO-R10@v1 threaded active provider version into BLOB_DEFINITIONS and delegated _defining_extents to extents.qualified_spans; structured range reporting on exact recorded blobs is preserved.",
+      "revision": 2,
+      "subject": "INV-RANN4DC0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F7DSPC",
+      "items": [
+        "sha256:6be6af5d684f4eb90b917d4468dc5bc0f1be320b9b22e1ad7a00e4ebcb2debae"
+      ],
+      "reason": "Packaged .scm tree-sitter query asset is outside onboarding storage.pathRules.fileTypes (no standalone file card); documented in mcp/overview.md and tags_engine.py.md.",
+      "sources": [
+        {
+          "blob": "850bd66c93f4370958060c45bb0fdbfd3df669c3",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/javascript/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/javascript/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FG5EWZ",
+      "items": [
+        "sha256:41816e3f982ef94ea057394e47085e21444a1584eb51ae52c8d79a07b90a2c86"
+      ],
+      "reason": "Packaged .scm tree-sitter query asset is outside onboarding storage.pathRules.fileTypes (no standalone file card); documented in mcp/overview.md and tags_engine.py.md.",
+      "sources": [
+        {
+          "blob": "b37b1067a7ca9c43f1bb109c5c7ba1ba36ceb5be",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/python/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/python/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FJPJV1",
+      "items": [
+        "sha256:000e908fb01819d456f51d9504a768c9a495d33081e41c3aa9ba24e870fcbeec"
+      ],
+      "reason": "Packaged .scm tree-sitter test-call query asset is outside onboarding storage.pathRules.fileTypes (no standalone file card); documented in mcp/overview.md and tags_engine.py.md.",
+      "sources": [
+        {
+          "blob": "a154e4ffe120e6a660fc05848a9ebb1b6da18a8b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/javascript/tests.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/javascript/tests.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJWF4Q",
+      "items": [
+        "sha256:a58c90be02031779ef972d5533c10eb8ad9a46c7922f40c1a5a77c7128260fbe"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:a58c90be02031779ef972d5533c10eb8ad9a46c7922f40c1a5a77c7128260fbe"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+            "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "before": {
+            "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
+            "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "id": "RLZ-DPJ3KS"
+        },
+        {
+          "after": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:6bfe2019d1c09093fa73eb95259cf83dc3a12cce93bad85b09b544beed31d850",
+            "locator": {
+              "kind": "symbol",
+              "name": "uncertain_lean_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:6bfe2019d1c09093fa73eb95259cf83dc3a12cce93bad85b09b544beed31d850",
+            "locator": {
+              "kind": "symbol",
+              "name": "uncertain_lean_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-ES6JD3"
+        },
+        {
+          "after": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-QB5ZDY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GDRVWT",
+      "items": [
+        "sha256:879fbb329a48c67976240c9b2ea9218c33ef8184de67c75804a866d3114a3f7d"
+      ],
+      "reason": "KNO-R10@v1 resolves Lean through active_language_set() and LeanLanguageProvider while preserving uncertain-scope unverifiability and line-range remedies across code_anchors, read_anchors, and extents.",
+      "revision": 1,
+      "subject": "INV-0KYRK9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JGPBGQ",
+      "items": [],
+      "reason": "Confirmed docs/architecture.md at candidate tree e122f928 after KNO-R10@v1 touched extents.py::definition_scope; all documented architectural and request-scope rules remain accurate.",
+      "revision": 25,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:59cb28ddff1e2bd3c8e7e0afa65bed67aa75f31d8aec4ac300eb4dfff464a2fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TypeScriptAnchorInputs"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:aeb23e1396f56667b51624eb822c6f9571d7a79832398a5c72475f33e36754be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TypeScriptAnchorInputs"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-AVA9N4"
+        },
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:2f763f385704d548a70e9440c51ccc3c978ece135255918a876b8e324831bd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:e43aea664225a234255e22b44540ef0327f2064be2672bf168dc6493fc6a9af0",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-XMSC5S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JYVDJA",
+      "items": [
+        "sha256:68d3872c51191bd7f659f9c3747f5955f4c58242a65e8274464b834e621de136"
+      ],
+      "reason": "KNO-R10@v1 keyed _TypeScriptAnchorInputs by (provider.version, text) while preserving request_memo_scope release semantics on completion, error, or cancellation.",
+      "revision": 1,
+      "subject": "INV-HPHVCN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e9afae233389503558811590710d1ee5bae9fdca",
+            "content": "sha256:f968473c0c680cd6642cc2c12b29718b0eea0088fc7a75c1bae06f580c569e37",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+            "content": "sha256:e63f00b18951888fc6d44bdac582d67cbe277d741cd2f7f95459bb0e116a4430",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JZCAQ5",
+      "items": [
+        "sha256:d6b1aa9ff63e206e6a32356d540949885540e81325a9468812dd0c522546a9ce"
+      ],
+      "reason": "KNO-R10@v1 registered memory_quality.style.citations.tags_engine.compile_query with _clear_cache reset treatment in PROCESS_MUTABLE_STATES; the closed register invariant holds unchanged.",
+      "revision": 2,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+            "content": "sha256:d09cab15088d938c3f50765dfaba63ab00dd1ae808df9009976c1693af46bf6e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KJ05XQ",
+      "items": [
+        "sha256:521d45b56a11b4cbc27d767b0f1e1d9594ed92471b20973bf71843df35e54db3"
+      ],
+      "reason": "KNO-R10@v1 added test_language_set_and_tags_engine.py to unit-regression in test-evidence-lanes.toml; every declared test module exists on the candidate tree.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-071CY8"
+        },
+        {
+          "after": {
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:678441169a89f71733098f1aa5a33291172277f23a5184fe31f58181d14c8783",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:0829b81aa35335c0b35c946d40a2a7dc71809de9ddfa398560cf893b68e6b434",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-17R8AR"
+        },
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-28F8AE"
+        },
+        {
+          "after": {
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-H0DZTB"
+        },
+        {
+          "after": {
+            "blob": "c56edbf19a601ce8f703cb7c2e6c284b9e2348ad",
+            "content": "sha256:07b81f0136f2f18fe7a929ff4408d7777e26872918dbb99868c2e519ac3597c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decided_without_resolving"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+          },
+          "before": {
+            "blob": "cdfab35765b92a571e4287b93a3618fff4e469de",
+            "content": "sha256:07b81f0136f2f18fe7a929ff4408d7777e26872918dbb99868c2e519ac3597c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decided_without_resolving"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+          },
+          "id": "RLZ-QGXEMP"
+        },
+        {
+          "after": {
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:7e508e2016831235b383860fa15a3124446da0847ba4c3600466b872f5d728b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "title_of"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:7e508e2016831235b383860fa15a3124446da0847ba4c3600466b872f5d728b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "title_of"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-TERZMS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M2ZTH8",
+      "items": [
+        "sha256:c2a476a7ac3c1935e715ad4d64b54c2efe8c72e4e84c523b4994999d58abff1a"
+      ],
+      "reason": "KNO-R10@v1 moved JS/TS test-case call collection to declarative tests.scm via tags_engine while preserving test-case binding multiplicity, UTF-8 decoding guards, and line-range proof refusal rules.",
+      "revision": 2,
+      "subject": "INV-B37MWR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NT7TA9",
+      "items": [
+        "sha256:b00d1adf1015cf1e05b9b4145e4b10c7d0a0e6bd28dd61a0ad756aa90780e2dc"
+      ],
+      "reason": "Exports active_extractor_version and derives EXTRACTOR_VERSION from grammars.extractor_version() in support of KNO-R10@v1 §1 observation_key cache isolation.",
+      "subject": "hunk:sha256:b00d1adf1015cf1e05b9b4145e4b10c7d0a0e6bd28dd61a0ad756aa90780e2dc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NYJ1FS",
+      "items": [
+        "sha256:ea468ef4e129684e01a88d017c055dc312f31d7c2d8d52467f8dcd29cfdf23fe"
+      ],
+      "reason": "Created onboarding card and sidecar for new LanguageProvider/LanguageSet seam module language_set.py.",
+      "sources": [
+        {
+          "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P1CM95",
+      "items": [
+        "sha256:596ba648c5e2e2523542256838c1d5900c263673c721cad6cd1c6b75eb8abbf5"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:596ba648c5e2e2523542256838c1d5900c263673c721cad6cd1c6b75eb8abbf5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P3966G",
+      "items": [
+        "sha256:2b29944b0d07c066bd3e2f0505e7aa12699725f9151571845d7d5fef5edd29b9"
+      ],
+      "reason": "Updated mcp/overview.md to document packaged citation queries under package_data/citations/queries/*.scm executed by tags_engine behind the LanguageSet seam.",
+      "sources": [
+        {
+          "blob": "850bd66c93f4370958060c45bb0fdbfd3df669c3",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/javascript/tags.scm"
+        },
+        {
+          "blob": "a154e4ffe120e6a660fc05848a9ebb1b6da18a8b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/javascript/tests.scm"
+        },
+        {
+          "blob": "b37b1067a7ca9c43f1bb109c5c7ba1ba36ceb5be",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/python/tags.scm"
+        },
+        {
+          "blob": "f0259354762b8d3a3597c3c223fe77b16565b593",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/typescript/tags.scm"
+        },
+        {
+          "blob": "3a55d8b87a8edad00d89234260ebc1094e8803a8",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/typescript/tests.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-P82YM3",
+      "items": [
+        "sha256:a17458178fa776633f5cfdd5c23d35e50721e6c04675a22cc927ff831237d185"
+      ],
+      "reason": "Examined all three members after KNO-R10@v1 registered tags_engine.compile_query in PROCESS_MUTABLE_STATES with _clear_cache reset treatment: module-boundary isolation and closed register semantics hold unchanged.",
+      "revision": 5,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:d882c4b604adc7b7dd98a5d1cd1c8b132131b41cb69be9c987ba4925a5d81e34",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:5952f6096541f54daa7e5f3606b7a6c96416c1507776f5d7fe931b8e6f208a2b",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-K557YT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PG6FS4",
+      "items": [
+        "sha256:5c13cc49ff4cc23e666cb5450354a527d14a2895f4b5670b87bebdedd1f8561a"
+      ],
+      "reason": "KNO-R10@v1 added Sequence import at test_cases.py line 22 and changed refusal to accept declarative tests.scm call-site nodes (lines 263-292); line-range proof admission and blocking-modifier refusal semantics are unchanged.",
+      "revision": 1,
+      "subject": "INV-N5KQ73"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PQFRZF",
+      "items": [
+        "sha256:ec5037c0dae1046ec5084301309c2dad95dc58a45ad78eb965dea0d1f3c3cae1"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:ec5037c0dae1046ec5084301309c2dad95dc58a45ad78eb965dea0d1f3c3cae1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PZ7J0S",
+      "items": [
+        "sha256:1c023271dbf2ff4923b9b55e554665df12f8292e2d71e72bf3d921227f1eecfb",
+        "sha256:27cdc5c90e19143a96a8673ce99fc46b9a8881f2e4e2b34b2de801e1ee0c2089",
+        "sha256:7df14e7b313926942ff8808d0c7bcc72460e29faa05899fc57357bd41f3c73c3",
+        "sha256:858728f91fdac3149a55277fae01146f326ee65b3994e9e3b6b1b75090a4957e",
+        "sha256:b0236e0193c4367f7c6b37672fe6a35345afdd8b8f8ab909937ba7b7c81059a1",
+        "sha256:c034272aea49f0a1c3ee7e5c8507ae34ef9a0aa1a6ce1990ef03a7fa0cad5abc"
+      ],
+      "reason": "Updated test_memory_citation_grammars.py card prose and added PinnedDependencyTests citation while noting removal of dead OFFLINE_PROBE.",
+      "sources": [
+        {
+          "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+          "path": "mcp/tests/test_memory_citation_grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_citation_grammars.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q8XJDW",
+      "items": [
+        "sha256:4056dcdc26f9b3a64aa3450c094068d6364373c5ef711a7b6950e58969380284"
+      ],
+      "reason": "Exports active_extractor_version and derives EXTRACTOR_VERSION from grammars.extractor_version() in support of KNO-R10@v1 §1 observation_key cache isolation.",
+      "subject": "hunk:sha256:4056dcdc26f9b3a64aa3450c094068d6364373c5ef711a7b6950e58969380284"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QY81ZF",
+      "items": [
+        "sha256:4bad1d218ce17ddf446cdfdec5b835a4b71a777b5c25cf28a3bbf97b23de82ac"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:4bad1d218ce17ddf446cdfdec5b835a4b71a777b5c25cf28a3bbf97b23de82ac"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RNRAT1",
+      "items": [
+        "sha256:f549c8fdaf4b0e051b74048d01c92d4a847d61319df953dd06380caf7c0fedce"
+      ],
+      "reason": "Updated code_anchors.py card prose and re-authored citations [2], [6], [7], [8], [11], [14] for active_language_set() provider resolution.",
+      "sources": [
+        {
+          "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RTGRZ3",
+      "items": [
+        "sha256:f4b3d851816c8efe0f87581282c6b881bfdd47311c1d3d32bd140dd8da4b5c8a"
+      ],
+      "reason": "Updated test_cases.py card prose and re-authored citations [5], [6] for declarative Sequence[Node] call-site inputs to refusal.",
+      "sources": [
+        {
+          "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+    },
+    {
+      "considered": [
+        "FAM-CSVQBJ",
+        "FAM-04M3Z0",
+        "FAM-BWQ4XYF9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RYN9Y2",
+      "items": [],
+      "reason": "KNO-R10@v1 §4 pairs dependency-pin/query-compilation checks (PinnedDependencyTests against pyproject.toml, uv.lock, and wheels) with shared holder-containment delegation between read_anchors and extents; it guards alignment directly rather than joining the declarative tags.scm/LanguageSet family or the Lean/family-review families.",
+      "revision": 1,
+      "subject": "membership:INV-QQ8TQ7"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-141H2J",
+          "revision": 1
+        },
+        {
+          "id": "INV-HPHVCN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JB9D62",
+          "revision": 1
+        },
+        {
+          "id": "INV-V4WR2R",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-STQJWJ",
+      "items": [
+        "sha256:a80bc15496cf07f252d29e3d28c68af4d04de4bb028fd86a266c2357b6307e5b"
+      ],
+      "reason": "Examined all four members after KNO-R10@v1 keyed _TypeScriptAnchorInputs by active provider version under request_memo_scope: per-invocation observation isolation and exit cleanup hold unchanged.",
+      "revision": 1,
+      "subject": "FAM-AHHW29"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T25SME",
+      "items": [
+        "sha256:0b594cd9bc28cc719df0089a65d92bca2db13e2672a623da1801ddb6b1956330",
+        "sha256:3832e6689295ae4ae0d4b1a3f2962fdc80fa7c1b9fbe1aefa8aa2e9f56abde64",
+        "sha256:a2d01f4b96dbddc9c46ff649b43906e39e0301bff75ffd355b9436f6d1de2fcf",
+        "sha256:c17f396cfca358688b171dfd30e8c7624d2a448412a38d8eff3c09252bb14d86"
+      ],
+      "reason": "Updated review_memo_store.py card prose and added citation for _grammar_identity binding default LanguageSet extractor_version.",
+      "sources": [
+        {
+          "blob": "9202f81fb89cde5dbc8910168d1386435cebc108",
+          "path": "mcp/src/agents_remember/application/review_memo_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_memo_store.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T9CCKV",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "Updated global_state.py card prose and re-authored citation [3] for tags_engine.compile_query registration in PROCESS_MUTABLE_STATES.",
+      "sources": [
+        {
+          "blob": "e9afae233389503558811590710d1ee5bae9fdca",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TKEFGM",
+      "items": [
+        "sha256:1c31bf4ccb437cc37eb638273a4dbfc3b6a8c27c2187c39a4bf5dccf1f703be8"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:1c31bf4ccb437cc37eb638273a4dbfc3b6a8c27c2187c39a4bf5dccf1f703be8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TN23SF",
+      "items": [
+        "sha256:e06082bb1a7480d492da5a611ce1a7ac8ac5de7585723d7ed463d9cda5c4c611"
+      ],
+      "reason": "Imports grammars alongside extents in support of KNO-R10@v1 §1 provider-versioned CodeObjects definition caching and default-LanguageSet SYMBOL_SPANS gating.",
+      "subject": "hunk:sha256:e06082bb1a7480d492da5a611ce1a7ac8ac5de7585723d7ed463d9cda5c4c611"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VSJ6V4",
+      "items": [
+        "sha256:82a1fab45202ae1ff1a352e063d1baf9f09d906f132b91028cc23a0d09ecbca4"
+      ],
+      "reason": "Updated observe.py card prose and re-authored citations [2], [4], [6], [11], [19] for active_extractor_version() and LanguageSet-derived observation keys.",
+      "sources": [
+        {
+          "blob": "c56edbf19a601ce8f703cb7c2e6c284b9e2348ad",
+          "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-W54522",
+      "items": [],
+      "reason": "Confirmed skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md at candidate tree e122f928 after KNO-R10@v1 touched model.py::anchors_in and code_anchors.py::_symbol_range; all four standing anchors and documented rules remain accurate.",
+      "revision": 3,
+      "subject": "DPD-2Z4WN0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WCNZQP",
+      "items": [
+        "sha256:386b3b6e8f35c19a6be538da65ae45d3345d284a15dcb0830f5b56549f8597e5"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:386b3b6e8f35c19a6be538da65ae45d3345d284a15dcb0830f5b56549f8597e5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WFVNNE",
+      "items": [
+        "sha256:c1e388895c7e1534331c13320460cfbfd236d736751b007ead19d3db60290aa6"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:c1e388895c7e1534331c13320460cfbfd236d736751b007ead19d3db60290aa6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WTSG1R",
+      "items": [
+        "sha256:6194f917049b8b10ba587308656f835cd3c625e8c76d8728f66d4150d93a422a"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:6194f917049b8b10ba587308656f835cd3c625e8c76d8728f66d4150d93a422a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X8R3GP",
+      "items": [
+        "sha256:6ef5057938fe99816fb26879ae9a0eecd1f13e09257dbff6143a6801afd70f59"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:6ef5057938fe99816fb26879ae9a0eecd1f13e09257dbff6143a6801afd70f59"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XR7EZR",
+      "items": [
+        "sha256:76e330be9a086679b507f721214a105c06ea4e09f0213fc03041607d07dd41ac"
+      ],
+      "reason": "Packaged .scm tree-sitter query asset is outside onboarding storage.pathRules.fileTypes (no standalone file card); documented in mcp/overview.md and tags_engine.py.md.",
+      "sources": [
+        {
+          "blob": "f0259354762b8d3a3597c3c223fe77b16565b593",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/typescript/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/typescript/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y20HEW",
+      "items": [
+        "sha256:1a953ccc83058567dd699a3657a05f653ab8ae3d418fba59011547fe8358eda6"
+      ],
+      "reason": "Widens _DefinitionCache key type tuple to include provider version string in support of KNO-R10@v1 §1 extents.definitions cache isolation.",
+      "subject": "hunk:sha256:1a953ccc83058567dd699a3657a05f653ab8ae3d418fba59011547fe8358eda6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+            "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchors_in"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+          },
+          "before": {
+            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "content": "sha256:9772cb9c0612a151b635f58712357424b251f885b03ad3048eef0c8925ab2678",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchors_in"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+          },
+          "id": "RLZ-C760V8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y7YE4J",
+      "items": [
+        "sha256:349f31af7a5557793c85b2e26c244245cf65b815a865f05347d5d0ba0b685f81"
+      ],
+      "reason": "KNO-R10@v1 added an optional language_set scope parameter to model.anchors_in while preserving extended Lean name scoping to cited Lean files only.",
+      "revision": 1,
+      "subject": "INV-CK3F9Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YJC50K",
+      "items": [
+        "sha256:f4fa9d727da8c7e4978da52be13ad8bbd47a624b99354bec578f11aa433be184"
+      ],
+      "reason": "Updated memory_quality/overview.md prose and re-authored citations [46], [99], [100], [104] for language_set.py, tags_engine.py, provider-versioned definition/parse scopes, and TypeScript anchor memoization.",
+      "sources": [
+        {
+          "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+        },
+        {
+          "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        },
+        {
+          "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+        },
+        {
+          "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+        },
+        {
+          "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+        },
+        {
+          "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:fa78b8bd401d960d54493214bf1a61bc8982c651bde14324daf644323e4754ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_range"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:a65d3c5df4742d092e3fbaa5c29d6ff83f253e61748b338528a01fd9f8f0793a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_range"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-3J326P"
+        },
+        {
+          "after": {
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-MQZSKS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z84A86",
+      "items": [
+        "sha256:eee7c2d274847f51cbf3bcf443e072f828991c5501164339a24cd2756a973d5b"
+      ],
+      "reason": "KNO-R10@v1 routed grammars.test_case_range through declarative tests.scm call sites from the active provider; refusal modifier naming and exact line-range remedy behavior are unchanged.",
+      "revision": 1,
+      "subject": "INV-WK39V1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZATJ6Z",
+      "items": [
+        "sha256:9c2ec619e84d35e45a74bfb4f88971f2008c913bfd345d4f14abcee351488e45"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:9c2ec619e84d35e45a74bfb4f88971f2008c913bfd345d4f14abcee351488e45"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZHTEPD",
+      "items": [
+        "sha256:4d8a9105df4b2b0455a26892ab00430a10be5210cb5d994a937d5aa857ff09d4"
+      ],
+      "reason": "Refactors grammars.py module exports, LanguageSet/tags_engine wiring, _ParsedSource cache structure, and removes superseded bespoke Python/JS/TS/Lean walkers in support of KNO-R10@v1 §1-§4 without introducing an additional standalone obligation.",
+      "subject": "hunk:sha256:4d8a9105df4b2b0455a26892ab00430a10be5210cb5d994a937d5aa857ff09d4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZPP4BQ",
+      "items": [
+        "sha256:0e630ca1749815df35798e5f85f875ac99f5dccfaf23f4eed2922ea31387be20"
+      ],
+      "reason": "Updated grammars.py card prose, re-authored live citations, added MEASURED_VERSIONS/active_language_set citations, re-pointed [22] to LeanLanguageProvider.extract_bindings, and withdrew obsolete deleted-walker citations [9]-[15], [19].",
+      "sources": [
+        {
+          "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:c177d6978f6c8a21d80130e6323e79148338e477b07e1849d1be7aa74db70422",
+      "record": "DPD-2Z4WN0",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:743bd4ae9911c1ef6b93d562bb227fb2531b565fd1eb46326e94da5dbc299a06",
+      "record": "DPD-86HJGF",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:631a4be31e5645a15234727a062868704be7a993c19e944df27f7e21f4940ca0",
+      "record": "DPD-ZT8YY7",
+      "revision": 42,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:7fd3d6d5f5a6113495c5be304b5ba11450b1deabb8642a18fd7f7d612c5cfa99",
+      "record": "FAM-CSVQBJ",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:855d7a41e61231d7192b638e02be32f5d9cfc488f694fb914c09fe7125514a14",
+      "record": "INV-5FFC2H",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d037760313155c282a748ecdc882a249ed2e251823b890aa288556fd4ae50d81",
+      "record": "INV-KQ8BKK",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:7eb1e4f30143c86542d08e284f4fa55c36b3d64cce8d9c910936c36c120f3017",
+      "record": "INV-QQ8TQ7",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:9bf1db50aa32917bcadd317bdebf632e6a9599fe483e458e3ac4c0cd841a40a3",
+      "record": "INV-ZYP9YD",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T17:57:42+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L10",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

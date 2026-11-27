@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/review_memo_store.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
+        "content": "sha256:bc1c4e163be41c7b7de838b4e19b80e3ecc7e0561d84c4b63aef4b12ea14217d",
+        "locator": {
+          "kind": "symbol",
+          "name": "memo_namespace"
+        }
+      },
+      "id": "RLZ-6Y2CKV",
+      "invariant": "INV-CSJ1ZD",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §4",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Computes memo store grammar namespace identity from tree_sitter and the repository/active LanguageSet extractor_version without importing GRAMMAR_PACKAGES.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "_Stored binds a named live memo to its row encoder and decoder. _Rows represents the encoded disk rows, and _question selects a memo by its name.",
       "targets": [
         {
           "anchor": {
-            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
             "content": "sha256:bc3ba8ad53778ab9e6f7f2d400c7405775d1ee8b24e0faa8afbe1c3d6b40da79",
             "locator": {
               "end": 120,
@@ -19,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
             "content": "sha256:d839f9a9f6f9bdb44f86454e276d117f85c80b038b77bb355b7c7698968bb951",
             "locator": {
               "end": 200,
@@ -31,12 +50,28 @@
         },
         {
           "anchor": {
-            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
             "content": "sha256:3a2388c5b0c3daada2ab8167c76d913993046621f8ae963a6baa2690c07c98c8",
             "locator": {
-              "end": 352,
+              "end": 388,
               "kind": "line_range",
-              "start": 340
+              "start": 376
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_grammar_identity` hashes the `tree_sitter` package alongside the active catalog/repository `extractor_version` so query and language-set changes separate memo namespaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
+            "content": "sha256:863cb885ebeffb03a4ea3b240e885aeb02b5c06a147fa7200a60c5510405d468",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grammar_identity"
             }
           },
           "kind": "code"

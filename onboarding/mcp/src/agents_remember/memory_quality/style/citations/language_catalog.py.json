@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+        "content": "sha256:f9b3d832d15967a409cac347c35c2bd6a59968cd7c13c64bcb7b74e04affc640",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_language_catalog"
+        }
+      },
+      "id": "RLZ-0ZNVDE",
+      "invariant": "INV-559QV5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §1",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Loads and validates the bundled catalog lock, verifying packaged tags.scm and tests.scm SHA-256 hashes and refusing reserved or ambiguous default suffix claims.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`CATALOG_SCHEMA` and `CATALOG_LOCK_PATH` pin the shipped catalog schema and packaged lockfile location.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:e6c4167c5ad9961978478fdf4551ed5993cde1a1b26a61463b9b220ba788bcbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CATALOG_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:a9195d87ef66a874c18d4e90c44eab1e2b61cafa901befe648af851ae27337dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CATALOG_LOCK_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Immutable catalog records represent `TreeSitterPin`, `LanguagePackPin`, `WheelArtifact`, `CatalogLanguageSpec`, and `LanguageCatalog` with uniform provider metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:cb57adbfa59d611c1d5650b2d588853cf1d054436225d2dc11807424b6358095",
+            "locator": {
+              "kind": "symbol",
+              "name": "CatalogLanguageSpec"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:5a33354eb5a8d35829cc3637744365e1c71a3f392358776d4c746af487a726de",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageCatalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_read_verified_query` verifies every packaged `.scm` query file's SHA-256 digest against the lockfile pin before returning its text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:e6c1e4c9c2510f021ce08ee51d8a7b96a3c38839f63ebc51b3df7c2a497dc482",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_verified_query"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`parse_language_catalog` enforces unique language IDs, unambiguous suffix ownership, reserved `.lean` protection, and pinned wheel metadata across all catalog entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:5a7df6675fcac93531a9917ae2a6f51a6e0d64b2a3da6f1d8a7a51a204aeae46",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_language_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`load_language_catalog` caches validated catalog instances by lockfile and package-data path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "content": "sha256:f9b3d832d15967a409cac347c35c2bd6a59968cd7c13c64bcb7b74e04affc640",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_language_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

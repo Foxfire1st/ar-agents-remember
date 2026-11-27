@@ -249,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+            "blob": "b94453568a2e4367b5599c5e07936e49b70c8032",
             "content": "sha256:bc17b517227631b5ae60f4d2dbd2f079cdb0f8ed3116ff35ab1aa48f992f3d1e",
             "locator": {
               "kind": "symbol",
@@ -1216,42 +1216,14 @@
       ]
     },
     "158": {
-      "note": "A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator.",
+      "note": "A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. Anchor: `_observed_entry`, `_recorded_lines`, `_blob_definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
-              "end": 247,
-              "kind": "line_range",
-              "start": 194
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:ed64a5daddb1ed12baaf24282cd1149aed2469a528b5fc52b182ea1712d1c43b",
-            "locator": {
-              "end": 369,
-              "kind": "line_range",
-              "start": 322
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:10a7107dfebe4e9ccf2ecca87934960852a18560c7af27010f1f872c7c3a4c9b",
-            "locator": {
-              "end": 427,
-              "kind": "line_range",
-              "start": 383
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1293,7 +1265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:e8c77574bd5ade8cf84872075080d750f769cb2e722e4cddd4810394d0dcbf06",
             "locator": {
               "end": 126,
@@ -1510,7 +1482,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+            "blob": "b94453568a2e4367b5599c5e07936e49b70c8032",
             "content": "sha256:83c81c45414d8c0341c34cff9880616ffff920d4382e43006428ae55742e59e7",
             "locator": {
               "end": 118,
@@ -1702,7 +1674,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -1731,12 +1703,12 @@
       ]
     },
     "19": {
-      "note": "A recorded symbol observation returns the defining extents when the selected key is established.",
+      "note": "A recorded symbol observation returns the defining extents when the selected key is established, sharing `extents.qualified_spans` containment.",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -1819,7 +1791,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -1831,7 +1803,7 @@
         },
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:57c63d42827354cbfafd543d94611297372fa8a782554d7a775f5f21371749d3",
             "locator": {
               "end": 231,
@@ -2234,7 +2206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -2246,7 +2218,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",

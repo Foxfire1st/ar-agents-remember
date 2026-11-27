@@ -3,12 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
+        "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+        "content": "sha256:e5709d3f2fa2e9c1732acdb6d788932aabbc4fd47e555fec3c029c9122b01b74",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ENHE2G",
+      "invariant": "INV-A3XH71",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R4",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Public feature overview aligned with knowledge_read impact/search/records and compact dependent triage while preserving INV-47NR7E brief guidance (DPD-EG5TYT).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
         "content": "sha256:0fde5d8cd47bb2f1a93883513895d6a7ab6904057288c608518251d63519c7c5",
         "locator": {
-          "end": 203,
+          "end": 205,
           "kind": "line_range",
-          "start": 199
+          "start": 201
         }
       },
       "id": "RLZ-SHWMZJ",
@@ -27,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
+            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
             "content": "sha256:cd872f38724c302d6001056619c7e1a71c881e1ce125f7753acc26edfd22af57",
             "locator": {
               "end": 151,
@@ -40,14 +57,14 @@
       ]
     },
     "2": {
-      "note": "Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and names-only `knowledge_read`.",
+      "note": "Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and 11-view text-bearing `knowledge_read` (`impact`, `search`, `records`, and compact `dependent` triage).",
       "targets": [
         {
           "anchor": {
-            "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
-            "content": "sha256:576e4c6559d67c027ca68ddff59cc4d962b61489899e86e9593a93dfb3c67d1e",
+            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+            "content": "sha256:bcd0a08b6c2ebad0e436568688b458f40dce65d52dcf9ceb9a1724b72c40b107",
             "locator": {
-              "end": 209,
+              "end": 214,
               "kind": "line_range",
               "start": 191
             }
@@ -61,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
+            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
             "content": "sha256:29082506ccaab8af4b1b79410312f190fa3253c5c53da8d8cf19f840d289f3ee",
             "locator": {
-              "end": 400,
+              "end": 405,
               "kind": "line_range",
-              "start": 363
+              "start": 368
             }
           },
           "kind": "code"

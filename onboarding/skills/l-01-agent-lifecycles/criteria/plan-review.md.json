@@ -1,14 +1,34 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2f9fa31e8eb41a39765813a7f1b46f45a1844bdc",
+        "content": "sha256:78c3a7052839881c708822e953d5d6c3fd492fac0e58e48a81bf7405839d9284",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-HQ6R0Q",
+      "invariant": "INV-YSQJ5K",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R2",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Updates plan-review read-only knowledge guidance to use knowledge_read impact/records while reserving native file opens for source code and uncarried documents.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "PR-4 defines both explicit-graph and graph-less topology review.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f4018a75a320265adea0a71ef1b32bae8b1c7c3",
+            "blob": "2f9fa31e8eb41a39765813a7f1b46f45a1844bdc",
             "content": "sha256:fee6866a71234582d9b0e7bc94392983e4472883398224f1a40dc2dba24e43e4",
             "locator": {
               "end": 47,
@@ -25,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f4018a75a320265adea0a71ef1b32bae8b1c7c3",
-            "content": "sha256:603290c829c0f3b6dd3736da5e348481b14ae791ea3442fe79eedf74c5a27943",
+            "blob": "2f9fa31e8eb41a39765813a7f1b46f45a1844bdc",
+            "content": "sha256:1d8f6b2f270b17a38882959e76994eaa836d05a2b1b1fe9f7b7753dade050ea0",
             "locator": {
               "end": 89,
               "kind": "line_range",

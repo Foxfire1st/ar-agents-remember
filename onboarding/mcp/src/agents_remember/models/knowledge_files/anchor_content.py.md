@@ -60,7 +60,8 @@ The definition and its pins.
 
 - The content identity. [4]
 
-- The writer resolves an anchor at the selected candidate without replacing its identity. [5]
+- The writer resolves an anchor at the selected candidate without replacing its identity. Anchor: `CodeSnapshot.resolve` [5]
+
 
 - LF, CRLF, lone CR and invalid UTF-8 pinned. [6]
 

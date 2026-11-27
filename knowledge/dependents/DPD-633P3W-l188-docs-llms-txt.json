@@ -1,27 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/llms.txt against post-CAP-L5 synced tree e273d1c9: nine-role roster including Consolidator remains accurate while preserving pre-existing KNO-R07 DFR-WQXFSQ under 261112-KNO.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited docs/llms.txt against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): llms.txt index and links remain accurate after BUG-L32/L34 and L11 updates.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "file": "docs/llms.txt",
-        "note": "Update docs/llms.txt lines 49-56 for all eleven knowledge_read views (including verbatim records, impact, search, compact dependent, and consolidation_proposal) and brief freshness gating."
-      },
-      "createdAt": "2026-11-27T05:21:52.740873Z",
-      "createdByLeaf": "261112-KNO-L5",
-      "fileBlob": "599b6a37cc0028e09d228770c19e6384491de241",
-      "id": "DFR-WQXFSQ",
-      "owner": "261112-KNO",
-      "passage": "docs/llms.txt lines 49-56 (read_ar_files brief guidance and knowledge_read returns names and locations only)",
-      "reason": "KNO-R05@v3 updated docs/llms.txt role counts to nine roles, moving its blob, while pre-existing KNO-R07 lines 49-56 remain deferred under 261112-KNO (accepted by Reviewer in KNO-L5-F07)."
-    }
-  ],
   "document": "docs/llms.txt",
   "id": "DPD-633P3W",
   "origin": {
@@ -32,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -48,12 +33,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -84,14 +69,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

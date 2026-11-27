@@ -150,12 +150,12 @@
       ]
     },
     "5": {
-      "note": "The Manager role's Reference index links `master-state.md` under Master (`task_doc`/`worktree_abandon`/`record_landing`). [3]",
+      "note": "The Manager role's Reference index links `master-state.md` under Master (`task_doc`/`worktree_abandon`/`record_landing`). \\[3]",
       "targets": [
         {
           "anchor": {
-            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
-            "content": "sha256:49968f4b6153e8f37ac4c7a5ed36ee4f0ef798e523dcba9c977c806c4974c4dc",
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+            "content": "sha256:40bedadda1b156da4c1444abba33eaa787fce82f42ad436c5f4d53b337c575a7",
             "locator": {
               "end": 41,
               "kind": "line_range",

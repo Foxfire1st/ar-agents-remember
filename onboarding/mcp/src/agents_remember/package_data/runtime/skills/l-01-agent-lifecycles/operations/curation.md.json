@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-        "content": "sha256:641e5977b0280c2791ad6da096495f6028c2e10a1f2932c1e88a02cb666afd21",
+        "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+        "content": "sha256:f952694a48f1f289768b83d84fdbbacc1025fd0ffa1a8bc176583ba7e807a723",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+        "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
         "content": "sha256:de1372d7b5482f0ab0340e49130f58713c468baf6f7101a151adf96dc55aa208",
         "locator": {
           "end": 30,
@@ -58,12 +58,12 @@
       ]
     },
     "10": {
-      "note": "Curation boundaries keep code, Git and transaction ownership with their owners, require `curator_coherence` when `checklistStatus=coherence-required`, keep partial/refused handovers partial, and send the memory candidate directly to the Reviewer via `role_message`.\n\nAnchor: `curator_coherence`",
+      "note": "Curation boundaries keep code, Git and transaction ownership with their owners, require `curator_coherence` when `checklistStatus=coherence-required`, keep partial/refused handovers partial, and send the memory candidate directly to the Reviewer via `role_message`.",
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:44fe6e8ba5d1a39fabd70ca4eab4dbcafeb37df2771b189f158c5d423187b5c8",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:ca0a8ffcd1e71b7c1738e083a0af38ec825eb253b1098b9185bef29588888edc",
             "locator": {
               "end": 36,
               "kind": "line_range",
@@ -115,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
             "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
             "locator": {
               "end": 24,
@@ -163,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:44fe6e8ba5d1a39fabd70ca4eab4dbcafeb37df2771b189f158c5d423187b5c8",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:ca0a8ffcd1e71b7c1738e083a0af38ec825eb253b1098b9185bef29588888edc",
             "locator": {
               "end": 36,
               "kind": "line_range",
@@ -181,8 +181,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c10bf61473d638dd294f8a66d8d2978f10ca75d029571245722ada219b09583b",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -195,12 +195,12 @@
       ]
     },
     "8": {
-      "note": "The curation workflow verifies writer outputs resolve in `workspace.memoryRoot` and reads scoped `knowledge_read` plus full `knowledge_diff` before semantic changes; orientation binds curation decisions and writes to the starting server or serving-build CLI.\n\nAnchor: `workspace.memoryRoot`",
+      "note": "The curation workflow verifies writer outputs resolve in `workspace.memoryRoot` and reads scoped `knowledge_read` plus full `knowledge_diff` before semantic changes; orientation binds curation decisions and writes to the starting server or serving-build CLI.",
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:aae3b2e23b0d19e3e9f2ad76ea5b8fe0c658c147220fc66f0612a821d111354f",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:172c37b340867d7da6edbc6e59d25f33cd710a2120092bae7e46cd02a311993c",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -229,8 +229,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:df233583d99a02b4962f4c6d5f2816d9b22aafc4c8830f31caeb1f568f710844",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:b52ec9bd6963451fd9b42664399dc04c9eba67aaa97250edd963e476a526855d",
             "locator": {
               "end": 24,
               "kind": "line_range",

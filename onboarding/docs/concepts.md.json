@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d29016fdc9804af42c05cc0a88358040daf3211d",
+        "blob": "d81a46135d0e1f1bd0486bc53c49f3302a8c714f",
         "content": "sha256:300474691b7260131f6c019a5988045bc68fee8bc0552531fc64b0dfed20c2a2",
         "locator": {
-          "end": 424,
+          "end": 426,
           "kind": "line_range",
-          "start": 421
+          "start": 423
         }
       },
       "id": "RLZ-103Z8D",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "d29016fdc9804af42c05cc0a88358040daf3211d",
+        "blob": "d81a46135d0e1f1bd0486bc53c49f3302a8c714f",
         "content": "sha256:2db133bc80fbbbe64238d764eb8b5fe39627e9b12ec714f523b1d5b4d1b7f33d",
         "locator": {
           "end": 218,
@@ -38,6 +38,23 @@
       },
       "rationale": "Names the new tool log codes and delay or wait fields on the existing tool-log surface.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d81a46135d0e1f1bd0486bc53c49f3302a8c714f",
+        "content": "sha256:5368908ebc138f101f68ebdcfab600da9f3d2ad6911bb9b5a5eae35b64396a70",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MXG2PQ",
+      "invariant": "INV-A3XH71",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R4",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Public concepts guide aligned with knowledge_read impact/search/records and compact dependent triage while preserving INV-47NR7E brief guidance (DPD-71WYH4).",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -46,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29016fdc9804af42c05cc0a88358040daf3211d",
+            "blob": "d81a46135d0e1f1bd0486bc53c49f3302a8c714f",
             "content": "sha256:f51e4d8e668c840fbb8b6087e3426a1234dcaffd0724be55fb7e265f684fd6c2",
             "locator": {
               "end": 211,
@@ -63,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29016fdc9804af42c05cc0a88358040daf3211d",
+            "blob": "d81a46135d0e1f1bd0486bc53c49f3302a8c714f",
             "content": "sha256:2db133bc80fbbbe64238d764eb8b5fe39627e9b12ec714f523b1d5b4d1b7f33d",
             "locator": {
               "end": 218,

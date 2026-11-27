@@ -47,6 +47,7 @@ The profile declaration does not itself prove runtime composition or final-memor
 - Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks and system) and generated-skills (the packaged skills tree); no generated-harness input is declared. [7]
 
 - The retained generated-harness rail checks skills through scripts/sync-skills.py --check. [8]
+
 ### Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
@@ -65,6 +66,7 @@ The exact source declarations below establish the current behavior; this invento
 
 
 - The declaration carries its own canonical profile digest. [3]
+
 
 
 - 45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed. [4]

@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans the language-agnostic tags.scm engine and LanguageSet provider/reservation seam, and is guarded by tags-engine policy, .lean reservation, and Lean anchor tests."
+  },
+  "applicability": "All tree-sitter citation languages executed by tags_engine and all LanguageSet suffix registrations.",
+  "conditions": [
+    "Tree-sitter bindings execute standard upstream @definition.* and @name tags.scm captures while tolerating @doc and @local.* captures.",
+    "Engine-side wrapper widening preserves declaration lines, DestructuringSpec unpacks bound-side leaves only, has_error nodes are skipped, and output preserves document order.",
+    "Lean declarations execute via LeanLanguageProvider behind LanguageProvider, and LanguageSet permanently refuses binding .lean to any tree-sitter or non-Lean provider."
+  ],
+  "exclusions": [
+    "Lean does not use tree-sitter or tags.scm queries."
+  ],
+  "id": "INV-ZYP9YD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_language_set_and_tags_engine.py, mcp/tests/test_lean_symbol_anchors.py, mcp/tests/test_lean_card_citations.py; clean-copy tree e122f928d620ee2485100752a3d16ed709100bac"
+      ],
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R10@v1 §2",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every tree-sitter language executes declaratively through the language-agnostic tags.scm engine using standard upstream captures with engine-side wrapper widening, bound-side destructuring, error skipping, and document ordering, while Lean stays behind LanguageProvider with .lean permanently reserved.",
+  "supersedes": [],
+  "title": "Declarative tags.scm engine extracts bindings while .lean stays reserved",
+  "writer": {
+    "at": "2026-11-27T17:57:42+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L10",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
+  }
+}

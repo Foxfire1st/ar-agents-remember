@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:804a8be40857dd71b8cf7b52c91de5ff1dfbc0ed2ee2a7ea35bc8f191f703d98",
         "locator": {
           "end": 30,
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:9c86c3656e6ecfe1f99ae7c1ca754f93b2aef89c238c3928cc47f4284929c2f2",
         "locator": {
           "end": 26,
@@ -42,7 +42,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:9c86c3656e6ecfe1f99ae7c1ca754f93b2aef89c238c3928cc47f4284929c2f2",
         "locator": {
           "end": 26,
@@ -61,8 +61,8 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-        "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+        "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
         "locator": {
           "kind": "file"
         }
@@ -78,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:9f730060211a5cbc77fa7bc68b604b7a1a4e496b49eee6d4f467dcef011103b3",
         "locator": {
           "end": 24,
@@ -97,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:8745ab2cf062d2a50230ecf3c23389f61cfef5208c8ad69ab7b098e342ec9325",
         "locator": {
           "end": 20,
@@ -116,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-        "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+        "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
         "locator": {
           "kind": "file"
         }
@@ -133,8 +133,8 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-        "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+        "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
         "locator": {
           "kind": "file"
         }
@@ -150,8 +150,8 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-        "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+        "content": "sha256:5d13c2190144eee78517df67c7f1e60d3108e72ee874438681657cae6555048c",
         "locator": {
           "end": 16,
           "kind": "line_range",
@@ -169,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:02d55a5346ad2547b0bb53bb64f02f0260cc802a0b338f51c4a41f16c2d47bdc",
         "locator": {
           "end": 8,
@@ -188,7 +188,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:80ecc63742c97892cccc2d3ddf3d5ffba8084ef1b00a724642dbfc002fac9e0a",
         "locator": {
           "end": 22,
@@ -207,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:8745ab2cf062d2a50230ecf3c23389f61cfef5208c8ad69ab7b098e342ec9325",
         "locator": {
           "end": 20,
@@ -226,8 +226,8 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-        "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+        "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
         "locator": {
           "kind": "file"
         }
@@ -243,7 +243,26 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+        "content": "sha256:5d13c2190144eee78517df67c7f1e60d3108e72ee874438681657cae6555048c",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-TSH7YK",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Cues Architect to read impact/search/records via knowledge_read alongside code reads in replacement-first wording within compiled and wire ceilings.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:e96ad2a9a72e13dadf7952606b13d848f914080904ec8f5bddc103cb3a037b43",
         "locator": {
           "end": 22,
@@ -262,7 +281,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:80ecc63742c97892cccc2d3ddf3d5ffba8084ef1b00a724642dbfc002fac9e0a",
         "locator": {
           "end": 22,
@@ -281,7 +300,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:02d55a5346ad2547b0bb53bb64f02f0260cc802a0b338f51c4a41f16c2d47bdc",
         "locator": {
           "end": 8,
@@ -300,7 +319,7 @@
     },
     {
       "anchor": {
-        "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+        "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
         "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
         "locator": {
           "end": 14,
@@ -324,7 +343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:02d55a5346ad2547b0bb53bb64f02f0260cc802a0b338f51c4a41f16c2d47bdc",
             "locator": {
               "end": 8,
@@ -336,7 +355,7 @@
         },
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:8745ab2cf062d2a50230ecf3c23389f61cfef5208c8ad69ab7b098e342ec9325",
             "locator": {
               "end": 20,
@@ -348,7 +367,7 @@
         },
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:804a8be40857dd71b8cf7b52c91de5ff1dfbc0ed2ee2a7ea35bc8f191f703d98",
             "locator": {
               "end": 30,
@@ -365,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:de9177d4d1e07778b5853be422a1f9c86f806346653042273f82a71eb0cff32a",
             "locator": {
               "end": 26,
@@ -391,12 +410,12 @@
       ]
     },
     "3": {
-      "note": "The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them.\n\nAnchor: `expectedKnowledgeEffects`",
+      "note": "The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them.",
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-            "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:5d13c2190144eee78517df67c7f1e60d3108e72ee874438681657cae6555048c",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -408,12 +427,12 @@
       ]
     },
     "4": {
-      "note": "When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published.\n\nAnchor: `system/task-publication.md`",
+      "note": "When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published.",
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
-            "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:5d13c2190144eee78517df67c7f1e60d3108e72ee874438681657cae6555048c",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -429,7 +448,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:9c86c3656e6ecfe1f99ae7c1ca754f93b2aef89c238c3928cc47f4284929c2f2",
             "locator": {
               "end": 26,
@@ -446,7 +465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:02e7bf69b2007f61d474ed262031cf769b814871675b0e0d06de32360411077a",
             "locator": {
               "end": 26,
@@ -458,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:804a8be40857dd71b8cf7b52c91de5ff1dfbc0ed2ee2a7ea35bc8f191f703d98",
             "locator": {
               "end": 30,
@@ -475,7 +494,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:02d55a5346ad2547b0bb53bb64f02f0260cc802a0b338f51c4a41f16c2d47bdc",
             "locator": {
               "end": 8,
@@ -492,7 +511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
             "locator": {
               "end": 14,
@@ -509,7 +528,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
             "content": "sha256:9f730060211a5cbc77fa7bc68b604b7a1a4e496b49eee6d4f467dcef011103b3",
             "locator": {
               "end": 24,

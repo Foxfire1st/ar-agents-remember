@@ -1,0 +1,174 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+        "content": "sha256:c4df04aaa8fa51bfac9f1429afba18106c402bf37639bfd48835b90170a1c2d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "extract_test_calls"
+        }
+      },
+      "id": "RLZ-1E9R30",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Captures candidate test and suite call expressions declaratively via tests.scm in pre-order document order.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+        "content": "sha256:749a5355cb6333cdc2e58400c06f4693635deae095aa01b51f7363acf80eb45a",
+        "locator": {
+          "kind": "symbol",
+          "name": "extract_tag_entries"
+        }
+      },
+      "id": "RLZ-JPK4QA",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Runs standard @definition.* and @name captures, applies wrapper widening and declaration-line preservation, unpacks destructuring targets on the bound side only, skips has_error nodes, and preserves document order.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+        "content": "sha256:d7b7699129d762f8e57436e6a72ecf24558c2e5f86020ad356e58b9142046149",
+        "locator": {
+          "kind": "symbol",
+          "name": "DestructuringSpec"
+        }
+      },
+      "id": "RLZ-VZH0PH",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Carries declarative per-language bound-side unpacking rules so destructuring avoids capturing object keys, defaults, or attribute/subscript targets.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`QUERIES_ROOT` resolves the packaged `citations/queries` directory; `load_query_text`, `query_digest`, and `compile_query` load, hash, and cache `.scm` queries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:67d4b15ceec76b2406e8dc981b3fa703fd0bf36d0400b9bdfac8664965cd25e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_query"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`Binding` retains a construct's widened line span, own declaration line, test-case flag, and Lean scope metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:40b0795b1d892b4b70d3eb8159d16e1eba59f239062e2d7a4ea602b69f4ce4c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "Binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`DestructuringSpec` declares bound-side leaf, child, and field unpacking rules so destructuring extracts only bound names in source order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:d7b7699129d762f8e57436e6a72ecf24558c2e5f86020ad356e58b9142046149",
+            "locator": {
+              "kind": "symbol",
+              "name": "DestructuringSpec"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`widened` expands a syntax node outward through declared wrapper parent types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:d8e89037c25887ffb76350c709a6432edbbd32196e356032f2d30273abac624a",
+            "locator": {
+              "kind": "symbol",
+              "name": "widened"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`extract_tag_entries` runs `@definition.*`/`@name` captures, skips `has_error` nodes, deduplicates pairs, widens wrappers, and unpacks destructuring targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:749a5355cb6333cdc2e58400c06f4693635deae095aa01b51f7363acf80eb45a",
+            "locator": {
+              "kind": "symbol",
+              "name": "extract_tag_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`extract_test_calls` collects unique `@test.*` call sites in document order and `extract_test_case_entries` delegates title extraction to `test_cases.case_names`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:c4df04aaa8fa51bfac9f1429afba18106c402bf37639bfd48835b90170a1c2d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "extract_test_calls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`merge_entries` orders tag and test-case entries in pre-order document order and groups bindings by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:6aa6b7618b7a3fcbc41a0f2882163673b3c3afcdb7a5995905b09a6bbe427c99",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -4,10 +4,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
-        "content": "sha256:06a32814144253c86253119eb9d86f0723f8dac599a0a8236c170cd18b9f4c06",
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+        "content": "sha256:5c13a6d0a51607d78a5dfe479be898a54a48640e3b33d6b49087e08f3bb2a9f8",
         "locator": {
-          "end": 49,
+          "end": 51,
           "kind": "line_range",
           "start": 22
         }
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
         "content": "sha256:071850472ecaf6707fdee350163cbc42e9f2006d1c62be215641b1c7aefdfe26",
         "locator": {
-          "end": 142,
+          "end": 144,
           "kind": "line_range",
-          "start": 137
+          "start": 139
         }
       },
       "id": "RLZ-1TKMCY",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
         "content": "sha256:3ada9214ef78c2233b273c6f85e2095fe1cb099402455601d20dd08520e3af1f",
         "locator": {
-          "end": 64,
+          "end": 66,
           "kind": "line_range",
-          "start": 60
+          "start": 62
         }
       },
       "id": "RLZ-3PSMK2",
@@ -61,7 +61,24 @@
     },
     {
       "anchor": {
-        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+        "content": "sha256:77aca02ad817c284c51756b7e4d3e02be39ec546ab7944b57c4c5f9b508cc417",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AXMAGK",
+      "invariant": "INV-XEQ0TR",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R3",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Canonical Stage 1 Read instructions teach the Explainer to call knowledge_read (impact, search, records) against bound trees/memory paired with trees/code within 1,469/1,500 words.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
         "content": "sha256:ed3bb5d5cc1be92bbec1cc2254ae868cb90e62216fe316305fe457e1a554280f",
         "locator": {
           "end": 20,
@@ -80,12 +97,12 @@
     },
     {
       "anchor": {
-        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
         "content": "sha256:0b1582410ecd675257327b6ce0d5890d33e86b2946153bb4f73fb248426eb47c",
         "locator": {
-          "end": 55,
+          "end": 57,
           "kind": "line_range",
-          "start": 51
+          "start": 53
         }
       },
       "id": "RLZ-KXTPD1",
@@ -99,12 +116,12 @@
     },
     {
       "anchor": {
-        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
         "content": "sha256:395ca77ee89933b5b94218235ba7b476e0d287c4f9aef07911f5eb98a29eb6a8",
         "locator": {
-          "end": 84,
+          "end": 86,
           "kind": "line_range",
-          "start": 76
+          "start": 78
         }
       },
       "id": "RLZ-N1VS3R",
@@ -123,10 +140,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
-            "content": "sha256:880c4b10981967f84354f6727692c5766eb7a06148bf1671327fe6f9bc986f76",
+            "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+            "content": "sha256:9c068c56efa94992d3d02ff6cebe1164d61ea36c69a6b21c51bf3cc4efae884b",
             "locator": {
-              "end": 49,
+              "end": 51,
               "kind": "line_range",
               "start": 24
             }
@@ -135,12 +152,12 @@
         },
         {
           "anchor": {
-            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
             "content": "sha256:3ada9214ef78c2233b273c6f85e2095fe1cb099402455601d20dd08520e3af1f",
             "locator": {
-              "end": 64,
+              "end": 66,
               "kind": "line_range",
-              "start": 60
+              "start": 62
             }
           },
           "kind": "code"
@@ -152,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
             "content": "sha256:de3208ed0a91ec6f24a461063f55ef2db7cd30a594d2c4df09ec17510cbf75cb",
             "locator": {
               "end": 20,
@@ -164,12 +181,12 @@
         },
         {
           "anchor": {
-            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
             "content": "sha256:0270004776f9f7584181784a8d8f9d2b3d89c9ba617d5ce424e59c0d77812bf8",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
-              "start": 66
+              "start": 68
             }
           },
           "kind": "code"

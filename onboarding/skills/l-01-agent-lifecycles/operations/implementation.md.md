@@ -38,6 +38,7 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - The candidate stays uncommitted and the seat starts no role and stages nothing. [2]
 
 
+
 - A hand-over counts only on a reply naming its exact object; busy refusals are retried. [3]
 
 
