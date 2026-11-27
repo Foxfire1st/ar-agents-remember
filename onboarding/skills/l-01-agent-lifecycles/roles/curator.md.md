@@ -88,7 +88,10 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 `roles/curator.md` ends with its `## Reference index` table; scratch-root rules are carried by `core/every-role.md` and `reference/sandbox-actors.md` rather than an inline closing paragraph in `roles/curator.md`.
 
+
 - Current Curator intake requires candidate-bound producer data and a passing handoff-check for the freeze, links intent-reconciliation and knowledge-ingest details, keeps one writer, marks only its completed own step, stops after three failed repairs on one item, and relies on operations/curation.md (full checks and OM-2 fact-check), reference/curator/exceptions-and-recovery.md (bounded named encountered-memory repairs and owner routing) and core/every-role.md (scoped covered-write recovery). The family-obligations detail attributes prepared-context unattributed code locations to their family or reports why not, and the change-routing detail retires deleted or renamed source cards while repairing every reference to them. [17]
+
+
 
 
 - Before ingest, earlier subject rows are read and invariant disposition meanings stay distinct from family/onboarding schemas, alongside the Curator's candidate-bound intake, single-writer, own-step, three-repair stop and linked detail rules. [18]
@@ -102,17 +105,22 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - Current curation verifies card sentences against source, delegates bounded encountered-memory repairs (beyond quality-check findings, named, without a broad sweep) to reference/curator/exceptions-and-recovery.md, routes code concerns, requirement decisions and cross-leaf work to their owners, and requires full checks and the independent OM-2 fact-check before handover. [27]
 
 
+
 - The Curator reads the required task, change-set, producer handoff and affected memory inputs. [1]
+
 
 
 - Three-way reconciliation, baseline preservation, admitted-record readback and full quality-check duties, including the Manager-leaf-closeout stale dependent-document read. [2]
 
 
 
+
 - The curator’s prohibited writes and source-stamp boundary. [3]
+
 
 
 - The knowledge-ingest preparation detail requires each hand-off target’s own authored rationale before ingest; the writer never generates that rationale and refuses an unexplained target. [4]
@@ -124,15 +132,21 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 - The curator follows the card-format and citation detail: cards hold current prose and numbered evidence lines, and the citation fixer turns citation tables into those lines and sidecar references. [6]
 
 
+
 - The admitted knowledge writer writes memory files in the leaf memory worktree; --commit (commit: true) authorizes those file writes, never a Git commit or acceptance. [7]
+
 
 
 - Restated guarantees carry an authored effect; the writer fills the revision.
 
+
 - The memory-review pass limit is the settings limit and a pass beyond it needs Architect or developer instruction recorded by the Manager; the role keeps its stage and authority boundaries. [9]
 
 
+
+
 - The Curator batches citation checks and repairs, completes the full quality/coherence operation and hands memory directly to the independent Reviewer. Faulty inputs are corrected through the same tool; a covered correct-input write refusal uses the scoped recovery procedure with explicit provenance. Permission, validation, unowned-state, meaning and outside-surface stops remain. Extra memory passes require Architect/developer authority recorded by Manager. [10]
+
 
 
 - Evidence and working files stay outside the memory worktree. Overview authoring is purpose-first, changes belong in their applicable body section, and all citation lines terminate the overview. [11]
@@ -148,10 +162,13 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 - The worklist detail points to the writer's row, reconsideration and link-repair rules; the governing-sources detail records a rejected simplification or workaround with the chosen design, rejected option and reason, apart from unfinished work. [16]
 
+
 - Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits the same-tool/input-class recovery procedure, with owner notice, declared provenance and working checks. [26]
 
 
+
 - A changed family guarantee carries a Curator-authored effect. The writer fills the revision. [8]
+
 
 
 

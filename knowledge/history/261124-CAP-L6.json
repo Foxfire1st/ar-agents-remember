@@ -1,0 +1,1504 @@
+{
+  "closed": true,
+  "leaf": "261124-CAP-L6",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T02:11:34+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261124-CAP-L6",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "fc6f5c77-19c8-5951-815d-de85e40746b6",
+      "task": "261124-CAP"
+    },
+    "reviewer": {
+      "at": "2026-11-27T02:11:34+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261124-CAP-L6",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "e43af007-a7af-5fbd-a6c0-b58ccbc29613",
+      "task": "261124-CAP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "20316daf486f6edb04bb11ffe11293dc51908cda",
+    "verdictRef": "notes/reports/reviewer/e43af007-a7af-5fbd-a6c0-b58ccbc29613/role-launch/261124-CAP-L6-memory-review-verdict-r1.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-1KC30K",
+      "items": [
+        "sha256:a17458178fa776633f5cfdd5c23d35e50721e6c04675a22cc927ff831237d185"
+      ],
+      "reason": "Examined all three members; registering wire_budget._wire_encoding in PROCESS_MUTABLE_STATES satisfies INV-KE2ZHT without changing the Python state-isolation family guarantee or routes.",
+      "revision": 5,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:41eb3b7e51c0c9e1bc24bc5fb91b25dc9ffdffa79e2a1251f1838001997c5656",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:ee89254635e0b9dec5801dacb41c5ff17162c9b7a550ad142525220e5e693b5b",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-JFZ5WP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2W1VVX",
+      "items": [
+        "sha256:e8a77c3b0c87510e89ee70197534f681d57da85ce612de7807d7d2dcc9a5ef0b"
+      ],
+      "reason": "Re-anchored RLZ-JFZ5WP on skills/l-01-agent-lifecycles/roles/curator.md:17 after CAP-L6 trimmed redundant words ('only', 'keep'); all-role harness organization and Curator single-writer rules unchanged.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-301ZPK",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Updated Curator curation word count from 406 to 412 in prose and reference [8] and refreshed references [2] and [8] against renewed capsule-budgets-current.json.",
+      "sources": [
+        {
+          "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-438PJS",
+      "items": [
+        "sha256:45ad5b8047ba40698dcc3e2f7cd8f28dedbfa78275ec838d501c68f54604d64e"
+      ],
+      "reason": "Reviewed mcp/tests/overview.md against CAP-L6's six repaired unit-test modules; route overview prose remains accurate and stale base references were refreshed via citation_fix.",
+      "sources": [
+        {
+          "blob": "5556922ac1fe431722d2b1fe5b9d6515c5079fd6",
+          "path": "mcp/tests/test_knowledge_correction_guidance.py"
+        },
+        {
+          "blob": "5484c6d6b05e2e82db6233180ddcbf94ec3a70ad",
+          "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py"
+        },
+        {
+          "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+          "path": "mcp/tests/test_leaf_handover.py"
+        },
+        {
+          "blob": "686d0569ac8697c4d43b4deb040a758c9db640fd",
+          "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+        },
+        {
+          "blob": "a8bacafb1b1197616ace18ab3f3f8bc8c449bb82",
+          "path": "mcp/tests/test_role_capsule_moved_piece_reach.py"
+        },
+        {
+          "blob": "ec2f33c8cf0f23612096da8a692ede0ca649db83",
+          "path": "mcp/tests/test_stored_gates.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4F10GT",
+      "items": [],
+      "reason": "Refreshed reconsider_on link 1 on skills/l-01-agent-lifecycles/roles/curator.md:15 via the still_rejected judgment for alternative 1; chosen design and rejected alternative remain unchanged.",
+      "revision": 5,
+      "subject": "DEC-SKAXJ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-J4K6S5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4RAPZ5",
+      "items": [
+        "sha256:b9f8caba607dd267febf554a9115f05e972f7deadf9a49df84a1eeeab840daf0"
+      ],
+      "reason": "Re-anchored RLZ-J4K6S5 on skills/l-01-agent-lifecycles/roles/curator.md:15 after CAP-L6 trimmed redundant 'init'; mounted writer and scoped refused-write recovery rules unchanged.",
+      "revision": 4,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7HBKZR",
+          "revision": 2
+        },
+        {
+          "id": "INV-AF2DN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AW14ZP",
+          "revision": 1
+        },
+        {
+          "id": "INV-CV3MW4",
+          "revision": 3
+        },
+        {
+          "id": "INV-K76Z77",
+          "revision": 1
+        },
+        {
+          "id": "INV-S9H78W",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6NJWDS",
+      "items": [
+        "sha256:7e486a7272e1909a7ac0c0abe6ef1a92cbb8ea7362e292c4d9b99987734f83b5"
+      ],
+      "reason": "Examined all six members; re-anchoring RLZ-SHXSR1 on roles/curator.md:19-32 and updating its operations/curation.md line reference keeps the settings-owned review-budget guarantee and routes unchanged.",
+      "revision": 3,
+      "subject": "FAM-K65H24"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+            "content": "sha256:a006d3a10a5667a9577d86921d394ec9802031af53b742ffd1e2dc7d3f66dad5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:fe564418e4dc1e8221a413d25cf7bdab3ff91e31f88c4cecd2258c47385fc966",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-V9RRXD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6P8QW2",
+      "items": [
+        "sha256:0e3b1803840dc13eb18e62613a7eca1bc75a7d999325a46f459a185b0793ceb2"
+      ],
+      "reason": "Re-anchored RLZ-V9RRXD on skills/l-01-agent-lifecycles/core/digest-map.json after restoring IN1.2 (population check) to disposition 'digest' at place-32 (core/every-role.md:33); all 170 core units remain accounted for with zero duplicate copies.",
+      "revision": 1,
+      "subject": "INV-X0VQ3D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-747ZEY",
+      "items": [
+        "sha256:d30c72c0993f17dc788049592f82e4d9f0b882fb86860b7613b16ceb6cdc420b"
+      ],
+      "reason": "Updated line count from 34 to 36 (and line 34 -> 36 notice reference), documented the restored verbatim intake-staleness workflow sentence, and refreshed reference [4] to lines 10-36.",
+      "sources": [
+        {
+          "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-TND9GX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7WPRPZ",
+      "items": [
+        "sha256:66e9497db844d117f27a1e3f4a1006a7e316fd964f64ab3ef0a065562af9d194"
+      ],
+      "reason": "Re-anchored RLZ-TND9GX on skills/l-01-agent-lifecycles/roles/curator.md:15 after CAP-L6 trimmed redundant 'init'; false-claim repair obligation unchanged.",
+      "revision": 1,
+      "subject": "INV-6A3N48"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-80VAKX",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined both members; canonical skills/ edits in operations/curation.md and roles/curator.md were regenerated to their sole package_data/runtime copies (and base-stale roles/reviewer.md entries re-anchored), keeping the surface-propagation guarantee and routes unchanged.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-889XKD",
+      "items": [
+        "sha256:245a5bd9894d8fb7c06cd04ca9a1066e332dd703df552213d51a38e269a5ed8d"
+      ],
+      "reason": "Updated commentary and reference [1] to reflect compact inline prompt leafSeats projection alongside full sibling roleMessageArguments verification in the compiled handover artifact.",
+      "sources": [
+        {
+          "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+          "path": "mcp/tests/test_leaf_handover.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_leaf_handover.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+            "content": "sha256:3c8ac55d1fc754f3455368b0c235ffbf569190b913ce548c3341cd92828350a2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8S12FX",
+      "items": [
+        "sha256:1a11cab1bac1edcfcd38d0c70c7e49f8861987a0d48a46d43977596e731fa1aa"
+      ],
+      "reason": "Re-anchored RLZ-RHRQZQ on skills/l-01-agent-lifecycles/capsule-budgets-current.json after instruction renewal refreshed current measurements (curator/curation 412 words) without changing authored token ceilings.",
+      "revision": 3,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:41eb3b7e51c0c9e1bc24bc5fb91b25dc9ffdffa79e2a1251f1838001997c5656",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:ee89254635e0b9dec5801dacb41c5ff17162c9b7a550ad142525220e5e693b5b",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-DT71R6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8S8C8K",
+      "items": [
+        "sha256:61d585ecec38f5d5adf2d779e3c4acda7a402324108fbfba94469f71e166c665"
+      ],
+      "reason": "Re-anchored RLZ-DT71R6 on skills/l-01-agent-lifecycles/roles/curator.md:17 after CAP-L6 trimmed redundant words ('only', 'keep') without altering the Curator worklist or single-writer invariant.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:78c872aff6f4ed0e59b6c2598bdc48d1baac4e60cc9ae4b369a359b9c47152ef",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-0GEXHP"
+        },
+        {
+          "after": {
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:a9597d18cffbc9d1613cce89f32a88b69813b4c12e99c7f8e0ba92d68473ad0c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:2ebc6cb756bc4375b282337dcf8472558e110d12dbe052cc362695a92b5138d2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:356bdb331c6971b987292bd9921439b4f16293decc360194fb89a3006e74fe1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:a87590170e4a5857f4411ae66534cf53435a1e9037a6eac345a9faa4666b38b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:641e5977b0280c2791ad6da096495f6028c2e10a1f2932c1e88a02cb666afd21",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:59b69c1389f51f2bb6f1bad1f8c70f029752b2002c181a2ebd066772da4cb4f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        },
+        {
+          "after": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:0402c97afc3d3827bdfad66e36a3a0e5d13ab119a59c0ab54367f1ee901c3147",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:1f54bb214e94a58f01c11aa885212c38b1c97f63a40ea481403c6c72143a1d05",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-VXHQMN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8VPK7A",
+      "items": [
+        "sha256:21e67c1b5ace37a78e6321eee7327e4f1cbf82f621b1c2160dcf035126d5b950",
+        "sha256:7b7813d6fe779783dce7bbc4d836dd368068a1af62cf1fe3cf95d818aaa97e8c"
+      ],
+      "reason": "Re-anchored canonical and packaged runtime skill entries for operations/curation.md (lines 10-19 after restoring line 14), roles/curator.md, and base-stale roles/reviewer.md (from BUG-L54); canonical-to-package propagation invariant unchanged.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PFT43W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-91QJF3",
+      "items": [
+        "sha256:c3c48122c38858862f6bcd27c53ceeeca88c671c17a013d12d46eb104fcf8db2"
+      ],
+      "reason": "Re-anchored RLZ-PFT43W on skills/l-01-agent-lifecycles/roles/curator.md:10 after CAP-L6 trimmed redundant 'preview'; per-call canonical task-scope admission unchanged.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 5
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-A4QAKP",
+      "items": [
+        "sha256:41665460e4eac367806f6cb960f60b8d64200d998bb57ca9ba7706f04df5fc1b"
+      ],
+      "reason": "Examined all six members; re-anchoring test_leaf_handover.py on INV-W58B84 for compact inline prompt projection preserves complete sibling handover addresses and leaves the direct leaf-seat handover guarantee and routes unchanged.",
+      "revision": 3,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:8f6d967591000adcba71c399f133add4e4dead8dfcfa95f8af23d282477a4ef6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:2678eef4a0b44524c75d012c3b9214c4a3915df86cebe22349eff7dbaaed0f68",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-SHXSR1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E0WZFV",
+      "items": [
+        "sha256:f49759d0176c12180f6859ea34eb17093316d5b892e14aff412544723b396dfd"
+      ],
+      "reason": "Re-anchored RLZ-SHXSR1 on skills/l-01-agent-lifecycles/roles/curator.md:19-32 after CAP-L6 trimmed redundant 'or' and updated the rationale line pointer for operations/curation.md from line 22 to line 24; invariant meaning unchanged.",
+      "revision": 3,
+      "subject": "INV-CV3MW4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EFKXGG",
+      "items": [
+        "sha256:1535213644dec172f04999f04e6058b3fbb4c3db7d03502349aea687d917b0db",
+        "sha256:2fc8396e5a526514bf88a57a9d5ae0ca12d353990c1eac635f21acd420a8a624",
+        "sha256:3ac4bfc146f5317040e15ebd1da014d787dd46d0f148bb49e0234617ee060e45",
+        "sha256:4775256b985c177bd3ca5c5095ba7a0592bd749cb77110926ba40b6a9f7a3274",
+        "sha256:9862014218f5a5b7237c1ca9bddb55bc3f63b5decd07e55fdb5f490cdf212030",
+        "sha256:a1370bd45f738da090ec039747138c59577807d8a8f55fef52b22194502eb431"
+      ],
+      "reason": "Updated Logic commentary and reference [4] for exact closeout refusal equality with with_refusal_reference(..., 'closeout-gate-blocked') and refreshed reference [2].",
+      "sources": [
+        {
+          "blob": "ec2f33c8cf0f23612096da8a692ede0ca649db83",
+          "path": "mcp/tests/test_stored_gates.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_stored_gates.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ESQWNF",
+      "items": [
+        "sha256:7ada8b65fce334c482d2755547f7c06f513fc2559dbb5e5d949ebe04723b06cb"
+      ],
+      "reason": "Reviewed mcp/overview.md against the four regenerated runtime skill copies; package overview prose remains accurate and moved reference anchor [288] was refreshed via citation_fix.",
+      "sources": [
+        {
+          "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 2
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 2
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-ETRHYS",
+      "items": [
+        "sha256:cd4cd3b03dc921cbac1451a7d818b24348361abb467afbf23a4963799db73ffb"
+      ],
+      "reason": "Examined all five members; restoring IN1.2 to place-32 in core/digest-map.json and aligning the test_role_capsule_manifest_edges.py pin leave the addressed-capsule delivery guarantee and routes unchanged.",
+      "revision": 4,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FC0MAQ",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "Documented IN1.2's restored disposition 'digest' mapping at place-32 (core/every-role.md:33) without widening digest_map.py's allowlist, and refreshed reference [3].",
+      "sources": [
+        {
+          "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+            "content": "sha256:3c8ac55d1fc754f3455368b0c235ffbf569190b913ce548c3341cd92828350a2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FY2EPB",
+      "items": [
+        "sha256:dafe04516d723b9944994560aa491b7ee58fb71151f9e4147f26eb11843ef677"
+      ],
+      "reason": "Re-anchored RLZ-9FX5WR on skills/l-01-agent-lifecycles/capsule-budgets-current.json after scripts/renew-instructions.py refreshed current measurements while keeping COMPILED_CAPSULE_TOKEN_CEILINGS in wire_budget.py unchanged.",
+      "revision": 7,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f0238043f49c6e6aac36e749f5ceba8cee7b5aa05d0aadabfe81c53b1f28fbf7",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:afb9a90a7d457e793ff37ef351c1519eed4eb9a30381cf2e24a2c905fa4b8e93",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-W7BYTX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GX5KF4",
+      "items": [
+        "sha256:a4c8fd8a508077be238a45bf32a46d5fbd2960ca414744c5bddcacccc3503263"
+      ],
+      "reason": "Re-anchored RLZ-W7BYTX on skills/l-01-agent-lifecycles/roles/curator.md:17-21 after CAP-L6 trimmed redundant words without altering Curator repair-continuation or 3-repair-stop rules.",
+      "revision": 1,
+      "subject": "INV-JAACMT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:77b5edde6d0cb126a761c44b2b2336cb440fd4fd41ece65e186027dbcaa783be",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:cd844584ff89591caa6a11f857bdec6c7004d0372a03f94c8657c8420865d6f5",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-V1AKR1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HVVW76",
+      "items": [
+        "sha256:4c64f78cb1eabbc1c53e58513afa40c73da3ea5d0efd172326d6c09f046f2a7d"
+      ],
+      "reason": "Re-anchored RLZ-V1AKR1 on skills/l-01-agent-lifecycles/roles/curator.md:19-21 after CAP-L6 trimmed redundant 'or' in the Boundaries list; receipt lifecycle projection semantics unchanged.",
+      "revision": 3,
+      "subject": "INV-4E130M"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J2MJ2W",
+      "items": [
+        "sha256:3b088bce1096c3b1f6f688111286884671d360d0631d1b4bda9b2325e2b57b92"
+      ],
+      "reason": "Reviewed skills/l-01-agent-lifecycles/roles/overview.md against CAP-L6's six-token wording trim in roles/curator.md; role overview prose remains accurate and stale reference anchors were refreshed via citation_fix.",
+      "sources": [
+        {
+          "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "686d0569ac8697c4d43b4deb040a758c9db640fd",
+            "content": "sha256:e5cbca08749bf54cd67240ce8bd5f7447d073463ed33612a45e61d752a17d498",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_structured_shared_digest_is_delivered_once_and_seals_each_role"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "before": {
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
+            "content": "sha256:fd4fe41a955ff5f8dab0b57eba0b9dcc544090f87aa1e399211c6abae6f53518",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_structured_shared_digest_is_delivered_once_and_seals_each_role"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "id": "PRF-MZNQ5M"
+        },
+        {
+          "after": {
+            "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+            "content": "sha256:a006d3a10a5667a9577d86921d394ec9802031af53b742ffd1e2dc7d3f66dad5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M6GXTK",
+      "items": [
+        "sha256:1534530d4ea989cee84b02f2942e42ba1e06c8ba6c932fbfd3f37f6dcae0b838"
+      ],
+      "reason": "Re-anchored RLZ-BZ71PH (skills/l-01-agent-lifecycles/core/digest-map.json) and PRF-MZNQ5M (test_structured_shared_digest_is_delivered_once_and_seals_each_role) after CAP-L6 restored IN1.2 to disposition 'digest' at place-32 and aligned the task_code_rule test pin to compressed core/every-role.md wording; invariant meaning unchanged.",
+      "revision": 2,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q450HV",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "Reviewed testing/overview.md against global_state.py's _wire_encoding registration; route-level reset-register prose remains accurate and stale whole-file references were refreshed via citation_fix.",
+      "sources": [
+        {
+          "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:356bdb331c6971b987292bd9921439b4f16293decc360194fb89a3006e74fe1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:a87590170e4a5857f4411ae66534cf53435a1e9037a6eac345a9faa4666b38b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-ZN9615"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QYNTX2",
+      "items": [
+        "sha256:0ae778d6abc9f866c1943ba1002364d91fba6aceaef7ec817d73f3b8d8926247"
+      ],
+      "reason": "Re-anchored RLZ-ZN9615 on skills/l-01-agent-lifecycles/roles/curator.md after six-token zero-rule-loss compression; all tool-involving pointers retain their AR tool names.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+            "content": "sha256:a006d3a10a5667a9577d86921d394ec9802031af53b742ffd1e2dc7d3f66dad5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-0E8J78"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SG80KY",
+      "items": [
+        "sha256:0296451bcd753790c34ebeac640fd6d6541351ff0ed83fa99dc838ef424c4ec4"
+      ],
+      "reason": "Re-anchored RLZ-0E8J78 on skills/l-01-agent-lifecycles/core/digest-map.json after restoring IN1.2 to disposition 'digest' at place-32 and renewing derived hashes; hash-window relocation invariant unchanged.",
+      "revision": 1,
+      "subject": "INV-HN54VG"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 2
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 3
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SQMG1Z",
+      "items": [
+        "sha256:7f7c339f7d8aaced5613bc5b1c63c382df8788f672a9b0cf96a29bf6d2e6781c"
+      ],
+      "reason": "Examined all six members; trimming redundant 'preview' on roles/curator.md:10 leaves INV-CQCPAD and the retired-plane prohibition family guarantee and routes unchanged.",
+      "revision": 4,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-STAHNS",
+      "items": [
+        "sha256:35f2e7a5a89af0201550e5b375cdb360490e3832b2f74999c97df98fb50871df"
+      ],
+      "reason": "Updated references [16] and [17] to match Tier-2 Architect template reach and Curator's Workflow section and refreshed references [12], [14], and [15] after the three wording-pin repairs.",
+      "sources": [
+        {
+          "blob": "686d0569ac8697c4d43b4deb040a758c9db640fd",
+          "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_manifest_edges.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SYVCTA",
+      "items": [
+        "sha256:0c275d4df9a72221d609b10e176cdb530cee93bafc00d14df09bbec948dfa2c1",
+        "sha256:1464d0c34f8c7bfe300dbe31d3576c91e1c9a22b928f6d20cc179c84fe26c673",
+        "sha256:15993bacc490603fe101b62c5404d117fc0746ad15439d206d4e8e5dd834ef82",
+        "sha256:2543369b88152736f88ddaf68f04fa9d9ef152f12e91163e6363b08539c8d894",
+        "sha256:4da7ce2b9374205abfd71d72804e495cb2752ff1f7dd5d0e23ab8f87b09e1475",
+        "sha256:51dcb5ac70b1e8e91a0f7fdd500c12b84125d2849532bd30f820e0e10a9d47e4",
+        "sha256:6dd2b90cebb56e5d6eca16de7d8718157734829f7418c3be47a2883a311f2fdf",
+        "sha256:76aa79c57531daea73ba5784496ef88bb94bf77fea43ef9d0cfc69d9ed6a69c9",
+        "sha256:8297ab0cf5f9190f80f5c263a5bb7ac551f99f63fa88572c5c792aa2001a9301",
+        "sha256:8d8efd7da129b81d2b7125483c3ad81765fc5778ca13f5c00e8282cd796b6b35",
+        "sha256:a3671584d96392f9db6b57c84f26cf9bab9e331e72fc88631acb4cd700e414f2",
+        "sha256:b3bf62b3f183904910e8acb6bb926623373267871afd4ad4a859ebbbb0b9c2ee",
+        "sha256:c0663cc427799ff5952df80989e9fe98a7775feecd83a887acb506b9cdd3bbf8",
+        "sha256:ead70ba6a540298457012d9605bdb42d1810531a77208ef35cb9df231d816eb5",
+        "sha256:ef1b942baa1c23896ffda83eb794621cb14e26325d772c90ef0de5d9af502b74",
+        "sha256:f7ec2b2951a0c08623af12b7b3611fcddb5dda383da3cc9f2dc7441c59f9dcfb"
+      ],
+      "reason": "Updated Code Commentary and references [1]-[3] for (rendered, detail_paths) return shape, two-tier Architect template reach via reference/tasks/document-authoring.md, and Curator's Workflow section with restored intake-staleness rule.",
+      "sources": [
+        {
+          "blob": "a8bacafb1b1197616ace18ab3f3f8bc8c449bb82",
+          "path": "mcp/tests/test_role_capsule_moved_piece_reach.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_moved_piece_reach.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+            "content": "sha256:f81c73406e59d45c46a8e2f4265f936b5d6f7192c27398e56a95ca3dba5d8095",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids"
+            },
+            "path": "mcp/tests/test_leaf_handover.py"
+          },
+          "before": {
+            "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+            "content": "sha256:7dfc781d77b7f035cbc9e2a49446540beecc0dbe2d8ede2e1a890f9a0e393df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids"
+            },
+            "path": "mcp/tests/test_leaf_handover.py"
+          },
+          "id": "PRF-QEG38R"
+        },
+        {
+          "after": {
+            "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+            "content": "sha256:105827702ff0603e0769e3b8ae8a0e803035614a7279c60da3e6cf5fa22f5358",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_leaf_handover.py"
+          },
+          "before": {
+            "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+            "content": "sha256:cc007eff9e5110243cd8a35c43a84c1581ee3dd476fec88ce389a6c938fb9b71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_leaf_handover.py"
+          },
+          "id": "RLZ-QXYKA6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SZ3QCB",
+      "items": [
+        "sha256:453d282fe1a6e77694e39eca0755e622c0ea39e64428f76863413ad304555e88"
+      ],
+      "reason": "Re-anchored RLZ-QXYKA6 and PRF-QEG38R on mcp/tests/test_leaf_handover.py after updating the prompt check for INV-8AMSGV's compact inline leafSeats while preserving exact sibling roleMessageArguments verification on the compiled handover artifact; invariant meaning unchanged.",
+      "revision": 3,
+      "subject": "INV-W58B84"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T6BMF7",
+      "items": [
+        "sha256:c228ccf2a14790d7b891754e293802d237da98694e42a5a1d96622e65a49d168"
+      ],
+      "reason": "Reviewed skills/l-01-agent-lifecycles/overview.md against CAP-L6 changes to capsule-budgets-current.json, core/digest-map.json, and operations/curation.md; route prose remains accurate and stale reference anchors were refreshed via citation_fix.",
+      "sources": [
+        {
+          "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-TD3EXQ",
+      "items": [
+        "sha256:6202309a59ac838368f9ad46cc588b147ca3d55c3fdb06ed41ea36ba205ca8ad"
+      ],
+      "reason": "Examined all three members; trimming redundant words on roles/curator.md:17 leaves INV-208SQT and the guarded instruction-corpus guarantee and routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TRG34D",
+      "items": [
+        "sha256:fd8021910e1e52c0cb569e21457d7eb7fe5f4c3ee85b1ce51a19dbc27348a409"
+      ],
+      "reason": "Examined all three members; only RLZ-97786Q on roles/curator.md:10 was re-anchored after trimming redundant 'preview', leaving brief recovery and freshness guarantees and all ten routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "686d0569ac8697c4d43b4deb040a758c9db640fd",
+            "content": "sha256:b6e0522d4bd188cf4ac2f258d8dc50faa499e182f6cc51c7800deba33f9348c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "before": {
+            "blob": "d09853ba4f85bc3ef5a25a85d33a17b4064b53fd",
+            "content": "sha256:8ce3b51c67d1c6bdde98aef070cb2dcae2bbdf53add92a9a3497e79465d085ab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "id": "RLZ-GWCXJE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V0CWPN",
+      "items": [
+        "sha256:966c9d47b6a319619bd80c8edb9910b2dcca50c5d93dc51c8cc10ce525bc451c"
+      ],
+      "reason": "Re-anchored RLZ-GWCXJE on mcp/tests/test_role_capsule_manifest_edges.py after CAP-L6 updated three stale pre-CAP-L3 wording pins without changing manifest step/audience consumption.",
+      "revision": 1,
+      "subject": "INV-AZTTPZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-97786Q"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WVBWDR",
+      "items": [
+        "sha256:bd70ea5a6501dc49d4c4b7f68be0da2fc0ec8234e9beddbdf9c7b0b5a706352d"
+      ],
+      "reason": "Re-anchored RLZ-97786Q on skills/l-01-agent-lifecycles/roles/curator.md:10 after CAP-L6 trimmed redundant 'preview' from 'dry_run=true'; brief assembly and freshness semantics unchanged.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+            "content": "sha256:e63f00b18951888fc6d44bdac582d67cbe277d741cd2f7f95459bb0e116a4430",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:b5b30225570cccb39961ba4a30e988a89cb653516850680b239c01e1bd837ac8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XD8DBM",
+      "items": [
+        "sha256:5fd9d45a0a141ace0230db55264972a6fbf981a195f2ee7d9e67cf997dafa76b"
+      ],
+      "reason": "Re-anchored RLZ-1563PY on PROCESS_MUTABLE_STATES in mcp/test_support/agents_remember_test_support/testing/global_state.py after registering application.role_capsules.wire_budget._wire_encoding with _clear_cache; closed-census treatment invariant unchanged.",
+      "revision": 2,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XFSMYQ",
+      "items": [
+        "sha256:40c953257ae8ba190bae98e912bbecfd7d21db03f5e14a144893dba1518e7b4d",
+        "sha256:cba4036d50c7c21758b07b389015741019740c9932abd9ca2a86f615223552a0",
+        "sha256:fe9eddaec63242901e9c9ab052c356db2a6ad488613dc9de348229af5ab5a80b"
+      ],
+      "reason": "Updated Code Commentary to state the exact per-file timing markers ('pre-build' in roles/architect.md and 'before implementation' in operations/planning.md).",
+      "sources": [
+        {
+          "blob": "5556922ac1fe431722d2b1fe5b9d6515c5079fd6",
+          "path": "mcp/tests/test_knowledge_correction_guidance.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_correction_guidance.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y6X6PK",
+      "items": [],
+      "reason": "Confirmed pre-base-stale dependent docs/design/python-evidence-system.md accurate on CAP-L6 candidate 35aff1724eca (synced base 63ff759a8) after auditing all 295 lines against clean_room.py, .dagger/src/agents_remember_quality/main.py, test-evidence-lanes.toml, and evidence-lifecycle.toml; zero contradictions.",
+      "revision": 28,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-YGQCQF",
+      "items": [
+        "sha256:b22d8f0672fc1f0f71881edc743bb799880450e249453e1fe0fc09e1a2bd9e4e"
+      ],
+      "reason": "CAP-L6 only removed the redundant word 'init' on skills/l-01-agent-lifecycles/roles/curator.md:15 to keep curator/curation within the 3,000-token wire ceiling after restoring the intake-staleness workflow sentence; harness sub-agent freedom and Curator single-writer boundaries are unchanged, so alternative 1's reconsider_when condition is not met.",
+      "subject": "reconsider:DEC-SKAXJ5#1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YKTV6R",
+      "items": [
+        "sha256:6337f5917f5b9558cb24f13573ca515ade74919408f2ffbfcd8059c84c419b92"
+      ],
+      "reason": "Six-token zero-rule-loss wording trim on lines 10, 15, 17, and 21 preserved every Curator duty and line count (32 lines); refreshed stale reference anchors via citation_fix without changing card meaning.",
+      "sources": [
+        {
+          "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-N4VK1C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YVDQB4",
+      "items": [
+        "sha256:cd137e330c369d5dcf9474b4c8ec4658d192c12aaf8c1189bc3bd981a6d7c97c"
+      ],
+      "reason": "Re-anchored RLZ-N4VK1C on skills/l-01-agent-lifecycles/roles/curator.md:10 after CAP-L6 trimmed redundant 'preview'; leaf-only Curator opening rule unchanged.",
+      "revision": 3,
+      "subject": "INV-CQCPAD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z0Y2NE",
+      "items": [
+        "sha256:31065ac18caf5c3ab0b949f712d7be36d75431aaef1447cc44496cf43a47a336",
+        "sha256:452e2347edebbcec523bea8642c3cb51f5965778adea0adaf0645d1b02e20e3c",
+        "sha256:463bc57ad9f016c20489c8a12e80c2a1db546b4a69d4066beb78a8ee3711edef",
+        "sha256:4db33354e613f9b81be67a4205de62946e688834bf4d0c20891162add202ea43",
+        "sha256:5b75b2deac2b72e1aece16ec4b27b8b45f0b469a0d913dc400e98bf24aa8211a",
+        "sha256:7eebdc98ce3fac3509ccaaf72c1beed8d96bd24d607278bd89786d942d395c5d",
+        "sha256:96810e5f30e02c6ef28e371d9c8789592704d207177c25afceb36d2a3abf1ecf",
+        "sha256:d0686bb0888cd851f47e4e8a82d788621119a4ad4c1b436505b8b5195ef0d0c3",
+        "sha256:debae737d02c92941ada068a39e7789d3f189a61b638af4d8e722e905009b5ac",
+        "sha256:ebacc67854dfaae509bc6d8ab8cf58bd1f30dee5ea1a31e9ac490e3884646fa0"
+      ],
+      "reason": "Updated _held_leaf_set commentary to match the compressed CAP-L3 opening intake, Link roots declaration, and [baseline](detail/reference/review-baseline.md) check, and refreshed reference [4].",
+      "sources": [
+        {
+          "blob": "5484c6d6b05e2e82db6233180ddcbf94ec3a70ad",
+          "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_reviewer_criterion_delivery.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z3CW4J",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "Documented the new PROCESS_MUTABLE_STATES reset entry for application.role_capsules.wire_budget._wire_encoding (@lru_cache, _clear_cache) and refreshed whole-file references.",
+      "sources": [
+        {
+          "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+            "content": "sha256:3c8ac55d1fc754f3455368b0c235ffbf569190b913ce548c3341cd92828350a2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": {
+            "blob": "5554b57abbeaf75d927c961ce007f3d4015e86f6",
+            "content": "sha256:a006d3a10a5667a9577d86921d394ec9802031af53b742ffd1e2dc7d3f66dad5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z3H8WF",
+      "items": [
+        "sha256:3726872ee4dcb59cf3acbc5a5d672474702b6a77281bbefd55536fd3acf9fd31",
+        "sha256:b4af1d75a7f79e0e002df95660f1974c9d84c02459e6703797d19a809263af1c"
+      ],
+      "reason": "Re-anchored RLZ-9J6CEC and RLZ-WZZ5BF on the packaged runtime copies of capsule-budgets-current.json and core/digest-map.json after scripts/renew-instructions.py renewed derived measurements and IN1.2 digest mapping; renewal entry-point invariant unchanged.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:65d66a0df165d3ae070c143fba19d37241f0bcc15803ccb9315ff4f494cfb1ca",
+      "record": "DEC-SKAXJ5",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T01:42:36+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "fc6f5c77-19c8-5951-815d-de85e40746b6",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:c4352642752c160253752e502c8f38b33ba41d0c30fa70b48c83dd109099c031",
+      "record": "DPD-ZMQ523",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-27T01:42:36+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "fc6f5c77-19c8-5951-815d-de85e40746b6",
+        "task": "261124-CAP"
+      }
+    }
+  ]
+}

@@ -107,4 +107,5 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 - Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and narrowing of the sealed scope in ordinary successor adjudication, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate. [6]
 
+
 - Verdict artifacts and loop-review leaf verdicts are written in the handover's local `role-reports/` folder on a leaf (collected to `notes/reports/`) and under `notes/reports/` on other seams and plan reviews. [9]

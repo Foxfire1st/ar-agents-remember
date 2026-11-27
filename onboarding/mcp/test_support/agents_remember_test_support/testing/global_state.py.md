@@ -33,7 +33,7 @@ when their owner is already in `sys.modules`; resetting never imports a product 
 
 The closed register retains ordinary `_clear` resets for closeout digest-file stats and lifecycle operation location/record caches. The removed session-log cache and ambient singleton are not reset owners. No scanner exemption or production reset is added; restored rows retain their per-test treatment.
 
-The reset register also includes measured answer-folder budgets, suspended held-message sweep walks, message-stem counters, atomic-write temporary paths and the installed tool-event writer. Sweep walks and the writer delegate cleanup to their owning resetters rather than merely clearing a wrapper mapping.
+The reset register also includes measured answer-folder budgets, suspended held-message sweep walks, message-stem counters, atomic-write temporary paths, the installed tool-event writer, and `application.role_capsules.wire_budget._wire_encoding` (`@lru_cache`, cleared via `_clear_cache` between test modules). Sweep walks and the writer delegate cleanup to their owning resetters rather than merely clearing a wrapper mapping.
 
 Cleanup follows the resource owner: wait for quality workers under their lock before clearing runs;
 terminate and reap this process's tracked children; clear caches,
@@ -63,7 +63,9 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 
 
 
+
 - Process snapshot and restore use one typed state owner. [2]
+
 
 
 
@@ -79,7 +81,9 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 
 
 
+
 - Resetting loaded owners delegates sweep cleanup and tool-writer cleanup to their resetters. [8]
+
 
 
 
@@ -103,7 +107,10 @@ and clears the slot, so the next test module builds a fresh pool. A further row 
 keeps — process state a test module must not inherit — not a claim about production behaviour.
 
 
+
 - The reset register discards loaded master-architect host adapters, Explainer send and build ledgers, and per-root move watches between test modules. [11]
+
+
 
 
 
@@ -113,12 +120,17 @@ keeps — process state a test module must not inherit — not a claim about pro
 
 
 
+
+
 - The closed register gives each registered process state one treatment and a reason. [3]
 
 
 
 
+
+
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [9]
+
 
 
 - Retired at the fifth freeze d59c3493: mcp/test_support/agents_remember_test_support/testing/global_state.py::PROCESS_MUTABLE_STATES - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -145,7 +145,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:d52cdd82ad54ea280d29c15b098ffe7347d78378e85e79f18b284f4b52b829a0",
             "locator": {
               "end": 21,
@@ -237,8 +237,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -286,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,
@@ -397,8 +397,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-            "content": "sha256:41acc3316bbc5e0e23cc496396cbee392834f3116f29af1172a963edefb19f7e",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:ba3125fc7b37d5f3b077e1d73d85335da55104a498b7503be83ac0d2bc896348",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -428,8 +428,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:d38bd4d2ce31f91bc3513fc336584600103cd96b7f58a2ede31416f3967874e0",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:341afa8a3d7f39db3a93644135540122fb6c1ce072ffd3c5e8e080fcd143298f",
             "locator": {
               "end": 17,
               "kind": "line_range",
@@ -477,8 +477,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -800,7 +800,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,
@@ -924,8 +924,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:78c872aff6f4ed0e59b6c2598bdc48d1baac4e60cc9ae4b369a359b9c47152ef",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -937,10 +937,10 @@
         },
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-            "content": "sha256:416301ebf53bc49490a1d3a5eea679f6e9f83a15c14f92ca359ce56ac20bc809",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:0865515e5d061df60ea1ae72bbf5c9d9f193ca7d2afa0babae486760c0f3cef8",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
               "start": 12
             },
@@ -1160,12 +1160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
             "locator": {
-              "end": 22,
+              "end": 24,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1240,7 +1240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
             "content": "sha256:b1c2eb9199201832d35a4520bf4aa2bc8a606d09bd50bc24e27d37350b1a4654",
             "locator": {
               "end": 29,
@@ -1346,8 +1346,8 @@
         },
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:afec075119d9fe0643d56aa97c20a7d069e081b9eba90414325b0e281a2760e8",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -1372,7 +1372,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -1421,8 +1421,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -1602,12 +1602,12 @@
         },
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:8a4eecc9c88d2715d33dde9ea626f515b4004673647cebbb066272039a1e7f6f",
             "locator": {
-              "end": 22,
+              "end": 24,
               "kind": "line_range",
-              "start": 14
+              "start": 16
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1755,10 +1755,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-            "content": "sha256:5cc0140b65ebf16701a5db1bed14511b11a5174dbb5d5ed8defdf65b2ba3c458",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:232aa2941423a1a7bd90bfd50e8ee27345bd4149f58c93d5b20bf7abbdff1019",
             "locator": {
-              "end": 17,
+              "end": 19,
               "kind": "line_range",
               "start": 12
             },
@@ -1768,8 +1768,8 @@
         },
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:4b664763ebc7332416096177356204e438e9aa58f9c79605627f1034b1966b95",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:d4574e14690f5c6ecb31a912064de077b75c56eeebddfa2879fc100fb094ac77",
             "locator": {
               "end": 17,
               "kind": "line_range",
@@ -1781,7 +1781,7 @@
         },
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
             "content": "sha256:b1c2eb9199201832d35a4520bf4aa2bc8a606d09bd50bc24e27d37350b1a4654",
             "locator": {
               "end": 29,
@@ -1799,8 +1799,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:caa85a4c30b6b7dbad7211719280de94dcc434e7fd928c30ead19e4776754d33",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:63a4ea71bc018833b502fd4e104fe295df60b1e2614781c2142e29e236334850",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -1812,12 +1812,12 @@
         },
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
-        "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+        "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+        "content": "sha256:3c8ac55d1fc754f3455368b0c235ffbf569190b913ce548c3341cd92828350a2",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "10d9f305b9ceecd65ae3135fa616ce3f1e813641",
+        "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
         "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
         "locator": {
           "end": 6163,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "10d9f305b9ceecd65ae3135fa616ce3f1e813641",
+        "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
         "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
         "locator": {
           "end": 5103,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
-        "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
+        "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+        "content": "sha256:3c8ac55d1fc754f3455368b0c235ffbf569190b913ce548c3341cd92828350a2",
         "locator": {
           "kind": "file"
         }
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -92,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
             "content": "sha256:e0384fd7a2fb1b964c2b6d2a3453d3456017a6a0751411176817ae3633b28718",
             "locator": {
               "end": 6163,
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
             "content": "sha256:a168ac4593332874fd3f8bccf68985cba86370cc161d30f660e0a5398c703f55",
             "locator": {
               "end": 6667,
@@ -122,12 +122,12 @@
       ]
     },
     "2": {
-      "note": "Generated measurements cover current capsules, declared details and the shared digest without individual item limits.\n\nAnchor: `current_measurements`",
+      "note": "Generated measurements cover current capsules, declared details and the shared digest without individual item limits.",
       "targets": [
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
-            "content": "sha256:b6da19e1d77e3890d0d50f50cf61275518da741c0c17421e32859e95449d1b77",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+            "content": "sha256:1dc0d6a694f525b3c1dfd43d5fa9d3daa5519811019954e890a562b348b0fde7",
             "locator": {
               "end": 6282,
               "kind": "line_range",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
             "content": "sha256:d5665e2c65318e40ccc91514b74628dbfded3687336c223c4480798ddcc8464c",
             "locator": {
               "end": 6687,
@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
             "content": "sha256:f8f8b8c92cf7bbc546918ecbd81a64ce055160bc40252f448e919df93cc9d4ed",
             "locator": {
               "end": 6177,
@@ -227,12 +227,12 @@
       ]
     },
     "8": {
-      "note": "The generated size record holds the current curation capsule (406 Curator, 727 Manager) and judgment detail (353) measurements.\n\nAnchor: `manager/curation`; `curator/curation`",
+      "note": "The generated size record holds the current curation capsule (412 Curator, 727 Manager) and judgment detail (353) measurements.",
       "targets": [
         {
           "anchor": {
-            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
-            "content": "sha256:4ff42423834e5ec5729f23b50b6144edac77935f6657d8c76bbee8975316fc36",
+            "blob": "ac2132c3c0e42441814dafb821390d87bc43718e",
+            "content": "sha256:28a4dbc11bfd90e3282362e147116833cce545288f6d7a4a7a0e55a228c32461",
             "locator": {
               "end": 6240,
               "kind": "line_range",

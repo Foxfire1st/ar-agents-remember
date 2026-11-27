@@ -17,8 +17,7 @@ value at all.
 `handovers()` compiles a handover through `role_launch_preparation` from a `role_launch_context`, and the two
 cases read the compiled answer.
 
-- `test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids` checks the addresses and the absence of
-  any agent id.
+- `test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids` checks the compact inline prompt projection `{"roles":["worker","reviewer","curator"]}` (with `roleMessageArguments` omitted from the inline prompt) alongside the full sibling `roleMessageArguments` (without agent IDs) in the compiled handover artifact.
 - `test_other_roles_and_leafless_contexts_receive_no_sibling_value` keeps the value out of a non-leaf role and
   out of a context with no leaf.
 
@@ -33,4 +32,5 @@ caught.
 
 ## Evidence
 
-- The compiled handover carries the exact sibling addresses for each leaf role. [1]
+
+- The compiled handover carries the exact sibling addresses for each leaf role while the inline prompt projects compact leafSeats without roleMessageArguments. [1]

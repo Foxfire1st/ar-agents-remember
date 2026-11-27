@@ -179,15 +179,21 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
 
+
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
+
+
 
 
 - The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes. [27]
 
 
+
 - The step-local ingest detail supplies the writer outputs, the serving-build binding and ingest-report pointers, and the plan-then-write invocation. [35]
 
+
 - The Curator role and orientation operation keep the writer boundary and serving-build binding for deciding and writing memory, while the curation operation keeps the writer-output and no-Git boundaries. [36]
+
 
 
 - The Curator reads the actual written, planned or refused report state and keeps a partial or refused handover partial. [37]
@@ -214,7 +220,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The Worker implements one selected leaf's approved primary requirement under its handover. [47]
 
 
+
 - Bound curation intake and capabilities, including the writer-output and writer-ownership boundaries. [54]
+
 
 
 - Normal full curation checks include the Manager-leaf-closeout stale dependent-document `knowledge_read` and run until the raw status is ready for closeout, with coherence completed before closeout. [55]
@@ -239,13 +247,17 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The Curator reads the shared writing profile before drafting statements, guarantees or history reasons and compares meanings independently before publication. [81]
 
 
+
 - Operation sections carry role-audience markers, so a capsule keeps the stage's common text and the sections for its own role. [82]
+
 
 
 - The Worker marks only its own completed build and evidence step, never review, curation, task status or acceptance. [83]
 
 
+
 - The Curator marks only its completed task-document step; incomplete, blocked, progress or escalation reports mark nothing done. [84]
+
 
 
 - The Curator decides and writes through the starting server or its serving-build CLI; leaf source never produces leaf memory, and nothing is installed or unguarded. [85]
