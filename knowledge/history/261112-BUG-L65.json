@@ -1,0 +1,1121 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L65",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T19:45:18+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L65",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "d2a845be-d3b3-5aa0-9cb1-fe3ef4fad9b3",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T19:45:18+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L65",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "eb686de2-836f-5ca1-8940-c85b76227ad1",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "ba7c2865bda24f1c09757cb2f3803cab5fdb0b1b",
+    "verdictRef": "notes/reports/reviewer/eb686de2-836f-5ca1-8940-c85b76227ad1/role-launch/261112-BUG-L65-memory-review-verdict-r1.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4d51d2ccbaa7aaaefa8d9f97048d63b4c112b2f5",
+            "content": "sha256:caae7297568cd054f3221492bfcca1093c9af74bc31a92bc7b858bf0d91dbbb4",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "before": {
+            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
+            "content": "sha256:64a11d94602cc5607fa2c9698baaf4a1c70746bbe30a9d99524954187516ca29",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-5R1WWT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-16ARKV",
+      "items": [
+        "sha256:72d3e5384d2b747e4ed33fb3e171effdbf2164b107b87019b3e9b4575c5aa264"
+      ],
+      "reason": "Re-anchored RLZ-5R1WWT at README.md lines 192-194 after updating the Status version sentence from 3.0.8 to 3.1.1 to match mcp/pyproject.toml; invariant statement is unchanged.",
+      "revision": 4,
+      "subject": "INV-MG3HK1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "content": "sha256:748304b5926c3af0a979708ea0ba032d5a4de8621a72f28ebf75f927174154b1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:5c1c4fe02e88a332a58dd03af15b7ac52e1623d2d640a0a363097325d0f7644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1GC2VH",
+      "items": [
+        "sha256:a8ec9bbf03881bf9845f0c5e1d26ff9f250e5e9fbbb311bed188918280f64064"
+      ],
+      "reason": "Re-anchored RLZ-BKYWR9 on the packaged runtime copy of roles/reviewer.md regenerated from canonical skills/l-01-agent-lifecycles/roles/reviewer.md; invariant statement is unchanged.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2QT6N0",
+      "items": [
+        "sha256:ac607aac29d761c3899ef31ec42b16033f483509d0f8aefb55b103410e7f5441"
+      ],
+      "reason": "Updated Code Commentary to state that ArchiveAttempt.preview gates pending_creation (entered heldOpenPending or leafCreateEntered) into _preview_debt via agent-state even before leafArchive.closing is persisted.",
+      "sources": [
+        {
+          "blob": "1c3c58134df670360414b21e7a3d5b2ccd0019b9",
+          "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_archive.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-367E4W",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Updated Code Commentary with refreshed Reviewer capsule word measurements (629/473/382), repaired encountered stale evidence numbers in [8] (724 Manager, 355 coherence-judgments) and [11] (6,889 words at lines 6681-6684), and refreshed [2].",
+      "sources": [
+        {
+          "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "007aaa57c61a726cf13d1dd9e664070d698f82e3",
+            "content": "sha256:610aaac13134a318a185f20d20b5cf830fb14596ba7818ed2646751af780a299",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "before": {
+            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
+            "content": "sha256:805e27f2f746ffc03cde030f6a9917a757a4e148b7797b2c9a10849c09acb466",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "id": "PRF-3HVH1G"
+        },
+        {
+          "after": {
+            "blob": "007aaa57c61a726cf13d1dd9e664070d698f82e3",
+            "content": "sha256:1c59819d9dedc3acbf62dd7ee816514d9a8b7f85425f83a55f01013b6b9b0d24",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "before": {
+            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
+            "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "id": "PRF-FH8XQN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3V61ST",
+      "items": [
+        "sha256:0638d5e391a2a1c98cd11ceaa3dc9231c00c11ef683efacecdf0348ba1cf2a14"
+      ],
+      "reason": "Re-anchored base-stale proof entries PRF-3HVH1G and PRF-FH8XQN in mcp/tests/test_role_start_set.py after BUG-R65@v1 Item 1 updated consolidation-set deferred-held assertions in the same file; invariant statement is unchanged.",
+      "revision": 3,
+      "subject": "INV-RTQCXN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-40QS92",
+      "items": [
+        "sha256:b24d41981385a2e1924f8faefb79096b671900edf05d395cf6f35055ed5755b9"
+      ],
+      "reason": "Reviewed mcp/overview.md; the 3.1.1 version bump, ArchiveAttempt.preview pending_creation gate fix, and regenerated skill mirror preserve all package-level contracts unchanged.",
+      "sources": [
+        {
+          "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+          "path": "mcp/pyproject.toml"
+        },
+        {
+          "blob": "1c3c58134df670360414b21e7a3d5b2ccd0019b9",
+          "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+        },
+        {
+          "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "713d6f2e26ba0dc8f0446bc723f4ce7e80b43893",
+          "path": "mcp/uv.lock"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4FEVET",
+      "items": [
+        "sha256:e2fd6554c7848563004e6e367823881ffa129bca98bcb1f793cd69c1fbbfd7a1"
+      ],
+      "reason": "Reviewed kernel/primitives/overview.md; its version-agnostic description of version.py's metadata-or-source fallback resolver remains accurate after bumping the literal fallback to 3.1.1.",
+      "sources": [
+        {
+          "blob": "75666896c9253c112c36592690f5521a934ca963",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "content": "sha256:6cc33ab00859e2e907ba7a5f362bf3ee0b4b38495b055e90e4fc9ca1c24de212",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5AWFKT",
+      "items": [
+        "sha256:266b831281060ded470c9b22252e5e85b61131abd998ce5dd65a2e8db1bb5438"
+      ],
+      "reason": "Re-anchored RLZ-9J6CEC on the packaged capsule-budgets-current.json copy regenerated byte-for-byte from canonical skills/ by scripts/renew-instructions.py; invariant statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5ENJ9G",
+      "items": [
+        "sha256:2b2efedfa672291acf3b2737816a28f74c2ccb40578f77176cc7d8278ee89845"
+      ],
+      "reason": "Reviewed skills/l-01-agent-lifecycles/overview.md and refreshed its roles/reviewer.md:21 reference anchor [9]; route architecture and ceiling policies are unchanged.",
+      "sources": [
+        {
+          "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5de32bb2dfdfbb3173057d60059aab0507791cf0",
+            "content": "sha256:327c6af6dd3e470ff3940a88c7a3b2f7ea33108d09d10b6d9d929ec22d8880a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClosedHeldStoreTests.test_public_send_refuses_its_generation_after_same_id_restart"
+            },
+            "path": "mcp/tests/test_closed_held_store.py"
+          },
+          "before": {
+            "blob": "beb2c2e9c04e06f72ac76f6427e86e81f0d9fd3c",
+            "content": "sha256:87737eef5a109d35bd8abcd1dceebde76f1e70b76ed8fed616ed744521c1c35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClosedHeldStoreTests.test_public_send_refuses_its_generation_after_same_id_restart"
+            },
+            "path": "mcp/tests/test_closed_held_store.py"
+          },
+          "id": "PRF-VW6R12"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6CJG9G",
+      "items": [
+        "sha256:a611503bbcc21aca1947e599c5bd4d52a718e4c250e2d595246d1d798992a2be"
+      ],
+      "reason": "Re-anchored PRF-VW6R12 (ClosedHeldStoreTests.test_public_send_refuses_its_generation_after_same_id_restart) after opening generation 0 of the deferred held Reviewer seat before host loss and same-ID restart into generation 1; invariant statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-M7BT2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9HF8XG",
+      "items": [
+        "sha256:780545b5bb02aac68a6c511d1b9812c1a58de3839de19322485c30fa464ef198"
+      ],
+      "reason": "Updated committed fallback version prose from 3.0.8 to 3.1.1 and refreshed _resolve_server_version reference anchors [1]-[2].",
+      "sources": [
+        {
+          "blob": "75666896c9253c112c36592690f5521a934ca963",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/version.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "content": "sha256:222c8c6b50f664fa3ca0e661421f36c0b90387bc0f6638811b39ba7b4c2da639",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:98280725f4f215ac7718af24c6a725b3b4181a0d105096511ba98ba95066d529",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PC6PG7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A2ZASC",
+      "items": [
+        "sha256:5595495f7c8ca8af02fe10e9cb990dc9b5d0d9e009fb9eebc3bbe9e6e97735bf"
+      ],
+      "reason": "Re-anchored RLZ-PC6PG7 at skills/l-01-agent-lifecycles/roles/reviewer.md lines 15-21 after restoring the inline complete-diff phrase at line 21; per-call canonical task-scope brief intake is unchanged.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-GV3NYM",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ790A",
+          "revision": 1
+        },
+        {
+          "id": "INV-J8FGWF",
+          "revision": 1
+        },
+        {
+          "id": "INV-M7BT2R",
+          "revision": 1
+        },
+        {
+          "id": "INV-R850AZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-AWH4YA",
+      "items": [
+        "sha256:cce0576bc7921240af07639c3d816efcc8284e6a451be0028cf08c2c09b06f95"
+      ],
+      "reason": "Examined all 6 members; only INV-M7BT2R's integration proof in test_closed_held_store.py was updated to open generation 0 under deferred held seats before testing same-ID restart refusal, leaving the family guarantee and routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-TE2628"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0249f35bb35bd240905a01fb88ffe5d54b315395",
+            "content": "sha256:5b2066d6bc2f1dfbd74aec925a4e86a3effaedd2693129248dc75094cd23c83b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeferredHeldSeatArchiveTests.test_entered_deferred_held_open_settles_through_host_and_reports_debt"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_archive.py"
+          },
+          "before": {
+            "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+            "content": "sha256:7ab08b6c1476f8cd0a48c9edf8c575f1f344f2b196874530ca853a23766987ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeferredHeldSeatArchiveTests.test_entered_deferred_held_open_settles_through_host_and_reports_debt"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_archive.py"
+          },
+          "id": "PRF-09DPNB"
+        },
+        {
+          "after": {
+            "blob": "1c3c58134df670360414b21e7a3d5b2ccd0019b9",
+            "content": "sha256:5e6cf7cecf5be226c0c8f9cc7109317980957718b2b21f229e62d4d434bc8f6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArchiveAttempt.preview"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:1883b00cf099defb75936d835aab68c5fc3e7137c24c0798d46f9a09d015f248",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArchiveAttempt.preview"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-ZRS4XM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BJFWZF",
+      "items": [
+        "sha256:c9498d50bcd1890c5cc8543174ffc0d9542a599fc5b2a16b541a60527f4504b5"
+      ],
+      "reason": "Re-anchored RLZ-ZRS4XM (ArchiveAttempt.preview, updating rationale for the added pending_creation debt gate) and PRF-09DPNB (test_entered_deferred_held_open_settles_through_host_and_reports_debt verifying dry-run agent-state debt check and applied retry-once sequence); invariant statement is unchanged.",
+      "revision": 2,
+      "subject": "INV-VPXD65"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4CJ7H0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 2
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 2
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 2
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 2
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-HBMPXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 3
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 2
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-C1SAZD",
+      "items": [
+        "sha256:b6ec190da2cecd1cb3b1ed8e06b6ce3c1b5a1eb7369e526747e903c4f5e410e6"
+      ],
+      "reason": "Examined all 12 members; INV-VPXD65's ArchiveAttempt.preview adds or pending_creation so dry-run preview enforces the existing family guarantee for entered creations and held-seat opens without altering the family guarantee or routes.",
+      "revision": 3,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DQC2W6",
+      "items": [
+        "sha256:7f8527c2bad3ed3c7843c2845ef37501a4be4965c10c71de8fbafd53eae209d0"
+      ],
+      "reason": "Updated card prose and evidence [1] to document dry-run agent-state preview debt blocking and the applied retry-once sequence (agent-archive, agent-state, agent-archive) for heldOpenPending=True.",
+      "sources": [
+        {
+          "blob": "0249f35bb35bd240905a01fb88ffe5d54b315395",
+          "path": "mcp/tests/test_deferred_held_seat_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_deferred_held_seat_archive.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DV43NZ",
+      "items": [
+        "sha256:77445278cd0fccc5ff6473999f84492416be6c636369cf2002926a98e58742e5"
+      ],
+      "reason": "Reviewed skills/l-01-agent-lifecycles/roles/overview.md and refreshed its roles/reviewer.md reference anchors [2], [13], [23], [35]; no role duty or boundary changed.",
+      "sources": [
+        {
+          "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "713d6f2e26ba0dc8f0446bc723f4ce7e80b43893",
+            "content": "sha256:9cc254c2c180a67230f54577ced710a53ffd69bb3375860411880596e8c76af3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/uv.lock"
+          },
+          "before": {
+            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+            "content": "sha256:5bf2c1bb5c49e302a051084439c001f17b8800fea8c00695cd6baa73cb485c78",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-XXV97Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G70GNP",
+      "items": [
+        "sha256:67ee90c831384151eb21bab77a3877b1856fe8fb8a98db389eea655cba1d83fe"
+      ],
+      "reason": "Re-anchored RLZ-XXV97Y on mcp/uv.lock after updating only the editable agents-remember-mcp package version to 3.1.1; the declared mcp>=1.30.0,<2 floor and resolved dependency graph are unchanged.",
+      "revision": 1,
+      "subject": "INV-DY0898"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GTKTX3",
+      "items": [
+        "sha256:6bbd2ef5779c01804a0ccec578c9b134c13eb98375686ae5aac834a579b7547a",
+        "sha256:867ba9be58bcaebe00f2816fe8dcf8f02cacdee1a42fdef7a3c66982f0677420",
+        "sha256:c572a6e418af1883c4becea2b6d8c02d0dbcdeedd8ffbbbf064e4deef820a185"
+      ],
+      "reason": "Updated card Contract prose to document the consolidation-path Reviewer deferred held seat assertions (hostAgentExists=false, execution={}, absent from host agents until opened on first addressed message; no new invariant).",
+      "sources": [
+        {
+          "blob": "007aaa57c61a726cf13d1dd9e664070d698f82e3",
+          "path": "mcp/tests/test_role_start_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_start_set.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HV8AYZ",
+      "items": [
+        "sha256:b037e62d4a75ba33350adc80019815c62116948aaccdb5a8a94709273169a4f3"
+      ],
+      "reason": "Updated evidence lines [19]-[21] from 3.0.8 to 3.1.1 and refreshed version-file reference anchors to match candidate tree 8754e870900b.",
+      "sources": [
+        {
+          "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KT30H6",
+      "items": [
+        "sha256:e5119cde1c9c8f7b238477a732add86920ffa2543702b481bbaaa405c7f5edb0"
+      ],
+      "reason": "Reviewed mcp/tests/overview.md; updates to five existing test modules (deferred held seats, replay patch target, preview/retry assertions, HERMES_HOME isolation) add no module and change no lane or catalog contract.",
+      "sources": [
+        {
+          "blob": "e89caa7d7307d17a7e3ea4536e5bf5f654a68cfa",
+          "path": "mcp/tests/test_agent_eval_trial_setup.py"
+        },
+        {
+          "blob": "be2177edaed32294d5560a6e19b8639f64e27315",
+          "path": "mcp/tests/test_capsule_replay_integrity.py"
+        },
+        {
+          "blob": "5de32bb2dfdfbb3173057d60059aab0507791cf0",
+          "path": "mcp/tests/test_closed_held_store.py"
+        },
+        {
+          "blob": "0249f35bb35bd240905a01fb88ffe5d54b315395",
+          "path": "mcp/tests/test_deferred_held_seat_archive.py"
+        },
+        {
+          "blob": "007aaa57c61a726cf13d1dd9e664070d698f82e3",
+          "path": "mcp/tests/test_role_start_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "content": "sha256:9e9a0cdabe68ffb2955f988e8eb7181b67aab60c03995816705e30a45a61fb66",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-9FYETT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M963Z7",
+      "items": [
+        "sha256:594ed592b1687edf889b4c399b07ea029ec5f14e1e917905cee07e25267bdc88"
+      ],
+      "reason": "Re-anchored RLZ-9FYETT at skills/l-01-agent-lifecycles/roles/reviewer.md line 21 after restoring the exact inline complete-diff phrase 'inspect all changed/unattributed files'; brief-assembly rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MQ6SFB",
+      "items": [
+        "sha256:4a2c65e253009ac33c40d3de2b4292c190e02bf6e05e2a3147285048e5568dc5"
+      ],
+      "reason": "Confirmed README.md at candidate tree 8754e870900b after updating the Status version sentence from 3.0.8 to 3.1.1 under BUG-R65@v1 Item 4 (D1069) to match mcp/pyproject.toml, version.py, and mcp/uv.lock; all 14 stands_on links and document prose remain accurate.",
+      "revision": 21,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-8F4C0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-M36NT5",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        },
+        {
+          "id": "INV-XXG2W0",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZYKN6P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NA2MEW",
+      "items": [
+        "sha256:e6763c4640c9e8257c7938aef9c1d9c8acddcdfc007b5a5f88523755ce57b0e3"
+      ],
+      "reason": "Examined all 7 members; only INV-47NR7E was touched via roles/reviewer.md:21 wording restoration with no change to brief assembly, saved freshness, or start notices, so the family guarantee and routes are unchanged.",
+      "revision": 2,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NC4A9S",
+      "items": [
+        "sha256:1c31bdddb8a29ea95ed7c7a7e741610456baea6c3bb237aa7a9dea4baebd2214"
+      ],
+      "reason": "Updated card Code Commentary to document TrialSetupTests.setUp HERMES_HOME isolation to self.root / 'source-home', resolve_hermes_auxiliary default stub with addCleanup, and the sourceHome assertion.",
+      "sources": [
+        {
+          "blob": "e89caa7d7307d17a7e3ea4536e5bf5f654a68cfa",
+          "path": "mcp/tests/test_agent_eval_trial_setup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_agent_eval_trial_setup.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "content": "sha256:748304b5926c3af0a979708ea0ba032d5a4de8621a72f28ebf75f927174154b1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:5c1c4fe02e88a332a58dd03af15b7ac52e1623d2d640a0a363097325d0f7644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-1MJ3JN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NDTRV2",
+      "items": [
+        "sha256:77b446b1508741923e2d8540bd35364379d0cfd8392a96f00cf0923421c1b627"
+      ],
+      "reason": "Re-anchored RLZ-1MJ3JN on skills/l-01-agent-lifecycles/roles/reviewer.md after restoring the inline complete-diff phrase at line 21; all tool-naming pointers remain intact and invariant statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5BPF6M",
+          "revision": 1
+        },
+        {
+          "id": "INV-8SBKWP",
+          "revision": 1
+        },
+        {
+          "id": "INV-KVQ91Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEF33P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NM7YHB",
+      "items": [
+        "sha256:c13b54ee7c700fdaaac1eb72af7532d8b1171043ff610428b71b854aa98ca456"
+      ],
+      "reason": "Examined all 4 members; only INV-5BPF6M was touched via roles/reviewer.md:21 wording restoration with no change to review-round versus final-check separation, so the family guarantee and routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-CZZ8N4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NNCQZS",
+      "items": [
+        "sha256:003b1e047740fe975d3a2a161f67cc4bd7632ee0ab811969c7a1f594449dd991",
+        "sha256:0f66e5db8ec23eeb5c8143dc01b1a21ee49e701b550914e3798d51323b9e830b",
+        "sha256:3fbe51b5eb3918fd13a622263d846f035f6b39249c6d7ca0b96d3e97d73f07ea",
+        "sha256:8a544ddf571b6b816bd065553d7193735c19c7921e01b88d16ec17dceef5c569"
+      ],
+      "reason": "Updated card prose and refreshed whole-file test references to document awaiting the asynchronously fetched 'Speed override' control via findByLabelText across the three Vitest cases (no new invariant).",
+      "sources": [
+        {
+          "blob": "42653da95329396ef394502ce6db7d49dc244643",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P7R3QK",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "Updated Code Commentary to record the restored exact inline complete-diff phrase 'inspect all changed/unattributed files' at line 21 and refreshed line-21 reference anchors [1], [3], [7], [12], [14], [15].",
+      "sources": [
+        {
+          "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-PJC14B",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined both members; INV-NNQR91 was touched only by regenerating the packaged roles/reviewer.md copy from canonical skills/ via scripts/renew-instructions.py, preserving the family guarantee and routes unchanged.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "content": "sha256:6cc33ab00859e2e907ba7a5f362bf3ee0b4b38495b055e90e4fc9ca1c24de212",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RHSWHM",
+      "items": [
+        "sha256:16e3aee561b219314bd75a8f0278aa1b1d56a07a368166182b9ec8d7234b4579"
+      ],
+      "reason": "Re-anchored RLZ-RHRQZQ at skills/l-01-agent-lifecycles/capsule-budgets-current.json after scripts/renew-instructions.py refreshed Reviewer word measurements (+2 words) and hashes without changing authored token ceilings.",
+      "revision": 3,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "713d6f2e26ba0dc8f0446bc723f4ce7e80b43893",
+            "content": "sha256:a9e5a6f6494328d7ccae71bf060ee488d1557ff8578092f9dae9981487fb2942",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "before": {
+            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+            "content": "sha256:2706c5cf78f6bb225e4b439ee08b7a68851f562687540b46ea40092947c4a10d",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-7M3P2R"
+        },
+        {
+          "after": {
+            "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+            "content": "sha256:47ac738df8028f046cfa20dd8506922a485a057f296d766241fe385c865deae1",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "before": {
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "id": "RLZ-A4TZZ0"
+        },
+        {
+          "after": {
+            "blob": "75666896c9253c112c36592690f5521a934ca963",
+            "content": "sha256:ba802923fa3dd7700967d5eb644f020887841d152bb94d81496cb7f7d1762b26",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "before": {
+            "blob": "3a90a71f3c01e73e7f0442a89cd5c26d252f90e7",
+            "content": "sha256:2852aaa52c131813c4f5e13947f0232eef0cc8b76d9b415000b00263e4687800",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "id": "RLZ-YGKGJR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SW484M",
+      "items": [
+        "sha256:76e0e7d259d5f2b6e1c1b67e4abde94d9ad0f90627d0f0b395e0c1315c29b33b"
+      ],
+      "reason": "Re-anchored RLZ-A4TZZ0 (mcp/pyproject.toml), RLZ-YGKGJR (version.py::_resolve_server_version), and RLZ-7M3P2R (mcp/uv.lock) after bumping the package version uniformly from 3.0.8 to 3.1.1 under BUG-R65@v1 Item 4 (D1069); invariant statement is unchanged.",
+      "revision": 4,
+      "subject": "INV-BQFZCR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VDG7X4",
+      "items": [
+        "sha256:73cce7d3dc02e20375c6845691853e3ca316ad2a3187793a6952ce81912f7ac5"
+      ],
+      "reason": "Reviewed dashboard/src/overview.md; the async findByLabelText fix in RoleLauncher.row.test.tsx is test-local and changes no dashboard architecture, transport, or route contract.",
+      "sources": [
+        {
+          "blob": "42653da95329396ef394502ce6db7d49dc244643",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0b4b1c3fb40899b61c92c9f49ae2aa0f719f97cf",
+            "content": "sha256:6cc33ab00859e2e907ba7a5f362bf3ee0b4b38495b055e90e4fc9ca1c24de212",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VWJX2C",
+      "items": [
+        "sha256:6bf338c48489741c62deb85db957ca066addc5021df38c33dee6b8485b708833"
+      ],
+      "reason": "Re-anchored RLZ-9FX5WR on skills/l-01-agent-lifecycles/capsule-budgets-current.json after scripts/renew-instructions.py refreshed Reviewer word measurements and source hashes within COMPILED_CAPSULE_TOKEN_CEILINGS; invariant statement is unchanged.",
+      "revision": 7,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e89caa7d7307d17a7e3ea4536e5bf5f654a68cfa",
+            "content": "sha256:061e3ae7d6fa5c29755b03fc1598e57bf31a953e4d45c997536540b41da0737f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_agent_eval_trial_setup.py"
+          },
+          "before": {
+            "blob": "0f8a8a18affbb6396c753c130283ff2e7a783120",
+            "content": "sha256:5d4a620d83a5420f9ecacf9567e55eaaf3ab157339b4cbaf7b4245f38c053aab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_agent_eval_trial_setup.py"
+          },
+          "id": "RLZ-7C5A4Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W71HD5",
+      "items": [
+        "sha256:2fec12b3c9a35f1ae708ecd231295fb1d08b24a60f3ea51a7d26315c39dc4e1c"
+      ],
+      "reason": "Re-anchored RLZ-7C5A4Y on mcp/tests/test_agent_eval_trial_setup.py after TrialSetupTests.setUp isolated HERMES_HOME to self.root / 'source-home' and stubbed resolve_hermes_auxiliary by default (preserving per-test overrides and HermesDestinationTests); invariant statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-A8FVPH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z1YV85",
+      "items": [
+        "sha256:4f534963340994e73c54bfdf4f401984eb5c8967bbf4a8facaf4978dcef4d2d6",
+        "sha256:9da3ce32b5ae0f9cb11198d2b1c913a4efdf808172fdb315838396f77e306e83",
+        "sha256:a2e8dbc204a2cd0842c202b462086d8b2c3c1e64c313d977c60c7c561b9c363f"
+      ],
+      "reason": "Updated card prose and refreshed symbol reference [6] to document monkeypatching role_held_opening.run_launch_call in test_held_opening_refuses_changed_details_and_preserves_waiting_messages (no new invariant).",
+      "sources": [
+        {
+          "blob": "be2177edaed32294d5560a6e19b8639f64e27315",
+          "path": "mcp/tests/test_capsule_replay_integrity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_capsule_replay_integrity.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z8EQ3M",
+      "items": [
+        "sha256:6d686638b3be62faf57341cc7688ff725a2449647bfd477228e76a4c7354f391"
+      ],
+      "reason": "Updated card prose and refreshed shifted test anchors [3]-[4] to document opening generation 0 of the deferred held Reviewer seat before host loss and same-ID restart into generation 1.",
+      "sources": [
+        {
+          "blob": "5de32bb2dfdfbb3173057d60059aab0507791cf0",
+          "path": "mcp/tests/test_closed_held_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_closed_held_store.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "content": "sha256:9e9a0cdabe68ffb2955f988e8eb7181b67aab60c03995816705e30a45a61fb66",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-SQ8RXD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZAPZ4E",
+      "items": [
+        "sha256:2d8c7c4c5fb917eb4cca962632bc36c5eb66383229092542d3eef9e162da4eba"
+      ],
+      "reason": "Re-anchored RLZ-SQ8RXD at skills/l-01-agent-lifecycles/roles/reviewer.md line 21 after restoring the inline complete-diff wording; focused-tests versus final-checks rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-5BPF6M"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:9afa5f8f745d0cab053752eb61bea419476ad3a8363b6df8e4d97342bf4519fd",
+      "record": "DPD-CZBR1Q",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T19:27:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L65",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d2a845be-d3b3-5aa0-9cb1-fe3ef4fad9b3",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

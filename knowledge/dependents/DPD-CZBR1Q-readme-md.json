@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "110900be0fc26641af05f73825a21d58ec55d28d",
+    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
     "role": "curator",
-    "statement": "Audited README.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Merged 261112-BUG-L65 (3.1.1) and 261125-DEP-L3 (DEP-R03@v2 mcp>=2.3.0,<3) on synced code tree 110900be0fc2 (commit 11cd92e38425): README.md Status section states package version 3.1.1 matching mcp/pyproject.toml, version.py, and mcp/uv.lock, and documented behavior, tool surfaces, links, install steps, and stability-promise text remain accurate.",
     "task": "261125-DEP-L3",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "README.md",
   "id": "DPD-CZBR1Q",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+      "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -92,14 +92,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-27T20:59:54+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }
