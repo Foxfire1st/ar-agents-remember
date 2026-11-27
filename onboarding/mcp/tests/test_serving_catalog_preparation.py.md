@@ -18,4 +18,4 @@ The obligation above is the whole of what this file must keep true; the route ac
 
 ## Evidence
 
-- Cold launcher discovery runs beside serving startup and drains with that lifetime [1]
+- Cold launcher discovery runs beside serving startup and drains with that lifetime Anchor: `` `CatalogPreparationLifetimeTests` `` [1]

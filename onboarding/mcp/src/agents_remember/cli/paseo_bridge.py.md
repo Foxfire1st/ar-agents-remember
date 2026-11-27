@@ -24,6 +24,23 @@ and the supplied timeout minus a 100 ms margin, so a caller with a shorter remai
 the JavaScript side too. The archive service uses this to keep its per-target call inside the
 closing archive budget.
 
+`bridge_call` checks `raise_if_read_cancelled()` before spawning and delegates execution to
+`_run_bridge`: when `read_cancellation()` is `None`, it keeps the `subprocess.run` path; when a
+cancellation token is bound, it launches `subprocess.Popen(..., start_new_session=True)`, drains
+stdout/stderr via short-timeout `communicate` polling, and on cancellation kills the child process
+group (`os.killpg(..., SIGKILL)`), reaps it (`process.wait()`), and raises `ReadCancelled`.
+
+## Operation-scoped daemon configuration
+
+`paseo_catalog_scope` defines the configured runtime tuple `(install_prefix, home, listen, version)`.
+`launcher_daemon_configuration` binds a per-operation `ContextVar` (`_OPERATION_DAEMON_CONFIG`)
+cleared on exit, populated by `record_operation_daemon_config` from a metadata catalog reply's
+`daemonConfig` / `daemonConfigError` (with its original `readAt`). Within that scope,
+`operation_daemon_config` and `operation_role_profiles` supply the recorded configuration or
+propagate its error without spawning redundant `daemon-config` or `role-profiles` bridge processes;
+`daemon_configuration` reuses the recorded answer or raises `PaseoRuntimeFailure(DAEMON_CONFIG_UNVERIFIED)`
+directly before falling back to a standalone bridge call outside the scope.
+
 ## Send outcome codes and the timeline read
 
 `SEND_OUTCOME_UNKNOWN` (`paseo_send_outcome_unknown`) is the code `agent-send` reports when the connection is lost while the message was being sent: the host may have taken it. The role-message tool holds the message with that reason rather than reporting a delivery or a plain refusal. `agent-has-message` is the read behind the reconciliation before a resend: it answers whether the recipient's timeline already carries a client message id, and a timeline the runtime cannot read is the named failure `paseo_timeline_unreadable`.

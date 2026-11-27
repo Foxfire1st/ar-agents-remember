@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across cli/held_reset_adoption.py, cli/held_reset_delivery.py, and cli/paseo_role_tools.py, and guarded by aged-wait adoption and live-entry precedence proofs in mcp/tests/test_held_reset_delivery.py."
+  },
+  "applicability": "Dashboard startup whenever live launch receipts reference held stores containing waiting rows with non-null limitedUntil timestamps.",
+  "conditions": [
+    "adopt_held_resets walks all live receipt_roots in bounded 32-path chunks, selects the earliest limitedUntil from complete read_waiting_rows results, and calls HeldResetIndex.enroll.",
+    "Enrollment uses ON CONFLICT(agent) DO NOTHING so live scheduled reset generations always win over startup adoption.",
+    "Aged waits that have left the 24-hour / 512-entry held-receipt queue are still adopted and delivered at reset."
+  ],
+  "exclusions": [
+    "Unreadable receipts, mismatched store endpoints, and incomplete waiting-row reads are skipped without aborting startup adoption."
+  ],
+  "id": "INV-GV3950",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L32-W1-freeze.md#bug-r32v1; mcp/tests/test_held_reset_delivery.py (4 passed)"
+      ],
+      "path": "L32-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R32@v1 rule 2 enrollment at start",
+    "leaf": "261112-BUG-L32",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard start enrolls each recipient's existing provider-limited holds into the reset index before the next due pass.",
+  "supersedes": [],
+  "title": "Startup adoption of saved provider-limited held waits",
+  "writer": {
+    "at": "2026-11-27T21:15:46+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
+  }
+}

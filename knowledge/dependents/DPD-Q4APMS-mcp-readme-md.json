@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified mcp/README.md against frozen tree 58741cf1: MCP package README remains accurate after KNO-R14@v1 renewed role/operation/template instructions and packaged copies.",
-    "task": "261112-KNO-L14",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: mcp/README.md remains accurate against merged mcp/pyproject.toml, cli/dashboard.py, and docs/reference/mcp-tools.md.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 31,
+  "revision": 32,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -56,20 +56,20 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+      "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

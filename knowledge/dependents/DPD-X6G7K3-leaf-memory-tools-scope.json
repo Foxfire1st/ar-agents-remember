@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/reference/mcp-tools.md against frozen tree 58741cf1: line 203 and lines 217-247 now document all eleven knowledge_read views, selectors, auto-pairing, and text-bearing responses while narrowing pre-existing KNO-R07 deferral DFR-XP94XS to line 31 (4,000-token ceiling).",
-    "task": "261112-KNO-L14",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: merged docs/reference/mcp-tools.md carries both KNO-R14@v1 eleven knowledge_read views (line 203, lines 217-247) and BUG-R32@v1 16-worker reset-scheduler prose (lines 822-829); retains narrowed deferral DFR-6EWRE4 on line 31 (4,000-token ceiling) bound to merged blob without lifting it.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "deferrals": [
     {
@@ -15,11 +15,11 @@
       },
       "createdAt": "2026-11-27T17:29:51.671043Z",
       "createdByLeaf": "261112-KNO-L14",
-      "fileBlob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+      "fileBlob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
       "id": "DFR-6EWRE4",
       "owner": "261112-KNO",
       "passage": "docs/reference/mcp-tools.md line 31 (4,000-token higher bound ceiling)",
-      "reason": "Narrowed and re-deferred from DFR-XP94XS onto KNO-L14 frozen blob of docs/reference/mcp-tools.md: KNO-R14@v1 updated line 203 and lines 217-247 to document all eleven knowledge_read views, auto-pairing, and text-bearing replies, while line 31 still states a 4,000-token bound."
+      "reason": "Narrowed from DFR-XP94XS and preserved across crossing-8 onto merged blob of docs/reference/mcp-tools.md (combining KNO-R14@v1 lines 203 & 217-247 with BUG-R32@v1 lines 822-829, superseding DFR-9JY22K): line 31 still states a 4,000-token higher bound ceiling."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 35,
+  "revision": 36,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+      "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -438,14 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

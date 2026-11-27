@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+        "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
         "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+        "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
         "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
             "content": "sha256:03d6e404863e2554d1977f185419a47feb9f7a9c7251e7d44c95af016fb54d59",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
             "content": "sha256:63dddee13a61d4ea975d53693f4edee287ca9bf77ca569e1537c0d953456ba28",
             "locator": {
               "kind": "symbol",
@@ -76,11 +76,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
-            "content": "sha256:63ac47dda7175ad3a8253dc32b048169d14e93754e83097e5654afe4424a4502",
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
+            "content": "sha256:e3a7f301f439509504c989f695073e5a4891a76e5b80bac684b6ee7eef004e8c",
             "locator": {
               "kind": "symbol",
               "name": "useRoleChatRunActions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
+            "content": "sha256:985c79776aae2025358e14e81782b39fb2ab64bc091359b934d6fcc0b3c3b46e",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 215
             }
           },
           "kind": "code"
@@ -92,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
             "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
             "locator": {
               "kind": "symbol",

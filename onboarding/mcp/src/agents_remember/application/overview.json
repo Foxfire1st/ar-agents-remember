@@ -2340,7 +2340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -4688,7 +4688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -7031,7 +7031,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "blob": "1316a26cfc00ccbab56538b3777d3221ccd9bcf8",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -7043,7 +7043,7 @@
         },
         {
           "anchor": {
-            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -7697,11 +7697,11 @@
       ]
     },
     "480": {
-      "note": "**Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance.\n\nAnchor: `_launch_prepared_role_session`, `dispatch_leaf_set`",
+      "note": "**Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. Anchor: `_launch_prepared_role_session`, `dispatch_leaf_set`",
       "targets": [
         {
           "anchor": {
-            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
+            "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
             "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
             "locator": {
               "kind": "symbol",
@@ -7713,7 +7713,7 @@
         },
         {
           "anchor": {
-            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
+            "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
             "content": "sha256:e231c66b302c0c4466c9f205148c0193f4ae30fbe02a06fe78e6e0d506ed72b0",
             "locator": {
               "kind": "symbol",
@@ -7751,10 +7751,10 @@
         },
         {
           "anchor": {
-            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
-            "content": "sha256:79c83740ddd26484bc1b66cce2523483da62a1442ab8f6f28517fd33102f2964",
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:180588d05a4adb7c4b6dfb122c1b37e8fc06ae4ae95b13cda5e780c6e51c95b3",
             "locator": {
-              "end": 33,
+              "end": 31,
               "kind": "line_range",
               "start": 1
             },
@@ -7903,7 +7903,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+            "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
             "content": "sha256:7e87864407ba990037b6b009e45c52085bdd3767d360afd4516af3be93421340",
             "locator": {
               "kind": "symbol",

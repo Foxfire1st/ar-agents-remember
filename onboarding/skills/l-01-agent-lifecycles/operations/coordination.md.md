@@ -61,6 +61,7 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
 
 

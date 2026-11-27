@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "95234971624e9cfbae7d009db14d7e6280a2ddf5",
-    "commit": "9f1b832ca3c8490833c4d15edd46bc5515cbba54",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/architecture.md against post-KNO-L10 synced frozen tree 95234971 (base 9f1b832ca): lines 254-259 accurately document knowledge_read impact, search, records, and compact dependent views alongside read_ar_files briefs while preserving KNO-L10 extents.py::definition_scope architectural contracts.",
-    "task": "261112-KNO-L14",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L14/L10 and 261112-BUG-L32 onto a96cc14d2: docs/architecture.md accurately documents knowledge_read views, read_ar_files briefs, extents.py::definition_scope, and serving ResetDeliveryPorts boundaries.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "document": "docs/architecture.md",
   "id": "DPD-86HJGF",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -254,8 +254,8 @@
     },
     {
       "anchor": {
-        "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
-        "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+        "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+        "content": "sha256:7cf565448e269fb9fb9c3ef6ae61caaff0bce1f6f75cdc957996dcd37d13a259",
         "locator": {
           "kind": "symbol",
           "name": "serving_collaborators"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:56:49+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

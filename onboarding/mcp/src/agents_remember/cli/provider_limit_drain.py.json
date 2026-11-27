@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
-        "content": "sha256:5b0bc6c3a602ea384a4e0aeda8ec6c383b9c56e2946fcf8eae3f4b12a7c9e436",
+        "blob": "d04d4923c6ff209775dfc8e580a922da21fdcba2",
+        "content": "sha256:62d01c4e3b8b9be89dbed2b1ddb48d0e6ed39b877e10006ffdfabf528b482c26",
         "locator": {
           "kind": "symbol",
           "name": "pause_for_provider_limit"
@@ -16,7 +16,7 @@
         "handoffEntry": "L25-M1-F3 drain attribution",
         "leaf": "261112-BUG-L25"
       },
-      "rationale": "This gate keeps native held messages waiting during an active provider limit, checks an ended stamp once and resolves confirmed archive or absence as undelivered. When the limit clears it returns to the held-message caller for ordinary readiness and delivery.",
+      "rationale": "This gate keeps native held messages waiting during an active provider limit, checks ended stamps once for confirmed archive or absence, and publishes known reset timestamps to HeldResetIndex (releasing the claim on write error) so the independent reset scheduler wakes at reset.",
       "role": "enforcement"
     }
   ],
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
-            "content": "sha256:5b0bc6c3a602ea384a4e0aeda8ec6c383b9c56e2946fcf8eae3f4b12a7c9e436",
+            "blob": "d04d4923c6ff209775dfc8e580a922da21fdcba2",
+            "content": "sha256:62d01c4e3b8b9be89dbed2b1ddb48d0e6ed39b877e10006ffdfabf528b482c26",
             "locator": {
               "kind": "symbol",
               "name": "pause_for_provider_limit"

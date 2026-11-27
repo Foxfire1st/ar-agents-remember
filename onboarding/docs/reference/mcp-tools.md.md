@@ -14,6 +14,8 @@ The worktree section tells a caller whose client stopped waiting for a sync to l
 
 The knowledge section documents all 11 `knowledge_read` views (`source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, `consolidation_proposal`), automatic code-tree pairing (`contractPath`/`repo_id`/`memoryRoot`, overridden by `repositoryRoot`/`codeTreeId`), text IDs (`recordId`/`recordIds`), text-bearing `records`/`impact`/`search` responses, and `dependent(compact=true)` closeout triage alongside full moved-link rows, while keeping retrieved claims subordinate to reading source code and running tests.
 
+The `role_message` held-delivery section documents that provider-limited holds with a known reset time publish to the durable reset index and wake through an independent 16-worker reset scheduler delivering within roughly 30 seconds for up to roughly 300 due recipients (and at roughly 11 recipients per second beyond that host-bridge ceiling), separate from the 512-entry / 24-hour held-receipt queue.
+
 ## Relationships
 
 Both directions link the `Tool log` entry of `docs/concepts.md`, which says how a cancelled request is logged.

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/guides/review-page-and-explainer.md against frozen tree 58741cf1: review-page and Explainer guide remains accurate after KNO-R14@v1 updated Stage 1 of review-presenter.md.",
-    "task": "261112-KNO-L14",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L34 onto a96cc14d2: docs/guides/review-page-and-explainer.md remains accurate with updated review-presenter.md, role_launch_routes.py, and paseo_catalog.py.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "document": "docs/guides/review-page-and-explainer.md",
   "id": "DPD-PMZ21Z",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -251,12 +251,12 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
+      "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

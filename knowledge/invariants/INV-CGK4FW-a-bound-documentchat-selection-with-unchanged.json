@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents unrelated SSE task deltas from aborting and refiring /saved-catalog, /options, and /result on every task event while DocumentChat is open; proved by DocumentChat.test.tsx."
+  },
+  "applicability": "Operations right-rail bound DocumentChat launcher while SSE task deltas update the task list.",
+  "conditions": [
+    "The bound selection's role and canonical document references are unchanged.",
+    "useRoleChatOptionsLoader keys its effect on Boolean(boundSelection) rather than boundSelection object identity."
+  ],
+  "exclusions": [
+    "Changing the selected role or canonical document references still aborts superseded reads and loads the new scope."
+  ],
+  "id": "INV-CGK4FW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/34_launcher-options-coalesced-and-clean-9763ab777e-ar/role-reports/worker/2b56f62f-7fe4-56a7-9c61-6107077010c6/role-launch/261112-BUG-L34-worker-2b56f62f-7fe4-56a7-9c61-6107077010c6.md#frontend-read-stability"
+      ],
+      "path": "L34-W3-curator-ingest"
+    },
+    "handoffEntry": "BUG-R34@v1 item 2",
+    "leaf": "261112-BUG-L34",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A bound DocumentChat selection with unchanged role and document references keeps its active launcher reads.",
+  "supersedes": [],
+  "title": "Bound DocumentChat keeps active launcher reads across equal-scope task deltas",
+  "writer": {
+    "at": "2026-11-27T21:13:03+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
+  }
+}

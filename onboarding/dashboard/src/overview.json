@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
             "content": "sha256:b4fd32d47e3e4d3008d98f87a5e9d950193d9c6a0ff8ff3efeb69a03e39b0a37",
             "locator": {
-              "end": 366,
+              "end": 376,
               "kind": "line_range",
-              "start": 332
+              "start": 342
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
             "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "end": 551,
+              "end": 561,
               "kind": "line_range",
-              "start": 529
+              "start": 539
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
             "content": "sha256:88f7cc7c5c0980e5901b6360a5674bb0e1f091c49587c406e9afca984eed093d",
             "locator": {
-              "end": 714,
+              "end": 736,
               "kind": "line_range",
-              "start": 672
+              "start": 694
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -82,12 +82,12 @@
         },
         {
           "anchor": {
-            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
             "content": "sha256:4dbb4d258d00e659098add02584bff171c4ac97afc9821194f3f7cfdf93eedcf",
             "locator": {
-              "end": 915,
+              "end": 937,
               "kind": "line_range",
-              "start": 909
+              "start": 931
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -165,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
             "locator": {
               "end": 544,
@@ -178,10 +178,10 @@
         },
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
-            "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+            "content": "sha256:1de984a534016cc8f5dfedc2db9559aa0d868c49b18d3f043a3c1c6bb3743b61",
             "locator": {
-              "end": 576,
+              "end": 573,
               "kind": "line_range",
               "start": 548
             },
@@ -191,12 +191,12 @@
         },
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
             "locator": {
-              "end": 631,
+              "end": 627,
               "kind": "line_range",
-              "start": 603
+              "start": 599
             },
             "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
           },
@@ -204,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "67fd827411b726fc622af1a177534644708fdd00",
+            "blob": "532cb568b8b42c4f4519a1d95ae9949991b4d47a",
             "content": "sha256:27947e2886962c8e1ac6e7f5cbee84a495eb0834496e138706848e032dc5cf87",
             "locator": {
-              "end": 487,
+              "end": 482,
               "kind": "line_range",
-              "start": 480
+              "start": 475
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },
@@ -217,7 +217,7 @@
         },
         {
           "anchor": {
-            "blob": "b49924393da60112d2b2d603aefea43b5b6d3e44",
+            "blob": "033dc28fc218f4f1005b043737f724ce1ce3fe74",
             "content": "sha256:e2aac63e23625b3e61f0f5ec132f80dc5848bfcfc5bf0f3c7120ac70144c4122",
             "locator": {
               "end": 44,
@@ -986,10 +986,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
             "locator": {
-              "end": 134,
+              "end": 142,
               "kind": "line_range",
               "start": 48
             },
@@ -1075,10 +1075,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-            "content": "sha256:a17f4bdcafe2b5653c6e205dba3fe689ec592128930d61d73860e5dd3de74048",
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:c1456294533da6245da4306969743f58531b97abf74881cd7b6341d01d96f7b6",
             "locator": {
-              "end": 128,
+              "end": 136,
               "kind": "line_range",
               "start": 75
             },
@@ -1241,7 +1241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
             "content": "sha256:18122260b28f99ef258102b738664a036a7a0066b9b75fc900944f7f066903e4",
             "locator": {
               "end": 125,
@@ -1860,7 +1860,7 @@
         },
         {
           "anchor": {
-            "blob": "67fd827411b726fc622af1a177534644708fdd00",
+            "blob": "532cb568b8b42c4f4519a1d95ae9949991b4d47a",
             "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
             "locator": {
               "end": 133,

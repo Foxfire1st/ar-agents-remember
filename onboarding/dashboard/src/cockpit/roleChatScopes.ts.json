@@ -1,14 +1,33 @@
 {
   "path": "dashboard/src/cockpit/roleChatScopes.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2b013b111e4a889a3a805bbce2c20084be8984b6",
+        "content": "sha256:026a0c24a9be7eddc7dfcd741298a7fa55bb3b29e734a57f80fe41402a823196",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRoleChatScopes"
+        }
+      },
+      "id": "RLZ-1BKZ10",
+      "invariant": "INV-TB8KGA",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 1",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "Memoized role and document references define the metadata request scope.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "useRoleChatScopes is a current owner of the behavior described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "542e4d9c62657dc3ce02f6e9361b0ff0a053cab6",
-            "content": "sha256:dced414c7a01bd974e244f2103164520f91d54745569bb6992f1613a816ae0d4",
+            "blob": "2b013b111e4a889a3a805bbce2c20084be8984b6",
+            "content": "sha256:026a0c24a9be7eddc7dfcd741298a7fa55bb3b29e734a57f80fe41402a823196",
             "locator": {
               "kind": "symbol",
               "name": "useRoleChatScopes"

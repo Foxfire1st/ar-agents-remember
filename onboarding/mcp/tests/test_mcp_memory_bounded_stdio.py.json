@@ -107,12 +107,12 @@
         },
         {
           "anchor": {
-            "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+            "blob": "d05826602feb043c81fd81d1dd991c26a9a8632b",
             "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
             "locator": {
-              "end": 880,
+              "end": 881,
               "kind": "line_range",
-              "start": 877
+              "start": 878
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

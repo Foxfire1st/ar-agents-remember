@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_catalog_store.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4aebb028d13eaa43a58130ef983e158316109f4b",
+        "content": "sha256:c49409cbafc62fb83c7da764eebaba75e25ff9a5cdd9c1636bc77f1eb6d8e1df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_merge_saved"
+        }
+      },
+      "id": "RLZ-VF2Z2G",
+      "invariant": "INV-QZKWWY",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 5",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "The acquired store lock bounds a final cancellation check before publication.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The source implements the behavior and boundaries described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "1685739736665c385870182bb26945b4a57565d3",
-            "content": "sha256:05c5d75e2d9cb426434aea3396f2ca5e99ab2df1a0e8b5f07a5c36949a9cca70",
+            "blob": "4aebb028d13eaa43a58130ef983e158316109f4b",
+            "content": "sha256:3dc7f19d17ba0ea8d950cffb011024fbf06ffdc1df4daf9455d601d930344fdd",
             "locator": {
               "kind": "file"
             }

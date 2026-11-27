@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across serving/held_reset_scheduler.py, cli/held_reset_delivery.py, and controlplane/held_store_layout.py, and guarded by unit-regression proofs in mcp/tests/test_held_reset_delivery.py."
+  },
+  "applicability": "Provider-limited recipients with a recorded reset timestamp whose reset time has passed.",
+  "conditions": [
+    "deliver_due_pass snapshots index.due_at(now) and dispatches distinct recipients through a bounded pool (RESET_WORKERS = 16) via pool.map with buffersize=pool_size.",
+    "drain_reset_entry verifies receipt endpoints and delivers through drain_held and apply_drain_to_receipt in FIFO order.",
+    "Under D987 Option A, up to roughly 300 due recipients clear within about 30 seconds and larger simultaneous resets drain at about 11 recipients per second."
+  ],
+  "exclusions": [
+    "Recipients whose host agent is archived, gone, closed without resume admission, in a non-steerable turn, or awaiting permission keep ordinary drain deferral or closure behavior."
+  ],
+  "id": "INV-6NJ5ZH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L32-W1-freeze.md#bug-r32v1; L32-D987-evidence-20261125T1010Z/bounded/summary.json"
+      ],
+      "path": "L32-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R32@v1 rule 2",
+    "leaf": "261112-BUG-L32",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every provider-limited recipient whose reset has passed is delivered in order through one bounded due pass rather than the ordinary rotating sweep: within about 30 seconds while up to about 300 recipients wait, and for a larger backlog at the host's measured rate of about 11 recipients a second (the physical witness measured 512 at 46.5 s).",
+  "supersedes": [],
+  "title": "Bounded post-reset held-message delivery pass",
+  "writer": {
+    "at": "2026-11-27T21:15:46+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
+  }
+}

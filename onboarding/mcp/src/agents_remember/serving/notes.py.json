@@ -341,12 +341,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+            "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
             "content": "sha256:5b618c916233fbb800ee634903cc0930bb1d1e99c6bbc106d13abe9f2987055f",
             "locator": {
-              "end": 222,
+              "end": 223,
               "kind": "line_range",
-              "start": 222
+              "start": 223
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
-    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
+    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
+    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
     "role": "curator",
-    "statement": "Re-confirmed updated docs/install/pi.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): Pi install, role-scoped agents-remember-task, and secondCopyLoaded=true passages remain accurate after KNO-L7 updated landing_answer_shapes.py.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/install/pi.md against post-L32 synced L34 candidate: Pi install guidance remains accurate after BUG-R34@v1.",
+    "task": "261112-BUG-L34",
     "uncommitted": true
   },
   "document": "docs/install/pi.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/kernel/harnesses.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -67,14 +67,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:33:23+01:00",
+    "at": "2026-11-27T22:06:38+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
   }
 }

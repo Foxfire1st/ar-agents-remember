@@ -12,7 +12,7 @@ Shared serving collaborators, the runtime bundle, and projection/SSE helpers. Th
 
 Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition.
 
-ServingCollaborators holds the distinct subject-review, entry-list, source-content, intent-summary, tree-view and path-reader ports plus tree-view shutdown and extra-route hooks. It also declares `review_memory_root: ReviewMemoryRootPort | None = None`; `_ServingRuntime` carries the same optional field. The imported alias is a three-string callable returning `Path | None`, not admission logic. An omitted port is a missing capability, not an empty result. The runtime contains configuration, projector, clock, build, interval, the optional memory-root capability and the tree-child shutdown hook; it is not a terminal host. LiveProjectionInputs resolves unset landing/change-watch toggles from the replay seam. The projection dump is memoized by published instance, copied before the serve-time build tail, and reused for SSE snapshots; deltas remain individual nodes. A route-supplied build-currentness reading rides the snapshot tail beside the build. Optional `host_activity_reconcile` supplies the config-bound full-host boot reconciliation port; omission leaves activity unknown rather than proving absence. Each runtime owns its `TaskDocumentBodyCache`. Conditional-read ETag parsing now belongs to `conditional_read`, not this helper module.
+ServingCollaborators holds the distinct subject-review, entry-list, source-content, intent-summary, tree-view and path-reader ports plus tree-view shutdown, extra-route hooks, and optional `held_reset_delivery: ResetDeliveryPorts | None = None`. It also declares `review_memory_root: ReviewMemoryRootPort | None = None`; `_ServingRuntime` carries both optional fields. The imported alias is a three-string callable returning `Path | None`, not admission logic. An omitted port is a missing capability, not an empty result. The runtime contains configuration, projector, clock, build, interval, the optional memory-root and reset-delivery capabilities, and the tree-child shutdown hook; it is not a terminal host. LiveProjectionInputs resolves unset landing/change-watch toggles from the replay seam. The projection dump is memoized by published instance, copied before the serve-time build tail, and reused for SSE snapshots; deltas remain individual nodes. A route-supplied build-currentness reading rides the snapshot tail beside the build. Optional `host_activity_reconcile` supplies the config-bound full-host boot reconciliation port; omission leaves activity unknown rather than proving absence. Each runtime owns its `TaskDocumentBodyCache`. Conditional-read ETag parsing now belongs to `conditional_read`, not this helper module.
 
 The projection stream route passes the runtime's memory-root capability to `multiplex_review_memory`. With no review identity, that helper streams ordinary events without resolving a root. A supplied identity is checked before root resolution; a missing adapter or unadmitted root produces a review-memory error event while ordinary events continue. The native worker separately checks that the root is an existing canonical non-symlink directory outside provider-runtime.
 
@@ -47,7 +47,9 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
+
 - Anchor: Runtime without a terminal host or inbox registrar. [14]
+
 
 
 
@@ -102,6 +104,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
+
 - Snapshot-only volatile serving build tail. [28]
 
 
@@ -120,6 +123,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 - ServingCollaborators and _ServingRuntime declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is a callable type alias. The projection stream passes the runtime field to multiplex_review_memory, which skips root resolution without review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The memory-event subscription checks that the root is canonical, nonsymlink, a directory and outside provider-runtime paths. These bodies do not prove the composition root’s full leaf-admission policy. [31]
+
 
 
 

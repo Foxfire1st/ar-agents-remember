@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "e122f928d620ee2485100752a3d16ed709100bac",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md in full against KNO-R10@v1 candidate tree e122f928: test-evidence-lanes.toml added test_language_set_and_tags_engine.py to unit-regression (704 unit-regression, 858 total) and shifted stress-durability to lines 877-879; all documented pytest bootstrap, lane, and bounded-memory rules remain accurate.",
-    "task": "261112-KNO-L10",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L10 and 261112-BUG-L32 onto a96cc14d2: updated test-evidence-lanes.toml stress-durability anchor to lines 878-880 (859 total: 705 unit-regression including test_held_reset_delivery.py and test_language_set_and_tags_engine.py, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability); docs/design/python-pytest-bootstrap.md remains accurate.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 42,
+  "revision": 43,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+      "blob": "d05826602feb043c81fd81d1dd991c26a9a8632b",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
+        "blob": "d05826602feb043c81fd81d1dd991c26a9a8632b",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 879,
+          "end": 880,
           "kind": "line_range",
-          "start": 877
+          "start": 878
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T17:57:42+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L10",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

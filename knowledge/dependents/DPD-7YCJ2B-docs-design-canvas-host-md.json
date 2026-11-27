@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/design/canvas-host.md against frozen tree 58741cf1: canvas host design remains accurate after KNO-R14@v1 added Stage 1 knowledge_read guidance to canvas/review-presenter.md within the 1,500-word ceiling.",
-    "task": "261112-KNO-L14",
-    "uncommitted": true
+    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: docs/design/canvas-host.md remains accurate with both review-presenter.md Stage 1 knowledge_read guidance and serving/app.py optional held_reset_delivery lifespan port.",
+    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
+    "uncommitted": false
   },
   "document": "docs/design/canvas-host.md",
   "id": "DPD-7YCJ2B",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+      "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/app.py"
     },
@@ -161,14 +161,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-27T22:57:01+01:00",
     "by": "agent",
+    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }
