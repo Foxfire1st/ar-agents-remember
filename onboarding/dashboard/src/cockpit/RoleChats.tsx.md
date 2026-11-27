@@ -29,8 +29,6 @@ The current source and test assertions below establish the documented ownership;
 
 - The pane binds task scope, options metadata and actions to the launcher and preserves its frame and report owner. [1]
 
-
-
 - Selected Result/report reads retain UUID and live-target guards. [2]
 
 - Start/Revive dispatch keeps exact request scope and retained retry identity. [3]
@@ -40,11 +38,10 @@ The current source and test assertions below establish the documented ownership;
 
 ## MIK-R95 Extracted Launcher And Bound Row
 
-The launcher row is no longer defined here: `RoleLauncher` and `useRoleLaunchProgress` moved to `./role-launcher/`, and `RoleChatsPane` renders that shared component for the Chats page and for the document rail's bound selection. The pane coordinates launch intent and exact request identity through roleChatControls, options reads through roleChatOptionsLoader, and the failure line and frame through RoleChatsView. Its bound mode suppresses the known reference pickers; ordinary singleton and Projects roles mark an open execution running and offer no second start, while selected-task Investigator uses its explicit per-request policy, and adopts an existing saved Projects open request through `boundTasklessRequest` while an uncertain request keeps its exact identity. The canonical scopes are memoized from reference values by useRoleChatScopes; roleChatOptionsLoader owns the active, refresh and bound-request effect, and the controls enforce the selected UUID on Result application.
+The launcher row is no longer defined here: `RoleLauncher` and `useRoleLaunchProgress` moved to `./role-launcher/`, and `RoleChatsPane` renders that shared component for the Chats page and for the document rail's bound selection. The pane coordinates launch intent and exact request identity through roleChatControls, options reads through roleChatOptionsLoader (carrying a one-shot `resultReadRef` alongside `requestOptionsRefresh` so a settled dispatch result is preserved without a duplicate `/result` read), and the failure line and frame through RoleChatsView. Its bound mode suppresses the known reference pickers; ordinary singleton and Projects roles mark an open execution running and offer no second start, while selected-task Investigator uses its explicit per-request policy, and adopts an existing saved Projects open request through `boundTasklessRequest` while an uncertain request keeps its exact identity. The canonical scopes are memoized from reference values by useRoleChatScopes; roleChatOptionsLoader owns the active, refresh and bound-request effect, and the controls enforce the selected UUID on Result application.
 
 ## Investigator scope and request identity
 
 Selected sprint/master Investigators adopt and restore their exact saved request UUID from executions[], including a completed selection with a newer sibling. Automatic and manual Result/report, Retry and Revive retain that UUID and complete canonical document references through remount. The same persistent native frame and controls-only row remain in place; the selected document’s primary Manager/Orchestrator is refreshed separately and remains its coordinator.
-
 
 - Options restoration selects the saved request rather than a newer sibling. [5]

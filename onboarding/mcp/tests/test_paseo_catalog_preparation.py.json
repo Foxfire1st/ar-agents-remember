@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_paseo_catalog_preparation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d9f721401a1b37921fb9b5796dd7ff679d832573",
+        "content": "sha256:4cf77bdc4cf436f5945c91566bca377133b973d0ca6cea6d23b2d47ae297c263",
+        "locator": {
+          "kind": "symbol",
+          "name": "CatalogPreparationScopeTests.test_options_and_saved_catalog_exclude_only_the_refused_provider"
+        }
+      },
+      "facet": "Fresh /options, /saved-catalog, and implicit fallback selection omit antigravity and offer antigravity-acp, while an explicit antigravity default surfaces the ACP refusal.",
+      "id": "PRF-3MTG86",
+      "invariant": "INV-RVQGY8",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 6",
+        "leaf": "261112-BUG-L34"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d9f721401a1b37921fb9b5796dd7ff679d832573",
+        "content": "sha256:4d8765ab37b2b1b334f779e69506d9b2d306cb9cfc47c9cf4fa3f46822735aff",
+        "locator": {
+          "kind": "symbol",
+          "name": "CatalogPreparationScopeTests.test_options_metadata_shares_the_profile_and_extra_args_answers"
+        }
+      },
+      "facet": "One metadata POST /api/role-launch/options spawns one catalog bridge call and reuses both daemonConfig (profiles, readAt, extraArgs) and daemonConfigError without standalone role-profiles or daemon-config calls.",
+      "id": "PRF-ZS9KKB",
+      "invariant": "INV-VNT8DT",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 4",
+        "leaf": "261112-BUG-L34"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e69d38f0b7f1979070cb4731683c8204c4dc704e",
+            "blob": "d9f721401a1b37921fb9b5796dd7ff679d832573",
             "content": "sha256:799b37c3e4d6d6c868586d258639a4725f6fd8e7a227a73b6b53914a3a9cffc3",
             "locator": {
               "kind": "symbol",

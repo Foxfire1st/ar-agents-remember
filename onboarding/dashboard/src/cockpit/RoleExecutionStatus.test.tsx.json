@@ -1,5 +1,25 @@
 {
   "path": "dashboard/src/cockpit/RoleExecutionStatus.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
+        "content": "sha256:252b537eeaf42e291d45a2d6d9c55370223884bc378a30a8b7877d0cb1bb8f54",
+        "locator": {
+          "end": 645,
+          "kind": "line_range",
+          "start": 606
+        }
+      },
+      "facet": "An unresolved 202 or offline dispatch does not suppress the follow-up /api/role-launch/result reread until a settled receipt arrives.",
+      "id": "PRF-YDS21E",
+      "invariant": "INV-ZQV6YN",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 3",
+        "leaf": "261112-BUG-L34"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
             "content": "sha256:996a0d7890773e1a237e362604ea67f9f6b019160165150c84b521a012d36ea7",
             "locator": {
               "end": 191,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
             "content": "sha256:199588ce4f4242ac1612512552045db12aafe789498756616caf525564af2c52",
             "locator": {
               "end": 31,
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
             "content": "sha256:ba536f7ac5249a9339edab2a0cdaf1ec2bd5a6e2eefdbabee22c5ef84867383d",
             "locator": {
               "end": 137,
@@ -58,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
-            "content": "sha256:d2653ccb926a535b886050332985cb037b530d77b401d3eb1c90cc5f1380a1a3",
+            "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
+            "content": "sha256:5f76e2fe9ed284c72c0b7cc925d360006c822feb67f9bbe8e70190ffedc66d1b",
             "locator": {
               "end": 231,
               "kind": "line_range",
-              "start": 210
+              "start": 205
             }
           },
           "kind": "test"

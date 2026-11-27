@@ -217,7 +217,7 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:e6739cf14d6c6e492d354d2a93cba50e1789ffa2c07018e77043289dfface698",
             "locator": {
               "end": 4065,
@@ -230,12 +230,12 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4702,
+              "end": 4703,
               "kind": "line_range",
-              "start": 4654
+              "start": 4655
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -340,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:d111436f816900c8ee32efc6a3864a3f484cae7befe34a1cffa55a4a39c318b2",
             "locator": {
               "end": 423,
@@ -353,7 +353,7 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
             "locator": {
               "end": 989,
@@ -366,7 +366,7 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:ca4e0f4726a7b894a9ac5a2f5c43c5aefa74beaaf5f1b6037a07097d866ba16d",
             "locator": {
               "end": 2966,
@@ -379,7 +379,7 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:a0a54d60b2ffe5de4b2f8ba53b571b9cddc1075923656977c379a2d8d6185976",
             "locator": {
               "end": 3897,
@@ -392,7 +392,7 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
             "locator": {
               "end": 4014,
@@ -405,12 +405,12 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:92b08f511ddf56b161a979b5c8275e419bbb13c5fea160bde9c26ffa176d26e5",
             "locator": {
-              "end": 4662,
+              "end": 4663,
               "kind": "line_range",
-              "start": 4662
+              "start": 4663
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -436,7 +436,7 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:d56d9de62acf81873bf297bd77d2007bff68937cbc5d153654f4098d0e3e02f5",
             "locator": {
               "end": 4026,
@@ -449,12 +449,12 @@
         },
         {
           "anchor": {
-            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
             "content": "sha256:cecbd91791d4924c1ff7dca3d81ab2aeee4d8c681b8afb284a2a6d94f3689d81",
             "locator": {
-              "end": 4701,
+              "end": 4702,
               "kind": "line_range",
-              "start": 4673
+              "start": 4674
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

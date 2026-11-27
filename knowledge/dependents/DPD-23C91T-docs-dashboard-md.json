@@ -11,6 +11,19 @@
     {
       "condition": {
         "file": "docs/dashboard.md",
+        "note": "Update docs/dashboard.md line 131 to note that the Agent selector omits role-start-refused providers such as native antigravity."
+      },
+      "createdAt": "2026-11-27T20:38:16.118023Z",
+      "createdByLeaf": "261112-BUG-L34",
+      "fileBlob": "b41657ee78918b4cb1e833731f5f59b95bad900a",
+      "id": "DFR-82832Z",
+      "owner": "261112-BUG",
+      "passage": "docs/dashboard.md line 131 ('then every harness that the host knows')",
+      "reason": "BUG-R34@v1 item 6 omits role-start-refused native antigravity from the launcher's offered agents list even when the host knows it, offering only antigravity-acp for Antigravity role launches; preserving code freeze and existing open deferral DFR-NDPEXV until docs/dashboard.md is next edited."
+    },
+    {
+      "condition": {
+        "file": "docs/dashboard.md",
         "note": "Update docs/dashboard.md lines 256-262 to reflect BUG-R62@v1 onLoad-anchored readiness, 45 s non-reloading cold-load cap, and unconfirmed URL-landed waiting notice with Retry."
       },
       "createdAt": "2026-11-27T05:40:52.706277Z",
@@ -32,7 +45,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -455,14 +468,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T12:00:07+01:00",
+    "at": "2026-11-27T21:38:12+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
     "task": "261112-BUG"
   }
 }

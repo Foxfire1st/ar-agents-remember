@@ -10,7 +10,7 @@ Resolve launch defaults, workspace, scoped readers, instructions and handover be
 
 ## Code Commentary
 
-`prepare_role_handover` accepts an optional `step_up` reason, selects defaults from current task, receipt, and decision facts, and validates the resulting provider, model, mode, and features against the host catalog (including the native Antigravity refusal) before workspace or enclosure creation. Ordinary roles without an alternative continue using their own choices.
+`prepare_role_handover` accepts an optional `step_up` reason, obtains the catalog and defaults through `_catalog_and_role_defaults` (which calls `launcher_catalog` before `_role_defaults` so host profiles and extra-args reuse the metadata call's recorded daemon config while preserving defaults error precedence when catalog discovery raises), selects defaults from current task, receipt, and decision facts, and validates the resulting provider, model, mode, and features against the prefetched catalog (including the native Antigravity refusal) before workspace or enclosure creation. `_launcher_catalog` shares `_catalog_and_role_defaults` and passes the prefetched catalog to `launcher_options`. Ordinary roles without an alternative continue using their own choices.
 
 `_role_defaults` delegates settings projection to `role_launch_defaults` while retaining the host role read. `_compile_handover` delegates instruction composition through `_compose_compact_instructions`, which resolves `durable_composition_corpus_root(cache_root=coordination_root / ".cache" / "skill-corpus")`, calls `compose_launch_instructions(..., compact_links=True, corpus_root=durable_root)` to freeze detail bytes under symlink-confined `<stem>.details/<source_path>` and compose user append/`<overwrite>` notes, and emits JSON-quoted `Link roots: skill="..."` (plus `, detail="..."` via `nested_detail_root` when `detailReferences` is non-empty). `_assembled_brief` compacts `capsule.shared_block` with `compact_skill_uri_links` and passes `BriefParts` (including `link_roots`) to `role_brief_message.brief_prompt`.
 
@@ -53,7 +53,6 @@ Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded
 
 
 - `_compile_handover` compiles instructions, names canonical task and copied documents, records starter and leaf peers through bound role addresses, and populates `host.developerQuestionRoute`. [10]
-
 
 - Selection validation and the native Antigravity refusal run before workspace and enclosure preparation. [11]
 

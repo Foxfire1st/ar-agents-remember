@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,44 @@
     },
     {
       "anchor": {
-        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
-        "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+        "content": "sha256:5042c6b5c3f67605adbf9054b304b69529c600d676eea1453326adcb58784b8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "daemon_configuration"
+        }
+      },
+      "id": "RLZ-GB0NRN",
+      "invariant": "INV-VNT8DT",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 4",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "Extra-argument resolution uses the recorded configuration or names its failure.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+        "content": "sha256:1558eb9d7c8a9e853536c549fea4a87632d88280891b591f617faf3dabc3bb1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_daemon_configuration"
+        }
+      },
+      "id": "RLZ-PGZXPP",
+      "invariant": "INV-VNT8DT",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 4",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "The context manager clears stored answers on exit.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+        "content": "sha256:57b0d5b07f3d2bc0dfab05abb1e62cb80c662520d06c63a117811dd7613d3646",
         "locator": {
           "kind": "symbol",
           "name": "bridge_call"
@@ -39,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+        "content": "sha256:ddda75f17b0f22753f3da930463fca20115cbdef1ad941e0af4ff4a171278312",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_bridge"
+        }
+      },
+      "id": "RLZ-Y2WQQJ",
+      "invariant": "INV-QZKWWY",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 5",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "The cancellable runner drains the pipes and reaps the owned process group on disconnect.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -57,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
-        "content": "sha256:1f5135d018b4dae368c2e370956a8a3daf03e1793afe2f252a3df7dfb3d7b084",
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+        "content": "sha256:d2a625c9dd92372df92163a9c83aed6fb0465e08164c63b1257d8ad7fc5556d2",
         "locator": {
           "kind": "file"
         }
@@ -71,6 +125,24 @@
       },
       "rationale": "The bridge is the dynamic reply adapter: bridge_call returns an unrestricted dict decoded from the bridge's JSON reply, so a field it does not describe is still carried rather than refused, and no strict usage DTO is declared. The bounded subprocess, environment, identity and deadline guarantees stand.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+        "content": "sha256:85a06aa7fb378f0553c306fad40c22b575e0c8110a75772e45c80e6276b32478",
+        "locator": {
+          "kind": "symbol",
+          "name": "paseo_catalog_scope"
+        }
+      },
+      "id": "RLZ-ZFQTQP",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Defines the configured runtime identity for shared saved answers.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -79,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
-            "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+            "content": "sha256:57b0d5b07f3d2bc0dfab05abb1e62cb80c662520d06c63a117811dd7613d3646",
             "locator": {
               "kind": "symbol",
               "name": "bridge_call"
@@ -112,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
             "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
             "locator": {
               "kind": "symbol",
@@ -128,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
             "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
             "locator": {
               "kind": "symbol",
@@ -196,8 +268,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
-            "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+            "content": "sha256:57b0d5b07f3d2bc0dfab05abb1e62cb80c662520d06c63a117811dd7613d3646",
             "locator": {
               "kind": "symbol",
               "name": "bridge_call"
@@ -212,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
             "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",
@@ -228,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
             "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",

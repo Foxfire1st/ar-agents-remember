@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
-    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
+    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
     "role": "curator",
-    "statement": "Verified docs/host.md whole document against L32 candidate 52e47cca: native host lifecycle, dashboard supervision, and transport contracts remain accurate after L32's internal held-reset scheduler.",
-    "task": "261112-BUG-L32",
+    "statement": "Verified all 415 lines of docs/host.md against post-L32 synced L34 candidate atop L32 rev 23: host setup, daemon config, host profiles, and Antigravity ACP guidance remain accurate with refreshed role_launch_preparation.py (220-232) and paseo_bridge.mjs createAgent (668-682) anchors.",
+    "task": "261112-BUG-L34",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+      "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -167,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
-        "content": "sha256:cbced39d98f0f242a9cf58261086e4ec92635447892dff254ab77056ab7530e9",
+        "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+        "content": "sha256:e1f349edb3365ab10239f3616a70dd6a2d20f5c8ca28764fec9decfc0be49b40",
         "locator": {
-          "end": 227,
+          "end": 232,
           "kind": "line_range",
-          "start": 207
+          "start": 220
         },
         "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
       },
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
-        "content": "sha256:2ba7260a1a79b25900fe8a17262fcaddb1a5f2ce0b938706cba05a890ea317f2",
+        "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
+        "content": "sha256:91acdcf384530ac62b5c1ad7c896aa02d31a72df6a1c43f751e8011a4febfdf3",
         "locator": {
-          "end": 751,
+          "end": 682,
           "kind": "line_range",
-          "start": 734
+          "start": 668
         },
         "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
       },
@@ -265,14 +265,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:15:46+01:00",
+    "at": "2026-11-27T22:06:38+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L32",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
     "task": "261112-BUG"
   }
 }

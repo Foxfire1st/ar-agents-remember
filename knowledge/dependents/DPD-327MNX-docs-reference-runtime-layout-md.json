@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
-    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
+    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
     "role": "curator",
-    "statement": "Verified docs/reference/runtime-layout.md whole document against L32 candidate 52e47cca: coordination root, temp directory, and worktree layout descriptions remain accurate alongside <coordination_root>/temp/held-resets.sqlite.",
-    "task": "261112-BUG-L32",
+    "statement": "Verified docs/reference/runtime-layout.md against post-L32 synced L34 candidate atop L32 rev 16: coordination root, temp/held-resets.sqlite, and worktree/role-launch layout remain accurate after BUG-R34@v1.",
+    "task": "261112-BUG-L34",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+      "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:15:46+01:00",
+    "at": "2026-11-27T22:06:38+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L32",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
     "task": "261112-BUG"
   }
 }

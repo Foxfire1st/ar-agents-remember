@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "905dc4746abe42313dc247e1818318c3d4834375",
-        "content": "sha256:a2c422d3b327331c33c30bf0e578a0530d46e760f6f372dab63c55a3bfb1ca24",
+        "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+        "content": "sha256:ed114a8f888c75d80ac00caa77e7d6e5f660b19f692f26f592c9e70ea1f2924f",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:d092f25893dbf5da0ebcb81a6227fb0de3711016330e2ed721f4fc753fe0305d",
             "locator": {
               "end": 257,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
             "locator": {
               "end": 217,
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:e9a34b7197b84b1d9168d68192ee3a90510fbe7242aaec22500f1ecf29e0d889",
             "locator": {
               "end": 423,
@@ -72,12 +72,12 @@
       ]
     },
     "5": {
-      "note": "Mounted dispatch carries the explicit mode before and after a model override.\n\nAnchor: \"carries the chosen mode in its override and keeps it across a model change\"",
+      "note": "Mounted dispatch carries the explicit mode before and after a model override.",
       "targets": [
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
-            "content": "sha256:232b9d770912766addc39ec652afd000e8687220178258fbd79c4b0fd7f51c4f",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+            "content": "sha256:5e3f52271c23073f338c62998252137ee2ff314cf83927338d24e61f600fc3b1",
             "locator": {
               "end": 500,
               "kind": "line_range",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
             "locator": {
               "end": 544,
@@ -105,10 +105,10 @@
         },
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
-            "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+            "content": "sha256:1de984a534016cc8f5dfedc2db9559aa0d868c49b18d3f043a3c1c6bb3743b61",
             "locator": {
-              "end": 576,
+              "end": 573,
               "kind": "line_range",
               "start": 548
             }
@@ -117,12 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
             "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
             "locator": {
-              "end": 631,
+              "end": 627,
               "kind": "line_range",
-              "start": 603
+              "start": 599
             }
           },
           "kind": "test"
@@ -130,12 +130,12 @@
       ]
     },
     "7": {
-      "note": "The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement.\n\nAnchor: `lines 111-177`",
+      "note": "The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement.",
       "targets": [
         {
           "anchor": {
-            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
-            "content": "sha256:4a2f94484f3935406e343185786aee8ed7dc8f17b6a0e4d9d6e195c5b66a3fe8",
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+            "content": "sha256:79a63898ac9452dff39cab13486c74f8e0981443cf21dec0db106cc28729536e",
             "locator": {
               "end": 177,
               "kind": "line_range",

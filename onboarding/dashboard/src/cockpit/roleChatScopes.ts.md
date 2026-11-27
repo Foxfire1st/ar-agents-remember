@@ -10,7 +10,7 @@ Memoize canonical document and options scopes by their content.
 
 ## Code Commentary
 
-Role plus repository/path values of sprint, master and task references determine document scope. Agent choice also keys options scope. Replacing reference objects with equal content preserves both memo identities; feature-value edits change neither.
+Role plus repository/path values of sprint, master and task references determine both document scope and options scope (`optionsScope` aliases the memoized `documentScope`, omitting `agentId`). Replacing reference objects with equal content or changing agent/model/effort/mode/feature overrides preserves both memo identities so metadata options reads do not refire.
 
 ## Boundaries
 

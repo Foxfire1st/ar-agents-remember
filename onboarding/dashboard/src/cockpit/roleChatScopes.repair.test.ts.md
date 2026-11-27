@@ -10,7 +10,7 @@ Witness content-keyed document and options memo identities.
 
 ## Code Commentary
 
-Equal references and feature edits keep both identities stable. Role/master-path changes rebuild both; agent changes rebuild options only.
+Equal references, feature edits, and agent changes keep both document and options scope identities stable. Role or document-reference changes rebuild both.
 
 ## Boundaries
 

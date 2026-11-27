@@ -431,13 +431,11 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - RoleChatsPane renders the shared launcher view with scoped options, role launch controls and the existing frame and report owner. [35]
 
-
 - The route's embedded chat frame. [36]
 
 - Test and hook completion share hang guards. [38]
 
 - Bounded source guard scans dashboard test and support files. [39]
-
 
 - RoleChatsPane supplies the current scope, request controls, metadata and independent refresh generations. [40]
 

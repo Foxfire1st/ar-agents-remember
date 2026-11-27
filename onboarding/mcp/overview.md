@@ -819,7 +819,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
 
 - The direct options route requests its exact pair. The pane reuses that answer, and Start validation uses a separate operation-local memo. Saved-only display reads skip discovery. [391]
-
 - Durable parts preserve successful answers and distinguish saved from unknown after failures. [392]
 - Host names match IDs before labels, without case. [393]
 - Exact tree endpoint composition, not candidate directories [183]
