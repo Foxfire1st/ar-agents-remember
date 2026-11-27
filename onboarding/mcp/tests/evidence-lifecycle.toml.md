@@ -892,7 +892,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 - The L110 shared-support artifact declares `test_landing_state_refusals.py` as an exact consumer. The refusal suite imports the answer table through `test_tool_answer_table`. That module re-exports the table built by `tool_answer_table_support`, which reads L110 row data. [272]
 
 
-- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file
+
+- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. [574]
+
 
 
 - The held consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file [277]
@@ -1552,7 +1554,6 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. [515]
 
 
@@ -1560,7 +1561,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.
+- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [575]
 
 
 
@@ -1568,7 +1569,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.
+
+
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [576]
 
 
 
@@ -1824,9 +1827,6 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-
-
-
 - The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts. [343]
 
 
@@ -1844,7 +1844,6 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 - The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. [347]
-
 
 
 

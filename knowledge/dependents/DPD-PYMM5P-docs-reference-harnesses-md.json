@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/harnesses.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Updated docs/reference/harnesses.md line 40 on CAP-L5 tree af88a85d to state role-bound agents-remember-task serves only ROLE_TOOL_ALLOWLISTS[role] and fails closed to server_info on an unreadable binding while keeping full-roster secondCopyLoaded semantics accurate.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -102,14 +102,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T23:45:16+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

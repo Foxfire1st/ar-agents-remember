@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e3ae887dd8246d306fa877e2617a6ee078adbfb9",
+        "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
         "content": "sha256:842cb14dd4dee97ccd5a5a8bc05d99d9d734df461e6994754b46e1be3cf37a86",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e3ae887dd8246d306fa877e2617a6ee078adbfb9",
+        "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
         "content": "sha256:7d8a23be405c82eee3c6591866ef040826e3f6a6858e1fc69e0037f3d130b71d",
         "locator": {
           "kind": "symbol",
@@ -38,13 +38,30 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here.",
+    "3": {
+      "note": "Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3ae887dd8246d306fa877e2617a6ee078adbfb9",
-            "content": "sha256:af03c1c6b62a101e698c3c8f69730793b221c45be303652a6a5ee565466ce54e",
+            "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
+            "content": "sha256:358372c986016199f6cc63c500dbec88edd5b40eb8b26955488786b7885facfe",
+            "locator": {
+              "end": 997,
+              "kind": "line_range",
+              "start": 973
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here.\n\nAnchor: whole file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
+            "content": "sha256:f3898172ed0e24f7f2e030b0681c31ec3bf7c3c43fd7570597199229f4508302",
             "locator": {
               "kind": "file"
             }
@@ -53,34 +70,16 @@
         }
       ]
     },
-    "2": {
+    "5": {
       "note": "Taskless Architect planning passes `role=architect` to the resolver and keeps the existing binding, no-invented-task and no-invented-repository assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3ae887dd8246d306fa877e2617a6ee078adbfb9",
-            "content": "sha256:1c7e158a0dd657cb24b06eacc06697bcd1abdbe8be2b0903bbd22672cf536fb4",
+            "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
+            "content": "sha256:8fbd03f94db4c63414fd60facf0cf2d87885129669eafc0160c081effc4f4fe3",
             "locator": {
-              "end": 606,
-              "kind": "line_range",
-              "start": 463
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3ae887dd8246d306fa877e2617a6ee078adbfb9",
-            "content": "sha256:358372c986016199f6cc63c500dbec88edd5b40eb8b26955488786b7885facfe",
-            "locator": {
-              "end": 997,
-              "kind": "line_range",
-              "start": 973
+              "kind": "symbol",
+              "name": "test_taskless_architect_handover_uses_planning_without_inventing_task_or_repository"
             }
           },
           "kind": "test"

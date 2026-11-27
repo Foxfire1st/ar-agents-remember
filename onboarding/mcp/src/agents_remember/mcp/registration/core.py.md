@@ -40,7 +40,7 @@ request-time reprobes or an MCP-to-serving domain import.
 
 ### Role Runtime and Scope
 
-server_info describes optional toolServer and agentBinding of a launched server. Registered context_packet/read_ar_files accept optional TaskScopedReaderContext with exact task and contract together; absent context keeps Projects scope. Core registration forwards typed requests without permitting caller-defined roots.
+server_info describes optional toolServer and agentBinding of a launched server. Registered context_packet/read_ar_files accept optional TaskScopedReaderContext with exact task and contract together; `read_ar_files` names the validated `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)` (441 raw chars <= 500) rather than response fields, and absent context keeps Projects scope. Core registration forwards typed requests without permitting caller-defined roots.
 
 ## Evidence
 
@@ -64,7 +64,7 @@ server_info describes optional toolServer and agentBinding of a launched server.
 
 - The packet description states what `include_drift` measures and that omitting it measures nothing. [8]
 
-- `_register_orientation_tools` declares `context_packet` and `read_ar_files` and removes the obsolete `refresh` argument from the advertised schema. [6]
+- `_register_orientation_tools` declares `context_packet` and `read_ar_files` (naming `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)`) and removes the obsolete `refresh` argument from the advertised schema. [6]
 
 ## The install description and the skill corpus
 
@@ -73,7 +73,5 @@ The `runtime_install` description says the call installs/refreshes the coordinat
 
 
 - The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh. [10]
-
-
 
 - Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused. [11]

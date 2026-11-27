@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56daf6642402898075d164df4e26178499116006",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
     "role": "curator",
-    "statement": "docs/architecture.md remains accurate on synced base 65911c75 / candidate 56daf664 because mcp/pyproject.toml's comment update (version 3.0.8) leaves the package name, commands, and packaged contents unchanged.",
-    "task": "261112-BUG-L33",
+    "statement": "Updated docs/architecture.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) to document role-scoped agents-remember-task allowlists, fail-closed unreadable bindings, lossless wire schema compaction, <=500-character descriptions, and <coordination-root>/.cache/skill-corpus/ archive materialization, remaining accurate with BUG-L33 mcp/pyproject.toml changes.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:39:05+01:00",
+    "at": "2026-11-27T02:55:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

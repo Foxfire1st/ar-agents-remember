@@ -1,25 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
-    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
     "role": "curator",
-    "statement": "Audited docs/reference/runtime-layout.md on 261112-BUG-L54 candidate 814fd2eb: coordination-root layout, server-binding records, and role report/scratch folder paths remain accurate after role_launch_workspace.py switched to the shared COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY constants, with zero contradictions.",
-    "task": "261112-BUG-L54",
+    "statement": "Updated docs/reference/runtime-layout.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) to document <coordination-root>/.cache/skill-corpus/ archive materialization and role-launch/ nested <stem>.details/ and offload sidecar layout alongside Server binding records and L54 COLLECTED_REPORT_DIRECTORY/ROLE_REPORT_DIRECTORY constants; resolved DFR-GNDY45.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T12:09:27.126262Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-GNDY45",
-      "owner": "261124-CAP",
-      "passage": "docs/reference/runtime-layout.md ## The coordination root (lines 40-53) and ## Scratch folders (lines 141-153)",
-      "reason": "Omits CAP-L1/L3 <coordination-root>/.cache/skill-corpus/ durable corpus materialization and nested <stem>.details/ folders written beside role reports; doc updates owned by 261124-CAP-L5."
-    }
-  ],
   "document": "docs/reference/runtime-layout.md",
   "id": "DPD-327MNX",
   "origin": {
@@ -30,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -49,7 +36,7 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -156,15 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T22:34:46+01:00",
-    "by": "product",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
-    "effort": "none",
-    "harness": "product",
-    "model": "none",
-    "operation": "crossing-merge",
-    "role": "product",
-    "seat": "product",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+    "at": "2026-11-27T02:55:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

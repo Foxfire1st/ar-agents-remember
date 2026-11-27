@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
     "role": "curator",
-    "statement": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md against KNO-R07 candidate: packaged tool-details copy matches docs/tool-details.md and remains accurate.",
-    "task": "261112-KNO-L7",
+    "statement": "Confirmed mcp/src/agents_remember/package_data/runtime/docs/tool-details.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) as the byte-identical packaged mirror of updated docs/tool-details.md renewed via scripts/renew-instructions.py.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "40638134662ff715f51b378d410ab63214cb8c71",
+      "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
@@ -239,14 +239,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T02:55:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

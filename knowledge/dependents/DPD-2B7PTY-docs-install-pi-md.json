@@ -1,25 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
-    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
     "role": "curator",
-    "statement": "The Pi guide still describes case-insensitive matching by client name or name segment and explicit agent=\"pi\" selection, which are independent of the task-document warning field.",
-    "task": "261112-BUG-L25",
+    "statement": "Re-confirmed updated docs/install/pi.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): Pi install, role-scoped agents-remember-task, and secondCopyLoaded=true passages remain accurate after KNO-L7 updated landing_answer_shapes.py.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T12:09:27.083915Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-5BMGKD",
-      "owner": "261124-CAP",
-      "passage": "docs/install/pi.md ## Role agents on this harness (lines 66-88) and ## What this harness needs (lines 113-122)",
-      "reason": "Pre-base stale on agent_binding.py, role_start_answer.py, and landing_answer_shapes.py since 261112-BUG-L25; explicitly assigned to 261124-CAP-L5."
-    }
-  ],
   "document": "docs/install/pi.md",
   "id": "DPD-2B7PTY",
   "origin": {
@@ -30,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -54,12 +41,12 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+      "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
@@ -74,20 +61,20 @@
       "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py"
     },
     {
-      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T05:33:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
     "task": "261124-CAP"
   }
 }

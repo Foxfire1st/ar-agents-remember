@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "40638134662ff715f51b378d410ab63214cb8c71",
+        "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
         "content": "sha256:a613bdc8bb462b6c654e826568c9dad8bdacb1eec88e84471cfe8de251a9f5da",
         "locator": {
-          "end": 286,
+          "end": 289,
           "kind": "line_range",
-          "start": 280
+          "start": 283
         }
       },
       "id": "RLZ-55Y8YZ",
@@ -27,12 +27,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40638134662ff715f51b378d410ab63214cb8c71",
+            "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
             "content": "sha256:9b879f65dbefa8750cc1afa554fa42afe06c6ae19871f9d4d4734f31935e341c",
             "locator": {
-              "end": 287,
+              "end": 290,
               "kind": "line_range",
-              "start": 280
+              "start": 283
             }
           },
           "kind": "code"
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40638134662ff715f51b378d410ab63214cb8c71",
+            "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
             "content": "sha256:9b879f65dbefa8750cc1afa554fa42afe06c6ae19871f9d4d4734f31935e341c",
             "locator": {
-              "end": 287,
+              "end": 290,
               "kind": "line_range",
-              "start": 280
+              "start": 283
             },
             "path": "docs/tool-details.md"
           },

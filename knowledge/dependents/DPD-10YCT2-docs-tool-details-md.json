@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
     "role": "curator",
-    "statement": "Verified docs/tool-details.md against KNO-R07 candidate: worktree/memory tool details remain accurate; knowledge_read tool details live in docs/reference/mcp-tools.md and post-landing briefsProblem is advisory.",
-    "task": "261112-KNO-L7",
+    "statement": "Updated docs/tool-details.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) to document fail-closed malformed bindings on server_info, skill:// refusal pointers on curator_coherence, memory_quality_check, and retire_child, and >1,000-character opening/held-batch offloading on role_start_set; merged with crossing-3 stands_on blobs.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -272,14 +272,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T02:55:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

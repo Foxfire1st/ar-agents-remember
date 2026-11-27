@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
-    "commit": "130545f8071e7c9fd369e170b0851da63abee6f6",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
     "role": "curator",
-    "statement": "Audited docs/FAQ.md (lines 1-200) against synced Attempt-5 tree d1e7bbbc and roles/worker.md: Worker pre-edit knowledge reads, code-only/memory-read-only scope, and Curator hand-off list routing for discoveries remain accurate with no contradiction.",
-    "task": "261124-CAP-L3",
+    "statement": "Audited docs/FAQ.md (lines 1-200) against CAP-L5 tree af88a85d after core.py read_ar_files task_context description repair: read_ar_files brief degradation, context_packet drift/freshness, workflow rules, and memory.md behavior remain accurate with zero contradiction.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
     },
     {
-      "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+      "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:16:07+01:00",
+    "at": "2026-11-26T23:45:16+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
     "task": "261124-CAP"
   }
 }

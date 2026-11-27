@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
-    "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: mcp/README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
-    "task": "261112-BUG",
-    "uncommitted": false
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
+    "role": "curator",
+    "statement": "Audited mcp/README.md (lines 1-132) on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) after docs/reference/mcp-tools.md updates and crossing-3 merge: prerequisites, five install steps, CLI commands, eight tool groups, four explainer tools, and served skill description remain accurate with zero contradiction.",
+    "task": "261124-CAP-L5",
+    "uncommitted": true
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,20 +56,20 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+      "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T02:55:00+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
-        "content": "sha256:7f88707f8e8a86599b7cc02818df4b26814094696183a390c18fdf49fafc764b",
+        "blob": "ce85032f7b10fd549cfd6bcb2a9afe9883d12534",
+        "content": "sha256:d4caaf329a1176e355f292bbe3fa6ce8761fe16dee3a6a2adb9ffede51c6faf3",
         "locator": {
           "kind": "symbol",
           "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"

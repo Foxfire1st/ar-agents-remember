@@ -1,25 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/skills.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Updated docs/reference/skills.md on CAP-L5 tree af88a85d to document core/ and reference/ folders, three-tier progressive disclosure, durable Link roots skill-corpus resolution, and six-family Poka-Yoke skill:// refusal pointers; resolved DFR-JB7N46.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T12:09:27.146860Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-JB7N46",
-      "owner": "261124-CAP",
-      "passage": "docs/reference/skills.md ## Shipped skills (line 29) and ## Reading Served Skills (lines 48-61)",
-      "reason": "Omits core/ and reference/ folders, 3-tier progressive disclosure, durable skill-corpus cache materialization, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5."
-    }
-  ],
   "document": "docs/reference/skills.md",
   "id": "DPD-ZQB4YZ",
   "origin": {
@@ -30,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -39,7 +26,7 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+      "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },
@@ -49,7 +36,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+      "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
     },
@@ -69,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
     },
     {
-      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
@@ -85,14 +72,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:45:16+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
     "task": "261124-CAP"
   }
 }
