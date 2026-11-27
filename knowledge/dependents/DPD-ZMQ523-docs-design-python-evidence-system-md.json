@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0601566579ef39fe6cab0b43e547041eb7359a57",
+    "codeTree": "96c82a119b127691f4a92d6057d2970b9d09ef4d",
     "commit": "3e4c8d678835d3d077dfee722c1bfb89f1bf5359",
     "role": "curator",
-    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against synced 3e4c8d678 + KNO-R07 candidate: pins no counts; registering the two KNO-R07 unit-regression modules in test-evidence-lanes.toml and evidence-lifecycle.toml leaves every documented altitude, lane, catalog, fixture, quality-obligation, selection, retry-v3, causal, and command contract accurate with zero contradictions.",
-    "task": "261112-KNO-L7",
+    "statement": "Audited docs/design/python-evidence-system.md (lines 1-295) on synced CAP-L5 tree 96c82a119b12 (base 3e4c8d678, BUG-L57-L59-L63): pins no counts or row-level catalog entries; all evidence altitudes, seven accepting lanes, canonical catalog rules, fixture authority, dependency-owned selection, retry proof, causal localization, and commands remain accurate after BUG-L57-L59-L63 updated test-evidence-lanes.toml and evidence-lifecycle.toml.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 29,
+  "revision": 30,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T03:56:55+01:00",
+    "at": "2026-11-27T03:32:09+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

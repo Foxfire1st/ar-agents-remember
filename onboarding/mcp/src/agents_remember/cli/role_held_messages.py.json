@@ -344,8 +344,8 @@
     },
     {
       "anchor": {
-        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
-        "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
+        "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+        "content": "sha256:627fdb0d40b945bf42ec9c281382fdf879187d3fe38a2e12996c5b3d4054bfa4",
         "locator": {
           "kind": "symbol",
           "name": "_open_held_seat"

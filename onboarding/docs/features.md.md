@@ -22,4 +22,5 @@ Tours Agents Remember's product capabilities—mirrored cards, sidecars, knowled
 
 - Reference-anchor blob and content currentness versus realization/proof and four-state invariant currentness. [1]
 - Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and names-only `knowledge_read`. [2]
-- MCP tool server read-only versus mutating trust boundaries, answer token bounds, and tool-log locations. [3]
+
+- MCP tool server read-only versus mutating trust boundaries, role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke refusal pointers, answer token bounds, and tool-log locations. [3]

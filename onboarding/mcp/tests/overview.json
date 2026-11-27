@@ -3948,7 +3948,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",
@@ -4278,7 +4278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:e94dfd6f87da288095332d138eddf7f464773a38dabe701b239a7fcbbb659f91",
             "locator": {
               "end": 172,
@@ -4291,7 +4291,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "end": 241,
@@ -5735,7 +5735,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "end": 241,
@@ -5759,50 +5759,6 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_review_meaning_effects.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1716": {
-      "note": "Source controls cover cut measure, threshold, deletion proof and overviews.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
-            "content": "sha256:ce8aa2e3c3ae67f7f8a0c6e3d1c615e35cb5bb2b64afa25b3a389fb346755050",
-            "locator": {
-              "end": 182,
-              "kind": "line_range",
-              "start": 81
-            },
-            "path": "mcp/tests/test_landing_report.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
-            "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
-            "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 97
-            },
-            "path": "mcp/tests/conftest.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
-            "content": "sha256:9fe95df47a19725809ba5b6559e503fa2dbec60d8d04aba8f13fcb39643c2cd2",
-            "locator": {
-              "end": 307,
-              "kind": "line_range",
-              "start": 180
-            },
-            "path": "mcp/tests/conftest.py"
           },
           "kind": "test"
         }
@@ -5839,7 +5795,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:36aadd685107ad708ec5be5cd157a571432a713e162191fbbd0dfdc1bda46cae",
             "locator": {
               "end": 172,
@@ -5852,7 +5808,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "end": 241,
@@ -6425,7 +6381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:176cebd5ffbfc48e6492c052cf701622e95209bad4ff72e20deec46861fa3b23",
             "locator": {
               "end": 78,
@@ -6438,7 +6394,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
             "locator": {
               "end": 101,
@@ -6451,7 +6407,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
             "locator": {
               "end": 210,
@@ -10753,6 +10709,58 @@
         }
       ]
     },
+    "1915": {
+      "note": "Candidate isolation and three plugin registrations (`pytest_plugins`) are explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+            "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_plugins"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1916": {
+      "note": "Ordinary and certifying pytest composition (`pytest_configure` through `worktree_services`) is explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+            "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1917": {
+      "note": "Source controls cover cut measure, threshold, deletion proof and overviews.\n\nAnchor: `test_landing_report.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a630140b5e905d2d3478038049fb8d58c5b8c39",
+            "content": "sha256:ce8aa2e3c3ae67f7f8a0c6e3d1c615e35cb5bb2b64afa25b3a389fb346755050",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/test_landing_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The current repository-root collected-case declarations are 10,000 unit and 2,000 integration.",
       "targets": [
@@ -10825,7 +10833,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
             "locator": {
               "kind": "symbol",
@@ -10920,7 +10928,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:176cebd5ffbfc48e6492c052cf701622e95209bad4ff72e20deec46861fa3b23",
             "locator": {
               "end": 78,
@@ -10933,7 +10941,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
             "locator": {
               "end": 101,
@@ -10946,7 +10954,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
             "locator": {
               "end": 210,
@@ -11016,7 +11024,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:8930dbc38e7a66bb21d0cb61c5f443303ad44469813930e99e18f63c5149c5f5",
             "locator": {
               "end": 195,
@@ -11029,7 +11037,7 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
             "locator": {
               "end": 220,
@@ -11181,7 +11189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",

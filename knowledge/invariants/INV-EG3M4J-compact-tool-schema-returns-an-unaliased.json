@@ -31,6 +31,7 @@
   "schema": "ar-invariant/v1",
   "statement": "compact_tool_schema returns an unaliased deep copy of one MCP tool JSON Schema that strips only schema-level title, default: null, and immediate top-level $defs model-level description strings while preserving literal title, default, and description property names, combinators, dependentSchemas, list and dict items, additionalProperties, required, enum, const, $ref, and non-null defaults.",
   "supersedes": [],
+  "title": "compact_tool_schema returns an unaliased lossless deep copy",
   "writer": {
     "at": "2026-11-26T12:07:40+01:00",
     "by": "conversion",

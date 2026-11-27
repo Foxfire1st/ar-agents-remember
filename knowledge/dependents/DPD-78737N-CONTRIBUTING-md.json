@@ -1,27 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
-    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
     "role": "curator",
-    "statement": "CONTRIBUTING.md accurately documents the uv-managed Python 3.14 and uv 0.13 minor-line runtime contract, bootstrap and hook checks, and Dagger endpoint validation, _EXPERIMENTAL_DAGGER_RUNNER_HOST handoff, and dropped-selector reporting on synced post-L54 base 8fe83ceb2352 (noting line 553 summarizes PNT start's --ensure step as creating a missing mcp/.venv without repeating stale-venv replacement).",
-    "task": "261112-BUG-L33",
+    "statement": "Re-confirmed updated CONTRIBUTING.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1, KNO-L7): test isolation matches mcp/tests/conftest.py (_user_settings_home sets XDG_DATA_HOME via tmp_path_factory.mktemp('user-data') beside XDG_CONFIG_HOME), and seven-lane manifest passages pin no counts after KNO-L7 updated test-evidence-lanes.toml.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "file": "CONTRIBUTING.md",
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T22:03:54.865746Z",
-      "createdByLeaf": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
-      "fileBlob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
-      "id": "DFR-RBZQP6",
-      "owner": "261124-CAP",
-      "passage": "CONTRIBUTING.md ## Generated copies (lines 150-152) and ### Lanes (lines 230-259)",
-      "reason": "Crossing merge resolution at 4559dabe8: preserves open CAP-L5 deferral DFR-EBATAV (CAP-L3 retired word ceilings in scripts/instruction_renewal/budgets.py in favor of COMPILED_CAPSULE_TOKEN_CEILINGS and WIRE_TOKEN_CEILINGS; also pre-base stale on test-evidence-lanes.toml and explicitly assigned to 261124-CAP-L5)."
-    }
-  ],
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
   "origin": {
@@ -32,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +51,12 @@
       "path": ".githooks/_gate.sh"
     },
     {
-      "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+      "blob": "8519550ed36c2126183a5e02b649210221f2e280",
       "kind": "file",
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+      "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -196,7 +181,7 @@
       "path": "scripts/instruction_renewal/plan.py"
     },
     {
-      "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+      "blob": "f8bd5e976e342f7caa08a4dffcad35ea4f5eba3a",
       "kind": "file",
       "path": "scripts/instruction_renewal/budgets.py"
     },
@@ -227,14 +212,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T05:33:23+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
     "role": "curator",
-    "statement": "Audited ROADMAP.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): roadmap concepts and links remain accurate after L51 updated docs/concepts.md for the IDENTITY MISMATCH: carve-out; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited ROADMAP.md (lines 1-152) against CAP-L5 tree af88a85d after docs/concepts.md updates: core memory model, Beyond code directions, and Nearer for code directions remain accurate with zero contradiction.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
+      "blob": "a4cd8f85d3c687f5538b0215ce749f90d773af10",
       "kind": "file",
       "path": "docs/concepts.md"
     },
@@ -42,14 +42,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-26T23:45:16+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

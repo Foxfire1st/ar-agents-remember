@@ -1,25 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
-    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
     "role": "curator",
-    "statement": "The Hermes guide still describes the ACP provider, the unmatched Bootstrap refusal, launch mode precedence and held delivery accurately, and the grant policy remains scoped to its two named provider branches.",
-    "task": "261112-BUG-L25",
+    "statement": "Re-confirmed updated docs/install/hermes.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): Hermes install, role-scoped agents-remember-task, ACP wait-line, and secondCopyLoaded=true passages remain accurate after KNO-L7 updated landing_answer_shapes.py.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T12:09:27.058366Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-SFNAZX",
-      "owner": "261124-CAP",
-      "passage": "docs/install/hermes.md ## What this harness needs (lines 160-167, 179-188, 207-217)",
-      "reason": "Pre-base stale on 7 standing files plus CAP-L3 changes to core/every-role.md (universal WAITING FOR SUBAGENTS/BACKGROUND rule), paseo_role_tools.py, roles/worker.md, and role_launch_preparation.py; explicitly assigned to 261124-CAP-L5."
-    }
-  ],
   "document": "docs/install/hermes.md",
   "id": "DPD-GHEXS9",
   "origin": {
@@ -30,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -54,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -69,17 +56,17 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+      "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+      "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -89,17 +76,17 @@
       "path": "mcp/src/agents_remember/observer/acp_providers.py"
     },
     {
-      "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+      "blob": "ea658dc71d32bc3e38d448dc67af8b4c42c14d04",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
     {
-      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -109,30 +96,30 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts"
     },
     {
-      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
     {
-      "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+      "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T05:33:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
     "task": "261124-CAP"
   }
 }

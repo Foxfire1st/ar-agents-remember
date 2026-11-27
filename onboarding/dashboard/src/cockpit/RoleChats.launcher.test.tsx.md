@@ -23,7 +23,7 @@ The current source and test assertions below establish the documented ownership;
 
 
 
-- The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement. [2]
+- The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement. [7]
 
 - Matching saved inventory keeps eligible Start available during metadata and model-options refresh. The launcher shows no separate catalog-status line before or after settlement. [6]
 

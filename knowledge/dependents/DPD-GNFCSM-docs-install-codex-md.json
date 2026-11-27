@@ -1,25 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
     "role": "curator",
-    "statement": "The Codex guide still accurately describes implicit Bootstrap and exact Codex selection. Its startup section now describes the complete grant on the seat's own server, retaining that grant through resumes and reloads, replacing the seat for future tools, and separate approval-mode control for shell commands and other servers.",
-    "task": "261112-BUG-L31",
+    "statement": "Updated docs/install/codex.md on CAP-L5 tree af88a85d to state Codex startup preapproval covers ROLE_TOOL_ALLOWLISTS[role] and role-scoped agents-remember-task runs alongside full-roster agents-remember while preserving secondCopyLoaded: true also when no such registration exists; resolved DFR-EV2TJQ.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T12:09:27.026957Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-EV2TJQ",
-      "owner": "261124-CAP",
-      "passage": "docs/install/codex.md ## What this harness needs (lines 79-84, 129-140)",
-      "reason": "Pre-base stale on paseo_seat_policy.py::preapproval_policy (role-scoped allowlist) and five standing files since 261112-BUG-L31; explicitly assigned to 261124-CAP-L5."
-    }
-  ],
   "document": "docs/install/codex.md",
   "id": "DPD-GNFCSM",
   "origin": {
@@ -30,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -39,7 +26,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+      "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -59,17 +46,17 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+      "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+      "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_agents.py"
     },
@@ -79,7 +66,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
+      "blob": "c850334b91dd3b57babb5c9d5dd68b2b1fc014e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
     },
@@ -137,8 +124,8 @@
     },
     {
       "anchor": {
-        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
-        "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+        "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
+        "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
         "locator": {
           "kind": "symbol",
           "name": "preapproval_policy"
@@ -150,7 +137,7 @@
     },
     {
       "anchor": {
-        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "blob": "446a7390fb949b8ceb2c55aa03a886a15ba6601d",
         "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
         "locator": {
           "kind": "symbol",
@@ -163,14 +150,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:45:16+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
     "task": "261124-CAP"
   }
 }

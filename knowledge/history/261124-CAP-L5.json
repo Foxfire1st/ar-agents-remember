@@ -1,0 +1,1628 @@
+{
+  "closed": true,
+  "leaf": "261124-CAP-L5",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T06:03:06+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261124-CAP-L5",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+      "task": "261124-CAP"
+    },
+    "reviewer": {
+      "at": "2026-11-27T06:03:06+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261124-CAP-L5",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "5a6c1bdd-f208-5e47-b822-036b184060db",
+      "task": "261124-CAP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "52de8957cf3d8daa87fb9cfa5667276b6018b093",
+    "verdictRef": "notes/reports/261124-CAP-L5-memory-review-r2.md"
+  },
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0Z5D17",
+      "items": [
+        "sha256:144fdd8f1b7f2ccc611300553dafedc86ff9df8be8ab36299872b99588fabbda",
+        "sha256:8fbdb24d8ed0e4d8a0394d2f0ce1be7e0a0ea6160d0db7338d810c3fc43908e8"
+      ],
+      "reason": "Re-confirmed docs/install/pi.md on Code Round 4 PASS synced tree f361cfb95723 after KNO-L7 updated landing_answer_shapes.py; zero contradiction.",
+      "revision": 10,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-14VPCP",
+      "items": [
+        "sha256:221efc0ac05b58140874e4d73062d3a50ad9cdace34912540cdeafd143979595"
+      ],
+      "reason": "Aligned DPD-ZMQ523 history revision after KNO-L7 sync (rev 30, exact KNO-L7 upstream stands_on blobs on test-evidence-lanes.toml and evidence-lifecycle.toml; docs/design/python-evidence-system.md lines 1-295 verified accurate).",
+      "revision": 30,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+            "content": "sha256:4ec5b0bf13f94d844ad90f1129a4142a1e67e2472966fc8683feb46397457371",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-MTTNJ1"
+        },
+        {
+          "after": {
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_worktree_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "before": {
+            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_worktree_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "id": "RLZ-NJRK6G"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-28FVM8",
+      "items": [
+        "sha256:5f30b461d5d396d2618943d7bb246902dca6efb4a628678d6e9de6ebae19695d"
+      ],
+      "reason": "CAP-L5 edited only the docstrings of read_ar_files in core.py and worktree_sync in worktrees.py without altering canonical light models, lazy payload resolution, or post-discovery startup behavior; re-anchored RLZ-MTTNJ1 and RLZ-NJRK6G.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5MFB9S",
+          "revision": 1
+        },
+        {
+          "id": "INV-BPDGMZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-D5BANQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-JV7S6Y",
+          "revision": 1
+        },
+        {
+          "id": "INV-VD1BVN",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2H1WW1",
+      "items": [
+        "sha256:81d10d31edc67a08a9c42c116aa775970de593883656d4faae56a843ac86209b"
+      ],
+      "reason": "Examined all 5 members of FAM-N6S3XT after re-anchoring INV-5MFB9S runtime-layout.md lines 47-81; seat-identity binding, exclusive confirmation, and IDENTITY MISMATCH guarantee and routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-N6S3XT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+            "content": "sha256:89a6195b6e820ef1cda784428f63965d46c1ed836adac69c780d2fbf4fc1bec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
+            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-0V86KJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3H6K16",
+      "items": [],
+      "reason": "Re-anchored pre-base master-end MIK-R09 stale proof PRF-0V86KJ on test_paseo_agent_tools.py::HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line after CAP-L2/CAP-L3 merge onto 021fb21a; read-only atomic handover pair proof holds.",
+      "revision": 3,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+            "content": "sha256:5582ac32de35bcbce85354ca46852727f7f844750459c4bfb035425ad551fd7e",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "before": {
+            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+            "content": "sha256:055d9570f12ee4feece62b3fbb8096ca10d443edefc1c7c362e9391d007f0137",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "id": "RLZ-N5VVKX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4680DT",
+      "items": [
+        "sha256:6c984eb2810c2ac3b26ffcb7e9c70a224f490222abad7c5ae7c9231c55294c36"
+      ],
+      "reason": "Inserting the .cache/skill-corpus/ table row at docs/reference/runtime-layout.md line 53 changed the hashed range content while the runtime/server-bindings/<pid>.json row and Server binding records contract remain intact at lines 47-81; invariant meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-5MFB9S"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-495RKM",
+      "items": [],
+      "reason": "Audited and confirmed ROADMAP.md against CAP-L5 tree af88a85d after docs/concepts.md updates; zero contradiction.",
+      "revision": 12,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "content": "sha256:627fdb0d40b945bf42ec9c281382fdf879187d3fe38a2e12996c5b3d4054bfa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-XRBVHQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4XXC0C",
+      "items": [],
+      "reason": "Re-anchored pre-base master-end MIK-R09 stale realization RLZ-XRBVHQ on role_held_messages.py::_open_held_seat after CAP-L2/CAP-L3 merge onto 021fb21a; staging-before-removal recovery obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-ATA2Z7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-53X8MY",
+      "items": [
+        "sha256:216bd396bc6ffc4424bc034292e7f8f3226d539f86496bed42aa7d77622f18c9",
+        "sha256:ca22e98403cdb3f8b85e1f0a080fab09efaad3064e0ec484a442804f3bb07f3f"
+      ],
+      "reason": "Aligned DPD-10YCT2 history revision after KNO-L7 sync (rev 23; docs/tool-details.md updated for CAP-L5 and verified accurate on synced base 1063f65132b1).",
+      "revision": 23,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6TXREC",
+      "items": [
+        "sha256:79c40458465dbaea16e97853fe2e52860a70bd4598d427e5a12b8d005fc364ab"
+      ],
+      "reason": "Synced mcp/README.md confirmation onto base 53dbac3fb / candidate b2c03d1e8755 (BUG-L54+L33 + CAP-L6 crossing-3 merge), advancing revision to 28.",
+      "revision": 28,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6V9R1R",
+      "items": [
+        "sha256:25e6403f4f2de83354285e1631b12ff3780736037ce8c3c769a5ee208ffd828f"
+      ],
+      "reason": "Updated onboarding/mcp/tests/conftest.py.md to record per-test XDG_DATA_HOME via tmp_path_factory.mktemp('user-data') alongside XDG_CONFIG_HOME in _user_settings_home and refreshed all citations for Code Round 4 PASS synced tree f361cfb95723.",
+      "sources": [
+        {
+          "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+          "path": "mcp/tests/conftest.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/conftest.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-778PBM",
+      "items": [
+        "sha256:3442708beff7315bb5278c705d8446606b31465ab0d83fd86e71b172860fe5cd",
+        "sha256:633771c9ca5604a349aef1a620def32a78c0bb07a119281001d6a57707be3c3c"
+      ],
+      "reason": "Synced docs/architecture.md confirmation onto base 53dbac3fb / candidate b2c03d1e8755 (BUG-L54+L33 + CAP-L6 merge), advancing revision to 23.",
+      "revision": 23,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-826HNE",
+      "items": [
+        "sha256:55370c5efb1e3bcf561fdfb335aba29fcace01e6ea61f7d4b824792e375037da",
+        "sha256:58a6bc5f2e7086e434b8d0837cd8da1b2210eeabbec6c34909442caf4f0cddc8"
+      ],
+      "reason": "Confirmed CAP-L5 edited docs/features.md on synced tree f361cfb95723 while preserving open re-deferred KNO-R07 deferral DFR-CB8YJ8 (owner 261112-KNO) for lines 204 and 388-390.",
+      "revision": 37,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8CJDMM",
+      "items": [
+        "sha256:0fe8f90d5b2318aaab669b049803f66b8d38b28dee81449c530a5169e2f7f08b"
+      ],
+      "reason": "Updated core.py card to record read_ar_files naming TaskScopedReaderContext input fields (task_document_ref, contract_path) in 441 raw chars and re-authored stale references [6] and [11].",
+      "sources": [
+        {
+          "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
+            "content": "sha256:cb0a033f0729d3133650ea18d3a245dc58e05bf6a99bef4495e4ebe9d424cafc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+            "content": "sha256:364358932ff4fd311379743ab0e4ab7f465921fe04fc4be2f583b9fb202c91e4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        },
+        {
+          "after": {
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+            "content": "sha256:32a7c039e55a60cb98c1ce69fb3d43a23af2daa345760f8f4d4d1ed59a272bdf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "before": {
+            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+            "content": "sha256:23d0dac6a30a8a674652f98b02c1a4100cb83721462b5946e2be0fc0ac345331",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "id": "RLZ-AHFJXT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8MZFPH",
+      "items": [
+        "sha256:1ae07f097adaadf468ae1f6e0f9c86702c4e4d7b8903d4a1cb37ac013aef6ce7"
+      ],
+      "reason": "CAP-L5 added closing documentation passages to docs/reference/mcp-tools.md and docs/reference/runtime-layout.md without altering the five-minute recheck, early held-message drain, or provider-limits.json contract; re-anchored both whole-file realizations.",
+      "revision": 1,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8ZGR4J",
+      "items": [
+        "sha256:e4305c7757880640dc0e2979166df3fd7e953f92fea50a902909fe16aadf0a0c"
+      ],
+      "reason": "Confirmed updated docs/reference/harnesses.md on CAP-L5 tree af88a85d.",
+      "revision": 8,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8ZW3PV",
+      "items": [
+        "sha256:0f98bec60710a43a2b97b532f14cbf6fce8388237367c1dc90252e4f63678e17",
+        "sha256:61005556081cafe8f6168aa39c3fa5ab9d168cb8e4ab1ca5eb809995675a1727"
+      ],
+      "reason": "Re-confirmed docs/install/hermes.md on Code Round 4 PASS synced tree f361cfb95723 after KNO-L7 updated landing_answer_shapes.py; zero contradiction.",
+      "revision": 13,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "content": "sha256:a2c422d3b327331c33c30bf0e578a0530d46e760f6f372dab63c55a3bfb1ca24",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "before": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:eb3ac1bde13c70a0e8c7a42ddf9381509ac2da164c2011c906072a29fec939f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "id": "RLZ-DKX1HV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9R8A08",
+      "items": [
+        "sha256:26f4a1b7dac342f6a6ad852404343e31fd3087550d7fcc4b6361b3467559dbff"
+      ],
+      "reason": "Re-anchored support realization RLZ-DKX1HV on dashboard/src/cockpit/RoleChats.launcher.test.tsx for Code Round 3 PASS tree 2de7710673c1 after wrapping the Speed: Fast assertion in waitFor beside start.disabled === false; launcher feature preservation and default provenance invariant is unchanged.",
+      "revision": 4,
+      "subject": "INV-63Z0MN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A9G5PN",
+      "items": [
+        "sha256:87d6cbad2d4877fdc11f7459b948357357f332b2979027c35c994d0c6944bb8e"
+      ],
+      "reason": "Restored DPD-633P3W to KNO-L7 upstream c83e49a7f (rev 19, open deferral DFR-S6CEKP owned by 261112-KNO); CAP-L5 did not edit docs/llms.txt and core.py read_ar_files description repair introduces no new contradiction.",
+      "revision": 19,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "85f35fd2f1f699b7812b01b0850e39740b5528d1",
+            "content": "sha256:38e4e806eb43d387cd4c215656c7028d724715ef22532be9cfb06509bcb73821",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/skills.md"
+          },
+          "before": {
+            "blob": "c0e2d842b7397b60ad5e7d962fd0ccfc1f00dfdc",
+            "content": "sha256:7596a656e8bcdc1999cd319193b9473384cf10a98299d04dbf9106b2ca085fa1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/skills.md"
+          },
+          "id": "RLZ-PN2Q7F"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ABCKVY",
+      "items": [
+        "sha256:539983bf64c41f61fcaf6823b2095b5dda36c507d0759a6c33492f6706a0adc3"
+      ],
+      "reason": "CAP-L5 updated docs/reference/skills.md for 3-tier progressive disclosure and durable skill-corpus resolution while preserving the instruction-renewal command and CONTRIBUTING.md contributor pointer; re-anchored RLZ-PN2Q7F.",
+      "revision": 1,
+      "subject": "INV-J2CHWZ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ANKMMT",
+      "items": [
+        "sha256:6eedacf969aa6801e7d413b2a01c9fc6e95352f32d6ed4934b6f257d5f52811c",
+        "sha256:d968c69345cbd2d84f7cd60dda4f5b4b5d7935ccbcf0097529774bdf371dfe8b"
+      ],
+      "reason": "Confirmed CAP-L5 edited docs/concepts.md on synced tree f361cfb95723 while preserving open KNO-R07 deferral DFR-A19SP8 (owner 261112-KNO) for line 425.",
+      "revision": 35,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "deferralIds": [
+        "DFR-EV2TJQ"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CFE4RV",
+      "items": [
+        "sha256:ccdf28cd34c4e70c429c1ef4208b05ae816f4295b235fcd0f08cdfc3cddff844"
+      ],
+      "reason": "Confirmed updated docs/install/codex.md on CAP-L5 tree af88a85d and resolved open deferral DFR-EV2TJQ.",
+      "revision": 10,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D6SNDX",
+      "items": [
+        "sha256:5d937b83df7da48f2fd5283365b16b4595c8c2a0558d8c455820aba5a9316284"
+      ],
+      "reason": "Re-confirmed docs/design/python-pytest-bootstrap.md (lines 1-94) on Code Round 4 PASS synced tree f361cfb95723 after conftest.py switched XDG_DATA_HOME to tmp_path_factory.mktemp('user-data'); zero contradiction.",
+      "revision": 37,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D9M0P3",
+      "items": [
+        "sha256:ac46a5cbb76c18207511e0eb2c75ef8c533299a6111d59d9683f858fd60aa9db"
+      ],
+      "reason": "Updated registration route overview for read_ar_files (task_document_ref, contract_path) and worktree_sync raw-merge warning, and re-authored reference [38].",
+      "sources": [
+        {
+          "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        },
+        {
+          "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+          "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DF4W3M",
+      "items": [
+        "sha256:a9520e1f40d3f3f1ceff457a86e2a016724c1e9e132eb651ebbf683d26214ac5"
+      ],
+      "reason": "CAP-L5 edited only the worktree_sync docstring in worktrees.py; _register_worktree_start_tools and its memory_mode argument are unchanged, so WKN-FRS2Q6 still stands as open debt.",
+      "revision": 2,
+      "subject": "WKN-FRS2Q6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+            "content": "sha256:e653a9cb6247cece14c61e1f4a5a7b952cdf447939b40a325a64dfc88568b233",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "before": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:8986cd965e9ca0b82d45e1fb9dfb15e479bbfd3035dd033426f4126d877a71c3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "id": "RLZ-KZ3BQD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DY990F",
+      "items": [
+        "sha256:79f83071e457e9fe3299765c3d79de04e2b56017bba3e5f3e0839efe0aaf026d"
+      ],
+      "reason": "Re-anchored support realization RLZ-KZ3BQD on mcp/tests/conftest.py for Code Round 4 PASS synced tree f361cfb95723 after _user_settings_home switched per-test XDG_DATA_HOME to tmp_path_factory.mktemp('user-data'); outside-scratch parent isolation and marker-checked removal invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-TMKNRV"
+    },
+    {
+      "deferralIds": [
+        "DFR-JB7N46"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ED4PYA",
+      "items": [
+        "sha256:03f1b1fa255218c85d8c27edd2d348142fb98ba243c135104180b95b6447ec20"
+      ],
+      "reason": "Confirmed updated docs/reference/skills.md on CAP-L5 tree af88a85d and resolved open deferral DFR-JB7N46.",
+      "revision": 8,
+      "subject": "DPD-ZQB4YZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+            "content": "sha256:abb37125b3cf6a99387f4c7c11faf4355dd1b49bb9407e7f0b832c84e20cc2d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:e985eda391e72f8d9a41556ac080c7874c1a1e9bcf750ef7abc77a73bf640d56",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-GEQTSN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H3E4KE",
+      "items": [
+        "sha256:a102dac925339c017961472b3e9de2686b23f9a0c392aad1acd1cf3d7d056ff6"
+      ],
+      "reason": "CAP-L5 edited only the read_ar_files docstring in core.py; assignment_read stays retired and role launch MCP definition/grant policy is unchanged; re-anchored RLZ-GEQTSN.",
+      "revision": 4,
+      "subject": "INV-N9D91D"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HEJM69",
+      "items": [
+        "sha256:5256d55b58edf5c64341bb0ccc008aaf92d0019d067cc4904c7a8f949bda9f24",
+        "sha256:eac21d427022e9dd10b5641ae7b16981fa55c18414ae924c94ffe0933244f1ea"
+      ],
+      "reason": "Re-confirmed CONTRIBUTING.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1) after conftest.py switched XDG_DATA_HOME to tmp_path_factory.mktemp('user-data') and KNO-L7 updated test-evidence-lanes.toml; zero contradiction.",
+      "revision": 26,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JH0ES0",
+      "items": [],
+      "reason": "Audited and confirmed docs/FAQ.md against CAP-L5 tree af88a85d after core.py description repair; zero contradiction.",
+      "revision": 12,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JKWKZB",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Examined all 8 members of FAM-N17BB4 after re-anchoring INV-N9D91D whole-file core.py realization; launch-choice resolution against host offerings and Codex/Claude startup grants are unchanged.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c485db71ada40dc1f62d06ae5ccc33a7c8e5514",
+            "content": "sha256:b7648e0f834e8414dcbd1b97a0002253f9f5a0d162f8ff49cac5e6678c8d9143",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": {
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+            "content": "sha256:750163d382064732d0055cae8addbfdc8eb0e46b149f82892d466bbe3ed6e7ce",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "id": "RLZ-KK0WAS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K1T5DW",
+      "items": [
+        "sha256:f09ce25a82baec639856ee6947bd3023be5d84eceb85559fe72d6f6db2363a48"
+      ],
+      "reason": "Updated RLZ-KK0WAS anchor record in CAP-L5 history to lines 256-331 of role_reports.py after post-BUG-L54 sync onto 53dbac3fb shifted canonical_execution_reports through _line_measurement_citations by +27 lines; obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-29DEHG"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K2PE0Q",
+      "items": [
+        "sha256:254de1c1f9236c3c75274a8458904d51960b9c4087b9e3607b6143d19f192469",
+        "sha256:b814ec9b733fd9f36da0defb846a38efb0131085650d8ab2cd45dd773e3310be"
+      ],
+      "reason": "Aligned DPD-NGC2F6 history revision after KNO-L7 sync (rev 25; packaged tool-details.md copy matches docs/tool-details.md on synced base 1063f65132b1).",
+      "revision": 25,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-AV4AMJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B31E3G",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q9AV3B",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZBKDZR",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ME2K3V",
+      "items": [],
+      "reason": "Examined all 4 members of FAM-40M4RD after re-anchoring pre-base stale PRF-RK3Q1K on INV-Q9AV3B; bounded request-owned handover locator guarantees are unchanged.",
+      "revision": 1,
+      "subject": "FAM-40M4RD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+            "content": "sha256:51eb19d61cf4533407004bd3bebd09de60a3eed294b9b18814148fd9eb43563d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_literal_const_enum_and_default_payloads_survive_compaction_and_signature"
+            },
+            "path": "mcp/tests/test_tool_schema_compaction.py"
+          },
+          "before": "absent",
+          "id": "PRF-H4MRM8"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-NAXAEM",
+      "items": [],
+      "reason": "Attached test_literal_const_enum_and_default_payloads_survive_compaction_and_signature as an explicit proof of literal const, enum, and non-null default payload preservation on both compact_tool_schema and _contract_signature; invariant meaning is unchanged. Evidence (CAP-R05@v1 AC-3 literal-payload proof): mcp/tests/test_tool_schema_compaction.py::test_literal_const_enum_and_default_payloads_survive_compaction_and_signature on tree af88a85dc8da08e4a316a4b458227cad59e76c91",
+      "revision": 1,
+      "subject": "INV-EG3M4J"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q65AD7",
+      "items": [
+        "sha256:54def7992e4765d6d93d9de0abc650af0394272243ca122653d7c1de9084bd75",
+        "sha256:8e2c5e960c7792841c58fcf1f91dfa9d66a3a128de00739b88e5761c74df3a3e"
+      ],
+      "reason": "Synced docs/reference/runtime-layout.md confirmation onto base 53dbac3fb / candidate b2c03d1e8755 (BUG-L54+L33 + CAP-L6 merge), keeping DFR-GNDY45 resolved and advancing revision to 13.",
+      "revision": 13,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0B3Q36",
+          "revision": 2
+        },
+        {
+          "id": "INV-29DEHG",
+          "revision": 1
+        },
+        {
+          "id": "INV-453GX6",
+          "revision": 1
+        },
+        {
+          "id": "INV-ET42V0",
+          "revision": 1
+        },
+        {
+          "id": "INV-W55VKB",
+          "revision": 1
+        },
+        {
+          "id": "INV-X073BM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-QK5VGE",
+      "items": [],
+      "reason": "Examined all 6 members of FAM-MS7NC5 after re-anchoring pre-base stale RLZ-KK0WAS on INV-29DEHG; explainer input staging, canonical report manifest, and stage-artifact guarantees are unchanged.",
+      "revision": 2,
+      "subject": "FAM-MS7NC5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+            "content": "sha256:f861fb6d2e8445b1ac9e9628e2b4ba37de93e58aee9bdbf60f8af77a8ac40f0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_ar_files_description_names_task_scoped_reader_inputs"
+            },
+            "path": "mcp/tests/test_tool_schema_compaction.py"
+          },
+          "before": "absent",
+          "id": "PRF-436AJ1"
+        },
+        {
+          "after": {
+            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+            "content": "sha256:734fbca6777cb77caf32b1698ac25466588ba8cf2e54f89cbabb758f8afd5cd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_sync_description_keeps_raw_merge_warning"
+            },
+            "path": "mcp/tests/test_tool_schema_compaction.py"
+          },
+          "before": "absent",
+          "id": "PRF-69HVMA"
+        },
+        {
+          "after": {
+            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+            "content": "sha256:abb37125b3cf6a99387f4c7c11faf4355dd1b49bb9407e7f0b832c84e20cc2d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:e985eda391e72f8d9a41556ac080c7874c1a1e9bcf750ef7abc77a73bf640d56",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-1HMR42"
+        },
+        {
+          "after": {
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "before": {
+            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "content": "sha256:a4543c48577f503ae05e09521ac61a49632ba8e0930e5dd04e511e08b33cdcbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "id": "RLZ-6CYDPZ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-QTBSYF",
+      "items": [
+        "sha256:f4a290259ca980961ce408a2eb1cb541ac6c6cf86e0f9eb8aa2a6a00b4c470e9"
+      ],
+      "reason": "Re-anchored RLZ-1HMR42 (core.py read_ar_files input fields) and RLZ-6CYDPZ (worktrees.py worktree_sync raw-merge warning) with updated rationales and attached two new regression proofs in test_tool_schema_compaction.py; the 44-tool <=500-char description invariant meaning is unchanged. Evidence (CAP-R05@v1 AC-1+AC-2 description proofs): mcp/tests/test_tool_schema_compaction.py::test_worktree_sync_description_keeps_raw_merge_warning; mcp/tests/test_tool_schema_compaction.py::test_read_ar_files_description_names_task_scoped_reader_inputs on tree af88a85dc8da08e4a316a4b458227cad59e76c91",
+      "revision": 1,
+      "subject": "INV-06MGX9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 1
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R24X9Y",
+      "items": [
+        "sha256:9e31ad4cd104a0f92f169835b4f5d24d392888ff2c148b4c46f277e823b6a1ae"
+      ],
+      "reason": "Examined all 7 members of FAM-FD58VB after re-anchoring INV-6ZZXV3 whole-file doc realizations; early provider-limit reset, held-message drain, and plugin release guarantee and routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R79SG4",
+      "items": [
+        "sha256:f73b9abdd7d42ad685ebc288ca298a049f061f0693f6fb6ab7df05bdf62aec24"
+      ],
+      "reason": "Re-bound onboarding/mcp/tests/overview.md to Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1) across conftest.py, test_role_handover_binding.py, and test_tool_schema_compaction.py; preserved KNO-L7 695/848 count, CAP-L5 AC-4 repair, and refreshed citations.",
+      "sources": [
+        {
+          "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+          "path": "mcp/tests/conftest.py"
+        },
+        {
+          "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        },
+        {
+          "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+          "path": "mcp/tests/test_tool_schema_compaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-SVSA68",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined both members (INV-63Z0MN, INV-NNQR91) of FAM-GDXSJG after re-anchoring RLZ-DKX1HV on dashboard/src/cockpit/RoleChats.launcher.test.tsx; test-only waitFor timing adjustment does not affect dashboard launcher propagation or packaged skills serving guarantees.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "deferralIds": [
+        "DFR-BKQ5CP"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SZ1WVY",
+      "items": [
+        "sha256:eead8b27430ab24daa6d59b06f4c99d28b4b2f045be6ed13f48275944ef6a071"
+      ],
+      "reason": "Confirmed updated docs/reference/role-capsules.md on CAP-L5 tree af88a85d and resolved open deferral DFR-BKQ5CP.",
+      "revision": 11,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SZA9C6",
+      "items": [
+        "sha256:5ccce13eeeafb95538ad4163e9db11adef37f87d2ee2500db12e9b6ff86f2de4",
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7",
+        "sha256:fc814be5bffb1eae24bb17f8d1ca313cd0e0b41644d30ddc87d9a846ad1d68e6"
+      ],
+      "reason": "Read onboarding/mcp/tests/test_role_handover_binding.py.md against Code Round 3 PASS tree 2de7710673c1: test-only CAP-L3 wording string-pin updates at lines 394-402 and 587 preserve documented test responsibilities; re-authored whole-file and lines 463-606 citations.",
+      "sources": [
+        {
+          "blob": "6d9e01530c51fe4dd31a10a032891ea1a67f613e",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TPX415",
+      "items": [
+        "sha256:17440689c1f414376d17a921e0cb503756da5307e04fd0c8f8c822ef20bcc25f",
+        "sha256:c96b190edd73580e35da9d25f05279d0454aa1b7768a97c57d56a6031b4df32b",
+        "sha256:e9250d9419489caf580dde4d662c9db89c75c2d2b72c7d738b7f046afef12433"
+      ],
+      "reason": "Read onboarding/dashboard/src/panels/review/explainer/ExplanationView.test.tsx.md against Code Round 3 PASS tree 2de7710673c1: test-only passive-effect act flush and port.onmessage assertion before dispatching entered do not alter documented test coverage; refreshed sidecar citations.",
+      "sources": [
+        {
+          "blob": "e526e10b7a2a8d50ee411e3730b29783678ca9c8",
+          "path": "dashboard/src/panels/review/explainer/ExplanationView.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ExplanationView.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VD2SFD",
+      "items": [
+        "sha256:52d9613b4ca2045345ae3d00c2005e98fbebb4427f316411093af434f3b48c40",
+        "sha256:7af81ad33ea21a9bd168bbdaf6bf60f8c4da89880b0f4454b2fe6e52c37ea8dc"
+      ],
+      "reason": "Confirmed CAP-L5 edited docs/reference/mcp-tools.md on synced tree f361cfb95723 while preserving open KNO-R07 deferral DFR-5EZYPH (owner 261112-KNO) for lines 31 and 203.",
+      "revision": 32,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-ATA2Z7",
+          "revision": 1
+        },
+        {
+          "id": "INV-PJA167",
+          "revision": 2
+        },
+        {
+          "id": "INV-TTYYP8",
+          "revision": 3
+        },
+        {
+          "id": "INV-Y1SDE2",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W23D7Z",
+      "items": [],
+      "reason": "Examined all 4 members of FAM-S140B6 after re-anchoring pre-base stale RLZ-XRBVHQ on INV-ATA2Z7; held-queue crash recovery, stale-claim resume, message splitting, and sweep-drain guarantees are unchanged.",
+      "revision": 3,
+      "subject": "FAM-S140B6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WWJ5B1",
+      "items": [
+        "sha256:8f6fa2b713bedd7a797b03eca1922b2205e1d73b73db88dfff6b2397632d769a",
+        "sha256:ccda075a95f6884f722fef120b42a26baf7263f2f3613850272a7aa5b9b998a1"
+      ],
+      "reason": "Synced docs/roles.md confirmation onto base 53dbac3fb / candidate b2c03d1e8755 (BUG-L54+L33 + CAP-L6 merge), keeping DFR-YRD97K resolved and advancing revision to 19.",
+      "revision": 19,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:082cab09ab7894853bc81c9ca696c927abadbd0192e26fa03ffd051c29b98c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "before": {
+            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "content": "sha256:f76f7dbd114948f2d1f386710dea7bd5bcb659978cdd3ebdbfd03da72a70644a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "id": "RLZ-EX1X7C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X7H13F",
+      "items": [
+        "sha256:213b47ede897116af4c8baf86c24c0d80bfda1381d7c012bc8c6c615e45673c5"
+      ],
+      "reason": "CAP-L5 restored the memory-merge-only / raw git merge warning in worktree_sync's docstring while keeping the sync_source='repository-default' parameter and semantics unchanged; re-anchored RLZ-EX1X7C.",
+      "revision": 1,
+      "subject": "INV-STH8F0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XHR1VP",
+      "items": [
+        "sha256:1948f204d7331a7a1e8c7e24a62e26acedfe23ae012f681193ca323dda210520",
+        "sha256:2c2d7e0eb7ce42776776deedb48875572a33159ad6234c55243bf44b679a2bb9",
+        "sha256:847ef8dd23ca54fb07465ed118c5ddf86c38bf69c3368aedc8ffef139bf99c9b",
+        "sha256:99d5d4502d14268fb3d8d0dbe63d3a2fa256e79c80f03296ad55ddf3b324b2ce",
+        "sha256:e0bfa6d1d91da76bc409221a307df016b2b38b1416b79e626aab06b73e08ff80",
+        "sha256:e2a707a2e854ae905ac47361801c428446c238cafd0bea7297934c547f05952a",
+        "sha256:e59739841dd2c22929458ef22213d789d3917a42abfe8d4f3539890ff76284ee",
+        "sha256:edf12c61c0cfa06149ade445c3d8b31835eb9732f699a29c41018db827897600"
+      ],
+      "reason": "Updated test_tool_schema_compaction.py card for _contract_signature subschema-only recursion and the three new literal-payload and description-pin unit tests, authoring references [3]-[5].",
+      "sources": [
+        {
+          "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+          "path": "mcp/tests/test_tool_schema_compaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_schema_compaction.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XMR1JD",
+      "items": [
+        "sha256:09b09e1fe4c176fe9ecadebbb5b34ace50f4298170f4213a8921b8e393c93bff"
+      ],
+      "reason": "Read onboarding/dashboard/src/cockpit/RoleChats.launcher.test.tsx.md against Code Round 3 PASS tree 2de7710673c1: test-only waitFor settlement around Speed: Fast preserves documented behavior; refreshed moved citations and re-authored the tier/unoffered-model citation for lines 111-177.",
+      "sources": [
+        {
+          "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y0T0WN",
+      "items": [
+        "sha256:ae568cfd22f311dfd81c132848a5308123fd86d24d24cf4facf4b345673502ca"
+      ],
+      "reason": "Read onboarding/dashboard/src/overview.md against Code Round 3 PASS tree 2de7710673c1: test-only waitFor settlement in RoleChats.launcher.test.tsx does not alter dashboard shell, launcher, or cockpit ownership; refreshed moved line-range references in its sidecar.",
+      "sources": [
+        {
+          "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce85032f7b10fd549cfd6bcb2a9afe9883d12534",
+            "content": "sha256:d4caaf329a1176e355f292bbe3fa6ce8761fe16dee3a6a2adb9ffede51c6faf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "before": {
+            "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
+            "content": "sha256:7f88707f8e8a86599b7cc02818df4b26814094696183a390c18fdf49fafc764b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "id": "PRF-RK3Q1K"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y12RV1",
+      "items": [],
+      "reason": "Re-anchored pre-base master-end MIK-R09 stale proof PRF-RK3Q1K on test_role_locator_replay.py::test_real_detailed_preparation_refuses_a_collision_before_artifact_writes after CAP-L2/CAP-L3 merge onto 021fb21a; pre-write collision refusal proof holds including nested .details/.",
+      "revision": 1,
+      "subject": "INV-Q9AV3B"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YE49XD",
+      "items": [
+        "sha256:d9b0144eab29644b02fbdce7f6f48b57ed8fed9fd9eba713bc4b181c73046f89"
+      ],
+      "reason": "Read onboarding/dashboard/src/panels/review/overview.md against Code Round 3 PASS tree 2de7710673c1: test-only passive-effect flush in ExplanationView.test.tsx does not alter Intent Review architecture, ownership, or boundaries.",
+      "sources": [
+        {
+          "blob": "e526e10b7a2a8d50ee411e3730b29783678ca9c8",
+          "path": "dashboard/src/panels/review/explainer/ExplanationView.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZAP65A",
+      "items": [
+        "sha256:ea7f804e8851c78b7c8e858b598e07abd4773129236e53079b46fc034da8fdc8"
+      ],
+      "reason": "Updated worktrees.py card from 358 to 426 raw chars with the restored memory-merge-only and raw git merge unsupported hand edit warning, and re-authored stale references [2], [11], [13], and [14].",
+      "sources": [
+        {
+          "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+          "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/worktrees.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:2a8e33720081770ca22cadcbd65db88e181da511f80fd0cdb75ccb471fb6a186",
+      "record": "DPD-10YCT2",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:71dcc3a492d99c31aa86f4b5c628d0a87bb85677029870c40f332e20e8c09888",
+      "record": "DPD-2B7PTY",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-27T05:33:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f83c3f48ab51222342acdaa04e6c5367446f71683e4ff14a74d43ff94fc55080",
+      "record": "DPD-327MNX",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:fe0890f9f43773ce1598f22442345e861d8b5513c95aec79f30ebe2f6d1f4228",
+      "record": "DPD-3P9XTZ",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:8fa1bacc3937daae96a7981474ffe94b8c8876fbe6a6461a349c8e9171e92c30",
+      "record": "DPD-633P3W",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:c101b6b413db381ca455ff0f99252bfcc579970f4b3fa14a0772d6e40c5c2bb4",
+      "record": "DPD-71WYH4",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:70deff0af8c75c024bc4c2b071f0a9634fb5cf628f59bba2cd296d24ccc70115",
+      "record": "DPD-71WYH4",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T05:42:30+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:da8bc589db6833cc95e839df7df56867f0df3f0a898f7a8ebc0d8989f3968787",
+      "record": "DPD-78737N",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:22f66f499297e9ba2f95812944627d6d7298f6fbd667b9d06967e20569e5021e",
+      "record": "DPD-78737N",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-27T05:33:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:3a255c1ee8d5d7084d24c5e52a45c9586a39aac4afd0d564c219c509d85457d8",
+      "record": "DPD-86HJGF",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:4048dc1cc2f21c0ae492cd5d756ecba5265b6fa2bb3875f082bf6e6389d12171",
+      "record": "DPD-A3XZ3Q",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:40136ef47cec7f592cdc9d9828aca6615ec2f78bb6f6ec8aeca8fdcc8df66cff",
+      "record": "DPD-B540GW",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:661695054cea24678bf792b770a0498f7f4baadb545a11b45d1057e64244b55c",
+      "record": "DPD-EG5TYT",
+      "revision": 34,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:55686b2059dfd6b1ecadf600828fb96f6a906b04e52fc0355b07e2b9372d7eb4",
+      "record": "DPD-EG5TYT",
+      "revision": 37,
+      "writer": {
+        "at": "2026-11-27T05:42:30+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:75e6d77bb0c2900694d6b741929834c4e30f16426a9f82c802d86ba46193de86",
+      "record": "DPD-GHEXS9",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-27T05:33:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f013ce3521dfcefa21eb7cf120cd6af15ae212f0b0f6f04894a76889a7b10967",
+      "record": "DPD-GNFCSM",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:248438c1d9a435c417d3a9c66c297dda2eabb9dcec16c2a6f6c88bbc01146f55",
+      "record": "DPD-NGC2F6",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b104827fbb97c647f0ce1c51e056ed027f6f6e7611cc38c7f7d40d41078abdc9",
+      "record": "DPD-PYMM5P",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:91e4e1dfdb068b517e5e3b0ec773296464313af0ba6980a39ce5066f34c44ee5",
+      "record": "DPD-Q4APMS",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:10a9ec123868940ec9198b6cebc0efb144136edcc7d5e04538e3f5344dacf0d2",
+      "record": "DPD-QFGFS0",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1634aaa7747e1b8e15b254ee175f653b234ba5ec40565f4b9cc55bb52620b501",
+      "record": "DPD-X6G7K3",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-27T05:42:30+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:7ad0c6ecf6f0b863cb8f4b2b3825d665fdd2a3fc6e117e65fbfbfac4c28cf59d",
+      "record": "DPD-ZMQ523",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-27T03:32:09+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:163a9c2a97c57f1cabf28047cde4e5aaf0c7d9ae256096f80b499d510f244fac",
+      "record": "DPD-ZQB4YZ",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T23:45:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f453ec4b25cf3fe5d73398497793db79a2dbce469e975df8aace021ec227c7c8",
+      "record": "DPD-ZT8YY7",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T04:47:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:e61ae84eb417cb0355da89a584bc8c2e20b9c5e0327506f844264a38ed6f0b29",
+      "record": "DPD-ZT8YY7",
+      "revision": 37,
+      "writer": {
+        "at": "2026-11-27T05:33:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L5",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+        "task": "261124-CAP"
+      }
+    }
+  ]
+}

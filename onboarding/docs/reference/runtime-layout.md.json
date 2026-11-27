@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
-        "content": "sha256:23d0dac6a30a8a674652f98b02c1a4100cb83721462b5946e2be0fc0ac345331",
+        "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+        "content": "sha256:32a7c039e55a60cb98c1ce69fb3d43a23af2daa345760f8f4d4d1ed59a272bdf",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
-        "content": "sha256:055d9570f12ee4feece62b3fbb8096ca10d443edefc1c7c362e9391d007f0137",
+        "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+        "content": "sha256:5582ac32de35bcbce85354ca46852727f7f844750459c4bfb035425ad551fd7e",
         "locator": {
           "end": 81,
           "kind": "line_range",
@@ -40,14 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, and paseo-native-executions paths.",
+      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, `.cache/skill-corpus/`, and paseo-native-executions paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
-            "content": "sha256:e567094cf551a8515295dbfc9614f0aa4313303635e184f3fe49d74cb4b2d356",
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+            "content": "sha256:a6f74517b95eaf03b71b76c507f7806ca4fb7e9d2aeb229711c6c396e21bdb3c",
             "locator": {
-              "end": 53,
+              "end": 54,
               "kind": "line_range",
               "start": 11
             }
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
             "content": "sha256:ea78b1f23a7b0b0a574521721aabf8fe73b392625c5f1a494746468c7f2db43a",
             "locator": {
-              "end": 168,
+              "end": 169,
               "kind": "line_range",
-              "start": 152
+              "start": 153
             }
           },
           "kind": "code"
@@ -74,16 +74,16 @@
       ]
     },
     "3": {
-      "note": "Per-role scratch and report folders, `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.",
+      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.\n\nAnchor: `## Scratch folders`",
       "targets": [
         {
           "anchor": {
-            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
-            "content": "sha256:c052360b3a3a7b7121464db09738624cc1d3cbaddc228717f33c7ad467f192ad",
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+            "content": "sha256:9ea282ada002f17bf144dc3484c53ed2944d171217ec64fbe3f7c232b2436604",
             "locator": {
-              "end": 203,
+              "end": 207,
               "kind": "line_range",
-              "start": 169
+              "start": 170
             }
           },
           "kind": "code"

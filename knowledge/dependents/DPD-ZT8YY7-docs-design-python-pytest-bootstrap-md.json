@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0601566579ef39fe6cab0b43e547041eb7359a57",
-    "commit": "3e4c8d678835d3d077dfee722c1bfb89f1bf5359",
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
     "role": "curator",
-    "statement": "Verified docs/design/python-pytest-bootstrap.md against synced 3e4c8d678 + KNO-R07 candidate: pytest bootstrap and evidence-lane mechanics remain accurate after registering the two KNO-R07 unit-regression modules and shifting test-evidence-lanes.toml lines 865-867 to 867-869.",
-    "task": "261112-KNO-L7",
+    "statement": "Re-confirmed docs/design/python-pytest-bootstrap.md (lines 1-94) on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): Isolation, Policy, Budgets, Commands, Certification, and Diagnostic metrics remain completely accurate after mcp/tests/conftest.py moved per-test XDG_DATA_HOME to tmp_path_factory.mktemp('user-data').",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 36,
+  "revision": 37,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "pyproject.toml"
     },
     {
-      "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+      "blob": "8519550ed36c2126183a5e02b649210221f2e280",
       "kind": "file",
       "path": "mcp/tests/conftest.py"
     },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T03:56:55+01:00",
+    "at": "2026-11-27T05:33:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

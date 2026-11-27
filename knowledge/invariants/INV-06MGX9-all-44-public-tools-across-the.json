@@ -30,6 +30,7 @@
   "schema": "ar-invariant/v1",
   "statement": "All 44 PUBLIC_TOOLS across the nine registration modules advertise optimized raw descriptions at or below 500 characters while preserving every pinned contract substring, AST docstring shape, and documentation pointer.",
   "supersedes": [],
+  "title": "All 44 PUBLIC_TOOLS descriptions stay at or below 500 raw characters",
   "writer": {
     "at": "2026-11-26T12:07:40+01:00",
     "by": "conversion",
