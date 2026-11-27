@@ -45,4 +45,3 @@ Preparation happens in the child and the caller's lifecycle binding is not adopt
 
 
 - Sequential child preparation leaves the caller's binding environment exact. [4]
-

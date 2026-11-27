@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0d1f4e2330f16a7b9c4ac546d7f046e27bb428ab",
-    "commit": "a7dd3660d211118210760755c852e9316e04dadf",
+    "codeTree": "0e9f45c9d2f003048e78fc46adae4783f46e8e4c",
+    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
     "role": "curator",
-    "statement": "Audited docs/guides/review-page-and-explainer.md in full against post-L58 synced L62 candidate 0d1f4e23: BUG-R62@v1's showFrame gating of computeFrameTarget in dashboard/src/explainer/columnState.ts does not alter any documented explainer header state, menu selection, build panel, or notice behavior in lines 392-418 and 515-529.",
-    "task": "261112-BUG-L62",
+    "statement": "Audited docs/guides/review-page-and-explainer.md in full (lines 1-938) against post-crossing-5 synced L61 candidate (base 7ff6e80f139c): L61 minimal dashboard/src/tray/traySend.ts update (typing TrayMessageBody.repository optional, removing the redundant MessageBody alias, and updating comments for non-blocking optional repository context) preserves shownStore provenance, archived-explainer first-request diversion, and all review-page tray send/settlement documentation with zero contradictions.",
+    "task": "261112-BUG-L61",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -111,7 +111,7 @@
       "path": "dashboard/src/explainer/FirstRequestForm.tsx"
     },
     {
-      "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+      "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
       "kind": "file",
       "path": "dashboard/src/tray/traySend.ts"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T04:15:52+01:00",
+    "at": "2026-11-27T05:37:33+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L62",
+    "leaf": "261112-BUG-L61",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
     "task": "261112-BUG"
   }
 }

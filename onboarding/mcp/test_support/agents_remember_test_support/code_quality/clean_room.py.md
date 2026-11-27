@@ -48,4 +48,3 @@ No cross-repository contract is owned here.
 
 
 - The adapter is confined to one resolved code worktree and enclosure. [2]
-

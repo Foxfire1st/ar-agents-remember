@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:a92f867fdc4d64a5373faf9591de3ce0a1c9bb87c88c15b1217f39ce0d173a78",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+        "content": "sha256:309ab7fbf5254cfe22ed9efe19f531e80bfeb1355e98477d9a83ccc8b6bcd5b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_filed"
+        }
+      },
+      "id": "RLZ-C8CZK2",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L61-INV-G1K3QN-taskless-filing",
+        "leaf": "261112-BUG-L61"
+      },
+      "rationale": "Matches taskful folders, unified taskless/*/*_<message_id>*.md, and legacy */taskless/*/*_<message_id>*.md so previously filed repo-scoped taskless messages stay readable, deduped, and settleable.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:a713727e7982a76592f195fff495d0c180a0d371b62b226b9958caab1b9ae67e",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:bb0efbdd0cc73844858b708875decc61d9cd8e2a3ef6b6b03f40037fdfb4779d",
         "locator": {
           "kind": "symbol",
@@ -58,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:af3b99efbc02aaa3de19f18d5aaf8f69b23c106a3224b04457a008463e37acf8",
         "locator": {
           "kind": "symbol",
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:2bed6dfd77059c86b4875d79cdf28ee04cfb34e5ef49b73dfec4584528470ef7",
         "locator": {
           "kind": "symbol",
@@ -94,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:e89513e05af19bdee3d1203c117044dd83e8f4fbebfbe532017c4d9c01561958",
         "locator": {
           "kind": "symbol",
@@ -112,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
-        "content": "sha256:479eeea0476e520846b11661db822dcc845c10e8c2d7a19a9e525594b096c397",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+        "content": "sha256:6e47f5db40715604eeee04ccb7a585c7ddc0c55754fd33d1e99453c47d98768b",
         "locator": {
           "kind": "symbol",
           "name": "target_folder"
@@ -125,12 +143,12 @@
         "handoffEntry": "TRAY09",
         "leaf": "260928-MIK-L89"
       },
-      "rationale": "Chooses the task's folder or the taskless agent folder.",
+      "rationale": "Chooses <repository>/<task_id>/ for taskful recipients or unified taskless/<agent_id>/ for taskless recipients.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:d57d6c9e45b36987f61d48afbdfca51e3f74805ae1dd8af0c204f020337e473c",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+        "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
         "content": "sha256:5e64d53328daf00035dfce6325a2a4c8eb8706297e5097bbe098d62b17f2289f",
         "locator": {
           "kind": "symbol",
@@ -167,16 +185,26 @@
   ],
   "references": {
     "1": {
-      "note": "Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history.\n\nAnchor: \"def target_folder(\"",
+      "note": "Keeps target-scoped complete developer messages (taskful and unified taskless), legacy taskless read-back, hashed picks and bounded sent-log history.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
-            "content": "sha256:d0f390d49f4191f336a0241aeed5a4c228976dfd74e7b56f91cd1594ef1d4242",
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+            "content": "sha256:6e47f5db40715604eeee04ccb7a585c7ddc0c55754fd33d1e99453c47d98768b",
             "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 81
+              "kind": "symbol",
+              "name": "target_folder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+            "content": "sha256:309ab7fbf5254cfe22ed9efe19f531e80bfeb1355e98477d9a83ccc8b6bcd5b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_filed"
             }
           },
           "kind": "code"
@@ -188,12 +216,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
             "content": "sha256:ce5cf552d7b20e28664e10e5a733c87da95a502eb8bf1ae9e631471541481301",
             "locator": {
-              "end": 116,
+              "end": 123,
               "kind": "line_range",
-              "start": 104
+              "start": 111
             }
           },
           "kind": "code"
@@ -205,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
             "content": "sha256:bb0efbdd0cc73844858b708875decc61d9cd8e2a3ef6b6b03f40037fdfb4779d",
             "locator": {
               "kind": "symbol",
@@ -216,12 +244,12 @@
         },
         {
           "anchor": {
-            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
             "content": "sha256:092281c59bc5e22b4df5a058a70f56f6ef0f7924d01f1aab2f0f3f4d0104bbf6",
             "locator": {
-              "end": 38,
+              "end": 40,
               "kind": "line_range",
-              "start": 26
+              "start": 28
             }
           },
           "kind": "code"

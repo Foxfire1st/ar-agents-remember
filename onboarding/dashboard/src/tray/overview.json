@@ -42,12 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-            "content": "sha256:0554ac70db8bc6a8ef94c826865cc82df17e8f38d0a1c6361686b3be68d6de99",
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
             "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "sendTray"
             },
             "path": "dashboard/src/tray/traySend.ts"
           },
@@ -207,6 +206,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "sendTray"
+            },
+            "path": "dashboard/src/tray/traySend.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
             "content": "sha256:cbcf519a0e6135b848475968eaa787c925645e0b60f012db8ddf727391f6730d",
             "locator": {
@@ -215,17 +226,6 @@
               "start": 120
             },
             "path": "dashboard/src/tray/TrayPanel.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/tray/traySend.ts"
           },
           "kind": "code"
         }

@@ -24,4 +24,3 @@ Provides a concise LLM-oriented summary and complete relative-link index of the 
 - Memory discovery via mirrored paths, `read_ar_files` brief/compact row shapes, and names-only `knowledge_read`. [2]
 
 - Five canonical install steps from `uv tool install` through Bootstrap call and dashboard open. [3]
-

@@ -12,7 +12,7 @@ Defines tray object identity, collection entries, developer-send payloads and tr
 
 ### Logic
 
-Keeps references structured; distinguishes panel/chat provenance, partial seat listings, delivered/held/refused outcomes and filed-message identity.
+Keeps references structured; distinguishes panel/chat provenance, partial seat listings, delivered/held/refused outcomes and filed-message identity; types `repository` as optional on `TrayMessageBody`.
 
 ### Invariants And Boundaries
 

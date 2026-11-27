@@ -32,4 +32,5 @@ All worlds are prepared through `writer_worklist_test_support.prepare_worklist` 
 - A member absent from `K_C` stamps its worklist base revision and satisfies `family_row_open`, while unknown names, non-invariants, and invalid bases are refused. [3]
 
 
+
 - The module is selected in `unit-regression` and listed on its four source-derived artifact consumer lists. [4]
