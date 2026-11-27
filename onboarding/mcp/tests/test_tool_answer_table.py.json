@@ -21,6 +21,23 @@
     {
       "anchor": {
         "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
+        "content": "sha256:91382885cfc795f16005642746b4059a1c4afa72f7786adddbf2f13096f0d024",
+        "locator": {
+          "kind": "symbol",
+          "name": "L109LargestProductionTests.test_knowledge_read_largest_is_operation_produced"
+        }
+      },
+      "facet": "Demonstrates that the operation-produced largest source_context page matches the 4,000-token cut (12 rows returned, 25 remaining).",
+      "id": "PRF-FRMZ8A",
+      "invariant": "INV-HYYYX5",
+      "origin": {
+        "handoffEntry": "BUG-R64-Option3B-tree-bound",
+        "leaf": "261112-BUG-L64"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
         "content": "sha256:55c468ba322e2a0094e88f07fecf0ebe1d879ce73f9ea5dc5e23248eb5a201e0",
         "locator": {
           "kind": "symbol",

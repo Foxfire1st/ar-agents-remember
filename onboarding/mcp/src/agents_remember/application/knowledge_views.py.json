@@ -157,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4e367f74cf99e83ed876df07c80f0579e9055bd",
+            "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
             "content": "sha256:a5824e1c2ef143cdffea0f9bd5130b705f31e9c8752b1bd592b22b3cbc2798dc",
             "locator": {
-              "end": 770,
+              "end": 774,
               "kind": "line_range",
-              "start": 723
+              "start": 727
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -170,12 +170,12 @@
         },
         {
           "anchor": {
-            "blob": "b4e367f74cf99e83ed876df07c80f0579e9055bd",
+            "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
             "content": "sha256:5d99f2c6b27e2468a571ec62cbcbf0522bbe1803f7d742b1e0bd3d43449d19cb",
             "locator": {
-              "end": 977,
+              "end": 981,
               "kind": "line_range",
-              "start": 873
+              "start": 877
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -183,12 +183,12 @@
         },
         {
           "anchor": {
-            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "blob": "cb555efcf61550390f3cd0e770ef7ac59e679676",
             "content": "sha256:fa865c6227e5472b5d644a83b55b69a227a166860b67beea1270e435bee27bbd",
             "locator": {
-              "end": 674,
+              "end": 681,
               "kind": "line_range",
-              "start": 652
+              "start": 659
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
           },

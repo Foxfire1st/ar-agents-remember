@@ -1,5 +1,5 @@
 {
-  "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py",
+  "path": "mcp/src/agents_remember/application/knowledge_queries.py",
   "realizes": [
     {
       "anchor": {

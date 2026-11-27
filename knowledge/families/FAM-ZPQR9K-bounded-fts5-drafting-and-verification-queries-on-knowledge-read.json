@@ -20,25 +20,24 @@
     "leaf": "261112-KNO-L7",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp/src/agents_remember/memory/knowledge_index",
-    "mcp/src/agents_remember/mcp/registration",
-    "mcp/src/agents_remember/models/tools",
     "mcp/src/agents_remember/application",
-    "mcp/src/agents_remember/mcp/tools"
+    "mcp/src/agents_remember/mcp/registration",
+    "mcp/src/agents_remember/memory/knowledge_index",
+    "mcp/src/agents_remember/models/tools"
   ],
   "schema": "ar-family/v1",
   "title": "Bounded drafting and verification queries on knowledge_read",
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T08:20:21+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261112-BUG-L64",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "f5500511-d459-5681-b091-6d0186621e40",
+    "task": "261112-BUG"
   }
 }

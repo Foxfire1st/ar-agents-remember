@@ -169,6 +169,24 @@
     {
       "anchor": {
         "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+        "content": "sha256:1f1815b7611d9b97d0a8dbde901e6e21a2f43af0810431f47f94701f6b455a04",
+        "locator": {
+          "kind": "symbol",
+          "name": "TOOL_ANSWER_EXCEPTIONS"
+        }
+      },
+      "id": "RLZ-AGH4VM",
+      "invariant": "INV-HYYYX5",
+      "origin": {
+        "handoffEntry": "BUG-R64-Option3B-tree-bound",
+        "leaf": "261112-BUG-L64"
+      },
+      "rationale": "Preserves the 5,000-token envelope exception for ('knowledge_read', None) so verbatim 20-record batch reads remain bounded at 5,000 tokens.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
         "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
         "locator": {
           "kind": "symbol",

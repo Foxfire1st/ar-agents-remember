@@ -1,12 +1,12 @@
-# mcp/src/agents_remember/mcp/tools/knowledge_queries.py
+# mcp/src/agents_remember/application/knowledge_queries.py
 
 ## Governing Overview
 
-[tools](overview.md)
+[application](overview.md)
 
 ## Purpose
 
-MCP tool adapter bridging `knowledge_read` requests for `QUERY_VIEWS = frozenset({"impact", "search", "records"})` to their application query owners, handling automatic code-source pairing, dataset selection lifecycle, error refusal mapping, and standard MCP `state: "view"` / `"refused"` envelopes.
+Internal application query-view dispatcher bridging `knowledge_read` requests for `QUERY_VIEWS = frozenset({"impact", "search", "records"})` to their application query owners, handling automatic code-source pairing, dataset selection lifecycle, error refusal mapping, and standard MCP `state: "view"` / `"refused"` envelopes.
 
 ## Code Commentary
 

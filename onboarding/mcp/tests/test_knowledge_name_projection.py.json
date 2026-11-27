@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_knowledge_name_projection.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "492ef4281e5d892bc9cb3a2478f35cb36e3a7c65",
+        "content": "sha256:003253a6d9f374c6c7e65e8a49c84ca6ab1b0899b2f40d4e7689d2a815820a87",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_resumed_walk_after_a_checkout_move_is_refused"
+        }
+      },
+      "facet": "Demonstrates that legacy source_context pagination cuts a multi-page walk within the 4,000-token tree_read bound and refuses continuation after a checkout move.",
+      "id": "PRF-CY0VJX",
+      "invariant": "INV-HYYYX5",
+      "origin": {
+        "handoffEntry": "BUG-R64-Option3B-tree-bound",
+        "leaf": "261112-BUG-L64"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

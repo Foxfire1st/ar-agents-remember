@@ -872,6 +872,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers. Anchor: file [247]
 
 
@@ -882,7 +883,10 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - Closeout-input support names the same retained code/memory transaction replacement node. Anchor: file [254]
+
 
 
 
@@ -906,7 +910,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file [584]
+
 
 
 
@@ -935,7 +941,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - The held consumers of `mcp/tests/knowledge_index_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not an execution account. Anchor: file [285]
+
 
 
 
@@ -987,6 +995,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 - Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file [323]
 
 - Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file [324]
+
 
 
 
@@ -1569,7 +1578,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - Knowledge-writer test support lists the crossing dependent writer test as a consumer. [341]
+
 
 
 
@@ -1586,13 +1597,21 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [585]
+
+
 
 
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [576]
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [586]
+
+
 
 
 
@@ -1623,7 +1642,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [517]
+
+
 
 
 
@@ -1643,7 +1666,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [519]
+
+
 
 
 
@@ -1663,7 +1690,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [521]
+
+
 
 
 
@@ -1683,7 +1714,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [523]
+
+
 
 
 
@@ -1704,6 +1739,8 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The permanent shared settings guard declares its owner, replacement node and exact consumers. [525]
 
 
@@ -1714,7 +1751,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [526]
+
+
 
 
 
@@ -1735,7 +1776,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [528]
+
+
 
 
 
@@ -1756,6 +1801,8 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [530]
 
 
@@ -1766,7 +1813,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution. [531]
+
+
 
 
 
@@ -1788,7 +1839,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution. [533]
+
+
 
 
 
@@ -1814,6 +1869,8 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules. [535]
 
 
@@ -1826,7 +1883,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [536]
+
+
 
 
 
@@ -1852,7 +1913,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts. [538]
+
+
 
 
 
@@ -1872,7 +1937,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists. [540]
+
+
 
 
 
@@ -1892,6 +1961,8 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The settings guard lists the crossing dependent writer test as a consumer. [542]
 
 
@@ -1902,7 +1973,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The portable Node lockfile lists the crossing dependent writer test as a consumer. [543]
+
+
 
 
 
@@ -1925,7 +2000,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The four DEP-R07 type-checker defect regression modules are declared as exact consumers on the settings-guard and Node-lockfile rows, and `test_organizational_completion_repair.py` is also declared on `node/package.json` and `repository_profile_test_support.py`. [346]
+
+
 
 
 
@@ -1947,7 +2026,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The lifecycle catalog declares `mcp/tests/test_code_quality_dashboard_lint_scope.py` as an exact consumer of `_user_settings_guard.py` and the Node-profile `package-lock.json` fixture; membership is dependency reachability accounting, not test execution. [544]
+
+
 
 
 
@@ -1967,7 +2050,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. [546]
+
+
 
 
 
@@ -1987,7 +2074,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [548]
+
+
 
 
 
@@ -2007,7 +2098,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The current lifecycle catalog declares test_knowledge_route_chain.py on ten exact artifact consumer lists. [550]
+
+
 
 
 
@@ -2027,7 +2122,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The current lifecycle catalog declares test_worktree_own_environment.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_worktree_own_environment.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_worktree_own_environment.py` as an exact consumer. [552]
+
+
 
 
 
@@ -2047,7 +2146,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. [554]
+
+
 
 
 
@@ -2067,7 +2170,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The canonical _user_settings_guard.py artifact declares test_task_document_order.py as an exact consumer; membership is not execution. [556]
+
+
 
 
 
@@ -2087,7 +2194,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer. [558]
+
+
 
 
 
@@ -2107,7 +2218,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. This declaration establishes no invocation. [560]
+
+
 
 
 
@@ -2127,7 +2242,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. [562]
+
+
 
 
 
@@ -2147,7 +2266,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity. [564]
+
+
 
 
 
@@ -2163,7 +2286,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer. [566]
+
+
 
 
 
@@ -2183,7 +2310,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The settings guard and Node lockfile each declare the after-discovery, publication-merge-admission and landing-workflow-setting tests as consumers. The after-discovery regression asserts that scheduling follows the discovery answer and that the first call starts the same work when discovery was skipped. [568]
+
+
 
 
 
@@ -2203,7 +2334,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The catalog declares 26 recording artifacts with their consumer ownership. Issue 414 owns the general derivation limitation. [570]
+
+
 
 
 
@@ -2225,7 +2360,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - `mcp/tests/test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json`. [572]
+
+
 
 
 
@@ -2237,10 +2376,16 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 - `mcp/tests/test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_writer_test_support.py`, and `writer_worklist_test_support.py` (18 contracts, 123 artifacts). [573]
 
 
+
+
 - The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. [574]
 
 
+
+
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [575]
+
+
 
 
 - `mcp/tests/test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, and `paseo_runtime_test_support.py` (18 contracts, 123 artifacts). [587]

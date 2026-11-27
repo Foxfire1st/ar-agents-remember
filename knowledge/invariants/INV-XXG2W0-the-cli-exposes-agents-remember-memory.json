@@ -9,7 +9,7 @@
   },
   "applicability": "Manual derived-brief regeneration invoked via the public agents-remember memory-briefs CLI subcommand.",
   "conditions": [
-    "Accepts either a configured repository selector (--repo) or explicit converted --memory and --code directories, verifying the converted layout marker before refreshing via refresh_written_memory_folder.",
+    "Accepts either a configured repository selector (--repo, with optional --config) or explicit converted --memory-root, --code-root, and --coordination-root directories (with optional --code-commit), verifying the converted layout marker before refreshing via refresh_written_memory_folder.",
     "Refuses unconverted legacy memory directories without writing files and emits structured JSON when --json is requested."
   ],
   "exclusions": [
@@ -27,20 +27,20 @@
     "leaf": "261112-KNO-L7",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The CLI exposes agents-remember memory-briefs to manually refresh derived briefs for a configured repository or explicit memory/code pair and refuses unconverted legacy memory directories.",
   "supersedes": [],
   "title": "CLI memory-briefs command refreshes derived briefs and refuses legacy",
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T08:20:21+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261112-BUG-L64",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "f5500511-d459-5681-b091-6d0186621e40",
+    "task": "261112-BUG"
   }
 }

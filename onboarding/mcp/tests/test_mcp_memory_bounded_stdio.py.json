@@ -17,6 +17,23 @@
         "handoffEntry": "BUG-R18@v1 item 4 — stress regression",
         "leaf": "261112-BUG-L18"
       }
+    },
+    {
+      "anchor": {
+        "blob": "1e2e355c1da61d56ca7b0745abbe5f339123f7f9",
+        "content": "sha256:567ac684a891089c67be2c8da2cfa0a45668420c4f483c3b608eaf66da1a50f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_stdio_memory_stays_bounded"
+        }
+      },
+      "facet": "Demonstrates that native stdio memory stays bounded with the restored 4,000-token legacy tree-view pagination cut.",
+      "id": "PRF-8MEYB3",
+      "invariant": "INV-HYYYX5",
+      "origin": {
+        "handoffEntry": "BUG-R64-Option3B-tree-bound",
+        "leaf": "261112-BUG-L64"
+      }
     }
   ],
   "realizes": [
@@ -90,12 +107,12 @@
         },
         {
           "anchor": {
-            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
             "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
             "locator": {
-              "end": 874,
+              "end": 879,
               "kind": "line_range",
-              "start": 871
+              "start": 876
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

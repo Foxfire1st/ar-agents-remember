@@ -4,6 +4,24 @@
     {
       "anchor": {
         "blob": "c5e9620c5b830bef6c200edb2b025aef975fe00f",
+        "content": "sha256:87d79391ad26addabc0e383dae816213806dfd445b9fb1960ab78cbfed5afba5",
+        "locator": {
+          "kind": "symbol",
+          "name": "add_arguments"
+        }
+      },
+      "id": "RLZ-K8JY0G",
+      "invariant": "INV-XXG2W0",
+      "origin": {
+        "handoffEntry": "BUG-R64-INV-XXG2W0-flags",
+        "leaf": "261112-BUG-L64"
+      },
+      "rationale": "Defines the authoritative memory-briefs CLI flags (--repo, --config, --memory-root, --code-root, --code-commit, --coordination-root, --json) that commands.md and INV-XXG2W0 match.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c5e9620c5b830bef6c200edb2b025aef975fe00f",
         "content": "sha256:afe5a406c8ef22b0c2bb15ff23e1d34af7ebdaf15c8506a6385e7976d3203e61",
         "locator": {
           "kind": "symbol",

@@ -30,7 +30,7 @@ Retrieve the smallest useful route packet. Generated `overview.index.json` suppl
 
 knowledge_read with view source_context exposes the family-complete path walk: the index selects path invariants/entries and containing/chain families, while the mounted answer names text IDs, kinds, computed states and locations rather than record prose. Shared-member/header references and counts remain paging facts. read_ar_files also uses prepare_leaf internally to compute card states/counts, but exposes no paged record walk or continuation and keeps no per-session served state. Paired published-intent delivery, deferred seeds and served_earlier response descriptions are historical carriers, not its current naming response.
 
-The retained internal knowledge threshold metadata declares 8,000 tiktoken:o200k_base tokens. The mounted knowledge_read pager instead sizes the delivered naming projection against bound_for("knowledge_read") = 5,000 tokens with envelope reserve. View/scope cuts cap data rows at twenty; leaf cuts cap them at nineteen to reserve room for a continued-family header. This is not a twenty-entry aggregate across every list in the answer. Whole-selection/returned/remaining counts and continuations bind memory tree, seed, policy, manifest, ordering and resolved code tree. Resume through knowledge_read with memory root, view and token, never a database path. Indivisible oversized rows retain the internal pager flag; mounted naming rows carry no record prose. Deferred paired-read seeds and seed_queue_exceeded belong to the retired paired content route, not current read_ar_files.
+The retained internal knowledge threshold metadata declares 8,000 tiktoken:o200k_base tokens. The mounted knowledge_read legacy tree-view pager (`source_context`, `invariant`, `family`) instead sizes the delivered naming projection against `TOOL_ANSWER_EXCEPTION_MAX_TOKENS` = 4,000 tokens via `tree_read._delivered_bound()` with envelope reserve, while `bound_for("knowledge_read")` stays at 5,000 tokens for verbatim batch `records`. View/scope cuts cap data rows at twenty; leaf cuts cap them at nineteen to reserve room for a continued-family header. This is not a twenty-entry aggregate across every list in the answer. Whole-selection/returned/remaining counts and continuations bind memory tree, seed, policy, manifest, ordering and resolved code tree. Resume through knowledge_read with memory root, view and token, never a database path. Indivisible oversized rows retain the internal pager flag; mounted naming rows carry no record prose. Deferred paired-read seeds and seed_queue_exceeded belong to the retired paired content route, not current read_ar_files.
 
 A task-scoped reader requires the task reference, repository, enclosure binding, contract identity and directories to agree; neither root substitutes for the other. Missing memory is named rather than filled from another repository or snapshot.
 
@@ -380,7 +380,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite. [71]
 
 
-- The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 5,000-token delivered bound and a 20-entry list cap. [73]
+- The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read legacy tree-view pager uses a 4,000-token delivered bound (`TOOL_ANSWER_EXCEPTION_MAX_TOKENS`) and a 20-entry list cap, while `bound_for("knowledge_read")` stays at 5,000 tokens for verbatim batch `records`. [73]
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
@@ -689,7 +689,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares sibling leaf seats (Worker/Reviewer/Curator for ordinary leaves, or Consolidator/Reviewer for consolidation leaves): Worker or Consolidator opens immediately, while held seats open on their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator, consolidator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest still contributes its full-source revision to capsule semantic identity without injecting the larger core doctrine into rendered instructions, while `compile_admitted_capsule` filters the separately delivered `shared_block` to the target role's audience for `CapsuleRoleSeat` via `application/role_capsules/shared_block.py::filter_shared_block`. Missing or unsupported selection fields refuse rather than being inferred from nearby documents. [366]
+
 
 
 

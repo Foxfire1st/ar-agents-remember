@@ -181,4 +181,5 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 
 
 
+
 - The lifecycle catalog lists `mcp/tests/test_curator_review_assessment_publication.py` among the exact consumers of `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [8]
