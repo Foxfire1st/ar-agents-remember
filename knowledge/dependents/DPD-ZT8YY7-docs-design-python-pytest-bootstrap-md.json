@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "96ea43470c6dfadace6c796b08359e78b606ec01",
+    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
     "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
-    "role": "manager",
-    "statement": "Crossing-6 merge confirmation on 5cb9f97940b5 combining 261112-BUG-L61 and 261124-CAP-L5 (PR #304/#84): docs/design/python-pytest-bootstrap.md remains accurate with 852 cataloged modules (698 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability at test-evidence-lanes.toml:871-873).",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
-    "uncommitted": false
+    "role": "curator",
+    "statement": "Audited docs/design/python-pytest-bootstrap.md in full (lines 1-94) against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5): case budgets (10000/2000), lane-based -m \"not integration\" selection across 853 cataloged modules (699 unit-regression including test_provider_limit_suppression.py at line 464, 3 public-contract, 126 integration including test_standalone_master_pr_finalize.py at line 814, 24 architecture-fitness, 1 stress-durability), isolation rules, and stress-durability anchor (test-evidence-lanes.toml:872-874; pyproject.toml kept at 73-78) remain accurate with zero contradictions.",
+    "task": "261112-BUG-L60",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 39,
+  "revision": 40,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+      "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+        "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 873,
+          "end": 874,
           "kind": "line_range",
-          "start": 871
+          "start": 872
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:02:02+01:00",
+    "at": "2026-11-27T07:18:52+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
     "task": "261112-BUG"
   }
 }

@@ -243,6 +243,8 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
 
+
+
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
 
 - The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]

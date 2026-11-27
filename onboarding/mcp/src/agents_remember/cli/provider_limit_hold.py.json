@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
         "content": "sha256:213763126ed88f1398c8382d0c771a2f832d107c4a884bd37b859c57e40166a2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
         "content": "sha256:213763126ed88f1398c8382d0c771a2f832d107c4a884bd37b859c57e40166a2",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
-        "content": "sha256:7f76f13a9ea0605b42b054067afb4feb337298cb3b92c67a2fb63826cd840347",
+        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+        "content": "sha256:bdff6601411217989a7096556330ef82891d1b8e302d936413986b4b94eea142",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-K81V43",
+      "invariant": "INV-2PVK9H",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R4",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Thin CLI adapter parsing --config and status/suppress/unsuppress selectors into typed requests, delegating to serving.paseo.provider_limits, and printing JSON with exit codes 0/1/2.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+        "content": "sha256:1b46af6c6659dc2814be24c6cb5d199145700174d769f9ff65b6003e1fa53093",
         "locator": {
           "kind": "file"
         }
@@ -55,6 +73,34 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Registers `provider-limits status|suppress|unsuppress` arguments and delegates all mutations to `serving.paseo.provider_limits`, printing JSON with exit codes 0/1/2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+            "content": "sha256:d738e95ee5e4c4687f7ea8331a24577958d7ed75cb60d6065ac73318d15cd999",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+            "content": "sha256:bdff6601411217989a7096556330ef82891d1b8e302d936413986b4b94eea142",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

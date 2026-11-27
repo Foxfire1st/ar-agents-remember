@@ -180,12 +180,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
-            "content": "sha256:207ae7df84639f0d2b60fb3d51ae6b2c357acf9c3584d098d243ac38692c7de2",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:b33708787113f827366da4f87e25bd823c724372ff067e2b0eb8110563190961",
             "locator": {
-              "end": 178,
+              "end": 185,
               "kind": "line_range",
-              "start": 156
+              "start": 160
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

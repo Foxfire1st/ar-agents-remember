@@ -858,7 +858,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+
 
 
 
@@ -870,7 +872,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
+
 
 
 
@@ -882,7 +886,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
+
 
 
 
@@ -894,7 +900,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
+
 
 
 
@@ -943,8 +951,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - Eager-provider binding confirmation, single retry with fresh `agentId`, `skipToolServerWait` send, `open-held` re-confirmation, and receipt-apply helpers live in `role_launch_confirmation.py` and its launch callers; deferred held-seat reservation (`role_deferred_held.py`) and create-on-first-message opening (`role_held_opening.py`) defer host creation until first `role_message` and return the live `recipientAgentId` and `bindingConfirmation`. [427]
 
 
 
 - Opening brief identity self-check and Paseo plugin `IDENTITY MISMATCH:` turn-end interception forward the verbatim mismatch line directly to the parent without waking the seat. [428]
+
+- Window-scoped provider-limit suppression persists `recordedAt` and suppressions in `provider-limit-suppressions.json` via `serving/paseo/provider_limit_suppressions.py` and `provider_limits.py`, hooks bound live tool calls off-loop in `mcp/server.py`, and exposes `agents-remember provider-limits` (`status`, `suppress`, `unsuppress`) via `cli/__main__.py` and `cli/provider_limit_hold.py`. [429]

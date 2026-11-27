@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -4777,8 +4777,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -5008,12 +5008,12 @@
         },
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
             "content": "sha256:474686ba73825e2fea5114d54432c0d17c642e98a975429ed4fa31b03ca77b9d",
             "locator": {
-              "end": 231,
+              "end": 249,
               "kind": "line_range",
-              "start": 188
+              "start": 206
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5233,12 +5233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
             "content": "sha256:0cd7a5c9b310f08d74b90ea0b080cbae900b6002e2587c4df5eff6f01c240cbc",
             "locator": {
-              "end": 177,
+              "end": 183,
               "kind": "line_range",
-              "start": 163
+              "start": 169
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5410,7 +5410,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
             "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
             "locator": {
               "kind": "symbol",
@@ -5422,12 +5422,12 @@
         },
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
             "content": "sha256:0ea0efa751fb218a6ba991e4260d13c89c69e14dd7c28fe60177fd81ea923958",
             "locator": {
-              "end": 154,
+              "end": 159,
               "kind": "line_range",
-              "start": 140
+              "start": 145
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5435,12 +5435,12 @@
         },
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
             "content": "sha256:afe208da1375b31816ed0a9d1825ec726f09e649a6a28c733576e072ef19c953",
             "locator": {
-              "end": 476,
+              "end": 505,
               "kind": "line_range",
-              "start": 452
+              "start": 481
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5792,7 +5792,7 @@
       ]
     },
     "426": {
-      "note": "`register_server_binding` writes per-PID binding/ancestry records under `runtime/server-bindings/`, `live_server_bindings` reclaims dead/recycled records, and `harness_root_pids` locates root harness PIDs via `/proc`. \\[426]",
+      "note": "`register_server_binding` writes per-PID binding/ancestry records under `runtime/server-bindings/`, `live_server_bindings` reclaims dead/recycled records, and `harness_root_pids` locates root harness PIDs via `/proc`.",
       "targets": [
         {
           "anchor": {
@@ -5807,8 +5807,8 @@
         },
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
-            "content": "sha256:307cf6bc19c4e17f7e862cd37516a85083ea17ded6cb5be8e8efb671e712fe62",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:8efd0ee7cda0d0e1dbea7b730d3b66dd8d2c7410e5102de97fc5aa4227d72be8",
             "locator": {
               "kind": "file"
             },
@@ -5880,6 +5880,66 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/identity_mismatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "429": {
+      "note": "Window-scoped provider-limit suppression persists `recordedAt` and suppressions in `provider-limit-suppressions.json` via `serving/paseo/provider_limit_suppressions.py` and `provider_limits.py`, hooks bound live tool calls off-loop in `mcp/server.py`, and exposes `agents-remember provider-limits` (`status`, `suppress`, `unsuppress`) via `cli/__main__.py` and `cli/provider_limit_hold.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:9dd51b1f3b61994e7284cfdd99793607a40be0d566928120f74fab7ca4e63ef7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:f338947b1469d95f45840c719e08ba7038526fb8cf78e609920c9d184730ba2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:8efd0ee7cda0d0e1dbea7b730d3b66dd8d2c7410e5102de97fc5aa4227d72be8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+            "content": "sha256:1b46af6c6659dc2814be24c6cb5d199145700174d769f9ff65b6003e1fa53093",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
           },
           "kind": "code"
         }
@@ -6443,8 +6503,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -6590,8 +6650,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -6640,8 +6700,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -6688,8 +6748,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -6752,8 +6812,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },
@@ -6819,8 +6879,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
-            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
             "locator": {
               "kind": "file"
             },

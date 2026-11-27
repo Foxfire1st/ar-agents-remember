@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across cli/__main__.py, cli/provider_limit_hold.py, and serving/paseo/provider_limits.py, proven by the two CLI tests in mcp/tests/test_provider_limit_suppression.py (with serving/_app_lifespan.py CLI-import isolation checked by mcp/tests/test_provider_limit_layering.py)."
+  },
+  "applicability": "Operator inspection and manual override of active provider-limit windows through agents-remember provider-limits.",
+  "conditions": [
+    "cli/__main__.py registers provider-limits under _register_runtime_commands (outside paseo_runtime._COMMANDS).",
+    "cli/provider_limit_hold.py parses --config and status, suppress, and unsuppress selectors, emits JSON, returns exit codes 0 (success), 2 (config, selector, or non-live refusal), or 1 (filesystem or unexpected error), and routes every mutation exclusively through serving.paseo.provider_limits under provider-limits.lock.",
+    "suppress refuses non-live reports, unknown windows, and omitted --window on multi-window reports by name; unsuppress removes named suppressions so later reads judge the window normally."
+  ],
+  "exclusions": [
+    "No dashboard UI button or MCP tool mutates provider-limit suppressions.",
+    "The CLI adapter performs no direct writes to provider-limits.json or provider-limit-suppressions.json."
+  ],
+  "id": "INV-2PVK9H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_provider_limit_suppression.py + mcp/tests/test_provider_limit_layering.py on clean tree 54a3d3198b5f47b34a4987cbadf2c9ca58a20a4d"
+      ],
+      "path": "261112-BUG-L60-curator-ingest"
+    },
+    "handoffEntry": "BUG-R60@v1 R4",
+    "leaf": "261112-BUG-L60",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The agents-remember provider-limits runtime command provides JSON status, suppress, and unsuppress sub-actions (exit 0/1/2) refusing non-live reports/windows by name and routing every file mutation exclusively through serving.paseo.provider_limits under provider-limits.lock.",
+  "supersedes": [],
+  "title": "Runtime provider-limits CLI exposes JSON actions via single serving writer",
+  "writer": {
+    "at": "2026-11-27T02:39:07+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
+  }
+}

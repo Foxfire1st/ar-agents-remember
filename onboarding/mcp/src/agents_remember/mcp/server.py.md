@@ -38,7 +38,8 @@ A native invocation opens a lazy request memo and clears its shared owner map af
 2. Install a supplier through the light kernel service holder; the first dependent worktree operation builds the default services once, including `LeafAgentArchive(config)`. Initialize the boot-time caller-identity tool writer through `server_startup.initialize_mcp_application(config)` and complete FastMCP settings before constructing the server. The writer's constructors are light; this is no blanket optional-work deferral claim.
 3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
    launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
-   supplies no instruction line.
+   supplies no instruction line. `create_server` also snapshots `_bound_agent_id` once via
+   `_snapshot_bound_agent_id()` (`read_agent_binding().agent_id`, or `None` when unbound or malformed).
 4. Read the required explainer binding. Every launch invokes the ordered `TOOL_REGISTRARS`; a valid explainer launch also registers its four tools and retains its binding for those tools’ per-call validation. An invalid required binding refuses service.
 5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
@@ -61,9 +62,11 @@ AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules sta
 
 ### Stale installed builds refuse publication writes at dispatch
 
-Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. The refusal is built in a detached worker thread, so cancelling the request does not wait for it. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
+Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. Immediately before entering `tool_build_currentness`, `_execute_tool_call` awaits `_maybe_suppress_provider_limits(config)`, which offloads `suppress_provider_limits_for_live_tool_call(config, agent_id)` via `asyncio.to_thread` when both `config` and `_bound_agent_id` are present and catches any exception so suppression never breaks or delays an unbound call. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. The refusal is built in a detached worker thread, so cancelling the request does not wait for it. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
 
-- A stale installed build's publication writes are refused before dispatch; other calls dispatch under the carried currentness reading. [13]
+- A stale installed build's publication writes are refused before dispatch; before entering `tool_build_currentness`, a bound server runs `_maybe_suppress_provider_limits` off the event loop and swallows any failure, then dispatches under the carried currentness reading. [13]
+- `_maybe_suppress_provider_limits` skips when `config` or `_bound_agent_id` is absent and runs `suppress_provider_limits_for_live_tool_call` via `asyncio.to_thread` inside `suppress(Exception)`. [21]
+- `_snapshot_bound_agent_id` reads `read_agent_binding()` once at server creation and returns `None` when unbound or malformed (`ValueError`). [22]
 
 - `run_server` registers both the `"mcp"` running-server record and the per-PID binding/ancestry record (`bound`, `unbound`, or `unreadable`) via `_register_process_binding` before serving and runs both cleanups when serving ends. [14]
 
@@ -210,8 +213,8 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- `create_server` builds the FastMCP instance, invokes the registered tool families, compacts every advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the result to the allowlist of a bound role. [1]
-- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface, applies the read-only marks, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and then removes every tool outside the allowlist of a bound role. [7]
+- `create_server` builds the FastMCP instance, snapshots `_bound_agent_id`, invokes the registered tool families, compacts every advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the result to the allowlist of a bound role. [1]
+- `create_server` installs compact content, initializes the application services, snapshots `_bound_agent_id`, registers every tool family, adds a bound explainer surface, applies the read-only marks, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and then removes every tool outside the allowlist of a bound role. [7]
 
 - `_bound_role_tools` resolves the binding precedence, and `_scope_server_tools` removes every tool outside a role's allowlist after the read-only marks, keeping the survivors' order. [20]
 

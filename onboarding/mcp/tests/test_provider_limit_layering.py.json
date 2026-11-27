@@ -34,6 +34,23 @@
         "handoffEntry": "NEW-R192-RULE19-PORT",
         "leaf": "260928-MIK-L184"
       }
+    },
+    {
+      "anchor": {
+        "blob": "16d4a1133648d32cee39318ad939a25f1b00f180",
+        "content": "sha256:25163d67deb14d0c1b980ca501b6f07622199ce8406a39081b052872d1b9a8dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_measured_layering_report_has_no_such_added_violation"
+        }
+      },
+      "facet": "Verifies serving/_app_lifespan.py adds no forbidden cli.provider_limit_hold or cli.paseo_bridge imports in the measured layering report.",
+      "id": "PRF-GJQXRV",
+      "invariant": "INV-2PVK9H",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R4",
+        "leaf": "261112-BUG-L60"
+      }
     }
   ],
   "realizes": [

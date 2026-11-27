@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across serving/paseo/provider_limit_suppressions.py and serving/paseo/provider_limits.py, proven by four unit tests in mcp/tests/test_provider_limit_suppression.py, and required to keep mixed-version v1 readers working while persisting suppression state."
+  },
+  "applicability": "Every write, periodic recheck, and suppression mutation of provider limits under <home>/agents-remember/.",
+  "conditions": [
+    "provider-limit-suppressions.json (schema ar-provider-limit-suppressions/v1) lives beside provider-limits.json and is updated exclusively by serving.paseo.provider_limits under provider-limits.lock.",
+    "provider-limits.json remains strictly ar-provider-limits/v1 with no extra fields so mixed-version extra=forbid readers continue to parse it cleanly.",
+    "Existing recordedAt timestamps for unchanged live (reportId, windowId, resetsAt) windows are preserved across usage re-reads, and expired sidecar entries (resetsAt <= now) are pruned in both record_usage_reads and _periodic_update.",
+    "Sidecar and provider-limits.json writes commit as an atomic all-or-nothing pair, rolling back the sidecar if the provider-limits.json write fails."
+  ],
+  "exclusions": [
+    "A missing sidecar is treated as empty without migrating or rewriting an existing v1 provider-limits.json until the next normal write.",
+    "A quiet periodic tick with no expired sidecar entries and no due reports performs no file write."
+  ],
+  "id": "INV-41J2Q6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_provider_limit_suppression.py (21 passed) + .githooks/_gate.sh fast PASS on clean tree 54a3d3198b5f47b34a4987cbadf2c9ca58a20a4d"
+      ],
+      "path": "261112-BUG-L60-curator-ingest"
+    },
+    "handoffEntry": "BUG-R60@v1 R1",
+    "leaf": "261112-BUG-L60",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Per-window recordedAt timestamps and active window-scoped provider-limit suppressions are stored in the sibling sidecar provider-limit-suppressions.json written atomically by serving.paseo.provider_limits under provider-limits.lock, keeping provider-limits.json strictly ar-provider-limits/v1, preserving recordedAt across re-reads, and pruning expired entries during both record_usage_reads and _periodic_update.",
+  "supersedes": [],
+  "title": "Sibling sidecar stores recordedAt and suppressions keeping limits file v1",
+  "writer": {
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
+  }
+}

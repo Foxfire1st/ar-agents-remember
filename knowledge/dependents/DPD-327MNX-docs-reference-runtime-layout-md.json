@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
+    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
+    "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
     "role": "curator",
-    "statement": "Updated docs/reference/runtime-layout.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) to document <coordination-root>/.cache/skill-corpus/ archive materialization and role-launch/ nested <stem>.details/ and offload sidecar layout alongside Server binding records and L54 COLLECTED_REPORT_DIRECTORY/ROLE_REPORT_DIRECTORY constants; resolved DFR-GNDY45.",
-    "task": "261124-CAP-L5",
+    "statement": "Audited docs/reference/runtime-layout.md lines 165-166 against post-CAP-L5 crossing-6 synced L60 candidate (BUG-R60@v1, base 5cb9f97940b5): provider-limits.json v1 projection, sibling provider-limit-suppressions.json sidecar under provider-limits.lock, and CAP-L5 cleared host/scratch layout prose all match live code with zero contradictions.",
+    "task": "261112-BUG-L60",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:55:00+01:00",
+    "at": "2026-11-27T07:18:52+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-BUG-L60",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

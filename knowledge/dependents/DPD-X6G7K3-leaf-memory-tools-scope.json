@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
-    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
+    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
+    "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
     "role": "curator",
-    "statement": "Confirmed CAP-L5 edits to docs/reference/mcp-tools.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): all CAP-L5 passages (role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke skill:// pointers) are accurate and CAP deferral resolved; KNO-R07 lines 31 and 203 contradiction remains openly deferred under DFR-5EZYPH (owner 261112-KNO).",
-    "task": "261124-CAP-L5",
+    "statement": "Audited docs/reference/mcp-tools.md lines 758-767 against post-CAP-L5 crossing-6 synced L60 candidate (BUG-R60@v1, base 5cb9f97940b5): automatic post-limit live-turn suppression and operator agents-remember provider-limits suppress/unsuppress release semantics on role_message provider-limit holds match live code; re-deferred CAP-L5 open deferral DFR-5EZYPH (lines 31 and 203 KNO-R07 knowledge_read ceiling/views) onto L60 candidate blob of docs/reference/mcp-tools.md without lifting it.",
+    "task": "261112-BUG-L60",
     "uncommitted": true
   },
   "deferrals": [
@@ -13,13 +13,13 @@
         "file": "docs/reference/mcp-tools.md",
         "note": "Update docs/reference/mcp-tools.md lines 31 and 203 for KNO-R07 5,000-token knowledge_read ceiling, ten views (including records/impact/search/compact), auto-pairing, and post-landing brief refresh."
       },
-      "createdAt": "2026-11-27T04:33:25.250953Z",
-      "createdByLeaf": "261124-CAP-L5",
-      "fileBlob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
-      "id": "DFR-5EZYPH",
+      "createdAt": "2026-11-27T06:18:55.167384Z",
+      "createdByLeaf": "261112-BUG-L60",
+      "fileBlob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+      "id": "DFR-XP94XS",
       "owner": "261112-KNO",
       "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read lists 7 views and states open named files for record text)",
-      "reason": "KNO-R07 (landed in 1063f65132b1) raises the knowledge_read ceiling to 5,000 tokens in tool_answer.py, adds records/impact/search/compact-dependent views and auto-pairing in knowledge.py/marks.py/truth.py, and adds post-landing brief refresh in record_landing.py, directly contradicting lines 31 and 203; codeRoot is frozen at Code Round 4 PASS and Curator cannot edit docs/ files."
+      "reason": "Re-deferred from CAP-L5 DFR-5EZYPH onto L60 candidate blob of docs/reference/mcp-tools.md: L60 edited only lines 758-767 (provider-limit hold release semantics for BUG-R60@v1) and did not modify lines 31 or 203 (which still omit KNO-R07 5,000-token knowledge_read ceiling and ten views); preserving KNO deferral scope intact until lines 31 and 203 are updated."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -158,12 +158,12 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+      "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+      "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -410,7 +410,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -438,14 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:42:30+01:00",
+    "at": "2026-11-27T07:18:52+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-BUG-L60",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

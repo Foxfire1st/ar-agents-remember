@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0e9f45c9d2f003048e78fc46adae4783f46e8e4c",
-    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
+    "codeTree": "4032fac6253b4b4594fe13e5719bbd766de5b7c2",
+    "commit": "ad3d765da8fd525c688fe107bf5b2ef946bbb7f7",
     "role": "curator",
-    "statement": "Audited docs/dashboard.md section Sending (lines 728-746) against post-crossing-5 synced L61 candidate (BUG-R61@v1, base 7ff6e80f139c): accurately states that one tray send needs only the recipient address and non-empty text or picks, that a page repository is optional non-blocking context, and that taskless sends file under <coordination-root>/notes/reports/developer-messages/taskless/<agent id>/; preserves L62 open deferral DFR-73APGD re-deferred as DFR-THCPWR (lines 256-262 pre-BUG-R62 20 s timeout prose) on the updated docs/dashboard.md blob.",
-    "task": "261112-BUG-L61",
+    "statement": "Audited docs/dashboard.md lines 336-346 against post-L61 synced L60 candidate (BUG-R60@v1, base ad3d765da8fd): window-scoped automatic live-turn and operator provider-limit suppression semantics, clearedSeats release propagation, and Paseo usage reports as sole limit creator match live code; re-deferred L61 open deferral DFR-THCPWR (originally L62 DFR-73APGD, lines 256-262 pre-BUG-R62 20 s timeout prose) onto L60 candidate blob of docs/dashboard.md without lifting it.",
+    "task": "261112-BUG-L60",
     "uncommitted": true
   },
   "deferrals": [
@@ -13,13 +13,13 @@
         "file": "docs/dashboard.md",
         "note": "Update docs/dashboard.md lines 256-262 to reflect BUG-R62@v1 onLoad-anchored readiness, 45 s non-reloading cold-load cap, and unconfirmed URL-landed waiting notice with Retry."
       },
-      "createdAt": "2026-11-27T04:03:40.362048Z",
-      "createdByLeaf": "261112-BUG-L61",
-      "fileBlob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
-      "id": "DFR-THCPWR",
+      "createdAt": "2026-11-27T05:40:52.706277Z",
+      "createdByLeaf": "261112-BUG-L60",
+      "fileBlob": "88c357b0424d5bc0e3192908f9261729eec5804b",
+      "id": "DFR-NDPEXV",
       "owner": "261112-BUG",
       "passage": "docs/dashboard.md lines 256-262 (Chats frame timeout and first-visit 20 s recovery)",
-      "reason": "Re-deferred from L62 DFR-73APGD onto L61 candidate blob of docs/dashboard.md: L61 edited only section Sending (lines 734-745) for BUG-R61@v1 and did not modify lines 256-262 (which still describe the pre-BUG-R62 20 s first-visit timeout and single URL reload); preserving L62 deferral scope intact until lines 256-262 are updated."
+      "reason": "Re-deferred from L61 DFR-THCPWR (originally L62 DFR-73APGD) onto L60 candidate blob of docs/dashboard.md: L60 edited only lines 336-346 for BUG-R60@v1 window-scoped provider-limit suppression and did not modify lines 256-262 (which still describe the pre-BUG-R62 20 s first-visit timeout and single URL reload); preserving deferral scope intact until lines 256-262 are updated."
     }
   ],
   "document": "docs/dashboard.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -461,14 +461,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:37:33+01:00",
+    "at": "2026-11-27T06:40:50+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L61",
+    "leaf": "261112-BUG-L60",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
     "task": "261112-BUG"
   }
 }

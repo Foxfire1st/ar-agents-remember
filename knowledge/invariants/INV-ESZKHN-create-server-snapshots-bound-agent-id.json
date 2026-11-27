@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across mcp/server.py, serving/paseo/provider_limits.py, and serving/paseo/provider_limit_suppressions.py, proven by five unit tests in mcp/tests/test_provider_limit_suppression.py, and required to auto-heal false limits without suppressing genuine limits from pre-limit turns."
+  },
+  "applicability": "Every MCP tool call handled by AgentsRememberMCP._execute_tool_call on a config-backed server.",
+  "conditions": [
+    "create_server snapshots server._bound_agent_id once from read_agent_binding() (None when unbound or malformed).",
+    "AgentsRememberMCP._maybe_suppress_provider_limits offloads suppress_provider_limits_for_live_tool_call via asyncio.to_thread inside suppress(Exception) so limit-file I/O neither blocks the event loop nor fails any tool call.",
+    "Auto-suppression selects only mapped live exhausted windows that have an explicit sidecar recordedAt strictly less than a complete host-activity.json entry's eventAt while the seat state is in-turn or permission, re-verified under provider-limits.lock."
+  ],
+  "exclusions": [
+    "Unbound servers, malformed bindings, missing or malformed host-activity.json, non-active seat states, legacy limits lacking sidecar recordedAt, and turns with eventAt <= recordedAt fail closed with no suppression."
+  ],
+  "id": "INV-ESZKHN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_provider_limit_suppression.py (causal guard fail-closed matrix, in-turn/permission success, off-loop thread proof, error suppression) on clean tree 54a3d3198b5f47b34a4987cbadf2c9ca58a20a4d"
+      ],
+      "path": "261112-BUG-L60-curator-ingest"
+    },
+    "handoffEntry": "BUG-R60@v1 R3",
+    "leaf": "261112-BUG-L60",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "create_server snapshots _bound_agent_id once and AgentsRememberMCP._execute_tool_call offloads a non-blocking, exception-suppressed hook that auto-suppresses mapped live exhausted windows only when recordedAt is explicit in the sidecar and a complete host-activity.json publication shows the seat in-turn or permission with eventAt strictly greater than recordedAt.",
+  "supersedes": [],
+  "title": "Bound MCP tool call auto-suppresses only on strict post-limit live turn proof",
+  "writer": {
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
+  }
+}

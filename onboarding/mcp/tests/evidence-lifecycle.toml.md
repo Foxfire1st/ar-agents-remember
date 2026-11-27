@@ -91,7 +91,7 @@ The deletion-cancellation module is declared as a consumer of the existing `_use
 
 The role-tool-scope module, `test_role_tool_scope.py`, is declared as an exact consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation.
 
-The tool-schema-compaction module, `test_tool_schema_compaction.py`, is likewise declared as an exact consumer of the existing `_user_settings_guard.py` (line 883) and Node-profile `package-lock.json` (line 3424) artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation. `test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` (line 798) and the portable Node-profile `package-lock.json` (line 3339) artifacts; membership is dependency accounting and certifies no invocation. `test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py` (line 319), the portable Node-profile `package-lock.json` (line 2860), `knowledge_writer_test_support.py` (line 4126), and `writer_worklist_test_support.py` (line 5287); membership is dependency accounting and certifies no invocation. `test_standalone_master_pr_finalize.py` is declared as an exact consumer of `_user_settings_guard.py` (line 794, 852 consumers), portable Node-profile `package-lock.json` (line 3335, 852 consumers), and `tool_answer_l111_test_support.py` (line 5030, 16 consumers); membership is dependency accounting and certifies no invocation.
+The tool-schema-compaction module, `test_tool_schema_compaction.py`, is likewise declared as an exact consumer of the existing `_user_settings_guard.py` (line 884) and Node-profile `package-lock.json` (line 3426) artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation. `test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` (line 799) and the portable Node-profile `package-lock.json` (line 3341) artifacts; membership is dependency accounting and certifies no invocation. `test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py` (line 319), the portable Node-profile `package-lock.json` (line 2861), `knowledge_writer_test_support.py` (line 4128), and `writer_worklist_test_support.py` (line 5290); membership is dependency accounting and certifies no invocation. `test_standalone_master_pr_finalize.py` is declared as an exact consumer of `_user_settings_guard.py` (line 795, 853 consumers), portable Node-profile `package-lock.json` (line 3337, 853 consumers), and `tool_answer_l111_test_support.py` (line 5033, 16 consumers); membership is dependency accounting and certifies no invocation. `test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py` (line 624, 853 consumers), portable Node-profile `package-lock.json` (line 3166, 853 consumers), and `paseo_runtime_test_support.py` (line 4542, 77 consumers); membership is dependency accounting and certifies no invocation.
 
 The four DEP-R07 type-checker defect regression modules (`test_judged_history_closing_restore.py`, `test_organizational_completion_repair.py`, `test_quality_continuation_declaration.py`, and `test_type_hint_contracts.py`) are declared as exact consumers of `_user_settings_guard.py` and the portable Node-profile `package-lock.json` artifact, and `test_organizational_completion_repair.py` is additionally declared on `fixtures/repository_profiles/node/package.json` and `repository_profile_test_support.py`. Membership is dependency accounting and certifies no invocation.
 
@@ -909,6 +909,8 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
+
 - The held consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file [277]
 
 - The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file [278]
@@ -1581,16 +1583,12 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [581]
 
 
-
-
-
-
-
-
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [576]
 
 
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [582]
+
+
 
 
 
@@ -1907,8 +1905,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts. [343]
 
+
+- The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts. [343]
 
 
 
@@ -1930,8 +1929,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-
 - The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. [347]
+
+
 
 
 
@@ -2229,6 +2229,11 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 - `mcp/tests/test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_writer_test_support.py`, and `writer_worklist_test_support.py` (18 contracts, 123 artifacts). [573]
 
+
 - The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. [574]
 
+
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [575]
+
+
+- `mcp/tests/test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, and `paseo_runtime_test_support.py` (18 contracts, 123 artifacts). [583]

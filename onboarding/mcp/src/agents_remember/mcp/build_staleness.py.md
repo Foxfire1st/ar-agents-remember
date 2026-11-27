@@ -32,7 +32,9 @@ Every other name — reads, previews, checkout work, host operations, messages a
 - `curator_coherence` counts only for the publish action. [5]
 - `task_doc` counts for every valid operation except the linkage report, imported lazily. [6]
 - The refusal answer carries code `server-build-stale`, both digests, the remedy and the reading. [7]
+
 - Dispatch consults this module only for a stale installed build, after argument validation. [8]
+
 - A `server-build-stale` payload validates against the shared refusal model. [9]
 
 

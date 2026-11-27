@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
+        "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
         "content": "sha256:16d78ed5ce3e1a8c849848cbe3a3752629cb745916c18a5cd86e479e72cc4dd4",
         "locator": {
           "end": 180,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
+        "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
         "content": "sha256:564f24fc08af9e74e81c8add3c7f5e77f051b9db0d41080531a01b5620bd247d",
         "locator": {
           "end": 129,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
+        "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
         "content": "sha256:ddab2868457d4a8f0cfcb52006bd4ed1b1261f6d0486c3adb85c5584776ca7cf",
         "locator": {
           "end": 195,
@@ -60,7 +60,26 @@
     },
     {
       "anchor": {
-        "blob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
+        "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
+        "content": "sha256:96a35052361f8bcce02b2abac47475d058521ddfa4ff1d2624aa0392a616126a",
+        "locator": {
+          "end": 346,
+          "kind": "line_range",
+          "start": 336
+        }
+      },
+      "id": "RLZ-NTJVPR",
+      "invariant": "INV-VEGPXX",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R5",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Documents how window-scoped suppression updates or clears the dashboard rate-limited display while Paseo usage reports remain the sole limit creator.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
         "content": "sha256:0329e130ac8f552e548165776fe5e12f64ccd3ab60de746effceebff168ff68c",
         "locator": {
           "end": 203,
@@ -84,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
+            "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
             "content": "sha256:109130f6b711f7fdfffa03de85b8046e9d8788377d3fd46826e760d855cb2bbf",
             "locator": {
               "end": 203,
@@ -132,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e48982cbc882ab1d7ca07fc5d548e75608ad7c98",
+            "blob": "88c357b0424d5bc0e3192908f9261729eec5804b",
             "content": "sha256:d492525e1bf249bbfbe3018a6e7685a651786a03cb4a5103062c0a18d13049c9",
             "locator": {
               "end": 9,

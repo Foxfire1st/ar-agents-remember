@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The recheck claim, the serialized write, the delivery order, the clear marker, the pending-only plugin check and the shared read each fail the release alone: a clear without the marker waits for the old deadline, a marker without the pending check reaches no action, and a read without the delivery order reaches no message."
+    "justification": "The sidecar store, shared window-scoped projection, causal MCP tool-call hook, runtime CLI adapter, recheck claim, serialized write, delivery order, clear marker, pending-only plugin check, and documentation each fail reliable seat release alone: a suppression without sidecar persistence re-imposes on the next tick, a projection without clear markers waits for the old deadline, and an unguarded hook would clear genuine limits from pre-limit turns."
   },
-  "guarantee": "When the host reports that a provider limit ended before the recorded deadline, the product records the attempt, writes the cleared release, drains the eligible held messages in their recorded order, and releases the plugin's pending resume and parent flush within one fifteen-second check period, with no turn end and no hand wake.",
+  "guarantee": "When the host reports that a provider limit ended early, or when a falsely reported exhausted window (reportId, windowId, resetsAt) is suppressed until its reset—automatically by a bound seat's post-limit live turn or explicitly via agents-remember provider-limits—the product maintains per-window recordedAt and suppressions in provider-limit-suppressions.json under provider-limits.lock, projects remaining unsuppressed windows onto strictly ar-provider-limits/v1 provider-limits.json (recomputing until or dropping the report with clearedSeats), drains eligible held messages in recorded order, and releases pending resume and parent flush within one fifteen-second check period while Paseo usage reports remain the sole limit creator.",
   "id": "FAM-FD58VB",
   "members": [
     "INV-795NRN",
@@ -14,7 +14,12 @@
     "INV-2KVT5S",
     "INV-KM9V3K",
     "INV-XN49FH",
-    "INV-6ZZXV3"
+    "INV-6ZZXV3",
+    "INV-41J2Q6",
+    "INV-SDEXYK",
+    "INV-ESZKHN",
+    "INV-2PVK9H",
+    "INV-VEGPXX"
   ],
   "origin": {
     "handoff": {
@@ -24,32 +29,25 @@
     "leaf": "261112-BUG-L37",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp/src/agents_remember/serving",
+    "docs",
     "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/mcp",
     "mcp/src/agents_remember/package_data/paseo_plugin/server",
-    "docs/reference"
+    "mcp/src/agents_remember/serving"
   ],
   "schema": "ar-family/v1",
-  "title": "An early limit reset reaches the seats without a turn end",
+  "title": "Early limit resets and window-scoped suppressions reach seats reliably",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L37",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

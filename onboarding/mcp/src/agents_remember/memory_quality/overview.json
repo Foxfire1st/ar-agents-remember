@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
-            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
             "locator": {
-              "end": 186,
+              "end": 192,
               "kind": "line_range",
-              "start": 117
+              "start": 122
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
             "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
             "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
             "locator": {
               "kind": "symbol",

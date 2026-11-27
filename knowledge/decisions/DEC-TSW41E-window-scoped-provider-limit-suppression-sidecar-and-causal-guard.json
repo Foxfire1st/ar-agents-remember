@@ -1,0 +1,126 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Three concrete design alternatives (in-place v2 schema change, transient clear without persistence, and unguarded MCP auto-suppression) were explicitly weighed and rejected under BUG-R60@v1, and the chosen sibling-sidecar and causal-guard architecture constrains all future provider-limit readers, writers, and CLI tools."
+  },
+  "alternatives": [
+    {
+      "option": "Store per-window recordedAt timestamps and window-scoped (reportId, windowId, resetsAt) suppressions until resetsAt in sibling sidecar provider-limit-suppressions.json written atomically under provider-limits.lock, keeping provider-limits.json strictly ar-provider-limits/v1 and gating automatic MCP tool-call suppression on a complete host-activity.json in-turn/permission entry with eventAt > recordedAt.",
+      "reason": "Preserves mixed-version ar-provider-limits/v1 Python reader compatibility without schema breakage, prevents five-minute usage re-reads from re-imposing a falsely reported window before resetsAt, and ensures an in-flight pre-limit turn cannot falsely suppress a real limit.",
+      "status": "chosen"
+    },
+    {
+      "option": "Embed recordedAt and suppression entries directly inside provider-limits.json or bump provider-limits.json to a v2 schema.",
+      "reason": "The Python reader (observer/provider_limits.py) validates provider-limits.json strictly against ar-provider-limits/v1 with extra=forbid and falls back to EMPTY_PROVIDER_LIMITS on ValidationError, so adding fields or bumping the schema in place would break mixed-version Python readers, running daemons, or older checkouts.",
+      "reconsider_when": "All active Python readers of provider-limits.json drop extra=forbid or migrate together under a coordinated schema-version bump that no longer requires mixed-version v1 coexistence.",
+      "status": "rejected"
+    },
+    {
+      "option": "Clear a falsely reported limit once in memory or only until the next five-minute usage recheck instead of persisting a window-scoped suppression until resetsAt.",
+      "reason": "Because the host usage report continues returning the stale exhausted window until its resetsAt passes, a transient clear would be undone on the very next periodic recheck or turn end.",
+      "reconsider_when": "Host usage endpoints stop re-reporting stale exhausted windows once the provider resets the window, so repeated usage reads no longer re-impose a false hold.",
+      "status": "rejected"
+    },
+    {
+      "option": "Auto-suppress active provider limits on any bound MCP tool call without requiring causal host-activity.json turn-start evidence (eventAt > recordedAt).",
+      "reason": "A turn that started before the limit was recorded can still execute MCP tool calls before ending; suppressing without strict post-limit turn-start proof would mask genuine limits.",
+      "reconsider_when": "MCP tool calls can no longer execute within turns started prior to limit recording, or the host exposes a stronger causal proof of post-limit turn admission than host-activity.json.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "provider-limits.json remains strictly ar-provider-limits/v1 while serving.paseo.provider_limits owns atomic paired writes with provider-limit-suppressions.json under provider-limits.lock.",
+    "Every limit write projects exhausted windows through project_reports_with_suppressions, recomputing until on partial suppression or dropping the report with clearedSeats when none remain.",
+    "Automatic suppression from MCP tool calls fails closed unless explicit sidecar recordedAt and complete host-activity.json in-turn/permission state prove eventAt > recordedAt; operators can still override live windows explicitly via agents-remember provider-limits."
+  ],
+  "context": "When a provider usage endpoint falsely reports an exhausted window after reset, Paseo usage re-reads repeatedly re-impose the rate-limit hold even while seats are actively executing turns; meanwhile the Python reader (observer/provider_limits.py) validates provider-limits.json strictly against ar-provider-limits/v1 with extra=forbid and falls back to EMPTY_PROVIDER_LIMITS on ValidationError (while the TypeScript plugin reader ignores unknown keys).",
+  "decider": "Developer D1054 and D1062 (with Agent Council #2 review D1060) approving BUG-R60@v1",
+  "id": "DEC-TSW41E",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "FAM-FD58VB"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-BCXFH9"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-41J2Q6"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-SDEXYK"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-ESZKHN"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:e6b8d2d8c5e6603a84ee6245bc40fc4f0804c5de72a1551b8f0dc95af0f48029",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderLimitSuppressions"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:c564d24af6a40d319b5e55083cfab5072ec005cf31225945fa31115a61d20eca",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_reports_with_suppressions"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+      }
+    },
+    {
+      "alternative": 3,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:52b8dec61c907d3ae81b15161234f2fdc416404a98afaa13a1e6b87606d7d877",
+        "locator": {
+          "kind": "symbol",
+          "name": "auto_suppression_candidates"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L60-curator-ingest"
+    },
+    "handoffEntry": "dec-provider-limit-suppression",
+    "leaf": "261112-BUG-L60",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-27T02:39:07+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
+  }
+}

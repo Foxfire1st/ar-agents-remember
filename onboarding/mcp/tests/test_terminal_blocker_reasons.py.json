@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 822,
+              "end": 823,
               "kind": "line_range",
-              "start": 822
+              "start": 823
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 822,
+              "end": 823,
               "kind": "line_range",
-              "start": 822
+              "start": 823
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -507,8 +507,8 @@
         },
         {
           "anchor": {
-            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
-            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+            "content": "sha256:1b729ad78d123c73f007ae285e1ab5906956d1a8301b601aba6280a210fba2a7",
             "locator": {
               "kind": "file"
             },
@@ -549,8 +549,8 @@
         },
         {
           "anchor": {
-            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
-            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+            "content": "sha256:1b729ad78d123c73f007ae285e1ab5906956d1a8301b601aba6280a210fba2a7",
             "locator": {
               "kind": "file"
             },

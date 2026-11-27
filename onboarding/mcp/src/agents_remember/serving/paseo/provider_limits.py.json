@@ -3,7 +3,61 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:97788679c85eb397bd649a97e9967a4820b67f372bf14b5d52f068e20d5f5258",
+        "locator": {
+          "kind": "symbol",
+          "name": "_periodic_update"
+        }
+      },
+      "id": "RLZ-08WBM1",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Prunes expired sidecar entries during periodic checks, includes sidecar pruning in claim_due_reports change detection, and computes _updated_clear_markers when dropping any live suppressed report.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:8e89517db7e81f4b8f2afe532a524d1da5b716253f9177d326bd825b8d5a9960",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_pair_locked"
+        }
+      },
+      "id": "RLZ-0G7BY0",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Commits sidecar and provider-limits.json atomically as an all-or-nothing pair under provider-limits.lock, rolling back the sidecar if the limits write raises.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:19a9e9385a420251e322de2d20dd49f4fcf581cf7a3d2a636cd9be2723327c5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "suppress_provider_limits_for_live_tool_call"
+        }
+      },
+      "id": "RLZ-6PZHAT",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Enforces lock-free pre-check and under-lock re-verification of the causal host-activity.json guard before committing auto-tool-call suppressions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
         "content": "sha256:412829dd705279d9da5331e52d68b75291803908a445621f1a7e8e2298443258",
         "locator": {
           "kind": "symbol",
@@ -21,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
-        "content": "sha256:4ac6759289c3f5daa0a0766fc5aac850e1fcc4ed47b4e022a874e854d3d80c77",
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:99816000095de62b65d77945769a91e49b9fbdebc6389cac5f6909ae28add2e9",
         "locator": {
           "kind": "symbol",
           "name": "claim_due_reports"
@@ -34,13 +88,31 @@
         "handoffEntry": "BUG-R37@v1 rule 1",
         "leaf": "261112-BUG-L37"
       },
-      "rationale": "The claim records the attempt before dispatch and prunes departed mappings in each replacement.",
+      "rationale": "The claim records the attempt before dispatch, prunes expired sidecar entries and departed mappings in each locked replacement, and includes sidecar pruning in change detection.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
-        "content": "sha256:136b636f24c858467f5e986e50b0a6cc84105e2eacdb25bcecdf2527148f99ee",
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:97788679c85eb397bd649a97e9967a4820b67f372bf14b5d52f068e20d5f5258",
+        "locator": {
+          "kind": "symbol",
+          "name": "_periodic_update"
+        }
+      },
+      "id": "RLZ-CBGZFF",
+      "invariant": "INV-SDEXYK",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R2",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Recomputes _updated_clear_markers whenever periodic projection drops a live report covered by an active sidecar suppression.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:080893b27cbd1c7706685812a17fbcca18199966b2b81d4b2c8c059165a83413",
         "locator": {
           "kind": "symbol",
           "name": "record_usage_reads"
@@ -52,13 +124,67 @@
         "handoffEntry": "BUG-R37@v1 rule 2",
         "leaf": "261112-BUG-L37"
       },
-      "rationale": "The writer holds the lock from reread through replacement and retains prior mappings for unresolved reports.",
+      "rationale": "The writer holds provider-limits.lock from reread through atomic paired replacement of provider-limit-suppressions.json and provider-limits.json, preserving recordedAt, applying live suppressions, and retaining prior mappings on failed refreshes.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
-        "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:0b6ceb1b26ecc26da56e7cf25296869b546748dfe6ee5a121b1b222ab2000daa",
+        "locator": {
+          "kind": "symbol",
+          "name": "unsuppress_provider_limit_windows"
+        }
+      },
+      "id": "RLZ-PH3BMF",
+      "invariant": "INV-2PVK9H",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R4",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Single-writer operator unsuppression mutation under provider-limits.lock removing named suppressions so later reads judge the window normally.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:0cd7585f14a7fc0756470ed9c3ff50c2761cd1a5ace385997a693ffa13088342",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_suppressions_locked"
+        }
+      },
+      "id": "RLZ-S97QX1",
+      "invariant": "INV-SDEXYK",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R2",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Applies merged suppressions through project_reports_with_suppressions, recomputes clearedSeats via _updated_clear_markers under provider-limits.lock, and commits sidecar and provider-limits.json atomically via _commit_pair_locked.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:f9ece4ef108f260c1e1deb3c4adf85bc350d25a153e1907b6e2e88f9560468b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "suppress_provider_limit_windows"
+        }
+      },
+      "id": "RLZ-X1996E",
+      "invariant": "INV-2PVK9H",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R4",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Single-writer operator suppression mutation under provider-limits.lock refusing non-live reports/windows and multi-window omission by name.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:f338947b1469d95f45840c719e08ba7038526fb8cf78e609920c9d184730ba2d",
         "locator": {
           "kind": "file"
         }
@@ -69,8 +195,26 @@
         "handoffEntry": "INV-4T6KSE",
         "leaf": "260928-MIK-L184"
       },
-      "rationale": "This module both judges one read by rule 6 and is the product's one atomic writer of provider-limits.json, so the decision and the fact's storage are realized here rather than in the observer.",
+      "rationale": "This module judges usage reports by rule 6, filters exhausted windows against live suppressions via project_reports_with_suppressions, and atomically writes the locked provider-limit-suppressions.json and ar-provider-limits/v1 provider-limits.json pair.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+        "content": "sha256:080893b27cbd1c7706685812a17fbcca18199966b2b81d4b2c8c059165a83413",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_usage_reads"
+        }
+      },
+      "id": "RLZ-ZHWYM4",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Serializes sidecar updates and v1 provider-limits.json replacements under provider-limits.lock while pruning expired sidecar entries and preserving recordedAt.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -79,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
             "content": "sha256:5a9faaacc33d488290ef0908cb1184a7ffb9d43164e23fe0a268fc70946c04f6",
             "locator": {
               "end": 12,
@@ -91,12 +235,12 @@
         },
         {
           "anchor": {
-            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
             "content": "sha256:f4f559cc42147d98994985773b22c3cda3c7b389b8c4d159743ba03367129847",
             "locator": {
-              "end": 209,
+              "end": 240,
               "kind": "line_range",
-              "start": 180
+              "start": 211
             }
           },
           "kind": "code"
@@ -104,14 +248,26 @@
       ]
     },
     "2": {
-      "note": "One due attempt is claimed under the file lock before the read, and a fresh snapshot keeps the claim.\n\nAnchor: `claim_due_reports`",
+      "note": "One due attempt is claimed under the file lock before the read, a fresh snapshot keeps the claim, and `_periodic_update` prunes expired sidecar entries and computes `_updated_clear_markers` when dropping live suppressed reports.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
-            "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:99816000095de62b65d77945769a91e49b9fbdebc6389cac5f6909ae28add2e9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "claim_due_reports"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:97788679c85eb397bd649a97e9967a4820b67f372bf14b5d52f068e20d5f5258",
+            "locator": {
+              "kind": "symbol",
+              "name": "_periodic_update"
             }
           },
           "kind": "code"
@@ -119,14 +275,96 @@
       ]
     },
     "3": {
-      "note": "An early clear names the seat and the old deadline, and is kept only while the seat remains eligible and no limit returns.\n\nAnchor: `_updated_clear_markers`",
+      "note": "An early clear names the seat and the old deadline, and is kept only while the seat remains eligible and no limit returns.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
-            "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:412829dd705279d9da5331e52d68b75291803908a445621f1a7e8e2298443258",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_updated_clear_markers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_commit_pair_locked` commits sidecar and `provider-limits.json` atomically under `provider-limits.lock` and rolls back the sidecar if `_write_limits` raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:8e89517db7e81f4b8f2afe532a524d1da5b716253f9177d326bd825b8d5a9960",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_pair_locked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`suppress_provider_limits_for_live_tool_call` enforces the causal `host-activity.json` turn-start guard (`in-turn`/`permission`, `eventAt > recordedAt`) lock-free and under lock before committing auto-suppressions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:3134a1282ec0825c378ac320b517547c019ad9e37bafc0c8b694627a0006b0be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proven_active_turn_started_at"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:19a9e9385a420251e322de2d20dd49f4fcf581cf7a3d2a636cd9be2723327c5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "suppress_provider_limits_for_live_tool_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`provider_limits_status`, `suppress_provider_limit_windows`, and `unsuppress_provider_limit_windows` serve operator status and lock-serialized suppression overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:38cfb99fcb7ee2b19e400753dd288a6dc9dc4b76b29447765a2ae3bd9bba1c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_limits_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:f9ece4ef108f260c1e1deb3c4adf85bc350d25a153e1907b6e2e88f9560468b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "suppress_provider_limit_windows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:0b6ceb1b26ecc26da56e7cf25296869b546748dfe6ee5a121b1b222ab2000daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsuppress_provider_limit_windows"
             }
           },
           "kind": "code"

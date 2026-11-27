@@ -1,0 +1,1961 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L60",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T07:30:15+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L60",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T07:30:15+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L60",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "de72ffe6-4ad7-577d-a8e9-8c642eee5f14",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "fb36c7d30978340303717cd36706e99981969eb0",
+    "verdictRef": "notes/reports/reviewer/de72ffe6-4ad7-577d-a8e9-8c642eee5f14/role-launch/261112-BUG-L60-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-VWKSMD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-210ERP",
+      "items": [
+        "sha256:989d8c080bf791117ca424b3506013ce89912c374e4651f1d2f0614044d80349"
+      ],
+      "reason": "AgentsRememberMCP._execute_tool_call added _maybe_suppress_provider_limits before entering tool_build_currentness without altering stale-installed-build write refusal.",
+      "revision": 1,
+      "subject": "INV-9SKGX1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-562GH4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3AGJC8",
+      "items": [
+        "sha256:356599621f99e68cb1d310066e1fdcdbdb232781bde195abde3d9a192be96f0c"
+      ],
+      "reason": "create_server added server._bound_agent_id snapshot without altering apply_read_only_marks coverage.",
+      "revision": 1,
+      "subject": "INV-QCMCJX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+            "content": "sha256:a44a0ff0c1ca45fa60e9040e612f77c7fc9b16f66f6f5539607a3dc920f9336d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+            "content": "sha256:1b729ad78d123c73f007ae285e1ab5906956d1a8301b601aba6280a210fba2a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3V76PE",
+      "items": [],
+      "reason": "Both test catalogs registered test_provider_limit_suppression.py without affecting outside-scratch test registrations (re-anchored post-crossing-6 on 5cb9f97940b5/518a6d271ec1).",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+            "content": "sha256:9ae03aed4adeb48058756ccb97875199cbaef594ed2e266c228bd69f5c7d5d53",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
+            "content": "sha256:cb0a033f0729d3133650ea18d3a245dc58e05bf6a99bef4495e4ebe9d424cafc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        },
+        {
+          "after": {
+            "blob": "29f91f06402cb597c6de65ad5ad197293931962e",
+            "content": "sha256:b22fb18567b2957e4a4ad77e9344af668e343425ddaff0dbf49b75dca2eedf2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "before": {
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
+            "content": "sha256:32a7c039e55a60cb98c1ce69fb3d43a23af2daa345760f8f4d4d1ed59a272bdf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "id": "RLZ-AHFJXT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-46KSX0",
+      "items": [],
+      "reason": "Re-anchored RLZ-7YMNE5 (docs/reference/mcp-tools.md) and RLZ-AHFJXT (docs/reference/runtime-layout.md) onto post-CAP-L5 crossing-6 candidate blobs covering suppression and sidecar reference docs.",
+      "revision": 2,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-RM2JDK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4BBE7T",
+      "items": [
+        "sha256:8b42b3c8e1aa1008236640f911d4fc2b93036a2f2e6de66dad128f712fe15fd4"
+      ],
+      "reason": "AgentsRememberMCP._execute_tool_call added _maybe_suppress_provider_limits after waiting_for=None, leaving build-currentness cancellation tracking unchanged.",
+      "revision": 1,
+      "subject": "INV-8NDEQB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+            "content": "sha256:1b729ad78d123c73f007ae285e1ab5906956d1a8301b601aba6280a210fba2a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+            "content": "sha256:a44a0ff0c1ca45fa60e9040e612f77c7fc9b16f66f6f5539607a3dc920f9336d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5FXAG5",
+      "items": [],
+      "reason": "Both test catalogs registered test_provider_limit_suppression.py in canonical sorted order, preserving exact unique lane selection and artifact consumer lists (re-anchored post-crossing-6 on 5cb9f97940b5/518a6d271ec1).",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-C1DP32"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5QJEXJ",
+      "items": [
+        "sha256:3298042407b16b59afc09f48138cbb9e9859281f469d3f73fd3c3d8b05082e19"
+      ],
+      "reason": "create_server added server._bound_agent_id snapshot without changing read-only marks, schema compaction, or role-allowlist narrowing order.",
+      "revision": 1,
+      "subject": "INV-4ZA9SH"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6KGG4Z",
+      "items": [
+        "sha256:556b42edce2d2bc41ac1cea2866944740d32d8dc8457150ebcc88a2cf5219a69"
+      ],
+      "reason": "Re-anchored WKN-P01MFZ to candidate mcp/server.py::AgentsRememberMCP; undeclared tool-call argument handling was not modified so the fault still stands.",
+      "revision": 5,
+      "subject": "WKN-P01MFZ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-81B9PT",
+      "items": [],
+      "reason": "Per Manager directive, DPD-ZMQ523 (docs/design/python-evidence-system.md) is kept strictly untouched at HEAD (a387168e7fa4, rev 29, unconfirmed by L60) ahead of 261112-BUG master end.",
+      "revision": 29,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8SBEJ5",
+      "items": [],
+      "reason": "Merged post-CAP-L5 runtime-layout.md.md retaining L60 [2] (lines 153-170) and CAP-L5 [3] and refreshed citations.",
+      "sources": [
+        {
+          "blob": "29f91f06402cb597c6de65ad5ad197293931962e",
+          "path": "docs/reference/runtime-layout.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/runtime-layout.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4CJ7H0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 2
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 2
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 2
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 2
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-HBMPXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 3
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 2
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-9WKT2S",
+      "items": [
+        "sha256:b6ec190da2cecd1cb3b1ed8e06b6ce3c1b5a1eb7369e526747e903c4f5e410e6"
+      ],
+      "reason": "Re-examined all 12 members on post-L61 base (including updated INV-AJKQV2 and INV-VPXD65): create_server _bound_agent_id snapshot does not affect LeafAgentArchive binding, terminal-agent archiving, store settlement, or launch fencing.",
+      "revision": 3,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A1BCAE",
+      "items": [
+        "sha256:fac631c3398561d5fd2b5431fd788f9fe334e6c7a5c2d92a6916f1b8abbae539"
+      ],
+      "reason": "Re-anchored WKN-G1TBN8 to post-L61 candidate cli/__main__.py::build_parser; the five earlier-installation commands remain registered so the debt still stands.",
+      "revision": 6,
+      "subject": "WKN-G1TBN8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+            "content": "sha256:a44a0ff0c1ca45fa60e9040e612f77c7fc9b16f66f6f5539607a3dc920f9336d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+            "content": "sha256:1b729ad78d123c73f007ae285e1ab5906956d1a8301b601aba6280a210fba2a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        },
+        {
+          "after": {
+            "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+            "content": "sha256:1b46af6c6659dc2814be24c6cb5d199145700174d769f9ff65b6003e1fa53093",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+            "content": "sha256:7f76f13a9ea0605b42b054067afb4feb337298cb3b92c67a2fb63826cd840347",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "id": "RLZ-N27ZQQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B60Y6P",
+      "items": [],
+      "reason": "cli/provider_limit_hold.py added the provider-limits runtime CLI adapter and the test catalogs registered test_provider_limit_suppression.py without changing the shared hold-check contract (re-anchored post-crossing-6 on 5cb9f97940b5/518a6d271ec1).",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BZTAFS",
+      "items": [],
+      "reason": "Confirmed docs/reference/runtime-layout.md lines 165-166 against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5; CAP-L5 cleared DFR-GNDY45).",
+      "revision": 14,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+            "content": "sha256:a44a0ff0c1ca45fa60e9040e612f77c7fc9b16f66f6f5539607a3dc920f9336d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CA3VCT",
+      "items": [
+        "sha256:6ad0e593ea1b6393e3f46c16be53233a7fe0b76b975cf3549f702d5f40d5e8f7"
+      ],
+      "reason": "test-evidence-lanes.toml registered the newly added test_provider_limit_suppression.py module, preserving exact existing-file lane membership (re-anchored post-L61 on ad3d765da8fd/a387168e7fa4).",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CE8Y5K",
+      "items": [],
+      "reason": "Confirmed docs/design/python-pytest-bootstrap.md against post-CAP-L5 crossing-6 synced L60 candidate (853 total: 699 unit-regression, 126 integration, stress-durability at test-evidence-lanes.toml:872-874).",
+      "revision": 40,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-V08DBJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CVJEWQ",
+      "items": [
+        "sha256:2fbdffb528ef81c979e41f1e30404b926ce48a7fe06818095fc774744c859baa"
+      ],
+      "reason": "AgentsRememberMCP._execute_tool_call added _maybe_suppress_provider_limits after the explainer-seat refusal guard, leaving explainer-surface validation unchanged.",
+      "revision": 1,
+      "subject": "INV-TPVGJK"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DB7TX3",
+      "items": [
+        "sha256:02cecfef7f2f4d7485844905f36c7e6a8a3421b12974db1e3458c4ffafabff51"
+      ],
+      "reason": "Updated cli/provider_limit_hold.py.md to document the agents-remember provider-limits status/suppress/unsuppress CLI adapter and authored symbol citations.",
+      "sources": [
+        {
+          "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+          "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/provider_limit_hold.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DG70Q4",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Merged post-L61 test-evidence-lanes.toml.md with 699 unit-regression / 853 total, test_provider_limit_suppression.py at line 464, stress-durability at lines 872-874, and refreshed citations.",
+      "sources": [
+        {
+          "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DX6TFN",
+      "items": [
+        "sha256:183b13305b116bb6cb176fa1668c940767f3dfbeb2c91f6d56dbe60ccbf05f37"
+      ],
+      "reason": "Examined all 8 members: _maybe_suppress_provider_limits runs after build_currentness completes and before tool_build_currentness/stale-write refusal, leaving stale-installed-build detection and refusal unchanged.",
+      "revision": 2,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-TSW41E"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:f338947b1469d95f45840c719e08ba7038526fb8cf78e609920c9d184730ba2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "before": {
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "id": "RLZ-XATWX1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EJFAT5",
+      "items": [
+        "sha256:05e4113a299c7703db825ea8560b1dbb99090a78358a378b5408ecf94b350cdd"
+      ],
+      "reason": "Updated INV-4T6KSE and re-anchored RLZ-XATWX1 to reflect window-scoped suppression filtering and atomic sidecar pairing under provider-limits.lock.",
+      "revision": 4,
+      "subject": "INV-4T6KSE"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3HQNH1",
+          "revision": 2
+        },
+        {
+          "id": "INV-B7D1WM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EYKF6Y",
+      "items": [
+        "sha256:e6aa07414ca7ec7fd358142a446d7303969f49cbf4de86701a515bbbedd25e91"
+      ],
+      "reason": "Examined both members: registering provider-limits under _register_runtime_commands in cli/__main__.py does not affect single user-settings path resolution or upgrade routing.",
+      "revision": 2,
+      "subject": "FAM-6M4B49"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-57VSEG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FBX9W2",
+      "items": [
+        "sha256:0d4a70c88794a16c99543a0f0dc3248b978a9787a88f8087d250c2d9dd845935"
+      ],
+      "reason": "cli/__main__.py registered provider-limits under _register_runtime_commands without altering the single user-settings upgrade command routing (re-anchored post-L61 on ad3d765da8fd/a387168e7fa4).",
+      "revision": 2,
+      "subject": "INV-3HQNH1"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FS0YMY",
+      "items": [],
+      "reason": "Audited SECURITY.md against candidate code tree a9ba0d9b after mcp/server.py added off-loop _maybe_suppress_provider_limits: no network listener, origin policy, secret-handling, or approval-gate contract changed.",
+      "revision": 17,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-TSW41E"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:99816000095de62b65d77945769a91e49b9fbdebc6389cac5f6909ae28add2e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_due_reports"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "before": {
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "content": "sha256:4ac6759289c3f5daa0a0766fc5aac850e1fcc4ed47b4e022a874e854d3d80c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_due_reports"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "id": "RLZ-BNRPJE"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-G5D7ST",
+      "items": [
+        "sha256:0e5f759b42fdd35e4d8da99f45c52d3103830134c9f09a321eb90cfeae0b6fba"
+      ],
+      "reason": "Updated INV-795NRN and re-anchored RLZ-BNRPJE for sidecar pruning in claim_due_reports and clear-marker emission during periodic drops.",
+      "revision": 2,
+      "subject": "INV-795NRN"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GSKXNS",
+      "items": [],
+      "reason": "Confirmed mcp/README.md against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5).",
+      "revision": 29,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-TSW41E"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+            "content": "sha256:080893b27cbd1c7706685812a17fbcca18199966b2b81d4b2c8c059165a83413",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_usage_reads"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "before": {
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "content": "sha256:136b636f24c858467f5e986e50b0a6cc84105e2eacdb25bcecdf2527148f99ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_usage_reads"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "id": "RLZ-K85G1Q"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-HV6F7T",
+      "items": [
+        "sha256:6c77bafc1572e62f8c09c7d21c0d6c499550c74cfb2e65334970b73b32b0ae50"
+      ],
+      "reason": "Updated INV-YEQENJ and re-anchored RLZ-K85G1Q for locked sidecar/limits atomic writes, recordedAt preservation, and suppression projection.",
+      "revision": 2,
+      "subject": "INV-YEQENJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J99M0H",
+      "items": [
+        "sha256:1c00aa82bfff12c5392595b353f6d1b808a457a1f3308b32865f969ede74a616"
+      ],
+      "reason": "Updated serving/overview.md to document provider_limit_suppressions.py, the locked v1/sidecar pair, and automatic/operator suppression projection.",
+      "sources": [
+        {
+          "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+        },
+        {
+          "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J9SHB0",
+      "items": [
+        "sha256:4cf60b5391f99de11dc857c31aa18d399e3a05378f83a6b73d3c2f02f6121b25"
+      ],
+      "reason": "Class-attribute type annotation `_bound_agent_id: str | None = None` on AgentsRememberMCP is local wiring supporting BUG-R60@v1 R3, which is already anchored on create_server and AgentsRememberMCP._maybe_suppress_provider_limits.",
+      "subject": "hunk:sha256:4cf60b5391f99de11dc857c31aa18d399e3a05378f83a6b73d3c2f02f6121b25"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-HD5W8S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JS2PT1",
+      "items": [
+        "sha256:09899027fc8bb6d30ca3c89fe3cee0d3ddf4fe655f0ba88bafa32e620cc8741a"
+      ],
+      "reason": "create_server added server._bound_agent_id snapshot without changing ordinary tool family or explainer registration.",
+      "revision": 2,
+      "subject": "INV-48203N"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4ZA9SH",
+          "revision": 1
+        },
+        {
+          "id": "INV-B06F1V",
+          "revision": 1
+        },
+        {
+          "id": "INV-DWNKBC",
+          "revision": 1
+        },
+        {
+          "id": "INV-KYKYPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-SJKVE0",
+          "revision": 1
+        },
+        {
+          "id": "INV-TPVGJK",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KC43GK",
+      "items": [
+        "sha256:6acb6378e4c2a0f181a454ef3cb7a58eeaa285f2a0cd1a6b1628a8b9ff6c304a"
+      ],
+      "reason": "Examined all 6 members: create_server's _bound_agent_id snapshot and _execute_tool_call's off-loop suppression hook leave tool registration order, schema compaction, allowlist narrowing, and explainer-seat checks unchanged.",
+      "revision": 1,
+      "subject": "FAM-0BVSZB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KJ0MDT",
+      "items": [],
+      "reason": "docs/features.md is untouched by L60 and carries active KNO-L7 deferral DFR-JQM92D at HEAD (a387168e7fa4, rev 36); preserved strictly intact without unedited confirmation.",
+      "revision": 36,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MX89R0",
+      "items": [
+        "sha256:8353baad06a1f9e9c54b54abe5db3721d6d93cf3d84ed046b31ceaf7681d3426"
+      ],
+      "reason": "Merged post-L61 cli/__main__.py.md retaining provider-limits [18] and memory-briefs [26] and refreshed citations.",
+      "sources": [
+        {
+          "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/__main__.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N73DG1",
+      "items": [
+        "sha256:b36c2b5d1313afd867566b1a41d7a2337f42823446b4863fbb29b01e6d16ccd8"
+      ],
+      "reason": "Merged post-L61 mcp/tests/overview.md with 699 unit-regression / 126 integration / 853 total and test_provider_limit_suppression.py evidence row and refreshed citations.",
+      "sources": [
+        {
+          "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+          "path": "mcp/tests/test_provider_limit_suppression.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NNB3DY",
+      "items": [],
+      "reason": "Confirmed docs/architecture.md against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5).",
+      "revision": 24,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PH2GKT",
+      "items": [
+        "sha256:e6e37cbd57381228da3b500d35dc1f6846e3aceee9c0ccb1bba86706ca7e3f05"
+      ],
+      "reason": "Private helper `_snapshot_bound_agent_id()` in mcp/server.py is called solely by create_server to populate `_bound_agent_id` for BUG-R60@v1 R3, which is already anchored on create_server and AgentsRememberMCP._maybe_suppress_provider_limits.",
+      "subject": "hunk:sha256:e6e37cbd57381228da3b500d35dc1f6846e3aceee9c0ccb1bba86706ca7e3f05"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "deferralIds": [
+        "DFR-XP94XS"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PJC3NY",
+      "items": [],
+      "reason": "Confirmed docs/reference/mcp-tools.md lines 758-767 against post-CAP-L5 crossing-6 synced L60 candidate and re-deferred CAP-L5 open deferral DFR-5EZYPH (lines 31 and 203) onto L60 candidate blob.",
+      "revision": 33,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RD6QX4",
+      "items": [
+        "sha256:eb0fc89816b215eb1df1658407bf3092b7b41d3bbb11bc513cb1bdc05430de78"
+      ],
+      "reason": "Updated mcp/server.py.md to document _bound_agent_id snapshotting and off-loop _maybe_suppress_provider_limits dispatch hook and refreshed stale references.",
+      "sources": [
+        {
+          "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T1C5CG",
+      "items": [
+        "sha256:7f850a55444049e0c98374279926bfc4b8e54bf9446fa48adb5d361129ccf81f"
+      ],
+      "reason": "Updated serving/paseo/provider_limits.py.md to document _commit_pair_locked, suppression projection, auto-suppression, and operator suppress/unsuppress APIs and refreshed citations.",
+      "sources": [
+        {
+          "blob": "cf74085736b5b1ae32e4ec29dfc5df74dcbd9719",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/provider_limits.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T1MAK3",
+      "items": [
+        "sha256:ca67f2e38bcabd360806ee5b0edf2cd647622497afe813457e10f5b2ecf78503"
+      ],
+      "reason": "Merged post-L61 mcp/overview.md retaining upstream [427] and L60 BUG-R60@v1 window-scoped provider-limit suppression evidence row and refreshed citations.",
+      "sources": [
+        {
+          "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        },
+        {
+          "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+          "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+        },
+        {
+          "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T3S2GV",
+      "items": [],
+      "reason": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md is untouched by L60 and carries active L58 Option C deferral DFR-YWM2GX at HEAD (a387168e7fa4, rev 24); preserved strictly intact without unedited confirmation.",
+      "revision": 24,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "deferralIds": [
+        "DFR-NDPEXV"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T9NS5A",
+      "items": [
+        "sha256:693c3cc00c19ddf0a03b2dd0d57fcfb66db0929219fc8cbc2448c2adf0216446"
+      ],
+      "reason": "Confirmed docs/dashboard.md lines 336-346 against post-L61 synced L60 candidate for BUG-R60@v1 and re-deferred L61 open deferral DFR-THCPWR (lines 256-262 pre-BUG-R62 20 s timeout prose) onto L60 candidate blob of docs/dashboard.md.",
+      "revision": 13,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-FSMKXF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TA7SM5",
+      "items": [
+        "sha256:6193598fb75341f3f0c24a489962e831ab646b17e9baa57a6c6ca8bcf9705083"
+      ],
+      "reason": "AgentsRememberMCP._execute_tool_call added _maybe_suppress_provider_limits without altering request-memo or definition-scope delegation.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-THAY16",
+      "items": [
+        "sha256:07d3e953e8e09d4d4592a253c1938bcf5d9c0ee2b6e7f00929e837f1e4abda71"
+      ],
+      "reason": "Created onboarding card and citation sidecar for new test suite mcp/tests/test_provider_limit_suppression.py.",
+      "sources": [
+        {
+          "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+          "path": "mcp/tests/test_provider_limit_suppression.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_suppression.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R60",
+          "packet": "requirements/BUG-R60-v1-window-scoped-provider-limit-suppression.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-TSW41E"
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V3501B",
+      "items": [],
+      "reason": "Amended INV-BCXFH9 under BUG-R60@v1 Rule 5 so the single-source limit creation invariant explicitly accounts for the locked v1/sidecar pair and window-scoped suppression projection.",
+      "revision": 3,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VSX9G1",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Merged post-L61 evidence-lifecycle.toml.md with test_provider_limit_suppression.py at lines 624/3166/4542 (853/853/77 consumers across 18 contracts and 123 artifacts) and refreshed citations.",
+      "sources": [
+        {
+          "blob": "4b0fe617084d52455e25bb76f908e8fb5825bf67",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-8T6VV2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WM3JFN",
+      "items": [
+        "sha256:449438567615390c100995ba67ecf0a6523e4a90b2516c63aff375398ec3cc81"
+      ],
+      "reason": "create_server added server._bound_agent_id snapshot without altering lazy worktree-services supplier binding.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-2PVK9H",
+          "revision": 1
+        },
+        {
+          "id": "INV-41J2Q6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 2
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 2
+        },
+        {
+          "id": "INV-ESZKHN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-SDEXYK",
+          "revision": 1
+        },
+        {
+          "id": "INV-VEGPXX",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-XVC5ER",
+      "items": [
+        "sha256:9e31ad4cd104a0f92f169835b4f5d24d392888ff2c148b4c46f277e823b6a1ae"
+      ],
+      "reason": "Strengthened FAM-FD58VB guarantee, admitted BUG-R60@v1 R1..R5 as members (12 total), added mcp/src/agents_remember/mcp route, and widened docs/reference to docs to cover docs/dashboard.md.",
+      "revision": 2,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YQ2J4G",
+      "items": [
+        "sha256:bda710c3fc502f4935edcff7ac46cb9fc87388ee01adad0ef421cd42e41e4420"
+      ],
+      "reason": "Created onboarding card and citation sidecar for new module serving/paseo/provider_limit_suppressions.py.",
+      "sources": [
+        {
+          "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-THMGJK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YX3TJD",
+      "items": [
+        "sha256:f1e8663347dd9c838b8b84a34197ac19e779b787f28be97caa0e2197b908a19a"
+      ],
+      "reason": "create_server added server._bound_agent_id snapshot without altering LeafAgentArchive supplier binding.",
+      "revision": 2,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-1QHQXM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z4GF9B",
+      "items": [
+        "sha256:2949b74ded159311d4bbe618c307ae6248fc3aef62b0045c8c845ef45d66370c"
+      ],
+      "reason": "create_server added server._bound_agent_id snapshot without altering in-place _compact_server_tool_schemas compaction.",
+      "revision": 1,
+      "subject": "INV-NZ27V7"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:f5eefecaf61df1e67f1fb9bead479f21c146e77732667a5b5dbdf81d94d135b7",
+      "record": "DEC-TSW41E",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:39:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:84a5561533dce2b6ebdf4b9cef688ee815319f85d9463de131c721de7a8ac31c",
+      "record": "DPD-23C91T",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:daa1286c3d54d14d14b0ff0c0b28b06e871a2a9011a1da7dbf0d84c8e98dbdd9",
+      "record": "DPD-23C91T",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-27T06:40:50+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:be00a30b13f56360e38ff5fab6e4d6038b8e5c0641637fedd58bdd6a51417725",
+      "record": "DPD-327MNX",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4a33c00a86b7bddd7017b66e09d2bf43ed7258736bc5c404172fbd569332e16f",
+      "record": "DPD-327MNX",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T07:18:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e7853f48e7635b2c0c014f387d53984300b9662ba1b3e396f2a5effbc78adde6",
+      "record": "DPD-86HJGF",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:361f6a405e074d8bf5a19a76979a797f2a8828f86c53023dfd41c86852597d0f",
+      "record": "DPD-86HJGF",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-27T07:18:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a8529e8c9e3ded4738ef6423fafb93ecb0472f5f2937d8c2d06c86352c57b69b",
+      "record": "DPD-8PE0G9",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:16fef5335ed7960fddcac372097c23b5cb1e6be25ded144da7daa0b9ba06a047",
+      "record": "DPD-EG5TYT",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9cfc6fbe39f578e287156ef16fc00b3cdaffa8c7c46aa6bc6c492fd7cb4f40b5",
+      "record": "DPD-NGC2F6",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c17a4d4f8b4f706dc6db4c42f025c509ae4eae07ee8798ca2bb7a78618eb1461",
+      "record": "DPD-Q4APMS",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b25440cb3cc9a3ea5c79bb4c53dfc53703b897a494a0959791eb86675e54b9d1",
+      "record": "DPD-Q4APMS",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-27T07:18:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d649d68625281670339165f1073a3d5525ac8b74ae4c5628f5d899cbaf5921dd",
+      "record": "DPD-X6G7K3",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-27T06:45:53+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:149dfaf23676c9ecc6479661ed319af6f1257dc898226f2e0d2554416d09939f",
+      "record": "DPD-X6G7K3",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-27T07:18:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:914e94dd1e70c893c14d626208607a5f33e512557f78f6602eb6b376a73d4458",
+      "record": "DPD-ZMQ523",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2d9e72e5b27ef5895dbf8b2ad995b1802ac7d21dbc45257b1b407c05b7a936e6",
+      "record": "DPD-ZT8YY7",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1510aabf2197e850d2171282cb77a30457b02eddce97a4c3eba6405040d3864b",
+      "record": "DPD-ZT8YY7",
+      "revision": 39,
+      "writer": {
+        "at": "2026-11-27T06:40:50+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9703016d7df67bbb7b5a7d7c709c88160c2a6e382bf30a89a25e03a0506e16de",
+      "record": "DPD-ZT8YY7",
+      "revision": 40,
+      "writer": {
+        "at": "2026-11-27T07:18:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a1014756613dc1b434d293ef8d94161e6d976ad881ec278a85fd50666e0fc2cb",
+      "record": "FAM-FD58VB",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e49ce6db50ac1e982db151aa90f144a251a2a244b7e4e1ee73f334859d76539c",
+      "record": "INV-2PVK9H",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:39:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6ff1ab51997663d8259a5968e48586362afdb10f3482930882ef948485c21e89",
+      "record": "INV-41J2Q6",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:305786d174c115cd8684564e2e37ea20f79f66c0d3806c6a5706552ef3814c57",
+      "record": "INV-4T6KSE",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:720263a2405f3d264901350a035fdd9708e38e1a732c8533cf6b64edc299c60f",
+      "record": "INV-6ZZXV3",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:58b44fb986665dec29ff0bda6518fd3312e7e0cbc687d392a75db81a02838848",
+      "record": "INV-795NRN",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4640250a5376041c760afeeb9661b09c84f04982a61167bd57c8571631d3b4d9",
+      "record": "INV-BCXFH9",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:dba868e12113439eaee272bbf18af54ec0e42bdc5024b2dd86a2711d21bcb640",
+      "record": "INV-ESZKHN",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:682f6962a29a7704e0d9dcd71275dbe00ae95436a2b6d3b17126bff86584914e",
+      "record": "INV-SDEXYK",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0c54f486b700230c27211b98d8619a12e37a1646a664bc959cb6eed0a6815cee",
+      "record": "INV-VEGPXX",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1639eaac12e56e81e35461dfeeb9f23b3e2e452ad896cb88590f4923c59f38f4",
+      "record": "INV-YEQENJ",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:902b15bb157e6127b4aa60c0c9a870f1255f4af4d2b1680d6a1de5587bd74e2e",
+      "record": "WKN-G1TBN8",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-27T06:40:50+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:8c17da0dc03708aa35f52db4b553aefdd5a9d573b44b99415cb531bca0310a9f",
+      "record": "WKN-P01MFZ",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T02:21:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L60",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}
