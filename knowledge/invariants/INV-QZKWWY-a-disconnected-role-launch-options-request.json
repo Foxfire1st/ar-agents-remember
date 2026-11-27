@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across role_launch_routes.py, paseo_bridge.py, and paseo_catalog_store.py, and proved by three disconnect tests in test_read_cancellation.py."
+  },
+  "applicability": "HTTP POST /api/role-launch/options requests guarded by read_while_connected when the client disconnects.",
+  "conditions": [
+    "_run_bridge runs a pipe-draining Popen process group when read_cancellation() is bound, killing and reaping the child group and raising ReadCancelled on disconnect while keeping subprocess.run when unbound.",
+    "_merge_saved re-checks raise_if_read_cancelled() under the catalog store lock before publishing."
+  ],
+  "exclusions": [
+    "An already-published atomic catalog snapshot written while connected stands if disconnect occurs later during receipt liveness reads; POST /api/role-launch/dispatch cancellation semantics are unchanged."
+  ],
+  "id": "INV-QZKWWY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/34_launcher-options-coalesced-and-clean-9763ab777e-ar/role-reports/worker/2b56f62f-7fe4-56a7-9c61-6107077010c6/role-launch/261112-BUG-L34-worker-2b56f62f-7fe4-56a7-9c61-6107077010c6.md#disconnect-cancellation"
+      ],
+      "path": "L34-W3-curator-ingest"
+    },
+    "handoffEntry": "BUG-R34@v1 item 5",
+    "leaf": "261112-BUG-L34",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A disconnected role-launch options request stops pending bridge work and returns 499, preserving the prior snapshot when cancellation is observed before publication.",
+  "supersedes": [],
+  "title": "Disconnected options requests stop bridge work, return 499, fence writes",
+  "writer": {
+    "at": "2026-11-27T21:13:03+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
+  }
+}

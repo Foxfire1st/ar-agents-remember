@@ -42,7 +42,8 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 
 
 
-- Current, history and retry selection preserve every artifact. [5]
+- Current, history and retry selection preserve every artifact. Anchor: file [5]
+
 
 
 - Predecessor debt survives host failure and automatic recovery advances it. [6]

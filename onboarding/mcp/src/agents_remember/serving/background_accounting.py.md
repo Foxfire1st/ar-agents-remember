@@ -24,22 +24,9 @@ Local implementation and executable evidence do not replace requirement authorit
 - Nine retained labels account for wired serving work after three retired record owners were removed; actual executing-thread CPU, bounded detail, honest incomplete windows and worker drain remain the existing accounting contract. [1]
 
 
-## 260928-MIK-L177 Background Units Run On Their Own Pool
 
-`offload` no longer schedules on the loop's default executor, which every `asyncio.to_thread` call in
-the process shares; a long background unit could therefore hold a thread another awaited read needed.
-(Starlette's own synchronous endpoints are not on that executor: `run_in_threadpool` hands them to
-AnyIO's worker threads, so the queueing this change removes is the loop's, not Starlette's.)
-Background units now run on a process-wide `ThreadPoolExecutor` named `ar-background` with
-`BACKGROUND_WORKERS = 4` threads, created once and never resized, and each unit carries a copy of the
-loop's context so it observes the same context variables a read does. The accounting labels, the
-bounded detail and the cancellation drain are unchanged; the change is where the work runs.
+## Background Pool And Dedicated Executors
 
-## 260928-MIK-L177 A9 — The Unit Is A Task, Not A Bare Future
+`offload` schedules background units on a process-wide `ThreadPoolExecutor` named `ar-background` with `BACKGROUND_WORKERS = 4` threads (created once and never resized) rather than on the event loop's default executor, so long background work cannot starve awaited default-executor reads. (Starlette's synchronous endpoints use AnyIO's worker threads via `run_in_threadpool`, so this isolates the event loop's default executor rather than Starlette's.) Each unit runs through `_background_thread`, copying the loop's context so context variables remain visible, and is wrapped in an explicit `asyncio.create_task` awaited through `_drain_worker`. On cancellation, `_drain_worker` shields and awaits the running worker task across repeated cancellations before re-raising, preserving worker-drain guarantees that a bare executor future does not provide.
 
-`offload` now runs a unit through `_background_thread`, which copies the loop's context and awaits
-`loop.run_in_executor(_background_pool(), context.run, func)`, and it wraps that in an explicit
-`asyncio.create_task`. The task boundary is the point: the shutdown drain shields and awaits that task
-even when its owner is cancelled repeatedly, which a bare executor future did not give. The executor
-stays the background-only pool with `BACKGROUND_WORKERS = 4`; accounting labels, bounded detail and
-cancellation handling are unchanged.
+`offload_on(executor, owner, ledger, func, *args, **kwargs)` runs a measured unit on a caller-supplied dedicated `Executor` (such as the held-reset scheduler's coordinator pool) through the same context-copying `_background_thread` and `_drain_worker` cancellation-drain boundary, keeping owner attribution and shutdown drain consistent without sharing the 4-thread `ar-background` pool.

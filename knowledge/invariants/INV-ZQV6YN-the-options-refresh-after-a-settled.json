@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across roleChatDispatch.ts, RoleChats.tsx, and roleChatOptionsLoader.ts, and proved by RoleChats.dispatch.test.tsx and RoleExecutionStatus.test.tsx."
+  },
+  "applicability": "Automatic dashboard role launcher options refresh immediately after dispatchRoleAction.",
+  "conditions": [
+    "Dispatch or offline recovery obtained a settled RoleExecutionReceipt matching the exact requestScope and requestId.",
+    "The follow-up options load is automatic (neither explicit Retry nor Refresh) for the same document scope."
+  ],
+  "exclusions": [
+    "Unresolved (202/unknown), absent, or mismatched receipts and explicit Refresh or Retry still fetch /api/role-launch/result."
+  ],
+  "id": "INV-ZQV6YN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/34_launcher-options-coalesced-and-clean-9763ab777e-ar/role-reports/worker/2b56f62f-7fe4-56a7-9c61-6107077010c6/role-launch/261112-BUG-L34-worker-2b56f62f-7fe4-56a7-9c61-6107077010c6.md#settled-dispatch-refresh"
+      ],
+      "path": "L34-W3-curator-ingest"
+    },
+    "handoffEntry": "BUG-R34@v1 item 3",
+    "leaf": "261112-BUG-L34",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The options refresh after a settled dispatch preserves and reuses the result from the exact request.",
+  "supersedes": [],
+  "title": "Post-dispatch refresh preserves and reuses a settled exact-request result",
+  "writer": {
+    "at": "2026-11-27T21:13:03+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
+  }
+}

@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "110900be0fc26641af05f73825a21d58ec55d28d",
-    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Merged 261112-BUG-L65 (3.1.1) and 261125-DEP-L3 (DEP-R03@v2 mcp>=2.3.0,<3) on synced code tree 110900be0fc2 (commit 11cd92e38425): README.md Status section states package version 3.1.1 matching mcp/pyproject.toml, version.py, and mcp/uv.lock, and documented behavior, tool surfaces, links, install steps, and stability-promise text remain accurate.",
+    "statement": "Resolved crossing-7 sync conflict for README.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
     "task": "261125-DEP-L3",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -92,9 +92,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T20:59:54+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-6",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

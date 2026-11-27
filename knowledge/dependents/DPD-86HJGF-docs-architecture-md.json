@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "2f247e921f1cb8d035b1edce2f7d5b41416b5af5",
-    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Audited edited docs/architecture.md against 261125-DEP-L4 tree 2f247e92 (DEP-R04@v2 Rule 5 / DEP-L4-MR1-F1 fix): lines 48-52 now accurately describe enabling listing-time schema compaction before role narrowing so list_tools returns losslessly compacted copies without mutating stored tools, and the remaining runtime architecture holds with zero contradictions.",
+    "statement": "Resolved crossing-7 sync conflict for docs/architecture.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
     "task": "261125-DEP-L4",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/architecture.md",
   "id": "DPD-86HJGF",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -254,8 +254,8 @@
     },
     {
       "anchor": {
-        "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
-        "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+        "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+        "content": "sha256:7cf565448e269fb9fb9c3ef6ae61caaff0bce1f6f75cdc957996dcd37d13a259",
         "locator": {
           "kind": "symbol",
           "name": "serving_collaborators"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:15:31+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L4",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

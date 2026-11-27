@@ -674,7 +674,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Complete response validation and logging remain separate from caller-sized status projection. [478]
 
 
-- **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. [480]
+- **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. Anchor: `_launch_prepared_role_session`, `dispatch_leaf_set` [480]
+
 
 
 

@@ -1,0 +1,159 @@
+{
+  "path": "mcp/tests/test_held_reset_delivery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "content": "sha256:a1c02b4b512d2ce5a8c61b9b6d26e352df1058178131dad670fe34a25ed66dcf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_live_reset_wins_enrollment_and_a_prior_generation_cannot_retire_it"
+        }
+      },
+      "facet": "Demonstrates that enroll preserves an existing live scheduled reset target rather than overwriting it with an earlier startup target.",
+      "id": "PRF-11WWKK",
+      "invariant": "INV-GV3950",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 enrollment at start",
+        "leaf": "261112-BUG-L32"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "content": "sha256:1e293258715d9f8277b2153b87be1fde7e3bd4e2d54e23fd741c18c54899605d",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldResetDeliveryTests.test_an_indexed_wait_survives_a_new_scheduler_and_is_retired_after_ack"
+        }
+      },
+      "facet": "Demonstrates that a reset entry published at hold time persists on disk for a fresh HeldResetIndex and is retired only after delivery acknowledgement.",
+      "id": "PRF-GW9SPP",
+      "invariant": "INV-0SSZQM",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 durable reset index",
+        "leaf": "261112-BUG-L32"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "content": "sha256:417765fda89c44aa5b8f66bb0c042d62ef3f06f7791c0e2a3c024156c1864cb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldResetDeliveryTests.test_startup_adopts_an_aged_legacy_wait_and_delivers_in_order_at_reset"
+        }
+      },
+      "facet": "Demonstrates that startup adoption enrolls an aged legacy provider-limited wait absent from the 24-hour held-receipt queue and delivers its messages in FIFO order at reset.",
+      "id": "PRF-JV1NKT",
+      "invariant": "INV-GV3950",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 enrollment at start",
+        "leaf": "261112-BUG-L32"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "content": "sha256:a1c02b4b512d2ce5a8c61b9b6d26e352df1058178131dad670fe34a25ed66dcf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_live_reset_wins_enrollment_and_a_prior_generation_cannot_retire_it"
+        }
+      },
+      "facet": "Demonstrates that a live scheduled reset generation cannot be overwritten by startup enrollment or retired by an earlier generation's finish call.",
+      "id": "PRF-NCVXX3",
+      "invariant": "INV-0SSZQM",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 durable reset index",
+        "leaf": "261112-BUG-L32"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "content": "sha256:3bec52de2587cc21d4b76576f8ed25ea7d0c220759bc7cd682ef2d7a63987f2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+        }
+      },
+      "facet": "Demonstrates that deliver_due_pass overlaps distinct due recipients concurrently while staying within the configured pool bound and visiting each recipient once.",
+      "id": "PRF-V1F1TS",
+      "invariant": "INV-6NJ5ZH",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2",
+        "leaf": "261112-BUG-L32"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "content": "sha256:1e293258715d9f8277b2153b87be1fde7e3bd4e2d54e23fd741c18c54899605d",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldResetDeliveryTests.test_an_indexed_wait_survives_a_new_scheduler_and_is_retired_after_ack"
+        }
+      },
+      "facet": "Demonstrates that an indexed wait is held until reset, delivered once due via deliver_due_pass, and retired from the index after acknowledgement.",
+      "id": "PRF-VSR0RJ",
+      "invariant": "INV-6NJ5ZH",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2",
+        "leaf": "261112-BUG-L32"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`HeldResetDeliveryTests` exercises startup adoption of an aged legacy wait dropped from the 24-hour queue, exact deadline wake, FIFO delivery within thirty seconds, and post-acknowledgement retirement across a fresh scheduler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "content": "sha256:4daeb39fbb4812ffebd624030561000867edbc9eae1f96c94123740a11c6402c",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldResetDeliveryTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`test_live_reset_wins_enrollment_and_a_prior_generation_cannot_retire_it` verifies that `enroll` preserves live entries and a stale generation cannot retire a newer schedule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "content": "sha256:a1c02b4b512d2ce5a8c61b9b6d26e352df1058178131dad670fe34a25ed66dcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_reset_wins_enrollment_and_a_prior_generation_cannot_retire_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound` verifies concurrent delivery across distinct recipients stays within the configured pool bound with one visit per recipient.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "content": "sha256:3bec52de2587cc21d4b76576f8ed25ea7d0c220759bc7cd682ef2d7a63987f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

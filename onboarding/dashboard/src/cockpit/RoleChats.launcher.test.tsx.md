@@ -24,21 +24,9 @@ The current source and test assertions below establish the documented ownership;
 
 
 - The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement. [7]
-
 - Matching saved inventory keeps eligible Start available during metadata and model-options refresh. The launcher shows no separate catalog-status line before or after settlement. [6]
 
-
-
-
-
-
-
-
 - Current source owner or exact assertion described above. [3]
-
-
-
-
 
 - The launcher keeps explicit speed choices separate from effort and waits for the shown model’s Speed control before exercising an override. [4]
 

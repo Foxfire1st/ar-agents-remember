@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
+    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
     "role": "curator",
-    "statement": "Verified docs/reference/harnesses.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 role-bound allowlist/fail-closed binding prose alongside KNO-L5 Round 5 afterTries (worker, curator, consolidator).",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/reference/harnesses.md against post-L32 synced L34 candidate: harness catalog, role settings, and start-choice precedence remain accurate after BUG-R34@v1.",
+    "task": "261112-BUG-L34",
     "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,12 +46,12 @@
       "path": "mcp/src/agents_remember/kernel/primitives/user_settings_location.py"
     },
     {
-      "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+      "blob": "66fb93ef27f70a6571c32983a0e1c591ce1bcfa2",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -102,14 +102,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T22:06:38+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
   }
 }

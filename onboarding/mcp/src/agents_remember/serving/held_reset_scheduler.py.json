@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+        "content": "sha256:075be224cc2591adb286bb000f6d9919ae4b72503e0615421d1ef05385b17871",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_held_reset_scheduler"
+        }
+      },
+      "id": "RLZ-3SADQY",
+      "invariant": "INV-0SSZQM",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 durable reset index",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The scheduler rechecks the indexed head every three seconds and runs due passes without waiting for the fifteen-second ordinary sweep.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+        "content": "sha256:563d3dadbdb2eb2b399769faecf0c4a9b7682af5fb15fdf957949367bb45c926",
+        "locator": {
+          "kind": "symbol",
+          "name": "deliver_due_pass"
+        }
+      },
+      "id": "RLZ-W8H49A",
+      "invariant": "INV-6NJ5ZH",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The due pass snapshots every past-reset entry once and dispatches it through the fixed worker pool, so a backlog cannot leave recipients waiting for later ordinary sweeps.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`RESET_WORKERS = 16`, `_HEAD_RECHECK_SECONDS = 3.0`, `_RETRY_DELAY = timedelta(seconds=15)`, and the typed port/result dataclasses define the scheduler's fixed bounds and boundary contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:572caa6c6ff647d07f0dec3ba8fc32ca4fb909861aa257a4995af97aa5405b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESET_WORKERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:4df066b365a4c9501a845b708aa10216230a38b9e80a3bac7c07cead4b822026",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResetDeliveryPorts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`deliver_due_pass` snapshots `index.due_at(now)` and bounds submission and concurrency through `pool.map(run, entries, buffersize=pool_size)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:563d3dadbdb2eb2b399769faecf0c4a9b7682af5fb15fdf957949367bb45c926",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_due_pass"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`run_held_reset_scheduler` and `_run_due_passes` run startup adoption and deadline-driven due passes on dedicated `ar-reset-coordinator` and `ar-held-reset` pools accounted under `OWNER_HELD_DELIVERY`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:075be224cc2591adb286bb000f6d9919ae4b72503e0615421d1ef05385b17871",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_held_reset_scheduler"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:5a6ec4a293c66ff19eed9afc3fba018654b730366d36b48d974199b37b9f7c49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_due_passes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

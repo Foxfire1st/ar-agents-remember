@@ -37,7 +37,7 @@ records and wire references a send can name, while `text_pick()` and `image_pick
 - **Filing.** `test_a_filing_that_fails_leaves_no_new_pick_and_keeps_one_another_message_names` removes the picks
   it saved itself while keeping one another message names, and
   `test_a_held_send_that_ends_undelivered_is_filed_and_logged_undelivered` and
-  `test_a_held_send_after_a_partial_drain_is_answered_by_its_own_message` keep a held send's fate recorded per
+  `test_a_held_send_after_a_partial_drain_is_answered_by_its_own_message` (which patches `held_reset_delivery.note_held_receipt` to isolate the partial-drain queue seam) keep a held send's fate recorded per
   send.
 - **Seat list.** `SeatListTests.test_the_seat_list_joins_live_agents_with_current_records_and_pages` joins live
   agents with current records and pages the answer, including a taskless seat.

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-7 sync conflict for docs/design/python-pytest-bootstrap.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
     "task": "261125-DEP-L3",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 42,
+  "revision": 43,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
+      "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
+        "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 878,
+          "end": 879,
           "kind": "line_range",
-          "start": 876
+          "start": 877
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

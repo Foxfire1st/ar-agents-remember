@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_read_cancellation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a4a852df8e5050a2ac467d00b211559540981f79",
+        "content": "sha256:d3947bd8b865c22cbc7e494c7f0b4e602223c55291e28019b5141fcd991f1e4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_launch_options_disconnect_during_receipt_read_keeps_published_catalog"
+        }
+      },
+      "facet": "Late disconnect during agent-state receipt liveness kills and reaps the agent-state child, returns 499, and preserves both the already-published catalog snapshot and the receipt file.",
+      "id": "PRF-3MGYTG",
+      "invariant": "INV-QZKWWY",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 5",
+        "leaf": "261112-BUG-L34"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4a852df8e5050a2ac467d00b211559540981f79",
+        "content": "sha256:ddbb209041b7d910c1a80130b10beb5fdb4c3ef4b97298b65824fd99267c0e73",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_launch_options_disconnect_reaps_bridge_and_keeps_saved_catalog"
+        }
+      },
+      "facet": "Disconnect during a stalled catalog bridge call kills and reaps the child process, returns 499 with empty body, and leaves launcher-catalog.json byte-identical.",
+      "id": "PRF-7ZB2S7",
+      "invariant": "INV-QZKWWY",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 5",
+        "leaf": "261112-BUG-L34"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4a852df8e5050a2ac467d00b211559540981f79",
+        "content": "sha256:95f70d76617380f1a2081e48c58d2cccbd67120951b548ba39d82ec1a55322c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_launch_options_disconnect_before_catalog_lock_acquisition_keeps_snapshot"
+        }
+      },
+      "facet": "Disconnect observed while waiting for the catalog store lock cancels before writing and preserves the prior saved snapshot inode and bytes.",
+      "id": "PRF-WC4984",
+      "invariant": "INV-QZKWWY",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 5",
+        "leaf": "261112-BUG-L34"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c27b75e73e991a01ba621a142060652ef9ab583f",
+            "blob": "a4a852df8e5050a2ac467d00b211559540981f79",
             "content": "sha256:bf8f783cde4f5b75724a936cddd36bc14bc85669ba160f652080701b5deb7f6e",
             "locator": {
               "kind": "symbol",

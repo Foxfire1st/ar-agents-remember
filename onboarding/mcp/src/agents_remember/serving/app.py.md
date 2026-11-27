@@ -14,13 +14,11 @@ Typed409 refusal routes are registered before canvas routes, so first-match rout
 
 `_build_serving_runtime` resolves live-input capabilities, creates one shared background ledger, optionally creates the landing refresher, and passes those collaborators to the Projector. When landing exists it binds interest to the actual Projector subscriber predicate before returning the runtime. The runtime carries the supplied clock, build stamp, cadence, child shutdown and the review_memory_root collaborator.
 
-`review_memory_root=collaborators.review_memory_root` supplies the runtime review-memory-root resolver. `usage_read=collaborators.usage_read` wires the runtime to the composition root's host-usage reader, so the serving tick's limit write reads the host's usage report through that reader rather than importing the bridge or adding a lifetime poll. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
+`review_memory_root=collaborators.review_memory_root` supplies the runtime review-memory-root resolver. `usage_read=collaborators.usage_read` wires the runtime to the composition root's host-usage reader, so the serving tick's limit write reads the host's usage report through that reader rather than importing the bridge or adding a lifetime poll. `held_reset_delivery=collaborators.held_reset_delivery` forwards the independent reset adoption and delivery ports onto `_ServingRuntime` so `_app_lifespan` starts the reset scheduler without serving importing CLI delivery owners. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
 
 `create_app` supplies the serving lifespan, installs gzip and registers projection/action, files, changeset, notes, requirements, reviewer, summary, tree and knowledge-reader routes. The changeset cache returned by its registration is passed to the summary route. The optional extra-route callback runs before static mounting; static delivery is last. Missing-port refusals, action mutation rules and stream framing are route-owner contracts, not new decisions in this function.
 
- This current local composition account is not a new served-process, browser, background-loop or CODE/MEMORY acceptance measurement.
-
-**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** The app is the composition root, so the collaborators' wiring is realized here.
+This current local composition account is not a new served-process, browser, background-loop or CODE/MEMORY acceptance measurement.
 
 ## Evidence
 

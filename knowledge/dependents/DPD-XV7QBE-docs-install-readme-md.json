@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Audited docs/install/README.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-7 sync conflict for docs/install/README.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
     "task": "261125-DEP-L3",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/install/README.md",
   "id": "DPD-XV7QBE",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+      "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -72,14 +72,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

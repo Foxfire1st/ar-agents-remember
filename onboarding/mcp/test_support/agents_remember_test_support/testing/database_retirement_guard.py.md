@@ -10,7 +10,7 @@ The pytest guard that fails a test which opens or writes a retired knowledge dat
 
 ## Code Commentary
 
-The guard attributes every APSW connection and database-file operation to the module that made it, charges the ones outside the named exemptions, restores any hook a test removed, and states its own limits.
+The guard attributes every APSW connection and database-file operation to the module that made it, charges the ones outside the named exemptions (`ALLOWED_MODULES`, which includes `controlplane/held_reset_index.py` for the non-knowledge held-reset schedule store), restores any hook a test removed, and states its own limits.
 
 ## Evidence
 

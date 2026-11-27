@@ -20,7 +20,7 @@ These are source assertions over the real bridge and a fake client, not a report
 
 ### Repo-Internal References
 
-- Successful empty lists retain read time; ordinary and refresh questions reach the provider boundary. [1]
+- Successful empty lists retain read time and projected launcher daemonConfig (profiles and provider options/params without env); ordinary and refresh questions reach the provider boundary. [1]
 
 - Model, mode, effort and tool-server failures leave other metadata parts available. [2]
 

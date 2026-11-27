@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355",
-    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Audited SECURITY.md against 261125-DEP-L4 tree 39b7bfbd (DEP-R04@v2 public-API-only mcp 2.3.0 boundary): local-only server security posture, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-7 sync conflict for SECURITY.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L32 (main 882d41531b3d) with zero code overlap or contradiction.",
     "task": "261125-DEP-L4",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "SECURITY.md",
   "id": "DPD-8PE0G9",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,12 +26,12 @@
       "path": "mcp/src/agents_remember/serving/write_guard.py"
     },
     {
-      "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+      "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/app.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -117,14 +117,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:28:23+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L4",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

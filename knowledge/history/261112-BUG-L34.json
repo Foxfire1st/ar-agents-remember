@@ -1,0 +1,2529 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L34",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T22:21:09+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L34",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T22:21:09+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L34",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "017e0a2c-777e-522a-a431-b56fe2e957f6",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "a05b2d3f36ae161955196f0343b4949d726a07b2",
+    "verdictRef": "notes/reports/reviewer/017e0a2c-777e-522a-a431-b56fe2e957f6/role-launch/L34-R1-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+            "content": "sha256:72dbd87ead7d9023af687b4949ea46c70d1d74baca8bf6ae5b9d45dac13d9d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "content": "sha256:28cdff05c5e6d0d105212b1caadd4e3f834342229612aab60d9d77386ffae72c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-02VQGE",
+      "items": [
+        "sha256:965a8e62a550468beb8d2d227c6ec5b5e4aeb0c2c4562b743601cbc3aec741d3"
+      ],
+      "reason": "Re-anchored evidence-lifecycle.toml realization onto post-L32 merged catalog after registering test_read_cancellation.py in canonical consumer order; catalog integrity unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0756HV",
+      "items": [
+        "sha256:09216f3aa772d7157a90b6ff918d4efc4f3da4b7d4c15eddb853eddf9e08778b"
+      ],
+      "reason": "roleChatDispatch.ts:55 updates DispatchWriters.requestOptionsRefresh signature to accept optional DispatchResultRead; callback plumbing for INV-ZQV6YN.",
+      "subject": "hunk:sha256:09216f3aa772d7157a90b6ff918d4efc4f3da4b7d4c15eddb853eddf9e08778b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2fa42e4750002265642f65e833bd8e0b9704f855",
+            "content": "sha256:62d8fe9674733fcdf3ab9ea09723b2454953674bffd8d97b7bb89028edd45c5f",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "before": {
+            "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+            "content": "sha256:865b759fc4a3e4faadde0de2c4f01d2d7232f320db7196063d0909458445046f",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "id": "RLZ-RDS19H"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-261QA9",
+      "items": [
+        "sha256:c6ce563ab5e429c88777a86d5cc885135c5163d8834c5cd4859b134a032059eb"
+      ],
+      "reason": "Re-anchored runOptionsLoad realization in roleChatOptionsLoader.ts after simplifying body construction and adding settledRequestId; Refresh snapshot renewal ordering unchanged.",
+      "revision": 1,
+      "subject": "INV-TRCBNZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-26EA0V",
+      "items": [
+        "sha256:07ee0c958ba1a7bc79d8b44aca3777e594b6dc85c43679e31a427a34ec5ee0ac"
+      ],
+      "reason": "roleLaunchModel.ts:449 simplifies sameRoleOptionsScope to delegate directly to sameRoleDocumentScope now that RoleOptionsScope omits agentId (supporting INV-TB8KGA).",
+      "subject": "hunk:sha256:07ee0c958ba1a7bc79d8b44aca3777e594b6dc85c43679e31a427a34ec5ee0ac"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-6WEANN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2QY80C",
+      "items": [
+        "sha256:cdbd9c22bfdc0f24c50f2f0d3afa4d77adf427f2c8caefe3492b2cf15c160320"
+      ],
+      "reason": "Re-anchored RoleChats.tsx realization after threading resultReadRef; Investigator slot and UUID preservation unchanged.",
+      "revision": 2,
+      "subject": "INV-BS7TH8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2YJGQY",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/role_launch_preparation.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3HD38W",
+      "items": [
+        "sha256:4f574f1e26c895ea6dc26cf583a997e03ad5bdcb13d02d74955456817eb36bf8"
+      ],
+      "reason": "roleChatOptionsLoader.ts:80 narrows adoptSavedExecution writers parameter to Pick<OptionsLoadContext, 'updateActiveRequest' | 'rememberExecution'> after removing ExecutionWriters; type cleanup only.",
+      "subject": "hunk:sha256:4f574f1e26c895ea6dc26cf583a997e03ad5bdcb13d02d74955456817eb36bf8"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-3N32GR",
+      "items": [
+        "sha256:e01a689af96191318f66a0f9f9fb81be1d44aa87a57b7adf2d8d6c3ea3ed8eea"
+      ],
+      "reason": "BUG-R34@v1 item 3 is a standalone launcher/bridge/cancellation/offering invariant (like INV-RQ2ZB8, INV-1DBF74, INV-J2SF5K, and INV-TRCBNZ) and does not alter the joint guarantees of the examined families.",
+      "revision": 1,
+      "subject": "membership:INV-ZQV6YN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-47ZFX7",
+      "items": [
+        "sha256:6b4dcdc8e64f420459bbdc2834f371b5cb245fd92b56de43154cbceca6efe71f"
+      ],
+      "reason": "roleChatOptionsLoader.ts:295 updates startOptionsLoad body after OptionsLoadContext consolidation; structural refactoring only.",
+      "subject": "hunk:sha256:6b4dcdc8e64f420459bbdc2834f371b5cb245fd92b56de43154cbceca6efe71f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5JBV4M",
+      "items": [
+        "sha256:3966e473f5914d1a934e5caee008e1e9ac707e2c81ed8c71ba776d9e8e294534"
+      ],
+      "reason": "roleLaunchModel.ts:166 simplifies RoleOptionsScope from an interface with optional agentId to type RoleOptionsScope = RoleDocumentScope (supporting INV-TB8KGA).",
+      "subject": "hunk:sha256:3966e473f5914d1a934e5caee008e1e9ac707e2c81ed8c71ba776d9e8e294534"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5ME916",
+      "items": [
+        "sha256:1d98a61f25b6238ec309cec10b38156983723d81238b143313340879110c73bc"
+      ],
+      "reason": "roleChatOptionsLoader.ts:143 replaces writers.setExecutionErrorState with ctx.setExecutionErrorState inside applyOptionsSuccess; parameter consolidation only.",
+      "subject": "hunk:sha256:1d98a61f25b6238ec309cec10b38156983723d81238b143313340879110c73bc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5TP4TC",
+      "items": [
+        "sha256:ec2c9685073de411103bebd796165856dcc96a9f21d77f962f96d2abacf22282"
+      ],
+      "reason": "roleChatOptionsLoader.ts:134 consolidates applyOptionsSuccess parameters (stores, writers, activeRequestsRef, boundSelection) into ctx: OptionsLoadContext; structural refactoring only.",
+      "subject": "hunk:sha256:ec2c9685073de411103bebd796165856dcc96a9f21d77f962f96d2abacf22282"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5Z273G",
+      "items": [
+        "sha256:5d986c5837aed49769d86dbd5bfc3477b7a52328326b8d32290ed661011a118b"
+      ],
+      "reason": "roleChatOptionsLoader.ts:136 updates applyOptionsSuccess ctx.setOptionsState call to read catalogRefresh/optionsRefresh from ctx; parameter consolidation only.",
+      "subject": "hunk:sha256:5d986c5837aed49769d86dbd5bfc3477b7a52328326b8d32290ed661011a118b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
+            "content": "sha256:5acfd6829c72f987a8f798237a607dbf56674cd94bf19bba18e6a5e79093a776",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "content": "sha256:ed21284a9a0a10b2ea849ef1b0b0ff86298ba39a5ca26b366c2dbdc45e9d5997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-QQR1B1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-698AT4",
+      "items": [
+        "sha256:1b60b353f5833d985cfbbd2ecbcc7fc59514ed92e06c497f92299899c209d761"
+      ],
+      "reason": "Re-anchored role_launch_routes.py realization after wrapping _bind_options_endpoint in read_while_connected; permission-mode resolution unchanged.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-7BQTMS",
+      "items": [
+        "sha256:fa956b8d863151873f78141ca56c6a185baf66612f96784357cdcadb5873c569"
+      ],
+      "reason": "BUG-R34@v1 item 6 is a standalone launcher/bridge/cancellation/offering invariant (like INV-RQ2ZB8, INV-1DBF74, INV-J2SF5K, and INV-TRCBNZ) and does not alter the joint guarantees of the examined families.",
+      "revision": 1,
+      "subject": "membership:INV-RVQGY8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7C0K92",
+      "items": [
+        "sha256:ed92d555de2a10351ea1718e09352e4d5df18d9d90c97ec2ce5d2c6b7bd7d2e4"
+      ],
+      "reason": "paseo_catalog.py:45 adds host_role_profile import from role_launch_defaults for read_host_role; import-only.",
+      "subject": "hunk:sha256:ed92d555de2a10351ea1718e09352e4d5df18d9d90c97ec2ce5d2c6b7bd7d2e4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7Q7F8B",
+      "items": [
+        "sha256:8164e81bd8295549caf6f5bec1f1c63ce57f7ec90d576e9fd74d51ba51364118"
+      ],
+      "reason": "Updated dashboard/src/cockpit/document-chat/DocumentChat.test.tsx onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+          "path": "dashboard/src/cockpit/document-chat/DocumentChat.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/document-chat/DocumentChat.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-86QQ9J",
+      "items": [
+        "sha256:2769aa039373a591264b7a567b8304af613c57c6dc59e725e4d1280fc953d40b"
+      ],
+      "reason": "roleChatOptionsLoader.ts:292-293 updates startOptionsLoad parameter forwarding after consolidating OptionsLoadContext; structural refactoring only.",
+      "subject": "hunk:sha256:2769aa039373a591264b7a567b8304af613c57c6dc59e725e4d1280fc953d40b"
+    },
+    {
+      "deferralIds": [
+        "DFR-82832Z"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-8DG445",
+      "items": [
+        "sha256:c38f886076ec913f2d18c620efb0b6274d4e3df0e881020d223c8b4b0a408eb5"
+      ],
+      "reason": "Recorded deferral on docs/dashboard.md line 131 for BUG-R34@v1 item 6 omitting native antigravity from launcher offerings while preserving existing open deferral DFR-NDPEXV and the passed code freeze.",
+      "revision": 15,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8M0S2J",
+      "items": [
+        "sha256:adf58a746942e9e0953b0ddc55bd8967c6ce2d9949621960f43d83a51dfafd61"
+      ],
+      "reason": "paseo_catalog.py:40-43 imports NATIVE_ANTIGRAVITY and native_antigravity_role_start_refusal from paseo_launch for INV-RVQGY8; import-only.",
+      "subject": "hunk:sha256:adf58a746942e9e0953b0ddc55bd8967c6ce2d9949621960f43d83a51dfafd61"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8MJHHE",
+      "items": [
+        "sha256:0bf07d022ea86a8ad0a52706363fe724c1d9574ac95476481935689e22dce20d",
+        "sha256:120e9cb8a9d1f049edf8c7acc7e500f53caeaa0df2ce0c2cc7dbeeb7d3caa13f",
+        "sha256:1a0b942abef1ee8ae96d6c3d28bde9318a3ddaa051bf695cadf6433dd4136278",
+        "sha256:1ced8e90bb7a02e524cb41aeaa45d1aea8ef8460e923a27aac8627ccab6dbfcd",
+        "sha256:3b1d1a4398218dd0a681a024d5432fe3b056bead78e7c0b48afac7e4c7c4100c",
+        "sha256:426db24676409544c4eeaf63da1891916f12ddb8d40e02c71ce9f723f238659f",
+        "sha256:48b2fad395403e0a28487fa227cb79236b1850dda1bf6c8edcfe1a1564c48955",
+        "sha256:5258440dd964f22f10e4554a12282ad12d3866868ffa3e7c231318305a620d2c",
+        "sha256:6c95554392a6a76c04fb49aed993ba62c7d7f7ae92b4775cbe1f76d68cc3d206",
+        "sha256:752ae02332c5ce428beb1a06d39087c76bc52327b27517198ae73d59ff3d3999",
+        "sha256:782a3c520b3185ab54b939f0aa641f131455ffe2e68760662babe73d8c2b9511",
+        "sha256:d4c994125348f8342f2c269f460708cb215f837334a594e108e866203c49d266",
+        "sha256:d7218a815935169a3ee446f9d31f4f246e339a7cf6396f747d5671431c3dada2",
+        "sha256:f169ad9f3ddf76df1c8e656eb7555d4106c8a20ee55ca54b094bd427f3e58bae"
+      ],
+      "reason": "Updated mcp/tests/test_read_cancellation.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "a4a852df8e5050a2ac467d00b211559540981f79",
+          "path": "mcp/tests/test_read_cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_read_cancellation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+            "content": "sha256:72dbd87ead7d9023af687b4949ea46c70d1d74baca8bf6ae5b9d45dac13d9d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "content": "sha256:28cdff05c5e6d0d105212b1caadd4e3f834342229612aab60d9d77386ffae72c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-96XAQW",
+      "items": [
+        "sha256:8d30e49746c0841c09292bedf5f8439664ce092bfdf376438e3936121a430ef6"
+      ],
+      "reason": "Re-anchored evidence-lifecycle.toml realization onto post-L32 merged catalog after alphabetical insertion of test_read_cancellation.py; wake policy unchanged.",
+      "revision": 10,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9DDQF5",
+      "items": [
+        "sha256:ecf587887a8999c3179dff3813ce6452495fb34729d6a231ee4c8ec2774e7a63",
+        "sha256:f9714a15fe8381581c618e60a67b27f1597d653e077465cdd14da573242850c9",
+        "sha256:fe71f2add0fa0c20fa8406cf8946425141c7682a6fded0d7a23d942f311acd09"
+      ],
+      "reason": "Updated mcp/tests/test_paseo_bridge_catalog_freshness.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "e2491358b199c8cacb429e4d2e8d6fbdea07f587",
+          "path": "mcp/tests/test_paseo_bridge_catalog_freshness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_catalog_freshness.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9ST2SA",
+      "items": [
+        "sha256:9976b8bc83b67c64d10f9388686c7675af36e4a53cc6886d1c2520380787d843"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/role_launch_defaults.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "66fb93ef27f70a6571c32983a0e1c591ce1bcfa2",
+          "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_defaults.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
+            "content": "sha256:86f85d25bb5d5d5af9ed02c1a649adffb284abce95471213690f37943fce3505",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-PBVSKD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AE57YB",
+      "items": [
+        "sha256:b14b4fa461cd0d1c875ad91bd88010eb0845971e674dd39de2319d471921dc8e"
+      ],
+      "reason": "Re-anchored launcher_options realization in paseo_catalog.py after adding prefetched catalog parameter and offering filter; unavailable-options usability unchanged.",
+      "revision": 1,
+      "subject": "INV-1DBF74"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AH8PQW",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/role_launch_routes.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AYB52B",
+      "items": [
+        "sha256:692e6d6356d30465337160bc70f7a99b7350d791a9cb1083b04db2504b7b5000"
+      ],
+      "reason": "roleChatControls.ts:205,220 updates dispatchWritersFor and useRoleChatRunActions parameter types to DispatchWriters['requestOptionsRefresh']; pure type plumbing supporting INV-ZQV6YN.",
+      "subject": "hunk:sha256:692e6d6356d30465337160bc70f7a99b7350d791a9cb1083b04db2504b7b5000"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-B0HSJC",
+      "items": [
+        "sha256:ea8903ee50d18ed54cfee4376191f56088baa9f2c6eda640341a143ad1801e34"
+      ],
+      "reason": "Verified docs/guides/review-page-and-explainer.md against post-L32 synced L34 candidate: review page and explainer guidance remain accurate after BUG-R34@v1.",
+      "revision": 22,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-B38KSQ",
+      "items": [
+        "sha256:1dd2bc45d4529ecf86a6a7b4da17fb9e662a6323cd9b29bb7dc628af0b9b8005"
+      ],
+      "reason": "Verified docs/guides/cost-aware-bootstrap.md against post-L32 synced L34 candidate: cost-aware bootstrap and role-settings guidance remain accurate after BUG-R34@v1.",
+      "revision": 10,
+      "subject": "DPD-1DXK6Q"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-BA1TGF",
+      "items": [
+        "sha256:0d3b97eb8544d31a44f179545b255b5df795bb13b3882a2a4b74bb88b7f563b9"
+      ],
+      "reason": "BUG-R34@v1 item 4 is a standalone launcher/bridge/cancellation/offering invariant (like INV-RQ2ZB8, INV-1DBF74, INV-J2SF5K, and INV-TRCBNZ) and does not alter the joint guarantees of the examined families.",
+      "revision": 1,
+      "subject": "membership:INV-VNT8DT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BNCC4T",
+      "items": [
+        "sha256:7d1c802851d393262acdf463eb926b156a46c8f6d569efcfddf5fcd5f19591c2"
+      ],
+      "reason": "roleChatOptionsLoader.ts:8 delete-only removal of unused roleDocumentScope import now that RoleOptionsScope equals RoleDocumentScope (INV-TB8KGA).",
+      "subject": "hunk:sha256:7d1c802851d393262acdf463eb926b156a46c8f6d569efcfddf5fcd5f19591c2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C8EMZ8",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated mcp/tests/evidence-lifecycle.toml onboarding prose and re-authored evidence-lifecycle.toml citations atop post-L32 synced base b0bb6149fd53 / 4efebd85ad89.",
+      "sources": [
+        {
+          "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0VKEA"
+        },
+        {
+          "after": {
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+            "content": "sha256:167cc8e9594d75d6ef0c712dd0a7bbce1fae020ab5a72b60caec4352f724d06e",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatchRoleAction"
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+          },
+          "before": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatchRoleAction"
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+          },
+          "id": "RLZ-GMD7W4"
+        },
+        {
+          "after": {
+            "blob": "2fa42e4750002265642f65e833bd8e0b9704f855",
+            "content": "sha256:304c9b9ba0339e018fb611ec5a5783b1d4a75fb4121c305b8f57538322da57c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "runOptionsLoad"
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "before": {
+            "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+            "content": "sha256:65f1c5c225336a4296f5cb71d4d17a2e41298546d445b93d1171ba21348637fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "runOptionsLoad"
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "id": "RLZ-N8EDE3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CHTV34",
+      "items": [
+        "sha256:28fd32d25c852971979cc1b782395f2305cb8613d62b7524ab6fd6747f446de7"
+      ],
+      "reason": "Re-anchored RoleChatsPane, dispatchRoleAction, and runOptionsLoad realizations after adding settled-dispatch result marker; one-line failure display unchanged.",
+      "revision": 3,
+      "subject": "INV-C7AT8R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CJ51HH",
+      "items": [
+        "sha256:72104ec86304f9dcae5473c0dc35f0716ba814a06f55e71a9fc9d136ca409df0"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/paseo_catalog.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 4
+        },
+        {
+          "id": "INV-AE8ZGP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 4
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 3
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNWH01",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CPTVPS",
+      "items": [
+        "sha256:41dfb59c885afe9e3b764f04127b85e6ce4fd1fcdb86db0d347d923cd53e82ac"
+      ],
+      "reason": "Examined all 10 members of FAM-57TZPE against BUG-R34@v1; touched/stale realizations were re-anchored without meaning change and the family guarantee remains current.",
+      "revision": 7,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DDY0DR",
+      "items": [
+        "sha256:a26408fb6edf80417198bdf534a35f305e128d89aec8b7aab3f402102132d805"
+      ],
+      "reason": "roleChatOptionsLoader.ts:89-97 delete-only removal of redundant ExecutionWriters interface consolidated into OptionsLoadContext.",
+      "subject": "hunk:sha256:a26408fb6edf80417198bdf534a35f305e128d89aec8b7aab3f402102132d805"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DNBE7S",
+      "items": [
+        "sha256:5d1a9a1dc2512dd17397356faa69d617ee5a2a2f54af5bc0ec18b5c8bcfe3ebe"
+      ],
+      "reason": "roleChatOptionsLoader.ts:206-208 inlines OptionsFlowState setter types directly on OptionsLoadContext after removing OptionsStores; type cleanup only.",
+      "subject": "hunk:sha256:5d1a9a1dc2512dd17397356faa69d617ee5a2a2f54af5bc0ec18b5c8bcfe3ebe"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E0GDRV",
+      "items": [
+        "sha256:008d20842f1341c0547d23b5f4f3bd0eeffd7467abf6ffecb60f2d3c09f5516f"
+      ],
+      "reason": "roleChatOptionsLoader.ts:145-146 reads optionsScope and calls ctx.setOptionsErrorState after consolidating OptionsStores/ExecutionWriters into OptionsLoadContext; structural refactoring only.",
+      "subject": "hunk:sha256:008d20842f1341c0547d23b5f4f3bd0eeffd7467abf6ffecb60f2d3c09f5516f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E0Q0MQ",
+      "items": [
+        "sha256:4668f5f29124264c8ff5e5f5e4bf9b896e4c7403bde6b6248ee450b062a491de",
+        "sha256:b276bf70003a0ebc0133f0d5ad512b8baefce27ef4a9c96ae3876959b95cd2e3"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/paseo_catalog_store.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "4aebb028d13eaa43a58130ef983e158316109f4b",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_catalog_store.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "66fb93ef27f70a6571c32983a0e1c591ce1bcfa2",
+            "content": "sha256:bcf5671c2d2610b8a9aad6b76987299682e89b492edbbc21db88863400fb178e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
+          },
+          "before": {
+            "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+            "content": "sha256:c0813043012fba1904d1ec050e89502fc1a1d467826ea579a5e8827a08edf53b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
+          },
+          "id": "RLZ-S0CK5Z"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E8TDRA",
+      "items": [
+        "sha256:013e8a76b2c4b34b386c47d15e4b5b0b2ffd5db64e20a98ed79e4b99bf40745e"
+      ],
+      "reason": "Re-anchored role_launch_defaults.py realization after adding pure host_role_profile helper; injected read_config port boundary unchanged.",
+      "revision": 1,
+      "subject": "INV-QBWBNV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ERBE4W",
+      "items": [
+        "sha256:ac62566f573c76ae7f74ce56f7c4a7e3a3a2ad1c7e57c6559dfecea989f7ed75"
+      ],
+      "reason": "roleChatOptionsLoader.ts:22 imports type DispatchResultRead for OptionsLoadContext; import-only plumbing.",
+      "subject": "hunk:sha256:ac62566f573c76ae7f74ce56f7c4a7e3a3a2ad1c7e57c6559dfecea989f7ed75"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EZBGDE",
+      "items": [
+        "sha256:e30838fa6e423854e79bfa227ae56cbc7b4eeab7e7324b2034470715d63ffd24"
+      ],
+      "reason": "roleChatOptionsLoader.ts:64-75 delete-only removal of obsolete buildOptionsBody helper after removing agentId from /api/role-launch/options request scope (INV-TB8KGA).",
+      "subject": "hunk:sha256:e30838fa6e423854e79bfa227ae56cbc7b4eeab7e7324b2034470715d63ffd24"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "66fb93ef27f70a6571c32983a0e1c591ce1bcfa2",
+            "content": "sha256:bcf5671c2d2610b8a9aad6b76987299682e89b492edbbc21db88863400fb178e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
+          },
+          "before": {
+            "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
+            "content": "sha256:c0813043012fba1904d1ec050e89502fc1a1d467826ea579a5e8827a08edf53b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
+          },
+          "id": "RLZ-AX1K8P"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FDJ2XP",
+      "items": [
+        "sha256:b58ed9dd5932f5d4daad36da748d1d21b99f8ce2b98ff6aac2e7c588218ba9c1"
+      ],
+      "reason": "Re-anchored role_launch_defaults.py realization after adding host_role_profile; extra-args overlay unchanged.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FT4JNA",
+      "items": [
+        "sha256:321908622d6fb9de3e9f13ac3ed03ff2347a0764ef087b0e0fff512e12a2845d",
+        "sha256:99865ab1890d2db457e5d93a5934c5c9a6d54fdcb5839d83fdf79b12de030030",
+        "sha256:aeb79ac467270a5876d441afac632b15bdd6962d553f017b0465ee6fddd59b59",
+        "sha256:b59c07f46b227dd4c507e47039c401b1bf660088bc4b6fce80fe2955e71215c6",
+        "sha256:c120a8998a0b74af7bcd2bbd9fd0670ffca89bce3bdf64fb6d5b3641acdd4522",
+        "sha256:c54840d6544af101ee28240902be2d2dde2afe7d53e9264b1ad60576657e63d6",
+        "sha256:dc0d9d10b3b182cd40ca6aabcaacb73296b1866a255b464249b7549cc0a33954"
+      ],
+      "reason": "Existing card commentary remains accurate; test harness adjustments pass resultReadRef and assert unresolved 202 reread proof (linked to BUG-R34@v1 item 3) without altering the card's stated execution-status scope.",
+      "sources": [
+        {
+          "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
+          "path": "dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FXG2VD",
+      "items": [
+        "sha256:126f125b365aaa7d0f5a3d1b59343447fb3a1d07270aba41ba0e8022bf56b5a3",
+        "sha256:86effb565753aaff6f3e0197bd81875ead2f84a44338984a923a835688805535",
+        "sha256:b187e50ad6cae711d9d6fba4ebefdfb7337c18c30de65fbf31686c6c5c1f3d37",
+        "sha256:dadce0a9f56b9bff3349b1863b95accffd7d9f70f76a532d35a3224dc2778ebc",
+        "sha256:e9e7c3bb7b2e95cef809fa59d672bad3a6a3ab95e53f7e4378eb026baaeba7ef",
+        "sha256:ee4a6778caecb342fdfd8e8f157b7157126a78a145d4d9936fcbf63ab4e0146d"
+      ],
+      "reason": "Updated dashboard/src/cockpit/roleChatScopes.ts onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "2b013b111e4a889a3a805bbce2c20084be8984b6",
+          "path": "dashboard/src/cockpit/roleChatScopes.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatScopes.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G2VB79",
+      "items": [
+        "sha256:761b86c6efc545433b011163eec9dd7379b77103684fd2ad410aac4ddf84a3ab"
+      ],
+      "reason": "paseo_catalog.py:52 imports raise_if_read_cancelled for _question_catalog cancellation fencing; import-only.",
+      "subject": "hunk:sha256:761b86c6efc545433b011163eec9dd7379b77103684fd2ad410aac4ddf84a3ab"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+            "content": "sha256:ed114a8f888c75d80ac00caa77e7d6e5f660b19f692f26f592c9e70ea1f2924f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "before": {
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "content": "sha256:a2c422d3b327331c33c30bf0e578a0530d46e760f6f372dab63c55a3bfb1ca24",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "id": "RLZ-DKX1HV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G3BABV",
+      "items": [
+        "sha256:8c65890dbfa3801dcc53665a02e1e1bcf107571a2ef5fa800428dbb582437d4c"
+      ],
+      "reason": "Re-anchored RoleChats.launcher.test.tsx realization after dropping obsolete agent-change reload assertions under BUG-R34@v1; feature preservation unchanged.",
+      "revision": 4,
+      "subject": "INV-63Z0MN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-YGH2ER"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GPN0TF",
+      "items": [
+        "sha256:e4497cdfcb5b478213dda37c1436acb5f2b9f6ae41891629ea13153bd9432343"
+      ],
+      "reason": "Re-anchored RoleChats.tsx realization after threading resultReadRef; Result rereading and mounted frame preservation unchanged.",
+      "revision": 1,
+      "subject": "INV-EFDE52"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
+            "content": "sha256:86f7700d1f0741abe346cce072d7ca2c1f36e98fa6cb2c6deb1c7df70e1232f8",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:11b325738516c0049bdb6735d8bb9588aaf172c939f4e19596a859c82246cf59",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GR4GR5",
+      "items": [
+        "sha256:351bd99ad778b72b70e615f3c19cac365908301a7a72db3f8bba24d517aeca2d"
+      ],
+      "reason": "Re-anchored readCatalog realization in paseo_bridge.mjs after adding launcher daemonConfig projection; provider/model/feature separation unchanged.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HDM7H9",
+      "items": [
+        "sha256:72ab7c88f39569a2eb077143f8966b7c0ff680788c1d955f726afc3a003ede71"
+      ],
+      "reason": "Updated mcp/tests/overview onboarding prose and re-authored evidence-lifecycle.toml citations atop post-L32 synced base b0bb6149fd53 / 4efebd85ad89.",
+      "sources": [
+        {
+          "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "e2491358b199c8cacb429e4d2e8d6fbdea07f587",
+          "path": "mcp/tests/test_paseo_bridge_catalog_freshness.py"
+        },
+        {
+          "blob": "d9f721401a1b37921fb9b5796dd7ff679d832573",
+          "path": "mcp/tests/test_paseo_catalog_preparation.py"
+        },
+        {
+          "blob": "fbef0b9b6cd2d6311f5c7fb61e8cd20c61e15a28",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "a4a852df8e5050a2ac467d00b211559540981f79",
+          "path": "mcp/tests/test_read_cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HS620H",
+      "items": [
+        "sha256:18a078e5fc0682be9880d991bf1e33c92104dff9a6a2c8e558661e0a23ece168",
+        "sha256:5053eebb1d5eb49dccb83790910b8b8eb6d14a8b5e9c2f94105c41df019d0383",
+        "sha256:5cd65385d90ced7d0b211a65d22d1112fcb98480f9470d929d0ed6f04dda0efd",
+        "sha256:e9a4eb4af1b48a0b78ba50e8a15815c3dde67fc56ceb11dd47197c0b67980c42"
+      ],
+      "reason": "Updated mcp/tests/test_paseo_catalog_preparation.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "d9f721401a1b37921fb9b5796dd7ff679d832573",
+          "path": "mcp/tests/test_paseo_catalog_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_catalog_preparation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HV7F46",
+      "items": [
+        "sha256:166d4ac209da44506e45e845fb31bf8ea5854124dd5c00b9c7d3b6393df93acb",
+        "sha256:584a695b758e5bfffa772cdda854a8390883f82d928afde55482c31491ed8d8b"
+      ],
+      "reason": "Existing card commentary remains accurate; test fixture adds resultReadRef for the updated options-loader signature without changing repair semantics.",
+      "sources": [
+        {
+          "blob": "ce262e5f35182ebb4f4d8391b2eab3af2d5fcb2f",
+          "path": "dashboard/src/cockpit/roleChatOptions.repair.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatOptions.repair.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HWC1TN",
+      "items": [
+        "sha256:0c88f71e14fe0fd5807a4f3dea7f0c3969052487e13cd9f4284d3e4eaeb092a3",
+        "sha256:5eedf8bb98fddd15c3a5e8e97e456ce668661e74b181b2de2ecfa42460caa887",
+        "sha256:8092c4cd8ac5c8ef5dbe3933b770fc4a1789dc418259cc87eb31775795d90956",
+        "sha256:8f551019df49673a5c9dc7060d8ebe45424a11940c05d3350e3d6ddc6d93768f",
+        "sha256:95c7091838962299176bbcbabfc4f3ea00f5929399397711eeb7bb5376149de5",
+        "sha256:ab2bd43ea6da0abb2fced8489de36ebd4305ad755bf1d547dcb316e9268c6ce4",
+        "sha256:e0d4b57a465aaea11b1bede9ed32b06f5fe841a7ea7a790ef5a91350032c52c9",
+        "sha256:f614d4b758e53fbf6a834bdc5ba8283a55d393673c357edf607a5248643b22af"
+      ],
+      "reason": "Updated dashboard/src/cockpit/RoleChats.modelOptions.test.tsx onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "6beb9dc3b5becc4adb606266b11c49578828676a",
+          "path": "dashboard/src/cockpit/RoleChats.modelOptions.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.modelOptions.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-XXYE2Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HYBHSE",
+      "items": [
+        "sha256:f9966f6494e1a3e5966cb72f48942684048d90e83771c7a6d1fa03a9a37e5738"
+      ],
+      "reason": "Re-anchored RoleChats.tsx realization after threading resultReadRef; persistent native chat frame unchanged.",
+      "revision": 4,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:cd4f2a69be15d9494449810b5d2d7991eb4bf34194dc7b8543c64ce8758c2118",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:fc6961f35b443d8619ed2157c4b87a4c0298835845d63b39110c10f3105fdf74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-N8BY9K"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-J0VK9M",
+      "items": [
+        "sha256:d2f3787a71306cc9ecc86425d55cfd49f73f34ebb772a05cf241ff72fc81d4bb"
+      ],
+      "reason": "Re-anchored RoleChats.tsx realization after threading resultReadRef; external chat target navigation unchanged.",
+      "revision": 1,
+      "subject": "INV-AE8ZGP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-J7YGRP",
+      "items": [
+        "sha256:08cd81dc1709ae9fa4e2b5aa4d9029210c56120d36c54fca3b501d298472cbb5"
+      ],
+      "reason": "Verified docs/reference/harnesses.md against post-L32 synced L34 candidate: harness catalog, role settings, and start-choice precedence remain accurate after BUG-R34@v1.",
+      "revision": 10,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J94R0J",
+      "items": [
+        "sha256:09b09e1fe4c176fe9ecadebbb5b34ace50f4298170f4213a8921b8e393c93bff"
+      ],
+      "reason": "Updated dashboard/src/cockpit/RoleChats.launcher.test.tsx onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JFRXKA",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Examined all 8 members of FAM-N17BB4 against BUG-R34@v1; touched/stale realizations were re-anchored without meaning change and the family guarantee remains current.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+            "content": "sha256:d2a625c9dd92372df92163a9c83aed6fb0465e08164c63b1257d8ad7fc5556d2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "content": "sha256:1f5135d018b4dae368c2e370956a8a3daf03e1793afe2f252a3df7dfb3d7b084",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-YQNH72"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JJY7YQ",
+      "items": [
+        "sha256:a2927abeafa6c4fc8d7c3148acf9dddef776d72fa24c883249ce17fd6504669f"
+      ],
+      "reason": "Re-anchored paseo_bridge.py realization after adding operation-scoped daemon-config ContextVar and cancellable _run_bridge; dynamic reply adapter for usage reports unchanged.",
+      "revision": 3,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-JKV24H",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined all 2 members of FAM-GDXSJG against BUG-R34@v1; touched/stale realizations were re-anchored without meaning change and the family guarantee remains current.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KFCRRH",
+      "items": [
+        "sha256:29910fc1adae8cf7c23bcf4524cdeda4bbea0022f8adb967359eac66c96f796b",
+        "sha256:56907e537103d3811819af9f8465a722c01d7ac6c0ce8aff4e5a0f86c00311c3",
+        "sha256:62e5aa2dbb2e98431da1a70d16c4b565f07bd73856922bcff74241e5991d110c",
+        "sha256:f671bc1f5679da0a5d3159478c6a06b34673e3b20f909e722ea35ed9bba55545",
+        "sha256:f7eb172d74d116516c493da9191eb4e815846ff5d6010c0af8b0f78bf1d5862c"
+      ],
+      "reason": "Updated dashboard/src/cockpit/roleChatScopes.repair.test.ts onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "d841439c1b7ce7913a330109c11f10d90fc15484",
+          "path": "dashboard/src/cockpit/roleChatScopes.repair.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatScopes.repair.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 2
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 2
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-KH089M",
+      "items": [
+        "sha256:e57e4f6de1c1179ecce2b3ab4b704b041a330bbafeae2490e9c5d906e6276798"
+      ],
+      "reason": "Examined all 5 members of FAM-3NG1K9 against BUG-R34@v1; touched/stale realizations were re-anchored without meaning change and the family guarantee remains current.",
+      "revision": 2,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KKBMSY",
+      "items": [
+        "sha256:1d086ad750a334d2bc487329ccbff8406d82dca3adc7a842545f9a65ceed260b"
+      ],
+      "reason": "roleChatOptionsLoader.ts:194 replaces boundSelection object field with boolean hasBoundSelection on OptionsLoadContext, supporting INV-CGK4FW.",
+      "subject": "hunk:sha256:1d086ad750a334d2bc487329ccbff8406d82dca3adc7a842545f9a65ceed260b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KMXBX5",
+      "items": [
+        "sha256:0b6a47c8f2238f92a1e57052f4976a7b79e65ce50507f6c01b6c303e63d4907b",
+        "sha256:6f8fb016eea18e5e118fcdd46f7c52b6040ae84eae7bf5c68123e703e5f9845d",
+        "sha256:88fdb73a5dc77d5b84581314060e9037f016bd65f123d04a4c002e84e80fc13a",
+        "sha256:8acb842fe34ed957a8d74c22761ed74082fa15842b34c3acfef666d8828694eb"
+      ],
+      "reason": "Card commentary covers agent matching and catalog display; test adjustments align with agent-independent roleOptionsScope without altering the card's stated contract.",
+      "sources": [
+        {
+          "blob": "033dc28fc218f4f1005b043737f724ce1ce3fe74",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4CJ7H0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 2
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 2
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 2
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 2
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-HBMPXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 3
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 2
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-KPG5FT",
+      "items": [
+        "sha256:b6ec190da2cecd1cb3b1ed8e06b6ce3c1b5a1eb7369e526747e903c4f5e410e6"
+      ],
+      "reason": "Examined all 12 members of FAM-VNK792 against BUG-R34@v1; touched/stale realizations were re-anchored without meaning change and the family guarantee remains current.",
+      "revision": 3,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KS9W2N",
+      "items": [
+        "sha256:d60da640bc7507e269129f0c58cbe30bfcc7eaaab01d219f5e8fa0bec87a5126"
+      ],
+      "reason": "Updated dashboard/src/cockpit/roleChatControls.ts onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
+          "path": "dashboard/src/cockpit/roleChatControls.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatControls.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M078D9",
+      "items": [
+        "sha256:dee43e797143079405b8ff7ba19270c64db0f84b0b781eeb5975b5a881cca957"
+      ],
+      "reason": "roleChatOptionsLoader.ts:152 passes refresh.settledRequestId from applyOptionsSuccess into adoptRequestExecutionState (INV-ZQV6YN); call-site forwarding only.",
+      "subject": "hunk:sha256:dee43e797143079405b8ff7ba19270c64db0f84b0b781eeb5975b5a881cca957"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-N37Q20",
+      "items": [],
+      "reason": "Verified docs/reference/runtime-layout.md against post-L32 synced L34 candidate atop L32 rev 16: coordination root, temp/held-resets.sqlite, and worktree/role-launch layout remain accurate after BUG-R34@v1.",
+      "revision": 17,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NHPTMQ",
+      "items": [
+        "sha256:b736fc41d5b4b7744225034f189bbf5da67a12f0ba5cf489307dbc4796ca4f42"
+      ],
+      "reason": "roleChatOptionsLoader.ts:148 replaces writers.rememberFailureExecution with ctx.rememberFailureExecution inside applyOptionsSuccess; parameter consolidation only.",
+      "subject": "hunk:sha256:b736fc41d5b4b7744225034f189bbf5da67a12f0ba5cf489307dbc4796ca4f42"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NS4Y79",
+      "items": [
+        "sha256:602a300335df42274b4deec7e1d373a45ec0ea95b7b47e7d7d292195477d8ee9"
+      ],
+      "reason": "roleChatOptionsLoader.ts:158,178 rewrites OptionsStores['setOptionsErrorState'] references to OptionsLoadContext['setOptionsErrorState'] in applyOptionsRefusal and failOptionsLoad; type alias cleanup.",
+      "subject": "hunk:sha256:602a300335df42274b4deec7e1d373a45ec0ea95b7b47e7d7d292195477d8ee9"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-PHH86Q",
+      "items": [
+        "sha256:127fc98739fe970d7951fed357db449f0a4de4552cca3ba197b62c3fcbaecc4e"
+      ],
+      "reason": "BUG-R34@v1 item 2 is a standalone launcher/bridge/cancellation/offering invariant (like INV-RQ2ZB8, INV-1DBF74, INV-J2SF5K, and INV-TRCBNZ) and does not alter the joint guarantees of the examined families.",
+      "revision": 1,
+      "subject": "membership:INV-CGK4FW"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 2
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 5
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 3
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PS2W9N",
+      "items": [
+        "sha256:7ac9d01dbac48ba68d7ed0b74fa8954ff5366401fe7f095d4f64f4117ea3a6ca"
+      ],
+      "reason": "Examined all 9 members of FAM-RT2XDA against BUG-R34@v1; touched/stale realizations were re-anchored without meaning change and the family guarantee remains current.",
+      "revision": 8,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+            "content": "sha256:51addfa878d5c10db93a4b8ce845b75c8f76ba00c291d93a7c33445a971b0411",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+            "content": "sha256:8d0d9d6c9dba37ed3466ab0b55d8a695a53f9f8170f5250135298c0b141c9883",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PTSNFB",
+      "items": [
+        "sha256:945ed011de745863819884c77e610b5720aa34d8541cde2da7fdb7971178ca1d"
+      ],
+      "reason": "Re-anchored role_launch_preparation.py realization after extracting _catalog_and_role_defaults; atomic handover publication unchanged.",
+      "revision": 3,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+            "content": "sha256:cf82360facb4158bf314dff7157656fa762324895c9c3775ac6b12000e20ead2",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-0ZG5YM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PX3YP0",
+      "items": [
+        "sha256:a7c95a5cb44ba82cba5c04f547a2474a5b3d0e238fcce5d1fc90e92945ba60a3"
+      ],
+      "reason": "Re-anchored prepare_role_handover realization after prefetching catalog before defaults; enclosure parent preparation unchanged.",
+      "revision": 4,
+      "subject": "INV-5ATS9T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q0SD8M",
+      "items": [
+        "sha256:312304d9f2ba13b3d7124ed621fa4977c4f3011f8783f1861da9eef24cf4d47d"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/paseo_bridge.py onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_bridge.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q33HWE",
+      "items": [
+        "sha256:ad62aa32802a050d368de0da9b828a784e7df19a230e2ed0d4ffcecf877d49ac"
+      ],
+      "reason": "Verified docs/reference/settings-json.md against post-L32 synced L34 candidate: settings schema and reload semantics remain accurate after BUG-R34@v1.",
+      "revision": 23,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QJY2BV",
+      "items": [
+        "sha256:6336cb816be4cfec517d126898372eb87a9c7d3fc4e7464d98aa5fc72d5842ae"
+      ],
+      "reason": "roleChatControls.ts:300 updates RoleChatControlsArgs.requestOptionsRefresh type alias to DispatchWriters['requestOptionsRefresh'] to thread optional DispatchResultRead; no separate invariant beyond INV-ZQV6YN.",
+      "subject": "hunk:sha256:6336cb816be4cfec517d126898372eb87a9c7d3fc4e7464d98aa5fc72d5842ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QVY81X",
+      "items": [
+        "sha256:5d65b25681775f6c61bcabcdb491aa84ff92bb1ec7d4670d981f910774a7465c"
+      ],
+      "reason": "paseo_catalog.py:17-20 imports launcher_daemon_configuration, operation_role_profiles, paseo_catalog_scope, and record_operation_daemon_config from paseo_bridge; import-only.",
+      "subject": "hunk:sha256:5d65b25681775f6c61bcabcdb491aa84ff92bb1ec7d4670d981f910774a7465c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R5GPBG",
+      "items": [
+        "sha256:70c4da6af7fb5642c2ea219d55ce5c1e6f18854429ada640a6468599ac165938"
+      ],
+      "reason": "Updated dashboard/src/cockpit/RoleChats.dispatch.test.tsx onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "ab23ba3a537a4b862420dd3f6e70e26fa836f0d9",
+          "path": "dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-R7T6FX",
+      "items": [
+        "sha256:4d1bbd3e248e0ba32331997a7f272f6dc08201e1bfe2210f006986767eb30525"
+      ],
+      "reason": "BUG-R34@v1 item 1 is a standalone launcher/bridge/cancellation/offering invariant (like INV-RQ2ZB8, INV-1DBF74, INV-J2SF5K, and INV-TRCBNZ) and does not alter the joint guarantees of the examined families.",
+      "revision": 1,
+      "subject": "membership:INV-TB8KGA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RBPE9R",
+      "items": [
+        "sha256:16df37fdd6df89cf03b962c78f2d88a6afd2803c92f311aa7873fbac388f1953",
+        "sha256:c9ab40d00223d29c03cf59096551f9aae7d66b7e0ad5a86df939523fff319672",
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "Existing card commentary and anchors remain accurate; LaunchCatalogSharingTests adds dispatch catalog-sharing proof linked to BUG-R34@v1 item 4 without contradicting existing card statements.",
+      "sources": [
+        {
+          "blob": "fbef0b9b6cd2d6311f5c7fb61e8cd20c61e15a28",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RNDWB5",
+      "items": [
+        "sha256:c8d883e14fcc05038b9b8607f1ed1539307b21b2fb86f680f433eb6a752516eb"
+      ],
+      "reason": "roleChatDispatch.ts:41-45 declares the DispatchResultRead carrier interface ({scope, requestId}) consumed by dispatchRoleAction and RoleChatsPane under INV-ZQV6YN; no independent invariant.",
+      "subject": "hunk:sha256:c8d883e14fcc05038b9b8607f1ed1539307b21b2fb86f680f433eb6a752516eb"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-S4WBQE",
+      "items": [
+        "sha256:4a531c307d7939d66e3e357571d048ae3046c2b071acee0c9c79b0e9fbd8f052"
+      ],
+      "reason": "Verified docs/install/claude-code.md against post-L32 synced L34 candidate: Claude Code install and launcher guidance remain accurate after BUG-R34@v1.",
+      "revision": 17,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-5P93PT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SBC3VX",
+      "items": [
+        "sha256:7b70b13c37bd123540b160f01dac51ef0af872725d99be93a08016eea71a28d8"
+      ],
+      "reason": "Re-anchored RoleChatsPane realization after threading resultReadRef; bound open-request adoption unchanged.",
+      "revision": 3,
+      "subject": "INV-5MP23G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T9AC70",
+      "items": [
+        "sha256:66ec4a7d66af73c69f4218667fd558eac030712b557b329664fd11f82e468cd8"
+      ],
+      "reason": "paseo_bridge.mjs:477-484 extracts private helper catalogProviderSettings(entry) called by catalogConfiguration (INV-VNT8DT) to project only extraArgs and supportsMcpServers from options/params.",
+      "subject": "hunk:sha256:66ec4a7d66af73c69f4218667fd558eac030712b557b329664fd11f82e468cd8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TH0VPM",
+      "items": [
+        "sha256:3856f785bbf9c4d6221149a576217f1ef6881eccbee5ef8146969f0dc28a0fc5"
+      ],
+      "reason": "Verified docs/install/cursor.md against post-L32 synced L34 candidate: Cursor install guidance remains accurate after BUG-R34@v1.",
+      "revision": 14,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-THH7KP",
+      "items": [
+        "sha256:51ebd68aeb9d1447e0de35ca66c922da41e321f4de2cced428406015d374113a"
+      ],
+      "reason": "Updated dashboard/src/cockpit/RoleChats.tsx onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+          "path": "dashboard/src/cockpit/RoleChats.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TJJ5Q3",
+      "items": [
+        "sha256:7b39f04b62e8aba11e55527b395b339b9d900925dd525b8c7cd27ee4601086b8"
+      ],
+      "reason": "Updated dashboard/src/cockpit/roleChatDispatch.ts onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+          "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatDispatch.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TRZV01",
+      "items": [
+        "sha256:295da0842556eb0d83d24d99b3a5138b549d012438d2dbbba56d8c2a210629f5"
+      ],
+      "reason": "Verified docs/install/openclaw.md against post-L32 synced L34 candidate: OpenClaw install guidance remains accurate after BUG-R34@v1.",
+      "revision": 14,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TWSX2H",
+      "items": [
+        "sha256:75534625532008c0d4e498faf2dbfd6636ecb57b9e9778d258363980cf159ba1"
+      ],
+      "reason": "Updated dashboard/src/overview onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "ab23ba3a537a4b862420dd3f6e70e26fa836f0d9",
+          "path": "dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+        },
+        {
+          "blob": "4840d92f984d048a79d6a1d03e3dd98b87b8273b",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        },
+        {
+          "blob": "6beb9dc3b5becc4adb606266b11c49578828676a",
+          "path": "dashboard/src/cockpit/RoleChats.modelOptions.test.tsx"
+        },
+        {
+          "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+          "path": "dashboard/src/cockpit/RoleChats.tsx"
+        },
+        {
+          "blob": "87d08874d07ba96c9418a41c1f74c5da464cb42b",
+          "path": "dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
+        },
+        {
+          "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+          "path": "dashboard/src/cockpit/document-chat/DocumentChat.test.tsx"
+        },
+        {
+          "blob": "033dc28fc218f4f1005b043737f724ce1ce3fe74",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx"
+        },
+        {
+          "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
+          "path": "dashboard/src/cockpit/roleChatControls.ts"
+        },
+        {
+          "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+          "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+        },
+        {
+          "blob": "ce262e5f35182ebb4f4d8391b2eab3af2d5fcb2f",
+          "path": "dashboard/src/cockpit/roleChatOptions.repair.test.ts"
+        },
+        {
+          "blob": "2fa42e4750002265642f65e833bd8e0b9704f855",
+          "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+        },
+        {
+          "blob": "d841439c1b7ce7913a330109c11f10d90fc15484",
+          "path": "dashboard/src/cockpit/roleChatScopes.repair.test.ts"
+        },
+        {
+          "blob": "2b013b111e4a889a3a805bbce2c20084be8984b6",
+          "path": "dashboard/src/cockpit/roleChatScopes.ts"
+        },
+        {
+          "blob": "532cb568b8b42c4f4519a1d95ae9949991b4d47a",
+          "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V4SYXJ",
+      "items": [
+        "sha256:d07a5790efdcdc593fa4ca9953dbf9ddb1352b1fd59c46515affbba9ea383140"
+      ],
+      "reason": "roleChatOptionsLoader.ts:138-139 updates applyOptionsSuccess refresh parameter type to carry optional settledRequestId instead of redundant catalog/options numbers; plumbing for INV-ZQV6YN.",
+      "subject": "hunk:sha256:d07a5790efdcdc593fa4ca9953dbf9ddb1352b1fd59c46515affbba9ea383140"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
+            "content": "sha256:83e288b6b9fcbe21daeba70900f80582c964d3c407b3fce61eb70ff97eea6117",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-4FRACE"
+        },
+        {
+          "after": {
+            "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+            "content": "sha256:cf82360facb4158bf314dff7157656fa762324895c9c3775ac6b12000e20ead2",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-8N10TZ"
+        },
+        {
+          "after": {
+            "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+            "content": "sha256:cf82360facb4158bf314dff7157656fa762324895c9c3775ac6b12000e20ead2",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-DFH2HW"
+        },
+        {
+          "after": {
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
+            "content": "sha256:f937de22d97f573e39e0184ff6cbaf236b7d4df9e381eaf89f5dbbf2c376cc77",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog_question"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:3dcd0adf88a37933435ec7101f47bf93b0d6d67cc6a822717b855e43fdb382bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog_question"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-DVGZB0"
+        },
+        {
+          "after": {
+            "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
+            "content": "sha256:2891cf3f194b5bd1658e929613a119000ec6fc3ae6f8d67713da81afef962c43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_question_catalog"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:57dcf45cd1f6fb27b6976b8c071f05fd4a87012c55322fc19387a8d4a0e3d323",
+            "locator": {
+              "kind": "symbol",
+              "name": "_question_catalog"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-X66C8E"
+        },
+        {
+          "after": {
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+            "content": "sha256:85a06aa7fb378f0553c306fad40c22b575e0c8110a75772e45c80e6276b32478",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_catalog_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:85a06aa7fb378f0553c306fad40c22b575e0c8110a75772e45c80e6276b32478",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_catalog_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-ZFQTQP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V506ET",
+      "items": [
+        "sha256:0aee24d9c28accc158fbdc767e65b3c3fd78146ba981fdf26dd33753f420eeb5"
+      ],
+      "reason": "Moved paseo_catalog_scope realization (RLZ-ZFQTQP) to paseo_bridge.py where the shared runtime-scope helper now lives to avoid circular imports, and re-anchored the five touched realizations; per-operation catalog sharing without process-lifetime caching is preserved.",
+      "revision": 4,
+      "subject": "INV-RQ2ZB8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+            "content": "sha256:72dbd87ead7d9023af687b4949ea46c70d1d74baca8bf6ae5b9d45dac13d9d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "content": "sha256:28cdff05c5e6d0d105212b1caadd4e3f834342229612aab60d9d77386ffae72c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V9THB0",
+      "items": [
+        "sha256:9ee47b41e51f2439837ae3f932800b0bc138c11ae6ae41551dc6a03766a06cc6"
+      ],
+      "reason": "Re-anchored evidence-lifecycle.toml realization onto post-L32 merged catalog after registering test_read_cancellation.py; outside-scratch-root ownership unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VEDF9N",
+      "items": [
+        "sha256:f3d854b4a574460229aec215914b8db71474566c28be9557bf26dcefbf8e2160"
+      ],
+      "reason": "Updated dashboard/src/cockpit/roleLaunchModel.ts onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "532cb568b8b42c4f4519a1d95ae9949991b4d47a",
+          "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleLaunchModel.ts"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-W098CN",
+      "items": [
+        "sha256:a8c9e495a880866dc265597fd88e2ac1753f69dd0dc09fed6eecc017f8c58e1a"
+      ],
+      "reason": "BUG-R34@v1 item 5 is a standalone launcher/bridge/cancellation/offering invariant (like INV-RQ2ZB8, INV-1DBF74, INV-J2SF5K, and INV-TRCBNZ) and does not alter the joint guarantees of the examined families.",
+      "revision": 1,
+      "subject": "membership:INV-QZKWWY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W4ABJ9",
+      "items": [
+        "sha256:7d4fffd4482f4645aef561b5f3b0a9ea4b43f4486e5ce1dd9fa4d1852a738df3"
+      ],
+      "reason": "roleChatDispatch.ts:323 returns the RoleExecutionReceipt from writers.fetchExecutionResult inside failDispatchOffline so dispatchRoleAction (realizing INV-ZQV6YN) can inspect offline recovery settlement.",
+      "subject": "hunk:sha256:7d4fffd4482f4645aef561b5f3b0a9ea4b43f4486e5ce1dd9fa4d1852a738df3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+            "content": "sha256:57b0d5b07f3d2bc0dfab05abb1e62cb80c662520d06c63a117811dd7613d3646",
+            "locator": {
+              "kind": "symbol",
+              "name": "bridge_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
+            "content": "sha256:2426fced85f34cf83e40cf94e29efbb811e2ba36856351c52940fd0738d71079",
+            "locator": {
+              "kind": "symbol",
+              "name": "bridge_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-PMZND5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WEH5J4",
+      "items": [
+        "sha256:037b07a7a0790f4a09dc4de5554a23566cba9fb3b606a6db233c81eb178493d6"
+      ],
+      "reason": "Re-anchored bridge_call realization after delegating execution to _run_bridge; caller deadline propagation unchanged.",
+      "revision": 3,
+      "subject": "INV-K43DJZ"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-X8YG7R",
+      "items": [
+        "sha256:443cdc3b75952af23e90ef0746ac39100378d482eaa3b38d16f4dd9da7985056"
+      ],
+      "reason": "BUG-R34@v1 only wraps _bind_options_endpoint in read_while_connected (re-anchoring INV-7DMXZ3 without semantic change) and reuses prefetched catalog metadata; Paseo still owns harness mode acceptance and host-advertised defaults, so deriving least-permissive modes in the product remains rejected.",
+      "subject": "reconsider:DEC-6BZSX5#1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XQCC1P",
+      "items": [
+        "sha256:8b90c189992074a1c2da68686347e9c272c23652a8c78eee0a8667a314f8fbc4"
+      ],
+      "reason": "Updated dashboard/src/cockpit/roleChatOptionsLoader.ts onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "2fa42e4750002265642f65e833bd8e0b9704f855",
+          "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatOptionsLoader.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YCJFBM",
+      "items": [],
+      "reason": "Verified all 415 lines of docs/host.md against post-L32 synced L34 candidate atop L32 rev 23: host setup, daemon config, host profiles, and Antigravity ACP guidance remain accurate with refreshed role_launch_preparation.py (220-232) and paseo_bridge.mjs createAgent (668-682) anchors.",
+      "revision": 24,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YV7SEN",
+      "items": [
+        "sha256:1beffc6dc189c28b2fdac7d719731f062f5ca7d81d22555ca8a0802da7ef9f6a"
+      ],
+      "reason": "Updated mcp/overview onboarding prose and/or re-authored changed citation references to match synced BUG-R34@v1 candidate 6fbcf898.",
+      "sources": [
+        {
+          "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+        },
+        {
+          "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+        },
+        {
+          "blob": "4aebb028d13eaa43a58130ef983e158316109f4b",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog_store.py"
+        },
+        {
+          "blob": "66fb93ef27f70a6571c32983a0e1c591ce1bcfa2",
+          "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
+        },
+        {
+          "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0WKTC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YVV789",
+      "items": [
+        "sha256:4122eb3a5a82406cf42911a1d6312ccb0c660659cee3b095565a3476ab11cc44"
+      ],
+      "reason": "Re-anchored RoleChatsPane realization after threading resultReadRef; Investigator exact request identity unchanged.",
+      "revision": 1,
+      "subject": "INV-A0240E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z2H7TC",
+      "items": [
+        "sha256:39cfe3d840eda28e7cc2cbe1d5446c542ee93283b461c782d823f89e2cdf45b4"
+      ],
+      "reason": "roleChatOptionsLoader.ts:201,336 adds resultReadRef field to OptionsLoadContext and useRoleChatOptionsLoader args to hand the settled-dispatch marker into runOptionsLoad (INV-ZQV6YN).",
+      "subject": "hunk:sha256:39cfe3d840eda28e7cc2cbe1d5446c542ee93283b461c782d823f89e2cdf45b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZRH35Q",
+      "items": [
+        "sha256:3c3893607eb779aadd31416966c06831f811cd6b735be5af6513dad4d445df43"
+      ],
+      "reason": "roleChatDispatch.ts:308 widens failDispatchOffline return type from Promise<void> to Promise<RoleExecutionReceipt | undefined>; type plumbing for INV-ZQV6YN.",
+      "subject": "hunk:sha256:3c3893607eb779aadd31416966c06831f811cd6b735be5af6513dad4d445df43"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZS2YKJ",
+      "items": [
+        "sha256:b5cfcbd3e28daf65b13e03dae7afb618d152b77337cafce6880b83e6b8ae7a4b"
+      ],
+      "reason": "Verified docs/install/pi.md against post-L32 synced L34 candidate: Pi install guidance remains accurate after BUG-R34@v1.",
+      "revision": 11,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZWEMSN",
+      "items": [
+        "sha256:3404c8bbf80c7fcec48fc8a84053c0732cc7b7980e26a984fe372cfc9fb4ba81"
+      ],
+      "reason": "paseo_catalog.py:47 imports RolePreparationError so launcher_options catches native Antigravity start refusals; import-only.",
+      "subject": "hunk:sha256:3404c8bbf80c7fcec48fc8a84053c0732cc7b7980e26a984fe372cfc9fb4ba81"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:369941d79ca125f5bfb26b04174e851b6dfe1b41f0cf616946f4d0fb81b96f52",
+      "record": "DPD-1DXK6Q",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:8ab1e202c90f09fc57b57adafa7878a07111246a680e5f7a878c88c0e2d945a8",
+      "record": "DPD-21GMJ5",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4e505792da10a1554419bbe531290fb3fb0fdf4142be1ab4b0991382dacfa4e4",
+      "record": "DPD-23C91T",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T21:38:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ab4412c3601d5ecbca3ce6bb0da6aa912c45631c75b3bd45b53c07a5f8ba64ae",
+      "record": "DPD-2B7PTY",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:47710e7a2339a72c5516fcc9a7e97931fa9c6cb16193727f9941562223d87b05",
+      "record": "DPD-327MNX",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-27T21:38:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:251a798509c677d4bbfc2a98253552ca685a0085feec20da3887bf24ac3108bd",
+      "record": "DPD-327MNX",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:54bd384d1493c959f6cd74c891fd7572ff34cae9e5847c4021d30b5fb65b8da7",
+      "record": "DPD-3E9E2R",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:61dcf8d48a25a9b5c8adbcece029b4381caa030f20dd45f708dab295c761f7b9",
+      "record": "DPD-6528VF",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3c572588665840e8dde1a4a75e6e4f0241ad5c13e4add0d81728a074d5f838d8",
+      "record": "DPD-K2QMWQ",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T21:38:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b04288c0fadff1eda99cd370a24fa8f41ff9de1450b353546fb39a8b56a1ad03",
+      "record": "DPD-K2QMWQ",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e8879cbc61319614fa5a13fe2f20b8ac4f528f94ecacb26252a57819d468fe43",
+      "record": "DPD-PMZ21Z",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fcb2f003c478bad7f63d6d48a46b760776a8326b6ef6e9ebe6bba0772aa08a2c",
+      "record": "DPD-PYMM5P",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ff3d9f09e7e08e3a1fed7e4b2d36881eed25c48b4ea4105dc71c51da70b832a7",
+      "record": "DPD-W0T9V9",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T22:06:38+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:63147b8bb4cef8ea631ec3ba9155f97a391ff1d62da5a3abf099518fa70937c2",
+      "record": "INV-CGK4FW",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:13:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:414d4c83053195261e7dd53469932fdf5a9675c1c2e6a4cd9d716c2a59c7069a",
+      "record": "INV-QZKWWY",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:13:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a763d7bf72036b3d983f896c417338259676dc4f2bc2190c100fc7931615d439",
+      "record": "INV-RVQGY8",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:13:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f2a43463c9729e6dbe8059da93a024a4d1518a9c59828f40543d5ffe3bebe8c7",
+      "record": "INV-TB8KGA",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:13:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3f727757df6cfc01a1e97e95682a83e31f9ea479cd7bc470c51ad60678577f60",
+      "record": "INV-VNT8DT",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:13:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:341d6677ff003dc4eb6ff62c599a304a14f94f875c89e929e7f499043aa17021",
+      "record": "INV-ZQV6YN",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:13:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L34",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

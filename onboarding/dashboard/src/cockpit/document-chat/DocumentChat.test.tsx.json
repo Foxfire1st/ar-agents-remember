@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/cockpit/document-chat/DocumentChat.test.tsx",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+        "content": "sha256:62179f274360aedb8545da403e47083e35d2b5013b7878a2d78f2c5d69ba00f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "the document's native chat and the shared bound launcher > keeps the bound running Projects role and its launcher reads stable across unrelated task deltas"
+        }
+      },
+      "facet": "Rerendering DocumentChat with an updated unrelated leaf entry leaves prior /saved-catalog, /options, and /result requests unaborted and fires no duplicate reads.",
+      "id": "PRF-JHCJ0J",
+      "invariant": "INV-CGK4FW",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 2",
+        "leaf": "261112-BUG-L34"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -8,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
             "content": "sha256:43bf4613110015882cef66f50d79151c7d1d47ac9d65f9d15fc2e3e1a7f31c70",
             "locator": {
               "end": 32,
@@ -25,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
-            "content": "sha256:982268a8a2c32e071487217fba5520c63190d7c5ae409cf53419710063140dc1",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+            "content": "sha256:8cec71fda01bd880d67a1fae48aea00dc4692fd6d66e40c08fa0d30fb87a7ae0",
             "locator": {
               "kind": "file"
             }
@@ -36,12 +54,12 @@
       ]
     },
     "3": {
-      "note": "An open bound row is running and offers no second start.",
+      "note": "An open bound row is running, offers no second start, and keeps its launcher reads stable across unrelated task deltas.",
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
-            "content": "sha256:982268a8a2c32e071487217fba5520c63190d7c5ae409cf53419710063140dc1",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+            "content": "sha256:8cec71fda01bd880d67a1fae48aea00dc4692fd6d66e40c08fa0d30fb87a7ae0",
             "locator": {
               "kind": "file"
             }
@@ -55,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
-            "content": "sha256:982268a8a2c32e071487217fba5520c63190d7c5ae409cf53419710063140dc1",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+            "content": "sha256:8cec71fda01bd880d67a1fae48aea00dc4692fd6d66e40c08fa0d30fb87a7ae0",
             "locator": {
               "kind": "file"
             }
@@ -70,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
-            "content": "sha256:982268a8a2c32e071487217fba5520c63190d7c5ae409cf53419710063140dc1",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+            "content": "sha256:8cec71fda01bd880d67a1fae48aea00dc4692fd6d66e40c08fa0d30fb87a7ae0",
             "locator": {
               "kind": "file"
             }
@@ -85,8 +103,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
-            "content": "sha256:982268a8a2c32e071487217fba5520c63190d7c5ae409cf53419710063140dc1",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+            "content": "sha256:8cec71fda01bd880d67a1fae48aea00dc4692fd6d66e40c08fa0d30fb87a7ae0",
             "locator": {
               "kind": "file"
             }
@@ -100,8 +118,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98b750db998ae2759a02287bb026436786b5de6e",
-            "content": "sha256:982268a8a2c32e071487217fba5520c63190d7c5ae409cf53419710063140dc1",
+            "blob": "081f239f5ee49f6787dbc45b0b067b98d45bd5c4",
+            "content": "sha256:8cec71fda01bd880d67a1fae48aea00dc4692fd6d66e40c08fa0d30fb87a7ae0",
             "locator": {
               "kind": "file"
             }

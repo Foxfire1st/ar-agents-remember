@@ -56,20 +56,20 @@
     "leaf": "260928-MIK-L117",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-invariant/v1",
-  "statement": "A silent role-agent turn end — a completed turn that hands off to no one, does not end with an `IDENTITY MISMATCH:` line, declares no helper or background wait, that nothing holds and that is not a reply to a waiting sender — wakes the agent that waits, its recorded parent or the current Manager of its master when that parent is archived or missing, with one line naming the role, agent, task, the ended turn's own last line of text and the newest report, except that a Worker, Reviewer, Curator or Consolidator is sent back to its work at the first two silent ends in a row and only from the third gives its parent that line, marked with the count; a delivered return to the parent in that turn suppresses the line wherever the row shows the recipient, a turn with no text says so, and a recipient that is in a turn is told when that turn ends rather than steered into it, unless the product knows that provider keeps its turn under a steer. A seat whose publication shows a running subagent is not a silent end and is left alone at that end, and a provider limit delays the send-back: a seat the limit file names as limited gets neither the seat message nor the counted line until its reset. A limited parent's line is held and flushed once that parent is no longer limited. A provider-limited recipient’s held messages stay queued unless confirmed archive or absence resolves them undelivered. After reset, eligible messages drain when the bounded receipt cursor reaches the recipient. A role seat on any provider may declare a helper or background-process wait. A declaration alone sends no parent line. A handoff in the same turn retains the ordinary recipient and suppression rules. A current declaration can arm one check after that path returns. A later undeclared end, close or archive ends the wait. The plug-in provider verdict still determines the ACP launch instruction and the wake message's closing sentence.",
+  "statement": "A silent role-agent turn end — a completed turn that hands off to no one, does not end with an `IDENTITY MISMATCH:` line, declares no helper or background wait, that nothing holds and that is not a reply to a waiting sender — wakes the agent that waits, its recorded parent or the current Manager of its master when that parent is archived or missing, with one line naming the role, agent, task, the ended turn's own last line of text and the newest report, except that a Worker, Reviewer, Curator or Consolidator is sent back to its work at the first two silent ends in a row and only from the third gives its parent that line, marked with the count; a delivered return to the parent in that turn suppresses the line wherever the row shows the recipient, a turn with no text says so, and a recipient that is in a turn is told when that turn ends rather than steered into it, unless the product knows that provider keeps its turn under a steer. A seat whose publication shows a running subagent is not a silent end and is left alone at that end, and a provider limit delays the send-back: a seat the limit file names as limited gets neither the seat message nor the counted line until its reset. A limited parent's line is held and flushed once that parent is no longer limited. A provider-limited recipient’s held messages stay queued unless confirmed archive or absence resolves them undelivered. After reset, eligible provider-limited messages are delivered in order through the durable reset index and independent 16-worker reset scheduler (within about 30 seconds up to about 300 due recipients, and at about 11 recipients per second beyond), without waiting for the bounded rotating receipt cursor. A role seat on any provider may declare a helper or background-process wait. A declaration alone sends no parent line. A handoff in the same turn retains the ordinary recipient and suppression rules. A current declaration can arm one check after that path returns. A later undeclared end, close or archive ends the wait. The plug-in provider verdict still determines the ACP launch instruction and the wake message's closing sentence.",
   "supersedes": [],
   "title": "Silent role-agent turn-end notification and wake policy",
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-27T21:15:46+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
   }
 }

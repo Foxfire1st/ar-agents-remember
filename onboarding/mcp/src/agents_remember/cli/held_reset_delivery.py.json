@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/cli/held_reset_delivery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+        "content": "sha256:44967590748dc2ce5543f36e4be85cb527220c6483af6bb155b9e7f63756e364",
+        "locator": {
+          "kind": "symbol",
+          "name": "reset_delivery_ports"
+        }
+      },
+      "id": "RLZ-A0HP6G",
+      "invariant": "INV-GV3950",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 enrollment at start",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The delivery ports bind the product's adoption and attempt callables into the scheduler without a second implementation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+        "content": "sha256:daeb6f6d09d0aa60d68fa610156348f9060ccdbe9776e07e48a49965ba431326",
+        "locator": {
+          "kind": "symbol",
+          "name": "drain_reset_entry"
+        }
+      },
+      "id": "RLZ-TVX5BM",
+      "invariant": "INV-6NJ5ZH",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The drain reads the receipt, sends its waits under their sender lines and records the terminal outcome for that exact reset entry.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`hold_at_receipt` schedules a known reset in `HeldResetIndex` via `hold_message(..., before_commit=schedule)` before committing the held store file and then calls `note_held_receipt`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+            "content": "sha256:3ce87de8211d804eb709805fa70ed1c0ae7d284b456e7be15ef3cfae06475c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "hold_at_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`drain_reset_entry` verifies receipt endpoints, runs `drain_held` and `apply_drain_to_receipt`, and contains `(OSError, ValueError, HTTPException)` failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+            "content": "sha256:daeb6f6d09d0aa60d68fa610156348f9060ccdbe9776e07e48a49965ba431326",
+            "locator": {
+              "kind": "symbol",
+              "name": "drain_reset_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`finish_reset_entry` retires gone entries directly and otherwise checks `messages` and `pendingLines` under `exclusive_file_lock` before retiring or deferring the generation; `reset_delivery_ports` constructs `ResetDeliveryPorts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+            "content": "sha256:42930dc828785aee05b05c7f76573c7d5360b6252275aebdd5a189ca0323aa09",
+            "locator": {
+              "kind": "symbol",
+              "name": "finish_reset_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+            "content": "sha256:44967590748dc2ce5543f36e4be85cb527220c6483af6bb155b9e7f63756e364",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_delivery_ports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

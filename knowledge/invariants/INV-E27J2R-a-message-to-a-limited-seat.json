@@ -9,7 +9,7 @@
   "applicability": "Every message to a limited recipient on role_message, the developer's tray send and report_to_architect.",
   "conditions": [
     "The message is held with the reason and the reset time, also when the recipient is idle.",
-    "For a recipient ready to receive, the first sweep after reset delivers held messages in order within its 15-second budget. Any eligible messages left by that sweep's bound are due within 30 seconds of reset.",
+    "When the reset time is known, hold admission and drain pause schedule the recipient in the durable reset index, startup adoption enrolls saved limited waits, and the independent 16-worker reset scheduler delivers held messages in order at reset (within about 30 seconds up to about 300 due recipients, and at about 11 recipients per second beyond).",
     "An archived recipient found through the publication's ended stamp is still answered, and a closed session keeps its messages waiting."
   ],
   "exclusions": [
@@ -29,27 +29,20 @@
     "leaf": "260928-MIK-L184",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A message to a limited seat waits for reset. When the recipient is ready, the first post-reset sweep delivers held messages in order. Eligible messages left by the sweep's bound are due within 30 seconds of reset.",
+  "statement": "A message to a limited seat waits for reset. When a reset time is known, the durable reset index and independent 16-worker reset scheduler deliver held messages in order once the recipient is ready at reset: within about 30 seconds for up to about 300 due recipients, and at about 11 recipients per second for larger backlogs.",
   "supersedes": [],
+  "title": "Provider-limited held-message waiting and post-reset delivery",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L20",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T21:15:46+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
   }
 }

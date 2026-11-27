@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Audited docs/host.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "statement": "Resolved crossing-7 sync conflict for docs/host.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L34 (main 882d41531b3d) with zero code overlap or contradiction.",
     "task": "261125-DEP-L3",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+      "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -167,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
-        "content": "sha256:cbced39d98f0f242a9cf58261086e4ec92635447892dff254ab77056ab7530e9",
+        "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+        "content": "sha256:e1f349edb3365ab10239f3616a70dd6a2d20f5c8ca28764fec9decfc0be49b40",
         "locator": {
-          "end": 227,
+          "end": 232,
           "kind": "line_range",
-          "start": 207
+          "start": 220
         },
         "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
       },
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
-        "content": "sha256:2ba7260a1a79b25900fe8a17262fcaddb1a5f2ce0b938706cba05a890ea317f2",
+        "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
+        "content": "sha256:91acdcf384530ac62b5c1ad7c896aa02d31a72df6a1c43f751e8011a4febfdf3",
         "locator": {
-          "end": 751,
+          "end": 682,
           "kind": "line_range",
-          "start": 734
+          "start": 668
         },
         "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
       },
@@ -259,20 +259,20 @@
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
     {
-      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+      "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

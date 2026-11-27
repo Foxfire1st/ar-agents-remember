@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
+    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
     "role": "curator",
-    "statement": "docs/design/canvas-host.md preserves all 261124-EXP canvas host and explainer boundaries on 9af497f7bb99 and accurately updates its dashboard lint verification command at line 382 to npx oxlint alongside npx tsc -b and npx vitest.",
-    "task": "261125-DEP-L6",
+    "statement": "Verified docs/design/canvas-host.md whole document against L32 candidate 52e47cca: canvas host routes, guards, and serving integration remain unaffected by L32's optional held_reset_delivery lifespan port.",
+    "task": "261112-BUG-L32",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+      "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/app.py"
     },
@@ -161,14 +161,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:08:02+01:00",
+    "at": "2026-11-27T21:15:46+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L6",
+    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
-    "task": "261125-DEP"
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
   }
 }

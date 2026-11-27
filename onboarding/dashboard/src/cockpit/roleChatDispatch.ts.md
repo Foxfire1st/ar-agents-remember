@@ -14,7 +14,7 @@ Dispatch retains the selected retry UUID and full task scope, carries sticky ref
 
 ## Boundaries
 
-Start/Revive transport is separate from automatic Result and rendering. Revive does not invent a per-request operator override. Options refresh still runs in the dispatch finally path.
+Start/Revive transport is separate from automatic Result and rendering. Revive does not invent a per-request operator override. Options refresh still runs in the dispatch finally path and receives a `DispatchResultRead` marker (`{ scope, requestId }`) only when `fetchExecutionResult` (from continuing dispatch or `failDispatchOffline` recovery) returned a settled receipt matching that exact `requestId` (`!isUncertainRoleExecution(result)`).
 
 ## Current Contract
 
@@ -36,10 +36,12 @@ This account is bound to the candidate source, not a claim of a running serving 
 - The same start-only reason enters saved retry payload and POST body. [7]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 - dispatchRoleAction is a current owner of the behavior described above. [1]
+
 - applyDispatchReceipt is a current owner of the behavior described above. [2]
+
 - failDispatchOffline is a current owner of the behavior described above. [3]
 
 
