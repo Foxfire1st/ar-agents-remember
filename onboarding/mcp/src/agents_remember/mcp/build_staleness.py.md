@@ -10,7 +10,7 @@ Names the publication tool calls that an MCP server running a stale installed bu
 
 ## Code Commentary
 
-`server.py`'s `call_tool` asks this module only when the process's build reading is an installed build in state `stale`, after validating the call's arguments against the registered tool's argument model. `is_stale_build_write(name, arguments)` matches publication, not every side effect:
+`tool_wrapper.py`'s `wrap_registered_tool` asks this module only when `current_tool_build_currentness()` (carried by `server.py`'s `_execute_tool_call`) is an installed build in state `stale`, after `MCPServer` validates the call's arguments and `admitted_arguments` normalizes them. `is_stale_build_write(name, arguments)` matches publication, not every side effect:
 
 - any call with `dry_run` exactly `True` is not a write;
 - the fixed `_WRITERS` set — closeout apply, integration, checkpoint and recorded landing, direct landing, sync, lifecycle finalize, citation note revision, route-index refresh, memory init, baseline adopt, carryover apply and task reopen — is a write;
@@ -33,7 +33,7 @@ Every other name — reads, previews, checkout work, host operations, messages a
 - `task_doc` counts for every valid operation except the linkage report, imported lazily. [6]
 - The refusal answer carries code `server-build-stale`, both digests, the remedy and the reading. [7]
 
-- Dispatch consults this module only for a stale installed build, after argument validation. [8]
+- The per-tool registration wrapper consults this module only for a stale installed build, after argument validation. [8]
 
 
 - A `server-build-stale` payload validates against the shared refusal model. [9]

@@ -210,6 +210,30 @@
       "targets": [
         {
           "anchor": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:6c5b5c21c0c1c5feb48e9cb6dded1f1585e870a13d934cb6971fe09e7d6552a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:7d6413b974ffaaa66867a98586801f29c5fbcba435bbd22a31f932018258dbc1",
             "locator": {
@@ -270,19 +294,6 @@
               "start": 104
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:e743d06044000742c68488aaedf9320321ccb58a4341b8f8f4af9211df747b45",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 98
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }

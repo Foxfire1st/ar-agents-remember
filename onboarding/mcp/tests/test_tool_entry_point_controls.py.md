@@ -12,7 +12,7 @@ Check the tool entry-point world's classifiers and its ability to complete a rea
 
 The negative controls drive invalid-input responses through the ordinary world's classifier. It marks a delivered answer with an envelope field as unvalidatable. It also marks a missing or unreadable whole-result file as unvalidatable and names the problem.
 
-The corruption and deadline controls use the registered `server_info` route. The retained-list control injects an undeclared key into a real `read_ar_files` result and checks the classifier names its indexed path.
+The corruption and deadline controls use the registered `server_info` route, patching public `self.world.server.call_tool` via `mock.patch.object` for the silent-handler timeout check. The retained-list control injects an undeclared key into a real `read_ar_files` result and checks the classifier names its indexed path.
 
 The socket-denial control patches `socket.socket.send` to raise `EPERM` during an actual `server_info` call and requires a classified payload. It sets ten-second initialization and response budgets for that call.
 
@@ -28,7 +28,7 @@ The argument-versus-response validation control calls `citation_fix` with no `re
 
 - A handler that goes round the choke point arrives as unvalidatable with its key named. [4]
 
-- The retained handler deadline control names server_info and checks cleanup plus the next call. [6]
+- The retained handler deadline control patches public `self.world.server.call_tool`, names `server_info`, and checks cleanup plus the next call. [6]
 
 
 - The retained-list control injects an undeclared key into a real `read_ar_files` list item and names its indexed path in the unvalidatable result. [7]

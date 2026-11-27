@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "CompactToolResultWireTests.test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
+        }
+      },
+      "facet": "Proves every role and alias listing keeps exact wire bytes, readOnlyHint-only server_info annotations, removed refresh omission on read_ar_files, and uncompacted stored SDK tool definitions.",
+      "id": "PRF-01EFVE",
+      "invariant": "INV-NZ27V7",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 INV-NZ27V7 update",
+        "leaf": "261125-DEP-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
         "content": "sha256:614bfe2a671c53714b3e5aa6b87f327de490228d55770c1e38ebf895588eef30",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
         "content": "sha256:45b89f1e35da1316d9e2cd86e4abc46b5ac756d961f3e829da22b5e64ffb2468",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
         "content": "sha256:614bfe2a671c53714b3e5aa6b87f327de490228d55770c1e38ebf895588eef30",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
         "content": "sha256:d62be75201bf658e805dae7661fe9ef004f5280f71d52fae59fe0ce5df6fab38",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,41 @@
     },
     {
       "anchor": {
-        "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "content": "sha256:98d507170326587cee0de6195a66be29c52ec6d7261b91cbf61795c093db0d13",
+        "locator": {
+          "kind": "symbol",
+          "name": "CompactToolResultWireTests.test_no_private_mcp_sdk_access_remains_in_repository"
+        }
+      },
+      "facet": "AST-scans mcp/src, mcp/test_support, scripts, and mcp/tests to prove zero private MCP SDK attribute accesses or internal SDK module imports remain.",
+      "id": "PRF-N8NS4P",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "CompactToolResultWireTests.test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
+        }
+      },
+      "facet": "Proves public-API registration, listing-time schema compaction, and role narrowing preserve exact wire bytes across every role while keeping stored SDK tool definitions unmutated.",
+      "id": "PRF-NVX3JY",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
         "content": "sha256:614bfe2a671c53714b3e5aa6b87f327de490228d55770c1e38ebf895588eef30",
         "locator": {
           "kind": "symbol",
@@ -87,15 +138,34 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "content": "sha256:98d507170326587cee0de6195a66be29c52ec6d7261b91cbf61795c093db0d13",
+        "locator": {
+          "kind": "symbol",
+          "name": "CompactToolResultWireTests.test_no_private_mcp_sdk_access_remains_in_repository"
+        }
+      },
+      "id": "RLZ-AV9PTQ",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Scans mcp/src, mcp/test_support, scripts, and mcp/tests via AST to fail on any private SDK attribute access or internal SDK module import.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Direct `CallToolResult` construction and compact JSON serialization live in `mcp/tool_results.py` (`build_call_tool_result`, `compact_content_blocks`, `build_early_refusal_result`), replacing the retired `compact_content.py` monkeypatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-            "content": "sha256:2e47b87590a54ff396d6d78fae2664b5e5b741c8745c400930c913115b0c43c9",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
             "locator": {
               "kind": "symbol",
               "name": "build_call_tool_result"
@@ -106,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
             "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
             "locator": {
               "kind": "symbol",
@@ -118,8 +188,8 @@
         },
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-            "content": "sha256:85f52a3913ed9b770b7b84af01b2287f17cf101388f368f8fc9264543f22bf1b",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
             "locator": {
               "kind": "symbol",
               "name": "build_early_refusal_result"
@@ -131,17 +201,29 @@
       ]
     },
     "2": {
-      "note": "`create_server()` constructs `AgentsRememberMCP` with `build_skills_extension()` and `preserve_handshake_extensions`, and dispatches tool results through `build_call_tool_result` and `build_early_refusal_result`.",
+      "note": "`create_server()` constructs `AgentsRememberMCP` with `build_skills_extension()`, `preserve_handshake_extensions`, and `enforce_read_only_marks=True`, and dispatches tool results through registration-time `wrap_registered_tool` (`build_call_tool_result` and `build_early_refusal_result`).",
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -159,6 +241,33 @@
               "name": "settings_payload"
             },
             "path": "mcp/tests/test_config.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Role wire-byte parity, unmutated stored tool schemas, and repository-wide private MCP SDK access AST guard live in `CompactToolResultWireTests`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+            "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+            "content": "sha256:98d507170326587cee0de6195a66be29c52ec6d7261b91cbf61795c093db0d13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_private_mcp_sdk_access_remains_in_repository"
+            }
           },
           "kind": "test"
         }

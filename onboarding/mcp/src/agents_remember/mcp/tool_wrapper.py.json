@@ -1,0 +1,159 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tool_wrapper.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+        "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+        "locator": {
+          "kind": "symbol",
+          "name": "wrap_registered_tool"
+        }
+      },
+      "id": "RLZ-7NBBQK",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Wraps each registered callable at registration time to normalize validated arguments, refuse stale-build publications, enforce write-lock and thread_workers offload, and emit compact CallToolResult without private fn_metadata or Tool.model_copy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+        "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_sync_call"
+        }
+      },
+      "id": "RLZ-EQ7EC0",
+      "invariant": "INV-8NDEQB",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 pre-handler cancellation",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Catches asyncio.CancelledError while waiting on policy.acquire_write_lock before the handler starts and invokes policy.on_write_lock_cancelled to record one cancelled wait row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+        "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_sync_call"
+        }
+      },
+      "id": "RLZ-GA8TM7",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The synchronous wrapper delegates to thread_workers.run_in_request_thread, which carries ContextVars and drains cancellation before the dispatch ordering lock releases.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`RegisteredToolPolicy` binds per-tool annotations, structured output plan, write-lock acquisition, and write-lock cancellation logging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:ac34dd4ca56f5ec111b610e9e3b34cc5af928d05f1fe7cf07036a65225d6f163",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredToolPolicy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`admitted_arguments` skips injected `Context` values and dumps validated `BaseModel` arguments to dicts for staleness and write-lock checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:971bb99b7d58ea328d0168e8ec2bffe977081d08a44671c71004cb316bd25213",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`nonwriting_call` bypasses the synchronous write lock only for centrally read-only tools and explicitly non-writing modes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:ed60c7ef19be7ce6b27e4140671458c80f9886ee1478a76eeab16969c2396d65",
+            "locator": {
+              "kind": "symbol",
+              "name": "nonwriting_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`wrap_registered_tool` checks stale-build publication refusal before execution, dispatches async or offloaded sync handlers, and returns compact `CallToolResult` values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_run_sync_call` offloads synchronous handlers via `run_in_request_thread` and holds the server write lock around potentially mutating calls while logging pre-acquisition cancellations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_sync_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`AgentsRememberMCP.add_tool` applies `read_only_annotations`, computes `structured_output_spec`, wraps each tool with `wrap_registered_tool`, and registers it via public `MCPServer.add_tool`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

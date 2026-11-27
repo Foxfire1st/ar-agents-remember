@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-        "content": "sha256:2e47b87590a54ff396d6d78fae2664b5e5b741c8745c400930c913115b0c43c9",
+        "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+        "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
         "locator": {
           "kind": "symbol",
           "name": "build_call_tool_result"
@@ -16,12 +16,12 @@
         "handoffEntry": "DEP-R03@v2-R4-tool-results",
         "leaf": "261125-DEP-L3"
       },
-      "rationale": "Builds direct CallToolResult values with compact separator JSON text blocks and schema-validated structured_content without monkeypatching mcp internals or holding process-global state.",
+      "rationale": "Builds direct CallToolResult values with compact separator JSON text blocks and StructuredOutputSpec-validated structured_content without monkeypatching mcp internals or holding process-global state.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
+        "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
         "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-        "content": "sha256:85f52a3913ed9b770b7b84af01b2287f17cf101388f368f8fc9264543f22bf1b",
+        "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+        "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
         "locator": {
           "kind": "symbol",
           "name": "build_early_refusal_result"
@@ -54,16 +54,45 @@
       },
       "rationale": "Preserves the start tree's indented JSON text plus structured_content wire shape on early-return guard refusals (explainer forged-seat and stale-build guards).",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+        "content": "sha256:a164bde7a4ba6dd20e189cde02346c580bc3da1c037dd58af8f9eb9873448ab6",
+        "locator": {
+          "kind": "symbol",
+          "name": "structured_output_spec"
+        }
+      },
+      "id": "RLZ-Z312GF",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Derives each tool's structured-output conversion plan from its Python return annotation using public typing, pydantic, and mcp.server.mcpserver Audio/Image imports instead of internal SDK tools/utilities modules and fn_metadata.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "`build_call_tool_result` builds compact `CallToolResult` values with schema-validated `structured_content` only when the tool declares `output_schema`.",
+      "note": "`structured_output_spec` and `build_call_tool_result` derive structured-output plans from return annotations and build compact `CallToolResult` values with validated `structured_content` only when a spec is present.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-            "content": "sha256:2e47b87590a54ff396d6d78fae2664b5e5b741c8745c400930c913115b0c43c9",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:a164bde7a4ba6dd20e189cde02346c580bc3da1c037dd58af8f9eb9873448ab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "structured_output_spec"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
             "locator": {
               "kind": "symbol",
               "name": "build_call_tool_result"
@@ -78,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
             "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
             "locator": {
               "kind": "symbol",
@@ -89,8 +118,8 @@
         },
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-            "content": "sha256:1d6fa20c5c56193544aecf07bd8b07ea6f950bb302114ec9cd332eac892499a0",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:bb0a89d252c71e7130a26222cd563bcf68c1a53b9f92e16e13a8346d0ca4d019",
             "locator": {
               "kind": "symbol",
               "name": "compact_json_text"
@@ -105,8 +134,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
-            "content": "sha256:85f52a3913ed9b770b7b84af01b2287f17cf101388f368f8fc9264543f22bf1b",
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
             "locator": {
               "kind": "symbol",
               "name": "build_early_refusal_result"
@@ -117,15 +146,15 @@
       ]
     },
     "4": {
-      "note": "`AgentsRememberMCP` calls `build_call_tool_result` and `build_early_refusal_result` directly from its call path.",
+      "note": "`AgentsRememberMCP` computes `structured_output_spec` in `add_tool` and calls `build_call_tool_result` and `build_early_refusal_result` through `wrap_registered_tool` and `_explainer_seat_refusal`.",
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
             "locator": {
               "kind": "symbol",
-              "name": "_execute_tool_call"
+              "name": "add_tool"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -133,13 +162,25 @@
         },
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:6fe5aeb2c1f3d20916c5fbf8c0b24ad6a6055ba9875fa2154676e44538894706",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:6fdb4fe2cd91d73de74c322372caa7e23da088785e7ce2dab6f3265e5216b2e0",
             "locator": {
               "kind": "symbol",
-              "name": "_dispatch_tool"
+              "name": "_explainer_seat_refusal"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -150,24 +191,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
-            "content": "sha256:80d8414b7af9352f9f9c047cc6524c6b28adb9e9c2683ddcf6337f21835344bd",
+            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+            "content": "sha256:a6136a3a67936532ba0fc16bdaa610b8adbabdbc1d1e8fa65e822c4268222727",
             "locator": {
               "kind": "symbol",
               "name": "CompactToolResultWireTests"
-            },
-            "path": "mcp/tests/test_compact_content.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1070251a28eec5e5f72a6383150a6ded3eb7ff86",
-            "content": "sha256:dc49e5cdf26263fbe60122a9ca7de5f8e0b4f2c07f3e8723140db8d467d9ebb7",
-            "locator": {
-              "end": 225,
-              "kind": "line_range",
-              "start": 55
             },
             "path": "mcp/tests/test_compact_content.py"
           },

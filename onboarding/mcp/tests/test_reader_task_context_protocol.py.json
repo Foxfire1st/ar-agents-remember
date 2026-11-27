@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
-        "content": "sha256:93559b0d7ea748b34b1abf482fe41e3513d129ac7607d5becabf69e945a79931",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+        "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:095f8aaee0209f06f66ea1fed664fe827bc588bee31b54ab8af35a08d82c3ed4",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+        "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
+        }
+      },
+      "id": "RLZ-J1B01E",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Injects the slow tools/list coroutine by patching public self.server.list_tools instead of mutating self.server._lowlevel_server request handlers.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:0f12e34c0afbba96924c11edc11e02c82224dda336af787e44848d7f9c7d5412",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
         "locator": {
           "kind": "symbol",
@@ -98,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
-            "content": "sha256:6e3fc1e9248889883cfd6be13707bcd3b349d25fb4b551ce996ff569da68cb57",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+            "content": "sha256:e45c763e9c3a646b1ccb22c2f5c69e13dbfab85197e8d16e8b71fecf835f921d",
             "locator": {
               "kind": "file"
             }
@@ -113,8 +131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
@@ -130,24 +148,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
             "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
             "locator": {
-              "end": 341,
+              "end": 336,
               "kind": "line_range",
-              "start": 329
+              "start": 324
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
             "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
             "locator": {
-              "end": 388,
+              "end": 383,
               "kind": "line_range",
-              "start": 373
+              "start": 368
             }
           },
           "kind": "test"
@@ -155,16 +173,15 @@
       ]
     },
     "4": {
-      "note": "The late-response case that holds its handler and starts its deadline after session initialization.",
+      "note": "The late-response case that patches public `self.server.list_tools` to hold its handler and starts its deadline after session initialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
-            "content": "sha256:16cee9190d7a60b0921e0da92a3d09dd797e769f24b7db559bb659050e733806",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+            "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
             "locator": {
-              "end": 325,
-              "kind": "line_range",
-              "start": 295
+              "kind": "symbol",
+              "name": "test_late_tool_list_response_times_out_and_closes_the_handler"
             }
           },
           "kind": "test"
@@ -176,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
             "content": "sha256:e82cb62ec38ce20b0f5e1b1551de6ac58b094c8287bd5b8344f5305a2e1fbb21",
             "locator": {
               "end": 118,

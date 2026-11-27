@@ -20,7 +20,7 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 
 `test_registered_readers_use_call_local_admitted_leaf_context` drives the protocol exchange through `_run_protocol`, which runs the whole exercise under `_await_protocol`'s default 60-second limit; a passed limit raises the ordinary assertion failure "MCP reader protocol responses did not arrive". `_git_status` gives the test's two Git observations the same limit.
 
-`test_late_tool_list_response_times_out_and_closes_the_handler` starts a three-second response deadline only after the session is initialized, holds its `tools/list` handler until it is cancelled, requires the named failure, and then re-runs the primary case so the server with its patched handler is proven usable afterwards. The shared limit of the driver and of `git status` stays at 60 seconds, so neither a slow `git status` nor a slow session start fails the case for reasons it does not test.
+`test_late_tool_list_response_times_out_and_closes_the_handler` starts a three-second response deadline only after the session is initialized, patches public `self.server.list_tools` via `mock.patch.object` to hold the response until it is cancelled, requires the named failure, and then re-runs the primary case so the server is proven usable afterwards. The shared limit of the driver and of `git status` stays at 60 seconds, so neither a slow `git status` nor a slow session start fails the case for reasons it does not test.
 
 ### Invariants And Boundaries
 
@@ -31,10 +31,7 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 
 - The scoped current source carries the module/document behavior described above. [1]
 
-
 - The bounded driver and the 60-second Git observation limit. [3]
 
-- The late-response case that holds its handler and starts its deadline after session initialization. [4]
-
-
+- The late-response case that patches public `self.server.list_tools` to hold its handler and starts its deadline after session initialization. [4]
 - The product factory `create_server` composes `AgentsRememberMCP` with `SkillsExtension` and invokes `TOOL_REGISTRARS`. [2]

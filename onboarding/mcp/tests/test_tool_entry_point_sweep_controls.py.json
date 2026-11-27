@@ -1,16 +1,36 @@
 {
   "path": "mcp/tests/test_tool_entry_point_sweep_controls.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
+        "content": "sha256:d0db754a3a16508289f096f07fd714cac9c5ef028359b9da57662acd7beb1022",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        }
+      },
+      "id": "RLZ-MS0XZX",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Injects the silent sweep tools/call coroutine by patching public self.world.server.call_tool instead of mutating self.world.server._lowlevel_server request handlers.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The choke point catches a forbidden payload, and the two failure shapes arrive in their own named arms.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
-            "content": "sha256:b6e0bc3a62fb7b3d19682516fc5ed19e5da7569e6f468bce6982a8ea6e73c7b0",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
+            "content": "sha256:b1164eaf58d3b36faf57529ed7e643de836a52bbd6f9c7a6825550c76ea5579b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ChokePointControlTests"
             }
           },
           "kind": "test"
@@ -22,10 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
-            "content": "sha256:b6e0bc3a62fb7b3d19682516fc5ed19e5da7569e6f468bce6982a8ea6e73c7b0",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
+            "content": "sha256:86ce80d486ab6b40ca392b14b1da7353f1ad2e984cf87a6fbecb0e3609f186ce",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "EntryPointCensusControlTests"
             }
           },
           "kind": "test"

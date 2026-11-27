@@ -368,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:27dc1dc31066e8d65c0d41b28ba8a7ae41b9d7913948242934b7a18085b260be",
             "locator": {
-              "end": 136,
+              "end": 126,
               "kind": "line_range",
-              "start": 65
+              "start": 55
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -386,12 +386,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:5b960d6b8627d929296ffeda64be97237ccc852c0d694cbdf89218c00a55f505",
             "locator": {
-              "end": 193,
+              "end": 183,
               "kind": "line_range",
-              "start": 168
+              "start": 158
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -399,12 +399,12 @@
         },
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:fe81f6a4ec9a6c942709ad574566a5d1ace16fbaef98b2638c7407160fec0460",
             "locator": {
-              "end": 235,
+              "end": 225,
               "kind": "line_range",
-              "start": 195
+              "start": 185
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -481,12 +481,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:cede13215966552239010b64649c4fca8e07a0bad43fbc142c8b03c878447fcf",
             "locator": {
-              "end": 136,
+              "end": 126,
               "kind": "line_range",
-              "start": 115
+              "start": 105
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -512,12 +512,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:8251f4ccdd9d264c78e9cbc7664ca539d93c8d25c9a0963db21a92afb911961c",
             "locator": {
-              "end": 75,
+              "end": 65,
               "kind": "line_range",
-              "start": 65
+              "start": 55
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -574,12 +574,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
-            "content": "sha256:1839d2c767df49bb16b49b3dbf89ef3a3d64ed5ee9bb11d5b8ae2277db076e9b",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
+            "content": "sha256:d0db754a3a16508289f096f07fd714cac9c5ef028359b9da57662acd7beb1022",
             "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -711,12 +710,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:27dc1dc31066e8d65c0d41b28ba8a7ae41b9d7913948242934b7a18085b260be",
             "locator": {
-              "end": 136,
+              "end": 126,
               "kind": "line_range",
-              "start": 65
+              "start": 55
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -746,12 +745,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6f02c204d82682a266a9a87f2df7c8dd7a7684a",
+            "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
             "content": "sha256:53a3fc5688b2bedb6331a6a4f789e6eb9ffeaa8b14ba366bb7cbd9d03414ca04",
             "locator": {
-              "end": 158,
+              "end": 148,
               "kind": "line_range",
-              "start": 138
+              "start": 128
             },
             "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
@@ -764,7 +763,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:57d50058c8bff473ec350ef9c891850aef546413edd49555abb0990427629416",
             "locator": {
               "kind": "symbol",

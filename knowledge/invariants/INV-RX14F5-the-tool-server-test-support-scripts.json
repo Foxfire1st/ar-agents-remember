@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across six MCP server modules and four test suites and guarded by an AST repository scan, preventing private SDK attribute coupling that silently breaks across mcp 2.x upgrades."
+  },
+  "applicability": "All repository Python code under mcp/src, mcp/test_support, scripts, and mcp/tests that interacts with the mcp 2.3.0 SDK.",
+  "conditions": [
+    "Production tool registration, listing, dispatch, role narrowing, schema compaction, structured output conversion, and extension queries use public MCPServer, ToolAnnotations, SkipJsonSchema, mcp.Client, and public typing/pydantic APIs.",
+    "Protocol timeout and choke-point tests patch public MCPServer.list_tools and MCPServer.call_tool rather than private server attributes."
+  ],
+  "exclusions": [
+    "Provisional ServerMiddleware from mcp.server.context used strictly on initialize in preserve_handshake_extensions, which is tracked separately by a decision record and touches no private SDK attribute."
+  ],
+  "id": "INV-RX14F5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Clean freeze copy /var/tmp/agents-remember/ar-003952a772f3/freeze-r1 (tree 651dd79f9632829ea86d6ab2a3afbc33b9d227c9): sh .githooks/_gate.sh fast PASS; 21-file focused pytest 213 passed, 134 subtests passed; scratch/worker/d625d7c6-fcc9-51fc-9c6b-c09a8b320b3a/evidence4-private-sdk-scan.json (2622 files scanned, 0 AST hits, 0 non-guard regex hits)."
+      ],
+      "path": "dep-l4-curator-ingest.json"
+    },
+    "handoffEntry": "DEP-R04@v2 Rule 1",
+    "leaf": "261125-DEP-L4",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The tool server, test support, scripts, and tests reach the mcp 2.3.0 SDK exclusively through documented public APIs without accessing private SDK attributes or internal SDK module paths.",
+  "supersedes": [],
+  "title": "Tool server and tests reach mcp 2.3.0 SDK only through public APIs",
+  "writer": {
+    "at": "2026-11-27T21:28:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L4",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "task": "261125-DEP"
+  }
+}

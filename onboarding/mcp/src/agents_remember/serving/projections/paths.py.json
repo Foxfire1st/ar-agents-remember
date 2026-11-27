@@ -86,16 +86,15 @@
       ]
     },
     "6": {
-      "note": "create_server invokes the application startup owner; it does not install an ambient lifecycle. Anchor: server startup call",
+      "note": "`create_server` invokes the application startup owner; it does not install an ambient lifecycle.",
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:aad6c76fcd651a2ffed265092c91edf85dc1f5c4c1417c73078c86b873163a71",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
-              "end": 474,
-              "kind": "line_range",
-              "start": 465
+              "kind": "symbol",
+              "name": "create_server"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

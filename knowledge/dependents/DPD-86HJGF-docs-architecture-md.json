@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "2f247e921f1cb8d035b1edce2f7d5b41416b5af5",
+    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
     "role": "curator",
-    "statement": "Audited docs/architecture.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
-    "task": "261125-DEP-L3",
+    "statement": "Audited edited docs/architecture.md against 261125-DEP-L4 tree 2f247e92 (DEP-R04@v2 Rule 5 / DEP-L4-MR1-F1 fix): lines 48-52 now accurately describe enabling listing-time schema compaction before role narrowing so list_tools returns losslessly compacted copies without mutating stored tools, and the remaining runtime architecture holds with zero contradictions.",
+    "task": "261125-DEP-L4",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+      "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+      "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -170,7 +170,7 @@
     },
     {
       "anchor": {
-        "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
@@ -230,7 +230,7 @@
     },
     {
       "anchor": {
-        "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
@@ -242,8 +242,8 @@
     },
     {
       "anchor": {
-        "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-        "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._execute_tool_call"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-27T22:15:31+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
+    "leaf": "261125-DEP-L4",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
     "task": "261125-DEP"
   }
 }

@@ -398,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:cf56060852f0ad8e340b08dc8305a8cc6a39c7138f48e42f8cce37daa403680c",
             "locator": {
               "kind": "symbol",
@@ -1020,10 +1020,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
-            "content": "sha256:c4c4ef34c67df758caa388347f6f3f02b43bd433d4eee4298b2eeda6e055e53e",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+            "content": "sha256:1de9f3b69015756e93e3918f7821d2fe3c4bc6d363f5238ed0148dd2c86b9096",
             "locator": {
-              "end": 20,
+              "end": 19,
               "kind": "line_range",
               "start": 1
             },
@@ -1033,12 +1033,12 @@
         },
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:7a4d65358bd22e90e0aba6fadf35ed66938181db5b395e840b07b3fc7418fc62",
             "locator": {
-              "end": 86,
+              "end": 94,
               "kind": "line_range",
-              "start": 69
+              "start": 77
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -1137,29 +1137,28 @@
       ]
     },
     "63": {
-      "note": "Current ordinary model roster has 44 names, including citation_note_revision, nine ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration.\n\nAnchor: `PUBLIC_TOOLS`",
+      "note": "Current ordinary model roster has 44 names, including citation_note_revision, nine ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration.\n\nAnchor: `TOOL_REGISTRARS`",
       "targets": [
         {
           "anchor": {
-            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
-            "content": "sha256:e1cfb1d0b54ab0387e3c407d5a4ce057611cb133006b605a3496a680bc112567",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_REGISTRARS"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:d4a3177819f2f7372a5f1f177f9e5cd66f9efce016ca77fd4d4650b4e5082bdf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
           "kind": "code"
         },

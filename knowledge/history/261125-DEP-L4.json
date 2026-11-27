@@ -1,0 +1,2023 @@
+{
+  "closed": true,
+  "leaf": "261125-DEP-L4",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T22:32:17+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261125-DEP-L4",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+      "task": "261125-DEP"
+    },
+    "reviewer": {
+      "at": "2026-11-27T22:32:17+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261125-DEP-L4",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "5c6df5e5-05c3-57cc-ada5-04b91e80e36f",
+      "task": "261125-DEP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "1fe2de4bd08848320d2fadbf3264544039c861dc",
+    "verdictRef": "notes/reports/reviewer/5c6df5e5-05c3-57cc-ada5-04b91e80e36f/memory-round-2/261125-DEP-L4-memory-round-2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-1FWDVW",
+      "items": [
+        "sha256:0fe8f90d5b2318aaab669b049803f66b8d38b28dee81449c530a5169e2f7f08b"
+      ],
+      "reason": "Updated core.py card to replace deleted _scrub_removed_argument with SkipJsonSchema[Any] on read_ar_files refresh parameter.",
+      "sources": [
+        {
+          "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2AX0QH",
+      "items": [
+        "sha256:88c6a3bea23a78aaba3e0685a585e6cbb55f456a26493dcc768b3050df2518f9"
+      ],
+      "reason": "__all__ export list addition of StructuredOutputSpec in tool_results.py; carries no standalone invariant.",
+      "subject": "hunk:sha256:88c6a3bea23a78aaba3e0685a585e6cbb55f456a26493dcc768b3050df2518f9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2G2WA0",
+      "items": [
+        "sha256:70a55d447af4baa20aab1e99b0fd2b3a96c081b1c633067ac80d42a87ddc2c5f"
+      ],
+      "reason": "Import additions in server.py for structured_output_spec, RegisteredToolPolicy, and wrap_registered_tool; behavioral invariant is carried by DEP-R04@v2 Rule 1.",
+      "subject": "hunk:sha256:70a55d447af4baa20aab1e99b0fd2b3a96c081b1c633067ac80d42a87ddc2c5f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2QFGNK",
+      "items": [
+        "sha256:1e13ee826ee7d95796e54ead58e85ebb765f59125e476684194583c859816719"
+      ],
+      "reason": "Module docstring edit in tool_results.py removing stale internal SDK reference; carries no standalone invariant.",
+      "subject": "hunk:sha256:1e13ee826ee7d95796e54ead58e85ebb765f59125e476684194583c859816719"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4CYN6C",
+      "items": [
+        "sha256:ea44f2e420dfd73e062ea09c41a62a550633ba571a8545bafbe20b9da7541de6"
+      ],
+      "reason": "Stdlib import inspect addition on line 11 of tool_results.py for return-annotation inspection; carries no standalone invariant.",
+      "subject": "hunk:sha256:ea44f2e420dfd73e062ea09c41a62a550633ba571a8545bafbe20b9da7541de6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4EKZ3S",
+      "items": [
+        "sha256:5acfd88ae402f751dec065d580f0568ad5f3fbe6fc8612dfecec3f6483f25575"
+      ],
+      "reason": "Stdlib types (GenericAlias, UnionType) and typing (Annotated, Any, Union, get_args, get_origin, get_type_hints) imports on lines 16-17 of tool_results.py; carries no standalone invariant.",
+      "subject": "hunk:sha256:5acfd88ae402f751dec065d580f0568ad5f3fbe6fc8612dfecec3f6483f25575"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4Y24P1",
+      "items": [
+        "sha256:46d8537d31234a38fa7a831cebff3cb5d3a09d5b789c8b178e61e6cceded85a5"
+      ],
+      "reason": "Reconfirmed DPD-8PE0G9 (SECURITY.md) against 261125-DEP-L4 candidate tree 39b7bfbd after server.py public-API refactoring; documented security posture and tool surfaces remain accurate.",
+      "revision": 19,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5AMYJK",
+      "items": [
+        "sha256:dc340495125fd9af9ca5fc4cd6af20162e9ba5665253fe8421844a589866dbe6"
+      ],
+      "reason": "Updated read_only.py card to replace deleted apply_read_only_marks with registration-time read_only_annotations and refreshed all citations.",
+      "sources": [
+        {
+          "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+          "path": "mcp/src/agents_remember/mcp/read_only.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/read_only.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-61VBN7",
+      "items": [
+        "sha256:bfa3ab1e1421339652ecf701510f26f83f0eb1672e740d00cecba7159873c73f"
+      ],
+      "reason": "Updated registration overview for SkipJsonSchema[Any] refresh omission, public mcp.Client extension inspection, and registration-time read-only marks.",
+      "sources": [
+        {
+          "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+          "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+        },
+        {
+          "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-8F4C0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-M36NT5",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        },
+        {
+          "id": "INV-XXG2W0",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZYKN6P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6ADSTS",
+      "items": [
+        "sha256:e6763c4640c9e8257c7938aef9c1d9c8acddcdfc007b5a5f88523755ce57b0e3"
+      ],
+      "reason": "Re-examined all seven members: only INV-47NR7E's read_ar_files docstring shifted lines when _scrub_removed_argument was deleted; file-brief assembly, freshness, and start notices are unchanged.",
+      "revision": 2,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6JM9A2",
+      "items": [
+        "sha256:e656e231f37d6ff7697ff2c01910315a6b23a9a01eef9130e497d00f946b4bf8"
+      ],
+      "reason": "__all__ export list addition of structured_output_spec in tool_results.py; carries no standalone invariant.",
+      "subject": "hunk:sha256:e656e231f37d6ff7697ff2c01910315a6b23a9a01eef9130e497d00f946b4bf8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8XF4MT",
+      "items": [
+        "sha256:c29356b651fb5160ed20793acda774eabf47fc15f8aaf382931a29e5ddc74564"
+      ],
+      "reason": "Updated capsule_serving.py card for public mcp.Client(server) declared_extensions and public ResourceBinding import.",
+      "sources": [
+        {
+          "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+          "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:72d85e00289e88237fe2a4195f5fcca9711a2ca7cc64a58389a9e3c586e34725",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:6fe5aeb2c1f3d20916c5fbf8c0b24ad6a6055ba9875fa2154676e44538894706",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-CPPWJQ"
+        },
+        {
+          "after": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_sync_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_threaded"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-GA8TM7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8ZYMHX",
+      "items": [
+        "sha256:7a7b4c0cd52dfa3f40abae4a51b7aeffc24ae101931a369b35c2323b5e181960"
+      ],
+      "reason": "Moved RLZ-GA8TM7 from deleted server._threaded to tool_wrapper._run_sync_call and re-anchored RLZ-CPPWJQ; synchronous offload, ContextVar isolation, and FIFO write-lock draining remain unchanged.",
+      "revision": 2,
+      "subject": "INV-T3CE64"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A1YAFJ",
+      "items": [
+        "sha256:322240ee1acefa0aefda08881cd629510e5da6637913be589be4c66eaa3dc5e7"
+      ],
+      "reason": "Reviewed mcp/tests/overview.md: high-level test route summary remains accurate with no new test files added and existing file cards updated.",
+      "sources": [
+        {
+          "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+          "path": "mcp/tests/test_compact_content.py"
+        },
+        {
+          "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+          "path": "mcp/tests/test_reader_task_context_protocol.py"
+        },
+        {
+          "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+          "path": "mcp/tests/test_tool_entry_point_controls.py"
+        },
+        {
+          "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
+          "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-THMGJK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A42QZ5",
+      "items": [
+        "sha256:7eb4614621cb633fe6f4a8a32b912f29bc24c5f6d34f2dccce095b7ed2c95614"
+      ],
+      "reason": "Re-anchored RLZ-THMGJK (create_server) after public-API refactoring; LeafAgentArchive binding into worktree services remains unchanged.",
+      "revision": 2,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-APFZP5",
+      "items": [
+        "sha256:1ea22f95ae274fde9c8a4f899b45e1f7ff929e1e70d3f157b1bfad1aaebb5cd1",
+        "sha256:1ea43d522a4e1ff0439be463226c3bc1cd9e6bdab949f579f885ca09d853a75e",
+        "sha256:73976c0ae4c0afd3a98c719e44dae84d02775177666d70e61a16de572a1f99db",
+        "sha256:b4573c25db5ae8d7c83c5ac472739a2596d06a74be861cc3b0a0745b2ecd5adb",
+        "sha256:d1ff24c3c644c91840ca365f50a5d199c89ad78e50fde766b042a47004430079",
+        "sha256:f8498d32d9d10448c5568cc8298f53eebb5339abd2384b1ff8601d8ad5f97236"
+      ],
+      "reason": "Updated test_compact_content.py card to cover the new per-role wire-byte/unmutated-stored-tools test and repository-wide AST private-SDK guard.",
+      "sources": [
+        {
+          "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+          "path": "mcp/tests/test_compact_content.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_compact_content.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-8T6VV2"
+        },
+        {
+          "after": {
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:ea06350c08b93e7aea3a52295d75d1f582868ee94280513442d19fa5c80d5960",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:fcc2476506111f542cb09f32db986afd187b58ad5a179fc6c8464b462c8b7a45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-MTTNJ1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AWGSPQ",
+      "items": [
+        "sha256:430c0ebad86db54b85c2c589cf4cb394deb1ace6174cf9e18e40e51b9f8c1522"
+      ],
+      "reason": "Re-anchored RLZ-8T6VV2 (create_server) and RLZ-MTTNJ1 (_register_orientation_tools) after public-API refactoring; lazy imports, canonical light models, and post-discovery start remain unchanged.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-B8N11E",
+      "items": [
+        "sha256:183b13305b116bb6cb176fa1668c940767f3dfbeb2c91f6d56dbe60ccbf05f37"
+      ],
+      "reason": "Re-examined all eight members: stale-build publication refusal moved into wrap_registered_tool without changing any refusal, digest, or dry-run guarantee; routes already cover mcp/src/agents_remember/mcp.",
+      "revision": 2,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BKD44E",
+      "items": [
+        "sha256:2c50c522a9ba6154d4e78a823da54a392fb6b6c8ea4bcdb5e1203fde66dce869"
+      ],
+      "reason": "Delete-only removal of unused mcp.types ListToolsRequest/CallToolRequest imports in test_tool_entry_point_controls.py after replacing _lowlevel_server mutation with public call_tool patching.",
+      "subject": "hunk:sha256:2c50c522a9ba6154d4e78a823da54a392fb6b6c8ea4bcdb5e1203fde66dce869"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:bdbae024ff5ccdf5333b21b5cf71149be6c686c7080962aef40054bc972a2f15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/read_only.py"
+          },
+          "before": {
+            "blob": "c80ae4484e2b62f9b70636e178e22d927cf42b60",
+            "content": "sha256:133bd8e578533fd7ea14bc044b1218ef06d126ff141e4902af5db694ec156884",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/read_only.py"
+          },
+          "id": "RLZ-1G500X"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-562GH4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BR2SMD",
+      "items": [
+        "sha256:a357830dee04bca7119f63a8af94e94d6fd3accfdd0cf0eef480a8c4a897fa69"
+      ],
+      "reason": "Clarified condition and create_server realization rationale for registration-time readOnlyHint enforcement and added title while preserving the classification invariant. Evidence (DEP-R04@v2 INV-QCMCJX clarify): Clean freeze copy /var/tmp/agents-remember/ar-003952a772f3/freeze-r1 (tree 651dd79f9632829ea86d6ab2a3afbc33b9d227c9) and synced working tree 39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355: Reviewer Code Round 1 PASS (role-reports/reviewer/5c6df5e5-05c3-57cc-ada5-04b91e80e36f/code-round-1/261125-DEP-L4-code-round-1-verdict.md).",
+      "revision": 2,
+      "subject": "INV-QCMCJX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BSJ5GS",
+      "items": [
+        "sha256:e01c7e7e45575afd0e7cc42a1e834cea998b0cdf6b9ce62c0f86505a9f24c14d"
+      ],
+      "reason": "Import line update in capsule_serving.py moving ResourceBinding to public mcp.server.mcpserver; behavioral invariant is carried by DEP-R04@v2 Rule 1.",
+      "subject": "hunk:sha256:e01c7e7e45575afd0e7cc42a1e834cea998b0cdf6b9ce62c0f86505a9f24c14d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:c264e30e1f78b57b354d8bebd582f85fe39788a72700620eb407210f227616d1",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-3Y3JWS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C184XM",
+      "items": [
+        "sha256:80a2a6ff71b9f5b57f1ac95ccbf4de757c6dc18fe1d39ba8759e29ee24fdc63f"
+      ],
+      "reason": "Re-anchored RLZ-3Y3JWS to core.py line 81 after deleting _scrub_removed_argument shifted read_ar_files upward; brief assembly and advertised description remain unchanged.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:639984062a91945c72e53ce7f94d0744a60cc778e06614ec50817906d8b94a7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-GEQTSN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CAC40M",
+      "items": [
+        "sha256:f61ef34a94c918fa2450aae25c729e71ee5324f4c83954b2b5300c0ee9dd2b50"
+      ],
+      "reason": "Re-anchored RLZ-GEQTSN (core.py) after switching read_ar_files refresh omission to SkipJsonSchema[Any]; assignment_read remains absent.",
+      "revision": 4,
+      "subject": "INV-N9D91D"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_only_annotations"
+            },
+            "path": "mcp/src/agents_remember/mcp/read_only.py"
+          },
+          "before": {
+            "blob": "c80ae4484e2b62f9b70636e178e22d927cf42b60",
+            "content": "sha256:3bddc371ca37cda4186b7b2064f586652be2c4200bf1841d9c875380feb84bdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_read_only_marks"
+            },
+            "path": "mcp/src/agents_remember/mcp/read_only.py"
+          },
+          "id": "RLZ-667KAE"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-C1DP32"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:58c791ad879a65d8e4fa00b111df6a075383408164863abf94f9e3c883097f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_server_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:ef27bc656f09241f3d1062a7823627e4f3af70cb6729e6485b9124cfbd2794d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_server_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-XY0EYV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CDQ4QJ",
+      "items": [
+        "sha256:66c6c3315b0f0486b3ca7ac96680593781c0a13b3cc37b219e6e5cb5700e0409"
+      ],
+      "reason": "Re-anchored RLZ-667KAE from deleted apply_read_only_marks to read_only_annotations and refreshed create_server and _scope_server_tools rationales; every tool is still read-only-classified before role narrowing.",
+      "revision": 1,
+      "subject": "INV-4ZA9SH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CW5ABB",
+      "items": [
+        "sha256:c68b130c159c6f3edd7209400461462321d0f568324ab4d6e15a49805e6b3f13"
+      ],
+      "reason": "Delete-only removal of internal mcp.server.mcpserver.extensions import in capsule_serving.py after switching ResourceBinding to public mcp.server.mcpserver.",
+      "subject": "hunk:sha256:c68b130c159c6f3edd7209400461462321d0f568324ab4d6e15a49805e6b3f13"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D9FFT4",
+      "items": [
+        "sha256:0be57b5160ea3f03c7998adf02d8ad56e81f1de4b8b0554ca210af57932194e2"
+      ],
+      "reason": "Reconfirmed DPD-ZQB4YZ (docs/reference/skills.md) against 261125-DEP-L4 candidate tree 39b7bfbd after capsule_serving.py public-API refactoring; SEP-2640 skills extension serving and resource publication remain accurate.",
+      "revision": 11,
+      "subject": "DPD-ZQB4YZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-1ZD35A"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DBE61H",
+      "items": [
+        "sha256:25bf62795d700495760cd603c2b0f6583479bff8b2ab565ea6b6e4be0f92dc18"
+      ],
+      "reason": "Re-anchored RLZ-1ZD35A (create_server) after public-API refactoring; _bound_agent_id snapshot and live-turn provider-limit suppression behavior remain unchanged.",
+      "revision": 1,
+      "subject": "INV-ESZKHN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:639984062a91945c72e53ce7f94d0744a60cc778e06614ec50817906d8b94a7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-1HMR42"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DBJGBH",
+      "items": [
+        "sha256:ae3763f7ef4d14dba0fcad6e439c9066348affc7b42a450884cf121bf1b1e769"
+      ],
+      "reason": "Re-anchored RLZ-1HMR42 after core.py switched read_ar_files refresh omission to SkipJsonSchema[Any]; all 44 PUBLIC_TOOLS descriptions remain unchanged and <= 500 raw chars.",
+      "revision": 1,
+      "subject": "INV-06MGX9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DJAYW9",
+      "items": [
+        "sha256:ee3ed1eaff3cafb22c3c9aebdf7642bea9aea48f46f215b9c324f72d81f28dae"
+      ],
+      "reason": "Public mcp.types import update on line 18 of server.py adding ToolAnnotations; carries no standalone invariant.",
+      "subject": "hunk:sha256:ee3ed1eaff3cafb22c3c9aebdf7642bea9aea48f46f215b9c324f72d81f28dae"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E7ZGHT",
+      "items": [
+        "sha256:7b82272285a7effa89ef98aada5c7575b1fe31e40289b3f229db9a1996343d65"
+      ],
+      "reason": "Confirmed edited docs/architecture.md on frozen tree 2f247e92 (DEP-R04@v2 Rule 5 / DEP-L4-MR1-F1): lines 48-52 now accurately state that before role narrowing the server enables listing-time schema compaction so list_tools returns losslessly compacted copies without mutating stored tools.",
+      "revision": 26,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EJ92JE",
+      "items": [
+        "sha256:d038b367ced1de832909067771026074e53b061f979b8b7a69876c17d8c7cfe1"
+      ],
+      "reason": "Updated tool_results.py card for StructuredOutputSpec / structured_output_spec replacing private fn_metadata and internal SDK imports.",
+      "sources": [
+        {
+          "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+          "path": "mcp/src/agents_remember/mcp/tool_results.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tool_results.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EQC902",
+      "items": [
+        "sha256:b24c0e4733382a9865dca559d3d39fd98c23e38d8ca31b7f7c1861b469cc6865"
+      ],
+      "reason": "Updated mcp/overview.md to reflect registration-time readOnlyHint attachment in AgentsRememberMCP.add_tool and listing-time schema compaction on copied MCPTool instances in list_tools().",
+      "sources": [
+        {
+          "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+          "path": "mcp/src/agents_remember/mcp/read_only.py"
+        },
+        {
+          "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        },
+        {
+          "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+          "path": "mcp/src/agents_remember/mcp/tool_results.py"
+        },
+        {
+          "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+          "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FAVG1Z",
+      "items": [
+        "sha256:7964de4c62f07bebc0da31629aba96d2deeef482da3cba56d17f406099450592"
+      ],
+      "reason": "Stdlib unittest.mock import added in test_reader_task_context_protocol.py for public server.list_tools patching; carries no standalone invariant.",
+      "subject": "hunk:sha256:7964de4c62f07bebc0da31629aba96d2deeef482da3cba56d17f406099450592"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FF4JZR",
+      "items": [
+        "sha256:c5f1f290d82c2630d02f4ccc537bb5f52dd81a3750a47faf130d97c2bbc20e1a"
+      ],
+      "reason": "Delete-only removal of unused run_in_detached_request_thread from the .thread_workers import block in server.py after moving stale-build refusal offloading to tool_wrapper.py.",
+      "subject": "hunk:sha256:c5f1f290d82c2630d02f4ccc537bb5f52dd81a3750a47faf130d97c2bbc20e1a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FW36XB",
+      "items": [
+        "sha256:6a156653da8bbb6e0b04840912d576870dfd3b319c737ef87637bea2178654d9"
+      ],
+      "reason": "Authored onboarding card and verified sidecar references for new module tool_wrapper.py (wrap_registered_tool, RegisteredToolPolicy, _run_sync_call).",
+      "sources": [
+        {
+          "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+          "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tool_wrapper.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FXN5XH",
+      "items": [
+        "sha256:fdb0ad9c539ab7124f6afbdc3390a8eef1da9d10904d20a1b6b41cc22594b50c"
+      ],
+      "reason": "Module type tuples (_CONTENT_TYPES, _CONTENT_SEQUENCE_ORIGINS, _WRAPPED_PRIMITIVES) and StructuredOutputSpec frozen dataclass on lines 41-51 of tool_results.py; behavioral obligation is carried by structured_output_spec and build_call_tool_result.",
+      "subject": "hunk:sha256:fdb0ad9c539ab7124f6afbdc3390a8eef1da9d10904d20a1b6b41cc22594b50c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_sync_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:6fe5aeb2c1f3d20916c5fbf8c0b24ad6a6055ba9875fa2154676e44538894706",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-EQ7EC0"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-RM2JDK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FZ4B5F",
+      "items": [
+        "sha256:71a94981034366d99e3d7ba678dfa13d3286b6e64bbedbce8bda7c31b5c26d4b"
+      ],
+      "reason": "Moved RLZ-EQ7EC0 to tool_wrapper._run_sync_call where write-lock cancellation is now caught and logged via on_write_lock_cancelled, and re-anchored RLZ-RM2JDK; pre-handler cancellation logging semantics are unchanged.",
+      "revision": 1,
+      "subject": "INV-8NDEQB"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:4bb1fd792f0778f36be443d9fe0ab35bc533d4e13e634444021eab54211555ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:1b48bcce1269571dd4cd6057ba029f0b32612be9ad67c97eafd72fd221cf3a81",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-7DM4BE"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-8XSFMV"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GYQ8DK",
+      "items": [
+        "sha256:cb75f5d254fdb83555332b7635346bf3f8f156c32d4689e65ca3bf90cc16670b"
+      ],
+      "reason": "Removed the obsolete exclusion deferring private SDK attribute retirements to 261125-DEP-L4 and refreshed create_server and AgentsRememberMCP rationales while keeping the call_tool guarantee intact. Evidence (DEP-R04@v2 INV-H9Z24G clarify): Clean freeze copy /var/tmp/agents-remember/ar-003952a772f3/freeze-r1 (tree 651dd79f9632829ea86d6ab2a3afbc33b9d227c9) and synced working tree 39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355: Reviewer Code Round 1 PASS (role-reports/reviewer/5c6df5e5-05c3-57cc-ada5-04b91e80e36f/code-round-1/261125-DEP-L4-code-round-1-verdict.md).",
+      "revision": 2,
+      "subject": "INV-H9Z24G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H4YND1",
+      "items": [
+        "sha256:eb0fc89816b215eb1df1658407bf3092b7b41d3bbb11bc513cb1bdc05430de78"
+      ],
+      "reason": "Updated server.py card for add_tool, list_tools, registered_tool_names, direct super().call_tool dispatch, and retirement of _tool_manager and _threaded.",
+      "sources": [
+        {
+          "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-VWKSMD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H746MT",
+      "items": [
+        "sha256:023504fec4f3d9259011f7828d8de91fdffe9bbb2d1c87ef941b2414018cf54f"
+      ],
+      "reason": "Re-anchored RLZ-VWKSMD and updated rationale for stale-build refusal now executing inside wrap_registered_tool before the handler runs; publication refusal semantics remain unchanged.",
+      "revision": 1,
+      "subject": "INV-9SKGX1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HSHFM3",
+      "items": [
+        "sha256:cda7e94aac5bda07a2d7704fb22227f7ae52609c15120b96d50026c28dd9831a"
+      ],
+      "reason": "Module docstring lines 5-6 in tool_results.py stating structured_content follows each tool's declared return annotation without touching private SDK metadata; carries no standalone invariant.",
+      "subject": "hunk:sha256:cda7e94aac5bda07a2d7704fb22227f7ae52609c15120b96d50026c28dd9831a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J9XTP3",
+      "items": [
+        "sha256:e10e20070dba63aed05655bed31707f2ae86a0a125b8a799c9bda418d3cfbec5"
+      ],
+      "reason": "Docstring wording update on line 55 of compact_json_text in tool_results.py; carries no standalone invariant.",
+      "subject": "hunk:sha256:e10e20070dba63aed05655bed31707f2ae86a0a125b8a799c9bda418d3cfbec5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4CJ7H0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 2
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 2
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 2
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 2
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-HBMPXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 3
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 2
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-JH8BEK",
+      "items": [
+        "sha256:b6ec190da2cecd1cb3b1ed8e06b6ce3c1b5a1eb7369e526747e903c4f5e410e6"
+      ],
+      "reason": "Re-examined all twelve members: only INV-F1TY2E's create_server anchor shifted; in-group seat archival, store settlement, and launch fencing guarantees are unchanged.",
+      "revision": 3,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JR95NC",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Re-examined all eight members: only INV-N9D91D's core.py anchor shifted; host-offering resolution, permission modes, and bound task-server launch grants are unchanged.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JYWHQ9",
+      "items": [
+        "sha256:b1d211f6fb2a01fb9f2403598b9cb703f5fb785069bcde913f671ec744a07e11"
+      ],
+      "reason": "Updated test_reader_task_context_protocol.py card for public self.server.list_tools patching replacing _lowlevel_server mutation.",
+      "sources": [
+        {
+          "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+          "path": "mcp/tests/test_reader_task_context_protocol.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_reader_task_context_protocol.py"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K8QKS7",
+      "items": [
+        "sha256:379cbdab38897e707397dcf92e17fcf1e2d744f9927cc731dfcd758b70936eb0"
+      ],
+      "reason": "Reconfirmed DPD-A3XZ3Q (docs/FAQ.md) against 261125-DEP-L4 candidate tree 39b7bfbd after core.py public-API refactoring; read_ar_files brief behavior and memory workflow guidance remain accurate.",
+      "revision": 14,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+            "content": "sha256:4452e0e5d44a5e23d0e509d6a5dfcec70f3497ad92f4123411b68bd8c3256828",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "content": "sha256:7694dfa65212abbbd4443a0da19de1b531e2df2e8d24a631c58d31dda06063c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-AGBGWK"
+        },
+        {
+          "after": {
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+            "content": "sha256:4452e0e5d44a5e23d0e509d6a5dfcec70f3497ad92f4123411b68bd8c3256828",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "content": "sha256:7694dfa65212abbbd4443a0da19de1b531e2df2e8d24a631c58d31dda06063c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-BCFPZV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N05X9H",
+      "items": [
+        "sha256:b2006b5264f10f0b73f168ec65bc64a614491731aefcdf8c5fc7e93e62ad6d46"
+      ],
+      "reason": "Re-anchored PRF-AGBGWK and RLZ-BCFPZV after the control test switched from mutating _lowlevel_server to patching public self.world.server.call_tool; sweep timeout phases and assertions remain unchanged.",
+      "revision": 2,
+      "subject": "INV-W4XGR4"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-N7EMG8",
+      "items": [
+        "sha256:ac003c50340526c27997cbf7b1a9ce7fe1ec69a3acf73a7f889a4764f8cb9e54"
+      ],
+      "reason": "Reconfirmed DPD-Q4APMS (mcp/README.md) against 261125-DEP-L4 candidate tree 39b7bfbd after server.py public-API refactoring; package commands, tool groups, and explainer roster documentation remain accurate.",
+      "revision": 32,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NY2GP8",
+      "items": [
+        "sha256:78674eb3c1bfcc4470214b545098c05f6ee1a8ea95b69d17501e1c4cfe4a4724"
+      ],
+      "reason": "Updated test_tool_entry_point_controls.py card for public self.world.server.call_tool patching replacing _lowlevel_server mutation.",
+      "sources": [
+        {
+          "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+          "path": "mcp/tests/test_tool_entry_point_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_entry_point_controls.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PWPQ44",
+      "items": [
+        "sha256:e2d8ec934c5bc92ade60923c07f10928f0d3ee6cb0d94e41fff816177be87930"
+      ],
+      "reason": "Stdlib collections.abc (Callable, Sequence) and dataclasses.dataclass imports on lines 13-14 of tool_results.py; carries no standalone invariant.",
+      "subject": "hunk:sha256:e2d8ec934c5bc92ade60923c07f10928f0d3ee6cb0d94e41fff816177be87930"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4ZA9SH",
+          "revision": 1
+        },
+        {
+          "id": "INV-B06F1V",
+          "revision": 1
+        },
+        {
+          "id": "INV-DWNKBC",
+          "revision": 1
+        },
+        {
+          "id": "INV-KYKYPR",
+          "revision": 2
+        },
+        {
+          "id": "INV-SJKVE0",
+          "revision": 1
+        },
+        {
+          "id": "INV-TPVGJK",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RJSVDC",
+      "items": [
+        "sha256:570a2f9752b2e8351adb6b5d0b513c811d66a9b3e09f81edda2da44884e066c9"
+      ],
+      "reason": "Re-examined all six members: role-bound allowlist ordering, read-only classification before pruning, explainer guard, and unknown-tool rejection are preserved unchanged under public MCPServer APIs; routes already cover mcp/src/agents_remember/mcp.",
+      "revision": 1,
+      "subject": "FAM-0BVSZB"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-HD5W8S"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RTKJDV",
+      "items": [
+        "sha256:149aedd25967c5e6ae00ce2a15f3f0f6e0ac1cbc04ec4417d3c360cf20311b58"
+      ],
+      "reason": "Clarified Condition 5 from post-registration to registration-time central read-only annotation attachment and added title while keeping the bound explainer obligation unchanged. Evidence (DEP-R04@v2 INV-48203N clarify): Clean freeze copy /var/tmp/agents-remember/ar-003952a772f3/freeze-r1 (tree 651dd79f9632829ea86d6ab2a3afbc33b9d227c9) and synced working tree 39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355: Reviewer Code Round 1 PASS (role-reports/reviewer/5c6df5e5-05c3-57cc-ada5-04b91e80e36f/code-round-1/261125-DEP-L4-code-round-1-verdict.md).",
+      "revision": 3,
+      "subject": "INV-48203N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S5N0HT",
+      "items": [
+        "sha256:7b5c54d5774c86b251caddbce814a822a87b14bd3cdbe2ae5cca69887aad0f0a"
+      ],
+      "reason": "Typing import update on line 14 of server.py adding override for @override annotations on AgentsRememberMCP.add_tool and remove_tool; carries no standalone invariant.",
+      "subject": "hunk:sha256:7b5c54d5774c86b251caddbce814a822a87b14bd3cdbe2ae5cca69887aad0f0a"
+    },
+    {
+      "because": [
+        {
+          "id": "DEP-R04",
+          "packet": "requirements/DEP-R04-v2-the-tool-server-reaches-the-sdk-only-through-its-public-api.md",
+          "task": {
+            "path": "261125_dependencies-brought-current",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+            "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CompactToolResultWireTests.test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "before": "absent",
+          "id": "PRF-01EFVE"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:4f790633416231e2f62c6551dd72970233e820f3943f58a826a8d2e4bea93787",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-1QHQXM"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:6c5b5c21c0c1c5feb48e9cb6dded1f1585e870a13d934cb6971fe09e7d6552a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.list_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": "absent",
+          "id": "RLZ-F2G69T"
+        },
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:a07f60fa73593b74f0377985b4f98ada275e196b490b07ad1b8f2af12ac9375c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_server_tool_schemas"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:daa554bb4d6a6f9e2e7fd98aeff0fb8bf5fbbc5df347c16f884e3c77e7cd63c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_server_tool_schemas"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-MPG6Z7"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-SAWBGB",
+      "items": [
+        "sha256:5dafef74399b0a7a89c2014f0482d63171e7ee31033a890c6a01ba8f367fa64b"
+      ],
+      "reason": "Replaced in-place parameter mutation mechanism with listing-time compaction on copied MCPTool instances while keeping every role's wire tool-list bytes identical and stored SDK tools unmutated. Evidence (DEP-R04@v2 INV-NZ27V7 update): Clean freeze copy /var/tmp/agents-remember/ar-003952a772f3/freeze-r1 (tree 651dd79f9632829ea86d6ab2a3afbc33b9d227c9) and synced working tree 39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355: Reviewer Code Round 1 PASS (role-reports/reviewer/5c6df5e5-05c3-57cc-ada5-04b91e80e36f/code-round-1/261125-DEP-L4-code-round-1-verdict.md).",
+      "revision": 3,
+      "subject": "INV-NZ27V7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SNWCZ1",
+      "items": [
+        "sha256:6a89e646456078640498f67e97d1c3cbe5119eab81484cce17a725856228bbe7"
+      ],
+      "reason": "Public mcp.server.mcpserver import update in server.py adding Icon for MCPServer.add_tool signature parity; carries no standalone invariant.",
+      "subject": "hunk:sha256:6a89e646456078640498f67e97d1c3cbe5119eab81484cce17a725856228bbe7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-V08DBJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TKMFT8",
+      "items": [
+        "sha256:15d2ad655e5177a3ec3b6d682fa661a3db0562d28c0439e1d28066cc1142d027"
+      ],
+      "reason": "Re-anchored RLZ-V08DBJ (AgentsRememberMCP._execute_tool_call) after public-API refactoring; retained-tool explainer seat guard check remains unchanged.",
+      "revision": 1,
+      "subject": "INV-TPVGJK"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0ZEX0D",
+          "revision": 1
+        },
+        {
+          "id": "INV-2S0FEY",
+          "revision": 1
+        },
+        {
+          "id": "INV-W4XGR4",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-TN2NV3",
+      "items": [
+        "sha256:a0f960c4dbaffbcf66a598b848e93a39178a0f4abceb2347d2f26842687c2629"
+      ],
+      "reason": "Re-examined all three members: INV-2S0FEY and INV-W4XGR4 control tests replaced _lowlevel_server mutation with public list_tools/call_tool patches while preserving every protocol timeout limit and assertion.",
+      "revision": 3,
+      "subject": "FAM-TG3WK0"
+    },
+    {
+      "considered": [
+        "FAM-0BVSZB",
+        "FAM-7EBNVZ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-WQQ48T",
+      "items": [],
+      "reason": "The repository-wide public-API-only mcp 2.3.0 SDK boundary is an SDK-integration architectural constraint rather than part of role-allowlist narrowing (FAM-0BVSZB) or stale-build publication refusal (FAM-7EBNVZ).",
+      "revision": 1,
+      "subject": "membership:INV-RX14F5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-FSMKXF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X14GGP",
+      "items": [
+        "sha256:2c9ff1b8f2364f50938faff281e84241918179615429b8e7b4aa7be41cd43313"
+      ],
+      "reason": "Re-anchored RLZ-FSMKXF (AgentsRememberMCP._execute_tool_call) after public-API refactoring; per-call definition_scope ownership remains unchanged.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+            "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "before": {
+            "blob": "31c3de5486d982b28b803ffc5b2087090ce74e70",
+            "content": "sha256:93559b0d7ea748b34b1abf482fe41e3513d129ac7607d5becabf69e945a79931",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "id": "PRF-E8CQJR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XPKPAZ",
+      "items": [
+        "sha256:7f304bbdc2315bc8aa1e14306e14bf7dd716f12073bf0eaa34b15ccf9c3decc4"
+      ],
+      "reason": "Re-anchored PRF-E8CQJR after the late-response test switched from mutating _lowlevel_server to patching public self.server.list_tools; timeout behavior and assertions remain unchanged.",
+      "revision": 1,
+      "subject": "INV-2S0FEY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y41SCZ",
+      "items": [
+        "sha256:ad2edeac2f1fda2b0c29c75ded270c9abd4b977aa19ef01a75014d9925cc5fdd"
+      ],
+      "reason": "Import addition of public mcp.Client in capsule_serving.py supporting declared_extensions; behavioral invariant is carried by DEP-R04@v2 Rule 1.",
+      "subject": "hunk:sha256:ad2edeac2f1fda2b0c29c75ded270c9abd4b977aa19ef01a75014d9925cc5fdd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_call_tool_result"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_results.py"
+          },
+          "before": {
+            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
+            "content": "sha256:2e47b87590a54ff396d6d78fae2664b5e5b741c8745c400930c913115b0c43c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_call_tool_result"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_results.py"
+          },
+          "id": "RLZ-QH5491"
+        },
+        {
+          "after": {
+            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_early_refusal_result"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_results.py"
+          },
+          "before": {
+            "blob": "7b218dff6ff009ec58978be1f74db5bc72500c8f",
+            "content": "sha256:85f52a3913ed9b770b7b84af01b2287f17cf101388f368f8fc9264543f22bf1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_early_refusal_result"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_results.py"
+          },
+          "id": "RLZ-Y00CX8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y7Y5W4",
+      "items": [
+        "sha256:3259a453841250b363ecf072515b4914fa005fb372d49910b477a6c10166c476"
+      ],
+      "reason": "Re-anchored RLZ-QH5491 and RLZ-Y00CX8 after tool_results.py switched from private fn_metadata to StructuredOutputSpec; compact CallToolResult and indented early-refusal wire shapes remain unchanged.",
+      "revision": 1,
+      "subject": "INV-P0643N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z0ABKJ",
+      "items": [
+        "sha256:f14e984a612e69503d786d494ae0ebc21bfc0c012057fb555958314543710717"
+      ],
+      "reason": "Public pydantic (BaseModel, PydanticUserError, TypeAdapter) and typing_extensions.is_typeddict imports on lines 31-32 of tool_results.py; carries no standalone invariant.",
+      "subject": "hunk:sha256:f14e984a612e69503d786d494ae0ebc21bfc0c012057fb555958314543710717"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z17BPS",
+      "items": [
+        "sha256:3e92c0213a2c5ef43504be826520748253aa64d67edcb890c0c3e2edc5bf2dde",
+        "sha256:b5a1131be31ab592d24786a764785812627265e384bd373f35ee54a4841bcf56",
+        "sha256:f0f5328ed3a78b360315858dce4fe9d1246149f422a6eb9a9282a3efa1222776",
+        "sha256:fe7619f11db5c0c916992379a2b4d84d5a760c9a0ae4ff14e2097eecc9cdf366"
+      ],
+      "reason": "Updated test_tool_entry_point_sweep_controls.py card for public self.world.server.call_tool patching replacing _lowlevel_server mutation.",
+      "sources": [
+        {
+          "blob": "ace057f8b3fada9e55d41f801a5d5db7d0bfae6d",
+          "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_entry_point_sweep_controls.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-2PVK9H",
+          "revision": 1
+        },
+        {
+          "id": "INV-41J2Q6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 2
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 2
+        },
+        {
+          "id": "INV-ESZKHN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-SDEXYK",
+          "revision": 1
+        },
+        {
+          "id": "INV-VEGPXX",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-Z7RZ2N",
+      "items": [
+        "sha256:ed0d776840c4b8f2629d92eb69ca318cc1f3354b465b09e8f8562ce94040d0e3"
+      ],
+      "reason": "Re-examined all twelve members: only INV-ESZKHN's create_server anchor shifted; provider-limit suppression, sidecar projection, and hold-drain semantics are unchanged.",
+      "revision": 2,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZAGZYB",
+      "items": [
+        "sha256:3cc3acf862d80919ad3f5d5b3e29badfc3fac7a2e76a677b2ce7e41e33b39b93"
+      ],
+      "reason": "Import swap in server.py from deleted apply_read_only_marks to read_only_annotations; behavioral invariant is carried by INV-4ZA9SH, INV-QCMCJX, and DEP-R04@v2 Rule 1.",
+      "subject": "hunk:sha256:3cc3acf862d80919ad3f5d5b3e29badfc3fac7a2e76a677b2ce7e41e33b39b93"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZBDCTQ",
+      "items": [
+        "sha256:82460fa9cf44c848ec7ad56ba5e1298f3cfb27993991466f4c0d1dea9c202819"
+      ],
+      "reason": "Delete-only removal of unused import in test_reader_task_context_protocol.py.",
+      "subject": "hunk:sha256:82460fa9cf44c848ec7ad56ba5e1298f3cfb27993991466f4c0d1dea9c202819"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZFB7Y8",
+      "items": [
+        "sha256:f02a28c98d4afd70c7734d734d5b6880e8f80f9fb25f62fea5c7235ff5f79faf"
+      ],
+      "reason": "Public from mcp.server.mcpserver import Audio, Image on line 20 of tool_results.py replacing internal mcp.server.mcpserver.tools.base and utilities.types imports; behavioral obligation is carried by INV-RX14F5.",
+      "subject": "hunk:sha256:f02a28c98d4afd70c7734d734d5b6880e8f80f9fb25f62fea5c7235ff5f79faf"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:72d85e00289e88237fe2a4195f5fcca9711a2ca7cc64a58389a9e3c586e34725",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:6fe5aeb2c1f3d20916c5fbf8c0b24ad6a6055ba9875fa2154676e44538894706",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-PVJHT5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZHXHKV",
+      "items": [
+        "sha256:0b85596e654c35d86c581e15726d4f31efe3632ea629c96787b07ba13cfd800a"
+      ],
+      "reason": "Re-anchored RLZ-PVJHT5 after _dispatch_tool delegated directly to super().call_tool; calling an excluded tool still fails as an unknown tool without invoking its handler.",
+      "revision": 1,
+      "subject": "INV-SJKVE0"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:95b80278722bcfe3f5d3a31f66f2986ffa317d0dbad9c93a4a2ec087e5cbfda2",
+      "record": "DEC-R5BWVP",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:7d4d61cd69c66ab5f43745053bc0be3db955296303082dff34f26d45c22ac189",
+      "record": "DPD-86HJGF",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-27T22:15:31+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:43a56f2b038a7452a0ffe4ea9a0ef3225513cc7db91fafee747b99c105f4cb03",
+      "record": "DPD-8PE0G9",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:8688051c23270c97edd5340125a10665c0b360e8b7868db503dd401afe6fcae1",
+      "record": "DPD-A3XZ3Q",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f1fa84ded8efcc89db883aed14cb347a0bc185b8546658185dbfb0900ea48e19",
+      "record": "DPD-Q4APMS",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b4dadc194a62859fa70dd5ea0374f05d720bcf84f9896f936c9276a4e4fa1143",
+      "record": "DPD-ZQB4YZ",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:374e9400ea119fa4948d771f60b4ddd3a29641f90eb60daede721d53f44935bb",
+      "record": "INV-48203N",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:388c7b3c3a67886ed4d8eb2ac90a8a6177cf60605a7da1209441eb65cbeb1c49",
+      "record": "INV-H9Z24G",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:7411eb06632197efaf0dd56847a9cf77525174bb62acc8bd9349c05c61f17e3e",
+      "record": "INV-NZ27V7",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:a5373b93241334b97d800e2e50634d8820aa83be35913627295164dd576c17e7",
+      "record": "INV-QCMCJX",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:c30277e5237669580d08fdd852685c618049b011ee4528118ba018a5e758087d",
+      "record": "INV-RX14F5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:28:23+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L4",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

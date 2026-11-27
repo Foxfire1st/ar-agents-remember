@@ -39,12 +39,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:4e6e76b11461a704523e32ce70110ee485c903c0b95053b31dfadb478178db19",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
             "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 160
+              "kind": "symbol",
+              "name": "_execute_tool_call"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

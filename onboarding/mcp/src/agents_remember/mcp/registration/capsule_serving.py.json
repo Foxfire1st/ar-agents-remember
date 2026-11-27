@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+        "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
         "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
         "locator": {
           "kind": "symbol",
@@ -19,6 +19,24 @@
       },
       "rationale": "Builds the shipped skill catalog's resource bindings and extension before MCPServer instantiation.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+        "content": "sha256:a18fba6a7da40a28c72c075f5aa8cbe340234def8a3db6cc3d1df42cd5d27da8",
+        "locator": {
+          "kind": "symbol",
+          "name": "declared_extensions"
+        }
+      },
+      "id": "RLZ-FREYFC",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Reads advertised extension capabilities through public mcp.Client(server) (client.server_capabilities.extensions) and imports ResourceBinding from mcp.server.mcpserver instead of calling _lowlevel_server.create_initialization_options().",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -125,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
             "locator": {
               "kind": "symbol",
@@ -170,8 +188,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
-            "content": "sha256:fffdc186a095d34dd245b7cebf8401eb3c2ae4dcd3919af2e375761ed6bcac42",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+            "content": "sha256:1037a186393fd10f6245154fdfad2ea8bb12a43a152fcaa1632d607e3daf8466",
             "locator": {
               "kind": "file"
             }
@@ -185,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
             "locator": {
               "kind": "symbol",
@@ -197,12 +215,12 @@
       ]
     },
     "7": {
-      "note": "`declared_extensions` reads `capabilities.extensions` from the server's initialization options.",
+      "note": "`declared_extensions` reads `client.server_capabilities.extensions` through a public `mcp.Client(server)` session.",
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
-            "content": "sha256:67d7e68cf3fbeff346c5fbb432273fbcf4e50a67c4955edff9701b1d069f55ef",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+            "content": "sha256:a18fba6a7da40a28c72c075f5aa8cbe340234def8a3db6cc3d1df42cd5d27da8",
             "locator": {
               "kind": "symbol",
               "name": "declared_extensions"
@@ -217,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:89f190be8ce3cc808d1fa2a9c7ab867ef79facd8fad0533b104890f5c2a9bfc6",
             "locator": {
               "kind": "symbol",
@@ -228,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:cf56060852f0ad8e340b08dc8305a8cc6a39c7138f48e42f8cce37daa403680c",
             "locator": {
               "kind": "symbol",

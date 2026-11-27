@@ -12,8 +12,7 @@
     "Synchronous handlers offload via thread_workers with write-lock FIFO ordering, deferred start_after_discovery, request/definition/heap-trim scopes, and UnexpectedToolError mapped to ToolError carrying the cause message."
   ],
   "exclusions": [
-    "Handshake-only initialize middleware preserve_handshake_extensions, which never intercepts tool calls.",
-    "Private SDK attribute retirements deferred to 261125-DEP-L4."
+    "Handshake-only initialize middleware preserve_handshake_extensions, which never intercepts tool calls."
   ],
   "id": "INV-H9Z24G",
   "origin": {
@@ -27,20 +26,20 @@
     "leaf": "261125-DEP-L3",
     "task": "261125-DEP"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "AgentsRememberMCP subclasses MCPServer, overrides the public 3-argument call_tool(name, arguments, context) method without provisional call middleware, preserves thread_workers offload, write-lock FIFO ordering, deferred post-discovery start, request/definition/heap-trim scopes, and maps UnexpectedToolError back to exact 1.x ToolError wire text.",
   "supersedes": [],
   "title": "MCPServer public call_tool preserves offload, lock, scopes, and ToolError text",
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-27T21:28:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
+    "leaf": "261125-DEP-L4",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
     "task": "261125-DEP"
   }
 }

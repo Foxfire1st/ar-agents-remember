@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
-        "content": "sha256:7694dfa65212abbbd4443a0da19de1b531e2df2e8d24a631c58d31dda06063c9",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+        "content": "sha256:4452e0e5d44a5e23d0e509d6a5dfcec70f3497ad92f4123411b68bd8c3256828",
         "locator": {
           "kind": "symbol",
           "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:16b4e30fb815c64fc6f431f12cb12d603a86c40724f5cf812cdb0599ab1ec533",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:9747b1bba2d04e21f3b019e4f01b2830c6ac27e580152418d7e9cc3361ddf9c3",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:f2d4352a385e3cdf909b5ed9ac5af2bc19aadb9a6d50695f9dfe5d33eacf7b4b",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
         "locator": {
           "kind": "symbol",
@@ -192,7 +192,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:16b4e30fb815c64fc6f431f12cb12d603a86c40724f5cf812cdb0599ab1ec533",
         "locator": {
           "kind": "symbol",
@@ -210,7 +210,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
         "locator": {
           "kind": "symbol",
@@ -228,8 +228,8 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
-        "content": "sha256:7694dfa65212abbbd4443a0da19de1b531e2df2e8d24a631c58d31dda06063c9",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+        "content": "sha256:4452e0e5d44a5e23d0e509d6a5dfcec70f3497ad92f4123411b68bd8c3256828",
         "locator": {
           "kind": "symbol",
           "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
@@ -246,7 +246,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
@@ -264,7 +264,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
         "locator": {
           "end": 28,
@@ -283,7 +283,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:cdb6b316e08fde79922d3052458bc3358fbcbbe7a82093419a564c41950cceea",
         "locator": {
           "end": 32,
@@ -302,7 +302,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
         "locator": {
           "kind": "symbol",
@@ -320,7 +320,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
         "locator": {
           "kind": "symbol",
@@ -338,7 +338,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
         "locator": {
           "kind": "symbol",
@@ -356,7 +356,25 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+        "content": "sha256:4452e0e5d44a5e23d0e509d6a5dfcec70f3497ad92f4123411b68bd8c3256828",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        }
+      },
+      "id": "RLZ-PTGEQE",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Injects the silent tools/call coroutine by patching public self.world.server.call_tool instead of mutating self.world.server._lowlevel_server request handlers.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
@@ -374,7 +392,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
         "locator": {
           "kind": "symbol",
@@ -392,7 +410,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
         "locator": {
           "kind": "symbol",
@@ -410,7 +428,7 @@
     },
     {
       "anchor": {
-        "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+        "blob": "300fd8ad411296fe2683abce605a64982a208b03",
         "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
         "locator": {
           "kind": "symbol",
@@ -433,7 +451,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
             "locator": {
               "kind": "symbol",
@@ -449,7 +467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
             "locator": {
               "kind": "symbol",
@@ -465,7 +483,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:f2d4352a385e3cdf909b5ed9ac5af2bc19aadb9a6d50695f9dfe5d33eacf7b4b",
             "locator": {
               "kind": "symbol",
@@ -481,12 +499,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:33130145055549ab94d277f921efd2ccfe6a699fa7b23e2bac7f40b086db8dcb",
             "locator": {
-              "end": 334,
+              "end": 324,
               "kind": "line_range",
-              "start": 320
+              "start": 310
             }
           },
           "kind": "test"
@@ -494,16 +512,15 @@
       ]
     },
     "6": {
-      "note": "The retained handler deadline control names server_info and checks cleanup plus the next call.",
+      "note": "The retained handler deadline control patches public `self.world.server.call_tool`, names `server_info`, and checks cleanup plus the next call.",
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
-            "content": "sha256:c51461ed8cc73f9746d43c847191346558706597da63c45a2913b5eb4d7bab52",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
+            "content": "sha256:4452e0e5d44a5e23d0e509d6a5dfcec70f3497ad92f4123411b68bd8c3256828",
             "locator": {
-              "end": 89,
-              "kind": "line_range",
-              "start": 68
+              "kind": "symbol",
+              "name": "test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
             }
           },
           "kind": "test"
@@ -515,7 +532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:16b4e30fb815c64fc6f431f12cb12d603a86c40724f5cf812cdb0599ab1ec533",
             "locator": {
               "kind": "symbol",
@@ -531,7 +548,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98acbfb406644cd92b1e3b1fb3ac5b8cf540666e",
+            "blob": "300fd8ad411296fe2683abce605a64982a208b03",
             "content": "sha256:9747b1bba2d04e21f3b019e4f01b2830c6ac27e580152418d7e9cc3361ddf9c3",
             "locator": {
               "kind": "symbol",

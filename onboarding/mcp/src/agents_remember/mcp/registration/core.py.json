@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-        "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
+        "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+        "content": "sha256:639984062a91945c72e53ce7f94d0744a60cc778e06614ec50817906d8b94a7c",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-        "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
+        "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+        "content": "sha256:c264e30e1f78b57b354d8bebd582f85fe39788a72700620eb407210f227616d1",
         "locator": {
-          "end": 111,
+          "end": 81,
           "kind": "line_range",
-          "start": 103
+          "start": 81
         }
       },
       "id": "RLZ-3Y3JWS",
@@ -40,8 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-        "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
+        "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+        "content": "sha256:ea06350c08b93e7aea3a52295d75d1f582868ee94280513442d19fa5c80d5960",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_orientation_tools"
+        }
+      },
+      "id": "RLZ-FK555Z",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Annotates read_ar_files's removed refresh parameter with Pydantic's public SkipJsonSchema[Any] so refresh stays omitted from inputSchema while remaining receivable for boundary refusal, replacing _scrub_removed_argument.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+        "content": "sha256:639984062a91945c72e53ce7f94d0744a60cc778e06614ec50817906d8b94a7c",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-        "content": "sha256:fcc2476506111f542cb09f32db986afd187b58ad5a179fc6c8464b462c8b7a45",
+        "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+        "content": "sha256:ea06350c08b93e7aea3a52295d75d1f582868ee94280513442d19fa5c80d5960",
         "locator": {
           "kind": "symbol",
           "name": "_register_orientation_tools"
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:6aa9581369be83431efb8a064530ac17f4d3d865b2ef278c449c0691e5bc93e6",
             "locator": {
               "kind": "symbol",
@@ -96,10 +114,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-            "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:1b70873998b0c5fd487687ea2829697f7a9bc4f1f8398664742da378ecacbdfe",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "register_core_tools"
             }
           },
           "kind": "code"
@@ -155,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:48834fafcae3d9b9a0c8bd7ba2366e8a3f8e4621a5578d96ed223cefe32dc7ee",
             "locator": {
               "kind": "symbol",
@@ -171,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:aa46cbd9a49964e6afdbfa9a57e7220bab22291fcd53fdede7a6759bbf1358cc",
             "locator": {
               "kind": "symbol",
@@ -183,12 +202,12 @@
       ]
     },
     "6": {
-      "note": "`_register_orientation_tools` declares `context_packet` and `read_ar_files` (naming `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)`) and removes the obsolete `refresh` argument from the advertised schema.",
+      "note": "`_register_orientation_tools` declares `context_packet` and `read_ar_files` (naming `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)`) and omits the obsolete `refresh` argument from the advertised schema via `SkipJsonSchema[Any]`.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-            "content": "sha256:fcc2476506111f542cb09f32db986afd187b58ad5a179fc6c8464b462c8b7a45",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:ea06350c08b93e7aea3a52295d75d1f582868ee94280513442d19fa5c80d5960",
             "locator": {
               "kind": "symbol",
               "name": "_register_orientation_tools"
@@ -203,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:6aa9581369be83431efb8a064530ac17f4d3d865b2ef278c449c0691e5bc93e6",
             "locator": {
               "kind": "symbol",
@@ -219,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:8aeef5ae7a9c584e2568ed4a23121e7a0d91e474cd520c3ad45c5849eddf7aeb",
             "locator": {
               "kind": "symbol",
@@ -235,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:386cc863606c3916adacf065fefdcb20c4fc33191e5ad7494bd07a0894b8a8a6",
             "locator": {
               "kind": "symbol",

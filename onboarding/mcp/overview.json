@@ -787,7 +787,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+            "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 27,
@@ -2728,7 +2728,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
             "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
             "locator": {
               "kind": "symbol",
@@ -2740,10 +2740,10 @@
         },
         {
           "anchor": {
-            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
-            "content": "sha256:c4c4ef34c67df758caa388347f6f3f02b43bd433d4eee4298b2eeda6e055e53e",
+            "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
+            "content": "sha256:1de9f3b69015756e93e3918f7821d2fe3c4bc6d363f5238ed0148dd2c86b9096",
             "locator": {
-              "end": 20,
+              "end": 19,
               "kind": "line_range",
               "start": 1
             },
@@ -4259,7 +4259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+            "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -5008,14 +5008,13 @@
         },
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:98c771b14e47a3323b11edebb219e8298f580825e7eea15fc77aa5be1b48cbe4",
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
             "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 206
+              "kind": "symbol",
+              "name": "_run_sync_call"
             },
-            "path": "mcp/src/agents_remember/mcp/server.py"
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -5229,18 +5228,17 @@
       ]
     },
     "399": {
-      "note": "The stale-writer refusal runs before dispatch.",
+      "note": "The stale-writer refusal runs before calling the registered tool handler.",
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:36e1ca05836173e34a5378cbee716642c5a584ba0b2da6f879203f0273f02873",
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
             "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 169
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
             },
-            "path": "mcp/src/agents_remember/mcp/server.py"
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -5394,7 +5392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
             "locator": {
               "kind": "symbol",
@@ -5406,12 +5404,11 @@
         },
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:337c7723da098aa5358a99618248d351aaf83eebbaaa4b97f782b9cb4361c947",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:6fdb4fe2cd91d73de74c322372caa7e23da088785e7ce2dab6f3265e5216b2e0",
             "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 145
+              "kind": "symbol",
+              "name": "_explainer_seat_refusal"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5419,12 +5416,11 @@
         },
         {
           "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:b5643c45c329ecdcff046ac8f83c2476f7b6815c6b6b067a5dbf6de7d6af5e93",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
-              "end": 505,
-              "kind": "line_range",
-              "start": 481
+              "kind": "symbol",
+              "name": "create_server"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5780,23 +5776,24 @@
       "targets": [
         {
           "anchor": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:c4ff886996d234e64584c43dbfa4043fa2f196ebb93f59432e0f2cf07736ed51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_process_binding"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "42e2cf05d7801962fc50e09223d6e66c11a8d71b",
             "content": "sha256:7e9a2921f4c248c88d77f0595cb35f8839fe2be450a3c6b1a2d92257c13a80df",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/server_bindings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:c422e3c1cc3d6971b58200c3f2b96cf8c6ea8a10adcf4ac1e275268f036f8946",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }
@@ -5908,6 +5905,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:4c924bbd4ae6635383a1026cf74562a28a9fbda7589dd61dd3ae0c6d3034fadb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_maybe_suppress_provider_limits"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
             "content": "sha256:9dd51b1f3b61994e7284cfdd99793607a40be0d566928120f74fab7ca4e63ef7",
             "locator": {
@@ -5925,17 +5934,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
-            "content": "sha256:c422e3c1cc3d6971b58200c3f2b96cf8c6ea8a10adcf4ac1e275268f036f8946",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         },

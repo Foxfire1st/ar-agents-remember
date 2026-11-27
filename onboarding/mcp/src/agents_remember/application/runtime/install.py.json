@@ -130,12 +130,12 @@
         },
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
             "content": "sha256:cf64f642ff6e81c14f50c0af40a635ef68eba13f5a5435dbea9cee112233aa9e",
             "locator": {
-              "end": 129,
+              "end": 108,
               "kind": "line_range",
-              "start": 116
+              "start": 95
             },
             "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
@@ -148,10 +148,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
-            "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
+            "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
+            "content": "sha256:6aa9581369be83431efb8a064530ac17f4d3d865b2ef278c449c0691e5bc93e6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_register_installation_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
