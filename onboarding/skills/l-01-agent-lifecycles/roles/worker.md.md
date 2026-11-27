@@ -18,9 +18,9 @@ This canonical Worker implements one selected leaf’s approved primary requirem
 
 ## Logic
 
-`roles/worker.md` is a concise Tier-1 role manual (24 lines). It directs building the environment per `system/tools.md` (reporting missing tools and recording the interpreter), calling `read_ar_files` (`task_context`, open briefs) and `knowledge_read` (`workspace.memoryRoot`, `view="source_context"`) before edits or diagnosis, following `workspace.memoryRoot` `system/{coding,design,skill-writing}-guidelines.md` (helpers too; never edit skill guidelines), and sending Manager a skeleton before bodies when plan shape is open or changes and waiting.
+`roles/worker.md` is a concise Tier-1 role manual (24 lines). It directs building the environment per `system/tools.md` (reporting missing tools and recording the interpreter), calling `read_ar_files` (`task_context`, open briefs) and `knowledge_read` (`impact`/`records`) before edits, following `workspace.memoryRoot` `system/{coding,design,skill-writing}-guidelines.md` (helpers too; never edit skill guidelines), and sending Manager a skeleton before bodies when plan shape is open or changes and waiting.
 
-It declares the `<!-- ar:gives freeze-handoff to reviewer: ... -->` and `<!-- ar:gives producer-list to curator: ... -->` contract markers, keeps candidates uncommitted (running unfamiliar commands from scratch), forbids role starts, Reviewer/Curator acts, memory/status edits, closeout, commit/merge/push/publish or requirement/packet rewrites, requires repairing own/instrument breaks (naming repairs in the report) and fixing faulty input on the same tool, stops after 3 failed repairs on one item and tells Manager, and marks build `done` via `task_doc(set_step)`.
+It declares the `<!-- ar:gives freeze-handoff to reviewer: ... -->` and `<!-- ar:gives producer-list to curator: ... -->` contract markers, keeps candidates uncommitted (running new commands from scratch), forbids role starts, Reviewer/Curator acts, memory/status edits, closeout, commit/merge/push/publish or requirement/packet rewrites, requires repairing own/instrument breaks (naming repairs in the report) and fixing faulty input on the same tool, stops after 3 failed repairs on one item and tells Manager, and marks build `done` via `task_doc(set_step)`.
 
 Its `## Reference index` routes detailed procedures to `reference/knowledge/{use,commands,serving-build}.md`, `reference/tasks/document-authoring.md`, `templates/turn-report.md#shape`, `templates/curator-handoff-list.md`, `reference/writing/visual-explainers.md`, `reference/message-handover.md`, `reference/worker/sync-and-repairs.md`, `reference/sandbox-actors.md`, `operations/orientation.md#ask-for-a-developer-decision`, and `core/acceptance.md`.
 
@@ -79,6 +79,7 @@ Worker implements the approved leaf only, leaves code uncommitted, uses memory r
 
 
 
+
 - Worker freezes and first asks Manager to start Reviewer, then sends that Reviewer its exact freeze and journal attempt IDs; after code PASS it sends the Curator the exact-freeze structured producer list after serving-build handoff-check. [4]
 
 
@@ -90,19 +91,25 @@ Worker implements the approved leaf only, leaves code uncommitted, uses memory r
 - Worker owns code and its build/evidence step completion, not memory, review, lifecycle/status, commits or acceptance; its completed matching own steps may be marked done through task_doc and unfinished work is never marked complete. [7]
 
 
+
 - Worker stage completion requires meeting the requirement, passing coding-guidelines handover checks on a clean copy of the frozen candidate and running any listed final checks once on the code-passed tree. The Worker repairs its own failing checks and reports those it cannot pass or run. [9]
+
 
 
 - Worker escalates three unsuccessful own repairs and costly/repeated small repairs to Manager, preserves build-only authority, and uses the bounded writer ladder only for its admitted tool class while validation/transaction guards retain their stops. [11]
 
 
+
 - Worker first notifies Manager at freeze so Reviewer can be started; after code PASS Manager starts Curator. Worker starts no role, cannot accept its own implementation, repairs its own failing checks and retains a record-only review round only while candidate bytes stay unchanged. [12]
+
 
 
 - Worker marks only its own build/evidence step done when complete through task_doc, never curation, review, task status or acceptance. [13]
 
 
+
 - After three unsuccessful own repairs of the same check or finding, Worker records its attempts and remaining failure and tells Manager rather than continuing that repair loop. [14]
+
 
 
 
@@ -112,4 +119,4 @@ Worker implements the approved leaf only, leaves code uncommitted, uses memory r
 
 
 
-- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [18]
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree. [18]

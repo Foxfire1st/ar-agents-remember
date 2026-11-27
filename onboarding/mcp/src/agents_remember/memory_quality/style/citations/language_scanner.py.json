@@ -1,0 +1,157 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+        "content": "sha256:02e861628214eb419cb03e42cd2fb49b3784869bda57187d85a64507d005b31a",
+        "locator": {
+          "kind": "symbol",
+          "name": "repository_language_set"
+        }
+      },
+      "id": "RLZ-VY7R07",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Resolves and stat-caches each repository's configured LanguageSet, validating enable/disable identities and refusing custom language ids that shadow catalog entries.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+        "content": "sha256:4e8542a7e21008622980eaaa4799f180d11f2e23f09e81dc7c28f5c840c38571",
+        "locator": {
+          "kind": "symbol",
+          "name": "warm_repository_languages"
+        }
+      },
+      "id": "RLZ-WT977Y",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Scans tracked files for unambiguous catalog suffixes, exact filenames, shebangs, and overrides while reporting ambiguous suffixes and pre-warming detected languages into AR_LANGUAGE_CACHE.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`build_provider_from_catalog` and `build_provider_from_custom` construct lazy `LanguageProvider` instances uniformly for catalog wheels, language-pack entries, built-in Lean, and local custom libraries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:062ce23568e36ccc14d3f4cbd5315092137dfb4d46431839cb749c57e8d681ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_provider_from_catalog"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:b3ff8178133a950e39db22e7418d5a2498ec774eb026d633b09294fc985b7283",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_provider_from_custom"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`build_language_set` and `repository_language_set` build and stat-keyed-cache repository `LanguageSet` instances from the catalog and merged overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:77a5a7d7e31d38a63fa677b1df8f4a719528b4cb43dd2e84c45c75b221ec23b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_language_set"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:02e861628214eb419cb03e42cd2fb49b3784869bda57187d85a64507d005b31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_language_set"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`scan_repository_languages` enumerates repository files, applies overrides, globs, suffixes, and shebang detection, and reports detected languages alongside unresolved ambiguous suffixes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:b8f51bad7eacc4085f395fb152bb6cfab63fa265ab0f9c55bde2f94bce52af0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "scan_repository_languages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`warm_repository_languages` pre-warms catalog wheels for scanned or explicitly requested language IDs into the external cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:4e8542a7e21008622980eaaa4799f180d11f2e23f09e81dc7c28f5c840c38571",
+            "locator": {
+              "kind": "symbol",
+              "name": "warm_repository_languages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_validate_override_identities` and `_validate_override_target_ids` reject custom IDs shadowing catalog entries and unknown language IDs in `enable`, `disable`, or `suffix_overrides`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:e5eb8da787bf8b6a2923c2f7bb196a2b7e06e589e36f8abee6a93e78fecbd6e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_override_identities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+            "content": "sha256:66ccc7c4d16f4acb76d99dc079ccf1d2ee44a3230ebbf6e7ca25c0107cba9b2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_override_target_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

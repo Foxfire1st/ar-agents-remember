@@ -10,7 +10,7 @@
 that dispatches subcommands. Its subcommands include `dashboard`, `memory-citations`,
 `memory-backfill`, `memory-briefs`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-convert-states`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `provider-limits`, `upgrade-user-settings` and `removed-stores` — and
+`knowledge-census`, `knowledge-copies`, `languages`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `provider-limits`, `upgrade-user-settings` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -33,6 +33,7 @@ each subparser through its adapter's own `add_arguments`. Finite commands dispat
 `knowledge_routes.add_arguments`/`knowledge_routes.run`,
 `knowledge_census.add_arguments`/`knowledge_census.run`,
 `knowledge_copies.add_arguments`/`knowledge_copies.run`,
+`languages.add_arguments`/`languages.run` (registered under `_register_memory_commands` to scan repository languages and warm pinned wheels in the external grammar cache),
 `explainer_browser.add_arguments`/`explainer_browser.run`,
 `paseo_runtime.add_arguments`/`paseo_runtime.run`, `provider_limit_hold.add_arguments`/`provider_limit_hold.run` and
 `tool_log_stats.add_arguments`/`tool_log_stats.run`. For public commands, `main(argv=None)`

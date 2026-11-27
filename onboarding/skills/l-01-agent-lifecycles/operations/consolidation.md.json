@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
-        "content": "sha256:36d2755cd5bb91508757b461e22a83e8b16915cb021d48167f4e7a59146a07ae",
+        "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+        "content": "sha256:df9f114047aadc00e286e0602fcbdbc80714e4032b055dd7f925ea7694b0c00d",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,25 @@
       },
       "rationale": "Canonical Tier-1 operation text for consolidation.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+        "content": "sha256:635662b552a30cc2a08b3a1216b20cec68174ed14fd382d2c9fb1622d4c247d9",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 12
+        }
+      },
+      "id": "RLZ-KYKD38",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Updates step 3 dependent verification to use compact=true for triage while preserving full rows where evidence requires them.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -25,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+            "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
             "content": "sha256:eebd0eaeb12d9aee6046b401f24b41728dbc63bb5144fa51af44f7aaedf48556",
             "locator": {
               "end": 5,
@@ -38,12 +57,12 @@
       ]
     },
     "2": {
-      "note": "`## Workflow` orders worklist persistence, family-first reading and named proof-test execution, `knowledge_write` (`commit: false` -> `true`), clean-tree/integrity/stale checks, `curator_coherence`, and Reviewer handover via `role_message`.\n\nAnchor: `## Workflow`",
+      "note": "`## Workflow` orders worklist persistence, family-first reading and named proof-test execution, `knowledge_write` (`commit: false` -> `true`), clean-tree/integrity/stale checks, `curator_coherence`, and Reviewer handover via `role_message`.",
       "targets": [
         {
           "anchor": {
-            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
-            "content": "sha256:0bd81b5f442dc6c05f90b555937d165a4291da6a6abe6d11b856a6acba5fa847",
+            "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+            "content": "sha256:79dce034c280f3557fb05ca46119e554458ac0a0f090cbfe2c60e8b764447394",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -59,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+            "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
             "content": "sha256:949db6cfc98d76f39f1f07bbbb93c00cd2682175ef8cf32b10f2e282cc0c973e",
             "locator": {
               "end": 18,

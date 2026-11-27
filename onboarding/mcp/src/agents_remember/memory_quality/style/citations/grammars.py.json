@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
         "locator": {
           "kind": "symbol",
           "name": "bindings"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:a65d3c5df4742d092e3fbaa5c29d6ff83f253e61748b338528a01fd9f8f0793a",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
         "locator": {
           "kind": "symbol",
           "name": "test_case_range"
@@ -39,26 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:15717ca60fe9464d4cbd1e464d8ed8c7143620f49b67821bc7c463da994b3842",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:df05926a33ec7c917a3ab19eaee930c1d15dcf7d66c0c0a70c4a00779ce0adfb",
         "locator": {
           "kind": "symbol",
-          "name": "_lean_bindings"
+          "name": "repository_language_set_scope"
         }
       },
-      "id": "RLZ-3W13Z8",
-      "invariant": "INV-WZ8R0Q",
+      "id": "RLZ-40NFRD",
+      "invariant": "INV-EW1ST5",
       "origin": {
-        "handoffEntry": "SUB-R01-shared-lean-binding-realization",
-        "leaf": "261123-SUB-L1"
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
       },
-      "rationale": "This adapter retains source-written, possible and verified full keys from one declaration span and orders verified full-name bindings before aliases.",
-      "role": "unclassified"
+      "rationale": "Binds a repository's configured LanguageSet across production citation, read, write, conversion, currentness, reference, and review-memo seams while respecting explicit language_set_scope overrides.",
+      "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:aeb23e1396f56667b51624eb822c6f9571d7a79832398a5c72475f33e36754be",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:59cb28ddff1e2bd3c8e7e0afa65bed67aa75f31d8aec4ac300eb4dfff464a2fc",
         "locator": {
           "kind": "symbol",
           "name": "_TypeScriptAnchorInputs"
@@ -75,8 +75,44 @@
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_case_range"
+        }
+      },
+      "id": "RLZ-BKBWRG",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Feeds declarative tests.scm call sites into test_case_ranges.case_at, preserving exact running-case extent and blocking-modifier rules.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:c0e3394a53290c8171a867ea8fc2adfd4c0a6041267932a2abb369b4686d014e",
+        "locator": {
+          "kind": "symbol",
+          "name": "active_language_set"
+        }
+      },
+      "id": "RLZ-DCWCE7",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Binds the active LanguageSet ContextVar with deterministic default fallback and exposes language_set_scope and extractor_version across citation readers.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
         "locator": {
           "kind": "symbol",
           "name": "bindings"
@@ -88,13 +124,13 @@
         "handoffEntry": "SUB-R01-lean-source",
         "leaf": "261123-SUB-L1"
       },
-      "rationale": "Routes Lean to the product scanner and exposes both names.",
+      "rationale": "Routes .lean paths through active_language_set() to LeanLanguageProvider.extract_bindings while preserving source-written and full-name bindings.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:1c1600e3d6946320fed314492c2aea995907f1e5b0916b30b9097ea1476a29f6",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
         "locator": {
           "kind": "symbol",
           "name": "test_case_refusal"
@@ -106,13 +142,67 @@
         "handoffEntry": "L9-independent-case-diagnostic",
         "leaf": "261112-BUG-L9"
       },
-      "rationale": "Each refusal observation runs independently over nodes from the call-owned parsed source.",
+      "rationale": "Each refusal observation runs independently over declarative tests.scm call-site nodes from the call-owned parsed source.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:2b0b8c99d53f4dd8d589fcb9b4733318eb93a7d0f4c047a796c443a09c412c1c",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_case_refusal"
+        }
+      },
+      "id": "RLZ-K90YCX",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Feeds declarative tests.scm call sites from the call-scoped parse cache into test_cases.refusal without scanning unrelated AST nodes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:ca4c391bbde02d90454cf88a4db1c7bb433a714e9edca98a24985a9a6eee858f",
+        "locator": {
+          "kind": "symbol",
+          "name": "DEFAULT_LANGUAGE_SET"
+        }
+      },
+      "id": "RLZ-N4TQ3E",
+      "invariant": "INV-559QV5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §1",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Builds the default LanguageSet purely from the catalog lock through language_scanner.build_language_set without hardcoded GRAMMAR_PACKAGES, SUFFIX_GRAMMARS, or MEASURED_VERSIONS tables.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
+        "locator": {
+          "kind": "symbol",
+          "name": "typescript_anchor_identifier"
+        }
+      },
+      "id": "RLZ-TWCHVH",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Remains scoped as a TypeScript call and generic spelling resolver keyed by active provider version under request_memo_scope.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:69af759838de282ba67b9de63e4b5ab2d935353eaf65589d90f6da5e44c2ce11",
         "locator": {
           "kind": "symbol",
           "name": "parsing_scope"
@@ -129,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:e43aea664225a234255e22b44540ef0327f2064be2672bf168dc6493fc6a9af0",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
         "locator": {
           "kind": "symbol",
           "name": "typescript_anchor_identifier"
@@ -142,124 +232,21 @@
         "handoffEntry": "Curator-W3-coverage-INV-HPHVCN",
         "leaf": "261112-BUG-L18"
       },
-      "rationale": "Native citation lookup selects the current request owner and keeps repeated parses only in that owner’s locked table.",
+      "rationale": "Native citation lookup selects the current request owner and keeps repeated TypeScript anchor parses keyed by active provider version only in that owner's locked table.",
       "role": "support"
     }
   ],
   "references": {
-    "10": {
-      "note": "`_span` uses the shared case-span rule.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:f5450539cf2f00fc7494a788e1af318d89bd607fc25c669127af84dc9d140646",
-            "locator": {
-              "end": 409,
-              "kind": "line_range",
-              "start": 407
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "`_text` extracts a node's source bytes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:0ca335ebf67ed7e1e70f9ebdf42177b37ef3b0351fbae5ac8ff352f8cb411576",
-            "locator": {
-              "end": 413,
-              "kind": "line_range",
-              "start": 412
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "`_python_names` extracts names bound by Python constructs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:7fe5a83e47b7f26215ac340f6b1c1225a096f8bec9f6ecf3ef0240a28f737a1e",
-            "locator": {
-              "end": 422,
-              "kind": "line_range",
-              "start": 416
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "`_python_targets` unpacks Python assignment targets.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:bf82d265fc24ef8ca49491f30cb6aeb1a04a60ea995a52d9c3c5cd381f00ecf5",
-            "locator": {
-              "end": 437,
-              "kind": "line_range",
-              "start": 425
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "`_script_names` extracts script declaration names.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:f72c75f9cf5be364570dfad89283f42bd1b18b450c0f14f549876a969b08fe27",
-            "locator": {
-              "end": 446,
-              "kind": "line_range",
-              "start": 440
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "`_script_targets` unpacks script destructuring targets.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:66ad6d345d6ebbcdaeee1582f7531c321b17d8063248a197a1391f3c9a7a635e",
-            "locator": {
-              "end": 466,
-              "kind": "line_range",
-              "start": 449
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "17": {
-      "note": "Specialized unresolved-case diagnostics are restricted to script test files.",
+      "note": "Specialized unresolved-case diagnostics are restricted to providers supporting test cases on the path and pass `tests.scm` call sites to `test_cases.refusal`.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:1c1600e3d6946320fed314492c2aea995907f1e5b0916b30b9097ea1476a29f6",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
             "locator": {
-              "end": 360,
-              "kind": "line_range",
-              "start": 355
+              "kind": "symbol",
+              "name": "test_case_refusal"
             }
           },
           "kind": "code"
@@ -267,12 +254,12 @@
       ]
     },
     "18": {
-      "note": "Exact range lookup returns a case or its refusal using the caller's name resolver.",
+      "note": "Exact range lookup returns a case or its refusal from declarative `tests.scm` call sites using the caller's name resolver.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:a65d3c5df4742d092e3fbaa5c29d6ff83f253e61748b338528a01fd9f8f0793a",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
             "locator": {
               "kind": "symbol",
               "name": "test_case_range"
@@ -282,33 +269,16 @@
         }
       ]
     },
-    "19": {
-      "note": "Tree-sitter extents use the case module's span rule.",
+    "2": {
+      "note": "`grammar_of` selects the active `LanguageSet` grammar key for a path.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:f5450539cf2f00fc7494a788e1af318d89bd607fc25c669127af84dc9d140646",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:2ab2e5e1f5162c2ba5053cba2c518585909ae3eab9145502a68956bb49203ce8",
             "locator": {
               "kind": "symbol",
-              "name": "_span"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`grammar_of` selects the grammar for a path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:d4c4be7b68b3c769defc7d7a66f6dd8f80c834ab25e0f7f97efcf70b43eb7d9a",
-            "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 211
+              "name": "grammar_of"
             }
           },
           "kind": "code"
@@ -316,12 +286,12 @@
       ]
     },
     "20": {
-      "note": "A call retains eligible parsed test inputs and clears them at the outer exit.",
+      "note": "A call retains eligible parsed test inputs keyed by path, grammar, provider version, and lines, and clears them at the outer exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:2b0b8c99d53f4dd8d589fcb9b4733318eb93a7d0f4c047a796c443a09c412c1c",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:69af759838de282ba67b9de63e4b5ab2d935353eaf65589d90f6da5e44c2ce11",
             "locator": {
               "kind": "symbol",
               "name": "parsing_scope"
@@ -332,12 +302,12 @@
       ]
     },
     "21": {
-      "note": "Bindings retain widened extents, declaration lines and recognized named test cases.",
+      "note": "Bindings delegate to the active `LanguageProvider` (`LeanLanguageProvider` or `TreeSitterLanguageProvider` via `tags_engine`) and retain widened extents, declaration lines, and recognized named test cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
             "locator": {
               "kind": "symbol",
               "name": "bindings"
@@ -348,15 +318,60 @@
       ]
     },
     "22": {
-      "note": "The built-in Lean reader exposes exact written and full-name keys and retains the status of uncertain keys.",
+      "note": "The built-in Lean reader in `LeanLanguageProvider.extract_bindings` exposes exact written and full-name keys and retains the status of uncertain keys.\n\nAnchor: `LeanLanguageProvider.extract_bindings`",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:15717ca60fe9464d4cbd1e464d8ed8c7143620f49b67821bc7c463da994b3842",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "`DEFAULT_LANGUAGE_SET` builds from the shipped catalog lockfile (`language_catalog.lock.json`) and `repository_language_set_scope` layers per-repo `languages.json` overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:9737cc4ecb53dd8e6b6e97dbcfde53e759b74d490e7304c19c90eb0d4eca4e0e",
             "locator": {
               "kind": "symbol",
-              "name": "_lean_bindings"
+              "name": "default_language_set"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:df05926a33ec7c917a3ab19eaee930c1d15dcf7d66c0c0a70c4a00779ce0adfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_language_set_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "`active_language_set`, `default_language_set`, `is_default_language_set`, and `extractor_version` expose the active `LanguageSet` and its version identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:c0e3394a53290c8171a867ea8fc2adfd4c0a6041267932a2abb369b4686d014e",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_language_set"
             }
           },
           "kind": "code"
@@ -368,12 +383,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
             "content": "sha256:6fb6cbf9fab65503f090e926d159bdfe3d414852217f4453d1e4269e0f82e8dc",
             "locator": {
-              "end": 218,
+              "end": 214,
               "kind": "line_range",
-              "start": 216
+              "start": 212
             }
           },
           "kind": "code"
@@ -381,28 +396,15 @@
       ]
     },
     "4": {
-      "note": "`typescript_anchor_identifier` recognizes a complete direct TypeScript anchor spelling. A native request reuses the exact input’s answer until the request memo clears.",
+      "note": "`typescript_anchor_identifier` recognizes a complete direct TypeScript anchor spelling and keys request/process reuse by active TypeScript provider version.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:1159742f8d8566d72385122b6ad7867dd3e0c431d89827c1083531fd00b4b21f",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
             "locator": {
-              "end": 278,
-              "kind": "line_range",
-              "start": 221
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:e9a6d605ea2f05bf5c441bef6eda290e4e9fbb831f824266598fd3c8884c41ec",
-            "locator": {
-              "end": 278,
-              "kind": "line_range",
-              "start": 227
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
             }
           },
           "kind": "code"
@@ -414,12 +416,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:0cef424167c021967be2e1f137eade95c3f8455fbf5e45e6c140135368c8aec6",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:68431929c417c45639447a50963a5ef7aa089a3f15fdd3329d3250c0e0d5b5ce",
             "locator": {
-              "end": 297,
+              "end": 139,
               "kind": "line_range",
-              "start": 285
+              "start": 130
             }
           },
           "kind": "code"
@@ -427,33 +429,15 @@
       ]
     },
     "8": {
-      "note": "`_walk` traverses every node in document order.",
+      "note": "`_walk` traverses every node in document order for TypeScript anchor spelling inspection.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:ce5ed35ba39d059fe0a0fdd9b9cff94fab2e4ca6ff1d5f4fe6c2dc5c8150a753",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:0c5004795331d10af09af19f0fc3f1b7a7dfd99e1fe2fdd13b0f2a3dfeb87ed9",
             "locator": {
-              "end": 397,
-              "kind": "line_range",
-              "start": 384
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`_widened` includes decoration or export syntax.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:c45eec1278d1f14982a7034cdcc5c937863fbb4ecd00f72e2337b03bed11ac65",
-            "locator": {
-              "end": 404,
-              "kind": "line_range",
-              "start": 400
+              "kind": "symbol",
+              "name": "_walk"
             }
           },
           "kind": "code"

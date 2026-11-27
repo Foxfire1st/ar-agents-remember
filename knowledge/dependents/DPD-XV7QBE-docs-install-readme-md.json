@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
-    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/install/README.md whole document against L32 candidate 52e47cca: installation prerequisites, setup commands, and runtime layout guidance remain unaffected by L32.",
-    "task": "261112-BUG-L32",
+    "statement": "Audited docs/install/README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): installation prerequisites, setup commands, and runtime layout guidance remain accurate after BUG-L32 and L11 updates.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/install/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -72,14 +72,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:15:46+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L32",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

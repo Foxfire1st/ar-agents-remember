@@ -26,7 +26,7 @@ The role text selects the Orchestrator when two or more masters are worked on at
 
 The compressed Tier-1 role page has five sections: `## Coordinate the sprint`, `## Communicate with the Architect`, `## Changes to the plan`, `## Verify, boundaries, and result contract`, and `## Reference index`. The page keeps sprint coordination, verification without loop takeover, the plan-change spirit test and the compact result contract; its Reference index links `templates/manager-brief.md`, `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake`, `templates/curator-handoff-list.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/master-state.md`, `reference/tasks/document-authoring.md#preserve-decisions-and-approved-intent`, `reference/coordination/shared/closeout-recovery.md#recover-an-unfinished-closeout`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/sandbox-actors.md` and `reference/coordination/shared/child-questions.md`.
 
-**Coordinate the sprint.** Reuse Architect-named Managers and start one Manager per other master with `role_start`; those Managers coordinate their Workers, Reviewers, Curators and Investigators.
+**Coordinate the sprint.** Read needed sprint/master/leaf rendered docs via file tools, use `knowledge_read` (`impact`/`search`/`records`) for sprint/master scope, overlap, and prior rulings, edit canonical docs via `task_doc` first, and reuse Architect-named Managers and start one Manager per other master with `role_start`; those Managers coordinate their Workers, Reviewers, Curators and Investigators.
 
 Managers under the Orchestrator also coordinate consolidation leaves (Consolidator and Reviewer) where the master includes consolidation passes. Decide ordinary requirement readings and operational rulings itself, keeping the rulings record, requirement sentences and status file; verify Manager delivery without taking over the leaf diff, repair or evidence loop, and route collection/import test failures as landed-leaf regressions.
 
@@ -70,6 +70,7 @@ The Orchestrator coordinates concurrent masters through their Managers and may s
 
 
 
+
 - The Orchestrator Result contract names its rulings and status artifacts, developer-decision and final report-path messages, verified Manager delivery and separately addressed reports, findings, review, curation and publication. [17]
 
 
@@ -82,6 +83,7 @@ The Orchestrator coordinates concurrent masters through their Managers and may s
 
 
 - Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence, unchanged forwarding of Manager Architect matters and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards. [20]
+
 
 
 

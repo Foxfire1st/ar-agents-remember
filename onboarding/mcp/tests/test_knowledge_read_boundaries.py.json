@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
             "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
             "locator": {
-              "end": 770,
+              "end": 772,
               "kind": "line_range",
-              "start": 770
+              "start": 772
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -320,48 +320,12 @@
       ]
     },
     "9": {
-      "note": "Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate. Anchor: `_tree_entry` `_TreeLookupFailed` `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
+      "note": "Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate. Anchor: `_tree_entry`, `_TreeLookupFailed`, `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_tree_entry"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:20abb41e24de5aa9b91673cccec7a7452e4c9c3c496acfb8227ae17dbcb9931e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_TreeLookupFailed"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
-            "content": "sha256:a72bee8a2ef688cfec02937354f31ea3fe0d26ee72f51f0166a6c2c6242390ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path"
-            },
-            "path": "mcp/tests/test_knowledge_read_paths.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:eb4c50e8de010c2feedce2c0585f7191c63dbae277b9a4bab7fcce635261e07e",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             },

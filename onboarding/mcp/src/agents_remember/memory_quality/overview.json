@@ -20,12 +20,12 @@
       ]
     },
     "100": {
-      "note": "parsing_scope retains diagnostic parse trees only within the active call and clears them on exit.",
+      "note": "`parsing_scope` retains diagnostic parse trees and declarative `tests.scm` call sites only within the active call and clears them on exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:2b0b8c99d53f4dd8d589fcb9b4733318eb93a7d0f4c047a796c443a09c412c1c",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:69af759838de282ba67b9de63e4b5ab2d935353eaf65589d90f6da5e44c2ce11",
             "locator": {
               "kind": "symbol",
               "name": "parsing_scope"
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
             "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
             "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
             "locator": {
               "kind": "symbol",
@@ -88,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
-            "content": "sha256:4795e117dbdddc921f627850b5f8426151de8c7361afecd4ee510811591b0d9d",
+            "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
+            "content": "sha256:4e6700816d6c00dda8252030b071071eac2ed61c14c9070726883e98933e47a0",
             "locator": {
               "kind": "file"
             },
@@ -100,16 +100,15 @@
       ]
     },
     "104": {
-      "note": "TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. [104]",
+      "note": "TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request, keyed by active provider version. Unscoped callers use the separate process memo on the default `LanguageSet`. Anchor: `typescript_anchor_identifier`, `_process_typescript_anchor_identifier`",
       "targets": [
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:5ee91f1754b7fd30c2cddccb4422ceb09dc7f9dae84fe99e647ba2c2e97fa5d2",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
             "locator": {
-              "end": 235,
-              "kind": "line_range",
-              "start": 221
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
           },
@@ -117,12 +116,11 @@
         },
         {
           "anchor": {
-            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-            "content": "sha256:830b0627214487b8f211874cfdb1802646d82908c88f1669a78f3c5ce1a66644",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:5d52cec22c9a4c7716c3cba7087d45def93a34bd4d9142aa080aae7088ed6607",
             "locator": {
-              "end": 282,
-              "kind": "line_range",
-              "start": 277
+              "kind": "symbol",
+              "name": "_process_typescript_anchor_identifier"
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
           },
@@ -581,12 +579,12 @@
       ]
     },
     "46": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule.\n\nAnchor: `qualified_spans`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:fdacd63be1da323f1d2049ed275304d4d74ef1c4160dff47a2d0d9eeed7668a9",
             "locator": {
               "kind": "file"
             },
@@ -1247,8 +1245,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
-            "content": "sha256:095caa7ea43283c436da50242be4a8f5e00c99b6b7e2785861aa611411aa9b6f",
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+            "content": "sha256:34129f78a83030265b5bc28b4d74065b85514fdae9241ccb9f83492310b73e3e",
             "locator": {
               "kind": "file"
             },
@@ -1331,8 +1329,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
-            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+            "content": "sha256:6a333ba109eb8640f9bdc0d9d3ebe9632565700c92fbca86e1d7b271e660f3c0",
             "locator": {
               "kind": "symbol",
               "name": "fix_references"
@@ -1641,7 +1639,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
             "content": "sha256:f98b639faf9af2bd6b8bcc593729a46563ee400c52f809e5a49d83423b41470c",
             "locator": {
               "kind": "symbol",
@@ -1653,8 +1651,8 @@
         },
         {
           "anchor": {
-            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
-            "content": "sha256:0bc49fa5609ba5d0247613c9eaea07ce4fc313bf16eaf0b8260435ecf592896c",
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+            "content": "sha256:981cb1b8c1c59c302393b0a2f45d6dffa2a50357ada803cf7ac4f4317b6714f5",
             "locator": {
               "kind": "symbol",
               "name": "check_references"
@@ -1665,8 +1663,8 @@
         },
         {
           "anchor": {
-            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
-            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+            "content": "sha256:6a333ba109eb8640f9bdc0d9d3ebe9632565700c92fbca86e1d7b271e660f3c0",
             "locator": {
               "kind": "symbol",
               "name": "fix_references"
@@ -1930,12 +1928,12 @@
       ]
     },
     "99": {
-      "note": "definition_scope owns call-local definition results, joins nested scopes, enters parsing_scope and clears retained values on exit.",
+      "note": "`definition_scope` owns call-local definition results keyed by path, grammar, active provider version, and lines, joins nested scopes, enters `parsing_scope`, and clears retained values on exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
             "locator": {
               "kind": "symbol",
               "name": "definition_scope"

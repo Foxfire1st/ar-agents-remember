@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56daf6642402898075d164df4e26178499116006",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "a4f026f8fda8838d20b19dae774506d1a8b3d24b",
+    "commit": "29195b213c2b2065cee45958b650e07b76cf2aa3",
     "role": "curator",
-    "statement": "docs/reference/repository-certification-profile.md remains accurate across L33's uv-managed Dagger base, refreshed profile digests, and dropped-selector reporting on synced base 65911c75 / candidate 56daf664 because it documents the profile schema, gate rules, and manifest flow without pinning legacy runtime builds or digests.",
-    "task": "261112-BUG-L33",
+    "statement": "Audited docs/reference/repository-certification-profile.md against L11 candidate tree a4f026f8 after certification-profile-v1.json added AR_LANGUAGE_CACHE to rail environment contracts and refreshed profileDigest; reference prose remains accurate.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
+      "blob": "089d163613b2a2c136565afcbf071f338566ff41",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+      "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
     },
     {
-      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+      "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
@@ -128,20 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "cc0b41fec35e3c753461668ff0c6f7d65d3689fc",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:39:05+01:00",
+    "at": "2026-11-27T21:03:08+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

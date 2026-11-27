@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans seven Tier-2 reference, criteria, and template files; contradictory pre-L7 names-only instructions cause agents to manually open record JSONs or skip compact dependent triage and anti-overreach boundaries."
+  },
+  "applicability": "Tier-2 knowledge references (commands.md, use.md), plan-review criteria, curator family-obligations detail, and impact/manager/curator brief templates.",
+  "conditions": [
+    "All eleven knowledge_read views, text-bearing records/impact/search rows, dependent(compact=true) triage, and auto-pairing are documented consistently.",
+    "Retrieved knowledge claims remain advisory context that never substitutes for reading source code or running tests."
+  ],
+  "exclusions": [
+    "Does not alter knowledge_read runtime schemas, token ceilings, or Bootstrap setup behavior."
+  ],
+  "id": "INV-YSQJ5K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "22-file targeted pytest suite PASS and scripts/renew-instructions.py --check PASS on clean copy tree 58741cf122bf63ea3bb6dfc88afc8f302b0375f4; report /home/firefox/projects/ar-coordination/worktrees/agents-remember/14_role-instructions-and-explainer-for-kno-l7-views-ar/role-reports/worker/9c52f08d-1b32-51f7-bd11-d45d0d4e7081/role-launch/261112-KNO-L14-worker-9c52f08d-1b32-51f7-bd11-d45d0d4e7081.md"
+      ],
+      "path": "kno-l14-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R14@v1 R2",
+    "leaf": "261112-KNO-L14",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Tier-2 knowledge references, plan-review criteria, curator family obligations, and brief/impact templates document all eleven knowledge_read views, text-bearing records/impact/search responses, dependent(compact=true) triage, and role-scoped anti-overreach boundaries while preserving that retrieved claims never replace reading code or running tests.",
+  "supersedes": [],
+  "title": "Tier-2 references and templates document all eleven knowledge_read views",
+  "writer": {
+    "at": "2026-11-27T18:29:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L14",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
+  }
+}

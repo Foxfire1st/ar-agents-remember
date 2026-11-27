@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans language_catalog.lock.json, language_catalog.py, and grammars.py, is guarded by AST and dependency-purity tests, and anchors the uniform catalog half of the FAM-CSVQBJ extraction seam."
+  },
+  "applicability": "Shipped tree-sitter and built-in citation language metadata in package_data/citations/language_catalog.lock.json, language_catalog.py, and grammars.py.",
+  "conditions": [
+    "Every shipped language is declared once in language_catalog.lock.json with canonical id, unambiguous suffixes/filenames/shebangs, pinned wheel or language-pack SHA-256 digests, verified tags.scm/tests.scm SHA-256 digests, and wrapper/destructuring specs.",
+    "language_catalog.py verifies packaged .scm query SHA-256 hashes and rejects duplicate ids, ambiguous default suffix claims, or reserved .lean claims before returning a LanguageCatalog.",
+    "grammars.py builds DEFAULT_LANGUAGE_SET from the catalog lock with zero hardcoded language tables or suffix-to-grammar maps."
+  ],
+  "exclusions": [
+    "Per-repository languages.json overrides and user settings overrides are layered on top by language_config.py and language_scanner.py rather than stored in the shipped lockfile."
+  ],
+  "id": "INV-559QV5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/python -m pytest -q mcp/tests/test_language_catalog_and_lazy_cache.py mcp/tests/test_memory_citation_grammars.py (clean-copy tree 825dedbe9356776ebe13f67d9a5dc9c331c295d6)"
+      ],
+      "path": "261112-KNO-L11-curation"
+    },
+    "handoffEntry": "KNO-R11@v1 §1",
+    "leaf": "261112-KNO-L11",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every supported catalog language is declared solely in the bundled hash-pinned language_catalog.lock.json data lock with canonical id, unambiguous suffixes/filenames/shebangs, pinned pypi_wheel or language_pack artifact hashes, verified tags.scm/tests.scm SHA-256 digests, and wrapper/destructuring rules, while core citation modules hardcode no language lists.",
+  "supersedes": [],
+  "title": "Bundled hash-pinned language catalog is sole shipped language table",
+  "writer": {
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
+  }
+}

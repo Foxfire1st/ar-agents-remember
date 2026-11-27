@@ -38,6 +38,23 @@
     {
       "anchor": {
         "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+        "content": "sha256:7ebc8f32780cbff9f1bc2c49b15a4a52b435d33acc025092ea328458ad3b4e9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_complete_instruction_documentation_and_registered_descriptions"
+        }
+      },
+      "facet": "Verifies instruction documentation and registered MCP tool descriptions remain complete and mutually consistent across Tier-2 surfaces.",
+      "id": "PRF-DZ659K",
+      "invariant": "INV-YSQJ5K",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R2",
+        "leaf": "261112-KNO-L14"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
         "content": "sha256:aa249effa404b77f31350e4d13b1ca76e3a5b9f84bbfa0b2791b67d9768498a7",
         "locator": {
           "kind": "symbol",

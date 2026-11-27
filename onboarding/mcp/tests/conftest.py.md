@@ -18,6 +18,7 @@ certifying services.
 - The candidate's `mcp/src` and `mcp/test_support` are put first on `sys.path`.
 - The hermetic bootstrap activates the environment of this pytest process
   (`activate_current_pytest_environment`).
+- Before redirecting `HOME` and XDG directories, `_HOST_LANGUAGE_CACHE` captures `AR_LANGUAGE_CACHE` (falling back to `${XDG_STATE_HOME:-~/.local/state}/agents-remember/grammars`) and passes it into `_ISOLATED_ENVIRONMENT` so hermetic test runs reuse pre-warmed grammar wheels without touching host config or mutating the venv.
 - A temporary directory under `/tmp` becomes `HOME`, the XDG config, data and cache homes and
   `CODEX_HOME`; a private `TMUX_TMPDIR` scopes tmux to this pytest process. Git's global and
   system configuration are switched off. Subprocesses of a fixture
@@ -85,7 +86,7 @@ scope `all-tests`.
 > Retained earlier citation wording: - The environment is restored and the temporary directory removed. [7]
 
 
-> Retained earlier citation wording: - The isolated home directories and the switched-off Git configuration. [8]
+> Retained earlier citation wording: - The isolated home directories and the switched-off Git configuration.
 
 
 > Retained earlier citation wording: - The removal of inherited opt-ins and credentials. [9]
@@ -97,6 +98,7 @@ scope `all-tests`.
 
 
 - The pytest environment owns a private tmux directory. [16]
+
 - Environment, lease and temporary cleanup follow an attempted private-server kill even on failure. [17]
 - Inherited tmux launcher variables are scrubbed from the test environment. [18]
 
@@ -110,6 +112,7 @@ The session fixture gives code running in this pytest process an isolated outsid
 
 
 - The isolated home directories and the switched-off Git configuration. [8]
+
 
 
 - The removal of inherited opt-ins and credentials. [9]

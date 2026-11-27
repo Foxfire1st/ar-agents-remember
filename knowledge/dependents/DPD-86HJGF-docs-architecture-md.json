@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
-    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/architecture.md whole document against L32 candidate 52e47cca: package layering, serving/controlplane boundaries, and component architecture remain accurate; serving consumes reset delivery through injected ResetDeliveryPorts.",
-    "task": "261112-BUG-L32",
+    "statement": "Audited docs/architecture.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): package layering, ResetDeliveryPorts, knowledge_read views, and L11 uniform language catalog/lazy cache boundaries remain accurate.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -134,8 +134,8 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
         "locator": {
           "kind": "symbol",
           "name": "definition_scope"
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+        "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
         "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
         "locator": {
           "kind": "symbol",
@@ -158,7 +158,7 @@
     },
     {
       "anchor": {
-        "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+        "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
         "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
         "locator": {
           "kind": "symbol",
@@ -182,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
-        "content": "sha256:800e9795e3c2782a3450b9c03a1e7d1a5850845f293febf0cb73112eaf470050",
+        "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
+        "content": "sha256:9c3da1ee755b11bfbc1f6b620fedcc93dfaafac51032bd4ad129fae35ffb3a20",
         "locator": {
           "kind": "symbol",
           "name": "_complete_quality_run"
@@ -218,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "a233ab3fe2581897d83112343d331b2f980d34fc",
+        "blob": "dc5e32a2d7eb2dd8f8ae08e1e81cde77a33f518f",
         "content": "sha256:68a71d0d063bbf3928f0411825fed8bf0e88083d42d14d17337f096720803d9f",
         "locator": {
           "kind": "symbol",
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:15:46+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L32",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

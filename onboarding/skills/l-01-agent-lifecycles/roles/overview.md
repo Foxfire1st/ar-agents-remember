@@ -8,7 +8,7 @@ Architect owns the developer conversation, requirement meaning and semantic plan
 
 ## Hot Path Summary
 
-The Worker, Reviewer, Curator, Consolidator and Investigator retrieve briefs for their relevant files. Fuller replies can include rule text. Compact rows can retain a pointer even when the saved brief is missing. Open the current saved brief when present. Each role uses knowledge_read and its own file tools for whole records and supporting evidence.
+The Worker, Reviewer, Curator, Consolidator and Investigator retrieve briefs for their relevant files (`read_ar_files`). Fuller replies can include rule text; compact rows can retain a pointer even when the saved brief is missing; open the current saved brief when present. All eight non-Bootstrap roles use `knowledge_read` with role-appropriate views (`impact`, `search`, `records`, and `dependent(staleOnly=true, compact=true)` triage where applicable; full `dependent` rows where an evidence receipt requires them) alongside their own file tools for source code, tests, briefs, and uncarried documents.
 
 Worker and Bootstrap intake now obtain naming/orientation and open source/card/overview files natively; this changes reading, not grants, scratch placement, CODE/MEMORY ownership, question provenance or peer handover. Curator family authoring follows its operation and the family-obligations detail.
 
@@ -177,12 +177,15 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Curation keeps scope and producer-ownership boundaries; the serving-build and ingest-report details hold the invocation and report-reading method. [8]
 
 
 
 
+
 - The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; code, gate, lifecycle and closeout writes stay outside the seat, and task-document edits stay within its own assignment. [9]
+
 
 
 
@@ -196,11 +199,13 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - The capsule vocabulary holds nine roles — architect, orchestrator, manager, worker, curator, reviewer, consolidator, investigator and bootstrap — the same set the launcher can select; the launcher also accepts the system-specialist alias. [12]
 
 
 
 - Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
+
 
 
 
@@ -212,6 +217,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 - The Curator's file-writer step uses mounted knowledge_write or the admitted serving-build command-line writer. [18]
+
 
 
 
@@ -228,7 +234,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Independent exact assigned review and sealed findings. [23]
+
 
 
 
@@ -239,7 +247,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Taskless real concern and report-first remediation. [25]
+
 
 
 
@@ -251,7 +261,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - The canonical role owns this concern and mutation boundary. [27]
+
 
 
 
@@ -280,7 +292,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Reviewer independently checks exact attempts, knowledge-effect declarations and separately sealed memory evidence. [35]
+
 
 
 
@@ -295,6 +309,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 - Current closeout doctrine consumes exact authority (including the Manager's standing leaf authority for routine paired closeout) and evidence (including the Curator's refreshed dependent-document read after a pair-changing clean sync) without substituting raw Git or blanket full-suite gates. [46]
+
 
 
 
@@ -314,6 +329,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Families are authored as records with their own guarantee, members, routes and admission, name members only by identifier, and are read back through knowledge_read with view family. [3]
 
+
 - The per-target authored rationale lives in the knowledge-ingest preparation detail and the report-state reading in the ingest-report detail. [4]
 
 - The Curator report names writer-report state, written record and entry identifiers and paths, history rows and each refusal's own reason. [7]
@@ -329,7 +345,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Sprint coordination above one Manager per master and separate evidence. [21]
+
 
 
 
@@ -366,6 +384,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Memory review keeps separate sealed reports, finding identifiers and pass count, recorded with reviewKind=memory, and changes no code review state. [53]
 
 
@@ -384,6 +403,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 - Curator authors scope, reads the full knowledge_diff before semantic changes and completes full MQC and candidate-bound coherence; Reviewer owns the Git base/candidate handover comparison, with no separate Curator Git comparison. [39]
+
 
 
 

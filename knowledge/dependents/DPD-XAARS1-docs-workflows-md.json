@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified docs/workflows.md against 17c064d8: consolidation task workflow variant (Consolidator and Reviewer with no Worker/Curator) matches KNO-R05@v3.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/workflows.md against frozen tree 58741cf1: workflow overview remains accurate after KNO-R14@v1 added knowledge_read view cues to Tier-1 roles and operations.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,12 +101,12 @@
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+      "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+      "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/planning.md"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-27T18:29:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
     "task": "261112-KNO"
   }
 }

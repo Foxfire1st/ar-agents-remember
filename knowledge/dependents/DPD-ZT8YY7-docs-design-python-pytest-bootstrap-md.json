@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
-    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/design/python-pytest-bootstrap.md whole document against L32 candidate 52e47cca: pytest bootstrap, evidence-lane selection, and database-retirement guard policy remain accurate after registering controlplane/held_reset_index.py as an explicit non-knowledge store.",
-    "task": "261112-BUG-L32",
+    "statement": "Audited docs/design/python-pytest-bootstrap.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): pytest bootstrap, AR_LANGUAGE_CACHE preservation, and test-evidence-lanes.toml (860 total: 706 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability at lines 879-881) remain accurate.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 42,
+  "revision": 44,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,12 +26,12 @@
       "path": "pyproject.toml"
     },
     {
-      "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+      "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
       "kind": "file",
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+      "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
-        "content": "sha256:4e4f48d598378107acc657473e9b89d02f6da82e2512f3ebf9c720e3d4df40bd",
+        "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+        "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 878,
+          "end": 881,
           "kind": "line_range",
-          "start": 876
+          "start": 879
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:15:46+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L32",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

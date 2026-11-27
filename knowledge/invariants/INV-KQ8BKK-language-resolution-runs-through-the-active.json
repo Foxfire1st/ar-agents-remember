@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans nine modules across citations, currentness, writer, conversion, recorded reads, and test-isolation state census, and is guarded by LanguageSet cache-isolation, definition-scope, and process-state tests."
+  },
+  "applicability": "Every citation, anchor, conversion, currentness, and test-isolation consumer resolving source bindings through LanguageSet.",
+  "conditions": [
+    "Language resolution runs through the active LanguageSet ContextVar and LanguageProvider protocol rather than a process-global suffix table.",
+    "LanguageSet.extractor_version deterministically incorporates pinned tree-sitter and provider versions plus .scm query digests.",
+    "Definition, parse, TypeScript anchor, BLOB_DEFINITIONS, observation, and CodeObjects caches key by active provider identity or restrict process-global reuse to the default LanguageSet.",
+    "tags_engine.compile_query is registered in PROCESS_MUTABLE_STATES for module-boundary test cleanup."
+  ],
+  "exclusions": [
+    "Legacy format 1 conversion retains its explicit historical CitationReader language selection."
+  ],
+  "id": "INV-KQ8BKK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_language_set_and_tags_engine.py::test_language_set_derives_extractor_version_and_isolates_caches, mcp/tests/test_definition_scope.py, mcp/tests/test_suite_load_independence.py; clean-copy tree e122f928d620ee2485100752a3d16ed709100bac"
+      ],
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R10@v1 §1",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Language resolution runs through the active LanguageSet ContextVar and LanguageProvider protocol, deriving EXTRACTOR_VERSION from pinned versions and query digests and threading provider identity into every definition, parse, anchor, and observation cache key.",
+  "supersedes": [],
+  "title": "LanguageSet seam derives extractor version and isolates anchor caches",
+  "writer": {
+    "at": "2026-11-27T17:57:42+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L10",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
+  }
+}

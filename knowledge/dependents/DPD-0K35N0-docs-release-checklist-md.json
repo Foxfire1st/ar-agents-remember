@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
-    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
+    "codeTree": "a4f026f8fda8838d20b19dae774506d1a8b3d24b",
+    "commit": "29195b213c2b2065cee45958b650e07b76cf2aa3",
     "role": "curator",
-    "statement": "docs/release-checklist.md accurately reflects the uv-managed Python 3.14 wheel build, clean-environment smoke checks, version locations (3.0.8), GitHub workflows, hook gate, and PNT sandbox release verification on synced post-L54 base 8fe83ceb2352.",
-    "task": "261112-BUG-L33",
+    "statement": "Audited docs/release-checklist.md against L11 candidate tree a4f026f8 after pyproject.toml, uv.lock, and certification-profile-v1.json updates; release packaging, wheel/sdist, and verification steps remain accurate.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "cc0b41fec35e3c753461668ff0c6f7d65d3689fc",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -142,14 +142,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T21:50:20+01:00",
+    "at": "2026-11-27T21:03:08+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

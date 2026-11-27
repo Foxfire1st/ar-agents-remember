@@ -125,7 +125,9 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The Reviewer starts on owner assignment after receiving the required intake and writes local report-folder verdicts (template for verdictRef). [3]
+
 
 
 
@@ -156,6 +158,7 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The onboarding staleness criterion checks every present-tense card or overview sentence against the as-landed code, keeps historical accounts in history rows, and does not accept a true paragraph added beside a contradictory claim. [14]
 
 
@@ -170,7 +173,9 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The Reviewer writes the verdict in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) using the linked verdict template and records memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`. [19]
+
 
 
 
@@ -211,7 +216,9 @@ No meaningful cross-repo references found.
 
 
 
+
 - Review starts on owner assignment and requires mode, seam, requirement IDs/versions/packets/approval, exact candidate with passing clean-copy checks, Worker attempts, and `system/tools.md`/guidelines before inspecting. [26]
+
 
 
 
@@ -225,6 +232,7 @@ No meaningful cross-repo references found.
 
 
 
+
 - The Reviewer marks review `done` via `task_doc(set_step)` only after the last round passes. [32]
 
 
@@ -232,4 +240,4 @@ No meaningful cross-repo references found.
 
 
 
-- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [36]
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree. [36]

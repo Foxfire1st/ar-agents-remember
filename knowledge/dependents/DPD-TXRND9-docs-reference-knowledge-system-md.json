@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
-    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
+    "codeTree": "95234971624e9cfbae7d009db14d7e6280a2ddf5",
+    "commit": "9f1b832ca3c8490833c4d15edd46bc5515cbba54",
     "role": "curator",
-    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: docs/reference/knowledge-system.md remains accurate with zero contradictions after L59 added the pre-short-circuit contract-abandoned guard in record_landing.py.",
-    "task": "261112-BUG-L59",
+    "statement": "Verified docs/reference/knowledge-system.md against post-KNO-L10 synced frozen tree 95234971 (base 9f1b832ca): lines 386-394 document all eleven knowledge_read views, text-bearing replies, and auto-pairing; additive KNO-L10 LanguageSet/tags.scm citation engine preserves documented citation rules; narrowed deferral DFR-DE843V (line 31, lines 408-410, 497-502) remains intact.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/reference/knowledge-system.md",
-        "note": "Update docs/reference/knowledge-system.md for clause_title (~80 chars), ten knowledge_read views, automatic code-tree pairing, post-landing brief refresh, and agents-remember memory-briefs."
+        "note": "Update docs/reference/knowledge-system.md line 31 (clause_title ~80 chars) and lines 408-410, 497-502 (post-landing brief refresh and agents-remember memory-briefs CLI)."
       },
-      "createdAt": "2026-11-27T01:47:08.380157Z",
-      "createdByLeaf": "261112-KNO-L7",
-      "fileBlob": "b57ee9b5a4726d4b95947fa831f9bd6dbd2d0424",
-      "id": "DFR-5W723Z",
+      "createdAt": "2026-11-27T17:29:51.630838Z",
+      "createdByLeaf": "261112-KNO-L14",
+      "fileBlob": "d008e755892f80eaa227bfb5cbc9c6b11db2c5a6",
+      "id": "DFR-DE843V",
       "owner": "261112-KNO",
-      "passage": "docs/reference/knowledge-system.md lines 30-31 (first six words fallback), lines 386-388 (knowledge_read never returns record text), lines 401-403 and 486-496 (omitting post-landing brief refresh and memory-briefs CLI), and lines 425-429 (omitting automatic code-tree pairing)",
-      "reason": "KNO-R07 replaces six-word untitled fallback with ~80-char first-clause clause_title, adds verbatim records/impact/search/compact-dependent views on knowledge_read, adds automatic memoryRoot-to-code pairing, and adds post-landing brief refresh plus agents-remember memory-briefs CLI; Curator cannot edit docs/ files in code root."
+      "passage": "docs/reference/knowledge-system.md line 31 (first six words fallback) and lines 408-410, 497-502 (omitting post-landing brief refresh and agents-remember memory-briefs CLI)",
+      "reason": "Narrowed and re-deferred from DFR-5W723Z onto KNO-L14 frozen blob of docs/reference/knowledge-system.md: KNO-R14@v1 fixed lines 386-394 (eleven knowledge_read views, text-bearing responses, and automatic code-tree pairing), while line 31 and lines 408-410, 497-502 remain untouched."
     }
   ],
   "document": "docs/reference/knowledge-system.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
     {
-      "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+      "blob": "01afa70c008ae34ebf1f81b0ffab4bb47952036b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -122,7 +122,7 @@
       "path": "mcp/src/agents_remember/kernel/generated_copies.py"
     },
     {
-      "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+      "blob": "ceb7522bd6fc0d82fd14dd7a603e3fd782707f36",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
     },
@@ -143,8 +143,8 @@
     },
     {
       "anchor": {
-        "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
-        "content": "sha256:cd6baad3af0eca70673d6da336f2d0a97e064578948a9ecef96d7be5dda01776",
+        "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
+        "content": "sha256:2ec8f3f4402f70629ceaa69f1c75b3d6d19beac1cb187289d850ab77a39851e3",
         "locator": {
           "kind": "symbol",
           "name": "_observe_source"
@@ -202,7 +202,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
+      "blob": "902b5496cac9635da19c498cabd8036b1ab9efe9",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
     },
@@ -212,7 +212,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
     },
     {
-      "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+      "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
     },
@@ -252,7 +252,7 @@
       "path": "dashboard/src/panels/review/MeaningEffects.tsx"
     },
     {
-      "blob": "d3ea3d44f09ba0802cfe5e4292c87fd8d1dd9010",
+      "blob": "244b1e06ca7a6bf7b8e6ba91d37fe1fff6d48b17",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
     },
@@ -272,12 +272,12 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
     },
     {
-      "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+      "blob": "e847930d44b35a21df3ab12eb97a23fce9ee5561",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+      "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     },
@@ -306,7 +306,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+      "blob": "ebd9c7653054484424f0e2c8051ea300693daf93",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
     },
@@ -317,8 +317,8 @@
     },
     {
       "anchor": {
-        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
-        "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+        "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
         "locator": {
           "kind": "symbol",
           "name": "bindings"
@@ -329,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -341,8 +341,8 @@
     },
     {
       "anchor": {
-        "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
-        "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
+        "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+        "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
         "locator": {
           "kind": "symbol",
           "name": "_symbol_range"
@@ -406,14 +406,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T00:41:03+01:00",
+    "at": "2026-11-27T18:56:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L59",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
-    "task": "261112-BUG"
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
   }
 }

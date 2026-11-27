@@ -23,7 +23,7 @@ that used to collapse into one `None` are three genuinely different facts here:
 
 The bounded process memo reuses a tree entry for the same repository, tree and path, and blob lines
 for the same repository and blob, when those entries are cached. A definition-cache hit reuses the
-parse for the same repository, blob, grammar and applicable script test-file class. Eviction permits
+parse for the same repository, blob, grammar key, active provider version, and applicable script test-file class. Eviction permits
 a fresh read or parse. The tables live in [`read_anchor_memo.py`](read_anchor_memo.py.md). Warmed content
 can remain available under its recorded identity when the requested tree and matching path still
 resolve after a blob becomes unavailable.
@@ -75,7 +75,7 @@ locator addresses in those exact bytes, and the model refuses ranges beside any 
 
 | Locator kind | What `resolved_ranges` carries on `exact_recorded_blob` |
 | --- | --- |
-| `symbol` | the distinct defining extents selected in document order. The reader tries the whole key first. Lean lookup ends at that key, while other readers can split a dotted name after a miss. The memo retains the extent metadata needed for scope decisions |
+| `symbol` | the distinct defining extents selected in document order through `extents.qualified_spans` (sharing enclosing-holder containment with writer and conversion). The reader tries the whole key first; Lean and exact-binding providers end at that key, while other readers apply dotted holder containment after a miss. The memo retains the extent metadata needed for scope decisions |
 | `line_range` | the recorded range itself **only if the blob holds those lines** — `_observed_line_range` reads the blob's lines once (`_recorded_lines`, the same read `_blob_definitions` makes for the symbol path) and compares the recorded `end_line` with `_line_count` |
 | `file` | nothing: a file locator addresses the whole blob and names no range |
 
@@ -145,7 +145,7 @@ the complete object id(s) the answer is a function of:
 | --- | --- | --- | --- |
 | `TREE_ENTRIES` | (root, tree id, confined path) | `_tree_entry` | the parsed `ls-tree` entry **or `None`** — Git's own "no entry at this path" about an existing immutable tree is as permanent as a found entry |
 | `BLOB_LINES` | (root, blob id) | `_recorded_lines` | the blob's lines as an immutable **tuple**, because one answer is shared by every later caller |
-| `BLOB_DEFINITIONS` | (root, blob id, grammar and script test-file class) | `_blob_definitions` | a read-only mapping from names to extent tuples that preserves Lean scope information and is reused on a matching reader-class cache hit |
+| `BLOB_DEFINITIONS` | (root, blob id, grammar key, active provider version, and script test-file class) | `_blob_definitions` | a read-only mapping from names to extent tuples that preserves Lean scope information and is reused on a matching provider-version and reader-class cache hit |
 
 The rules a successor must keep, because each was either a review finding or is what makes "never
 stale" true:
@@ -251,22 +251,21 @@ No meaningful cross-repo references found.
 - **The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.** [2]
 - **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** [3]
 - The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. [5]
-- **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** [7]
+
+- **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** Anchor: `_observed_entry`, `_observed_symbol`, `_observed_line_range` [7]
+
 - An established symbol key returns its distinct defining extents as structured ranges. An uncertain Lean key retains the recorded blob identity and returns no range. [8]
-- **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** [9]
-- How many lines a blob holds, where a final newline ends the last line. [10]
-- Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup selects the distinct ranges from those extents in document order. [11]
-- The memo keeps a tree entry or its definite absence, blob lines, and definitions per grammar and script test-file class. Entries require complete identities and successful observation. [12]
 
+- Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup delegates to `extents.qualified_spans` and selects distinct ranges in document order. Anchor: `_blob_definitions`, `_defining_extents` [11]
 
+- The memo keeps a tree entry or its definite absence, blob lines, and definitions keyed by grammar, active provider version, and script test-file class. Entries require complete identities and successful observation. Anchor: `_tree_entry`, `_recorded_lines`, `_blob_definitions` [12]
 
-
-- The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. [13]
-
-
-
-
-- **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [15]
+- The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. Anchor: `anchor_resolver_for`, `_observed_entry`, `_observed_symbol`, `_blob_definitions` [13]
 
 - The recorded symbol reader preserves blob identity when an exact Lean key is unverifiable. [22]
-- Exact keys precede dotted fallback and Lean uses the exact key only. [23]
+
+- Exact keys precede dotted holder containment via `extents.qualified_spans`, and Lean uses the exact key only. [23]
+
+- **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** [9]
+- How many lines a blob holds, where a final newline ends the last line. [10]
+- **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [15]

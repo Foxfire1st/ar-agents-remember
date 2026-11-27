@@ -1,0 +1,4767 @@
+{
+  "closed": true,
+  "leaf": "261112-KNO-L11",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T23:37:29+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-KNO-L11",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+      "task": "261112-KNO"
+    },
+    "reviewer": {
+      "at": "2026-11-27T23:37:29+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-KNO-L11",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "4345dd0b-7266-5334-bf52-2639b9042e3d",
+      "task": "261112-KNO",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 4,
+    "tree": "ffc7b03d2fb089c92fc88266ae3d517285126c23",
+    "verdictRef": "notes/reports/reviewer/4345dd0b-7266-5334-bf52-2639b9042e3d/memory-round-4/verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+            "content": "sha256:6a333ba109eb8640f9bdc0d9d3ebe9632565700c92fbca86e1d7b271e660f3c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "before": {
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "id": "RLZ-3XM7BA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-01ZJC0",
+      "items": [
+        "sha256:9b0775b23f7b5470543d31b976fb92aadc4544ca78aa7923ecb2529f52d5e0ad"
+      ],
+      "reason": "Re-anchored RLZ-3XM7BA at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-13QTT2's contract.",
+      "revision": 1,
+      "subject": "INV-13QTT2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-03RGME",
+      "items": [
+        "sha256:0e630ca1749815df35798e5f85f875ac99f5dccfaf23f4eed2922ea31387be20"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory_quality/style/citations/grammars.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0550MP",
+      "items": [
+        "sha256:25e6403f4f2de83354285e1631b12ff3780736037ce8c3c769a5ee208ffd828f"
+      ],
+      "reason": "Updated mcp/tests/conftest.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
+          "path": "mcp/tests/conftest.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/conftest.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-07P1Z3",
+      "items": [
+        "sha256:13060f4a5da4ec0d01a65ae5971978090b324d526fb864f96e8c51b2a8e40d4c"
+      ],
+      "reason": "Audited docs/install/hermes.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): Hermes install guide remains accurate after BUG-L32/L34 and L11 runtime/install updates.",
+      "revision": 16,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0JAFSQ",
+      "items": [
+        "sha256:f549c8fdaf4b0e051b74048d01c92d4a847d61319df953dd06380caf7c0fedce"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/knowledge_writer/code_anchors.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0SADY5",
+      "items": [
+        "sha256:0006e154d5687ed1004347b14b7c6526bd959b163225076f584f9516653b4f63"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:0006e154d5687ed1004347b14b7c6526bd959b163225076f584f9516653b4f63"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-13K6W2",
+      "items": [
+        "sha256:2ecc35a156608e3e633167259f8fdd25876465d26da1b9a55e4a029713dfd9ec"
+      ],
+      "reason": "Wraps citation conversion anchor parsing in repository_language_set_scope and catches GrammarUnavailableError cleanly.",
+      "subject": "hunk:sha256:2ecc35a156608e3e633167259f8fdd25876465d26da1b9a55e4a029713dfd9ec"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-18QHY9",
+      "items": [
+        "sha256:70bcbb6ada3d7e6aa0eb093ce3a0ebe3bf9fe78c6947061e73a3da90ffa3cc45"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:70bcbb6ada3d7e6aa0eb093ce3a0ebe3bf9fe78c6947061e73a3da90ffa3cc45"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1BVMFN",
+      "items": [
+        "sha256:e58770da6527b6a4d4cf9aecfdba2cbcf077463b3790c76c5a3df3ce3fe8f213"
+      ],
+      "reason": "Wraps citation conversion anchor parsing in repository_language_set_scope and catches GrammarUnavailableError cleanly.",
+      "subject": "hunk:sha256:e58770da6527b6a4d4cf9aecfdba2cbcf077463b3790c76c5a3df3ce3fe8f213"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "93437431cdffc0ab36a3ab133123953593f0b139",
+            "content": "sha256:d53871a3d2f7fba3d58257a97168df82d7c8d0828365b163a71207e49dfb2eab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/codex_dispatch.py"
+          },
+          "before": {
+            "blob": "eb6318aa272951c24e6b94403b47684d43815924",
+            "content": "sha256:24be4a0d3c87e6950de66de7e29d2036f575375303545d8180e5963d61809421",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/codex_dispatch.py"
+          },
+          "id": "RLZ-94GFDB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1TBBEG",
+      "items": [
+        "sha256:6b78174d77938298011e8e3efa71032f32661dcec8566415475addc9a8310752"
+      ],
+      "reason": "Re-anchored RLZ-94GFDB at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-R4JZ3F's contract.",
+      "revision": 1,
+      "subject": "INV-R4JZ3F"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_range"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:fa78b8bd401d960d54493214bf1a61bc8982c651bde14324daf644323e4754ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_range"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-3J326P"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1TY893",
+      "items": [
+        "sha256:ae5f3f2efcbe073ce4b663d988f5c61a77fbe9cefd83f3aa014f2e4a99abe830"
+      ],
+      "reason": "Re-anchored RLZ-3J326P at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-WK39V1's contract.",
+      "revision": 1,
+      "subject": "INV-WK39V1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1YFSJX",
+      "items": [
+        "sha256:61ebcbd99131b416fdae9ea9dc5dd34e00b0935d11a0579af306e4fefecab285"
+      ],
+      "reason": "Updated mcp/src/agents_remember/errors.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "089d163613b2a2c136565afcbf071f338566ff41",
+          "path": "mcp/src/agents_remember/errors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/errors.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 3
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-28PW7T",
+      "items": [
+        "sha256:f61af7cf7dd3a7fdc8e9e555bf6e44bc8509928792b4b30ab95b1597620081a5"
+      ],
+      "reason": "Examined all 5 members of FAM-TYKA3T; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:2f763f385704d548a70e9440c51ccc3c978ece135255918a876b8e324831bd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-XMSC5S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2BWRHG",
+      "items": [
+        "sha256:513adc7a62927bb2b7f53b899ac71fdd782d87d5f13b9c07838490ff69c793f1"
+      ],
+      "reason": "Re-anchored RLZ-XMSC5S at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-HPHVCN's contract.",
+      "revision": 1,
+      "subject": "INV-HPHVCN"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2FWA3X",
+      "items": [
+        "sha256:fb0a82719f677253508a79a78f13ac0eb0188f448b9d405326d46f639fa48ee5"
+      ],
+      "reason": "Re-anchored WKN-G1TBN8 to candidate mcp/src/agents_remember/cli/__main__.py::build_parser after L11 registered languages; the five earlier-installation commands remain registered so the debt still stands.",
+      "revision": 7,
+      "subject": "WKN-G1TBN8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2JGX7F",
+      "items": [
+        "sha256:11379d3cae508e4bbbf1326230b5a47c26cc2c2c86a759a3a31e5b7379ca6060"
+      ],
+      "reason": "Updated overview.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+          "path": ".dagger/src/agents_remember_quality/main.py"
+        },
+        {
+          "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
+          "path": "scripts/bootstrap-mcp-venv.sh"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2M0K7B",
+      "items": [
+        "sha256:d4d196d76b71f5de354a099edb9f1bcae52c360c6bbb951868addb4aa03fb823"
+      ],
+      "reason": "Created new onboarding card and sidecar for language_scanner.py covering repository language scanning, stat-cached LanguageSet construction, and cache warming.",
+      "sources": [
+        {
+          "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2NYPAP",
+      "items": [
+        "sha256:ffb59eaeaa1920773fd6ca136c5485cf28ea65ca1fff1e3acd536936e9c71b56"
+      ],
+      "reason": "Re-anchored WKN-AVZ1GA to candidate mcp/tests/conftest.py::_TEMPORARY (shifted 9 lines by _HOST_LANGUAGE_CACHE); dir='/tmp' literal is unchanged so the weakness still stands.",
+      "revision": 2,
+      "subject": "WKN-AVZ1GA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-31Y6EC",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Re-bound mcp/tests/evidence-lifecycle.toml card and sidecar onto post-sync L11 frozen candidate 492f436d9bbb (combining BUG-L32 and L11 exact-consumer updates).",
+      "sources": [
+        {
+          "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
+            "content": "sha256:7f9502d386378e7b9a089fbcaaa4e9ee70e4daeba7f41added3428ba95633249",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:d8bd466872c5b44a7443bec5095cccaf7188a04cb88df345c53d603a5ef61f29",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-57VSEG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-31YB17",
+      "items": [
+        "sha256:b43e9a46a75ce9de5f3bd569f35640af60f31d639e61b2a20f8e7000c863d24d"
+      ],
+      "reason": "Re-anchored RLZ-57VSEG at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-3HQNH1's contract.",
+      "revision": 2,
+      "subject": "INV-3HQNH1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-WMH9SZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-37RZ17",
+      "items": [
+        "sha256:e8b9a381696ac7f56b36e1d2c05e618166fdf143e826e11eb23a1a9a68b191c4"
+      ],
+      "reason": "Re-anchored RLZ-WMH9SZ at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-BT9HFV's contract.",
+      "revision": 1,
+      "subject": "INV-BT9HFV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-38AG67",
+      "items": [
+        "sha256:c3a764c46ef683fc39098e5654f1f267b861940f6b3bb2e1324acd342ef21f76"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:c3a764c46ef683fc39098e5654f1f267b861940f6b3bb2e1324acd342ef21f76"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3FJ3XB",
+      "items": [
+        "sha256:6e0cf3ea6d0396246414fb879f73948968b7ac23e4c4aad2d60f0471559b290a"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory/overview.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "b94453568a2e4367b5599c5e07936e49b70c8032",
+          "path": "mcp/src/agents_remember/memory/conversion/citations.py"
+        },
+        {
+          "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        },
+        {
+          "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+            "content": "sha256:d6876da7e222663fca8ced1b895dc23925f77aa4836c3c28d74733018af4a9f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PinnedDependencyTests"
+            },
+            "path": "mcp/tests/test_memory_citation_grammars.py"
+          },
+          "before": {
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "PinnedDependencyTests"
+            },
+            "path": "mcp/tests/test_memory_citation_grammars.py"
+          },
+          "id": "PRF-W4S5SQ"
+        },
+        {
+          "after": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:d80beb2d35fa6a065fc8a27142e5e2bd3a513643b67659f6dbebc3af2e411d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_anchors_and_extents_share_holder_containment_for_qualified_names"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "before": {
+            "blob": "8bf34abd28279aa9502fcf44c8b9fa8d0f3b50b7",
+            "content": "sha256:98d3027471e4977a7cfa1a0eed090077754c3cfba95ad71a5ce137221f83a85f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_anchors_and_extents_share_holder_containment_for_qualified_names"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "id": "PRF-WBQ3SQ"
+        },
+        {
+          "after": {
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+            "content": "sha256:d6876da7e222663fca8ced1b895dc23925f77aa4836c3c28d74733018af4a9f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PinnedDependencyTests"
+            },
+            "path": "mcp/tests/test_memory_citation_grammars.py"
+          },
+          "before": {
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "PinnedDependencyTests"
+            },
+            "path": "mcp/tests/test_memory_citation_grammars.py"
+          },
+          "id": "RLZ-210WCP"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:b5eb72c6cccd36ce45d5d8fc1229d76dcd614f8cca281a3c6752464083629178",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEASURED_VERSIONS"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-VKDBA8"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-3S0Y29",
+      "items": [
+        "sha256:b9aa6dd2108e1a680bcb85e48256db5f5cbbcafe740d8a5f1cf86e9bd8d52afc"
+      ],
+      "reason": "L11 deleted grammars.MEASURED_VERSIONS (removing RLZ-VKDBA8) and moved the tree-sitter 0.26.1 pin to language_catalog.lock.json with zero tree-sitter-* grammar dependencies while PinnedDependencyTests enforces dependency purity and read_anchors._defining_extents continues delegating to extents.qualified_spans.",
+      "revision": 2,
+      "subject": "INV-QQ8TQ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-40180E",
+      "items": [
+        "sha256:8ada8e310465e22ee15ca1284a91c84cd3aed0867f2fca82aae9942765aa1214"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory/knowledge/read_anchors.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-40MNWT",
+      "items": [
+        "sha256:f69f56b42a7e8ea9ad93381cb27f2c1ee3850255f74d8d480a3e08def6620541"
+      ],
+      "reason": "Wraps _resolve and _unsupported in grammars.repository_language_set_scope so review tree entry resolution uses repository language overrides.",
+      "subject": "hunk:sha256:f69f56b42a7e8ea9ad93381cb27f2c1ee3850255f74d8d480a3e08def6620541"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4PTNA9",
+      "items": [
+        "sha256:0124cb46e7ffa02357d830019bc056d3a605dff1ecc5ba8e9cdc396eef1680ac"
+      ],
+      "reason": "Imports warm_repository_languages and adds _warm_repo_languages_summary helper invoked by memory_init_tool (covered by KNO-R11@v1 §2).",
+      "subject": "hunk:sha256:0124cb46e7ffa02357d830019bc056d3a605dff1ecc5ba8e9cdc396eef1680ac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4YBZN2",
+      "items": [
+        "sha256:952cce7c48fc0420bcbcd51d2039859aa16ce73e67e47539cea755c62302b947"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:952cce7c48fc0420bcbcd51d2039859aa16ce73e67e47539cea755c62302b947"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4YDMSD",
+      "items": [
+        "sha256:dc1fbea5f2f6b655c37fd3f258170b1be9f8349052d6768702c2d4564c6b7aa9"
+      ],
+      "reason": "Re-bound mcp/tests/overview card and sidecar onto post-sync L11 frozen candidate 492f436d9bbb (860 lane modules: 706 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability).",
+      "sources": [
+        {
+          "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
+          "path": "mcp/tests/conftest.py"
+        },
+        {
+          "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+          "path": "mcp/tests/test_definition_scope.py"
+        },
+        {
+          "blob": "2ca6488b10c19d8b50dc6fa943cc9658cb2455bd",
+          "path": "mcp/tests/test_knowledge_database_retired.py"
+        },
+        {
+          "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+          "path": "mcp/tests/test_language_catalog_and_lazy_cache.py"
+        },
+        {
+          "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+          "path": "mcp/tests/test_language_set_and_tags_engine.py"
+        },
+        {
+          "blob": "84cb01deb0495c3aa758d0263e1594f74c32463d",
+          "path": "mcp/tests/test_memory_case_ranges.py"
+        },
+        {
+          "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+          "path": "mcp/tests/test_memory_citation_grammars.py"
+        },
+        {
+          "blob": "e39b42df1d3b07cd0e6eab497328c757772f06ac",
+          "path": "mcp/tests/tool_answer_l110_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1RWT3JRR",
+          "revision": 1
+        },
+        {
+          "id": "INV-6W74GGC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-716Q6QMV",
+          "revision": 1
+        },
+        {
+          "id": "INV-ENTFR23T",
+          "revision": 1
+        },
+        {
+          "id": "INV-RANN4DC0",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-59BEGT",
+      "items": [
+        "sha256:5231d35b257f5e787d5f759ad506434f5cfa5692828d3f2f79b1d9e1e277a8b1"
+      ],
+      "reason": "Examined all 5 members of FAM-BWQ4XYF9; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 2,
+      "subject": "FAM-BWQ4XYF9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5B177T",
+      "items": [
+        "sha256:356783c5ab2b8ac8b666509ef93dd9b252994e68aa7b3cd99107a9161c599c1d",
+        "sha256:655fa9ab33983edb7ddb2c8f0134b16fc3890ce643037151098bf6be8c04d22a",
+        "sha256:aeede30b4120df67e9978f0ad86acea97109b5ac86d3a1d3253c9e27d45bbbc1",
+        "sha256:bb8b75235fd51e6472d0a80ce087e17bb63da4e9237df0f400dd4c20b94b3c76",
+        "sha256:dad4049c308e64911ed0ffd17b474a2c1952ed27ce5e36f48f9707d733fafb10"
+      ],
+      "reason": "Updated mcp/tests/test_language_set_and_tags_engine.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+          "path": "mcp/tests/test_language_set_and_tags_engine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_language_set_and_tags_engine.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5E93QV",
+      "items": [
+        "sha256:9255b400388ec7052401b21b54c4e31b8d24576c7184dd0f43f3ce4554c5b9ca"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/canvas/kit_references.py.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "87494b46fcc6dd6f32cb8fc8b709e3ca8b71a658",
+          "path": "mcp/src/agents_remember/canvas/kit_references.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/kit_references.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:eae46a4ccd86d9ba37156a220d05eadd34d61a5a3d41ded8cc37d213ccfb7435",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "content": "sha256:2aa1e08f165e633bb2abd48490f1bebb7876d1e8e8d07f8bf079b05a7e63140b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-VDX96S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5FNAYX",
+      "items": [
+        "sha256:03d745a1d4be595e29d868f4cab35d7f22ca0f9ab83d1873d1936fd3a7d639e0"
+      ],
+      "reason": "Re-anchored RLZ-VDX96S at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-V2QBEP's contract.",
+      "revision": 1,
+      "subject": "INV-V2QBEP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5HTVFD",
+      "items": [
+        "sha256:0661b2f302d9a73b3dacc182a0df51c29442661e6a59297f49c7db3008890791"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory_quality/reference_state.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+          "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/reference_state.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:4c5f5ca27498f435eb98fb474b15b59b187f36f4a6cb1eb68b9751a8b1b862a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-1X4SZQ"
+        },
+        {
+          "after": {
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-GB76X8G2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5REX9Z",
+      "items": [
+        "sha256:cbaaa1cb8f31b4e0ed99d9d10ba04c22acf5bd6ffca265e40f9d73c2dfdf2e80"
+      ],
+      "reason": "Re-anchored RLZ-1X4SZQ, RLZ-GB76X8G2 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-RANN4DC0's contract.",
+      "revision": 2,
+      "subject": "INV-RANN4DC0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5TP14G",
+      "items": [
+        "sha256:8dc5b1b26cc6be01bea2ea165430ec9d7234ac15f0b3337a12cd85db089d98a7"
+      ],
+      "reason": "Adjusts import/helper wiring supporting repository_language_set_scope and read-side GrammarUnavailableError degradation (covered by KNO-R11@v1 §2).",
+      "subject": "hunk:sha256:8dc5b1b26cc6be01bea2ea165430ec9d7234ac15f0b3337a12cd85db089d98a7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5V2SCT",
+      "items": [
+        "sha256:1d09c6146704e2906c46b1324a994e6c3362dade7ae107356c672014b05d90d0"
+      ],
+      "reason": "Audited mcp/README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): MCP package structure, CLI/dashboard entry points, and L11 zero grammar-dep pyproject.toml/languages command remain accurate.",
+      "revision": 33,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-647T4G",
+      "items": [
+        "sha256:c4d8c502312e5af037e0940d6c5e74bb91137d3de52e92de9e22bea55b616b41"
+      ],
+      "reason": "Created new onboarding card and sidecar for test_language_catalog_and_lazy_cache.py covering dependency purity, lazy cache, language pack, error asymmetry, custom local language, and CLI tests.",
+      "sources": [
+        {
+          "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+          "path": "mcp/tests/test_language_catalog_and_lazy_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_language_catalog_and_lazy_cache.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-67B0J9",
+      "items": [
+        "sha256:fa108ac851d4bfeda544c58ce49ccf7ac6aeefeb094c4db4b546ce7fb3863f82"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/runtime/overview.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+          "path": "mcp/src/agents_remember/application/runtime/install.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6A52T4",
+      "items": [
+        "sha256:e4842fcb44fd9d330b0920b7a4a9b8f2694369119fc2b0df8e3a39b8f2784e4a"
+      ],
+      "reason": "Imports warm_repository_languages and adds _warm_repo_languages_summary helper invoked by memory_init_tool (covered by KNO-R11@v1 §2).",
+      "subject": "hunk:sha256:e4842fcb44fd9d330b0920b7a4a9b8f2694369119fc2b0df8e3a39b8f2784e4a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
+            "content": "sha256:dbdc5eddb81f8dec9172ae1a10fee90bb220708c6040acf612fd6f2e1d05f62e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_runtime_commands"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+            "content": "sha256:60fc007b2df6d0312a85840cf3517e46471650bf3b42db2018b4d0e8186994b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_runtime_commands"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-1RC1VP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6PRRJT",
+      "items": [
+        "sha256:cc172d1dc747d2dde16367eef5670de54f5286bf4aab9cc333b99624bed21996"
+      ],
+      "reason": "Re-anchored RLZ-1RC1VP at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-2PVK9H's contract.",
+      "revision": 1,
+      "subject": "INV-2PVK9H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
+            "content": "sha256:a52585b335ec466e019899a09df2f3b8aa49a04025989f77bc347ed733fb6834",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:5ae607e9ae7c0b52cd26b7aa9bac5ed60b1983b9bca66d66e395e9dced4b788f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-8CBSKX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6PZ13C",
+      "items": [
+        "sha256:3d9a42db42fcd8217eac37302a566d9ed99cf49584abd46ed49a80350a8def6a"
+      ],
+      "reason": "Re-anchored RLZ-8CBSKX at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-XG226D's contract.",
+      "revision": 2,
+      "subject": "INV-XG226D"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-NWX29V"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7422JB",
+      "items": [
+        "sha256:105fb1bec56c9052cf5dc1377eab8ab65c0bf289e3b5d2c438a1ee2193999286"
+      ],
+      "reason": "Re-anchored RLZ-NWX29V at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-GAZREV's contract.",
+      "revision": 1,
+      "subject": "INV-GAZREV"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-2PVK9H",
+          "revision": 1
+        },
+        {
+          "id": "INV-41J2Q6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 2
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 2
+        },
+        {
+          "id": "INV-ESZKHN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-SDEXYK",
+          "revision": 1
+        },
+        {
+          "id": "INV-VEGPXX",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-772XEB",
+      "items": [
+        "sha256:ed0d776840c4b8f2629d92eb69ca318cc1f3354b465b09e8f8562ce94040d0e3"
+      ],
+      "reason": "Re-examined all 12 members of FAM-FD58VB on post-sync L11 frozen candidate 492f436d9bbb after re-anchoring INV-6ZZXV3 (RLZ-7YMNE5); family guarantee is unchanged.",
+      "revision": 2,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7HS3S6",
+      "items": [
+        "sha256:3612c7dfe0a01afdcab97d4ffe3b0c94a9fb596e0d0774132cb1e43e23a57f60"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:3612c7dfe0a01afdcab97d4ffe3b0c94a9fb596e0d0774132cb1e43e23a57f60"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7MNBJD",
+      "items": [
+        "sha256:d5fe45a0dd6f7580bf32380ea6a73370e47df584b8335481b9fb787c0e8eba10"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:d5fe45a0dd6f7580bf32380ea6a73370e47df584b8335481b9fb787c0e8eba10"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-816V1J",
+      "items": [
+        "sha256:3e28d788ebf7152bd583361615f46d2d8a98e124ba5cf8743007620ee38c020d"
+      ],
+      "reason": "Dagger module constants and helper wiring supporting AR_LANGUAGE_CACHE volume mount and pre-warm step covered by KNO-R11@v1 §4.",
+      "subject": "hunk:sha256:3e28d788ebf7152bd583361615f46d2d8a98e124ba5cf8743007620ee38c020d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
+            "content": "sha256:ef0e19cb5fe65db30546c00ca2901544188c789acfab1689e53639989539b23c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "before": {
+            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+            "content": "sha256:e653a9cb6247cece14c61e1f4a5a7b952cdf447939b40a325a64dfc88568b233",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "id": "RLZ-KZ3BQD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8836F5",
+      "items": [
+        "sha256:e22aa19feb4fac1957d264fcfef536f7a743d9206591507fa8047cd74dd84307"
+      ],
+      "reason": "Re-anchored RLZ-KZ3BQD at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-TMKNRV's contract.",
+      "revision": 1,
+      "subject": "INV-TMKNRV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8SXMRB",
+      "items": [
+        "sha256:9a60a21dcd1e6e5112ca9091c3aa9299c18128449445f96ecdac5b0af9da7c44"
+      ],
+      "reason": "Reviewed scripts/agent_evals/overview.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "93437431cdffc0ab36a3ab133123953593f0b139",
+          "path": "scripts/agent_evals/adapters/codex_dispatch.py"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-GHNZS9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8V4R0Y",
+      "items": [
+        "sha256:f912e84f40d95e5d8859a1eae285a70393d8dbb0603f85cb8fe4e0659b658e97"
+      ],
+      "reason": "Re-anchored RLZ-GHNZS9 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-WZ8R0Q's contract.",
+      "revision": 1,
+      "subject": "INV-WZ8R0Q"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8ZYZ76",
+      "items": [
+        "sha256:09b24b120c98796f042ce9255f8e1c55ff470acd50391dc1fbac631be21e2556"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/application/review_tree_knowledge.py.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "b9d685899110493177ae5483ae4b24095dc6256a",
+          "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_tree_knowledge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-90BVSW",
+      "items": [
+        "sha256:01bcac5234b65dd62c8ae7408df23b5ffffac7c706f0fce3c9339032556f36c4"
+      ],
+      "reason": "Adapts JS grammar resolution in explainer_target to use grammars.language instead of direct tree_sitter_javascript import.",
+      "subject": "hunk:sha256:01bcac5234b65dd62c8ae7408df23b5ffffac7c706f0fce3c9339032556f36c4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-967A00",
+      "items": [
+        "sha256:a639452d37bb107b14aceed3ba9ebbb37ff49265eb90f57ee3bd2b979f566517"
+      ],
+      "reason": "Audited docs/install/README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): installation prerequisites, setup commands, and runtime layout guidance remain accurate after BUG-L32 and L11 updates.",
+      "revision": 15,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9EQYY7",
+      "items": [
+        "sha256:92d152588de552ee8fda9efbca7a6ee41ce568ae5887f197a011b7cba322a8ae"
+      ],
+      "reason": "Created new onboarding card and sidecar for cli/languages.py covering agents-remember languages scan and warm subcommands.",
+      "sources": [
+        {
+          "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+          "path": "mcp/src/agents_remember/cli/languages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/languages.py"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-9MCRDH",
+      "items": [],
+      "reason": "Audited and confirmed scripts/pnt_sandbox/README.md against L11 candidate tree a4f026f8; none of L11's uniform language catalog, lazy AR_LANGUAGE_CACHE, or zero tree-sitter-* dependency changes falsifies the document.",
+      "revision": 2,
+      "subject": "DPD-ZMQVXY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-13QTT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-4XD2ZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-DE9ZZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-QR6DSA",
+          "revision": 2
+        },
+        {
+          "id": "INV-TJADR1",
+          "revision": 4
+        }
+      ],
+      "id": "ROW-9MY519",
+      "items": [
+        "sha256:0b62a3833b6982c2020680de33e2c02646ef7892845b44727232f7ca24ed1218"
+      ],
+      "reason": "Examined all 5 members of FAM-VDDPC6; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 4,
+      "subject": "FAM-VDDPC6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9NPV0X",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "Updated mcp/test_support/agents_remember_test_support/testing/overview.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "9100985109e69470c20da9af730fc3e33ebd6aec",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9QH2HJ",
+      "items": [
+        "sha256:82a1fab45202ae1ff1a352e063d1baf9f09d906f132b91028cc23a0d09ecbca4"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/knowledge_currentness/observe.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "9141d7bc7562ab2a0993a72e24350837aa976bb1",
+          "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9SSBPQ",
+      "items": [
+        "sha256:7d857ec1acb5109656e9d32af097de0daa1c6da1d5fefc3168ff52dcd700a2d0"
+      ],
+      "reason": "Re-bound onboarding:mcp/overview trace after post-3.1.1-sync resolution of mcp/pyproject.toml (blob 6b92ec03) and mcp/uv.lock (blob 6cf9de2b) alongside L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope updates.",
+      "sources": [
+        {
+          "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+          "path": "mcp/certification-profile-v1.json"
+        },
+        {
+          "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
+          "path": "mcp/pyproject.toml"
+        },
+        {
+          "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        },
+        {
+          "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+          "path": "mcp/src/agents_remember/cli/languages.py"
+        },
+        {
+          "blob": "089d163613b2a2c136565afcbf071f338566ff41",
+          "path": "mcp/src/agents_remember/errors.py"
+        },
+        {
+          "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
+          "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+        },
+        {
+          "blob": "6cf9de2bb802b7506c9ad1d2472cd8dd8c4e0128",
+          "path": "mcp/uv.lock"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9XCSBX",
+      "items": [
+        "sha256:bab13242620e13fbea00ab1624e83b165bd8a063f94429c5aaf176776d5319b4"
+      ],
+      "reason": "Imports warm_repository_languages helper called by run_runtime_install (covered by KNO-R11@v1 §2).",
+      "subject": "hunk:sha256:bab13242620e13fbea00ab1624e83b165bd8a063f94429c5aaf176776d5319b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9XX07E",
+      "items": [
+        "sha256:4085cbca1852a3b24390d905db078c10f872551f616ecf7e054ae80b0f24d5e2"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:4085cbca1852a3b24390d905db078c10f872551f616ecf7e054ae80b0f24d5e2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A0B91M",
+      "items": [
+        "sha256:4dedd9aea56165af33920ba5d626eb6835f5d1eaf8503b40ae49c54061946c9f"
+      ],
+      "reason": "Removes privileged tree-sitter-* grammar dependencies and obsolete parser-wheel platform comment as part of the KNO-R11@v1 §4 dependency flip. (delete-only hunk)",
+      "subject": "hunk:sha256:4dedd9aea56165af33920ba5d626eb6835f5d1eaf8503b40ae49c54061946c9f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A0FN8B",
+      "items": [
+        "sha256:ef75b821c884c8a271baa2cb55ea5f17ed700540ec27beda78762c95f171402a"
+      ],
+      "reason": "Dagger module constants and helper wiring supporting AR_LANGUAGE_CACHE volume mount and pre-warm step covered by KNO-R11@v1 §4.",
+      "subject": "hunk:sha256:ef75b821c884c8a271baa2cb55ea5f17ed700540ec27beda78762c95f171402a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-MVRA3T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A0ZY7R",
+      "items": [
+        "sha256:2d1d9b96a97a001eab2d8ec91cd9fb22a403b59fcbc1918c1c80ae4ba7bb8955"
+      ],
+      "reason": "Re-anchored RLZ-MVRA3T at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-J8FGWF's contract.",
+      "revision": 1,
+      "subject": "INV-J8FGWF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A6C7NX",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "Updated mcp/test_support/agents_remember_test_support/testing/global_state.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "9100985109e69470c20da9af730fc3e33ebd6aec",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AJEME7",
+      "items": [
+        "sha256:c5b48cda7b1e640bb08c64d6a9648db07dcd00afc41cf27a03fab3ab4be4d4e0"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:c5b48cda7b1e640bb08c64d6a9648db07dcd00afc41cf27a03fab3ab4be4d4e0"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AX37QR",
+      "items": [
+        "sha256:525382259eb1b74e0d2ded4d3659a57d918425a008cda8e9db6997a0e5600974"
+      ],
+      "reason": "Audited docs/README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): documentation index makes no grammar-dependency claim and remains accurate alongside BUG-L32 held-reset delivery additions.",
+      "revision": 15,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-AXES76",
+      "items": [
+        "sha256:a17458178fa776633f5cfdd5c23d35e50721e6c04675a22cc927ff831237d185"
+      ],
+      "reason": "Examined all 3 members of FAM-3FTGSA; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 5,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AZS243",
+      "items": [
+        "sha256:4c7135faf09898b4bdee48aa4e58ef039c1aa403d6875ebdd46e23adc415faff"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:4c7135faf09898b4bdee48aa4e58ef039c1aa403d6875ebdd46e23adc415faff"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9100985109e69470c20da9af730fc3e33ebd6aec",
+            "content": "sha256:36c213da7b465959d7665dc49eec3113d52a80cfaf1ff7df1cdb9e3fc8e06754",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "e9afae233389503558811590710d1ee5bae9fdca",
+            "content": "sha256:f968473c0c680cd6642cc2c12b29718b0eea0088fc7a75c1bae06f580c569e37",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B363EG",
+      "items": [
+        "sha256:fecbc6faa0cec1753486c33ca44ce6612bb5643b9c911355c6cd0fa225e0361e"
+      ],
+      "reason": "Re-anchored RLZ-1563PY at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-KE2ZHT's contract.",
+      "revision": 2,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B9Q3N9",
+      "items": [
+        "sha256:c034272aea49f0a1c3ee7e5c8507ae34ef9a0aa1a6ce1990ef03a7fa0cad5abc"
+      ],
+      "reason": "Updated mcp/tests/test_memory_citation_grammars.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+          "path": "mcp/tests/test_memory_citation_grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_citation_grammars.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BH0CW1",
+      "items": [
+        "sha256:9b90e05b3edee0b216edc7f536a7bac8a3d4241959e53771278ac448de76e842"
+      ],
+      "reason": "Created new onboarding card and sidecar for language_cache.py covering isolated AR_LANGUAGE_CACHE downloads, SHA-256 verification, atomic extraction, ABI checks, and custom shared-library loading.",
+      "sources": [
+        {
+          "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BXA21S",
+      "items": [
+        "sha256:43c696d291484b6871ab11304ec24b16038017e120cb9c640df8bc8ea683c6ea"
+      ],
+      "reason": "Audited docs/architecture.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): package layering, ResetDeliveryPorts, knowledge_read views, and L11 uniform language catalog/lazy cache boundaries remain accurate.",
+      "revision": 28,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C55QYF",
+      "items": [
+        "sha256:c493712d54ff832bc68a79e8de795e7b2621970b06ad144a1715d7129413b7f9"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:c493712d54ff832bc68a79e8de795e7b2621970b06ad144a1715d7129413b7f9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CC8SN3",
+      "items": [
+        "sha256:8353baad06a1f9e9c54b54abe5db3721d6d93cf3d84ed046b31ceaf7681d3426"
+      ],
+      "reason": "Updated mcp/src/agents_remember/cli/__main__.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/__main__.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+            "content": "sha256:82b49fd73b289ac731afbcd1742e9ef6bd7f3e94fa884df15fc531200620a410",
+            "locator": {
+              "kind": "symbol",
+              "name": "range_proof"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+          },
+          "before": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:bf7b281388fd9bdf14847fd42909e75ca4286ba961540e6d830fc77efd84d0ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "range_proof"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+          },
+          "id": "RLZ-ZDG4KC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CK1DD2",
+      "items": [
+        "sha256:676f001cf5944df0cc991737d61d8677fdfb7702ed08420eb15aad01b3802a58"
+      ],
+      "reason": "Re-anchored RLZ-ZDG4KC at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-N5KQ73's contract.",
+      "revision": 1,
+      "subject": "INV-N5KQ73"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-GV3NYM",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ790A",
+          "revision": 1
+        },
+        {
+          "id": "INV-J8FGWF",
+          "revision": 1
+        },
+        {
+          "id": "INV-M7BT2R",
+          "revision": 1
+        },
+        {
+          "id": "INV-R850AZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CNHPV7",
+      "items": [
+        "sha256:cce0576bc7921240af07639c3d816efcc8284e6a451be0028cf08c2c09b06f95"
+      ],
+      "reason": "Examined all 6 members of FAM-TE2628; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 1,
+      "subject": "FAM-TE2628"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+            "content": "sha256:9ec1d0d3745eb947853cf3e9eb561493be3538fb2ee538ecd432dc2e7e0b6e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "before": {
+            "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+            "content": "sha256:7e7d95e708d73ec0ed905b3df7566991cff9e716af4dce6cd90bd78cb247576e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "id": "RLZ-GMH0JZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CXBT0H",
+      "items": [
+        "sha256:ec0959fa89ed56f4147ddc64a6e32770a26627ac37f20d5af612eb1bed8ccb7b"
+      ],
+      "reason": "Re-anchored RLZ-GMH0JZ at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-VWRJR7's contract.",
+      "revision": 2,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CYKCVZ",
+      "items": [
+        "sha256:1aa205be905f96345ecd9d4eb9813ad65b7d233cf4b18e65123fdd144ab52d77"
+      ],
+      "reason": "Threads repository_language_set_scope around observation_key and locator resolution in observe_entry (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:1aa205be905f96345ecd9d4eb9813ad65b7d233cf4b18e65123fdd144ab52d77"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CZ3BEP",
+      "items": [
+        "sha256:fa672e49010daf4ca4e56bd17e1954ff5575eac4b9158fa21b02273c267e22e1"
+      ],
+      "reason": "Audited docs/host.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): host setup, daemon config, Antigravity ACP guidance, and refreshed role_launch_preparation.py/paseo_bridge.mjs anchors remain accurate alongside L11 CLI/install updates.",
+      "revision": 25,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-D3ZRPX",
+      "items": [
+        "sha256:183b13305b116bb6cb176fa1668c940767f3dfbeb2c91f6d56dbe60ccbf05f37"
+      ],
+      "reason": "Examined all 8 members of FAM-7EBNVZ; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 2,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8893dece04922f14cfcbbf99ed77b1cf5e47d0ed",
+            "content": "sha256:6ae3e977a4bc23918a11f3b7c5eb95cbaabdb40ec260ad41551e23935aee6002",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
+          },
+          "before": {
+            "blob": "a0efdfe20f3f77b6898242e2667f426ccbcef18f",
+            "content": "sha256:7c6e6d2f0fae1ed2185832ce032fb37bf88153be3df07a3a301a3ac220bb9cfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
+          },
+          "id": "RLZ-Q4HG5W"
+        },
+        {
+          "after": {
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+            "content": "sha256:34129f78a83030265b5bc28b4d74065b85514fdae9241ccb9f83492310b73e3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "before": {
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:095caa7ea43283c436da50242be4a8f5e00c99b6b7e2785861aa611411aa9b6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "id": "RLZ-Z15J3Z"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DDN85S",
+      "items": [
+        "sha256:ab19bad139ce6c3a8c809bfd01df430d57b856bb259ee8613c6e8077a6a2908a"
+      ],
+      "reason": "Re-anchored RLZ-Q4HG5W, RLZ-Z15J3Z at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-033XSD's contract.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DRF0FZ",
+      "items": [
+        "sha256:46a637535df1265e68a437dea376320e1b24c34b27c1d626ae4fbfd13b644a88"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:46a637535df1265e68a437dea376320e1b24c34b27c1d626ae4fbfd13b644a88"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DSM7B2",
+      "items": [
+        "sha256:6e3c9af2b467ff0b2edab8ae022af733720559b184b8b9fc570e06d32eb7e8bd"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3). (delete-only hunk)",
+      "subject": "hunk:sha256:6e3c9af2b467ff0b2edab8ae022af733720559b184b8b9fc570e06d32eb7e8bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DSQ05J",
+      "items": [
+        "sha256:dd1be8e536f8026942ddfe8b3087a85f760e8cc2f38594b72c6cf9dab66413a9"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:dd1be8e536f8026942ddfe8b3087a85f760e8cc2f38594b72c6cf9dab66413a9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E0VM28",
+      "items": [
+        "sha256:2697325ed910015a6d08b70e401bef9cda9b131f662770a98ac0f38d80fb75e1"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/memory_initialization.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+          "path": "mcp/src/agents_remember/application/memory_initialization.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_initialization.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EA8RGQ",
+      "items": [
+        "sha256:79e692c46860af64d9bbe8d04530ee3e865c7710a3c01477fabe43a413eccf51"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:79e692c46860af64d9bbe8d04530ee3e865c7710a3c01477fabe43a413eccf51"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EADC22",
+      "items": [
+        "sha256:dbf113aa1de5967f535eec87d2c0d8c87f6c748be0281de64dd4e8e38f6bad6b"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:dbf113aa1de5967f535eec87d2c0d8c87f6c748be0281de64dd4e8e38f6bad6b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EGRASW",
+      "items": [
+        "sha256:62a30e3f588205b570eff202de12783b87647b84ad968a856e1c0ef1d88aa6e6"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:62a30e3f588205b570eff202de12783b87647b84ad968a856e1c0ef1d88aa6e6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-559QV5",
+          "revision": 1
+        },
+        {
+          "id": "INV-5FFC2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-EW1ST5",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJDERT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KQ8BKK",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYP9YD",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EKMTXS",
+      "items": [
+        "sha256:3ef77bd9d3b136141e70420ab9ec71bd0b9c07939d09085449709536533bf431"
+      ],
+      "reason": "Added KNO-R11@v1 §1 (bundled hash-pinned catalog lock), §2 (isolated lazy AR_LANGUAGE_CACHE and read/write asymmetry), and §3 (local-only languages.json overrides, custom libraries, and live repository_language_set_scope binding) to FAM-CSVQBJ, strengthened the joint guarantee, and updated non-nested routes to application, cli, memory/conversion, memory/knowledge, memory_quality, package_data/citations, and test_support/testing.",
+      "revision": 2,
+      "subject": "FAM-CSVQBJ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3HQNH1",
+          "revision": 2
+        },
+        {
+          "id": "INV-B7D1WM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EPJN5X",
+      "items": [
+        "sha256:e6aa07414ca7ec7fd358142a446d7303969f49cbf4de86701a515bbbedd25e91"
+      ],
+      "reason": "Examined all 2 members of FAM-6M4B49; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 2,
+      "subject": "FAM-6M4B49"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+            "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            },
+            "path": "mcp/tests/test_definition_scope.py"
+          },
+          "before": {
+            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            },
+            "path": "mcp/tests/test_definition_scope.py"
+          },
+          "id": "PRF-AATTF0"
+        },
+        {
+          "after": {
+            "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
+            "content": "sha256:9c3da1ee755b11bfbc1f6b620fedcc93dfaafac51032bd4ad129fae35ffb3a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_quality_run"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+          },
+          "before": {
+            "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+            "content": "sha256:800e9795e3c2782a3450b9c03a1e7d1a5850845f293febf0cb73112eaf470050",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_quality_run"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+          },
+          "id": "RLZ-FAV7J5"
+        },
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:69af759838de282ba67b9de63e4b5ab2d935353eaf65589d90f6da5e44c2ce11",
+            "locator": {
+              "kind": "symbol",
+              "name": "parsing_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:9470ed3912c77900163c64625b404bdc0733f9b3f0d0ee3111a9d7806c09229f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parsing_scope"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-WTX2BJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ERT2CZ",
+      "items": [
+        "sha256:0b1057b4d96c24d8b0cc6fa3e8b87464ae285e446493f800988117a4b22a3ad2"
+      ],
+      "reason": "Re-anchored PRF-AATTF0, RLZ-FAV7J5, RLZ-WTX2BJ at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-F1J9BH's contract.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EVTTAN",
+      "items": [
+        "sha256:7648dad1e003c440019f929b166295f6f9f56a1ebe4bfb113e1f192b8e843b8a"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:7648dad1e003c440019f929b166295f6f9f56a1ebe4bfb113e1f192b8e843b8a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:343d1736eac3d872956b7cef84b52826ed85794fb43645ff18a3c1cdbf6ad6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_suffix_is_permanently_reserved_from_tree_sitter_providers"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "before": {
+            "blob": "8bf34abd28279aa9502fcf44c8b9fa8d0f3b50b7",
+            "content": "sha256:bafabd311dfcfce4f1ad086f73599ba90b74bf75a6ee70d2a4d205b1d83c3cb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_suffix_is_permanently_reserved_from_tree_sitter_providers"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "id": "PRF-1SWE9J"
+        },
+        {
+          "after": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:b0323973c97f76e3f3ed88c49a25eaa3f8bcc42e03aec3baa143423651c4e12e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tags_engine_ignores_doc_and_local_captures_and_preserves_document_order"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "before": {
+            "blob": "8bf34abd28279aa9502fcf44c8b9fa8d0f3b50b7",
+            "content": "sha256:cc27206166172cf3ca7fc8192027867dd9f306f1ea204e3a6899d5d6885c8bb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tags_engine_ignores_doc_and_local_captures_and_preserves_document_order"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "id": "PRF-PRQW7Z"
+        },
+        {
+          "after": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:3977e516af81450c94fccf8b03f999cd67ca59118413d92b7e8cad824716b993",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeanLanguageProvider"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "before": {
+            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+            "content": "sha256:30e0d1b2661454362fa720bc6417e3201768db2608a11e915e338645d50a9a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeanLanguageProvider"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "id": "RLZ-VTDT98"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-F287PW",
+      "items": [
+        "sha256:3fe0ab777cb530c15cfd25b348aa9469d2ffaf231c24ec7de94594a4a94cdca3"
+      ],
+      "reason": "Re-anchored PRF-1SWE9J, PRF-PRQW7Z, RLZ-VTDT98 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-ZYP9YD's contract.",
+      "revision": 1,
+      "subject": "INV-ZYP9YD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+            "content": "sha256:a828c59946627f996e006a9d91b62e0905c4b66ea0629d2881a2e2e5579330fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "before": {
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+            "content": "sha256:175d08c35c2eb075a61fc55a9fb45a6dd38c03c62814efa473a28315832b1d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "id": "RLZ-SM460F"
+        },
+        {
+          "after": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FBS6MM",
+      "items": [
+        "sha256:573900f3b2b0f31c6a6ca79aaad82d6d7ba94c50de8167b2b34b5a3525f3771c",
+        "sha256:a7d5feafda46a87bd287f7e20fb404ab4eea88235aea7d055703f172abbc987a"
+      ],
+      "reason": "Re-anchored RLZ-SM460F (mcp/certification-profile-v1.json) and RLZ-XQXYDT (mcp/tests/test-evidence-lanes.toml) onto post-sync L11 frozen candidate 492f436d9bbb; INV-BXWQRD contract is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FCKJGN",
+      "items": [
+        "sha256:6ea2d5d17ffcd2dcaf58558748b7c056081a0509e9a4e657409957fabdbef065"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory_quality/overview.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "8893dece04922f14cfcbbf99ed77b1cf5e47d0ed",
+          "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
+        },
+        {
+          "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
+          "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+        },
+        {
+          "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        },
+        {
+          "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
+        },
+        {
+          "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py"
+        },
+        {
+          "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_config.py"
+        },
+        {
+          "blob": "eab275be8e5fed4b5e7c41f8b8c3c509fd6168ed",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py"
+        },
+        {
+          "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FH26C5",
+      "items": [
+        "sha256:b037e62d4a75ba33350adc80019815c62116948aaccdb5a8a94709273169a4f3"
+      ],
+      "reason": "Re-bound onboarding:mcp/pyproject.toml trace after post-3.1.1-sync resolution of mcp/pyproject.toml (blob 6b92ec03, version 3.1.1 + L11 zero tree-sitter-* dependency flip).",
+      "sources": [
+        {
+          "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G07YGR",
+      "items": [
+        "sha256:21246bae6ce0969a2577df16478d258c22633bf3a7573411bd42c220344249a6"
+      ],
+      "reason": "Wraps _resolve and _unsupported in grammars.repository_language_set_scope so review tree entry resolution uses repository language overrides.",
+      "subject": "hunk:sha256:21246bae6ce0969a2577df16478d258c22633bf3a7573411bd42c220344249a6"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7VGMWY",
+          "revision": 2
+        },
+        {
+          "id": "INV-XG226D",
+          "revision": 2
+        },
+        {
+          "id": "INV-XWNDYE",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y2SXDZ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-G1ERZB",
+      "items": [
+        "sha256:a49254079e560ebd680fcf353c703a8e389cc74f14f486cdd8dd45adbd994fcf"
+      ],
+      "reason": "Examined all 4 members of FAM-Z69A94; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 3,
+      "subject": "FAM-Z69A94"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G7AJMB",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Re-bound mcp/tests/test-evidence-lanes.toml card and sidecar onto post-sync L11 frozen candidate 492f436d9bbb (860 total modules, 706 unit-regression including test_held_reset_delivery.py and test_language_catalog_and_lazy_cache.py, stress-durability lines 879-881).",
+      "sources": [
+        {
+          "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G9A25B",
+      "items": [
+        "sha256:d69ef53a8601a5fba33711d1481d0f50db4391b2d3395bedbdb82df0df1f8282"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:d69ef53a8601a5fba33711d1481d0f50db4391b2d3395bedbdb82df0df1f8282"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GAEG6V",
+      "items": [
+        "sha256:5f40aafa7ce1e9f8b6e0970634c68d08cd77bc024fa979a9edb1530a0e8913ab"
+      ],
+      "reason": "Reviewed codex_dispatch.py.md against L11 candidate changes; after removing the stray EOF blank line and refreshing whole-file citation [1] with unchanged meaning, the card requires no counted Markdown or note edit.",
+      "sources": [
+        {
+          "blob": "93437431cdffc0ab36a3ab133123953593f0b139",
+          "path": "scripts/agent_evals/adapters/codex_dispatch.py"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/adapters/codex_dispatch.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-GP2N7C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GD7A24",
+      "items": [
+        "sha256:6aa35f9f8f70019a4a6020bcd5cfe3b0dade51b67e1e76986c9599407ef2339a"
+      ],
+      "reason": "Re-anchored RLZ-GP2N7C at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-WK67MP's contract.",
+      "revision": 1,
+      "subject": "INV-WK67MP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GEDMGP",
+      "items": [
+        "sha256:2273b0c0f1672771f68c2e0c043887fe74a1b8a6ca7a2180de0798c2c5d026f6"
+      ],
+      "reason": "Updated mcp/certification-profile-v1.json.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+          "path": "mcp/certification-profile-v1.json"
+        }
+      ],
+      "subject": "onboarding:mcp/certification-profile-v1.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GEYTRS",
+      "items": [
+        "sha256:1580a8928b653628d6128febbccd8920ee8f22721f06f4e27996f546a816d664",
+        "sha256:a6f5491f5c3b94e1ea420ce67d328b7de7e9410559f633900bdd71bcd07463a5"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/review_lane_classification.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "b552aae89dd4d8f6559c8fcc46fb27b8769a6fe4",
+          "path": "mcp/src/agents_remember/application/review_lane_classification.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_lane_classification.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GM6G5G",
+      "items": [
+        "sha256:b36dc56d19f7efccb31e93d8b8eee5da19ae513625a9b0fb41c791808ff6554c"
+      ],
+      "reason": "Audited CONTRIBUTING.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): contributor setup, bootstrap, and test commands remain accurate after BUG-L32/L34 and L11 updates.",
+      "revision": 28,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GQV7RZ",
+      "items": [
+        "sha256:3322f325f24b22f6f6479780abd28248b730e8fdb4192805a876214bef6eab77"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/overview.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "9141d7bc7562ab2a0993a72e24350837aa976bb1",
+          "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+        },
+        {
+          "blob": "ddcbc077a4a18e2a2b4ba5159585ba111a05e371",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+        },
+        {
+          "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+        },
+        {
+          "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        },
+        {
+          "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+          "path": "mcp/src/agents_remember/application/memory_initialization.py"
+        },
+        {
+          "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
+          "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+        },
+        {
+          "blob": "b552aae89dd4d8f6559c8fcc46fb27b8769a6fe4",
+          "path": "mcp/src/agents_remember/application/review_lane_classification.py"
+        },
+        {
+          "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
+          "path": "mcp/src/agents_remember/application/review_memo_store.py"
+        },
+        {
+          "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+          "path": "mcp/src/agents_remember/application/review_tree_entries.py"
+        },
+        {
+          "blob": "b9d685899110493177ae5483ae4b24095dc6256a",
+          "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+        },
+        {
+          "blob": "af91771f2da741416ddc97b2bbeb58fd09e63aeb",
+          "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GS6MTY",
+      "items": [
+        "sha256:38c24e7e22037054c3fd7cfadb1f1a2e6d22815f5b6a96776ed2feb912cbcfa2"
+      ],
+      "reason": "Dagger module constants and helper wiring supporting AR_LANGUAGE_CACHE volume mount and pre-warm step covered by KNO-R11@v1 §4.",
+      "subject": "hunk:sha256:38c24e7e22037054c3fd7cfadb1f1a2e6d22815f5b6a96776ed2feb912cbcfa2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GVWKQ1",
+      "items": [
+        "sha256:acba0be72ac81b7d1707771dd07ce29650a9198b3d868df7e743cee4a684a4c4"
+      ],
+      "reason": "Audited SECURITY.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): loopback binding, HeldResetIndex confinement, and L11 zero tree-sitter-* dependency and cache boundaries remain accurate.",
+      "revision": 19,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GW9TEC",
+      "items": [
+        "sha256:fb2544c9a6d0157353aaf835b766e3463d9785a8ccfaec9b6d4974680f7c2cd1"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:fb2544c9a6d0157353aaf835b766e3463d9785a8ccfaec9b6d4974680f7c2cd1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-H252V7",
+      "items": [
+        "sha256:e19419db5cf4352a088643be1dc31d4ef7900eedccf1f82cd973a628db369b8c"
+      ],
+      "reason": "Audited README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): Status section states package version 3.1.1 matching mcp/pyproject.toml, version.py, and mcp/uv.lock, and quickstart, install steps, links, and stability-promise text remain accurate.",
+      "revision": 23,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H3Q6B0",
+      "items": [
+        "sha256:9a3517ff086191972fda4e124d331046536c2353586cd68b166dba344967ee27"
+      ],
+      "reason": "Created new onboarding card and sidecar for language_config.py covering repository languages.json and user settings overrides and local-only URL refusal boundaries.",
+      "sources": [
+        {
+          "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_config.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_config.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H5CBMH",
+      "items": [
+        "sha256:4b86042b82b667d6fa044cd7a5845255afb3962077b4100ba198088a0bcae475"
+      ],
+      "reason": "Replaces direct tree_sitter_javascript import with grammars.language('javascript') in support of KNO-R11@v1 §4.",
+      "subject": "hunk:sha256:4b86042b82b667d6fa044cd7a5845255afb3962077b4100ba198088a0bcae475"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-H9NQGZ",
+      "items": [
+        "sha256:86f8cad28b474837ff9d869b68c9d34ce26746f1546cc871f27aee58af1f77c4"
+      ],
+      "reason": "Audited docs/design/python-pytest-bootstrap.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): pytest bootstrap, AR_LANGUAGE_CACHE preservation, and test-evidence-lanes.toml (860 total: 706 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability at lines 879-881) remain accurate.",
+      "revision": 44,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+            "content": "sha256:60f960f5260b86b2b9458916eb8758e5a1386cb731d3ecc873985c3ce0982f84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+            "content": "sha256:72dbd87ead7d9023af687b4949ea46c70d1d74baca8bf6ae5b9d45dac13d9d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HJAQNQ",
+      "items": [
+        "sha256:1b6879706b32fc21846ccd8d54cfca0aad4b84b26db8667d2ff82d346d9f98f9"
+      ],
+      "reason": "Re-anchored RLZ-BJ41EY and RLZ-H44S0N onto post-sync L11 frozen candidate 492f436d9bbb; evidence catalog updates preserve INV-T8672G without semantic change.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-QB5ZDY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HW647Z",
+      "items": [
+        "sha256:fe06ca84b8c917eb30756271647964cb04cf9bc836a13bd49ecb096123820693"
+      ],
+      "reason": "Re-anchored RLZ-QB5ZDY at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-0KYRK9's contract.",
+      "revision": 1,
+      "subject": "INV-0KYRK9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J19AG6",
+      "items": [
+        "sha256:43e60affb4889c8e1961898f14ef068ac855f9f62dc6736aa692fb687fd0bf19",
+        "sha256:b423e51abfb8a25f8996a438cb04ab31114215631bcf6ea58dceecf6c25658b0"
+      ],
+      "reason": "Updated mcp/tests/test_memory_case_ranges.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "84cb01deb0495c3aa758d0263e1594f74c32463d",
+          "path": "mcp/tests/test_memory_case_ranges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_case_ranges.py"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-J4WFKR",
+      "items": [],
+      "reason": "Audited and confirmed docs/release-checklist.md against L11 candidate tree a4f026f8; none of L11's uniform language catalog, lazy AR_LANGUAGE_CACHE, or zero tree-sitter-* dependency changes falsifies the document.",
+      "revision": 12,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JDC9V7",
+      "items": [
+        "sha256:707b3b2cdf1efba09cafd0c39c6fb5414ec535cf163c203951e9b8a3d9f606e8"
+      ],
+      "reason": "Updates GrammarUnavailableError docstring to describe lazy AR_LANGUAGE_CACHE downloads and local custom library paths without changing error semantics.",
+      "subject": "hunk:sha256:707b3b2cdf1efba09cafd0c39c6fb5414ec535cf163c203951e9b8a3d9f606e8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JFMXMA",
+      "items": [
+        "sha256:5b1c4ffa1e9ff0671483aba3e83a45be2c78e5ef28682187f1cf1b43ea591478"
+      ],
+      "reason": "Replaces direct tree_sitter_javascript import with grammars.language('javascript') in support of KNO-R11@v1 §4. (delete-only hunk)",
+      "subject": "hunk:sha256:5b1c4ffa1e9ff0671483aba3e83a45be2c78e5ef28682187f1cf1b43ea591478"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K4YKMM",
+      "items": [
+        "sha256:0f36fe0becc55ef6bd7090bd9ee157a515c3d8735bf570bf4296db5c21d7b13f"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/knowledge_writer/case_proof.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "ae18db151c89dfa1ccf0a55abfb50b015ab4d98d",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6cf9de2bb802b7506c9ad1d2472cd8dd8c4e0128",
+            "content": "sha256:c8ca767e248b473aa82813c971681c1d7390e8da33d7de97dcd155a1ebe3addd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/uv.lock"
+          },
+          "before": {
+            "blob": "713d6f2e26ba0dc8f0446bc723f4ce7e80b43893",
+            "content": "sha256:9cc254c2c180a67230f54577ced710a53ffd69bb3375860411880596e8c76af3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-XXV97Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K7EG13",
+      "items": [
+        "sha256:a7068e58450cd1959d9c2bbbc3d5c61e91eb5922f35c865cb77b331ae1a7364a"
+      ],
+      "reason": "Re-anchored RLZ-XXV97Y on mcp/uv.lock (blob 6cf9de2b) at post-3.1.1-sync L11 candidate tree bf8f874d0093 (codeBase 941b09bf0); mcp>=1.30.0,<2 remains satisfied without altering INV-DY0898's contract.",
+      "revision": 1,
+      "subject": "INV-DY0898"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-28F8AE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KAZCYC",
+      "items": [
+        "sha256:0e1b4b99cc4f2626a560e37293497b6d0eb242e334a1f5cb28bb581447a4c06f"
+      ],
+      "reason": "Re-anchored RLZ-28F8AE at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-B37MWR's contract.",
+      "revision": 2,
+      "subject": "INV-B37MWR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KPHPRP",
+      "items": [
+        "sha256:26bf8d249b90b16c487a6f3d6f8de8afb08b28853bab08037ca6d08a56c8877e"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/knowledge_worklist/code.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "ddcbc077a4a18e2a2b4ba5159585ba111a05e371",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/code.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_range"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:fa78b8bd401d960d54493214bf1a61bc8982c651bde14324daf644323e4754ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_range"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-BKBWRG"
+        },
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "content": "sha256:2f763f385704d548a70e9440c51ccc3c978ece135255918a876b8e324831bd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-TWCHVH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M0Y1JY",
+      "items": [
+        "sha256:ad961caf5d0913316f14a82fde48b7317d703484b402c433f727f3f7503fcc66"
+      ],
+      "reason": "Re-anchored RLZ-BKBWRG, RLZ-TWCHVH at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-5FFC2H's contract.",
+      "revision": 1,
+      "subject": "INV-5FFC2H"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M62TBH",
+      "items": [
+        "sha256:3431a82af89f65f5177ba09799d3ffbf1f79efe0fefacf4d0fef5bfa09a47fe8"
+      ],
+      "reason": "Imports Path and grammars to bind repository_language_set_scope inside the detached quality worker.",
+      "subject": "hunk:sha256:3431a82af89f65f5177ba09799d3ffbf1f79efe0fefacf4d0fef5bfa09a47fe8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MFRFR0",
+      "items": [
+        "sha256:50e106e1d09232332126973b2f2f097df116be20a499c79694bd7d395aa659b7"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/review_tree_entries.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+          "path": "mcp/src/agents_remember/application/review_tree_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_tree_entries.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MFYZBB",
+      "items": [
+        "sha256:4df9d513f22a5cf298e04044a87990473b28440128d4e8c31436c32b3bb30841"
+      ],
+      "reason": "Imports Path and grammars to bind repository_language_set_scope inside the detached quality worker.",
+      "subject": "hunk:sha256:4df9d513f22a5cf298e04044a87990473b28440128d4e8c31436c32b3bb30841"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-MH4KS2",
+      "items": [
+        "sha256:75cda37fb3878d9c53a29ba5ed729321029df678d4d798caecd714bf91735bc0"
+      ],
+      "reason": "L11 only wrapped restore_review_memos in review_tree_knowledge.py inside grammars.repository_language_set_scope so per-repo language sets govern memo namespaces; it did not restore regressed shared caches or measure first-view/index nonregression, so alternative 1 remains rejected.",
+      "subject": "reconsider:DEC-H24NXK#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MK1VGH",
+      "items": [
+        "sha256:1bb6822dc3e30158ea3c85981c1bc6c535259be484cbc502728f2e3e85b14965"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:1bb6822dc3e30158ea3c85981c1bc6c535259be484cbc502728f2e3e85b14965"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MPY6K8",
+      "items": [
+        "sha256:d1d71b054f616f07249a8d4dd42a9e1bbd7f871970a49f419e20cfa0295032c0"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:d1d71b054f616f07249a8d4dd42a9e1bbd7f871970a49f419e20cfa0295032c0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "content": "sha256:66e31f9e204b9907081813aef8b907f9dc9de92398b59c6bdce205d0ab444883",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-AZ5367"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MYW6H7",
+      "items": [
+        "sha256:e56e91e496a7d156ab0b9c56f61141d06e7d5ed7a173284042f3ba0054891bbd"
+      ],
+      "reason": "Re-anchored RLZ-AZ5367 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-4Y2AN9's contract.",
+      "revision": 1,
+      "subject": "INV-4Y2AN9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-AFA5WS",
+          "revision": 1
+        },
+        {
+          "id": "INV-BT9HFV",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEBRX0",
+          "revision": 1
+        },
+        {
+          "id": "INV-S18ZC5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-N0P9CW",
+      "items": [
+        "sha256:dbbb1299fd3a450ee109471af2ed32038ee9332dd90655bbfccd9bacd783c780"
+      ],
+      "reason": "Examined all 4 members of FAM-P7XS4J; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 1,
+      "subject": "FAM-P7XS4J"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N0XMY6",
+      "items": [
+        "sha256:34033d91853ca4d15ef571cfd0954b2298d314904d9f65cc519e3e63f4624bf4"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory/conversion/code_objects.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/code_objects.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N96RC2",
+      "items": [
+        "sha256:612652c26fd3a6285850388fcb91300c38241a453aa322887f770211a92dc879"
+      ],
+      "reason": "Verified mcp/tests/test_knowledge_database_retired.py.md against post-sync L11 frozen candidate 492f436d9bbb; prose and refreshed anchors remain accurate with no semantic card edit needed.",
+      "sources": [
+        {
+          "blob": "2ca6488b10c19d8b50dc6fa943cc9658cb2455bd",
+          "path": "mcp/tests/test_knowledge_database_retired.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_database_retired.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NQVSNG",
+      "items": [
+        "sha256:1d999169f89fdb7fe62842486ba2728619b51181eeb492a1c727f3851384ea9d"
+      ],
+      "reason": "Created new onboarding card and sidecar for language_catalog.lock.json covering the bundled hash-pinned language catalog lockfile.",
+      "sources": [
+        {
+          "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
+          "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NSCNPY",
+      "items": [
+        "sha256:340011dc59a8a8546a61a5cc25ca59197e32ab481679e2e6da87f2f89da27bb7"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory_quality/style/citations/language_set.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0KYRK9",
+          "revision": 1
+        },
+        {
+          "id": "INV-CK3F9Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZ8R0Q",
+          "revision": 1
+        },
+        {
+          "id": "INV-XA55TP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NTCXE5",
+      "items": [
+        "sha256:f084c2c5affb11eb5e0e4fd5a2c553d6b428de2cad8cbcf89d2eba53a519adc0"
+      ],
+      "reason": "Examined all 4 members of FAM-04M3Z0; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 1,
+      "subject": "FAM-04M3Z0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P1R5PV",
+      "items": [
+        "sha256:d092382f684ab9ac7a0d0638af5a5a29fc01d5d393d0e7ffe40127b953f9ebf5"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:d092382f684ab9ac7a0d0638af5a5a29fc01d5d393d0e7ffe40127b953f9ebf5"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-P3YRA7",
+      "items": [],
+      "reason": "Refreshed reconsider_on link 2 (review_tree_knowledge.py) to candidate tree a4f026f8 after affirming alternative 1 remains rejected under KNO-R11@v1.",
+      "revision": 11,
+      "subject": "DEC-H24NXK"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PGBZVD",
+      "items": [
+        "sha256:e470175732c468baafb48f1ac8f113e6f88c51c6bcebaaa8d43b60f8fa8ec229"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/canvas/overview.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "dc5e32a2d7eb2dd8f8ae08e1e81cde77a33f518f",
+          "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+        },
+        {
+          "blob": "87494b46fcc6dd6f32cb8fc8b709e3ca8b71a658",
+          "path": "mcp/src/agents_remember/canvas/kit_references.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+            "content": "sha256:60f960f5260b86b2b9458916eb8758e5a1386cb731d3ecc873985c3ce0982f84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+            "content": "sha256:72dbd87ead7d9023af687b4949ea46c70d1d74baca8bf6ae5b9d45dac13d9d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PHPR05",
+      "items": [
+        "sha256:2c210d53107c70a13ac13d619d3791622f34339ccf37a42e8c843036dd2c487f"
+      ],
+      "reason": "Re-anchored RLZ-8RHQED and RLZ-MC12B0 onto post-sync L11 frozen candidate 492f436d9bbb; evidence catalog updates preserve INV-H1BCMX without semantic change.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+            "content": "sha256:b7279f6ee60c025103f86f145f853d474d250a8a9f485d625b2fb8b83d203fb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_initialization.py"
+          },
+          "before": {
+            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_initialization.py"
+          },
+          "id": "RLZ-X96Y02"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PKK3MJ",
+      "items": [
+        "sha256:d55b89c24c5b3598e5b4102dfe9e339ae85e214fc10affde28430865deab69ac"
+      ],
+      "reason": "Re-anchored RLZ-X96Y02 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-T50898's contract.",
+      "revision": 1,
+      "subject": "INV-T50898"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PKP00S",
+      "items": [
+        "sha256:f32144459835a5839f76970d6bd8666c77b8dc2e8b175211e3d5c0967f5fc1cc"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:f32144459835a5839f76970d6bd8666c77b8dc2e8b175211e3d5c0967f5fc1cc"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-8F4C0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-M36NT5",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        },
+        {
+          "id": "INV-XXG2W0",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZYKN6P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PQ1G6W",
+      "items": [
+        "sha256:e6763c4640c9e8257c7938aef9c1d9c8acddcdfc007b5a5f88523755ce57b0e3"
+      ],
+      "reason": "Examined all 7 members of FAM-0TR1G5; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 2,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PS20ST",
+      "items": [
+        "sha256:2be966604f08e7d0ced9da98238dd3125dd58afe437bab80cc14fcf7cf86a53e",
+        "sha256:439af156736adce7d317ba3533ca6780fedd3b75939457a1909c48a646cd6d2e",
+        "sha256:7926edb72d2036b68a2118cc1d5f951c601c6aeeafef736d35880652e437a2fd"
+      ],
+      "reason": "Reviewed mcp/tests/tool_answer_l110_rows.py.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "e39b42df1d3b07cd0e6eab497328c757772f06ac",
+          "path": "mcp/tests/tool_answer_l110_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_answer_l110_rows.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "af91771f2da741416ddc97b2bbeb58fd09e63aeb",
+            "content": "sha256:f678d4312da4d4fc53cd946dd7bb77d68d0309772443c093786bcf4f6f6931af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+          },
+          "before": {
+            "blob": "96f428f7ed103996bb5fc0505bb9d312e50b662a",
+            "content": "sha256:29998f4a3e3b20b2844f3d48d1f5b242b00e6eaa48fec9940911b23bcc940c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+          },
+          "id": "RLZ-S1ZTCF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q83X2V",
+      "items": [
+        "sha256:eb7ea589d022f06024bedc94753f9f7cb900afd87ebfa27026530ebbc766aee6"
+      ],
+      "reason": "Re-anchored RLZ-S1ZTCF at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-19P897's contract.",
+      "revision": 1,
+      "subject": "INV-19P897"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+            "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            },
+            "path": "mcp/tests/test_definition_scope.py"
+          },
+          "before": {
+            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            },
+            "path": "mcp/tests/test_definition_scope.py"
+          },
+          "id": "PRF-KKCVFF"
+        },
+        {
+          "after": {
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "content": "sha256:4c5f5ca27498f435eb98fb474b15b59b187f36f4a6cb1eb68b9751a8b1b862a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-133F10"
+        },
+        {
+          "after": {
+            "blob": "9100985109e69470c20da9af730fc3e33ebd6aec",
+            "content": "sha256:36c213da7b465959d7665dc49eec3113d52a80cfaf1ff7df1cdb9e3fc8e06754",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "e9afae233389503558811590710d1ee5bae9fdca",
+            "content": "sha256:f968473c0c680cd6642cc2c12b29718b0eea0088fc7a75c1bae06f580c569e37",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-CSYDPS"
+        },
+        {
+          "after": {
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "content": "sha256:66e31f9e204b9907081813aef8b907f9dc9de92398b59c6bdce205d0ab444883",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-NTFR29"
+        },
+        {
+          "after": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageSet"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "before": {
+            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+            "content": "sha256:e837acd14aa0171ad84803abe7b869bc4290020fd2e550312560cdc74ff7ab27",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageSet"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "id": "RLZ-ZVVM86"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QE093W",
+      "items": [
+        "sha256:80ae99c3cfeffc5d3ae2a6d43fe7b991b968f5299ff5f7103c3fb9ad25af5bae"
+      ],
+      "reason": "Re-anchored PRF-KKCVFF, RLZ-133F10, RLZ-CSYDPS, RLZ-NTFR29, RLZ-ZVVM86 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-KQ8BKK's contract.",
+      "revision": 1,
+      "subject": "INV-KQ8BKK"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QEEY3D",
+      "items": [
+        "sha256:f3ada4c309c56b38328037c7ead8ce20565f1b2328f30814f6cb0415da6277fb"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:f3ada4c309c56b38328037c7ead8ce20565f1b2328f30814f6cb0415da6277fb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QMCH6R",
+      "items": [
+        "sha256:140dc34dae4807fe5bd5f0db183ccd8018603b27aaed30b72fe6981520f74cbf",
+        "sha256:1b883873d0e048a240d89011b7b59e595557e6442e2a1438c4c23a665e98f41b",
+        "sha256:3832e6689295ae4ae0d4b1a3f2962fdc80fa7c1b9fbe1aefa8aa2e9f56abde64",
+        "sha256:466c51c74e024613d77d6921150ad5ff7a3f9a6d856a8d9dfaa60ed70bfef1d9",
+        "sha256:82ccdb4a6bbb543287167b0101690a16e5b8bc663b7fb71b5eb6214552493ef8",
+        "sha256:87bfb61ad3a36363ca5bef7fffc10395862efb93ac33c9c8027cd4f15e57cf0a",
+        "sha256:8dc59cddd90fc91d1554844f6993c811b14cfd22860093d20511f1efb33afd6f",
+        "sha256:9432e727504cc65a416441e6c12c65293ecc84850f6f561ffe128aadf4a9bb5d",
+        "sha256:ab3b53f1f1026f3eab932cb09dc2dc8598826a38a10614773600c91af42c42dd",
+        "sha256:b13453cd34c3a9dc04738a7865c455ff44a04888f4e585b783707c197b92f347",
+        "sha256:bc77e82a716f51639f2e1bfb6dce6be1cfc32d34f5ca6a61eab658afdf2e4eef",
+        "sha256:dad41d4b382d7810da6f6131a959f9ad19b007345eaf491f1e7beb666a627ac5",
+        "sha256:e1f2c9fa3c72666bbe84cb081651cb0f62ce540a1a27ec214d184d4abaa22e1a",
+        "sha256:ee0abf49de89f10b5177383c4424c2b9320faf81898d19ac960511a52481da3f"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/review_memo_store.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "f960eaefbc6568d70370b906d2107adea5c40ce3",
+          "path": "mcp/src/agents_remember/application/review_memo_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_memo_store.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QN0P7A",
+      "items": [
+        "sha256:891990720059577df30850bbde77844cfa075c2a75401ce50764b54ba10e62ff"
+      ],
+      "reason": "Adds repository_language_set_scope wiring for reference anchor observation.",
+      "subject": "hunk:sha256:891990720059577df30850bbde77844cfa075c2a75401ce50764b54ba10e62ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QYKCGH",
+      "items": [
+        "sha256:4fcda2e7c59883c8a43b054b938cb496edfa80b87182406e6b160a00f8f2706d"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:4fcda2e7c59883c8a43b054b938cb496edfa80b87182406e6b160a00f8f2706d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R6CX0Y",
+      "items": [
+        "sha256:86321e490650edcad6cef89663f2a1a2464694066bbc14bbbbe8f4827b33e040"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3). (delete-only hunk)",
+      "subject": "hunk:sha256:86321e490650edcad6cef89663f2a1a2464694066bbc14bbbbe8f4827b33e040"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R6WEZT",
+      "items": [
+        "sha256:96149eeff6afae5386d772b92e42f8b63d58c59d6db7be0873acb7758208e870"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:96149eeff6afae5386d772b92e42f8b63d58c59d6db7be0873acb7758208e870"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-R8BTMV",
+      "items": [],
+      "reason": "Audited and confirmed docs/reference/drift-c02.md against L11 candidate tree a4f026f8; none of L11's uniform language catalog, lazy AR_LANGUAGE_CACHE, or zero tree-sitter-* dependency changes falsifies the document.",
+      "revision": 5,
+      "subject": "DPD-GRXQW5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-R8JQ04",
+      "items": [
+        "sha256:6d8f7b875493b4bd8713ffb6695bad1a917a45d5e0e35d3a58d50a7bca0d9247"
+      ],
+      "reason": "Audited docs/design/python-evidence-system.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): evidence-lane and lifecycle catalog design remain accurate with 860 lane modules and 123 governed artifacts.",
+      "revision": 32,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RDFKJM",
+      "items": [
+        "sha256:f52e283fef49bfd8b687a2a0cfa073b9fb030e53ac5878006b4ae6efe98eb2b1"
+      ],
+      "reason": "Updated mcp/tests/test_definition_scope.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+          "path": "mcp/tests/test_definition_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_definition_scope.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:488d3d1f4270de0a85276c91e961e58f954871ae4c60327624e79e3a2a4d65e3",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "7893b835c74381f771be3538a2fe1aa5fceebad8",
+            "content": "sha256:9e9a0cdabe68ffb2955f988e8eb7181b67aab60c03995816705e30a45a61fb66",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-9FYETT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S20H5D",
+      "items": [
+        "sha256:b00b7e40bc9fbcc5ce76e02e54963bba596c9e0c3ffc3e937db434705b2c5144"
+      ],
+      "reason": "Re-anchored RLZ-9FYETT on skills/l-01-agent-lifecycles/roles/reviewer.md line 21 (blob e8d846a8) after the 3.1.1 master crossing; line 21 still directs the Reviewer to open briefs via read_ar_files and call knowledge_read without altering INV-47NR7E's contract.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2FS4D1",
+          "revision": 1
+        },
+        {
+          "id": "INV-4AQ26N",
+          "revision": 2
+        },
+        {
+          "id": "INV-RCFXFA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SY89M0",
+      "items": [
+        "sha256:a2b81fa37f4086f17663644ec30f466df6174bd5cbb2c3b618214968b015299a"
+      ],
+      "reason": "Examined all 3 members of FAM-H734XJ; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 2,
+      "subject": "FAM-H734XJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SZASH1",
+      "items": [
+        "sha256:a0cc70f16825a015617cf18c0e36369f5fe200c420946f585e5a224b1603e8d7"
+      ],
+      "reason": "Threads repository_language_set_scope around observation_key and locator resolution in observe_entry (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:a0cc70f16825a015617cf18c0e36369f5fe200c420946f585e5a224b1603e8d7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TAJ4QG",
+      "items": [
+        "sha256:88e5e7677737de25d1956d469e4a19d1a52befdf097ff9c8f77a695446d71a30"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/application/reviewer_worklist_child.py.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "af91771f2da741416ddc97b2bbeb58fd09e63aeb",
+          "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/reviewer_worklist_child.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TJGAW0",
+      "items": [
+        "sha256:ac20538faa7b5c0afdb0c92a2ee8c503cd14caf8e927c3134c0ec8c7c3f65191"
+      ],
+      "reason": "Updated mcp/src/agents_remember/application/runtime/install.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+          "path": "mcp/src/agents_remember/application/runtime/install.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/install.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V4XKAZ",
+      "items": [
+        "sha256:002986d6cf83ef31f2443af94cd1612a52f00ad20db79d8e817acb23a8c3dfa5"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:002986d6cf83ef31f2443af94cd1612a52f00ad20db79d8e817acb23a8c3dfa5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V6ZJ0V",
+      "items": [
+        "sha256:7d5f66dbd57e2e6fb5f12c32c2a5e46925842e77ea247ebb89e1e29ea73b04ec"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:7d5f66dbd57e2e6fb5f12c32c2a5e46925842e77ea247ebb89e1e29ea73b04ec"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VQRRNS",
+      "items": [
+        "sha256:58322aff9a8f39df455fb725abb81835ee2a89b319163282160da54a96cf2176"
+      ],
+      "reason": "Removes privileged tree-sitter-* grammar dependencies and obsolete parser-wheel platform comment as part of the KNO-R11@v1 §4 dependency flip.",
+      "subject": "hunk:sha256:58322aff9a8f39df455fb725abb81835ee2a89b319163282160da54a96cf2176"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VSBKPE",
+      "items": [
+        "sha256:563fb51168255c68467ce5724a2c1e86d44e03c39a533abc42d1a7d73a67f975"
+      ],
+      "reason": "Created new onboarding card and sidecar for language_catalog.py covering ar-language-catalog/v1 lockfile parsing, query digest verification, and catalog caching.",
+      "sources": [
+        {
+          "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-1XKQEK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VXYXXW",
+      "items": [
+        "sha256:d0e46ff7a1b26bd47e5f92323b3b17c087b8fc9a73e10f3a9c05647f035e6416"
+      ],
+      "reason": "Re-anchored RLZ-1XKQEK at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-XX08QF's contract.",
+      "revision": 1,
+      "subject": "INV-XX08QF"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-03M6ZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-0PAKA9",
+          "revision": 3
+        },
+        {
+          "id": "INV-7HC1QH",
+          "revision": 1
+        },
+        {
+          "id": "INV-96C24X",
+          "revision": 1
+        },
+        {
+          "id": "INV-BGV9YT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CB36W0",
+          "revision": 1
+        },
+        {
+          "id": "INV-E4E4N1",
+          "revision": 1
+        },
+        {
+          "id": "INV-EQH5X6",
+          "revision": 1
+        },
+        {
+          "id": "INV-FM3V0M",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAZREV",
+          "revision": 1
+        },
+        {
+          "id": "INV-PB8GDK",
+          "revision": 1
+        },
+        {
+          "id": "INV-RW4566",
+          "revision": 1
+        },
+        {
+          "id": "INV-WK67MP",
+          "revision": 1
+        },
+        {
+          "id": "INV-YXP2R0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WQ99B0",
+      "items": [
+        "sha256:a1045ce5e09e40012a6f606583e579c90d0544535b30fbfcf3db4873e70046ee"
+      ],
+      "reason": "Examined all 14 members of FAM-QDY93G; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 3,
+      "subject": "FAM-QDY93G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WZPMWD",
+      "items": [
+        "sha256:875bef7dbd6f1c971cb2193bbef0398bd3ff06c7a09c776ae926b2c9f0eb461b"
+      ],
+      "reason": "Audited docs/llms.txt against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): llms.txt index and links remain accurate after BUG-L32/L34 and L11 updates.",
+      "revision": 22,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-141H2J",
+          "revision": 1
+        },
+        {
+          "id": "INV-HPHVCN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JB9D62",
+          "revision": 1
+        },
+        {
+          "id": "INV-V4WR2R",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-X0GP8P",
+      "items": [
+        "sha256:a80bc15496cf07f252d29e3d28c68af4d04de4bb028fd86a266c2357b6307e5b"
+      ],
+      "reason": "Examined all 4 members of FAM-AHHW29; touched member entries only re-anchored under L11 without changing member meaning or the family guarantee.",
+      "revision": 1,
+      "subject": "FAM-AHHW29"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
+            "content": "sha256:aeba9f5835f3966cad9498d615fb143ddce9a268792ca58ccc847d0c63cf3e2f",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:3959e30bfb81fb5f553990106fd3a6db8067f659fca8ab904dae7b1a7aa3de90",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-MNKE2T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X55RXC",
+      "items": [
+        "sha256:a46a0af9e00cd78ae30c4533f9349bced9cb16cac75f25f210815f9a232b6f2f"
+      ],
+      "reason": "Re-anchored RLZ-MNKE2T at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-2FS4D1's contract.",
+      "revision": 1,
+      "subject": "INV-2FS4D1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "content": "sha256:b42ef288ea28375b62b3c35a60040f0af628b4f5512e647f5fe362eab9e6a648",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "content": "sha256:e09d583901b2f25fc20f1aae5fa1259bdbabdedf7e5b54d508d10e61131d136f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        },
+        {
+          "after": {
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "content": "sha256:fd0126fc8a847537737ffbc6c292bdad31aba2df90c1788bb1d7f83e70f2d858",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "before": {
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "content": "sha256:fd0126fc8a847537737ffbc6c292bdad31aba2df90c1788bb1d7f83e70f2d858",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "id": "RLZ-AHFJXT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XAYAC1",
+      "items": [
+        "sha256:b4888aecf371a39f93f90714e338a2763bede1326e5bfd6840c9f36970c74f10"
+      ],
+      "reason": "Re-anchored RLZ-AHFJXT (docs/reference/runtime-layout.md) and RLZ-7YMNE5 (docs/reference/mcp-tools.md) onto post-sync L11 frozen candidate 492f436d9bbb; both docs preserve INV-6ZZXV3 without semantic change.",
+      "revision": 2,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XB2VKX",
+      "items": [
+        "sha256:44dc61dc02b1d8d59e150d2e07f1924df6a34a77f655342c10be205ba0b1bc81"
+      ],
+      "reason": "Removes obsolete computed-import allowance entry no longer needed after L11 eliminated dynamic grammar package imports. (delete-only hunk)",
+      "subject": "hunk:sha256:44dc61dc02b1d8d59e150d2e07f1924df6a34a77f655342c10be205ba0b1bc81"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b9d685899110493177ae5483ae4b24095dc6256a",
+            "content": "sha256:6f24f3d71116bbcd22cd1ac981d076691ada91062212e9b170978ff1596a4ada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "32b468e307d43909fa4abb9ad4cf27f31384665f",
+            "content": "sha256:e577bcb9fb4872d2d5264e05e1ce09443b285400a84fd7e041514ddbd5a704bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-9YB1ER"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XET9CH",
+      "items": [
+        "sha256:e6e896de63d44874786c1fe188f72cdf2f70d97c87ada3037e77ef89575cfad2"
+      ],
+      "reason": "Re-anchored RLZ-9YB1ER at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-5FC4T6's contract.",
+      "revision": 1,
+      "subject": "INV-5FC4T6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XQHVQ2",
+      "items": [
+        "sha256:a671e44a97949e149a238b4a00de9315b9068b7246ded1aaebe027c9f2aa8cf0"
+      ],
+      "reason": "Adds Path/grammars import or repository_language_set_scope wiring for reviewer worklist child resolution.",
+      "subject": "hunk:sha256:a671e44a97949e149a238b4a00de9315b9068b7246ded1aaebe027c9f2aa8cf0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XVF4EA",
+      "items": [
+        "sha256:d54848e22e4d1367ecc4dc5a5c4c6bc0313c8d38359bd61a6f39aae7ea17c5ac"
+      ],
+      "reason": "Replaces direct tree_sitter_javascript import with grammars.language('javascript') in support of KNO-R11@v1 §4.",
+      "subject": "hunk:sha256:d54848e22e4d1367ecc4dc5a5c4c6bc0313c8d38359bd61a6f39aae7ea17c5ac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XZ76XW",
+      "items": [
+        "sha256:80780a442f1c49e94e9e3f12a93852f28b7b389e85b64cd1ab8a070a7eeff9b7"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:80780a442f1c49e94e9e3f12a93852f28b7b389e85b64cd1ab8a070a7eeff9b7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y1K1T8",
+      "items": [
+        "sha256:a117d2a26fcab1a2b0ee23d24554c24ea0293a5b41386d8c9a5ae4d732acdd9b"
+      ],
+      "reason": "Updates GrammarUnavailableError docstring to describe lazy AR_LANGUAGE_CACHE downloads and local custom library paths without changing error semantics.",
+      "subject": "hunk:sha256:a117d2a26fcab1a2b0ee23d24554c24ea0293a5b41386d8c9a5ae4d732acdd9b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y3DKRF",
+      "items": [
+        "sha256:f2c23f8683def48564bdd97403e33f887814adce6485a149e20a8fba6dc5f26c"
+      ],
+      "reason": "Reviewed mcp/src/agents_remember/canvas/explainer_target.py.md against L11 candidate changes; existing prose and citations remain accurate after mechanical anchor refresh and require no semantic card edit.",
+      "sources": [
+        {
+          "blob": "dc5e32a2d7eb2dd8f8ae08e1e81cde77a33f518f",
+          "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_target.py"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R11",
+          "packet": "requirements/KNO-R11-v1-uniform-language-catalog-lazy-cache-and-dependency-flip.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-YCKZHV",
+      "items": [],
+      "reason": "Audited and confirmed docs/reference/repository-certification-profile.md against L11 candidate tree a4f026f8; none of L11's uniform language catalog, lazy AR_LANGUAGE_CACHE, or zero tree-sitter-* dependency changes falsifies the document.",
+      "revision": 9,
+      "subject": "DPD-FR0VZP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YEKDT2",
+      "items": [
+        "sha256:3a69168a4ad77faf9f8d94ab1a42a132634bf3765daaf43dfb5750bbde36f010"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:3a69168a4ad77faf9f8d94ab1a42a132634bf3765daaf43dfb5750bbde36f010"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YJHDZ6",
+      "items": [
+        "sha256:6f917861a0ebe85f90f30498b9070df96701b123ed87f08b72a3b07f04dcba75"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory_quality/reference_anchors.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "8893dece04922f14cfcbbf99ed77b1cf5e47d0ed",
+          "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/reference_anchors.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YSHJZR",
+      "items": [
+        "sha256:75f31952d1a8692be8992661b2b2d18aa7cd87c231361fbc212b63cf93b1ba9e"
+      ],
+      "reason": "Updated scripts/bootstrap-mcp-venv.sh.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
+          "path": "scripts/bootstrap-mcp-venv.sh"
+        }
+      ],
+      "subject": "onboarding:scripts/bootstrap-mcp-venv.sh"
+    },
+    {
+      "considered": [
+        "FAM-CSVQBJ",
+        "FAM-Z69A94",
+        "FAM-H734XJ",
+        "FAM-3FTGSA"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-YYH78G",
+      "items": [],
+      "reason": "KNO-R11@v1 §4 spans packaging purity (mcp/pyproject.toml), Dagger container cache mounts (.dagger), post-transaction bootstrap (scripts/bootstrap-mcp-venv.sh), pytest HOME isolation (conftest.py), and process-state registration (global_state.py); adding it to FAM-CSVQBJ would collapse FAM-CSVQBJ's deep routes to repository root '.' and it does not share a joint runtime guarantee with FAM-Z69A94, FAM-H734XJ, or FAM-3FTGSA.",
+      "revision": 1,
+      "subject": "membership:INV-CSJ1ZD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+            "content": "sha256:60f960f5260b86b2b9458916eb8758e5a1386cb731d3ecc873985c3ce0982f84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d3c2cf0145ef25513d3ddd822734d3ef18390579",
+            "content": "sha256:72dbd87ead7d9023af687b4949ea46c70d1d74baca8bf6ae5b9d45dac13d9d3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z2BTZ6",
+      "items": [
+        "sha256:a69fc281b83a4c71df208c251f844591980fae1d98ab7b5bd4f2ab2dcef30a55"
+      ],
+      "reason": "Re-anchored RLZ-BNMQ79 and RLZ-GEMVNE onto post-sync L11 frozen candidate 492f436d9bbb (test-evidence-lanes.toml and evidence-lifecycle.toml carry both BUG-L32 and L11 modules without altering INV-1ZKP4R rev 10).",
+      "revision": 10,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z5ZXPJ",
+      "items": [
+        "sha256:fa2b72c2d4df6d0ddfb84e14d8e6a469811d93f9776078c0eb812282f0371bf1"
+      ],
+      "reason": "Updates module import from removed MEASURED_VERSIONS to language_catalog for PinnedDependencyTests (covered by INV-QQ8TQ7 and KNO-R11@v1 §1).",
+      "subject": "hunk:sha256:fa2b72c2d4df6d0ddfb84e14d8e6a469811d93f9776078c0eb812282f0371bf1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z781TF",
+      "items": [
+        "sha256:03bb661d4afdd74caa4195eef9aa6d04c051739d042338e9a0f2313f0accd847"
+      ],
+      "reason": "Reviewed runs.py.md against L11 candidate changes; after removing the stray EOF blank line and refreshing citation [7] to lines 134-154 with unchanged meaning, the card requires no counted Markdown or note edit.",
+      "sources": [
+        {
+          "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
+          "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_quality/runs.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZDPP67",
+      "items": [
+        "sha256:52494971583411e4504d973d2f2e15c287e3fb095c7fa605c6dda16313da4937"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3). (delete-only hunk)",
+      "subject": "hunk:sha256:52494971583411e4504d973d2f2e15c287e3fb095c7fa605c6dda16313da4937"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZFEADC",
+      "items": [
+        "sha256:28a4915e281152773a5e7fd2322e19187979e830867eff42e390d04bc1f374c9"
+      ],
+      "reason": "Updated mcp/src/agents_remember/memory/conversion/citations.py.md prose and/or re-authored stale evidence citations for L11 uniform language catalog, lazy AR_LANGUAGE_CACHE, and repository_language_set_scope changes.",
+      "sources": [
+        {
+          "blob": "b94453568a2e4367b5599c5e07936e49b70c8032",
+          "path": "mcp/src/agents_remember/memory/conversion/citations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/citations.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+            "content": "sha256:a828c59946627f996e006a9d91b62e0905c4b66ea0629d2881a2e2e5579330fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "before": {
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+            "content": "sha256:175d08c35c2eb075a61fc55a9fb45a6dd38c03c62814efa473a28315832b1d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "id": "RLZ-8ZDDHS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZJMM1B",
+      "items": [
+        "sha256:ed3734b8cecfa27252277e73207e5b18ea1a7976d3b1fb1dfb33f22bc683ae67"
+      ],
+      "reason": "Re-anchored RLZ-8ZDDHS at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-Y2SXDZ's contract.",
+      "revision": 2,
+      "subject": "INV-Y2SXDZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZJV2VJ",
+      "items": [
+        "sha256:9dc67265e474b9a62f14345a46487a3eaf8da363aab912f5913a96f79b4b3f3f"
+      ],
+      "reason": "Extends LanguageProvider/TreeSitterLanguageProvider/LanguageSet for glob matching, lazy grammar loaders, and override/custom-library version hashing (covered by KNO-R11@v1 §3).",
+      "subject": "hunk:sha256:9dc67265e474b9a62f14345a46487a3eaf8da363aab912f5913a96f79b4b3f3f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
+            "content": "sha256:a52585b335ec466e019899a09df2f3b8aa49a04025989f77bc347ed733fb6834",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:5ae607e9ae7c0b52cd26b7aa9bac5ed60b1983b9bca66d66e395e9dced4b788f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-47KDJ2"
+        },
+        {
+          "after": {
+            "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
+            "content": "sha256:aeba9f5835f3966cad9498d615fb143ddce9a268792ca58ccc847d0c63cf3e2f",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+            "content": "sha256:3959e30bfb81fb5f553990106fd3a6db8067f659fca8ab904dae7b1a7aa3de90",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-GK62C4"
+        },
+        {
+          "after": {
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "before": {
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "id": "RLZ-Z2P900"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZK4H7D",
+      "items": [
+        "sha256:bb43877ff284d36e8b5caf3ebf3a344be87a686107f7e2a742ee0fe17d58a2b5"
+      ],
+      "reason": "Re-anchored RLZ-47KDJ2, RLZ-GK62C4, RLZ-Z2P900 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-XWNDYE's contract.",
+      "revision": 1,
+      "subject": "INV-XWNDYE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ddcbc077a4a18e2a2b4ba5159585ba111a05e371",
+            "content": "sha256:2f6d4563cfaad4eec3b98a8ac5171466708ba3fcb58ce999a8aee388a667c501",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTrees"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "before": {
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:de1bce56663cf3d60d5fdac74320df2958d107127088de2b378bed5831eeb034",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTrees"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "id": "RLZ-PNV0Y8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZSA3GC",
+      "items": [
+        "sha256:84ab67730c69cb7c84881ca3d5aa08dfb9da027e1b6a9375d852cb98d9cd540f"
+      ],
+      "reason": "Re-anchored RLZ-PNV0Y8 at L11 candidate tree a4f026f8; L11 wrapped language resolution in repository_language_set_scope or updated adjacent packaging/bootstrap/test code without altering INV-AJBF9F's contract.",
+      "revision": 1,
+      "subject": "INV-AJBF9F"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZT6BFE",
+      "items": [
+        "sha256:ffa7a0161f678102882c24897fa4649f5d6e51cfafc5d3bdb847940b2fe9a974"
+      ],
+      "reason": "Removes hardcoded MEASURED_VERSIONS, direct tree_sitter_* imports, and _build_default_language_set in favor of catalog-driven DEFAULT_LANGUAGE_SET and repository_language_set_scope (covered by KNO-R11@v1 §1 and §3).",
+      "subject": "hunk:sha256:ffa7a0161f678102882c24897fa4649f5d6e51cfafc5d3bdb847940b2fe9a974"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:7fd90f27a486fa9fc65d8de8060321c98390f5510ba9928cfdb1c7df344f6597",
+      "record": "DEC-H24NXK",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:b78c2cf033223d001f1f1e98f090865ec9c5991903e754de571219ff14fd12ac",
+      "record": "DPD-06057Y",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:82f5022c3ac2933b6e843f8631b26e9e4e4648cef30335d9a3d26033e725791a",
+      "record": "DPD-06057Y",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:9948c0d318f9f132e0963e551ec4ccc05fd80c3385fe26c8383163a319060650",
+      "record": "DPD-0K35N0",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:cf22bb0e5abad2a5a63df2516c24721309f5dfa9795ac8e7f9c82e52c3212434",
+      "record": "DPD-633P3W",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:f8a564c91f53ca1ab961dc34877a1ad78b0546cab1a89a7007392662e7111402",
+      "record": "DPD-78737N",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:5db1be505ce4dbd6ad824141adfd4fa1cfeac16b6a70415345693e9e9b1c4a13",
+      "record": "DPD-86HJGF",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ad379c4201d1d2e76f02d66da65099fb21fa3afe16e09dfec26a739672741b94",
+      "record": "DPD-86HJGF",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:f3e7aa96972d1f4ffae134944b468ad7ac97bc81f7f67bfa873110844464da2e",
+      "record": "DPD-8PE0G9",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:f962a528f54d29f0db592b99e1e6c52d9d03f568fca0e656f85decff5d6761d7",
+      "record": "DPD-8PE0G9",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d2b5ba1437ed966c7a6af8e44bb080c5f001427186a7609f08afb43749619463",
+      "record": "DPD-CZBR1Q",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:0b199ceeab5d1d1b51a0bd5b204c8e3d8fb9c159c4498ae0c80bc52982ddbceb",
+      "record": "DPD-CZBR1Q",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T22:23:54+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4076ccdfd195ebd0c5518116282376e7a23e6b5a2e13ac1c5f71f23ccd19d05b",
+      "record": "DPD-CZBR1Q",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:cf895747a5e29c56a59bc1e4fa846e9c93c2849e9bd03d0a4ed7ad97c68eebb1",
+      "record": "DPD-FR0VZP",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:707f257445e51e8905988875e4e81bc24b585b8ad0b134c106fe56360a4dc4e1",
+      "record": "DPD-GHEXS9",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:8d24d96e0904df3245b7cfda65fb21c1c1774eaa4151077ae2b47610c92113c7",
+      "record": "DPD-GRXQW5",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:e50e5c369b27d9a6c7f392cef863295834f9310b81d02bff910cc2b2cde8d65e",
+      "record": "DPD-K2QMWQ",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:cd4fedd64d0ffe5402b918e8d472680380841d819ef86f7f1863dd4edd35e18c",
+      "record": "DPD-K2QMWQ",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:a5cb37b1a66ccd6c55ca7c354926a90170118fb2bb4d399de3faecd5dd65123a",
+      "record": "DPD-Q4APMS",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:b0028575cb79917e257abc9b14e47e3bed94ba2264ced93f00e8924dc2c769b9",
+      "record": "DPD-Q4APMS",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ec46fb1cff8425942d8d377d552017f22f81274780cdd1e5364b0ef7f70da02a",
+      "record": "DPD-XV7QBE",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:c25538f04704f2d5b2d6281a414fc05057385376ffefccbcef78967bb191358a",
+      "record": "DPD-XV7QBE",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:7e5e141fd9a38c3fc35052b66b66e85be433907290c5527bd4e502b185c8d94c",
+      "record": "DPD-ZMQ523",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4bf4b0b34366a791659fe1a66289e2bc44ce4d6d6df7eb26af37682173c64ec8",
+      "record": "DPD-ZMQVXY",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:df1e43478384456022b995020fcd502462a5e8ce31474f559df0724ae9983b28",
+      "record": "DPD-ZT8YY7",
+      "revision": 43,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:3d2764f52d460b1ebf1aab772f06a1fa53480fc8f7ce8812ded8e5069fb66a12",
+      "record": "DPD-ZT8YY7",
+      "revision": 44,
+      "writer": {
+        "at": "2026-11-27T23:21:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:3611fe15a7bdce5205edbc41755493b0b81564bdb365b4509fbdebedc980cf13",
+      "record": "FAM-CSVQBJ",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:cfdce2cc3d2bc5c567741571eddee5f8841d9584b62aae0b2c6a8bb2d97556df",
+      "record": "INV-559QV5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:cb06e3f9944a5879de4721e4d70e8e095cbf2d717dbd129cad7348b0bda180ed",
+      "record": "INV-CSJ1ZD",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d21c8a9cf3971fa78a220237ce48531c72ae7fe156e9d53634114b6dc16776cf",
+      "record": "INV-EW1ST5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:e7daedc754679bfbc1d9fd6074fec8b908fc42d47c0ac6e4b9b76a6ce8b6ecf5",
+      "record": "INV-KJDERT",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:b5ef95f54cb0e491c1e10998832f6119aea8c2257de6b9cbca2dba52b6fc4bcf",
+      "record": "INV-QQ8TQ7",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:7e936201ebced5f73bf045ffe3274c2cf9e443ce68e4c83b57efae4cb57d55f3",
+      "record": "WKN-AVZ1GA",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ca1fac0b809b34ce23a11021dfc841332d8867c2b96635a8ea8447b5ec0ace23",
+      "record": "WKN-G1TBN8",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-27T21:03:08+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L11",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

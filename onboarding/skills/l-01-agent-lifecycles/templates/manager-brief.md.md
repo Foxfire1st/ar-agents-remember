@@ -48,7 +48,7 @@ candidate does not reopen accepted work.
 
 The brief also keeps task authoring independent of disposable closeout projections: valid task
 mutations proceed, projection effects are reported,
-and queue state is never treated as a task lock.
+and queue state is never treated as a task lock. Under `## Start defaults`, its `### Knowledge reads` section guides Manager `knowledge_read` usage (`impact` for leaf scope/overlap, `search` for prior rulings/terms, `records` for requirement/decision/invariant text, and `dependent(staleOnly=true, compact=true)` for closeout triage only—leaving full-row receipts and repairs with Curator/Consolidator and keeping `writers`/`consolidation_proposal` as specialist surfaces) at zero compiled capsule tokens.
 
 ### Conventions
 
@@ -103,6 +103,7 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
 
 
 

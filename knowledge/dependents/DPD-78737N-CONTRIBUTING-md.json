@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified CONTRIBUTING.md against post-CAP-L5 synced tree e273d1c9 after CAP-L5 resolved its deferral: role-scoped allowlists, compiled capsule ceilings, and test-evidence-lanes.toml guidance remain accurate.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited CONTRIBUTING.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): contributor setup, bootstrap, and test commands remain accurate after BUG-L32/L34 and L11 updates.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "pyproject.toml"
     },
     {
-      "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+      "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
       "kind": "file",
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
@@ -51,12 +51,12 @@
       "path": ".githooks/_gate.sh"
     },
     {
-      "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+      "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
       "kind": "file",
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+      "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -71,12 +71,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+      "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
     {
-      "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+      "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -212,14 +212,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:33:39+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

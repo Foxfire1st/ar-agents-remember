@@ -4,8 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-        "content": "sha256:b38e95474d7cc30b4547a7981fae5376bd0f4cac2e8802ad3cf5cfcb2a50c0a0",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:f29cb2543de405d8b6a79fc759d5b176bc265cf7689229a4d72d0f895fa98d93",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeObjects.symbol_span"
+        }
+      },
+      "id": "RLZ-9TCG78",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Binds the repository's LanguageSet for live conversion and worklist symbol resolution while preserving legacy Format 1 byte identity.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
         "locator": {
           "kind": "symbol",
           "name": "CodeObjects.qualified_spans"
@@ -17,12 +35,12 @@
         "handoffEntry": "SUB-R01-reproduce-legacy",
         "leaf": "261123-SUB-L1"
       },
-      "rationale": "Applies reader selection before serving or storing a symbol-span memo result.",
+      "rationale": "Applies reader selection and default LanguageSet scoping before serving or storing a symbol-span memo result.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
         "content": "sha256:ef7d2276f3f905a1c8650d419d5b264397d6a2a627f33cb2551eea74166444e8",
         "locator": {
           "end": 77,
@@ -41,7 +59,25 @@
     },
     {
       "anchor": {
-        "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeObjects.qualified_spans"
+        }
+      },
+      "id": "RLZ-NTFR29",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Keys per-instance definition caches by provider version and restricts process-global SYMBOL_SPANS reuse to the default LanguageSet.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
         "content": "sha256:dd7dc91c834766ce625cc583dc54a864cfd8e57afe1dd1849d56d24097eb6446",
         "locator": {
           "kind": "symbol",
@@ -59,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-        "content": "sha256:9385c1faf9dfe98ca553b3a98b666069bfdaed6c9e777ffa7b90edd8232aca96",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:eae46a4ccd86d9ba37156a220d05eadd34d61a5a3d41ded8cc37d213ccfb7435",
         "locator": {
           "kind": "symbol",
           "name": "CodeObjects"
@@ -78,12 +114,12 @@
   ],
   "references": {
     "1": {
-      "note": "`CodeObjects` reads code objects and keeps raw blob bytes and blob-keyed split lines in its instance.",
+      "note": "`CodeObjects` reads code objects and keeps raw blob bytes, blob-keyed split lines, and provider-version-keyed definitions in its instance while restricting `SYMBOL_SPANS` reuse to the default `LanguageSet`. Anchor: `CodeObjects`",
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:805133ad4ab91c08df6cd12557bc7cdd89f30b5a182dcbc4a6e5438f955d7fc5",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -97,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
               "end": 184,
@@ -110,24 +146,12 @@
       ]
     },
     "2": {
-      "note": "`CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit.",
+      "note": "`CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit. Anchor: `CodeObjects.commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:02c474b75b6e42c4f52083441dae6f6218246dd838d51dc6d10241594784e5ec",
-            "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 108
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:805133ad4ab91c08df6cd12557bc7cdd89f30b5a182dcbc4a6e5438f955d7fc5",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -137,24 +161,12 @@
       ]
     },
     "3": {
-      "note": "`CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix.",
+      "note": "`CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix. Anchor: `CodeObjects.commits_with_prefix`",
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:cf677fe3ee94908c5ef8f3ebe2cf220a323494e3d2e1c53c96aecbe87e0e0c16",
-            "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 123
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:805133ad4ab91c08df6cd12557bc7cdd89f30b5a182dcbc4a6e5438f955d7fc5",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -168,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:456988b59ee57b545888a5d5731ce707ca867cc13013072dfa328ac68917bb9a",
             "locator": {
               "end": 167,
@@ -185,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "end": 61,
@@ -197,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:542974dfebba194c6d17618baa57fd25640b5c633220e5a03c884c8c4c9f21e7",
             "locator": {
               "end": 263,
@@ -210,36 +222,12 @@
       ]
     },
     "6": {
-      "note": "`CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`.",
+      "note": "`CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`. Anchor: `CodeObjects.prefetch`",
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:8086904047170a3aabae0fb3104cbf1f536f808476b0d88b4fc7077976755046",
-            "locator": {
-              "end": 216,
-              "kind": "line_range",
-              "start": 202
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:2c5341f0df119c28c9640ec80328e921a435dcb9384d33b6ac03147f3013837c",
-            "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 80
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
-            "content": "sha256:805133ad4ab91c08df6cd12557bc7cdd89f30b5a182dcbc4a6e5438f955d7fc5",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -253,12 +241,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:bc108c15b98e7c62712a7c9800b30e409435384d49a6664bfc08fba87fd528c5",
             "locator": {
-              "end": 444,
+              "end": 455,
               "kind": "line_range",
-              "start": 412
+              "start": 423
             }
           },
           "kind": "code"
@@ -270,8 +258,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"

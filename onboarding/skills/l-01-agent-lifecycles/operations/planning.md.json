@@ -4,7 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+        "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+        "content": "sha256:7d24df837b0986c9bda0ed472a21a8b26c3938784c28e661b41c6cd2e82c6696",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-71GPGT",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Cues Architect planning to use knowledge_read impact and search when assembling Prepared context.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
         "content": "sha256:c7a3a5d1cdb7556efb1507e4ceaaad362561cc3df7e2725ce4111ba549031d19",
         "locator": {
           "end": 27,
@@ -24,12 +43,12 @@
   ],
   "references": {
     "1": {
-      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.\n\nAnchor: `## Choose the coordination owner`",
+      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
-            "content": "sha256:3aa8a70aa741d80cba2a04af006ee5b3507a4f2064c80b3b00151749b0d4d80f",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+            "content": "sha256:7d24df837b0986c9bda0ed472a21a8b26c3938784c28e661b41c6cd2e82c6696",
             "locator": {
               "end": 18,
               "kind": "line_range",
@@ -58,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
             "content": "sha256:40b5da7ab38b2a479e8ab4bdef3878e15309233f063557ad3fc63793b137a336",
             "locator": {
               "end": 8,
@@ -75,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
             "content": "sha256:8e16f573dbea8a12eac3013f0797651d899ef4899c03eb25b258195904f71dbb",
             "locator": {
               "end": 23,
@@ -92,8 +111,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
-            "content": "sha256:0f96d0137ba2f62568e07acce9750ed6f8dcb654b723c10567e19af0f5b767eb",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+            "content": "sha256:5547e457584e1695b15765bb3fcf040d8a7de9977963babdf5577ebac695d901",
             "locator": {
               "kind": "file"
             }
@@ -107,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
-            "content": "sha256:8966adcfebbe542021d9c53f8da8361f47d6fac64822470f996c782d4f5f57b8",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+            "content": "sha256:20a4930666dfec06b0d0d7a675f98e53585b83c7396105a2410609ead9ad6dd9",
             "locator": {
               "end": 33,
               "kind": "line_range",
@@ -124,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
             "content": "sha256:8e16f573dbea8a12eac3013f0797651d899ef4899c03eb25b258195904f71dbb",
             "locator": {
               "end": 23,
@@ -137,12 +156,12 @@
       ]
     },
     "7": {
-      "note": "Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a full-store refusal, the named message-handover section owns the pending handover, single retry and second-refusal report.",
+      "note": "Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state (populated via `knowledge_read` `impact`/`search`), code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a full-store refusal, the named message-handover section owns the pending handover, single retry and second-refusal report.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
-            "content": "sha256:dcb80da92973aece1ee628f69b85fe332ff9743f3a16595e4677917e62c3d0a6",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+            "content": "sha256:68e520396fbc0ca0f56bd1690867a13be919ae8dc631cb607c0b6e1d316515f3",
             "locator": {
               "end": 33,
               "kind": "line_range",

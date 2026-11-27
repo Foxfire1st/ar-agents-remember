@@ -17,7 +17,7 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 ## Synced current-source qualification
 
-Name affected realization claims and relevant sibling realizations with `knowledge_read` (server binding in `core/every-role.md`), then open the named record files natively.
+Call `knowledge_read` (`impact`/`records`; `workspace.memoryRoot`; server binding in `core/every-role.md`) for affected rules and families, reserving native file opens for source code, tests, briefs, and uncarried documents.
 
 
 ## Purpose
@@ -37,7 +37,7 @@ A Reviewer finding states the required property the candidate breaks; the showin
 
 Read the selected requirement and rendered leaf task only via own file tools (no `.json`); `task_doc` writes and does not read. Confirm paired code/read-only-memory/report bindings; resolve missing facts from canonical task/requirement without inferring a different task.
 
-Before edits or diagnosis, the Worker calls `read_ar_files` (`task_context`, opening current saved briefs when present) and `knowledge_read` (`workspace.memoryRoot`, `view="source_context"`). Build the worktree's environment and run candidate commands as `system/tools.md` says. For code changes, read `system/coding-guidelines.md` under `workspace.memoryRoot` in full, where it exists, before the first source edit, follow it for every line of source code, tests and product messages, and tell a code helper to do the same. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them. Before writing bodies, when the plan leaves types, modules or signatures open or the Worker proposes a planned shape change, it sends a skeleton to its Manager, follows any pre-edit report instructions in the requirement, and writes bodies after the Manager or Architect answers.
+Before edits or diagnosis, the Worker calls `read_ar_files` (`task_context`, opening current saved briefs when present) and `knowledge_read` (`impact`/`records`; `workspace.memoryRoot`), opening needed code and cards via file tools. Build the worktree's environment and run candidate commands as `system/tools.md` says. For code changes, read `system/coding-guidelines.md` under `workspace.memoryRoot` in full, where it exists, before the first source edit, follow it for every line of source code, tests and product messages, and tell a code helper to do the same. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them. Before writing bodies, when the plan leaves types, modules or signatures open or the Worker proposes a planned shape change, it sends a skeleton to its Manager, follows any pre-edit report instructions in the requirement, and writes bodies after the Manager or Architect answers.
 
 Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Worker reports the listed post-PASS final checks to the Reviewer and Manager. A dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
 
@@ -99,6 +99,7 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 
 
+
 - The packaged Worker role implements one leaf's approved requirement and preservation rules in its paired code worktree with memory read-only. [2]
 
 
@@ -131,15 +132,18 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 
 
 
+
 - The packaged Worker role is byte-identical to the authored role in this source tree. Both copies carry the same stage and repair duties. [7]
 
 
 
-- Before edits or diagnosis, Worker intake calls `read_ar_files` with `task_context` (opening briefs) and `knowledge_read` with `workspace.memoryRoot` and `view="source_context"`. [8]
+
+- Before edits or diagnosis, Worker intake calls `read_ar_files` with `task_context` (opening briefs) and `knowledge_read` (`impact`/`records`) with `workspace.memoryRoot`, and opens needed code and cards via file tools. [8]
 
 
 
 
 
 
-- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [11]
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree. [11]

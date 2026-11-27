@@ -92,6 +92,7 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 
 
+
 - Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES. [1]
 
 

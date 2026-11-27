@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified docs/features.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 trust-boundary and Poka-Yoke updates alongside KNO-R05@v3 Consolidator memory-write updates while re-deferring pre-existing KNO-R07 DFR-CB8YJ8 (line 204 and post-merge lines 393-395) under 261112-KNO.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/features.md against frozen tree 58741cf1: lines 197-211 now document all eleven knowledge_read views and text-bearing replies while narrowing pre-existing KNO-R07 deferral DFR-4XVB1B to lines 398-399 (4,000-token ceiling).",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/features.md",
-        "note": "Update docs/features.md line 204 and lines 393-395 for the 5,000-token knowledge_read ceiling and all eleven views."
+        "note": "Update docs/features.md lines 398-399 from 4,000-token to 5,000-token knowledge_read exception ceiling."
       },
-      "createdAt": "2026-11-27T06:28:50.363432Z",
-      "createdByLeaf": "261112-KNO-L5",
-      "fileBlob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
-      "id": "DFR-4XVB1B",
+      "createdAt": "2026-11-27T17:29:51.560514Z",
+      "createdByLeaf": "261112-KNO-L14",
+      "fileBlob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+      "id": "DFR-M29BGY",
       "owner": "261112-KNO",
-      "passage": "docs/features.md line 204 (knowledge_read returns names and locations only) and lines 393-395 (4,000-token knowledge_read exception ceiling)",
-      "reason": "KNO-L5 merged docs/features.md onto CAP-L5 (e273d1c9), shifting the 4,000-token ceiling sentence to lines 393-395; pre-existing KNO-R07 line 204 and lines 393-395 remain deferred under 261112-KNO (accepted in KNO-L5-F07)."
+      "passage": "docs/features.md lines 398-399 (4,000-token knowledge_read exception ceiling)",
+      "reason": "Narrowed and re-deferred from DFR-4XVB1B onto KNO-L14 frozen blob of docs/features.md: KNO-R14@v1 fixed lines 197-211 (eleven knowledge_read views and text-bearing responses), while lines 398-399 still state the 4,000-token ceiling rather than 5,000 tokens."
     }
   ],
   "document": "docs/features.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 38,
+  "revision": 39,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -108,12 +108,12 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+      "blob": "e505a5027f45cf753855a75f1e924f042c617489",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+      "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
@@ -238,7 +238,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+      "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -304,20 +304,20 @@
       "kind": "anchor"
     },
     {
-      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+      "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T18:29:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
     "task": "261112-KNO"
   }
 }

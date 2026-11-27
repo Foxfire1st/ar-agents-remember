@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans tags_engine call-site capture and grammars test-case refusal, range, and TypeScript anchor spelling resolution, guarded by case-definition, case-range, and writer case-proof suites."
+  },
+  "applicability": "JavaScript, TypeScript, and TSX test/spec files and TypeScript anchor spelling resolution.",
+  "conditions": [
+    "tags_engine.extract_test_calls captures @test.* call sites declaratively via tests.scm in pre-order document order.",
+    "grammars.test_case_refusal and grammars.test_case_range feed those call sites from the call-scoped parse cache into test_cases.refusal and test_case_ranges.case_at.",
+    "grammars.typescript_anchor_identifier remains a spelling resolver keyed by active TypeScript provider version under request_memo_scope."
+  ],
+  "exclusions": [
+    "Non-test/spec filenames and non-JS/TS languages do not run tests.scm or acquire test-case definitions."
+  ],
+  "id": "INV-5FFC2H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "307 dashboard test/spec files differential (0 diffs), mcp/tests/test_memory_case_ranges.py, mcp/tests/test_memory_citation_grammars.py, mcp/tests/test_writer_case_proofs.py; clean-copy tree e122f928d620ee2485100752a3d16ed709100bac"
+      ],
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R10@v1 §3",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "JavaScript and TypeScript test-case definitions, blocking refusals, and line-range proofs flow from declarative tests.scm call-site captures into the existing policy layer while typescript_anchor_identifier remains a spelling resolver.",
+  "supersedes": [],
+  "title": "Declarative tests.scm calls feed JS/TS case policy and spelling resolver",
+  "writer": {
+    "at": "2026-11-27T17:57:42+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L10",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
+  }
+}

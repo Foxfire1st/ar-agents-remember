@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans override parsing, stat-cached repository LanguageSet resolution, custom shared-library loading, and all live production citation consumers, guarded by four end-to-end and security-boundary tests."
+  },
+  "applicability": "Optional repository-root languages.json and user-settings languages overrides, custom local tree-sitter library loading, and repository_language_set_scope binding across production read, write, conversion, currentness, reference, and review paths.",
+  "conditions": [
+    "parse_language_overrides rejects unknown keys, forbidden URL keys, remote URLs, and reserved .lean claims in both repository and user layers.",
+    "repository_language_set validates enable/disable/suffix/glob target ids, refuses custom ids shadowing catalog entries, and stat-caches sets by config and custom artifact mtimes/sizes.",
+    "Custom local libraries load via ctypes/PyCapsule with ABI 13-15 checks and hash binary and query contents into extractor_version.",
+    "Production write, conversion, currentness, reference-state, and read paths bind repository_language_set_scope while honoring explicit language_set_scope overrides."
+  ],
+  "exclusions": [
+    "Legacy Format 1 conversion retains its pinned format byte contract while using the repository LanguageSet for live symbol resolution."
+  ],
+  "id": "INV-EW1ST5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/python -m pytest -q mcp/tests/test_language_catalog_and_lazy_cache.py (clean-copy tree 825dedbe9356776ebe13f67d9a5dc9c331c295d6)"
+      ],
+      "path": "261112-KNO-L11-curation"
+    },
+    "handoffEntry": "KNO-R11@v1 §3",
+    "leaf": "261112-KNO-L11",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Optional per-repo languages.json and user settings support ambiguous-suffix/glob overrides, validated enable/disable controls, and local custom tree-sitter library registration (refusing catalog-id shadowing, unknown ids, remote URLs, and .lean overrides) with ABI 13-15 validation, binary/query content hashing into EXTRACTOR_VERSION, and live binding across production read, write, conversion, currentness, reference, and review-memo paths.",
+  "supersedes": [],
+  "title": "Local-only languages.json overrides and custom libraries bind live seams",
+  "writer": {
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
+  }
+}

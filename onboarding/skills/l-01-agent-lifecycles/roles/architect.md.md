@@ -38,7 +38,7 @@ A `From explainer ·` message carries the developer's words only when their SHA-
 - Copied developer words in a From explainer message count as those words only after their hash matches the filed developer message; an Architect not named by the master-to-architect record claims that master through explainer_control. [7]
 
 
-When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
+When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` before implementation. A packet naming no such effect declares nothing. Pre-planning resolves memory (`context_packet`), calls `knowledge_read` (`impact`/`search`/`records`; all pages), opens named files and code, and surfaces conflicts. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
 
 For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` (bound to `agents-remember-task` via `core/every-role.md`), preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
 
@@ -84,7 +84,9 @@ Before answering a child's question or returning the developer's answer, the Arc
 - The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them. [3]
 
 
+
 - When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published. [4]
+
 
 
 ### Docs References

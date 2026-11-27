@@ -159,6 +159,7 @@ No configured live documentation source was available for this pass.
 - `CodeTrees` resolves ranges and content identities against the selected side and obtains the hunks used by the hit rules. [29]
 
 
+
 - The pinned zero-context blob diff. [30]
 - One hunk and its document form. [31]
 - The strict-inside rule for an empty side. [32]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+        "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
         "content": "sha256:b77c472b9d1cc851eca40ec99fc9f025ef96722d1d2467b541c68817af2685a4",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+        "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
         "content": "sha256:033d9da5a20b547e6c39a41ee9ecb779edb8370a6f39631af3fa1a4001d291c9",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
-        "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+        "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+        "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
         "locator": {
           "kind": "symbol",
           "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
@@ -51,6 +51,23 @@
         "handoffEntry": "BUG-R09@v3 rule 1",
         "leaf": "261112-BUG-L9"
       }
+    },
+    {
+      "anchor": {
+        "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+        "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+        }
+      },
+      "facet": "Verifies call-scoped definition reuse parses once per distinct (path, grammar, provider version, lines) key.",
+      "id": "PRF-KKCVFF",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      }
     }
   ],
   "realizes": [],
@@ -60,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
-            "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+            "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
             "locator": {
               "kind": "symbol",
               "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
@@ -76,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
             "content": "sha256:5072efa6a545d9562800e964134c5efb5d381e874815e9906f34d181ff829540",
             "locator": {
               "kind": "symbol",
@@ -92,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
             "content": "sha256:033d9da5a20b547e6c39a41ee9ecb779edb8370a6f39631af3fa1a4001d291c9",
             "locator": {
               "kind": "symbol",
@@ -108,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
             "content": "sha256:b77c472b9d1cc851eca40ec99fc9f025ef96722d1d2467b541c68817af2685a4",
             "locator": {
               "kind": "symbol",

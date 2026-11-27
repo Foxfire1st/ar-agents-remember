@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
-        "content": "sha256:0829b81aa35335c0b35c946d40a2a7dc71809de9ddfa398560cf893b68e6b434",
+        "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+        "content": "sha256:678441169a89f71733098f1aa5a33291172277f23a5184fe31f58181d14c8783",
         "locator": {
           "kind": "symbol",
           "name": "refusal"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
         "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
-        "content": "sha256:5952f6096541f54daa7e5f3606b7a6c96416c1507776f5d7fe931b8e6f208a2b",
+        "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+        "content": "sha256:d882c4b604adc7b7dd98a5d1cd1c8b132131b41cb69be9c987ba4925a5d81e34",
         "locator": {
           "end": 292,
           "kind": "line_range",
-          "start": 262
+          "start": 263
         }
       },
       "id": "RLZ-K557YT",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
         "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
         "content": "sha256:7e508e2016831235b383860fa15a3124446da0847ba4c3600466b872f5d728b5",
         "locator": {
           "kind": "symbol",
@@ -99,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
             "content": "sha256:d3785bb47603cc433dc59d4866eea3b644e8a2243cc67acd2d52f0bd4c1a2e2f",
             "locator": {
               "kind": "symbol",
@@ -115,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
             "content": "sha256:6e81674097f2894be2a2942854e035da6c4b9c7066501ca445145bf2444e0fd2",
             "locator": {
               "kind": "symbol",
@@ -131,8 +131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
-            "content": "sha256:cb178eeebefe35be51f3ec1e36d59f24666a909d2fea181a920c29d1baac25bb",
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:d54221c318488eeb10a0d797e771a193acb6e9196fdd626ffbc7e584213b40cc",
             "locator": {
               "kind": "file"
             }
@@ -142,16 +142,15 @@
       ]
     },
     "6": {
-      "note": "The refusal offers the exact lines where a modifier or a computed title explains the miss, and otherwise names the ambiguity with an `S`/`E` placeholder range for the curator to fill; a case that does not run gets no offer.",
+      "note": "The refusal accepts declarative call-site nodes and offers the exact lines where a modifier or a computed title explains the miss, and otherwise names the ambiguity with an `S`/`E` placeholder range for the curator to fill; a case that does not run gets no offer.",
       "targets": [
         {
           "anchor": {
-            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
-            "content": "sha256:0829b81aa35335c0b35c946d40a2a7dc71809de9ddfa398560cf893b68e6b434",
+            "blob": "384277e0599f763bea650d9bc63e8dd50c27dd8f",
+            "content": "sha256:678441169a89f71733098f1aa5a33291172277f23a5184fe31f58181d14c8783",
             "locator": {
-              "end": 290,
-              "kind": "line_range",
-              "start": 262
+              "kind": "symbol",
+              "name": "refusal"
             }
           },
           "kind": "test"

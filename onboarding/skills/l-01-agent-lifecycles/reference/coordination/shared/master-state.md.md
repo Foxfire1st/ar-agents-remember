@@ -23,4 +23,5 @@ An atomic master's document must read `abandoned` or `Completed` before `worktre
 
 - The Manager role's Reference index links `master-state.md` under Master (`task_doc`/`worktree_abandon`/`record_landing`). \[3] [5]
 
+
 - `## End a standalone master` prescribes `worktree_record_landing`, `lifecycle_finalize_task` without prior `set_status`, and `task_doc retire_master` (dry run first) because finalization never archives a series master. [4]

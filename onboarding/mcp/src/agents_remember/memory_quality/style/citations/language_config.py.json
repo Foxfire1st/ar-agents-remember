@@ -1,0 +1,161 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/language_config.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+        "content": "sha256:854ea5f665f73d46e3e58585ec620c95c542100b0434315baac2a0b31b300197",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_language_overrides"
+        }
+      },
+      "id": "RLZ-3GZPM0",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Validates per-repo languages.json and user settings overrides, refuses remote URLs and download-URL keys as a security boundary, and refuses any override or disable of reserved .lean.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`CustomLanguageSpec` and `LanguageOverrides` hold immutable parsed custom-language definitions and enable/disable/suffix override maps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:40c32805d77c8a2b0b00b4d49810626f95b86e28a3d9b4a267a3743b02d47c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "CustomLanguageSpec"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:d74da09e5a84e1d16a8ff23c8bd0ee4599bf0c891bf5919f33f7449026cbcf28",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageOverrides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`load_language_overrides`, `load_repo_languages_file`, and `parse_language_overrides` read user and repository config files and merge repository precedence over user defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:e67476195a24b90bc24538717f4c17d0a959bfa54dfbed2f19390dccac4458b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_language_overrides"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:854ea5f665f73d46e3e58585ec620c95c542100b0434315baac2a0b31b300197",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_language_overrides"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:2898c3c442be35819a13b7338e24bd16c764529fd2d5d144aed92b40583024f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_overrides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_refuse_unknown_and_url_keys` and `_refuse_remote_url` reject unknown fields, forbidden URL keys, and remote URLs in `languages.json` and user settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:4aac9be7486eb2c808ede478d418ab3656aeac325f2262b80115e8683b172184",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_unknown_and_url_keys"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:af1c9c772e2b6dd4b104328dce2f63a1df610fccd687b67bdda666dd2300938d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_remote_url"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_refuse_reserved_suffix` and `_refuse_reserved_glob` prevent overrides or custom languages from claiming reserved suffixes such as `.lean`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:df6ba82f768282857ac8918ec8fbfd5df42e5c335b291679882de78f45ef93ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_reserved_suffix"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:89a57f5b97bc99a439c33761cf8f190de87ded3aaf8ea53e7e14f61116659842",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_reserved_glob"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_parse_one_custom_language` resolves local library and query paths and validates selectors, wrappers, and destructuring rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "content": "sha256:74d033093b5cbef171077eab33a74bcdad8b328554c50bb6f334f694ecafa73f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_one_custom_language"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

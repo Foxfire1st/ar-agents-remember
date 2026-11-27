@@ -27,11 +27,13 @@ The checklist's actionable count is exactly repairable findings plus missing onb
 
 Interactive `finalFullCatalog` remains a non-certifying readiness projection: the controller supplies no affected-closure plan digest and the catalog reports `finalizationEligible: false`. The prepared application adapter and its production affected-execution/final-certification composition were removed. Core certificate issuance and finalization still require their exact result, prefix and current-memory-input authority, but their existence is not a live Gate-5 producer or successful certification execution.
 
-`extents.definition_scope` owns reusable definition results for one operation and enters `grammars.parsing_scope` for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Definition extraction outside its definition scope parses independently.
+`extents.definition_scope(language_set=None)` owns reusable definition results for one operation (keyed by path, grammar, active provider version, and source lines) and enters `grammars.parsing_scope` (and `language_set_scope` when supplied) for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Definition extraction outside its definition scope parses independently.
 
-Lean symbol extents come from the built-in declaration scan. Each alias binder has its own symbol name and shares the command extent through the target identifier. Whole written and full names share the scan's extent, with verified full names taking precedence. If the scanner retains competing namespace qualifications for the requested declaration key, the key is unverifiable and a line range remains available. The sidecar citation check reports this state separately.
+`style/citations/language_catalog.py`, `language_cache.py`, `language_config.py`, `language_scanner.py`, `language_set.py`, and `tags_engine.py` provide the uniform data-driven language catalog (`package_data/citations/language_catalog.lock.json`), isolated external grammar cache (`AR_LANGUAGE_CACHE` / `${XDG_STATE_HOME:-~/.local/state}/agents-remember/grammars`), local-only `languages.json`/user-settings override loader, repository scanner and cache warmer, explicit `LanguageProvider`/`LanguageSet` `ContextVar` seam (`language_set_scope` and `repository_language_set_scope`), and declarative tree-sitter `tags.scm`/`tests.scm` execution engine behind `grammars.py`. Core dependencies pin only `tree-sitter==0.26.1` with zero `tree-sitter-*` grammar wheels in `pyproject.toml`/`uv.lock`; each `TreeSitterLanguageProvider` loads lazily from verified cached wheels or local custom libraries and hashes its `.scm` queries into its provider version, `LanguageSet.extractor_version` derives one deterministic identity from `tree-sitter` and every registered provider, and `.lean` is permanently reserved for the built-in `LeanLanguageProvider`.
 
-TypeScript anchor parsing memoizes each exact input, including an unresolved spelling, in the active request. Callers without a request owner use the separate process memo.
+Lean symbol extents come from `LeanLanguageProvider` wrapping the built-in declaration scan. Each alias binder has its own symbol name and shares the command extent through the target identifier. Whole written and full names share the scan's extent, with verified full names taking precedence. If the scanner retains competing namespace qualifications for the requested declaration key, the key is unverifiable and a line range remains available. The sidecar citation check reports this state separately.
+
+TypeScript anchor parsing memoizes each exact `(provider.version, text)` input, including an unresolved spelling, in the active request. Callers without a request owner use the separate process memo on the default `LanguageSet` or parse directly under a scoped override.
 
 MCP tool dispatch and finite CLI handlers establish the operation boundary; the dashboard server handler remains outside it. A background quality worker enters its own fresh context and definition scope. Completed validation results remain independently computed.
 
@@ -196,19 +198,24 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - The converted check's bases: HEAD first and, during a merge, MERGE_HEAD too, each kept only when converted. [73]
 
-- Retained reference account (no fresh execution or acceptance inferred): The re-recording scoped to one sidecar. [74]
+- Retained reference account (no fresh execution or acceptance inferred): The re-recording scoped to one sidecar. Anchor: `fix_references` [74]
+
 - Retained reference account (no fresh execution or acceptance inferred): A history file closed in a base or a frozen commit is left out of the re-anchor check. [75]
 - Retained reference account (no fresh execution or acceptance inferred): A later row of another disposition that would replace the leaf's changed row is found. [76]
 - Retained reference account (no fresh execution or acceptance inferred): The drift item of a converted tree is the converted check's result. [77]
 - Adoption-only card discovery scans sorted onboarding Markdown, including dot-directory cards. It skips I/O read errors. Invalid UTF-8 raises a decoding error. [78]
+
 - Retained reference account (no fresh execution or acceptance inferred): Mechanical refresh skips sidecars refused by citation authoring before refresh/write. [79]
+
 - One registry includes the working-tree overview rules; applicable commit calls refuse failing reports without a subset parameter. [82]
 - Purpose heading, leaf/date heading and trailing citation rules refuse at leaf publication, with standalone-conversion exemptions. Their implementation is tracked in the frozen code tree. [83]
 - Governing resolution requires a metadata field, tests field/body independently, and observes missing body links. [85]
 - Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
 - Decision governs is a refusing rule. [58]
 - Converted summary names measured counts and unreadable sidecars; report/snapshot writes are conditional. [86]
-- The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing. [87]
+
+- The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing. Anchor: `anchor_state`, `check_references`, `fix_references` [87]
+
 - Family judgments newly published or edited require authored effect and their actual revision; exact historical rows are exempt. [88]
 - An explicit certificate requires a green certifying result bound to its admitted plan; core finalization authority requires exact green Gates 1–5 and current memory inputs. Readiness alone supplies no certificate. [92]
 - Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [94]
@@ -233,22 +240,20 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
 
 - The curator checklist renderer owns deterministic grouping, closeout-provenance separation and atomic publication. [7]
-- Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
 - The defaulted without-proof input, row shape and informational rendering. [47]
 - The checklist's defaulted worklist inputs. [49]
 - Checklist actionability has three terms; operational report and attestation receive separate atomic writes and exact bindings, and the returned whole result retains the three blocking populations. [84]
-
-- definition_scope owns call-local definition results, joins nested scopes, enters parsing_scope and clears retained values on exit. [99]
-- parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
-
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
-
-
-
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
 
 - The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]
 
 - Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
 
-- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. [104]
+- Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
+- `definition_scope` owns call-local definition results keyed by path, grammar, active provider version, and lines, joins nested scopes, enters `parsing_scope`, and clears retained values on exit. [99]
+
+- `parsing_scope` retains diagnostic parse trees and declarative `tests.scm` call sites only within the active call and clears them on exit. [100]
+
+
+- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request, keyed by active provider version. Unscoped callers use the separate process memo on the default `LanguageSet`. Anchor: `typescript_anchor_identifier`, `_process_typescript_anchor_identifier` [104]

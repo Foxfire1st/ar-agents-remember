@@ -55,6 +55,23 @@
     {
       "anchor": {
         "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:90863487bc35529aa7a3b0cf5e59ef14f2194d8e3d7be424a5b73316fe0488c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiled_capsule_token_ceilings_all_34_matrix_keys"
+        }
+      },
+      "facet": "Verifies all compiled role/operation capsules stay within their authored compiled token ceilings after adding knowledge_read view cues.",
+      "id": "PRF-2R8FC8",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
         "content": "sha256:97aafadbfed205a71e72fbd6572bd61cb47c274f115fd8b93285e26aeafa595c",
         "locator": {
           "kind": "symbol",
@@ -169,6 +186,23 @@
       "origin": {
         "handoffEntry": "cap-l2-inv-5h5vr2",
         "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4b5ae391947d790d65e8b1db7f22768055d8a18d",
+        "content": "sha256:717e287768ebb540a5d2b3b0ff25053ef11ebcb0ae2785ae0427ee5d81321e36",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_wire_and_compiled_ceilings_reject_overages_and_match_launch_links"
+        }
+      },
+      "facet": "Verifies Turn-1 wire token ceilings and launch detail links hold across all roles after Tier-1 capsule updates.",
+      "id": "PRF-8NMQP7",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
       }
     },
     {

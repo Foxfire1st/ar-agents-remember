@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-        "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_blob_definitions"
+        }
+      },
+      "id": "RLZ-133F10",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Includes the active provider version and test-file eligibility in the BLOB_DEFINITIONS memo key to prevent cross-LanguageSet contamination.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
         "locator": {
           "kind": "symbol",
           "name": "_blob_definitions"
@@ -16,12 +34,30 @@
         "handoffEntry": "SUB-R01-recorded-ranges-revision",
         "leaf": "261123-SUB-L1"
       },
-      "rationale": "The memo retains exact symbol extents by selected grammar and script test-file class so equal bytes cannot return a definition from the wrong reader context.",
+      "rationale": "The memo retains exact symbol extents by selected grammar, active provider version, and script test-file class so equal bytes cannot return a definition from the wrong reader or LanguageSet context.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_symbol"
+        }
+      },
+      "id": "RLZ-3FAAVQ",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Binds the repository's configured LanguageSet and degrades gracefully to unsupported_locator when GrammarUnavailableError occurs on read paths without hardcoding language sets.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
         "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
         "locator": {
           "kind": "symbol",
@@ -38,8 +74,26 @@
     },
     {
       "anchor": {
-        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-        "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_defining_extents"
+        }
+      },
+      "id": "RLZ-9JQHAJ",
+      "invariant": "INV-QQ8TQ7",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §4",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Delegates to extents.qualified_spans so recorded-anchor resolution applies the same enclosing-holder containment as the writer and conversion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
         "locator": {
           "kind": "symbol",
           "name": "_defining_extents"
@@ -51,13 +105,13 @@
         "handoffEntry": "SUB-R01-symbol-lookup",
         "leaf": "261123-SUB-L1"
       },
-      "rationale": "Looks up the complete name and retains all distinct defining ranges.",
+      "rationale": "Delegates to extents.qualified_spans to preserve exact-key Lean lookup and enclosing-holder containment for other languages.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-        "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
         "locator": {
           "kind": "symbol",
           "name": "_observed_symbol"
@@ -73,7 +127,7 @@
     },
     {
       "anchor": {
-        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
         "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
         "locator": {
           "kind": "symbol",
@@ -90,8 +144,8 @@
     },
     {
       "anchor": {
-        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-        "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
         "locator": {
           "kind": "symbol",
           "name": "_observed_symbol"
@@ -113,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -124,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:2ca33e9b6a9aae9d879c6a71c5a75c3a67319d81f43cc9a874ab00ec556ae305",
             "locator": {
               "kind": "symbol",
@@ -135,7 +189,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:20abb41e24de5aa9b91673cccec7a7452e4c9c3c496acfb8227ae17dbcb9931e",
             "locator": {
               "kind": "symbol",
@@ -151,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:8965416a0ebb24e6b5812c1db2cc986cfdeae20b5fb4286abb99dd215cf027e3",
             "locator": {
               "kind": "symbol",
@@ -163,12 +217,12 @@
       ]
     },
     "11": {
-      "note": "Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup selects the distinct ranges from those extents in document order.",
+      "note": "Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup delegates to `extents.qualified_spans` and selects distinct ranges in document order. Anchor: `_blob_definitions`, `_defining_extents`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
             "locator": {
               "kind": "symbol",
               "name": "_blob_definitions"
@@ -178,8 +232,8 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
             "locator": {
               "kind": "symbol",
               "name": "_defining_extents"
@@ -190,37 +244,14 @@
       ]
     },
     "12": {
-      "note": "The memo keeps a tree entry or its definite absence, blob lines, and definitions per grammar and script test-file class. Entries require complete identities and successful observation.",
+      "note": "The memo keeps a tree entry or its definite absence, blob lines, and definitions keyed by grammar, active provider version, and script test-file class. Entries require complete identities and successful observation. Anchor: `_tree_entry`, `_recorded_lines`, `_blob_definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
-              "kind": "symbol",
-              "name": "_tree_entry"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:5af787370ce4411072fd753185ec3ebadbc2553e231c6cf12b33c96f766c5c31",
-            "locator": {
-              "kind": "symbol",
-              "name": "_recorded_lines"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
-            "locator": {
-              "kind": "symbol",
-              "name": "_blob_definitions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -228,52 +259,14 @@
       ]
     },
     "13": {
-      "note": "The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity.",
+      "note": "The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. Anchor: `anchor_resolver_for`, `_observed_entry`, `_observed_symbol`, `_blob_definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:0245345ac16f6155c43ef2f82a434cffddd7453659999acaa0d29a95d68f6d0d",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 83
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
-            "locator": {
-              "end": 247,
-              "kind": "line_range",
-              "start": 194
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:8bd367138526f93a692d46ced7707b7fb84197c2a3266455b0237d194420d4fd",
-            "locator": {
-              "end": 283,
-              "kind": "line_range",
-              "start": 272
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:10a7107dfebe4e9ccf2ecca87934960852a18560c7af27010f1f872c7c3a4c9b",
-            "locator": {
-              "end": 427,
-              "kind": "line_range",
-              "start": 383
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -454,7 +447,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",
@@ -519,8 +512,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -531,12 +524,12 @@
       ]
     },
     "23": {
-      "note": "Exact keys precede dotted fallback and Lean uses the exact key only.",
+      "note": "Exact keys precede dotted holder containment via `extents.qualified_spans`, and Lean uses the exact key only.",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
             "locator": {
               "kind": "symbol",
               "name": "_defining_extents"
@@ -551,7 +544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
             "locator": {
               "kind": "symbol",
@@ -562,7 +555,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:4c5aac44aba12702668c799f1f4d4f1bc11570169d3ec88466bd81459f94afe3",
             "locator": {
               "kind": "symbol",
@@ -573,7 +566,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
               "kind": "symbol",
@@ -584,7 +577,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:1c0602e811691ffa334ba461731dc248fd78e3ec14ee74d212cd44bbfa774b80",
             "locator": {
               "kind": "symbol",
@@ -617,7 +610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:d4531f57e5c69f17628ad313df7a9555b7b0492aa986e742f7ea79ab28a539a6",
             "locator": {
               "kind": "symbol",
@@ -628,7 +621,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:0ea7ecb27d8f5ea4cbc904337efa60921100c10580d0d46e8410af162baa896e",
             "locator": {
               "kind": "symbol",
@@ -639,7 +632,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:46148201232cbdca872d79c8aff9237655b6ab64c9d5aed52734a51c62d32e2d",
             "locator": {
               "kind": "symbol",
@@ -650,7 +643,7 @@
         },
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:a9aa35c34fadaba98e6b29155e8c793d17dcd253fce1600d2ae30823baa9c594",
             "locator": {
               "kind": "symbol",
@@ -703,38 +696,14 @@
       ]
     },
     "7": {
-      "note": "**The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.**",
+      "note": "**The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** Anchor: `_observed_entry`, `_observed_symbol`, `_observed_line_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
-              "kind": "symbol",
-              "name": "_observed_line_range"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_observed_symbol"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
-            "locator": {
-              "end": 247,
-              "kind": "line_range",
-              "start": 194
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -746,8 +715,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
-            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -762,7 +731,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",

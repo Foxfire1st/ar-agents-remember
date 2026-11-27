@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The bundled hash-pinned catalog, isolated lazy AR_LANGUAGE_CACHE with read/write asymmetry, local-only languages.json and custom library overrides, active LanguageSet cache-key isolation, declarative tags.scm/tests.scm extraction, and .lean reservation together guarantee uniform language-agnostic anchor resolution across every production consumer without privileged grammar dependencies or cross-set cache leakage."
+  },
+  "guarantee": "Every tree-sitter citation consumer resolves source bindings and JS/TS test-case call sites declaratively through the active or repository-scoped LanguageSet ContextVar backed by the bundled hash-pinned language_catalog.lock.json, isolated lazy AR_LANGUAGE_CACHE wheel loading, and local-only languages.json/custom-library overrides, derives extractor identity from pinned versions, binaries, and query digests across all downstream caches, preserves read-degrade versus write-refuse failure asymmetry, and keeps .lean permanently reserved for the built-in Lean declaration scanner.",
+  "id": "FAM-CSVQBJ",
+  "members": [
+    "INV-KQ8BKK",
+    "INV-ZYP9YD",
+    "INV-5FFC2H",
+    "INV-559QV5",
+    "INV-KJDERT",
+    "INV-EW1ST5"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "kno-r10-declarative-language-set-seam",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/memory/conversion",
+    "mcp/src/agents_remember/memory/knowledge",
+    "mcp/src/agents_remember/memory_quality",
+    "mcp/src/agents_remember/package_data/citations",
+    "mcp/test_support/agents_remember_test_support/testing"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Uniform language catalog, lazy cache, and declarative LanguageSet seam",
+  "writer": {
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
+  }
+}

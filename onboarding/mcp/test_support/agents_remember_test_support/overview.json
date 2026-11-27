@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
-            "content": "sha256:ac953c2640b7cbaf4311827febc888c55354aee72dfd2f0cb9e7b622ad66eca3",
+            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+            "content": "sha256:2ae2ae6e9c785c9488a305aa18b2bb1f3d3b9a14eff317d46187f76e5797a5d3",
             "locator": {
-              "end": 161,
+              "end": 165,
               "kind": "line_range",
-              "start": 158
+              "start": 160
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -208,12 +208,12 @@
         },
         {
           "anchor": {
-            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
             "content": "sha256:94c7c81c1baee3096c70b650f98c3f3d7832e2230adc4c1014f8aed8cf34399d",
             "locator": {
-              "end": 243,
+              "end": 258,
               "kind": "line_range",
-              "start": 230
+              "start": 245
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -221,12 +221,12 @@
         },
         {
           "anchor": {
-            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
             "content": "sha256:0a43c8d5259c19788d88e03b08769ef39af3456bb44248728aab0fcd8e3e7dc0",
             "locator": {
-              "end": 241,
+              "end": 256,
               "kind": "line_range",
-              "start": 222
+              "start": 237
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -341,12 +341,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+            "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
             "content": "sha256:276519340d6bbbbf2f426c48c03c834eca4031a6cd6a98290b364aac2ffc8de6",
             "locator": {
-              "end": 72,
+              "end": 57,
               "kind": "line_range",
-              "start": 59
+              "start": 44
             },
             "path": "mcp/pyproject.toml"
           },
@@ -354,12 +354,12 @@
         },
         {
           "anchor": {
-            "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+            "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
             "content": "sha256:c3566bb76d04bb29fb5df72925d693a3e7a0aaa01f9c4f0c1603935ac690ea1c",
             "locator": {
-              "end": 88,
+              "end": 73,
               "kind": "line_range",
-              "start": 87
+              "start": 72
             },
             "path": "mcp/pyproject.toml"
           },
@@ -367,7 +367,7 @@
         },
         {
           "anchor": {
-            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+            "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
             "content": "sha256:2c974185c97c32e3a03ecb066ade1806a9f10f0ec48a1a395edc602a9457ea6f",
             "locator": {
               "end": 20,
@@ -380,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
             "content": "sha256:04e6c1cfb80d069095215884792aee4145606659458cd0ac6627d63db7534797",
             "locator": {
-              "end": 239,
+              "end": 254,
               "kind": "line_range",
-              "start": 236
+              "start": 251
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -410,12 +410,12 @@
         },
         {
           "anchor": {
-            "blob": "8519550ed36c2126183a5e02b649210221f2e280",
+            "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
             "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
             "locator": {
-              "end": 210,
+              "end": 220,
               "kind": "line_range",
-              "start": 196
+              "start": 206
             },
             "path": "mcp/tests/conftest.py"
           },

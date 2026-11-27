@@ -1,0 +1,190 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/language_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+        "content": "sha256:65effee3f874e1191e411d1b4435c033236fdf432da91cd5d9c8fd9b6714af25",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_catalog_language"
+        }
+      },
+      "id": "RLZ-4N6HJ9",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Lazily downloads platform-matched wheels from pinned catalog URLs, verifies SHA-256 digests before atomic zip extraction into isolated AR_LANGUAGE_CACHE targets, reuses verified receipts without network traffic, and enforces tree-sitter ABI bounds.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+        "content": "sha256:75ef5d48bd9e457ada60d10a7d127eb39cb64f595f919e2413a60a56cc3d8568",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_custom_library_language"
+        }
+      },
+      "id": "RLZ-TXVQ9N",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Loads local compiled tree-sitter shared libraries via ctypes and PyCapsule, verifying ABI 13-15 compatibility and reporting machine-local provisioning requirements on absence.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`resolve_language_cache_root` and `select_platform_wheel` resolve the external cache location (`AR_LANGUAGE_CACHE` or `${XDG_STATE_HOME:-~/.local/state}/agents-remember/grammars`) and match pinned wheels to the running platform tags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:1e6a00d52262831ab4f2cf665da01cdbeef175aa4bdceae32a95df4276a1521b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_language_cache_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:543fff6ab9a1aa66bc8477849c5abd80326c22c9ce40500282dbf456d081ace1",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_platform_wheel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`warm_catalog_language` and `ensure_catalog_language` install pinned wheels on demand and cache loaded `tree_sitter.Language` objects in memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:e57c76da962126bb57ae7ab3c22a655686252e727c1d112793d261d9cad531e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "warm_catalog_language"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:65effee3f874e1191e411d1b4435c033236fdf432da91cd5d9c8fd9b6714af25",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_catalog_language"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`load_custom_library_language` and `_construct_and_verify_abi` load local shared libraries via `ctypes.CDLL`, wrap the pointer in a PyCapsule, retain the DLL handle, and enforce catalog ABI bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:75ef5d48bd9e457ada60d10a7d127eb39cb64f595f919e2413a60a56cc3d8568",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_custom_library_language"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:5cb148ac505318adbf51b60e8bab1334544a98a8e1c35dc4448faa37fc891edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_construct_and_verify_abi"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_install_pinned_wheel`, `_extract_wheel_atomically`, and `_safe_extract_zip` serialize installs with `flock`, verify SHA-256 digests before extraction, block zip path traversal, and publish receipts atomically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:07cd5f8fdad35d0dd9a7eab35ffeaea39597a45c8a1c53e3725741dc86ceef05",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_pinned_wheel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:7ca73c713f613f69d12451dd3ccec8c3b2040190208fa025074df7fa26185e7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_extract_wheel_atomically"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:1db795245f7c0be4b5e131f8177d7c568615d0b0f674127ab8c1f699a9fefb3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_safe_extract_zip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_load_language_from_cache` and `_import_isolated_module` load cached grammar wheels without mutating `sys.path` or the MCP venv.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:96875346c0fccc21870ce8fe66ebbb88e40f6f85934e141d0db36d43a5b1931d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_language_from_cache"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "content": "sha256:e80559e02faa323e5dd55198bc7eb43c0c20f461f54e2875fe45e4373c937300",
+            "locator": {
+              "kind": "symbol",
+              "name": "_import_isolated_module"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

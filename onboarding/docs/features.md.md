@@ -11,7 +11,7 @@ Tours Agents Remember's product capabilities—mirrored cards, sidecars, knowled
 ## Code Commentary
 
 - Distinguishes reference-anchor currentness (blob and content identity, `stale:blob`) from realization/proof currentness (`current`/`stale`/`unverifiable`) and invariant states (`current`/`stale`/`unverifiable`/`unrealized`).
-- Documents `read_ar_files` brief-to-compact row degradation and names-only `knowledge_read`, alongside per-build/tree SQLite knowledge-index caching and eviction (14 days / 1 GiB).
+- Documents `read_ar_files` brief-to-compact row degradation and 11-view `knowledge_read` (`impact`, `search`, verbatim `records` up to 25 IDs, compact `dependent` triage, and the remaining views, reserving native file opens for source code, tests, briefs, and cards), alongside per-build/tree SQLite knowledge-index caching and eviction (14 days / 1 GiB).
 - Defines read-only versus mutating MCP tool trust boundaries (`intent_note`, `dry_run`, answer token bounds, and tool-log routing between `<enclosure>/logs/` and `<coordination-root>/logs/mcp/`).
 
 ## Relationships
@@ -21,6 +21,8 @@ Tours Agents Remember's product capabilities—mirrored cards, sidecars, knowled
 ## Evidence
 
 - Reference-anchor blob and content currentness versus realization/proof and four-state invariant currentness. [1]
-- Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and names-only `knowledge_read`. [2]
+
+- Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and 11-view text-bearing `knowledge_read` (`impact`, `search`, `records`, and compact `dependent` triage). [2]
+
 
 - MCP tool server read-only versus mutating trust boundaries, role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke refusal pointers, answer token bounds, and tool-log locations. [3]

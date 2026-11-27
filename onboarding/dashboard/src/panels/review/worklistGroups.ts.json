@@ -155,12 +155,12 @@
       ]
     },
     "8": {
-      "note": "The server's matching row lookup.\n\nAnchor: `_row_subjects`",
+      "note": "The server's matching row lookup. Anchor: `_row_subjects`",
       "targets": [
         {
           "anchor": {
-            "blob": "32b468e307d43909fa4abb9ad4cf27f31384665f",
-            "content": "sha256:e577bcb9fb4872d2d5264e05e1ce09443b285400a84fd7e041514ddbd5a704bc",
+            "blob": "b9d685899110493177ae5483ae4b24095dc6256a",
+            "content": "sha256:6f24f3d71116bbcd22cd1ac981d076691ada91062212e9b170978ff1596a4ada",
             "locator": {
               "kind": "file"
             },

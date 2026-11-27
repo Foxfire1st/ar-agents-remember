@@ -1,0 +1,24 @@
+{
+  "path": "docs/reference/knowledge-system.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d008e755892f80eaa227bfb5cbc9c6b11db2c5a6",
+        "content": "sha256:5163abbec8055e48904fdd25db6a85cf58d59632df51075a37dd2addc74c3171",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QTWS6Q",
+      "invariant": "INV-A3XH71",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R4",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Public knowledge-system reference aligned with eleven knowledge_read views and text-bearing records/impact/search in disjoint section lines 386-388 (DPD-TXRND9).",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

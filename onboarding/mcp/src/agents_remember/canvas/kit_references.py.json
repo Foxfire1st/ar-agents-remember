@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+        "blob": "87494b46fcc6dd6f32cb8fc8b709e3ca8b71a658",
+        "content": "sha256:826eaffaa255d192efcf1f44b81db7d1aeb2b5b97adbd7100e19db785de7c09f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_js_language"
+        }
+      },
+      "id": "RLZ-13R25X",
+      "invariant": "INV-CSJ1ZD",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §4",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Loads the JavaScript grammar through grammars.language('javascript') instead of directly importing tree_sitter_javascript.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "87494b46fcc6dd6f32cb8fc8b709e3ca8b71a658",
         "content": "sha256:2f1741b05140672e77d03d7b088a5e4f512e7b0f36d86407dd2f45c6337dc005",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+        "blob": "87494b46fcc6dd6f32cb8fc8b709e3ca8b71a658",
         "content": "sha256:ff463f4efb55d1b6b3ee7195f450829f3cb910d89bc8a13a0b2ab8d40003fc08",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+            "blob": "87494b46fcc6dd6f32cb8fc8b709e3ca8b71a658",
             "content": "sha256:ff463f4efb55d1b6b3ee7195f450829f3cb910d89bc8a13a0b2ab8d40003fc08",
             "locator": {
               "end": 458,

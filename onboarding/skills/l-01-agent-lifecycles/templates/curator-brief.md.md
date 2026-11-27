@@ -49,7 +49,7 @@ That projection is evidence, not a caller-selected commit authority. The Manager
 and requires `sourceLineage.state=current`. A stale or unavailable result synchronizes/reconciles before curation;
 the curator never documents stale source and never repairs code.
 
-Routing and handover rules sit in detail files: `reference/curator/change-routing.md` for routing change-set and notes items, `reference/curator/memory-handover.md` for the memory handover to the Reviewer, and `reference/message-handover.md` for message payloads and full-store refusals; the Manager's compilation checks point to `operations/curation.md#checks-and-gates`, `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake` and `operations/review.md#rounds`.
+Routing and handover rules sit in detail files: `reference/curator/change-routing.md` for routing change-set and notes items, `reference/curator/memory-handover.md` for the memory handover to the Reviewer, and `reference/message-handover.md` for message payloads and full-store refusals; the Manager's compilation checks point to `operations/curation.md#checks-and-gates`, `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake` and `operations/review.md#rounds`. Its `## Knowledge reads` section guides pre-authoring `knowledge_read` calls (`impact`, `search`, `records`) and closeout `dependent(staleOnly=true, compact=true)` triage (using full rows when an evidence receipt requires moved-link rows) at zero compiled capsule tokens.
 
 ## Invariants And Boundaries
 
@@ -88,6 +88,7 @@ No cross-repository implementation dependency governs this template.
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [8]
+
 
 
 - The Manager starts the Curator stage through the coordination operation after code PASS; the Worker and Reviewer hand their inputs directly. [9]

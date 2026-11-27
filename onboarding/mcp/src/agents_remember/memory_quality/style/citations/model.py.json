@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
-        "content": "sha256:9772cb9c0612a151b635f58712357424b251f885b03ad3048eef0c8925ab2678",
+        "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+        "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
+        "locator": {
+          "kind": "symbol",
+          "name": "anchors_in"
+        }
+      },
+      "id": "RLZ-13QRXE",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Accepts an explicit LanguageSet scope and threads it into TypeScript spelling resolution.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+        "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
         "locator": {
           "kind": "symbol",
           "name": "anchors_in"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+        "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
         "content": "sha256:4b181122983e03f89d82cd51a4b2d2d46995feef22d5d72e3806233e4dde9052",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:7713fb376f08b5d6f1164038a731a3c6800cd2f2ab83d483407103cf60962ab3",
             "locator": {
               "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:23785e4bfdc035e87c900804d136ef82232ccaec8e7154ab805322f862d32228",
             "locator": {
               "kind": "symbol",
@@ -72,16 +90,15 @@
       ]
     },
     "11": {
-      "note": "The anchor parser returns the recognized anchors and the count of unrecognized code spans.",
+      "note": "The anchor parser returns the recognized anchors and the count of unrecognized code spans, threading an optional `LanguageSet` scope into TypeScript spelling resolution.",
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
-            "content": "sha256:d5467d77f53e692fe18e29cb26ca80dd1b47b1e5fed28098efc5db7688dbbc8f",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+            "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
             "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 101
+              "kind": "symbol",
+              "name": "anchors_in"
             }
           },
           "kind": "code"
@@ -93,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:a2feba352b8af533e207c85848a94a7b8820405d57155e1378b096f7d54f36c8",
             "locator": {
               "kind": "symbol",
@@ -109,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:a5e6e8b8bffbfa165dfb94245bef0d20f175277872fbd37466c15f270dd1210c",
             "locator": {
               "kind": "symbol",
@@ -125,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:805863548699b7bfb7ea63c32b2755763340009bfaea461f98b56887e57dbffb",
             "locator": {
               "kind": "symbol",
@@ -141,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:4753bedfb81232196400be441ffd137263008f91fc5f245f7ef1b0a461365131",
             "locator": {
               "kind": "symbol",
@@ -157,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:b277f4bd813d21af2003d50506ea930fe87c91d118a91c2fee4e2f790eda8f84",
             "locator": {
-              "end": 202,
+              "end": 208,
               "kind": "line_range",
-              "start": 174
+              "start": 180
             }
           },
           "kind": "code"
@@ -174,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:52fbf351ee3144257e96091932dc638718e253e99a92ddf58cb86b39ba9cf51f",
             "locator": {
               "kind": "symbol",
@@ -190,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:28eacc946c94b235c024853dd847d4603f6ce39104e3141aa9cf0db66dc4ab79",
             "locator": {
               "kind": "symbol",
@@ -201,7 +218,7 @@
         },
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:d2fa33df7353b01e7f64a5eae70e077e0fbdf3519735a42818052f6a0059348f",
             "locator": {
               "end": 81,
@@ -218,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
             "content": "sha256:89a30ef6e5758eae409f28149b1f7f604f656c1c54fb233f55e2b0460133c492",
             "locator": {
               "kind": "symbol",

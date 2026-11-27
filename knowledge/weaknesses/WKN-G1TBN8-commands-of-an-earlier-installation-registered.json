@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+    "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
     "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
     "locator": {
       "kind": "symbol",
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -27,14 +27,14 @@
   "state": "open",
   "statement": "Five earlier-installation commands remain registered (knowledge-census, knowledge-copies, memory-backfill, upgrade-user-settings, removed-stores): no public page describes the first four, and removed-stores is named only for legacy provider folders. A sixth, knowledge-convert, is told briefly in two guides.",
   "writer": {
-    "at": "2026-11-27T06:40:50+01:00",
+    "at": "2026-11-27T21:03:08+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

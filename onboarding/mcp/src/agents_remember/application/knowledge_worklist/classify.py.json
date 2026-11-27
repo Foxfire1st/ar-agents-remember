@@ -56,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "blob": "ddcbc077a4a18e2a2b4ba5159585ba111a05e371",
             "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
             "locator": {
               "end": 504,
@@ -240,7 +240,7 @@
         },
         {
           "anchor": {
-            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "blob": "ddcbc077a4a18e2a2b4ba5159585ba111a05e371",
             "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
             "locator": {
               "end": 504,
@@ -319,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "blob": "ddcbc077a4a18e2a2b4ba5159585ba111a05e371",
             "content": "sha256:e1ef3f03df40f48e9a34cacfe7da3e0a1111ec90ccbc777dd812d8790c048d77",
             "locator": {
               "end": 468,

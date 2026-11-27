@@ -3,12 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "091b5825d902374c8f55297f96a361589fef324b",
+        "blob": "e480b1c4326545ae4e39219cfcf56e93d7d96329",
+        "content": "sha256:8ae66cc46dbead3f05495793a1bd3d0cb719ba2ed3965c974aa6ded39a26d307",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WTSX5M",
+      "invariant": "INV-A3XH71",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R4",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Public FAQ aligned with knowledge_read impact/search/records and compact dependent triage while preserving INV-47NR7E brief guidance (DPD-A3XZ3Q).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e480b1c4326545ae4e39219cfcf56e93d7d96329",
         "content": "sha256:59e8b174b18d57cc153ef83030d81a402067726189bdcb210a664f2f29bd615e",
         "locator": {
-          "end": 39,
+          "end": 41,
           "kind": "line_range",
-          "start": 36
+          "start": 38
         }
       },
       "id": "RLZ-ZXSPSK",
@@ -23,14 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "Deterministic mirrored-path card lookup, bounded `read_ar_files` brief/compact row degradation, and names-and-locations-only `knowledge_read`.",
+      "note": "Deterministic mirrored-path card lookup, bounded `read_ar_files` brief/compact row degradation, and 11-view text-bearing `knowledge_read` (`impact`, `search`, `records`, and compact `dependent` triage).",
       "targets": [
         {
           "anchor": {
-            "blob": "091b5825d902374c8f55297f96a361589fef324b",
-            "content": "sha256:4cc6834b980a2cd8af4426c181b80fab081ccbc9238a49a036804809ace5f79f",
+            "blob": "e480b1c4326545ae4e39219cfcf56e93d7d96329",
+            "content": "sha256:8f41be96437e5ec9a09b2df00a572f75404dd7a4c438493302cbc569b83fe728",
             "locator": {
-              "end": 45,
+              "end": 49,
               "kind": "line_range",
               "start": 28
             }
@@ -44,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "091b5825d902374c8f55297f96a361589fef324b",
+            "blob": "e480b1c4326545ae4e39219cfcf56e93d7d96329",
             "content": "sha256:167bd538b709724d2d471d6663d0794948de9661d87246f0c6f1276c6c6b621b",
             "locator": {
-              "end": 84,
+              "end": 88,
               "kind": "line_range",
-              "start": 67
+              "start": 71
             }
           },
           "kind": "code"
@@ -61,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "091b5825d902374c8f55297f96a361589fef324b",
+            "blob": "e480b1c4326545ae4e39219cfcf56e93d7d96329",
             "content": "sha256:946d6089867f7b5fe0acc9d3512555d32765b8640402305fc2cbced816a21471",
             "locator": {
-              "end": 172,
+              "end": 176,
               "kind": "line_range",
-              "start": 144
+              "start": 148
             }
           },
           "kind": "code"

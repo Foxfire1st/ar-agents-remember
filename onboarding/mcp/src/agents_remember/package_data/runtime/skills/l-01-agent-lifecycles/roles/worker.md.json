@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-        "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
+        "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+        "content": "sha256:1c7ddee0218a8b19e29ec2c199708d9b0e7b3175c86cb27b69cd4c89d18f0d39",
         "locator": {
           "kind": "file"
         }
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:f57771366fba8a8f9685e3d8265724997b712cadaa808a00689a5bb192843fc4",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -38,11 +38,11 @@
       ]
     },
     "11": {
-      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -94,8 +94,8 @@
         },
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
             "content": "sha256:ca32055cbb659de71147100743b5fce688c710d3a4af9db0cd6814a3a9929a23",
             "locator": {
               "end": 8,
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -162,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:f57771366fba8a8f9685e3d8265724997b712cadaa808a00689a5bb192843fc4",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:1c7ddee0218a8b19e29ec2c199708d9b0e7b3175c86cb27b69cd4c89d18f0d39",
             "locator": {
               "kind": "file"
             },
@@ -190,8 +190,8 @@
         },
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:1c7ddee0218a8b19e29ec2c199708d9b0e7b3175c86cb27b69cd4c89d18f0d39",
             "locator": {
               "kind": "file"
             }
@@ -201,12 +201,12 @@
       ]
     },
     "8": {
-      "note": "Before edits or diagnosis, Worker intake calls `read_ar_files` with `task_context` (opening briefs) and `knowledge_read` with `workspace.memoryRoot` and `view=\"source_context\"`.\n\nAnchor: `read_ar_files`",
+      "note": "Before edits or diagnosis, Worker intake calls `read_ar_files` with `task_context` (opening briefs) and `knowledge_read` (`impact`/`records`) with `workspace.memoryRoot`, and opens needed code and cards via file tools.",
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
             "locator": {
               "end": 10,
               "kind": "line_range",

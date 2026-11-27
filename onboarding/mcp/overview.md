@@ -116,7 +116,7 @@ Paseo host installation/provision/status/stop, pinned host/Node packaging, nativ
 
 The conversation subsystem now retains only `mcp/native_helpers/conversation_library`: its `protocol.ts` declares handshake/list/read/resolve-resume-target helpers and pages with decimal offset/ordinal cursors, not signed purpose/scope/epoch/generation ones. The former hosted-control runtime, independently owned active/library/control children, private exact-identity IPC and hydration machinery are historical; the current serving composition contains no such runtime. Native history/evidence domains stay distinct; hydration uses native authority rather than a flattened transcript cache. Control acknowledgements do not equal settlement, ambiguous post-write loss does not justify blind resend, raw vendor evidence is not public control data, and fixture/version observations cannot independently promote capabilities.
 
-Generated package runtime skills/assets come from canonical repository sources and sync generators; package copies are distribution evidence, not authoring homes. The compiler uses packaged instruction bytes, while installed coordinator copies serve human/runtime browsing. Dashboard assets are git-ignored release output, not one-to-one onboarding subjects; a source build without them can serve a named 503 and absent `dashboardBuild`. The tracked tokenizer vocabulary is a different population: exact bytes are verified before the scoped tiktoken cache override, preventing corruption from becoming a network download or installed-tree rewrite. Its reentrant lock permits nested loading.
+Generated package runtime skills/assets come from canonical repository sources and sync generators; package copies are distribution evidence, not authoring homes. The compiler uses packaged instruction bytes, while installed coordinator copies serve human/runtime browsing. Packaged tree-sitter citation queries (`mcp/src/agents_remember/package_data/citations/queries/{python/tags.scm,typescript/tags.scm,typescript/tests.scm,javascript/tags.scm,javascript/tests.scm}`) are authored package assets loaded by `memory_quality/style/citations/tags_engine.py` for the declarative `LanguageSet` seam (with `.lean` permanently reserved for the built-in Lean declaration scanner). Dashboard assets are git-ignored release output, not one-to-one onboarding subjects; a source build without them can serve a named 503 and absent `dashboardBuild`. The tracked tokenizer vocabulary is a different population: exact bytes are verified before the scoped tiktoken cache override, preventing corruption from becoming a network download or installed-tree rewrite. Its reentrant lock permits nested loading.
 
 Converted-memory landing admission is exact-pair judgment on every publication/recording route, not trust in a previous verdict. Leaf recovery, integration and recording share one leaf-pair judge; master final/checkpoint/recorded routes combine validator, net staleness, chain proof and new-history ownership. This does not make full MQC or independent review a landing-time operation.
 
@@ -703,6 +703,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 
 
+
 - The packaged host contract. [252]
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
 - The production review port delegates the candidate-bound complete review through the recorded-answer owner. [377]
@@ -720,6 +721,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - The task reopening tool on the registration surface. [378]
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
+
 
 
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
@@ -872,7 +874,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+
 
 
 
@@ -886,7 +890,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
+
 
 
 
@@ -900,7 +906,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
+
 
 
 
@@ -914,7 +922,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
+
 
 
 

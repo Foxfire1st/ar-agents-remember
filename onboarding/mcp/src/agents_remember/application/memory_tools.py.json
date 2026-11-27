@@ -400,7 +400,7 @@
         },
         {
           "anchor": {
-            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -466,12 +466,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
-            "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+            "content": "sha256:b7279f6ee60c025103f86f145f853d474d250a8a9f485d625b2fb8b83d203fb6",
             "locator": {
-              "end": 70,
+              "end": 77,
               "kind": "line_range",
-              "start": 33
+              "start": 36
             },
             "path": "mcp/src/agents_remember/application/memory_initialization.py"
           },
@@ -882,12 +882,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
-            "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+            "content": "sha256:b7279f6ee60c025103f86f145f853d474d250a8a9f485d625b2fb8b83d203fb6",
             "locator": {
-              "end": 70,
+              "end": 77,
               "kind": "line_range",
-              "start": 33
+              "start": 36
             },
             "path": "mcp/src/agents_remember/application/memory_initialization.py"
           },
@@ -895,12 +895,12 @@
         },
         {
           "anchor": {
-            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
             "content": "sha256:c5fa698d0e00944352e7e45c40675ba64c3d076af3efbaefc82252be26e0233d",
             "locator": {
-              "end": 151,
+              "end": 170,
               "kind": "line_range",
-              "start": 91
+              "start": 110
             },
             "path": "mcp/src/agents_remember/application/memory_initialization.py"
           },

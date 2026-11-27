@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:2446d355be9ac295614af8fa2679f21f445e6f618d0d665c2c6964aa748d24f6",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:e80589c20de85368765bdaeef1bb85c1580d94f27a2826f70c197845dee062a6",
         "locator": {
           "end": 18,
           "kind": "line_range",
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -90,8 +90,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -107,8 +107,27 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:88a52f174d98771c2604525159092892322c38ff7c315ef8eb3c1de2cedaf8d5",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 12
+        }
+      },
+      "id": "RLZ-D6KJ5A",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Directs Investigator to use knowledge_read (search/impact/records) alongside read_ar_files first within the 2,500-token wire budget.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:88a52f174d98771c2604525159092892322c38ff7c315ef8eb3c1de2cedaf8d5",
         "locator": {
           "end": 12,
           "kind": "line_range",
@@ -126,7 +145,7 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
         "content": "sha256:9018aee88d37ea4fee05c3cb6433890dfea2013b46bb21f717603099d1cf51dc",
         "locator": {
           "end": 8,
@@ -145,8 +164,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -162,8 +181,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -179,8 +198,8 @@
     },
     {
       "anchor": {
-        "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-        "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+        "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+        "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
         "locator": {
           "kind": "file"
         }
@@ -201,8 +220,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
             "locator": {
               "kind": "file"
             }
@@ -216,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
             "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
             "locator": {
               "end": 14,
@@ -229,11 +248,11 @@
       ]
     },
     "3": {
-      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -285,8 +304,8 @@
         },
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-            "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:88a52f174d98771c2604525159092892322c38ff7c315ef8eb3c1de2cedaf8d5",
             "locator": {
               "end": 12,
               "kind": "line_range",

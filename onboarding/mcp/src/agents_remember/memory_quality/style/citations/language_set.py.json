@@ -1,0 +1,211 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeanLanguageProvider.extract_bindings"
+        }
+      },
+      "id": "RLZ-3W13Z8",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-shared-lean-binding-realization",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "LeanLanguageProvider.extract_bindings adapts lean_declarations behind LanguageProvider, retaining source-written, possible, and verified full keys and ordering verified full-name bindings before aliases.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LanguageSet"
+        }
+      },
+      "id": "RLZ-MH9S9H",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Applies glob and suffix overrides while keeping .lean permanently reserved and hashes overrides, custom binary digests, and query digests into extractor_version.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_suffix"
+        }
+      },
+      "id": "RLZ-SNBXY9",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Refuses any LanguageSet that attempts to bind reserved suffix .lean to a tree-sitter or non-Lean provider.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:3977e516af81450c94fccf8b03f999cd67ca59118413d92b7e8cad824716b993",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeanLanguageProvider"
+        }
+      },
+      "id": "RLZ-VTDT98",
+      "invariant": "INV-ZYP9YD",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §2",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Plugs the built-in Lean declaration scanner behind the uniform LanguageProvider protocol while preserving exact full/written name semantics.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LanguageSet"
+        }
+      },
+      "id": "RLZ-ZVVM86",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Defines the immutable suffix-to-provider mapping, .lean reservation check, and deterministic extractor_version derived from tree-sitter and provider versions plus query digests.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`LanguageProvider` declares the uniform key, suffix, version, tree-sitter/exact-binding, and test-case interface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:a8054390e826e76392d9df90cf5d457cb20efc3393820ddacbb2d3d9f7d342df",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageProvider"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`TreeSitterLanguageProvider` hashes `tags.scm` and optional `tests.scm` queries into its version and delegates extraction to `tags_engine`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:d17a2ff03f564eb2861e231f3156342e721cb60f687cfe9d457e2ee4b1763f66",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeSitterLanguageProvider"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`LeanLanguageProvider.extract_bindings` preserves full-name precedence over possible and written aliases while marking uncertain scope.\n\nAnchor: `LeanLanguageProvider.extract_bindings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`LanguageSet` owns immutable key/suffix maps, derived set builders, and deterministic `extractor_version` and `language_identity`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageSet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_register_suffix` enforces normalized dot-prefixed suffixes, rejects duplicate claims, and permanently reserves `.lean` for the built-in Lean scanner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_suffix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_build_extractor_version` combines `tree-sitter` and sorted provider versions and suffixes into one deterministic version string.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:9614b3569318208fd2758599f7bde815529f3fd354c0a18b4522a2e11777068a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_extractor_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`current_language_set`, `has_language_set_override`, and `language_set_scope` bind and restore the active `LanguageSet` `ContextVar`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:5d5d4d49f8d05474f2d6b9cd2c21ac8e7e69f002f7708d464cde793194233545",
+            "locator": {
+              "kind": "symbol",
+              "name": "language_set_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

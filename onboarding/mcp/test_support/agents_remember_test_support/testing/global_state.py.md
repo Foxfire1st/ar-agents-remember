@@ -11,7 +11,7 @@ and restores. Lives in test support so production plugins do not import test hel
 
 ## Code Commentary
 
-The grammar-parser (`canvas.kit_references._js_language`, `memory_quality.style.citations.grammars.language`, and `_process_typescript_anchor_identifier`) and lifecycle-cache reset entries name process-owned caches cleared between test modules via `_clear_cache` or `_clear`. Request scopes clear their own owner maps when they leave.
+The grammar-parser (`canvas.kit_references._js_language`, `memory_quality.style.citations.grammars._process_typescript_anchor_identifier`, `memory_quality.style.citations.language_cache._CUSTOM_DLL_HANDLES`, `memory_quality.style.citations.language_cache._LOADED_LANGUAGES`, `memory_quality.style.citations.language_catalog.load_language_catalog`, `memory_quality.style.citations.language_scanner._REPO_LANGUAGE_SETS`, and `memory_quality.style.citations.tags_engine.compile_query`) and lifecycle-cache reset entries name process-owned caches cleared between test modules via `_clear_cache` or `_clear`. Request scopes clear their own owner maps when they leave.
 
 `PROCESS_MUTABLE_STATES` is a closed register of syntactically discovered product process state.
 Each row names its owner, treatment and reason. The four treatments are `restored`, `reset`, `constant for tests` and `quiescent`. The knowledge-index `_builds` dictionary and `_active_temps` set use `quiescent`. The cache owns their cleanup. The in-process thread success and failure tests check both collections for the fixture directory after the threads finish.
@@ -57,7 +57,8 @@ whose contract deliberately sets process state.
 
 - Process snapshot and restore use one typed state owner. [2]
 
-- The closed register gives each registered process state one treatment and a reason. [3]
+- The closed register gives each registered process state one treatment and a reason, including `language_cache`, `language_catalog`, `language_scanner`, and `tags_engine` caches. [3]
+
 
 - Resetting loaded owners delegates sweep cleanup and tool-writer cleanup to their resetters. [8]
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [9]
