@@ -150,6 +150,7 @@ sources.
 - The wiring case asserts role_capsule_compile is absent from registered tools, then verifies the direct capsule entry point resolves its real enclosure through CapsuleCompileRequest and returns instructions. [8]
 
 
+
 - The launch compiler that consumes the seat-addressed routing entry point for a taskless seat. [9]
 
 - The tool policy is a snapshot of the published roster, so a capsule requests tools and never grants them. [10]

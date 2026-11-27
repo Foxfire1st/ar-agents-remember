@@ -29,10 +29,13 @@ Read-only checks exclude only the derived index and logs under their owner rules
 - The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent. [1]
 
 
+
 - An unknown registered name fails closed instead of receiving a default mark. [2]
 
 
+
 - Annotations are applied after registrars from the same partition. [3]
+
 
 
 ## The settings initializer is a writer
@@ -41,5 +44,6 @@ Read-only checks exclude only the derived index and logs under their owner rules
 
 
 - The mutating set that now carries the settings initializer. [4]
+
 
 - The central vocabulary marks `render` read-only and `define_category`, `remove_category`, `grade` and `explainer_control` mutating. Unknown marks raise instead of receiving a default. [5]

@@ -41,4 +41,5 @@ Current source: The first-message control rejects forbidden host strings across 
 
 
 
+
 - The compact role_message description stays within 600 characters and states the host mid-turn promise, queued held delivery and no resend of held messages. Host acceptance or consuming-turn completion is distinct from AR acceptance; the source check remains separate from live message delivery. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

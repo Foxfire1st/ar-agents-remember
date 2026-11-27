@@ -565,7 +565,9 @@ The recorded-base suite tests inheritance across an untrailed memory merge, exac
 
 - The literal PUBLIC_TOOLS tuple in models/tools/public_roster.py contains 44 names, including explainer_control and citation_note_revision. The separate conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. A literal roster and source pins are distinct from a fresh collection or execution result. [1807]
 
+
 - Transport cases preserve per-call context and write ordering. [1810]
+
 
 - Preview cases preserve synchronous semantics without writes. [1811]
 
@@ -601,9 +603,12 @@ The recorded-base suite tests inheritance across an untrailed memory merge, exac
 
 - A task-attached launch's capsule is the compiler's own result for the same seat -- trusted instructions and semantic digest -- never a hand-built literal. [1550]
 
+
 - One decision point with two answers: a capsule role compiles, and every other seat refuses with a status that names the role and delivers nothing. [1552]
 
+
 - The free agent's admission names its absent task plane and its capsule identity moves with the seat; the replacement route refuses by name for an unmarked stage part, a role the stage lacks and a missing required file. [1553]
+
 
 - The SEP entry contract is asserted in mcp/tests/test_capsule_serving_surface.py separately from this server's own index shape. [1558]
 
@@ -611,7 +616,9 @@ The recorded-base suite tests inheritance across an untrailed memory merge, exac
 
 - The current SDK client/server exchange and separate traversal-refusal case live in mcp/tests/test_capsule_serving_surface.py. The exchange asserts both extension methods succeed and absent/unregistered calls fail; it does not assert the exact -32602 error code. [1559]
 
+
 - The current SDK client/server exchange and separate traversal-refusal case live in mcp/tests/test_capsule_serving_surface.py. The exchange asserts both extension methods succeed and absent/unregistered calls fail; it does not assert the exact -32602 error code. [1803]
+
 
 - The case that keeps the seeded-mutation evidence honest lives in mcp/tests/test_capsule_serving_surface.py. [1560]
 
@@ -660,6 +667,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The relabelled changed-row control preserves its revision-refusal assertion with the admitted worklist. [1771]
 
 - The real paired-enclosure fixture initializes and verifies its empty repository lock before measuring refusal. [1773]
+
 
 - The competing writer directly observes lease exclusion and uses the shared hang guard. [1774]
 
@@ -710,6 +718,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - Source-file scenarios call the synchronous memory-quality controller. Helpers assert read-policy refusals, successful citation resolution, and stale content after the cited bytes change. [1809]
 
 - The conformance source declares ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. Its structural tests compare registry and adapter populations in both directions, compare PUBLIC_TOOLS with the registered surface, reject duplicate roster entries and unadvertised registrations, and assert the roster count. These are source declarations and assertions, not a recorded test run or a measurement of the developer’s host. [1733]
+
 
 - In `tool_entry_point_world.py`, a returned call routes through `_returned_arm`, which reads the whole result from the answer-named file; missing/unreadable/non-object files are unvalidatable. _judge_delivered validates the whole result with the tool response model and separately judges the delivered answer, including stripped-envelope and same-place key checks. This is the ordinary world's classifier implementation, not proof of a sweep run. [1705]
 
@@ -961,7 +970,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The worklist module’s fixture world and synthetic corpus. [1555]
 
 - The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree. [1556]
+
 - Four serving cases cover catalog-path containment, unreadable skill index refusal, directory and frontmatter name agreement, and idempotent extension registration. [1557]
+
 
 - The leaf-bound controller fixture exercises worklist persistence, checklist rendering and route-index generation on a fresh shared clone. It stubs the quality runner, census and final-catalog projection. [1566]
 
@@ -979,6 +990,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 - The live public-surface inventory contract for the advertised MCP tool tuple. [1581]
+
 
 
 
@@ -1002,6 +1014,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 - The registered admission refusal addresses only the addressed contract's own state. [1603]
+
 
 
 - Cache damage cannot change the accepted integration pair or block ref publication. [1605]
@@ -1121,7 +1134,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The running mismatched host requires a restart and is left untouched. [1702]
 
 - The node module. [1703]
+
 - Registered preview preserves startup/Git state while checking call records. [1706]
+
 - The shared support guard refuses protected settings paths before returning a write path. [1709]
 - The world child proves its reviewed source and leaves the fake-account home empty on refusal; the scanner derives its support population recursively. [1710]
 - The comparison selector proof over recorded trees [1711]
@@ -1180,6 +1195,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - Capsule-serving cases check catalog escape, an unservable index, a directory-name mismatch and idempotent extension registration. [1743]
 
+
 - Family-context cases distinguish recorded-empty from absent, retain before-context for additions and removals and preserve sparse authored populations. [1749]
 
 - The case asserts the proposed and reviewed values in the single lifecycle field row. A separate assertion checks structured key-order canonicality. [1755]
@@ -1203,7 +1219,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The selected evidence-packet case asserts that a foreign repository with equal trees is never this comparison (`test_review_evidence_packet.py::test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison`); the packet, read, claim and prepared-address contracts are asserted by the module's other cases, not by this one. [1787]
 
 - No-knowledge task-context source cases assert All changes wording, absence of `. ` in the statement and inventory truth without browser-layout evidence. [1795]
+
 - Capsule-serving cases check catalog escape, an unservable index, a directory-name mismatch and idempotent extension registration. [1801]
+
 
 
 
@@ -1234,8 +1252,11 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. [1831]
 
+
 - The retained landing-check method invokes instruction renewal with the running interpreter. [1833]
+
 - Current fixtures compare body-only and final-trailer attribution with Git, exercise registered weakness writes and both reads across closure states and episodes, and assert that public closeout commits the judged memory tree without rewriting the reviewed record. These are source assertions, not a fresh execution or settlement of a live weakness. [1834]
+
 
 
 
@@ -1257,6 +1278,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - test_definition_scope.py declares focused checks for scope reuse, fresh operations and source-content identity; this is source-described coverage, not a new test execution. [1837]
 
 - The definition-scope tests check native MCP, finite CLI, dashboard and detached quality boundaries. The journal cases distinguish request-local reuse from process ownership. [1838]
+
 
 - The build-identity tests cover loaded-build isolation, reuse after restart, private unknown-build reads, cold lookup contention, failure and retry, and temporary-file eviction. [1839]
 
@@ -1350,7 +1372,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1818]
 
 - Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. [1819]
+
 - Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. [1820]
+
 
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. [1821]
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. [1822]
@@ -1358,7 +1382,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1825]
 
 - Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. [1826]
+
 - Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. [1827]
+
 
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: mcp/tests/test_landing_report.py. [1828]
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: mcp/tests/landing_report_test_support.py. [1829]
@@ -1431,6 +1457,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 - The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. These are declarations and source assertions, not a fresh run. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. ENVELOPE_LOSING_RAISERS is empty. The sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep support. None remains in the entry-point world. None remains in the sweep module. lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. [1908]
+
 
 
 

@@ -25,4 +25,5 @@ Read-only hints are dispatch classification, not sandbox authority or host-wide 
 
 
 
+
 - Cancellation drains before the next write and call contexts stay separate. [2]

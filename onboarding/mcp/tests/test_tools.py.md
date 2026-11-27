@@ -73,13 +73,21 @@ to removed methods are superseded by this current inventory.
 
 - Memory init repairs authority after config write failure [3]
 - Typed cgc payloads reject invalid inputs before provider execution [4]
+
 - Grepai payloads reject invalid scope and trace inputs [5]
-- Live FastMCP registration order equals the advertised public tuple [6]
+
+- Live MCPServer registration order equals the advertised public tuple [6]
+
 - The record-landing tool has a registered response model that validates [7]
+
 - The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish [8]
+
 - The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says "not a pause", says pausing is a "separate matter and is NOT this call", and no longer opens with "Use this to pause". [9]
+
 - The pause description presents a stop that publishes NOTHING, names the checkpoint landing as the separate publication, and — since the already-vacant stop — advertises no refusal the verb no longer performs while still naming the release it does perform. [10]
+
 - The description names every field `curator_coherence`'s `publish` requires, and pins that the JSON schema cannot carry the requirement. [11]
+
 - `publish` refuses by naming **every** missing field, one omission per field with the complete-shape acceptance as the positive control. [12]
 - The one list both pins compare — the nine publish-required fields, spelled once. [13]
 - The permissive registration-time config stub the registration cases build against [14]
@@ -100,9 +108,9 @@ it to the tuple is self-referential. `worktree_record_landing` shipped registere
 lookup made the tool unable to return a payload at all.
 
 `test_live_registration_matches_the_public_inventory_in_order` registers every entry in
-`TOOL_REGISTRARS` against a probe `FastMCP("inventory-probe")` and compares the
+`TOOL_REGISTRARS` against a probe `MCPServer("inventory-probe")` and compares the
 `asyncio.run(server.list_tools())` names to `PUBLIC_TOOLS`. The comparison is ordered because
-FastMCP publishes in registration order, so a misplaced row is a reordering bug rather than a
+`MCPServer` publishes in registration order, so a misplaced row is a reordering bug rather than a
 missing one. `test_worktree_record_landing_has_a_response_model_that_validates` asserts
 `set(PUBLIC_TOOL_RESPONSE_MODELS) == set(PUBLIC_TOOLS)` and then drives one
 `finalize_tool_response("worktree_record_landing",...)` call — the call a missing registry row
@@ -130,7 +138,7 @@ whole registry.
 
 `test_the_pause_advertises_a_stop_that_publishes_nothing` is the L36 case's counterpart, and the two
 are deliberately a pair. The checkpoint case pins the publication's side of the split; this one pins
-the stop's. It registers every registrar against a probe `FastMCP("pause-surface-probe")`, reads the
+the stop's. It registers every registrar against a probe `MCPServer("pause-surface-probe")`, reads the
 advertised descriptions, and asserts that `worktree_pause` is a `PUBLIC_TOOLS` member, that
 `worktree_checkpoint_landing` is too, and that the stop's text says all three things an agent needs:
 that it is a pause of an atomic master, that it **publishes NOTHING**, and that the publication it
@@ -165,7 +173,7 @@ and a model-level validator reports `loc: ()`, so the message was the caller's o
 missing field. Two disagreements, pinned separately because either can regress alone:
 
 - `test_the_description_names_every_field_publish_requires` registers every `TOOL_REGISTRARS` entry
- against a probe `FastMCP("curator-coherence-description-probe")`, reads the advertised
+ against a probe `MCPServer("curator-coherence-description-probe")`, reads the advertised
  `curator_coherence` text, and asserts each of the nine names appears in it. In the same case
  `CuratorCoherenceRequest.model_json_schema()["required"]` must stay
  `["action", "contract_path"]` — **the schema cannot carry the requirement**, because it is

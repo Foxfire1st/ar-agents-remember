@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:f6c104244f87e83b53dade29f4d2c132681eab51f06e1b82a891bbd7dd188ef9",
             "locator": {
-              "end": 59,
+              "end": 60,
               "kind": "line_range",
-              "start": 49
+              "start": 50
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:d30fae5b4a85ee0ad00f9d04987bb52e368d0a02f1f69cbe2bd6357ec9d63000",
             "locator": {
-              "end": 795,
+              "end": 796,
               "kind": "line_range",
-              "start": 758
+              "start": 759
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -51,12 +51,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:4474208db0ec0c99173af6f3094e5ae315e6d5d37a9071e228880411d3c9a1c5",
             "locator": {
-              "end": 287,
+              "end": 288,
               "kind": "line_range",
-              "start": 243
+              "start": 244
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -64,12 +64,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:ffdfc1db9fe47225f1dd73e35d28bd7bc6a7cf4bd56655b785341ef58b5b8e1e",
             "locator": {
-              "end": 718,
+              "end": 719,
               "kind": "line_range",
-              "start": 679
+              "start": 680
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -93,12 +93,12 @@
       ]
     },
     "12": {
-      "note": "The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session.\n\nAnchor: `` `WorkflowWorld` ``",
+      "note": "The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
-            "content": "sha256:30b9635599a0d3cff8fc4a7e83ab7f66bf8ed33ba1be13eeb29f1093f0390a7c",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
+            "content": "sha256:78c4fa30acac1414a5bf24a060854fd16c1b6ccadc70d412f6d57d6f97537e19",
             "locator": {
               "end": 389,
               "kind": "line_range",
@@ -115,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
-            "content": "sha256:8324db0c9c168d19abbca627c61b5f785d08d2ca100f9efd06e0fa3422e27981",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
+            "content": "sha256:ec4751375cf67b6ebf7910eda2278fb59f262d05496d36333a761faafee263b5",
             "locator": {
               "end": 388,
               "kind": "line_range",
@@ -133,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:b5231cc98a7b0b6d75307380fcc8fac8a8b9c9f8a9aa00095bb12b89cc8297b0",
             "locator": {
-              "end": 571,
+              "end": 572,
               "kind": "line_range",
-              "start": 553
+              "start": 554
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:6372f856f395f267219f6b99386bb96c1e5b510551a19849959d1956053a39c2",
             "locator": {
-              "end": 799,
+              "end": 800,
               "kind": "line_range",
-              "start": 720
+              "start": 721
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -164,12 +164,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:074f1807227be7a653b18474f1b4793a9499e854e77051d22eaad5e0038399b3",
             "locator": {
-              "end": 655,
+              "end": 656,
               "kind": "line_range",
-              "start": 592
+              "start": 593
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -182,8 +182,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
-            "content": "sha256:8324db0c9c168d19abbca627c61b5f785d08d2ca100f9efd06e0fa3422e27981",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
+            "content": "sha256:ec4751375cf67b6ebf7910eda2278fb59f262d05496d36333a761faafee263b5",
             "locator": {
               "end": 388,
               "kind": "line_range",
@@ -195,12 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:981974c9307e8268a4d14c039e5504cc7d6bd516acd4592e764e721d7bbe8aa3",
             "locator": {
-              "end": 844,
+              "end": 845,
               "kind": "line_range",
-              "start": 814
+              "start": 815
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -225,12 +225,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:a65a165cb54d55273b82f73be6777c7ba7379e134039953793594a64abd7e399",
             "locator": {
-              "end": 72,
+              "end": 73,
               "kind": "line_range",
-              "start": 63
+              "start": 64
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -284,12 +284,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:25c7a497f8d9b06f368d69ba7dbacb5abb2bac8329003bca240955f4a922bbc1",
             "locator": {
-              "end": 916,
+              "end": 917,
               "kind": "line_range",
-              "start": 886
+              "start": 887
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -421,12 +421,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:97c46f72c18bdfe4fd6821ade3ff7f0e8034820dc003570ef6beffb68c95701b",
             "locator": {
-              "end": 80,
+              "end": 81,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -446,12 +446,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:1e0974c3150ae79c1b0eeb2b7f25fe14c23d631081cf6870080b5481176695a4",
             "locator": {
-              "end": 715,
+              "end": 716,
               "kind": "line_range",
-              "start": 698
+              "start": 699
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -659,12 +659,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:be14a4bfee90061b5cec524cbde58494b7e2d02d86ed70d1f03c7098f732a95b",
             "locator": {
-              "end": 118,
+              "end": 119,
               "kind": "line_range",
-              "start": 110
+              "start": 111
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -896,8 +896,8 @@
         },
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:331b58139722f7fafdd3d8f2ba9b21a3de8a17159f4fd914b5a5ac2987e0fce5",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:9afa7d90cdd9b0b1c6ca9444bfa4e1b41aa193266a5fce9f46531704acdf7319",
             "locator": {
               "end": 135,
               "kind": "line_range",
@@ -914,12 +914,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:1641f2fbe0cfee79a659dd90a2bef32a855233d22b63a77b522fb2e511898590",
             "locator": {
-              "end": 134,
+              "end": 135,
               "kind": "line_range",
-              "start": 120
+              "start": 121
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1045,12 +1045,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:685f203edcbe701778d86c1fcc94b4ee4480df92fddb287c1277a0be38d348ac",
             "locator": {
-              "end": 677,
+              "end": 678,
               "kind": "line_range",
-              "start": 657
+              "start": 658
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1063,12 +1063,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:e1bccccdeeea8960e48893d501acb31c431a37bf1d4bf941bf0f78cdacbd6663",
             "locator": {
-              "end": 718,
+              "end": 719,
               "kind": "line_range",
-              "start": 643
+              "start": 644
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1081,12 +1081,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:6372f856f395f267219f6b99386bb96c1e5b510551a19849959d1956053a39c2",
             "locator": {
-              "end": 799,
+              "end": 800,
               "kind": "line_range",
-              "start": 720
+              "start": 721
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1094,12 +1094,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:cdcfc0a21c0b9eee0e931707d0511b48e4a550df5a0b6cd179dd5434acbd8a37",
             "locator": {
-              "end": 845,
+              "end": 846,
               "kind": "line_range",
-              "start": 801
+              "start": 802
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1107,12 +1107,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:4ad42a87bc265a7621b07b3696c574e5b9f19e60de95c8abbd1e68d1203da71a",
             "locator": {
-              "end": 882,
+              "end": 883,
               "kind": "line_range",
-              "start": 847
+              "start": 848
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1120,12 +1120,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:36e2d3de861794b909486faacdb57f1339b284d4583879d04b8fd9363e24b762",
             "locator": {
-              "end": 916,
+              "end": 917,
               "kind": "line_range",
-              "start": 900
+              "start": 901
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1138,12 +1138,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:c91a1bc0cb3a3b6f084b32de2ae10455120b806fcde7c8feffb78ab0f8233acf",
             "locator": {
-              "end": 147,
+              "end": 148,
               "kind": "line_range",
-              "start": 136
+              "start": 137
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1163,12 +1163,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:4ad42a87bc265a7621b07b3696c574e5b9f19e60de95c8abbd1e68d1203da71a",
             "locator": {
-              "end": 882,
+              "end": 883,
               "kind": "line_range",
-              "start": 847
+              "start": 848
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1181,12 +1181,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:f0264a4563bcf0c14d6b555d2dbb2927928a8a95317f4e068acc6ec141615311",
             "locator": {
-              "end": 164,
+              "end": 165,
               "kind": "line_range",
-              "start": 149
+              "start": 150
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1194,12 +1194,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:da7f9ab9e506453bb966c35c9812bdefd52accd8900e3eb257b2c823a6c27652",
             "locator": {
-              "end": 677,
+              "end": 678,
               "kind": "line_range",
-              "start": 643
+              "start": 644
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1207,12 +1207,12 @@
         },
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:12f7b894c72792bed3d39a30618573b10ef04a57e8c34f02379785736ee9c831",
             "locator": {
-              "end": 935,
+              "end": 936,
               "kind": "line_range",
-              "start": 920
+              "start": 921
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1225,12 +1225,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:179f105168f5baffc1ea28bb0b185823f3c36a385ad393f17ef8e1769a40640c",
             "locator": {
-              "end": 202,
+              "end": 203,
               "kind": "line_range",
-              "start": 188
+              "start": 189
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -1255,12 +1255,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "blob": "847f28f97bad0d01fb70e4c21281c5545044cfe6",
             "content": "sha256:0aaf70bbebeb59c71454a460c15bde3f59432628fcc8338f49cc838a7013b7ae",
             "locator": {
-              "end": 233,
+              "end": 234,
               "kind": "line_range",
-              "start": 225
+              "start": 226
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },

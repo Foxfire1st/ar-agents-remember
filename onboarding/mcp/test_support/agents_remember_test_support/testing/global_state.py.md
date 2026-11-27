@@ -24,7 +24,7 @@ per test and restored before reporting leaks. Import-time-only registries retain
 registrations from deferred imports. Reset rows are handled before and after each test module, only
 when their owner is already in `sys.modules`; resetting never imports a product module.
 
-The closed register includes `agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED` with the default `reset` treatment and `_clear` resetter between test modules rather than per-test restoration. It also retains ordinary `_clear` resets for closeout digest-file stats and lifecycle operation location/record caches. The removed session-log cache and ambient singleton are not reset owners. No scanner exemption or production reset applies; restored rows keep their per-test treatment.
+The closed register includes `agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED` with the default `reset` treatment and `_clear` resetter between test modules rather than per-test restoration. It also retains ordinary `_clear` resets for closeout digest-file stats and lifecycle operation location/record caches. The removed session-log cache, ambient singleton, and retired `mcp` 1.x patch guards (`compact_content` and `capsule_serving`/`skills_extension` session/dispatcher patches) are not reset owners. No scanner exemption or production reset applies; restored rows keep their per-test treatment.
 
 The reset register also includes measured answer-folder budgets, suspended held-message sweep walks, message-stem counters, atomic-write temporary paths, the installed tool-event writer, `serving.background_accounting._BackgroundPool.executor` (drained under `_BACKGROUND_POOL_LOCK` and cleared by `_reset_background_pool`), `serving.projections.host_activity` `_ENDINGS` and `_ROLE_RECORDS`, and `application.role_capsules.wire_budget._wire_encoding` (`@lru_cache`, cleared via `_clear_cache` between test modules). Sweep walks and the writer delegate cleanup to their owning resetters rather than merely clearing a wrapper mapping.
 
@@ -58,6 +58,7 @@ whose contract deliberately sets process state.
 - Process snapshot and restore use one typed state owner. [2]
 
 - The closed register gives each registered process state one treatment and a reason. [3]
+
 
 - Resetting loaded owners delegates sweep cleanup and tool-writer cleanup to their resetters. [8]
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [9]

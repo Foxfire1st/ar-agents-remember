@@ -14,7 +14,7 @@ The registered stdio calls preview closeout for an atomic child and an organizat
 
 `_call_registered` drives the real MCP stdio server with the fixture settings file and returns the
 raw `CallToolResult`; `_call` runs it synchronously. `_assert_wire_payload` requires the readable
-text block and `structuredContent` to agree, so a route that renders one shape and returns another
+text block and `structured_content` to agree, so a route that renders one shape and returns another
 cannot pass.
 
 `_remove_leaf_review` clears the leaf's `routeReview` record. `_prepare_atomic_leaf_landing`
@@ -59,6 +59,7 @@ No external documentation source was configured for this test module.
 ### Repo-Internal References
 
 - Registered stdio client and the readable/structured wire-payload agreement assertion. [1]
+
 - Review-free fixture setup: the leaf review record is cleared. [2]
 
 

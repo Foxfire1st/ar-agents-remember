@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a9ba0d9bb559053ad21e4119097b9588d7249511",
-    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Audited SECURITY.md against candidate code tree a9ba0d9b after mcp/server.py added off-loop _maybe_suppress_provider_limits: no network listener, origin policy, secret-handling, or approval-gate contract changed.",
-    "task": "261112-BUG-L60",
+    "statement": "Audited SECURITY.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+      "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -117,14 +117,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:21:57+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
-    "task": "261112-BUG"
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

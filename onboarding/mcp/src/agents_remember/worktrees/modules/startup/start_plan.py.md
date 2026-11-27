@@ -16,7 +16,7 @@ Request-local enclosure plan values, unchanged contract projections and ordinary
 
 Authority remains with the existing master-series constructor/admission and durable transaction owners. These local values do not authorize actual apply or another parent-series caller. Startup-state no-materialization means no contract, activation, protected-ref, worktree or real-index mutation. The enclosing registered tool call still records its daily log line and any detail file, plus its completed-call workspace-river event (or the existing ambient lifecycle's event). Those records are not a reservation or startup publication; the public first-leaf proof admits and checks them rather than asserting universal zero-I/O.
 
-> Retained earlier citation wording: - The registered first-leaf proof preserves startup/Git state and checks the call records separately. [10]
+> Retained earlier citation wording: - The registered first-leaf proof preserves startup/Git state and checks the call records separately. \[10]
 
 ## Evidence
 

@@ -4,49 +4,49 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-        "content": "sha256:e9d6402689ffe51c82f16133a711cdcf602f61a35a0d7f4116588c001207d3f8",
+        "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+        "content": "sha256:64cd5a83734a769dfd2f4168e41a0344504598d0a203464a8b7f83a80aa317f0",
         "locator": {
           "kind": "symbol",
-          "name": "_install_dispatcher"
+          "name": "SkillsExtension"
         }
       },
-      "id": "RLZ-REXRPE",
-      "invariant": "INV-X0BRG0",
+      "id": "RLZ-E3YNRB",
+      "invariant": "INV-XBQYW7",
       "origin": {
-        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
-        "leaf": "260928-MIK-L70"
+        "handoffEntry": "DEP-R03@v2-R3-skills-extension",
+        "leaf": "261125-DEP-L3"
       },
-      "rationale": "This is the per-server half of the extension that only a server built by the product factory receives; a server without it silently drops each request once the process-wide half is installed.",
-      "role": "support"
+      "rationale": "Constructs the SEP-2133 Extension declaring io.modelcontextprotocol/skills and binding skills/list, skills/get, and all skill:// resources through MethodBinding and ResourceBinding.",
+      "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-        "content": "sha256:99f480fb78ae99318a23a1acf888da8aab05b61fe7022ba72d39b2795f303842",
+        "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+        "content": "sha256:ae91c1f63a0c838b7f3f2af3a36bd303a7b56bdebf3e07b1450f15c8d115086b",
         "locator": {
           "kind": "symbol",
-          "name": "_install_request_union"
+          "name": "preserve_handshake_extensions"
         }
       },
-      "id": "RLZ-VTTMBC",
-      "invariant": "INV-X0BRG0",
+      "id": "RLZ-T57N17",
+      "invariant": "INV-XBQYW7",
       "origin": {
-        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
-        "leaf": "260928-MIK-L70"
+        "handoffEntry": "DEP-R03@v2-R3-skills-extension",
+        "leaf": "261125-DEP-L3"
       },
-      "rationale": "This is the process-wide half: it replaces `ServerSession.__init__` for the rest of the interpreter, which is the state the reader test met.",
-      "role": "support"
+      "rationale": "Re-attaches capabilities.extensions and capabilities.experimental={} on initialize responses because mcp 2.3.0 strips them when serializing protocol version 2025-11-25.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes.\n\nAnchor: \"This extension introduces three protocol methods.\"; \"The extension introduces no other methods, message types, or schema changes.\"",
+      "note": "The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:f799ca2eba40977a8ed0834d018008a1cca3f6dad866bfc96653a9c354367f68",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:958109500487cc63836ed49aed3fa130fbd59aae46cb97a048349d3171af4c71",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -58,77 +58,15 @@
       ]
     },
     "10": {
-      "note": "The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation.\n\nAnchor: `_register_skill_resources` `declare_skills_extension`",
+      "note": "`build_skills_extension` assembles `SkillsExtension` with the index and every served skill file resource before `MCPServer` construction.",
       "targets": [
         {
           "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:26281eee4775d550c00a4096005fab1ee68897893b8a99ed510e17193c953c63",
+            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
             "locator": {
               "kind": "symbol",
-              "name": "_register_skill_resources"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:d69893f1c3bd695c92b4588515bc735d2b057f5267f28a9cf9cf8ddbeaeed941",
-            "locator": {
-              "kind": "symbol",
-              "name": "declare_skills_extension"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:935a9b62e15361103dd6ad0ec5c496c95dd4ac0df1f1e6edbba360cba8dc1338",
-            "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 143
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:547ee2d3390940b8a8fc7ba4a000e2da08fe7ae8903ba2bba80d4c9e4327dbf8",
-            "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 77
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:3c6ff13f347f8cf95a0f7072582c5c0bd2645bac5cab9fb89d481002db957d74",
-            "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 157
+              "name": "build_skills_extension"
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -199,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b8b86a9a24a56b450fecbffab324198d75c3c83",
+            "blob": "b4d82be5a51b07c028d204dcf9b2512f77a40840",
             "content": "sha256:07b2d018f61e7eee032ab39fac5eab11793315e6ce434103eabbc38475ee366b",
             "locator": {
-              "end": 384,
+              "end": 383,
               "kind": "line_range",
-              "start": 309
+              "start": 308
             },
             "path": "mcp/tests/test_capsule_serving_surface.py"
           },
@@ -217,8 +155,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b8b86a9a24a56b450fecbffab324198d75c3c83",
-            "content": "sha256:121a8847c559a9a6db5e74967695da263150846f1f0a123e5d682ca57eca4ff2",
+            "blob": "b4d82be5a51b07c028d204dcf9b2512f77a40840",
+            "content": "sha256:c70f7aaf65c92f80460bbd260111275a4aa9c7905bc9e47986395cbd2f92591d",
             "locator": {
               "end": 526,
               "kind": "line_range",
@@ -231,12 +169,12 @@
       ]
     },
     "2": {
-      "note": "**Declaring the extension itself commits the server** to `skills/list` and `skills/get`.\n\nAnchor: \"Declaring the extension itself commits the server to\"",
+      "note": "**Declaring the extension itself commits the server** to `skills/list` and `skills/get`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:48107d0669af4168e3a83f64d1f32721178c8cf42fe86cc52363ba96a22ef02f",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:fabb8316792babaa534edba787e849a2c733f2fd4e43fbd9d67a93638ca022b3",
             "locator": {
               "end": 11,
               "kind": "line_range",
@@ -252,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
             "content": "sha256:c5db9011ca3be0d0309dcff87c7d6c947b34721e1a61a5670d2943577a654adb",
             "locator": {
               "kind": "symbol",
@@ -281,26 +219,15 @@
       ]
     },
     "5": {
-      "note": "The one entry point, making three additive changes; the process-wide session patch is idempotent.\n\nAnchor: `_INSTALLED`",
+      "note": "`SkillsExtension` declares `io.modelcontextprotocol/skills` and binds `skills/list`, `skills/get`, and served `skill://` resources per server via `MethodBinding` and `ResourceBinding`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:cc4845b47643583a8b98ac754e62902b8c3afa0d20223d7a77ef2c6167511c4d",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:64cd5a83734a769dfd2f4168e41a0344504598d0a203464a8b7f83a80aa317f0",
             "locator": {
               "kind": "symbol",
-              "name": "install_extension_methods"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:99f480fb78ae99318a23a1acf888da8aab05b61fe7022ba72d39b2795f303842",
-            "locator": {
-              "kind": "symbol",
-              "name": "_install_request_union"
+              "name": "SkillsExtension"
             }
           },
           "kind": "code"
@@ -308,26 +235,15 @@
       ]
     },
     "6": {
-      "note": "The dispatcher hook, without which an extension request is silently dropped rather than refused.",
+      "note": "`preserve_handshake_extensions` restores `capabilities.extensions` and `capabilities.experimental={}` on `initialize` responses without intercepting tool calls or patching SDK classes.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:e9d6402689ffe51c82f16133a711cdcf602f61a35a0d7f4116588c001207d3f8",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:ae91c1f63a0c838b7f3f2af3a36bd303a7b56bdebf3e07b1450f15c8d115086b",
             "locator": {
               "kind": "symbol",
-              "name": "_install_dispatcher"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:a1a7d7ccd80b5f49f543c63a0700c4c25cb776f409f74390ac5cda495447f89c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_DISPATCH_INSTALLED"
+              "name": "preserve_handshake_extensions"
             }
           },
           "kind": "code"
@@ -339,8 +255,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:dff2844fde0f4c222393a15010a2a6985f11267e5d6925e10c031798049c1a4a",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:d2cca34a665c1c1650a37643b37fa8991c8db376387af5612f5286d64e1c84d8",
             "locator": {
               "kind": "symbol",
               "name": "_skills_list_handler"
@@ -350,7 +266,7 @@
         },
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
             "content": "sha256:7bc3f3f02c91cea4872d3727b104586999bca3b812dcc29bab02e0dcffe1a4cf",
             "locator": {
               "kind": "symbol",
@@ -366,8 +282,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:b08b4801ba0159c6d6ce30e7954cdf483bb8dc02fce88346d37290e94de5d598",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:9ffd59f7d9bba4148dcc01aab504ec2b6319df3e4863f1c61e772cb680627bc1",
             "locator": {
               "kind": "symbol",
               "name": "_skills_get_handler"
@@ -394,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
             "content": "sha256:0fbe55693a843a3d6284e3cb9fe90d679e4b1070073e0acbd51f3845fb92a8ad",
             "locator": {
               "kind": "symbol",
@@ -405,8 +321,8 @@
         },
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:fb402ce58bc816d55bfeb4236524d04d2b33059a46c454a1a862c82a67ca11ac",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:cde1faaff212db4dd08396d9a8131e5894ce738d931176ae565f35946f94c55d",
             "locator": {
               "kind": "symbol",
               "name": "_require_servable"

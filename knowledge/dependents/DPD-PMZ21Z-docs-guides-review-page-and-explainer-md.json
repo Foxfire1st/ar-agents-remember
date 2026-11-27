@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
-    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
-    "role": "manager",
-    "statement": "Crossing-7 merge of 261112-BUG-L61 and 261112-KNO-L5 onto bf8bda3fb: docs/guides/review-page-and-explainer.md remains accurate.",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "uncommitted": false
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "role": "curator",
+    "statement": "Audited docs/guides/review-page-and-explainer.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
+    "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
   "id": "DPD-PMZ21Z",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -246,7 +246,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
     {
-      "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+      "blob": "9089e67048af8c8c1b1e26caf2b75500a700f32a",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
@@ -318,7 +318,7 @@
     },
     {
       "anchor": {
-        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+        "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
         "content": "sha256:edeebf24017b5b360c833c992c4d353a34f77003648509e37df26a303e4858b4",
         "locator": {
           "kind": "symbol",
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T12:00:07+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

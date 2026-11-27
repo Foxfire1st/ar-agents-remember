@@ -20,7 +20,7 @@ MIK-R109: core registration removes `resolve_context`; `context_packet` advertis
 
 The current ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
-An ordinary `create_server` calls ten registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, knowledge and explainer control. Nine declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The explainer registrar's `render` answer carries the announce of a first browser fetch whole and adds the load's `browser` record to a publishing answer, so the seat reads the same state the review page draws. The current source `PUBLIC_TOOLS` literal contains 44 ordinary names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
+An ordinary `create_server` passes `build_skills_extension()` into `MCPServer(extensions=[...])` (with `preserve_handshake_extensions` middleware for pre-2026 `initialize` compatibility) and calls nine tool registrars in `TOOL_REGISTRARS` order: core, native seat retirement, memory, worktrees, closeout, tasks, native role agents, knowledge and explainer control. The explainer registrar's `render` answer carries the announce of a first browser fetch whole and adds the load's `browser` record to a publishing answer, so the seat reads the same state the review page draws. The current source `PUBLIC_TOOLS` literal contains 44 ordinary names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
 
 ## Construction
 
@@ -39,17 +39,17 @@ The closeout/direct-landing registrar adds the launch-bound architect direct_exe
 | `worktrees.py` | Start, enclosure adoption, attach, status, sync, and pause. |
 | `closeout.py` | Direct landing, `direct_execution_grant`, closeout preview/apply, integration, checkpoint publication, landing recording, operation control, cleanup, and abandonment. |
 | `tasks.py` | Reopen, lifecycle finalization, task-document authoring, curator coherence, and closeout projection inspection/rebuild. |
-| `capsule_serving.py` | Skill index/file resources, extension declaration, and protocol-method installation; no tools. |
-| `role_agents.py` | `role_start`, Manager-owned `role_start_set`, `user_settings_init`, and `role_message`, in that order. |
+| `capsule_serving.py` | Builds the SEP-2640 `SkillsExtension` (`build_skills_extension`) carrying `skill://` resources and extension declaration before `MCPServer` construction; no tools. |
+| `role_agents.py` | `role_start` (with injected `Context`), Manager-owned `role_start_set`, `user_settings_init`, and `role_message`, in that order. |
 | `knowledge.py` | `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`, and `knowledge_write`. |
 | `explainer.py` | Architect-only `explainer_control`. |
-| `skills_extension.py` | Skill request/result types, dispatcher support, and `skills/list` / `skills/get` handlers; no tool declarations. |
+| `skills_extension.py` | `SkillsExtension` (SEP-2133 `Extension`), `preserve_handshake_extensions` initialize middleware, request/result types, and `skills/list` / `skills/get` handlers; no tool declarations. |
 
 The roster is defined in the zero-import models leaf `models/tools/public_roster.py` and re-exported by `mcp/tools/base.py`. `public_surface.py` compares observed names with that roster in exact order and checks inventory/response-model and dispatch-advertisement contracts. This describes source checks, not a newly executed verification result.
 
 ### Published schemas and delegates
 
-The standing schema contract is that FastMCP derives tool inputs from Python signatures: replacing flat parameters with one model parameter changes the published shape. Flatness remains the default; memory-quality, closeout-queue, and curator-coherence request parameters are deliberate model-shaped contracts. Preserve the registration-scoped argument-count exemption's intent rather than using it to shelter implementation logic. The root per-file ignore at pyproject.toml:38 exempts only registration modules from PLR0913; adjacent comments state the schema rationale. This source declaration is not test execution.
+The standing schema contract is that `MCPServer` derives tool inputs from Python signatures (omitting injected `Context` parameters): replacing flat parameters with one model parameter changes the published shape. Flatness remains the default; memory-quality, closeout-queue, and curator-coherence request parameters are deliberate model-shaped contracts. Preserve the registration-scoped argument-count exemption's intent rather than using it to shelter implementation logic. The root per-file ignore at pyproject.toml:38 exempts only registration modules from PLR0913; adjacent comments state the schema rationale. This source declaration is not test execution.
 
 Native `retire_child` accepts the receipt-tracked agent_id and interrupt_turn through seat_retirement.py and delegates to the original-starter retirement owner. It is not a hosted-seat dispatch adapter. role_start/role_start_set/role_message keep their actual native selection, starter, held-message and permission-feature refusal boundaries; no undeclared-dispatch schema hook remains.
 
@@ -98,7 +98,7 @@ Curator coherence's compact description names its four actions (`prepare`, `publ
 
 ### Skill transport
 
-After proving the catalog servable, skill registration declares the extension and installs its mandatory methods together, then adds the server's index resource and each served skill file. The extension installer adds request-union and dispatcher support and installs handlers in the SDK request-handler map. Both method handlers use the catalog registry. The index resource retains this server's own well-known-discovery shape; extension enumeration is `skills/list`, not that index. The optional directory-read method/capability is deliberately absent.
+After proving the catalog servable, `capsule_serving.build_skills_extension` constructs a `SkillsExtension` (SEP-2133 `Extension`) carrying the `io.modelcontextprotocol/skills` capability, `skills/list` and `skills/get` `MethodBinding` entries, and `ResourceBinding` entries for `skill://index.json` and each served skill file, passed to `MCPServer(extensions=[...])` at server construction with `preserve_handshake_extensions` middleware restoring `capabilities.extensions` and `capabilities.experimental={}` on pre-2026 `initialize` responses. Both method handlers use the catalog registry. The index resource retains this server's own well-known-discovery shape; extension enumeration is `skills/list`, not that index. The optional directory-read method/capability is deliberately absent.
 
 Resource construction delegates reads to the served-file owner; registration does not activate skills or confer local-file trust. Resource and skill counts depend on the actual catalog and are not fixed here at the inherited 85-resource/14-skill values. The formerly advertised capsule/catalog tools are absent from the current registrar and roster.
 
@@ -198,7 +198,9 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 - The role-agent registrar mounts `role_start`, `role_start_set`, `user_settings_init`, and `role_message`; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
 
 
+
 - The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
+
 
 
 
@@ -207,7 +209,9 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 
 
 
+
 - register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners. [40]
+
 
 
 - One registered citation operation forwards the extended signature. [42]
@@ -224,23 +228,33 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 
 - The integrity registrar mounts `knowledge_integrity_check` for converted-tree validation and leaf worklist reporting. [6]
 
-[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
+
+- \[6] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [7]
+
 
 - The shared MCP adapter declares _tool_payload and forwards the whole tool result, optional projection and optional fitter into response completion. [9]
 
 [10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__
 [12] mcp/src/agents_remember/application/task_docs/task_ref.py — symbol TaskRef
 [13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField
-[14] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 32-37
-[17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-[26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
+
+- \[13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField [14]
+
+- \[16] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 172-199; mcp/src/agents_remember/mcp/registration/worktrees.py — lines 177-203 [17]
+
+- mcp/src/agents_remember/mcp/registration/core.py — code file [26]
+
 [29] mcp/src/agents_remember/models/tools/public_roster.py — code file
-[31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
-[32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
+
+- Skill resources, extension assembly, and index/file resource construction. [31]
+
+- SEP-2133 `SkillsExtension` registration, initialize handshake middleware, and catalog-backed `skills/list` and `skills/get` handlers. [32]
+
 - \[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration. [11]
 - `citation_fix` repairs moved citation anchors and authors sidecar references in a leaf memory worktree. [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
+
 
 
 

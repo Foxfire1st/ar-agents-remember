@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+        "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
         "content": "sha256:f861fb6d2e8445b1ac9e9628e2b4ba37de93e58aee9bdbf60f8af77a8ac40f0c",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
-        "content": "sha256:97045a12c9da951dd17552627cda53011bbc1426ff5da17171c231895ece484e",
+        "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
+        "content": "sha256:c25d35181cef6a3c9545005f99aef41ee0d0af33f11e72c929d43ff6807cc088",
         "locator": {
           "kind": "symbol",
           "name": "test_create_server_compacts_every_advertised_schema_with_contract_parity"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+        "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
         "content": "sha256:734fbca6777cb77caf32b1698ac25466588ba8cf2e54f89cbabb758f8afd5cd9",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+        "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
         "content": "sha256:768f68e936281e6833c04142f9e42e464c0d99783b066c499035c1a89d14f6ae",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+        "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
         "content": "sha256:51eb19d61cf4533407004bd3bebd09de60a3eed294b9b18814148fd9eb43563d",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
+            "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
             "content": "sha256:768f68e936281e6833c04142f9e42e464c0d99783b066c499035c1a89d14f6ae",
             "locator": {
               "kind": "symbol",
@@ -110,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
-            "content": "sha256:97045a12c9da951dd17552627cda53011bbc1426ff5da17171c231895ece484e",
+            "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
+            "content": "sha256:c25d35181cef6a3c9545005f99aef41ee0d0af33f11e72c929d43ff6807cc088",
             "locator": {
               "kind": "symbol",
               "name": "test_create_server_compacts_every_advertised_schema_with_contract_parity"
@@ -122,12 +122,12 @@
       ]
     },
     "3": {
-      "note": "Both production `compact_tool_schema` and `_contract_signature` preserve literal `const`, `enum`, and non-`None` `default` JSON payloads verbatim while recursing only through JSON-Schema subschema containers.\n\nAnchor: `_contract_signature`; `test_literal_const_enum_and_default_payloads_survive_compaction_and_signature`",
+      "note": "Both production `compact_tool_schema` and `_contract_signature` preserve literal `const`, `enum`, and non-`None` `default` JSON payloads verbatim while recursing only through JSON-Schema subschema containers.",
       "targets": [
         {
           "anchor": {
-            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
-            "content": "sha256:db32bb018ca06c0b9cffd564a297ee2550ab466160a68af1ba42c4f45f3f463f",
+            "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
+            "content": "sha256:1be79d96ca98e990cebf18a07da83865974e006174a00a9796b71446972c39fb",
             "locator": {
               "kind": "file"
             }
@@ -137,12 +137,12 @@
       ]
     },
     "4": {
-      "note": "`worktree_sync` description keeps the memory-merge-only and raw-`git merge` unsupported-hand-edit warning within 500 raw characters.\n\nAnchor: `test_worktree_sync_description_keeps_raw_merge_warning`",
+      "note": "`worktree_sync` description keeps the memory-merge-only and raw-`git merge` unsupported-hand-edit warning within 500 raw characters.",
       "targets": [
         {
           "anchor": {
-            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
-            "content": "sha256:db32bb018ca06c0b9cffd564a297ee2550ab466160a68af1ba42c4f45f3f463f",
+            "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
+            "content": "sha256:1be79d96ca98e990cebf18a07da83865974e006174a00a9796b71446972c39fb",
             "locator": {
               "kind": "file"
             }
@@ -152,12 +152,12 @@
       ]
     },
     "5": {
-      "note": "`read_ar_files` description names `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)` instead of response fields within 500 raw characters.\n\nAnchor: `test_read_ar_files_description_names_task_scoped_reader_inputs`",
+      "note": "`read_ar_files` description names `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)` instead of response fields within 500 raw characters.",
       "targets": [
         {
           "anchor": {
-            "blob": "f599872bff533211d52d0316020e54fd82b27c5b",
-            "content": "sha256:db32bb018ca06c0b9cffd564a297ee2550ab466160a68af1ba42c4f45f3f463f",
+            "blob": "09b29a56cae8601ca0741e3ab07db71e410be39a",
+            "content": "sha256:1be79d96ca98e990cebf18a07da83865974e006174a00a9796b71446972c39fb",
             "locator": {
               "kind": "file"
             }

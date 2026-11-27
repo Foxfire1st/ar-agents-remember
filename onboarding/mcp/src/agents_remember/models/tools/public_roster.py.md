@@ -206,13 +206,16 @@ history of how the tail arrived; this section is its current state.
 - The live registered-order comparison that treats this tuple as the advertised authority. [8]
 
 
+
 - The executor that pins the worktree surface's enforcement of this roster in both directions. [9]
 
 
-- The registrar that publishes the three capsule/skill names, whose order the tuple must match. [10]
+- The capsule/skill registrar publishes skill resources only; it registers no public tools and adds no tool names to this tuple. [10]
 
 
-- register_knowledge_tools registers the three read/diff/integrity tools and does not register the retired knowledge_change or knowledge_project tools. [11]
+
+- The knowledge registrar registers four tools: knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write. [11]
+
 
 
 ### Cross-Repo References
@@ -380,7 +383,7 @@ violations with no `models → mcp` edge and no new cycle.
 - The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. (historical reference3, retained in memory base c855ef3ee; no current target or fresh validation claimed)
 - The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows. [4]
 - The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. [7]
-- The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change. [11]
+- The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change. \[11]
 
 ### Cross-Repo References
 

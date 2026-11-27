@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-        "content": "sha256:abb37125b3cf6a99387f4c7c11faf4355dd1b49bb9407e7f0b832c84e20cc2d5",
+        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+        "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
         "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
         "locator": {
           "end": 111,
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-        "content": "sha256:abb37125b3cf6a99387f4c7c11faf4355dd1b49bb9407e7f0b832c84e20cc2d5",
+        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+        "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-        "content": "sha256:4ec5b0bf13f94d844ad90f1129a4142a1e67e2472966fc8683feb46397457371",
+        "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+        "content": "sha256:fcc2476506111f542cb09f32db986afd187b58ad5a179fc6c8464b462c8b7a45",
         "locator": {
           "kind": "symbol",
           "name": "_register_orientation_tools"
@@ -80,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-            "content": "sha256:dfb1a9bbac3c5543a924ac4ab155eb4a24e23dc2376c844b494e317a2f6584a3",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:6aa9581369be83431efb8a064530ac17f4d3d865b2ef278c449c0691e5bc93e6",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -92,12 +92,12 @@
       ]
     },
     "11": {
-      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused.\n\nAnchor: `_register_identity_tools`; `_register_orientation_tools`; `_register_installation_tools`",
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-            "content": "sha256:abb37125b3cf6a99387f4c7c11faf4355dd1b49bb9407e7f0b832c84e20cc2d5",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:d45582314cbba79cb1ec77a00cc08e55e96e4e516c5e36531dc968f7b1dbf42a",
             "locator": {
               "kind": "file"
             }
@@ -155,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
             "content": "sha256:48834fafcae3d9b9a0c8bd7ba2366e8a3f8e4621a5578d96ed223cefe32dc7ee",
             "locator": {
               "kind": "symbol",
@@ -171,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-            "content": "sha256:3c228c4c16d351ff935eb413d30fb7532f8791a234fa85b696a616ee34434fd6",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:aa46cbd9a49964e6afdbfa9a57e7220bab22291fcd53fdede7a6759bbf1358cc",
             "locator": {
               "kind": "symbol",
               "name": "_register_identity_tools"
@@ -187,8 +187,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-            "content": "sha256:4ec5b0bf13f94d844ad90f1129a4142a1e67e2472966fc8683feb46397457371",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:fcc2476506111f542cb09f32db986afd187b58ad5a179fc6c8464b462c8b7a45",
             "locator": {
               "kind": "symbol",
               "name": "_register_orientation_tools"
@@ -203,8 +203,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-            "content": "sha256:dfb1a9bbac3c5543a924ac4ab155eb4a24e23dc2376c844b494e317a2f6584a3",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:6aa9581369be83431efb8a064530ac17f4d3d865b2ef278c449c0691e5bc93e6",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -219,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
             "content": "sha256:8aeef5ae7a9c584e2568ed4a23121e7a0d91e474cd520c3ad45c5849eddf7aeb",
             "locator": {
               "kind": "symbol",
@@ -235,8 +235,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
-            "content": "sha256:b77b686e326bf7ecce14fac5f793b4901fc57976dd1f09370142572dea076d49",
+            "blob": "2ac5b5aef62416a1581b1f9a5723fe89178dbef2",
+            "content": "sha256:386cc863606c3916adacf065fefdcb20c4fc33191e5ad7494bd07a0894b8a8a6",
             "locator": {
               "kind": "symbol",
               "name": "server_info"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
-        "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
+        "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
+        "content": "sha256:3f314b4be554dda1ce84da49d7943411f92fbf594ec5419045d090182453d1d4",
         "locator": {
           "kind": "symbol",
           "name": "register_bound_explainer_tools"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+        "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
         "content": "sha256:2070982438b76d7d3f1cca33e166f40102c58e2cb7f229a0f37ab7a804a6c2a8",
         "locator": {
           "end": 187,
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+        "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
         "content": "sha256:edeebf24017b5b360c833c992c4d353a34f77003648509e37df26a303e4858b4",
         "locator": {
           "kind": "symbol",
@@ -59,12 +59,12 @@
   ],
   "references": {
     "1": {
-      "note": "The explainer's surface is supplied on the server the seat launch already built\n\nAnchor: `def register_bound_explainer_tools(`",
+      "note": "The explainer's surface is supplied on the server the seat launch already built",
       "targets": [
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
-            "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
+            "content": "sha256:3f314b4be554dda1ce84da49d7943411f92fbf594ec5419045d090182453d1d4",
             "locator": {
               "end": 283,
               "kind": "line_range",
@@ -76,12 +76,12 @@
       ]
     },
     "5": {
-      "note": "A grade carries the binding it was made at and refuses when the environment left it\n\nAnchor: `def register_judgment_tools(`",
+      "note": "A grade carries the binding it was made at and refuses when the environment left it",
       "targets": [
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
-            "content": "sha256:505de2315ee3a77ab21a7a47668ef15276a01c5f75e07a421d3757d87b1d1780",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
+            "content": "sha256:bdc72cc56260caf07e00c59e079348d5ff70772f2a382fc07e62bc2a1ca596a6",
             "locator": {
               "end": 249,
               "kind": "line_range",
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
             "content": "sha256:888e527860e5594e4064179b595c219f661568fce558e798b2d8dff499f987ef",
             "locator": {
               "end": 94,
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
             "content": "sha256:4e0e710da0fddd38776bb8c5417242448a5daa8210b0353574eb1c50a4ec86a3",
             "locator": {
               "end": 129,
@@ -131,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
             "content": "sha256:cda415c70994cde47959d8afe56b6bf0e5ef15f89186e0b71d5b9f5536829732",
             "locator": {
               "end": 75,
@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
             "content": "sha256:59aff11fd94e16d1790069a17794d68a7dc1d212b25bcb12cec8365d009bd58a",
             "locator": {
               "end": 129,
@@ -160,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+            "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
             "content": "sha256:7b0afcadf65e264db60395c3046f956ddeb15d8ba3af65bb72bc72612800b585",
             "locator": {
               "end": 184,

@@ -98,13 +98,13 @@ seeds open canonical leaf history with an `onboarding:{CODE_CHANGE}` `no_impact`
 `sources` path/blob names that edited file. This is fixture setup, not an additional declared workflow operation.
 The world uses a single `TemporaryDirectory`, two real
 Git repositories with remote-tracking authority, real task documents, a real server built by
-`create_server`, and a real in-memory MCP client session per call (`mcp/tests/workflow_chain_guidance_test_support.py:375-391`, through
-`create_connected_server_and_client_session`). `declare_test_process()` is called on
-construction (`mcp/tests/workflow_chain_guidance_test_support.py:313`). The fixture configures no providers and uses an in-memory MCP session.
+`create_server`, and a real in-memory MCP client session per call (`mcp/tests/workflow_chain_guidance_test_support.py`, through
+`Client(server, mode="legacy")`). `declare_test_process()` is called on
+construction. The fixture configures no providers and uses an in-memory MCP session.
 
 Every call goes through the **production entry point** — a registered tool over an MCP session — and
 `call` returns a three-way arm (`RAISED ToolError` with rendered detail text, `RAISED <Exception>` with no payload, or
-`RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
+`RETURNED` with `structured_content`), so "did it raise" is itself the measurement.
 
 The survey uses registry placement as source evidence of selection.
 
@@ -409,6 +409,7 @@ No repository or external-system boundary is proved by this module.
 
 - The no-control fallback returns worktree_status with contract_path only. Task-unstarted evidence can publish that tuple as a next move, but the registered status call also requires repo_id. [49]
 
+
 - The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. [50]
 - Where the tuple becomes the operational triple a seat reads. [51]
 
@@ -422,13 +423,16 @@ No repository or external-system boundary is proved by this module.
 - The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session. [12]
 
 
+
 - The call wrapper invokes a registered tool through an in-memory MCP session and distinguishes a structured result, a server ToolError with rendered detail, and a client-side exception. [13]
+
 
 
 - The observation performs one ordered walk, two follow-on arrangements (sibling and stale-base) and separate operational-triple probes. [14]
 
 
 - The fixture starts a sibling and verifies its enclosure exists. It opens a separate in-memory MCP connection for a dry-run finalization addressed to the target contract and computes raw guidance for that target. The sibling case requires a raw hint for the target, excludes the sibling from present address values and checks public-tool membership when a top-level next tool exists. [19]
+
 
 - Each declared operation-state pair is required to occur. The terminal contract cleanup cell must be completed. [2]
 

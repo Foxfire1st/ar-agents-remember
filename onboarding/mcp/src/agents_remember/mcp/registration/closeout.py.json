@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-        "content": "sha256:b81fa01ac7d524b80576efc62e9cc0ece53b751d838062a0fd5bae97495af362",
+        "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+        "content": "sha256:d776939a3866b1e315c42ebba83f7275c1a21ecc3bf3cb726694d49e569a4ddd",
         "locator": {
           "kind": "symbol",
           "name": "_register_closeout_command_tools"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-        "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+        "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+        "content": "sha256:c7ab9fdd9db4db6492ca6ce80a6051e4bd5606796bb4b290ffe0f3f46d976b25",
         "locator": {
           "kind": "symbol",
           "name": "register_closeout_tools"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-        "content": "sha256:952000fce6cbf02aae6d6273fddaec9741911d3149dd6654637921a0e5fe0ed5",
+        "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+        "content": "sha256:e14344cd2dcf595d913b268463906f1e4f0b815624ea59b75b16106de5077a9e",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.\n\nAnchor: `register_closeout_tools` through `_register_reclamation_command_tools`",
+      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:c7ab9fdd9db4db6492ca6ce80a6051e4bd5606796bb4b290ffe0f3f46d976b25",
             "locator": {
               "kind": "symbol",
               "name": "register_closeout_tools"
@@ -73,8 +73,8 @@
         },
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:a9f8fee08cb565bfe94e7a37f1abaf2c822c1903d0fcf4a24306a8749b0a62cf",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:e0b42e2ea19d982c6cfc70d3ca1a9491bcec6b5aeb144d2db9ed92c8f0e888b2",
             "locator": {
               "kind": "symbol",
               "name": "_register_reclamation_command_tools"
@@ -89,8 +89,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:c7ab9fdd9db4db6492ca6ce80a6051e4bd5606796bb4b290ffe0f3f46d976b25",
             "locator": {
               "end": 33,
               "kind": "line_range",
@@ -101,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
             "content": "sha256:0878111df3841152f48711073ccac31571e5a53ae197fbc2f1c81f3ab4875368",
             "locator": {
               "end": 201,
@@ -113,7 +113,7 @@
         },
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
             "content": "sha256:5c9bf6e4e020ee6a2696c5e214c98564d6dce0d00af3ad50a9fce6a991abea81",
             "locator": {
               "end": 100,
@@ -127,12 +127,12 @@
       ]
     },
     "11": {
-      "note": "This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof.\n\nAnchor: `register_closeout_tools` through `_register_reclamation_command_tools`",
+      "note": "This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:c7ab9fdd9db4db6492ca6ce80a6051e4bd5606796bb4b290ffe0f3f46d976b25",
             "locator": {
               "kind": "symbol",
               "name": "register_closeout_tools"
@@ -142,8 +142,8 @@
         },
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:a9f8fee08cb565bfe94e7a37f1abaf2c822c1903d0fcf4a24306a8749b0a62cf",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:e0b42e2ea19d982c6cfc70d3ca1a9491bcec6b5aeb144d2db9ed92c8f0e888b2",
             "locator": {
               "kind": "symbol",
               "name": "_register_reclamation_command_tools"
@@ -154,12 +154,12 @@
       ]
     },
     "12": {
-      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.\n\nAnchor: `register_closeout_tools` through `_register_reclamation_command_tools`",
+      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:c7ab9fdd9db4db6492ca6ce80a6051e4bd5606796bb4b290ffe0f3f46d976b25",
             "locator": {
               "kind": "symbol",
               "name": "register_closeout_tools"
@@ -169,8 +169,8 @@
         },
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:a9f8fee08cb565bfe94e7a37f1abaf2c822c1903d0fcf4a24306a8749b0a62cf",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:e0b42e2ea19d982c6cfc70d3ca1a9491bcec6b5aeb144d2db9ed92c8f0e888b2",
             "locator": {
               "kind": "symbol",
               "name": "_register_reclamation_command_tools"
@@ -185,8 +185,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:b81fa01ac7d524b80576efc62e9cc0ece53b751d838062a0fd5bae97495af362",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:d776939a3866b1e315c42ebba83f7275c1a21ecc3bf3cb726694d49e569a4ddd",
             "locator": {
               "end": 115,
               "kind": "line_range",
@@ -303,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
             "content": "sha256:e645def706db273be4a8fc86f2a25d1d732fa06a6f772cf519fb5aa1789f0bf3",
             "locator": {
               "end": 156,
@@ -413,8 +413,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
-            "content": "sha256:5b75019b3ffbc4d3e4a39bd0fb07638657128f43d4db984d5218401220ac7e24",
+            "blob": "d31651242c5427f608d0446cf2911f4eeddf2db3",
+            "content": "sha256:88050406a6d2c2810e90073ff391bf8e51c6697e6d575287fd0b54448f67f8ec",
             "locator": {
               "kind": "symbol",
               "name": "test_the_checkpoint_description_publishes_rather_than_pausing"

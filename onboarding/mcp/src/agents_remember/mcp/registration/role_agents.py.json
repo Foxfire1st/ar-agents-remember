@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
         "content": "sha256:0a1babe8ae764cba2ed73b4a55e974c1d538c4defadc1da46cbe784447bb8561",
         "locator": {
-          "end": 178,
+          "end": 179,
           "kind": "line_range",
-          "start": 173
+          "start": 174
         }
       },
       "id": "RLZ-3KJEK9",
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-        "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+        "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
         "locator": {
           "kind": "symbol",
           "name": "register_role_agent_tools"
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
         "content": "sha256:a5365f8a7710bcdc7aa7b67f0f58fa3971b47e09918e9ec4995da9b47f501a98",
         "locator": {
           "kind": "symbol",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-        "content": "sha256:b8667a3188762b86905f1da9cd2472021af37a3f8901bdca9968a801b3b56f4d",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+        "content": "sha256:ed9ae118c73a53d68141bead405be75b6694ff2d7603811bc6cebac761c33d07",
         "locator": {
           "kind": "file"
         }
@@ -76,12 +76,30 @@
     },
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+        "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_role_agent_tools"
+        }
+      },
+      "id": "RLZ-DM1NZ1",
+      "invariant": "INV-82K3AM",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R5-explicit-context",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Declares ctx: Context[Any, Any] | None = None on role_start so MCPServer injects the active request context without exposing ctx in role_start's JSON schema.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
         "content": "sha256:2dc753c8784eec6be3e34abfd0a202d2bb9b740dc87506cd81df6b56ac84cb6f",
         "locator": {
-          "end": 210,
+          "end": 211,
           "kind": "line_range",
-          "start": 210
+          "start": 211
         }
       },
       "id": "RLZ-FQP3ST",
@@ -95,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-        "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+        "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
         "locator": {
           "kind": "symbol",
           "name": "register_role_agent_tools"
@@ -113,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-        "content": "sha256:b8667a3188762b86905f1da9cd2472021af37a3f8901bdca9968a801b3b56f4d",
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+        "content": "sha256:ed9ae118c73a53d68141bead405be75b6694ff2d7603811bc6cebac761c33d07",
         "locator": {
           "kind": "file"
         }
@@ -127,6 +145,24 @@
       },
       "rationale": "Optimizes all four role-agent tool descriptions while preserving all role_start, role_start_set (MIK-R100 rule 1), and role_message exact sentence pins and forbidden-word cleanliness.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+        "content": "sha256:f65236f06392ad25f6cfd6a7ad26d5b114656fe05192777304a464c17d90f00c",
+        "locator": {
+          "kind": "symbol",
+          "name": "caller_harness_name"
+        }
+      },
+      "id": "RLZ-Q5N6M7",
+      "invariant": "INV-82K3AM",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R5-explicit-context",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Reads client_info.name from the injected Context session and returns None when ctx is None or ctx.session raises ValueError outside a served request.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -135,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"
@@ -151,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
             "content": "sha256:a5365f8a7710bcdc7aa7b67f0f58fa3971b47e09918e9ec4995da9b47f501a98",
             "locator": {
               "kind": "symbol",
@@ -167,24 +203,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
             "content": "sha256:1eb082d708953641bf620537529119dab61f2d296b4239dba03d8158cbda7334",
             "locator": {
-              "end": 179,
+              "end": 180,
               "kind": "line_range",
-              "start": 172
+              "start": 173
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
             "content": "sha256:2dc753c8784eec6be3e34abfd0a202d2bb9b740dc87506cd81df6b56ac84cb6f",
             "locator": {
-              "end": 210,
+              "end": 211,
               "kind": "line_range",
-              "start": 210
+              "start": 211
             }
           },
           "kind": "code"
@@ -196,8 +232,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"
@@ -248,8 +284,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:f65236f06392ad25f6cfd6a7ad26d5b114656fe05192777304a464c17d90f00c",
             "locator": {
               "kind": "symbol",
               "name": "caller_harness_name"
@@ -259,8 +295,8 @@
         },
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:5cbe028b8b7d81503737ec9a8d65b9ca1f13a4248a96ee05055c55408d794974",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:38c30be2a2e21658948451b66488734bf10a181075fa47a08a5e0b761939878a",
             "locator": {
               "kind": "symbol",
               "name": "role_start"
@@ -270,12 +306,12 @@
         },
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
             "content": "sha256:a95600af35dc123296a604f37a8d82191db38677e55ea776e6083ebe4b0e9767",
             "locator": {
-              "end": 44,
+              "end": 43,
               "kind": "line_range",
-              "start": 32
+              "start": 31
             }
           },
           "kind": "code"
@@ -287,8 +323,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:f65236f06392ad25f6cfd6a7ad26d5b114656fe05192777304a464c17d90f00c",
             "locator": {
               "kind": "symbol",
               "name": "caller_harness_name"
@@ -303,8 +339,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"
@@ -319,8 +355,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"

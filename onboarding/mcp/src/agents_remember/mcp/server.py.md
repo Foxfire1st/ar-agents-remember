@@ -32,43 +32,39 @@ A native invocation opens a lazy request memo and clears its shared owner map af
 
 `create_server(config)` composes the application and server in the following order:
 
-1. `install_compact_content()` — idempotent; makes the JSON text mirror of every tool result emit
-   without FastMCP's hardcoded indentation. It affects text-mirror serialization only, never
-   `structuredContent` or tool behaviour.
-2. Install a supplier through the light kernel service holder; the first dependent worktree operation builds the default services once, including `LeafAgentArchive(config)`. Initialize the boot-time caller-identity tool writer through `server_startup.initialize_mcp_application(config)` and complete FastMCP settings before constructing the server. The writer's constructors are light; this is no blanket optional-work deferral claim.
-3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
-   launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
-   supplies no instruction line. `create_server` also snapshots `_bound_agent_id` once via
-   `_snapshot_bound_agent_id()` (`read_agent_binding().agent_id`, or `None` when unbound or malformed).
-4. Read the required explainer binding. Every launch invokes the ordered `TOOL_REGISTRARS`; a valid explainer launch also registers its four tools and retains its binding for those tools’ per-call validation. An invalid required binding refuses service.
-5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
+1. Install a supplier through the light kernel service holder; the first dependent worktree operation builds the default services once, including `LeafAgentArchive(config)`. Initialize the boot-time caller-identity tool writer through `server_startup.initialize_mcp_application(config)`. The writer's constructors are light; this is no blanket optional-work deferral claim.
+2. Build `extensions = [build_skills_extension()]` and construct `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions(), version=SERVER_VERSION, extensions=extensions, middleware=[preserve_handshake_extensions(extensions)], subscriptions=False)`. Passing `version=SERVER_VERSION` advertises the product version (`3.0.8` on this release, rather than the MCP SDK package version) as `serverInfo.version` on the wire during `initialize`; passing `subscriptions=False` disables MCP resource subscriptions because this server publishes catalog-backed skill resources without a subscribe/unsubscribe notification stream. A readable launch binding supplies the canonical task-server instruction line; unbound or unreadable binding supplies no instruction line. `create_server` also snapshots `_bound_agent_id` once via `_snapshot_bound_agent_id()` (`read_agent_binding().agent_id`, or `None` when unbound or malformed).
+3. Read the required explainer binding. Every launch invokes the ordered `TOOL_REGISTRARS`; a valid explainer launch also registers its four tools and retains its binding for those tools’ per-call validation. An invalid required binding refuses service.
+4. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
    an unmarked tool. This step changes annotations, not registration order or handler ownership.
-6. `_compact_server_tool_schemas(server)` compacts every registered tool's advertised `parameters`
+5. `_compact_server_tool_schemas(server)` compacts every registered tool's advertised `parameters`
    (`inputSchema`) in place through `models.tools.tool_schema_compaction.compact_tool_schema`,
    covering unbound, role-bound, and explainer surfaces alike without altering registration order,
    read-only annotations, or runtime Pydantic argument validation (`fn_metadata.arg_model`).
-7. `_bound_role_tools` reads the agent binding after compaction. An unbound process keeps the whole
+6. `_bound_role_tools` reads the agent binding after compaction. An unbound process keeps the whole
    registered roster. A readable role binding keeps that role's `tools_for_role` allowlist, plus the
    explainer's four tools when an explainer seat is also bound, and `_scope_server_tools` removes every
-   other registered tool through FastMCP's `remove_tool`, so the survivors keep their registration
+   other registered tool through `MCPServer.remove_tool`, so the survivors keep their registration
    order, compacted schemas and read-only annotations. A present but unreadable binding keeps only `server_info`.
 
 `run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), then writes this server's per-PID binding and process-ancestry record under `<coordination-root>/runtime/server-bindings/<pid>.json` through `_register_process_binding(config)` → `serving/server_bindings.register_server_binding` (distinguishing `bound` with `BoundIdentityPayload`, `unbound`, and `unreadable` with `unreadable_reason`) before calling `create_server(config).run()`. In `finally`, it runs both idempotent cleanups (removing the binding record first, then the server registry record), and both cleanups are also registered with `atexit` for normal process exit.
 
 ### Dispatch at the public transport boundary
 
-AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before entering tool_call_context. Calls to an explainer tool that this process still serves validate their launched seat before the registered handler; a call to an explainer tool that role narrowing removed reaches dispatch and fails there as an unknown tool. Ordinary tools keep their own argument admission. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
+`AgentsRememberMCP` subclasses `MCPServer` and overrides the public 3-argument `call_tool(name, arguments, context)` and `list_tools()` methods without provisional call middleware. `AgentsRememberMCP.list_tools` first awaits the `MCPServer` answer, then schedules `start_after_discovery(config)` with the running loop’s `call_soon` and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. `call_tool` reaches that same latch as the fallback for a client that never lists, before entering `tool_call_context`. Calls to an explainer tool that this process still serves validate their launched seat before the registered handler (returning an indented early refusal via `tool_results.build_early_refusal_result`); a call to an explainer tool that role narrowing removed reaches dispatch and fails there as an unknown tool. Ordinary tools keep their own argument admission. Unexpected tool errors (`UnexpectedToolError`) are mapped back to `ToolError` carrying the cause message so wire error texts stay intact. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop and converting normal tool results through `tool_results.build_call_tool_result`.
 
 ### Stale installed builds refuse publication writes at dispatch
 
 Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. Immediately before entering `tool_build_currentness`, `_execute_tool_call` awaits `_maybe_suppress_provider_limits(config)`, which offloads `suppress_provider_limits_for_live_tool_call(config, agent_id)` via `asyncio.to_thread` when both `config` and `_bound_agent_id` are present and catches any exception so suppression never breaks or delays an unbound call. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. The refusal is built in a detached worker thread, so cancelling the request does not wait for it. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
 
 - A stale installed build's publication writes are refused before dispatch; before entering `tool_build_currentness`, a bound server runs `_maybe_suppress_provider_limits` off the event loop and swallows any failure, then dispatches under the carried currentness reading. [13]
+
 - `_maybe_suppress_provider_limits` skips when `config` or `_bound_agent_id` is absent and runs `suppress_provider_limits_for_live_tool_call` via `asyncio.to_thread` inside `suppress(Exception)`. [21]
 - `_snapshot_bound_agent_id` reads `read_agent_binding()` once at server creation and returns `None` when unbound or malformed (`ValueError`). [22]
 
 - `run_server` registers both the `"mcp"` running-server record and the per-PID binding/ancestry record (`bound`, `unbound`, or `unreadable`) via `_register_process_binding` before serving and runs both cleanups when serving ends. [14]
+
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 
@@ -117,8 +113,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 - The transport subclass may enforce a closed public boundary only when the framework-generated
   boundary is demonstrably weaker. It must not duplicate handlers, invent fallbacks, or become a
   second tool registry.
-- Initialize compact-content serialization and application services before registering tools;
-  no ambient lifecycle installer remains.
+- Initialize application services and build `SkillsExtension` before constructing `AgentsRememberMCP`; compact JSON `CallToolResult` construction lives directly in `mcp/tool_results.py` with no SDK monkeypatch or ambient lifecycle installer.
 - **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process()` stays before
   `run_server`, and neither declaration may move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
@@ -146,6 +141,7 @@ Readable launch binding supplies one canonical launched-server instruction line.
 
 
 - The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. [2]
+
 
 - The stable tools package declares the public import surface for payload builders. [3]
 - The package imports worktree payload builders from the owning module. [4]
@@ -179,15 +175,17 @@ Every tool call owns one definition scope around its complete dispatch. Synchron
 
 ## Synchronous dispatch and write ordering
 
-After the applicable explainer-tool seat checks, `_dispatch_tool` wraps a synchronous registered function on a per-call Tool copy and runs it through the shared request-thread helper. FastMCP validates the original arguments, injects context and converts the result. The worker receives the call's context. Each async handler owns any worker it starts.
+After the applicable explainer-tool seat checks, `_dispatch_tool` wraps a synchronous registered function on a per-call Tool copy and runs it through the shared request-thread helper. `MCPServer` validates the original arguments and injects context while `AgentsRememberMCP` converts the return value into a compact `CallToolResult` via `tool_results.build_call_tool_result` (and maps `UnexpectedToolError` to `ToolError` carrying the cause message). The worker receives the call's context. Each async handler owns any worker it starts.
 
 Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. A request cancelled while it still waits for the lock leaves a `cancelled` tool-log row that names the write lock. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
 
 
-- Threaded synchronous dispatch retains the registered validation and conversion path. [10]
+- Threaded synchronous dispatch retains the registered validation path and direct compact CallToolResult conversion. [10]
+
 
 
 - Declared reads and explicit nonwriting modes bypass the synchronous write lock. [11]
+
 
 
 
@@ -213,14 +211,16 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- `create_server` builds the FastMCP instance, snapshots `_bound_agent_id`, invokes the registered tool families, compacts every advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the result to the allowlist of a bound role. [1]
-- `create_server` installs compact content, initializes the application services, snapshots `_bound_agent_id`, registers every tool family, adds a bound explainer surface, applies the read-only marks, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and then removes every tool outside the allowlist of a bound role. [7]
+- `create_server` builds the `MCPServer` (`AgentsRememberMCP`) with `version=SERVER_VERSION` (product `serverInfo.version`), `extensions=[build_skills_extension()]`, `middleware=[preserve_handshake_extensions(extensions)]`, and `subscriptions=False`, snapshots `_bound_agent_id`, invokes the registered tool families, compacts every advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the result to the allowlist of a bound role. [1]
+- `create_server` initializes application services, builds `SkillsExtension`, constructs `AgentsRememberMCP` with `version=SERVER_VERSION` and `subscriptions=False`, snapshots `_bound_agent_id`, registers every tool family, adds a bound explainer surface, applies the read-only marks, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and removes every tool outside the allowlist of a bound role. [7]
 
 - `_bound_role_tools` resolves the binding precedence, and `_scope_server_tools` removes every tool outside a role's allowlist after the read-only marks, keeping the survivors' order. [20]
+
 
 
 ## Retirements
 
 - Initialization installs the worktree supplier and every ordinary tool family, adds the four explainer tools for a bound launch, and narrows the tools to the allowlist of a role-bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings. [9]
+
 
 - The dashboard declares its durable-store role on the reload-worker and foreground or daemon entry paths. [15]

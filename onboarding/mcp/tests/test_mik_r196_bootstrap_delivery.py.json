@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
+        "blob": "60ab84c85f6d881e61373c375f173d27716a493e",
         "content": "sha256:f54a10906ebc85e48535cb057e569294d10893ba22a04a909c470e7a9f03b4c7",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "handoffEntry": "L188-B02",
         "leaf": "260928-MIK-L188"
       }
+    },
+    {
+      "anchor": {
+        "blob": "60ab84c85f6d881e61373c375f173d27716a493e",
+        "content": "sha256:68943ddee15dc0c7cb50b250eb8d250a0bf312942e8105899770fd8979dfcdce",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreeSeatOverrideTests.test_real_session_client_info_arrives_via_injected_context"
+        }
+      },
+      "facet": "Verifies a real MCP session's client_info.name reaches role_start via injected Context while ctx stays absent from inputSchema and outside-request calls return None.",
+      "id": "PRF-W0ZVFA",
+      "invariant": "INV-82K3AM",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R5-explicit-context",
+        "leaf": "261125-DEP-L3"
+      }
     }
   ],
   "realizes": [],
@@ -26,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
-            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
+            "blob": "60ab84c85f6d881e61373c375f173d27716a493e",
+            "content": "sha256:ad75f0e43aa0390b21c39b8e85e60f81326059bac622f061623a13e6266f7874",
             "locator": {
               "kind": "file"
             }
@@ -41,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
-            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
+            "blob": "60ab84c85f6d881e61373c375f173d27716a493e",
+            "content": "sha256:ad75f0e43aa0390b21c39b8e85e60f81326059bac622f061623a13e6266f7874",
             "locator": {
               "kind": "file"
             }
@@ -56,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
-            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
+            "blob": "60ab84c85f6d881e61373c375f173d27716a493e",
+            "content": "sha256:ad75f0e43aa0390b21c39b8e85e60f81326059bac622f061623a13e6266f7874",
             "locator": {
               "kind": "file"
             }

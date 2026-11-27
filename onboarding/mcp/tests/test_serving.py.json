@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+        "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
         "content": "sha256:24b6c537a0808c1e9c6dee9df55a700bfe20ad853e2858d2562f2d93f3ff90a0",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+        "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
         "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
         "locator": {
           "end": 446,
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+        "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
         "content": "sha256:750dbacf6318d2eb4cb17de431e0d6ddb6d86c831631da06dfbd59f101d049db",
         "locator": {
           "kind": "symbol",
@@ -55,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+        "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
         "content": "sha256:7472ee20485dcba1696e01169a6ef04b2b39505637566f462066bc680fabac4f",
         "locator": {
           "kind": "symbol",
@@ -72,7 +72,7 @@
     },
     {
       "anchor": {
-        "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+        "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
         "content": "sha256:8ed7714230f1e4b8bbb715fb25071581bbf732c620d7cc0149009a5c7a93556d",
         "locator": {
           "end": 423,
@@ -92,25 +92,25 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Snapshot subscription cannot lose an interleaved projection\n\nAnchor: `test_snapshot_subscription_cannot_lose_an_interleaved_projection`",
+      "note": "Snapshot subscription cannot lose an interleaved projection",
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:5ae8564ac22ad9ed9fefb687a9fe59819b48ee79a536aaecb537212ae06933a5",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:17f2d24d578df65381c8b86ac5a16f1c0a15f842100f83f6ab91069da7c64d58",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_snapshot_subscription_cannot_lose_an_interleaved_projection"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:17f2d24d578df65381c8b86ac5a16f1c0a15f842100f83f6ab91069da7c64d58",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:98c307b434964b633f8d542f061b84afea9e740c401beda8c280876174fd12ab",
             "locator": {
-              "kind": "symbol",
-              "name": "test_snapshot_subscription_cannot_lose_an_interleaved_projection"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
             "locator": {
               "kind": "symbol",
@@ -134,25 +134,25 @@
       ]
     },
     "2": {
-      "note": "Etag 304 cycle then new etag on content change\n\nAnchor: `test_etag_304_cycle_then_new_etag_on_content_change`",
+      "note": "Etag 304 cycle then new etag on content change",
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:5ae8564ac22ad9ed9fefb687a9fe59819b48ee79a536aaecb537212ae06933a5",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:702a645d32e7b4e690d2a9663406e3b3de4015861b50bf13f403f6895cb2318c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_etag_304_cycle_then_new_etag_on_content_change"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:702a645d32e7b4e690d2a9663406e3b3de4015861b50bf13f403f6895cb2318c",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:98c307b434964b633f8d542f061b84afea9e740c401beda8c280876174fd12ab",
             "locator": {
-              "kind": "symbol",
-              "name": "test_etag_304_cycle_then_new_etag_on_content_change"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -164,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:128383f876583644e55c8c9aac66d77576dea7f803f6277a4cb95fd8bdcdae5a",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:8812c86a63019edbbc33b8c01accaac54f103c0cd124adb6f2225f3afa390067",
             "locator": {
               "end": 256,
               "kind": "line_range",
@@ -181,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:5954301579cf49b02532078d40f046d3d57bc657c2c0d769713f90158366a761",
             "locator": {
               "end": 315,
@@ -198,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:db506fa2e7aa1373e47207f30e16df88d2f48c89778d8b028c3b3728034f6bde",
             "locator": {
               "end": 512,
@@ -210,7 +210,7 @@
         },
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:215fb4eddd658d3a81c6eb68d44cb1fa874d0b60f1f81980c159d55ce4d8dd28",
             "locator": {
               "end": 543,
@@ -227,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:c8012f5d3fd6c296f1dd6ac0c7389689067b0c21af6ac1bdc370e452c6ff6a01",
             "locator": {
               "end": 571,
@@ -239,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:72e80a96d6e5b8921fb605b6a1f8f06d82b682cb006deef9d677fa24c39ceed8",
             "locator": {
               "end": 602,
@@ -252,25 +252,25 @@
       ]
     },
     "7": {
-      "note": "The unchanged ETag is checked after the volatile-only projection was actually published.\n\nAnchor: `test_etag_304_cycle_then_new_etag_on_content_change`",
+      "note": "The unchanged ETag is checked after the volatile-only projection was actually published.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:5ae8564ac22ad9ed9fefb687a9fe59819b48ee79a536aaecb537212ae06933a5",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:702a645d32e7b4e690d2a9663406e3b3de4015861b50bf13f403f6895cb2318c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_etag_304_cycle_then_new_etag_on_content_change"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
-            "content": "sha256:702a645d32e7b4e690d2a9663406e3b3de4015861b50bf13f403f6895cb2318c",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
+            "content": "sha256:98c307b434964b633f8d542f061b84afea9e740c401beda8c280876174fd12ab",
             "locator": {
-              "kind": "symbol",
-              "name": "test_etag_304_cycle_then_new_etag_on_content_change"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -282,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:942de0bc5ef4f0cc452d104cb6d9ff7c35e68e6eb10fb61524f22e29b09895d9",
             "locator": {
               "kind": "symbol",
@@ -298,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad983695fbd57e5ef39ac7aed311f6ef46aadbc4",
+            "blob": "c25f735d2088aad57c4226b5feddd9b5053d61ca",
             "content": "sha256:4cfc3d642a4e5c57d7fddffe5b6aec1c2d1f7fd195c587604f6dc137472b7e63",
             "locator": {
               "kind": "symbol",

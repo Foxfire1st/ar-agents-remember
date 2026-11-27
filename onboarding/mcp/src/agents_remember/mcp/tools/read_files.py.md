@@ -34,6 +34,7 @@ Optional task_context is admitted to a call-local config, without mutating the s
 
 - Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse. [5]
 
+
 - The application reply owns the exact context, tree observation and naming rows. [1]
 
 - The payload gives the reader's fitter to the shared response completion after scope resolution. [2]

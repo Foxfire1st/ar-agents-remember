@@ -3,8 +3,42 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-        "content": "sha256:6c6069e9ea7342eea593c2e1c6306dcde41366be74e67e036b64a70ea1ce54cf",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:cf1d93f6668843c42b221a9c808b8461bbe579661503d6ed1e90611dffd19822",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_stdio_session_on_a_malformed_binding_serves_only_server_info"
+        }
+      },
+      "facet": "Verifies ToolError wire texts carry AR_PASEO_AGENT_ID and Unknown tool details over real stdio.",
+      "id": "PRF-22VPP1",
+      "invariant": "INV-H9Z24G",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R2",
+        "leaf": "261125-DEP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:53a45f11a56925a16c8a326094ff4fb152274ab994674bebacb441093ded2f9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_installed_mcp_meets_declared_floor_and_server_lists_tools"
+        }
+      },
+      "facet": "Reads mcp/pyproject.toml to assert a single mcp dependency with floor >=2.3.0 and <3 ceiling, verifies installed mcp satisfies both and exposes MCPServer.remove_tool, and asserts create_server lists PUBLIC_TOOLS unbound and tools_for_role('worker') when bound.",
+      "id": "PRF-2JZR0T",
+      "invariant": "INV-DY0898",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R1-proof",
+        "leaf": "261125-DEP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:cf1d93f6668843c42b221a9c808b8461bbe579661503d6ed1e90611dffd19822",
         "locator": {
           "kind": "symbol",
           "name": "test_a_real_stdio_session_on_a_malformed_binding_serves_only_server_info"
@@ -20,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:c0db0ab405ff37624bce2d629e4288a51eb1f8047fa9a5ae94dc4cb9c744ef7e",
         "locator": {
           "kind": "symbol",
@@ -37,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:063923f9fbccf7ccfa57cbb5f01cef7d8e047a1f37631db8ad11c14ebf7e1ee2",
         "locator": {
           "kind": "symbol",
@@ -54,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:503e1aadceb778bf53ca02ea53a4f45da8d7e96afea7b5181115f2409d0698d3",
         "locator": {
           "kind": "symbol",
@@ -71,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-        "content": "sha256:1e79c839e9fb85e9e512ae755210df915a301e20de470bc08b159ea5e25ca7dd",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:f65e641dc21b6cf0fd895a8a56e8cdeafc297b3eb7dc2104d47a3222301a30c1",
         "locator": {
           "kind": "symbol",
           "name": "test_a_bound_server_advertises_only_its_roles_tools_in_public_order"
@@ -88,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:063923f9fbccf7ccfa57cbb5f01cef7d8e047a1f37631db8ad11c14ebf7e1ee2",
         "locator": {
           "kind": "symbol",
@@ -105,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:58f2429687301a1733aa5defe277ac5e9a4779aad6ddee24851ba314072a5b24",
         "locator": {
           "kind": "symbol",
@@ -122,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-        "content": "sha256:64e9aec4ebc00f0d07b7ac673239061c443836a0cc08a66b45bcc3e015c7c1c7",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:e78c9747e05a8adedabd9f97a19b8e7e05d1df812e4e68edcecff364a68e59bd",
         "locator": {
           "kind": "symbol",
           "name": "test_a_real_stdio_manager_session_lists_32_compacted_tools_and_validates_calls"
@@ -139,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:0623b958efeea4e222802a8c09a2e27e206f3908d3311ec30719a469f0a17f5f",
         "locator": {
           "kind": "symbol",
@@ -156,24 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-        "content": "sha256:6f7aabdf7d7786e795d928c219fc6b8aebe2c5b545a04fb006d6e7e64c7a57fc",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_installed_mcp_meets_declared_floor_and_server_lists_tools"
-        }
-      },
-      "facet": "Reads mcp/pyproject.toml to assert a single mcp dependency with floor >=1.30.0 and <2 ceiling, verifies installed mcp satisfies both and exposes FastMCP.remove_tool, and asserts create_server lists PUBLIC_TOOLS unbound and tools_for_role('worker') when bound.",
-      "id": "PRF-P3ESZX",
-      "invariant": "INV-DY0898",
-      "origin": {
-        "handoffEntry": "DEP-R01@v2 §1",
-        "leaf": "261125-DEP-L1"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:ecb7681a5dfd900a55e69c81b510c1ee8586afab67c2c8cc419e19d91d4eaafa",
         "locator": {
           "kind": "symbol",
@@ -190,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:063923f9fbccf7ccfa57cbb5f01cef7d8e047a1f37631db8ad11c14ebf7e1ee2",
         "locator": {
           "kind": "symbol",
@@ -207,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:8de16b038258f0e120ce3411a4c3ad24dfa1e2337c3129761b3eb6fa9cd739cc",
         "locator": {
           "kind": "symbol",
@@ -224,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:255edf60832b4652ad1bb28e8391c7ad83fa6009ca0d64af25a90f694e43a6cd",
         "locator": {
           "kind": "symbol",
@@ -241,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
         "content": "sha256:89bebb4a6ead042648aaf276397c9bd029f8658018f7e447a3c4140216900b30",
         "locator": {
           "kind": "symbol",
@@ -258,8 +275,8 @@
     },
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-        "content": "sha256:7528732686c754febaaf73ac8d4adf20be775ffac0e7aa77e962a47010600a87",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:e77911e1274205ed3c5a6080b3191221555f9a9a098488b8544994d10819cb9f",
         "locator": {
           "kind": "symbol",
           "name": "test_a_real_stdio_session_advertises_and_dispatches_only_the_bound_roles_tools"
@@ -277,8 +294,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-        "content": "sha256:6f7aabdf7d7786e795d928c219fc6b8aebe2c5b545a04fb006d6e7e64c7a57fc",
+        "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+        "content": "sha256:53a45f11a56925a16c8a326094ff4fb152274ab994674bebacb441093ded2f9d",
         "locator": {
           "kind": "symbol",
           "name": "test_installed_mcp_meets_declared_floor_and_server_lists_tools"
@@ -290,7 +307,7 @@
         "handoffEntry": "DEP-R01@v2 §1",
         "leaf": "261125-DEP-L1"
       },
-      "rationale": "Verifies the declared >=1.30.0,<2 specifier in mcp/pyproject.toml, installed mcp compliance, FastMCP.remove_tool availability, and unbound and worker-bound server tool listing.",
+      "rationale": "Verifies the declared >=2.3.0,<3 specifier in mcp/pyproject.toml, installed mcp compliance, MCPServer.remove_tool availability, and unbound and worker-bound server tool listing.",
       "role": "enforcement"
     }
   ],
@@ -300,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
             "content": "sha256:255edf60832b4652ad1bb28e8391c7ad83fa6009ca0d64af25a90f694e43a6cd",
             "locator": {
               "kind": "symbol",
@@ -316,7 +333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
             "content": "sha256:8de16b038258f0e120ce3411a4c3ad24dfa1e2337c3129761b3eb6fa9cd739cc",
             "locator": {
               "kind": "symbol",
@@ -332,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
             "content": "sha256:063923f9fbccf7ccfa57cbb5f01cef7d8e047a1f37631db8ad11c14ebf7e1ee2",
             "locator": {
               "kind": "symbol",
@@ -348,8 +365,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-            "content": "sha256:7528732686c754febaaf73ac8d4adf20be775ffac0e7aa77e962a47010600a87",
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+            "content": "sha256:e77911e1274205ed3c5a6080b3191221555f9a9a098488b8544994d10819cb9f",
             "locator": {
               "kind": "symbol",
               "name": "test_a_real_stdio_session_advertises_and_dispatches_only_the_bound_roles_tools"
@@ -364,8 +381,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-            "content": "sha256:64e9aec4ebc00f0d07b7ac673239061c443836a0cc08a66b45bcc3e015c7c1c7",
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+            "content": "sha256:e78c9747e05a8adedabd9f97a19b8e7e05d1df812e4e68edcecff364a68e59bd",
             "locator": {
               "kind": "symbol",
               "name": "test_a_real_stdio_manager_session_lists_32_compacted_tools_and_validates_calls"
@@ -376,15 +393,27 @@
       ]
     },
     "6": {
-      "note": "The floor case checks `mcp>=1.30.0,<2` in `mcp/pyproject.toml`, installed `mcp` compliance, `FastMCP.remove_tool`, and unbound and worker-bound `list_tools()`.",
+      "note": "The floor case checks `mcp>=2.3.0,<3` in `mcp/pyproject.toml`, installed `mcp` compliance, `MCPServer.remove_tool`, and unbound and worker-bound `list_tools()`.",
       "targets": [
         {
           "anchor": {
-            "blob": "2dda35e607a2bad20350b081bc51d771434b82d8",
-            "content": "sha256:6f7aabdf7d7786e795d928c219fc6b8aebe2c5b545a04fb006d6e7e64c7a57fc",
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+            "content": "sha256:53a45f11a56925a16c8a326094ff4fb152274ab994674bebacb441093ded2f9d",
             "locator": {
               "kind": "symbol",
               "name": "test_installed_mcp_meets_declared_floor_and_server_lists_tools"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0386f77bd2039e16a96ce50f3948f5c71bb7fe0",
+            "content": "sha256:87e83f0fde8a54e1170a7d9ed73f57b4540509808e810b0141dddacccdde6f2c",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

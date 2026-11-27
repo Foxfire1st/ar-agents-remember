@@ -142,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
+            "blob": "98476ce817d312054fa6a6f6b0a7c60fb2260231",
             "content": "sha256:9d897b739d66b64c9a89e3f845a130440eb2925d35c40c031512e593e1d080e3",
             "locator": {
-              "end": 307,
+              "end": 308,
               "kind": "line_range",
-              "start": 287
+              "start": 288
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },

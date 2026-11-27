@@ -385,7 +385,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
 
 
+
 - Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock. [389]
+
 
 - Citation preview adds modes to the existing declaration. [390]
 
@@ -598,7 +600,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
 - **Retained historical source account — superseded by the current route account:** The batch blob reader. [272]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
+
 - **Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
+
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
 
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
@@ -829,6 +833,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - A stale installed build refuses declared publication writers, not reads or dry runs. [398]
 
 - The stale-writer refusal runs before dispatch. [399]
+
 - Each running server registers a live-process record that installation and status read back. [400]
 
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
@@ -854,11 +859,13 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
 
+
 - The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance. [423]
 
 - The memory leg writes the qualifying review fact while closing history, then refreshes route indexes and entity fingerprints. A failed prepublication refresh restores the closing bytes. [422]
 
 - Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write. [133]
+
 
 - Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The worklist gate uses the contract's recorded bases and exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
 
@@ -966,6 +973,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 - `register_server_binding` writes per-PID binding/ancestry records under `runtime/server-bindings/`, `live_server_bindings` reclaims dead/recycled records, and `harness_root_pids` locates root harness PIDs via `/proc`. [426]
+
 
 
 

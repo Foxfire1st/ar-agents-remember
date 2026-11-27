@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Protects the role-scoped task-server surface: a server launched for a role advertises and dispatches only that role's allowlist from `models/tools/role_tool_scope.py`, a Codex seat is granted the same ordered list, every advertised public tool keeps a raw description at or below 500 characters, every canonical role and the unbound server stay within enforced compact `list_tools()` byte ceilings, a bound Manager session over real stdio lists all 32 compacted tools with unchanged Pydantic validation, and the installed `mcp` SDK satisfies the `>=1.30.0,<2` floor in `mcp/pyproject.toml` with `FastMCP.remove_tool` present and working tool listing.
+Protects the role-scoped task-server surface: a server launched for a role advertises and dispatches only that role's allowlist from `models/tools/role_tool_scope.py`, a Codex seat is granted the same ordered list, every advertised public tool keeps a raw description at or below 500 characters, every canonical role and the unbound server stay within enforced compact `list_tools()` byte ceilings, a bound Manager session over real stdio lists all 32 compacted tools with unchanged Pydantic validation, and the installed `mcp` SDK satisfies the `>=2.3.0,<3` floor in `mcp/pyproject.toml` with `MCPServer.remove_tool` present and working tool listing.
 
 ## Code Commentary
 
@@ -16,9 +16,9 @@ In-process servers bound through `AgentBinding` cover the binding precedence: ev
 
 The budget case (`COMPACT_BYTE_BUDGETS` and `MAX_RAW_TOOL_DESCRIPTION_CHARS = 500`) measures the compact `list_tools()` UTF-8 JSON of the unbound 44-tool server and every canonical role on the same build. It asserts that every unbound tool's raw `description` length is `<= 500`, that every scope stays at or below its compact ceiling and strictly below its pre-compaction baseline (Manager `<= 45,000 B` vs `59,618 B`, Architect `<= 34,000 B` vs `43,988 B`, Orchestrator `<= 34,000 B` vs `43,819 B`, Curator `<= 25,000 B` vs `32,736 B`, Reviewer `<= 19,500 B` vs `25,655 B`, Investigator `<= 14,500 B` vs `18,457 B`, Worker `<= 11,000 B` vs `14,045 B`, Bootstrap `<= 7,500 B` vs `9,027 B`, and Unbound `<= 55,000 B` vs `72,590 B`), that every bound role stays strictly below unbound bytes, and that compacted unbound bytes stay strictly below uncompacted bytes when `_compact_server_tool_schemas` is monkeypatched to a no-op.
 
-Three real MCP stdio sessions run the launched command. A bound Worker lists exactly its allowlist, and a `role_start` call fails before and after the list, leaving two raised-call log rows. A malformed binding initializes without instructions, lists only `server_info`, whose call fails naming `AR_PASEO_AGENT_ID`, and answers `task_doc` and `render` as unknown tools. A bound Manager lists all 32 tools matching `tools_for_role("manager")` (including `curator_coherence` and `worktree_operation_control`), every advertised `inputSchema` equals `compact_tool_schema(tool.inputSchema)` with no root `"title"`, and empty calls to `curator_coherence` and `worktree_operation_control` return `isError is True` under unchanged Pydantic validation.
+Three real MCP stdio sessions run the launched command. A bound Worker lists exactly its allowlist, and a `role_start` call fails before and after the list, leaving two raised-call log rows. A malformed binding initializes without instructions, lists only `server_info`, whose call fails naming `AR_PASEO_AGENT_ID`, and answers `task_doc` and `render` as unknown tools. A bound Manager lists all 32 tools matching `tools_for_role("manager")` (including `curator_coherence` and `worktree_operation_control`), every advertised `input_schema` equals `compact_tool_schema(tool.input_schema)` with no root `"title"`, and empty calls to `curator_coherence` and `worktree_operation_control` return `is_error is True` under unchanged Pydantic validation.
 
-The `mcp` floor case (`test_installed_mcp_meets_declared_floor_and_server_lists_tools`) reads `mcp/pyproject.toml`, asserts a single `mcp` dependency with a floor at least `1.30.0` and a `<2` ceiling, verifies the installed `mcp` distribution satisfies both and exposes `FastMCP.remove_tool`, and checks that `create_server` lists `PUBLIC_TOOLS` unbound and `tools_for_role("worker")` when bound.
+The `mcp` floor case (`test_installed_mcp_meets_declared_floor_and_server_lists_tools`) reads `mcp/pyproject.toml`, asserts a single `mcp` dependency with a floor at least `2.3.0` and a `<3` ceiling, verifies the installed `mcp` distribution satisfies both and exposes `MCPServer.remove_tool`, and checks that `create_server` lists `PUBLIC_TOOLS` unbound and `tools_for_role("worker")` when bound.
 
 ## Relationships
 
@@ -34,6 +34,8 @@ The module is declared in the `unit-regression` lane of [`test-evidence-lanes.to
 
 - A real stdio Manager session lists all 32 compacted tools in canonical order and rejects empty `curator_coherence` and `worktree_operation_control` calls via unchanged Pydantic validation. [5]
 
+
 - A real stdio Worker session lists its allowlist and leaves two raised-call rows for refused role_start calls. [4]
 
-- The floor case checks `mcp>=1.30.0,<2` in `mcp/pyproject.toml`, installed `mcp` compliance, `FastMCP.remove_tool`, and unbound and worker-bound `list_tools()`. [6]
+
+- The floor case checks `mcp>=2.3.0,<3` in `mcp/pyproject.toml`, installed `mcp` compliance, `MCPServer.remove_tool`, and unbound and worker-bound `list_tools()`. [6]

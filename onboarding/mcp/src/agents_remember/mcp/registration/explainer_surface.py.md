@@ -22,6 +22,8 @@ Selects the explainer's four tools on the normal AR task server from the launch-
 - A binding that is present and wrong refuses service rather than falling back to the ordinary roster [1]
 - The workspace must be the environment of the leaf and repository the binding names [3]
 - A generation is a count from one upward, never a string that could sort as one [4]
+
 - The bound surface is registered for that leaf and no other [5]
+
 
 - Capability, required keys and the leaf’s own task folder are checked before the four explainer tools are registered [2]

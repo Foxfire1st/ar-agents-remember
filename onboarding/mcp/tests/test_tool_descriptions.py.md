@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Pins the registered tool descriptions, their longer-explanation files and the synchronous closeout apply description. It reads descriptions from the actual FastMCP registrar.
+Pins the registered tool descriptions, their longer-explanation files and the synchronous closeout apply description. It reads descriptions from the actual `MCPServer` registrar.
 
 ## Contract And Boundaries
 

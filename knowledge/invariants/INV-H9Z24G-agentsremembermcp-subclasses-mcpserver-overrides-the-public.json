@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents moving tool dispatch onto provisional SDK middleware or losing 1.x ToolError wire texts that agents act on, guarded by wire-parity, concurrency, and stdio tests."
+  },
+  "applicability": "Every tool invocation dispatched through AgentsRememberMCP constructed by create_server.",
+  "conditions": [
+    "AgentsRememberMCP subclasses MCPServer and overrides the public 3-argument call_tool(name, arguments, context) method without provisional call middleware.",
+    "Synchronous handlers offload via thread_workers with write-lock FIFO ordering, deferred start_after_discovery, request/definition/heap-trim scopes, and UnexpectedToolError mapped to ToolError carrying the cause message."
+  ],
+  "exclusions": [
+    "Handshake-only initialize middleware preserve_handshake_extensions, which never intercepts tool calls.",
+    "Private SDK attribute retirements deferred to 261125-DEP-L4."
+  ],
+  "id": "INV-H9Z24G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "pytest mcp/tests/test_mcp_dispatch_concurrency.py mcp/tests/test_mcp_build_staleness.py mcp/tests/test_definition_scope_boundaries.py mcp/tests/test_role_tool_scope.py"
+      ],
+      "path": "261125-DEP-L3-curator-pass1.json"
+    },
+    "handoffEntry": "DEP-R03@v2-R2",
+    "leaf": "261125-DEP-L3",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "AgentsRememberMCP subclasses MCPServer, overrides the public 3-argument call_tool(name, arguments, context) method without provisional call middleware, preserves thread_workers offload, write-lock FIFO ordering, deferred post-discovery start, request/definition/heap-trim scopes, and maps UnexpectedToolError back to exact 1.x ToolError wire text.",
+  "supersedes": [],
+  "title": "MCPServer public call_tool preserves offload, lock, scopes, and ToolError text",
+  "writer": {
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
+  }
+}

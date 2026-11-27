@@ -6,12 +6,12 @@
     ],
     "justification": "Omitting post-registration compaction or running it out of order relative to explainer registration and role narrowing leaves uncompacted tool schemas and clips Manager tools above the 48,312 B pack cap; guarded by server parity, budget, and stdio tests."
   },
-  "applicability": "Applies to every FastMCP server constructed by create_server(config) in mcp/src/agents_remember/mcp/server.py across unbound, role-bound, and explainer configurations.",
+  "applicability": "Applies to every MCPServer server constructed by create_server(config) in mcp/src/agents_remember/mcp/server.py across unbound, role-bound, and explainer configurations.",
   "conditions": [
     "Runs once over the entire registered surface immediately after apply_read_only_marks and before _bound_role_tools / _scope_server_tools."
   ],
   "exclusions": [
-    "Does not alter FastMCP fn_metadata.arg_model runtime Pydantic validation, tool registration order, read-only annotations, or role allowlists."
+    "Does not alter MCPServer fn_metadata.arg_model runtime Pydantic validation, tool registration order, read-only annotations, or role allowlists."
   ],
   "id": "INV-NZ27V7",
   "origin": {
@@ -26,27 +26,20 @@
     "leaf": "261124-CAP-L4",
     "task": "261124-CAP"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "create_server compacts every registered tool's advertised inputSchema in place immediately after apply_read_only_marks and before role narrowing, covering unbound, role-bound, and explainer tools without changing runtime Pydantic validation, tool order, or read-only annotations.",
   "supersedes": [],
+  "title": "create_server compacts every tool inputSchema before role narrowing",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261124-CAP-L4",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261124-CAP",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

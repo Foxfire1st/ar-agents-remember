@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-        "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+        "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+        "content": "sha256:025cd73c3787c2534e7365684264f0ca2b09f52f3690ccd6be5609f646656a93",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+        "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
         "content": "sha256:082cab09ab7894853bc81c9ca696c927abadbd0192e26fa03ffd051c29b98c62",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-        "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+        "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+        "content": "sha256:8937309d8fad66f49f7c8774a3d2836e177da632c13969e1658c8faa068562e8",
         "locator": {
           "kind": "symbol",
           "name": "register_worktree_tools"
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
             "content": "sha256:00d0d0a306b15f3f52edeb7b9282a679f15efec7aeef931627220935bc9f86ea",
             "locator": {
               "kind": "symbol",
@@ -73,8 +73,8 @@
         },
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:87afead0ffb9e2e5a7b87802fa44d65ee458aa78a9161726cb7ba6cad488993b",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:df69bef048025caafad2fe1a48babc350ad252f93a37b924931e2ae19386b606",
             "locator": {
               "kind": "symbol",
               "name": "_register_worktree_stop_tools"
@@ -102,7 +102,7 @@
       ]
     },
     "11": {
-      "note": "The pairing this registrar performs: `worktree_sync` builds `SyncResolutionInput(action=resolution_action, source=sync_source)` from the shared continue/cancel and repository-default vocabulary.\n\nAnchor: `worktree_sync`",
+      "note": "The pairing this registrar performs: `worktree_sync` builds `SyncResolutionInput(action=resolution_action, source=sync_source)` from the shared continue/cancel and repository-default vocabulary.",
       "targets": [
         {
           "anchor": {
@@ -142,8 +142,8 @@
         },
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:025cd73c3787c2534e7365684264f0ca2b09f52f3690ccd6be5609f646656a93",
             "locator": {
               "kind": "file"
             }
@@ -157,8 +157,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:8937309d8fad66f49f7c8774a3d2836e177da632c13969e1658c8faa068562e8",
             "locator": {
               "kind": "symbol",
               "name": "register_worktree_tools"
@@ -169,12 +169,12 @@
       ]
     },
     "13": {
-      "note": "Current sync accepts `contract_path`, `memory_sync_choice`, `resolution_action`, `dry_run` and `sync_source`, packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`, and warns that memory merges only through `worktree_sync` and raw `git merge` is an unsupported hand edit; its compact single-line description is 426 characters raw (within the 500-character raw ceiling in `test_role_tool_scope.py` and the 600-character bound in `test_tool_descriptions.py`).\n\nAnchor: `worktree_sync`",
+      "note": "Current sync accepts `contract_path`, `memory_sync_choice`, `resolution_action`, `dry_run` and `sync_source`, packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`, and warns that memory merges only through `worktree_sync` and raw `git merge` is an unsupported hand edit; its compact single-line description is 426 characters raw (within the 500-character raw ceiling in `test_role_tool_scope.py` and the 600-character bound in `test_tool_descriptions.py`).",
       "targets": [
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:025cd73c3787c2534e7365684264f0ca2b09f52f3690ccd6be5609f646656a93",
             "locator": {
               "kind": "file"
             }
@@ -188,8 +188,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:025cd73c3787c2534e7365684264f0ca2b09f52f3690ccd6be5609f646656a93",
             "locator": {
               "kind": "file"
             }
@@ -199,12 +199,12 @@
       ]
     },
     "2": {
-      "note": "Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`; there is no `knowledge_resolution` argument.\n\nAnchor: `worktree_sync`",
+      "note": "Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`; there is no `knowledge_resolution` argument.",
       "targets": [
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:025cd73c3787c2534e7365684264f0ca2b09f52f3690ccd6be5609f646656a93",
             "locator": {
               "kind": "file"
             }

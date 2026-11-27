@@ -65,7 +65,9 @@ to removed methods are superseded by this current inventory.
 - Snapshot subscription cannot lose an interleaved projection [1]
 
 
+
 - Etag 304 cycle then new etag on content change [2]
+
 
 
 ### Cross-Repo References
@@ -79,7 +81,9 @@ No external evidence is needed for these assertions.
 
 
 
+
 - The real native watcher observes the nested atomic rename.  Anchor: `BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling` [3]
+
 
 
 - Work/rest notifications and rest bounds share one timeline.  Anchor: `BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest` [4]

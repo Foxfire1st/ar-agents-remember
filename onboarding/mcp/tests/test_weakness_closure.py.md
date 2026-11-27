@@ -12,7 +12,7 @@ Exercises weakness closure authoring through the registered `knowledge_write` to
 
 ### Logic
 
-The fixture creates a writer world and registers the FastMCP tools. `_submit` calls the registered writer with a task-bound handoff; `_read_closures` calls the weakness and record views with `includeClosed`, the selected memory root and code tree. The shared snapshot compares file bytes, HEAD and index bytes in both repositories before and after those reads. `_store` and `_defer` directly construct historical fixture states; they are not public authoring evidence.
+The fixture creates a writer world and registers the `MCPServer` tools. `_submit` calls the registered writer with a task-bound handoff; `_read_closures` calls the weakness and record views with `includeClosed`, the selected memory root and code tree. The shared snapshot compares file bytes, HEAD and index bytes in both repositories before and after those reads. `_store` and `_defer` directly construct historical fixture states; they are not public authoring evidence.
 
 The own-task case previews without changing the snapshot, then writes a task/reason closure without guessing a code commit. It preserves the original anchor and seen metadata. Both public views first return the pending closeout note, then return the actual code commit after a paired memory commit, while the stored closure remains unchanged. Explicit and deferred closure forms also parse through the knowledge tree and index and remove the open weakness from maintenance marks/counts.
 
@@ -29,6 +29,7 @@ The test worlds are task-local fixtures. The direct historical setup helpers and
 ### Repo-Internal References
 
 - Registered writer/reader helpers bind the isolated world and compare both repository snapshots around reads. \[1] [1]
+
 - Actual committed-message and Git captures distinguish body-only mentions from a genuine final trailer in both public views. \[2] [2]
 - Own-task preview/write and stored explicit/deferred forms preserve observations and remove the closed mark. \[3] [3]
 - Other-task authoring requires an explicit actual code commit and rejects the five named invalid object classes without partial writes. \[4] [4]

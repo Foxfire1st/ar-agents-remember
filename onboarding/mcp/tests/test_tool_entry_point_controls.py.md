@@ -30,6 +30,7 @@ The argument-versus-response validation control calls `citation_fix` with no `re
 
 - The retained handler deadline control names server_info and checks cleanup plus the next call. [6]
 
+
 - The retained-list control injects an undeclared key into a real `read_ar_files` list item and names its indexed path in the unvalidatable result. [7]
 
 - A real tool call reaches a classified payload with socket send refused. [8]

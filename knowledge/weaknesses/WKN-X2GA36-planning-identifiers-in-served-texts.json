@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
-    "content": "sha256:d95011d6809b6c8c77c0b627270115c04ab21626427fc2b7ad9636e28b8662d2",
+    "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
+    "content": "sha256:32a2819d17e4319b3be30b9beddc368bc4ef4d3c02fd1e6a186bf9ac626ddd42",
     "locator": {
       "kind": "file"
     },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -26,21 +26,14 @@
   "state": "open",
   "statement": "Served tool descriptions and command help texts hold identifiers of planning (22 places), and so do the descriptions of the explainer's tools and many string constants of the source.",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

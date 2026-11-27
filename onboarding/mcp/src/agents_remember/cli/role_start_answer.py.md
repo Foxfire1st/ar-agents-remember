@@ -66,4 +66,5 @@ For Bootstrap the answer independently adds the dashboard address result and the
 
 
 
+
 - Dashboard publication requires the owner/origin result; host chat independently derives its route from embed, reported server id and receipt agent id without an HTTP chat-page probe. [8]

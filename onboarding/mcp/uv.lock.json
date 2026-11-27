@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+        "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
         "content": "sha256:2706c5cf78f6bb225e4b439ee08b7a68851f562687540b46ea40092947c4a10d",
         "locator": {
           "end": 7,
@@ -22,8 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
-        "content": "sha256:5bf2c1bb5c49e302a051084439c001f17b8800fea8c00695cd6baa73cb485c78",
+        "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
+        "content": "sha256:1a1423229b8fc64d3e30a3d143d6fc5477220b1c8163e0ce3eb3379ad15f98e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XQXATE",
+      "invariant": "INV-DY0898",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R1-proof",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Pins mcp 2.3.0 and its transitive dependency delta (adding httpcore2, httpx2, httpx2-jsfetch, mcp-types, truststore; removing httpx-sse, pydantic-settings, python-dotenv) while holding every other direct dependency steady.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
+        "content": "sha256:1a1423229b8fc64d3e30a3d143d6fc5477220b1c8163e0ce3eb3379ad15f98e2",
         "locator": {
           "kind": "file"
         }
@@ -34,18 +51,18 @@
         "handoffEntry": "DEP-R01@v2 §1",
         "leaf": "261125-DEP-L1"
       },
-      "rationale": "Records the >=1.30.0,<2 mcp specifier and resolves the locked 1.x dependency graph consumed by frozen sync.",
+      "rationale": "Records the >=2.3.0,<3 mcp specifier and resolves the locked mcp 2.3.0 dependency graph consumed by frozen sync.",
       "role": "propagation-persistence"
     }
   ],
   "references": {
     "2": {
-      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.\n\nAnchor: `[[package]]` / `name = \"agents-remember-mcp\"`",
+      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.",
       "targets": [
         {
           "anchor": {
-            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
-            "content": "sha256:136fee7a3e654708671380e5c00e511efe31cff61d86ec8a8420ee0fc472b9bb",
+            "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
+            "content": "sha256:a6954af05f76f6ce6e11a522f679540334b0f1916a995b8487631072bc727387",
             "locator": {
               "end": 23,
               "kind": "line_range",

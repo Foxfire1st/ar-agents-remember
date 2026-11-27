@@ -26,5 +26,7 @@ The module contains fourteen test functions (twenty-one collected cases with par
 
 - Verifies legacy v1 compatibility without a sidecar, `recordedAt` preservation across re-reads, and expired sidecar pruning at sizes 2 and 20. [1]
 - Verifies multi-window `until` recomputation, single-window report drop with `clearedSeats` and stopped polling, periodic drop clear markers, and two-file rollback on limits-write failure. [2]
+
 - Verifies the fail-closed causal guard matrix, `in-turn`/`permission` auto-suppression, off-loop MCP hook execution with I/O error containment, and unbound/malformed binding skips. [3]
+
 - Verifies `agents-remember provider-limits status`, `suppress`, and `unsuppress` JSON outputs and exit-2 refusals end-to-end. [4]

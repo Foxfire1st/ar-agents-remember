@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
-    "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Audited docs/architecture.md against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5): mcp/server.py off-loop _maybe_suppress_provider_limits, cli/__main__.py provider-limits command, and serving/paseo/provider_limit_suppressions.py preserve all documented architectural boundaries with zero contradictions.",
-    "task": "261112-BUG-L60",
+    "statement": "Audited docs/architecture.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+      "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -170,8 +170,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+        "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
           "name": "call_tool"
@@ -230,8 +230,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+        "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
@@ -242,8 +242,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+        "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+        "content": "sha256:dab098f3d1001b825134ccc1f1f9ec446e37158a26d2e654f870bd03a72fabc0",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._execute_tool_call"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:18:52+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
-    "task": "261112-BUG"
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

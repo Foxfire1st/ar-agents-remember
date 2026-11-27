@@ -25,7 +25,9 @@ Declares the explainer's four tools — `render`, `define_category`, `remove_cat
 ## Evidence
 
 - The explainer's surface is supplied on the server the seat launch already built [1]
+
 - A grade carries the binding it was made at and refuses when the environment left it [5]
+
 
 
 - The announce answer passes through whole, with no run folder to name. [6]

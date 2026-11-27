@@ -245,10 +245,11 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 
 
+
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
 
 - The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]
 
 - Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
 
-- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. [104]
+- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. \[104] [104]

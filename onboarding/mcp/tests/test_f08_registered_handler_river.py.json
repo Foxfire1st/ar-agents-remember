@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
+        "blob": "1f45e11721fb8c82a68870895e083022fe2c8cbe",
         "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
+            "blob": "1f45e11721fb8c82a68870895e083022fe2c8cbe",
             "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
+            "blob": "1f45e11721fb8c82a68870895e083022fe2c8cbe",
             "content": "sha256:c690c865a430adb2b93db666f983b7406c842f5ad0b8c59404319fc8bdd6541c",
             "locator": {
               "kind": "symbol",
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07507ed6e7647def78c69a3694e6ebb6cf4ef377",
-            "content": "sha256:0f69719ddb53afcb9760221cddb54cad35c91bbf229c57a75221a2b1d3a56ffa",
+            "blob": "1f45e11721fb8c82a68870895e083022fe2c8cbe",
+            "content": "sha256:3ce4aad0bd4967077ff965771acd389e07a1e63d24905a9a88da6b608401014c",
             "locator": {
               "kind": "symbol",
               "name": "_call_server_info"

@@ -82,7 +82,7 @@ TOOL_RESPONSE_MODELS adds role_start=RoleStartResponse and role_message=RoleMess
 
 - Every advertised MCP tool has a registered response model.
 - **Registration is what makes an advertised tool answerable.** `finalize_tool_response` indexes
-  `TOOL_RESPONSE_MODELS` by tool name (`models/tools/tool_response.py`), so a name that FastMCP
+  `TOOL_RESPONSE_MODELS` by tool name (`models/tools/tool_response.py`), so a name that `MCPServer`
   publishes but this registry omits raises `KeyError` inside the tool handler rather than returning
   a payload. A registered row must also sit in the same relative order as its
   `mcp.tools.PUBLIC_TOOLS` entry.

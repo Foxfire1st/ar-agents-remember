@@ -59,11 +59,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:86df5ba0e21313eb37e969223c7d9683ece433561c0b281f700c2de91762a4f9",
+            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
             "locator": {
               "kind": "symbol",
-              "name": "register_capsule_and_skill_tools"
+              "name": "build_skills_extension"
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -76,8 +76,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
-            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
+            "content": "sha256:f11e58ea821e6720184e3bb473453cd052de565f5578e75c717551dc7820a53a",
             "locator": {
               "kind": "symbol",
               "name": "register_knowledge_tools"
@@ -247,12 +247,12 @@
       ]
     },
     "8": {
-      "note": "The live registered-order comparison that treats this tuple as the advertised authority.\n\nAnchor: `source range`",
+      "note": "The live registered-order comparison that treats this tuple as the advertised authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
-            "content": "sha256:99af9a6a427cf236127e24d5be61389107383dbbf702a8547b09e09dc08713ed",
+            "blob": "d31651242c5427f608d0446cf2911f4eeddf2db3",
+            "content": "sha256:5ceceb6f8b3a5bc05205e7ce794203a7f6c3468f34a7ffa5c7c46475ba9c0a0b",
             "locator": {
               "kind": "symbol",
               "name": "PublicSurfaceInventoryTests"
@@ -263,8 +263,8 @@
         },
         {
           "anchor": {
-            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
-            "content": "sha256:b805de0d79f475a5787fd49ded1bfe30593aeb7a995f6e5665af2e6462635a75",
+            "blob": "d31651242c5427f608d0446cf2911f4eeddf2db3",
+            "content": "sha256:6d4071e7766fba84a6bc62cad5e33def6d3359243c046c8ce4b25726374e35a7",
             "locator": {
               "end": 311,
               "kind": "line_range",

@@ -51,6 +51,7 @@ cases decide whether the directory or unlanded branch actually exists.
 
 
 
+
 - A leaf worktree directory that exists and a leaf branch with unlanded commits are open work. [2]
 
 

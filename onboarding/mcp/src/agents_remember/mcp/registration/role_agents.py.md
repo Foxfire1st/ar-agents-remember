@@ -38,22 +38,27 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 
 - The caller harness name comes from MCP initialization. Role start forwards `step_up` into `RoleStartCall` and delegates launch through the shared request thread. [6]
 
+
 - The registrar declares typed start/set/message inputs and delegates to their payload owners. The current `role_message` description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
+
 
 
 - The typed role start, role start set and role message declarations expose the public inputs and compact descriptions. The payload owners retain launch, message and receipt policy. [3]
 
 
+
 - The registration that mounts the role tools and the settings initializer. [8]
 
 
+
 - The role registrars build typed calls and delegate to their payload owners. Both start handlers use the shared request-thread helper, which drains blocking work before propagating cancellation. [9]
+
 
 
 - The settings initializer and role messages run through the detached request-thread helper. [11]
 
 ## The caller's harness name and the settings tool
 
-`caller_harness_name` reads the client name the calling harness sent in its `initialize` request from the served request context, and answers `None` for a client that named nothing or for a call made outside a served request, so the launch reports an unknown caller harness rather than inventing one. `user_settings_init` is registered beside the three role tools, takes a target, an optional harness or per-role harnesses and a dry run, and runs its payload builder through the detached request-thread helper.
+`role_start` accepts an injected `ctx: Context[Any, Any] | None = None` parameter (omitted from `inputSchema` by `MCPServer`) and passes `caller_harness_name(ctx)` into `RoleStartCall`. `caller_harness_name` reads `ctx.session.client_params.client_info.name` during a served request and returns `None` when `ctx` is `None`, when `ctx.session` raises `ValueError` outside a request, or when the client named nothing, so the launch reports an unknown caller harness rather than inventing one. `user_settings_init` is registered beside the three role tools, takes a target, an optional harness or per-role harnesses and a dry run, and runs its payload builder through the detached request-thread helper.
 
 - The transport's own client name, or no name at all. [7]

@@ -107,6 +107,7 @@ extension specification, SEP-2640).
 
 - These builders serve this server's own tool surface; the extension's enumeration result is produced by the `skills/list` handler. [10]
 
+
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.

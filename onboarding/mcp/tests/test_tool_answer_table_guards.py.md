@@ -46,4 +46,5 @@ The carryover cases check delivered outcome and action order through production 
 
 - Production completion and the text compactor preserve the carryover outcome and action order. The integrity fitter keeps the higher-priority `validation.candidate` omission and leaves out the later `bases` value. [4]
 
+
 - Error priority leaves a warning marker when no warning text fits. The marker remains on a refit. [5]

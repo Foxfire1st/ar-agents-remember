@@ -35,4 +35,5 @@ Tests the explainer’s mounted render and grade tools, their leaf binding and l
 
 - The render tool description asks the seat to say the announcement before fetching and names no shell command. [5]
 
+
 - The render case checks report and picture paths, full on-disk errors and a bounded reply, publication part map and coverage, revision copies, resumed successor publication and moved-binding refusal. [9]

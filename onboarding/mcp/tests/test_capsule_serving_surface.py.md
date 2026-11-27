@@ -66,6 +66,7 @@ catch, so no guard passes without being reached.
 
 - Live-server traversal refusal and the harness-can-fail sanity check. [4]
 
+
 - Seeded-mutation guards: containment, index, name rule and idempotence. [5]
 
 

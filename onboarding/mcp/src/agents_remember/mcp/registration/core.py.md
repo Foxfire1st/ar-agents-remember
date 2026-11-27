@@ -20,7 +20,7 @@ Identity/orientation/install declarations use the light sentinel and lazily reso
 
 ## Code Commentary
 
-The registered identity reader `server_info` retains explicit ToolAnnotations: `readOnlyHint=True`,
+The registered identity reader `server_info` retains explicit ToolAnnotations: `read_only_hint=True`,
 `destructiveHint=False`, `idempotentHint=True`, `openWorldHint=False`. These describe the identity
 operation, not a promise that its admitted tool-call logging creates no bytes.
 
@@ -48,6 +48,7 @@ server_info describes optional toolServer and agentBinding of a launched server.
 - The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping. [9]
 
 
+
 - `read_ar_files_payload`, imported through the `mcp.tools` facade. [2]
 
 
@@ -59,12 +60,15 @@ server_info describes optional toolServer and agentBinding of a launched server.
 
 
 
+
 - The installation tools and the `runtime_install` registration. [7]
+
 
 
 - The packet description states what `include_drift` measures and that omitting it measures nothing. [8]
 
 - `_register_orientation_tools` declares `context_packet` and `read_ar_files` (naming `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)`) and removes the obsolete `refresh` argument from the advertised schema. [6]
+
 
 ## The install description and the skill corpus
 
@@ -73,5 +77,6 @@ The `runtime_install` description says the call installs/refreshes the coordinat
 
 
 - The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh. [10]
+
 
 - Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused. [11]

@@ -75,12 +75,12 @@
       ]
     },
     "11": {
-      "note": "The writer's planned rows and every refusal.\n\nAnchor: `test_the_writer_writes_planned_rows_and_refuses_what_they_cannot_name`",
+      "note": "The writer's planned rows and every refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
-            "content": "sha256:4f1588452352498062ecf77e5ebc010a470552fc6638e32791882bf0a76cb122",
+            "blob": "f6798605ba745f70849c76c1f7e5881f7e897155",
+            "content": "sha256:52c2aa95417d74fce8560a9ef2a31e493a7fd16f683d2d3e81b93d715ad11f2a",
             "locator": {
               "kind": "file"
             },

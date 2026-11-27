@@ -25,6 +25,7 @@ The counted parser is shared with `test_definition_scope.py`. Production lifetim
 
 - The registered synchronous handler reuses its Python definition and TypeScript anchor memo within one native call. The next call parses the inputs again. [1]
 
+
 - Finite CLI scopes clear on success and exceptions. [2]
 - Dashboard option dispatch leaves server requests outside a process scope. [3]
 

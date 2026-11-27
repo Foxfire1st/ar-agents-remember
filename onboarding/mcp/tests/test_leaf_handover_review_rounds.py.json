@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
-        "content": "sha256:095da9f2ff142e0464763a8ee03bd05f696f29d852e731612aa46725f9c2e514",
+        "blob": "e60195369f3f1f805287d4df26af221a7aba11dd",
+        "content": "sha256:1a24b8fa89558818d4a6f58d46156ed404fbbdc2125050d3f9972eb3bada099e",
         "locator": {
           "kind": "symbol",
           "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
-        "content": "sha256:e5082f0657f86656442c332d5002c57184bd035d28b7a08fe95fb80565492cda",
+        "blob": "e60195369f3f1f805287d4df26af221a7aba11dd",
+        "content": "sha256:5d311b37da6a37185b5f3bcf045ea1d1cb3977d856177665386a363a3cbdb55c",
         "locator": {
           "kind": "file"
         }
@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "A bound Reviewer opens and records ordinary CODE BLOCK rounds, retaining the same unresolved sealed ID; changed IDs and the next unapproved begin are refused.\n\nAnchor: `test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits`",
+      "note": "A bound Reviewer opens and records ordinary CODE BLOCK rounds, retaining the same unresolved sealed ID; changed IDs and the next unapproved begin are refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
-            "content": "sha256:e5082f0657f86656442c332d5002c57184bd035d28b7a08fe95fb80565492cda",
+            "blob": "e60195369f3f1f805287d4df26af221a7aba11dd",
+            "content": "sha256:5d311b37da6a37185b5f3bcf045ea1d1cb3977d856177665386a363a3cbdb55c",
             "locator": {
               "kind": "file"
             }

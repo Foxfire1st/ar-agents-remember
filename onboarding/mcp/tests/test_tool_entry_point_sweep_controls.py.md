@@ -22,4 +22,5 @@ Each arm is proven reachable by a constructed shape rather than assumed, and one
 
 - The choke point catches a forbidden payload, and the two failure shapes arrive in their own named arms. [1]
 
+
 - The census notices a write, a rewrite and a delete inside a repository and at the coordination boundary. [2]

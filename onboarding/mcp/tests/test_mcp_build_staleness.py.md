@@ -17,8 +17,11 @@ Two answer-shaping cases sit beside the gate: the stale annotation survives the 
 ## Evidence
 
 - A stale refusal is structured content over the real MCP transport and the handler is not entered [1]
+
 - Every declared publication refuses before its handler with both digests and the remedy; its dry run answers [2]
+
 - Reads, messages, planning calls and unknown tools are not publication; unknown or absent readings add no annotation [3]
+
 - Every task-document operation except `linkage_report` and dry runs is publication [4]
 - A runtime-install preview keeps every host action in its named log [5]
 - The stale annotation survives answer overflow [6]

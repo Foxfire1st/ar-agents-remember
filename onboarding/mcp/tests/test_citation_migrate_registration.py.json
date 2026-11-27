@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+        "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
         "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+        "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
         "content": "sha256:08672d24d93014ad1c5a562857c47567569aeb5a8ab8b41a394fed5b677e8559",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "Retained citation_fix-only configured-contract-authority refusal assertions.\n\nAnchor: `test_citation_tools_name_a_configured_contract_authority_refusal`",
+      "note": "Retained citation_fix-only configured-contract-authority refusal assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
-            "content": "sha256:43c78866b14d9f46fa72c00abdc5dc8c3089f30ce001436395ef7e624076b47a",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
+            "content": "sha256:f73fb2824e33acee713d96096e9b55361ed5bd168b8b85031b527e6819d922be",
             "locator": {
               "kind": "file"
             }
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
             "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
             "locator": {
               "kind": "symbol",
@@ -74,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
-            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
+            "content": "sha256:54037f84e67b3acecd637d968e65c9ec1bc49fd526793f1f12b497962ac1d7de",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -91,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
-            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
+            "content": "sha256:54037f84e67b3acecd637d968e65c9ec1bc49fd526793f1f12b497962ac1d7de",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -108,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
-            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
+            "content": "sha256:54037f84e67b3acecd637d968e65c9ec1bc49fd526793f1f12b497962ac1d7de",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -125,8 +125,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
-            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
+            "content": "sha256:54037f84e67b3acecd637d968e65c9ec1bc49fd526793f1f12b497962ac1d7de",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -142,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
             "content": "sha256:0319d1be96e926246dec4307b80c2a2aac8ab2c7522aa3575adf9dba2752f045",
             "locator": {
               "end": 160,
@@ -155,12 +155,12 @@
       ]
     },
     "9": {
-      "note": "Negative registration/roster/model assertions for citation_migrate.\n\nAnchor: `test_the_tool_is_not_registered_advertised_or_modelled`",
+      "note": "Negative registration/roster/model assertions for citation_migrate.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
-            "content": "sha256:43c78866b14d9f46fa72c00abdc5dc8c3089f30ce001436395ef7e624076b47a",
+            "blob": "28abc68c2ec349ade9b340b14da5f40a28e82d52",
+            "content": "sha256:f73fb2824e33acee713d96096e9b55361ed5bd168b8b85031b527e6819d922be",
             "locator": {
               "kind": "file"
             }

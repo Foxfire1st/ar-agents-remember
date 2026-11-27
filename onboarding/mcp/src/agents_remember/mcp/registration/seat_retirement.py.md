@@ -25,4 +25,5 @@ Scope uses the caller binding and the selection recorded for `agent_id`. Open ch
 No Domain Documentation source is configured for this repository-specific boundary.
 
 - `register_seat_retirement_tools` registers scope-based `retire_child` with required `agent_id` and `role`, optional task references, `reason`, and `interrupt_turn`. [1]
+
 - The `retire_child` signature stays strict while `tools.retire_child_payload` loads only when retirement is invoked. [2]

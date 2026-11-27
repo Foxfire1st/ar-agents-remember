@@ -42,4 +42,4 @@ process, so a shortcut in the test cannot substitute for the startup path.
 
 - A fresh process writes its first call through startup. [2]
 
-- The first-call protocol vehicle is the registered `server_info`. [3]
+- The first-call protocol vehicle is registered server_info. [3]

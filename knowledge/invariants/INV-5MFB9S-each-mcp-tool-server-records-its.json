@@ -9,7 +9,7 @@
   },
   "applicability": "Every MCP tool server started via run_server under a trusted runtime config.",
   "conditions": [
-    "The server writes runtime/server-bindings/<pid>.json atomically before FastMCP transport startup with bindingState bound, unbound, or unreadable plus /proc process ancestry when readable.",
+    "The server writes runtime/server-bindings/<pid>.json atomically before MCPServer transport startup with bindingState bound, unbound, or unreadable plus /proc process ancestry when readable.",
     "The legacy runtime/servers/<pid>.json record keeps its unchanged schema and directory contents for older readers.",
     "Cleanup runs in nested finally blocks on exit, and live_server_bindings prunes dead or PID-recycled records."
   ],
@@ -31,20 +31,20 @@
     "leaf": "261112-BUG-L51",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Each MCP tool server records its launch binding state (bound, unbound, or unreadable with reason) and process ancestry in a peer server-bindings registry before serving, without altering the legacy servers inventory schema or directory contents.",
   "supersedes": [],
   "title": "Peer MCP server-binding registry preserves legacy server inventory",
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

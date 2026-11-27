@@ -31,4 +31,5 @@ Callers: the MCP tool dispatcher reads it before each call, attaches it to the r
 
 - The tool dispatcher refuses a declared write of an installed stale build. [7]
 
+
 - The reading's fields. [8]

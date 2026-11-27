@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:de5df3329e36596ea337b524294bf7c688692d7f345903ba3be15e1ecf15e733",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
             "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
             "locator": {
               "end": 38,
@@ -118,8 +118,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:e6e1dac341d2f9320dfc6df77c23a0721ce53a5a182fdc79390f7b16f089f263",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:3ac30a67b44bc3fe0652a78e482cf354d46793bb899635f3277591bc17886651",
             "locator": {
               "end": 38,
               "kind": "line_range",
@@ -136,8 +136,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
-            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
+            "content": "sha256:f11e58ea821e6720184e3bb473453cd052de565f5578e75c717551dc7820a53a",
             "locator": {
               "kind": "symbol",
               "name": "register_knowledge_tools"
@@ -153,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
             "content": "sha256:560387f2a58cd5720aac11b4af3f53b1112325cda9f1ab06f47c592d3a6e2b9f",
             "locator": {
               "end": 97,
@@ -171,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
-            "content": "sha256:4464d5201513553236b59e23bb82bc15789d8962e357e5016f44b936b7ccd448",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
+            "content": "sha256:3496f21f8977d6ecf74fdbce0b0ae98b57534921327b12baa7de4cd8441f6152",
             "locator": {
               "kind": "file"
             },
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "blob": "23a1c6ad9f6bd3901eceb246e102a65b4da76578",
             "content": "sha256:d3904d08bba4f55e5c552cb463dc3dd126301d9253d924d35da32fc69b4436d5",
             "locator": {
               "kind": "symbol",
@@ -204,8 +204,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"
@@ -221,8 +221,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:e1cfb1d0b54ab0387e3c407d5a4ce057611cb133006b605a3496a680bc112567",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_REGISTRARS"
@@ -254,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
             "content": "sha256:c19a478af6a295a298495f09d8ff35aa57dc4b5a2fc22dcbfbc2678f286a47cb",
             "locator": {
               "end": 99,
@@ -268,16 +268,15 @@
       ]
     },
     "31": {
-      "note": "[29] mcp/src/agents_remember/models/tools/public_roster.py — code file",
+      "note": "Skill resources, extension assembly, and index/file resource construction.",
       "targets": [
         {
           "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:2a0c1ef223f4a96d0b2c802064282856e3da48addd7a68e59f66ca56434f1ae7",
+            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "content": "sha256:be7c987f8283ae03c1d0b761d158a9b4f92828ca73c549f9fd11ec544d9252d5",
             "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 69
+              "kind": "symbol",
+              "name": "build_skills_extension"
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -285,12 +284,23 @@
         },
         {
           "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:52044c70862e4e13740be40f57fd4f6accb5d0e68cdc480b1ba24576c9669969",
+            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "content": "sha256:89f190be8ce3cc808d1fa2a9c7ab867ef79facd8fad0533b104890f5c2a9bfc6",
             "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 126
+              "kind": "symbol",
+              "name": "skill_file_resource"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "258e8889d54240a6cb99097769960079ff63df0b",
+            "content": "sha256:cf56060852f0ad8e340b08dc8305a8cc6a39c7138f48e42f8cce37daa403680c",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_resource"
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -299,16 +309,15 @@
       ]
     },
     "32": {
-      "note": "[31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183",
+      "note": "SEP-2133 `SkillsExtension` registration, initialize handshake middleware, and catalog-backed `skills/list` and `skills/get` handlers.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:44c82fd66623074547ce6352c099043a559721610f6838ac09e1c2d3e3ead069",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:64cd5a83734a769dfd2f4168e41a0344504598d0a203464a8b7f83a80aa317f0",
             "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 133
+              "kind": "symbol",
+              "name": "SkillsExtension"
             },
             "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
           },
@@ -316,12 +325,11 @@
         },
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:eeb8903d1b0373cedaa3c2a8796fb91f94fb8083674172832c118203a0b17f3e",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:ae91c1f63a0c838b7f3f2af3a36bd303a7b56bdebf3e07b1450f15c8d115086b",
             "locator": {
-              "end": 294,
-              "kind": "line_range",
-              "start": 235
+              "kind": "symbol",
+              "name": "preserve_handshake_extensions"
             },
             "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
           },
@@ -330,12 +338,12 @@
       ]
     },
     "33": {
-      "note": "The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep.\n\nAnchor: `_register_closeout_queue_tools` .. `register_task_tools`, `_TASK_DOC_TOOL_DESCRIPTION`",
+      "note": "The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep.",
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-            "content": "sha256:1911efab1f6c8bf56adac39d52e2be7fe3edb1cbc4f728aef347708efa68a700",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+            "content": "sha256:adfa105be7c86e4b1b4391b65a61c2c954504c68e3b148d17caa407bba4ab236",
             "locator": {
               "kind": "symbol",
               "name": "_register_closeout_queue_tools"
@@ -346,8 +354,8 @@
         },
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-            "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+            "content": "sha256:ce1a7e9d1de20f3e03a8e38b4cfc3e085db082b5646c9b81f638d73e52c12186",
             "locator": {
               "kind": "symbol",
               "name": "register_task_tools"
@@ -358,7 +366,7 @@
         },
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
               "kind": "symbol",
@@ -371,12 +379,12 @@
       ]
     },
     "38": {
-      "note": "The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.\n\nAnchor: `register_closeout_tools`; `PUBLIC_TOOLS`; `register_task_tools`; `register_role_agent_tools`; `register_worktree_tools`",
+      "note": "The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
-            "content": "sha256:952000fce6cbf02aae6d6273fddaec9741911d3149dd6654637921a0e5fe0ed5",
+            "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
+            "content": "sha256:e14344cd2dcf595d913b268463906f1e4f0b815624ea59b75b16106de5077a9e",
             "locator": {
               "kind": "file"
             },
@@ -397,8 +405,8 @@
         },
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-            "content": "sha256:58b2d7342e62a7b7c769f37ef096450b57a883f06d4715e2e450f06fca633c7c",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+            "content": "sha256:3c7293ea8a0169b4b0303a35f93bf71cfbfe0c4746057789cd54df10b71895b8",
             "locator": {
               "kind": "file"
             },
@@ -408,8 +416,8 @@
         },
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:b8667a3188762b86905f1da9cd2472021af37a3f8901bdca9968a801b3b56f4d",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:ed9ae118c73a53d68141bead405be75b6694ff2d7603811bc6cebac761c33d07",
             "locator": {
               "kind": "file"
             },
@@ -419,8 +427,8 @@
         },
         {
           "anchor": {
-            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
-            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+            "content": "sha256:025cd73c3787c2534e7365684264f0ca2b09f52f3690ccd6be5609f646656a93",
             "locator": {
               "kind": "file"
             },
@@ -435,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
             "content": "sha256:417c74110107ef6158b5d5127b0095e65ff5f2e048cd33d14729d560f3784a66",
             "locator": {
               "end": 98,
@@ -453,8 +461,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
-            "content": "sha256:6eef4967414aeca946190f07dcbc371947124220dbcf0ee7202800c57191b6e9",
+            "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
+            "content": "sha256:72ab02c4a3ac3ce8f75f7ffe898c16367a8dc38376f7b900163e2a509eadbb8c",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"
@@ -470,8 +478,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:844900c90b52903fa18413aedb3a1eca8cda0b0cd016575ebe6bccd4d49359e0",
+            "blob": "3883b7156f50b4ae9db0011699bd15210db163e8",
+            "content": "sha256:7b41eb20eb3971e048a0cbf3a6ddc94ed6ccc2a4ea3b24f0e85eaed1d9d83720",
             "locator": {
               "end": 492,
               "kind": "line_range",
@@ -483,8 +491,8 @@
         },
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:d4a3177819f2f7372a5f1f177f9e5cd66f9efce016ca77fd4d4650b4e5082bdf",
             "locator": {
               "kind": "file"
             },
@@ -499,7 +507,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "blob": "23a1c6ad9f6bd3901eceb246e102a65b4da76578",
             "content": "sha256:d3904d08bba4f55e5c552cb463dc3dd126301d9253d924d35da32fc69b4436d5",
             "locator": {
               "kind": "symbol",
@@ -516,7 +524,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
             "content": "sha256:5bf4fec216570f74150d1131db48e49fd565f12d55d5ef00851951eb96279e9c",
             "locator": {
               "end": 91,
@@ -534,8 +542,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
-            "content": "sha256:b3a9ee71c0a665c2729a74ff431ebfdec2fd898fe84bd11b0e535c6d658fed57",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
+            "content": "sha256:6c47c5717f2fcc701d0fe68aa7a23acc893ed3ac03b981a876834095c845b59d",
             "locator": {
               "kind": "symbol",
               "name": "_register_knowledge_integrity_check"
@@ -551,8 +559,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
-            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
+            "content": "sha256:f11e58ea821e6720184e3bb473453cd052de565f5578e75c717551dc7820a53a",
             "locator": {
               "kind": "symbol",
               "name": "register_knowledge_tools"

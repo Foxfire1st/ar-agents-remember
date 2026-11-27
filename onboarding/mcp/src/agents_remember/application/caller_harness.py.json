@@ -52,12 +52,12 @@
       ]
     },
     "4": {
-      "note": "A model-only bootstrap call is served on the calling chat's own harness, and a provider the bound harness does not offer is refused before a seat exists.\n\nAnchor: `test_a_model_only_bootstrap_call_binds_the_callers_own_harness`; `test_a_model_the_bound_provider_does_not_offer_is_refused_before_the_seat`",
+      "note": "A model-only bootstrap call is served on the calling chat's own harness, and a provider the bound harness does not offer is refused before a seat exists.",
       "targets": [
         {
           "anchor": {
-            "blob": "82ed2ccfcff8f1c3017f2058a0cddec1b6f5831e",
-            "content": "sha256:c4cd3714da1f6cabeba5137f13795bbcb1d46d69e8c93ef3e50e33c8ed760222",
+            "blob": "60ab84c85f6d881e61373c375f173d27716a493e",
+            "content": "sha256:ad75f0e43aa0390b21c39b8e85e60f81326059bac622f061623a13e6266f7874",
             "locator": {
               "kind": "file"
             },

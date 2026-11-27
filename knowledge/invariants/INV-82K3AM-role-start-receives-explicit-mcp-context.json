@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by FreeSeatOverrideTests.test_real_session_client_info_arrives_via_injected_context and prevents silent empty caller_harness from 1.x clientInfo spelling or unhandled ValueError outside a request."
+  },
+  "applicability": "Caller harness name resolution in registered role_start tool calls.",
+  "conditions": [
+    "role_start declares ctx: Context[Any, Any] | None = None so MCPServer injects the active Context without advertising ctx in inputSchema.",
+    "caller_harness_name reads session.client_params.client_info.name during a served request and returns None when ctx is None or ctx.session raises ValueError outside a request."
+  ],
+  "exclusions": [
+    "Other role tools (role_start_set, user_settings_init, role_message) that do not read client_info."
+  ],
+  "id": "INV-82K3AM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "pytest mcp/tests/test_mik_r196_bootstrap_delivery.py::FreeSeatOverrideTests::test_real_session_client_info_arrives_via_injected_context"
+      ],
+      "path": "261125-DEP-L3-curator-pass1.json"
+    },
+    "handoffEntry": "DEP-R03@v2-R5-explicit-context",
+    "leaf": "261125-DEP-L3",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "role_start receives explicit MCP Context injection (omitted from its advertised inputSchema) and caller_harness_name reads session.client_params.client_info.name when in a served request and returns None outside a request.",
+  "supersedes": [],
+  "title": "role_start reads caller harness from injected MCP Context without schema leak",
+  "writer": {
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
+  }
+}

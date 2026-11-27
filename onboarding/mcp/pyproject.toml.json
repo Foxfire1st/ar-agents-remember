@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+        "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+        "content": "sha256:820797912c2b523cf12bd0ea06bf5e7a04b48ea4fb6fac775ec1e63237d7a34e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1NCXPM",
+      "invariant": "INV-DY0898",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R1-proof",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Declares the direct mcp>=2.3.0,<3 dependency constraint for the server package.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
         "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
         "locator": {
           "end": 7,
@@ -22,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+        "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
         "content": "sha256:a4cb690be93d8f7848bdb7afe25cea36ad241287dbe85e75ccc451a806657fa4",
         "locator": {
           "end": 17,
@@ -41,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "68023c34b7d22c6b4131caed18c611104caae038",
-        "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
+        "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+        "content": "sha256:b6a5a41ee2069fb9a09ea3411ab44ddd4ef17e08275624610d5c0b91af0187fb",
         "locator": {
           "end": 29,
           "kind": "line_range",
@@ -55,7 +72,7 @@
         "handoffEntry": "DEP-R01@v2 §1",
         "leaf": "261125-DEP-L1"
       },
-      "rationale": "Declares mcp>=1.30.0,<2 so PyPI installs require FastMCP.remove_tool and exclude the known advisories fixed in 1.30.0 while keeping mcp below 2.",
+      "rationale": "Declares mcp>=2.3.0,<3 in mcp/pyproject.toml so PyPI installs require MCPServer.remove_tool and the 2.x Extension API while staying below mcp 3.",
       "role": "primary-authority"
     }
   ],
@@ -292,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
             "content": "sha256:66849923cf1e429dc9be66b5ca9be29d75ada44505e180a10a193079e3826c7a",
             "locator": {
               "end": 4,
@@ -310,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
             "content": "sha256:2bf54c904d15b087cac566a605a9e29a3765bc298c0ae8b24f3e162665832e2e",
             "locator": {
               "end": 20,
@@ -327,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
               "end": 107,
@@ -370,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+            "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
             "content": "sha256:8b6ba71f06b6112de52063672605a1ab86aebe6d97ed2d261c4565a87486416f",
             "locator": {
               "end": 8,
@@ -388,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
             "content": "sha256:3ba6c4ba535ae9033fbe06949ca6eca5c5c4f4375e101f3172ee3fcaf52092c4",
             "locator": {
               "end": 170,
@@ -401,7 +418,7 @@
         },
         {
           "anchor": {
-            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
             "content": "sha256:70525e47cbd9f3178774a1352cbbf683c00a3ee8c8398143faa2d145d5881347",
             "locator": {
               "end": 192,
@@ -414,7 +431,7 @@
         },
         {
           "anchor": {
-            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
             "content": "sha256:a2c93a423b219d580128cb62d3ea549600b72ae4da1a3a3f6785aed3eb3193fd",
             "locator": {
               "end": 350,
@@ -432,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
             "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
             "locator": {
               "end": 7,
@@ -463,16 +480,16 @@
       ]
     },
     "22": {
-      "note": "The declared `mcp` dependency requires `>=1.30.0,<2` so installs carry `FastMCP.remove_tool` and stay on the 1.x line without the 1.29.1 advisories.",
+      "note": "The declared `mcp` dependency requires `>=2.3.0,<3` so installs carry `MCPServer.remove_tool` and the 2.x SEP-2133 `Extension` API while staying below `mcp` 3.",
       "targets": [
         {
           "anchor": {
-            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
-            "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
+            "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
+            "content": "sha256:50513cb1a01f264777c3140bdd77577447febb0c3aa527da5623e1cf4cd15114",
             "locator": {
-              "end": 29,
+              "end": 40,
               "kind": "line_range",
-              "start": 29
+              "start": 1
             }
           },
           "kind": "code"
@@ -484,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -501,7 +518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -518,7 +535,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+            "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 42,
@@ -531,7 +548,7 @@
         },
         {
           "anchor": {
-            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
+            "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 110,

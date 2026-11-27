@@ -406,6 +406,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. The ordinary roster has 44 names, and a valid explainer binding adds four tools to that roster. [146]
 
+
 - The HTTP Build handler forwards the history that selects planned composition for a blank request. [147]
 
 

@@ -18,7 +18,7 @@ The test removes the obsolete source marker, writes the deferred closure, retain
 
 ### Boundaries
 
-This integration source uses application/payload entry points; it does not register a FastMCP closeout call. The judge wrapper retains the native judge. The assertions concern the fixture's paired closeout, exact record bytes and exact memory tree. They establish no live record settlement or execution result by this card's author.
+This integration source uses application/payload entry points; it does not register an `MCPServer` closeout call. The judge wrapper retains the native judge. The assertions concern the fixture's paired closeout, exact record bytes and exact memory tree. They establish no live record settlement or execution result by this card's author.
 
 ## Evidence
 

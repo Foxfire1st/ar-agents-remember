@@ -16,7 +16,7 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 
 ### Logic
 
-`RegisteredTaskReaderContextProtocolTests.setUp` builds its server through the product factory `create_server`, not a bare `FastMCP` with selected registrars. The factory installs the skills extension's process-wide request union together with its per-server dispatcher; a server composed without the dispatcher silently drops `tools/list` once another test in the same process has installed the union, which is the hang this fixture met in a combined run. `tearDown` resets the worktree services and cleans the temporary fixture; no ambient observer is installed or reset.
+`RegisteredTaskReaderContextProtocolTests.setUp` builds its server through the product factory `create_server`, not a bare `MCPServer` with selected registrars, so the test exercises the full product wiring (including the SEP-2133 `SkillsExtension` registered per server at construction). `tearDown` resets the worktree services and cleans the temporary fixture; no ambient observer or process-wide session patch is installed or reset.
 
 `test_registered_readers_use_call_local_admitted_leaf_context` drives the protocol exchange through `_run_protocol`, which runs the whole exercise under `_await_protocol`'s default 60-second limit; a passed limit raises the ordinary assertion failure "MCP reader protocol responses did not arrive". `_git_status` gives the test's two Git observations the same limit.
 
@@ -24,15 +24,17 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 
 ### Invariants And Boundaries
 
-- The server under test is composed the way the product composes one; the fixture does not reset the skills extension's process-wide request union. Its teardown resets worktree services and removes the disposable fixture; it does not restore the skills request union or reset a removed ambient lifecycle.
+- The server under test is composed through `create_server` the way the product composes one; under `mcp` 2.x, `SkillsExtension` registers per server at construction with no process-wide session patch. Teardown resets worktree services and removes the disposable fixture.
 - The protocol exchange ends in a named failure at its limit and the module's own `git status` observations end at a subprocess limit; the `git`/`init_repo` helpers in `test_worktree_support` carry no timeout of their own and are outside the bounded protocol operations.
 
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
 
+
 - The bounded driver and the 60-second Git observation limit. [3]
 
 - The late-response case that holds its handler and starts its deadline after session initialization. [4]
 
-- The factory that pairs the process-wide request union with its per-server dispatcher, through the tool registrars it runs. [2]
+
+- The product factory `create_server` composes `AgentsRememberMCP` with `SkillsExtension` and invokes `TOOL_REGISTRARS`. [2]

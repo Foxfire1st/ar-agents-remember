@@ -65,6 +65,7 @@ No configured external domain documentation applies.
 - Python lint policy and signature exception. [1]
 
 
+
 - Type-checker scope, depth-independent environment/cache exclusions (avoiding blanket dot-folder rules because tracked Python lives under `.dagger/`, while noting Pyright's independent default dot-folder exclude), and import environments. [2]
 
 

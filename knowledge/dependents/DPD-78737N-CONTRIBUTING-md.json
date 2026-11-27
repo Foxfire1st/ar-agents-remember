@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified CONTRIBUTING.md against post-CAP-L5 synced tree e273d1c9 after CAP-L5 resolved its deferral: role-scoped allowlists, compiled capsule ceilings, and test-evidence-lanes.toml guidance remain accurate.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited CONTRIBUTING.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+      "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
       "kind": "file",
       "path": "pyproject.toml"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+      "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -212,14 +212,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:33:39+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

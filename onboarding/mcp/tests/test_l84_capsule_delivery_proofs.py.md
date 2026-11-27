@@ -28,6 +28,7 @@ Proves, on the shipped lifecycle corpus with no corpus or compiler patch, that t
 
 - The knowledge detail's views and keywords match the registered tool. [5]
 
+
 - The advice and reporting rules reach only their role audience. [6]
 
 - Measurement checkpoint steps reach every Worker operation. [7]

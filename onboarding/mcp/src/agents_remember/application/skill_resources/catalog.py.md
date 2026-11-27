@@ -111,7 +111,9 @@ extension specification, SEP-2640).
 - The value types, the entry and index renderers, and the per-read `_meta` provenance block this module produces. [11]
 - The frontmatter reader this module refuses a non-conforming skill through, and the verbatim map it returns. [12]
 - The served corpus and its publishing origin, bound together. [13]
+
 - The registration layer that turns these values into MCP resources and the two protocol methods. [14]
+
 
 ### Cross-Repo References
 

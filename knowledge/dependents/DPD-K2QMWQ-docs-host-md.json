@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "aaf984732687f90beee1a456d63d12fb0f704a57",
-    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
-    "role": "manager",
-    "statement": "Crossing-5 merge confirmation on 7ff6e80f139c combining 261112-BUG-L58 (role_launch_preparation.py:207-227, paseo_bridge.mjs:734-751) and 261112-KNO-L7 (PR #303/#83): docs/host.md remains accurate across both merged lines.",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
-    "uncommitted": false
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "role": "curator",
+    "statement": "Audited docs/host.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
+    "uncommitted": true
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -167,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
-        "content": "sha256:b71fadad0622db128c871576a5d114f73d8f95f85dd88cb3d2e6e3d5cbb8abb5",
+        "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+        "content": "sha256:cbced39d98f0f242a9cf58261086e4ec92635447892dff254ab77056ab7530e9",
         "locator": {
           "end": 227,
           "kind": "line_range",
@@ -259,20 +259,20 @@
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:23:00+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

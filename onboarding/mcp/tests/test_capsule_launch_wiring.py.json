@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:912ff883ea737d89bf36d0927ce8dc85e0e576755f607c07b550cb96bd94c5b6",
             "locator": {
               "end": 14,
@@ -20,7 +20,7 @@
         },
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:e32b026f4e11aa5b73033264e3a947639b1db8f67b7f31c8aacadc2f0ea2bfc0",
             "locator": {
               "end": 206,
@@ -37,10 +37,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
-            "content": "sha256:af27fde7487ee67b2e71605cfa7ca885cd4879ae255ababe3680924461021d3e",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
+            "content": "sha256:bf18d058c890714a841f10bc8902431815c0b815c9f5fa03d42683fdb347d6d4",
             "locator": {
-              "end": 414,
+              "end": 413,
               "kind": "line_range",
               "start": 380
             }
@@ -50,21 +50,11 @@
       ]
     },
     "12": {
-      "note": "The free agent's named absence, and the identity that moves with the seat.\n\nAnchor: `test_the_free_agent_admission_names_its_absent_task_plane` `test_the_free_agent_capsule_identity_moves_with_the_seat`",
+      "note": "The free agent's named absence, and the identity that moves with the seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
-            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
             "locator": {
               "kind": "symbol",
@@ -75,11 +65,21 @@
         },
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:fd749260087e4c18edfa08e7eb550d1e6d4f03cf9b1678261eea9608720518fd",
             "locator": {
               "kind": "symbol",
               "name": "test_the_free_agent_capsule_identity_moves_with_the_seat"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
+            "content": "sha256:2d70418b01b80075df7c66d5ab252f1e34fbfa18e51651b4a061749cffe5d4ea",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
             "locator": {
               "end": 349,
@@ -169,14 +169,14 @@
       ]
     },
     "22": {
-      "note": "Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain.\n\nAnchor: Current test/support source",
+      "note": "Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
-            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
+            "content": "sha256:2d70418b01b80075df7c66d5ab252f1e34fbfa18e51651b4a061749cffe5d4ea",
             "locator": {
-              "end": 414,
+              "end": 413,
               "kind": "line_range",
               "start": 1
             }
@@ -190,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:e32b026f4e11aa5b73033264e3a947639b1db8f67b7f31c8aacadc2f0ea2bfc0",
             "locator": {
               "end": 206,
@@ -202,7 +202,7 @@
         },
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
             "content": "sha256:fd749260087e4c18edfa08e7eb550d1e6d4f03cf9b1678261eea9608720518fd",
             "locator": {
               "end": 372,
@@ -259,12 +259,12 @@
       ]
     },
     "3": {
-      "note": "The mode-gate case checks that unaddressable roles yield a named refusal with no delivery; it also checks an admitted bootstrap capsule. It is not a host-effect measurement.\n\nAnchor: `test_the_mode_gate_names_capsule_or_refused_for_every_seat_class`",
+      "note": "The mode-gate case checks that unaddressable roles yield a named refusal with no delivery; it also checks an admitted bootstrap capsule. It is not a host-effect measurement.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
-            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
+            "content": "sha256:2d70418b01b80075df7c66d5ab252f1e34fbfa18e51651b4a061749cffe5d4ea",
             "locator": {
               "kind": "file"
             }
@@ -274,12 +274,12 @@
       ]
     },
     "4": {
-      "note": "The one decision point, for every seat class.\n\nAnchor: `test_the_mode_gate_names_capsule_or_refused_for_every_seat_class`",
+      "note": "The one decision point, for every seat class.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
-            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "blob": "b18e57337b3833e796714b31fa9e79f295a125ca",
+            "content": "sha256:2d70418b01b80075df7c66d5ab252f1e34fbfa18e51651b4a061749cffe5d4ea",
             "locator": {
               "kind": "file"
             }

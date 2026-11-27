@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
-    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "docs/release-checklist.md accurately reflects the uv-managed Python 3.14 wheel build, clean-environment smoke checks, version locations (3.0.8), GitHub workflows, hook gate, and PNT sandbox release verification on synced post-L54 base 8fe83ceb2352.",
-    "task": "261112-BUG-L33",
+    "statement": "Audited docs/release-checklist.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -142,14 +142,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T21:50:20+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

@@ -54,7 +54,9 @@ No Domain Documentation source is configured for this memory root.
 
 - Current pause declaration is contract-addressed, publishes nothing, hands control back and identifies separate checkpoint publication. [1]
 
+
 - Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`; there is no `knowledge_resolution` argument. [2]
+
 
 - **Retained historical source account — superseded by the current contract:** The start payload forwards task identity, bases and execution configuration to the application owner. [3]
 - **Retained historical source account — superseded by the current contract:** The attach payload forwards the requested worktree attachment to the application owner. [4]
@@ -68,6 +70,7 @@ No Domain Documentation source is configured for this memory root.
 - **Retained historical source account — superseded by the current contract:** `TaskRef` — the shared task locator attach and status pack. [10]
 
 - The pairing this registrar performs: `worktree_sync` builds `SyncResolutionInput(action=resolution_action, source=sync_source)` from the shared continue/cancel and repository-default vocabulary. [11]
+
 
 ### Cross-Repo References
 
@@ -87,6 +90,7 @@ The current source seams include `register_worktree_tools`. The public schema/co
 
 - Current register_worktree_tools registers the existing start, address, observation and stop owners. [12]
 
+
 ## 260831-LOCR-L37 Stop Registration
 
 `_register_worktree_stop_tools(server, config)` is the fourth registrar in the family and declares
@@ -105,4 +109,5 @@ publication. Neither is reachable through the other.
 Current sync qualification: the flat signature is contract_path, memory_sync_choice, resolution_action, dry_run and sync_source. It builds SyncResolutionInput(action=resolution_action, source=sync_source); continue/cancel resolve retained file conflicts and sync_source="repository-default" pulls each repository's default branch. Memory merges belong to this route, and incoming converted fast-forwards validate before refs move. There is no knowledge_resolution argument and no reconcile action (`SyncResolutionAction` is `continue` or `cancel`).
 
 - Current sync accepts `contract_path`, `memory_sync_choice`, `resolution_action`, `dry_run` and `sync_source`, packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`, and warns that memory merges only through `worktree_sync` and raw `git merge` is an unsupported hand edit; its compact single-line description is 426 characters raw (within the 500-character raw ceiling in `test_role_tool_scope.py` and the 600-character bound in `test_tool_descriptions.py`). [13]
+
 - Worktree declarations use light `worktree_tool_requests` types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time. [14]

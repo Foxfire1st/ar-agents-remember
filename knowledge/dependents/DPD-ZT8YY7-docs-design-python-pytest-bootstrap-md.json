@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
-    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
-    "role": "manager",
-    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: updated test-evidence-lanes.toml stress-durability anchor to lines 876-878 (857 total: 703 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability).",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "uncommitted": false
+    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "role": "curator",
+    "statement": "Audited docs/design/python-pytest-bootstrap.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
+    "task": "261125-DEP-L3",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 41,
+  "revision": 42,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+      "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
       "kind": "file",
       "path": "pyproject.toml"
     },
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+        "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
         "content": "sha256:b339770887b57e6cd195a3caaead1d9462ce3c14570df67813856e00cfd640c0",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+        "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
         "content": "sha256:0db0090abe8ad1939fb3ec6d81139f02acdf6ae51cd0ab5e1810a44c02d36aed",
         "locator": {
           "kind": "symbol",
@@ -116,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+        "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
         "content": "sha256:920f9c91a233b6fea2889eee929b0c3dcad1799a845c7874bd4a4cb04294cb0c",
         "locator": {
           "end": 78,
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T12:00:07+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }
