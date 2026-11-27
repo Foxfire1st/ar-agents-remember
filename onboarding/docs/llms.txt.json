@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "599b6a37cc0028e09d228770c19e6384491de241",
-        "content": "sha256:97ee62f4c18d71b013dd8d80710e5eaecd87e8dd5716514d68be9a16a93e7ab5",
+        "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
+        "content": "sha256:fa51e92de221840cf442d04108c75d0dcdbb71397d501182efcb304db1492796",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DDS22S",
+      "invariant": "INV-A3XH71",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R4",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Public llms.txt summary aligned with eleven knowledge_read views and text-bearing records/impact/search while preserving INV-47NR7E brief guidance (DPD-633P3W).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
+        "content": "sha256:fa51e92de221840cf442d04108c75d0dcdbb71397d501182efcb304db1492796",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +37,12 @@
     },
     {
       "anchor": {
-        "blob": "599b6a37cc0028e09d228770c19e6384491de241",
+        "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
         "content": "sha256:5c2661f85968c32df81f35597e552b9c14d2c0e56106e97256ac74c8a44949e3",
         "locator": {
-          "end": 56,
+          "end": 57,
           "kind": "line_range",
-          "start": 52
+          "start": 53
         }
       },
       "id": "RLZ-TPGPXF",
@@ -44,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
+            "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
             "content": "sha256:fbfd42cadc2d94d2fd9a2992934b2b104da3b30777715889e50ef09e210dff0b",
             "locator": {
               "end": 44,
@@ -57,14 +74,14 @@
       ]
     },
     "2": {
-      "note": "Memory discovery via mirrored paths, `read_ar_files` brief/compact row shapes, and names-only `knowledge_read`.",
+      "note": "Memory discovery via mirrored paths, `read_ar_files` brief/compact row shapes, and 11-view text-bearing `knowledge_read` (`impact`, `search`, `records`, and compact `dependent` triage).",
       "targets": [
         {
           "anchor": {
-            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
-            "content": "sha256:b95bae0b7537da15f9daef4ab3b99f1fa4018dda1b0e0325bf2c7fbeb4fc796c",
+            "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
+            "content": "sha256:1e6455f0d594ae992a82350847383b6a33764d9cb11c8f69137fb178c7da749e",
             "locator": {
-              "end": 57,
+              "end": 60,
               "kind": "line_range",
               "start": 46
             }
@@ -78,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
+            "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
             "content": "sha256:4d6ac935db20446cddd7f94cf29f39d6c476d35010816c10307af0f9c56b5561",
             "locator": {
-              "end": 90,
+              "end": 93,
               "kind": "line_range",
-              "start": 59
+              "start": 62
             }
           },
           "kind": "code"

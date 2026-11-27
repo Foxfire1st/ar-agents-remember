@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e122f928d620ee2485100752a3d16ed709100bac",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "95234971624e9cfbae7d009db14d7e6280a2ddf5",
+    "commit": "9f1b832ca3c8490833c4d15edd46bc5515cbba54",
     "role": "curator",
-    "statement": "Audited docs/architecture.md in full against KNO-R10@v1 candidate tree e122f928: extents.py::definition_scope gained an optional language_set parameter and provider-version cache keying while preserving all documented architectural and request-scope lifetime contracts.",
-    "task": "261112-KNO-L10",
+    "statement": "Verified docs/architecture.md against post-KNO-L10 synced frozen tree 95234971 (base 9f1b832ca): lines 254-259 accurately document knowledge_read impact, search, records, and compact dependent views alongside read_ar_files briefs while preserving KNO-L10 extents.py::definition_scope architectural contracts.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T17:57:42+01:00",
+    "at": "2026-11-27T18:56:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L10",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
     "task": "261112-KNO"
   }
 }

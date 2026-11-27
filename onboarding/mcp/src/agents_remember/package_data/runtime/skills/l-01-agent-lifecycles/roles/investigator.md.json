@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
             "content": "sha256:9018aee88d37ea4fee05c3cb6433890dfea2013b46bb21f717603099d1cf51dc",
             "locator": {
               "end": 8,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
             "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
             "locator": {
               "end": 14,
@@ -37,11 +37,11 @@
       ]
     },
     "3": {
-      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -93,8 +93,8 @@
         },
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-            "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:88a52f174d98771c2604525159092892322c38ff7c315ef8eb3c1de2cedaf8d5",
             "locator": {
               "end": 12,
               "kind": "line_range",

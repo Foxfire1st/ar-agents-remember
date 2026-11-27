@@ -146,12 +146,12 @@
       ]
     },
     "17": {
-      "note": "Family coverage is authored only where evidence and intent justify a joint obligation, with the family's own guarantee, members, routes and admission; a member change prompts a fresh examination, and the family is read back through `knowledge_read`.\n\nAnchor: `knowledge_read`",
+      "note": "Family coverage is authored only where evidence and intent justify a joint obligation, with the family's own guarantee, members, routes and admission; a member change prompts a fresh examination, and the family is read back through `knowledge_read`.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
-            "content": "sha256:70c4ebf2443bc4f5a313514bcdb94912843264bf0f98b723d91a11de65dbdba0",
+            "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+            "content": "sha256:dbe89e242e193e3159bb26520ba2712538ff40b382510c7180f55e5519bf4bad",
             "locator": {
               "end": 11,
               "kind": "line_range",
@@ -292,8 +292,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:fbae3823da23858c1751c1554ce86aca4a4defced607a24619c683acd891ea98",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -323,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
             "content": "sha256:81341d9014737b333aabfbe7a4ac723edb139336c62326f6d2af57a6fa6d1fb4",
             "locator": {
               "end": 7,
@@ -336,7 +336,7 @@
         },
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
             "content": "sha256:0fbd2fb41e9a5ba9c604ae61fd9a24c9bba3c4de577130e7d4e7067d53ab2a92",
             "locator": {
               "end": 27,
@@ -362,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+            "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
             "content": "sha256:40dce529543d9e8e59d2484df622f6de578f4e9c32a3fca700cc2de5a15c4f45",
             "locator": {
               "end": 7,
@@ -396,8 +396,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:d1e113099fb25c412209939bfbf4ca1e5d16c94fa31710f6881288020caac6df",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -596,8 +596,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:d2df033ff5dd938abe112e661e6adb06f14a4467c1507ecfb1eeab7ee6caf753",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:a4affd8ea9e6d8dc777792f06d272b6186c0ba9ea268342e7a86395e22caf60b",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -609,8 +609,8 @@
         },
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:3ccce24fcfd84671aef2a77919dccf24fdbe9ebcb089e90167ca5ee11bfb1f1a",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:b9802fa15b5e5f6ab11cec8de597f5914f4baea9aba324880a0e32c2228ba8d2",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -708,14 +708,14 @@
       ]
     },
     "40": {
-      "note": "The knowledge read route binds the assigned memory tree, its paired code checkout and the exact code tree, and names record files that the reader opens with its own tools.\n\nAnchor: `codeTreeId`",
+      "note": "The knowledge read route binds the assigned memory tree with automatic code-tree pairing across 11 views, returns text-bearing `impact`, `search`, and `records` rows plus compact `dependent` triage, and reserves native file opens for source code, tests, briefs, and uncarried documents.",
       "targets": [
         {
           "anchor": {
-            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
-            "content": "sha256:829a860122ae34dac1350d18979d79c087e54f7d6d0e3cfe3317159ef36a5618",
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+            "content": "sha256:6b90ad192eab20bf91989ff1deab80e8d1910fc090d1c1e4fe5069178b5a3617",
             "locator": {
-              "end": 21,
+              "end": 28,
               "kind": "line_range",
               "start": 11
             },
@@ -746,7 +746,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
             "content": "sha256:bb98570680b91e26cb4258212a8ba36a0fd194a2b813d06e6ceea3a40362cc31",
             "locator": {
               "end": 8,
@@ -764,7 +764,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
             "content": "sha256:3038d19d34b1cd7b90f915e38f6e5b9c3fc11b4c1303fec555636444ba2e8cdc",
             "locator": {
               "end": 20,
@@ -795,7 +795,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
             "content": "sha256:ca32055cbb659de71147100743b5fce688c710d3a4af9db0cd6814a3a9929a23",
             "locator": {
               "end": 8,
@@ -936,8 +936,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:d2df033ff5dd938abe112e661e6adb06f14a4467c1507ecfb1eeab7ee6caf753",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:a4affd8ea9e6d8dc777792f06d272b6186c0ba9ea268342e7a86395e22caf60b",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -949,8 +949,8 @@
         },
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:63a4ea71bc018833b502fd4e104fe295df60b1e2614781c2142e29e236334850",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:ce6efd934ed8372e148c07499ff9146f6d06ad7b3237fc324a003e005772aa48",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -967,7 +967,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
             "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
               "end": 30,
@@ -1012,12 +1012,12 @@
       ]
     },
     "57": {
-      "note": "This source owns the route’s Investigator selection or execution boundary.\n\nAnchor: `## Read and investigate`",
+      "note": "This source owns the route’s Investigator selection or execution boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
-            "content": "sha256:2446d355be9ac295614af8fa2679f21f445e6f618d0d665c2c6964aa748d24f6",
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:e80589c20de85368765bdaeef1bb85c1580d94f27a2826f70c197845dee062a6",
             "locator": {
               "end": 18,
               "kind": "line_range",
@@ -1392,7 +1392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
             "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
               "end": 30,
@@ -1462,7 +1462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
             "content": "sha256:42494704d35cfb8f68d73b8e97c57cdc4529647d0c33c4c7b43ef388d7c91790",
             "locator": {
               "end": 16,
@@ -1534,7 +1534,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
             "content": "sha256:52d4838f16d0fb55b773eeb76b36080275f27719c941cbd940b0fa753a171f4b",
             "locator": {
               "end": 30,
@@ -1578,8 +1578,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
-            "content": "sha256:d5715421a949e279ffb3ea8ba868a6ca6ec2bb31265c8c556e6cd84d16892a21",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:6269892fcc5f0c75250875304ef29367355450b0da7d146813a5cb8c961dc36d",
             "locator": {
               "end": 26,
               "kind": "line_range",
@@ -1592,12 +1592,12 @@
       ]
     },
     "83": {
-      "note": "The Worker marks only its own completed build and evidence step, never review, curation, task status or acceptance.\n\nAnchor: `set_step`",
+      "note": "The Worker marks only its own completed build and evidence step, never review, curation, task status or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:f57771366fba8a8f9685e3d8265724997b712cadaa808a00689a5bb192843fc4",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -1627,8 +1627,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:bd2dae8ab1d8a5f444457e460d89dc1058446a700c31e88b206f8e132a2c453b",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -1676,7 +1676,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -1694,7 +1694,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
             "content": "sha256:42494704d35cfb8f68d73b8e97c57cdc4529647d0c33c4c7b43ef388d7c91790",
             "locator": {
               "end": 16,
@@ -1748,8 +1748,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
-            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:488d3d1f4270de0a85276c91e961e58f954871ae4c60327624e79e3a2a4d65e3",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -1862,7 +1862,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
             "content": "sha256:58e01ffa873b6e6c1afc35e5ebe4c8442edd8fb109e9b3b53510cdc8ada50e18",
             "locator": {
               "end": 24,
@@ -1880,7 +1880,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
             "content": "sha256:8e16f573dbea8a12eac3013f0797651d899ef4899c03eb25b258195904f71dbb",
             "locator": {
               "end": 23,

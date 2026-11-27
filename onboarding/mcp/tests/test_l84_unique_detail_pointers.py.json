@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+        "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
+        "content": "sha256:b8162e7ca97775171d871363fac0c54ed7811df399db6796cfae6f282d278062",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_required_detail_has_one_pointer_in_all_real_compiles"
+        }
+      },
+      "facet": "Verifies every real compiled capsule keeps unique detail pointers including Manager's [`knowledge_read`] pointer to commands.md.",
+      "id": "PRF-3EGWBJ",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
         "content": "sha256:1c4143ac99099cc2fbd9946f6fdfcce1165adc3834289084624ff9e0c1cd1311",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+        "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
         "content": "sha256:b8162e7ca97775171d871363fac0c54ed7811df399db6796cfae6f282d278062",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+        "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
         "content": "sha256:1c4143ac99099cc2fbd9946f6fdfcce1165adc3834289084624ff9e0c1cd1311",
         "locator": {
           "kind": "symbol",
@@ -56,8 +73,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
-        "content": "sha256:35905ad96d5c0b0d807371ad06ba90029e0f13db2d5405426bcba20f83eea413",
+        "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
+        "content": "sha256:88a3f5a69db1323596c64eb5edf45543606138e029b8bd0aa632df07075c868c",
         "locator": {
           "kind": "file"
         }
@@ -70,6 +87,25 @@
       },
       "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
+        "content": "sha256:39b9218d0d119c24ac05377972a7cd63178d14e9f689b5cdc7cbdd070adfdb4b",
+        "locator": {
+          "end": 366,
+          "kind": "line_range",
+          "start": 358
+        }
+      },
+      "id": "RLZ-ZAS7ZK",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Enforces Manager's updated [`knowledge_read`] reference-index pointer label to reference/knowledge/commands.md.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -78,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+            "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
             "content": "sha256:bf371914e265b0bba50578b3c262be76ae5338b508ed7f36452fc81b4a2d5da0",
             "locator": {
               "kind": "symbol",
@@ -216,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+            "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
             "content": "sha256:571a2668d02e4ac079b2ff39e1d765471e99487bab04e686530235f3f4dc33f1",
             "locator": {
               "kind": "symbol",
@@ -232,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+            "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
             "content": "sha256:7aca35d11214105853962873230e993bcaef28ecdb0285dac0baee80d6fea4d3",
             "locator": {
               "kind": "symbol",
@@ -248,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+            "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
             "content": "sha256:1c4143ac99099cc2fbd9946f6fdfcce1165adc3834289084624ff9e0c1cd1311",
             "locator": {
               "end": 800,
@@ -265,7 +301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+            "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
             "content": "sha256:08804c9b368d287bd076184cb89659e492ae9cbd3c8bd15f2e36dd09ec4733e6",
             "locator": {
               "end": 858,

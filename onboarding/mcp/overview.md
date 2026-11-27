@@ -720,6 +720,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
 
+
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]

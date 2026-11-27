@@ -23,7 +23,7 @@ Memory curation review requires a full `memory_quality_check` (blocking on Curat
 
 ## Code Commentary
 
-The Reviewer opens briefs (`read_ar_files`), calls `knowledge_read` on changed files, inspects every changed and unattributed file, checks card dates against commits, and preserves Curator producer fields.
+The Reviewer opens briefs (`read_ar_files`), calls `knowledge_read` (`impact`/`search`/`records`; memory-lane `dependent(staleOnly=true)`), inspects all changed and unattributed files, checks card dates against commits, and preserves Curator producer fields.
 
 ### Bound native review intake
 
@@ -118,10 +118,12 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 
 
 
+
 - The verdict template structurally repeats one adjudication block per stable ID. [2]
 
 
 - The reviewer emits its own curator hand-off list in the shared producer shape. [3]
+
 
 
 
@@ -166,6 +168,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 
+
 - Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and the ready-for-closeout notice names the passed freeze, both passed verdicts and any required final-check evidence. After repair it pairs the original report with the successor's targeted results. [9]
 
 
@@ -173,6 +176,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 - Reviewer reads only the assigned seam's selected packets and rendered task files via file tools (no .json or unrelated corpus), edits canonical task docs via task_doc, and writes local report-folder verdicts (template for verdictRef). [10]
+
 
 
 
@@ -196,6 +200,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 
+
 - Baseline is sealed under reference/review-baseline.md (linked from the Reference index); fix-verification checks sealed IDs only with no whole-review mandate. [13]
 
 
@@ -206,7 +211,9 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 
+
 - A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with its Catalog Binding section and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list and durable reports for material routes. [15]
+
 
 
 

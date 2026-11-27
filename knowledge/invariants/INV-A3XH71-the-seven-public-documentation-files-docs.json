@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans all seven public user and reference documentation files; leaving contradictory returns-no-text or names-only claims misleads operators and external agents about how knowledge_read retrieves governing rules and families."
+  },
+  "applicability": "The seven public documentation files docs/reference/mcp-tools.md, docs/reference/knowledge-system.md, docs/features.md, docs/concepts.md, docs/FAQ.md, docs/llms.txt, and docs/architecture.md.",
+  "conditions": [
+    "All eleven knowledge_read views and text-bearing records/impact/search responses are documented without pre-change returns-no-text or names-and-locations-only contradictions.",
+    "INV-47NR7E read_ar_files brief freshness guidance remains preserved."
+  ],
+  "exclusions": [
+    "Pre-existing out-of-scope doc deferrals (4,000 vs 5,000 token ceiling mentions, six-word untitled fallback, memory-briefs CLI, and Option C ### Held wording) remain tracked under their existing dependent deferrals."
+  ],
+  "id": "INV-A3XH71",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scripts/check-public-docs.py PASS (54 documents, 0 findings with real dashboard/node_modules) on clean copy tree 58741cf122bf63ea3bb6dfc88afc8f302b0375f4; report /home/firefox/projects/ar-coordination/worktrees/agents-remember/14_role-instructions-and-explainer-for-kno-l7-views-ar/role-reports/worker/9c52f08d-1b32-51f7-bd11-d45d0d4e7081/role-launch/261112-KNO-L14-worker-9c52f08d-1b32-51f7-bd11-d45d0d4e7081.md"
+      ],
+      "path": "kno-l14-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R14@v1 R4",
+    "leaf": "261112-KNO-L14",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The seven public documentation files (docs/reference/mcp-tools.md, docs/reference/knowledge-system.md, docs/features.md, docs/concepts.md, docs/FAQ.md, docs/llms.txt, and docs/architecture.md) document all eleven knowledge_read views and text-bearing records/impact/search responses with zero remaining pre-change returns-no-text or names-and-locations-only contradictions.",
+  "supersedes": [],
+  "title": "Public docs describe all eleven knowledge_read views and text-bearing replies",
+  "writer": {
+    "at": "2026-11-27T18:29:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L14",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
+  }
+}

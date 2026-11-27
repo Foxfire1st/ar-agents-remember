@@ -104,6 +104,7 @@ This packaged copy derives from the canonical roles/architect.md. The Architect 
 
 
 
+
 - The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy. [4]
 
 

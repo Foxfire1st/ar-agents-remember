@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified docs/install/hermes.md against post-CAP-L5 synced tree e273d1c9 after CAP-L5 resolved its deferral: Hermes provider setup, role-scoped ROLE_TOOL_ALLOWLISTS[role], and role settings guidance remain accurate.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/install/hermes.md against frozen tree 58741cf1: Hermes installation and provider-setup guide remains accurate with zero contradictions against pre-base BUG-L58 or KNO-R14@v1 instruction updates.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+      "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -61,12 +61,12 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+      "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
     {
-      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+      "blob": "e505a5027f45cf753855a75f1e924f042c617489",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -112,14 +112,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:33:39+01:00",
+    "at": "2026-11-27T18:29:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
     "task": "261112-KNO"
   }
 }

@@ -18,9 +18,7 @@ PR-4 distinguishes dependency topology from runtime source-pair selection. An ex
 `executionGraph` requires exact membership, cited acyclic edges, derived waves, and valid atomic
 blocker placement. A graph-less choice remains fully planned: canonical commanded-master order is
 only the stable equal-priority tie-break, nothing serializes the masters, independent atomic masters
-proceed concurrently, and selecting one does not hold another. PR-3 names implicated dependents
-through `read_ar_files` and opens them natively, and requires one effective priority row per
-schedulable candidate.
+proceed concurrently, and selecting one does not hold another. PR-3 inspects implicated rules, families, and dependents through `knowledge_read` (`impact`/`records`/`dependent`) alongside `read_ar_files` (opening source code and standing documents not carried in `records` natively), and requires one effective priority row per schedulable candidate. The catalog directs Reviewers to use the read-only knowledge tools (`read_ar_files`, `knowledge_read` `impact`/`search`/`records`/`dependent`, `knowledge_diff`) and reserve native file opens for source code, tests, briefs, cards, and documents not carried in `records`/`impact`.
 
 The remaining standing criteria keep the plan evidence-complete: refute uncited edges, re-intersect
 shared surfaces, re-derive high blast-radius and effective priority, reject dishonest findings,

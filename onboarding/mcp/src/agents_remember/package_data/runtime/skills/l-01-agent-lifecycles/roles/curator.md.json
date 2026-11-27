@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-        "content": "sha256:356bdb331c6971b987292bd9921439b4f16293decc360194fb89a3006e74fe1f",
+        "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+        "content": "sha256:ed43e6c329a45b41e309c91e8bc0fba6bf1dd52be51d82385f33223627e087bc",
         "locator": {
           "kind": "file"
         }
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
             "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
               "end": 30,
@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c10bf61473d638dd294f8a66d8d2978f10ca75d029571245722ada219b09583b",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -92,11 +92,11 @@
       ]
     },
     "17": {
-      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. `knowledge_read` retrieves text-bearing views (`impact`, `search`, `records`, and `dependent`) paired with the code tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -148,8 +148,8 @@
         },
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c10bf61473d638dd294f8a66d8d2978f10ca75d029571245722ada219b09583b",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -179,12 +179,12 @@
       ]
     },
     "3": {
-      "note": "The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes, uncommitted fingerprints or silencing attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`.",
+      "note": "The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes/attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`.",
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:77b5edde6d0cb126a761c44b2b2336cb440fd4fd41ece65e186027dbcaa783be",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c3af90368ec6cf6e9455a74f54af7607e8cde7f64eda7ede3c294a2e54e3c525",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -218,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:d1e113099fb25c412209939bfbf4ca1e5d16c94fa31710f6881288020caac6df",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -235,8 +235,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:bd2dae8ab1d8a5f444457e460d89dc1058446a700c31e88b206f8e132a2c453b",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -252,8 +252,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
-            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:bd2dae8ab1d8a5f444457e460d89dc1058446a700c31e88b206f8e132a2c453b",
             "locator": {
               "end": 21,
               "kind": "line_range",

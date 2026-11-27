@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans the canonical Explainer capability file and its enforcing test; omitting Stage 1 knowledge_read guidance leaves Explainers without governing invariants and families during review walkthroughs, while exceeding 1,500 words breaks the enforced capability budget."
+  },
+  "applicability": "Canonical Explainer capability text mcp/src/agents_remember/canvas/review-presenter.md, its generated package_data copy, and test_canvas_capsule_text.py enforcement.",
+  "conditions": [
+    "Stage 1 directs knowledge_read (impact, search, records) against bound trees/memory paired with trees/code.",
+    "Word count remains within the 1,500-word budget (measured at 1,469 words) and the packaged copy matches canonical bytes."
+  ],
+  "exclusions": [
+    "Does not alter Stage 2-7 artifact ordering, still-markup requirements, or non-canvas role capsules."
+  ],
+  "id": "INV-XEQ0TR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_canvas_capsule_text.py PASS (1,469 / 1,500 words, sha256:77aca02ad817c284c51756b7e4d3e02be39ec546ab7944b57c4c5f9b508cc417) on clean copy tree 58741cf122bf63ea3bb6dfc88afc8f302b0375f4; report /home/firefox/projects/ar-coordination/worktrees/agents-remember/14_role-instructions-and-explainer-for-kno-l7-views-ar/role-reports/worker/9c52f08d-1b32-51f7-bd11-d45d0d4e7081/role-launch/261112-KNO-L14-worker-9c52f08d-1b32-51f7-bd11-d45d0d4e7081.md"
+      ],
+      "path": "kno-l14-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R14@v1 R3",
+    "leaf": "261112-KNO-L14",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Explainer review-presenter capability text instructs Stage 1 knowledge_read (impact, search, records) against bound trees/memory paired with trees/code within the 1,500-word budget (1,469 words), with its packaged copy regenerated via write_generated_capability_copy and enforced by test_canvas_capsule_text.py.",
+  "supersedes": [],
+  "title": "Explainer review-presenter uses Stage 1 knowledge_read within 1,500-word budget",
+  "writer": {
+    "at": "2026-11-27T18:29:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L14",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
+  }
+}

@@ -14,7 +14,7 @@ The canonical impact-analysis template is the report the Reviewer uses for plann
 
 The report records recipient, analytical author label, subject and written time, followed by the surface swept, routes/areas, code anchors, both risk axes, evidence inventory and an actions section for the spawning agent's main loop. Planned-versus-planned includes present or future master/leaf collisions and suggested resolutions such as foundation extraction, leaf movement or sequencing. Planned-versus-past names already-landed work at risk and its evidence limits.
 
-Evidence-first findings cite route indexes and the files opened from `read_ar_files` results. The inventory records the identifiers and card paths returned by `read_ar_files` and the files opened with native file tools. Naming locates the material to inspect; it is not source/onboarding text or independent proof of a collision or regression. Each finding states what its evidence does not prove.
+Evidence-first findings cite route indexes, `knowledge_read` (`view="impact"` with `files`/`folder`, plus `view="records"` for full rule text), and brief/card pointers and files opened from `read_ar_files` results. The inventory records the rules, families, siblings, and standing dependents returned by `knowledge_read` (`impact`/`records`) alongside `read_ar_files` brief/card pointers and the source, test, brief, or card files opened with native file tools. Retrieved claims guide inspection and are not independent proof of a collision or regression. Each finding states what its evidence does not prove.
 
 ### Conventions
 
@@ -34,11 +34,13 @@ The template holds no TODO and needs no sibling-repository evidence for this rep
 
 - Both collision and regression axes need evidence and per-finding limits; the report never decides. [2]
 
+
 - Recipient, author, subject and timestamp are report fields, with analytical rather than occupant authorship. [3]
 
 - Scope, current/future collisions, resolution suggestions and landed regression risks are retained. [4]
 
-- The evidence inventory records `read_ar_files` identifiers and card paths and the natively opened files, and the actions section performs no mutation. [5]
+- The evidence inventory records `knowledge_read` (`impact`/`records`) results alongside `read_ar_files` brief/card pointers and natively opened files, and the actions section performs no mutation. [5]
+
 
 - Harness helpers hold no AR seat; boundary acts and one Curator writer remain with the seat. [6]
 

@@ -285,6 +285,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder. Anchor: `Handle a developer-declared takeover` [86]
 
 
@@ -296,6 +297,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
+
 
 
 
@@ -451,6 +453,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The reviewer's declaration check, mirrored into the package copy. [264]
+
 
 
 
@@ -613,11 +616,13 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Retained reference account (no fresh execution or acceptance inferred): Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP. [34]
 
 
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [340]
+
 
 
 
@@ -634,7 +639,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [343]
+
 
 
 
@@ -648,7 +655,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [345]
+
 
 
 
@@ -662,7 +671,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [348]
+
 
 
 
@@ -676,6 +687,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [350]
 
 
@@ -683,7 +695,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [351]
+
 
 
 
@@ -757,7 +771,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Knowledge authoring is in memory; evidence and working files are outside it, with report/task and scratch custody separated. Runtime install records leftover stores of removed parts under removedPartStores and deletes none of them. [314]
+
 
 
 

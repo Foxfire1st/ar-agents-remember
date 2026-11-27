@@ -74,6 +74,7 @@ Before converted-memory closeout, a seat that authored none of the leaf cards or
 
 
 
+
 ### Logic
 
 The hand-off template states that every hand-off target carries its own authored `rationale` and optional
@@ -101,11 +102,14 @@ No additional work is asserted by this card. Actual project publication and sema
 
 
 
+
 - Normal workflow reconciles intent and code, ingests invariants in scope and updates families only with justification and a re-examined guarantee, and runs full quality checks (including the closeout stale `dependent` check) and the independent OM-2 fact-check. [9]
 
 
 
+
 - Curation boundaries keep code, Git and transaction ownership with their owners, require `curator_coherence` when `checklistStatus=coherence-required`, keep partial/refused handovers partial, and send the memory candidate directly to the Reviewer via `role_message`. [10]
+
 
 
 
@@ -148,6 +152,7 @@ No meaningful cross-repository implementation dependency.
 
 
 - Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]
+
 
 
 

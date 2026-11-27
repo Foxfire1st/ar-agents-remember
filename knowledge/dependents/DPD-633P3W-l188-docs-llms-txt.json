@@ -1,27 +1,12 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified docs/llms.txt against post-CAP-L5 synced tree e273d1c9: nine-role roster including Consolidator remains accurate while preserving pre-existing KNO-R07 DFR-WQXFSQ under 261112-KNO.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/llms.txt against frozen tree 58741cf1: lines 49-59 now accurately document all eleven knowledge_read views, text-bearing impact/search/records replies, compact dependent triage, and INV-47NR7E read_ar_files brief guidance, resolving DFR-WQXFSQ.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
-  "deferrals": [
-    {
-      "condition": {
-        "file": "docs/llms.txt",
-        "note": "Update docs/llms.txt lines 49-56 for all eleven knowledge_read views (including verbatim records, impact, search, compact dependent, and consolidation_proposal) and brief freshness gating."
-      },
-      "createdAt": "2026-11-27T05:21:52.740873Z",
-      "createdByLeaf": "261112-KNO-L5",
-      "fileBlob": "599b6a37cc0028e09d228770c19e6384491de241",
-      "id": "DFR-WQXFSQ",
-      "owner": "261112-KNO",
-      "passage": "docs/llms.txt lines 49-56 (read_ar_files brief guidance and knowledge_read returns names and locations only)",
-      "reason": "KNO-R05@v3 updated docs/llms.txt role counts to nine roles, moving its blob, while pre-existing KNO-R07 lines 49-56 remain deferred under 261112-KNO (accepted by Reviewer in KNO-L5-F07)."
-    }
-  ],
   "document": "docs/llms.txt",
   "id": "DPD-633P3W",
   "origin": {
@@ -32,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -84,14 +69,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T18:29:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
     "task": "261112-KNO"
   }
 }

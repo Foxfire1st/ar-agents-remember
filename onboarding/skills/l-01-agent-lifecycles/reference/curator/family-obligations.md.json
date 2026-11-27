@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
-        "content": "sha256:70c4ebf2443bc4f5a313514bcdb94912843264bf0f98b723d91a11de65dbdba0",
+        "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+        "content": "sha256:cbd56868562fc9e2f4523142e3e298d865dd9dc8c8078b6d0b1d44c2ee1681cf",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-5TR8DH",
+      "invariant": "INV-YSQJ5K",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R2",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Replaces manual per-record file opens with knowledge_read view='records' while reserving native file opens for source code and tests.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+        "content": "sha256:dbe89e242e193e3159bb26520ba2712538ff40b382510c7180f55e5519bf4bad",
         "locator": {
           "end": 11,
           "kind": "line_range",
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
+        "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
         "content": "sha256:98fea9e20a213098ee6aa7c79945e20556b546c759e6c34cc2504a1621b310c3",
         "locator": {
           "end": 9,
@@ -46,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
+            "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
             "content": "sha256:0823b5eb721623c3673d7182ace6fddb10c628732cde49d66e6b4c832ac471d4",
             "locator": {
               "end": 5,
@@ -63,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
+            "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
             "content": "sha256:f32f7a9a81b0b228c150956cc2b633215e459b8d4c39512755aaf917cecd65ef",
             "locator": {
               "end": 9,
@@ -76,12 +95,12 @@
       ]
     },
     "3": {
-      "note": "Families are read back with `knowledge_read` and every unattributed prepared location is attributed or explained.\n\nAnchor: `view=\"family\"`",
+      "note": "Families are read back with `knowledge_read` and every unattributed prepared location is attributed or explained.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
-            "content": "sha256:366abfd364aee6f1170083e556e354d4a0af604d7787fc5020df6795b646c0f0",
+            "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+            "content": "sha256:da4c3c9df79a0107845c5c0c9d57484150c77d9d5f27daccc1c3fca8d9453743",
             "locator": {
               "end": 13,
               "kind": "line_range",

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "docs/design/canvas-host.md preserves all 261124-EXP canvas host and explainer boundaries on 9af497f7bb99 and accurately updates its dashboard lint verification command at line 382 to npx oxlint alongside npx tsc -b and npx vitest.",
-    "task": "261125-DEP-L6",
+    "statement": "Verified docs/design/canvas-host.md against frozen tree 58741cf1: canvas host design remains accurate after KNO-R14@v1 added Stage 1 knowledge_read guidance to canvas/review-presenter.md within the 1,500-word ceiling.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -121,7 +121,7 @@
       "path": "mcp/src/agents_remember/serving/explainer_routes.py"
     },
     {
-      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+      "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
@@ -161,14 +161,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:08:02+01:00",
+    "at": "2026-11-27T18:29:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L6",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
-    "task": "261125-DEP"
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
   }
 }

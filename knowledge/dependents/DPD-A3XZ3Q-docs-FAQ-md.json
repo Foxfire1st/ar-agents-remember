@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Audited docs/FAQ.md (lines 1-200) against CAP-L5 tree af88a85d after core.py read_ar_files task_context description repair: read_ar_files brief degradation, context_packet drift/freshness, workflow rules, and memory.md behavior remain accurate with zero contradiction.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/FAQ.md against frozen tree 58741cf1: lines 34-47 accurately document all eleven knowledge_read views, text-bearing replies, compact dependent triage, and INV-47NR7E read_ar_files brief guidance.",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },
     {
-      "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+      "blob": "e505a5027f45cf753855a75f1e924f042c617489",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:45:16+01:00",
+    "at": "2026-11-27T18:29:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
   }
 }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
-        "content": "sha256:32fd44e071b8344472166000afb61e83601b4e70059a0b12b10cdc9b0aa159d8",
+        "blob": "cb08478568a0b19398709001948066a453bb39a8",
+        "content": "sha256:55089946596c80e4a8c8de417adac29f9a29f725ece80996414d01ea8b8a0bb8",
         "locator": {
           "kind": "file"
         }
@@ -17,16 +17,35 @@
       },
       "rationale": "Canonical Tier-1 role manual for the Consolidator seat.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cb08478568a0b19398709001948066a453bb39a8",
+        "content": "sha256:924af9ddaf2bb560840f97e83dec2b11b8176cb9c9dfe87e709bf0d665e8aa84",
+        "locator": {
+          "end": 10,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-8PSCN5",
+      "invariant": "INV-4BJMGY",
+      "origin": {
+        "handoffEntry": "KNO-R14@v1 R1",
+        "leaf": "261112-KNO-L14"
+      },
+      "rationale": "Directs Consolidator to use knowledge_read (impact/search/records) for listed families and rules within the 3,000-token wire budget.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The role body defines the Consolidator's leaf mission, MCP call scoping, family-first code-and-proof examination, three outcome rules, mandatory proof evidence, and allowed memory-only edits.\n\nAnchor: `# Consolidator`",
+      "note": "The role body defines the Consolidator's leaf mission, MCP call scoping, family-first code-and-proof examination, three outcome rules, mandatory proof evidence, and allowed memory-only edits.",
       "targets": [
         {
           "anchor": {
-            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
-            "content": "sha256:24cfcb325a3369a729156278cc9c45a8fe8783099bcdf7aa0740cbb729aec8d1",
+            "blob": "cb08478568a0b19398709001948066a453bb39a8",
+            "content": "sha256:eff62c767a85d4963f5755a83580967074db2cdd1f6328cbbc9d62c3ef184b98",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -42,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+            "blob": "cb08478568a0b19398709001948066a453bb39a8",
             "content": "sha256:c5339aedd23772816dd78d4ba8b07e99c0142ee8ee3c0b8963a43d58149a1a9d",
             "locator": {
               "end": 20,
@@ -59,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+            "blob": "cb08478568a0b19398709001948066a453bb39a8",
             "content": "sha256:5ac7c60fe67aad5548aedef3f22623a904eec0e382e05e0daf750a2890e5e3a9",
             "locator": {
               "end": 30,

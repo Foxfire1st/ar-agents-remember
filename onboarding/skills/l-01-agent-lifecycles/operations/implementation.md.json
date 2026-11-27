@@ -170,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
             "content": "sha256:142bbcb890718878a721797553454ba3a3e926329b033e04245fbb8efed718db",
             "locator": {
               "end": 13,
@@ -184,12 +184,12 @@
       ]
     },
     "2": {
-      "note": "The candidate stays uncommitted and the seat starts no role and stages nothing.\n\nAnchor: \"Keep candidates uncommitted\"; \"stages no files\"",
+      "note": "The candidate stays uncommitted and the seat starts no role and stages nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
-            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:f57771366fba8a8f9685e3d8265724997b712cadaa808a00689a5bb192843fc4",
             "locator": {
               "end": 15,
               "kind": "line_range",

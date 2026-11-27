@@ -1,38 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified docs/concepts.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 role-capsule and handover updates alongside KNO-R05@v3 Consolidator/hand-off/step-up updates while re-deferring pre-existing KNO-R07 DFR-A19SP8 (line 425) under 261112-KNO.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/concepts.md against frozen tree 58741cf1: lines 418-430 now document all eleven knowledge_read views and text-bearing replies, resolving DFR-YZFEY8, while preserving pre-existing 261112-BUG Option C ### Held deferral DFR-A96ARN (lines 669-672).",
+    "task": "261112-KNO-L14",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/concepts.md",
-        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+        "note": "Update Option C deferred-held-seat wording in ### Held (lines 669-672) when this standing doc is next edited for 261112-BUG."
       },
-      "createdAt": "2026-11-27T01:48:17.074126Z",
-      "createdByLeaf": "261112-BUG-L58",
-      "fileBlob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
-      "id": "DFR-A96ARN",
+      "createdAt": "2026-11-27T17:29:51.530130Z",
+      "createdByLeaf": "261112-KNO-L14",
+      "fileBlob": "d81a46135d0e1f1bd0486bc53c49f3302a8c714f",
+      "id": "DFR-N0BHKQ",
       "owner": "261112-BUG",
-      "passage": "docs/concepts.md ### Held (lines 660-662: 'exists in the host')",
-      "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats exist on disk (hostAgentExists=false, execution={}) with zero host creation until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-Y5Q4JY untouched; code freeze preserved per Manager directive."
-    },
-    {
-      "condition": {
-        "file": "docs/concepts.md",
-        "note": "Update docs/concepts.md line 425 for KNO-R07 records/impact/search/compact-dependent views and 5,000-token ceiling."
-      },
-      "createdAt": "2026-11-27T06:28:50.317700Z",
-      "createdByLeaf": "261112-KNO-L5",
-      "fileBlob": "d29016fdc9804af42c05cc0a88358040daf3211d",
-      "id": "DFR-YZFEY8",
-      "owner": "261112-KNO",
-      "passage": "docs/concepts.md line 425 ('knowledge_read returns names and locations only')",
-      "reason": "KNO-L5 merged docs/concepts.md onto CAP-L5 (e273d1c9), advancing its blob; pre-existing KNO-R07 line 425 contradiction remains deferred under 261112-KNO (accepted in KNO-L5-F07)."
+      "passage": "docs/concepts.md ### Held (lines 669-672: 'exists in the host')",
+      "reason": "Re-deferred onto KNO-L14 frozen blob of docs/concepts.md: KNO-R14@v1 edited only lines 418-430 (knowledge_read views, resolving DFR-YZFEY8), shifting ### Held to lines 669-672 without changing its pre-existing BUG-R58@v2 Option C wording."
     }
   ],
   "document": "docs/concepts.md",
@@ -45,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 36,
+  "revision": 37,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -254,7 +241,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+      "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -359,7 +346,7 @@
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+      "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
@@ -369,12 +356,12 @@
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+      "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+      "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -456,7 +443,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
     {
-      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+      "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
@@ -467,7 +454,7 @@
     },
     {
       "anchor": {
-        "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
         "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
         "locator": {
           "kind": "symbol",
@@ -479,7 +466,7 @@
     },
     {
       "anchor": {
-        "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
         "content": "sha256:bc5079ebff54878518d0de262728685e89d6d820723ee8478daa47377d0c274a",
         "locator": {
           "kind": "symbol",
@@ -496,15 +483,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T11:49:22+01:00",
-    "by": "product",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "effort": "none",
-    "harness": "product",
-    "model": "none",
-    "operation": "crossing-merge",
-    "role": "product",
-    "seat": "product",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+    "at": "2026-11-27T18:29:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L14",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "task": "261112-KNO"
   }
 }

@@ -1,0 +1,4060 @@
+{
+  "closed": true,
+  "leaf": "261112-KNO-L14",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T19:17:01+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-KNO-L14",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+      "task": "261112-KNO"
+    },
+    "reviewer": {
+      "at": "2026-11-27T19:17:01+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-KNO-L14",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "a4893b85-cf53-52e7-af07-0b7ede2bde49",
+      "task": "261112-KNO",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "f8db79b29970a370b30f23ff570c5552682f594a",
+    "verdictRef": "notes/reports/reviewer/a4893b85-cf53-52e7-af07-0b7ede2bde49/memory-round-1/verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+            "content": "sha256:62f387ba4a172c25e34677afe724c6f67997dbdef6e369b68453b4c9cc67d909",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+            "content": "sha256:f326b83ea7a98ad959068364262389dfdfb06c6f060a6cd70b5c6979e7ed49b4",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-VKXWVN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-09GCR6",
+      "items": [
+        "sha256:bfdba4378ccf9a69e08dfc5c83790bb596d38c5d589707212988ccdc50bc13f1"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-CAJ09X on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-CAJ09X"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:16edb6e6178580136b51a541412b1b95bbefed7fa2d0aa9bb88e618ba0de8c1b",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:efde6e15c97d815a97a28c61485b2da8b1c0d0fc7fedbc5a5b3fe0963b60c1c0",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-QDM8GH"
+        },
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:f5bfb4af4d11290afde78d0039dc0618660556d9b35cf08de9e9a0aa74a022ae",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:8f6d967591000adcba71c399f133add4e4dead8dfcfa95f8af23d282477a4ef6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-SHXSR1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-09WY5G",
+      "items": [
+        "sha256:98ddc4517c2c09cb1eaaeb95a0376fca1ba3c23ae173fb1cb99dbc14365f6d2d"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-CV3MW4 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-CV3MW4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0NB602",
+      "items": [
+        "sha256:9bf7344dc0259c1c6fcf1a388d1d26a21b93925f8c9c90e8068b1462df898bb2"
+      ],
+      "reason": "Updated card prose for step 3 dependent(compact=true) triage vs full evidence rows and refreshed citations.",
+      "sources": [
+        {
+          "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+          "path": "skills/l-01-agent-lifecycles/operations/consolidation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/consolidation.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0YTMQ7",
+      "items": [
+        "sha256:8a8eee85dcdb21610a664c920dbdf5cb3bd09c92be29028c870c10080fdfbef2"
+      ],
+      "reason": "Updated card prose and citations [2], [5] for all eleven knowledge_read views, auto-pairing, and all eight non-Bootstrap role sections with anti-overreach boundaries.",
+      "sources": [
+        {
+          "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/use.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/knowledge/use.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:63ae50059c374acb22d6e63198caeaabfaefecaed2d8ffc0ee4612187c49ff0e",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:07e2d34b2b99a62cc4d18392dd5287e892d97d36ac7521c57f7cabcc6ad0536d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-K60P42"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-18VN4A",
+      "items": [
+        "sha256:5ada2d168bc48c7ac260d7892561585ab030d31f4851e0e06e4d470215315e18"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-RKGNF8 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:815c9d6ffd9dd5d02cfc9193243edca4c3c9cbf37c547849464f9d453b04a447",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:e5c2fe31c538d2c12223cbaf128a85a40718f85345556f04746b19595a3275f7",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-EEEG4W"
+        },
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:a0fc0164dfaa739ee9a0e3ab1fe71bf0a90ab7270f261522fcbf9897895dbf18",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:0d8033447f3f25da5d76aa7cca0262be110f5c3357645334f435d1454cfbf159",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-PDP66S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1FBVEE",
+      "items": [
+        "sha256:82b7ad0b7b35e7f03649b4fffeda273153c4c733a3998cd12dfe5f3f11f6bad3"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-5TKYXM on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 4,
+      "subject": "INV-5TKYXM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5BPF6M",
+          "revision": 1
+        },
+        {
+          "id": "INV-8SBKWP",
+          "revision": 1
+        },
+        {
+          "id": "INV-KVQ91Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEF33P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1NGQ7Y",
+      "items": [
+        "sha256:c13b54ee7c700fdaaac1eb72af7532d8b1171043ff610428b71b854aa98ca456"
+      ],
+      "reason": "Examined all 4 member invariants of FAM-CZZ8N4 against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-CZZ8N4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+            "content": "sha256:dbe89e242e193e3159bb26520ba2712538ff40b382510c7180f55e5519bf4bad",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+          },
+          "before": {
+            "blob": "b4f79d18ff4e9e27c2fec88e3c6f1d9358049b08",
+            "content": "sha256:70c4ebf2443bc4f5a313514bcdb94912843264bf0f98b723d91a11de65dbdba0",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+          },
+          "id": "RLZ-AHYBRR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1PEFXR",
+      "items": [
+        "sha256:84a35b13008e7cf735d11e6130d736a4472379f3dde7d56525a3b3e7ad43b725"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-VN0A3Q on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-VN0A3Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+            "content": "sha256:9b4bd10acb21d3150d3ffdbf277c975c4d530cefe966e2a57b355427d776e3ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2C0Z3Q",
+      "items": [
+        "sha256:05f07a1f62fd2cf0480e0aa60e4278205a5d5e1ce91a7cc4b9fdd7cc2c400616"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-4HZG3V on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2FS4D1",
+          "revision": 1
+        },
+        {
+          "id": "INV-4AQ26N",
+          "revision": 2
+        },
+        {
+          "id": "INV-RCFXFA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3A9KHG",
+      "items": [
+        "sha256:a2b81fa37f4086f17663644ec30f466df6174bd5cbb2c3b618214968b015299a"
+      ],
+      "reason": "Examined all 3 member invariants of FAM-H734XJ against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-H734XJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:375ec5cd0d1a7df6b6abb91dd581b86f0e8a6d6050bb9a62f0ca658e8771baa0",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:b7187add88a0ca8f2fe88b159f362a65c5cb3a4709cfbda12817a8728f752fc3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-HB7AP1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3B2C6E",
+      "items": [
+        "sha256:7280148485a18f76b51537c0fcffa34ccd6efb7ea4f1fbfb35a5f7c212d46e98"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-683GA3 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-683GA3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-8F4C0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-M36NT5",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        },
+        {
+          "id": "INV-XXG2W0",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZYKN6P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3M21X2",
+      "items": [
+        "sha256:e6763c4640c9e8257c7938aef9c1d9c8acddcdfc007b5a5f88523755ce57b0e3"
+      ],
+      "reason": "Examined all 7 member invariants of FAM-0TR1G5 against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0B3Q36",
+          "revision": 2
+        },
+        {
+          "id": "INV-29DEHG",
+          "revision": 1
+        },
+        {
+          "id": "INV-453GX6",
+          "revision": 1
+        },
+        {
+          "id": "INV-ET42V0",
+          "revision": 1
+        },
+        {
+          "id": "INV-W55VKB",
+          "revision": 1
+        },
+        {
+          "id": "INV-X073BM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-3NGTR7",
+      "items": [
+        "sha256:c9b9d6eed983c13353b1a0106663f78a5dbd039079c80bc81752d0c40f8454c3"
+      ],
+      "reason": "Examined all 6 member invariants of FAM-MS7NC5 against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-MS7NC5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:4ec9be6fc55690389876974999a82f1c7962fc7152a58f86160c263dff90fae5",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:41eb3b7e51c0c9e1bc24bc5fb91b25dc9ffdffa79e2a1251f1838001997c5656",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-JFZ5WP"
+        },
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-KCZHQB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3NWJ6F",
+      "items": [
+        "sha256:8cb93e1dda7d16da11e01d1c54e142d32459ce198f024c5d1dd51b9e86670c18"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-7VZRZW on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "928145b67bf94c0353620e2436a380f67b3a8329",
+            "content": "sha256:2ccb23fb03ed924cb39c722e074382befd901678f30a7ded4eca61e3a75c2913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "2c2f1ba3d6d0e33588d07ef315a0d33d4a7b99d2",
+            "content": "sha256:bccd2946c31d12765c1160802ba83ffc13693914bc20ea92e3125a3daface1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-VP8NQM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3PKJ9X",
+      "items": [
+        "sha256:2f5dffedf13d71836fa945b7181fa7e2293a95a2ac1616dac49b879e4bf789a1"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-WHEFVS on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-WHEFVS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:fbae3823da23858c1751c1554ce86aca4a4defced607a24619c683acd891ea98",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-J4K6S5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-47ZYS8",
+      "items": [
+        "sha256:73ee30e377e99a6723ac907606ab5e4962adcfedd9a4359b955abdcbd0318af4"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-945YZ4 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 4,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4EYVHT",
+      "items": [
+        "sha256:08615f75f53c5c8de242af3d2ccc390dd22ee4f00ea8360375a5bb80af717e19"
+      ],
+      "reason": "Updated card prose for Consolidator's knowledge_read impact/search/records cue and refreshed citations.",
+      "sources": [
+        {
+          "blob": "cb08478568a0b19398709001948066a453bb39a8",
+          "path": "skills/l-01-agent-lifecycles/roles/consolidator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/consolidator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-59Y7R2",
+      "items": [
+        "sha256:6202309a59ac838368f9ad46cc588b147ca3d55c3fdb06ed41ea36ba205ca8ad"
+      ],
+      "reason": "Examined all 3 member invariants of FAM-YGXZTQ against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "928145b67bf94c0353620e2436a380f67b3a8329",
+            "content": "sha256:2ccb23fb03ed924cb39c722e074382befd901678f30a7ded4eca61e3a75c2913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "2c2f1ba3d6d0e33588d07ef315a0d33d4a7b99d2",
+            "content": "sha256:bccd2946c31d12765c1160802ba83ffc13693914bc20ea92e3125a3daface1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-WR7C61"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5A9HT9",
+      "items": [
+        "sha256:84aed0eb941f2ba05f2de4036ffab3b11cf0ecb695359a4d85c2c1f0ebe21a21"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-HGSFJ8 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:09c76733f3d7e14ff7c1b3c4a390fc13621876a37621d271853739ec91c45ab1",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f0238043f49c6e6aac36e749f5ceba8cee7b5aa05d0aadabfe81c53b1f28fbf7",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-W7BYTX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5V1KFR",
+      "items": [
+        "sha256:5005f615b4927b80956f32a5c6a5832607319d0ccbf98ed566d3861d130039b8"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-JAACMT on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-JAACMT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-67185H",
+      "items": [],
+      "reason": "Confirmed docs/install/hermes.md against frozen tree 58741cf1: full document read verified zero contradictions against BUG-L58 or KNO-R14@v1.",
+      "revision": 15,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:eb9d4f3e1eac793f36c81f2bd06d0a761f08b4c5657789603f56a686f06d3f8e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:1f75710a45cae07a75ec73999fbecd98968a95f9511840bb9c8848b1437845b1",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-MXJ3HX"
+        },
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:a0fc0164dfaa739ee9a0e3ab1fe71bf0a90ab7270f261522fcbf9897895dbf18",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:0d8033447f3f25da5d76aa7cca0262be110f5c3357645334f435d1454cfbf159",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-VESCVY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6QKB82",
+      "items": [
+        "sha256:87c2cd9288bddcb8f102b783e23339e5e99ef84c1bc5da8c631ed33f33375ff7"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-ZNJ14G on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+            "content": "sha256:9b4bd10acb21d3150d3ffdbf277c975c4d530cefe966e2a57b355427d776e3ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7G86FY",
+      "items": [
+        "sha256:199c75a5b27e65034dc4f073625f538ef34234fbbba624a05b0056d16aa77b13"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-EHJV8E on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7VV30M",
+      "items": [
+        "sha256:7ecf092d8626da2db1be10133b1dbd713c90005b181474ac68e23327a9b8cd9c"
+      ],
+      "reason": "Updated card prose for Manager's [`knowledge_read`] pointer label to reference/knowledge/commands.md and refreshed citations.",
+      "sources": [
+        {
+          "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_unique_detail_pointers.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+            "content": "sha256:4eb72720cad9cc7f8f493d20f98643ea0fb071d37c344842b0c4db95da4c19a4",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+            "content": "sha256:cfc01bf450803399743e193702d871f0ceffc597def2fe9b0a3b83c5a2f37120",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-DJ7814"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7ZNS6P",
+      "items": [
+        "sha256:845b77f9167110977463101e2bde3f59a53de20453dfd273884d170cfd4a75e5"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-8SBKWP on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-8SBKWP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+            "content": "sha256:e945fcc3600f2e35d88b854415e12ecd53359061311da90d3898b5d8222e3bbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-C1M5FZ"
+        },
+        {
+          "after": {
+            "blob": "a1ea11a061d1871a9bc98ca23a6d8743d7006035",
+            "content": "sha256:fa51e92de221840cf442d04108c75d0dcdbb71397d501182efcb304db1492796",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/llms.txt"
+          },
+          "before": {
+            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
+            "content": "sha256:97ee62f4c18d71b013dd8d80710e5eaecd87e8dd5716514d68be9a16a93e7ab5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/llms.txt"
+          },
+          "id": "RLZ-PYN607"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-87GFSG",
+      "items": [
+        "sha256:7646267a61c57eb65557fdc1cbc65fd0573d14f5571b6ac9de09c1c804c3e389",
+        "sha256:8ce125a0b2aba274ccc15591092b07e9c24d8afc46bf22c30a98d5336e958658"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-3ZXAD9 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-3ZXAD9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8GG4AK",
+      "items": [
+        "sha256:14f0cba9df1d4eef9464f95edcc7bc65b9167fb08b2f1724f107540e2acaa698"
+      ],
+      "reason": "Updated card prose and citation [4] from 1,446 to 1,469 words against the 1,500-word ceiling and refreshed citations.",
+      "sources": [
+        {
+          "blob": "ad0aaa0b8860d0cbb695dc984cf89ecf729956eb",
+          "path": "mcp/tests/test_canvas_capsule_text.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_capsule_text.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8K3EVB",
+      "items": [
+        "sha256:0949c9051dfc862d8a9c544b69cf2058de48c1c32ebdad0048f406d194436080"
+      ],
+      "reason": "Re-authored stale reference [40] (11-view text-bearing knowledge_read + auto-pairing) and nine other changed-source citations via citation_fix.",
+      "sources": [
+        {
+          "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2f9fa31e8eb41a39765813a7f1b46f45a1844bdc",
+          "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
+        },
+        {
+          "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+          "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+        },
+        {
+          "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+          "path": "skills/l-01-agent-lifecycles/operations/consolidation.md"
+        },
+        {
+          "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+          "path": "skills/l-01-agent-lifecycles/operations/planning.md"
+        },
+        {
+          "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+        },
+        {
+          "blob": "9c8c12bfd4445251389ce007bbb770a3d4f948d7",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        },
+        {
+          "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/use.md"
+        },
+        {
+          "blob": "4692d8ba43f2db2e53f918ad723cadb8b4a902fd",
+          "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+        },
+        {
+          "blob": "8ee580618943f5f0e042d72d15ff33db1a7e4d27",
+          "path": "skills/l-01-agent-lifecycles/templates/impact-analysis.md"
+        },
+        {
+          "blob": "928145b67bf94c0353620e2436a380f67b3a8329",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+            "content": "sha256:862076e2d3db41e62171c2f7ba2bd29c09a82c3df538d18ae5292763fc9e1697",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+            "content": "sha256:6d8f09d9e611039b575a6d6ffceca76febf365f213ae7a67d9481f017adbf397",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-CQCTG9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8N76G4",
+      "items": [
+        "sha256:8443717255d85678a261963772ef905d15e2650fb1515239675685db5f707a63"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-AKRZAN on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-AKRZAN"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-8XX2MS",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined all 2 member invariants of FAM-GDXSJG against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-9BPGSN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-97F7JK",
+      "items": [
+        "sha256:676a8294a1ebdcb5b797778164bc48db5f6f149e7107773201ca19f13ba060b0"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-H0WCGX on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-H0WCGX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9MWQ8E",
+      "items": [
+        "sha256:df126ae31c1a803742ae22eb8517057637026ca8336a31da46c070cc20699771"
+      ],
+      "reason": "Updated card prose for Architect's knowledge_read impact/search/records cue and refreshed citations.",
+      "sources": [
+        {
+          "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "deferralIds": [
+        "DFR-M29BGY"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9PFM6X",
+      "items": [
+        "sha256:26e9ecb19889caf88bc9e1d0efcd68ff2e1752267d476fa1b402d28e3c5c6acd"
+      ],
+      "reason": "Confirmed docs/features.md against frozen tree 58741cf1: KNO-R14@v1 resolved the line 204 names-only contradiction and narrowed DFR-4XVB1B to remaining untouched lines 398-399 (4,000-token ceiling).",
+      "revision": 39,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A1JG2P",
+      "items": [
+        "sha256:16b843e98d833a8cb18bb5073b4c5faf0dcc9d485669579ffcda9c5850b23159"
+      ],
+      "reason": "Updated card prose for Manager's [`knowledge_read`] Reference index pointer to commands.md and refreshed citations.",
+      "sources": [
+        {
+          "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A2DEFE",
+      "items": [
+        "sha256:a9f66778ffbdcb5a94e0da32720962685861619a2c8cc4f6c45398728dedfb81"
+      ],
+      "reason": "Reviewed mcp/tests/overview.md against KNO-R14@v1: the test route overview covers suite layout and evidence lanes at area altitude and remains accurate; the 1,469-word measurement and [`knowledge_read`] pointer checks are recorded on their file cards.",
+      "sources": [
+        {
+          "blob": "ad0aaa0b8860d0cbb695dc984cf89ecf729956eb",
+          "path": "mcp/tests/test_canvas_capsule_text.py"
+        },
+        {
+          "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c3af90368ec6cf6e9455a74f54af7607e8cde7f64eda7ede3c294a2e54e3c525",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:77b5edde6d0cb126a761c44b2b2336cb440fd4fd41ece65e186027dbcaa783be",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-V1AKR1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A3Y5NJ",
+      "items": [
+        "sha256:ccb86be85b5853688b6f8c97f6a55c29ead2c1ee7501e393c4aca4fbe0a6cbb8"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-4E130M on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-4E130M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:35061894452db0bee7830d570ee580a92a91cbd7e7c770bee4280c220fd323c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:029daa3fe482995e53143dab52252d33e33ca1212f7d2fb2255b49ffcdc57472",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-8HSARZ"
+        },
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SZMT6X"
+        },
+        {
+          "after": {
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+            "content": "sha256:4e5236525594cd345db44967952dddf5d92073dd84231826a870fd71649453d3",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "content": "sha256:9c092932992c9152d380d534424c7c15f0f8665156c98f03beabab4c33840157",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-V9GWTW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A9GGR4",
+      "items": [
+        "sha256:ed61956d3b37d52d39bec86d582d06eea101e439bf3784b7521c487a6ee42620"
+      ],
+      "reason": "Re-anchored 3 realization/proof entry(ies) for INV-7FMDAS on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-7FMDAS"
+    },
+    {
+      "considered": [
+        "FAM-0TR1G5",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-AGZPPE",
+      "items": [],
+      "reason": "KNO-R14@v1 R2 governs Tier-2 reference, criteria, and brief-template documentation of all eleven knowledge_read views and anti-overreach boundaries; examined existing brief and guarded-instruction families and confirmed it stands alone without forming a new joint family guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-YSQJ5K"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d5527f7ac5c497eff36b064cb1af18b1e0550c4",
+            "content": "sha256:88a3f5a69db1323596c64eb5edf45543606138e029b8bd0aa632df07075c868c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "before": {
+            "blob": "430abceb20c1106652feb5bbb9bcd646e99f135b",
+            "content": "sha256:35905ad96d5c0b0d807371ad06ba90029e0f13db2d5405426bcba20f83eea413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "id": "RLZ-NRDHDM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ATBVJC",
+      "items": [
+        "sha256:a59d31cd3385b0b1661e5fc07510af7712e88ccdb7259510ea4c2c2985dbe5d9"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-NDGJ3M on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-NDGJ3M"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B68ZMP",
+      "items": [
+        "sha256:04ffd72ef6548f7081da03b91bfc4655555118f33cce1eebe61c559c386032b6"
+      ],
+      "reason": "Updated card prose for Stage 1 knowledge_read (impact, search, records) paired with trees/code within the 1,500-word ceiling (1,469 words) and refreshed citations.",
+      "sources": [
+        {
+          "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+          "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cb08478568a0b19398709001948066a453bb39a8",
+            "content": "sha256:55089946596c80e4a8c8de417adac29f9a29f725ece80996414d01ea8b8a0bb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/consolidator.md"
+          },
+          "before": {
+            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+            "content": "sha256:32fd44e071b8344472166000afb61e83601b4e70059a0b12b10cdc9b0aa159d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/consolidator.md"
+          },
+          "id": "RLZ-1EVSH6"
+        },
+        {
+          "after": {
+            "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+            "content": "sha256:df9f114047aadc00e286e0602fcbdbc80714e4032b055dd7f925ea7694b0c00d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/consolidation.md"
+          },
+          "before": {
+            "blob": "857595f1fd4d4833daad608ca5db06f5e0b22a20",
+            "content": "sha256:36d2755cd5bb91508757b461e22a83e8b16915cb021d48167f4e7a59146a07ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/consolidation.md"
+          },
+          "id": "RLZ-G7BA18"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BKJEXQ",
+      "items": [
+        "sha256:3abad6dcb550234f6e51fef2531c16b38b6d17f1a65382760183f8c977c9cc8e"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-SAK9RR on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-SAK9RR"
+    },
+    {
+      "deferralIds": [
+        "DFR-N0BHKQ",
+        "DFR-YZFEY8"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BR1GQM",
+      "items": [
+        "sha256:fb056087daedfa052f113081074a2ba8442f43794f58dd2eac1f8cb679e6e867"
+      ],
+      "reason": "Confirmed docs/concepts.md against frozen tree 58741cf1: resolved DFR-YZFEY8 after KNO-R14@v1 updated lines 418-430 for knowledge_read views and text-bearing replies, and re-deferred untouched 261112-BUG deferral DFR-A96ARN onto the new blob (lines 669-672).",
+      "revision": 37,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-05PN1D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BRGFXB",
+      "items": [
+        "sha256:e7e519771cb4604808ea94efd82dd5099e2bc41ea75e88f956ebfb250415fab9"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-4AQ26N on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-4AQ26N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BSBRA6",
+      "items": [],
+      "reason": "Confirmed docs/workflows.md against frozen tree 58741cf1: full document verified contradiction-free after KNO-R14@v1 Tier-1 instruction updates.",
+      "revision": 18,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "considered": [
+        "FAM-0TR1G5",
+        "FAM-GDXSJG",
+        "FAM-YGXZTQ",
+        "FAM-7ZPFMC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-C0JG2T",
+      "items": [],
+      "reason": "KNO-R14@v1 R1 governs Tier-1 role/operation knowledge_read view cues within token ceilings; examined existing brief, propagation, instruction-maintenance, and consolidator families and confirmed it states a standalone Tier-1 retrieval-cue rule rather than modifying or joining an existing family guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-4BJMGY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c10bf61473d638dd294f8a66d8d2978f10ca75d029571245722ada219b09583b",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-N4VK1C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C7T392",
+      "items": [
+        "sha256:877ea0fe537bc7458b98d99c78e335fa494c453e424406ff54d2826fc22680e8"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-CQCPAD on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-CQCPAD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CMXW1C",
+      "items": [
+        "sha256:4f7d838b642a51d196d748a90f43cbba95d8ff8d8bcb60813f85e20a682ded1b"
+      ],
+      "reason": "Reviewed canvas/overview.md against KNO-R14@v1: the route overview covers the canvas host and staged pipeline architecture at area altitude and remains accurate; Stage 1 knowledge_read guidance and word count are recorded on the review-presenter.md file card.",
+      "sources": [
+        {
+          "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+          "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DB3ARM",
+      "items": [
+        "sha256:1ff8406ebd654361afdbcd6467934bdc8c71890b2fa4776990de89bc3ed69441",
+        "sha256:24f865d91c14828a376516e62909cc953d985ef7064e71c505ccf83f12d8a280"
+      ],
+      "reason": "Updated packaged review-presenter card prose for Stage 1 knowledge_read guidance and 1,469-word measurement and refreshed citations.",
+      "sources": [
+        {
+          "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+          "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:1c7ddee0218a8b19e29ec2c199708d9b0e7b3175c86cb27b69cd4c89d18f0d39",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:d1e113099fb25c412209939bfbf4ca1e5d16c94fa31710f6881288020caac6df",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-0GEXHP"
+        },
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        },
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:92b2cc126f5fbc165925d52d6013918c48cb36ad480eebf2637de54ff61f8e45",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:5c1c4fe02e88a332a58dd03af15b7ac52e1623d2d640a0a363097325d0f7644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:5b4ab46746e88e55c7c1ec5b1303de212d3abfb87819e2aea4b394f6ef455d6e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:3f52a4546303520f008bfeecfe63fd51d3a69684465130ee350b45f6d2460451",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:ed43e6c329a45b41e309c91e8bc0fba6bf1dd52be51d82385f33223627e087bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:356bdb331c6971b987292bd9921439b4f16293decc360194fb89a3006e74fe1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+            "content": "sha256:17b4cd9d71cfd888e08759dcf1d6bc2729e6c79b2ec6b3cee429bdb369ac26c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "content": "sha256:4906637dc8b8d711150c022c222cabc97776fe4f200b2081225b680b5269e87e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:58dabadd958b5e81a3c2791f182d52dce67353f328ff48d12deb60a844407b01",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:b2571546ee05c04b15c77df486adecca00dd7196f499d6604fc1458a04a7c90f",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-GRG1X8"
+        },
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:f952694a48f1f289768b83d84fdbbacc1025fd0ffa1a8bc176583ba7e807a723",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:641e5977b0280c2791ad6da096495f6028c2e10a1f2932c1e88a02cb666afd21",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        },
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:35061894452db0bee7830d570ee580a92a91cbd7e7c770bee4280c220fd323c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:029daa3fe482995e53143dab52252d33e33ca1212f7d2fb2255b49ffcdc57472",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-RT5KYP"
+        },
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:fc8ed87eb9b6ec26781c3eb6ab8a5d14e7b9cf37d679a8a43adeaae8e68200a4",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:0402c97afc3d3827bdfad66e36a3a0e5d13ab119a59c0ab54367f1ee901c3147",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-VXHQMN"
+        },
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:35061894452db0bee7830d570ee580a92a91cbd7e7c770bee4280c220fd323c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:029daa3fe482995e53143dab52252d33e33ca1212f7d2fb2255b49ffcdc57472",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YVX677"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DBXT52",
+      "items": [
+        "sha256:c86fa2667a8421ab86ac2618fb3e8a0134af77914bb79961613ccadb2c27e43c"
+      ],
+      "reason": "Re-anchored 13 realization/proof entry(ies) for INV-NNQR91 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-2PVK9H",
+          "revision": 1
+        },
+        {
+          "id": "INV-41J2Q6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 2
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 2
+        },
+        {
+          "id": "INV-ESZKHN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-SDEXYK",
+          "revision": 1
+        },
+        {
+          "id": "INV-VEGPXX",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-DMFDYB",
+      "items": [
+        "sha256:ed0d776840c4b8f2629d92eb69ca318cc1f3354b465b09e8f8562ce94040d0e3"
+      ],
+      "reason": "Examined all 12 member invariants of FAM-FD58VB against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DPDV61",
+      "items": [
+        "sha256:7b82272285a7effa89ef98aada5c7575b1fe31e40289b3f229db9a1996343d65",
+        "sha256:a47fb51086c3f0954160cd9d96a4b3aef9b099b4219d8ffd72dbf2530cae8478"
+      ],
+      "reason": "Re-confirmed docs/architecture.md on post-KNO-L10 synced tree 95234971 (base 9f1b832ca / c1610ba89), advancing DPD-86HJGF cleanly above KNO-L10 rev 25 to rev 26 while preserving KNO-L10 extents.py::definition_scope and KNO-L14 lines 254-259.",
+      "revision": 26,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-RMJW06"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DR5DB6",
+      "items": [
+        "sha256:a3fbda3339da9400dcd0d54c7900a7aee3a580c6f5680cdbb65ae82e5976ee81"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-MM63KX on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-MM63KX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EDAVVA",
+      "items": [
+        "sha256:12cb3c5240266e92da1a3816f27989b48caf1178feaf143dbe4161c69242f281"
+      ],
+      "reason": "Updated card prose and citation [18] for Worker's knowledge_read impact/records cue alongside read_ar_files and refreshed citations.",
+      "sources": [
+        {
+          "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EH9D6J",
+      "items": [
+        "sha256:890d5696a374c1477c944d9c9a1a2a7d26c7143b85f4d4cb1bf16d7779320d0a"
+      ],
+      "reason": "Updated card prose for Orchestrator's knowledge_read impact/search/records sprint scope cue and refreshed citations.",
+      "sources": [
+        {
+          "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+          "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ad0aaa0b8860d0cbb695dc984cf89ecf729956eb",
+            "content": "sha256:366d4e04cbf5bf72c1cc4817b95621945355de9f89a04c30a6af8f9d8d65bf58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capability_text_is_read_from_the_package_data_copy"
+            },
+            "path": "mcp/tests/test_canvas_capsule_text.py"
+          },
+          "before": {
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
+            "content": "sha256:ade2edaaf5c390f1f4106d16bace35ad5e79f71d8042ee94d976daf5cf613906",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capability_text_is_read_from_the_package_data_copy"
+            },
+            "path": "mcp/tests/test_canvas_capsule_text.py"
+          },
+          "id": "PRF-6H7SYA"
+        },
+        {
+          "after": {
+            "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+            "content": "sha256:5c13a6d0a51607d78a5dfe479be898a54a48640e3b33d6b49087e08f3bb2a9f8",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+          },
+          "before": {
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "content": "sha256:06a32814144253c86253119eb9d86f0723f8dac599a0a8236c170cd18b9f4c06",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+          },
+          "id": "RLZ-015ETW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EMPHDR",
+      "items": [
+        "sha256:8ed2f0cedbe386ec456f1f351d14ffa407435de95ea2cf44f93a06aea951cf5d"
+      ],
+      "reason": "Re-anchored RLZ-015ETW (expanded line_range 22-51 to accommodate Stage 1 knowledge_read cue) and PRF-6H7SYA on frozen tree 58741cf1; six-stage artifact ordering and seventh index.html assembly meaning remain unchanged.",
+      "revision": 2,
+      "subject": "INV-0B3Q36"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EQVPGA",
+      "items": [
+        "sha256:9435ae3ab286b51ca519c30706180261a12ea00101a8b3051246d93882238b24"
+      ],
+      "reason": "Re-authored stale reference [286] on packaged worker.md via citation_fix after KNO-R14@v1 updated packaged instruction copies.",
+      "sources": [
+        {
+          "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
+          "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+        },
+        {
+          "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2f9fa31e8eb41a39765813a7f1b46f45a1844bdc",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md"
+        },
+        {
+          "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/closeout.md"
+        },
+        {
+          "blob": "7c38b5f64e1c1b245f02b06a29084ae6f8b875d2",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/consolidation.md"
+        },
+        {
+          "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/planning.md"
+        },
+        {
+          "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+        },
+        {
+          "blob": "9c8c12bfd4445251389ce007bbb770a3d4f948d7",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        },
+        {
+          "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/knowledge/use.md"
+        },
+        {
+          "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "cb08478568a0b19398709001948066a453bb39a8",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/consolidator.md"
+        },
+        {
+          "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+        },
+        {
+          "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "4692d8ba43f2db2e53f918ad723cadb8b4a902fd",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+        },
+        {
+          "blob": "8ee580618943f5f0e042d72d15ff33db1a7e4d27",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md"
+        },
+        {
+          "blob": "928145b67bf94c0353620e2436a380f67b3a8329",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-1YB3RJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-F0E1G0",
+      "items": [
+        "sha256:12a0a674b129631ed575cd990c2802d368c10c089b109bad8b9cb1fbee575f85"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-WAY665 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-WAY665"
+    },
+    {
+      "deferralIds": [
+        "DFR-6EWRE4"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-F5ANRM",
+      "items": [
+        "sha256:a8bcce7c23d0481f3a79dae7d23d2bca151d4b6feda1abce464c5012d0d44dd9"
+      ],
+      "reason": "Confirmed docs/reference/mcp-tools.md against frozen tree 58741cf1: KNO-R14@v1 resolved the line 203/217-247 view and text-bearing documentation gaps and narrowed DFR-XP94XS to line 31 (4,000-token ceiling).",
+      "revision": 35,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FNZP38",
+      "items": [
+        "sha256:a273828dc707e2aeba54735cc5cf3d38136ece036997c02d6be4bc08ca72d91b"
+      ],
+      "reason": "Updated card prose for knowledge_read impact/search in Prepared context assembly and refreshed citations.",
+      "sources": [
+        {
+          "blob": "56dd4c422336702ec475329d7536de210de0d6ce",
+          "path": "skills/l-01-agent-lifecycles/operations/planning.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G7QY37",
+      "items": [
+        "sha256:6337f5917f5b9558cb24f13573ca515ade74919408f2ffbfcd8059c84c419b92"
+      ],
+      "reason": "Updated card prose and citation [30] for Curator's knowledge_read impact/search/records cue and exact frozen 58741cf1 concise wording accepted by Manager.",
+      "sources": [
+        {
+          "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:e04c4a678d78b98573781230d6a31432868076b5814c78593c2aafda9fc89234",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:4ebb2af948f50d1a4e8eae25415d661d12168ae70cfcb7fb5a916c1631cd43e5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-5Y931E"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G9MXQA",
+      "items": [
+        "sha256:57031c299da56cb77071aefa7d13995cf84b12d6ad9a31b68dda749a1d5c6c2b"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-JAFF6J on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-JAFF6J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:5d13c2190144eee78517df67c7f1e60d3108e72ee874438681657cae6555048c",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-M47MGR"
+        },
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:5d13c2190144eee78517df67c7f1e60d3108e72ee874438681657cae6555048c",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-PAAE4A"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GAQXSQ",
+      "items": [
+        "sha256:8ad40a9ba055c8ab6595423b5188df81486dbfa1b1d5ac985f2ed7e1051b7b64"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-A6TJRJ on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-A6TJRJ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1PBH5A",
+          "revision": 1
+        },
+        {
+          "id": "INV-3ZXAD9",
+          "revision": 1
+        },
+        {
+          "id": "INV-4R5HAZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HD8CC1",
+          "revision": 1
+        },
+        {
+          "id": "INV-HE32N8",
+          "revision": 1
+        },
+        {
+          "id": "INV-HPD40B",
+          "revision": 1
+        },
+        {
+          "id": "INV-J4MDWS",
+          "revision": 1
+        },
+        {
+          "id": "INV-SAK9RR",
+          "revision": 1
+        },
+        {
+          "id": "INV-VETCYM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-HCW843",
+      "items": [
+        "sha256:0559dc92a09175fcefe5c9bfdeb75d5ce166219564c04136ada6ce0899da132e"
+      ],
+      "reason": "Examined all 9 member invariants of FAM-7ZPFMC against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-7ZPFMC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HQ9JNE",
+      "items": [
+        "sha256:a57b2d73de069d069ceec839b898b591b9629a5329eb00dd6921a84bd58abc92",
+        "sha256:bddbffa2e5cb336b79cb7c4c7c1aa65b78e7ab03073b4171cf3974209924fc3e",
+        "sha256:d88bc55684f2d61092fb92bda7cbc162d18ce72dadc9afbf2a8bbba0b8484fe1"
+      ],
+      "reason": "Updated card prose for knowledge_read impact/records guidance and refreshed citations.",
+      "sources": [
+        {
+          "blob": "2f9fa31e8eb41a39765813a7f1b46f45a1844bdc",
+          "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/criteria/plan-review.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HV3W4G",
+      "items": [
+        "sha256:4fc7fdcbb9311065481b1e791da4b3cac21861713447c9e6e7c9c48f3eaf654b"
+      ],
+      "reason": "Updated card prose for the added Knowledge reads section and refreshed citations.",
+      "sources": [
+        {
+          "blob": "4692d8ba43f2db2e53f918ad723cadb8b4a902fd",
+          "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KK9G60",
+      "items": [],
+      "reason": "Confirmed docs/design/canvas-host.md against frozen tree 58741cf1: full document verified contradiction-free after review-presenter.md Stage 1 knowledge_read update.",
+      "revision": 11,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KNRCYD",
+      "items": [],
+      "reason": "Confirmed mcp/README.md against frozen tree 58741cf1: full document verified contradiction-free after KNO-R14@v1 instruction and package copy updates.",
+      "revision": 31,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KTGR3S",
+      "items": [],
+      "reason": "Confirmed docs/roles.md against frozen tree 58741cf1: full document read verified zero contradictions against BUG-L58 or KNO-R14@v1 role instruction updates.",
+      "revision": 21,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M4690Y",
+      "items": [
+        "sha256:195bd18e4a69e8cf006db435d3a7d38318267f0a8f67a5650716c3b3baf9f2b6"
+      ],
+      "reason": "Updated Hot Path Summary prose for all eight non-Bootstrap roles' knowledge_read views and re-authored 19 stale references via citation_fix.",
+      "sources": [
+        {
+          "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "cb08478568a0b19398709001948066a453bb39a8",
+          "path": "skills/l-01-agent-lifecycles/roles/consolidator.md"
+        },
+        {
+          "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+          "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+          "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+        },
+        {
+          "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M94D4S",
+      "items": [
+        "sha256:75e360a685746bd988caa59f828bde1318e48467352b3c99ebb0cc0c8c619bbe",
+        "sha256:8701feb3e6447f93fad9cb1a2699632b0a35e78d3a3123649eb4c94792e587a9",
+        "sha256:f555868fe47c75c3c4c22230dae54ed153c88c6fabf9c93319071e0a4f335123"
+      ],
+      "reason": "Updated card prose and citation [5] for knowledge_read impact/records alongside read_ar_files and refreshed citations.",
+      "sources": [
+        {
+          "blob": "8ee580618943f5f0e042d72d15ff33db1a7e4d27",
+          "path": "skills/l-01-agent-lifecycles/templates/impact-analysis.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/impact-analysis.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MVSEN8",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "Updated card prose for Reviewer's knowledge_read impact/search/records and memory-lane dependent(staleOnly=true) cues while preserving complete-diff rule and refreshed citations.",
+      "sources": [
+        {
+          "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-N5W75H",
+      "items": [
+        "sha256:ddac544cbd8e69998da8381d1e51ae9a12542492641fa34a6c11f9b03a94e926"
+      ],
+      "reason": "KNO-R14@v1 only compressed roles/curator.md line 15 phrasing ('no disposition re-judge' -> 'no re-judge', 'status: retired to retire' -> 'retired') to stay within the compiled token ceiling after adding the knowledge_read cue; Curator still keeps one writer lane with unrestricted harness helper freedom, so the reconsider_when condition for fixed helper restrictions is not met.",
+      "subject": "reconsider:DEC-SKAXJ5#1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7HBKZR",
+          "revision": 2
+        },
+        {
+          "id": "INV-AF2DN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AW14ZP",
+          "revision": 1
+        },
+        {
+          "id": "INV-CV3MW4",
+          "revision": 3
+        },
+        {
+          "id": "INV-K76Z77",
+          "revision": 1
+        },
+        {
+          "id": "INV-S9H78W",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NCZEK9",
+      "items": [
+        "sha256:7e486a7272e1909a7ac0c0abe6ef1a92cbb8ea7362e292c4d9b99987734f83b5"
+      ],
+      "reason": "Examined all 6 member invariants of FAM-K65H24 against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 3,
+      "subject": "FAM-K65H24"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P7TMW5",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Updated card prose and citations [3], [8], [11] to renewed measurements (411 Curator, 724 Manager, 677/458/430 Consolidator, 355 coherence detail, 1,542 Manager brief, 6,889 handoff-ingestion template).",
+      "sources": [
+        {
+          "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PVRPQ0",
+      "items": [
+        "sha256:14be9492cda38d0fbaf3de831dce3f4706b638db62ddbb2307677e2b68f4eaee"
+      ],
+      "reason": "Updated card prose for dependent(staleOnly=true, compact=true) triage vs full evidence rows and refreshed citations.",
+      "sources": [
+        {
+          "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+          "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/closeout.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PVS9BK",
+      "items": [],
+      "reason": "Confirmed docs/guides/review-page-and-explainer.md against frozen tree 58741cf1: full document verified contradiction-free after review-presenter.md update.",
+      "revision": 22,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 7
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-CAJ09X",
+          "revision": 2
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-R7XAX7",
+      "items": [
+        "sha256:dc916577af44079d2f445ca8021fa35713bd5996ea87bb740e2797003ab8b193"
+      ],
+      "reason": "Examined all 6 member invariants of FAM-PNH1QS against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 6,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+            "content": "sha256:e945fcc3600f2e35d88b854415e12ecd53359061311da90d3898b5d8222e3bbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RCSJ8Y",
+      "items": [
+        "sha256:c5eac08636c8e4a4da803ef4f946380a45a46fa9a4b12c6e213115dec6c8217c"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-6ZZXV3 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-19NZ18"
+        },
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:acdb9195371646928ec3949425743f2d64ff79893e5763b41a5f8e2a305ab558",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:98280725f4f215ac7718af24c6a725b3b4181a0d105096511ba98ba95066d529",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PC6PG7"
+        },
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c10bf61473d638dd294f8a66d8d2978f10ca75d029571245722ada219b09583b",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PFT43W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RE7GZP",
+      "items": [
+        "sha256:7af281117a19cf6cce98c92abb6a6d81bb05040638f34182956ff0308e57dd61"
+      ],
+      "reason": "Re-anchored 3 realization/proof entry(ies) for INV-K6Q2R4 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+            "content": "sha256:fcfd73061bba0b60faf21e2b9ad8478306844a0fd86cfa3d46e2e31d51ba12ee",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "content": "sha256:eeb18b49e85d98b0e162087159a84883fabab145c2dd0c9a15f0a6e5b772c371",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-QGFMNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RK33GV",
+      "items": [
+        "sha256:a8f56cc8ab4713496ecc97e34a62820ccac091ec4ff462557c12cd938a3cb69f"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-5GEDEX on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-5GEDEX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SNVPXG",
+      "items": [
+        "sha256:600565d775d52f2b64ea24f955d695c08fea3b15217a9b221f905128243d755d"
+      ],
+      "reason": "Updated card prose and citation [3] for Investigator's knowledge_read search/impact/records cue and refreshed citations.",
+      "sources": [
+        {
+          "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+          "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/investigator.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SNXW9H",
+      "items": [
+        "sha256:63c44ae1bbe77f32c52a1dc3511736f883a27c90a2b0a9702b2ebf95fdf44a7f"
+      ],
+      "reason": "Updated card prose for the added Knowledge reads section and refreshed citations.",
+      "sources": [
+        {
+          "blob": "928145b67bf94c0353620e2436a380f67b3a8329",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-6FJEPD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SRSFYB",
+      "items": [
+        "sha256:91217163740160aa00853e7177d83cc851fdd2fdea0b76578951d2ee94e33398"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-YT1AD8 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-YT1AD8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-A8E0YE",
+          "revision": 1
+        },
+        {
+          "id": "INV-H0WCGX",
+          "revision": 1
+        },
+        {
+          "id": "INV-MM63KX",
+          "revision": 2
+        },
+        {
+          "id": "INV-WAY665",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNHABM",
+          "revision": 3
+        },
+        {
+          "id": "INV-YT1AD8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-TB5XGN",
+      "items": [
+        "sha256:832c3b6c6391bc3803e3d34a43b1aeaef0906c7cb0112ea02b5ef49b7b762ad2"
+      ],
+      "reason": "Examined all 6 member invariants of FAM-TYQYTP against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 4,
+      "subject": "FAM-TYQYTP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TMQ26E",
+      "items": [
+        "sha256:d30c72c0993f17dc788049592f82e4d9f0b882fb86860b7613b16ceb6cdc420b"
+      ],
+      "reason": "Updated card prose for knowledge_read impact/search/records cue in curation workflow and refreshed citations.",
+      "sources": [
+        {
+          "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:375ec5cd0d1a7df6b6abb91dd581b86f0e8a6d6050bb9a62f0ca658e8771baa0",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:b7187add88a0ca8f2fe88b159f362a65c5cb3a4709cfbda12817a8728f752fc3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-D5ZTR6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VGW4TB",
+      "items": [
+        "sha256:1e65c732b8b12e1c62310cebf58cc9098543e8b91143290549e618c1fb68b289"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-5KBX7C on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 5,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:55c76c03bdc1ff9098f4b66cb4e40a26fb6b3a5fbce0e7c3a4484794dd2b062c",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-82STF2"
+        },
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:c10bf61473d638dd294f8a66d8d2978f10ca75d029571245722ada219b09583b",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-97786Q"
+        },
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:488d3d1f4270de0a85276c91e961e58f954871ae4c60327624e79e3a2a4d65e3",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-9FYETT"
+        },
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:88a52f174d98771c2604525159092892322c38ff7c315ef8eb3c1de2cedaf8d5",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-FRP7FT"
+        },
+        {
+          "after": {
+            "blob": "d5a1d0937a7e21b6c28286535cf48625daaa195c",
+            "content": "sha256:7432ba316cc012d7d4a181d0d8bff62a803dafce7ce5245d824cb0c13833286a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/knowledge/use.md"
+          },
+          "before": {
+            "blob": "b6c43393f56d9096b0de25d176301c178162a896",
+            "content": "sha256:0fc4768a76075386cb7852dab353afd3a0ee65f9ca293922d01bebfc4f121a65",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/knowledge/use.md"
+          },
+          "id": "RLZ-RHS0GR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VH41MA",
+      "items": [
+        "sha256:00ffdd7e187a4c7b34cc969466c82af7e8b83a339fb336c51d225425cdee1ec4"
+      ],
+      "reason": "Re-anchored 5 realization/proof entry(ies) for INV-47NR7E on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 7
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-VJ05M2",
+      "items": [
+        "sha256:000a4e18a5de4c639f3274a3d1076eee420a3114a92e7ff4c3f739ac2ccf17c1"
+      ],
+      "reason": "Examined all 5 member invariants of FAM-7AEA19 against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 3,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4JERMG"
+        },
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:35061894452db0bee7830d570ee580a92a91cbd7e7c770bee4280c220fd323c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:029daa3fe482995e53143dab52252d33e33ca1212f7d2fb2255b49ffcdc57472",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-WH4X9B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VPT9RB",
+      "items": [
+        "sha256:f640d41c453a6ba446fc61e75dfa0f1b59e5fbe62c3c6de76c3a405a5a9f6a49"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-9S49CW on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-0NTWBB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W4SNTC",
+      "items": [
+        "sha256:0032dea8f0aa1d95d58cdcca8239b82267401cb67fdb6eeaab55eddb142784f5"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-A8E0YE on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-A8E0YE"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 2
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 3
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W7691G",
+      "items": [
+        "sha256:7f7c339f7d8aaced5613bc5b1c63c382df8788f672a9b0cf96a29bf6d2e6781c"
+      ],
+      "reason": "Examined all 6 member invariants of FAM-CR0HHJ against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 4,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:92b2cc126f5fbc165925d52d6013918c48cb36ad480eebf2637de54ff61f8e45",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:5c1c4fe02e88a332a58dd03af15b7ac52e1623d2d640a0a363097325d0f7644f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-1MJ3JN"
+        },
+        {
+          "after": {
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+            "content": "sha256:40bedadda1b156da4c1444abba33eaa787fce82f42ad436c5f4d53b337c575a7",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "content": "sha256:49968f4b6153e8f37ac4c7a5ed36ee4f0ef798e523dcba9c977c806c4974c4dc",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-5KGCEP"
+        },
+        {
+          "after": {
+            "blob": "e505a5027f45cf753855a75f1e924f042c617489",
+            "content": "sha256:1c7ddee0218a8b19e29ec2c199708d9b0e7b3175c86cb27b69cd4c89d18f0d39",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c9c4f01e52cac7cb674750b8a37019a8d8a0cf39df493f05fba2af9f8896d2c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-DAEBRQ"
+        },
+        {
+          "after": {
+            "blob": "08b4c4d998f66086c8f3d9031f1533bedb3565b1",
+            "content": "sha256:35061894452db0bee7830d570ee580a92a91cbd7e7c770bee4280c220fd323c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:029daa3fe482995e53143dab52252d33e33ca1212f7d2fb2255b49ffcdc57472",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-EKQSVP"
+        },
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-FKZS6D"
+        },
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-XG7F62"
+        },
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:ed43e6c329a45b41e309c91e8bc0fba6bf1dd52be51d82385f33223627e087bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:356bdb331c6971b987292bd9921439b4f16293decc360194fb89a3006e74fe1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-ZN9615"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W9SYNY",
+      "items": [
+        "sha256:bbfc03ee867ab6e7ae19ee98aa121f26eb8dc40f7fc2200b811d0639ddeadd8a"
+      ],
+      "reason": "Re-anchored 7 realization/proof entry(ies) for INV-GWA6VR on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0R04WY",
+          "revision": 1
+        },
+        {
+          "id": "INV-1QE8YM",
+          "revision": 1
+        },
+        {
+          "id": "INV-5GEDEX",
+          "revision": 2
+        },
+        {
+          "id": "INV-69M737",
+          "revision": 1
+        },
+        {
+          "id": "INV-793X8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-AV04NY",
+          "revision": 1
+        },
+        {
+          "id": "INV-B79B38",
+          "revision": 1
+        },
+        {
+          "id": "INV-BNDKC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-CZXJCP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G8AX2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-JAFF6J",
+          "revision": 1
+        },
+        {
+          "id": "INV-KPK1WT",
+          "revision": 2
+        },
+        {
+          "id": "INV-PD5ZD5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TRMMZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-X8FRT8",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z0FRT0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WJM85N",
+      "items": [
+        "sha256:4d689df3833836a4acca6471664b78a0d4fa61453a42b7e1c9d857651e9f08a3"
+      ],
+      "reason": "Examined all 16 member invariants of FAM-7NBVYB against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 4,
+      "subject": "FAM-7NBVYB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
+            "content": "sha256:9b4bd10acb21d3150d3ffdbf277c975c4d530cefe966e2a57b355427d776e3ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WM5WH5",
+      "items": [
+        "sha256:b6a8d77d2d54883e78ae8a941c96ec7e77038abd8a70259e94f9b5df94be3d6e"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-Y6GVZ7 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 7,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 5
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 4
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-WXWA8Z",
+      "items": [
+        "sha256:2042df190fb71ef666098ff9c3bc4f41fedabc0b2a5daf37c8b60ecc7c2c6a60"
+      ],
+      "reason": "Examined all 6 member invariants of FAM-83BTBD against frozen tree 58741cf1: KNO-R14@v1 only added knowledge_read view cues, Tier-2/public-doc updates, and regenerated package copies/measurements; every member meaning and the family guarantee remain unchanged.",
+      "revision": 4,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b70c5fe1d7f0f391c39b214abd60dba28cf727fe",
+            "content": "sha256:172c37b340867d7da6edbc6e59d25f33cd710a2120092bae7e46cd02a311993c",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:aae3b2e23b0d19e3e9f2ad76ea5b8fe0c658c147220fc66f0612a821d111354f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-X79EQQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WXZSSQ",
+      "items": [
+        "sha256:11dda039eae56e56a0cb64dd77ec1522c36d61698fd2866440ef09fede663592"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-C8SVFY on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:fbae3823da23858c1751c1554ce86aca4a4defced607a24619c683acd891ea98",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-TND9GX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X70168",
+      "items": [
+        "sha256:188d50b2fc6107bc640e1197e845517f0ce3c498a5bdca37fc6a5186774865e9"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-6A3N48 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-6A3N48"
+    },
+    {
+      "considered": [
+        "FAM-0TR1G5",
+        "FAM-7ZPFMC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-XFEA3X",
+      "items": [],
+      "reason": "KNO-R14@v1 R4 governs public documentation alignment for all eleven knowledge_read views and text-bearing replies; examined brief and consolidator families and confirmed public doc parity stands alone without joining an existing family.",
+      "revision": 1,
+      "subject": "membership:INV-A3XH71"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e86960ed019133fb2c05cc281c991f1003d8aa3e",
+            "content": "sha256:17b4cd9d71cfd888e08759dcf1d6bc2729e6c79b2ec6b3cee429bdb369ac26c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "content": "sha256:4906637dc8b8d711150c022c222cabc97776fe4f200b2081225b680b5269e87e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-VT0A1C"
+        },
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:57513bfaba4538a0f891156b7348891b59e82c86176237f114471cb5148220c8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:1f992757e0d459bd02e64fea8039662c7bd5c020fb31fb63dc4de67bc294dd7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-Z9Z18P"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XFGT6T",
+      "items": [
+        "sha256:87aff9263f1463b1aad9944926cb946c8b85e50c4d8e934ba4baae7d81b7641b"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-QZW2X2 on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 3,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "considered": [
+        "FAM-MS7NC5",
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-XNE93R",
+      "items": [],
+      "reason": "KNO-R14@v1 R3 governs the Explainer's Stage 1 knowledge_read instruction within the 1,500-word budget; examined FAM-MS7NC5 (comparison-scoped explainer authoring) and FAM-GDXSJG (onboarding propagation) and confirmed neither family's guarantee requires adding this Stage 1 retrieval-cue rule.",
+      "revision": 1,
+      "subject": "membership:INV-XEQ0TR"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d699fc11329d580a1204fb8ce2d2cf90df2d6372",
+            "content": "sha256:e80589c20de85368765bdaeef1bb85c1580d94f27a2826f70c197845dee062a6",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:2446d355be9ac295614af8fa2679f21f445e6f618d0d665c2c6964aa748d24f6",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4CP22X"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XY84DB",
+      "items": [
+        "sha256:9f9d5439bd70a40693fdce01862c9cc91176e1d8481233118f4d42d889da9f22"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-EXP68S on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-EXP68S"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "aa066f789990ab0e01c0dc1b12d6bf82d79c340c",
+            "content": "sha256:4eb72720cad9cc7f8f493d20f98643ea0fb071d37c344842b0c4db95da4c19a4",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+            "content": "sha256:cfc01bf450803399743e193702d871f0ceffc597def2fe9b0a3b83c5a2f37120",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-7J2CP7"
+        },
+        {
+          "after": {
+            "blob": "e8d846a824b15bd083af5bf92c715d5a68ce2ce4",
+            "content": "sha256:488d3d1f4270de0a85276c91e961e58f954871ae4c60327624e79e3a2a4d65e3",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-SQ8RXD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YCDXMK",
+      "items": [
+        "sha256:36bed1aaed3768bdae7c244daa57c83a8fe3d5eb3d90048f6233f3b2045e7c0f"
+      ],
+      "reason": "Re-anchored 2 realization/proof entry(ies) for INV-5BPF6M on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-5BPF6M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "505cc68c8b2746b0647bad55ca885922972572fb",
+            "content": "sha256:bd0005d8fd93fc642f8fb01d0125f64c5fb886eb54213c139fbf3710fdd5953c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "626255c0f35ee740b3cc9b092f1c825f1464e363",
+            "content": "sha256:ced09cc8efcc9ee2a5f27c9c905f3b1d7c79d31c0a004becd350ad3d403849cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-JK07JX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YRC8WB",
+      "items": [
+        "sha256:a5bb9280bcf6f37041561a43f6e57201f667fc4006af5e8b892880b0a51bfc08"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-NC6F6V on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c50cc0f677dcd2c826c7a988d6a337afdb25e98",
+            "content": "sha256:4ec9be6fc55690389876974999a82f1c7962fc7152a58f86160c263dff90fae5",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:41eb3b7e51c0c9e1bc24bc5fb91b25dc9ffdffa79e2a1251f1838001997c5656",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-DT71R6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YS34QM",
+      "items": [
+        "sha256:7feb0b05be2b35aeaa3cffe19c5b1391dddf6c579ced8cf64a36429b4d847874"
+      ],
+      "reason": "Re-anchored 1 realization/proof entry(ies) for INV-208SQT on frozen tree 58741cf1: KNO-R14@v1 added tool-named knowledge_read view cues, Tier-2/public-doc updates, and regenerated measurements/copies without changing this invariant's meaning.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YZJTDE",
+      "items": [
+        "sha256:30a42d241d2e34f7ba314ff2667a4d85ccabc732770cecb3d4f0ee92888e334d"
+      ],
+      "reason": "Updated card prose for knowledge_read view='records' batch reads replacing manual per-record opens and refreshed citations.",
+      "sources": [
+        {
+          "blob": "b0008e2cc7c44d6fcc4539ba81ce589f64206a02",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZA8457",
+      "items": [
+        "sha256:0a3b830d1bd57bd25ade080a0daa27191124c0b6f9b1e4833cda1b1a20a07d11"
+      ],
+      "reason": "Confirmed docs/FAQ.md against frozen tree 58741cf1 after KNO-R14@v1 updated lines 34-47 for all eleven knowledge_read views and text-bearing replies.",
+      "revision": 13,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZCM221",
+      "items": [],
+      "reason": "Refreshed the reconsider_on roles/curator.md anchor for DEC-SKAXJ5 after confirming rejected alternative 1 remains rejected following KNO-R14@v1 wording compression.",
+      "revision": 6,
+      "subject": "DEC-SKAXJ5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZV5NAP",
+      "items": [
+        "sha256:3e4b6fec84cdd3a5f80a6242ccd1775c54793f6d999e921a8c39dc6b7372783f",
+        "sha256:a88ac61c3f585800ac77d6a84abc26a534a0724832949ea237dfeb4ea9a09797"
+      ],
+      "reason": "Re-confirmed docs/reference/knowledge-system.md on post-KNO-L10 synced tree 95234971 (base 9f1b832ca / c1610ba89), refreshing KNO-L10 citation-engine stands_on links while preserving narrowed KNO-R07 deferral DFR-DE843V (line 31 and lines 408-410, 497-502).",
+      "revision": 14,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZV7JQN",
+      "items": [
+        "sha256:e2f90a2489e248e6000525d9c0f262a4f2b2f4d97c762fa0c981dd22296b307f"
+      ],
+      "reason": "Updated card prose for all eleven knowledge_read views, text-bearing impact/search/records, compact dependent, auto-pairing, and text IDs and refreshed citations.",
+      "sources": [
+        {
+          "blob": "9c8c12bfd4445251389ce007bbb770a3d4f948d7",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+    },
+    {
+      "deferralIds": [
+        "DFR-WQXFSQ"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZWXAW2",
+      "items": [
+        "sha256:1600974d973adf522df005f62f1e4fb1190ca1c758e2863cb6a95f77e982fe3e"
+      ],
+      "reason": "Confirmed docs/llms.txt against frozen tree 58741cf1 after KNO-R14@v1 updated lines 49-59 to document all eleven knowledge_read views and text-bearing responses while preserving read_ar_files brief guidance; resolved DFR-WQXFSQ.",
+      "revision": 21,
+      "subject": "DPD-633P3W"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:86466bf6a894a09b766d1facd149ac585f7d6396e9d14be96e16051baab8a99b",
+      "record": "DEC-SKAXJ5",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:97da6f65ede1a4d3e4c5553550194776bc52d9eb8b2ab10c08e91ed7e7e72c42",
+      "record": "DPD-633P3W",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:fb6ec575f44bf884d75f69ad75eaa60efd863a29f78709c06fea063f46acb6d0",
+      "record": "DPD-71WYH4",
+      "revision": 37,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:72572f8860d0401bf889941d4e2e133d16676f73c0e8469b447fd89c3becf22a",
+      "record": "DPD-7YCJ2B",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:b125d22ebee660b66a08a770d159abf9cec49fc742b8e44e64fec698ec180ccf",
+      "record": "DPD-86HJGF",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:1d66758886c15c063bca14a1f458a94b1b454f0981af5597c3d7fca8aaba1eb2",
+      "record": "DPD-86HJGF",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-27T18:56:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:b8ea7d365ef0472f7e7004a4b0c2b2f0ef04d7e37efbcb47f39a5853b2d83931",
+      "record": "DPD-A3XZ3Q",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:563c9d03b23366cbc8715e3bac488102d555f3c40240b2abe9d8aa209a2144eb",
+      "record": "DPD-B540GW",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:5eeb7c1972ee2ce61f2bc26ce2e8ddb375d431f230af0fd556551c2df4b20159",
+      "record": "DPD-EG5TYT",
+      "revision": 39,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:6e0ac40b5daf91f772ccb88062ef1bae4239218e05fdd3006efda760733eaafd",
+      "record": "DPD-GHEXS9",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:1b7c0060859d2ac3fd4f6d443bc98ca57211cd4e0772457d1fd403505ae47f1e",
+      "record": "DPD-PMZ21Z",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4a8486484c7ee504b853d2596d2f7c45797255097fd0634a121ee7a93d746f7b",
+      "record": "DPD-Q4APMS",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:9fc2158d7aa490b1229617ec553c5b602e6afe7467fc65fc64048731c246880f",
+      "record": "DPD-TXRND9",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T18:56:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:8a11bc2ef8e331e608b6ed554296b8e8d53bc9698166006ab4ea322cb120c5aa",
+      "record": "DPD-X6G7K3",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d7ea6c989aba56d1cc44c8eef6e8452b63b2573632b4a741b0fd455da8b11fae",
+      "record": "DPD-XAARS1",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:23d68b4ca7e4dff7d5d4e52d32e34804d702398aecb837e26559ca951d4d90fb",
+      "record": "INV-4BJMGY",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:661b7778059c1274d2346b6f0172720cab74a793c5978d5871b173c3d4cba02d",
+      "record": "INV-A3XH71",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4558669c6b2e9da155638d351a22579314027840ae6a7f63a2a3d219152894a9",
+      "record": "INV-XEQ0TR",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:175c90291e1688877d580f3a1d9f4e0d6427625f907a88c3dc21652fbb525843",
+      "record": "INV-YSQJ5K",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T18:29:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L14",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

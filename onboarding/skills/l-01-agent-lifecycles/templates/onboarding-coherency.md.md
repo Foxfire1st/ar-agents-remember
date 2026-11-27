@@ -61,6 +61,7 @@ The template holds no TODO and needs no sibling-repository evidence for this rep
 
 
 
+
 - Curation reconciles current intent, ruled intent and implemented reality and verifies every card sentence against code; each invariant is ingested within its Curator-authored semantic scope, while grouping and entity edits require their own justification. [6]
 
 
