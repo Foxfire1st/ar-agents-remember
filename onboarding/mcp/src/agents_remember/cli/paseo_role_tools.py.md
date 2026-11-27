@@ -21,7 +21,7 @@ the context variable the completed event reads. Nothing is guessed — with no r
 receipt or call the event stays literal.
 
 
-This module builds the tool answer a limited recipient's message returns; reserved deferred held seats bypass the pre-open provider-limit hold because they have no host agent or usage report yet, while post-open messages are held normally.
+This module builds the tool answer a limited recipient's message returns; reserved deferred held seats bypass the pre-open provider-limit hold because they have no host agent or usage report yet, while post-open messages are held normally through `_hold_for_seat`, which calls `held_reset_delivery.hold_at_receipt` inside `open_held_store(ref)` so any known reset timestamp is published to `HeldResetIndex` before the store file is committed.
 
 ## Refusal-remedy account — local and shared recovery owners
 

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b41aa602c6439ae0866d48e024f825b0768506f8",
+        "blob": "bd2e0fd985af10257f85f2c588e7347a10b8144a",
         "content": "sha256:7556cf90e810c482700b562ee7993ea75d0b4468311080b0ccabebf4130b4800",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Retained projection, event-tail, warmup, landing and startup/teardown cases check executing-thread attribution and drain; startup failure/cancellation uses river compaction, and retired native-conversation/migration stages are absent.\n\nAnchor: `` `MaterialOwnerUnitTests` ``",
+      "note": "Retained projection, event-tail, warmup, landing and startup/teardown cases check executing-thread attribution and drain; startup failure/cancellation uses river compaction, and retired native-conversation/migration stages are absent. Anchor: `` `MaterialOwnerUnitTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "b41aa602c6439ae0866d48e024f825b0768506f8",
-            "content": "sha256:c2676fc44356e43f7e7191523ef8bc1d97a3852fd02d04dd58b2d6cd9e51572c",
+            "blob": "bd2e0fd985af10257f85f2c588e7347a10b8144a",
+            "content": "sha256:8a9a17d6079362a645538d83521107f59ab4835408223bc33d588f46e1627936",
             "locator": {
-              "end": 526,
+              "end": 528,
               "kind": "line_range",
               "start": 107
             }

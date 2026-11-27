@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
-    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
-    "role": "manager",
-    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: docs/reference/runtime-layout.md reflects both BUG-R60@v1 and KNO-R05@v3.",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "uncommitted": false
+    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
+    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "role": "curator",
+    "statement": "Verified docs/reference/runtime-layout.md whole document against L32 candidate 52e47cca: coordination root, temp directory, and worktree layout descriptions remain accurate alongside <coordination_root>/temp/held-resets.sqlite.",
+    "task": "261112-BUG-L32",
+    "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
   "id": "DPD-327MNX",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/install/mcp_settings.py"
     },
     {
-      "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+      "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T12:00:07+01:00",
+    "at": "2026-11-27T21:15:46+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
     "task": "261112-BUG"
   }
 }

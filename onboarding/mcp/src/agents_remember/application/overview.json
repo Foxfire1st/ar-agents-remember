@@ -2340,7 +2340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -4688,7 +4688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -7031,7 +7031,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "blob": "1316a26cfc00ccbab56538b3777d3221ccd9bcf8",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -7043,7 +7043,7 @@
         },
         {
           "anchor": {
-            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -7697,7 +7697,7 @@
       ]
     },
     "480": {
-      "note": "**Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance.\n\nAnchor: `_launch_prepared_role_session`, `dispatch_leaf_set`",
+      "note": "**Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. Anchor: `_launch_prepared_role_session`, `dispatch_leaf_set`",
       "targets": [
         {
           "anchor": {
@@ -7751,10 +7751,10 @@
         },
         {
           "anchor": {
-            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
-            "content": "sha256:79c83740ddd26484bc1b66cce2523483da62a1442ab8f6f28517fd33102f2964",
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:180588d05a4adb7c4b6dfb122c1b37e8fc06ae4ae95b13cda5e780c6e51c95b3",
             "locator": {
-              "end": 33,
+              "end": 31,
               "kind": "line_range",
               "start": 1
             },

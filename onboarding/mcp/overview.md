@@ -528,6 +528,7 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration. [193]
 
+
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
@@ -642,6 +643,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The registration that reads that port. [192]
 
 - The composition root supplies the application adapters to the serving collaborators. Anchor: `ServingCollaborators` [360]
+
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted [361]
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]

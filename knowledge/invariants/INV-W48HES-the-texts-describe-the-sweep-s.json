@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across docs/reference/mcp-tools.md, mcp/src/agents_remember/cli/role_held_messages.py, and mcp/src/agents_remember/controlplane/held_store_layout.py, keeping operator documentation, module commentary, and runtime queue constants aligned."
+  },
+  "applicability": "Public MCP tool reference, held-message delivery module docstring, and held-queue bound constants describing post-reset delivery timing and queue limits.",
+  "conditions": [
+    "docs/reference/mcp-tools.md states independent reset scheduling, 16-worker delivery, roughly 30-second clearance up to roughly 300 recipients, roughly 11 recipients per second beyond, and the 512-entry / 24-hour queue bound.",
+    "cli/role_held_messages.py module docstring describes the rotating queue slice, walk fallback, 512-name / 24-hour queue bound, and independent durable reset index.",
+    "controlplane/held_store_layout.py defines HELD_QUEUE_MAX_ENTRIES = 512 and HELD_QUEUE_MAX_AGE_SECONDS = 24 * 60 * 60."
+  ],
+  "exclusions": [
+    "Does not assert live host throughput beyond the measured D987 Option A host-bridge ceiling."
+  ],
+  "id": "INV-W48HES",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L32-D987-report.md#rule-3-documentation-change; git diff 2791a041 5681250 -- docs/reference/mcp-tools.md"
+      ],
+      "path": "L32-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R32@v1 rule 3",
+    "leaf": "261112-BUG-L32",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The texts describe the sweep's bounds, the cursor and the queue's bounds, and the reset delivery timing states D987's measured ceiling.",
+  "supersedes": [],
+  "title": "Documented held-queue bounds and D987 reset-delivery ceiling",
+  "writer": {
+    "at": "2026-11-27T21:15:46+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
+  }
+}

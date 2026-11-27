@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "aaf984732687f90beee1a456d63d12fb0f704a57",
-    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
-    "role": "manager",
-    "statement": "Crossing-5 merge confirmation on 7ff6e80f139c combining 261112-BUG-L58 (role_launch_preparation.py:207-227, paseo_bridge.mjs:734-751) and 261112-KNO-L7 (PR #303/#83): docs/host.md remains accurate across both merged lines.",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
-    "uncommitted": false
+    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
+    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
+    "role": "curator",
+    "statement": "Verified docs/host.md whole document against L32 candidate 52e47cca: native host lifecycle, dashboard supervision, and transport contracts remain accurate after L32's internal held-reset scheduler.",
+    "task": "261112-BUG-L32",
+    "uncommitted": true
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -167,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
-        "content": "sha256:b71fadad0622db128c871576a5d114f73d8f95f85dd88cb3d2e6e3d5cbb8abb5",
+        "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+        "content": "sha256:cbced39d98f0f242a9cf58261086e4ec92635447892dff254ab77056ab7530e9",
         "locator": {
           "end": 227,
           "kind": "line_range",
@@ -259,20 +259,20 @@
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:23:00+01:00",
+    "at": "2026-11-27T21:15:46+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
     "task": "261112-BUG"
   }
 }

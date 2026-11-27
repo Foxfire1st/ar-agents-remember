@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/cli/held_reset_adoption.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f84d39436a8c9216e979d4ca83d06971f4291ae6",
+        "content": "sha256:d99900a9c94c6d4ea705e26b08b9dcd0bf3c0d0b536150536e171e192bbe5910",
+        "locator": {
+          "kind": "symbol",
+          "name": "adopt_held_resets"
+        }
+      },
+      "id": "RLZ-A9MPT6",
+      "invariant": "INV-GV3950",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 enrollment at start",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "Adoption scans the recipient's store for a still-live provider-limit hold and records its reset target so the index starts from the existing wait.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_existing_wait` extracts the earliest `limitedUntil` timestamp from complete `read_waiting_rows` output for a readable launch receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f84d39436a8c9216e979d4ca83d06971f4291ae6",
+            "content": "sha256:7eecdeafbc09b84046e664c869b4f9c08e554ec2e08fe3a20885d231a0a7de32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_wait"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`adopt_held_resets` walks all live `receipt_roots` in chunks of `_ADOPTION_READS` (32) and calls `index.enroll` so existing live generations win.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f84d39436a8c9216e979d4ca83d06971f4291ae6",
+            "content": "sha256:d99900a9c94c6d4ea705e26b08b9dcd0bf3c0d0b536150536e171e192bbe5910",
+            "locator": {
+              "kind": "symbol",
+              "name": "adopt_held_resets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

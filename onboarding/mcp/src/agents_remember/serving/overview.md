@@ -19,7 +19,7 @@ The explainer’s state, stale and revision reads project saved inventory or its
 
 The explainer’s Build route forwards the validated history along with the composed message to the seat builder. The builder sends the requirement-and-planned-effects request for blank planned content.
 
-_app_lifespan compacts the workspace river, primes the projector and starts projection, leaf-archive recovery, held native-role message delivery and river-compaction tasks, plus the moved watcher only when its application port is supplied. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
+_app_lifespan compacts the workspace river, primes the projector and starts projection, leaf-archive recovery, held native-role message delivery, optional held-reset delivery (`held_reset_scheduler.run_held_reset_scheduler`, running a 1-thread coordinator and a bounded 16-worker delivery pool accounted under `"held-delivery"` via `background_accounting.offload_on` whenever `held_reset_delivery` is wired), and river-compaction tasks, plus the moved watcher only when its application port is supplied. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep and reset-pass failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks (including the reset scheduler when started); there is no removed terminal-host shutdown.
 
 The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works, waiting, paused or unknown activity with the contributing eventAt. A provider limit annotates a paused task when no seat works or waits. Declared lists, documented-subTask master precedence and unambiguous commanded-master relations determine membership independently of worktree bindings. Only an absent subTask master uses list fallback; its present contrary or unresolvable master remains explicit and unbound. Other listed document kinds retain list placement under identity/cycle guards without own-master validation by that path. The same producer reports distinct list/record disagreements once per master rather than dropping contrary facts. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
 
@@ -366,6 +366,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Startup ordering, native held-message sweep registration, review-tree/master-preparation shutdown, and awaited background teardown are explicit. [111]
 
+
 - Leaf-archive recovery is the one loop under the terminal-observation owner: it sleeps after each attempt returns, and no terminal-observation prime or poll remains. [112]
 
 - Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline [113]
@@ -392,6 +393,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
+
 
 
 - The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]

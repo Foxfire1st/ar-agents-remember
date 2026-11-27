@@ -192,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
               "end": 197,
@@ -205,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "ebef670bc23f1844c3817c76f43fa7b59717e59e",
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
             "content": "sha256:c60dd780cd098f16dc6bcab72cac8a68096448b11218dde888c1d62f590beef4",
             "locator": {
               "end": 319,
@@ -218,12 +218,12 @@
         },
         {
           "anchor": {
-            "blob": "ebef670bc23f1844c3817c76f43fa7b59717e59e",
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
             "content": "sha256:a19d36020db1a6238a0a9b46278552ec8fcba7718890668f1972bb11ab8c4d98",
             "locator": {
-              "end": 2861,
+              "end": 2862,
               "kind": "line_range",
-              "start": 2861
+              "start": 2862
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -231,12 +231,12 @@
         },
         {
           "anchor": {
-            "blob": "ebef670bc23f1844c3817c76f43fa7b59717e59e",
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
             "content": "sha256:37bae0e06a5564dce610468e6ae8ae95c9541b6f8879c3c29660720a00554c6f",
             "locator": {
-              "end": 4128,
+              "end": 4130,
               "kind": "line_range",
-              "start": 4128
+              "start": 4130
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -244,12 +244,12 @@
         },
         {
           "anchor": {
-            "blob": "ebef670bc23f1844c3817c76f43fa7b59717e59e",
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
             "content": "sha256:196e8d5064c5a22d76fe5f99e559313b623583d67f15936f602e5daebc0960a4",
             "locator": {
-              "end": 5289,
+              "end": 5294,
               "kind": "line_range",
-              "start": 5289
+              "start": 5294
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

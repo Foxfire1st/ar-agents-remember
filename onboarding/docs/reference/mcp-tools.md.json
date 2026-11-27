@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
         "content": "sha256:dcb8284fcc1232af8fd4ffcb07378fc99d243cff2c098333a64a2622d9037709",
         "locator": {
           "end": 325,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
-        "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+        "content": "sha256:e09d583901b2f25fc20f1aae5fa1259bdbabdedf7e5b54d508d10e61131d136f",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
-        "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+        "content": "sha256:e09d583901b2f25fc20f1aae5fa1259bdbabdedf7e5b54d508d10e61131d136f",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
         "content": "sha256:63be1c89f4385bcf2f194349fa7e779685da0d6b389989f136b055d0562444ed",
         "locator": {
           "end": 525,
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
-        "content": "sha256:cc410c746b299c570a8692802770eec28e2d0e44a3471b07e9d0829cca25d383",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+        "content": "sha256:59eeeec3502e8128a2c9a6f76d34e861adeb73a7678e98a73d353f1f55cca66b",
         "locator": {
           "end": 794,
           "kind": "line_range",
@@ -94,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+        "content": "sha256:563bbc6888dfa22df8038b24b75e806252388b5b4bffd7e0233b14be55694a0f",
+        "locator": {
+          "end": 801,
+          "kind": "line_range",
+          "start": 794
+        }
+      },
+      "id": "RLZ-MBHWX0",
+      "invariant": "INV-W48HES",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 3",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The provider-limit bullet states the D987 behavior: about 30 seconds up to about 300 recipients, about 11 recipients a second beyond, 16 workers and the 512-receipt/24-hour queue bound.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
         "content": "sha256:eeb18b49e85d98b0e162087159a84883fabab145c2dd0c9a15f0a6e5b772c371",
         "locator": {
           "end": 203,
@@ -113,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
           "end": 394,
@@ -132,7 +151,7 @@
     },
     {
       "anchor": {
-        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
           "end": 340,
@@ -156,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
               "end": 340,
@@ -173,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
               "end": 394,
@@ -190,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
             "content": "sha256:159c45ab606f6f2f3c0d84033fe40143b0458ddb2338d3160c7b8d126a6c063f",
             "locator": {
               "end": 10,
