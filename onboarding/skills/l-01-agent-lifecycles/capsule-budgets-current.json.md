@@ -10,7 +10,7 @@ The current size record keeps authored capsule, detail and digest ceilings separ
 
 ## Code Commentary
 
-The generated curation entries record 411 words for the Curator and 724 for the Manager, and the Consolidator capsules measure 677 (`orientation`), 458 (`consolidation`), and 430 (`recovery`) words. The coherence-judgments detail measures 355 words and `reference/consolidation-pass.md` measures 740 words. These measurements sit below the authored ceilings.
+The generated curation entries record 411 words for the Curator and 724 for the Manager, the Reviewer capsules measure 621 (`orientation`), 465 (`review`), and 374 (`recovery`) words, and the Consolidator capsules measure 677 (`orientation`), 458 (`consolidation`), and 430 (`recovery`) words. The coherence-judgments detail measures 355 words and `reference/consolidation-pass.md` measures 740 words. These measurements sit below the authored ceilings.
 
 The generated measurement for the Curator handoff ingestion template is 6,889 words and carries the current source digest. The measurement leaves the authored ceilings unchanged.
 
@@ -42,8 +42,7 @@ not the active renewal or a new source measurement.
 - Budget checks read current measurements and authored ceilings. [7]
 
 
-- The generated template measurement records 6,889 words and the current source digest. [11]
-
+- The generated template measurement for `curator-handoff-ingestion.md` records 6,889 words and the current source digest. [11]
 
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]
 

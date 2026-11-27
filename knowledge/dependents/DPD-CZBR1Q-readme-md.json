@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
+    "codeTree": "8754e870900b6465af3df9dc6e3cc773ada57e46",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Verified README.md against 17c064d8: high-level architecture, setup, and links remain accurate after KNO-R05@v3.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified README.md against frozen candidate tree 8754e870900b: Status section states package version 3.1.1 matching mcp/pyproject.toml, version.py, and mcp/uv.lock, and all links, install steps, and stability-promise text remain accurate.",
+    "task": "261112-BUG-L65",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -92,14 +92,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-27T19:27:08+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-BUG-L65",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "d2a845be-d3b3-5aa0-9cb1-fe3ef4fad9b3",
+    "task": "261112-BUG"
   }
 }

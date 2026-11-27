@@ -105,16 +105,16 @@
       ]
     },
     "11": {
-      "note": "The generated template measurement records 6,889 words and the current source digest.",
+      "note": "The generated template measurement for `curator-handoff-ingestion.md` records 6,889 words and the current source digest.",
       "targets": [
         {
           "anchor": {
             "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
-            "content": "sha256:a101b72c4ee2853a36aae9c08cc083ee6135866b8dc8f118b07764ba5f3367d6",
+            "content": "sha256:23ad49cb57e0865d9303685542438541f8b8e3934ed67448a2ad38e8e4f30301",
             "locator": {
-              "end": 6667,
+              "end": 6684,
               "kind": "line_range",
-              "start": 6664
+              "start": 6681
             }
           },
           "kind": "code"
@@ -232,9 +232,9 @@
         {
           "anchor": {
             "blob": "8efd23ab752b593a35369a0b3a6f9b60db5968a0",
-            "content": "sha256:e0607e93a788cfce0ca2205c0603a80272bdb5930a57c22d23332f443485966a",
+            "content": "sha256:35bec1b20f8ad93d347b2c6e6759e091fa987a44f3a33add1b4e1ed817d92ebb",
             "locator": {
-              "end": 6240,
+              "end": 6244,
               "kind": "line_range",
               "start": 6202
             }

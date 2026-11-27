@@ -26,8 +26,9 @@ receipt and `_validate()` runs the replay check. `_HostBoundaryReached` stops at
   `test_replay_refuses_incomplete_detail_references_instead_of_skipping_them` refuse a missing target, a
   rebound folder with matching bytes and an incomplete reference, and restore an absent valid legacy link.
 - **Before the host.** `test_saved_start_replay_refuses_missing_details_before_the_host_call` refuses before
-  the host is called, and `test_held_opening_refuses_changed_details_and_preserves_waiting_messages` refuses
-  changed details on the delayed held-seat opening path while keeping the waiting messages.
+  the host is called, and `test_held_opening_refuses_changed_details_and_preserves_waiting_messages` monkeypatches
+  `role_held_opening.run_launch_call` and refuses changed details on the delayed held-seat opening path while
+  keeping the waiting messages.
 - **Real preparation.** `test_real_leaf_preparation_restores_details_beside_local_handover` keeps frozen detail
   bytes across three role cases, with the Worker's detail supplied at the compiler seam.
 
