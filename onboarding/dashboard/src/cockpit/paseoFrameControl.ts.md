@@ -14,9 +14,9 @@ Steer one existing native frame and own its bounded control-channel lifetime and
 
 Wanted, pending, settled and URL-loaded identities distinguish the selected agent, its unanswered open, a completed answer and the current loaded route. `receive` accepts only the configured embedded origin and exact iframe window. Native selected rows and source-scoped Parent errors retain their own authority. [1] [5]
 
-A ready selection sends `ar.open` immediately. Each load waits ten seconds for readiness, then sends one ping; ten more seconds without that ping's answer make control unavailable. A pong during readiness wait counts as readiness. Changes during that load wait are held and the latest is messaged when readiness returns. A ready open past its own ten-second deadline remains late while pings are answered, without resending the open; a newer selection still switches by message. [1] [2] [6] [7]
+A ready selection sends `ar.open` immediately. Each load arms a 45-second outer cold-load cap (`PASEO_COLD_LOAD_CAP_MS`) and waits for iframe `onLoad` (`onFrameLoad`) to arm or reset the ten-second readiness window (`PASEO_CONTROL_TIMEOUT_MS`), followed by one ping and ten more seconds; either timeout settles control to unavailable without reloading the in-flight frame. A ready or pong report clears any stale timeout problem notice, restores readiness, and re-attempts an unshown wanted target even after earlier retries settled. Changes during that load wait are held and the latest is messaged when readiness returns. A ready open past its own ten-second deadline remains late while pings are answered, without resending the open; a newer selection still switches by message. [1] [2] [6] [7]
 
-When control is unavailable outside a load-readiness wait, the trailing settle window coalesces selections and loads the latest URL. Explicit Retry and returned-host recovery start the frame again. Only an explicit capability list lacking `open-agent` selects URL-only navigation; an absent list retains message steering. Each load raises generation once. [1] [3] [4]
+When control is unavailable outside a load-readiness wait, the trailing settle window coalesces selections and loads the latest URL. Explicit Retry while unavailable and returned-host recovery start the frame again, while `retryOpen` and `resyncIfUnshown` resend `ar.open` without reload on a ready frame. Only an explicit capability list lacking `open-agent` selects URL-only navigation and publishes `urlOnly: true`; an absent list retains message steering. Each load raises generation once. [1] [3] [4]
 
 Ordinary document startup names the wanted target in its URL; opt-in hidden preload starts without an agent. Ready document steering sends exact agent and workspace and announces `ar.page`; the URL retains `arPage=document`.
 
@@ -26,7 +26,7 @@ The controller also publishes the native chat the frame shows, separately from l
 
 ## Invariants And Boundaries
 
-After initial startup, recovery loads require an unanswered application ping, explicit Retry, returned host or the explicit URL-only plugin exception. Missing readiness alone first asks a ping. Slow host or drawing answers do not themselves authorize a new generation.
+After initial startup, recovery loads require an unanswered open-request ping, a subsequent unavailable selection after load timeout settles, explicit Retry while unavailable, returned host, or the explicit URL-only plugin exception; post-load readiness and cold-load cap timeouts settle unavailable without reloading. Missing readiness after `onLoad` first asks a ping. Slow host or drawing answers do not themselves authorize a new generation.
 
 `navigated` separates completed host lookup from drawing. `on-chat` permits input on the selected native screen before the conversation is drawn. `shown` and the native `load-failed` pane settle only the pending agent; the latter retains the application's own failure text and Retry. Other or superseded pending identities have no settlement effect. Navigation acknowledgement does not establish native selected rows or task scope. [8]
 
@@ -35,14 +35,15 @@ Tray reporting does not navigate the native frame or change the launcher's selec
 
 ## Evidence
 
-- A ready frame sends the selected agent and workspace immediately. Held readiness and unavailable targets settle through separate paths. [1]
-- Ready capability negotiation attaches tray reporting and sends the latest held target. An eligible transient retry can send the matching selection immediately. [2]
 - URL loading remains bounded by unavailable state and outstanding readiness. [3]
-- One load produces one generation and its own readiness wait. [4]
 - All accepted control and tray messages require exact frame origin and window. [5]
-- Missing readiness probes before unavailable control. [6]
-- A late answered request stays pending without resending its open. [7]
 - A drawn chat or native load-failure answer settles only the pending selection. Settlement clears its retry. [8]
-- Frame startup distinguishes ordinary document load and hidden preload. [9]
 - Tray attachment is replaced on readiness and cleared on stop. [10]
 - Native showing reports and bounded older selection inference publish the frame's chat independently. [11]
+
+- A ready frame sends the selected agent and workspace immediately; onFrameLoad anchors readiness and retryOpen/resyncIfUnshown resend ar.open without reload. [1]
+- Ready capability negotiation clears stale problem notices, attaches tray reporting, publishes urlOnly and re-attempts any unshown wanted target. [2]
+- One load produces one generation and arms the outer cold-load cap while awaiting iframe onLoad. [4]
+- Post-load missing readiness pings once and both readiness timeout and the 45 s cold-load cap settle unavailable without reloading the in-flight frame. [6]
+- A late answered request stays pending without resending its open; unanswered request ping falls back once. [7]
+- Frame startup resets abilities and cold-load timers and distinguishes ordinary document load from hidden preload. [9]

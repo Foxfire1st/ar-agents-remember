@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ce97500e5b9eba9d55a78b9d9bebd41c7e0056a3",
+        "blob": "e9c2e1430107d18df0186f1067a95c7c07155ea4",
+        "content": "sha256:11ae2103b964f737d2ab57292a51ad0919af5bd0327f803c9b6a74e9b7e2347d",
+        "locator": {
+          "kind": "symbol",
+          "name": "re-syncs an unshown target without reloading when active flips false to true, and stays quiet once shown"
+        }
+      },
+      "facet": "Verifies active false-to-true reveal with an unshown target resends ar.open without reload and emits no duplicate open after shown.",
+      "id": "PRF-16G1SQ",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e9c2e1430107d18df0186f1067a95c7c07155ea4",
         "content": "sha256:abc758d211d285c19166e444a1b0750a41103d9c6e692bfbfd24aeb99071b681",
         "locator": {
           "kind": "symbol",
@@ -17,21 +34,38 @@
         "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
         "leaf": "261124-EXP-L1"
       }
+    },
+    {
+      "anchor": {
+        "blob": "e9c2e1430107d18df0186f1067a95c7c07155ea4",
+        "content": "sha256:a7b028f616c3f48a2895aa3bbd269ea7c6aa5af37e643aca41925b0cd90e4ea1",
+        "locator": {
+          "kind": "symbol",
+          "name": "re-sends ar.open without reload from problem Retry when ready, and reloads when unavailable"
+        }
+      },
+      "facet": "Verifies paseo-frame-agent-problem Retry clears refusal/retry state and resends ar.open in generation 1 when ready, and reloads to generation 2 when unavailable.",
+      "id": "PRF-NYKMDG",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retry cases exercise ready binding, cancellation and terminal settlement.",
+      "note": "The retry cases exercise bounded transient retry, cancellation, terminal settlement, ready/unavailable problem Retry, and reveal re-sync without reload.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce97500e5b9eba9d55a78b9d9bebd41c7e0056a3",
-            "content": "sha256:bc970550fe3512593bc6f761de1e87a06c9029f97eb704c6628ba06b9320ae1e",
+            "blob": "e9c2e1430107d18df0186f1067a95c7c07155ea4",
+            "content": "sha256:f77b91bc8b4efb7c1d2792d6a85920dcbc6a0be7f60195f9ab0e917369e39ec4",
             "locator": {
-              "end": 358,
+              "end": 474,
               "kind": "line_range",
-              "start": 91
+              "start": 90
             }
           },
           "kind": "test"

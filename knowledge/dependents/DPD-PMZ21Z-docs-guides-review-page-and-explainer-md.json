@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
-    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
+    "codeTree": "0d1f4e2330f16a7b9c4ac546d7f046e27bb428ab",
+    "commit": "a7dd3660d211118210760755c852e9316e04dadf",
     "role": "curator",
-    "statement": "Confirmed accurate against BUG-R58@v2 candidate: explainer and review-page documentation makes no claim about eager 0-turn held-seat host creation.",
-    "task": "261112-BUG-L58",
+    "statement": "Audited docs/guides/review-page-and-explainer.md in full against post-L58 synced L62 candidate 0d1f4e23: BUG-R62@v1's showFrame gating of computeFrameTarget in dashboard/src/explainer/columnState.ts does not alter any documented explainer header state, menu selection, build panel, or notice behavior in lines 392-418 and 515-529.",
+    "task": "261112-BUG-L62",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -181,7 +181,7 @@
       "path": "dashboard/src/panels/changeset/DiffPane.tsx"
     },
     {
-      "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+      "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
       "kind": "file",
       "path": "dashboard/src/explainer/columnState.ts"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
+    "at": "2026-11-27T04:15:52+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
+    "leaf": "261112-BUG-L62",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
     "task": "261112-BUG"
   }
 }

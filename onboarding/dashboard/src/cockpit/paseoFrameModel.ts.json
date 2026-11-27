@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+        "content": "sha256:27519e4e7037c7f28c041cf5461c998565c51644a2244c5303a2055579172010",
+        "locator": {
+          "kind": "symbol",
+          "name": "unavailableWaitText"
+        }
+      },
+      "id": "RLZ-10TB1N",
+      "invariant": "INV-K6HXG4",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §2",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Defines the waiting-line sentence displayed with Retry when control is unavailable and the target chat has not been confirmed as shown.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:40dda96c0b649f667147bc27f83b992879940d576a4821ed348114e3f75659b8",
         "locator": {
           "end": 85,
@@ -76,12 +94,12 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:7a64ac88decc3c9e450cb482085016238268b19976923fa36443060f1c10b4a7",
         "locator": {
-          "end": 318,
+          "end": 328,
           "kind": "line_range",
-          "start": 317
+          "start": 327
         }
       },
       "id": "RLZ-AMH2C3",
@@ -95,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
-        "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+        "content": "sha256:290cc888ed9150db80d85a24c0850f63da8beb8776a5296570f78463563cec57",
         "locator": {
           "kind": "symbol",
           "name": "agentTimeoutText"
@@ -108,12 +126,12 @@
         "handoffEntry": "MIK-R121-R2-P3",
         "leaf": "260928-MIK-L121"
       },
-      "rationale": "The timeout sentence lives with the other pane sentences; its fallback claim must match the loaded-identity guard or it asserts an action never taken.",
+      "rationale": "agentTimeoutText formats truthful timeout copy distinguishing an already-named agent URL from a frame kept open for a late answer without claiming a reload that never ran.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:6162ae3ea7ad8c3107ef2e6c6292faa1e68b9f31a653c5bed148fdcd25069316",
         "locator": {
           "kind": "symbol",
@@ -131,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
         "locator": {
           "kind": "symbol",
@@ -149,7 +167,25 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+        "content": "sha256:290cc888ed9150db80d85a24c0850f63da8beb8776a5296570f78463563cec57",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentTimeoutText"
+        }
+      },
+      "id": "RLZ-M7G2M5",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Formats truthful timeout text distinguishing an already-named agent URL from a frame kept open for a late ready answer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
         "locator": {
           "kind": "symbol",
@@ -167,7 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
         "locator": {
           "kind": "symbol",
@@ -185,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
         "locator": {
           "kind": "symbol",
@@ -203,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
         "locator": {
           "kind": "symbol",
@@ -221,7 +257,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:2e0366f5314a0a04ca074d1e65436fc19b01b8b707f615000571258645514312",
         "locator": {
           "end": 87,
@@ -240,7 +276,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:c1c90a49534d9aa915c04bbf13e89c4669174f9dd85d0239d1d239f56628d2fe",
         "locator": {
           "kind": "symbol",
@@ -258,7 +294,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
         "locator": {
           "kind": "symbol",
@@ -276,7 +312,7 @@
     },
     {
       "anchor": {
-        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
         "content": "sha256:2ee34efaa0f82e3aa50898bf8803895d8fcd697a552723d1aa63af921e4a691c",
         "locator": {
           "kind": "symbol",
@@ -299,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:669841be78c2a5ecf5421ab6ce6cb9b30eca4bfc4fbbbb7d7f97c6cd64be29a7",
             "locator": {
               "end": 136,
@@ -316,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
             "locator": {
               "end": 91,
@@ -333,11 +369,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
             "locator": {
               "kind": "symbol",
               "name": "composerExtent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "PaseoFrameShowing carries urlOnly, unavailableWaitText states the unconfirmed-control waiting line, and agentTimeoutText distinguishes already-named from kept-open frames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+            "content": "sha256:27d065f467cd847555fd566d6141bf2ed4e7adbe2e484843485017efc1b89cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameShowing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+            "content": "sha256:27519e4e7037c7f28c041cf5461c998565c51644a2244c5303a2055579172010",
+            "locator": {
+              "kind": "symbol",
+              "name": "unavailableWaitText"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+            "content": "sha256:290cc888ed9150db80d85a24c0850f63da8beb8776a5296570f78463563cec57",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
             }
           },
           "kind": "code"
@@ -349,7 +423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:8d2aec01684df053ee1abc0019cb6f73d88301a4337bf7f916e54d4f0c8199b4",
             "locator": {
               "end": 239,
@@ -366,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:8ea7bd9b358ffd8a9887c51af0f31003c7776625a43cd650f717aadf8daaa107",
             "locator": {
               "end": 249,
@@ -383,7 +457,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
             "locator": {
               "end": 265,
@@ -400,12 +474,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
             "locator": {
-              "end": 307,
+              "end": 309,
               "kind": "line_range",
-              "start": 302
+              "start": 304
             }
           },
           "kind": "code"
@@ -417,7 +491,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:9f7be3d850cb25222381d7d04f3abb345ec4f13122fc7b18bc066ca908f95a7c",
             "locator": {
               "end": 164,
@@ -434,12 +508,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
             "locator": {
-              "end": 355,
+              "end": 365,
               "kind": "line_range",
-              "start": 346
+              "start": 356
             }
           },
           "kind": "code"
@@ -451,7 +525,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
             "locator": {
               "kind": "symbol",
@@ -467,12 +541,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
             "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
             "locator": {
-              "end": 381,
+              "end": 391,
               "kind": "line_range",
-              "start": 379
+              "start": 389
             }
           },
           "kind": "code"

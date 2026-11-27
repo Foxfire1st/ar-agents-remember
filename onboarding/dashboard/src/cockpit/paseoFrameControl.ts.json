@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:7c92be0d1f76fa5c0c73e46219131ba0405584a80bb6fc0b7ed753db1311334d",
         "locator": {
           "kind": "symbol",
           "name": "load"
@@ -39,8 +39,44 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:c37820de166a59368a73c11abb6995906c8760f27fde13d2c411fe6ed00f27b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.retryOpen"
+        }
+      },
+      "id": "RLZ-5CP0ZT",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Clears refusal, settled state, retry count, and problem notice and re-sends ar.open without reloading when control is ready.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:8c94a7ad50ae3e2b21c56a05a3a66dfde91a67bd37d66635e6e025b7f1f8be6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_COLD_LOAD_CAP_MS"
+        }
+      },
+      "id": "RLZ-5CP7X4",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Declares the bounded 45_000 ms outer cold-load cap from load() when iframe onLoad never arrives.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.display"
@@ -57,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:96188e7128fa93d4895370cf62a38b8fc24ca59de90d469e82eca765f94300d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onFrameLoad"
+        }
+      },
+      "id": "RLZ-7GNHYS",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Arms and resets the post-load readiness deadline on each iframe load event while a load is in flight.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:3429c69cabae1586257f3c9c98077fffabfd6eef2f26aaf46c82f0e5b88e41e9",
         "locator": {
           "kind": "symbol",
@@ -75,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:a3f9bf4fdb4d938af04f2e6dcde7ddd418c4550738470bdeedb37e0fc1fc12e4",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:501b34ac0e76af88f6d0633a2ca2248479241bed7c0e786bf2ae85c45e2b8122",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -93,7 +147,25 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:bbecb7af9f49e75e4ed3d84c133559b8909694c8484929b4c10768836b156e38",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.publish"
+        }
+      },
+      "id": "RLZ-9XHBAW",
+      "invariant": "INV-K6HXG4",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §2",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Publishes showing.urlOnly from announced plug-in abilities so frameWait distinguishes explicit URL-only plug-ins from timed-out or unavailable control.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
@@ -111,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -129,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
         "locator": {
           "kind": "symbol",
@@ -147,12 +219,12 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:3ade5ee14778b26df1d8f6f7ae3d50de609593b4ef655540014be063ef0a5675",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:74080544c485bdf9b31f3ded81199bcf7f2733004f575ee65cd971b3f8817f19",
         "locator": {
-          "end": 216,
+          "end": 255,
           "kind": "line_range",
-          "start": 173
+          "start": 179
         }
       },
       "id": "RLZ-AZSTHT",
@@ -166,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.display"
@@ -184,12 +256,12 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:a2be474f3acefef4f9e093a372c08f64850e06530ac3b4e95a93f28265c44bf2",
         "locator": {
-          "end": 440,
+          "end": 478,
           "kind": "line_range",
-          "start": 396
+          "start": 434
         }
       },
       "id": "RLZ-BMDEEW",
@@ -203,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -221,8 +293,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:a4001b83ab14d00b79f55606c3c32bfa6c7313a5edc23f9c63ef3a6b856974a4",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.probe"
@@ -239,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:52281ebf7b6dd95a60f924b028dcd748a9265eb69d73531b35121fcf23369af8",
         "locator": {
           "kind": "symbol",
@@ -257,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:0a763a0b9fdf775cf149ddc77ca21a83db1c73aa1fa0699209981f55d716c9fe",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:7e33c8a2227055fe4e2c00e003d3513b8cc135860368f799db3b92665ad57e8e",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.onReady"
@@ -275,8 +347,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -293,7 +365,25 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:db5b84b0269f18456db5301d2045613912cccfbac7c867c9ee94a656120120df",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onLoadTimeout"
+        }
+      },
+      "id": "RLZ-MNF9BD",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Settles cold-load cap and post-load readiness timeouts to unavailable without reloading the in-flight iframe and records truthful timeout notice text.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
         "locator": {
           "kind": "symbol",
@@ -311,8 +401,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:eef62d182045ce0b503900b64a88b708e00f5a06c78de92edddc58b0c718f4e4",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.awaitReady"
@@ -324,17 +414,17 @@
         "handoffEntry": "MIK-R140@v1 rule 3",
         "leaf": "260928-MIK-L140"
       },
-      "rationale": "After every load: the deadline for the ready report, then one ping, and only that ping's silence makes the channel unavailable.",
+      "rationale": "After an iframe load event, awaitReady waits one deadline for ready, sends one ping, and on unanswered ping delegates to onLoadTimeout to settle unavailable without reloading.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:4d73c19f273635e95cc6bb2cfdc811da7b45d21f382cd2337c281626f1eeed77",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:85642f4c43dda7a3827e8007567e3c10b4afe45be0e9a5c6ae4128333dc7d256",
         "locator": {
-          "end": 38,
+          "end": 43,
           "kind": "line_range",
-          "start": 35
+          "start": 42
         }
       },
       "id": "RLZ-RX0G6H",
@@ -348,12 +438,12 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:07017c31afb5a9c1b75c0770ac96a8b82645c25fa8780cb769a875ed647b7268",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:ae5e746af75b07db65505759576cc180729daaa43ac3488b206c28a09720ccf4",
         "locator": {
-          "end": 590,
+          "end": 648,
           "kind": "line_range",
-          "start": 78
+          "start": 84
         }
       },
       "id": "RLZ-SFPH0W",
@@ -367,8 +457,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:07017c31afb5a9c1b75c0770ac96a8b82645c25fa8780cb769a875ed647b7268",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:ae5e746af75b07db65505759576cc180729daaa43ac3488b206c28a09720ccf4",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl"
@@ -385,8 +475,8 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-        "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:eef62d182045ce0b503900b64a88b708e00f5a06c78de92edddc58b0c718f4e4",
         "locator": {
           "kind": "symbol",
           "name": "awaitReady"
@@ -398,12 +488,66 @@
         "handoffEntry": "MIK-R121-R2-P3",
         "leaf": "260928-MIK-L121"
       },
-      "rationale": "awaitReady owns post-load timeout, ping, unanswered-ping problem naming and fallback; probe owns the pending agent request equivalent.",
+      "rationale": "awaitReady owns post-onLoad readiness timeout and ping, delegating to onLoadTimeout (shared with the 45 s cold-load cap) to name the unsettled agent and settle unavailable without reloading; probe owns the pending agent-request timeout and single URL fallback.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:0d8451a32a8a4ab3b40ee1f4e98d3cab35e126e0038e0b57d2d3a73167aa480d",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.resyncIfUnshown"
+        }
+      },
+      "id": "RLZ-WZE32A",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Re-sends ar.open without reloading when a hidden ready frame becomes active with an unshown wanted target.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_CONTROL_TIMEOUT_MS"
+        }
+      },
+      "id": "RLZ-Y8FMG9",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Preserves the 10_000 ms readiness and ping timeout constant pinned by tests.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+        "content": "sha256:7e33c8a2227055fe4e2c00e003d3513b8cc135860368f799db3b92665ad57e8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onReady"
+        }
+      },
+      "id": "RLZ-YKMKE0",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Clears stale timeout or unavailable problem text, re-attempts an unshown wanted target even after earlier transient retries exhausted, and retains explicit non-open-agent URL steering.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
@@ -421,7 +565,7 @@
     },
     {
       "anchor": {
-        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
         "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
         "locator": {
           "kind": "symbol",
@@ -440,16 +584,48 @@
   ],
   "references": {
     "1": {
-      "note": "A ready frame sends the selected agent and workspace immediately. Held readiness and unavailable targets settle through separate paths.",
+      "note": "A ready frame sends the selected agent and workspace immediately; onFrameLoad anchors readiness and retryOpen/resyncIfUnshown resend ar.open without reload.",
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-            "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
             "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 173
+              "kind": "symbol",
+              "name": "display"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:96188e7128fa93d4895370cf62a38b8fc24ca59de90d469e82eca765f94300d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "onFrameLoad"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:0d8451a32a8a4ab3b40ee1f4e98d3cab35e126e0038e0b57d2d3a73167aa480d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resyncIfUnshown"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:c37820de166a59368a73c11abb6995906c8760f27fde13d2c411fe6ed00f27b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "retryOpen"
             }
           },
           "kind": "code"
@@ -461,12 +637,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
             "content": "sha256:0056c576f8d01a30aa092a98dc330a6e072b6780418b1d58b6a37fe8faa07621",
             "locator": {
-              "end": 328,
+              "end": 366,
               "kind": "line_range",
-              "start": 317
+              "start": 355
             }
           },
           "kind": "code"
@@ -478,12 +654,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
             "content": "sha256:cbef9622e24b8e78204dff90ec919b400c9fc8c45686bd084bb912bf24d98046",
             "locator": {
-              "end": 389,
+              "end": 427,
               "kind": "line_range",
-              "start": 385
+              "start": 423
             }
           },
           "kind": "code"
@@ -491,16 +667,15 @@
       ]
     },
     "2": {
-      "note": "Ready capability negotiation attaches tray reporting and sends the latest held target. An eligible transient retry can send the matching selection immediately.",
+      "note": "Ready capability negotiation clears stale problem notices, attaches tray reporting, publishes urlOnly and re-attempts any unshown wanted target.",
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-            "content": "sha256:0a763a0b9fdf775cf149ddc77ca21a83db1c73aa1fa0699209981f55d716c9fe",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:7e33c8a2227055fe4e2c00e003d3513b8cc135860368f799db3b92665ad57e8e",
             "locator": {
-              "end": 310,
-              "kind": "line_range",
-              "start": 280
+              "kind": "symbol",
+              "name": "onReady"
             }
           },
           "kind": "code"
@@ -512,12 +687,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
             "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
             "locator": {
-              "end": 457,
+              "end": 495,
               "kind": "line_range",
-              "start": 449
+              "start": 487
             }
           },
           "kind": "code"
@@ -525,16 +700,15 @@
       ]
     },
     "4": {
-      "note": "One load produces one generation and its own readiness wait.\n\nAnchor: \"private load(wanted: PaseoAgentTarget \\| null): void {\"",
+      "note": "One load produces one generation and arms the outer cold-load cap while awaiting iframe onLoad.",
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-            "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:7c92be0d1f76fa5c0c73e46219131ba0405584a80bb6fc0b7ed753db1311334d",
             "locator": {
-              "end": 486,
-              "kind": "line_range",
-              "start": 476
+              "kind": "symbol",
+              "name": "load"
             }
           },
           "kind": "code"
@@ -546,12 +720,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
             "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
             "locator": {
-              "end": 226,
+              "end": 264,
               "kind": "line_range",
-              "start": 219
+              "start": 257
             }
           },
           "kind": "code"
@@ -559,16 +733,48 @@
       ]
     },
     "6": {
-      "note": "Missing readiness probes before unavailable control.\n\nAnchor: \"private awaitReady(): void {\"",
+      "note": "Post-load missing readiness pings once and both readiness timeout and the 45 s cold-load cap settle unavailable without reloading the in-flight frame.",
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:eef62d182045ce0b503900b64a88b708e00f5a06c78de92edddc58b0c718f4e4",
             "locator": {
-              "end": 515,
-              "kind": "line_range",
-              "start": 501
+              "kind": "symbol",
+              "name": "awaitReady"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:276923f4ef40eec53aa77c667a7afb46229f91804ec5f06015b92ec610ef299a",
+            "locator": {
+              "kind": "symbol",
+              "name": "armColdLoadCap"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:db5b84b0269f18456db5301d2045613912cccfbac7c867c9ee94a656120120df",
+            "locator": {
+              "kind": "symbol",
+              "name": "onLoadTimeout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:d12b287653333fd415b8e8d1204293e6d18b7907b44e59c7b16ea560c89f4d14",
+            "locator": {
+              "kind": "symbol",
+              "name": "settleUnavailable"
             }
           },
           "kind": "code"
@@ -576,16 +782,15 @@
       ]
     },
     "7": {
-      "note": "A late answered request stays pending without resending its open.\n\nAnchor: \"private probe(): void {\"",
+      "note": "A late answered request stays pending without resending its open; unanswered request ping falls back once.",
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-            "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:a4001b83ab14d00b79f55606c3c32bfa6c7313a5edc23f9c63ef3a6b856974a4",
             "locator": {
-              "end": 532,
-              "kind": "line_range",
-              "start": 521
+              "kind": "symbol",
+              "name": "probe"
             }
           },
           "kind": "code"
@@ -597,12 +802,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
             "content": "sha256:52281ebf7b6dd95a60f924b028dcd748a9265eb69d73531b35121fcf23369af8",
             "locator": {
-              "end": 374,
+              "end": 412,
               "kind": "line_range",
-              "start": 364
+              "start": 402
             }
           },
           "kind": "code"
@@ -610,16 +815,15 @@
       ]
     },
     "9": {
-      "note": "Frame startup distinguishes ordinary document load and hidden preload.",
+      "note": "Frame startup resets abilities and cold-load timers and distinguishes ordinary document load from hidden preload.",
       "targets": [
         {
           "anchor": {
-            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
-            "content": "sha256:523f5969114bb95f202f01046cf560425421929de4e82f2b9a7494377d7ea164",
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:501b34ac0e76af88f6d0633a2ca2248479241bed7c0e786bf2ae85c45e2b8122",
             "locator": {
-              "end": 146,
-              "kind": "line_range",
-              "start": 129
+              "kind": "symbol",
+              "name": "start"
             }
           },
           "kind": "code"

@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across PaseoChatFrame.tsx, paseoFrameControl.ts, and paseoFrameModel.ts and guarded by component and real-bridge tests; prevents silent blank workspaces when Paseo strips ?open=agent:<id> or ?arPage=document on empty storage."
+  },
+  "applicability": "Embedded chat frame wait-state calculation whenever control is unavailable and the wanted agent has not been confirmed as shown.",
+  "conditions": [
+    "PaseoFrameControl.publish sets urlOnly true only when the plug-in explicitly announced capabilities lacking open-agent.",
+    "When control is unavailable and showing.urlOnly is false, frameWait returns unavailableWaitText with Retry instead of IN_REACH even when showing.landed equals agentId.",
+    "Late ready on a document page restores document-page behaviour through ar.page even when Paseo stripped ?arPage=document."
+  ],
+  "exclusions": [
+    "A plug-in that explicitly reports lacking open-agent keeps URL-landed IN_REACH semantics.",
+    "Confirmed shown targets return IN_REACH immediately."
+  ],
+  "id": "INV-K6HXG4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "npx --prefix dashboard vitest run src/cockpit/paseoFrameLateAnswer.test.tsx src/cockpit/PaseoChatFrame.test.tsx; report 261112-BUG-L62-worker-9e7b04bc-afc8-55ae-afa7-c9e1e9ca0088.md"
+      ],
+      "path": "261112-BUG-L62-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R62@v1 §2",
+    "leaf": "261112-BUG-L62",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When control is unavailable without an explicit plug-in report lacking open-agent capability, an unconfirmed URL-landed agent is not treated as in-reach and instead displays a bounded waiting notice with Retry while late ready still opens the chat and restores document-page mode via ar.page.",
+  "supersedes": [],
+  "title": "Unconfirmed URL-landed chat waits with Retry while control is unavailable",
+  "writer": {
+    "at": "2026-11-27T01:50:04+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L62",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "task": "261112-BUG"
+  }
+}

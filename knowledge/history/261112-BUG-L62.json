@@ -1,0 +1,1677 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L62",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T04:32:36+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L62",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T04:32:36+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L62",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "4928bc69-87b6-59ac-9718-de59bfa43806",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "1f54711fcffc36903fb7140039744b3808c65614",
+    "verdictRef": "notes/reports/reviewer/4928bc69-87b6-59ac-9718-de59bfa43806/memory-review-r2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0172Q5",
+      "items": [
+        "sha256:13b9a77e13c5f672b3daf1f115ddbc4562bc0d9c2a781ddee7011133fabac4ef"
+      ],
+      "reason": "PaseoFrameShowing.urlOnly interface property declaration (lines 293-294); its runtime propagation and consumption are captured by BUG-R62@v1 §2 targets PaseoFrameControl.publish and frameWait.",
+      "subject": "hunk:sha256:13b9a77e13c5f672b3daf1f115ddbc4562bc0d9c2a781ddee7011133fabac4ef"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1GRDS2",
+      "items": [
+        "sha256:c9b2a1cee712f9c795bae3b8d0e660ee048c8566f431c8f7296e29c5dc320a0a",
+        "sha256:de77b0847afe60c32877b1d3632673116aeb6f275723be5afde4f7c13a32fbd0"
+      ],
+      "reason": "Updated card prose and added citation for composed CockpitShell/RightRail/DocumentChat > 8 s mid-build regression test.",
+      "sources": [
+        {
+          "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
+          "path": "dashboard/src/cockpit/reviewExplainerColumn.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/reviewExplainerColumn.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1XNP5W",
+      "items": [
+        "sha256:dbb6caff536f9a4ab9fed1828062ff333be4579cdcba65a2751dce3b288ca53e"
+      ],
+      "reason": "Updated card prose and citation [3] for computeFrameTarget returning null when showFrame is false.",
+      "sources": [
+        {
+          "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+          "path": "dashboard/src/explainer/columnState.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/columnState.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8P06Y0",
+          "revision": 2
+        },
+        {
+          "id": "INV-GY49SV",
+          "revision": 4
+        },
+        {
+          "id": "INV-MN80QW",
+          "revision": 2
+        },
+        {
+          "id": "INV-VMREN3",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y7WR54",
+          "revision": 2
+        },
+        {
+          "id": "INV-YFAHQM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-2B2QS1",
+      "items": [
+        "sha256:8cb125dfd4cf4bbcd368f340ac41691c7b76ae2e3c69d43ba02247e1e6290b4d"
+      ],
+      "reason": "Examined all 6 members; only anchor refreshes occurred on INV-8P06Y0, INV-GY49SV, and INV-Y7WR54, and the joint one-loaded-sidebar-chat guarantee remains unchanged.",
+      "revision": 4,
+      "subject": "FAM-0W20JV"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:4d9fd6a26ccb9c18387a0c27d1fdad4e1304cef9d4b457ac0850c602ba15297d",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:52779ed6470faab67d0ad0c3607267ef4bcdd8005fc8f14ea862cd2817feaca2",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-6CV9KK"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:ae5e746af75b07db65505759576cc180729daaa43ac3488b206c28a09720ccf4",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:07017c31afb5a9c1b75c0770ac96a8b82645c25fa8780cb769a875ed647b7268",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-SFPH0W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2EDA5Q",
+      "items": [
+        "sha256:9678c2b68815eb7ff52e2b8ad7375f94f59cb912d4ce5ca31ba333987776caef"
+      ],
+      "reason": "Unchanged; re-anchored shifted line ranges RLZ-6CV9KK in PaseoChatFrame.tsx and RLZ-SFPH0W in paseoFrameControl.ts.",
+      "revision": 2,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4YR8AD",
+      "items": [
+        "sha256:1e84654a95cbfb072e048080c9537006aeb104b1fdf02abac0cf635d28625fc8",
+        "sha256:22608043b5c7e6df7e644fff4c5be4194c766c826cb9fb47ceac6bb8b19f3ab0",
+        "sha256:2b7ae3f820bd189fcc0da4af15bd481ee006370d1eb45de0b94d5ba76de256cd",
+        "sha256:620a9a2e4a323e109c4efccba74ad8362c489ada8904cb6dfb2d151c258ee9ec",
+        "sha256:6929be3bb62ef0da005037c4757a96371bef6b596b5f110c3ec73234f27464e3",
+        "sha256:81ad3690562cb941e7e309455747d858a616169670cb87f6b775bfa29e0193db",
+        "sha256:89299119d9e2040097b8f21ab1ccd0fe8e8cc07dac9aa804d8acc03468804796",
+        "sha256:8c24d964aa60a984366cae22740f74176fe9995b943fa23c2415b5b70c7c0241",
+        "sha256:ac4da84ba34fde5f0940149169b3090c87789d09012023498ddb7d44cfe97c7c",
+        "sha256:acd97eb3a5fdf44dd3a4265e44e852bf06dbd5a48cf7ab6fa9107bb68d790176",
+        "sha256:c869408b395793d513202a42d8b10a054ff901c0f2766be41ac2d9b9340d3552",
+        "sha256:d41a2eb2042fdce9046778bafdfbd56c42cf6906092861d48da9874fc85bacdf",
+        "sha256:e9a8c32563d993fcfb6282ecb01c40ec9d0c75b0c37a3dd85131cf81c3e9048f",
+        "sha256:ebfeff86a7ef34881baf5ab5428b0c31f2ed087371eb804fa6d8200d79427546",
+        "sha256:f12df1394399ef9b4860fd63be6d87acfff630e10b7ef369d1098a9f419ae590",
+        "sha256:f43b52b3e6181469a69388b0bbb2ed32f8d1c0380dd3a710d14d24d015ab50a6",
+        "sha256:fc0c57f9ea1832b254231747564691a1d23b1904e03bbdfbd608dd2b5e3c5215"
+      ],
+      "reason": "Updated card prose and citations for bootstrap double-load survival, 45 s cold-load cap, unconfirmed URL-landed waiting notice, and stripped ?arPage=document real-bridge restoration.",
+      "sources": [
+        {
+          "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+          "path": "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-72Y8R3",
+          "revision": 1
+        },
+        {
+          "id": "INV-BTK24H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSCJ1Q",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-59K2BJ",
+      "items": [
+        "sha256:3e8212cb0fb24f2d4bde7bb5babb03ad2b8e4c716615bbb52cd7870095ac9393"
+      ],
+      "reason": "Examined all 3 members after clarifying INV-KSCJ1Q (rev 2 -> 3) under BUG-R62@v1 Rules 1-2; updated FAM-JY9AN3 guarantee to distinguish open-request ping silence (one fallback URL load) from post-onLoad readiness timeout and the 45 s cold-load cap (settle unavailable without reload while keeping waiting notice + Retry for unconfirmed URL loads).",
+      "revision": 4,
+      "subject": "FAM-JY9AN3"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R62",
+          "packet": "requirements/BUG-R62-v1-chat-initial-load-and-explainer-start-freeze.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5NRRH6",
+      "items": [],
+      "reason": "Confirmed DPD-PMZ21Z (docs/guides/review-page-and-explainer.md, rev 18 -> 19) after auditing all 938 lines against post-L58 synced L62 candidate 0d1f4e23: BUG-R62@v1's showFrame gating of computeFrameTarget in dashboard/src/explainer/columnState.ts does not alter any documented explainer header state, menu selection, build panel, or notice behavior.",
+      "revision": 19,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 2
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 3
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6P7965",
+      "items": [
+        "sha256:84ad9248c762191772e39f42c8cecbd1c44e909ffda4cd73e78816e0bdacea56"
+      ],
+      "reason": "Examined all 10 members; only anchor refreshes occurred on INV-7D9QDG, INV-QS9SRX, and INV-WEZ24E, and the native navigation guarantee remains unchanged.",
+      "revision": 4,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-91BP5B",
+      "items": [
+        "sha256:afae43ed59e70d7a44c8e3a71ce56841740635484041d0e1c8765b20fe49aa9a",
+        "sha256:e200635a811055b4ec9a5e0a9d538967025adb234ffaa0f910ed597889210116",
+        "sha256:ef64a2d1fb83c30ed032792d7015d2f6a8bad2b25c194a9a40fc5aea7ce908b8"
+      ],
+      "reason": "Updated card prose and citation [1] for ready/unavailable problem Retry and active reveal re-sync tests.",
+      "sources": [
+        {
+          "blob": "e9c2e1430107d18df0186f1067a95c7c07155ea4",
+          "path": "dashboard/src/cockpit/PaseoChatFrame.retry.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/PaseoChatFrame.retry.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:7c92be0d1f76fa5c0c73e46219131ba0405584a80bb6fc0b7ed753db1311334d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-3FTZB5"
+        },
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 355
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-93GQVS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-91WSWV",
+      "items": [
+        "sha256:364cf9f760826016db5fbf573f9b0333523eb624dcd3d707b0d87bb82bea649e"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-3FTZB5 on load() and updated shifted line range RLZ-93GQVS to line 402 (data-generation).",
+      "revision": 2,
+      "subject": "INV-Y7WR54"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9E9QRB",
+      "items": [
+        "sha256:00f4ed8136eaaa91d739fa318400bf2af377739c7bf3c24f423ad5acdba73495",
+        "sha256:0be39bc665a53b574bcb2f268e38af2a1d8b38f03c71197a9f44441186519ec4",
+        "sha256:0d324952e25577cd836fea39995c4db201e5bdd45131aeff9a5abadecb313909",
+        "sha256:1a6b51b64cb5495fb150c6ceeabc454a4e58dbe8ddb97f4fc8ba5fe51eb83d35",
+        "sha256:1d335d2e0ef4221a3b8028e3c7efd8cfd0045c4579cb4d6ae28a2a12a7900f8b",
+        "sha256:247394b89958d278bd5c45d7e51234758f0ce9307e5845aee5101170e046d3a3",
+        "sha256:2cc1f366b5a7a40e395aeda1bbb646f2597e75213550a612362740afbdee6480",
+        "sha256:3293711721b9725eeaa54f983677020cdb74dfbde19393c9b518a0ad6a65668f",
+        "sha256:38a2047c70e791b32402f789f1829a6029f9996a4fd8d0b873e42bfc80d377ba",
+        "sha256:53cb986f96ba129fc1d98554c4bc450bceab6285317c689d3a19188be16900aa",
+        "sha256:55537b128bf01d1eb52225686a6f57f0d798642f0db9df9a0c87376c549cf644",
+        "sha256:59d88f2281340cec4204c9342c576b1e07de1eedb2daa034bdf61b0089df985a",
+        "sha256:5b025a3b977a59c3afab46d400a5945f9d0d4c2c3273881ac29e62450346c663",
+        "sha256:6d56e1c20c8d55a1b1f26540a0f16413b910391b0f7de0bea94ec6b91925882f",
+        "sha256:73267561c6e427c4265954510f3e878e700dfdadb0f3593d7c9ac68ded5bac22",
+        "sha256:8d093c3101c2fad0a54a611645a0d8078b638576878057319d85c6c9edd4a8f0",
+        "sha256:ac7b9ae2bb47af826fc3e938fb207ad1ed4f92c0fd50ae7123579b3478d7099e",
+        "sha256:b710ae21b8f3e2980052fecf8c6b04816b558348fc0212d3ba71ab7f76c87057",
+        "sha256:b733d1460800efff9533bd056c4945f5a7ed2f2bf107a9bfe7593aec96233e82",
+        "sha256:c264ffbd6e22b89e72eaf4280720208fb610f694c441559c6f093f3ed0650cc1",
+        "sha256:d1bb42ea238271ac3f85e1af044eab672facda1b841d739ccaf2f07b22bfc688",
+        "sha256:d88701cb8750ba8f831ce5888ef4f686eb3feddc346a4b43cb0ac3d6e8f0e4ce",
+        "sha256:de4b63c093a64406c61299ecc5ed996b8adffc61fd2174560e1d1d308c16422d",
+        "sha256:e0734514ad3b66cb3e65c67aee16c360c2681d08ce2af15aa2c088e95b0bb9f5",
+        "sha256:ea973e0c8666edae838eeb18694c9ba73ef04bd394a2a574f4b63e61c6e92e27",
+        "sha256:eeba299b0f9f7f64b59484c46a42d4b6ad8239963c6f9f210baedc55d0c3a87e"
+      ],
+      "reason": "Updated card prose and citations for onLoad-anchored readiness, 45 s non-reloading cold-load cap, late ready, and wrong-origin/wrong-source rejection tests.",
+      "sources": [
+        {
+          "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
+          "path": "dashboard/src/cockpit/PaseoChatFrame.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/PaseoChatFrame.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:ae5e746af75b07db65505759576cc180729daaa43ac3488b206c28a09720ccf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:07017c31afb5a9c1b75c0770ac96a8b82645c25fa8780cb769a875ed647b7268",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-SXWYQF"
+        },
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:2415e2d3e868b65fbf518527ade04110ac5a2959bec61c6aab044c8a030e0312",
+            "locator": {
+              "kind": "symbol",
+              "name": "frameWait"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "frameWait"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-ZWAT5M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AXADD5",
+      "items": [
+        "sha256:5a9c1abe3d52a9a531abbf290f8661b208c328acc7a315a07c4d64ad07efc5df"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-ZWAT5M on frameWait and RLZ-SXWYQF on PaseoFrameControl.",
+      "revision": 1,
+      "subject": "INV-EEX84Q"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R62",
+          "packet": "requirements/BUG-R62-v1-chat-initial-load-and-explainer-start-freeze.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-6KQQRY"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:7e33c8a2227055fe4e2c00e003d3513b8cc135860368f799db3b92665ad57e8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.onReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:0a763a0b9fdf775cf149ddc77ca21a83db1c73aa1fa0699209981f55d716c9fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.onReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-GG246Z"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CT40SZ",
+      "items": [
+        "sha256:a57d40bc3791506e3ec15390f2c3db7750230c46e1535c4f6cf1f5c38c9f9ecb"
+      ],
+      "reason": "Clarified INV-EJ38J1 to revision 2 so unanswered post-load ping or cold-load cap expiry settles unavailable without destroying the in-flight frame while late ready or explicit Retry recovers the held selection, and re-anchored RLZ-6KQQRY and RLZ-GG246Z.",
+      "revision": 2,
+      "subject": "INV-EJ38J1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DTZ8RJ",
+      "items": [
+        "sha256:08d074235984a712173c8eb83e6cb39be6a7d2e6653b33cf4ddeaae97a81b81d",
+        "sha256:a452c9e857885729bf1f6c381fe4d03c4af0558ad17890702c21e41bbcab61f2",
+        "sha256:fae4dd7b8325ac7199d64417e90fbd2f6d7639a3c9bfb8ab0e33f50a16b1d627"
+      ],
+      "reason": "Updated card prose and citations for deterministic > 8 s mid-build regression test and INV-S3NMAZ/INV-M71W78 guards on problem Retry.",
+      "sources": [
+        {
+          "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+          "path": "dashboard/src/explainer/ExplainerColumn.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/ExplainerColumn.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+            "content": "sha256:7a64ac88decc3c9e450cb482085016238268b19976923fa36443060f1c10b4a7",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:7a64ac88decc3c9e450cb482085016238268b19976923fa36443060f1c10b4a7",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 317
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "id": "RLZ-AMH2C3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EK8MK5",
+      "items": [],
+      "reason": "Unchanged; re-anchored shifted line range RLZ-AMH2C3 to lines 327-328 in paseoFrameModel.ts.",
+      "revision": 1,
+      "subject": "INV-ZF7G5B"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EPAXR4",
+      "items": [
+        "sha256:a89e7e38c70bb433607223eb7b0dead0803552f9a3baa2daf5fe4ca5d9c89808"
+      ],
+      "reason": "Updated card prose and citations for PaseoFrameShowing.urlOnly, unavailableWaitText, and two-outcome agentTimeoutText.",
+      "sources": [
+        {
+          "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+          "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoFrameModel.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FXZ1ZS",
+      "items": [
+        "sha256:09d0f850adbf54a922a3ac8f94870aeac392f16c408434ee0a76cdf462d70ffe",
+        "sha256:b2a09f4ba428143b4656b4d65e42ffaaf273e0b29f42b32b5829e5787006fab1",
+        "sha256:d06032fea2320577e8f7392079e3217ec2ff24fa8563c1376b85f2c1285b1c59"
+      ],
+      "reason": "Updated card prose and added citation for ExplainerColumn and ExplainerFrame gating target on showFrame/shown.",
+      "sources": [
+        {
+          "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
+          "path": "dashboard/src/explainer/ExplainerColumn.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/ExplainerColumn.tsx"
+    },
+    {
+      "deferralIds": [
+        "DFR-73APGD"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-G14K2C",
+      "items": [],
+      "reason": "Deferred docs/dashboard.md lines 256-262 (pre-BUG-R62 20 s first-visit timeout and single reload copy) so the passed frontend-only code freeze is preserved until a follow-up docs pass edits docs/dashboard.md.",
+      "revision": 11,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:7d921bb35da93c4e10ce384580e215b0cdf69e209ffdee50fe5cd03d0c025300",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:011f51091c3826cba23b53b50b6b8895f19e466aa1f445f4eeb6a35a49890ef2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-25DTRT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G1MQ1G",
+      "items": [
+        "sha256:df241c2135a6bb472bf963aa83a82f2808bdac229b1acb8a3de170644b07112b"
+      ],
+      "reason": "Unchanged; re-anchored whole-file realization RLZ-25DTRT on PaseoChatFrame.tsx.",
+      "revision": 1,
+      "subject": "INV-AE8ZGP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveDocumentFrameProps"
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "before": {
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:ba1111cde415e1fbbdb11031bff91b609d324eb682bb33bbbe3d42741d3b096c",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveDocumentFrameProps"
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "id": "RLZ-6TQESZ"
+        },
+        {
+          "after": {
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveDocumentFrameProps"
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "before": {
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:ba1111cde415e1fbbdb11031bff91b609d324eb682bb33bbbe3d42741d3b096c",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveDocumentFrameProps"
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "id": "RLZ-HTWQ3A"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GS123S",
+      "items": [
+        "sha256:e5ac57ab8d2024d6adaeed3a3d1eefa304d14786ea3d5791f1a9462d300ee4af"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-6TQESZ and RLZ-HTWQ3A on resolveDocumentFrameProps after gating explainer target on showFrame.",
+      "revision": 4,
+      "subject": "INV-GY49SV"
+    },
+    {
+      "considered": [
+        "FAM-0W20JV",
+        "FAM-57TZPE",
+        "FAM-8GST1A",
+        "FAM-JY9AN3"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-H1VS02",
+      "items": [],
+      "reason": "Standalone explainer showFrame-gating, reveal re-sync, and agent-problem Retry invariant spanning cockpit and explainer modules (like INV-72AP2W); belongs to no existing family.",
+      "revision": 1,
+      "subject": "membership:INV-Z5M5WQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-Y4PJ59"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HMPSV2",
+      "items": [
+        "sha256:c3fb49abd4dca636323087123dce4a02c0a871b8269b65d89ae014ec8796ae67"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-Y4PJ59 on EmbeddedFrame.",
+      "revision": 1,
+      "subject": "INV-WEZ24E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-KJHW38"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HX7B82",
+      "items": [
+        "sha256:dfb4d83393570584b781ef54c1c67bd472f03cc5e32e5e00f0bd547b4bc5761e"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-KJHW38 on display() after returning boolean steered flag.",
+      "revision": 2,
+      "subject": "INV-QS9SRX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-BKMGA6"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:a2be474f3acefef4f9e093a372c08f64850e06530ac3b4e95a93f28265c44bf2",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:a2be474f3acefef4f9e093a372c08f64850e06530ac3b4e95a93f28265c44bf2",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-BMDEEW"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:85642f4c43dda7a3827e8007567e3c10b4afe45be0e9a5c6ae4128333dc7d256",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:4d73c19f273635e95cc6bb2cfdc811da7b45d21f382cd2337c281626f1eeed77",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-RX0G6H"
+        },
+        {
+          "after": {
+            "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+            "content": "sha256:5a4e97a660897351b36c0a540e31f04a34bf4103ecf2ae33776156912eb0cbc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "useExplainerColumn"
+            },
+            "path": "dashboard/src/explainer/columnState.ts"
+          },
+          "before": {
+            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+            "content": "sha256:ae9ffc6a35933b5238f539f969ca660ee7f38275e7954b4c3903924b17fd5bc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useExplainerColumn"
+            },
+            "path": "dashboard/src/explainer/columnState.ts"
+          },
+          "id": "RLZ-VX6PHH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HYBDYV",
+      "items": [
+        "sha256:94159383e6a451265473adba762764382d3d69aea3468a1bfc1e32923aad33f2"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-BKMGA6 and RLZ-VX6PHH and updated shifted line ranges RLZ-BMDEEW and RLZ-RX0G6H in paseoFrameControl.ts.",
+      "revision": 1,
+      "subject": "INV-72AP2W"
+    },
+    {
+      "considered": [
+        "FAM-0W20JV",
+        "FAM-57TZPE",
+        "FAM-8GST1A",
+        "FAM-JY9AN3"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-K422QK",
+      "items": [],
+      "reason": "Standalone unconfirmed URL-landed wait-state invariant (paired with standalone INV-D0QATN); adds no new joint guarantee across the four existing families.",
+      "revision": 1,
+      "subject": "membership:INV-K6HXG4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:a4001b83ab14d00b79f55606c3c32bfa6c7313a5edc23f9c63ef3a6b856974a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.probe"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.probe"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-DB2T67"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:eef62d182045ce0b503900b64a88b708e00f5a06c78de92edddc58b0c718f4e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.awaitReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl.awaitReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-NF7RKH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M5K4M4",
+      "items": [
+        "sha256:1c7e4c17634f198522d0aacdbffe0222e794ee5e3dfc802427845cc70974b937"
+      ],
+      "reason": "Unchanged reload-qualification boundary; re-anchored RLZ-DB2T67 on probe and RLZ-NF7RKH on awaitReady with updated rationale reflecting onFrameLoad anchoring and non-reloading settle.",
+      "revision": 1,
+      "subject": "INV-ZJ2JX8"
+    },
+    {
+      "considered": [
+        "FAM-0W20JV",
+        "FAM-57TZPE",
+        "FAM-8GST1A",
+        "FAM-JY9AN3"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-NHDPMA",
+      "items": [],
+      "reason": "Standalone frame readiness timing and cold-load cap invariant (like INV-D0QATN, INV-EJ38J1, and INV-ZJ2JX8); adds no new joint guarantee across the four existing families.",
+      "revision": 1,
+      "subject": "membership:INV-KVEKXR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q7686K",
+      "items": [
+        "sha256:3b24696367752d8f8061985b3131ccf0aa021241ec7cf356fa32f06ddbf0a50e"
+      ],
+      "reason": "Updated card prose and citations for onFrameLoad-anchored readiness, 45 s non-reloading cold-load cap, onReady problem clearing/re-attempt, urlOnly publication, and retryOpen/resyncIfUnshown.",
+      "sources": [
+        {
+          "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+          "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoFrameControl.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QDD3TV",
+      "items": [
+        "sha256:6bf1017f4de4c284de6c1435ecb81d72952c9275b08eb59062b5209cd09fbd00"
+      ],
+      "reason": "Updated card prose and citations for iframe onLoad wiring, active reveal re-sync, unconfirmed URL-landed waiting notice with Retry, and agent-problem Retry button.",
+      "sources": [
+        {
+          "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+          "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/PaseoChatFrame.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:2415e2d3e868b65fbf518527ade04110ac5a2959bec61c6aab044c8a030e0312",
+            "locator": {
+              "kind": "symbol",
+              "name": "frameWait"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "frameWait"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-NHP8GP"
+        },
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-ZW8J2W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QVFP1D",
+      "items": [
+        "sha256:437dc900a719a28c286ac296203f18394ace9c14c44fcfbe603b93b83feb8760"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-NHP8GP on frameWait and RLZ-ZW8J2W on EmbeddedFrame.",
+      "revision": 1,
+      "subject": "INV-CB2QY3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:501b34ac0e76af88f6d0633a2ca2248479241bed7c0e786bf2ae85c45e2b8122",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:a3f9bf4fdb4d938af04f2e6dcde7ddd418c4550738470bdeedb37e0fc1fc12e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-9XE68C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R35HV1",
+      "items": [
+        "sha256:8c53c2f130f51d7df803db84d58ae49859221464fdcc36a2c784beb6155dc3a0"
+      ],
+      "reason": "Unchanged; re-anchored RLZ-9XE68C on start() after adding abilities and cold-load cap resets.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R62",
+          "packet": "requirements/BUG-R62-v1-chat-initial-load-and-explainer-start-freeze.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+            "content": "sha256:290cc888ed9150db80d85a24c0850f63da8beb8776a5296570f78463563cec57",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "id": "RLZ-D21787"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:eef62d182045ce0b503900b64a88b708e00f5a06c78de92edddc58b0c718f4e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "awaitReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "awaitReady"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-TW9MMS"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RA7AFE",
+      "items": [
+        "sha256:f233fdb47df28754020e6fd733b1cbcce9caf86ba8def216ce64d97d661b4596"
+      ],
+      "reason": "Clarified INV-KSCJ1Q to revision 3 so post-onLoad readiness and cold-load cap timeouts state already-named versus kept-open without falsely claiming a reload occurred, while open-request ping silence keeps single URL fallback, and re-anchored RLZ-TW9MMS and RLZ-D21787.",
+      "revision": 3,
+      "subject": "INV-KSCJ1Q"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R62",
+          "packet": "requirements/BUG-R62-v1-chat-initial-load-and-explainer-start-freeze.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:4d9fd6a26ccb9c18387a0c27d1fdad4e1304cef9d4b457ac0850c602ba15297d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:3c5f0380ec70248470ba50eab1aa60c87ebc2bbcebb42a2e049a18dd3a8af960",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-7BAFW6"
+        },
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:2293639ae0fe014c11d689c3c41cdf327ac4cbf7c4d9bb64e16b7afdbb00ef02",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AVC402"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-RSM3TK",
+      "items": [
+        "sha256:3cd86f8bf469c1d01e6c8ca90bffd9a6748d8ab879a69d4831c1586a78a891dc"
+      ],
+      "reason": "Amended INV-D0QATN to revision 4 per BUG-R62@v1 and D1064, keeping ready switches and cold-load/readiness timeouts non-reloading and requiring confirmed shown or explicit urlOnly for IN_REACH, and re-anchored its realizations at candidate tree 538f43b98f8caf2e6cfb6ad9fc507552d6f3628d.",
+      "revision": 4,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S2X19R",
+      "items": [
+        "sha256:1fa61b1c3e70c112668e90851608ec876f4016121188e0fbef67d1d694f2563f"
+      ],
+      "reason": "Updated card prose and citations for resolveDocumentFrameProps gating explainer target on explainerColumn.showFrame.",
+      "sources": [
+        {
+          "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+          "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R62",
+          "packet": "requirements/BUG-R62-v1-chat-initial-load-and-explainer-start-freeze.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+            "content": "sha256:a8317fa78605cca66e3228fff439990cc0c4e4b50cc9330efbeb08a198a6b67a",
+            "locator": {
+              "kind": "symbol",
+              "name": "computeFrameTarget"
+            },
+            "path": "dashboard/src/explainer/columnState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-H3G193"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SE66ZW",
+      "items": [],
+      "reason": "Clarified leaf-created INV-Z5M5WQ (revision 1; Memory Review R1 finding L62-OM1-01) so the showFrame gate explicitly states Boolean(selectedRow) || phase === 'live' || phase === 'closed': null target holds whenever showFrame is false (no non-explainer row selected in placeholder, first-request, building, or retired phases), while an explicitly selected non-explainer row keeps showFrame true and forwards a non-null target; updated RLZ-H3G193 rationale accordingly.",
+      "revision": 1,
+      "subject": "INV-Z5M5WQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+            "content": "sha256:92e4093129d6909ac0cf7b0156cc900f1028e59251b7214640d219e95c1cffb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts TrayColumnDock above-composer across placeholder, closed and live states"
+            },
+            "path": "dashboard/src/explainer/ExplainerColumn.test.tsx"
+          },
+          "before": {
+            "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+            "content": "sha256:95728bb69241d8621983f5d2705448e5b9d282a8b22e753bbc86204012105875",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts TrayColumnDock above-composer across placeholder, closed and live states"
+            },
+            "path": "dashboard/src/explainer/ExplainerColumn.test.tsx"
+          },
+          "id": "PRF-NG3E1B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TNXQ85",
+      "items": [
+        "sha256:d56fcebd25391afd8075fd8c14938bce00e4d8e12c1dc34d8c0b53bc32bdbf18"
+      ],
+      "reason": "Unchanged and explicitly guarded by BUG-R62@v1 and tray-placement assertions around paseo-frame-agent-problem Retry; re-anchored PRF-NG3E1B.",
+      "revision": 2,
+      "subject": "INV-S3NMAZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-MDFGTP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TRYCMR",
+      "items": [
+        "sha256:e64398639687518924b74b8e00ef4f00079fe7802dd67e9f50bf2dc40605c3da"
+      ],
+      "reason": "Unchanged and explicitly guarded by BUG-R62@v1 and wrong-origin/wrong-source tests; re-anchored RLZ-MDFGTP on EmbeddedFrame after adding onLoad and Retry wiring.",
+      "revision": 1,
+      "subject": "INV-1PVR72"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VD4KA1",
+      "items": [
+        "sha256:43f2be6024caaaca22cf6ba360985f3dc29340fae3dfd6b55de11454ec2edf81"
+      ],
+      "reason": "JSDoc comment update on PASEO_CONTROL_TIMEOUT_MS (lines 22-24) noting iframe load event anchoring; the normative behaviour is captured by BUG-R62@v1 §1 targets.",
+      "subject": "hunk:sha256:43f2be6024caaaca22cf6ba360985f3dc29340fae3dfd6b55de11454ec2edf81"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X7VV0K",
+      "items": [
+        "sha256:a50e9ed8f4579347b08afcd9cbc64ebfa6317501b7d01f56b53fc88ae27d027d"
+      ],
+      "reason": "Updated Native selection and source-owner qualifications prose and refreshed stale citations [36], [47], [90], [94], and [96].",
+      "sources": [
+        {
+          "blob": "e9c2e1430107d18df0186f1067a95c7c07155ea4",
+          "path": "dashboard/src/cockpit/PaseoChatFrame.retry.test.tsx"
+        },
+        {
+          "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
+          "path": "dashboard/src/cockpit/PaseoChatFrame.test.tsx"
+        },
+        {
+          "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+          "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+        },
+        {
+          "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+          "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+        },
+        {
+          "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+          "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+        },
+        {
+          "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+          "path": "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx"
+        },
+        {
+          "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
+          "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+        },
+        {
+          "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
+          "path": "dashboard/src/cockpit/reviewExplainerColumn.test.tsx"
+        },
+        {
+          "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+          "path": "dashboard/src/explainer/ExplainerColumn.test.tsx"
+        },
+        {
+          "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
+          "path": "dashboard/src/explainer/ExplainerColumn.tsx"
+        },
+        {
+          "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+          "path": "dashboard/src/explainer/columnState.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
+            "content": "sha256:74080544c485bdf9b31f3ded81199bcf7f2733004f575ee65cd971b3f8817f19",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:3ade5ee14778b26df1d8f6f7ae3d50de609593b4ef655540014be063ef0a5675",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AZSTHT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XBATMP",
+      "items": [
+        "sha256:a2619f34c1b167e73ba31ec2de4e6d1a9b9195bdf70d90ac68d9a600b5f45d03"
+      ],
+      "reason": "Unchanged; re-anchored shifted line range RLZ-AZSTHT covering display and onSettle in paseoFrameControl.ts.",
+      "revision": 2,
+      "subject": "INV-8P06Y0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 4
+        },
+        {
+          "id": "INV-AE8ZGP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 4
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 3
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNWH01",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XJNT7J",
+      "items": [
+        "sha256:41dfb59c885afe9e3b764f04127b85e6ce4fd1fcdb86db0d347d923cd53e82ac"
+      ],
+      "reason": "Examined all 10 members; only whole-file anchor RLZ-25DTRT on INV-AE8ZGP moved, and the Operations attention guarantee remains unchanged.",
+      "revision": 7,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "deferralIds": [
+        "DFR-JPRPD6"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-Y6XYJD",
+      "items": [],
+      "reason": "Deferred docs/getting-started.md lines 196-200 (pre-BUG-R62 ~20 s first-visit timeout copy) after full-document inspection showed it lags BUG-R62@v1's onLoad-anchored 10 s window and 45 s cold-load cap; preserves the passed frontend-only code freeze.",
+      "revision": 21,
+      "subject": "DPD-MQCJK4"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:02d4276e51604bae6cf7375d2668423adba5ad6241ea2b0f17aa62a0b55941e3",
+      "record": "DPD-23C91T",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T02:39:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:44825edfe0254440e5b21b00f8ecae09000196ddac26b6f5c2c399fb8dbf9533",
+      "record": "DPD-MQCJK4",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T02:39:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:8058f1d2932de37431e9df66ba4627b1853a10510dcb27dae8752a529231771a",
+      "record": "DPD-PMZ21Z",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T02:39:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a0e4964b59dab99e2839371da314569540edc1bf9106488bd2927928b11e1276",
+      "record": "DPD-PMZ21Z",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-27T04:15:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:eccccafe3df9bdfb235a593264aa8d709101f1d49bf694b27506a1c28c846f0d",
+      "record": "FAM-JY9AN3",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-27T01:50:04+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e8e1d08f352f21dbeb263d092862ba13642867ccd38da191329f6cefbed8c92e",
+      "record": "INV-D0QATN",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-27T01:50:04+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:323b712d9473911968178b5183573b646ad633819b36a8774fa283567372a054",
+      "record": "INV-EJ38J1",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T01:50:04+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b2c7c567379dbfd6420d990d90efd720aa183ccef4dc80f5daa21fc1daca3d82",
+      "record": "INV-K6HXG4",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T01:50:04+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7543d2bf1be3869a650a803d3b6dedad02394168c1d2bd7d2c4a2962f2e0cb7d",
+      "record": "INV-KSCJ1Q",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-27T01:50:04+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:02e8667242cb7aa962560f963d2a849e3e8951e22507034f787b7abd97c2e805",
+      "record": "INV-KVEKXR",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T01:50:04+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1a1877f684e1577693665bbd49207e93853db765647c85f821a2a2172ef86f6f",
+      "record": "INV-Z5M5WQ",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:28:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L62",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

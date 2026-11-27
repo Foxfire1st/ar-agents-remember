@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across columnState.ts, DocumentChat.tsx, ExplainerColumn.tsx, PaseoChatFrame.tsx, and paseoFrameControl.ts and guarded by component and composed cockpit tests; prevents deterministic mid-build explainer chat freezes from exhausting retries while hidden and prevents unrecoverable agent-problem notices."
+  },
+  "applicability": "Explainer column frame targeting in Review and Operations, reveal re-sync on PaseoChatFrame activation, and explicit Retry on paseo-frame-agent-problem.",
+  "conditions": [
+    "computeFrameTarget, DocumentChat.resolveDocumentFrameProps, ExplainerColumn, and ExplainerFrame all pass null whenever showFrame is false (no non-explainer row selected; phase is placeholder, first-request, building, or retired).",
+    "When active transitions from false to true with a non-null unshown target not already steered in that render, useFrameController calls controller.resyncIfUnshown to resend ar.open without reload.",
+    "FrameNotices renders Retry inside paseo-frame-agent-problem: ready frames call retryOpen without reload while unavailable frames reload, preserving TrayColumnDock geometry, archived-target form handling, and origin checks."
+  ],
+  "exclusions": [
+    "An explicitly selected non-explainer row from the header menu makes showFrame true (Boolean(selectedRow)) and yields a non-null frameTarget even during placeholder, first-request, building, or retired phases.",
+    "Backend explainer_service.py mid-build generation and agentId publication remain unchanged as honest build state.",
+    "Hiding an active frame (active true to false) never triggers resyncIfUnshown or a reload."
+  ],
+  "id": "INV-Z5M5WQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "npx --prefix dashboard vitest run src/explainer/ExplainerColumn.test.tsx src/cockpit/reviewExplainerColumn.test.tsx src/cockpit/PaseoChatFrame.retry.test.tsx; report 261112-BUG-L62-worker-9e7b04bc-afc8-55ae-afa7-c9e1e9ca0088.md"
+      ],
+      "path": "261112-BUG-L62-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R62@v1 §3",
+    "leaf": "261112-BUG-L62",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Explainer frame targeting is gated on showFrame (Boolean(selectedRow) || phase === 'live' || phase === 'closed') so hidden phases with no non-explainer row selected never steer PaseoFrameControl, revealing an unshown target re-syncs via ar.open without reload when ready, and paseo-frame-agent-problem provides an explicit Retry button that re-sends ar.open when ready or reloads when unavailable while preserving INV-M71W78, INV-S3NMAZ, and INV-1PVR72.",
+  "supersedes": [],
+  "title": "showFrame gates explainer targeting; reveal and Retry recover cleanly",
+  "writer": {
+    "at": "2026-11-27T02:28:40+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L62",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "task": "261112-BUG"
+  }
+}

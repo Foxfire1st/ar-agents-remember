@@ -10,7 +10,7 @@ Protects late-answer versus application-silence recovery and the negotiated nati
 
 ## Code Commentary
 
-The real frame/controller tests distinguish a slow open that answers pings from an unanswered application ping. Missing ready first asks a ping; late ready/pong releases a held selection by message, while silence permits recovery once for that load. A selection made after recovery waits for that new load's own ready/ping cycle rather than immediately reloading again. Current-plugin on-chat releases selected-screen input before shown removes the waiting line; load-failed removes the line and leaves native Retry in reach. Capability cases keep legacy message switches and their early-answer notice distinct from an explicitly non-open plugin's URL navigation.
+The real frame/controller tests distinguish a slow open that answers pings from an unanswered application ping. Post-`onLoad` missing ready first asks a ping (resetting across bootstrap double-loads), and both ping silence and the 45 s cold-load cap settle unavailable without reloading the in-flight frame while keeping a waiting notice with Retry and accepting a late `ready`/`pong`; an unanswered open-request ping still performs one URL fallback. A selection made after recovery waits for that new load's own ready/ping cycle rather than immediately reloading again. Current-plugin on-chat releases selected-screen input before shown removes the waiting line; load-failed removes the line and leaves native Retry in reach. Capability cases keep legacy message switches and their early-answer notice distinct from an explicitly non-open plugin's URL navigation. A real-bridge document-page case verifies that ready-path `{ type: "ar.page", page: "document" }` restores document-page behaviour when `?arPage=document` is stripped.
 
 Capability fixtures include `pick` in the current plugin offer and require the dashboard hello to advertise `pick` and `showing`. A plugin missing only `pick` receives a provisioning notice without the early-answer warning, and the selected chat still switches by message in generation 1. The early-answer sentence is tied to missing display confirmation rather than every missing capability. These fixtures do not exercise selecting chat text or inserting a tray attachment.
 
@@ -20,5 +20,6 @@ Timer/channel fixtures establish executable component contracts, not a developer
 
 ## Evidence
 
-- The suite contrasts responsive late answers with true ping silence and checks each loaded document's own readiness wait, input release, native failure and legacy capability notices. [1]
 - The current offer includes pick, the dashboard hello advertises pick/showing, and a missing-pick notice preserves message switching without an early-answer warning. [2]
+
+- The suite contrasts responsive late answers with ping silence, verifies double-load survival, 45 s non-reloading cold cap, unconfirmed URL-landed waiting notice with Retry, input release, native failure, legacy capability notices and stripped arPage restoration. [1]

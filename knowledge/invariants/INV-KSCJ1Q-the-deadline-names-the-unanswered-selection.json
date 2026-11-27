@@ -1,15 +1,16 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "spans_locations",
+      "prevents_costly_mistake"
     ],
-    "justification": "Realized in dashboard/src/cockpit/paseoFrameControl.ts, where arm posts the agent-naming problem for the unanswered target with one fallback load, and in dashboard/src/cockpit/paseoFrameModel.ts, where agentTimeoutText states whether the fallback loads the agent page or the frame already names it."
+    "justification": "Realized across paseoFrameControl.ts and paseoFrameModel.ts; prevents timeout notices from claiming a reload occurred when the in-flight frame was kept open."
   },
-  "applicability": "A wanted but unsettled selection whose ready-after-load or request answer is overdue, on document and Chats pages.",
+  "applicability": "A wanted but unsettled selection whose post-onLoad ready report, 45 s cold-load cap, or open-request answer is overdue, on document and Chats pages.",
   "conditions": [
-    "A first deadline probes the application; only an unanswered ping deadline declares silence and permits fallback.",
-    "The fallback sentence reflects whether the loaded identity already names the selected agent.",
-    "A pong preserves/reestablishes readiness and a responsive late answer remains waiting."
+    "A first post-onLoad or open-request deadline probes the application; an unanswered open-request ping permits one fallback load, while post-load ping silence or the 45 s cold-load cap settles unavailable without reloading.",
+    "The timeout sentence reflects truthfully whether the loaded identity already names the selected agent, the frame was kept open for a late answer, or an open-request fallback loaded its page.",
+    "A pong preserves or reestablishes readiness and a responsive late answer remains waiting."
   ],
   "exclusions": [
     "Unselected panes, which name nothing by construction."
@@ -26,27 +27,20 @@
     "leaf": "260928-MIK-L121",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Ready-after-load or agent-answer timeout sends ping. Only its unanswered deadline names the unsettled agent and states whether the URL fallback loaded its page or already named it. A pong preserves/reestablishes readiness; a slow answer remains a named waiting state with explicit Retry and no automatic load.",
+  "statement": "Post-onLoad readiness timeout or agent-answer timeout sends ping. Only an unanswered open-request ping loads the URL fallback once and states whether it loaded the agent's page or already named it; an unanswered post-load ping or the 45 s cold-load cap settles unavailable without reloading and states whether the frame already named the agent or was kept open for a late answer. A pong preserves or reestablishes readiness; a slow answer remains a named waiting state with explicit Retry and no automatic load.",
   "supersedes": [],
+  "title": "Timeout probes and truthful problem copy for load versus open silence",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L140",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T01:50:04+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L62",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "task": "261112-BUG"
   }
 }

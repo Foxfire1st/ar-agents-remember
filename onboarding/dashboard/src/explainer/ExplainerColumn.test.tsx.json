@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+        "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
         "content": "sha256:d5962be86784a37d54122958107f2ef6e10a796bcc9b0b08212e82c94c2ef3e1",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+        "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
         "content": "sha256:3231c298e5c2b8da5573c5e1c2d94f9a581781c3bf0a0875bd303e4fd4524623",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
-        "content": "sha256:95728bb69241d8621983f5d2705448e5b9d282a8b22e753bbc86204012105875",
+        "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+        "content": "sha256:92e4093129d6909ac0cf7b0156cc900f1028e59251b7214640d219e95c1cffb0",
         "locator": {
           "kind": "symbol",
           "name": "mounts TrayColumnDock above-composer across placeholder, closed and live states"
@@ -51,6 +51,23 @@
         "handoffEntry": "L183-CUR-FE-ATTACH-outside-frame-tray",
         "leaf": "260928-MIK-L183"
       }
+    },
+    {
+      "anchor": {
+        "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+        "content": "sha256:94d71fb788eae5f2066713f834b38ed751a8755d4c6d24cbed854b37be0d0196",
+        "locator": {
+          "kind": "symbol",
+          "name": "sends zero ar.open while building with mid-build identity for > 8 s, then sends exactly one ar.open on live"
+        }
+      },
+      "facet": "Holds phase building with real mid-build generation/agentId/workspace for over 8 s with zero ar.open posts, then transitions to live and emits exactly one ar.open in generation 1.",
+      "id": "PRF-XCVN2W",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      }
     }
   ],
   "realizes": [],
@@ -60,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
             "content": "sha256:477a8825bc9383c37a9c1680992367764e5260946cc60f8734853728b3a4be41",
             "locator": {
-              "end": 818,
+              "end": 965,
               "kind": "line_range",
-              "start": 802
+              "start": 949
             }
           },
           "kind": "test"
@@ -77,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
             "content": "sha256:2eafdc1879589a077a254cf589e49195fd7822b41f9c91d045386b937032c6b6",
             "locator": {
-              "end": 825,
+              "end": 972,
               "kind": "line_range",
-              "start": 820
+              "start": 967
             }
           },
           "kind": "test"
@@ -94,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
             "content": "sha256:b4582af054662269601bfeba087e8b13b1b3334ef8fce1f0b4f9922e3b518ff0",
             "locator": {
               "end": 332,
@@ -107,28 +124,57 @@
       ]
     },
     "5": {
-      "note": "The directly mounted Operations-mode column follows the placeholder through Build to a live seat. A scripted agent-not-found followed by supported ready retries the selection in the same iframe. A separate matching-clear case closes the request form in this component fixture.",
+      "note": "The directly mounted Operations-mode column follows the placeholder through Build to a live seat, retries transient agent-not-found on same-frame ready, and clears the request form on matching clear.",
       "targets": [
         {
           "anchor": {
-            "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
-            "content": "sha256:e53c22552072475346c48d5d50c754fa394bdcd1dac08de1e0475b391d8c39e1",
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+            "content": "sha256:3231c298e5c2b8da5573c5e1c2d94f9a581781c3bf0a0875bd303e4fd4524623",
             "locator": {
-              "end": 611,
+              "end": 609,
               "kind": "line_range",
-              "start": 520
+              "start": 442
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
             "content": "sha256:619fba1276c376eda68f64f291de9d953835d011e3231258a8a5cb2f3c6d2232",
             "locator": {
-              "end": 870,
+              "end": 1017,
               "kind": "line_range",
-              "start": 859
+              "start": 1006
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The mid-build regression case emits zero ar.open while building for > 8 s and exactly one on live, and the tray case pins Retry outside TrayColumnDock with zero POST on archived notices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+            "content": "sha256:813b1a0bb152dea7cdb0aa040ad89b48533bec68965badb842f002f8d2a562c4",
+            "locator": {
+              "end": 718,
+              "kind": "line_range",
+              "start": 611
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d923a956a4c89f2fbe640bddc021a5cd8e042c09",
+            "content": "sha256:92e4093129d6909ac0cf7b0156cc900f1028e59251b7214640d219e95c1cffb0",
+            "locator": {
+              "end": 945,
+              "kind": "line_range",
+              "start": 842
             }
           },
           "kind": "test"

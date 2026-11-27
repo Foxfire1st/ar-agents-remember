@@ -7,6 +7,21 @@
     "task": "261124-EXP",
     "uncommitted": false
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/dashboard.md",
+        "note": "Update docs/dashboard.md lines 256-262 to reflect BUG-R62@v1 onLoad-anchored readiness, 45 s non-reloading cold-load cap, and unconfirmed URL-landed waiting notice with Retry."
+      },
+      "createdAt": "2026-11-27T01:39:09.815907Z",
+      "createdByLeaf": "261112-BUG-L62",
+      "fileBlob": "1dfbdf53bf19974a09a281f30225c74e4088e101",
+      "id": "DFR-73APGD",
+      "owner": "261112-BUG",
+      "passage": "docs/dashboard.md lines 256-262 (Chats frame timeout and first-visit 20 s recovery)",
+      "reason": "Lines 256-262 still describe the pre-BUG-R62 20 s first-visit timeout and single URL reload on timeout, whereas BUG-R62@v1 anchors the 10 s readiness window to iframe onLoad with a 45 s non-reloading cold-load cap and a waiting notice with Retry for unconfirmed URL-landed chats; deferred to preserve the passed frontend-only code freeze."
+    }
+  ],
   "document": "docs/dashboard.md",
   "id": "DPD-23C91T",
   "origin": {
@@ -17,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -446,14 +461,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-27T02:39:07+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L62",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
-    "task": "261124-EXP"
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "task": "261112-BUG"
   }
 }

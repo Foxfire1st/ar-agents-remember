@@ -1,13 +1,32 @@
 {
   "path": "dashboard/src/explainer/ExplainerColumn.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
+        "content": "sha256:45dac3b38b355ac976e5fda2faa4cf42b35c67185394126169ddbfce59e107cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplainerColumn"
+        }
+      },
+      "id": "RLZ-J5HFPN",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Gates the target passed to ExplainerFrame on column.showFrame, and ExplainerFrame also gates on shown.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The section publishes whether it shows the explainer or the placeholder\n\nAnchor: `selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1dbcf7db6701fca418cae0ed543dce0a26343c8",
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
             "content": "sha256:8211eb2ec7a0357f3ba52d8de91e177ce6d500f099f22cf783a3ce724dc56e04",
             "locator": {
               "end": 268,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1dbcf7db6701fca418cae0ed543dce0a26343c8",
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
             "content": "sha256:ae929758f87cade23958ea06cd7c2be6e97cedd42f6b38d5f18270326ba55a97",
             "locator": {
               "end": 131,
@@ -41,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1dbcf7db6701fca418cae0ed543dce0a26343c8",
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
             "content": "sha256:1b5b664e56d320347f47c78016d4073aa27f0d5e7dc70ca5e9538ade82952ad8",
             "locator": {
               "end": 200,
@@ -58,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1dbcf7db6701fca418cae0ed543dce0a26343c8",
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
             "content": "sha256:8619505b9406b303e57474831e7c29677c63524839548f325ab29e122ce5be45",
             "locator": {
               "end": 195,
@@ -75,12 +94,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1dbcf7db6701fca418cae0ed543dce0a26343c8",
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
             "content": "sha256:85f63432e2533232d142270f2058b26339d8bf312206753279c4d76a4fbca858",
             "locator": {
               "end": 288,
               "kind": "line_range",
               "start": 282
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ExplainerColumn and ExplainerFrame both gate the target passed to PaseoChatFrame on showFrame/shown, passing null whenever showFrame is false (no non-explainer row selected; phase placeholder, first-request, building, or retired) and forwarding the selected target when showFrame is true.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
+            "content": "sha256:0034bb0f2b91fd3c7b24d879d683573ceedd8b72d2d61c698ed079216297319d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerFrame"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "548d311a66c965edb8ddf564d15c6b0ca023ec9d",
+            "content": "sha256:45dac3b38b355ac976e5fda2faa4cf42b35c67185394126169ddbfce59e107cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerColumn"
             }
           },
           "kind": "code"

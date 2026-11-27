@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
-        "content": "sha256:ba1111cde415e1fbbdb11031bff91b609d324eb682bb33bbbe3d42741d3b096c",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+        "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
         "locator": {
           "kind": "symbol",
           "name": "resolveDocumentFrameProps"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+        "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolveDocumentFrameProps"
+        }
+      },
+      "id": "RLZ-AKTQP1",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Gates the explainer frame target on explainerColumn.showFrame before handing props to PaseoChatFrame.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
         "content": "sha256:60f885537a7f8af73640d7df1a471016a9e45887f4c7d140d519a90820718e27",
         "locator": {
           "end": 191,
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
         "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
@@ -58,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
-        "content": "sha256:ba1111cde415e1fbbdb11031bff91b609d324eb682bb33bbbe3d42741d3b096c",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+        "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
         "locator": {
           "kind": "symbol",
           "name": "resolveDocumentFrameProps"
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
         "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
@@ -94,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
         "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
         "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
         "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
@@ -149,14 +167,15 @@
   ],
   "references": {
     "1": {
-      "note": "DocumentChatImpl chooses ordinary document state or the leaf explainer state; the ordinary branch publishes its effective shown target, while explainer publication is owned by columnState.\n\nAnchor: `DocumentChatImpl`",
+      "note": "DocumentChatImpl chooses ordinary document state or the leaf explainer state; the ordinary branch publishes its effective shown target, while explainer publication is owned by columnState.",
       "targets": [
         {
           "anchor": {
-            "blob": "87320203450d777a0b564196b6dccdb508028659",
-            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "DocumentChatImpl"
             }
           },
           "kind": "code"
@@ -164,14 +183,26 @@
       ]
     },
     "2": {
-      "note": "DocumentChatImpl composes ordinary or explainer chrome over the same persistent frame wrapper, takes visibility/target/preload from resolveDocumentFrameProps and places the document tray dock after that wrapper.\n\nAnchor: `DocumentChatImpl`",
+      "note": "DocumentChatImpl composes ordinary or explainer chrome over the same persistent frame wrapper, takes visibility, showFrame-gated target and preload from resolveDocumentFrameProps, and places the document tray dock after that wrapper.",
       "targets": [
         {
           "anchor": {
-            "blob": "87320203450d777a0b564196b6dccdb508028659",
-            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolveDocumentFrameProps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatImpl"
             }
           },
           "kind": "code"
@@ -183,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
             "content": "sha256:ed0b534193a145e513deed34e43d8053bd8cfa43a72e6725d20b58706e9ec1e6",
             "locator": {
               "end": 276,
@@ -196,14 +227,15 @@
       ]
     },
     "4": {
-      "note": "The persistent-chat-frame wrapper stays mounted in DocumentChatImpl across ordinary document and explainer modes; a hidden phase sets display:none and aria-hidden instead of unmounting it.\n\nAnchor: `DocumentChatImpl`",
+      "note": "The persistent-chat-frame wrapper stays mounted in DocumentChatImpl across ordinary document and explainer modes; a hidden phase sets display:none and aria-hidden instead of unmounting it.",
       "targets": [
         {
           "anchor": {
-            "blob": "87320203450d777a0b564196b6dccdb508028659",
-            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "DocumentChatImpl"
             }
           },
           "kind": "code"
@@ -233,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
             "content": "sha256:c2ec0d752a3c6ca4d79ee3e2ebf6a4e772399e066907256f90e6670e656d2848",
             "locator": {
               "end": 54,
@@ -246,14 +278,37 @@
       ]
     },
     "7": {
-      "note": "Compose ordinary document-chat chrome or the review leaf's explainer chrome above one persistent native frame and one tray dock. Ordinary documents retain their bound launcher, warmup and held-frame behavior. An explainer target disables ordinary document discovery and uses useExplainerColumn instead: resolveDocumentFrameProps supplies the explainer's frame target and showFrame state, while ColumnChrome displays its placeholder, form, progress or header. Pending unbound review identity retains the screen under its wait line; known missing identity displays the named problem. The frame wrapper remains keyed persistent-chat-frame across modes and the sibling TrayColumnDock remains persistent-tray-dock. Ordinary visible targets publish via documentShownChat; explainer targets publish through columnState, including a placeholder identity when no seat exists.\n\nAnchor: `DocumentChatChrome`, `resolveDocumentFrameProps`, `documentShownChat`, `useOptionalExplainerColumn`, `ColumnChrome`, `DocumentChatImpl`",
+      "note": "resolveDocumentFrameProps gates explainer frame targeting on showFrame while ColumnChrome and DocumentChatImpl compose ordinary or explainer chrome over persistent-chat-frame and persistent-tray-dock.",
       "targets": [
         {
           "anchor": {
-            "blob": "87320203450d777a0b564196b6dccdb508028659",
-            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:6bcee05043e0557aa8cdfa7515cca5e06c9b7bfe4c6cac8c10ccdcb74ea5028f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolveDocumentFrameProps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:d6c545909717bf838dc4004de91d416e4cc69118d004bfcfafe894f2b7e1fc03",
+            "locator": {
+              "kind": "symbol",
+              "name": "ColumnChrome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eb6876fdcb1c1a4900e9d001d9c4983e91bf7b9",
+            "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatImpl"
             }
           },
           "kind": "code"
