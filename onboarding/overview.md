@@ -30,7 +30,7 @@ Retrieve the smallest useful route packet. Generated `overview.index.json` suppl
 
 knowledge_read with view source_context exposes the family-complete path walk: the index selects path invariants/entries and containing/chain families, while the mounted answer names text IDs, kinds, computed states and locations rather than record prose. Shared-member/header references and counts remain paging facts. read_ar_files also uses prepare_leaf internally to compute card states/counts, but exposes no paged record walk or continuation and keeps no per-session served state. Paired published-intent delivery, deferred seeds and served_earlier response descriptions are historical carriers, not its current naming response.
 
-The retained internal knowledge threshold metadata declares 8,000 tiktoken:o200k_base tokens. The mounted knowledge_read pager instead sizes the delivered naming projection against bound_for("knowledge_read") = 4,000 tokens with envelope reserve. View/scope cuts cap data rows at twenty; leaf cuts cap them at nineteen to reserve room for a continued-family header. This is not a twenty-entry aggregate across every list in the answer. Whole-selection/returned/remaining counts and continuations bind memory tree, seed, policy, manifest, ordering and resolved code tree. Resume through knowledge_read with memory root, view and token, never a database path. Indivisible oversized rows retain the internal pager flag; mounted naming rows carry no record prose. Deferred paired-read seeds and seed_queue_exceeded belong to the retired paired content route, not current read_ar_files.
+The retained internal knowledge threshold metadata declares 8,000 tiktoken:o200k_base tokens. The mounted knowledge_read pager instead sizes the delivered naming projection against bound_for("knowledge_read") = 5,000 tokens with envelope reserve. View/scope cuts cap data rows at twenty; leaf cuts cap them at nineteen to reserve room for a continued-family header. This is not a twenty-entry aggregate across every list in the answer. Whole-selection/returned/remaining counts and continuations bind memory tree, seed, policy, manifest, ordering and resolved code tree. Resume through knowledge_read with memory root, view and token, never a database path. Indivisible oversized rows retain the internal pager flag; mounted naming rows carry no record prose. Deferred paired-read seeds and seed_queue_exceeded belong to the retired paired content route, not current read_ar_files.
 
 A task-scoped reader requires the task reference, repository, enclosure binding, contract identity and directories to agree; neither root substitutes for the other. Missing memory is named rather than filled from another repository or snapshot.
 
@@ -341,7 +341,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's family-routes subsection. [23]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read. Anchor: `converted_memory_tree` [25]
+
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`. [31]
@@ -363,7 +365,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
 
+
 - A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files. [61]
+
 
 - Git exempts generated dashboard chunks from trailing-whitespace checks and vendored Paseo server fixtures from whitespace checks. The tokenizer vocabulary is marked as non-text, and Git union-merges the two test catalogs. [69]
 
@@ -371,7 +375,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite. [71]
 
-- The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap. [73]
+
+- The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 5,000-token delivered bound and a 20-entry list cap. [73]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
 
@@ -494,7 +500,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Source charters distinguish strict dependency order from future package construction and the named sequencing deviation. [327]
 
 
+
 - Retrieval uses `read_ar_files` for up to twenty paths. Fuller rows can carry rule text. Use native file tools for current saved briefs and named source files. [311]
+
 
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [333]
 
@@ -669,7 +677,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The worklist kind for an invariant that was already stale at the base. [105]
 
+
 - A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files. [293]
+
 
 - **Historical source-bound reference account, not an operative override:** Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary. [323]
 
@@ -734,7 +744,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 
 
+
 - The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
 
@@ -762,5 +774,5 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings. [316]
 
 
-- Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 451 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [374]
 
+- Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 451 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [374]

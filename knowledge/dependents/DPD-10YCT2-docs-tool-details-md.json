@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
-    "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/tool-details.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
-    "task": "261112-BUG",
-    "uncommitted": false
+    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
+    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "role": "curator",
+    "statement": "Verified docs/tool-details.md against KNO-R07 candidate: worktree/memory tool details remain accurate; knowledge_read tool details live in docs/reference/mcp-tools.md and post-landing briefsProblem is advisory.",
+    "task": "261112-KNO-L7",
+    "uncommitted": true
   },
   "document": "docs/tool-details.md",
   "id": "DPD-10YCT2",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -266,20 +266,20 @@
       "path": "mcp/src/agents_remember/install/checkout_environments.py"
     },
     {
-      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T02:47:05+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

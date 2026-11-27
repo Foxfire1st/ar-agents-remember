@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans integrate.py, landing_briefs.py, and landing_answer_shapes.py, is guarded by dedicated integration and projection tests, and upholds the file-brief retrieval family guarantee after local landings."
+  },
+  "applicability": "External-memory final integrations and atomic-master checkpoint landings executed through worktree_integrate or worktree_checkpoint_landing.",
+  "conditions": [
+    "Runs only after contract finalization succeeds and non-ledger memory content changed between the base and landed memory commits (excluding root memory.md).",
+    "Iterates checked-out worktrees owning the landed memory branch via branch_worktree_owners and delegates generation to WorktreeServices.file_briefs.",
+    "Surfaces any brief-refresh failure solely through the optional briefsProblem field retained in LANDING_KEPT_KEYS without altering returncode or reversing the landing."
+  ],
+  "exclusions": [
+    "Ledger-only memory changes or dry-run previews do not trigger brief refresh.",
+    "Brief refresh failure never blocks, fails, or rolls back Git ref publication or contract landing recording."
+  ],
+  "id": "INV-M36NT5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_briefs_and_pairing.py (3 cases) + role-reports/worker/bc987a9f-f2c3-5b6c-ad7a-0972c95a2645/role-launch/261112-KNO-L7-worker-bc987a9f-f2c3-5b6c-ad7a-0972c95a2645.md"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 1",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "External-memory integrations and checkpoint landings refresh derived briefs on checked-out branch worktrees only after finalization when non-ledger memory content changes, reporting any refresh failure strictly as an advisory briefsProblem field.",
+  "supersedes": [],
+  "title": "Post-finalization landing briefs refresh and advisory briefsProblem",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

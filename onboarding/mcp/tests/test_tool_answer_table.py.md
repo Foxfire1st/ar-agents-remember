@@ -46,8 +46,8 @@ table is caught.
 
 ## Evidence
 
-- The table covers every registered tool with no extras and each task-document row covers every operation. Anchor: `ToolAnswerTableTests` [8]
-- The three largest answers are operation-produced and pinned. Anchor: `L109LargestProductionTests` [9]
+- The table covers every registered tool with no extras and each task-document row covers every operation. [8]
+- The three largest answers are operation-produced and pinned. [9]
 
 - Table construction retains each row's fields, uses, cases, bound and interim ownership. [1]
 

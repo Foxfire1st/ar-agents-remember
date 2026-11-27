@@ -75,12 +75,12 @@
       ]
     },
     "103": {
-      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command.\n\nAnchor: file",
+      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -399,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
             "content": "sha256:3f1eb06bc6c22dfba7737013ff6fbe9017836fa91db8afecfaa0ea24e85a0e13",
             "locator": {
               "end": 215,
@@ -412,7 +412,7 @@
         },
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
             "content": "sha256:a56cd95724a9653f5f3408b27fe5ed5e2b068771d39873d496de3957451fcdfa",
             "locator": {
               "end": 244,
@@ -464,7 +464,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "end": 81,
@@ -1263,8 +1263,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
-            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
+            "content": "sha256:22405ae8c267c60c8722a28eeb29dda22e8c4a7550ce90a9de39d55f5f7f1ab6",
             "locator": {
               "kind": "file"
             },
@@ -2496,7 +2496,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:15d773d2870340bf74179440b77dd787a93638ced7d1f6f7f34f542d32b0c47e",
             "locator": {
               "kind": "symbol",
@@ -2936,12 +2936,12 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:1bda677913ca655ca47640df5d6c12f48f6c63799a00674f5b3001f802c02427",
             "locator": {
-              "end": 866,
+              "end": 867,
               "kind": "line_range",
-              "start": 856
+              "start": 857
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -3396,8 +3396,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
               "kind": "file"
             },
@@ -4334,8 +4334,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
-            "content": "sha256:a8cc96f8844bdfcd2a1af850d14be25c49b34889b2c68530a515ca4b3229ffcd",
+            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+            "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
             "locator": {
               "kind": "file"
             },
@@ -4434,7 +4434,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
             "content": "sha256:033f68c14d8a8997ddbf56030258113ab31200940fc576288a9391fab6e12b2f",
             "locator": {
               "kind": "symbol",
@@ -4776,12 +4776,12 @@
       ]
     },
     "379": {
-      "note": "The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command.\n\nAnchor: file",
+      "note": "The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -5351,12 +5351,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
             "content": "sha256:f6f4c7822e06f0eb404336132bfe1c65ebb76f7b70b09a5f1d9204afdf07186e",
             "locator": {
-              "end": 387,
+              "end": 388,
               "kind": "line_range",
-              "start": 354
+              "start": 355
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },
@@ -5911,7 +5911,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
             "content": "sha256:c90096cfc6d76d958d4b4375a74d01ed03f1c2a27eefb85db8e3e51adadd8e02",
             "locator": {
               "kind": "symbol",
@@ -5928,8 +5928,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
               "kind": "file"
             },
@@ -5939,8 +5939,8 @@
         },
         {
           "anchor": {
-            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
-            "content": "sha256:ba508ee4f809745c2c9894e88f2c237cbe56cc2700300f41f94ca226d5c608cc",
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "content": "sha256:e0fa97857b207f0950dc308642de3469fbc4d73315ff67ad07e3f275a6671c3c",
             "locator": {
               "kind": "file"
             },
@@ -6195,12 +6195,12 @@
       ]
     },
     "57": {
-      "note": "**Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch.\n\nAnchor: `read_tree_page`",
+      "note": "**Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
               "kind": "file"
             },
@@ -6318,7 +6318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -6335,8 +6335,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
-            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
+            "content": "sha256:22405ae8c267c60c8722a28eeb29dda22e8c4a7550ce90a9de39d55f5f7f1ab6",
             "locator": {
               "kind": "file"
             },
@@ -6442,12 +6442,12 @@
       ]
     },
     "69": {
-      "note": "**Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command.\n\nAnchor: file",
+      "note": "**Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -6589,12 +6589,12 @@
       ]
     },
     "80": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -6639,12 +6639,12 @@
       ]
     },
     "83": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -6687,12 +6687,12 @@
       ]
     },
     "86": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -6723,8 +6723,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
-            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
+            "content": "sha256:22405ae8c267c60c8722a28eeb29dda22e8c4a7550ce90a9de39d55f5f7f1ab6",
             "locator": {
               "kind": "file"
             },
@@ -6751,12 +6751,12 @@
       ]
     },
     "90": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },
@@ -6818,12 +6818,12 @@
       ]
     },
     "95": {
-      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.\n\nAnchor: file",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
-            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
             "locator": {
               "kind": "file"
             },

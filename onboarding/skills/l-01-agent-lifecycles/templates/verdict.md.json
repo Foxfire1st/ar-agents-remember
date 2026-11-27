@@ -97,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-        "content": "sha256:6b32543e610036813878d45e843d92fd817ba7ead48cb17d9d8c2a8cb95a1c41",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
+        "content": "sha256:74f88ca9164617159c46d5431af3d9d82d05dfc12dbae3bbe7008bebb099e8e9",
         "locator": {
           "end": 13,
           "kind": "line_range",
@@ -111,7 +111,7 @@
         "handoffEntry": "BUG-R54@v1 §1",
         "leaf": "261112-BUG-L54"
       },
-      "rationale": "Aligns the verdict template artifact-location instruction with roles/reviewer.md:93 (local role-reports/ on a leaf, notes/reports/ on other seams).",
+      "rationale": "The verdict template (lines 7-13) directs writing leaf verdicts in role-reports/ and non-leaf verdicts in notes/reports/, matching roles/reviewer.md:8.",
       "role": "presentation"
     },
     {

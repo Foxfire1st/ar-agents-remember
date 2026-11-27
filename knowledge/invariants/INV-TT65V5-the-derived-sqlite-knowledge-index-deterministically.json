@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans schema.py, fts.py, and build.py, is guarded by test_ix_fts_is_deterministic_and_excludes_retired_closed_and_history, and provides the deterministic full-text index backing bounded knowledge_read search queries."
+  },
+  "applicability": "Derived SQLite knowledge index construction under INDEX_FORMAT ar-knowledge-index/v8.",
+  "conditions": [
+    "Declares ix_fts as an FTS5 virtual table with tokenize='porter unicode61' over record_id, kind, title, statement, conditions, and applicability.",
+    "Populates ix_fts in deterministic record_id order strictly from live records, excluding history files, retired invariants, and closed weaknesses without altering canonical memory JSON schemas.",
+    "Ranks FTS5 queries with column weights, exact-phrase boost, per-term coverage counts, and deterministic record_id tie-breaking."
+  ],
+  "exclusions": [
+    "Does not write any SQLite file into a Git memory working tree or change canonical knowledge file formats."
+  ],
+  "id": "INV-TT65V5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_knowledge_queries.py::test_ix_fts_is_deterministic_and_excludes_retired_closed_and_history"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 8",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The derived SQLite knowledge index deterministically builds an ix_fts FTS5 virtual table using porter unicode61 over live records only, excluding history, retired invariants, and closed weaknesses without changing memory-repo schemas.",
+  "supersedes": [],
+  "title": "Derived index builds deterministic Porter FTS5 ix_fts over live records",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

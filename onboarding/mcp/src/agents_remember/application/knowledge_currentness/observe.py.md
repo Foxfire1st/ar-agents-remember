@@ -140,10 +140,14 @@ summary is not an unconditional unchanged-blob guarantee.
 - The reused resolver: the worklist's tree reader and its `resolve`. 
 
 
+
 - The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale. [15]
 
 
+
+
 - A timed-out Git call is unverifiable and is not cached. [16]
+
 
 - The cache key's contents and its reuse. [17]
 

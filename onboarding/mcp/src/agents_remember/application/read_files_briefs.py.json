@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+        "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
         "content": "sha256:ed652ebde32603908aaa9eba701dc4d38e59ac01f64043be50fc3f491775e618",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+        "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
         "content": "sha256:0196b012658c1c2e0b67fc42d2554d7826fd27fc6e3ac4129f50dd25a053b8be",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+        "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
         "content": "sha256:ba404bdc05c4090b9ed0ebba86623e80e0ed63df840444804d99e2914aa3f0b7",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+        "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
         "content": "sha256:21a1e399eda3f652f6b2694911dd6f32d6ddaac49ebd44b616b0a31451a18b50",
         "locator": {
           "kind": "symbol",
@@ -72,19 +72,36 @@
       },
       "rationale": "Reads the saved stamp and derives the missing, older or unknown state from the selected memory tree.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+        "content": "sha256:5f5907a6bc3b414bf223298ebacf48bfcf7522822fee42bf0797217480ae301d",
+        "locator": {
+          "kind": "symbol",
+          "name": "BatchBriefs"
+        }
+      },
+      "id": "RLZ-PMZ6KX",
+      "invariant": "INV-ZYKN6P",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 3",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Passes real on-disk freshness into BriefLocation.current so read_ar_files short answers reflect actual saved brief availability.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The batch preserves each path, brief address and needed freshness data when a full row cannot fit.",
+      "note": "The batch preserves each path, brief address, freshness data, and the `all_current` honesty check for `briefsLeftOut` when a full row cannot fit.\n\nAnchor: `BatchBriefs`",
       "targets": [
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
-            "content": "sha256:85f907a6530921dadf2fa3d82689cbbbc50c46ba8d39c25b521657486f4d3af2",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+            "content": "sha256:37c948d051b858512475fe0043221a562443d5bbbb28332ee770a410f4b9eb03",
             "locator": {
-              "kind": "symbol",
-              "name": "BatchBriefs"
+              "kind": "file"
             }
           },
           "kind": "code"

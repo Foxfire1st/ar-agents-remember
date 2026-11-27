@@ -118,7 +118,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Configured authority returns checked roots while preserving task/repository separation and optional candidate checks. [15]
 - Preview parent admission requires explicit dry run, an absent nonsymlink path and the same series identity proof. [16]
 
+
 - Public integration evaluates handover and converted knowledge before ancestry preview/apply. [17]
+
 
 - Landing admits two outputs and performs ordered CAS, retaining partial code landing on memory race. Anchor: `IntegratedCommits` `prepare_integration_ref_move` `merge_integrated_commits` [18]
 
@@ -152,7 +154,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Direct memory writes exclude the consumer cache. [11]
 
+
 - Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects.  Anchor: `_integrated_result` `finalize_result` [26]
+
 
 - Locator-manifest-journal authority and all publication I/O/state transitions. [3]
 

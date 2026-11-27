@@ -14,7 +14,7 @@
 
 - `SCOPE_POLICY`/`SCOPE_POLICY_VERSION` come from `KNOWLEDGE_READ_POLICY_VERSION` (`recorded-family-frontier`/`v1`). `_RESUMING_VIEW` maps a seed kind to the `knowledge_read` view that resumes it (a path is `source_context`).
 - `scope_rows(items)`: each scope item is one row; a `family_revision` item heads the memberships of that revision with a `family_header_reference`; `advertised_family` items are rows without a header reference.
-- `prepare_scope(request)`: selects the whole scope through `knowledge_read.select_knowledge_scope`, binds tree, policy, manifest and the context's code tree, and checks a resumed position (`position_refusal`). For a collapsed walk it also selects the first queued seed's manifest (`_next_manifest`), which the move on to it binds.
+- `prepare_scope(request)`: selects the whole scope through `knowledge_read.select_knowledge_scope`, binds tree, policy, manifest, the context's code tree, and `code_state=request.context.code_state` on `PageBinding`, and checks a resumed position (`position_refusal`). For a collapsed walk it also selects the first queued seed's manifest (`_next_manifest`), which the move on to it binds.
 - `PreparedScope.render`, `.deferred()` (counts plus a position-0 continuation) and `.collapsed(queued)` (one entry listing `seeds`, `counts` of `total` and `returned`).
 - `_page`: the block keeps `items`, `counts` (with `primary_items_returned`/`remaining` restated), `hasMore`, `enumerationComplete` (never true on a partial index), `continuation`, and adds `page`, `indexState`, `continuationOperation: "knowledge_read"`, `continuationView`, and `continuationSeed` when a finished seed's continuation moves on to the next queued seed.
 - `scope_page(request)`: `prepare_scope` plus `cut_page`, the single-response path.
@@ -52,9 +52,7 @@ No configured live documentation source was available for this pass.
 - Items as rows; a family revision heads its memberships. [3]
 
 - A prepared seed, deferred or collapsed. [4]
-
-
-- Selecting and checking a resumed position. [5]
+- Selecting, binding `code_state`, and checking a resumed position. [5]
 
 - The next token, or the move on to a queued seed. [6]
 

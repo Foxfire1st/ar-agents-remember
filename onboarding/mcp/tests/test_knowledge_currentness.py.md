@@ -39,9 +39,7 @@ per-side computation, the observation cache key, Git failures, and the two read 
 - **Failures (ruling N2).** A patched `TimeoutExpired` gives an `unverifiable` entry, and the next read
   observes again (never cached). A patched `IndexMismatchError` in `knowledge_read` still returns
   `state: view` with its payload and a degraded block.
-- **Surfaces.** `knowledge_read` with codeTreeId keeps the stale invariant/realization visible as named IDs and states, without its statement text; the invariant currentness entry list includes both realization RLZ-A00001 and proof PRF-P00001.
-  without a named tree, or with only `repositoryRoot`, it is `unverifiable` with compact entries even though
-  `HEAD` holds the edit. The published-intent block first names its committed tree and `treeScope`; an
+- **Surfaces.** `knowledge_read` with codeTreeId keeps the stale invariant/realization visible as named IDs and states, without its statement text; the invariant currentness entry list includes both realization RLZ-A00001 and proof PRF-P00001. Without a named tree, a read with a resolved code root (including `repositoryRoot`) auto-pairs and observes that code root, while a read with no resolvable code root stays `unverifiable` with compact entries (`test_knowledge_read_without_a_named_tree_pairs_resolved_code_and_stays_unverifiable_without_root`). The published-intent block first names its committed tree and `treeScope`; an
   uncommitted edit is then observed at a different captured working tree with `codeState=working-tree`
   and a working-tree `treeScope`. The test does not compare the dirty invariant states with the earlier states.
   With no resolved tree it is `unverifiable`.
@@ -76,8 +74,6 @@ No configured live documentation source was available for this pass.
 - The module statement: real Git code, a converted memory tree, raw-Git edits. [1]
 
 - The fixture world, with a fresh private cache by default. [2]
-
-
 - The packet's conforming example. [3]
 
 - Stale reasons. [4]
@@ -98,11 +94,7 @@ No configured live documentation source was available for this pass.
 - The cache key. [11]
 
 - `knowledge_read` with a named tree. [12]
-
-
-- `knowledge_read` without one. [13]
-
-
+- `knowledge_read` without `codeTreeId` pairs a resolved code root and stays unverifiable when no root resolves. [13]
 - The published-intent block. [14]
 
 

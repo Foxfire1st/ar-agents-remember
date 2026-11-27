@@ -38,6 +38,23 @@
     {
       "anchor": {
         "blob": "7ce43c794a6e479716570f69f39caa13b5e13f5b",
+        "content": "sha256:063923f9fbccf7ccfa57cbb5f01cef7d8e047a1f37631db8ad11c14ebf7e1ee2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_architect_schema_budget_holds_on_the_bound_and_unbound_server"
+        }
+      },
+      "facet": "Demonstrates that adding the minimal knowledge_read selector parameters preserves role tool schema byte budgets on bound and unbound servers.",
+      "id": "PRF-BE41ZM",
+      "invariant": "INV-KTGZFV",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 9",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7ce43c794a6e479716570f69f39caa13b5e13f5b",
         "content": "sha256:503e1aadceb778bf53ca02ea53a4f45da8d7e96afea7b5181115f2409d0698d3",
         "locator": {
           "kind": "symbol",

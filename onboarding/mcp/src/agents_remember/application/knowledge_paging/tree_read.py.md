@@ -18,11 +18,11 @@
 
 ### Logic
 
-- `read_tree_page(request, selected, context, *, extras, scope=None) -> (raw_body, shared_resolver)`: a fresh read is bound to the code tree the caller named, and only that one (`_at_code_tree`), and goes to `_fresh_response`: a `source_context` read with `sourcePath` is the leaf read (`_leaf_response`); since MIK-R05 a `source_context` read naming `familyRevisionId` and no `sourcePath` is a **family seed** (`_family_response`); anything else a view walk. A resumed read goes to `_resumed_response` by the token's response kind (`leaf`, `scope` or `view`); the two were split out to keep PLR0911. A resume decodes the token (`read_continuation`), then checks the memory tree, threshold and policy, the named subject, the ordering and the code tree in `_resume_refusal`, all before any selection is read. A resumed walk over a captured working tree captures that tree again (MIK-R73 rule 7), because no capture outlives the page that made it: an unchanged worktree yields the same tree id and the walk continues, a changed one is refused, and the new capture is closed when the page is written.
+- `read_tree_page(request, selected, context, *, extras, scope=None) -> (raw_body, shared_resolver)`: a fresh read binds the context's resolved code tree (`read.context.code_tree_id`) and any captured working-tree `object_directory` via `_at_code_tree`, and resumes propagate `resume.code_state` through `_at_code_tree`; fresh reads go to `_fresh_response`: a `source_context` read with `sourcePath` is the leaf read (`_leaf_response`); since MIK-R05 a `source_context` read naming `familyRevisionId` and no `sourcePath` is a **family seed** (`_family_response`); anything else a view walk. A resumed read goes to `_resumed_response` by the token's response kind (`leaf`, `scope` or `view`); the two were split out to keep PLR0911. A resume decodes the token (`read_continuation`), then checks the memory tree, threshold and policy, the named subject, the ordering and the code tree in `_resume_refusal`, all before any selection is read. A resumed walk over a captured working tree captures that tree again (MIK-R73 rule 7), because no capture outlives the page that made it: an unchanged worktree yields the same tree id and the walk continues, a changed one is refused, and the new capture is closed when the page is written.
 - **The ordering (rulings Q5 and F1).** `DEFAULT_ORDERING = "stable_ordering"` applies only when `orderingInput` is absent (`None`); an empty string keeps the base refusal `unadmitted_ordering_input` on every path. A view token's seed carries the effective ordering, and a resume reads in it.
-- **The code tree (rulings Q6, F2, F4 and 21:32:34).** The token binds only the Git tree ID. On resume the objects are read from the caller's `repositoryRoot`, else the mount's workspace, and `_missing_code_tree` checks `git cat-file -e <tree>^{tree}`: a root that does not hold it, or no known root, is refused `selected_input_unavailable`, naming the root and `repositoryRoot` as the relocation input.
-- `_view_response`/`_view_page` and `_scope_response`: each prepares the page extras once (`_TreeRead.prepared`: `memoryTree`, `indexComplete`, and the caller's `TreeExtras` of proofs and currentness) and lets `cut_page` render candidates. `TreeReadScope` supplies workspace and selection provenance; one resolver shares per-answer caches between sizing and final projection. `CutBudget` uses the mounted answer bound, a list row cap and `_delivered_measure`, including extras and a modeled log path. Leaf pages reserve one list slot for their repeated header reference.
-- **The leaf response (`_leaf_response`, MIK-R01).** It calls `knowledge_leaf.prepare_leaf` with the index, the tree key, the index state, the path, the walk's code tree and the token, and renders `state: "page"`, `view: "source_context"`, `snapshot` (the memory tree ID), `completeWithinDeclaredScope`, the `continuation` at the top, the leaf page (less `page` and `continuation`) as `payload`, `page`, `memoryTree`, `indexComplete` and the `LeafCurrentness` block, cut by `cut_page`.
+- **The code tree (rulings Q6, F2, F4 and 21:32:34).** The token binds only the Git tree ID. Code-root lookup in `_at_code_tree`, `_missing_code_tree`, and `_resumed_working_tree` resolves `request.repository_root`, then `TreeReadScope.paired_code_root`, then `context.repository_root`, then `workspace_root`, and `_missing_code_tree` checks `git cat-file -e <tree>^{tree}`: a root that does not hold it, or no known root, is refused `selected_input_unavailable`, naming the root and `repositoryRoot` as the relocation input.
+- `_view_response`/`_view_page` and `_scope_response`: each prepares the page extras once (`_TreeRead.prepared`: `memoryTree`, `indexComplete`, and the caller's `TreeExtras` of proofs and currentness) and lets `cut_page` render candidates. `TreeReadScope` supplies workspace, selection provenance, `object_directory`, and `paired_code_root`; one resolver shares per-answer caches between sizing and final projection. `CutBudget` uses the mounted answer bound, a list row cap and `_delivered_measure`, including extras and a modeled log path. Leaf pages reserve one list slot for their repeated header reference.
+- **The leaf response (`_leaf_response`, MIK-R01).** It calls `knowledge_leaf.prepare_leaf` with the index, the tree key, the index state, the path, the walk's code tree, `code_state=read.context.code_state`, and the token, and renders `state: "page"`, `view: "source_context"`, `snapshot` (the memory tree ID), `completeWithinDeclaredScope`, the `continuation` at the top, the leaf page (less `page` and `continuation`) as `payload`, `page`, `memoryTree`, `indexComplete` and the `LeafCurrentness` block, cut by `cut_page`.
   - **One declared order (ruling Q7, 2026-09-29 23:21:57).** A fresh leaf read with an `orderingInput` other than `stable_ordering` is refused `invalid_payload`; a resumed one is checked against the token like every walk.
   - A leaf token whose seed is neither a path nor a family (`{"kind": "family", "id"}`, MIK-R05) is refused `continuation_unreadable`. `_subject_refusal` binds a named `sourcePath` to a path seed, and a named `familyRevisionId` to a family seed (`_SCOPE_SUBJECTS["family"]`), as it does for a scope token.
   - **The chain on refusals (MIK-R05).** When `prepare_leaf` refuses a path `registration_absent` (no entry and no governing family), `_leaf_response` merges `knowledge_leaf.absent_chain(path)` into the refusal, so the refusal carries `routeChain` stating `no_governing_family`, as the published-intent block's refusal does.
@@ -78,9 +78,7 @@ No configured live documentation source was available for this pass.
 - The subject a page is read about. [3]
 
 - The dispatch and the checks before any selection. [4]
-
-
-- The walk's code tree, and a root that does not hold it. [5]
+- The walk's code tree, paired code-root fallback, and a root that does not hold it. [5]
 
 
 - A view page and a resumed scope page. [6]
@@ -91,11 +89,13 @@ No configured live documentation source was available for this pass.
 - The family seed: any spelling of the family, and one rule refusing a revision the tree does not hold, on fresh read and resume alike (ruling R2-1). [10]
 - Page 1 of a `source_context` path read is the leaf read, and of a read naming only `familyRevisionId` the family seed; a resumed page follows its token's kind, a leaf token's seed being a path or a family. [11]
 
-- The leaf page of a path or a family seed, one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain. [12]
+- The leaf page of a path or a family seed (preserving `code_state`), one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain. [12]
 
 - The `invariant` view names its families (rule 7). [13]
 
 - Page 1 of a fresh read, or the refusal of a seed the tree does not hold. [14]
+- `TreeReadScope` carries `object_directory` and `paired_code_root` for fresh working-tree observation and resumed code-root fallback. [18]
+
 - A family or revision the tree does not hold is refused selector_absent. [15]
 
 
@@ -104,7 +104,7 @@ No configured live documentation source was available for this pass.
 
 ### Cross-Repo References
 
-No meaningful cross-repo references found: the code tree is read from the caller's `repositoryRoot` or the mount's workspace, both the same code repository.
+No meaningful cross-repo references found: the code tree is read from the caller's `repositoryRoot`, `paired_code_root`, `context.repository_root`, or the mount's workspace, all in the same code repository.
 
 No cross-repo boundary is crossed by this file.
 

@@ -649,15 +649,14 @@
       ]
     },
     "134": {
-      "note": "WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing.\n\nAnchor: `LANDING_KEPT_KEYS`, `WorktreeStatusResponse`, `_replace_operation_status`, `test_registered_status_keeps_retired_history_and_direct_landing_controls`",
+      "note": "WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing.\n\nAnchor: `LANDING_KEPT_KEYS`; `WorktreeStatusResponse`; `_replace_operation_status`; `test_registered_status_keeps_retired_history_and_direct_landing_controls`",
       "targets": [
         {
           "anchor": {
-            "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
-            "content": "sha256:e452f9fe15810d2ccf9b7f0d3bd0adcd7d784926714ea210082350d8e0106e6b",
+            "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+            "content": "sha256:161cb5c67565707d82224c68b7a0f15e50222830fe5ccdd6ae3827df3f29cc79",
             "locator": {
-              "kind": "symbol",
-              "name": "LANDING_KEPT_KEYS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
@@ -666,10 +665,9 @@
         {
           "anchor": {
             "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
-            "content": "sha256:1dc7659ace21ce609683f5ee85286a363a2347f22d312a6c7109333c965f3736",
+            "content": "sha256:cf16a16167e0b91ecc2374aa74b904acda4ada11ca3aced5afa55a9de3d3edd0",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeStatusResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -677,10 +675,9 @@
         {
           "anchor": {
             "blob": "81b0e3d2947f32ed2a6e3a9fc97433196e6659a5",
-            "content": "sha256:c0f9b848be97b41a72c57609ec73c4ee1d6919e2a29bbdf8292b5e01b203beec",
+            "content": "sha256:aaa0dec4d52fa4e11a66be5d317870037aa59ee6f48446ad5136df383c8e244c",
             "locator": {
-              "kind": "symbol",
-              "name": "_replace_operation_status"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_status.py"
           },
@@ -689,10 +686,9 @@
         {
           "anchor": {
             "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
-            "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
+            "content": "sha256:6a86cdbd5161f0e53900a23d532161675711182505821de57a00e4f218e1f889",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_status_keeps_retired_history_and_direct_landing_controls"
+              "kind": "file"
             },
             "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
           },

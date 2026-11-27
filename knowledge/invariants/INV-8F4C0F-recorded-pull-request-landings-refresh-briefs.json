@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans record_landing.py and landing_briefs.py, is verified by test_recorded_landing_briefs_refreshes_matching_head_and_reports_unpulled, and keeps PR-landed brief freshness honest within the file-brief family."
+  },
+  "applicability": "External-memory pull-request landings recorded through worktree_record_landing after record_landed_integration succeeds.",
+  "conditions": [
+    "Refreshes briefs/ only on checked-out memory worktrees whose HEAD commit equals the recorded landed memory commit.",
+    "Returns an explicit advisory briefsProblem naming the manual agents-remember memory-briefs command when no checked-out worktree has pulled the landed memory commit."
+  ],
+  "exclusions": [
+    "Does not run git pull, fetch, or modify Git refs in any checked-out memory worktree.",
+    "Dry runs and already-recorded short-circuit calls do not perform brief refresh."
+  ],
+  "id": "INV-8F4C0F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_briefs_and_pairing.py::test_recorded_landing_briefs_refreshes_matching_head_and_reports_unpulled"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 2",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Recorded pull-request landings refresh briefs on every checked-out worktree whose HEAD matches the landed memory commit and explicitly report an advisory briefsProblem naming the manual refresh command when no checkout matches.",
+  "supersedes": [],
+  "title": "Recorded PR landing briefs refresh on matching HEAD and unpulled notice",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

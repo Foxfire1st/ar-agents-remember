@@ -1,0 +1,3719 @@
+{
+  "closed": true,
+  "leaf": "261112-KNO-L7",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T04:36:07+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-KNO-L7",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+      "task": "261112-KNO"
+    },
+    "reviewer": {
+      "at": "2026-11-27T04:36:07+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-KNO-L7",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "7550a690-8c44-5e4d-bc33-e6ec086afe58",
+      "task": "261112-KNO",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "29d1c7460431ca7a54a463f83a37a990ce904537",
+    "verdictRef": "/home/firefox/projects/ar-coordination/notes/reports/reviewer/7550a690-8c44-5e4d-bc33-e6ec086afe58/261112-KNO-L7-memory-round-3-reseal-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-05HPT2",
+      "items": [
+        "sha256:dfffa22dcf2e2239e6c1bec5f6842a6fb84dec9526c7f4ad71355120f99a2a20"
+      ],
+      "reason": "Package re-export of compact_dependent_rows from marks_compact.py; no separate invariant.",
+      "subject": "hunk:sha256:dfffa22dcf2e2239e6c1bec5f6842a6fb84dec9526c7f4ad71355120f99a2a20"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0F7EHG",
+      "items": [
+        "sha256:23ceb13aed7b97c450e77b4bfa5fae7634500d61e0c2718c8efce443cb7fc8e4"
+      ],
+      "reason": "Updated record_landing.py card prose, inline spans, and citations for synced 3e4c8d678 + KNO-R07 advisory post-recording briefs/ refresh.",
+      "sources": [
+        {
+          "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+          "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0VPKNJ",
+      "items": [
+        "sha256:dc232c8b74d33a589133de09aa579b361491ce3b49cfb5a7547ce96a417b347d"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:dc232c8b74d33a589133de09aa579b361491ce3b49cfb5a7547ce96a417b347d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-12FJTB",
+      "items": [
+        "sha256:d2fca011f844f3ce543b99fee5e5b340376eea0e0f4954b350faa3cd945fdf9d"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:d2fca011f844f3ce543b99fee5e5b340376eea0e0f4954b350faa3cd945fdf9d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-13MAZW",
+      "items": [
+        "sha256:5410a126b1bba008b9d5d12b6d3abf5e227860b2f1e0f8619c4d8a853d9de0b5"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:5410a126b1bba008b9d5d12b6d3abf5e227860b2f1e0f8619c4d8a853d9de0b5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-14R47K",
+      "items": [
+        "sha256:670221791df54529195a8b5fc8aa5dd46c2b5ffd75a132b69bd9bd2f46e6ce95"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:670221791df54529195a8b5fc8aa5dd46c2b5ffd75a132b69bd9bd2f46e6ce95"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+            "content": "sha256:334631e76b58212e4e2624e65c81512556dbbd3eddb9bb58623a16178db6c6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDING_KEPT_KEYS"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "before": {
+            "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+            "content": "sha256:e452f9fe15810d2ccf9b7f0d3bd0adcd7d784926714ea210082350d8e0106e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDING_KEPT_KEYS"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "id": "RLZ-R3CA82"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-15VB70",
+      "items": [
+        "sha256:5f61a1aa67791e4c3ffa86bb745c5205defde6d7911db8b8ae3a16036f6b4a13"
+      ],
+      "reason": "LANDING_KEPT_KEYS added optional briefsProblem to worktree_integrate, worktree_checkpoint_landing, and worktree_record_landing while preserving staleDocuments and landing-shape boundaries; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-STH8F0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-19X4PM",
+      "items": [
+        "sha256:f931681d075977741cd4220c18959bf77d2f1969d693b49d1f0576c6dc8a2f22"
+      ],
+      "reason": "Forwarding resolved code_state into open_read_context in _open_context; supports KNO-R07 Rule 6 with no separate invariant.",
+      "subject": "hunk:sha256:f931681d075977741cd4220c18959bf77d2f1969d693b49d1f0576c6dc8a2f22"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1C427Q",
+      "items": [
+        "sha256:10419cb87b5dab9ae5385f47599c0870f8c7e00d6b2a846e443b3da7e91f4c34"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new bounded impact query module (KNO-R07 Rule 10).",
+      "sources": [
+        {
+          "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+          "path": "mcp/src/agents_remember/application/knowledge_impact.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_impact.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1G31NB",
+      "items": [
+        "sha256:84b2000cf25354fe0502aa3b82e370bc5cf80b61185264db88695bfa6d5f741b"
+      ],
+      "reason": "Reviewed onboarding:mcp/src/agents_remember/worktrees/overview against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+          "path": "mcp/src/agents_remember/worktrees/landing_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1GVV99",
+      "items": [
+        "sha256:93add890d81126ce24150e19ce1d980a4dfacaf7972b0eae1ce21be27f3978a2"
+      ],
+      "reason": "Module docstring, dataclasses, and helper definitions supporting KNO-R07 Rule 7 (realized by resolve_paired_code_root and observe_code_source).",
+      "subject": "hunk:sha256:93add890d81126ce24150e19ce1d980a4dfacaf7972b0eae1ce21be27f3978a2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1YKGCB",
+      "items": [
+        "sha256:4a60dace615dd75d4d05852cbd5e096aacbd069869119c78b24cf9d4f02744bc"
+      ],
+      "reason": "Import and helper plumbing supporting KNO-R07 Rule 1 (realized by _publish_integration_edge).",
+      "subject": "hunk:sha256:4a60dace615dd75d4d05852cbd5e096aacbd069869119c78b24cf9d4f02744bc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1ZSB1S",
+      "items": [
+        "sha256:878aa4b804ca4f6ca0978c754584944d1eba4549982352d5f0720fd647c375a9"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/registration/overview prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-20DHHJ",
+      "items": [
+        "sha256:a7cd1c6936495ceb2b91a924cd8975540fc06e3c2ba9d8436fbd46a95e99ec76"
+      ],
+      "reason": "Import and helper plumbing supporting KNO-R07 Rule 1 (realized by _publish_integration_edge).",
+      "subject": "hunk:sha256:a7cd1c6936495ceb2b91a924cd8975540fc06e3c2ba9d8436fbd46a95e99ec76"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-25P97K",
+      "items": [
+        "sha256:5a9992176df62bf25002ae1bcee1b98c525693de32ccfb0700e634c2a4abd30b"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:5a9992176df62bf25002ae1bcee1b98c525693de32ccfb0700e634c2a4abd30b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2R4FJZ",
+      "items": [
+        "sha256:97141924bc5223595409b969caec184f62e6aae283b642df63688bbf66c64c05"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:97141924bc5223595409b969caec184f62e6aae283b642df63688bbf66c64c05"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-31SK5C",
+      "items": [
+        "sha256:867829f66212ac5d65d06d30bfd2723363001d2faf786c7f12ede0f6c6b7070b"
+      ],
+      "reason": "Reviewed onboarding:mcp/src/agents_remember/application/knowledge_reader/marks.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "e847930d44b35a21df3ab12eb97a23fce9ee5561",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/marks.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-39FYQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-6GBJC6",
+          "revision": 1
+        },
+        {
+          "id": "INV-8R2CRC",
+          "revision": 1
+        },
+        {
+          "id": "INV-95NQR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-V3N6NW",
+          "revision": 1
+        },
+        {
+          "id": "INV-WKM7SS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-354BNK",
+      "items": [
+        "sha256:18323e2657c6aa1fbce7f4a9da93b3a9f7c72b9fd4ae1494cfc2a1e88d06fba0"
+      ],
+      "reason": "Re-examined all 6 members; advisory briefs refresh after record_landed_integration leaves the pull-request landing recording family guarantee unchanged.",
+      "revision": 2,
+      "subject": "FAM-Q5J2ZC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "content": "sha256:00539bf08604208a7021bec2cf5d5d0ee12d0b20027e3e008955df971fc40ed1",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 573
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "before": {
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "content": "sha256:9f3d4dcbed185cc5b7855a4098cda0498555d4560daa7f902e681958309dd921",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 561
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "id": "RLZ-99RF0B"
+        },
+        {
+          "after": {
+            "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+            "content": "sha256:e6bc29ff6d48bde18b74d412a1d8365f74f943e2bde838114cb9962990a0f2df",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "content": "sha256:294ddd733011a40f9649b933f26f94c4f07359c00c174946aab515ccfd651095",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-ADCJCR"
+        },
+        {
+          "after": {
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "content": "sha256:89f0f34f1eeb59ede0343a6443275a8d68af1ceca0347a562b5346f249c8fef7",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 355
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "before": {
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "content": "sha256:c8d3aa68a6e5a00a0b043f1489ec2e0d927da35f47368bdaa35d25a7c646ead7",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 342
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "id": "RLZ-HC7CKC"
+        },
+        {
+          "after": {
+            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+            "content": "sha256:26a6f86e96d0c678f7b14b970f10d1346f37339aad5954e0c8db73d298c992a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FORMAT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+          },
+          "before": {
+            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
+            "content": "sha256:b12a2bd50fd77cd23bfe523907d6dd3c02f214d99e610416d1f2d84d0f6bdf94",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FORMAT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+          },
+          "id": "RLZ-TC9V3H"
+        },
+        {
+          "after": {
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "content": "sha256:146e8fd9f2e6d129dbbe06a5872a0610ba7b98cbc44852f91db4428760a5b003",
+            "locator": {
+              "end": 927,
+              "kind": "line_range",
+              "start": 901
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "before": {
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "content": "sha256:719fc652e87ee921d8f7fdd9998778f38e799d627ffdbc9ee0478e99fe9be858",
+            "locator": {
+              "end": 1028,
+              "kind": "line_range",
+              "start": 1005
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "id": "RLZ-W2C7V6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-38X405",
+      "items": [
+        "sha256:553dfbeb7e0df292c9ad8ce12ef152bd522d9ca575f8199099ca795feb337cbe"
+      ],
+      "reason": "knowledge.py added QUERY_VIEWS (records, impact, search) to _ADMITTED_VIEWS and _one_view, registration/knowledge.py updated the read description line, and schema.py bumped INDEX_FORMAT to ar-knowledge-index/v8 for ix_fts; the existing derived-index and read-view invariant holds unchanged with shifted line anchors.",
+      "revision": 1,
+      "subject": "INV-5GEDEX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3H1B70",
+      "items": [
+        "sha256:d5497cccd86e1919b9f88af0925167aece980a75f9d4082894b4413a9d966b29"
+      ],
+      "reason": "Updated stripped derived-table list in legacy-copy fixture for ix_fts tables (Rule 8); test helper update, not a new invariant.",
+      "subject": "hunk:sha256:d5497cccd86e1919b9f88af0925167aece980a75f9d4082894b4413a9d966b29"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3KCEBF",
+      "items": [
+        "sha256:4f4603304febf83bdd461c29252b14acd9efe5abd19f309deea76578e3c6162a"
+      ],
+      "reason": "Updated tool-answer table support helpers for knowledge_read's 5,000-token bound and new query fields (Rule 9); test support update, not a new invariant.",
+      "subject": "hunk:sha256:4f4603304febf83bdd461c29252b14acd9efe5abd19f309deea76578e3c6162a"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-438HQE",
+      "items": [],
+      "reason": "Re-confirmed README.md against synced 3e4c8d678 + KNO-R07 candidate.",
+      "revision": 19,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-453S42",
+      "items": [
+        "sha256:6e97e75b14a8946512854abc8c7eef16f3291120e5e9f85c0104d5b2f91150a3"
+      ],
+      "reason": "Updated tool-answer table support helpers for knowledge_read's 5,000-token bound and new query fields (Rule 9); test support update, not a new invariant.",
+      "subject": "hunk:sha256:6e97e75b14a8946512854abc8c7eef16f3291120e5e9f85c0104d5b2f91150a3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4941ZK",
+      "items": [
+        "sha256:23f9fd8b6ba42dbe5bde57bd873c34fde4a91aacf152f069d1c8f265072ea2b2"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new memory-briefs CLI subcommand module (KNO-R07 Rule 4).",
+      "sources": [
+        {
+          "blob": "c5e9620c5b830bef6c200edb2b025aef975fe00f",
+          "path": "mcp/src/agents_remember/cli/memory_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/memory_briefs.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4CQ6M8",
+      "items": [
+        "sha256:53554da93a4dba7897f7fae91cf90a68d0d427a1bce9a3ce2a1b717b5a5d517f"
+      ],
+      "reason": "Import and helper plumbing supporting KNO-R07 Rule 1 (realized by _publish_integration_edge).",
+      "subject": "hunk:sha256:53554da93a4dba7897f7fae91cf90a68d0d427a1bce9a3ce2a1b717b5a5d517f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4E33W0",
+      "items": [
+        "sha256:2b26a7067e675afd5defb36af5cc4d6c149b6c7cadead41cc23c11d74d1d3a9f"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/models/tools/tool_answer.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4V13VE",
+      "items": [
+        "sha256:70566e5c8c31204a0f6c9dd0645ad4c2864e7c7111c2c2efe4214b38d46e4f75"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:70566e5c8c31204a0f6c9dd0645ad4c2864e7c7111c2c2efe4214b38d46e4f75"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-58WXCA",
+      "items": [
+        "sha256:954eb852c8286aa526643eb8b5668416cde8a9c9a6f481be0b84bb18bbc09fab"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/knowledge_paging/tree_read.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+          "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5NWWNA",
+      "items": [
+        "sha256:0765c175381cca9361e439f87b3e943749f512d31018293a1155f3177e33dc86"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/read_files_briefs.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+          "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/read_files_briefs.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5XKWPV",
+      "items": [
+        "sha256:d5059fd0cc4b2a708b83ae4018ebd392a0dd8be41276d293ded714a69069f8c5"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new post-landing brief refresh helper module (KNO-R07 Rules 1-2).",
+      "sources": [
+        {
+          "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+          "path": "mcp/src/agents_remember/worktrees/landing_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/landing_briefs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3HQNH1",
+          "revision": 2
+        },
+        {
+          "id": "INV-B7D1WM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-60MGBA",
+      "items": [
+        "sha256:e6aa07414ca7ec7fd358142a446d7303969f49cbf4de86701a515bbbedd25e91"
+      ],
+      "reason": "Re-examined both members (INV-B7D1WM, INV-3HQNH1); registering additive memory-briefs in cli/__main__.py preserves the single-parser CLI family guarantee unchanged.",
+      "revision": 2,
+      "subject": "FAM-6M4B49"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-64GBNZ",
+      "items": [
+        "sha256:e3ee247348e1637ea5fa63eb2bc5c5175a241452516944070bdfd99e08a8c282"
+      ],
+      "reason": "Re-confirmed docs/workflows.md against synced 3e4c8d678 + KNO-R07 candidate.",
+      "revision": 16,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6MQC7X",
+      "items": [
+        "sha256:2d8e6ac17df997127881f075df15751394791f81f9d0d06ca41d3ce78e698314"
+      ],
+      "reason": "Test module fixtures and helper functions outside the proving test symbols for KNO-R07 Rules 1-7.",
+      "subject": "hunk:sha256:2d8e6ac17df997127881f075df15751394791f81f9d0d06ca41d3ce78e698314"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6Q71W9",
+      "items": [
+        "sha256:5823d37cf53d5a5ec1c06b5a8264342d6e5e93fcb8fd97901995802371d98fc8"
+      ],
+      "reason": "Updated worktrees/modules route overview citations for synced 3e4c8d678 + KNO-R07 record_landing.py.",
+      "sources": [
+        {
+          "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+          "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+        },
+        {
+          "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+          "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6RPMSH",
+      "items": [
+        "sha256:67290590857e3085433eb7e5f976c6192b33312401691387429b621daf99c3d9"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:67290590857e3085433eb7e5f976c6192b33312401691387429b621daf99c3d9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6TEF1V",
+      "items": [
+        "sha256:1356a04a67aecb35c509de1adedcfae081af34e3464e420d664019eb94504e0f",
+        "sha256:adef98e24d20d515c6e9c9f0f148d5c391e666869541146c73325d8584e536bd"
+      ],
+      "reason": "Reviewed onboarding:mcp/tests/test_knowledge_copies_completed_tasks.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "3e2a18ae30d3e2589ffdacd8b29157561efc74fe",
+          "path": "mcp/tests/test_knowledge_copies_completed_tasks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_copies_completed_tasks.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6Z8HXQ",
+      "items": [
+        "sha256:1546e12b4feaf5b0841affa28df3b03d41bf0dc933d8a4a4aa110039580bb936"
+      ],
+      "reason": "Module helpers and anchor-staleness formatting supporting KNO-R07 Rule 10 (realized by records_view).",
+      "subject": "hunk:sha256:1546e12b4feaf5b0841affa28df3b03d41bf0dc933d8a4a4aa110039580bb936"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-76JYW3",
+      "items": [
+        "sha256:6afec9585004b6a2ce3aba41d12051934996cd1b6c5bc5f80aea16f4f2b5d361"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:6afec9585004b6a2ce3aba41d12051934996cd1b6c5bc5f80aea16f4f2b5d361"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7CWF9D",
+      "items": [
+        "sha256:107a2ef302ac4eb7eefb72d810514898eccda9de1947f7789000cca323626c2b"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new verbatim batch records query module (KNO-R07 Rule 10).",
+      "sources": [
+        {
+          "blob": "760c8e7aff305d678fa626f31129d0e2bdbc2bce",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/records_batch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/records_batch.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7GBS14",
+      "items": [
+        "sha256:233ed464660a8de2dc139a8a37f04e92220f85cfa251518fe01aa620dc957b93"
+      ],
+      "reason": "KnowledgeIndex.search_fts thin delegation wrapper to fts.search_fts supporting KNO-R07 Rule 8; no separate standalone invariant.",
+      "subject": "hunk:sha256:233ed464660a8de2dc139a8a37f04e92220f85cfa251518fe01aa620dc957b93"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7GQY9H",
+      "items": [
+        "sha256:b23343f98f07f9fdfac55eef89e544d90a8974291cdf99dbe456d9ba90b104e0"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: test-evidence-lanes.toml and evidence-lifecycle.toml carry the KNO-R07 test entries; evidence catalog integrity rules hold unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7SYNY7",
+      "items": [
+        "sha256:56701be8a758ccda677edd18fb9e2e2e8b7836f287210a469ea3a1c1f04af9ba"
+      ],
+      "reason": "Imports, constants, and internal separator helpers supporting KNO-R07 Rule 5 (already realized by clause_title and rule_title).",
+      "subject": "hunk:sha256:56701be8a758ccda677edd18fb9e2e2e8b7836f287210a469ea3a1c1f04af9ba"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7VZB80",
+      "items": [
+        "sha256:16f9e5ffdd5421f7d6a955d443af87cb8748608c6463e25b2afccda79a95b9e7"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/memory/overview prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/__init__.py"
+        },
+        {
+          "blob": "41c3cc0d4c10b050843f34e7cf1e7b8d58b65fd3",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+        },
+        {
+          "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/fts.py"
+        },
+        {
+          "blob": "f16d9089893100a94e56c40f9bb4acbeea24b820",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+        },
+        {
+          "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8940VV",
+      "items": [
+        "sha256:de4fe88bfb137d9347537b2bfd80ba11ca27a26ff4da8e28dac8a54ebb07e550"
+      ],
+      "reason": "Argument parser setup and output formatting helpers supporting KNO-R07 Rule 4 (realized by run).",
+      "subject": "hunk:sha256:de4fe88bfb137d9347537b2bfd80ba11ca27a26ff4da8e28dac8a54ebb07e550"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-89P671",
+      "items": [
+        "sha256:2c3a81cbd528d2f7f068906be72e176fb752a7eaaba496dfc05c7e2817ddcbba"
+      ],
+      "reason": "Import of populate_fts supporting KNO-R07 Rule 8 (realized by build_index).",
+      "subject": "hunk:sha256:2c3a81cbd528d2f7f068906be72e176fb752a7eaaba496dfc05c7e2817ddcbba"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8HQR19",
+      "items": [],
+      "reason": "Re-confirmed docs/design/python-pytest-bootstrap.md against synced 3e4c8d678 + KNO-R07 candidate with shifted test-evidence-lanes.toml anchor lines 867-869.",
+      "revision": 36,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8KDR59",
+      "items": [
+        "sha256:872746f442fc03d6a96ba2f8e6edf325c4b3229127a7de230052924f82d8941a"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:872746f442fc03d6a96ba2f8e6edf325c4b3229127a7de230052924f82d8941a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8KSR1R",
+      "items": [
+        "sha256:5054990cf505c992ebb42a4606a0c530949c86536285ad6343b9b28bc5aa2863"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:5054990cf505c992ebb42a4606a0c530949c86536285ad6343b9b28bc5aa2863"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8Q7V50",
+      "items": [
+        "sha256:20478f6cfb6848ea9db6bda8ed588792a98a69ddb72536b572bb8d27fea3f944"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:20478f6cfb6848ea9db6bda8ed588792a98a69ddb72536b572bb8d27fea3f944"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8STSS4",
+      "items": [
+        "sha256:7ddbe45ee668d522588de32d17045ae2931c52df3ea582c2af05c98fbb87583a"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/published_intent.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
+          "path": "mcp/src/agents_remember/application/published_intent.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/published_intent.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8X7R3M",
+      "items": [
+        "sha256:cf45681a7fb925d93ff1f3f56e0522200958aecc5ac29a7b873c626dc447b52b"
+      ],
+      "reason": "marks.py only added a re-export of compact_dependent_rows from marks_compact.py; the equal dependency/product version token weakness remains open and unchanged.",
+      "revision": 1,
+      "subject": "WKN-E1Z3YT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8XNB5X",
+      "items": [
+        "sha256:7eae2a387a93e9d6a02e3b36e5b76d4118f4a6e074b4097ebddb54e695019dac"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:7eae2a387a93e9d6a02e3b36e5b76d4118f4a6e074b4097ebddb54e695019dac"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8YFTSR",
+      "items": [
+        "sha256:249385b3d8b0293ca598fa8053a27119f3d3215ef0c20527e90674cc639c1dd2",
+        "sha256:d5497cccd86e1919b9f88af0925167aece980a75f9d4082894b4413a9d966b29"
+      ],
+      "reason": "Reviewed onboarding:mcp/tests/test_knowledge_copy_cleanup.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "2dbfa83bf63462120d077d2494464a55249a1f41",
+          "path": "mcp/tests/test_knowledge_copy_cleanup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_copy_cleanup.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-901N1E",
+      "items": [
+        "sha256:c5eea7178336053e135e528e2de2e298d2f20fb4daaeebc8da5d087eb863d39a"
+      ],
+      "reason": "Query-filtering and statement-trimming helpers supporting KNO-R07 Rule 10 (realized by search_view).",
+      "subject": "hunk:sha256:c5eea7178336053e135e528e2de2e298d2f20fb4daaeebc8da5d087eb863d39a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-92G848",
+      "items": [
+        "sha256:312b6ad0dec5f55969bc77fefe397fb396c574bafc19001c7911458e273e0034"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new KNO-R07 briefs and code-pairing unit-regression test module.",
+      "sources": [
+        {
+          "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+          "path": "mcp/tests/test_kno_r07_briefs_and_pairing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_kno_r07_briefs_and_pairing.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-967WS9",
+      "items": [
+        "sha256:4d1dbc5589415c1a99acfdd5c8777b7d1bb6e4b22095dbafca56877f5ab1803b"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:4d1dbc5589415c1a99acfdd5c8777b7d1bb6e4b22095dbafca56877f5ab1803b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9707EJ",
+      "items": [
+        "sha256:11a8eafc85f0b258a73f3375f7a04f7b6b4d80a8380c5401a9fff9bf13c66faf"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:11a8eafc85f0b258a73f3375f7a04f7b6b4d80a8380c5401a9fff9bf13c66faf"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-8F4C0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-M36NT5",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        },
+        {
+          "id": "INV-XXG2W0",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYKN6P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-979ZVZ",
+      "items": [],
+      "reason": "Extended FAM-0TR1G5 with KNO-R07 Rules 1-4 covering post-landing advisory brief refresh (integration, checkpoint, and recorded PR landings), honest location.current short-answer notices, and the manual memory-briefs CLI; existing routes already cover worktrees, application, and cli.",
+      "revision": 2,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "considered": [
+        "FAM-0TR1G5",
+        "FAM-TBXG7G",
+        "FAM-ZPQR9K"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-983071",
+      "items": [],
+      "reason": "Rule 5 refines the standalone display-title fallback for legacy untitled invariants alongside INV-ZFNES3 (which is also standalone); it does not form a multi-invariant joint guarantee with FAM-0TR1G5 or either new KNO-R07 family.",
+      "revision": 1,
+      "subject": "membership:INV-WWRX4E"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 5
+        },
+        {
+          "id": "INV-3BGCAT",
+          "revision": 2
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 3
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 2
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-98CHHC",
+      "items": [
+        "sha256:c8269efe450443aab9db687b248fa2735bf88d5266e4d8aa5de2216c87a4611c"
+      ],
+      "reason": "Re-examined all 10 members; advisory post-recording briefs refresh in record_landing.py leaves the landing-gate and recording family guarantee unchanged.",
+      "revision": 3,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "deferralIds": [
+        "DFR-S6CEKP"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-98MBNB",
+      "items": [],
+      "reason": "KNO-R07 adds verbatim batch full-text records, impact, search, and compact dependent views on knowledge_read plus location.current gating on read_ar_files brief notices, directly contradicting the claim that knowledge_read returns names and locations only; Curator cannot edit docs/ files in code root.",
+      "revision": 19,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-99CKA5",
+      "items": [
+        "sha256:80cc485324848b872a636c0d2ad5d86a54c598ea1fb2e79b316bed98e4b0c6ed"
+      ],
+      "reason": "Package re-export of compact_dependent_rows from marks_compact.py; no separate invariant.",
+      "subject": "hunk:sha256:80cc485324848b872a636c0d2ad5d86a54c598ea1fb2e79b316bed98e4b0c6ed"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9A3NZE",
+      "items": [
+        "sha256:2fc06a62e5a85c891f9f3bf278870a7fb3a4f5c70bf2f480273855a2a78e1f00"
+      ],
+      "reason": "Reviewed onboarding:mcp/src/agents_remember/application/landing_answer_shapes.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/landing_answer_shapes.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9EPV0P",
+      "items": [
+        "sha256:07fd77c6e1e9ef12a9f0c1f1bbf286ca303248258aee59ad1a1037f4bb244740",
+        "sha256:77e17f075feef85243af3eb97e67d8ac8bf586764bfb99737626bb4f850a0a77"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/knowledge_paging/scope_pages.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
+          "path": "mcp/src/agents_remember/application/knowledge_paging/scope_pages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_paging/scope_pages.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9GSDZV",
+      "items": [
+        "sha256:bcfb2503419174befc6ed3b4c555dc9f9e91ce1fa8a269a607bcf5d908f4e544"
+      ],
+      "reason": "Imports, constants, and internal separator helpers supporting KNO-R07 Rule 5 (already realized by clause_title and rule_title).",
+      "subject": "hunk:sha256:bcfb2503419174befc6ed3b4c555dc9f9e91ce1fa8a269a607bcf5d908f4e544"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:2679ac106735021edc01011e13d8d9b85154bcac898cb945593be54fd006ad15",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resumed_working_tree"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "before": {
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e52b128c93495e57f4c537a9fba2e60adf35d8c208e0e6e55275a11be41ddcd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resumed_working_tree"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "id": "RLZ-TDZ6TC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9HR2ZH",
+      "items": [
+        "sha256:fc283eeab36d97d3c5f068146ba667652d20ee05b4ea973695dbc7278278625c"
+      ],
+      "reason": "_resumed_working_tree in tree_read.py now also checks TreeReadScope.paired_code_root before context/workspace fallback while still re-capturing and verifying unchanged dirty working trees on resume; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-09H4VC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9JGX3Y",
+      "items": [
+        "sha256:e45cf4fa673fd63d890775b292c3f0d5050a2d1fbc784492da0e1e1d36616290"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:e45cf4fa673fd63d890775b292c3f0d5050a2d1fbc784492da0e1e1d36616290"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9M9Y4V",
+      "items": [
+        "sha256:03d07e589d35a2c5264ebfe435e0dd4d1439fc0e4f88fa7460ec78b306bdd491",
+        "sha256:0b9f2a16bac57f36e1a18f30ce1b20e2ec19f4693bd100b96631ae2f0bbd9662",
+        "sha256:18c28388798a9bf78ee7524894fd884dfb19199c64363c802d89507f3a0cd1ed",
+        "sha256:7951434b5b2d68b131b41ce31180a32e6eac2d11051d9b1cc0beb34c2aa467ba"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/memory/knowledge_index/__init__.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/__init__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/__init__.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A1H0PH",
+      "items": [
+        "sha256:c399a3237d52cf67ec8132248218a74ebaf6822482412bf28abb750d6b84ca1e"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:c399a3237d52cf67ec8132248218a74ebaf6822482412bf28abb750d6b84ca1e"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A74VQM",
+      "items": [],
+      "reason": "Verified docs/host.md against KNO-R07 candidate: MCP server host registration, dashboard, and CLI host behavior remain accurate after adding memory-briefs and knowledge_read query views.",
+      "revision": 21,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A88B1S",
+      "items": [
+        "sha256:af101833499765fa09de9ca85d4eacb19b55d57e75d0b1de16154a8d1a475dbb",
+        "sha256:f07716e317d87d2e8f2d058b345da921f0ab935f9c19b161472bee4cf806f62d"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new query formatting and token-budget helper module (KNO-R07 Rule 10).",
+      "sources": [
+        {
+          "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+          "path": "mcp/src/agents_remember/application/knowledge_query_formatting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_query_formatting.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AA36P1",
+      "items": [
+        "sha256:e1c4c135ae6f25b5fb37c564458fdaf12c5304be53236fefe73007ec388a3972"
+      ],
+      "reason": "Updated tool-answer ceiling test to consult exception_ceiling_for for knowledge_read's 5,000-token bound (Rule 9); test update, not a new invariant.",
+      "subject": "hunk:sha256:e1c4c135ae6f25b5fb37c564458fdaf12c5304be53236fefe73007ec388a3972"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ACP5AB",
+      "items": [],
+      "reason": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md against KNO-R07 candidate: packaged tool-details copy matches docs/tool-details.md and remains accurate.",
+      "revision": 24,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ADQTHY",
+      "items": [
+        "sha256:91713654fa24c0c30c8f0c8eed8dd13c5fd89007821105cdbb2f14e57cda2801"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:91713654fa24c0c30c8f0c8eed8dd13c5fd89007821105cdbb2f14e57cda2801"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AGY4ET",
+      "items": [
+        "sha256:1d1c05a29aa75659a6a800420e1957c262e8bc9cdc3c18701cb656344c8fef65"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: test-evidence-lanes.toml and evidence-lifecycle.toml carry the KNO-R07 entries; evidence catalog boundary rules hold unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ASK685",
+      "items": [
+        "sha256:d2171e0be7a4151b44ce0ae2519fa33c365848c2428e9a0c3427da795c40baf2"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:d2171e0be7a4151b44ce0ae2519fa33c365848c2428e9a0c3427da795c40baf2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B90C91",
+      "items": [
+        "sha256:90b28763336620e3e45222241c7b692fb13ab7eb1f0742c9773fb3beff4c78ea"
+      ],
+      "reason": "Updated tool-answer table support helpers for knowledge_read's 5,000-token bound and new query fields (Rule 9); test support update, not a new invariant.",
+      "subject": "hunk:sha256:90b28763336620e3e45222241c7b692fb13ab7eb1f0742c9773fb3beff4c78ea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BDDM75",
+      "items": [
+        "sha256:48fdcbc336e4886bdb4d5f143788cd4134118f07c6ab52182489ee4bada24631"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:48fdcbc336e4886bdb4d5f143788cd4134118f07c6ab52182489ee4bada24631"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BE8CHW",
+      "items": [
+        "sha256:fb1c6251d89cc77a376c0fa2f4309472e307ae7579e31787af2364eb7805a420"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:fb1c6251d89cc77a376c0fa2f4309472e307ae7579e31787af2364eb7805a420"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BFTT1K",
+      "items": [
+        "sha256:fac631c3398561d5fd2b5431fd788f9fe334e6c7a5c2d92a6916f1b8abbae539"
+      ],
+      "reason": "cli/__main__.py only registered additive memory-briefs under _register_memory_commands; the earlier-installation command weakness remains open and unchanged.",
+      "revision": 5,
+      "subject": "WKN-G1TBN8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0R04WY",
+          "revision": 1
+        },
+        {
+          "id": "INV-1QE8YM",
+          "revision": 1
+        },
+        {
+          "id": "INV-5GEDEX",
+          "revision": 1
+        },
+        {
+          "id": "INV-69M737",
+          "revision": 1
+        },
+        {
+          "id": "INV-793X8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-AV04NY",
+          "revision": 1
+        },
+        {
+          "id": "INV-B79B38",
+          "revision": 1
+        },
+        {
+          "id": "INV-BNDKC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-CZXJCP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G8AX2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-JAFF6J",
+          "revision": 1
+        },
+        {
+          "id": "INV-KPK1WT",
+          "revision": 2
+        },
+        {
+          "id": "INV-PD5ZD5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TRMMZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-X8FRT8",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0FRT0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-BKFCRH",
+      "items": [
+        "sha256:e5a74a67b75b4778354f79b0b6f5b0ab44d52feda42b6e30f6341ca5c4748516"
+      ],
+      "reason": "Re-examined all 16 members; KNO-R07's v8 ix_fts addition, ten-view read registration, and re-anchored reviewer.md reference leave the family's guarantee intact.",
+      "revision": 3,
+      "subject": "FAM-7NBVYB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BMTAJM",
+      "items": [
+        "sha256:fd4949a4cc0797c402e164c1414e54c2ff7a8d4a14c9023dc3c7c5f04a081383"
+      ],
+      "reason": "Imports, constants, and internal separator helpers supporting KNO-R07 Rule 5 (already realized by clause_title and rule_title).",
+      "subject": "hunk:sha256:fd4949a4cc0797c402e164c1414e54c2ff7a8d4a14c9023dc3c7c5f04a081383"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BSA7KG",
+      "items": [
+        "sha256:0d136a76b1d881f7ac5502563b8ebe5485d2492a86e05c5555c69c5d31331ab0"
+      ],
+      "reason": "Forwarding resolved code_state into open_read_context in _open_context; supports KNO-R07 Rule 6 with no separate invariant.",
+      "subject": "hunk:sha256:0d136a76b1d881f7ac5502563b8ebe5485d2492a86e05c5555c69c5d31331ab0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CFGQS6",
+      "items": [
+        "sha256:187698ded4d5e66ea704942fc051acfffc74a496c3f5f45f1ef8e1d282fe83be"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new KNO-R07 FTS5 and knowledge_read query views unit-regression test module.",
+      "sources": [
+        {
+          "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+          "path": "mcp/tests/test_kno_r07_knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_kno_r07_knowledge_queries.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D826P9",
+      "items": [],
+      "reason": "Refreshed the reconsider_on build.py anchor after confirming alternative 1 remains rejected following the additive populate_fts call.",
+      "revision": 9,
+      "subject": "DEC-H24NXK"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DNXNWS",
+      "items": [
+        "sha256:00dde3c82ff535367c3555285f09fc229c6d19088d75bb0c90c16ee609e19d8b"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/overview prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
+          "path": "mcp/src/agents_remember/application/file_briefs/short_answer.py"
+        },
+        {
+          "blob": "8ebda317eb3dd9fcb6a054e127f030f1c4a8f133",
+          "path": "mcp/src/agents_remember/application/file_briefs/titles.py"
+        },
+        {
+          "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+          "path": "mcp/src/agents_remember/application/knowledge_code_pairing.py"
+        },
+        {
+          "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+          "path": "mcp/src/agents_remember/application/knowledge_impact.py"
+        },
+        {
+          "blob": "a6b9e6fd1ef5c0ceac8868377cba78dc24e18967",
+          "path": "mcp/src/agents_remember/application/knowledge_leaf/pages.py"
+        },
+        {
+          "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
+          "path": "mcp/src/agents_remember/application/knowledge_paging/scope_pages.py"
+        },
+        {
+          "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+          "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+        },
+        {
+          "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+          "path": "mcp/src/agents_remember/application/knowledge_query_formatting.py"
+        },
+        {
+          "blob": "e847930d44b35a21df3ab12eb97a23fce9ee5561",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+        },
+        {
+          "blob": "6b1404c86cd18b1522cc5bab72a246b14dc918a5",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/marks_compact.py"
+        },
+        {
+          "blob": "760c8e7aff305d678fa626f31129d0e2bdbc2bce",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/records_batch.py"
+        },
+        {
+          "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+        },
+        {
+          "blob": "df6ff1cf9d8532274741f8314398f1710a24480f",
+          "path": "mcp/src/agents_remember/application/knowledge_search.py"
+        },
+        {
+          "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        },
+        {
+          "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
+          "path": "mcp/src/agents_remember/application/published_intent.py"
+        },
+        {
+          "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+          "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DQ5YA9",
+      "items": [
+        "sha256:87dbcd5f10f04b2b7baffd2d6902c05cc5c0e461c123fccb4ad4ec26b62e75be"
+      ],
+      "reason": "Updated mcp/tests route overview counts (848 distinct modules) and citations for synced 3e4c8d678 + KNO-R07 catalogs.",
+      "sources": [
+        {
+          "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "f017525125f31a8bd73a1a116a988d9d7aba1638",
+          "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json"
+        },
+        {
+          "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
+          "path": "mcp/tests/test_file_briefs.py"
+        },
+        {
+          "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+          "path": "mcp/tests/test_kno_r07_briefs_and_pairing.py"
+        },
+        {
+          "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+          "path": "mcp/tests/test_kno_r07_knowledge_queries.py"
+        },
+        {
+          "blob": "3e2a18ae30d3e2589ffdacd8b29157561efc74fe",
+          "path": "mcp/tests/test_knowledge_copies_completed_tasks.py"
+        },
+        {
+          "blob": "2dbfa83bf63462120d077d2494464a55249a1f41",
+          "path": "mcp/tests/test_knowledge_copy_cleanup.py"
+        },
+        {
+          "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+          "path": "mcp/tests/test_knowledge_currentness.py"
+        },
+        {
+          "blob": "b8d90c27e4e7d4b99088e5c8e0a5e90dfa23fb7e",
+          "path": "mcp/tests/test_knowledge_store.py"
+        },
+        {
+          "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
+          "path": "mcp/tests/test_tool_answer_table.py"
+        },
+        {
+          "blob": "f8305a84bff28ad307d34188b02abf824187b0c9",
+          "path": "mcp/tests/tool_answer_table_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:e987f930518596576af11d6e544b5cb637447b4909038d0a1498dc287585114b",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-5Y931E"
+        },
+        {
+          "after": {
+            "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
+            "content": "sha256:74f88ca9164617159c46d5431af3d9d82d05dfc12dbae3bbe7008bebb099e8e9",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "before": {
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "content": "sha256:6b32543e610036813878d45e843d92fd817ba7ead48cb17d9d8c2a8cb95a1c41",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "id": "RLZ-FW5CCP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DRJ3R0",
+      "items": [
+        "sha256:73d37068c2db2b7e741241d0f189f61f42eaf0d765b0704a35753c83eabff567"
+      ],
+      "reason": "Pre-existing anchor drift in compacted skills/l-01-agent-lifecycles/roles/reviewer.md (old line_range 86-97 out of range in 36-line file); re-anchored RLZ-5Y931E to line 8 and refreshed RLZ-FW5CCP rationale reference. Reviewer role verdict-location contract holds unchanged.",
+      "revision": 1,
+      "subject": "INV-JAFF6J"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E5YE62",
+      "items": [
+        "sha256:63d22d4012c9ea21b19770b3a09e3d3ee349a7f254f84745911c7430c77a4a3e"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/knowledge_leaf/pages.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "a6b9e6fd1ef5c0ceac8868377cba78dc24e18967",
+          "path": "mcp/src/agents_remember/application/knowledge_leaf/pages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_leaf/pages.py"
+    },
+    {
+      "deferralIds": [
+        "DFR-JQM92D"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-EC2GBH",
+      "items": [],
+      "reason": "KNO-R07 raises the knowledge_read tool-answer exception ceiling from 4,000 to 5,000 tokens and adds verbatim batch full-text records plus impact/search/compact-dependent views, directly contradicting lines 204 and 372-374; Curator cannot edit docs/ files in code root.",
+      "revision": 36,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EENQS5",
+      "items": [
+        "sha256:f7a3d417fc8a2d030f831a9ade2cb1b1ebc6379eb8f6cd06c3ae635f4948bf16"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:f7a3d417fc8a2d030f831a9ade2cb1b1ebc6379eb8f6cd06c3ae635f4948bf16"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EMFMGR",
+      "items": [
+        "sha256:4218cefadd6347508ef944ca505a68746ef87def323946dd9fd12e7a945cd293"
+      ],
+      "reason": "Internal _fit all_current check and notice helper plumbing supporting KNO-R07 Rule 3 (realized by BatchBriefs).",
+      "subject": "hunk:sha256:4218cefadd6347508ef944ca505a68746ef87def323946dd9fd12e7a945cd293"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EPJ0M4",
+      "items": [
+        "sha256:5239a9d20db44ea0a51dfd5718066eaeaec0dea4d37a82c0d9fdb25736cd2fcd"
+      ],
+      "reason": "Updated tool-answer table support helpers for knowledge_read's 5,000-token bound and new query fields (Rule 9); test support update, not a new invariant.",
+      "subject": "hunk:sha256:5239a9d20db44ea0a51dfd5718066eaeaec0dea4d37a82c0d9fdb25736cd2fcd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F51C04",
+      "items": [
+        "sha256:9a40445d6336dbd50ffa88f898a762ec395d67dae724b1d177b610bba74268df"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new derived ix_fts FTS5 index module (KNO-R07 Rule 8).",
+      "sources": [
+        {
+          "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/fts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/fts.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F9HFRJ",
+      "items": [
+        "sha256:4faf66761758125bf18185fb33d13df80988180f21414e2f7e7b8751d3cfd345",
+        "sha256:56701be8a758ccda677edd18fb9e2e2e8b7836f287210a469ea3a1c1f04af9ba",
+        "sha256:700f0182fb9b463b40b95c778d908a6d1e36adf606973ab5556e3b01a9af9313",
+        "sha256:708689204e498c6aed68fdf1217347eb7f300a1b8b9a1c7083e0cee2d3c0ec97",
+        "sha256:8284b92cf1fc8409b032e3cd15f299a2f863f359a0c0fe59017302b9e3521efb",
+        "sha256:bcfb2503419174befc6ed3b4c555dc9f9e91ce1fa8a269a607bcf5d908f4e544",
+        "sha256:fd4949a4cc0797c402e164c1414e54c2ff7a8d4a14c9023dc3c7c5f04a081383"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/file_briefs/titles.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "8ebda317eb3dd9fcb6a054e127f030f1c4a8f133",
+          "path": "mcp/src/agents_remember/application/file_briefs/titles.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/file_briefs/titles.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FNNB17",
+      "items": [
+        "sha256:36961bfd5ebd6e72d2d468a0bcf08d1c1fdf38978e6193b8cce0b9117a7ee96d"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:36961bfd5ebd6e72d2d468a0bcf08d1c1fdf38978e6193b8cce0b9117a7ee96d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FNYQVJ",
+      "items": [
+        "sha256:01041604ae665c9d8cda969ec34bbbbcb21b7cdd0d86b004036714bd9d9c3ecd",
+        "sha256:79b1703385552ce041bea0a51e5f5cfad648225d25ddaa64e1571537d60bf307",
+        "sha256:9559351a9b0454214f2d9091313c221c3f3d2cdf9811b12f49da3416d33a66cf",
+        "sha256:d9c1ea95c3d53b4405377d39c41a7e1750c0f42f1f2590938718aed5ddee22e7"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_knowledge_currentness.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+          "path": "mcp/tests/test_knowledge_currentness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_currentness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FPAT5C",
+      "items": [
+        "sha256:6a94f40b741a6593916c192d8714b573e45f5e0ae786d55d2c511bc05137a55b"
+      ],
+      "reason": "TOOL_ANSWER_KNOWLEDGE_READ_MAX_TOKENS constant and TOOL_ANSWER_EXCEPTIONS entry supporting KNO-R07 Rule 9 (realized by exception_ceiling_for).",
+      "subject": "hunk:sha256:6a94f40b741a6593916c192d8714b573e45f5e0ae786d55d2c511bc05137a55b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "content": "sha256:09d5b97f0d2602e1604ad59a0f72f27611c4bf3e36ae6b4a964112af7b196d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_view"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "before": {
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "content": "sha256:1e44a3f33c3194b139d9094935ad9e7b9d7a63d86b28b659122abb519aa28c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_view"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "id": "RLZ-VVDQ78"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FVNC26",
+      "items": [
+        "sha256:b0b4687d6a1b185da0f1bdb60ea29288090d50ba9cdabe2c3408eb4dc80a6900"
+      ],
+      "reason": "_record_view now uses _observed_source_or_none for automatic code-tree pairing while preserving single-record lookup semantics; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-AJBF9F"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FYVC21",
+      "items": [
+        "sha256:e2163019bfae78c07c9cc65796f011edc2e2c55c80ac1aa1eb866ba03574e399"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:e2163019bfae78c07c9cc65796f011edc2e2c55c80ac1aa1eb866ba03574e399"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GB4BMS",
+      "items": [
+        "sha256:0f3751e3f44450841b7898c3b43d112c80ac491b7c105f4487213ea937c60f04"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/memory/knowledge_index/query.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "f16d9089893100a94e56c40f9bb4acbeea24b820",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/query.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GBN1N2",
+      "items": [],
+      "reason": "Verified docs/getting-started.md against KNO-R07 candidate: getting-started setup and workflow guidance remain accurate; KNO-R07 additions are additive.",
+      "revision": 21,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GEKRDY",
+      "items": [
+        "sha256:36dcdac72c99fbef233cf3218f170f773b4a50d8cd16ba4790349f4b6cd8da5b"
+      ],
+      "reason": "Optional code_state field plumbing on LeafRequest and PageBinding supporting KNO-R07 Rules 6-7; no separate standalone invariant beyond those rules.",
+      "subject": "hunk:sha256:36dcdac72c99fbef233cf3218f170f773b4a50d8cd16ba4790349f4b6cd8da5b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GGGPFC",
+      "items": [
+        "sha256:78482d75279ecc4cbd284516069ffe33c3266fe0aea9ca25091b82ae43f1a0db"
+      ],
+      "reason": "TOOL_ANSWER_KNOWLEDGE_READ_MAX_TOKENS constant and TOOL_ANSWER_EXCEPTIONS entry supporting KNO-R07 Rule 9 (realized by exception_ceiling_for).",
+      "subject": "hunk:sha256:78482d75279ecc4cbd284516069ffe33c3266fe0aea9ca25091b82ae43f1a0db"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GNG711",
+      "items": [
+        "sha256:eb13a25c6cdf4970fb243637a4f54f64b3c5887f06a927063e715a464e58af23"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/tools/overview prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+        },
+        {
+          "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "content": "sha256:f35648701bbf1d33ee721e9303f9238ab33606dc74cd94e316541164d2da1494",
+            "locator": {
+              "kind": "symbol",
+              "name": "_marks_view"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "before": {
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "content": "sha256:257091113916685966e040de9ac06c088f9a6c02f695ecb5918b23941aae9cb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_marks_view"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "id": "RLZ-020T98"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GQCBFN",
+      "items": [
+        "sha256:35a6df43054f2764d9faf9077d531acc0515f8fc49b77217564ceb2fbe0021be"
+      ],
+      "reason": "_marks_view added folder fallback, compact=True dependent projection, and automatic code-tree pairing while preserving read-only marks semantics; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-HB6783"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H53M7F",
+      "items": [
+        "sha256:1312fa0c9159b481dac39efe24c0edadb1a5998f7e199ff9ef430215570e7de9"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new automatic code-tree pairing module (KNO-R07 Rule 7).",
+      "sources": [
+        {
+          "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+          "path": "mcp/src/agents_remember/application/knowledge_code_pairing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_code_pairing.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
+            "content": "sha256:cecdaa011590c7c54e30766e3beaf305daaba4673ee9728ed7dab6a25be8e3b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "before": {
+            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "content": "sha256:4f1e7debc21d868a2233da359fbee83030fc2b00c7ef6b0096ef2e42181acadb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "id": "RLZ-E734EQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H6TDP5",
+      "items": [
+        "sha256:3e33ce73d56b6be448a41d2da516e8623a0b73d5b8758a62f1ef345f34c2d939"
+      ],
+      "reason": "truth.py added only a re-export of records_view from records_batch.py; truth-layer record-reading invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-3TJKFH"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
+            "content": "sha256:cecdaa011590c7c54e30766e3beaf305daaba4673ee9728ed7dab6a25be8e3b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "before": {
+            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "content": "sha256:4f1e7debc21d868a2233da359fbee83030fc2b00c7ef6b0096ef2e42181acadb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "id": "RLZ-6KMKCS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HBYCD9",
+      "items": [
+        "sha256:d5461ae296790f7523891711a79ddf7d4ddd10844ecf0b013bfc5a85dce97af5"
+      ],
+      "reason": "truth.py added only a re-export of records_view from records_batch.py; existing read-truth invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-DFA51A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HE9H0N",
+      "items": [
+        "sha256:bb47d38314b53cc67e2f503b5734ccb8e681eebb2f04ed8581edfbe77bd9acd2"
+      ],
+      "reason": "Import and helper plumbing supporting KNO-R07 Rule 1 (realized by _publish_integration_edge).",
+      "subject": "hunk:sha256:bb47d38314b53cc67e2f503b5734ccb8e681eebb2f04ed8581edfbe77bd9acd2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HJ7AM4",
+      "items": [
+        "sha256:fef5b544c90e538e7fe1df07c8f523e47ef57c20a65b371dbb8238789f089b33"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:fef5b544c90e538e7fe1df07c8f523e47ef57c20a65b371dbb8238789f089b33"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HJQT9Q",
+      "items": [
+        "sha256:4a841cd5275d8ffb2cfd25596d2124096602d7c48eb34a624d62792481005519"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:4a841cd5275d8ffb2cfd25596d2124096602d7c48eb34a624d62792481005519"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HKA299",
+      "items": [],
+      "reason": "Verified docs/reference/resolver-c08.md against KNO-R07 candidate: resolver precedence and anchor-resolution rules remain unchanged by automatic knowledge_read code-tree pairing and query views.",
+      "revision": 10,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HP59FZ",
+      "items": [
+        "sha256:4ed6cd58a4ee7c4da90e49d8014aab4b7a152feab0c9b97ac4d78993e50524cc"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:4ed6cd58a4ee7c4da90e49d8014aab4b7a152feab0c9b97ac4d78993e50524cc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HRAMGD",
+      "items": [
+        "sha256:f256058ffce557be62a3405fb8b4af530703bf1cda67eee86cfff14a1c2a00a4"
+      ],
+      "reason": "Helper definitions and batch wrapper supporting KNO-R07 Rule 10 (realized by compact_dependent_row).",
+      "subject": "hunk:sha256:f256058ffce557be62a3405fb8b4af530703bf1cda67eee86cfff14a1c2a00a4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J5092S",
+      "items": [
+        "sha256:3c574c7a730efd7c876fb1482411e0fdb49d012aec69d0176bf85f9501df35d3",
+        "sha256:5d9ebf6e02fadbbe1c25e3dae2fc99a112b53e3951fe38c70b4d4b47e2c9bcd4"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_knowledge_store.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "b8d90c27e4e7d4b99088e5c8e0a5e90dfa23fb7e",
+          "path": "mcp/tests/test_knowledge_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_store.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J7QM3S",
+      "items": [
+        "sha256:cabbcbe1d203ce5a7f6e03fb8067d5abd4d0d86b7dce751367230f02d829c538"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new bounded FTS5 search query module (KNO-R07 Rule 10).",
+      "sources": [
+        {
+          "blob": "df6ff1cf9d8532274741f8314398f1710a24480f",
+          "path": "mcp/src/agents_remember/application/knowledge_search.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_search.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JENST7",
+      "items": [
+        "sha256:5d993e738f9667e068432f210b1798d37da18a226b07256ed7028a0204fd1b24"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/memory/knowledge_index/build.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "41c3cc0d4c10b050843f34e7cf1e7b8d58b65fd3",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/build.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JEXW4P",
+      "items": [
+        "sha256:a447f75cbba415edfc5e49ed5dc56657353df909818b47c15d520519482f44cb"
+      ],
+      "reason": "Optional code_state field plumbing on LeafRequest and PageBinding supporting KNO-R07 Rules 6-7; no separate standalone invariant beyond those rules.",
+      "subject": "hunk:sha256:a447f75cbba415edfc5e49ed5dc56657353df909818b47c15d520519482f44cb"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JK7WW1",
+      "items": [],
+      "reason": "Verified docs/guides/onboard-existing-repo.md against KNO-R07 candidate: existing-repo onboarding guide remains accurate after additive memory-briefs CLI registration.",
+      "revision": 5,
+      "subject": "DPD-T00S78"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JVNSKV",
+      "items": [
+        "sha256:1fad2fff6bbf47ed167a0db042ad5554be74d1044d186e319e4d0c6ecee0111c"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/registration/knowledge.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/knowledge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JYDXW4",
+      "items": [
+        "sha256:4a08341cd84e6b989e01e2c876ae21f706ef90f4c37047933599d1721aee1a9b"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:4a08341cd84e6b989e01e2c876ae21f706ef90f4c37047933599d1721aee1a9b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+            "content": "sha256:92b49ca22d91fa16ee763f127ace17e974da6ee9d088089c43ec6e4b9c66b42c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "content": "sha256:05c4c21db68f935f381de50afc43b1d17f5c7b93b042340d5e66d182786e5a79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-8907S7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K21DKF",
+      "items": [
+        "sha256:db043ad6ef3db2f6ddbcee4b7d7710d4d6862be9cef4f63b52820c79db6ab3df"
+      ],
+      "reason": "_register_knowledge_read added read-only selector parameters and forwarded config.repositories without changing write/diff/integrity registration or read-only discipline; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K231CT",
+      "items": [
+        "sha256:54330a7aa07857c1e3aee47162bda620edb19b116a66751d63c37b954a7ddce5"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: test-evidence-lanes.toml and evidence-lifecycle.toml carry the two KNO-R07 unit-regression modules alongside synced catalogs; canonical catalog rules hold unchanged.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K2DDWC",
+      "items": [
+        "sha256:6f156936461197b4691e217b65f61ea869ad00816c34c3f0cd7e1122a22a7a76"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:6f156936461197b4691e217b65f61ea869ad00816c34c3f0cd7e1122a22a7a76"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K32TR4",
+      "items": [
+        "sha256:8b0993da055484eec9c301a88098c8a5a83e7ddb14bb0238880740b571f34fb8"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/file_briefs/short_answer.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
+          "path": "mcp/src/agents_remember/application/file_briefs/short_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/file_briefs/short_answer.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K8FPY0",
+      "items": [
+        "sha256:5f42bc4a6127af5dde7d96f246f79fe240c26a948828e59775b983b54fdfdd67"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:5f42bc4a6127af5dde7d96f246f79fe240c26a948828e59775b983b54fdfdd67"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K8MVP9",
+      "items": [
+        "sha256:e4adab9afadad26fd64b0014700ec41cff9c94fe5dc4afd3aaca3880cf02f137"
+      ],
+      "reason": "Reviewed onboarding:mcp/tests/test_file_briefs.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
+          "path": "mcp/tests/test_file_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_file_briefs.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KEBF0S",
+      "items": [],
+      "reason": "Confirmed docs/design/python-evidence-system.md (full lines 1-295 audit) against synced 3e4c8d678 + KNO-R07 candidate.",
+      "revision": 29,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KWMBCH",
+      "items": [
+        "sha256:d36b9d3126260e20cf36f55cee7a93dfcc58f8b845051133d672bae9135041de"
+      ],
+      "reason": "Updated tool-answer ceiling test to consult exception_ceiling_for for knowledge_read's 5,000-token bound (Rule 9); test update, not a new invariant.",
+      "subject": "hunk:sha256:d36b9d3126260e20cf36f55cee7a93dfcc58f8b845051133d672bae9135041de"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KZGNNX",
+      "items": [
+        "sha256:01cef62e576b271ec9057458b23564272731190b6583c970b9a65cfa17d6dd9d"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:01cef62e576b271ec9057458b23564272731190b6583c970b9a65cfa17d6dd9d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MBEGGJ",
+      "items": [
+        "sha256:31a8e712b73b8a4a245cf5d4f86d568f76ffb75b192cef2a9680fba5a6332d1a"
+      ],
+      "reason": "Module helpers and context dataclass supporting KNO-R07 Rule 10 (realized by run_query_view).",
+      "subject": "hunk:sha256:31a8e712b73b8a4a245cf5d4f86d568f76ffb75b192cef2a9680fba5a6332d1a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "content": "sha256:4b5ff80f51ef920f9eb59996c0996ae54d668c24df0fa6f9fef00d043618cd09",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:9adc3eb1533fdfc3953252935e103aac2420eb381c3cb06f5f2f5c83c2f4dbc2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-57VSEG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ME3JZJ",
+      "items": [
+        "sha256:1c19d8f5b59dd8157cf5cf55e54ed63b6d36ef3df87d13c4ebc6d4c1caf72fb1"
+      ],
+      "reason": "cli/__main__.py registered additive memory-briefs subcommand under _register_memory_commands; single CLI parser ownership invariant holds unchanged.",
+      "revision": 2,
+      "subject": "INV-3HQNH1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N0AC6Y",
+      "items": [
+        "sha256:9cafffc5d3c8755ad112ed7aecaf073caf9d4acae12fa91053f9b7da1ad79e18"
+      ],
+      "reason": "Updated tool-answer ceiling test to consult exception_ceiling_for for knowledge_read's 5,000-token bound (Rule 9); test update, not a new invariant.",
+      "subject": "hunk:sha256:9cafffc5d3c8755ad112ed7aecaf073caf9d4acae12fa91053f9b7da1ad79e18"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-4NWKSS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N0SYXP",
+      "items": [
+        "sha256:866f3271a25671e52c5d4557fb664a25524bb62aaca9c83112a66f0eb5506e46"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: record_landing_result adds advisory post-recording brief refresh without altering precondition gating or Git-commit-free recording; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-95NQR7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N6TZAQ",
+      "items": [
+        "sha256:8353baad06a1f9e9c54b54abe5db3721d6d93cf3d84ed046b31ceaf7681d3426"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/__main__.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/__main__.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N82ZSG",
+      "items": [
+        "sha256:590787bc53ea546e413d3afe4a032e76ae7bd34e95f35b5ac6a7cddf05386612"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:590787bc53ea546e413d3afe4a032e76ae7bd34e95f35b5ac6a7cddf05386612"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N9AP5Q",
+      "items": [
+        "sha256:7ba31d0ee04f890128d17f3103bd2179142a3d025109f88bc0d2a5dfb8af7870"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/tools/knowledge.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/knowledge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ND8M9F",
+      "items": [
+        "sha256:708689204e498c6aed68fdf1217347eb7f300a1b8b9a1c7083e0cee2d3c0ec97"
+      ],
+      "reason": "Imports, constants, and internal separator helpers supporting KNO-R07 Rule 5 (already realized by clause_title and rule_title).",
+      "subject": "hunk:sha256:708689204e498c6aed68fdf1217347eb7f300a1b8b9a1c7083e0cee2d3c0ec97"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NFJ016",
+      "items": [
+        "sha256:ba7a5ae81e8c7141878da52afbba7d0c454d5f3c55b6a8d61f9ea8ae4807ed40"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:ba7a5ae81e8c7141878da52afbba7d0c454d5f3c55b6a8d61f9ea8ae4807ed40"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NH2YCS",
+      "items": [],
+      "reason": "Verified docs/tool-details.md against KNO-R07 candidate: worktree/memory tool details remain accurate; knowledge_read tool details live in docs/reference/mcp-tools.md and post-landing briefsProblem is advisory.",
+      "revision": 22,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NJBEG4",
+      "items": [
+        "sha256:55587faab9c0fd35c046bae111e3093b5efe29ddb8cb954d9d41300048a4cb6c"
+      ],
+      "reason": "TOOL_ANSWER_KNOWLEDGE_READ_MAX_TOKENS constant and TOOL_ANSWER_EXCEPTIONS entry supporting KNO-R07 Rule 9 (realized by exception_ceiling_for).",
+      "subject": "hunk:sha256:55587faab9c0fd35c046bae111e3093b5efe29ddb8cb954d9d41300048a4cb6c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NKNTH9",
+      "items": [
+        "sha256:34aad993507b39fee30a6a71d5569ed63491cc602723a5644de729f8dc0e82b4"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:34aad993507b39fee30a6a71d5569ed63491cc602723a5644de729f8dc0e82b4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P4ZA26",
+      "items": [
+        "sha256:302de9e980c719916c90e4018b23170204f2d4f2355372928c6c951553a3a08e",
+        "sha256:3ba1208f043263df119a37e681dc5ddc60933e7f0b1d61a3a635e0caad929d7e",
+        "sha256:6ffe60b46dd2976e0c88b0c1b721559675466b6974ef73c415c08a9bdbe934fa",
+        "sha256:8c4ce47421c9469e843b0248653e2536422819e0975c11509ae24eee71ef04f2",
+        "sha256:ae72b24676dfa9d7088ef18dad658f9740d6a307abcef899b2870b39df542c3e",
+        "sha256:bdaba2bee8782212e6db741c7e7835993be80f9b60892e8a46dfb94ed487d650",
+        "sha256:fe4254e7667d9236b834108eee0d4c9f19e93aa6f8090c5f4ab8d06dc5170347"
+      ],
+      "reason": "Updated onboarding:mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "f017525125f31a8bd73a1a116a988d9d7aba1638",
+          "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PM3SMZ",
+      "items": [
+        "sha256:0565746d8d2e52f43efd003b8222d3a4fb56988709932e34db4efdedbb2bc0b9"
+      ],
+      "reason": "Optional code_state field plumbing on LeafRequest and PageBinding supporting KNO-R07 Rules 6-7; no separate standalone invariant beyond those rules.",
+      "subject": "hunk:sha256:0565746d8d2e52f43efd003b8222d3a4fb56988709932e34db4efdedbb2bc0b9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PPN4NS",
+      "items": [
+        "sha256:eb1d27d77bc7ce028f14e0496f6a4731c96b613feb85f9d1137b26616b80bb1a"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new compact dependent projection module (KNO-R07 Rule 10).",
+      "sources": [
+        {
+          "blob": "6b1404c86cd18b1522cc5bab72a246b14dc918a5",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/marks_compact.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/marks_compact.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-BZXP67",
+          "revision": 1
+        },
+        {
+          "id": "INV-CWFT4B",
+          "revision": 1
+        },
+        {
+          "id": "INV-H93WMT",
+          "revision": 1
+        },
+        {
+          "id": "INV-SK1G68",
+          "revision": 1
+        },
+        {
+          "id": "INV-V6R1JB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PQS1BK",
+      "items": [
+        "sha256:57929618f24ca02d7e2a516ddd0a1039226705eb4e86979feec86de2fe971d6d"
+      ],
+      "reason": "KNO-R07 adds strictly advisory post-recording briefs/ refresh after final PR recording in record_landing_result without altering PR-landed standalone-master eligibility, finalize readiness, cleanup order, or abandoned-contract refusal.",
+      "revision": 1,
+      "subject": "FAM-GE1MEV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PVKTZ8",
+      "items": [
+        "sha256:57284382280564fb434fa496ca1fbc01bc6b1521bab749dad9dde76080364183"
+      ],
+      "reason": "Import of refresh_recorded_landing_memory_briefs supporting KNO-R07 Rule 2 (realized by record_landing_result).",
+      "subject": "hunk:sha256:57284382280564fb434fa496ca1fbc01bc6b1521bab749dad9dde76080364183"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q5M58M",
+      "items": [
+        "sha256:0cd22809817ea6f604e410e1fbed83e7e726e63cabce7d403356c8fa1ebf970f"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:0cd22809817ea6f604e410e1fbed83e7e726e63cabce7d403356c8fa1ebf970f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q8KB2K",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml card counts (695 unit-regression / 848 total, stress-durability lines 867-869), KNO-R07 module registration, and citations for synced 3e4c8d678 + KNO-R07.",
+      "sources": [
+        {
+          "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q99AMK",
+      "items": [
+        "sha256:4d52ad9af57eaa10e2c51d80dd449c4c3ba2402fb1b2ee68822199b9094cfcba"
+      ],
+      "reason": "Re-confirmed docs/reference/worktrees-c09.md against synced 3e4c8d678 + KNO-R07 candidate.",
+      "revision": 16,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QCCWRQ",
+      "items": [
+        "sha256:0a5c94e2efecc2f97031bd0169b0d8865b8c58b0d4400899f4859e5c3608ff99"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:0a5c94e2efecc2f97031bd0169b0d8865b8c58b0d4400899f4859e5c3608ff99"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QTBMB1",
+      "items": [
+        "sha256:0c46abafa8941a8a1b62d1929c9f517c54f2fb0f62aeb2a09d4ad41499d81cda"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:0c46abafa8941a8a1b62d1929c9f517c54f2fb0f62aeb2a09d4ad41499d81cda"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+            "content": "sha256:334631e76b58212e4e2624e65c81512556dbbd3eddb9bb58623a16178db6c6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDING_KEPT_KEYS"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "before": {
+            "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+            "content": "sha256:e452f9fe15810d2ccf9b7f0d3bd0adcd7d784926714ea210082350d8e0106e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDING_KEPT_KEYS"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "id": "RLZ-9YA8HJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QZVDFP",
+      "items": [
+        "sha256:30c84d4957a30277a6fb8844ddc1026c89fa0b66db5e914ae7baac27b54f32f7"
+      ],
+      "reason": "LANDING_KEPT_KEYS added optional briefsProblem to the three landing routes without dropping any required landing key; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-RNX24H"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R15HPR",
+      "items": [
+        "sha256:73e367272ec195ff763e6057c11740bf9c2b8a69d49921cdfc2428a154e8e12d"
+      ],
+      "reason": "KnowledgeIndex.search_fts thin delegation wrapper to fts.search_fts supporting KNO-R07 Rule 8; no separate standalone invariant.",
+      "subject": "hunk:sha256:73e367272ec195ff763e6057c11740bf9c2b8a69d49921cdfc2428a154e8e12d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R5HFDJ",
+      "items": [
+        "sha256:4fbf6a09ff2df7cd5ad3a2e117bb69f3c2ecb0a37189c7f99552d703e2044616"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:4fbf6a09ff2df7cd5ad3a2e117bb69f3c2ecb0a37189c7f99552d703e2044616"
+    },
+    {
+      "disposition": "deferred",
+      "id": "ROW-R6YAVY",
+      "items": [
+        "sha256:0f77596ceab0f78494d5eab0a1a98324c26746e5040c95707a17cb24d5c264ce"
+      ],
+      "reason": "Recorded DPD-TXRND9 deferral DFR-5W723Z at synced revision 13: docs/reference/knowledge-system.md directly contradicts KNO-R07 behavior (clause_title, ten knowledge_read views, auto-pairing, post-landing brief refresh, memory-briefs CLI) and is deferred to 261112-KNO.",
+      "revision": 13,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RB9H21",
+      "items": [
+        "sha256:a50e187ce9dbcf765994ebc2fce783ef6fe7ea85a87eb8c658137af2dcefa6ce"
+      ],
+      "reason": "Reviewed onboarding:mcp/src/agents_remember/application/knowledge_reader/truth.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/truth.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RYXBFN",
+      "items": [
+        "sha256:6ae6502324163bad1418d45669503df140521f2dcd8698e9ccbd5c6aa698032c"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:6ae6502324163bad1418d45669503df140521f2dcd8698e9ccbd5c6aa698032c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SAJM7M",
+      "items": [
+        "sha256:4faf66761758125bf18185fb33d13df80988180f21414e2f7e7b8751d3cfd345"
+      ],
+      "reason": "Imports, constants, and internal separator helpers supporting KNO-R07 Rule 5 (already realized by clause_title and rule_title).",
+      "subject": "hunk:sha256:4faf66761758125bf18185fb33d13df80988180f21414e2f7e7b8751d3cfd345"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SBH1ZR",
+      "items": [
+        "sha256:5b89cce967a83f83f6cb9dd152329c68765ce7accfe75cdb1df58c07122801a3",
+        "sha256:9cafffc5d3c8755ad112ed7aecaf073caf9d4acae12fa91053f9b7da1ad79e18",
+        "sha256:d36b9d3126260e20cf36f55cee7a93dfcc58f8b845051133d672bae9135041de",
+        "sha256:e1c4c135ae6f25b5fb37c564458fdaf12c5304be53236fefe73007ec388a3972"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_tool_answer_table.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
+          "path": "mcp/tests/test_tool_answer_table.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_table.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SSQ7N5",
+      "items": [
+        "sha256:503c7fcedf4691648dd7c3fbe5e94be0af3a2207a46786ef1921545daee03092"
+      ],
+      "reason": "Internal _fit all_current check and notice helper plumbing supporting KNO-R07 Rule 3 (realized by BatchBriefs).",
+      "subject": "hunk:sha256:503c7fcedf4691648dd7c3fbe5e94be0af3a2207a46786ef1921545daee03092"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T29PPJ",
+      "items": [
+        "sha256:cbc368af55e78d247a5d548e4f49690005a58b11acb301f579277b368c8e3fe0"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:cbc368af55e78d247a5d548e4f49690005a58b11acb301f579277b368c8e3fe0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-AVXN66"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-T3JGRM",
+      "items": [
+        "sha256:418a7ebaf05c38dcda7ab6dfdcee2cb30a1ce64e51ecbbb8265760ddc2df4c39"
+      ],
+      "reason": "record_landing_result invokes advisory refresh_recorded_landing_memory_briefs only after record_landed_integration completes, leaving the pre-short-circuit abandoned_contract_reason / contract-abandoned refusal unchanged.",
+      "revision": 1,
+      "subject": "INV-BZXP67"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+            "content": "sha256:334631e76b58212e4e2624e65c81512556dbbd3eddb9bb58623a16178db6c6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDING_KEPT_KEYS"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "before": {
+            "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+            "content": "sha256:e452f9fe15810d2ccf9b7f0d3bd0adcd7d784926714ea210082350d8e0106e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDING_KEPT_KEYS"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "id": "RLZ-02XYSJ"
+        },
+        {
+          "after": {
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-PCZ0N8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-T898HQ",
+      "items": [
+        "sha256:3063e527f31cf54953f6ca238c272c2a9090f162413e733051c083cd7bd019f2"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: LANDING_KEPT_KEYS adds optional briefsProblem and record_landing_result adds advisory post-recording brief refresh; landing projection and recording invariant holds unchanged.",
+      "revision": 2,
+      "subject": "INV-6H0QQG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TA6XA7",
+      "items": [
+        "sha256:3f4f643c36694b4a5cd8c257acbea871af13e20e2d5ef5f041ea329cb57c4356"
+      ],
+      "reason": "Test module fixtures and helper functions outside the proving test symbols for KNO-R07 Rules 8-10.",
+      "subject": "hunk:sha256:3f4f643c36694b4a5cd8c257acbea871af13e20e2d5ef5f041ea329cb57c4356"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-THB9YF",
+      "items": [
+        "sha256:b8575c62eb662102406060d35350084aff711848fb3a8f4cfa344986e53bab3f"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:b8575c62eb662102406060d35350084aff711848fb3a8f4cfa344986e53bab3f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TR2MM3",
+      "items": [
+        "sha256:7e3c7d75b2c0272ad691bdaca9e0948b895f34a42aa26322d1c93ba25f6ef73e"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:7e3c7d75b2c0272ad691bdaca9e0948b895f34a42aa26322d1c93ba25f6ef73e"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-TZNCDS",
+      "items": [
+        "sha256:ea2be7d8453c813fc82a910dc512931ca6f5648bfe37a5d865d815d35338dddc"
+      ],
+      "reason": "KNO-R07 only added populate_fts(connection, parsed) in build.py to populate the derived ix_fts virtual table; it made no change to conversion shared caches, first-view composition, review memos, or MIK-R59/MIK-R85 performance/memory grounds, so the rejected shared-cache alternative remains rejected.",
+      "subject": "reconsider:DEC-H24NXK#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V0ZX3T",
+      "items": [
+        "sha256:9fefce4ca4d2fbd0ba216a21d1bb5e1bad35138baf9463310a8b39f428d2613d"
+      ],
+      "reason": "Constants, tokenization, and scoring helpers supporting KNO-R07 Rule 8 (realized by populate_fts and search_fts).",
+      "subject": "hunk:sha256:9fefce4ca4d2fbd0ba216a21d1bb5e1bad35138baf9463310a8b39f428d2613d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V6F26M",
+      "items": [
+        "sha256:ee2c71debb1237d5a51acc3b17370c1939c53dfba6b47d9e3eea4915e875a2b9"
+      ],
+      "reason": "TreeReadScope fields, helper signatures, and code-root lookup plumbing supporting KNO-R07 Rule 6 (already realized by _fresh_read, _at_code_tree, _resumed_working_tree).",
+      "subject": "hunk:sha256:ee2c71debb1237d5a51acc3b17370c1939c53dfba6b47d9e3eea4915e875a2b9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VAHVZK",
+      "items": [
+        "sha256:652766005ac431f3c37d0c1e19ad4cb4746fa62eb87da64bfd953e476f5b833e"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/models/overview prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VP6NS1",
+      "items": [
+        "sha256:1ffb0d05a0320cc7f000a644a5f650224777ed1d6a3e91ce001d4e0f459b5e84"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:1ffb0d05a0320cc7f000a644a5f650224777ed1d6a3e91ce001d4e0f459b5e84"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+            "content": "sha256:fd84418ef45b2ec526e57e85a0b7cc426a00bd36178148109025bef5ca43e19f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "content": "sha256:d2e09968807dec56860cba68aa784efdf258555dbb83498d84dafa5af2cecc47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-GDNVPK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VQDJWP",
+      "items": [
+        "sha256:54a07889a562925047590ad8ef138fac042238a69edd68f3278b027446dfd895"
+      ],
+      "reason": "knowledge_read raw description updated to advertise ten views and auto-pairing at 471 characters (still <= 500-character raw description ceiling); tool-description ceiling invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-06MGX9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
+            "content": "sha256:3c778ab06b1e5b45f1e963f58be4b571287bee3566a7fc7c4cfdf1f10e3e2a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_untitled_rule_is_named_by_its_first_clause"
+            },
+            "path": "mcp/tests/test_file_briefs.py"
+          },
+          "before": {
+            "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+            "content": "sha256:36974ea2e34dca39fea9659cf33da5355188afada7c2a55e2cf2203a786f77ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_untitled_rule_is_named_by_its_first_six_words"
+            },
+            "path": "mcp/tests/test_file_briefs.py"
+          },
+          "id": "PRF-6S5E97"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-VQJ3R4",
+      "items": [
+        "sha256:85173b028e91c61239fd0f13cba68ac969e362ee77e997b50b99b8b995b7e521"
+      ],
+      "reason": "KNO-R07 Rule 5 replaced six-word untitled fallback truncation with readable ~80-character first-clause derivation (clause_title), revising condition 2 of INV-ZFNES3 and renaming proof PRF-6S5E97 in test_file_briefs.py to test_an_untitled_rule_is_named_by_its_first_clause.",
+      "revision": 2,
+      "subject": "INV-ZFNES3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VTPZJH",
+      "items": [
+        "sha256:9523db28de7756dc983e96b1cd11a6c525d4f092ddbd650acc5b5b989f10ba64"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/worktrees/modules/integrate.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+          "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/integrate.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-AQ9CB7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W07KDW",
+      "items": [
+        "sha256:311eba469df0663f54dff219a16276d870b622a1afabe552d3b5e79b2bdefac5"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: record_landing_result invokes advisory post-recording brief refresh after record_landed_integration without altering landing gate or recording authority; invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-HAQRFD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W71HE6",
+      "items": [
+        "sha256:7d241dfa07ce38ff229f8c4c92d33a321a2e63ba613016db89a16be9f3e1db41"
+      ],
+      "reason": "Internal _fit all_current check and notice helper plumbing supporting KNO-R07 Rule 3 (realized by BatchBriefs).",
+      "subject": "hunk:sha256:7d241dfa07ce38ff229f8c4c92d33a321a2e63ba613016db89a16be9f3e1db41"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WJ792V",
+      "items": [
+        "sha256:04b792d2fcce3a5299e57a591a2dc8dc218518d676a8c6109939d577416d573e"
+      ],
+      "reason": "Created onboarding card and sidecar citations for new knowledge_read query view dispatcher module (KNO-R07 Rule 10).",
+      "sources": [
+        {
+          "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WVRGVP",
+      "items": [
+        "sha256:8284b92cf1fc8409b032e3cd15f299a2f863f359a0c0fe59017302b9e3521efb"
+      ],
+      "reason": "Imports, constants, and internal separator helpers supporting KNO-R07 Rule 5 (already realized by clause_title and rule_title).",
+      "subject": "hunk:sha256:8284b92cf1fc8409b032e3cd15f299a2f863f359a0c0fe59017302b9e3521efb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XDQTXA",
+      "items": [
+        "sha256:b1d3f1594d7c3af0d118a69d39e76a8c85d3c08307eaa709ce974483a9054b92"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/memory/knowledge_index/schema.py prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/schema.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XH2BW0",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated evidence-lifecycle.toml card consumer counts (41 exact consumers on knowledge_review_fact_test_support.py) and citations for synced 3e4c8d678 + KNO-R07.",
+      "sources": [
+        {
+          "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XHBZVJ",
+      "items": [
+        "sha256:d447b728cd4a92f88b1bde2ce1e290f4ea72c5c076bc41b52fe74451d1a96fcc"
+      ],
+      "reason": "Re-recorded after sync onto 3e4c8d678/8426c3bb: test-evidence-lanes.toml carries the two KNO-R07 unit-regression entries; lane catalog selection and uniqueness contract holds unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y0DV4A",
+      "items": [],
+      "reason": "Verified docs/install/claude-code.md against KNO-R07 candidate: Claude Code install/setup instructions and CLI entrypoints remain accurate after adding agents-remember memory-briefs.",
+      "revision": 15,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y3QVXC",
+      "items": [
+        "sha256:18477f5510f964008241c9536b9b9eae26cbb948a5fed8b01e7eec626dbbc0f6"
+      ],
+      "reason": "Updated onboarding:mcp/overview prose and re-authored citation anchors to reflect the KNO-R07 candidate implementation (brief refresh, clause_title fallback, automatic code-tree pairing, v8 ix_fts index, and ten-view knowledge_read queries).",
+      "sources": [
+        {
+          "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        },
+        {
+          "blob": "c5e9620c5b830bef6c200edb2b025aef975fe00f",
+          "path": "mcp/src/agents_remember/cli/memory_briefs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y9GPNV",
+      "items": [
+        "sha256:d4b07ef84c553a9447e3464d1e547799a1f926be29dfb6cf26114e2a4052109c"
+      ],
+      "reason": "Forwarding resolved code_state into open_read_context in _open_context; supports KNO-R07 Rule 6 with no separate invariant.",
+      "subject": "hunk:sha256:d4b07ef84c553a9447e3464d1e547799a1f926be29dfb6cf26114e2a4052109c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y9SQZE",
+      "items": [
+        "sha256:4b0c6d9ba790e07e0a95dfa63756852b385997df07e44022b780abc534b11ada"
+      ],
+      "reason": "Module docstring, dataclasses, and internal grouping/budget helpers supporting KNO-R07 Rule 10 (realized by impact_view).",
+      "subject": "hunk:sha256:4b0c6d9ba790e07e0a95dfa63756852b385997df07e44022b780abc534b11ada"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YGXJQ7",
+      "items": [
+        "sha256:a6bb15ea67f0a726a818b91deae4d7be8c0b7801e3dfd8a7708104a9a236189a"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:a6bb15ea67f0a726a818b91deae4d7be8c0b7801e3dfd8a7708104a9a236189a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YTPN3V",
+      "items": [
+        "sha256:dc7ca8b4f9e0a6f945053ac8f8e2edf134d0d1e702e6b9733cea878383a4a70e"
+      ],
+      "reason": "Module helpers and diff/checkout utilities supporting KNO-R07 Rules 1-2 (realized by refresh_integrated_memory_briefs and refresh_recorded_landing_memory_briefs).",
+      "subject": "hunk:sha256:dc7ca8b4f9e0a6f945053ac8f8e2edf134d0d1e702e6b9733cea878383a4a70e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YVXQ53",
+      "items": [
+        "sha256:20adbe9c6c64e7f7120699461ae2042d2e220163f66a35b6cba9f1a8689f1b00"
+      ],
+      "reason": "Reviewed onboarding:mcp/tests/tool_answer_table_support.py against the KNO-R07 candidate: existing onboarding prose remains accurate (additive re-export, pre-existing briefsProblem coverage, or test-fixture update with no card contract drift).",
+      "sources": [
+        {
+          "blob": "f8305a84bff28ad307d34188b02abf824187b0c9",
+          "path": "mcp/tests/tool_answer_table_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_answer_table_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z12DAW",
+      "items": [
+        "sha256:17b65e5682e9034d4a8942ed2b9633eac41325a4ccaf8f13ece4f09fcd194ad9"
+      ],
+      "reason": "Imports, ReadToolRequest fields, _ADMITTED_VIEWS/QUERY_VIEWS dispatch, and _marks_rows plumbing supporting KNO-R07 Rules 7 and 10 (realized by _observe_source and existing views).",
+      "subject": "hunk:sha256:17b65e5682e9034d4a8942ed2b9633eac41325a4ccaf8f13ece4f09fcd194ad9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z41NVM",
+      "items": [
+        "sha256:719099ee095385cd6934543f196ecedae09293c63dcdbe7dfc064ac43fa5a29e"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:719099ee095385cd6934543f196ecedae09293c63dcdbe7dfc064ac43fa5a29e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z5MTBX",
+      "items": [
+        "sha256:89636e319894210a3af077ada056c6d606936dcfaa0658ee9d6933fe6c64563e"
+      ],
+      "reason": "Imports, constant declarations, and internal notice helper wiring supporting KNO-R07 Rule 3 (already realized by whole/without_rule_texts/counts_notice).",
+      "subject": "hunk:sha256:89636e319894210a3af077ada056c6d606936dcfaa0658ee9d6933fe6c64563e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "41c3cc0d4c10b050843f34e7cf1e7b8d58b65fd3",
+            "content": "sha256:005572adf84af8a257c0171eea0a98b60474a23aec2b532bb27168d16a73d601",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "before": {
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
+            "content": "sha256:0c85032f6e5fb5960257f41194e0b5218bae87a11c616c86ae0066b535120ddf",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "id": "RLZ-6S51VT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZCPEF5",
+      "items": [
+        "sha256:f5a5273c459dea25ad6e168b78499e0854f75eb7d89e45c9183401e11c088180"
+      ],
+      "reason": "build_index inserted populate_fts(connection, parsed) inside the single write transaction before projection.project; index build completeness and standing derivation invariant holds unchanged at shifted line range 213-263.",
+      "revision": 1,
+      "subject": "INV-X8FRT8"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:f8efd918a36cd283ec4983d79168d19230812834d75564855256ca7bd5307ce8",
+      "record": "DEC-H24NXK",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:8888f49c06e945f7dd18881336fd546a0aed571b418d526e28ccf49ece48511c",
+      "record": "DPD-10YCT2",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:2ab37580a7b6623681a4f80114e23c6668603c1388e0634ea36b0b847693ec9e",
+      "record": "DPD-3E9E2R",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ddd864585777700c9c556b6d171cfee69e3692971b91a56640b813c87eeccf1a",
+      "record": "DPD-633P3W",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:3dcc76e0190c12563e3a41bbe9177b8c99588e5eea716503708f8d9f11165fa4",
+      "record": "DPD-9K25G8",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:536c97bc7f988c66f100aee67534a27f948418c03e385584579008618bdc9947",
+      "record": "DPD-9K25G8",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-27T03:56:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4a67feb9e8d3b2b2bd6cbe61bcc668c678f2f2759bbca127c8ef9171dc323d3d",
+      "record": "DPD-CZBR1Q",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:50932b3b6cefd2db0e277ba18068b89812026c824e71b34ee6d1e56b995e1fad",
+      "record": "DPD-CZBR1Q",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-27T03:56:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:458d643632c22b1a2b21fda4672236c43503ef8d37b6f777894ca6d14f39c7cb",
+      "record": "DPD-EG5TYT",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:6cca23088284a5f98f2170207ed03195c0cc024184a757ddf0854cac538b7556",
+      "record": "DPD-EJ2Y7Z",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:69efc758086c87f4d2592b14c6a9d65280d493b1743f8b5bfe47f4255a62c857",
+      "record": "DPD-K2QMWQ",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:c17c018ace08a06135361ffc7319008a244cfcecc5401c98225911cd58e7460d",
+      "record": "DPD-MQCJK4",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:6aacdcc6137a1cab60a9dfa9c123cde0468458f295f94cd62ebff4ed3efa1c3d",
+      "record": "DPD-NGC2F6",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:41ad209102f97fa5c9de667be1fc5f8bb1b5a6d18e21faf5b768fb0b1a656266",
+      "record": "DPD-T00S78",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:805f73f773a1c9351323d96d4fbd7cf31e1180aeba287c53f74b5c5c8428a214",
+      "record": "DPD-TXRND9",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:e80fde275cc3d166aeaee595e599f5da4246a363a9183c4dcb87c2b6cbad837f",
+      "record": "DPD-XAARS1",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d346ae8764537b90ca461e9f95485d7deeae8d7210471e7972f01b3fa7fcdaf8",
+      "record": "DPD-XAARS1",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-27T03:56:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4c3cab1cc2e94ce0b86a063fc8f9caba3bded04157b57d43cee5a7ca97937a4a",
+      "record": "DPD-ZMQ523",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-27T03:56:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:0bc3f34a1660d7a792cd18213d57534300957428eada17f4c2815695ddbac01f",
+      "record": "DPD-ZT8YY7",
+      "revision": 34,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:65357c9dc33dc1edadbeb2ada4a5075a38869b8d72a997a8bce43e0c7dc41ecf",
+      "record": "DPD-ZT8YY7",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T03:56:55+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:909e22163181f17d825c2954ba321127773709baffc559a2fbe860e2040e00ba",
+      "record": "FAM-0TR1G5",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:c26fe4c1ed60e8e537cd10e2e285e75cb70f6b263f6101c86c4c6b7f442bbd1e",
+      "record": "FAM-TBXG7G",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:42cfb64a05e4a7e174355b209d7876534c13415168b4af98e6c764df129686a7",
+      "record": "FAM-ZPQR9K",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:3285db7c0024b4325ca5744a818a752427e97862c51c9e88d815005d8efbab4e",
+      "record": "INV-4NNXH1",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:577f836954ad64f7dc60f7a2190713a913ec3b3a0971564efeaa067c0071d240",
+      "record": "INV-8F4C0F",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:f1fcd7f6539e1d10427d2cc6fc2b6910d66fe7b444d3a92550709790798940ad",
+      "record": "INV-DW999J",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:12907eddd45cc4c48b5a5240c64c4742c432f9658ee7e700811e80df4a65d87c",
+      "record": "INV-FM7P08",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ce550dacf99f20ddae14a3f1607b5c17aba91043d65e419622150522d3bf015a",
+      "record": "INV-KTGZFV",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:81a165784808fae247d4f54b43bf1d2dde8541f3485fa542270535131e2413c1",
+      "record": "INV-M36NT5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:c4ccadc2b30fa0e7ab4b8877d33ad32a62a38104542a6279b04e472d44988153",
+      "record": "INV-TT65V5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:7139edf4e1a00b90d20f93bf25eb18cd6130ac93ee5b21b01d363177e220c176",
+      "record": "INV-WWRX4E",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4ff6127a1288644d21789789249ca71fca7a52056f1ed033bdc71fd540b29124",
+      "record": "INV-XXG2W0",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:7dba2a8b1e1310427258a08931be7a6bde6882fc1acec85e018ff25265797c9c",
+      "record": "INV-ZFNES3",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:51ec053f78c24e1f3bc07c46ac12fe9207103b60fa506362ee92296c4a889560",
+      "record": "INV-ZYKN6P",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

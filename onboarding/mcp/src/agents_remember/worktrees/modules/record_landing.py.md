@@ -14,7 +14,7 @@ cosmetic, because the cell is what `worktree_cleanup` requires before it retires
 the series abandon guard reads before it lets a master's integration branch go. A PR-merged master
 would otherwise look like a master whose work had never left it.
 
-Successful PR recording adds emptyLanding=true for a pair equal to recorded bases; it publishes no Git commits. The recorded result also carries `staleDocuments` (MIK-R124 rule 4): the count of documents the landing made stale and the read that lists them — absent when the landing named no document, while a series master's end keeps `count: 0` when naming inherited debt (`alreadyStale`/`namedOnly`) or post-landing parent repairs (`repairedOnParent`) — computed from the recorded landed memory commit with `master_end` set and `document_base` resolved by `master_document_base` when the contract is a series, so a recorded master landing examines every document against the standing base and an ordinary recording only those its change can move.
+Successful PR recording adds emptyLanding=true for a pair equal to recorded bases; it publishes no Git commits. The recorded result also carries `staleDocuments` (MIK-R124 rule 4): the count of documents the landing made stale and the read that lists them — absent when the landing named no document, while a series master's end keeps `count: 0` when naming inherited debt (`alreadyStale`/`namedOnly`) or post-landing parent repairs (`repairedOnParent`) — computed from the recorded landed memory commit with `master_end` set and `document_base` resolved by `master_document_base` when the contract is a series, so a recorded master landing examines every document against the standing base and an ordinary recording only those its change can move. After recording a final PR landing, `record_landing_result` runs an advisory `briefs/` refresh through `refresh_recorded_landing_memory_briefs` for the recorded code/memory commits and attaches any refresh or unpulled-checkout problem as `briefsProblem` without reversing or failing the recorded landing.
 
 ## Code Commentary
 
@@ -22,33 +22,33 @@ Successful PR recording adds emptyLanding=true for a pair equal to recorded base
 
 The PR landing path forwards only the supplied landed code and memory-content commits into the shared `LandedIntegration` writer. It requests no ledger commit and cannot turn cache refresh into evidence that a remote landing occurred.
 
-`record_landing_result(args)`, which also asks the mandatory gate on converted memory (section below), cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:603-702)
+`record_landing_result(args)`, which also asks the mandatory gate on converted memory (section below), cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:604-710)
 refuses unless the call is approved or a dry run
-cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:605-605),
-loads the contract, refuses disabled contracts first (`is_disabled_contract`), and then calls `abandoned_contract_reason(contract)` (lines 611-618) **before** the `already-recorded` short-circuit: when `contract.cleanup == "abandoned"` or the contract's own task document reads `"abandoned"`, it returns `state_refusal_result(..., state="refused", code=CONTRACT_ABANDONED_CODE, error=abandoned_reason)` (`"contract-abandoned"`) in both dry run and apply without overwriting `cleanup: abandoned`, while leaving missing or unreadable task documents to the existing checks. For non-abandoned contracts, it short-circuits to `already-recorded` when the cell already records a
+cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:606-606),
+loads the contract, refuses disabled contracts first (`is_disabled_contract`), and then calls `abandoned_contract_reason(contract)` (lines 612-619) **before** the `already-recorded` short-circuit: when `contract.cleanup == "abandoned"` or the contract's own task document reads `"abandoned"`, it returns `state_refusal_result(..., state="refused", code=CONTRACT_ABANDONED_CODE, error=abandoned_reason)` (`"contract-abandoned"`) in both dry run and apply without overwriting `cleanup: abandoned`, while leaving missing or unreadable task documents to the existing checks. For non-abandoned contracts, it short-circuits to `already-recorded` when the cell already records a
 landed integration — `completed` or `checkpointed`
-cit:(["already-recorded"], mcp/src/agents_remember/worktrees/modules/record_landing.py:632-632) —
+cit:(["already-recorded"], mcp/src/agents_remember/worktrees/modules/record_landing.py:633-633) —
 so a repeat is idempotent rather than a second write.
 
-It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src/agents_remember/worktrees/modules/record_landing.py:513-513)
+It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src/agents_remember/worktrees/modules/record_landing.py:514-514)
 and resolves the branches that commit may legitimately have landed on. Both shapes occur: a master
 integrates into its recorded source branch (the super branch), while a task whose branch was merged
 straight to the protected default bypasses super entirely — which is what happened to
-`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:87-101)
+`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:88-102)
 therefore returns the recorded `code_source_branch` plus `main` when it exists locally, keeping only
 targets that are actually present.
 
 The anti-fabrication check is an ancestry test against those targets
-cit:(["not reachable from any landing target"], mcp/src/agents_remember/worktrees/modules/record_landing.py:543-543):
+cit:(["not reachable from any landing target"], mcp/src/agents_remember/worktrees/modules/record_landing.py:544-544):
 a commit that landed nowhere cannot set the cell. A `dry_run` reports `would-record` and writes
-nothing cit:(["would-record"], mcp/src/agents_remember/worktrees/modules/record_landing.py:657-657).
-The real path records `strategy=PR_STRATEGY` (imported from `worktrees/integration/standalone_pr_landing.py:26`, used at line 667)
+nothing cit:(["would-record"], mcp/src/agents_remember/worktrees/modules/record_landing.py:658-658).
+The real path records `strategy=PR_STRATEGY` (imported from `worktrees/integration/standalone_pr_landing.py:26`, used at line 668)
 through the shared writer, so the cell says which route landed the work. The
 call bundles its landed facts into the shared `LandedIntegration` record (the same record the local
 routes build) and appends no `checkpoint` flag, so this route still records a final landing
 cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66).
 
-The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:437-443)
+The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:438-444)
 rather than by `status_payload`. That is deliberate: this operation has no worktree or provider state
 to report, and avoiding the status payload keeps the operation callable and unit-testable without
 bound worktree services.
@@ -110,9 +110,9 @@ Reachable task-state preconditions return `ok:false`, their existing code and un
 
 The `already-recorded` short-circuit covers **both** landing states:
 `contract.integration_status in {"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/modules/record_landing.py:626-626),
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/modules/record_landing.py:627-627),
 and the summary branches on which one it found
-cit:(["This contract already records a checkpointed integration"], mcp/src/agents_remember/worktrees/modules/record_landing.py:636-636).
+cit:(["This contract already records a checkpointed integration"], mcp/src/agents_remember/worktrees/modules/record_landing.py:637-637).
 
 The `checkpointed` half is not cosmetic. The full-record path below writes `completed` plus
 `cleanup="pending"`, and that pending cleanup is exactly what `worktree_cleanup` requires before it
@@ -152,10 +152,18 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
+
 - The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts. [5]
+
+
 - The `already-recorded` guard covers both `completed` and `checkpointed` states so a checkpointed series is never upgraded into a reclaimable integration. [8]
+
+
 - The checkpointed summary preserves its still-open state and names `worktree_integrate` as its completion route. [9]
+
+
 - `record_landing_result` refuses abandoned contracts and abandoned task documents with `CONTRACT_ABANDONED_CODE` (`contract-abandoned`) before the `already-recorded` short-circuit without overwriting `cleanup: abandoned`. [20]
+
 
 - `_landing_request` sets `master_end=True` and `document_base=master_document_base(contract, code_commit=code, memory_commit=memory_commit)` for series contracts (and `None` for leaves). [19]
 
@@ -188,6 +196,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 
 
+
+
+- Advisory post-recording `briefs/` refresh attaches `briefsProblem` on recorded PR landings. [21]
 
 ### Cross-Repo References
 

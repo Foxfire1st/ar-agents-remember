@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
-    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
+    "codeTree": "0601566579ef39fe6cab0b43e547041eb7359a57",
+    "commit": "3e4c8d678835d3d077dfee722c1bfb89f1bf5359",
     "role": "curator",
-    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: docs/reference/worktrees-c09.md remains accurate with zero contradictions after L59 added the pre-short-circuit contract-abandoned guard in record_landing.py.",
-    "task": "261112-BUG-L59",
+    "statement": "Verified docs/reference/worktrees-c09.md against synced 3e4c8d678 + KNO-R07 candidate: worktree integration, checkpoint, and record-landing contracts remain accurate; post-landing briefs/ refresh is strictly advisory via briefsProblem.",
+    "task": "261112-KNO-L7",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+        "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
         "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
         "locator": {
           "kind": "symbol",
@@ -104,7 +104,7 @@
     },
     {
       "anchor": {
-        "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+        "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
         "content": "sha256:834b50635720414156aad7ce60d8689a5d5c0077188e1d782679d4b640d55ddd",
         "locator": {
           "kind": "symbol",
@@ -116,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-        "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+        "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T00:41:03+01:00",
+    "at": "2026-11-27T03:56:55+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L59",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
-    "task": "261112-BUG"
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

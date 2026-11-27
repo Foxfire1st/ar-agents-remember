@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/records_batch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "760c8e7aff305d678fa626f31129d0e2bdbc2bce",
+        "content": "sha256:ac932f3f4d8b1a618c07ab40577741e84117d0c8bebb1f7817ba7bbd68c404ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "records_view"
+        }
+      },
+      "id": "RLZ-022399",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Fetches up to 25 requested recordIds verbatim without statement trimming at up to 20 records per page inside the 5,000-token bound, naming bounded staleAnchors inline whenever stale > 0.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`records_view` enforces 25-ID cap, 20-record page cap, 4,650-token budget, and cursor validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "760c8e7aff305d678fa626f31129d0e2bdbc2bce",
+            "content": "sha256:ac932f3f4d8b1a618c07ab40577741e84117d0c8bebb1f7817ba7bbd68c404ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "records_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_format_invariant` returns verbatim statements, conditions, exclusions, and inline `staleAnchors` whenever `stale > 0`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "760c8e7aff305d678fa626f31129d0e2bdbc2bce",
+            "content": "sha256:87c49e564737f8e729a512f6e88035f8c7c7df0208e27f017f7afe77b8c331f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_format_invariant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_entry_paths` preserves every realization and proof symbol locator verbatim per path without collapsing or capping symbols.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "760c8e7aff305d678fa626f31129d0e2bdbc2bce",
+            "content": "sha256:a5d2600798c961171f6d39d9b23f15bd633b23af933ca041852186539d1bff01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

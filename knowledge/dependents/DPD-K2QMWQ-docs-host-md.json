@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56daf6642402898075d164df4e26178499116006",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
+    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
     "role": "curator",
-    "statement": "docs/host.md accurately adds post-upgrade step 4 describing runtime_install's stale-checkout listing and uv-managed Python 3.14 bootstrap recreation against install.py, checkout_environments.py, and scripts/bootstrap-mcp-venv.sh on synced base 65911c75 / candidate 56daf664.",
-    "task": "261112-BUG-L33",
+    "statement": "Verified docs/host.md against KNO-R07 candidate: MCP server host registration, dashboard, and CLI host behavior remain accurate after adding memory-briefs and knowledge_read query views.",
+    "task": "261112-KNO-L7",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -167,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:b71fadad0622db128c871576a5d114f73d8f95f85dd88cb3d2e6e3d5cbb8abb5",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:494b2564265a935dd2283abffd1a839b316d833274b1c652d9cd5c8ca98548c3",
         "locator": {
           "end": 256,
           "kind": "line_range",
@@ -265,14 +265,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:39:05+01:00",
+    "at": "2026-11-27T02:47:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

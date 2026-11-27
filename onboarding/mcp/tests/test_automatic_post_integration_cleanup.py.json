@@ -126,22 +126,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_integrated_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },

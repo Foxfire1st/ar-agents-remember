@@ -52,7 +52,7 @@ the cleanup guard checks carryover separately and refuses until it is done, so a
 here is not an assertion that memory was carried.
 
 Three callers reach it and no others: the local final integration result
-cit:(["def _integrated_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:642-692), the local
+cit:(["def _integrated_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:643-693), the local
 checkpoint result cit:(["def _checkpoint_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:1014-1058),
 and the pull-request entry point, which since MIK-R09 first checks the landed memory commit on converted memory
 cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:603-702).
@@ -112,14 +112,20 @@ The following current source boundaries establish the ledger-retirement behavior
 - The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) [3]
 - The landed facts this writer now takes as one frozen record. (`LandedIntegration`) [4]
 
+
 - The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) [5]
+
+
 
 
 - The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) [6]
 
 
 
+
 - The pull-request route calls the same writer. (`record_landed_integration(`) [7]
+
+
 
 > Retained earlier citation wording: - Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) [8]
 

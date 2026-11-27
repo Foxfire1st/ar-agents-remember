@@ -176,5 +176,7 @@ No meaningful cross-repo references found.
 
 - The four admitted ordering inputs the admission gate screens the request against, and the three renderers the dispatch table imports one per view name. [18]
 
+
 - The mounted knowledge read projects the converted tree result. Its paged reader uses read_knowledge_view internally to collect the renderer’s ordered slices. [15]
+
 - The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener. [10]

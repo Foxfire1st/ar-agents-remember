@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by dirty two-page resume and leaf-precedence tests, prevents false unverifiable currentness reports when a paired code tree was resolved, and forms half of the automatic code-tree pairing family guarantee."
+  },
+  "applicability": "Fresh and continuation-resumed paged knowledge_read walks over converted memory trees.",
+  "conditions": [
+    "Fresh reads forward the resolved context code_tree_id and captured dirty working-tree object_directory through _fresh_read and _at_code_tree.",
+    "Resumed reads over working-tree captures re-capture and re-verify the working tree in _resumed_working_tree, preserving object_directory when unchanged and refusing when mutated."
+  ],
+  "exclusions": [
+    "Does not mask a mutated working tree across continuation pages or invent a code tree when no code root resolves."
+  ],
+  "id": "INV-DW999J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_briefs_and_pairing.py (dirty resume + leaf precedence cases)"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 6",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Fresh and resumed paged tree reads forward the resolved CodeTree including repositoryRoot, code_tree_id, and any dirty working-tree object_directory so anchors are evaluated instead of reported unverifiable.",
+  "supersedes": [],
+  "title": "Paged tree reads forward resolved CodeTree and working-tree objects",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

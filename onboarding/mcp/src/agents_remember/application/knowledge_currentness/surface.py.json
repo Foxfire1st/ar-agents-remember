@@ -21,11 +21,11 @@
       ]
     },
     "10": {
-      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. Anchor: `read_published_intent`",
+      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block.",
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
             "content": "sha256:5be26a3a71d66ee5e95d4c7c1cb3a5049375cd567aaefe7db04b6dbbcb789b91",
             "locator": {
               "end": 308,
@@ -35,41 +35,18 @@
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
-            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "No tree, or only a repository, is unverifiable and never reads `HEAD`.\n\nAnchor: `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head`",
+      "note": "Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable.\n\nAnchor: `test_knowledge_read_without_a_named_tree_pairs_resolved_code_and_stays_unverifiable_without_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_currentness.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:f661cccb6214678afe8e668525b5f561ef5c285207806be7772f5e89089c066c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -82,22 +59,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_currentness.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -222,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",

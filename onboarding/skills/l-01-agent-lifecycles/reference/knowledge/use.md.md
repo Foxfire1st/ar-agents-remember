@@ -35,4 +35,5 @@ The Architect uses attribution with code reads to diagnose before proposing a re
 
 
 
+
 - The knowledge-use detail names `briefs/<path>.md` under the memory root. The Worker role directs the pre-edit brief read. Fuller runtime rows can include rule text. Compact rows can retain a pointer even when the saved brief is missing. [8]

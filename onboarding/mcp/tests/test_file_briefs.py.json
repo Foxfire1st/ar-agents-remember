@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:0bd49c8f638bb99786fe83a2324b2b8cc0fbf8a1306e2e41a54d2df8b5f44ed5",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:f6e29e3921b9b52d2d76294818ad9f569db24e241962984d6810f994ab2c85df",
         "locator": {
           "kind": "symbol",
@@ -37,11 +37,11 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
-        "content": "sha256:36974ea2e34dca39fea9659cf33da5355188afada7c2a55e2cf2203a786f77ef",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
+        "content": "sha256:3c778ab06b1e5b45f1e963f58be4b571287bee3566a7fc7c4cfdf1f10e3e2a18",
         "locator": {
           "kind": "symbol",
-          "name": "test_an_untitled_rule_is_named_by_its_first_six_words"
+          "name": "test_an_untitled_rule_is_named_by_its_first_clause"
         }
       },
       "facet": "The brief gives a legacy rule a display title without changing the stored rule.",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:f6e29e3921b9b52d2d76294818ad9f569db24e241962984d6810f994ab2c85df",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:7c4a7aa7593b0037cfe230c6eaea2b42fbb4d4e358cea3e4d32f8e067dd2aa32",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:5288608329df3db5b3593288df9cc17ebb71a488986bea3d850ab383edc678e7",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:d504774814665d3278dbbcc1e28059f95fae3e4997bf6e38712b1ab9f169adce",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:b64fb0ed9b3be57547ef1cca65e17f9168346ca78058e1de751d702ccff8e675",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
         "content": "sha256:6da80e69bc05d98325d8a675e2c4845edf971d8a84262426fd4aab08de758337",
         "locator": {
           "kind": "symbol",
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+            "blob": "3a24fb4c43e5d9fdaa439cea418649eb1a51e624",
             "content": "sha256:6da80e69bc05d98325d8a675e2c4845edf971d8a84262426fd4aab08de758337",
             "locator": {
-              "end": 571,
+              "end": 593,
               "kind": "line_range",
-              "start": 518
+              "start": 540
             }
           },
           "kind": "test"

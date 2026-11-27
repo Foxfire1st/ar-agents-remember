@@ -2364,7 +2364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
             "content": "sha256:033f68c14d8a8997ddbf56030258113ab31200940fc576288a9391fab6e12b2f",
             "locator": {
               "end": 290,
@@ -3437,12 +3437,12 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:aa63ccba3ea2b5e7409a67bc1c6ccaf0c5f79798662529f30f726c821c9d3d2b",
             "locator": {
-              "end": 608,
+              "end": 609,
               "kind": "line_range",
-              "start": 552
+              "start": 553
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -3696,63 +3696,14 @@
       ]
     },
     "298": {
-      "note": "Shaped bounds, final rows, interim ownership and exceptions each participate in bound resolution.\n\nAnchor: `SHAPED_TOOL_BOUNDS`, `L112_FINAL_BOUNDS`, `TOOL_ANSWER_EXCEPTIONS`, `INTERIM_TOOL_LEAF`, `bound_for`",
+      "note": "Shaped bounds, final rows, interim ownership and exceptions each participate in bound resolution.\n\nAnchor: `SHAPED_TOOL_BOUNDS`; `L112_FINAL_BOUNDS`; `TOOL_ANSWER_EXCEPTIONS`; `INTERIM_TOOL_LEAF`; `bound_for`",
       "targets": [
         {
           "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
-            "content": "sha256:461007092af6980f587ac3f4247b21c30e23eb0438420eed416cbec5434274ef",
+            "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+            "content": "sha256:cc24db7f65c9cda1c599c395de8f65e81cee3c1c367418156729282bc906c857",
             "locator": {
-              "kind": "symbol",
-              "name": "SHAPED_TOOL_BOUNDS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
-            "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
-            "locator": {
-              "kind": "symbol",
-              "name": "L112_FINAL_BOUNDS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
-            "content": "sha256:f360f64a90ef6927ceb594662430a3251db55814dc532d30176a727033283cb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_ANSWER_EXCEPTIONS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
-            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "INTERIM_TOOL_LEAF"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
-            "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
-            "locator": {
-              "kind": "symbol",
-              "name": "bound_for"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
@@ -4190,7 +4141,7 @@
         },
         {
           "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+            "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
             "content": "sha256:461007092af6980f587ac3f4247b21c30e23eb0438420eed416cbec5434274ef",
             "locator": {
               "kind": "symbol",
@@ -4867,12 +4818,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+            "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
             "content": "sha256:333201f187b41ee930ef52be503736779fc0ce24c41edcaa97b8cc87bc728a44",
             "locator": {
-              "end": 177,
+              "end": 188,
               "kind": "line_range",
-              "start": 170
+              "start": 181
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },

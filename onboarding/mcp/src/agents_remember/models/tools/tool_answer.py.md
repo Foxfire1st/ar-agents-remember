@@ -27,7 +27,7 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 The note-only `citation_note_revision` answer has a final shaped bound of 1,200 tokens. Its response names the revised reference, before/after sidecar digests and refusal vocabulary; complete sidecar rows remain whole-result log data.
 
-The bounds are `read_ar_files` 2400, `knowledge_read` 4000, `knowledge_diff` 1500 and `context_packet` 360 tokens. The compact file briefs are fitted within the `read_ar_files` bound before the answer leaves. These four names have no L109 interim row, and INTERIM_LEAVES does not contain L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps remain. Overflow shaping targets 400 tokens while retaining the exact recorded-result location and the final cut hint, even when mandatory content cannot fit that target.
+The bounds are `read_ar_files` 2400, `knowledge_read` 5000 (for batch full-text `records` up to 20 records per page and family-complete pages with short currentness), `knowledge_diff` 1500 and `context_packet` 360 tokens. The compact file briefs are fitted within the `read_ar_files` bound before the answer leaves. These four names have no L109 interim row, and INTERIM_LEAVES does not contain L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps remain. Overflow shaping targets 400 tokens while retaining the exact recorded-result location and the final cut hint, even when mandatory content cannot fit that target.
 
 ### Retained answer keys
 
@@ -37,8 +37,8 @@ The bounds are `read_ar_files` 2400, `knowledge_read` 4000, `knowledge_diff` 150
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:151-178`.
-- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:180-213`.
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:162-189`.
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:191-224`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -60,7 +60,7 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 
 ### Logic
 
-- Bounds and table: `TOOL_ANSWER_MAX_TOKENS = 1500`, exceptions to at most 4000, list cap 20, short-form target 400, with the exact recorded location and final cut hint retained when mandatory content cannot fit, error and warning text capped at 600 characters, and code capped at 120 characters. `TOOL_ANSWER_EXCEPTIONS` holds per-tool bounds; interim rows (bound 4000, no fields) name the leaves in `INTERIM_LEAVES` (L100, L110, L111, L112, L183). `bound_for` resolves a tool's own bound; `interim_leaf_for` names the owning leaf.
+- Bounds and table: `TOOL_ANSWER_MAX_TOKENS = 1500`, exceptions to at most `TOOL_ANSWER_EXCEPTION_MAX_TOKENS = 4000` except `("knowledge_read", None)` whose ceiling is `TOOL_ANSWER_KNOWLEDGE_READ_MAX_TOKENS = 5000` via `exception_ceiling_for`, list cap 20, short-form target 400, with the exact recorded location and final cut hint retained when mandatory content cannot fit, error and warning text capped at 600 characters, and code capped at 120 characters. `TOOL_ANSWER_EXCEPTIONS` holds per-tool bounds; interim rows (bound 4000, no fields) name the leaves in `INTERIM_LEAVES` (L100, L110, L111, L112, L183). `bound_for` resolves a tool's own bound; `interim_leaf_for` names the owning leaf.
 - `strip_envelope` removes exactly the envelope fields (`tokens`, `tokenizer`, `tokenCountExact`, `operation`) on all paths through the choke.
 - `truncate_lists` applies the ordinary projection's twenty-entry cap recursively through retained list items and mappings, preserving order, count and location.
 - `short_form` builds the fixed part, reserves the exact recorded location and measures whole declared fields or their fitting omission notices before error text, warning text and optional scalars. Fitting declared outcomes and actions appear ahead of the available locator in the delivered mapping. Each fitting whole value or omission notice reserves its space before the fitter tries the next field. The final measure includes `droppedFields` and the last-field `cut` hint. Late logging refits check each declared child path. After each scalar is shed, the hint fitter measures the current dropped-field count. The final fit sheds optional scalars, warning text and error text in that order. The location and hint remain when mandatory content cannot fit the 400-token target. With no recorded whole-result file, the hint says so and gives the logging reason.
@@ -84,7 +84,8 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 
 - Interim ownership is an explicit tool-to-leaf map; `direct_execution_grant` has no entry and takes its shaped 150-token bound. [5]
 
-- Shaped bounds include 600 tokens for role_start and 150 for direct_execution_grant, which lacks a raw interim-map entry. The role_message exception overrides its shaped row. Assembled table rows and the raw interim map have separate owners. runtime_install is the sole retained L112 final bound. [6]
+- Shaped bounds include 600 tokens for `role_start` and 150 for `direct_execution_grant`, which lacks a raw interim-map entry. The `role_message` exception overrides its shaped row. Assembled table rows and the raw interim map have separate owners. `runtime_install` is the sole retained L112 final bound. [6]
+- `TOOL_ANSWER_KNOWLEDGE_READ_MAX_TOKENS` (5000) and `exception_ceiling_for` authorize the 5,000-token `knowledge_read` exception row. [17]
 
 ## The settings answer's bound
 

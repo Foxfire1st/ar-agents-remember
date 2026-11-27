@@ -19,7 +19,7 @@ Cutover refusal helpers, worktree candidate capture and contract loading are imp
 
 ### Logic
 
-Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record body is delivered by a naming projection: its rows carry names and derived state. The requested marks views are the exception the requirements name — a `weakness` row carries that weakness's own statement and, where the record holds one, its measurement — and neither view carries a document body. Source-resolution pairs remain complete or absent. [1]
+Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record body is delivered by a naming projection: its rows carry names and derived state. The requested marks views and query views are the requirement-authorized top-level exceptions — `weakness` carries a weakness's own statement and measurement, `dependent` supports `folder` fallback and `compact=True` projection through `compact_dependent_rows`, and `QUERY_VIEWS` (`records`, `impact`, `search`) route through `_one_view` and `knowledge_queries.run_query_view` (with `records` delivering bounded batch full-text records). `ReadToolRequest` carries `repo_id`, `contract_path`, `files`, `folder`, `query`, `kinds`, `record_ids`, and `compact`. Source-resolution pairs remain complete or absent. [1]
 
 Diff compares knowledge/onboarding Git files, privately captures the memory working tree when afterRevision is absent, and writes the whole selected comparison as a report before projecting the answer. `_reported_body` returns both compared trees, counts by kind, decision-ordered record names up to `TOOL_ANSWER_LIST_MAX`, their total `decisionRecordCount`, and the report location. The report holds patches and source/record groups; the mounted answer carries no comparison body, `diff`, `complete` or `leftOut`, and infers no semantic effect label. A report write failure refuses `report-unwritable`, retaining the actual cleanup/residual facts.
 
@@ -37,43 +37,25 @@ database files refuse before an open; change/project and selected-run fields are
 
 ### Logic
 
-`knowledge_read_payload` refuses a view outside its admitted views — `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent`, `writers` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
+`knowledge_read_payload` refuses a view outside its ten admitted views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
 
-**The read context's source-resolution pair is completed rather than half-supplied, and the mount hands
-over a default repository rather than half a pair.** `_source_resolution(request, workspace_root)`
-returns `(repository_root, code_tree_id)` and never one without the other: a caller who named both gets
-both back untouched, a caller who named a root gets that root's own current tree from
-`_current_code_tree` (since 260928-MIK-L01, a named root with no tree is refused by name, below), and a
-caller who named neither gets the mount's workspace default **only when a tree can actually be resolved
-from it**. `_current_code_tree` shells `git -C <root> rev-parse
-HEAD^{tree}` under `_GIT_TIMEOUT_SECONDS`, validates the answer against `_TREE_ID_PATTERN` and returns
-`None` — never a guess — when the root is not a repository, Git is absent, Git does not answer in time,
-or the answer is not a tree id; the context is then built with neither half. This is what the registration
-hands over as `workspace_root=`, and it is why a minimal schema-conformant `knowledge_read` returns a
-view instead of a raw `KnowledgeReadContext` validation error.
+**Code-tree resolution and automatic pairing.** Code-tree resolution is delegated to `application/knowledge_code_pairing` (`observe_code_source`, `resolve_paired_code_root`, `code_tree_of`, `NoCodeTreeError` aliased as `_NoCodeTreeError`, `ObservedCodeSource` aliased as `_ObservedSource`). `knowledge_read_payload` and `_read_result` accept `repositories`. For paged views, `_read_result` resolves `paired_code_root` via `resolve_paired_code_root`, observes the code source on fresh reads via `_observe_source`, and forwards `code_state`, captured working-tree `object_directory`, and `paired_code_root` into `open_read_context` and `TreeReadScope`. `_record_view` and `_marks_view` obtain their code tree through `_observed_source_or_none` -> `_code_tree_of`, auto-pairing when no explicit `codeTreeId` is given and degrading to `None`/unverifiable when no root resolves. A caller-named `repositoryRoot` that resolves no tree raises `_NoCodeTreeError` (`selected_input_unavailable`).
 
 ### Invariants And Boundaries
 
 - **No builder decides anything.** No classification is computed, no effect label inferred, no draft authored, no rationale judged, no ambiguity resolved by choosing, no missing assessment filled and no compatibility verdict produced anywhere in the module.
 
-- **No semantic classification is added by naming.** `_read_result` retains the rich body, its selected tree and shared resolver internally; `_projected_body` mechanically projects that body for the mounted answer, and it invents no assessment. It is also the route the marks views take, so it does not withhold record text as a rule: on an ordinary naming view it returns names and derived state and no record body, and on a requested `weakness` or `dependent` view it carries the top-level rows MIK-R118 and MIK-R124 authorize, including a weakness's own statement and, where the record holds one, its measurement.
+- **No semantic classification is added by naming.** `_read_result` retains the rich body, its selected tree and shared resolver internally; `_projected_body` mechanically projects that body for the mounted answer, and it invents no assessment. It is also the route the marks and query views take: on an ordinary naming view it returns names and derived state and no record body; on a requested `weakness` or `dependent` view it carries the top-level rows MIK-R118 and MIK-R124 authorize; and on `records`, `impact`, or `search` it delegates through `_one_view` to `knowledge_queries.run_query_view`.
 
 - **A continuation is carried opaquely.** The builder never resolves or guesses a snapshot binding.
 
-- **A source-resolution pair is named as a pair or not at all.** `_source_resolution` never returns a
-  root without a tree or a tree without a root: a caller-named root is completed with that root's own
-  current tree, the mount's workspace default is named only when a tree can be resolved from it, and
-  since 260928-MIK-L01 a caller-named root Git cannot answer for (no commit, or not a repository) is
-  refused `selected_input_unavailable` naming the root, rather than passed on as half a pair. `_current_code_tree` returns `None` — never a
-  guess — for a root that is not a repository, an absent Git, a timeout or an answer that is not a tree
-  id, so a minimal read reaches the context as "no source resolution was requested" instead of as a
-  raised validation error out of the mounted tool.
+- **A source-resolution pair is named as a pair or not at all.** `_observe_source` (via `observe_code_source`) never returns a root without a tree or a tree without a root: a caller-named root without a tree raises `_NoCodeTreeError` (`selected_input_unavailable` naming the root); when neither root nor tree is supplied, pairing resolves `paired_code_root` (from `contractPath`/`repo_id`/`memoryRoot`/workspace) and observes its code tree, or leaves the pair unrequested (`None`) when no code root resolves.
 
-## MIK-R118 Rule 6 And MIK-R124 Rule 7 — The Two Marks Views
+## MIK-R118 Rule 6, MIK-R124 Rule 7, And KNO-R07 Query Views
 
-The selected-tree reader sends `record` to `_record_view`, `weakness` and `dependent` to `_marks_view`, and `writers` to `_writers_view`. The record view retains derived revision state and writer attribution. The writers view returns aggregate rows and a full report path through the same mounted read.
+The selected-tree reader sends `record` to `_record_view`, `weakness` and `dependent` to `_marks_view`, `writers` to `_writers_view`, and `QUERY_VIEWS` (`records`, `impact`, `search`) to `knowledge_queries.run_query_view` via `_one_view` with a `QueryViewContext`. The record view retains derived revision state and writer attribution. The writers view returns aggregate rows and a full report path through the same mounted read.
 
-`weakness` lists the tree's open weaknesses — `weaknessKind` picks one kind, `sourcePath` a folder, `includeClosed` adds closed records — and a row holds the id, the file, the kind, the statement and the state, with the measurement and the closing where the record holds them and the anchor's state at the read's code tree. `dependent` lists the documents — `sourcePath` a folder of documents, `staleOnly` the stale ones, `standsOn` those with a link at a named code file — and a row holds the id, the document, the derived state, the last confirmation and the revision, with `movedLinks` naming each link that moved where it is stale. Neither view writes: a weakness anchor is observed, a dependent's state is derived, and no byte of a record changes.
+`weakness` lists the tree's open weaknesses — `weaknessKind` picks one kind, `folder` (falling back to `sourcePath`) a folder, `includeClosed` adds closed records — and a row holds the id, the file, the kind, the statement and the state, with the measurement and the closing where the record holds them and the anchor's state at the read's code tree. `dependent` lists the documents — `folder` (falling back to `sourcePath`) a folder of documents, `staleOnly` the stale ones, `standsOn` those with a link at a named code file, and `compact=True` projects through `compact_dependent_rows` — and a row holds the id, the document, the derived state, the last confirmation and the revision, with `movedLinks` naming each link that moved where it is stale. Neither view writes: a weakness anchor is observed, a dependent's state is derived, and no byte of a record changes.
 
 The answer is a page. `limit` is the caller's, capped at `TOOL_ANSWER_LIST_MAX`; `counts` carries `rowsReturned`, `total`, `rowsRemaining` and `offset`; and while rows remain a `readOn` block names the same view, its narrowing filters and the `rows:<n>` cursor the next page starts at. A continuation is read as `rows:<n>` and nothing more: `_marks_offset` accepts that shape, starts at `0` when none
 is given, and refuses `bad_continuation` naming the shape it reads for anything else. It checks no issuer, view, tree
@@ -182,7 +164,7 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
-- The public read projects names from its selected rich page; source-resolution pairs and internally prepared proof/currentness extras remain distinct. [1]
+- The public read projects names from its selected rich page; code-source observation and internally prepared proof/currentness extras remain distinct. [1]
 
 
 
@@ -213,13 +195,9 @@ No configured domain documentation could be checked.
 - - The tool returns the latest worklist. [63]
 - - A converted tree's page carries `currentness` at the walk's code tree, computed once per page beside its proofs. [64]
 
-- - A named tree flags the stale invariant and keeps it visible. [65]
-
-
-- - Without `codeTreeId` it is unverifiable and never reads `HEAD`. [66]
-
-
-- - A failing step never refuses the view. [67]
+- A named tree flags the stale invariant and keeps it visible. [65]
+- Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable. [66]
+- A failing step never refuses the view. [67]
 
 
 
@@ -227,12 +205,10 @@ No configured domain documentation could be checked.
 
 
 
-- - The paged tree read this module hands a converted selection to. [71]
-
-- - A named root that resolves no code tree is its own error, refused `selected_input_unavailable` naming the root. [72]
-- - `_source_resolution` raises it for a caller-named root without a tree. [73]
-
-- - The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed). [74]
+- The paged tree read this module hands a converted selection to. [71]
+- A named root that resolves no code tree is its own error, refused `selected_input_unavailable` naming the root. [72]
+- `_observe_source` / `observe_code_source` raises `NoCodeTreeError` for a caller-named root without a tree. [73]
+- The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed). [74]
 
 
 
@@ -241,10 +217,9 @@ No configured domain documentation could be checked.
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
 
-- The mounted reader dispatches the writers aggregate and distinguishes it from record and mark results. [79]
+- The mounted reader dispatches `QUERY_VIEWS` (`records`, `impact`, `search`), writers aggregate, record, and mark views through `_one_view`. [79]
+- Code-tree observation and pairing resolve explicit or paired code roots (refusing a caller-named root without a tree) or leave the pair unrequested when no root resolves. [80]
 
-
-- - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
 
 ### Cross-Repo References
@@ -259,12 +234,10 @@ No cross-repository contract is established by this file.
 - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 
 - A converted tree's read is handed to the paged tree read right after the selection. [68]
-
 - A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer. [70]
-
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
-
 - Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
+- Admitted views include `records`, `impact`, and `search`; `_marks_rows` applies `folder` fallback and `compact_dependent_rows` when `compact=True`. [87]
 
 
 - The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]

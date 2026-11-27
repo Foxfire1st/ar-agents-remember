@@ -16,7 +16,7 @@
 
 - The cache groups files by loaded build and memory-tree key; `open_cached_index` exposes read-only reuse of an existing matching file.
 
-- `__all__` re-exports `RecordStanding` and `RecordWriter` alongside the public names of those modules, so callers (`application/published_intent.py`, `mcp/tools/knowledge.py`, `cli/knowledge_index.py`) import from the package.
+- `__all__` re-exports `RecordStanding`, `RecordWriter`, and the FTS5 search surface (`ALLOWED_SEARCH_KINDS`, `DEFAULT_SEARCH_KINDS`, `FtsHit`) from `.fts` alongside the public names of those modules, so callers (`application/published_intent.py`, `mcp/tools/knowledge.py`, `cli/knowledge_index.py`) import from the package.
 
 ### Conventions
 
@@ -61,5 +61,4 @@ No cross-repo boundary is crossed by this file.
 - Public index surface includes prose companions without making prose an indexed model. [3]
 
 - The public lookup types include record standing and its writer projection. [5]
-
-- The re-exported public surface. [2]
+- The re-exported public surface, including FTS5 search kinds and `FtsHit` from `.fts`. [2]

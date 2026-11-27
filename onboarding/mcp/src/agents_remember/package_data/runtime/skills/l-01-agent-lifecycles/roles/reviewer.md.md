@@ -127,6 +127,7 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The Reviewer prohibits seat absorption alongside code/onboarding edits, requirement rewrites, task acceptance, role starts, Git publishes, gate decisions and operator-setting changes. [5]
 
 
@@ -193,6 +194,8 @@ No meaningful cross-repo references found.
 
 
 
+
+
 - Review starts on owner assignment and requires mode, seam, requirement IDs/versions/packets/approval, exact candidate with passing clean-copy checks, Worker attempts, and `system/tools.md`/guidelines before inspecting. [26]
 
 
@@ -205,6 +208,7 @@ No meaningful cross-repo references found.
 
 
 - The Reviewer marks review `done` via `task_doc(set_step)` only after the last round passes. [32]
+
 
 
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "35aff1724ecab78abe2572eab397e23f1de035ca",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "codeTree": "0601566579ef39fe6cab0b43e547041eb7359a57",
+    "commit": "3e4c8d678835d3d077dfee722c1bfb89f1bf5359",
     "role": "curator",
-    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against CAP-L6 candidate tree 35aff1724eca (off synced base 63ff759a8): pins no counts or runtime-installer implementation details; clean_room.py's dropped_selectors stderr notice, .dagger/src/agents_remember_quality/main.py's uv-managed Python 3.14 container base, and the updated test-evidence-lanes.toml / evidence-lifecycle.toml catalogs leave every documented altitude, lane, catalog, fixture, quality-obligation, selection, retry-v3, causal, and command contract accurate with zero contradictions.",
-    "task": "261124-CAP-L6",
+    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against synced 3e4c8d678 + KNO-R07 candidate: pins no counts; registering the two KNO-R07 unit-regression modules in test-evidence-lanes.toml and evidence-lifecycle.toml leaves every documented altitude, lane, catalog, fixture, quality-obligation, selection, retry-v3, causal, and command contract accurate with zero contradictions.",
+    "task": "261112-KNO-L7",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 28,
+  "revision": 29,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+      "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
+      "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T01:42:36+01:00",
+    "at": "2026-11-27T03:56:55+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L6",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "fc6f5c77-19c8-5951-815d-de85e40746b6",
-    "task": "261124-CAP"
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

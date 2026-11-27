@@ -22,6 +22,7 @@
 - `database_path` is the file itself — the dataset the reused read code opens — and `repository_id` is the index's constant namespace.
 - `history_row(row_id)` (MIK-R74 rule 4) answers every row filed under that ID, each with the path of the file that holds it: two closed files may hold the same row ID, so the lookup names every match and the caller picks by path. The reader uses it to name the
   record a row is about when a link's source is a history row.
+- `search_fts(query_text, *, kinds=None, limit=None)` runs deterministic FTS5 keyword search over `ix_fts` via `fts.search_fts` and wraps the `FtsHit` tuple in `Answer` carrying `IndexState`, so partial-index search results never claim completeness.
 
 ### Conventions
 
@@ -143,3 +144,5 @@ No cross-repo boundary is crossed by this file.
 - One history row by its ID. [20]
 - Entries of the files directly in a directory (F2). [5]
 - The directory condition and the prefix it is built from. [9]
+
+- Deterministic FTS5 keyword search over live records wrapped in `Answer` with `IndexState`. [24]

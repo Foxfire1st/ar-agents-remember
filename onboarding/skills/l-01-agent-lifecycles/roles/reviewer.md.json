@@ -59,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-        "content": "sha256:e987f930518596576af11d6e544b5cb637447b4909038d0a1498dc287585114b",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
         "locator": {
-          "end": 97,
+          "end": 8,
           "kind": "line_range",
-          "start": 86
+          "start": 8
         }
       },
       "id": "RLZ-5Y931E",
@@ -73,7 +73,7 @@
         "handoffEntry": "BUG-R54@v1 §1",
         "leaf": "261112-BUG-L54"
       },
-      "rationale": "Directs Reviewers to write verdicts in the handover's local report folder and record memory verdictRef in one of the three accepted forms within the reviewer capsule ceiling.",
+      "rationale": "The Reviewer role card (line 8) directs writing verdicts in the local report folder using the verdict template for verdictRef.",
       "role": "presentation"
     },
     {

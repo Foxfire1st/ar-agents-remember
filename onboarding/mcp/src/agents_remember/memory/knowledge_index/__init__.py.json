@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
+            "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
             "content": "sha256:af262f382ce5480f3ad4aa5912d578dc41f8bc83507153a56a80ff1511fe25f5",
             "locator": {
               "end": 19,
@@ -20,14 +20,14 @@
       ]
     },
     "2": {
-      "note": "The re-exported public surface.",
+      "note": "The re-exported public surface, including FTS5 search kinds and `FtsHit` from `.fts`.",
       "targets": [
         {
           "anchor": {
-            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
-            "content": "sha256:4476ec1ae1f55eb38290a1336591f3873687bfa93b16c53869eb60c7eaa90c33",
+            "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
+            "content": "sha256:daa3f42016b52613a5aecf3a27dab30317e033450bcc0d4a65805c229ac85b9a",
             "locator": {
-              "end": 92,
+              "end": 100,
               "kind": "line_range",
               "start": 23
             }
@@ -53,24 +53,24 @@
         },
         {
           "anchor": {
-            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
+            "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
             "content": "sha256:f33e496c3db55628e5968b929d7cc7b5e5577826d87f8893bf449ab714804b4b",
             "locator": {
-              "end": 57,
+              "end": 62,
               "kind": "line_range",
-              "start": 50
+              "start": 55
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
+            "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
             "content": "sha256:f91447a425b1cfb8eca83dcc605004b0db75e36c068d690fea95a0ba24be03ec",
             "locator": {
-              "end": 91,
+              "end": 99,
               "kind": "line_range",
-              "start": 88
+              "start": 96
             }
           },
           "kind": "code"
@@ -82,12 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
-            "content": "sha256:88f01fa45e877b0f7ef34969bd0bc65ab2354c59171b2b19413bb21ce5f1325e",
+            "blob": "d89303ae10fe79e12a58d6e4b3ea0ba17bacd142",
+            "content": "sha256:e7c5d408eecfa29973341357ffef1024c672e96aa23e6581bf5fdceac334eeda",
             "locator": {
-              "end": 83,
+              "end": 90,
               "kind": "line_range",
-              "start": 48
+              "start": 53
             }
           },
           "kind": "code"

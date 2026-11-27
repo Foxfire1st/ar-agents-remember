@@ -8,7 +8,7 @@
   "applicability": "Invariant publication and display by builds that serve the KNO-R04 title contract.",
   "conditions": [
     "New invariants require a one-line title of at most 80 characters.",
-    "A legacy untitled revision remains writable with a notice; the brief and short answer derive a display title from its first six statement words.",
+    "A legacy untitled revision remains writable with a notice; the brief and short answer derive a readable first-clause display title up to roughly 80 characters without mutating the record.",
     "A title-only edit preserves the invariant revision."
   ],
   "exclusions": [
@@ -26,27 +26,20 @@
     "leaf": "261112-KNO-L4",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "New rules require a title and legacy rules without one can still be displayed and revised.",
   "supersedes": [],
+  "title": "New rules require titles and legacy untitled rules display first clause",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-KNO-L4",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-KNO",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

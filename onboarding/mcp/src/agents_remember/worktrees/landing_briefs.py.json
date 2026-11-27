@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/landing_briefs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+        "content": "sha256:218a54f94258227bed17b0831078c71461d85c508685f888569eb9dcd590a7c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "refresh_recorded_landing_memory_briefs"
+        }
+      },
+      "id": "RLZ-6SP80V",
+      "invariant": "INV-8F4C0F",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 2",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Compares each branch_worktree_owners checkout HEAD against the landed memory commit, refreshes matching checkouts via WorktreeServices.file_briefs, and returns an explicit advisory notice when no checkout has pulled the landed commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+        "content": "sha256:bef9ee892f0c023fb6cd0792f602970613d797d7a8a9110314f2e1927116988d",
+        "locator": {
+          "kind": "symbol",
+          "name": "refresh_integrated_memory_briefs"
+        }
+      },
+      "id": "RLZ-K626P4",
+      "invariant": "INV-M36NT5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 1",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Checks external memory mode and non-ledger git diff excluding memory.md, iterates branch_worktree_owners, and delegates to the composition-bound WorktreeServices.file_briefs port so worktrees never imports application.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Integration and checkpoint brief refresh checks external mode, skips ledger-only diffs, and refreshes converted branch-owner checkouts via `WorktreeServices.file_briefs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+            "content": "sha256:bef9ee892f0c023fb6cd0792f602970613d797d7a8a9110314f2e1927116988d",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_integrated_memory_briefs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded-landing brief refresh requires checkout `HEAD == target_commit` and returns explicit pull and `memory-briefs` CLI guidance when no checkout matches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+            "content": "sha256:218a54f94258227bed17b0831078c71461d85c508685f888569eb9dcd590a7c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_recorded_landing_memory_briefs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Non-ledger content diff excludes `LEDGER_RELATIVE_PATH` (`memory.md`) via `git diff --name-only --no-renames`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369c1979af1fe0241cfc92d696c93387162c6b11",
+            "content": "sha256:6d4d3f2164b06da408ec92d34e918a131228baf02b5ac9bb58e46dd0a11f39cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_content_changed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_query_formatting.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`trim_statement` caps statements at `STATEMENT_WORD_CAP` (`80` words) and appends a `records <ID>` pointer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+            "content": "sha256:2b6f6c95cc8cb4a0776489e4e20a043afb08aac0094c80e4fd6bc06f96e456c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "trim_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`anchor_counts` and standing helpers compute current/stale/unverifiable totals and pipe-delimited standing tags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+            "content": "sha256:8fda4ca29dd8b9ca8c4c5e079ad4bcab496ac3f343a666358d47d475fb15d233",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`resolve_indexed_paths` resolves exact and unique-suffix paths against indexed entries and reports unmatched inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+            "content": "sha256:f780bcbd1aea772b99cf677d54526e77949210b836b880b49ca0e10562f13c8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_indexed_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`decode_query_cursor` validates `kq1.<view>:<digest>:<offset>` prefix, syntax, view, and scope/tree digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+            "content": "sha256:44474b594396a672b16074cb5b3899be0298ebe787ffaa76e928f50babacfb5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_query_cursor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`fit_slice_in_budget` binary-searches token-bounded page slices with guaranteed progress and exact page estimation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a196fdfc312d699fc782116020dc81cf6dedc180",
+            "content": "sha256:fb0e018db79e0b0239458f61e746ff2cad610303c4f38332f1be1aa1eec943b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "fit_slice_in_budget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

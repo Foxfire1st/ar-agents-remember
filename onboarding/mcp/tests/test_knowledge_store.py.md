@@ -41,7 +41,7 @@ code, offending record, row counts) rather than internal call order.
 
 None recorded.
 
-The schema pin is ar-knowledge-sqlite/v10 with user_version 10. The expected derived tables include ix_revision. The open guard refuses generations 1, 9 and 11 by name.
+The schema pin is ar-knowledge-sqlite/v10 with user_version 10. The expected derived tables include `ix_revision` and `ix_fts` (along with its FTS5 shadow tables `ix_fts_config`, `ix_fts_content`, `ix_fts_data`, `ix_fts_docsize`, and `ix_fts_idx`). The open guard refuses generations 1, 9 and 11 by name.
 
 ## Evidence
 
@@ -108,7 +108,8 @@ No meaningful cross-repo references found.
 
 
 - The schema pin observes the new generation and verifies table drift refusal. [33]
-- The declared derived table set includes ix_revision. [34]
+
+- The declared derived table set includes `ix_revision`, `ix_fts`, and the FTS5 shadow tables. [34]
 
 - The unit-regression lane selects mcp/tests/test_knowledge_store.py. [19]
 
@@ -117,7 +118,6 @@ No meaningful cross-repo references found.
 - The seal covering more than the statement. [16]
 - The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage. [14]
 - The database-level immutability proof against the stored revision rows. [15]
-
 - Read-only production store and test-only builder. [13]
 - Three separately recorded single-revision records stay independently addressable with their exact statements. [1]
 - Identity/schema preserved on reopen. [2]

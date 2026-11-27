@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/fts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+        "content": "sha256:226a3e24fee37317c790c4088d0902fbe4ff8007fe7cd304e50f4397e6c849eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "search_fts"
+        }
+      },
+      "id": "RLZ-D4TGGZ",
+      "invariant": "INV-TT65V5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 8",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Executes Porter FTS5 BM25 queries with column weighting, exact-phrase boost, per-term coverage counts, and deterministic record_id tie-breaking.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+        "content": "sha256:ad726de2e38439390ad586190d1e1a29422b582f31f29fba0fe1c746c8d59ad8",
+        "locator": {
+          "kind": "symbol",
+          "name": "populate_fts"
+        }
+      },
+      "id": "RLZ-P2JXZQ",
+      "invariant": "INV-TT65V5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 8",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Populates ix_fts in deterministic record_id order from live records' title, statement, conditions, and applicability while excluding history, retired invariants, and closed weaknesses.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines default and allowed live search kinds (excluding `history/`) and BM25 column weights.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+            "content": "sha256:e3a4b13fafae1a00354f07bdaed0c0f3f5fcae122cf49cc2f58fe051aeb221d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_SEARCH_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`populate_fts` populates `ix_fts` in sorted `record_id` order while skipping retired invariants and closed weaknesses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+            "content": "sha256:ad726de2e38439390ad586190d1e1a29422b582f31f29fba0fe1c746c8d59ad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "populate_fts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`search_fts` ranks hits with BM25, distinct-term coverage, exact-phrase boost, and deterministic `record_id` tie-breaking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+            "content": "sha256:226a3e24fee37317c790c4088d0902fbe4ff8007fe7cd304e50f4397e6c849eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "search_fts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_excluded_from_live_fts` filters out retired invariants and closed weaknesses from the live FTS table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4e34a2a23bc654020e068f36f373390423b376",
+            "content": "sha256:380d84eabb75d9ce29e35efad146bd9f5932c66bd3f791b9e4a31e9eeca0716e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_from_live_fts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
