@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across paseo_bridge.mjs, paseo_bridge.py, paseo_catalog.py, and role_launch_preparation.py, and proved by test_paseo_catalog_preparation.py, test_paseo_launch.py, and test_paseo_bridge_catalog_freshness.py."
+  },
+  "applicability": "Server operations inside launcher_catalog_question() (metadata /api/role-launch/options and /api/role-launch/dispatch preparation).",
+  "conditions": [
+    "readCatalog metadata mode returns a launcher-scoped daemonConfig projection (agentProfiles and per-provider options/params for extraArgs and supportsMcpServers, excluding provider env maps) or an explicit daemonConfigError.",
+    "launcher_daemon_configuration() stores the answer in an operation-scoped ContextVar cleared on exit, and recorded errors propagate as unavailable/DAEMON_CONFIG_UNVERIFIED without spawning fallback bridge calls."
+  ],
+  "exclusions": [
+    "No cross-operation or process-lifetime cache is introduced (INV-RQ2ZB8 preserved); callers outside launcher_catalog_question() or replies omitting both fields retain direct bridge calls."
+  ],
+  "id": "INV-VNT8DT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/34_launcher-options-coalesced-and-clean-9763ab777e-ar/role-reports/worker/2b56f62f-7fe4-56a7-9c61-6107077010c6/role-launch/261112-BUG-L34-worker-2b56f62f-7fe4-56a7-9c61-6107077010c6.md#operation-scoped-host-configuration"
+      ],
+      "path": "L34-W3-curator-ingest"
+    },
+    "handoffEntry": "BUG-R34@v1 item 4",
+    "leaf": "261112-BUG-L34",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One metadata bridge call supplies catalog, role profiles and daemon configuration within each launcher operation.",
+  "supersedes": [],
+  "title": "One metadata bridge call supplies catalog, profiles, and daemon config",
+  "writer": {
+    "at": "2026-11-27T21:13:03+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
+  }
+}

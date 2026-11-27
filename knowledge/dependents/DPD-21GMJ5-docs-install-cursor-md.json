@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
-    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
-    "role": "manager",
-    "statement": "Crossing-7 merge of 261112-BUG-L58 and 261112-KNO-L5 onto bf8bda3fb: docs/install/cursor.md remains accurate.",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "uncommitted": false
+    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
+    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
+    "role": "curator",
+    "statement": "Verified docs/install/cursor.md against post-L32 synced L34 candidate: Cursor install guidance remains accurate after BUG-R34@v1.",
+    "task": "261112-BUG-L34",
+    "uncommitted": true
   },
   "document": "docs/install/cursor.md",
   "id": "DPD-21GMJ5",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
+      "blob": "31501ff29c4aa9f156fb2187c93ce7401f4fdb2a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T12:00:07+01:00",
+    "at": "2026-11-27T22:06:38+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
     "task": "261112-BUG"
   }
 }

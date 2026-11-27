@@ -10,7 +10,7 @@ A test suite for paseo catalog preparation.py.md: it drives the behaviour the co
 
 ## Code Commentary
 
-Startup discovery and a first launch share Paseo's catalog only inside one operation's scope, so neither inherits the other's answer
+Startup discovery and a first launch share Paseo's catalog only inside one operation's scope, so neither inherits the other's answer. Additional cases assert that one metadata `POST /api/role-launch/options` call shares `daemonConfig` / `daemonConfigError` with host role profiles and extra-args without spawning standalone `role-profiles` or `daemon-config` bridge calls, and that fresh and saved launcher catalogs omit refused native `antigravity` while keeping `antigravity-acp` and configured-default refusal messaging.
 
 ## Boundaries
 

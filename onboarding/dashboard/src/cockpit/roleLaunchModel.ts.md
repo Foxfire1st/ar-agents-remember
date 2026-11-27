@@ -18,7 +18,7 @@ Known unsupported catalog choices for agent, model, effort or service tier are s
 
 ## Current Contract
 
-RoleDefaults has optional configured stepUp model/harness; RoleScopedExecution has optional reported stepUp model/source and can carry top-level observed mode. RoleLaunchSelection carries the requested reason string. These are distinct configured, observed and requested facts. Taskless restoration canonicalizes the saved role for matching but preserves its saved spelling, trims a string reason, retains it only when nonblank, and retains the agent override and original UUID/pending bit. Architect and Investigator keep existing storage slots, including Investigator's legacy system-specialist slot. Document/options scope remains independent of the reason. No model availability, count or permission authority is inferred from these types.
+RoleDefaults has optional configured stepUp model/harness; RoleScopedExecution has optional reported stepUp model/source and can carry top-level observed mode. RoleLaunchSelection carries the requested reason string. These are distinct configured, observed and requested facts. Taskless restoration canonicalizes the saved role for matching but preserves its saved spelling, trims a string reason, retains it only when nonblank, and retains the agent override and original UUID/pending bit. Architect and Investigator keep existing storage slots, including Investigator's legacy system-specialist slot. `RoleOptionsScope` aliases `RoleDocumentScope`, and `roleOptionsScope` / `sameRoleOptionsScope` key and compare only role and document references (independent of `agentOverride.agentId` and reason). No model availability, count or permission authority is inferred from these types.
 
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
@@ -57,12 +57,7 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 
 - The launcher model keys selected Investigator executions by request and preserves the original Projects storage slot. [4]
 
-
-
-
-
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]
-
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
 

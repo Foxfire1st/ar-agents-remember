@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "aaf984732687f90beee1a456d63d12fb0f704a57",
-    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
-    "role": "manager",
-    "statement": "Crossing-5 merge confirmation on 7ff6e80f139c combining 261112-BUG-L58 (role_launch_preparation.py:207-227, paseo_bridge.mjs:734-751) and 261112-KNO-L7 (PR #303/#83): docs/host.md remains accurate across both merged lines.",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
-    "uncommitted": false
+    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
+    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
+    "role": "curator",
+    "statement": "Verified all 415 lines of docs/host.md against post-L32 synced L34 candidate atop L32 rev 23: host setup, daemon config, host profiles, and Antigravity ACP guidance remain accurate with refreshed role_launch_preparation.py (220-232) and paseo_bridge.mjs createAgent (668-682) anchors.",
+    "task": "261112-BUG-L34",
+    "uncommitted": true
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+      "blob": "e46f280c0ee70f5f2fdce299c6493e9280827c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+      "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -167,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
-        "content": "sha256:b71fadad0622db128c871576a5d114f73d8f95f85dd88cb3d2e6e3d5cbb8abb5",
+        "blob": "e8e97391b7e868f7ff7b992d2c0bc6bb8ecd437e",
+        "content": "sha256:e1f349edb3365ab10239f3616a70dd6a2d20f5c8ca28764fec9decfc0be49b40",
         "locator": {
-          "end": 227,
+          "end": 232,
           "kind": "line_range",
-          "start": 207
+          "start": 220
         },
         "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
       },
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
-        "content": "sha256:2ba7260a1a79b25900fe8a17262fcaddb1a5f2ce0b938706cba05a890ea317f2",
+        "blob": "fe2f215b9c6a5d603b281c6640c8840b3706516e",
+        "content": "sha256:91acdcf384530ac62b5c1ad7c896aa02d31a72df6a1c43f751e8011a4febfdf3",
         "locator": {
-          "end": 751,
+          "end": 682,
           "kind": "line_range",
-          "start": 734
+          "start": 668
         },
         "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
       },
@@ -259,20 +259,20 @@
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:23:00+01:00",
+    "at": "2026-11-27T22:06:38+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
     "task": "261112-BUG"
   }
 }

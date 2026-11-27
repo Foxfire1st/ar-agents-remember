@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/held_reset_index.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+        "content": "sha256:39486e603cd54f6147c09b4bcaa33ff6c9a3051909b26b07585d111ab0539cfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldResetIndex"
+        }
+      },
+      "id": "RLZ-E0WJGW",
+      "invariant": "INV-0SSZQM",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2 durable reset index",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The index stores each reset receipt with its own due time, so a restart reconstructs the schedule without the ordinary sweep.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`ResetTarget` and `ResetEntry` define the recipient reset scheduling target and generation-fenced entry shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+            "content": "sha256:677eccd6e2799219af375d7d85eecc06ba11fd2b64cd2f768d70acb98536b3cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResetTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+            "content": "sha256:c59a6b470d37c6e2052eef1246c24e347c6151643300b13844d23cf72f71f639",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResetEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`HeldResetIndex` stores one row per waiting agent in `<coordination_root>/temp/held-resets.sqlite` indexed on `(next_attempt, agent)` and enforces `require_durable_write_target` before writes while reading in `?mode=ro` mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+            "content": "sha256:39486e603cd54f6147c09b4bcaa33ff6c9a3051909b26b07585d111ab0539cfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldResetIndex"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`schedule` upserts with a new generation, `enroll` preserves existing live rows via `ON CONFLICT(agent) DO NOTHING`, `next_attempt` and `due_at` query due order, and `finish` fences deletes and retries by `(agent, generation)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+            "content": "sha256:00c8216c1561ef10c10c3038a035065b0ea4baef39886aa84ab831ab1fdc0e05",
+            "locator": {
+              "kind": "symbol",
+              "name": "schedule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+            "content": "sha256:fde97d3dad0fb73c8156ec409aca092e875de5dd9e162c81f145051d5e191438",
+            "locator": {
+              "kind": "symbol",
+              "name": "enroll"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+            "content": "sha256:081267a2c19bb26318764352715c8d15d74773f31e4379e7736d3d6d0682bc75",
+            "locator": {
+              "kind": "symbol",
+              "name": "finish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

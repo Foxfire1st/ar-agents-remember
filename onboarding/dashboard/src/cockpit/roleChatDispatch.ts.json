@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
-        "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+        "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+        "content": "sha256:167cc8e9594d75d6ef0c712dd0a7bbce1fae020ab5a72b60caec4352f724d06e",
+        "locator": {
+          "kind": "symbol",
+          "name": "dispatchRoleAction"
+        }
+      },
+      "id": "RLZ-F2JT7P",
+      "invariant": "INV-ZQV6YN",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 3",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "Only a settled result receipt for the exact dispatch request marks the options refresh.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+        "content": "sha256:167cc8e9594d75d6ef0c712dd0a7bbce1fae020ab5a72b60caec4352f724d06e",
         "locator": {
           "kind": "symbol",
           "name": "dispatchRoleAction"
@@ -26,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
-            "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+            "content": "sha256:167cc8e9594d75d6ef0c712dd0a7bbce1fae020ab5a72b60caec4352f724d06e",
             "locator": {
               "kind": "symbol",
               "name": "dispatchRoleAction"
@@ -38,14 +56,14 @@
       ]
     },
     "10": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L355–L390",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
-            "content": "sha256:933c7801dadcfd3a331441f9bba32f3456135491108752a4ad5f411c5cab437a",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+            "content": "sha256:b49ce83cff291d19d554cfbecc13cfcf9ee37d804e9c4f55387251479986a7a0",
             "locator": {
-              "end": 390,
+              "end": 403,
               "kind": "line_range",
               "start": 355
             }
@@ -59,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
             "content": "sha256:7d94913fccf171b590eb80b35af3f3c001bd9825dd6e76480856330974a9682a",
             "locator": {
               "kind": "symbol",
@@ -75,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
-            "content": "sha256:41eebc34005625b0acf4e0760db68637c3e83cbe93ae34c12f3ab7b39c6f5f03",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+            "content": "sha256:cf18d45189c8b5bd2ebec4c0d6e6693ba740f92afdbcf1eb3821084d917d7f6c",
             "locator": {
               "kind": "symbol",
               "name": "failDispatchOffline"
@@ -127,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67fd827411b726fc622af1a177534644708fdd00",
+            "blob": "532cb568b8b42c4f4519a1d95ae9949991b4d47a",
             "content": "sha256:7fd82a87cd1a73540efe6632a25f2c2b0a298ae7b96f86946f91e27d5e24875f",
             "locator": {
-              "end": 388,
+              "end": 386,
               "kind": "line_range",
-              "start": 343
+              "start": 341
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },
@@ -145,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
             "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
             "locator": {
-              "end": 157,
+              "end": 162,
               "kind": "line_range",
-              "start": 115
+              "start": 120
             }
           },
           "kind": "code"
@@ -162,12 +180,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
             "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
             "locator": {
-              "end": 157,
+              "end": 162,
               "kind": "line_range",
-              "start": 115
+              "start": 120
             }
           },
           "kind": "code"
@@ -179,12 +197,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
             "content": "sha256:01d7fd6e8851c9a1350c5846e5f97f96024134e090dbbdb596492db1c245eb12",
             "locator": {
-              "end": 350,
+              "end": 355,
               "kind": "line_range",
-              "start": 321
+              "start": 326
             }
           },
           "kind": "code"

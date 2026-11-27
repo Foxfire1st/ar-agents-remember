@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d447d4411235f62f90a916729ff9e8158aacaba",
-            "content": "sha256:c12dfb978e6d5c2d841d3c238f0b853c56ee86cbd6d2827fd5b857aaae6aa7de",
+            "blob": "09dd4f477f5932ab601a14ea8d7bccf6b0faec05",
+            "content": "sha256:535341ef09d4e2a91e8a2bd2e31f8afe519713cc797f7969bfd118763cbe3f85",
             "locator": {
-              "end": 117,
+              "end": 210,
               "kind": "line_range",
-              "start": 90
+              "start": 180
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
           },

@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across controlplane/held_reset_index.py, serving/held_reset_scheduler.py, and serving/_app_lifespan.py, and guarded by generation-fencing and restart-survival proofs in mcp/tests/test_held_reset_delivery.py."
+  },
+  "applicability": "Provider-limited held messages with a known reset timestamp persisted across dashboard restarts and separate MCP/CLI writers.",
+  "conditions": [
+    "HeldResetIndex stores one generation-fenced row per waiting recipient in <coordination_root>/temp/held-resets.sqlite ordered by (next_attempt, agent), gated by require_durable_write_target on writes and read-only URI opens on reads.",
+    "run_held_reset_scheduler runs dedicated coordinator and 16-worker delivery pools, rechecking the indexed head every 3 seconds or waking earlier at the head timestamp independently of the 15-second ordinary sweep.",
+    "finish_reset_entry inspects the held store under exclusive_file_lock and retires the observed generation only when messages and pendingLines are both empty or the receipt is gone."
+  ],
+  "exclusions": [
+    "Ordinary non-limited held messages without a reset timestamp continue to rely on turn-end drains and the rotating receipt sweep."
+  ],
+  "id": "INV-0SSZQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L32-W1-freeze.md#bug-r32v1; L32-D987-evidence-20261125T1010Z/bounded/summary.json"
+      ],
+      "path": "L32-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R32@v1 rule 2 durable reset index",
+    "leaf": "261112-BUG-L32",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The reset schedule is a durable control-plane index that survives restarts and wakes delivery independently of the ordinary receipt cursor.",
+  "supersedes": [],
+  "title": "Durable reset index and independent wake scheduler",
+  "writer": {
+    "at": "2026-11-27T21:15:46+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
+  }
+}

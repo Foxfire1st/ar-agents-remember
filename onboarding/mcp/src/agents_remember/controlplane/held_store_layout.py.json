@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
-        "content": "sha256:826c25994825fc05cae0e5ceadf840cbf2d53956fbd92ce947f1f5694772635a",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+        "content": "sha256:aac1183591308839df9c20036d6b147c1179c5539a8aadb35e4d1630b54763fd",
         "locator": {
           "kind": "symbol",
           "name": "hold_message"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
         "content": "sha256:a4e007b6bda21ddaf94c0010af79d8b007eac1b091c8b67af0b23b611e64d4ea",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,44 @@
     },
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+        "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "note_held_receipt"
+        }
+      },
+      "id": "RLZ-57SV7G",
+      "invariant": "INV-6NJ5ZH",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 2",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The queue names the receipt when a hold is written, so the reset scheduler and the ordinary walk both see the store.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+        "content": "sha256:6fbb267b58d67f1dc762e59e919cdb751950580ac4c0216c1ecb7fbfb9e1d8c9",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-BQP6N3",
+      "invariant": "INV-W48HES",
+      "origin": {
+        "handoffEntry": "BUG-R32@v1 rule 3",
+        "leaf": "261112-BUG-L32"
+      },
+      "rationale": "The constants define the queue's count and age bounds that the texts describe.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
         "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
         "locator": {
           "kind": "symbol",
@@ -57,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
-        "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+        "content": "sha256:394dc240c747e1386249d8920b6b2fff7137ed7ac7bc9d256770e962d9eeb55f",
         "locator": {
           "kind": "file"
         }
@@ -74,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
         "content": "sha256:8db96d14fffdcfd95ec05ecd81557f89d6bd51a64acd8ea379a777018e65e077",
         "locator": {
           "kind": "symbol",
@@ -92,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
         "content": "sha256:a41edec100c7976149674e9e1d0fe9a85a423ccdd9a651d8ba443ba07627f944",
         "locator": {
           "kind": "symbol",
@@ -110,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
-        "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
+        "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+        "content": "sha256:394dc240c747e1386249d8920b6b2fff7137ed7ac7bc9d256770e962d9eeb55f",
         "locator": {
           "kind": "file"
         }

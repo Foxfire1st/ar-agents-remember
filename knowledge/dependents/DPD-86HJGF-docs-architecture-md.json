@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
-    "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
+    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
+    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
     "role": "curator",
-    "statement": "Audited docs/architecture.md against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5): mcp/server.py off-loop _maybe_suppress_provider_limits, cli/__main__.py provider-limits command, and serving/paseo/provider_limit_suppressions.py preserve all documented architectural boundaries with zero contradictions.",
-    "task": "261112-BUG-L60",
+    "statement": "Verified docs/architecture.md whole document against L32 candidate 52e47cca: package layering, serving/controlplane boundaries, and component architecture remain accurate; serving consumes reset delivery through injected ResetDeliveryPorts.",
+    "task": "261112-BUG-L32",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -254,8 +254,8 @@
     },
     {
       "anchor": {
-        "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
-        "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+        "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+        "content": "sha256:7cf565448e269fb9fb9c3ef6ae61caaff0bce1f6f75cdc957996dcd37d13a259",
         "locator": {
           "kind": "symbol",
           "name": "serving_collaborators"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:18:52+01:00",
+    "at": "2026-11-27T21:15:46+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
+    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
     "task": "261112-BUG"
   }
 }

@@ -10,7 +10,7 @@ Exercises the mounted launcher’s metadata and shown-model request contract wit
 
 ## Code Commentary
 
-Cases check model selection and cache reuse, Refresh ordering and generation changes, and selection during a pending response. The suite also checks omitted feature overrides on a new Start and preservation of a saved Retry payload.
+Cases check model selection and cache reuse, override stability (setting or clearing the first agent, model, effort, or mode override fires zero metadata `/options`, `/saved-catalog`, or `/result` reads and queries only uncached shown-model features), Refresh ordering and generation changes, and selection during a pending response. The suite also checks omitted feature overrides on a new Start and preservation of a saved Retry payload.
 
 ## Evidence
 

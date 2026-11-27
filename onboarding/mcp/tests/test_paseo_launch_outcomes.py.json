@@ -38,6 +38,23 @@
     {
       "anchor": {
         "blob": "18d5b47231d708714a1a5efc755a1da8b429adc6",
+        "content": "sha256:a7357a960c3ca4dd6bdb1e344e3a67fd3f9825c1250eb6f72218099d89a1dfec",
+        "locator": {
+          "kind": "symbol",
+          "name": "RepeatAndConflictTests.test_native_antigravity_retry_only_reconciles_an_existing_agent"
+        }
+      },
+      "facet": "Saved native Antigravity Retry retains existingOnly: true reconciliation.",
+      "id": "PRF-75WEQ8",
+      "invariant": "INV-RVQGY8",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 6",
+        "leaf": "261112-BUG-L34"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "18d5b47231d708714a1a5efc755a1da8b429adc6",
         "content": "sha256:af6b2a4d2d8f7d290c40162fa35a3bb21746f1669b85c06689dbd8c4a932c134",
         "locator": {
           "kind": "symbol",

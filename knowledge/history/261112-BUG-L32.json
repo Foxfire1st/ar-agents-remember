@@ -1,0 +1,2884 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L32",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T21:33:16+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L32",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T21:33:16+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L32",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "c2a43201-2611-4b32-9a10-7e8d9c01f032",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "246961c8b13234d42fb6f2dbb4a550e5d3500b72",
+    "verdictRef": "notes/reports/reviewer/00892b66-7750-413f-b109-86aa6cd3e428/261112-BUG-L32-memory-verdict-R1.md"
+  },
+  "rows": [
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0PS5SV",
+      "items": [],
+      "reason": "Verified docs/host.md whole document against L32 candidate 52e47cca: native host lifecycle, dashboard supervision, and transport contracts remain accurate after L32's internal held-reset scheduler.",
+      "revision": 23,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-11EMZS",
+      "items": [
+        "sha256:7e5c62bf69fa57bd875a880e2b345c656795f39f38b1b8a3b363d0fb9c4f185c",
+        "sha256:d07f1ee317fb0c8c999a6a9a953cc48739ef6248d23d6173e98ff15e779341b2"
+      ],
+      "reason": "Reviewed card: L32 only added held_reset_delivery=None to the lifespan fake; preview-background test contract is unchanged.",
+      "sources": [
+        {
+          "blob": "bba0420b294a0da7acbc20d23a073613d7821673",
+          "path": "mcp/tests/test_serving_preview_background.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving_preview_background.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1ec1bd0866f39fd8e23ee3ce76ae420b8b28afb8",
+            "content": "sha256:b74bf1f1c9a39694fe26a354471f8d8a31bcfd727f0fdec624da1b3d9d965ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "offload"
+            },
+            "path": "mcp/src/agents_remember/serving/background_accounting.py"
+          },
+          "before": {
+            "blob": "1fefbd4071035b1f6a3c99de43218b2ec9d23149",
+            "content": "sha256:4125b8413319c43814d375cf30adb8fb8c2182bf18d247d558d67ee532bba429",
+            "locator": {
+              "kind": "symbol",
+              "name": "offload"
+            },
+            "path": "mcp/src/agents_remember/serving/background_accounting.py"
+          },
+          "id": "RLZ-B8FAMX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-15V3NX",
+      "items": [
+        "sha256:44b5b1f72d8c5a2396577d28906ca39009bb5918539b5c8f7a654fe9216a17ae"
+      ],
+      "reason": "offload keeps executing-thread attribution and cancellation drain via shared _drain_worker while offload_on adds dedicated-executor support.",
+      "revision": 1,
+      "subject": "INV-0NSFFW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-16ZC12",
+      "items": [
+        "sha256:8e48ec6958c50fa63f48b357b27bcb7d77578c4fa9a3310b9334a6f9b53cbd2c"
+      ],
+      "reason": "Updated declared unit-regression/total counts (704/858), noted test_held_reset_delivery.py, and refreshed citations.",
+      "sources": [
+        {
+          "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "47eb44c7a0f181b5bb9c094c3693ed0c51f690fb",
+          "path": "mcp/tests/test_developer_messages.py"
+        },
+        {
+          "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+          "path": "mcp/tests/test_held_reset_delivery.py"
+        },
+        {
+          "blob": "c86021fadafcf25bb252c2e7edbe88b1a9547fd7",
+          "path": "mcp/tests/test_knowledge_database_retired.py"
+        },
+        {
+          "blob": "d45481196970c14ff574fd9178480857b289aa6e",
+          "path": "mcp/tests/test_leaf_agent_archive.py"
+        },
+        {
+          "blob": "c1cc54bcc786143265eef5cc92c068b5935503d3",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        },
+        {
+          "blob": "99441986a6872c626b6493e5eb94b1d87188e765",
+          "path": "mcp/tests/test_serving_catalog_preparation.py"
+        },
+        {
+          "blob": "bd2e0fd985af10257f85f2c588e7347a10b8144a",
+          "path": "mcp/tests/test_serving_owner_units.py"
+        },
+        {
+          "blob": "bba0420b294a0da7acbc20d23a073613d7821673",
+          "path": "mcp/tests/test_serving_preview_background.py"
+        },
+        {
+          "blob": "626fb3d817f3d0be2ceecb941b32d8e6bb59230e",
+          "path": "mcp/tests/test_serving_shutdown_drain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-19TDB0",
+      "items": [],
+      "reason": "Verified docs/design/python-pytest-bootstrap.md whole document against L32 candidate 52e47cca: pytest bootstrap, evidence-lane selection, and database-retirement guard policy remain accurate after registering controlplane/held_reset_index.py as an explicit non-knowledge store.",
+      "revision": 42,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1EBCSY",
+      "items": [
+        "sha256:1ac6cfb73e7934c0b0a2c604f5d8f70846b728abcb5c8ae42c0a4f9b157e3559"
+      ],
+      "reason": "Documented held_reset_delivery forwarding in _build_serving_runtime and removed dated L184 phrasing.",
+      "sources": [
+        {
+          "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
+          "path": "mcp/src/agents_remember/serving/app.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/app.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0WDKPN",
+          "revision": 1
+        },
+        {
+          "id": "INV-G1K3QN",
+          "revision": 1
+        },
+        {
+          "id": "INV-P7QEA9",
+          "revision": 1
+        },
+        {
+          "id": "INV-T6DV0Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1ETV7F",
+      "items": [
+        "sha256:dd2e6e5163c8d02e8b05900be710d7705efb73d96daa90e50b97d3123938eafc"
+      ],
+      "reason": "All 4 members examined; only INV-0WDKPN had anchors refreshed without meaning change, so the family guarantee holds unchanged.",
+      "revision": 2,
+      "subject": "FAM-DB8S4B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-25KAFD",
+      "items": [
+        "sha256:8beb5606cc7c38af3a89f37b52c5db148a4a11eb84be8047df891bc30fcfe942"
+      ],
+      "reason": "Registers controlplane/held_reset_index.py (held-resets.sqlite) in the static non-knowledge database allowlists; test allowlist maintenance with no new invariant.",
+      "subject": "hunk:sha256:8beb5606cc7c38af3a89f37b52c5db148a4a11eb84be8047df891bc30fcfe942"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0NSFFW",
+          "revision": 1
+        },
+        {
+          "id": "INV-1F0XGE",
+          "revision": 1
+        },
+        {
+          "id": "INV-3XG15P",
+          "revision": 1
+        },
+        {
+          "id": "INV-84PT5A",
+          "revision": 1
+        },
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-BMZ47D",
+          "revision": 2
+        },
+        {
+          "id": "INV-BY8XBH",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 3
+        },
+        {
+          "id": "INV-FKE909",
+          "revision": 2
+        },
+        {
+          "id": "INV-GDTTHF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-H9TEKD",
+          "revision": 1
+        },
+        {
+          "id": "INV-RGGEX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-RJWTW8",
+          "revision": 1
+        },
+        {
+          "id": "INV-RQNDH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-S8GHB9",
+          "revision": 1
+        },
+        {
+          "id": "INV-TMY6DW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-26D1SZ",
+      "items": [
+        "sha256:c2fbed36f736717fba72d4d68e073d5d5e47a18774c6d01f5c1d6bd592e190b6"
+      ],
+      "reason": "All 17 members examined; only INV-0NSFFW and INV-BMZ47D had anchors refreshed without meaning change, so the family guarantee holds unchanged.",
+      "revision": 5,
+      "subject": "FAM-CAG581"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+            "content": "sha256:ed41dc8eebedcf51ad1aaa024b8b5b15793d7abe996122a6cefed666ae97639b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+            "content": "sha256:04456d2f9a7aa42ef540038a20ec85b1fe07b2008edcd4df3a66195215934c93",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-8MGWMB"
+        },
+        {
+          "after": {
+            "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+            "content": "sha256:72d10771bf3fbfcabda535d73139b1f4485b07b1d78978a773fb52388b355727",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:3a6d0e4da549e07bd36e7fc2e52554dc02854d5ed72b9b49b54d9d4e45f41fe5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-DDMK3M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3D4Y56",
+      "items": [
+        "sha256:643897c3f60ec3c6de0d457a137e4c9cdb15905147b3ca1e62fc5bbc7fc88084"
+      ],
+      "reason": "Usage-read port injection from dashboard.py into _app_lifespan.py is unchanged.",
+      "revision": 1,
+      "subject": "INV-QBWBNV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3MPDBG",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated declared lane counts (704 unit-regression, 858 total) and line numbers for test_held_reset_delivery.py and refreshed citations.",
+      "sources": [
+        {
+          "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3N7FA2",
+      "items": [
+        "sha256:35517f9e4f2d89d08a3554d74e1cb8db1a2a1e46216419de0de2daff2864b8d3",
+        "sha256:cadb212be4456dea439221147bb895e060676d90e0727d641ad50cea0eea3193"
+      ],
+      "reason": "Reviewed card: L32 only added held_reset_delivery=None to the lifespan fake; shutdown-drain test contract is unchanged.",
+      "sources": [
+        {
+          "blob": "626fb3d817f3d0be2ceecb941b32d8e6bb59230e",
+          "path": "mcp/tests/test_serving_shutdown_drain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving_shutdown_drain.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-GCM4EB"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c1cc54bcc786143265eef5cc92c068b5935503d3",
+            "content": "sha256:4b802679d74b2d39ff8bdb8a34c527f7f06e50826470f0c2181439e868f9df13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_limited_recipient_costs_no_host_read"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "20188aae5eb7ce82590fed2caa03f0f6920fc3c2",
+            "content": "sha256:4b802679d74b2d39ff8bdb8a34c527f7f06e50826470f0c2181439e868f9df13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_limited_recipient_costs_no_host_read"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "PRF-NHBTWC"
+        },
+        {
+          "after": {
+            "blob": "c1cc54bcc786143265eef5cc92c068b5935503d3",
+            "content": "sha256:3cc11313fce611e6bb0c6b5b7da917072f9f73c2f815eb36a291c6f82c83487f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_fact_holds_the_message_with_its_reset_time"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "20188aae5eb7ce82590fed2caa03f0f6920fc3c2",
+            "content": "sha256:3cc11313fce611e6bb0c6b5b7da917072f9f73c2f815eb36a291c6f82c83487f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_fact_holds_the_message_with_its_reset_time"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "PRF-RCQ0ZA"
+        },
+        {
+          "after": {
+            "blob": "db2da68c2baec09b960f87cf16f6e1208c685874",
+            "content": "sha256:d914a6d272312cf2232dcb79e00e5d2daf79ee45f9b6e4ed1ebe44f56e98c507",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "before": {
+            "blob": "488b4a8c9fb88e0ab9105fc8d1bbb8350617fed4",
+            "content": "sha256:4e76feda1eaf61619773ef19fcba69aa74d2f612390e86a575405fff2f9cd280",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "id": "RLZ-YTMFR6"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-402WQ6",
+      "items": [
+        "sha256:6d74102151b8794b4d8c9dcae27559fcf7ea102678adc369d9d87a3f9b7a35ee"
+      ],
+      "reason": "Updated post-reset delivery rule from bounded rotating cursor sweep to durable reset index and independent 16-worker scheduler with the D987 Option A ceiling (~30s up to ~300 due recipients, ~11/s beyond) and added a rule title.",
+      "revision": 3,
+      "subject": "INV-E27J2R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-426FX9",
+      "items": [
+        "sha256:56786590fa62240fb7e0cf21b724c12a38f205d7a9ff8fae2da3930d151fe022"
+      ],
+      "reason": "Adds held_reset_delivery=None to two _ServingRuntime test doubles so existing owner-accounting tests construct the runtime cleanly; test-fixture repair only.",
+      "subject": "hunk:sha256:56786590fa62240fb7e0cf21b724c12a38f205d7a9ff8fae2da3930d151fe022"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "content": "sha256:e09d583901b2f25fc20f1aae5fa1259bdbabdedf7e5b54d508d10e61131d136f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-C1M5FZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-45SW8G",
+      "items": [
+        "sha256:8ce125a0b2aba274ccc15591092b07e9c24d8afc46bf22c30a98d5336e958658"
+      ],
+      "reason": "docs/reference/mcp-tools.md edits are confined to lines 794-801 (provider-limit reset scheduling); Consolidator documentation is unchanged.",
+      "revision": 1,
+      "subject": "INV-3ZXAD9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4MG9ED",
+      "items": [
+        "sha256:928c614b418c1c86181cfcb8d5ecea4d5b3209bea906f5e1c9696703af1ea36e"
+      ],
+      "reason": "Updated card prose to document _hold_for_seat routing through hold_at_receipt inside open_held_store(ref).",
+      "sources": [
+        {
+          "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-501QY7",
+      "items": [
+        "sha256:5687489ef3c1db1da6d257b07aea3de61574df237041cab24fe40eac31e363a1"
+      ],
+      "reason": "Import statements and helper wiring supporting HeldResetIndex scheduling inside pause_for_provider_limit (whose behavior is covered by INV-4DQMNE / RLZ-RX5FRC); no separate invariant.",
+      "subject": "hunk:sha256:5687489ef3c1db1da6d257b07aea3de61574df237041cab24fe40eac31e363a1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5AS541",
+      "items": [
+        "sha256:521d45b56a11b4cbc27d767b0f1e1d9594ed92471b20973bf71843df35e54db3"
+      ],
+      "reason": "test-evidence-lanes.toml lists only existing test modules after adding mcp/tests/test_held_reset_delivery.py.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5HVAGS",
+      "items": [
+        "sha256:567f3715497cd366a117bfdf263e0ad891a3ab22fc384d59ff62e9d844ce46f5"
+      ],
+      "reason": "Examined WKN-V8X6D3 against L32 candidate 52e47cca: the recorded weakness still stands unchanged (L32 added durable reset-index scheduling and did not alter this weakness's underlying seam).",
+      "revision": 4,
+      "subject": "WKN-V8X6D3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5M2XNK",
+      "items": [
+        "sha256:edb8214ac492ef59b9aacbc301a76bf93816716e9f5ab5f12c6bf65de0a10bd7"
+      ],
+      "reason": "Created onboarding card and authored sidecar references for new startup held-reset adoption module.",
+      "sources": [
+        {
+          "blob": "f84d39436a8c9216e979d4ca83d06971f4291ae6",
+          "path": "mcp/src/agents_remember/cli/held_reset_adoption.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/held_reset_adoption.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6JST3C",
+      "items": [
+        "sha256:2ba351a7256389257e35a7243cab4922fafb175797ada3af8f70de681838649d"
+      ],
+      "reason": "Internal helper extraction (_drain_worker) and dedicated-executor offload_on wrapper preserving the existing accounting/drain contract (INV-0NSFFW) for the held-reset scheduler; no separate invariant.",
+      "subject": "hunk:sha256:2ba351a7256389257e35a7243cab4922fafb175797ada3af8f70de681838649d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_send_part"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_send_part"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-29SEFE"
+        },
+        {
+          "after": {
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_send_once"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_send_once"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-3G97RJ"
+        },
+        {
+          "after": {
+            "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+            "content": "sha256:aac1183591308839df9c20036d6b147c1179c5539a8aadb35e4d1630b54763fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "hold_message"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:826c25994825fc05cae0e5ceadf840cbf2d53956fbd92ce947f1f5694772635a",
+            "locator": {
+              "kind": "symbol",
+              "name": "hold_message"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-3Y5NN9"
+        },
+        {
+          "after": {
+            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_filed_message_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_filed_message_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-5EWHGA"
+        },
+        {
+          "after": {
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_next_piece"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_next_piece"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-F2G09P"
+        },
+        {
+          "after": {
+            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-NJJDFT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-724H0E",
+      "items": [
+        "sha256:a3d98572514c86283affa894f915baa44db2220600f2b310d6f1b0640b474dc6"
+      ],
+      "reason": "Unknown-outcome isolation and attempt-ID deduplication across held_store_layout, paseo_role_tools, and role_held_messages are unchanged.",
+      "revision": 1,
+      "subject": "INV-AMJAZT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-764BN9",
+      "items": [
+        "sha256:2ac9bbf40d7722104af0fb16bfceef4725312e137f3f859fa6d644a537703a9f",
+        "sha256:56786590fa62240fb7e0cf21b724c12a38f205d7a9ff8fae2da3930d151fe022",
+        "sha256:b6f11e6e16c40f7d490bed7b7e1a1f1de650ae92e0ba6201819dc0b19d65a7a2"
+      ],
+      "reason": "Reviewed card: L32 only added held_reset_delivery=None to two lifespan fakes; owner-unit test contract is unchanged.",
+      "sources": [
+        {
+          "blob": "bd2e0fd985af10257f85f2c588e7347a10b8144a",
+          "path": "mcp/tests/test_serving_owner_units.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving_owner_units.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "content": "sha256:e09d583901b2f25fc20f1aae5fa1259bdbabdedf7e5b54d508d10e61131d136f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        },
+        {
+          "after": {
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "content": "sha256:fd0126fc8a847537737ffbc6c292bdad31aba2df90c1788bb1d7f83e70f2d858",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "before": {
+            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+            "content": "sha256:b31f6715eea5dce41f07acff07fdafe92e5e4cdeb7c5cae1fd3aeacfd318f1c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "id": "RLZ-AHFJXT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-77KAXV",
+      "items": [
+        "sha256:1082b71a74540f6137d9fb1717e4e0eee5f8fae4f7e1baa8969ea378577644b1"
+      ],
+      "reason": "Re-anchored RLZ-7YMNE5 (docs/reference/mcp-tools.md) and carried stale file anchor RLZ-AHFJXT (docs/reference/runtime-layout.md) onto candidate 52e47cca; early provider-limit clearing and retry/clear layout semantics are unchanged.",
+      "revision": 2,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BSK2A",
+      "items": [
+        "sha256:45625f629062af1c37fced16ae089c855ce96577b3b5df48822ae7b1a337aa56"
+      ],
+      "reason": "Adds held_reset_delivery=None to the lifespan test double so existing archive-recovery tests construct _ServingRuntime cleanly; test-fixture repair only.",
+      "subject": "hunk:sha256:45625f629062af1c37fced16ae089c855ce96577b3b5df48822ae7b1a337aa56"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-869X6J",
+      "items": [
+        "sha256:78bd4fb24022600743293d7fe9af5853799303252a9b4015a01248ee9cbc8107"
+      ],
+      "reason": "Documented offload_on and shared _drain_worker, converted dated leaf headings to present-tense prose, and refreshed file citation.",
+      "sources": [
+        {
+          "blob": "1ec1bd0866f39fd8e23ee3ce76ae420b8b28afb8",
+          "path": "mcp/src/agents_remember/serving/background_accounting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/background_accounting.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8ZMS50",
+      "items": [
+        "sha256:9b8d53002172fd75d40bc94c243469306c2ae66a472af700611a3f9f9ef47487"
+      ],
+      "reason": "Documented controlplane/held_reset_index.py in ALLOWED_MODULES.",
+      "sources": [
+        {
+          "blob": "aedbd72a765583717a51033ac5fbc07976745dd2",
+          "path": "mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9P8HCS",
+      "items": [
+        "sha256:b804879b4d41b859390eb23438bd8d79e61c22d64d5a2dffabb9fed22c20da1f"
+      ],
+      "reason": "Documented patching held_reset_delivery.note_held_receipt in the partial-drain test case.",
+      "sources": [
+        {
+          "blob": "47eb44c7a0f181b5bb9c094c3693ed0c51f690fb",
+          "path": "mcp/tests/test_developer_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_messages.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9YKPFV",
+      "items": [
+        "sha256:0b4bc086adc047c679fe0d1e6a93c5c2ac3fac0602f4e2e4aa343b2addefe464"
+      ],
+      "reason": "Import statements and helper wiring supporting HeldResetIndex scheduling inside pause_for_provider_limit (whose behavior is covered by INV-4DQMNE / RLZ-RX5FRC); no separate invariant.",
+      "subject": "hunk:sha256:0b4bc086adc047c679fe0d1e6a93c5c2ac3fac0602f4e2e4aa343b2addefe464"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ADM135",
+      "items": [
+        "sha256:1b70493a36fecb2061560f801f34861da0d6aa622a13cb1926df40a64eb65836"
+      ],
+      "reason": "Documented real McpRuntimeConfig construction in _batch for reset-index scheduling and removed dated L184 phrasing.",
+      "sources": [
+        {
+          "blob": "c1cc54bcc786143265eef5cc92c068b5935503d3",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_hold.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B7G4FA",
+      "items": [
+        "sha256:dbda9aadfc6051439e9fe580e0b1485839e747ffc2a4749a272b72a8aa63014a"
+      ],
+      "reason": "Examined WKN-GY12WH against L32 candidate 52e47cca: the recorded weakness still stands unchanged (L32 added durable reset-index scheduling and did not alter this weakness's underlying seam).",
+      "revision": 5,
+      "subject": "WKN-GY12WH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BBBDPS",
+      "items": [
+        "sha256:560f0c539154fb66fa020bf5f991da579fdc421b2153b5d6645e98e120c61a2f"
+      ],
+      "reason": "Registers controlplane/held_reset_index.py in ALLOWED_MODULES as an explicit non-knowledge reset-schedule SQLite store; local allowlist entry documented on the card.",
+      "subject": "hunk:sha256:560f0c539154fb66fa020bf5f991da579fdc421b2153b5d6645e98e120c61a2f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BSR6W7",
+      "items": [
+        "sha256:c28012666988b157c0cdc17ac45ff3b55b3826505fe23896be821dd00f73ebb9"
+      ],
+      "reason": "Updated lifespan summary to include held_reset_scheduler.run_held_reset_scheduler and refreshed citations.",
+      "sources": [
+        {
+          "blob": "1316a26cfc00ccbab56538b3777d3221ccd9bcf8",
+          "path": "mcp/src/agents_remember/serving/_app_common.py"
+        },
+        {
+          "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+          "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+        },
+        {
+          "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
+          "path": "mcp/src/agents_remember/serving/app.py"
+        },
+        {
+          "blob": "1ec1bd0866f39fd8e23ee3ce76ae420b8b28afb8",
+          "path": "mcp/src/agents_remember/serving/background_accounting.py"
+        },
+        {
+          "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+          "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CHZ78C",
+      "items": [],
+      "reason": "Verified docs/install/README.md whole document against L32 candidate 52e47cca: installation prerequisites, setup commands, and runtime layout guidance remain unaffected by L32.",
+      "revision": 14,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+            "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+            "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-GY7QM8"
+        },
+        {
+          "after": {
+            "blob": "1316a26cfc00ccbab56538b3777d3221ccd9bcf8",
+            "content": "sha256:11f0d818a0d694012b250820f85051ceefd73c54bbb29f3f945be9a487b6a7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "before": {
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:30d9d240d5d27abb0c4b0386f5753dc079a093d7bcac5505a8111ff3ebb74671",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "id": "RLZ-M5DREV"
+        },
+        {
+          "after": {
+            "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+            "content": "sha256:7cf565448e269fb9fb9c3ef6ae61caaff0bce1f6f75cdc957996dcd37d13a259",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-XKDX4F"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CKXVW2",
+      "items": [
+        "sha256:890c9586de3212d647cd0b587aef44dcf18b989abe55b7857b9bf935e6c242ed"
+      ],
+      "reason": "Composition still carries optional application ports without serving-to-CLI imports; held_reset_delivery follows the same optional port pattern.",
+      "revision": 1,
+      "subject": "INV-15M226"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CYBWJ5",
+      "items": [
+        "sha256:45625f629062af1c37fced16ae089c855ce96577b3b5df48822ae7b1a337aa56",
+        "sha256:836a4b21a2f5113f4d49a23743374e7f83cd9cbe2c76171a8f04c6490a9574fd"
+      ],
+      "reason": "Reviewed card: L32 only added held_reset_delivery=None to the lifespan fake; archive-recovery test contract is unchanged.",
+      "sources": [
+        {
+          "blob": "d45481196970c14ff574fd9178480857b289aa6e",
+          "path": "mcp/tests/test_leaf_agent_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_leaf_agent_archive.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D1W1MF",
+      "items": [
+        "sha256:2ca51153c2f6aba449ed659e965b3e1289ea71c18a0203cd8c09246e9a300f78"
+      ],
+      "reason": "Updated card prose to document _hold routing through hold_at_receipt inside open_held_store(ref) and removed dated L184 phrasing.",
+      "sources": [
+        {
+          "blob": "db2da68c2baec09b960f87cf16f6e1208c685874",
+          "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/developer_delivery.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DARYB1",
+      "items": [],
+      "reason": "Verified README.md whole document against L32 candidate 52e47cca: top-level product overview, install/workflow instructions, and linked references remain accurate after L32's internal held-reset scheduling additions.",
+      "revision": 22,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 3
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-DCJP6P",
+      "items": [
+        "sha256:f61af7cf7dd3a7fdc8e9e555bf6e44bc8509928792b4b30ab95b1597620081a5"
+      ],
+      "reason": "All 5 members examined; only INV-HHZP57 had its teardown anchor shifted without meaning change, so the family guarantee holds unchanged.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
+            "content": "sha256:b0302869279c44b6140dccf2b8be95d70735be0a47bd73f46e447cdb22de1484",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "before": {
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+            "content": "sha256:ceb7d028f441c6a14a6aab9fb4dde2aacc909f785075e03caefc9782204b2674",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "id": "RLZ-K8504A"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EHCBJA",
+      "items": [
+        "sha256:0b4a9e1b7ae81163b9a6a91adcc8d05900b6bfb5a4177f77445af59f54eac706"
+      ],
+      "reason": "_build_serving_runtime still constructs one shared landing refresher bound to Projector before startup; range grew by 1 line for held_reset_delivery.",
+      "revision": 2,
+      "subject": "INV-BMZ47D"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "content": "sha256:28cdff05c5e6d0d105212b1caadd4e3f834342229612aab60d9d77386ffae72c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EMMF73",
+      "items": [
+        "sha256:b35032ca2c6a3e6ae34e117eec3b8b6e02edd1d5af1eecfef53598b09cc88710"
+      ],
+      "reason": "evidence-lifecycle.toml and test-evidence-lanes.toml retain exact unique test selections and consumers after adding test_held_reset_delivery.py.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EVKW0P",
+      "items": [
+        "sha256:40ca751264395db38e139b9f278a11877d5497236d338994b1b5521f6006ba1e"
+      ],
+      "reason": "Reviewed testing support overview: database-retirement guard ownership is unchanged by adding one non-knowledge store to ALLOWED_MODULES.",
+      "sources": [
+        {
+          "blob": "aedbd72a765583717a51033ac5fbc07976745dd2",
+          "path": "mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F5N3J5",
+      "items": [
+        "sha256:901334c4ac666d8f8a001add6ad7de85b5581f481ab9070613b835aa13e0dd24"
+      ],
+      "reason": "Replaced stale rotating-cursor sentence with HeldResetIndex scheduling and claim release on failure, and refreshed symbol citation.",
+      "sources": [
+        {
+          "blob": "d04d4923c6ff209775dfc8e580a922da21fdcba2",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/provider_limit_drain.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-GCM4EB"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "content": "sha256:5e35a50622c2956e3d0b33c889ae12e67bda851a63d1f3bc577f2a724492e5bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:a93c7d5d6c4f7e7e33dd492960afb9624fc288727645e550a5166e8430eb83b0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-4AJ94X"
+        },
+        {
+          "after": {
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:1efd6d5502c7302f00647ef0c6fcf9b2e8c6d7a6d14ed3576f03d7a9bcbd0e70",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:0b095dc9c19ba4e223327c03a5ce2962d22f03949baa207ae5430605d88cd23d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-83E20B"
+        },
+        {
+          "after": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "c1cc54bcc786143265eef5cc92c068b5935503d3",
+            "content": "sha256:a7202efa23252bd4dc5e9dd062136e67d5181024240032187b8799888b93f067",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "20188aae5eb7ce82590fed2caa03f0f6920fc3c2",
+            "content": "sha256:fb3c96ef40c353e77cce6d50aad456ffaf38930cbf15987b78dfd29fce4bf165",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "RLZ-G2ZAMP"
+        },
+        {
+          "after": {
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "content": "sha256:28cdff05c5e6d0d105212b1caadd4e3f834342229612aab60d9d77386ffae72c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-FAX8FV",
+      "items": [
+        "sha256:4d29f083c5f0f78657e0f518328c0fa12d9ebea9e8df188f0738d6f9fbc2e893",
+        "sha256:fcc810e13fa5a37cb40f046fdc45618facde22d8222036277831a09bea896ca4"
+      ],
+      "reason": "Updated the single post-reset drain sentence to describe delivery through the durable reset index and independent 16-worker scheduler instead of waiting for the bounded rotating receipt cursor, and re-anchored touched entries on L32.",
+      "revision": 10,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-2PVK9H",
+          "revision": 1
+        },
+        {
+          "id": "INV-41J2Q6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 2
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 2
+        },
+        {
+          "id": "INV-ESZKHN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-SDEXYK",
+          "revision": 1
+        },
+        {
+          "id": "INV-VEGPXX",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-FGWFY0",
+      "items": [
+        "sha256:ed0d776840c4b8f2629d92eb69ca318cc1f3354b465b09e8f8562ce94040d0e3"
+      ],
+      "reason": "All 12 members examined; only INV-6ZZXV3 and INV-VEGPXX had anchors refreshed on docs/reference/mcp-tools.md without meaning change, so the family guarantee holds unchanged.",
+      "revision": 2,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GRMG4H",
+      "items": [
+        "sha256:5386ad1f3e261f12cb23401dc34538da341ab9ba633e945ab3fa120bda4b4b8f"
+      ],
+      "reason": "Documented hold_message's optional before_commit hook invoked under the store lock before _write_store_file.",
+      "sources": [
+        {
+          "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+          "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/held_store_layout.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GTD52P",
+      "items": [],
+      "reason": "Verified SECURITY.md whole document against L32 candidate 52e47cca: loopback binding, origin/host guards, durability, and reporting policy remain accurate; HeldResetIndex writes stay confined to coordination_root/temp via require_durable_write_target.",
+      "revision": 18,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H1N0CW",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Documented test_held_reset_delivery.py on its five shared support/fixture consumer rows and refreshed shifted citations.",
+      "sources": [
+        {
+          "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H5XT3R",
+      "items": [
+        "sha256:5521de59f4f1d5c075da263b7fb3edd696357f191af245ddbec10f8d003773b5"
+      ],
+      "reason": "Examined WKN-CS209S against L32 candidate 52e47cca: the recorded weakness still stands unchanged (L32 added durable reset-index scheduling and did not alter this weakness's underlying seam).",
+      "revision": 5,
+      "subject": "WKN-CS209S"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H6YTQY",
+      "items": [
+        "sha256:2139983db646bbf3891709942c3a36e0d5fd480c5179686e0ae28b6a71d4f225",
+        "sha256:619acc3f5450aa2ce353209b960e63b3e4317bfdfb94b1f830a5d046e7d531a7"
+      ],
+      "reason": "Reviewed card: L32 only added held_reset_delivery=None to the lifespan fake; catalog-preparation test contract is unchanged.",
+      "sources": [
+        {
+          "blob": "99441986a6872c626b6493e5eb94b1d87188e765",
+          "path": "mcp/tests/test_serving_catalog_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving_catalog_preparation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+            "content": "sha256:7cf565448e269fb9fb9c3ef6ae61caaff0bce1f6f75cdc957996dcd37d13a259",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-9D25GS"
+        },
+        {
+          "after": {
+            "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+            "content": "sha256:5fd69cb92db813c555b7a72d66ab63a32b59440624cd02bf26cef7eac6bc59b9",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 536
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+            "content": "sha256:5fd69cb92db813c555b7a72d66ab63a32b59440624cd02bf26cef7eac6bc59b9",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 522
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-9KM829"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HX6T3V",
+      "items": [
+        "sha256:0d018c839742b926bee4a928142956f537511a382f47d6ba9c23058c872f2b92"
+      ],
+      "reason": "Review-tree process owner creation and shutdown ordering before background task cancellation are unchanged; _running_lifespan teardown lines shifted +14 lines.",
+      "revision": 1,
+      "subject": "INV-HHZP57"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JAA3JA",
+      "items": [],
+      "reason": "Verified docs/design/canvas-host.md whole document against L32 candidate 52e47cca: canvas host routes, guards, and serving integration remain unaffected by L32's optional held_reset_delivery lifespan port.",
+      "revision": 11,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JACHBR",
+      "items": [
+        "sha256:7dd92bb319867736f42f2075840addcda8ec17ad8ddc2a095add4f0cf1f84881"
+      ],
+      "reason": "Created onboarding card and authored sidecar references for new independent 16-worker held-reset wake scheduler.",
+      "sources": [
+        {
+          "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+          "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/held_reset_scheduler.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JMDQ7F",
+      "items": [
+        "sha256:13e6f16ac4923856163ce83c4fc68e414f9b1ef553e497109b792f7ab63c8e80"
+      ],
+      "reason": "Updated purpose and ownership prose to include held_reset_index.py (<coordination_root>/temp/held-resets.sqlite).",
+      "sources": [
+        {
+          "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+          "path": "mcp/src/agents_remember/controlplane/held_reset_index.py"
+        },
+        {
+          "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+          "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JP5P5C",
+      "items": [
+        "sha256:b5ae7593a94611913cf4afac18ec137f1fda946694b1e1a21be63fbdb24925df"
+      ],
+      "reason": "Added present-tense account of durable reset-index scheduling and independent wake alongside the rotating sweep and refreshed citations.",
+      "sources": [
+        {
+          "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_messages.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K5GN26",
+      "items": [
+        "sha256:feb51b4cd247f462945f5e309df2c5e3a3ad9606ebc4b97627002d2403ff2ffa"
+      ],
+      "reason": "Documented optional reset_delivery_task startup and background teardown in _running_lifespan and refreshed citations.",
+      "sources": [
+        {
+          "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+          "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/_app_lifespan.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MDJMNN",
+      "items": [],
+      "reason": "Verified docs/README.md whole document against L32 candidate 52e47cca: documentation index links and scope descriptions remain accurate after L32's held-reset delivery additions.",
+      "revision": 14,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-GCM4EB"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "db2da68c2baec09b960f87cf16f6e1208c685874",
+            "content": "sha256:d914a6d272312cf2232dcb79e00e5d2daf79ee45f9b6e4ed1ebe44f56e98c507",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "before": {
+            "blob": "488b4a8c9fb88e0ab9105fc8d1bbb8350617fed4",
+            "content": "sha256:4e76feda1eaf61619773ef19fcba69aa74d2f612390e86a575405fff2f9cd280",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "id": "RLZ-1PYRAZ"
+        },
+        {
+          "after": {
+            "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+            "content": "sha256:d103f78490028d5071df7d816b91d3cfe4c93b2e23629d060f9e60b345a6be34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+            "content": "sha256:d103f78490028d5071df7d816b91d3cfe4c93b2e23629d060f9e60b345a6be34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-2B19GK"
+        },
+        {
+          "after": {
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:633c8c08df3553407d329b91fbcb568e13ac557d18a253948f535c308b51daca",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_ended_turns"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:633c8c08df3553407d329b91fbcb568e13ac557d18a253948f535c308b51daca",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_ended_turns"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-617P3B"
+        },
+        {
+          "after": {
+            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-6HF52M"
+        },
+        {
+          "after": {
+            "blob": "47eb44c7a0f181b5bb9c094c3693ed0c51f690fb",
+            "content": "sha256:7b5a6798e836dfaad80b9620ea26f3d99104a4d0b88f06599157b42b3e7f2a82",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:f2549e5d5efd2a3e7cb32d55bc2bcc8970ed5c55d294d299ecaf2d4990f29c46",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "RLZ-DT8Y58"
+        },
+        {
+          "after": {
+            "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+            "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "note_held_receipt"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "note_held_receipt"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-GCHN6K"
+        },
+        {
+          "after": {
+            "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+            "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+            "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-MQ79S4"
+        },
+        {
+          "after": {
+            "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+            "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep_held_messages"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep_held_messages"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-R78RC8"
+        },
+        {
+          "after": {
+            "blob": "d04d4923c6ff209775dfc8e580a922da21fdcba2",
+            "content": "sha256:62d01c4e3b8b9be89dbed2b1ddb48d0e6ed39b877e10006ffdfabf528b482c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_for_provider_limit"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "before": {
+            "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
+            "content": "sha256:5b0bc6c3a602ea384a4e0aeda8ec6c383b9c56e2946fcf8eae3f4b12a7c9e436",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_for_provider_limit"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "id": "RLZ-RX5FRC"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-MKHB7V",
+      "items": [
+        "sha256:f3434cffff91af0a3fd00d301baeb1f935979d995d9c8f94cb6a319ce5adfcfe"
+      ],
+      "reason": "Updated condition 6 so provider-limit drain pauses schedule known resets in HeldResetIndex for the independent 16-worker reset scheduler rather than waiting for the bounded rotating receipt cursor, and re-anchored touched entries on L32.",
+      "revision": 6,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MTRA8C",
+      "items": [
+        "sha256:797cdfa3fd8602553c7844aef4db1a49c633fdb57db22bc0fe286c4d7d54d9ef"
+      ],
+      "reason": "Created onboarding card and authored sidecar references for new durable SQLite held-reset scheduling index.",
+      "sources": [
+        {
+          "blob": "b050ac06a629b0a76fe60571b95e05bb5ce3ae59",
+          "path": "mcp/src/agents_remember/controlplane/held_reset_index.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/held_reset_index.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MXC8TD",
+      "items": [
+        "sha256:bd1711cfca49a31ad5895d23895257041e38abede6b97a027e304370f6882f7b"
+      ],
+      "reason": "Registers controlplane/held_reset_index.py (held-resets.sqlite) in the static non-knowledge database allowlists; test allowlist maintenance with no new invariant.",
+      "subject": "hunk:sha256:bd1711cfca49a31ad5895d23895257041e38abede6b97a027e304370f6882f7b"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NVP8XV",
+      "items": [],
+      "reason": "Verified docs/architecture.md whole document against L32 candidate 52e47cca: package layering, serving/controlplane boundaries, and component architecture remain accurate; serving consumes reset delivery through injected ResetDeliveryPorts.",
+      "revision": 25,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "47eb44c7a0f181b5bb9c094c3693ed0c51f690fb",
+            "content": "sha256:276d064798b51ba9a01efca0a505031bab572d6f4da84eec2928d6d0f5dd4955",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_sent_picks_log_keeps_its_latest_lines_and_its_latest_recipients"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:276d064798b51ba9a01efca0a505031bab572d6f4da84eec2928d6d0f5dd4955",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_sent_picks_log_keeps_its_latest_lines_and_its_latest_recipients"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "PRF-4G0HVD"
+        },
+        {
+          "after": {
+            "blob": "47eb44c7a0f181b5bb9c094c3693ed0c51f690fb",
+            "content": "sha256:8835d6b14928b06f759b8ddac143bb71d43bb927e7406ca44a471601c2bb556f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_held_send_that_ends_undelivered_is_filed_and_logged_undelivered"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:8835d6b14928b06f759b8ddac143bb71d43bb927e7406ca44a471601c2bb556f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_held_send_that_ends_undelivered_is_filed_and_logged_undelivered"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "PRF-5MVTGV"
+        },
+        {
+          "after": {
+            "blob": "47eb44c7a0f181b5bb9c094c3693ed0c51f690fb",
+            "content": "sha256:85ca6be31b2ddf911b5cedab4211de5171ddf732d6a5754126b9dbeab94b23f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_held_send_after_a_partial_drain_is_answered_by_its_own_message"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:7bec6ec82ad4dae2095673cc1a91d4bbb17eeb7107cb11a3a4cb4c4690b002e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_held_send_after_a_partial_drain_is_answered_by_its_own_message"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "PRF-R1TH1E"
+        },
+        {
+          "after": {
+            "blob": "db2da68c2baec09b960f87cf16f6e1208c685874",
+            "content": "sha256:bdabc632db5ca5abccaa642c31ad25c918dd455aa4a2a7a829138f6ba9b600a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "before": {
+            "blob": "488b4a8c9fb88e0ab9105fc8d1bbb8350617fed4",
+            "content": "sha256:5942c3e1f0ee78bc0cb8a82ae2619ad57edaacee06197b706cf1a8e56af0727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "id": "RLZ-FFSH5T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NZSW8C",
+      "items": [
+        "sha256:b5fbbddb3df1ac8420e2746c711eb8e1489178b2720e61bbf24e76a0d17257b8"
+      ],
+      "reason": "Developer partial-drain hold and per-message settlement semantics are unchanged; _hold delegates through hold_at_receipt and the test patches held_reset_delivery.note_held_receipt.",
+      "revision": 1,
+      "subject": "INV-0WDKPN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PQQ54K",
+      "items": [
+        "sha256:151f4e42fa2c85cbefb0d1bdb5c3ce2d2759561fc8dd6b212268f2b02da351f8"
+      ],
+      "reason": "Examined WKN-6RT10Q against L32 candidate 52e47cca: the recorded weakness still stands unchanged (L32 added durable reset-index scheduling and did not alter this weakness's underlying seam).",
+      "revision": 5,
+      "subject": "WKN-6RT10Q"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QA12KA",
+      "items": [
+        "sha256:f595af4b017d2e4290823e6cd5d4fca31a1c2a78529f957460fea266a5bfe5e7"
+      ],
+      "reason": "Examined WKN-NQ5HBZ against L32 candidate 52e47cca: the recorded weakness still stands unchanged (L32 added durable reset-index scheduling and did not alter this weakness's underlying seam).",
+      "revision": 2,
+      "subject": "WKN-NQ5HBZ"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "deferralIds": [
+        "DFR-9JY22K"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QDY4EK",
+      "items": [
+        "sha256:a8bcce7c23d0481f3a79dae7d23d2bca151d4b6feda1abce464c5012d0d44dd9"
+      ],
+      "reason": "Verified docs/reference/mcp-tools.md on L32 candidate 52e47cca: lines 794-801 accurately document independent 16-worker reset scheduling, the D987 ~30s/~300 and ~11/s ceiling, and the 512-entry/24-hour queue bound; pre-existing KNO-R07 deferral on lines 31 and 203 is re-deferred onto the new blob without lifting.",
+      "revision": 35,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R3FHHW",
+      "items": [
+        "sha256:960219bcd2d98d92942df6b9305abec113294e130f7e8b0ff67dd7ef5c58f4cb"
+      ],
+      "reason": "Created onboarding card and authored sidecar references for new held-reset admission, drain, finish, and port-wiring module.",
+      "sources": [
+        {
+          "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+          "path": "mcp/src/agents_remember/cli/held_reset_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/held_reset_delivery.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+            "content": "sha256:72d10771bf3fbfcabda535d73139b1f4485b07b1d78978a773fb52388b355727",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:3a6d0e4da549e07bd36e7fc2e52554dc02854d5ed72b9b49b54d9d4e45f41fe5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-HPJZAR"
+        },
+        {
+          "after": {
+            "blob": "1316a26cfc00ccbab56538b3777d3221ccd9bcf8",
+            "content": "sha256:0287188528d350c315c0de64f17efd71f79cf9597fbaf7f1c2129fcec90f8aa6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "before": {
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:492c4efee13fcc6724a0e910caeec6af7651945afde2116c324995ad340cb1f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "id": "RLZ-N1YKT8"
+        },
+        {
+          "after": {
+            "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
+            "content": "sha256:d4d903cffcfc7a64944dd2d7e851eb956fd42a40cd648bd02c75ca7b5ad48164",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "before": {
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+            "content": "sha256:77b483fad953fc455dbc920f0fed826852dbe6eccd5d71d900708377a97e7cf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "id": "RLZ-Y1MRCM"
+        },
+        {
+          "after": {
+            "blob": "85b48c98ae065332522bd95d96c036effedf0d6c",
+            "content": "sha256:ed41dc8eebedcf51ad1aaa024b8b5b15793d7abe996122a6cefed666ae97639b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+            "content": "sha256:04456d2f9a7aa42ef540038a20ec85b1fe07b2008edcd4df3a66195215934c93",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-Z58FSG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R9W3TB",
+      "items": [
+        "sha256:bb7d5bc2e0de5df12677584074ebd9d2c3aa84243d6323f6c956c10c3f1a0103"
+      ],
+      "reason": "Landing refresher wiring and lifespan ownership across dashboard.py, app.py, _app_common.py, and _app_lifespan.py are unchanged.",
+      "revision": 3,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RBFX1P",
+      "items": [
+        "sha256:e96aa5efb1468132fb31795b37c140a7d35c49e544b98019252b40139fe85150"
+      ],
+      "reason": "Registers controlplane/held_reset_index.py (held-resets.sqlite) in the static non-knowledge database allowlists; test allowlist maintenance with no new invariant.",
+      "subject": "hunk:sha256:e96aa5efb1468132fb31795b37c140a7d35c49e544b98019252b40139fe85150"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RQ695K",
+      "items": [
+        "sha256:efa6ce4752db62db828cf8220e1618d82d69f47d25903144b5fac615e43bb939"
+      ],
+      "reason": "Documented optional held_reset_delivery: ResetDeliveryPorts | None = None on ServingCollaborators and _ServingRuntime and refreshed citations.",
+      "sources": [
+        {
+          "blob": "1316a26cfc00ccbab56538b3777d3221ccd9bcf8",
+          "path": "mcp/src/agents_remember/serving/_app_common.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/_app_common.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0dca3e1987ccc0675e09f3aa12eb01255624e8ca",
+            "content": "sha256:59eeeec3502e8128a2c9a6f76d34e861adeb73a7678e98a73d353f1f55cca66b",
+            "locator": {
+              "end": 794,
+              "kind": "line_range",
+              "start": 785
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+            "content": "sha256:cc410c746b299c570a8692802770eec28e2d0e44a3471b07e9d0829cca25d383",
+            "locator": {
+              "end": 794,
+              "kind": "line_range",
+              "start": 785
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-KPHK0W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RYK55E",
+      "items": [
+        "sha256:e8587963b8da645ef7ecafc28f63e04f8987dffe26e7d897333223112126a4d5"
+      ],
+      "reason": "Provider-limit suppression documentation at docs/reference/mcp-tools.md:785-794 is unchanged; L32 appended reset-scheduler sentences at lines 794-801.",
+      "revision": 1,
+      "subject": "INV-VEGPXX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+            "content": "sha256:394dc240c747e1386249d8920b6b2fff7137ed7ac7bc9d256770e962d9eeb55f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-GEQ4R4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S9XHX4",
+      "items": [
+        "sha256:96bf13ebb64655fb96150e354c107154584c5d0b7a41ccc86ca60af66aab2db2"
+      ],
+      "reason": "Bounded hold-store authority reading in held_store_layout.py is unchanged by adding hold_message's optional before_commit hook.",
+      "revision": 1,
+      "subject": "INV-AYW07B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SV48N7",
+      "items": [
+        "sha256:a1f912ee6700d8a99e6b54d75f654eb5488caeb1b0caaf7869f5aab19663857c"
+      ],
+      "reason": "Registers controlplane/held_reset_index.py (held-resets.sqlite) in the static non-knowledge database allowlists; test allowlist maintenance with no new invariant.",
+      "subject": "hunk:sha256:a1f912ee6700d8a99e6b54d75f654eb5488caeb1b0caaf7869f5aab19663857c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SV6Q1K",
+      "items": [
+        "sha256:ab53adb8ec70784a18d8e0f5335e72484d22d89adfb560a6f1d4293b76b3c9ba"
+      ],
+      "reason": "Reviewed mcp/overview.md: high-level package boundary is unchanged by L32's internal held-reset scheduling modules (drifted dashboard citations refreshed mechanically).",
+      "sources": [
+        {
+          "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        },
+        {
+          "blob": "db2da68c2baec09b960f87cf16f6e1208c685874",
+          "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+        },
+        {
+          "blob": "f84d39436a8c9216e979d4ca83d06971f4291ae6",
+          "path": "mcp/src/agents_remember/cli/held_reset_adoption.py"
+        },
+        {
+          "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+          "path": "mcp/src/agents_remember/cli/held_reset_delivery.py"
+        },
+        {
+          "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        },
+        {
+          "blob": "d04d4923c6ff209775dfc8e580a922da21fdcba2",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        },
+        {
+          "blob": "3da084c86a95d69ed7378d2fc831ebefe2b66cee",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T3X6VR",
+      "items": [
+        "sha256:612652c26fd3a6285850388fcb91300c38241a453aa322887f770211a92dc879"
+      ],
+      "reason": "Documented controlplane/held_reset_index.py entries in the non-knowledge SQLite allowlists.",
+      "sources": [
+        {
+          "blob": "c86021fadafcf25bb252c2e7edbe88b1a9547fd7",
+          "path": "mcp/tests/test_knowledge_database_retired.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_database_retired.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3f0e5d1c51cb80308b7f53cd2721667c17af1137",
+            "content": "sha256:5748f640ecc90ee87f6e2a3c411470757ce4d1f8165dce1840e989e35334bada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "content": "sha256:1fb7124e8781153cb5aeaf45a73b4bd8444957007cce52902b9245bbfb0e4145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "36697d02b02907dc6b3f43b93db26bccf3de01a3",
+            "content": "sha256:28cdff05c5e6d0d105212b1caadd4e3f834342229612aab60d9d77386ffae72c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TK11MN",
+      "items": [
+        "sha256:a92c5c07bfb0066ec7a2fa2589d28d71f8aa284f7ba5ab2e1e56e18c73266afb"
+      ],
+      "reason": "Outside-scratch test entries in evidence-lifecycle.toml and test-evidence-lanes.toml are unchanged after adding test_held_reset_delivery.py.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TQRCE7",
+      "items": [
+        "sha256:2ac9bbf40d7722104af0fb16bfceef4725312e137f3f859fa6d644a537703a9f"
+      ],
+      "reason": "Adds held_reset_delivery=None to two _ServingRuntime test doubles so existing owner-accounting tests construct the runtime cleanly; test-fixture repair only.",
+      "subject": "hunk:sha256:2ac9bbf40d7722104af0fb16bfceef4725312e137f3f859fa6d644a537703a9f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V8QKVX",
+      "items": [
+        "sha256:889fd363c38bdd69e6d3edfc8ed4e469d8234edde25ac3ef6c228db0a266bcff"
+      ],
+      "reason": "Updated card prose to document held_reset_delivery=reset_delivery_ports(config) wiring and refreshed shifted citations.",
+      "sources": [
+        {
+          "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1PBH5A",
+          "revision": 1
+        },
+        {
+          "id": "INV-3ZXAD9",
+          "revision": 1
+        },
+        {
+          "id": "INV-4R5HAZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HD8CC1",
+          "revision": 1
+        },
+        {
+          "id": "INV-HE32N8",
+          "revision": 1
+        },
+        {
+          "id": "INV-HPD40B",
+          "revision": 1
+        },
+        {
+          "id": "INV-J4MDWS",
+          "revision": 1
+        },
+        {
+          "id": "INV-SAK9RR",
+          "revision": 1
+        },
+        {
+          "id": "INV-VETCYM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W01QAT",
+      "items": [
+        "sha256:0559dc92a09175fcefe5c9bfdeb75d5ce166219564c04136ada6ce0899da132e"
+      ],
+      "reason": "All 9 members examined; only INV-3ZXAD9 had a file-level anchor refreshed on docs/reference/mcp-tools.md without meaning change, so the family guarantee holds unchanged.",
+      "revision": 1,
+      "subject": "FAM-7ZPFMC"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WCYGEZ",
+      "items": [],
+      "reason": "Verified docs/reference/runtime-layout.md whole document against L32 candidate 52e47cca: coordination root, temp directory, and worktree layout descriptions remain accurate alongside <coordination_root>/temp/held-resets.sqlite.",
+      "revision": 16,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+            "content": "sha256:394dc240c747e1386249d8920b6b2fff7137ed7ac7bc9d256770e962d9eeb55f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-VCNRER"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WF9HM9",
+      "items": [
+        "sha256:9ed4c6f9153d5f62648344b153a7bfc1adb0bfc941055409c53ee2fdb165ad5c"
+      ],
+      "reason": "Bounded hold-store census retention in held_store_layout.py is unchanged by adding before_commit to hold_message.",
+      "revision": 1,
+      "subject": "INV-XP08W1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WN64KT",
+      "items": [
+        "sha256:056f1ac414b6dd6f7f17e6237c9397f6337c831db1676ed9b6407e2461cd8deb"
+      ],
+      "reason": "Registers controlplane/held_reset_index.py (held-resets.sqlite) in the static non-knowledge database allowlists; test allowlist maintenance with no new invariant.",
+      "subject": "hunk:sha256:056f1ac414b6dd6f7f17e6237c9397f6337c831db1676ed9b6407e2461cd8deb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZGTK0V",
+      "items": [
+        "sha256:822878062004f17f838c4cfbb559da07a710ccb16f4231cb6b241fe3a2ec993b"
+      ],
+      "reason": "Created onboarding card and authored sidecar references for new held-reset delivery unit-regression test module.",
+      "sources": [
+        {
+          "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+          "path": "mcp/tests/test_held_reset_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_reset_delivery.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R32",
+          "packet": "requirements/BUG-R32-v1-held-messages-go-out-within-thirty-seconds-of-a-reset-whatever-the-backlog.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZMYDE2",
+      "items": [],
+      "reason": "Verified mcp/README.md whole document against L32 candidate 52e47cca: MCP package structure, CLI/dashboard entry points, and test invocation guidance remain accurate after L32.",
+      "revision": 31,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "content": "sha256:de683d10ee1b20ef69e4fa1dac6d77c5c5e8d6c7cc65154bc8373eaefb253a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hold_for_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:3f1461afcbff4c641264899f280e711396af8b35840b8cff5944e60a34dc6f20",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hold_for_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-GHFC8D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZVDG61",
+      "items": [
+        "sha256:30b3127e4aa6ca9aa6e774dcba14fe88c6d954e05ef4da982659f4064f3c8050"
+      ],
+      "reason": "_hold_for_seat still appends the full-store refusal pointer only on HeldStoreFull recipient-busy refusals while calling hold_at_receipt.",
+      "revision": 1,
+      "subject": "INV-7CZVBD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZWYS16",
+      "items": [
+        "sha256:674e39a44fadae7b78fa613c2264c2f37b77e85106b32996f7036c66da5644a8"
+      ],
+      "reason": "Internal helper extraction (_drain_worker) and dedicated-executor offload_on wrapper preserving the existing accounting/drain contract (INV-0NSFFW) for the held-reset scheduler; no separate invariant.",
+      "subject": "hunk:sha256:674e39a44fadae7b78fa613c2264c2f37b77e85106b32996f7036c66da5644a8"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:e0cb01be83d7883e3fa72041f9f582bbac945d17a505cfeaa30238dce41ec82a",
+      "record": "DEC-GCM4EB",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:afb6811969f87e19140885fc527ae2a5e654c04125e9ef159dc6fba9359f217a",
+      "record": "DPD-06057Y",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0f8d42dc4f8da8794790e37b8c525eba5af3c7c220cb50e6988d81cdb445b632",
+      "record": "DPD-327MNX",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:67307b1e5cab893addb6d6f4c837c31842ec05cc5f10aca540bb7a89c5030c4c",
+      "record": "DPD-7YCJ2B",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:94a6a36fc9db453f67a1890d7cd22dff3e60510de717184d3b9956257c6de529",
+      "record": "DPD-86HJGF",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4977061e97f02e0da23e1677c93734e46f801ce0dbefe80cbda3b217399e9a14",
+      "record": "DPD-8PE0G9",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f31cab844fd73b41b920c0ecd73ed20789327d806cf0306b862dab711841f5c3",
+      "record": "DPD-CZBR1Q",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:72c2a6e6e4d485a7bfda6dd388beeee47773a4a8b2b0df094f91abfd5a8cf6a6",
+      "record": "DPD-K2QMWQ",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7e4da8996870cca968ab4b67e9a95550567c2552e5f4b5380f90e43f23311621",
+      "record": "DPD-Q4APMS",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6155d1afc999765e1bbecd037252e517b8c3449f88ddab723fbd1f3093bc6146",
+      "record": "DPD-X6G7K3",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:38169a5196c468050385f73880cff6daabb59949ba8d33a11088696f6f1f1795",
+      "record": "DPD-XV7QBE",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6612b7ce13f1d64d0bcffb83d04822a3e81e923ef9b718c881d682fe94a31efe",
+      "record": "DPD-ZT8YY7",
+      "revision": 42,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:002a5bf2f2e271c7c7958536e77c71184fbbe6dcba996749ecb58915aafa0a43",
+      "record": "FAM-Y44NA4",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:58c29ae3df5a50e2e02faf4b8f42b010895b146841f835a5a46a077e503f73a9",
+      "record": "INV-0SSZQM",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:06a460f04abf4afba44f77041c4dc881dc6e268bcf8d233eb28e6d3bd11b9b62",
+      "record": "INV-1ZKP4R",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5a6e6c3c1abaf3e4b2512447b3efad4ae16e73d18f1ad235faad098e660dafc3",
+      "record": "INV-4DQMNE",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0ceaf4c9e7f6d58c45ff1ec03fa5aeebc0fa9e84aceeb39a02932e249b1866b9",
+      "record": "INV-6NJ5ZH",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6d4ede1ab228de663622f67adca39eecb681dcc4070f8efa6c0ce24e862a7488",
+      "record": "INV-E27J2R",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4d60603b401612bc27e48e340a04c95c5566152bd864dce87214d73718a0bcdc",
+      "record": "INV-GV3950",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ec2f2ca64ef94db78ac5891d3a16323e0062f2bf00fb1b8ac0438200585271cc",
+      "record": "INV-W48HES",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T21:15:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L32",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

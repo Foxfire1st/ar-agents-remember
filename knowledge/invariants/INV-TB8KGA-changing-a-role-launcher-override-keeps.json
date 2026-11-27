@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across roleChatScopes.ts::useRoleChatScopes and roleLaunchModel.ts::roleOptionsScope, and proved by RoleChats.modelOptions.test.tsx."
+  },
+  "applicability": "Dashboard role launcher override edits (agent, model, effort, mode, and feature controls).",
+  "conditions": [
+    "The selected role and document references remain unchanged.",
+    "Shown-model feature discovery runs only when the newly displayed (agentId, modelId) pair has no held answer."
+  ],
+  "exclusions": [
+    "Explicit Refresh and role or document-reference changes still reload metadata and saved catalog."
+  ],
+  "id": "INV-TB8KGA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/34_launcher-options-coalesced-and-clean-9763ab777e-ar/role-reports/worker/2b56f62f-7fe4-56a7-9c61-6107077010c6/role-launch/261112-BUG-L34-worker-2b56f62f-7fe4-56a7-9c61-6107077010c6.md#frontend-read-stability"
+      ],
+      "path": "L34-W3-curator-ingest"
+    },
+    "handoffEntry": "BUG-R34@v1 item 1",
+    "leaf": "261112-BUG-L34",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Changing a role launcher override keeps the metadata scope and only reads features for a newly shown provider and model.",
+  "supersedes": [],
+  "title": "Launcher overrides keep metadata scope and only query uncached shown features",
+  "writer": {
+    "at": "2026-11-27T21:13:03+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
+  }
+}

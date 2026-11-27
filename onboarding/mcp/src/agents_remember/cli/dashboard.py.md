@@ -12,7 +12,7 @@ Run dashboard supervision or live/reload/sim serving and bind configuration-scop
 
 The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed.
 
-serving_collaborators is the rank boundary: complete review, numbered entry catalogue, source content, summary, tree and knowledge reader are injected application callables. It creates app-local ReviewerWorklistProcesses pools (tree reads and lowered-priority _leaf_build precompute), supplies tree reads and their shutdown, and wraps recorded intent/catalogue/tree questions in RecordedReviewAnswers. The application owners define their payloads; retained all-owner-record and knowledge-diff docstrings do not restore retired channels.
+serving_collaborators is the rank boundary: complete review, numbered entry catalogue, source content, summary, tree and knowledge reader are injected application callables, and `held_reset_delivery=reset_delivery_ports(config)` wires the independent held-message reset adoption and delivery ports into serving. It creates app-local ReviewerWorklistProcesses pools (tree reads and lowered-priority _leaf_build precompute), supplies tree reads and their shutdown, and wraps recorded intent/catalogue/tree questions in RecordedReviewAnswers. The application owners define their payloads; retained all-owner-record and knowledge-diff docstrings do not restore retired channels.
 
 review_entries_port now takes optional number and calls list_comparison_review_entries with that exact selector through the reuse owner. api_routes registers native role launch, then developer chat/tray seat/send/sent-pick routes, supplying the same admitted leaf-memory resolver for review references. This is composition, not a second developer-delivery implementation.
 
@@ -59,10 +59,12 @@ Configuration identity, admitted watch/reference roots, read availability, deliv
 
 
 
+
 - The daemon, status and stop commands delegate to the dashboard daemon adapter with this module's host observe and host start. [73]
 
 
 
 - The dashboard binds a registry-aware activity reader. A qualifying attempt checks role records before reading the activity snapshot. [74]
+
 
 - Foreground and reload Uvicorn paths pass `dashboard_log_config()`, configuring UTC ISO-8601 timestamps through `_UtcDefaultFormatter` and `_UtcAccessFormatter` and binding `agents_remember` `INFO` logging on stderr without mutating global `logging.Formatter.converter`. [75]

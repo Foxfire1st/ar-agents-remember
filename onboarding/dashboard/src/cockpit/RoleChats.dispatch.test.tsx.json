@@ -1,5 +1,25 @@
 {
   "path": "dashboard/src/cockpit/RoleChats.dispatch.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ab23ba3a537a4b862420dd3f6e70e26fa836f0d9",
+        "content": "sha256:63bd62bdb8d06d59eca4024749298c382705f9f70d6cc3bd2ac5a033dd50c3c5",
+        "locator": {
+          "end": 274,
+          "kind": "line_range",
+          "start": 221
+        }
+      },
+      "facet": "After a settled dispatch reply or offline recovery, the follow-up options refresh preserves the Result control and issues exactly one /api/role-launch/result call for that requestId.",
+      "id": "PRF-FWGAJX",
+      "invariant": "INV-ZQV6YN",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 3",
+        "leaf": "261112-BUG-L34"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f905e1e1f13cb2f90aaa1175cb76d6ac3223ca7",
-            "content": "sha256:5df18e63bc67e015100d1d79bdf63640c0f41f1cce76287d1512cd129476708b",
+            "blob": "ab23ba3a537a4b862420dd3f6e70e26fa836f0d9",
+            "content": "sha256:b158537b83dde3cec017b317010d0842b5f580246e5de73ac65b29f7dc61c2e2",
             "locator": {
               "kind": "file"
             }

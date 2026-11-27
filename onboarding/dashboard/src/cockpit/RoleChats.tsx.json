@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -21,10 +21,10 @@
     },
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
         "locator": {
-          "end": 134,
+          "end": 142,
           "kind": "line_range",
           "start": 48
         }
@@ -40,8 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsPane"
+        }
+      },
+      "id": "RLZ-958B24",
+      "invariant": "INV-ZQV6YN",
+      "origin": {
+        "handoffEntry": "BUG-R34@v1 item 3",
+        "leaf": "261112-BUG-L34"
+      },
+      "rationale": "The pane carries the result marker beside the metadata refresh counter.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -58,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:e225a0cb94bc38895dee45319410e8d4c1be1f2e93afc7fc176efa8e13319761",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -76,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:fc6961f35b443d8619ed2157c4b87a4c0298835845d63b39110c10f3105fdf74",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:cd4f2a69be15d9494449810b5d2d7991eb4bf34194dc7b8543c64ce8758c2118",
         "locator": {
           "kind": "file"
         }
@@ -93,10 +111,10 @@
     },
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
         "locator": {
-          "end": 134,
+          "end": 142,
           "kind": "line_range",
           "start": 48
         }
@@ -112,10 +130,10 @@
     },
     {
       "anchor": {
-        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+        "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+        "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
         "locator": {
-          "end": 134,
+          "end": 142,
           "kind": "line_range",
           "start": 48
         }
@@ -136,10 +154,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
-            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "blob": "9ffeb3bd2a7fdd01dc8fb820561b247906a6567d",
+            "content": "sha256:f7237e8a316f37da08963b6c39f3aff66925ceeefbd84b83dfbe431b4e2a55be",
             "locator": {
-              "end": 134,
+              "end": 142,
               "kind": "line_range",
               "start": 48
             }
@@ -153,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "blob": "8aa5880b5e798d5c943a0acb7515debf5fde244e",
             "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
             "locator": {
               "kind": "symbol",
@@ -170,8 +188,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
-            "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+            "blob": "4b436b7020b6b03ff25f7505439740836c318ab6",
+            "content": "sha256:167cc8e9594d75d6ef0c712dd0a7bbce1fae020ab5a72b60caec4352f724d06e",
             "locator": {
               "kind": "symbol",
               "name": "dispatchRoleAction"
@@ -205,8 +223,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
-            "content": "sha256:ec3548cc25f160af7a079d546f4f98eb9375f6504fa37f616544994b9251721f",
+            "blob": "2fa42e4750002265642f65e833bd8e0b9704f855",
+            "content": "sha256:d2dafae6234971018bb4d7ac2cefb8c271f5e7fe1ddefc2c3dd7bc160cb08d96",
             "locator": {
               "kind": "symbol",
               "name": "adoptSavedExecution"

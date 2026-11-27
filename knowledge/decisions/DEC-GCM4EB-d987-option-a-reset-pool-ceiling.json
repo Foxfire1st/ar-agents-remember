@@ -1,0 +1,113 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed four delivery architectures against measured host-bridge saturation and constrains future reset-scheduler concurrency, pool sizing, and documentation changes."
+  },
+  "alternatives": [
+    {
+      "option": "Deliver due recipients through a fixed 16-worker reset pool (RESET_WORKERS = 16) backed by a durable SQLite reset index, accepting the measured physical ceiling of roughly 300 due recipients within 30 seconds and roughly 11 recipients per second beyond it.",
+      "reason": "Keeps peak concurrency bounded independently of fleet size, clears up to roughly 300 simultaneous resets within 30 seconds, drains larger backlogs steadily without starving the 4-thread ar-background pool, and matches the host-bridge saturation measurements.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep serial delivery on the ordinary 15-second rotating receipt sweep (32 receipts per tick).",
+      "reason": "A backlog exceeding 32 waiting receipts or aged past the 24-hour / 512-entry held-receipt queue delays post-reset delivery across multiple sweep ticks past the 30-second requirement.",
+      "reconsider_when": "Fleet size stays permanently within a single 32-receipt sweep slice and 15-second sweep latency becomes acceptable.",
+      "status": "rejected"
+    },
+    {
+      "option": "Raise RESET_WORKERS above 16 (such as 32 workers) or scale thread count with fleet size.",
+      "reason": "Host-bridge saturation limits throughput near 11 recipients per second at 16 workers, so raising thread count adds contention without materially shortening large-backlog drain times.",
+      "reconsider_when": "Host-bridge concurrency characteristics change so more than 16 worker threads increase sustained delivery throughput without exhausting host resources.",
+      "status": "rejected"
+    },
+    {
+      "option": "Rewrite the host-bridge delivery protocol to eliminate per-recipient round-trip cost so unbounded simultaneous backlogs finish within 30 seconds.",
+      "reason": "Requires an invasive cross-process host-bridge redesign outside the leaf's scope when the measured 300-recipient / 11-per-second ceiling satisfies operational needs.",
+      "reconsider_when": "Production workloads regularly hit more than 300 simultaneous provider-limit resets and the ~11 recipients/second drain rate becomes operationally unacceptable.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Peak reset-delivery concurrency stays fixed at 16 threads independent of fleet size.",
+    "Up to roughly 300 simultaneous due recipients clear within 30 seconds of reset, and larger backlogs drain at roughly 11 recipients per second.",
+    "Operator documentation (docs/reference/mcp-tools.md) explicitly states the 16-worker pool, the ~300 / ~11-per-second D987 Option A ceiling, and the 512-entry / 24-hour queue bound."
+  ],
+  "context": "Simultaneous provider-limit resets across large fleets require delivering waiting held messages promptly without leaving recipients behind the bounded 32-receipt ordinary sweep rotation, while host-bridge per-recipient execution cost caps sustained throughput.",
+  "decider": "Developer (D987 Option A, 2026-11-25T09:09Z) following Architect ruling",
+  "id": "DEC-GCM4EB",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+        "content": "sha256:572caa6c6ff647d07f0dec3ba8fc32ca4fb909861aa257a4995af97aa5405b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "RESET_WORKERS"
+        },
+        "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": "INV-E27J2R"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-6NJ5ZH"
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+        "content": "sha256:572caa6c6ff647d07f0dec3ba8fc32ca4fb909861aa257a4995af97aa5405b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "RESET_WORKERS"
+        },
+        "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+      }
+    },
+    {
+      "alternative": 3,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+        "content": "sha256:563d3dadbdb2eb2b399769faecf0c4a9b7682af5fb15fdf957949367bb45c926",
+        "locator": {
+          "kind": "symbol",
+          "name": "deliver_due_pass"
+        },
+        "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L32-curation-handoff.json"
+    },
+    "handoffEntry": "d987-option-a-reset-pool-ceiling",
+    "leaf": "261112-BUG-L32",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-27T21:15:46+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L32",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
+  }
+}

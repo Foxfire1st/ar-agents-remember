@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
+    "codeTree": "52e47ccaf654cf3cda87769b9a11db7f349e7fea",
+    "commit": "c3f202eaf532b2518a41353fd0556dea72a17e8f",
     "role": "curator",
-    "statement": "Verified docs/README.md against 17c064d8: role count (nine roles) and documentation index accurately reflect KNO-R05@v3.",
-    "task": "261112-KNO-L5",
+    "statement": "Verified docs/README.md whole document against L32 candidate 52e47cca: documentation index links and scope descriptions remain accurate after L32's held-reset delivery additions.",
+    "task": "261112-BUG-L32",
     "uncommitted": true
   },
   "document": "docs/README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -47,14 +47,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-27T21:15:46+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261112-BUG-L32",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "45cd6d09-fb48-4137-aa04-22efa0c6f083",
+    "task": "261112-BUG"
   }
 }

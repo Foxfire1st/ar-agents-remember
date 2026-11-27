@@ -14,4 +14,4 @@ A message to a limited recipient is held with the reason and the reset time on e
 
 `test_stamped_empty_usage_list_can_remove_the_mapping_during_a_periodic_miss` holds the one clearing case: a successful stamped answer with an empty list removes the mapping even while a periodic refresh for the same report is missing.
 
-**L184 — INV-1ZKP4R.** The one limit check is held here, where its reason and reset are decided. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+The drain-pause fixture (`_batch`) constructs a real `McpRuntimeConfig` scoped to the test's temporary coordination root so `pause_for_provider_limit` exercises durable reset-index scheduling alongside the limit-check and wait rules.

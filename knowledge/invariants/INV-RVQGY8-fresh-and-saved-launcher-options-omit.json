@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across paseo_catalog.py and role_launch_preparation.py, and proved by test_paseo_catalog_preparation.py, test_paseo_launch.py, and test_paseo_launch_outcomes.py."
+  },
+  "applicability": "Fresh POST /api/role-launch/options, GET /api/role-launch/saved-catalog, implicit _default_agent selection, and direct prepare_role_handover starts.",
+  "conditions": [
+    "One shared predicate is_role_launch_provider_offered excludes NATIVE_ANTIGRAVITY ('antigravity') case-insensitively from offering outputs while keeping raw providers untouched in paseo_bridge.mjs.",
+    "Explicitly configured native antigravity reports native_antigravity_role_start_refusal() without mutating settings."
+  ],
+  "exclusions": [
+    "antigravity-acp remains offered normally; existing-receipt reconciliation (existingOnly: true) for native Antigravity Retry stays intact."
+  ],
+  "id": "INV-RVQGY8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/34_launcher-options-coalesced-and-clean-9763ab777e-ar/role-reports/worker/2b56f62f-7fe4-56a7-9c61-6107077010c6/role-launch/261112-BUG-L34-worker-2b56f62f-7fe4-56a7-9c61-6107077010c6.md#provider-offerings"
+      ],
+      "path": "L34-W3-curator-ingest"
+    },
+    "handoffEntry": "BUG-R34@v1 item 6",
+    "leaf": "261112-BUG-L34",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Fresh and saved launcher options omit native Antigravity while retaining Antigravity ACP and the explicit native start refusal.",
+  "supersedes": [],
+  "title": "Launcher options omit native Antigravity while keeping ACP and refusal",
+  "writer": {
+    "at": "2026-11-27T21:13:03+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L34",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
+    "task": "261112-BUG"
+  }
+}

@@ -24,6 +24,8 @@ The serving tick delivers what waits for a recipient the host's own activity rec
 
 `sweep_held_messages` drains the queued receipts before it walks any path, in a slice that starts where the previous tick stopped, so a receipt beyond the first thirty-two is reached within a bounded number of ticks while the receipts ahead of it stay held. The walk remains the fallback for receipts no holder named, under the same per-tick read and drain budget.
 
+Provider-limited holds with a known reset timestamp are additionally published to the durable `HeldResetIndex` (`<coordination_root>/temp/held-resets.sqlite`) and delivered by serving's independent reset scheduler (`held_reset_scheduler.run_held_reset_scheduler`), so post-reset delivery does not wait behind ordinary sweep rotation or the 512-entry / 24-hour queue retention bound.
+
 Before a resend, a message attempted under a host id goes alone and under that id: the drain asks the recipient's timeline through the bridge's `agent-has-message` command and, when the copy is already there, records the delivery with no send. A drain that pauses — the host unreachable, the resume unconfirmed, the store unclaimed or unreadable — writes one warning line naming the recipient and the reason and recounts the receipt's waiting count from the store it holds.
 
 ## Held-seat opening and batch offload
@@ -35,6 +37,7 @@ A `ValueError` from `_restore_launch_handover` releases the claim and returns `c
 ## Evidence
 
 - Admission appends under the store lock and refuses overflow without dropping text. [1]
+
 - A drain delegates claim/readiness checks (bypassing host reads for deferred held receipts) and whole-first FIFO delivery. [2]
 
 - Terminal lines are published separately from ended text and retain failure state. [3]
