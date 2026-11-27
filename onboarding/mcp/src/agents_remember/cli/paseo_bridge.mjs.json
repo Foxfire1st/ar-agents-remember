@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-        "content": "sha256:f9a6205aee0c2bc9c928214238693ef3329d99056d9f534b69ab30fe8a5628e6",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+        "content": "sha256:016f000a661414a0fcf3354dcf8d2c5741cf232328c734ce36edae1f09a2f0b1",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:ce585a05e817ac7c850a0e1ad34c3830a2b543bfa8caf5e879a42662ee773fa3",
         "locator": {
           "end": 416,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:dde3196997ecb99484b431c4bdcdea7319f9ffbfb3abdd7b98bbdbbdcabe1e6c",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,26 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+        "content": "sha256:7cf3cac952f00d34244e85ca24b2f48b6d4c742c90eccb28570d9e7b0bab2efa",
+        "locator": {
+          "end": 691,
+          "kind": "line_range",
+          "start": 660
+        }
+      },
+      "id": "RLZ-4N8M52",
+      "invariant": "INV-EQAWP7",
+      "origin": {
+        "handoffEntry": "BUG-R58@v2 §6",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Checks whether parentAgentId exists and is unarchived when allowMissingParent is true, omitting parentAgentId when absent/archived and retrying without parent on an unloaded-parent create refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:11b325738516c0049bdb6735d8bb9588aaf172c939f4e19596a859c82246cf59",
         "locator": {
           "end": 436,
@@ -96,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-        "content": "sha256:153f8e1f9a1edfbccb18bffb56a99d6908a418df3bedd28dcb2d0d4d6a0bbb09",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+        "content": "sha256:b9b2843e139c2fcd9a7afbcc8dadf61073c0d0ca6f1daf7c4e9922f2682b9eca",
         "locator": {
-          "end": 704,
+          "end": 276,
           "kind": "line_range",
-          "start": 672
+          "start": 276
         }
       },
       "id": "RLZ-8FFN5K",
@@ -115,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:d4d1f8a53afc2055357352246b9b9b0f2a61a4a7d5570f2b83c18b9056fb1569",
         "locator": {
           "end": 654,
@@ -134,7 +153,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:75900b8557745b97f613a702c436f4f9d035483edaad70c0f851b9bb1b7f84ea",
         "locator": {
           "kind": "symbol",
@@ -152,7 +171,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
         "locator": {
           "kind": "symbol",
@@ -170,7 +189,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:07da0822e9c263b96c934e4d1057b59aada3bba410b1cb2c267752819263bb89",
         "locator": {
           "end": 612,
@@ -189,12 +208,12 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:e67e22c6ba2055cb4059061dcb2e51ff15f19926463f6df7f91e1ed3f812527f",
         "locator": {
-          "end": 751,
+          "end": 765,
           "kind": "line_range",
-          "start": 714
+          "start": 728
         }
       },
       "id": "RLZ-N01B6H",
@@ -208,8 +227,8 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-        "content": "sha256:f9a6205aee0c2bc9c928214238693ef3329d99056d9f534b69ab30fe8a5628e6",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+        "content": "sha256:016f000a661414a0fcf3354dcf8d2c5741cf232328c734ce36edae1f09a2f0b1",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -226,7 +245,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
         "locator": {
           "kind": "symbol",
@@ -244,7 +263,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:952d5e8b06ad3f5c89d83c07111787f3737a0939a5dcd9b0b4ce0fe0dcac8b4f",
         "locator": {
           "kind": "symbol",
@@ -262,7 +281,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -280,7 +299,7 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -303,36 +322,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:dc4b0ba7d331f26aac77692912e4b0a24eb1526a7618e6d7b3d902492fb188a0",
             "locator": {
-              "end": 1373,
+              "end": 1394,
               "kind": "line_range",
-              "start": 1363
+              "start": 1384
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
-              "end": 1402,
+              "end": 1423,
               "kind": "line_range",
-              "start": 1392
+              "start": 1413
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:0d5e445b019128ecebe46e232d30f49c6695f2761a825540af92458db1082715",
             "locator": {
-              "end": 1135,
+              "end": 1156,
               "kind": "line_range",
-              "start": 1125
+              "start": 1146
             }
           },
           "kind": "code"
@@ -344,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:2eaca809b9ad7e6e8deb267b1d23fc58e9a168b3f6004404cbcbfecc5399ef01",
             "locator": {
               "end": 141,
@@ -356,7 +375,7 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:999c0a9e16fe47e5fb07e910fefc7f81fc9ab2cb78fcd0418ce7434d3f7dcd85",
             "locator": {
               "end": 288,
@@ -373,12 +392,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:d0043a1d73a7400fb2da73a7263e8383594613578520939fd5f7e69330f00eb5",
             "locator": {
-              "end": 755,
+              "end": 769,
               "kind": "line_range",
-              "start": 697
+              "start": 711
             }
           },
           "kind": "code"
@@ -420,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:f024dc4d8931f1506ca8cf9bf8e098b904dcc62150b32dc352a7e9df632e2382",
             "locator": {
               "end": 436,
@@ -432,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:e07aa5fd9174a29ae4edf0f78b600fac1147937404ed678de7dcf48248d68b42",
             "locator": {
               "end": 512,
@@ -449,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:2be8c7c2b18877c0ced55ffdf4f0f3a1b60fc98230d53168171f3046650ee73a",
             "locator": {
               "end": 278,
@@ -462,16 +481,26 @@
       ]
     },
     "5": {
-      "note": "`agentCreation` uses the selected settings role and supplies its applied options. The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four.",
+      "note": "`agentCreation` uses the selected settings role and supplies its applied options (plus `allowMissingParent` handling in `createAgent`). The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four.\n\nAnchor: `agentCreation`, `createAgent`",
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:9d24810591bb5a06243b6420c0407568752d9b1fe831783ee2c969f9d5ab0447",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:016f000a661414a0fcf3354dcf8d2c5741cf232328c734ce36edae1f09a2f0b1",
             "locator": {
-              "end": 875,
-              "kind": "line_range",
-              "start": 824
+              "kind": "symbol",
+              "name": "agentCreation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:e5b1da847d9c80c0dcc0020334fec52e23fd1d1050832cb448fd6c813a20eea2",
+            "locator": {
+              "kind": "symbol",
+              "name": "createAgent"
             }
           },
           "kind": "code"
@@ -505,16 +534,15 @@
       ]
     },
     "6": {
-      "note": "Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options.",
+      "note": "Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options.\n\nAnchor: `sendToAgent`, `sendExtras`",
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1157,
-              "kind": "line_range",
-              "start": 1096
+              "kind": "symbol",
+              "name": "sendToAgent"
             }
           },
           "kind": "code"
@@ -524,9 +552,8 @@
             "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:b64dbf12f1d75397980d4e00a8d9cd7dd0bf4466d3565d651723d079dd0679da",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 14
+              "kind": "symbol",
+              "name": "sendExtras"
             },
             "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
           },
@@ -544,30 +571,6 @@
             "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
-            "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1125
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:e6b324ac2280f470df345f719b5fefd3c03c2f3c5cbe032667b22e3496cc3cdc",
-            "locator": {
-              "end": 875,
-              "kind": "line_range",
-              "start": 814
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -576,7 +579,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:75900b8557745b97f613a702c436f4f9d035483edaad70c0f851b9bb1b7f84ea",
             "locator": {
               "kind": "symbol",
@@ -587,7 +590,7 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:dde3196997ecb99484b431c4bdcdea7319f9ffbfb3abdd7b98bbdbbdcabe1e6c",
             "locator": {
               "kind": "symbol",
@@ -603,7 +606,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:001006e278ad5f22fd0dba2388a5ab0c9291f7310eec55869301795cc24697e1",
             "locator": {
               "end": 567,
@@ -615,7 +618,7 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:346399eb9d5c2d43844d087331c5d11bbdeceb411d0c15d57ef8a9655982bf35",
             "locator": {
               "end": 642,
@@ -628,14 +631,28 @@
       ]
     },
     "9": {
-      "note": "An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone.",
+      "note": "An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone.\n\nAnchor: `usage-reports`",
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:f47e397855f95a46242a3c2af540d2beb6359c4819062a496902c86f219d3a38",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:137228d0eeadd8fd4af4ac9d0ea8be0e1c05d91c0793e58c794d881a30afdec1",
             "locator": {
-              "kind": "file"
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:b9b2843e139c2fcd9a7afbcc8dadf61073c0d0ca6f1daf7c4e9922f2682b9eca",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
             }
           },
           "kind": "code"

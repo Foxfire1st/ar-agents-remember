@@ -56,7 +56,9 @@ whose contract deliberately sets process state.
 - Only process-owned spawned children are terminated and reaped. [7]
 
 - Process snapshot and restore use one typed state owner. [2]
+
 - The closed register gives each registered process state one treatment and a reason. [3]
+
 - Resetting loaded owners delegates sweep cleanup and tool-writer cleanup to their resetters. [8]
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [9]
 - The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [10]

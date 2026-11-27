@@ -7,6 +7,21 @@
     "task": "261112-BUG",
     "uncommitted": false
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.056593Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "40638134662ff715f51b378d410ab63214cb8c71",
+      "id": "DFR-YWM2GX",
+      "owner": "261112-BUG",
+      "passage": "package_data/runtime/docs/tool-details.md role_start_set ('each exists on the host') and retire_child (omits host-free retirement of uncreated deferred held seats)",
+      "reason": "Parity copy of docs/tool-details.md contradicted by BUG-R58@v2 Option C (D1045): deferred held seats have no host agent until first role_message and retire host-free when uncreated. Code freeze preserved per Manager directive; update alongside docs/tool-details.md."
+    }
+  ],
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
   "id": "DPD-NGC2F6",
   "origin": {
@@ -17,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -239,14 +254,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

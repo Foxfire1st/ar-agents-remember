@@ -429,7 +429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -2679,12 +2679,12 @@
         },
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
             "content": "sha256:334c3016ebb9b3e44f23bd75183abe9215f91636a073430aaddd8d8ffd300056",
             "locator": {
-              "end": 155,
+              "end": 158,
               "kind": "line_range",
-              "start": 97
+              "start": 100
             },
             "path": "mcp/src/agents_remember/cli/role_retire.py"
           },
@@ -4464,7 +4464,7 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -4477,12 +4477,12 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:b18d5ec241432b6393a68408f76080e2c04dad4689c8f12e2f14838e184ef6c7",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:ae5f46b9eb1fded6382a7e815086b68423d8c021deb9af5c85e9b7ffa2679e07",
             "locator": {
-              "end": 895,
+              "end": 926,
               "kind": "line_range",
-              "start": 859
+              "start": 890
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4503,7 +4503,7 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:26314183153c205234615424aaee58bbfa3120a3fd659c0fd3c256f1c4ac5c00",
             "locator": {
               "end": 774,
@@ -4516,7 +4516,7 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:21054e547db35c4914f56821694f436ea35b2a6a0ba612deb4b68c010c7c69ac",
             "locator": {
               "end": 833,
@@ -4542,7 +4542,7 @@
         },
         {
           "anchor": {
-            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
             "content": "sha256:185ca4acf08305cfe192427ccf684a13a90c07fb783b93426eb9cdb9c8d1d63d",
             "locator": {
               "end": 440,
@@ -4555,12 +4555,12 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
-            "content": "sha256:5456b15ae254c9372c12ac455a713ce64adc3660bba07ce095bf0b0f924d8262",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:e4fa43e459659a24edfd33e387c5940d56c4a6c5334b65d7903721f1b3186c00",
             "locator": {
-              "end": 263,
+              "end": 258,
               "kind": "line_range",
-              "start": 235
+              "start": 228
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -4568,12 +4568,12 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
-            "content": "sha256:9852e0f1c86f3d15b0975ff8c82ce6c1276f302e0e097ea8417298647ed231c7",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:8c39a132511b3f3c0d30b67ba186865733373e9995ae907aa2aef459d5c0157b",
             "locator": {
-              "end": 417,
+              "end": 416,
               "kind": "line_range",
-              "start": 296
+              "start": 291
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -4581,12 +4581,12 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
             "content": "sha256:0f56026d2282c75995fe899363cb20f80788dd3465a7a674607e4a232dbe8602",
             "locator": {
-              "end": 1132,
+              "end": 1041,
               "kind": "line_range",
-              "start": 1089
+              "start": 998
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -4633,12 +4633,12 @@
         },
         {
           "anchor": {
-            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
             "content": "sha256:91f5b4e4420ea1c5aa0362b424ebc783469590ce419a62543589996a7c719334",
             "locator": {
-              "end": 770,
+              "end": 768,
               "kind": "line_range",
-              "start": 722
+              "start": 720
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
@@ -4914,11 +4914,11 @@
       ]
     },
     "374": {
-      "note": "Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 451 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]",
+      "note": "Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 451 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "blob": "93ac4fcbb2ddc5ead275164bd8bea102e50588fc",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -4931,7 +4931,7 @@
         },
         {
           "anchor": {
-            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "blob": "93ac4fcbb2ddc5ead275164bd8bea102e50588fc",
             "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
             "locator": {
               "end": 5111,
@@ -4944,7 +4944,7 @@
         },
         {
           "anchor": {
-            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "blob": "93ac4fcbb2ddc5ead275164bd8bea102e50588fc",
             "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
               "end": 5396,
@@ -4957,7 +4957,7 @@
         },
         {
           "anchor": {
-            "blob": "40c052d64222aefefec595b81974c250ab95c717",
+            "blob": "93ac4fcbb2ddc5ead275164bd8bea102e50588fc",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4970,8 +4970,8 @@
         },
         {
           "anchor": {
-            "blob": "40c052d64222aefefec595b81974c250ab95c717",
-            "content": "sha256:9341ee5d31ae401bed25a854c0795538d60c847409c9fe8233fd2f60453d52dc",
+            "blob": "93ac4fcbb2ddc5ead275164bd8bea102e50588fc",
+            "content": "sha256:6e45415d4d420520c09f85b4458a8f8bd9a1cc38f2bfca76e6dc28cd152336f6",
             "locator": {
               "end": 6271,
               "kind": "line_range",
@@ -5687,7 +5687,7 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:cb94ffe1a8e22c556f660c379c37ca5bcf1d117726726a9acc80b91e8f7edb04",
             "locator": {
               "end": 276,

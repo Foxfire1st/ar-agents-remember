@@ -45,6 +45,7 @@ This answer builder does not publish role facts: the obsolete post-answer plugin
 
 
 
+
 ## The continuation a bootstrap answer names
 
 For Bootstrap the answer independently adds the dashboard address result and the host chat route. `dashboardAddress` is published only when its origin answers and the dashboard owner's action is not `failed` (including a `lock-held`/skipped ensure result when the origin answers); running `nextAction` uses that dashboard address or names its failure. `chatAddress` is derived from the configured embed frame base URL, the bridge-reported server id and the receipt agent id; this path does not HTTP-probe the chat page and is not gated by the dashboard result. Identity and status still come from the saved receipt. This is the Architect-admitted distinction, not a rendered-page or native execution witness.

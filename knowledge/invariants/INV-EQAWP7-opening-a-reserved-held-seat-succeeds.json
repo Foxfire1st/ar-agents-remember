@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans role_held_opening.py and paseo_bridge.mjs, guarded by TestDeferredHeldBridgeParent, and prevents a deferred held Reviewer or Curator seat from becoming unopenable after its starting Manager is reloaded or archived."
+  },
+  "applicability": "Every deferred held-seat opening whose saved replayRequest carries a parentAgentId.",
+  "conditions": [
+    "open_held_seat sets allowMissingParent=true on the agent-create payload whenever parentAgentId is present.",
+    "paseo_bridge.mjs validates allowMissingParent as an optional boolean, omits parentAgentId when findAgent finds the parent absent or archived, and retries once without parentAgentId if create fails while includeParent was true and the new agent was not created.",
+    "The launch receipt retains its original parentAgentId metadata regardless of whether the host accepted the parent link."
+  ],
+  "exclusions": [
+    "Ordinary non-held launches, which do not set allowMissingParent.",
+    "Malformed non-boolean allowMissingParent payloads, which refuse with invalid_bridge_payload."
+  ],
+  "id": "INV-EQAWP7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_deferred_held_seat.py; role-reports/worker/be7a795f-cf0a-53da-ac2a-7948608a8b3a/role-launch/bug-r58-v2-evidence1-report.md (criteria g1, g2)"
+      ],
+      "path": "l58-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R58@v2 §6",
+    "leaf": "261112-BUG-L58",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Opening a reserved held seat succeeds even if the starting Manager was reloaded or archived in between, creating the host agent without the missing parent while retaining parentAgentId in the receipt.",
+  "supersedes": [],
+  "title": "Deferred held-seat opens succeed after parent reload or archive",
+  "writer": {
+    "at": "2026-11-27T02:48:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
+  }
+}

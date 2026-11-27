@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+        "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
         "content": "sha256:00294c702defca05fdd202e9abd2cf96671f06061401051b10084d0b527fc57e",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Matches shared store owners and checks the serving build before choosing preview or apply.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
+        "content": "sha256:4c894a306a0a86faa6bad60aa859621c02d7132ac781b27791b7b662dbcbab3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reconcile_agent"
+        }
+      },
+      "id": "RLZ-7VEWAV",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Preserves unretired, non-closing deferred held seats as live without querying the host or reclaiming their held-message store.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
             "content": "sha256:00294c702defca05fdd202e9abd2cf96671f06061401051b10084d0b527fc57e",
             "locator": {
               "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
             "content": "sha256:e2c80e5f47a383a489e9042772c7bb32a93e28590f6224d5262dc2acf84345f3",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
             "content": "sha256:ad9d8691346f457793bbfb33280169f8b40f639dbd0c65961dc33286d9b3acd9",
             "locator": {
               "kind": "symbol",
@@ -70,12 +88,12 @@
       ]
     },
     "4": {
-      "note": "`_reconcile_agent` preserves zero/ambiguous owners and errors, checks `_host_closure` for open receipts, and dispatches to `preview_held_store_reconciliation` or `reconcile_held_store`.",
+      "note": "`_reconcile_agent` preserves zero/ambiguous owners, open deferred held seats, and errors, checks `_host_closure` for other open receipts, and dispatches to `preview_held_store_reconciliation` or `reconcile_held_store`.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
-            "content": "sha256:7b053d4c29b16c90910c661be48b99c6e2b207a0834bc1694158e7248047705e",
+            "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
+            "content": "sha256:4c894a306a0a86faa6bad60aa859621c02d7132ac781b27791b7b662dbcbab3d",
             "locator": {
               "kind": "symbol",
               "name": "_reconcile_agent"

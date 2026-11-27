@@ -28,4 +28,5 @@ The module builds on `FirstMessageMatrixBase` (`role_first_message_support`) and
 - The public set starter runs the Worker and holds the Reviewer and Curator seats. [4]
 
 
+
 - The criterion-bound intake opens the held Reviewer seat before first inspection and mutants fail. [5]

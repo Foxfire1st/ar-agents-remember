@@ -3208,10 +3208,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
-            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleStartCall"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:d713c70b57df0d3d731a4ac2cf01db1d3d17c4341ef77717a4cffc96c04220a8",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 25
             },
             "path": "mcp/src/agents_remember/models/role_agents.py"
           },
@@ -3224,10 +3238,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
-            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleMessageCall"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:b80ae1261009e7e5378402d854ebdbc442b9ec878c1d1c180816085286bf5030",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/role_agents.py"
           },
@@ -3240,10 +3268,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
-            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:d8cf25c4d5d943b133633b058cff0281c67b32bc03523fccb03c16d167000a21",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleStartResponse"
             },
             "path": "mcp/src/agents_remember/models/role_agents.py"
           },
@@ -3256,10 +3285,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
-            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:95f6d4ef278f82da23620ffc6368f936961343d89df480c3dd71cc00db4cbfb5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
             },
             "path": "mcp/src/agents_remember/models/role_agents.py"
           },
@@ -4601,14 +4631,15 @@
       ]
     },
     "334": {
-      "note": "The start answer that declares the seat's continuation.\n\nAnchor: `RoleStartResponse`",
+      "note": "The start answer that declares the seat's continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
-            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:d8cf25c4d5d943b133633b058cff0281c67b32bc03523fccb03c16d167000a21",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleStartResponse"
             },
             "path": "mcp/src/agents_remember/models/role_agents.py"
           },
@@ -4967,7 +4998,7 @@
         },
         {
           "anchor": {
-            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
             "content": "sha256:2b865da3b67a81a25a5a35362e0879e240fc54ecc6aff7baa6c900e33d1a98d3",
             "locator": {
               "end": 176,

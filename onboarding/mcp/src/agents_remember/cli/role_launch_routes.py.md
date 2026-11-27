@@ -22,7 +22,7 @@ Launch preparation and receipt records retain their internal identity and task-c
 
 `dispatch_leaf_set` serializes one set using the existing dispatch lock. `seat_request_id` derives each seat UUID from the set request and role, so a repeated set completes missing seats without a fourth agent or waking an already held seat. Each seat retains ordinary role settings and preparation. Failure of one seat is returned on that seat and leaves the others standing.
 
-The prepared start writes each held seat's handover and `heldOpeningPrompt` before creation while omitting the creation prompt. Worker opens at once; optional direct `opening_message` (such as Reviewer work on a non-held seat) is bounded by `role_message_limit` and offloaded to `.opening-message.md` when over limit. A successor's handover names the prior report paths. Same-request replay, exclusive receipt publication, source-scope checks and leaf-closing archival debt remain with their existing owners.
+The prepared start writes each held seat's handover, saved `replayRequest`, and `heldOpeningPrompt` onto its receipt (`status: "held"`, `hostAgentExists: false`) without calling host `agent-create`, deferring host creation until the first addressed message opens the seat. Worker opens at once; optional direct `opening_message` (such as Reviewer work on a non-held seat) is bounded by `role_message_limit` and offloaded to `.opening-message.md` when over limit. A successor's handover names the prior report paths. Same-request replay, exclusive receipt publication, source-scope checks and leaf-closing archival debt remain with their existing owners.
 
 ## Grant-backed leaf preparation and revival
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56daf6642402898075d164df4e26178499116006",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
+    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
     "role": "curator",
-    "statement": "docs/host.md accurately adds post-upgrade step 4 describing runtime_install's stale-checkout listing and uv-managed Python 3.14 bootstrap recreation against install.py, checkout_environments.py, and scripts/bootstrap-mcp-venv.sh on synced base 65911c75 / candidate 56daf664.",
-    "task": "261112-BUG-L33",
+    "statement": "Confirmed accurate against BUG-R58@v2 candidate with role_launch_preparation.py (207-227) and paseo_bridge.mjs (734-751) anchors re-pointed after allowMissingParent addition; docs/host.md describes native host adapter behavior accurately.",
+    "task": "261112-BUG-L58",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -167,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:b71fadad0622db128c871576a5d114f73d8f95f85dd88cb3d2e6e3d5cbb8abb5",
         "locator": {
-          "end": 256,
+          "end": 227,
           "kind": "line_range",
-          "start": 236
+          "start": 207
         },
         "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
       },
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:2ba7260a1a79b25900fe8a17262fcaddb1a5f2ce0b938706cba05a890ea317f2",
         "locator": {
-          "end": 737,
+          "end": 751,
           "kind": "line_range",
-          "start": 720
+          "start": 734
         },
         "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
       },
@@ -265,14 +265,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:39:05+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

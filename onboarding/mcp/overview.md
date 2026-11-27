@@ -912,7 +912,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
-- Eager-provider binding confirmation, single retry with fresh `agentId`, `skipToolServerWait` send, `open-held` re-confirmation, and receipt-apply helpers live in `role_launch_confirmation.py` and its launch callers. [427]
+- Eager-provider binding confirmation, single retry with fresh `agentId`, `skipToolServerWait` send, `open-held` re-confirmation, and receipt-apply helpers live in `role_launch_confirmation.py` and its launch callers; deferred held-seat reservation (`role_deferred_held.py`) and create-on-first-message opening (`role_held_opening.py`) defer host creation until first `role_message` and return the live `recipientAgentId` and `bindingConfirmation`. [427]
 
 
 

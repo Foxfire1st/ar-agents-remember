@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
-        "content": "sha256:3829ecd15db0a818d064f694c061a329e8cd993a578898a5eef1856225fd1c9d",
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+        "content": "sha256:14174c53632ea1691910c85bcfb952be001a55c364bdbb1b22660593cfcdbe98",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
         "content": "sha256:17034141a46513dc7e75f4fe8d9a9f2973b53095d057544791ae0066569e9447",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
         "content": "sha256:2215485b3d30f059dfc3ecee140a8190398fc8a04c0dca4a0214543675b528ce",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
-        "content": "sha256:3829ecd15db0a818d064f694c061a329e8cd993a578898a5eef1856225fd1c9d",
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+        "content": "sha256:14174c53632ea1691910c85bcfb952be001a55c364bdbb1b22660593cfcdbe98",
         "locator": {
           "kind": "file"
         }
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
         "content": "sha256:1a7e89431c0e75a80d3ded10338a12aa844516ec681f322f80278d8abc878c4c",
         "locator": {
           "kind": "symbol",
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
-        "content": "sha256:bf4818da9a4ff2be16b8d667535132a5e1e426b6f647318a3f87d296158f8863",
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+        "content": "sha256:8764e39a40d20eb613feb3bd85a727aa57a013a2d8e5213c715b5730b5018ea4",
         "locator": {
           "kind": "symbol",
           "name": "_require_no_open_children"
@@ -105,7 +105,25 @@
         "handoffEntry": "BUG-R44@v1 rule 6",
         "leaf": "261112-BUG-L44"
       },
-      "rationale": "Uses launch parent identity, recorded retirement and the child's current host state to establish the open set.",
+      "rationale": "Evaluates child receipts including open deferred held children (skipping host read for uncreated deferred held children) before allowing parent retirement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+        "content": "sha256:535213604e3ec8a67ea3f314c680bc12ecdfa47879c98b00a4d916cc034d07d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "retire_native_seat"
+        }
+      },
+      "id": "RLZ-V0Z074",
+      "invariant": "INV-KRCG05",
+      "origin": {
+        "handoffEntry": "L58-INV-KRCG05-ext",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Skips host state reads, interruptibility checks, and host archives when retiring an uncreated deferred held seat while preserving open-child refusal for parents with open deferred held children.",
       "role": "enforcement"
     }
   ],
@@ -115,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
             "content": "sha256:17034141a46513dc7e75f4fe8d9a9f2973b53095d057544791ae0066569e9447",
             "locator": {
               "kind": "symbol",
@@ -131,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
             "content": "sha256:1a7e89431c0e75a80d3ded10338a12aa844516ec681f322f80278d8abc878c4c",
             "locator": {
               "kind": "symbol",
@@ -143,12 +161,12 @@
       ]
     },
     "3": {
-      "note": "`_archive_retiree` checks open children and interruption, records `retireIntent` via `hold_retirement` before `_archive_on_host`, clears definitive refusals, and settles via `_finish_retirement` with retryable `retire-record-failed` custody.",
+      "note": "`_archive_retiree` checks open children (including unclosed deferred held children without host reads), settles uncreated deferred held seats locally with zero host calls, checks interruption for host-backed seats, records `retireIntent` via `hold_retirement` before `_archive_on_host`, clears definitive refusals, and settles via `_finish_retirement` with retryable `retire-record-failed` custody.",
       "targets": [
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
-            "content": "sha256:85f135637feb29fe2f5f8b8d4844f54b02117088f9e7f1344e28c17b78218f4b",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:e878c242cc933ae11bf1f54e3d3a5bb54ba91ccc250897acfb31a42f7bc226bd",
             "locator": {
               "kind": "symbol",
               "name": "_archive_retiree"
@@ -158,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
             "content": "sha256:5d1aa0df3a92eeb53e4a2fac95b36a9c1c908780a66944991e58d85a2e8eec72",
             "locator": {
               "kind": "symbol",
@@ -169,11 +187,23 @@
         },
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
-            "content": "sha256:bf4818da9a4ff2be16b8d667535132a5e1e426b6f647318a3f87d296158f8863",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:8764e39a40d20eb613feb3bd85a727aa57a013a2d8e5213c715b5730b5018ea4",
             "locator": {
               "kind": "symbol",
               "name": "_require_no_open_children"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:0f44e81365c5b8f87ce4896ff5ca6cc0059c953f2df09db9487f6bb6ff7b08b9",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 202
             }
           },
           "kind": "code"

@@ -1,0 +1,171 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_deferred_held.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+        "content": "sha256:27f14a6bc315a99468c522e71c8148b88cd747fbd9f4651ce3962be80b2029b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_leaf_holder"
+        }
+      },
+      "id": "RLZ-DK535C",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Projects agentId and holderAgentId on public execution views for deferred held seats.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+        "content": "sha256:af2e1ad5d250e1fbe0155c4f44b99c40f769b8066ee2d1cad66ec354a4c23f87",
+        "locator": {
+          "kind": "symbol",
+          "name": "defer_held_launch"
+        }
+      },
+      "id": "RLZ-FFS2PD",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Publishes deferred held-seat receipts on disk with zero host creates, and for replacing held starts archives and settles any live predecessor first or publishes pendingArchiveAgentId debt without reserving.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+        "content": "sha256:682aaa2a0fa16479988e2d552b134b4755e97217a24f3d83558cc447e00e7037",
+        "locator": {
+          "kind": "symbol",
+          "name": "opened_held_seat_answer"
+        }
+      },
+      "id": "RLZ-H2S347",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "L58-INV-JV7S6Y",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Extracts drain execution.agentId as recipientAgentId and attaches drain bindingConfirmation on the opened role_message answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+        "content": "sha256:46d39540914e2e65824715b22c3b4c54bc8eb79b4fb8133e7ffa497ecf9e78e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "retried_outcome_agent_id"
+        }
+      },
+      "id": "RLZ-PJ60BY",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "L58-INV-AJKQV2",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Extracts a retried agent ID minted during BUG-R51 confirmation retry so concurrent close archives the retried orphan too.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`is_deferred_held_receipt` defines the reserved held-seat predicate (`status == \"held\"`, `hostAgentExists is False`, non-empty `agentId`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:458d32468d3f73bbc99deba86c6d776bd61fc4f89c08a571b3a36fe08efe8f44",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_deferred_held_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`retried_outcome_agent_id` extracts a BUG-R51 retried agent ID distinct from the recorded receipt ID for closing-mark archival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:46d39540914e2e65824715b22c3b4c54bc8eb79b4fb8133e7ffa497ecf9e78e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "retried_outcome_agent_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`opened_held_seat_answer` names the live `execution.agentId` as `recipientAgentId` and attaches `bindingConfirmation` on opened held-seat answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:682aaa2a0fa16479988e2d552b134b4755e97217a24f3d83558cc447e00e7037",
+            "locator": {
+              "kind": "symbol",
+              "name": "opened_held_seat_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`apply_leaf_holder` and `apply_leaf_closing` project deferred held-seat holder identity and leaf closing-mark refusal fields onto public execution views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:27f14a6bc315a99468c522e71c8148b88cd747fbd9f4651ce3962be80b2029b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_leaf_holder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:dde0f86f48acbf3d228a8e0f7e38a90c666f04a8ff0efb0f7f6d1e105ec2c99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_leaf_closing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`defer_held_launch` archives any live predecessor via `_archive_predecessor`, preserves `pendingArchiveAgentId` debt via `_publish_unsettled_predecessor` on archive or settlement-write failure, fences closing marks, and reserves `status=\"held\"` with `hostAgentExists=False` and `execution={}`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:af2e1ad5d250e1fbe0155c4f44b99c40f769b8066ee2d1cad66ec354a4c23f87",
+            "locator": {
+              "kind": "symbol",
+              "name": "defer_held_launch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

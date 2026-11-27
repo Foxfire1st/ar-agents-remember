@@ -11,6 +11,19 @@
     {
       "condition": {
         "file": "docs/concepts.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.074126Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
+      "id": "DFR-A96ARN",
+      "owner": "261112-BUG",
+      "passage": "docs/concepts.md ### Held (lines 660-662: 'exists in the host')",
+      "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats exist on disk (hostAgentExists=false, execution={}) with zero host creation until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-Y5Q4JY untouched; code freeze preserved per Manager directive."
+    },
+    {
+      "condition": {
+        "file": "docs/concepts.md",
         "task": "261124-CAP-L5"
       },
       "createdAt": "2026-11-26T22:03:54.860508Z",
@@ -32,7 +45,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 34,
+  "revision": 35,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -483,14 +496,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

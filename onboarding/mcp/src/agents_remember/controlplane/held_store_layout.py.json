@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
         "content": "sha256:826c25994825fc05cae0e5ceadf840cbf2d53956fbd92ce947f1f5694772635a",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
-        "content": "sha256:5e764c9362c1ea94888f55139c88aa1c87a661476ec7626e0e1e902ee0f80575",
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "content": "sha256:a4e007b6bda21ddaf94c0010af79d8b007eac1b091c8b67af0b23b611e64d4ea",
         "locator": {
           "kind": "symbol",
           "name": "recount_waiting"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
         "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
-        "content": "sha256:90362b84f00eb85735c4304141c8d887b7bdbb9243fc56b0a1196b36f398cfb7",
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
         "locator": {
           "kind": "file"
         }
@@ -74,7 +74,25 @@
     },
     {
       "anchor": {
-        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "content": "sha256:8db96d14fffdcfd95ec05ecd81557f89d6bd51a64acd8ea379a777018e65e077",
+        "locator": {
+          "kind": "symbol",
+          "name": "_store_endpoints"
+        }
+      },
+      "id": "RLZ-JJ9ECK",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "L58-INV-SB6HQS-ext",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Falls back to receipt agentId for deferred held seats when execution is empty so store endpoints and recount_waiting resolve their held messages.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
         "content": "sha256:a41edec100c7976149674e9e1d0fe9a85a423ccdd9a651d8ba443ba07627f944",
         "locator": {
           "kind": "symbol",
@@ -92,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
-        "content": "sha256:90362b84f00eb85735c4304141c8d887b7bdbb9243fc56b0a1196b36f398cfb7",
+        "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+        "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
         "locator": {
           "kind": "file"
         }

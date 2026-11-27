@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:d261edb9e59c2b79cf168075d714ea8fa292ab911f2da81beee7f0af3632ea45",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:db6c5f786f081df38c1c644faeb54a76f5a6678dc6b732f094ab03fce390b4f7",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
+        "content": "sha256:6f1a486fd9f3e6c7c2f5aa9278476b10a684880d1a1388a03222a8b458274f5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestHeldSeatReconfirmation.test_held_seat_open_skipped_confirmation_carries_record_and_live_agent"
+        }
+      },
+      "facet": "Verifies a lazy-provider deferred held-seat open carries the skipped bindingConfirmation record and live recipientAgentId on role_message.",
+      "id": "PRF-EE6ZM0",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "L58-INV-JV7S6Y",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:a10f35afdc7f18c4e382c96c828b5de597b7467abcafcaa47602b84dfb04b7ca",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:23e8c25c00f9b85edb6e5838f31fc350b3b5bde98e55e7354332f1145aae189d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:e7a543dbb75afd8738ed4ceff6f95eaab6e81e3ee17f4aa875dfa5f8657efcf2",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,24 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
+        "content": "sha256:f52fc8f5bd72943b50ac8d3988782a7e21686af0c09de1f5a366b43311c3685e",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestHeldSeatReconfirmation.test_held_seat_open_retries_once_when_existing_server_is_gone"
+        }
+      },
+      "facet": "Verifies a held-seat open whose first confirmation fails retries once with a fresh agentId and returns the retried live recipientAgentId and confirmed bindingConfirmation on role_message.",
+      "id": "PRF-PXAFBD",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "L58-INV-JV7S6Y",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:10e7d6727f90c3f3411f0591e2b06ff57d097f779b4efcef8d41b7bdbe5906b3",
         "locator": {
           "kind": "symbol",
@@ -105,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
         "content": "sha256:b3abc7cde873284822f4960af79c105794aea858f4768bcad460b4b29d58326d",
         "locator": {
           "kind": "symbol",
@@ -122,8 +156,25 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
-        "content": "sha256:66c3e272ee793b27d1d086b7bf96343aeacb62daadc51577d146f3c268a6a42b",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
+        "content": "sha256:e91bac5d08450e4c704672e394624586b86bc7d099ac29cb4bf5e924e9f6f6de",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestHeldSeatReconfirmation.test_held_seat_open_double_failure_archives_both_and_leaves_zero_live_seats"
+        }
+      },
+      "facet": "Verifies double confirmation failure on held-seat open archives both attempts and leaves zero live seats.",
+      "id": "PRF-WPRP8H",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "L58-INV-JV7S6Y",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
+        "content": "sha256:7f91eaca222cb4746030c357d794394e992209cd382a860af00f96ec32c8f654",
         "locator": {
           "kind": "symbol",
           "name": "test_send_role_message_uses_bound_server_identity_despite_spoofed_text_and_env"
@@ -139,8 +190,8 @@
     },
     {
       "anchor": {
-        "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
-        "content": "sha256:d225ef625ddf931184d05ac6390e8f471debbc874965bab9497b257f61b585d6",
+        "blob": "33605be589232b19197288ab81737e968b83f78c",
+        "content": "sha256:1077ebec37653d8f6b1d8965f7953b67672a802f8e82ed9343eed8dbdd4e68c8",
         "locator": {
           "kind": "symbol",
           "name": "test_held_seat_confirmed_at_create_and_reconfirmed_at_open_with_skip_wait"
@@ -162,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
             "content": "sha256:7de3beac66a26641bdfd952e6808d91d28e1834955ab6ab9e1e6f9aada538494",
             "locator": {
               "kind": "symbol",
@@ -174,14 +225,15 @@
       ]
     },
     "2": {
-      "note": "Missing registration retries once then refuses; duplicate bound servers (under harness root or shared parent PID) and unreadable servers refuse immediately while unbound servers pass.\n\nAnchor: `TestTimeoutAndMultipleServers`",
+      "note": "Missing registration retries once then refuses; duplicate bound servers (under harness root or shared parent PID) and unreadable servers refuse immediately while unbound servers pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
-            "content": "sha256:82ffd3054c47ae0c5ca2d67cb9db9cf2a1cf120e11519453fbd85c96bba49aff",
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:6af1b06aee6443d8ac4d1c0b63b309b60375cd5b7804874355fa1280dcabd2f6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TestTimeoutAndMultipleServers"
             }
           },
           "kind": "test"
@@ -193,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
             "content": "sha256:a3cc4fbf35de8b13d24895509295af98264c6705b6e1cfccd679f9dd8d4d0e89",
             "locator": {
               "kind": "symbol",
@@ -205,12 +257,12 @@
       ]
     },
     "4": {
-      "note": "Held seats confirm at create and re-confirm at open with `skipToolServerWait=True`, retry once when the prior binding disappears, and archive both on double failure.",
+      "note": "Held seats create and confirm on first message (or re-confirm legacy pre-created seats) with `skipToolServerWait=True`, return live `recipientAgentId` and `bindingConfirmation` (including on single retry and skipped confirmation), and archive both on double failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
-            "content": "sha256:e97a94b43742f880266875b617f565ba66b3fbf46678518d897d5debb0d635a3",
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:1b4d83affb237e69a2555da89c564da4d7bdd37debc33d70a2ed29bec5378d9b",
             "locator": {
               "kind": "symbol",
               "name": "TestHeldSeatReconfirmation"
@@ -221,11 +273,11 @@
       ]
     },
     "5": {
-      "note": "Real `paseo_bridge.mjs` skips `TOOL_SERVER_START_MS` when `skipToolServerWait=True`, and `role_message` and `sender_line` derive sender strictly from `AgentBinding`.",
+      "note": "Real `paseo_bridge.mjs` skips `TOOL_SERVER_START_MS` when `skipToolServerWait=True`, and `role_message` and `sender_line` derive sender strictly from `AgentBinding`.\n\nAnchor: `TestBridgeSkipToolServerWait`, `TestRule5SenderIdentityFromBinding`",
       "targets": [
         {
           "anchor": {
-            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
             "content": "sha256:63ede3fb8e90606a46a7c7a55958fbd4d480bba642e3d2bb3f03b25d6d801f7d",
             "locator": {
               "kind": "symbol",
@@ -236,8 +288,8 @@
         },
         {
           "anchor": {
-            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
-            "content": "sha256:c846556c0debdefa986854dcdebc00a9355cacf3bad79cf06cdb61c98fbee734",
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:c49e7709fc0d14ffcd2335a615d33d0a362ddb9071039a17df0292ddd4a6aacc",
             "locator": {
               "kind": "symbol",
               "name": "TestRule5SenderIdentityFromBinding"

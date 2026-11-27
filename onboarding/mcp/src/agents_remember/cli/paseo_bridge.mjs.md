@@ -29,7 +29,7 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 ## Fresh catalog and creation choices
 
-`readCatalog` defaults to metadata, which lists enabled provider and model choices without feature queries. Selected mode reads features for one specified provider and model. Explicit Refresh renews the provider snapshot before querying its current offerings. During saved native Antigravity Retry, the bridge looks up the exact recorded agent. It can deliver the saved first message to that agent. A missing agent produces a typed refusal before creation. `creationFeatureValues` checks configured feature values when an answer is available, matching IDs before labels without case through `namedOption`. A failed, timed-out or malformed feature listing passes configured values through unchecked; a known-empty offering refuses them. `agentCreation` accepts an optional boolean `skipToolServerWait` (refusing non-boolean values with `invalid_bridge_payload`), and `sendFirstMessage` skips the 6-second `toolServerStart()` (`TOOL_SERVER_START_MS`) startup wait when `skipToolServerWait` is true because launch confirmation has already verified the bound task server.
+`readCatalog` defaults to metadata, which lists enabled provider and model choices without feature queries. Selected mode reads features for one specified provider and model. Explicit Refresh renews the provider snapshot before querying its current offerings. During saved native Antigravity Retry, the bridge looks up the exact recorded agent. It can deliver the saved first message to that agent. A missing agent produces a typed refusal before creation. `creationFeatureValues` checks configured feature values when an answer is available, matching IDs before labels without case through `namedOption`. A failed, timed-out or malformed feature listing passes configured values through unchecked; a known-empty offering refuses them. `agentCreation` accepts optional booleans `skipToolServerWait` and `allowMissingParent` (refusing non-boolean values with `invalid_bridge_payload`). `sendFirstMessage` skips the 6-second `toolServerStart()` (`TOOL_SERVER_START_MS`) startup wait when `skipToolServerWait` is true because launch confirmation has already verified the bound task server. When `allowMissingParent` is true (used by deferred held-seat opens), `createAgent` checks whether `parentAgentId` is absent or archived before calling `create` and omits `parentAgentId` in that case (also retrying once without `parentAgentId` if `create` fails while `includeParent` was true and the new agent was not created).
 
 `role-registry` dispatches to `readRoleRegistry` for unarchived history or exact canonical UUID reads. The exact result distinguishes a positive archive timestamp and a successful null; the dedicated reader carries completeness and daemon identity.
 
@@ -60,25 +60,11 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 - Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options. [6]
 
-
-
-
-
 - `agent-cancel` acts on the identified agent and returns its re-read state. The state reports provider, last user-message time and last status. Absent active-turn state is null. [7]
 
-
-
-
-
-
-- `agentCreation` uses the selected settings role and supplies its applied options. The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four. [5]
-
-
-
+- `agentCreation` uses the selected settings role and supplies its applied options (plus `allowMissingParent` handling in `createAgent`). The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four. [5]
 
 - The host-activity reconciliation opts into background agents and asks only open, unarchived AR role seats for subagents. [8]
-
-
 
 - An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone. [9]
 

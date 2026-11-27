@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d88165e216d61602f6527955000193e85955e1dd",
-        "content": "sha256:46595ca7109e47de8cf1bdd28defb102dc7c4157edd18aa1f16b451b43d12ba8",
+        "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
+        "content": "sha256:5b0bc6c3a602ea384a4e0aeda8ec6c383b9c56e2946fcf8eae3f4b12a7c9e436",
         "locator": {
           "kind": "symbol",
           "name": "pause_for_provider_limit"
@@ -22,16 +22,15 @@
   ],
   "references": {
     "1": {
-      "note": "The drain uses one confirmation read per new ended stamp and resolves held messages on confirmed archive or absence.",
+      "note": "The drain bypasses uncreated deferred held receipts, uses one confirmation read per new ended stamp for limited live seats, and resolves held messages on confirmed archive or absence.",
       "targets": [
         {
           "anchor": {
-            "blob": "d88165e216d61602f6527955000193e85955e1dd",
-            "content": "sha256:40ca8234483d011c0f0114210a247a4d979d4a22a3afe8d2f163ff3f57e2bb1a",
+            "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
+            "content": "sha256:5b0bc6c3a602ea384a4e0aeda8ec6c383b9c56e2946fcf8eae3f4b12a7c9e436",
             "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 43
+              "kind": "symbol",
+              "name": "pause_for_provider_limit"
             }
           },
           "kind": "code"

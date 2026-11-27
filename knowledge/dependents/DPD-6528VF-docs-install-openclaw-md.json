@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
+    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
     "role": "curator",
-    "statement": "Verified docs/install/openclaw.md (lines 1-99) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): OpenClaw installation and MCP server setup remain accurate under BUG-R41@v1.",
-    "task": "261112-BUG-L41",
+    "statement": "Confirmed accurate against BUG-R58@v2 candidate: OpenClaw install documentation is unaffected by deferred held-seat reservation.",
+    "task": "261112-BUG-L58",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+      "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

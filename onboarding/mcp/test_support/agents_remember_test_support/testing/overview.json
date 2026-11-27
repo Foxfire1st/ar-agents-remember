@@ -169,8 +169,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
-            "content": "sha256:3dfde744774d6bc4c866d096e3d3b3184e6c0664d28cfba3e1bde4c4103aea84",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
+            "content": "sha256:a32e4d62acf9fc69884ab6517d7527c4062305b04d59f9cde8d118de30e650de",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"
@@ -368,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
             "content": "sha256:160292d7e4c42d854fe0ec5cfa5a617f4f20673493f839da4b8dabfa25fdec6c",
             "locator": {
-              "end": 285,
+              "end": 291,
               "kind": "line_range",
-              "start": 281
+              "start": 287
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -386,12 +386,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
             "content": "sha256:b22de22be79a13546d249e67b5de979ef176fc6d9cb061cbee98ef62c40ffdad",
             "locator": {
-              "end": 414,
+              "end": 420,
               "kind": "line_range",
-              "start": 410
+              "start": 416
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -399,12 +399,12 @@
         },
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
             "content": "sha256:870b458e5b8c769edd514627c968c6a5289200ab58d444152ebb2f4cc9e0629f",
             "locator": {
-              "end": 445,
+              "end": 451,
               "kind": "line_range",
-              "start": 436
+              "start": 442
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -417,8 +417,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
-            "content": "sha256:3dfde744774d6bc4c866d096e3d3b3184e6c0664d28cfba3e1bde4c4103aea84",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
+            "content": "sha256:a32e4d62acf9fc69884ab6517d7527c4062305b04d59f9cde8d118de30e650de",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
             "content": "sha256:19c6e6c7e29f33c8d15fab937469b8310dcf0edb768fd10fdefd8da3d56f5884",
             "locator": {
-              "end": 236,
+              "end": 242,
               "kind": "line_range",
-              "start": 213
+              "start": 219
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -447,12 +447,12 @@
         },
         {
           "anchor": {
-            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
             "content": "sha256:a29c11eb2f4bbfd563f3f47e204c9476a2f69c46715c5414b189234884110a20",
             "locator": {
-              "end": 383,
+              "end": 389,
               "kind": "line_range",
-              "start": 379
+              "start": 385
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },

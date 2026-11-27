@@ -10,6 +10,19 @@
   "deferrals": [
     {
       "condition": {
+        "file": "docs/reference/role-capsules.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.093995Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "246b45f9ea072fea09dc823369e3e654edfeea2d",
+      "id": "DFR-69Y75A",
+      "owner": "261112-BUG",
+      "passage": "docs/reference/role-capsules.md ## Held starts and held messages (lines 33-36: 'exists in the host')",
+      "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats are stored on disk without creating a host agent until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-BKQ5CP untouched; code freeze preserved per Manager directive."
+    },
+    {
+      "condition": {
         "task": "261124-CAP-L5"
       },
       "createdAt": "2026-11-26T12:09:27.104933Z",
@@ -30,7 +43,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -95,14 +108,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
   }
 }

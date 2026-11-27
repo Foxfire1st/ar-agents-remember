@@ -6,10 +6,11 @@
     ],
     "justification": "The closing mark, the receipt replay/publication path and the launch call realize the exception across three files."
   },
-  "applicability": "A prepared leaf start that is under way when its leaf is closed.",
+  "applicability": "Prepared leaf starts and deferred held seats during leaf/series closing, cleanup, abandon, or archive preview.",
   "conditions": [
-    "The leaf closing mark is read before replay and under the receipt lock after creation.",
-    "An unentered creation is refused; an entered creation's returned agent is archived and the start refused without erasing the retirement record."
+    "The leaf closing mark is read before replay/opening and under the receipt lock after creation.",
+    "Uncreated deferred held seats settle as gone with zero host calls and zero owed debt across ArchiveAttempt.preview and ArchiveAttempt._settle_target.",
+    "An entered creation or heldOpenPending open settles through the host (archiving any returned or retried agent ID) without erasing the retirement record."
   ],
   "exclusions": [
     "The product does not prevent creation inside an already-entered host RPC and does not wait for it.",
@@ -27,27 +28,20 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Under the approved terminal/prepared-start exception, a matching closing mark refuses an unentered leaf creation and makes an entered creation archive-only on completion and replay without erasing the retirement record.",
+  "statement": "Under the approved terminal/prepared-start exception, a matching closing mark refuses an unentered leaf creation (settling uncreated deferred held seats as gone with zero host calls and zero owed debt across finalize, cleanup, abandon, and preview) and makes an entered creation or heldOpenPending open archive-only on completion and replay (including any retried agent ID) without erasing the retirement record.",
   "supersedes": [],
+  "title": "Terminal archive settles uncreated deferred held seats host-free",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L76",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:48:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
   }
 }

@@ -7,14 +7,15 @@
     ],
     "justification": "Realized across role_launch_confirmation.py, paseo_bridge.mjs, paseo_launch.py, role_launch_outcome.py, role_launch_receipts.py, and role_held_messages.py, guarded by mcp/tests/test_launch_identity_confirmation.py, and prevents a newly started seat from receiving its opening assignment while wired to another seat's tool server."
   },
-  "applicability": "Every eager-harness role launch and every held-seat open executed through Paseo launch confirmation.",
+  "applicability": "Every eager-harness role launch and every deferred or legacy held-seat open executed through Paseo launch confirmation.",
   "conditions": [
-    "Launch creates the seat without its first prompt, polls live server bindings for up to 5.0 seconds to verify one bound server matching (agentId, requestId) under the seat's harness with zero foreign or unreadable bindings, and only then delivers the first message with skipToolServerWait=true.",
+    "Launch (and deferred held-seat open in mode=create) creates the seat without its first prompt, polls live server bindings for up to 5.0 seconds to verify one bound server matching (agentId, requestId) under the seat's harness with zero foreign or unreadable bindings, and only then delivers the first message with skipToolServerWait=true; legacy pre-created held seats re-confirm in mode=open-held before sending.",
     "On confirmation failure, launch archives the failed seat and retries once under the same requestId with a freshly minted agentId; a second failure archives both seats and refuses leaving zero live seats.",
+    "Every held-seat opening role_message answer populates recipientAgentId from drain execution.agentId (including after a single retry) and carries drain bindingConfirmation on RoleMessageResponse.",
     "When /proc is unavailable, confirmation verifies (agentId, requestId) without process ancestry and records ancestrySkippedReason=proc-unavailable in the receipt."
   ],
   "exclusions": [
-    "Non-eager harnesses that start tool servers lazily only on the first turn skip pre-prompt confirmation and keep the legacy bridge startup path.",
+    "Non-eager harnesses that start tool servers lazily only on the first turn skip pre-prompt confirmation and keep the legacy bridge startup path while still carrying skipped bindingConfirmation and live recipientAgentId on held-seat open.",
     "Does not prevent a harness bug from reviving an unrelated conversation after the launch check; opening-brief self-check (BUG-R51@v1 §3) guards runtime turns."
   ],
   "id": "INV-JV7S6Y",
@@ -30,20 +31,20 @@
     "leaf": "261112-BUG-L51",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every eager-harness role launch and held-seat open confirms that a live bound agents-remember-task server carrying the seat's exact agentId and requestId runs under its harness with no foreign or unreadable bindings before delivering the first message, retries once under the same requestId with a freshly minted agentId on failure, and otherwise archives both attempts and refuses leaving zero live seats; fail-closed eager classification treats every non-empty provider except lazy claude and native antigravity (D890) as eager.",
+  "statement": "Every eager-harness role launch and held-seat open confirms that a live bound agents-remember-task server carrying the seat's exact agentId and requestId runs under its harness with no foreign or unreadable bindings before delivering the first message, retries once under the same requestId with a freshly minted agentId on failure, and otherwise archives both attempts and refuses leaving zero live seats; deferred held seats defer creation until first role_message (opening in create mode while legacy pre-created held seats re-confirm in open-held mode), and every opened held-seat role_message answer names the live execution.agentId as recipientAgentId and carries bindingConfirmation on RoleMessageResponse; fail-closed eager classification treats every non-empty provider except lazy claude and native antigravity (D890) as eager.",
   "supersedes": [],
   "title": "Eager launch and held-seat open confirm exclusive seat binding",
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

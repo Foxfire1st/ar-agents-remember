@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
+    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
     "role": "curator",
-    "statement": "Audited docs/guides/review-page-and-explainer.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 216-229 (nine effects) and 265-270 (invariant, family, and membership dispositions) match live models/knowledge_files/history.py and records.py unchanged by DPD-only deferral dispositions.",
-    "task": "261112-BUG-L52",
+    "statement": "Confirmed accurate against BUG-R58@v2 candidate: explainer and review-page documentation makes no claim about eager 0-turn held-seat host creation.",
+    "task": "261112-BUG-L58",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+      "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

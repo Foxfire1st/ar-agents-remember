@@ -649,6 +649,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts. [369]
 
 
@@ -763,4 +764,3 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 44 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 451 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [374]
-

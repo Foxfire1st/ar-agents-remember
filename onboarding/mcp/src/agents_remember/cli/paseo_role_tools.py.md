@@ -21,7 +21,7 @@ the context variable the completed event reads. Nothing is guessed — with no r
 receipt or call the event stays literal.
 
 
-This module builds the tool answer a limited recipient's message returns.
+This module builds the tool answer a limited recipient's message returns; reserved deferred held seats bypass the pre-open provider-limit hold because they have no host agent or usage report yet, while post-open messages are held normally.
 
 ## Refusal-remedy account — local and shared recovery owners
 
@@ -29,7 +29,7 @@ Four `nextAction` remedies that still leave the message transportable (`_archive
 
 ## Leaf sets and held-message admission
 
-Only the leaf’s owning Manager may call `start_leaf_set`; the ordinary caller may-start matrix still guards each seat. `dispatch_leaf_set` prepares Worker, Reviewer and Curator as siblings, opens Worker immediately and leaves Reviewer/Curator held unless reviewer work is carried. A repeat retains the deterministic per-seat request identities. Single-role starts retain their ordinary opening, with explicit authorized replacement for an occupied leaf seat.
+Only the leaf’s owning Manager may call `start_leaf_set`; the ordinary caller may-start matrix still guards each seat. `dispatch_leaf_set` prepares Worker, Reviewer and Curator as siblings, opens Worker immediately and reserves Reviewer/Curator as deferred held seats (`hostAgentExists: false`, no host agent created until first message) unless reviewer work is carried. A repeat retains the deterministic per-seat request identities. Single-role starts retain their ordinary opening, with explicit authorized replacement for an occupied leaf seat.
 
 `send_role_message` does not let a new message overtake waiting work. A held answer names its reason, waiting ID and sender/total counts, rather than claiming acceptance by the host. `withdraw_held_message_id` withdraws only the sender’s uncommitted waiting message; a live delivery claim refuses withdrawal. Archived-recipient answers still expose the sender’s retained terminal outcomes. The host permission guard remains: holding never answers the prompt.
 
@@ -47,7 +47,7 @@ Caller binding, recipient resolution and role starts live in `paseo_role_caller.
 
 Before a native send, `_deliver` reads the host's own activity record through `agent_in_turn`. When that record says the recipient is in a turn the message is not sent: the refusal is `recipient-busy` with `holdReason` `recipient-in-turn`, and the caller holds it under the held-store owner. The bridge makes the second read at the moment of the send and answers `busy` for any provider it does not know to take a steer, so every such message is held rather than sent into the turn.
 
-A delivery that carried held messages answers `ok` with `status` `accepted` and carries no `turnId`; `RoleMessageResponse` validates it, and the turn id stays available to a caller that waits. A send the host did not answer is held with `host-unreachable` and the answer says the message is held, not lost. `_name_replacement` reports a replaced running turn on both answer paths: `taken` is `replaced` and the warning states plainly that the runtime replaced the recipient's turn to take the message, and that the turn did not continue because it was cancelled.
+A delivery that carried held messages answers `ok` with `status` `accepted`, carries no `turnId`, and when the delivery opened a held seat applies `role_deferred_held.opened_held_seat_answer` so `recipientAgentId` names the live opened agent ID (including after a single BUG-R51 retry) and `bindingConfirmation` is propagated onto `RoleMessageResponse`; the turn id stays available to a caller that waits. A send the host did not answer is held with `host-unreachable` and the answer says the message is held, not lost. `_name_replacement` reports a replaced running turn on both answer paths: `taken` is `replaced` and the warning states plainly that the runtime replaced the recipient's turn to take the message, and that the turn did not continue because it was cancelled.
 
 ## Feature passthrough, choice metadata and message-time collection
 
@@ -127,7 +127,7 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 
 
-- Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
+- Upstream held-message ordering is decided before native send (bypassing pre-open provider-limit holds for uncreated deferred held seats and propagating live `recipientAgentId` and `bindingConfirmation` on held-seat open); permission holding never answers a prompt. [14]
 
 
 

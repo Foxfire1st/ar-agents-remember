@@ -1,0 +1,193 @@
+{
+  "path": "mcp/tests/test_deferred_held_seat.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:2d86e546e1bb3af60ff537fc8494a94c4a319aec54aaf88aae8fbb6730766cfa",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReplacementAndLimits.test_rule5_replacing_held_start_keeps_debt_when_predecessor_settlement_write_fails"
+        }
+      },
+      "facet": "Verifies a replacing held start whose predecessor settlement write fails keeps pendingArchiveAgentId debt under status=unknown and reserves nothing, then recovers cleanly on retry.",
+      "id": "PRF-0DQF6T",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:602ce474c866289c3157b1c31f40869df9a47241e4bf6db4c7245f094cb6748f",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReservationAndOpening.test_rule9_occupancy_and_replacement_on_deferred_held_seat_uses_zero_host_calls"
+        }
+      },
+      "facet": "Verifies deferred held seats reserve on disk with zero host calls and enforce MIK-R100 rule 9 occupancy and local replacement without host reads.",
+      "id": "PRF-3P62NF",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:62e9a289c1bb72b2d4039193e1dbb6f61bcac730d952143a3d424a642e33c2e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReplacementAndLimits.test_rule7_reserved_seat_not_held_by_provider_limit_but_opened_seat_is"
+        }
+      },
+      "facet": "Verifies a reserved deferred held seat's first message bypasses provider-limit holds while a later message after opening is held by the active provider limit.",
+      "id": "PRF-7280M6",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "L58-INV-4DQMNE",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:36d2bd7d156ce9dd9bdf727ae76b1a49999d0764f4ca074b3655ec8615809024",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReservationAndOpening.test_role_message_by_role_and_task_opens_deferred_held_seat_and_sets_allow_missing_parent"
+        }
+      },
+      "facet": "Verifies first role_message addressed by role and task opens the deferred held seat and sets allowMissingParent.",
+      "id": "PRF-7PMCYN",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:2bb37a6b48d911a248712842fd021c6b9166282aa879b57af29ed1dfdf482056",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReservationAndOpening.test_rule2_opening_runs_stored_replay_request_verbatim_and_delivers_preopen_batch"
+        }
+      },
+      "facet": "Verifies first role_message runs stored replayRequest verbatim in create mode and delivers pre-open waiting messages together in one turn.",
+      "id": "PRF-B702J7",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:d58973945bb2c0cf6c5d06b6740fd174c9f65aaaedf22cdf8dffd7258db90335",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReplacementAndLimits.test_rule5_replacing_held_start_keeps_debt_and_reserves_nothing_when_archive_fails"
+        }
+      },
+      "facet": "Verifies a replacing held start whose predecessor host archive fails keeps pendingArchiveAgentId debt under status=unknown and reserves nothing.",
+      "id": "PRF-V7KRBA",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:e18a8b3773f4b333e2d92599a5d337c1e21cd8f66badf95dfccf025a0eedbec8",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldBridgeParent.test_bridge_omits_archived_parent_when_allow_missing_parent_is_true"
+        }
+      },
+      "facet": "Runs the real paseo_bridge.mjs script with allowMissingParent=true against an archived parent and verifies agent-create omits parentAgentId and succeeds.",
+      "id": "PRF-VBDFAV",
+      "invariant": "INV-EQAWP7",
+      "origin": {
+        "handoffEntry": "BUG-R58@v2 §6",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+        "content": "sha256:d78aabcd821ea38ca8175cde1f0c77db1bde9c9c67c57dc714e6e9228a3aef7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldReservationAndOpening.test_rule3_readers_keep_deferred_held_seat_live"
+        }
+      },
+      "facet": "Verifies seat readers, occupancy reconciliation, and shared held-store reconciliation keep deferred held seats live with zero host reads.",
+      "id": "PRF-YDP3RW",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Bridge test proves `agent-create` omits an archived parent when `allowMissingParent=True`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:25866f3da71fc2db57a6c7e9cea59bfc88272696499a3505d08d7df5487bdd67",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldBridgeParent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reservation, opening, and reader tests cover zero-host-call occupancy/replacement, role+task open with `allowMissingParent`, verbatim `replayRequest` with pre-open batch delivery, and live-seat readers (`_refresh_execution`, `recount_waiting`, `open-children`, `pause_for_provider_limit`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:ec0d2449d4421d2d2eb810d1b9e89b7cb971c75145aa252011cc004a0c0856ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReservationAndOpening"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Replacement and limit tests cover archive-failure and settlement-write-failure `pendingArchiveAgentId` debt recovery and pre-open vs post-open provider-limit behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:22cbaca76676d4d9d2f0617285ad359ca59918a550995c9f057992db85a9a6b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReplacementAndLimits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

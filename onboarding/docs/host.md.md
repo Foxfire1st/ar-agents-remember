@@ -17,6 +17,8 @@ The guide identifies Paseo 0.16.2 adapter source for standard I/O task-server fo
 ## Evidence
 
 - The host guide states the native refusal, ACP route and the distinct installed witness. [1]
+
 - Saved native Retry checks the recorded agent before the bridge's create branch. [2]
+
 - Paseo 0.16.2 forwards the mapped ACP servers to the session call. [3]
 - The pinned ACP mapping carries the standard I/O server definition. [4]

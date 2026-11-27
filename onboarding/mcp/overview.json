@@ -3192,7 +3192,7 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
               "end": 252,
@@ -3205,12 +3205,12 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:f3934786bc2aa73ea0f877a636640e2bdd73297b7d9c02aa46f373af420bd23d",
             "locator": {
-              "end": 727,
+              "end": 741,
               "kind": "line_range",
-              "start": 697
+              "start": 711
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3527,12 +3527,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
-            "content": "sha256:839bffcc6edea9158629bd8f2fa442a200bdc46ec2e5453c1e977598ba14894f",
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 131
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -3645,16 +3644,15 @@
       ]
     },
     "332": {
-      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.",
+      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.\n\nAnchor: `require_step_up_archive_idle`, `_run_prepared_launch`",
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
-            "content": "sha256:0d46d328ef0398cb6dcd18226369bc3b10c1fc5dba4c504d87093b30bcd2ddaf",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:4af7c056ca00d6b0e171726f00e10457a5ba70e9a9f6c260bdcb7353182a08b9",
             "locator": {
-              "end": 422,
-              "kind": "line_range",
-              "start": 370
+              "kind": "symbol",
+              "name": "require_step_up_archive_idle"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
           },
@@ -3662,12 +3660,11 @@
         },
         {
           "anchor": {
-            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
-            "content": "sha256:2fb147941d8a1e75ad798b6bfeff8da70b2ce57ba256d90c29f4a6e49444fbd0",
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:d170f7faed8a438bfc3895cff2b0b41ae9a716a66b62109c14cd6bfd4450230c",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 176
+              "kind": "symbol",
+              "name": "_run_prepared_launch"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -4182,12 +4179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1157,
+              "end": 1178,
               "kind": "line_range",
-              "start": 1096
+              "start": 1117
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4195,12 +4192,12 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1186,
+              "end": 1207,
               "kind": "line_range",
-              "start": 1125
+              "start": 1146
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4947,7 +4944,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
               "kind": "symbol",
@@ -5088,7 +5085,7 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
             "locator": {
               "end": 228,

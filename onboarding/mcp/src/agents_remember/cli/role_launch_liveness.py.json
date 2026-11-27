@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
         "locator": {
-          "end": 613,
+          "end": 666,
           "kind": "line_range",
-          "start": 566
+          "start": 619
         }
       },
       "id": "RLZ-7CJ59T",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,25 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+        "content": "sha256:40edfeeb90e4c77c033c48bd882fe72ed2b532d56ae41562d2e00e550f400b63",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reconcile_deferred_held_leaf"
+        }
+      },
+      "id": "RLZ-979Z98",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Enforces MIK-R100 rule 9 occupancy and local replacement on deferred held leaf seats using receipt agentId with zero host reads or archives.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:a1ce1f9b474495a426323655e44aa00b2680df195905f8838d3b9adc57d99d23",
         "locator": {
           "kind": "symbol",
@@ -77,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:1d44ab80429deb2b5efbc08cc39b39549d6e4e7a3acfd8ba92f161432335b2ca",
         "locator": {
           "kind": "symbol",
@@ -95,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
-        "content": "sha256:faf62f628b6b3cc40d09e88492c3b00df4e2da3b03c163ece19db1ac6de8c808",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+        "content": "sha256:ebe701d783ae6982940bcb773cc596ffef21282f4a87075ee8e529e5c3ada012",
         "locator": {
           "kind": "file"
         }
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
         "locator": {
           "kind": "symbol",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:97dcaca2bbc0e65993436c166ca0866a7febad447b45fc5f3dcf854b22ac440c",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+        "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
         "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
         "locator": {
           "kind": "symbol",
@@ -171,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:8f610bf33cbdbf5f66608be2852fb6bff54d61089d8ea50ff98554378667e8fd",
             "locator": {
-              "end": 476,
+              "end": 529,
               "kind": "line_range",
-              "start": 441
+              "start": 494
             }
           },
           "kind": "code"
@@ -236,11 +254,11 @@
       ]
     },
     "13": {
-      "note": "The current source implements this file’s stated Investigator and reconciliation boundaries.",
+      "note": "The current source implements this file’s stated Investigator and reconciliation boundaries, including zero-host-call occupancy and replacement for deferred held seats.",
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
             "locator": {
               "kind": "symbol",
@@ -251,7 +269,7 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:97dcaca2bbc0e65993436c166ca0866a7febad447b45fc5f3dcf854b22ac440c",
             "locator": {
               "kind": "symbol",
@@ -262,11 +280,22 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
-            "content": "sha256:d0d6ab5041ffd59de9b5f3b2c14362fdfe28f672aa3d23b48d3aac0a0bfd3fd5",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:70bd6871f92069160ead9b7736d59118a7d1ba053985c107b0458c34a385ebed",
             "locator": {
               "kind": "symbol",
               "name": "_reconcile_leaf_occupancy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:40edfeeb90e4c77c033c48bd882fe72ed2b532d56ae41562d2e00e550f400b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_deferred_held_leaf"
             }
           },
           "kind": "code"
@@ -278,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
             "locator": {
               "kind": "symbol",
@@ -289,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:cbfb829c855a25e709337be9484a12cc882aa9d1395673ff52f3e97f6429f0a5",
             "locator": {
               "kind": "symbol",
@@ -301,12 +330,12 @@
       ]
     },
     "15": {
-      "note": "Ordinary leaf replacement uses caller scope (`retirement_scope_refusal`) while step-up keeps starter-only authority and unconditional idle/prompt/subagent checks.",
+      "note": "Ordinary leaf replacement uses caller scope (`retirement_scope_refusal`) while step-up keeps starter-only authority and unconditional idle/prompt/subagent checks; deferred held seats reconcile locally without host calls.",
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
-            "content": "sha256:d0d6ab5041ffd59de9b5f3b2c14362fdfe28f672aa3d23b48d3aac0a0bfd3fd5",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:70bd6871f92069160ead9b7736d59118a7d1ba053985c107b0458c34a385ebed",
             "locator": {
               "kind": "symbol",
               "name": "_reconcile_leaf_occupancy"
@@ -316,7 +345,18 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:40edfeeb90e4c77c033c48bd882fe72ed2b532d56ae41562d2e00e550f400b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_deferred_held_leaf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:701c27e418df874b70d8d00ad27124a7659f703e9363b78eb58785cca607609c",
             "locator": {
               "kind": "symbol",
@@ -327,7 +367,7 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:66eae37ca4f1a415429f703ce00bee602c73b99ca99ec7a36d39c5c8797da79c",
             "locator": {
               "kind": "symbol",
@@ -339,12 +379,12 @@
       ]
     },
     "16": {
-      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.\n\nAnchor: `require_step_up_archive_idle`; `_run_prepared_launch`",
+      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.",
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
-            "content": "sha256:faf62f628b6b3cc40d09e88492c3b00df4e2da3b03c163ece19db1ac6de8c808",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:ebe701d783ae6982940bcb773cc596ffef21282f4a87075ee8e529e5c3ada012",
             "locator": {
               "kind": "file"
             }
@@ -353,8 +393,8 @@
         },
         {
           "anchor": {
-            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
-            "content": "sha256:5ec9ab34f5cc0e7ec890ce4380a936c07ba5042ca930deadf7191279e400aa5f",
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:8d8b83e051915b35fbde9472c963efca9a436106dcf4f73ce7f5762574597feb",
             "locator": {
               "kind": "file"
             },
@@ -400,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
             "locator": {
               "kind": "symbol",
@@ -411,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:1d44ab80429deb2b5efbc08cc39b39549d6e4e7a3acfd8ba92f161432335b2ca",
             "locator": {
               "kind": "symbol",
@@ -422,7 +462,7 @@
         },
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:0691f924ff029b874c82fcf8dd7950ceb50cab6070098ad653c872e9c47a1fbd",
             "locator": {
               "kind": "symbol",
@@ -438,12 +478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
             "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
             "locator": {
-              "end": 613,
+              "end": 666,
               "kind": "line_range",
-              "start": 566
+              "start": 619
             }
           },
           "kind": "code"

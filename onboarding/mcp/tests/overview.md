@@ -13,7 +13,7 @@ Reference-anchor coverage is split among census classification and captured-inpu
 
 The integration lane selects the crossing dependent writer test once. It checks that the mounted dry plan uses the settled code tree and that the branch name resolves to its commit.
 
-`mcp/tests/test_standalone_master_pr_finalize.py` exercises BUG-R59@v1 PR-landed standalone master finalization and record-landing abandoned-contract refusal, and is declared in `integration` (125 integration, 846 total) and as an exact consumer of `_user_settings_guard.py`, portable Node-profile `package-lock.json`, and `tool_answer_l111_test_support.py` (source declarations, not execution).
+`mcp/tests/test_standalone_master_pr_finalize.py` exercises BUG-R59@v1 PR-landed standalone master finalization and record-landing abandoned-contract refusal, and is declared in `integration` (126 integration, 849 total) and as an exact consumer of `_user_settings_guard.py`, portable Node-profile `package-lock.json`, and `tool_answer_l111_test_support.py` (source declarations, not execution).
 
 The unit-regression lane includes the seat-identity suite (`test_server_bindings.py`, `test_launch_identity_confirmation.py`, and `test_launch_identity_brief.py`), which exercises peer server-binding registration, eager/held launch confirmation and retry/refusal, opening-brief `server_info` self-check, parent role-source recovery rules, and bound-environment `role_message` sender attribution, and `test_memory_verdict_ref.py`, whose source assertions cover memory `verdictRef` file validation, collected `notes/reports/<rel>` mapping across closeout and direct landing, unmapped legacy notes, static/runtime `COLLECTED_REPORT_DIRECTORY` single-definition checks across `taskReportRoot` producers and `memory/conversion/state_owners.py`, and post-cleanup readability (source declarations, not a run receipt).
 
@@ -1152,6 +1152,8 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
+
 - Pytest setup isolates the test process and declares three default plugins. Certifying configuration loads a separate bootstrap plugin. [1735]
 
 - The module states that an addressed task body reads only the named documents and preserves the corpus projection. [1736]
@@ -1348,7 +1350,8 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1901]
+- The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1913]
+
 
 
 
@@ -1358,15 +1361,19 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 846 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1903]
+
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 849 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1903]
 
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 846 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1904]
+
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 849 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1904]
 
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 846 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1905]
+
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 849 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1905]
+
 
 
 
@@ -1374,7 +1381,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 846 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1907]
+
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 849 distinct modules across seven lane identities. These source declarations establish no execution or passing result. [1907]
+
 
 
 
@@ -1384,7 +1393,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. The `landing_report_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. [1909]
+
 
 
 
@@ -1392,7 +1403,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` are selected in `unit-regression` and declared as exact consumers in the evidence lifecycle catalog. [1911]
+
 
 
 
@@ -1405,7 +1418,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
+
 - `test_state_conversion_worklist.py` protects `state_conversion_only`, `KnowledgeSide.record_file_changed`, and all three worklist record-comparison sites (source assertions, not execution). [1888]
 
 
-- `mcp/tests/test_family_row_writer_gate_alignment.py` exercises BUG-R57@v1 writer-gate family-row alignment (empty-family `examined` admission and departed-member base-revision fallback) and is registered in `unit-regression` and the lifecycle catalog's four consumer rows (693 unit-regression, 846 total). [1901]
+- `mcp/tests/test_family_row_writer_gate_alignment.py` exercises BUG-R57@v1 writer-gate family-row alignment (empty-family `examined` admission and departed-member base-revision fallback) and is registered in `unit-regression` and the lifecycle catalog's four consumer rows (695 unit-regression, 849 total). [1901]

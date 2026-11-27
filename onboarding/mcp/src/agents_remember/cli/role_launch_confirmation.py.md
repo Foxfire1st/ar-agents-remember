@@ -20,7 +20,7 @@ Implements three-step launch-time server-binding confirmation, single-retry reco
 
 ## Relationships
 
-- **Callers:** `mcp/src/agents_remember/cli/paseo_launch.py` (`run_launch_call` delegates to `execute_confirmed_launch`); `mcp/src/agents_remember/cli/role_launch_outcome.py` (imports `BINDING_CONFIRMATION_FAILED_CODE`); `mcp/src/agents_remember/cli/role_held_messages.py` (uses `LaunchExecutionPolicy(mode="open-held", ...)` and the held-seat confirmation helpers); `mcp/src/agents_remember/cli/role_launch_receipts.py` (passes `on_retry_agent` via `LaunchExecutionPolicy`).
+- **Callers:** `mcp/src/agents_remember/cli/paseo_launch.py` (`run_launch_call` delegates to `execute_confirmed_launch`); `mcp/src/agents_remember/cli/role_launch_outcome.py` (imports `BINDING_CONFIRMATION_FAILED_CODE`); `mcp/src/agents_remember/cli/role_held_opening.py` (uses `LaunchExecutionPolicy(mode="create", ...)` for deferred held seats and `mode="open-held"` for legacy pre-created held seats, plus the held-seat confirmation helpers); `mcp/src/agents_remember/cli/role_launch_receipts.py` (passes `on_retry_agent` via `LaunchExecutionPolicy`).
 - **Dependencies:** `agents_remember.cli.paseo_seat_policy` (`provider_starts_tool_server_at_create`), `agents_remember.serving.server_bindings` (`live_server_bindings`, `harness_root_pids`, `ProcessAncestor`, `ServerBindingRecord`), `agents_remember.cli.paseo_launch` (lazy imports for outcome/mint/create helpers), `agents_remember.cli.paseo_bridge` (`PaseoBridgeFailure`, `AGENT_WITHOUT_MESSAGE_LOST`, `BRIDGE_REFUSED`), `agents_remember.application.agent_binding`.
 - **Tests:** `mcp/tests/test_launch_identity_confirmation.py`.
 

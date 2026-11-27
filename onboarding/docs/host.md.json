@@ -44,12 +44,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:5e597b4f0667c3ce70b87d2d6b595b7e5c5d4e24757dc61c50b155a20b3276ff",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:e5b1da847d9c80c0dcc0020334fec52e23fd1d1050832cb448fd6c813a20eea2",
             "locator": {
-              "end": 662,
-              "kind": "line_range",
-              "start": 645
+              "kind": "symbol",
+              "name": "createAgent"
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },

@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/test_deferred_held_seat_archive.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+        "content": "sha256:7ab08b6c1476f8cd0a48c9edf8c575f1f344f2b196874530ca853a23766987ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeferredHeldSeatArchiveTests.test_entered_deferred_held_open_settles_through_host_and_reports_debt"
+        }
+      },
+      "facet": "Verifies a deferred held seat with heldOpenPending=true settles through host agent-archive and reports owed debt rather than host-free gone.",
+      "id": "PRF-09DPNB",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "L58-INV-VPXD65",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+        "content": "sha256:117b9b11a79c0496722b0aa284fb8966aedb9dd4588e5a82d9b9984368703e4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeferredHeldSeatArchiveTests.test_deferred_held_seat_ends_without_host_on_finalize_cleanup_abandon_and_preview"
+        }
+      },
+      "facet": "Verifies finalize, cleanup, abandon, and dry-run preview settle uncreated deferred held seats as gone with zero host calls and zero owed debt.",
+      "id": "PRF-REN0TK",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "L58-INV-VPXD65",
+        "leaf": "261112-BUG-L58"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`DeferredHeldSeatArchiveTests` verifies uncreated deferred held seats settle as `gone` with zero host calls across finalize/cleanup/abandon/preview, while `heldOpenPending=True` seats settle through the host and record `owed` debt when unreachable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+            "content": "sha256:0eee5277ec442f1a038e440b01e6da2c538e2d5cd73ef2ea9922e7b27fe53c2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeferredHeldSeatArchiveTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

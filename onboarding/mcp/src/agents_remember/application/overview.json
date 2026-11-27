@@ -7750,7 +7750,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
             "locator": {
               "kind": "symbol",
@@ -7762,7 +7762,7 @@
         },
         {
           "anchor": {
-            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
             "content": "sha256:f283095054de1829707b97db5c978052fbfffc613c11a174edf16fadb8929a9f",
             "locator": {
               "kind": "symbol",
@@ -7800,7 +7800,7 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
             "content": "sha256:79c83740ddd26484bc1b66cce2523483da62a1442ab8f6f28517fd33102f2964",
             "locator": {
               "end": 33,
@@ -7813,12 +7813,12 @@
         },
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
             "content": "sha256:447480c9b84f7364d7bff04565a253e337e1d4dfb856a44e58bf09340743388d",
             "locator": {
-              "end": 155,
+              "end": 158,
               "kind": "line_range",
-              "start": 85
+              "start": 88
             },
             "path": "mcp/src/agents_remember/cli/role_retire.py"
           },

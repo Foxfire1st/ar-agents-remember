@@ -5,16 +5,17 @@
     ],
     "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
   },
-  "applicability": "One owning Manager’s set request for a canonical leaf and receipt-bound held-seat opening.",
+  "applicability": "One owning Manager's leaf-set start, deferred held-seat reservation, replacing held starts, and receipt-bound first-message held-seat opening (MIK-R100 rule 2 as revised by D1045 / BUG-R58@v2).",
   "conditions": [
     "The set request derives stable per-role seat request identities and retries partial creation without a fourth agent.",
-    "Optional Reviewer work opens Reviewer; ordinary preparation leaves Reviewer and Curator without turns.",
-    "One unarchived agent holds a leaf seat, including while closed; explicit authorized replacement and ambiguous-resolver refusal retain that rule."
+    "Optional Reviewer work opens Reviewer on the host immediately; ordinary held preparation reserves Reviewer and Curator on disk with status=held, hostAgentExists=false, execution={}, handover on disk, and stored replayRequest without calling host agent-create.",
+    "A replacing held start archives a live predecessor immediately and checks finish_replacing_predecessor before reserving the new seat; any archive or settlement-write failure publishes status=unknown with pendingArchiveAgentId debt and reserves nothing.",
+    "Unretired, non-closing deferred held seats are treated as live occupants by seat readers and occupancy reconciliation without host reads, and open on first role_message using the stored replayRequest verbatim.",
+    "One unarchived agent holds a leaf seat, including while closed or reserved; explicit authorized replacement and ambiguous-resolver refusal retain that rule."
   ],
   "exclusions": [
-    "A held manual single-role launcher start.",
-    "Taskless role capacity or a broadened role may-start table.",
-    "A real-host sandbox witness; evidence item five remains not shown."
+    "A held manual single-role launcher start outside deferred held-seat preparation.",
+    "Taskless role capacity or a broadened role may-start table."
   ],
   "id": "INV-RTQCXN",
   "origin": {
@@ -28,27 +29,20 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "One role_start_set call starts the leaf's Worker open at once with Reviewer and Curator held, repeat sends are identical, held seats open via role_message with held receipts, and one-seat occupancy with resolver refusal holds.",
+  "statement": "One role_start_set call starts the leaf's Worker open on the host immediately while reserving Reviewer and Curator on disk as deferred held seats (status held, hostAgentExists false, execution {}, pre-minted agentId, handover on disk, and stored replayRequest with zero host calls); repeat sends reconcile identical seat identities; replacing a live predecessor archives and settles it before reserving the new seat (keeping pendingArchiveAgentId debt under status unknown and reserving nothing if archive or settlement write fails); every seat reader keeps unretired, non-closing deferred held seats live without host reads; the first role_message creates and opens the addressed held seat with its stored replayRequest verbatim and delivers pre-open held messages in one turn; and one-seat occupancy with resolver refusal holds.",
   "supersedes": [],
+  "title": "Leaf-set start defers held seat creation until first message",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L100",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:48:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
   }
 }

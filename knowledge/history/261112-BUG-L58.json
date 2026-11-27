@@ -1,0 +1,3242 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L58",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T03:53:24+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L58",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T03:53:24+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L58",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "5538da82-cf5b-54b2-a305-9a2bc9d2dd34",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "3d18935462afa0852f7781aea361d7302026360c",
+    "verdictRef": "notes/reports/reviewer/5538da82-cf5b-54b2-a305-9a2bc9d2dd34/role-launch/261112-BUG-L58-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0QP4FJ",
+      "items": [
+        "sha256:b40a11a1e525ed9acfabec3a3a7ca079ad35f5c41aadec26c0e7ff14d6264a3e"
+      ],
+      "reason": "Import of is_deferred_held_receipt in provider_limit_drain.py; behavior is covered by INV-4DQMNE on pause_for_provider_limit.",
+      "subject": "hunk:sha256:b40a11a1e525ed9acfabec3a3a7ca079ad35f5c41aadec26c0e7ff14d6264a3e"
+    },
+    {
+      "because": [
+        "DEC-DZHAHE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+            "content": "sha256:7ab08b6c1476f8cd0a48c9edf8c575f1f344f2b196874530ca853a23766987ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeferredHeldSeatArchiveTests.test_entered_deferred_held_open_settles_through_host_and_reports_debt"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_archive.py"
+          },
+          "before": "absent",
+          "id": "PRF-09DPNB"
+        },
+        {
+          "after": {
+            "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+            "content": "sha256:117b9b11a79c0496722b0aa284fb8966aedb9dd4588e5a82d9b9984368703e4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeferredHeldSeatArchiveTests.test_deferred_held_seat_ends_without_host_on_finalize_cleanup_abandon_and_preview"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_archive.py"
+          },
+          "before": "absent",
+          "id": "PRF-REN0TK"
+        },
+        {
+          "after": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:90e11b882c50e3837eff09a1567a875dcfcd3019a5d8dc65475d3ce91234383f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArchiveAttempt._settle_target"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4868Q0"
+        },
+        {
+          "after": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:85bcdb733418b9f7bfb42631e9c7bb7151ab6825f3e447fe7334035b154139a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-DBTE97"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-S018M9"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-T387A9"
+        },
+        {
+          "after": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:1883b00cf099defb75936d835aab68c5fc3e7137c24c0798d46f9a09d015f248",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArchiveAttempt.preview"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZRS4XM"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-0R9BQK",
+      "items": [
+        "sha256:efbae90c75a5ccd9b8a2f374b11f08cd934eb5dbd44ee3c6aa75fa92a61b1f59"
+      ],
+      "reason": "Extended terminal archive/preview exception so uncreated deferred held seats settle as gone with zero host calls and zero owed debt while heldOpenPending and retried creations remain archive-only. Evidence (L58-INV-VPXD65): mcp/tests/test_deferred_held_seat_archive.py",
+      "revision": 2,
+      "subject": "INV-VPXD65"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0S5P70",
+      "items": [
+        "sha256:bdcf11bf6486a2349e6cf25f39c1e686d6a312c2ffbbcf098d844e2517fa6f9e"
+      ],
+      "reason": "Authored new onboarding card and sidecar for test_deferred_held_seat_closing.py covering BUG-R58@v2 Rule 4 host-free retirement, unentered closing fence, and mid-retry orphan archival.",
+      "sources": [
+        {
+          "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+          "path": "mcp/tests/test_deferred_held_seat_closing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_deferred_held_seat_closing.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-21CP00",
+      "items": [
+        "sha256:a5b4d9753fe35973ab4ce83530f6f10c88a27b368c889123788f43139c8c321e"
+      ],
+      "reason": "Authored new onboarding card and sidecar for role_held_opening.py covering BUG-R58@v2 deferred held-seat opening, closing-mark fence, and allowMissingParent handling.",
+      "sources": [
+        {
+          "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+          "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_opening.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-27WVV8",
+      "items": [
+        "sha256:54845cf33502952b1fa2390e8845c4427545c1daf4f62ae3593528f086658e09"
+      ],
+      "reason": "Import line formatting adjustment in role_message_delivery.py (-34,1 +34,1); behavior is covered by INV-R9S24S on _candidate_state.",
+      "subject": "hunk:sha256:54845cf33502952b1fa2390e8845c4427545c1daf4f62ae3593528f086658e09"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2DRRAW",
+      "items": [],
+      "reason": "Confirmed accurate against BUG-R58@v2 candidate: OpenClaw install documentation is unaffected by deferred held-seat reservation.",
+      "revision": 12,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2VXMMP",
+      "items": [
+        "sha256:9e8629633870610e25a080bf951088fd3ca2952fc59f898657af3649d8fd8622"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_receipts.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3Z2QSY",
+      "items": [
+        "sha256:241a3204dfa7f49a0b6a71e052a1693875fd2cdbd7a07c0fcb00f28a276fa79d"
+      ],
+      "reason": "Import of is_deferred_held_receipt in shared_held_store_reconciliation.py; behavior is covered by INV-RTQCXN on _reconcile_agent.",
+      "subject": "hunk:sha256:241a3204dfa7f49a0b6a71e052a1693875fd2cdbd7a07c0fcb00f28a276fa79d"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-45J0XF",
+      "items": [
+        "sha256:6451e66641d9db08c2ba2ed33cb8fa517f57a77a319025578e5d120ed18a06cd"
+      ],
+      "reason": "BUG-R58@v2 Option C preserves non-waiting closing: uncreated deferred held seats settle as gone with zero host calls, while entered heldOpenPending openings remain non-waiting archive-only debt; the developer has not accepted a closing that waits for an in-flight creation.",
+      "subject": "reconsider:DEC-89X3FM#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4GM9Z4",
+      "items": [
+        "sha256:39982562fb5bd8176facf306a7fb86c5db196a18363b9c3842511623675b2bd6"
+      ],
+      "reason": "Import of is_deferred_held_receipt in role_launch_archive.py (-31,0 +32,1); behavior is covered by INV-AJKQV2 and INV-VPXD65.",
+      "subject": "hunk:sha256:39982562fb5bd8176facf306a7fb86c5db196a18363b9c3842511623675b2bd6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4MHD45",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5JTSYW",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Examined all 8 members; launch choice resolution against host offerings is unchanged by deferred held-seat reservation.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-ATA2Z7",
+          "revision": 1
+        },
+        {
+          "id": "INV-PJA167",
+          "revision": 2
+        },
+        {
+          "id": "INV-TTYYP8",
+          "revision": 3
+        },
+        {
+          "id": "INV-Y1SDE2",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5NZK8D",
+      "items": [
+        "sha256:4a23af7b04fe27f16607406d776cbe77a960ce7655b73fa4148b3fe1da10bbeb"
+      ],
+      "reason": "Examined all 4 members; INV-ATA2Z7 moved RLZ-XRBVHQ to role_held_opening.py inside existing cli route with FIFO crash-recovery guarantee intact.",
+      "revision": 3,
+      "subject": "FAM-S140B6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5QP5CH",
+      "items": [],
+      "reason": "Confirmed accurate against BUG-R58@v2 candidate with role_launch_preparation.py (207-227) and paseo_bridge.mjs (734-751) anchors re-pointed after allowMissingParent addition; docs/host.md describes native host adapter behavior accurately.",
+      "revision": 21,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-632MZY",
+      "items": [
+        "sha256:1b0c6b81c5071af27a788e8dd005de06a517daac4a36f9bd9889e5e0e5644eef"
+      ],
+      "reason": "Re-anchored weakness at candidate code tree C; weakness remains open and is not closed by BUG-R58@v2.",
+      "revision": 6,
+      "subject": "WKN-K3PPJY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "content": "sha256:90362b84f00eb85735c4304141c8d887b7bdbb9243fc56b0a1196b36f398cfb7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-VCNRER"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-68K9ME",
+      "items": [
+        "sha256:85cebc44fbef9ca868c584c9d522874ea1d47f3fedf3d5bcb46ab018ed6589e2"
+      ],
+      "reason": "held_store_layout.py authority bounds and store schemas unchanged.",
+      "revision": 1,
+      "subject": "INV-XP08W1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6GWJ2Y",
+      "items": [
+        "sha256:dcaed9ed20928313c1f6ee1a87dcd697eab5c132317d83c8630fc2b3fc6f0026"
+      ],
+      "reason": "Re-anchored weakness at candidate code tree C; weakness remains open and is not closed by BUG-R58@v2.",
+      "revision": 5,
+      "subject": "WKN-GY12WH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6WY162",
+      "items": [
+        "sha256:5386ad1f3e261f12cb23401dc34538da341ab9ba633e945ab3fa120bda4b4b8f"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+          "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/held_store_layout.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-78RGCR",
+      "items": [
+        "sha256:3ab5f90af6270a69afdebffec844e8883c6cc1919cba15c9951573471522b338",
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433"
+      ],
+      "reason": "Existing card prose remains accurate; only mechanical citation anchors were refreshed after fixture additions.",
+      "sources": [
+        {
+          "blob": "6076920b18d0038b03e379ab42df38a81f1c6e77",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-844HKH",
+      "items": [],
+      "reason": "Confirmed accurate against BUG-R58@v2 candidate: Cursor install documentation is unaffected by deferred held-seat reservation.",
+      "revision": 12,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:a93c7d5d6c4f7e7e33dd492960afb9624fc288727645e550a5166e8430eb83b0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "content": "sha256:cf9432d1746a1f173f6afa5fb7d752e7df3662f538c9eeef1c94a8c01949014c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-4AJ94X"
+        },
+        {
+          "after": {
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:0b095dc9c19ba4e223327c03a5ce2962d22f03949baa207ae5430605d88cd23d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "content": "sha256:29e97a0fb54846ad44ec2b42ab2cc8525af1a34775ba336b1ea8ec30ae2b965d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-83E20B"
+        },
+        {
+          "after": {
+            "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+            "content": "sha256:5e0d61f8853bea0292fe7ea23c82907a60fe11c3b21128335d3c37a66f41d2b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "content": "sha256:ba5518f6a710d8e32ff198ea0ecbaaede123d5e6e07205bbc8a495bbe58b4429",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8GC92W",
+      "items": [
+        "sha256:692dcf80c483ac37c10b49057241d4f85268522d901986ce78f7c4f4f91bdb36"
+      ],
+      "reason": "Only deferred-held-seat dispatch, extraction, and three new test registrations changed; existing contract stands.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8TDQVR",
+      "items": [
+        "sha256:7f8527c2bad3ed3c7843c2845ef37501a4be4965c10c71de8fbafd53eae209d0"
+      ],
+      "reason": "Authored new onboarding card and sidecar for test_deferred_held_seat_archive.py covering BUG-R58@v2 Rule 4 finalize/cleanup/abandon/preview and heldOpenPending settlement.",
+      "sources": [
+        {
+          "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+          "path": "mcp/tests/test_deferred_held_seat_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_deferred_held_seat_archive.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:95f6d4ef278f82da23620ffc6368f936961343d89df480c3dd71cc00db4cbfb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-PCPVCG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-927BNK",
+      "items": [
+        "sha256:7c7f870ea2ae396b66c7f23e03e1e4937821fc2617e7abbc9d2285b9c909c8f7"
+      ],
+      "reason": "RoleMessageResponse retains limitedUntil separately from TaskState.providerLimit while adding optional bindingConfirmation.",
+      "revision": 1,
+      "subject": "INV-XZ766Y"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-956P03",
+      "items": [
+        "sha256:9c289f04acff875749478641c1b814b38bb602226e6b1968854f8ecf27b6d144"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        },
+        {
+          "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        },
+        {
+          "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+          "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+        },
+        {
+          "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        },
+        {
+          "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+          "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+        },
+        {
+          "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+          "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+        },
+        {
+          "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+          "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+        },
+        {
+          "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        },
+        {
+          "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        },
+        {
+          "blob": "bc2b3421dc4a719fb74416c26563d000b821a826",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        },
+        {
+          "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+          "path": "mcp/src/agents_remember/cli/role_retire.py"
+        },
+        {
+          "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
+          "path": "mcp/src/agents_remember/cli/shared_held_store_reconciliation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-990SSZ",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:fea68376619ad02d57f212e291b15df363e0e17f31b033e2b22c6a2a84cbfc64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "content": "sha256:90362b84f00eb85735c4304141c8d887b7bdbb9243fc56b0a1196b36f398cfb7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-GEQ4R4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9FNVVF",
+      "items": [
+        "sha256:370a52845dd88133bf944b29a65c50dcbbf6eb01d8ee57af14fe48f99f0a2a49"
+      ],
+      "reason": "held_store_layout.py change is limited to deferred held receipt agentId fallback; hint-not-census and UUID bounds unchanged.",
+      "revision": 1,
+      "subject": "INV-AYW07B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A071YB",
+      "items": [
+        "sha256:9bb443b788efa27c0a6e3f0b5d53dfec0f2e84326fd5cb06b40dd63fa73d082e"
+      ],
+      "reason": "Import of is_deferred_held_receipt in role_launch_archive.py; behavior is covered by INV-AJKQV2 and INV-VPXD65.",
+      "subject": "hunk:sha256:9bb443b788efa27c0a6e3f0b5d53dfec0f2e84326fd5cb06b40dd63fa73d082e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A9C16Q",
+      "items": [
+        "sha256:928c614b418c1c86181cfcb8d5ecea4d5b3209bea906f5e1c9696703af1ea36e"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ABWV9S",
+      "items": [
+        "sha256:e362e571f2829f6342345ba2c10ffa4dc2da0e127f6557be69edbcdeccfa53f4"
+      ],
+      "reason": "Existing card prose remains accurate; only mechanical citation anchors were refreshed after fixture updates.",
+      "sources": [
+        {
+          "blob": "4245b2a09d32f6c1c77305e8d7fe19d3a6fb0ac7",
+          "path": "mcp/tests/role_first_message_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/role_first_message_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AHJ7ZP",
+      "items": [
+        "sha256:0c193e5014f3ee3cf6ef74af267ab4153bcb4c60b3a866447e9a7bcb4020240f",
+        "sha256:8eed68e6981150266eafef5939e8f39bac2c040007960747aa18a70425a06912"
+      ],
+      "reason": "Existing card prose remains accurate for test_product_start_messages.py; test only adapted fixture setup for deferred held-seat opening.",
+      "sources": [
+        {
+          "blob": "04c43409d36938a614733410ade07b3f1b8f323b",
+          "path": "mcp/tests/test_product_start_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_product_start_messages.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:14174c53632ea1691910c85bcfb952be001a55c364bdbb1b22660593cfcdbe98",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": {
+            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "content": "sha256:3829ecd15db0a818d064f694c061a329e8cd993a578898a5eef1856225fd1c9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "id": "RLZ-FRTZHC"
+        },
+        {
+          "after": {
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:ebe701d783ae6982940bcb773cc596ffef21282f4a87075ee8e529e5c3ada012",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:faf62f628b6b3cc40d09e88492c3b00df4e2da3b03c163ece19db1ac6de8c808",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-KN9SG0"
+        },
+        {
+          "after": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-QBFBXB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AN37D7",
+      "items": [
+        "sha256:41302045eca99835de59419c225590219d102b6824f544a3b4134703c3896384"
+      ],
+      "reason": "Explicit retirement and replacement ownership rules stand; deferred held seats skip host calls only when uncreated.",
+      "revision": 3,
+      "subject": "INV-ECNV2S"
+    },
+    {
+      "deferralIds": [
+        "DFR-1ZVT5V"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-AV99AG",
+      "items": [],
+      "reason": "Recorded open Option C deferral on docs/tool-details.md per Manager code-freeze directive (preserving any pre-existing CAP-L5 deferrals intact).",
+      "revision": 22,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:7f91eaca222cb4746030c357d794394e992209cd382a860af00f96ec32c8f654",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_send_role_message_uses_bound_server_identity_despite_spoofed_text_and_env"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "before": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:66c3e272ee793b27d1d086b7bf96343aeacb62daadc51577d146f3c268a6a42b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_send_role_message_uses_bound_server_identity_despite_spoofed_text_and_env"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "id": "PRF-WRH272"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AXGJ8N",
+      "items": [
+        "sha256:45f15b4c9ca370b0549681c2d653c0307bd554ae54547a96877581064dae0619"
+      ],
+      "reason": "test_launch_identity_confirmation.py grew with held-seat open cases; sender identity derivation from AgentBinding is unchanged.",
+      "revision": 1,
+      "subject": "INV-BPDGMZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B3W8J2",
+      "items": [
+        "sha256:7c79b9ca444251224749a0495fb2fcf642b71b67821dfcfcbc06cf412a7444af"
+      ],
+      "reason": "Authored new onboarding card and sidecar for test_deferred_held_seat.py covering BUG-R58@v2 Rules 1, 2, 3, 5, 6, 7, and 9.",
+      "sources": [
+        {
+          "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+          "path": "mcp/tests/test_deferred_held_seat.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_deferred_held_seat.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B5J65F",
+      "items": [
+        "sha256:0bab4008b83a42186dc427c541b16681918e4a513fe36a09472b94bb549b810f",
+        "sha256:1b929ba66af86f06dbf0c2a95ae15969d95ea78e9d5e205243bfe827d51d5bef",
+        "sha256:91394268adc8b4734fcd869c5c808a9fe68c71c34ef30fc34358d67432938235",
+        "sha256:9ce48b2a989bf7466898a1d497ce1eef79171621e99e667afc35a3b7b9ddb655",
+        "sha256:d0a66e02677a2db8df8a5ce6c52a76fb75ca2af563677bf965d842c75a266781",
+        "sha256:d42d5127c485abf1f8c8864d7cc9e2d9fd4e0f0f0b409a2fd812147593dc5f7b",
+        "sha256:ff1794367deebb859f1d81edc56b304b578389bdac4e7b4dba7f9894ec175175"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "33605be589232b19197288ab81737e968b83f78c",
+          "path": "mcp/tests/test_launch_identity_confirmation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_launch_identity_confirmation.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-C09AYX",
+      "items": [
+        "sha256:2ae8746797df80d3479fea8cdf1db2fb57d7f4877ee931c08742e7d3b1a9b4d8"
+      ],
+      "reason": "Re-anchored weakness at candidate code tree C; weakness remains open and is not closed by BUG-R58@v2.",
+      "revision": 5,
+      "subject": "WKN-6RT10Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bc2b3421dc4a719fb74416c26563d000b821a826",
+            "content": "sha256:ada259ca7a482f54471979c2f1fbf99438d64b7555560d37ad48b4bf495b9e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_state"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-81PMYM"
+        },
+        {
+          "after": {
+            "blob": "bc2b3421dc4a719fb74416c26563d000b821a826",
+            "content": "sha256:d1eaebf30e08b94f94ebacc9108176cee27eaff6ddff8d24d5d5417578830aa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "before": {
+            "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
+            "content": "sha256:c19bf6d917289bf4fcab60edcd341ec5e69ab145828a402fe0a4f1c82e20efa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "id": "RLZ-A9DFWX"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CP7F67",
+      "items": [
+        "sha256:fff53c7c1c0a913a29f9206f0597f0283078aa217bbb1caaca15413fe315cfea"
+      ],
+      "reason": "Recipient resolution meaning unchanged; extended with _candidate_state recognizing unretired, non-closed deferred held seats without host reads. Evidence (L58-INV-R9S24S-ext): mcp/tests/test_deferred_held_seat.py::TestDeferredHeldReservationAndOpening::test_rule3_readers_keep_deferred_held_seat_live",
+      "revision": 2,
+      "subject": "INV-R9S24S"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+            "content": "sha256:5e0d61f8853bea0292fe7ea23c82907a60fe11c3b21128335d3c37a66f41d2b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "content": "sha256:ba5518f6a710d8e32ff198ea0ecbaaede123d5e6e07205bbc8a495bbe58b4429",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-D382SR",
+      "items": [
+        "sha256:c3433159b9fb9504a7850258b852b908ca12fe498ea47418371bac18167f0d32"
+      ],
+      "reason": "Test catalog additions preserve schema and lifecycle contract boundaries.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D3FTDH",
+      "items": [
+        "sha256:2fc5962169e5c3024422867495bdff0b3a6306bbd100a634ab2e0771036904c8"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+          "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_liveness.py"
+    },
+    {
+      "because": [
+        "DEC-DZHAHE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:2d86e546e1bb3af60ff537fc8494a94c4a319aec54aaf88aae8fbb6730766cfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReplacementAndLimits.test_rule5_replacing_held_start_keeps_debt_when_predecessor_settlement_write_fails"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-0DQF6T"
+        },
+        {
+          "after": {
+            "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
+            "content": "sha256:610aaac13134a318a185f20d20b5cf830fb14596ba7818ed2646751af780a299",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "before": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:805e27f2f746ffc03cde030f6a9917a757a4e148b7797b2c9a10849c09acb466",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "id": "PRF-3HVH1G"
+        },
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:602ce474c866289c3157b1c31f40869df9a47241e4bf6db4c7245f094cb6748f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReservationAndOpening.test_rule9_occupancy_and_replacement_on_deferred_held_seat_uses_zero_host_calls"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-3P62NF"
+        },
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:36d2bd7d156ce9dd9bdf727ae76b1a49999d0764f4ca074b3655ec8615809024",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReservationAndOpening.test_role_message_by_role_and_task_opens_deferred_held_seat_and_sets_allow_missing_parent"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-7PMCYN"
+        },
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:2bb37a6b48d911a248712842fd021c6b9166282aa879b57af29ed1dfdf482056",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReservationAndOpening.test_rule2_opening_runs_stored_replay_request_verbatim_and_delivers_preopen_batch"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-B702J7"
+        },
+        {
+          "after": {
+            "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
+            "content": "sha256:1c59819d9dedc3acbf62dd7ee816514d9a8b7f85425f83a55f01013b6b9b0d24",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "before": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats"
+            },
+            "path": "mcp/tests/test_role_start_set.py"
+          },
+          "id": "PRF-FH8XQN"
+        },
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:d58973945bb2c0cf6c5d06b6740fd174c9f65aaaedf22cdf8dffd7258db90335",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReplacementAndLimits.test_rule5_replacing_held_start_keeps_debt_and_reserves_nothing_when_archive_fails"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-V7KRBA"
+        },
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:d78aabcd821ea38ca8175cde1f0c77db1bde9c9c67c57dc714e6e9228a3aef7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReservationAndOpening.test_rule3_readers_keep_deferred_held_seat_live"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-YDP3RW"
+        },
+        {
+          "after": {
+            "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+            "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+          },
+          "before": "absent",
+          "id": "RLZ-59PWQ7"
+        },
+        {
+          "after": {
+            "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
+            "content": "sha256:4c894a306a0a86faa6bad60aa859621c02d7132ac781b27791b7b662dbcbab3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_agent"
+            },
+            "path": "mcp/src/agents_remember/cli/shared_held_store_reconciliation.py"
+          },
+          "before": "absent",
+          "id": "RLZ-7VEWAV"
+        },
+        {
+          "after": {
+            "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
+            "content": "sha256:40edfeeb90e4c77c033c48bd882fe72ed2b532d56ae41562d2e00e550f400b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_deferred_held_leaf"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": "absent",
+          "id": "RLZ-979Z98"
+        },
+        {
+          "after": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:27f14a6bc315a99468c522e71c8148b88cd747fbd9f4651ce3962be80b2029b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_leaf_holder"
+            },
+            "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DK535C"
+        },
+        {
+          "after": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:af2e1ad5d250e1fbe0155c4f44b99c40f769b8066ee2d1cad66ec354a4c23f87",
+            "locator": {
+              "kind": "symbol",
+              "name": "defer_held_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FFS2PD"
+        },
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:def73dcf8c4f4dcf99534555b6b99b677f11a91b6cf4cee4572fce50ee3ef819",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:def73dcf8c4f4dcf99534555b6b99b677f11a91b6cf4cee4572fce50ee3ef819",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-YG8KWM"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-DPC20H",
+      "items": [
+        "sha256:44c8fc633913d8bd18db1f5c2472f993e397798d9440bb46fe7fd04e12192f91"
+      ],
+      "reason": "Renewed MIK-R100 rule 2 under D1045 / BUG-R58@v2: role_start_set reserves Reviewer and Curator on disk with hostAgentExists=false and zero host calls, replacing held starts archive and settle live predecessors before reserving, and first role_message creates and opens the seat verbatim. Evidence (L58-INV-RTQCXN): mcp/tests/test_deferred_held_seat.py; mcp/tests/test_role_start_set.py; role-reports/worker/be7a795f-cf0a-53da-ac2a-7948608a8b3a/role-launch/bug-r58-v2-evidence1-report.md (criteria a-h)",
+      "revision": 2,
+      "subject": "INV-RTQCXN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DX8NKZ",
+      "items": [
+        "sha256:ce3a221e806fa29eba36b2639ff6318b07cd1d89c4e360e473491c96675eae2e"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+          "path": "mcp/src/agents_remember/models/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "considered": [
+        "FAM-N6S3XT",
+        "FAM-S140B6",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-E8Z8AX",
+      "items": [],
+      "reason": "Parent-absence tolerance on deferred held-seat open is a bridge creation safeguard distinct from binding-identity confirmation (FAM-N6S3XT), held-FIFO crash recovery (FAM-S140B6), and closing archival (FAM-VNK792).",
+      "revision": 1,
+      "subject": "membership:INV-EQAWP7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "content": "sha256:ba5518f6a710d8e32ff198ea0ecbaaede123d5e6e07205bbc8a495bbe58b4429",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:42768a3704f0aa03f1e04391a4a686e15eb2172474465684d9d4c20b901a53d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+            "content": "sha256:5e0d61f8853bea0292fe7ea23c82907a60fe11c3b21128335d3c37a66f41d2b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F57NEQ",
+      "items": [
+        "sha256:19763e31a5257a2c3f2a42afc1b43a93e368ab94d54371708714992f7d8ceb54"
+      ],
+      "reason": "Three deferred held-seat test modules registered in both test-evidence-lanes.toml and evidence-lifecycle.toml; catalog parity stands.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-5MFB9S",
+          "revision": 1
+        },
+        {
+          "id": "INV-BPDGMZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-D5BANQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-JV7S6Y",
+          "revision": 2
+        },
+        {
+          "id": "INV-VD1BVN",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FF5TYM",
+      "items": [
+        "sha256:81d10d31edc67a08a9c42c116aa775970de593883656d4faae56a843ac86209b"
+      ],
+      "reason": "Renewed family guarantee for deferred held-seat opens creating on first role_message and returning live recipientAgentId and bindingConfirmation on RoleMessageResponse, and added mcp/src/agents_remember/models to routes; all 5 family members examined.",
+      "revision": 2,
+      "subject": "FAM-N6S3XT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:016f000a661414a0fcf3354dcf8d2c5741cf232328c734ce36edae1f09a2f0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentCreation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "content": "sha256:f9a6205aee0c2bc9c928214238693ef3329d99056d9f534b69ab30fe8a5628e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentCreation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-P34QJB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FS9KCS",
+      "items": [
+        "sha256:afc87d6c6379f3ccb55747a6d41125fa75cfb12c270a96e480314ea2a48ff270"
+      ],
+      "reason": "agentCreation added optional allowMissingParent boolean without altering per-launch ambient tool suppression.",
+      "revision": 1,
+      "subject": "INV-ZKV9B3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FVTAWE",
+      "items": [
+        "sha256:c400dc8c8203d02f0237d8133f1187125d911b78bdd6db9b081065b3abccc562"
+      ],
+      "reason": "Import line formatting adjustment in role_message_delivery.py; behavior is covered by INV-R9S24S on _candidate_state.",
+      "subject": "hunk:sha256:c400dc8c8203d02f0237d8133f1187125d911b78bdd6db9b081065b3abccc562"
+    },
+    {
+      "because": [
+        "DEC-DZHAHE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+            "content": "sha256:88d1ff2ddfa4ec077377a89faa145bf2a466f32ddb37ee525f0b07e92d8ea50f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldSeatRetirementAndClosing.test_d1046_site7_site8_and_closing_retry_race"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_closing.py"
+          },
+          "before": "absent",
+          "id": "PRF-BKYMM6"
+        },
+        {
+          "after": {
+            "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+            "content": "sha256:d36baab1bb054c7eb6ad00f9ea5fb8e1b96a68913ca6fa8aee35bfc88c9e510b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldSeatRetirementAndClosing.test_rule4_unentered_opening_meets_closing_mark_and_closing_during_retry_archives_orphan"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_closing.py"
+          },
+          "before": "absent",
+          "id": "PRF-BQS81D"
+        },
+        {
+          "after": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:85bcdb733418b9f7bfb42631e9c7bb7151ab6825f3e447fe7334035b154139a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-5VCJGH"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-5Z2YB3"
+        },
+        {
+          "after": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:4280a764a6ff35573c531f49177dc49173ef93013698746a3d8f9dbeed9bec38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_uncreated_deferred_held"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": "absent",
+          "id": "RLZ-7PAZG3"
+        },
+        {
+          "after": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:61b5bd61da28fbe07a9a47b33eebd241786b531b791bb7b66fd4a355b042af5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settle_refused_targets"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AZN32B"
+        },
+        {
+          "after": {
+            "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+            "content": "sha256:7a424f13d610af5345c15b2cd0670b56f622d2f468f3bc2376aa650dd16c53fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_held_open_call"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GPC1C1"
+        },
+        {
+          "after": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:46d39540914e2e65824715b22c3b4c54bc8eb79b4fb8133e7ffa497ecf9e78e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "retried_outcome_agent_id"
+            },
+            "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PJ60BY"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-RFNY7Y"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-GF2004",
+      "items": [
+        "sha256:907813193c146eb40d97cbe038d7d745f6652264e047b05114465be177656336"
+      ],
+      "reason": "Extended closing-mark fence to deferred held-seat openings (unentered settles gone with zero host calls and waiting messages undelivered; entered heldOpenPending settles via host; mid-BUG-R51-retry close archives retried_agent_id too). Evidence (L58-INV-AJKQV2): mcp/tests/test_deferred_held_seat_closing.py",
+      "revision": 2,
+      "subject": "INV-AJKQV2"
+    },
+    {
+      "deferralIds": [
+        "DFR-A96ARN"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-H2H11J",
+      "items": [],
+      "reason": "Recorded open Option C deferral on docs/concepts.md per Manager code-freeze directive (preserving any pre-existing CAP-L5 deferrals intact).",
+      "revision": 35,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "04c43409d36938a614733410ade07b3f1b8f323b",
+            "content": "sha256:3e38c392b39d131fa981a0b09e540fa7e032b02ab908218fa9477914b4a0c769",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_curator_without_ignore_line_gets_the_moment_in_its_scratch"
+            },
+            "path": "mcp/tests/test_product_start_messages.py"
+          },
+          "before": {
+            "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+            "content": "sha256:f5a04303a1fa4b5593279e421ee67529934f122dbd57a3fd84b0868a56f4cfff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_curator_without_ignore_line_gets_the_moment_in_its_scratch"
+            },
+            "path": "mcp/tests/test_product_start_messages.py"
+          },
+          "id": "PRF-PVMECW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H2XPRQ",
+      "items": [
+        "sha256:5ceb10bcc5688cf4be7367d9df192bc987f4ede014f2e84ccec86fb0100a6066"
+      ],
+      "reason": "test_product_start_messages.py adjusted only to open deferred held seat cleanly; product start notice guarantee unchanged.",
+      "revision": 1,
+      "subject": "INV-9Z6T69"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H5XD9B",
+      "items": [
+        "sha256:4d213425a0cd7029a37a13984eefa17b1ff9b0e89761efae6e6799a1e0953227",
+        "sha256:b8d62d52b65eb040f0c5954f8528a0fe3ebeb814a3009023505634034c70f4c7"
+      ],
+      "reason": "Existing card prose remains accurate; only mechanical citation anchors were refreshed after fixture additions.",
+      "sources": [
+        {
+          "blob": "36d6749c59722340e159378c9b4d580614c0c07f",
+          "path": "mcp/tests/paseo_role_tools_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_role_tools_test_support.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+            "content": "sha256:5e0d61f8853bea0292fe7ea23c82907a60fe11c3b21128335d3c37a66f41d2b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:c0a843c7c1dfec44a99edcb59fe1fa7c3dee7d65c067661c3f390ed92442c4c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HPXWAC",
+      "items": [
+        "sha256:e4d31a134123630c9d169932671fefd0bd97212c7dc201f60ac48aec3f181e41"
+      ],
+      "reason": "test-evidence-lanes.toml added three deferred held-seat test modules; lane selection contract unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J8NAF5",
+      "items": [
+        "sha256:a6d9091dfa1890a8a877a02b805e2855da16e5e76f268be20230a883bc3a346a"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+          "path": "mcp/src/agents_remember/cli/role_retire.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_retire.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JBWQQB",
+      "items": [
+        "sha256:986912613aa024bb587c3fac0bb525477df4fada9e426c8b23e90afebbc8eeb3"
+      ],
+      "reason": "Test fixture helper adjustment in role_first_message_support.py for deferred held seats; introduces no new production invariant.",
+      "subject": "hunk:sha256:986912613aa024bb587c3fac0bb525477df4fada9e426c8b23e90afebbc8eeb3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:8ba11a47cfa286e26c1ccb29f1803d54d54ad31582d269f16dbc049007e0a85b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-T4SZ1K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JCQNH7",
+      "items": [
+        "sha256:e24273cb854d3e6295fe7868425d83470794ee73803e7f7aa50a7398aa0558fe"
+      ],
+      "reason": "Adding optional bindingConfirmation to RoleMessageResponse does not alter role-start/message schema invariants.",
+      "revision": 2,
+      "subject": "INV-5H5VR2"
+    },
+    {
+      "because": [
+        "DEC-DZHAHE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:6f1a486fd9f3e6c7c2f5aa9278476b10a684880d1a1388a03222a8b458274f5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestHeldSeatReconfirmation.test_held_seat_open_skipped_confirmation_carries_record_and_live_agent"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "before": "absent",
+          "id": "PRF-EE6ZM0"
+        },
+        {
+          "after": {
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:f52fc8f5bd72943b50ac8d3988782a7e21686af0c09de1f5a366b43311c3685e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestHeldSeatReconfirmation.test_held_seat_open_retries_once_when_existing_server_is_gone"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "before": "absent",
+          "id": "PRF-PXAFBD"
+        },
+        {
+          "after": {
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:e91bac5d08450e4c704672e394624586b86bc7d099ac29cb4bf5e924e9f6f6de",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestHeldSeatReconfirmation.test_held_seat_open_double_failure_archives_both_and_leaves_zero_live_seats"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "before": "absent",
+          "id": "PRF-WPRP8H"
+        },
+        {
+          "after": {
+            "blob": "33605be589232b19197288ab81737e968b83f78c",
+            "content": "sha256:1077ebec37653d8f6b1d8965f7953b67672a802f8e82ed9343eed8dbdd4e68c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_seat_confirmed_at_create_and_reconfirmed_at_open_with_skip_wait"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "before": {
+            "blob": "165a51fc4fa0dc7c59106e820684d4c5088a1924",
+            "content": "sha256:d225ef625ddf931184d05ac6390e8f471debbc874965bab9497b257f61b585d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_seat_confirmed_at_create_and_reconfirmed_at_open_with_skip_wait"
+            },
+            "path": "mcp/tests/test_launch_identity_confirmation.py"
+          },
+          "id": "PRF-XMXVZ0"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:d170f7faed8a438bfc3895cff2b0b41ae9a716a66b62109c14cd6bfd4450230c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:90459a7400e00ac2a8447ef3ec028f37f5d3a70a120601b97fe67af755a50ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-33ZN04"
+        },
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:95f6d4ef278f82da23620ffc6368f936961343d89df480c3dd71cc00db4cbfb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-B0HJPE"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-FMBHQ1"
+        },
+        {
+          "after": {
+            "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+            "content": "sha256:682aaa2a0fa16479988e2d552b134b4755e97217a24f3d83558cc447e00e7037",
+            "locator": {
+              "kind": "symbol",
+              "name": "opened_held_seat_answer"
+            },
+            "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+          },
+          "before": "absent",
+          "id": "RLZ-H2S347"
+        },
+        {
+          "after": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:e67e22c6ba2055cb4059061dcb2e51ff15f19926463f6df7f91e1ed3f812527f",
+            "locator": {
+              "end": 765,
+              "kind": "line_range",
+              "start": 728
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "content": "sha256:e67e22c6ba2055cb4059061dcb2e51ff15f19926463f6df7f91e1ed3f812527f",
+            "locator": {
+              "end": 751,
+              "kind": "line_range",
+              "start": 714
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-N01B6H"
+        },
+        {
+          "after": {
+            "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+            "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+          },
+          "before": {
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "content": "sha256:627fdb0d40b945bf42ec9c281382fdf879187d3fe38a2e12996c5b3d4054bfa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-R6PF51"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-KEXMW1",
+      "items": [
+        "sha256:7de7930a39ec155cf38bc0bcd2aa2659fe3445cf1abfde3544a70435eb5bc111"
+      ],
+      "reason": "Renewed for BUG-R58@v2 Option C: deferred held seats create and confirm on first message (legacy pre-created seats re-confirm in open-held mode) and every opened held-seat answer returns live execution.agentId as recipientAgentId plus bindingConfirmation on RoleMessageResponse. Evidence (L58-INV-JV7S6Y): mcp/tests/test_launch_identity_confirmation.py (TestHeldSeatReconfirmation); role-reports/worker/be7a795f-cf0a-53da-ac2a-7948608a8b3a/role-launch/bug-r58-v2-evidence1-report.md (criteria c, d, h)",
+      "revision": 2,
+      "subject": "INV-JV7S6Y"
+    },
+    {
+      "deferralIds": [
+        "DFR-YWM2GX"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-KFM65E",
+      "items": [],
+      "reason": "Recorded open Option C deferral on mcp/src/agents_remember/package_data/runtime/docs/tool-details.md per Manager code-freeze directive (preserving any pre-existing CAP-L5 deferrals intact).",
+      "revision": 24,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KPQMDC",
+      "items": [
+        "sha256:25458bd497e6cf1ac3d1e625da4e4c6045b711109930a7d2a077d2e7d6333c2a",
+        "sha256:9332a5462c0b9b07e95a285231b208647a61a88128201e691ef2cc0793faf231",
+        "sha256:93caa3a79f6be3ab16537255024cad309fe4bf07f3dfa928fccaae53a714fd9e",
+        "sha256:c572a6e418af1883c4becea2b6d8c02d0dbcdeedd8ffbbbf064e4deef820a185",
+        "sha256:f50d8a5bb7d0cf83674117a2415a4c2182dcf498260cc35b16c5aebc48978e6d"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
+          "path": "mcp/tests/test_role_start_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_start_set.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KXKKQC",
+      "items": [
+        "sha256:2ef741a0341e6f5ae415cc049a3146824cbf20b3289368972fdb2320cbcb15a1",
+        "sha256:31065ac18caf5c3ab0b949f712d7be36d75431aaef1447cc44496cf43a47a336",
+        "sha256:32bf87b002279d980d99bca0956d9fd268b001127f934e07e66285dcd0b2a61c"
+      ],
+      "reason": "Existing card prose remains accurate after post-sync fixture alignment; refreshed source blob binding.",
+      "sources": [
+        {
+          "blob": "329645d7b27976c98027e74ce0227ddcda1a15ff",
+          "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_reviewer_criterion_delivery.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:016f000a661414a0fcf3354dcf8d2c5741cf232328c734ce36edae1f09a2f0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentCreation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "content": "sha256:f9a6205aee0c2bc9c928214238693ef3329d99056d9f534b69ab30fe8a5628e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentCreation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-1F9QGM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MWK3HZ",
+      "items": [
+        "sha256:3e1d8ecb45d79860fa3b082207b82ac845bcca883abbc20cc6d03259cbeb813f"
+      ],
+      "reason": "agentCreation added optional allowMissingParent boolean without changing providerOptions/tool-policy suppression.",
+      "revision": 1,
+      "subject": "INV-XJJ3NX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:b9b2843e139c2fcd9a7afbcc8dadf61073c0d0ca6f1daf7c4e9922f2682b9eca",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+            "content": "sha256:153f8e1f9a1edfbccb18bffb56a99d6908a418df3bedd28dcb2d0d4d6a0bbb09",
+            "locator": {
+              "end": 704,
+              "kind": "line_range",
+              "start": 672
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-8FFN5K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MX7VEW",
+      "items": [
+        "sha256:732c625463a8acb53c698efeefc4085ec7a30950539c1aba3ce3d5efeb1f259b"
+      ],
+      "reason": "Forced usage-report refresh by reportIds alone is unchanged; re-anchored RLZ-8FFN5K onto paseo_bridge.mjs usage-reports dispatch line.",
+      "revision": 1,
+      "subject": "INV-DY1KSB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:14174c53632ea1691910c85bcfb952be001a55c364bdbb1b22660593cfcdbe98",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": {
+            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "content": "sha256:3829ecd15db0a818d064f694c061a329e8cd993a578898a5eef1856225fd1c9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "id": "RLZ-2NT148"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N6SN07",
+      "items": [
+        "sha256:b4132ead872888f9e3cf4e27ecce83a103c6c461d9716869a8457a30dcdff00f"
+      ],
+      "reason": "Retire-child authorization and held-message preservation unchanged; uncreated deferred held seats retire host-free.",
+      "revision": 1,
+      "subject": "INV-7CZVBD"
+    },
+    {
+      "because": [
+        "DEC-DZHAHE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+            "content": "sha256:62e9a289c1bb72b2d4039193e1dbb6f61bcac730d952143a3d424a642e33c2e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldReplacementAndLimits.test_rule7_reserved_seat_not_held_by_provider_limit_but_opened_seat_is"
+            },
+            "path": "mcp/tests/test_deferred_held_seat.py"
+          },
+          "before": "absent",
+          "id": "PRF-7280M6"
+        },
+        {
+          "after": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-6HF52M"
+        },
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:8ba11a47cfa286e26c1ccb29f1803d54d54ad31582d269f16dbc049007e0a85b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-J3TCD3"
+        },
+        {
+          "after": {
+            "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
+            "content": "sha256:5b0bc6c3a602ea384a4e0aeda8ec6c383b9c56e2946fcf8eae3f4b12a7c9e436",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_for_provider_limit"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "before": {
+            "blob": "d88165e216d61602f6527955000193e85955e1dd",
+            "content": "sha256:46595ca7109e47de8cf1bdd28defb102dc7c4157edd18aa1f16b451b43d12ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_for_provider_limit"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "id": "RLZ-RX5FRC"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NJKX3Z",
+      "items": [
+        "sha256:edaed8e233c3309ec9ca2c979b6f201661d9285c1e9696fc20bb93058a04b910"
+      ],
+      "reason": "Extended provider-limit hold and drain pause rules for BUG-R58@v2 Rules 3 & 7: reserved deferred held seats bypass pre-open provider-limit holds and ended-stamp absence reads until opened, while post-open messages are held normally. Evidence (L58-INV-4DQMNE): mcp/tests/test_deferred_held_seat.py::TestDeferredHeldReplacementAndLimits::test_rule7_reserved_seat_not_held_by_provider_limit_but_opened_seat_is",
+      "revision": 5,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NNBQ0M",
+      "items": [
+        "sha256:901334c4ac666d8f8a001add6ad7de85b5581f481ab9070613b835aa13e0dd24"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "d16d684a6e624fb527ff8d4b51f24dd21cb280a6",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/provider_limit_drain.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-PDSMW4"
+        },
+        {
+          "after": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:8d8b83e051915b35fbde9472c963efca9a436106dcf4f73ce7f5762574597feb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "content": "sha256:5ec9ab34f5cc0e7ec890ce4380a936c07ba5042ca930deadf7191279e400aa5f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-SA35BD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P6CJB5",
+      "items": [
+        "sha256:d4d06a28b8223f92ba2f4ee43b7bf0c7114aa11a92e27e25f6e571d5dfd27c18"
+      ],
+      "reason": "Direct opening-message offloading applies only to non-held launches; deferred held launches carry no opening prompt.",
+      "revision": 3,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-P8SNKE",
+      "items": [
+        "sha256:147d5360ac24e3dadd68ef85fbea99c136dc01bc0f59a0a01e9dd77ba17769af"
+      ],
+      "reason": "Re-anchored weakness at candidate code tree C; weakness remains open and is not closed by BUG-R58@v2.",
+      "revision": 5,
+      "subject": "WKN-CS209S"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PTX8F3",
+      "items": [],
+      "reason": "Confirmed accurate against BUG-R58@v2 candidate: explainer and review-page documentation makes no claim about eager 0-turn held-seat host creation.",
+      "revision": 18,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:a4e007b6bda21ddaf94c0010af79d8b007eac1b091c8b67af0b23b611e64d4ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "recount_waiting"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "content": "sha256:5e764c9362c1ea94888f55139c88aa1c87a661476ec7626e0e1e902ee0f80575",
+            "locator": {
+              "kind": "symbol",
+              "name": "recount_waiting"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-4BH1VC"
+        },
+        {
+          "after": {
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+            "content": "sha256:8db96d14fffdcfd95ec05ecd81557f89d6bd51a64acd8ea379a777018e65e077",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_endpoints"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JJ9ECK"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-PV1ABA",
+      "items": [
+        "sha256:2dbc742421a393ed0aadec2cea13c3dfd23b578e5acb434c8fd53783dee21f66"
+      ],
+      "reason": "Failed-drain logging and waiting-count recount meaning unchanged; extended with _store_endpoints falling back to receipt agentId for deferred held seats. Evidence (L58-INV-SB6HQS-ext): mcp/tests/test_deferred_held_seat.py::TestDeferredHeldReservationAndOpening::test_rule3_readers_keep_deferred_held_seat_live",
+      "revision": 2,
+      "subject": "INV-SB6HQS"
+    },
+    {
+      "deferralIds": [
+        "DFR-69Y75A"
+      ],
+      "disposition": "deferred",
+      "id": "ROW-Q3XF3Y",
+      "items": [],
+      "reason": "Recorded open Option C deferral on docs/reference/role-capsules.md per Manager code-freeze directive (preserving any pre-existing CAP-L5 deferrals intact).",
+      "revision": 11,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QKWPNQ",
+      "items": [
+        "sha256:d9626124ddcd2e9597545a785098a04f293e7e9231c7a3ad09033feda33dfceb"
+      ],
+      "reason": "Authored new onboarding card and sidecar for role_deferred_held.py covering BUG-R58@v2 deferred held-seat reservation, leaf holder projection, retried agent ID extraction, and opened held-seat answer projection.",
+      "sources": [
+        {
+          "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+          "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_deferred_held.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QZ8QQM",
+      "items": [
+        "sha256:7fb6eaf9c000bf3bed5c25a3ff4cbbd45f7fc33041e7258cb03f85472970e556"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+          "path": "mcp/src/agents_remember/models/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_agents.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-R1RYPY",
+      "items": [
+        "sha256:27d903f1fcdacd9138e7768d0a25db825c3171b77ba33aab49133f96bfd2b699"
+      ],
+      "reason": "Re-anchored weakness at candidate code tree C; weakness remains open and is not closed by BUG-R58@v2.",
+      "revision": 4,
+      "subject": "WKN-V8X6D3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4CJ7H0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 2
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 2
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 2
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 2
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-HBMPXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 3
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 2
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-RC4VRV",
+      "items": [
+        "sha256:b648184e094040d8e26b6f52c4ed354293e7a98dae852304b3fba084f6d3372b"
+      ],
+      "reason": "Examined all 12 members; INV-AJKQV2 and INV-VPXD65 extended closing-mark fencing and host-free gone settlement for uncreated deferred held seats inside existing routes without altering the family guarantee.",
+      "revision": 3,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RR6ZXW",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S2P8KJ",
+      "items": [
+        "sha256:ac607aac29d761c3899ef31ec42b16033f483509d0f8aefb55b103410e7f5441"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+          "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_archive.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:6ab4815f9125c705da5141e197dd016fab30b6c77174503b81e0f2969d5c3272",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_then_delivered"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_then_delivered"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-QR5NNP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S4JMVR",
+      "items": [
+        "sha256:9a55a4f76c690c5dd656aefa6ac8013c853a67d77614568aeb35847d0baadb43"
+      ],
+      "reason": "_held_then_delivered applies opened_held_seat_answer without changing replacement/transport wording.",
+      "revision": 1,
+      "subject": "INV-4XSRF7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T4KEWB",
+      "items": [
+        "sha256:c921b8c2b4adf298e01325a61d68933d0992f639186a6f4414ca838a9783fe8b"
+      ],
+      "reason": "Controlplane overview remains accurate; only held_store_layout.py added deferred-held receipt agentId fallback for recount_waiting.",
+      "sources": [
+        {
+          "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
+          "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TQ25F3",
+      "items": [
+        "sha256:4e572d6355671d320f695983326a9d63b0ea860e21f808d05e2c41e6d21f8ebc"
+      ],
+      "reason": "Test fixture helper adjustment in role_first_message_support.py for deferred held seats; introduces no new production invariant.",
+      "subject": "hunk:sha256:4e572d6355671d320f695983326a9d63b0ea860e21f808d05e2c41e6d21f8ebc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V0YEJ8",
+      "items": [
+        "sha256:b156150d6128bd6c8c806c57e8c029db678774ef41789993066e262cdeebe55d"
+      ],
+      "reason": "Updated tests route overview prose and counts (849 distinct modules: 695 unit-regression, 126 integration) for BUG-R58@v2 and refreshed source blob bindings post-sync.",
+      "sources": [
+        {
+          "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "6076920b18d0038b03e379ab42df38a81f1c6e77",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        },
+        {
+          "blob": "36d6749c59722340e159378c9b4d580614c0c07f",
+          "path": "mcp/tests/paseo_role_tools_test_support.py"
+        },
+        {
+          "blob": "4245b2a09d32f6c1c77305e8d7fe19d3a6fb0ac7",
+          "path": "mcp/tests/role_first_message_support.py"
+        },
+        {
+          "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "e988bc2bcf1b9ee85d4a910d89c8216c9082113f",
+          "path": "mcp/tests/test_deferred_held_seat.py"
+        },
+        {
+          "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+          "path": "mcp/tests/test_deferred_held_seat_archive.py"
+        },
+        {
+          "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+          "path": "mcp/tests/test_deferred_held_seat_closing.py"
+        },
+        {
+          "blob": "329645d7b27976c98027e74ce0227ddcda1a15ff",
+          "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py"
+        },
+        {
+          "blob": "33605be589232b19197288ab81737e968b83f78c",
+          "path": "mcp/tests/test_launch_identity_confirmation.py"
+        },
+        {
+          "blob": "04c43409d36938a614733410ade07b3f1b8f323b",
+          "path": "mcp/tests/test_product_start_messages.py"
+        },
+        {
+          "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
+          "path": "mcp/tests/test_role_start_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VDGPVB",
+      "items": [
+        "sha256:303e8def883c7e720430e5eea93be497b0cd48f130874621fda42e27eab7dabb"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "bc2b3421dc4a719fb74416c26563d000b821a826",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_message_delivery.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W177RC",
+      "items": [
+        "sha256:9a54e550957dd5a00c3fc052904782df62fa1abc52ff3b70ca12868ef0ad7943"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
+          "path": "mcp/src/agents_remember/cli/shared_held_store_reconciliation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/shared_held_store_reconciliation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WKGGMS",
+      "items": [
+        "sha256:fd8021910e1e52c0cb569e21457d7eb7fe5f4c3ee85b1ce51a19dbc27348a409"
+      ],
+      "reason": "Examined all 3 members; only PRF-PVMECW in test_product_start_messages.py adjusted for deferred held seats; file brief and start notice guarantee stands.",
+      "revision": 1,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-NJJDFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WZN2TE",
+      "items": [
+        "sha256:0dd417c1c5a0d0589cf8cbe61a31877dc1df3753952a006fcb52453a192026bd"
+      ],
+      "reason": "_deliver_or_hold pre-open provider-limit bypass does not alter filed message ID or host deduplication.",
+      "revision": 1,
+      "subject": "INV-AMJAZT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X31XA5",
+      "items": [
+        "sha256:12c0b3965ae20587eb973186e140837d60624e88922d928ebbbeee0bab2ba77f"
+      ],
+      "reason": "Import of is_deferred_held_receipt in role_message_delivery.py; behavior is covered by INV-R9S24S on _candidate_state.",
+      "subject": "hunk:sha256:12c0b3965ae20587eb973186e140837d60624e88922d928ebbbeee0bab2ba77f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:8ba11a47cfa286e26c1ccb29f1803d54d54ad31582d269f16dbc049007e0a85b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-055VPB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-X7658N",
+      "items": [
+        "sha256:038e0516279bb0f69f0f7b272ceeecb8d631afafeb298a05a030250b69d8e8a0"
+      ],
+      "reason": "RoleMessageResponse field additions (bindingConfirmation) do not alter strict envelope/model ownership.",
+      "revision": 1,
+      "subject": "INV-0GPNBS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y9BY0C",
+      "items": [],
+      "reason": "Confirmed accurate against BUG-R58@v2 candidate with test-evidence-lanes.toml anchor re-pointed to lines 868-870 after adding the three deferred held-seat test modules.",
+      "revision": 36,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+            "content": "sha256:7f5bd401248ee9c526323198f0c0cc33369836bfba78bdd3ea334d74a8c708fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+            "content": "sha256:6429ce63f6d4996657497aa9754dca6a4525b43ca84f7ea211aa8466ad2cf9bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-QQR1B1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z6M6XR",
+      "items": [
+        "sha256:33691449ca0a366661a5def32fe0c5a81672424fc2a1ba42741cc3b1dc40ff1a"
+      ],
+      "reason": "role_launch_routes.py touched only for deferred held seat preparation; launch choice resolution unchanged.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "79c65d4f175fceaac5582bbff0a2ab6e1a93e1ea",
+            "content": "sha256:95f6d4ef278f82da23620ffc6368f936961343d89df480c3dd71cc00db4cbfb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-QV74SA"
+        },
+        {
+          "after": {
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:6ab4815f9125c705da5141e197dd016fab30b6c77174503b81e0f2969d5c3272",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_then_delivered"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_then_delivered"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-WETPS8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z7GB6Y",
+      "items": [
+        "sha256:f59af197def9681f9f4e0226d01b4575dd72957fdde1ada92a6d47a79a73ebd6"
+      ],
+      "reason": "Held-drain answer still carries no turnId; opened_held_seat_answer only adds live recipientAgentId and bindingConfirmation.",
+      "revision": 1,
+      "subject": "INV-18M0W3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z7XPB2",
+      "items": [
+        "sha256:b5ae7593a94611913cf4afac18ec137f1fda946694b1e1a21be63fbdb24925df"
+      ],
+      "reason": "Updated card/overview prose and refreshed anchors for BUG-R58@v2 Option C deferred held-seat changes.",
+      "sources": [
+        {
+          "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_messages.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+            "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+          },
+          "before": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-XRBVHQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZAPASV",
+      "items": [
+        "sha256:3c2b74043fbcd87118e06b54ddc89f3220f8ea4a0b3caa32e46da05428710ffa"
+      ],
+      "reason": "Held-seat opening was extracted to role_held_opening.open_held_seat with FIFO crash-recovery staging order unchanged.",
+      "revision": 1,
+      "subject": "INV-ATA2Z7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+            "content": "sha256:45022fff795e572b3cfb49b5cfd4513fb4f877e7bea8145c52d17fe882b04e00",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldSeatRetirementAndClosing.test_retire_deferred_held_seat_sends_zero_host_calls_and_records_caller_and_reason"
+            },
+            "path": "mcp/tests/test_deferred_held_seat_closing.py"
+          },
+          "before": "absent",
+          "id": "PRF-73YVKV"
+        },
+        {
+          "after": {
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:8764e39a40d20eb613feb3bd85a727aa57a013a2d8e5213c715b5730b5018ea4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_no_open_children"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": {
+            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "content": "sha256:bf4818da9a4ff2be16b8d667535132a5e1e426b6f647318a3f87d296158f8863",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_no_open_children"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "id": "RLZ-QM3PVX"
+        },
+        {
+          "after": {
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
+            "content": "sha256:535213604e3ec8a67ea3f314c680bc12ecdfa47879c98b00a4d916cc034d07d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_native_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": "absent",
+          "id": "RLZ-V0Z074"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-ZTVDBF",
+      "items": [
+        "sha256:3f81a9fe10a6c7cfbd69e1e073dde15ba3b3562d1e171f17e51eb97d503dc4ae"
+      ],
+      "reason": "Explicit parent-retirement open-child refusal unchanged; extended with host-free retirement of uncreated deferred held seats and proof. Evidence (L58-INV-KRCG05-ext): mcp/tests/test_deferred_held_seat_closing.py::TestDeferredHeldSeatRetirementAndClosing::test_retire_deferred_held_seat_sends_zero_host_calls_and_records_caller_and_reason",
+      "revision": 1,
+      "subject": "INV-KRCG05"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-C9SY1X",
+          "revision": 1
+        },
+        {
+          "id": "INV-EMEW6K",
+          "revision": 1
+        },
+        {
+          "id": "INV-GKNF5W",
+          "revision": 1
+        },
+        {
+          "id": "INV-HFREW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-P8F6BT",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJJ3NX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKEF8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKV9B3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZWJFB5",
+      "items": [
+        "sha256:46442828846eda2a2a3806d3f662f91f5dc5d0c8ed254eb3f02089b1dd59e033"
+      ],
+      "reason": "Examined all 8 members; allowMissingParent in paseo_bridge.mjs does not alter per-launch ambient tool suppression.",
+      "revision": 1,
+      "subject": "FAM-QDEPNF"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:c20a5090204018f6178d208007ba650f85e1013aa88bc20f19a63e6085a942d5",
+      "record": "DEC-DZHAHE",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d81048300f3bc2f48366eb7f807aa9a32c8a7f757c113397c043d891c0781d90",
+      "record": "DPD-10YCT2",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fc391307f8d88590191eda4deef7d793ec29d7925ae04b7c8a75983c2dc6d64b",
+      "record": "DPD-21GMJ5",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:01c0ba9df8dfe0cf0f4a0c92897914d0fa78af7ae8e83c205eb1e7a349e27840",
+      "record": "DPD-6528VF",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:94b91b2786368189d35ab1933fab7dc957dacfad6cddbfab0bf1d82fb58ab892",
+      "record": "DPD-71WYH4",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2c3222583b7c2a94a349e1e6c566c3e5b21d7808074903fce6681f45a2765f73",
+      "record": "DPD-K2QMWQ",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:474e2a3dc42c0876f074b2426d19db44274dd49a7b3299a3ab4dbecd1256c1dd",
+      "record": "DPD-NGC2F6",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4c4729dada6210e7bce462930c3fac81d2e70aaa6f9e74b3ca19e8400db41977",
+      "record": "DPD-PMZ21Z",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c61e3bc728f5f677edee8f099552cc6a25de0e9f53e36bdc17e99543f90d6872",
+      "record": "DPD-QFGFS0",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ea99b073f09c8efcba50e71edfaa694b16c943238c8d313e26792db344e0fe08",
+      "record": "DPD-ZT8YY7",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:47b87d9c3e295bd58d39403384b78166c2e627d3f65aff6100f17fffdd01468b",
+      "record": "FAM-N6S3XT",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:770f2c8430a7eadcec72ba00c71d555fd20aaa643b476df7ee41263b14f8fc35",
+      "record": "INV-4DQMNE",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c26684fa5d3c88ee7bfdd94c56438e89f4ef3b72cfa4bde29daedabfa8427482",
+      "record": "INV-AJKQV2",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2ad3ad5a74acb73458b6675c3fd7b52bc5c2f9dbee0ec3cbbe93ee90b071008a",
+      "record": "INV-EQAWP7",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1b0b5639c1dc4cd4b7725b059eb57a33342ee41fae3c8ed95be6d3d242312301",
+      "record": "INV-JV7S6Y",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f689a2bd283d24a13c39752e7bf3ceca5dfd57f9987c255619a76581b6b7c2a9",
+      "record": "INV-RTQCXN",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b4312047b72efc747e27324d840338edae5ed77c01a7742f5b29567c001c6a5c",
+      "record": "INV-VPXD65",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:12de3bfe90ace35caf57e2fcadccfe2ace98a28c7d32fb84e5216e0fdce77e0c",
+      "record": "WKN-6RT10Q",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:64a5cbab25393344644ac40c6396ac0b8ed5a298c238e4b2cf494751b3dea4b9",
+      "record": "WKN-CS209S",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e60c173b81fc2abc2cd5e336bec48a8dec899c84ff540564ca4036f8ab21569d",
+      "record": "WKN-GY12WH",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fd38a0d87ecce183e08322a2f115ad11e5ac30f13a2a2f257591397e2f943807",
+      "record": "WKN-K3PPJY",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4bf35ef19b9bf000428121878a9651bc949107dd5a39cad43df526d64f739ac6",
+      "record": "WKN-V8X6D3",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-27T02:48:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L58",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

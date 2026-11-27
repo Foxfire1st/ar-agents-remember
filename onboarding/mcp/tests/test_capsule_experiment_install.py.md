@@ -107,5 +107,3 @@ returned summary alone.
 
 
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [17]
-
-

@@ -7,6 +7,21 @@
     "task": "261112-BUG",
     "uncommitted": false
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/tool-details.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.038543Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "40638134662ff715f51b378d410ab63214cb8c71",
+      "id": "DFR-1ZVT5V",
+      "owner": "261112-BUG",
+      "passage": "docs/tool-details.md role_start_set (lines 457-459: 'each exists on the host') and retire_child (lines 429-431: omits host-free retirement of uncreated deferred held seats)",
+      "reason": "Contradicted by BUG-R58@v2 Option C (D1045): held Reviewer and Curator seats are reserved on disk (hostAgentExists=false) with zero host calls until first role_message creates and opens them, and retiring an uncreated deferred held seat requires zero host calls. Code freeze preserved per Manager directive; update docs/tool-details.md on its next doc edit."
+    }
+  ],
   "document": "docs/tool-details.md",
   "id": "DPD-10YCT2",
   "origin": {
@@ -17,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -272,14 +287,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
-    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
+    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
+    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
     "role": "curator",
-    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: docs/design/python-pytest-bootstrap.md remains accurate after L59 added test_standalone_master_pr_finalize.py to mcp/tests/test-evidence-lanes.toml (846 distinct modules: 693 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness, 1 stress-durability); re-anchored stress-durability to lines 865-867.",
-    "task": "261112-BUG-L59",
+    "statement": "Confirmed accurate against BUG-R58@v2 candidate with test-evidence-lanes.toml anchor re-pointed to lines 868-870 after adding the three deferred held-seat test modules.",
+    "task": "261112-BUG-L58",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 35,
+  "revision": 36,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+      "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+        "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 867,
+          "end": 870,
           "kind": "line_range",
-          "start": 865
+          "start": 868
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T00:41:03+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L59",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }
