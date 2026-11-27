@@ -62,10 +62,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
-            "content": "sha256:d0f4cee78845b4fee86f0c22e49cd330f506383ab2d0bcb4bf726f23c2b054da",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:b22de22be79a13546d249e67b5de979ef176fc6d9cb061cbee98ef62c40ffdad",
             "locator": {
-              "kind": "file"
+              "end": 414,
+              "kind": "line_range",
+              "start": 410
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:870b458e5b8c769edd514627c968c6a5289200ab58d444152ebb2f4cc9e0629f",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 436
             }
           },
           "kind": "code"
@@ -77,10 +91,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
-            "content": "sha256:d0f4cee78845b4fee86f0c22e49cd330f506383ab2d0bcb4bf726f23c2b054da",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:1e0250c9e087e4c45a1bfda1dcaf47329ce093a472fe6d5ddac344fd32ba23e7",
             "locator": {
-              "kind": "file"
+              "end": 177,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:1f3b97942e0d821d2fd0af51a07f246814b4b3b6ac602877a05f47eb0156ca54",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:a29c11eb2f4bbfd563f3f47e204c9476a2f69c46715c5414b189234884110a20",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The reset register clears `canvas.kit_references._js_language` with `_clear_cache` between test modules to forget loaded JavaScript grammar memoization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:863cc578fe0511007949107ae9a30bede64480a910e0584dd6b2bb320ba074ce",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 237
             }
           },
           "kind": "code"
@@ -92,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
             "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
             "locator": {
               "kind": "symbol",
@@ -103,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
             "content": "sha256:8aef1c2a76ebeda48c8c7b6f0fd4404d64af40c72638c5e1eb9f8695e54ef77a",
             "locator": {
               "kind": "symbol",
@@ -114,21 +171,11 @@
         },
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
             "content": "sha256:d2530de545842cfcc3d49962b1d11f78af8555fd6fbe9b89aaee99a7bbd32402",
             "locator": {
               "kind": "symbol",
               "name": "end_pytest_process"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
-            "content": "sha256:d0f4cee78845b4fee86f0c22e49cd330f506383ab2d0bcb4bf726f23c2b054da",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -140,10 +187,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
-            "content": "sha256:d0f4cee78845b4fee86f0c22e49cd330f506383ab2d0bcb4bf726f23c2b054da",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:3dfde744774d6bc4c866d096e3d3b3184e6c0664d28cfba3e1bde4c4103aea84",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
             }
           },
           "kind": "code"
@@ -203,10 +251,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
-            "content": "sha256:d0f4cee78845b4fee86f0c22e49cd330f506383ab2d0bcb4bf726f23c2b054da",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:7694ebbfdd147cd4f8b074fb0e8c660446e333f7a5fa5f2b851a6c8a7fd2d9f3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_reset_sweep_cursor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:c4aa327e1a57bda2c7ea1aa8c451521ad85f62c0eca4efa5c69cfd4d9e7ca9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reset_tool_writer"
             }
           },
           "kind": "code"
@@ -218,10 +278,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14153d8a4858cf682b3ea233bee24a6fe020c134",
-            "content": "sha256:d0f4cee78845b4fee86f0c22e49cd330f506383ab2d0bcb4bf726f23c2b054da",
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:160292d7e4c42d854fe0ec5cfa5a617f4f20673493f839da4b8dabfa25fdec6c",
             "locator": {
-              "kind": "file"
+              "end": 285,
+              "kind": "line_range",
+              "start": 281
             }
           },
           "kind": "code"

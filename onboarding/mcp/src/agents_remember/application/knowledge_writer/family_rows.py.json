@@ -1,0 +1,226 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/family_rows.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+        "content": "sha256:40c8d3fb0ef5acc49b56b0779f5ed3971c5e133d528e57795f51a87f49f5608b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_base_revisions"
+        }
+      },
+      "id": "RLZ-1G6WAC",
+      "invariant": "INV-CEM7AB",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §2",
+        "leaf": "261112-BUG-L57"
+      },
+      "rationale": "Extracts integer base revisions of 1 or more from reached_family facts.members entries, rejecting absent, boolean or non-positive values.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+        "content": "sha256:4ddc7df3a2eb33c823416635effeef6f6e217f85ab7f82de69db0ef9c4bb4fa7",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_family_row"
+        }
+      },
+      "id": "RLZ-2TSM0M",
+      "invariant": "INV-FT42W0",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 2",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "build_family_row enforces family_effect_refusal, refuses invalid or curator-owned mechanical input, and stamps the candidate family's actual own revision before HistoryRowAuthoring._family_row validates the FamilyRow.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+        "content": "sha256:41ac1feb08323c566441fd8e151ed65fe4adc68776c5a304560999acf5048223",
+        "locator": {
+          "kind": "symbol",
+          "name": "reached_family_facts"
+        }
+      },
+      "id": "RLZ-BJ82YV",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      },
+      "rationale": "Reads each persisted reached_family item's facts.members into ReachedFamilyFacts, so the empty-family admission rests on the persisted worklist rather than the memory worktree HEAD.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+        "content": "sha256:4ddc7df3a2eb33c823416635effeef6f6e217f85ab7f82de69db0ef9c4bb4fa7",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_family_row"
+        }
+      },
+      "id": "RLZ-C8SXW5",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      },
+      "rationale": "Runs the unchanged effect refusal, checks _allows_empty_examined before refusing an empty or omitted examined list, resolves the members, stamps the produced revision and validates through the unchanged caller.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+        "content": "sha256:885d694b0e7bf829f81c0dff8de4118697929234fe67c77ced006d590b61c19e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_allows_empty_examined"
+        }
+      },
+      "id": "RLZ-K8P1FV",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      },
+      "rationale": "Requires both an empty worklist facts.members and a produced family record with no members, so a member added in the same batch cannot hide behind a stale worklist.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+        "content": "sha256:0a31ee02a46b07eb5edc042589135589aeb926f234d6bf906e0433a8430a58cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_examined"
+        }
+      },
+      "id": "RLZ-VH34SG",
+      "invariant": "INV-CEM7AB",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §2",
+        "leaf": "261112-BUG-L57"
+      },
+      "rationale": "Checks candidate stored invariants first, falls back to base_revisions from the reached_family item only when the member is absent from K_C, and keeps the existing not-a-stored-invariant refusal otherwise.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`reached_family_facts` and `_base_revisions` extract empty-member status and integer `base >= 1` revisions from persisted `reached_family` worklist items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:57987c8f70ca68cb978a306a45baa8b9ed709a17bdec802a2f6530eaf025ef24",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReachedFamilyFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:41ac1feb08323c566441fd8e151ed65fe4adc68776c5a304560999acf5048223",
+            "locator": {
+              "kind": "symbol",
+              "name": "reached_family_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:40c8d3fb0ef5acc49b56b0779f5ed3971c5e133d528e57795f51a87f49f5608b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_revisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`build_family_row` and `_allows_empty_examined` run effect refusal first and admit empty or omitted `examined` only when both worklist `facts.members` and the produced family record have no members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:4ddc7df3a2eb33c823416635effeef6f6e217f85ab7f82de69db0ef9c4bb4fa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_family_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:885d694b0e7bf829f81c0dff8de4118697929234fe67c77ced006d590b61c19e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_allows_empty_examined"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_resolve_examined` stamps candidate invariant revisions first, falls back to persisted worklist base revisions `>= 1` only when absent from `K_C`, and preserves the stored-invariant refusal otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:0a31ee02a46b07eb5edc042589135589aeb926f234d6bf906e0433a8430a58cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_examined"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`HistoryRowAuthoring._family_row` delegates row construction to `build_family_row` and validates the built `FamilyRow`, while `write_knowledge` wires `reached_family_facts(request.worklist)` into `Authoring`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "content": "sha256:96d075953c0a2916155ee0f174469a093968d82b8e8a7fece8253cf93abac369",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
+            "content": "sha256:c93e9f8e1226cebb4fdcb8667dc563ec54994545865fde21db88acc63d5a7aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

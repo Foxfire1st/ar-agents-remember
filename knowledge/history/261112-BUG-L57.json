@@ -1,0 +1,842 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L57",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T00:03:47+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L57",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T00:03:47+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L57",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "e6d511f4-f94d-5c9b-8cf1-a45e916c3faf",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "0c037a0e4690a95c26d9c4d1c7b39f73dc987208",
+    "verdictRef": "notes/reports/reviewer/e6d511f4-f94d-5c9b-8cf1-a45e916c3faf/role-launch/261112-BUG-L57-MR2-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-14XFPF",
+      "items": [
+        "sha256:c5b81591a3ff333c6c838001da3d3ec3f4d24dfa909567f64a2c3ebd3757afdc"
+      ],
+      "reason": "authoring_rows.py::_write_rows was untouched by L57; omitting a judgment from a later handoff still leaves the stored judgment in the open history file, so WKN-J9VT2X still stands as written.",
+      "revision": 2,
+      "subject": "WKN-J9VT2X"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2EAXQG",
+      "items": [
+        "sha256:a1c84a92360e00785d73017968abff45c3d3b17169dc3e20606abaa411ee4cfe"
+      ],
+      "reason": "Authored new onboarding card and verified citation sidecar covering all 6 writer-gate alignment test functions (11 cases) for BUG-R57@v1.",
+      "sources": [
+        {
+          "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+          "path": "mcp/tests/test_family_row_writer_gate_alignment.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_family_row_writer_gate_alignment.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2KKANA",
+      "items": [
+        "sha256:e87be55f7705f8152392ec7e202804246438dc5d7ae596956c0e68bc9e3506a8"
+      ],
+      "reason": "Module-level import of ReachedFamilyFacts in authoring.py for typing Authoring.reached_family_members; behavioral invariants are anchored on Authoring.reached_family_members and family_rows.py.",
+      "subject": "hunk:sha256:e87be55f7705f8152392ec7e202804246438dc5d7ae596956c0e68bc9e3506a8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-48WCCT",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Recorded the four consumer entries for test_family_row_writer_gate_alignment.py, updated shifted line numbers and note 287, and refreshed all citation anchors.",
+      "sources": [
+        {
+          "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8SRM54",
+      "items": [
+        "sha256:0face2a762d4ec480490f74c24512f81db41aeab861e17903e1edd3a33388534"
+      ],
+      "reason": "Added family_rows.py to the application route overview, refreshed overview prose/citations, and rebuilt application/overview.index.json.",
+      "sources": [
+        {
+          "blob": "9daa2d59c004011cbd853e8d2aa1c19ffc422493",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        },
+        {
+          "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        },
+        {
+          "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/family_rows.py"
+        },
+        {
+          "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+            "content": "sha256:f2aed1893e623d61ef13f27fc4b8329ef2048020523be96a8b1d6584009fc2cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "884bfca77d3918141360d799434cf4234f069731",
+            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9GY5NR",
+      "items": [
+        "sha256:cf1243e625e32955b2371e3c75a8ff27f45a1af714ac73bd06cb164fb7453e3a"
+      ],
+      "reason": "L57 added mcp/tests/test_family_row_writer_gate_alignment.py to the unit-regression lane in test-evidence-lanes.toml and to four existing consumer lists in evidence-lifecycle.toml without altering lane or lifecycle catalog rules.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9M63BS",
+      "items": [
+        "sha256:7df78041f459b6fea11a561af4e71ee399c9080f96911302913ad2be0525f966"
+      ],
+      "reason": "Updated catalog counts (845 distinct modules / 693 unit-regression / 124 integration / 24 architecture-fitness), added test_family_row_writer_gate_alignment.py, refreshed citations, and rebuilt tests/overview.index.json.",
+      "sources": [
+        {
+          "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+          "path": "mcp/tests/test_family_row_writer_gate_alignment.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [
+        "FAM-DGPZ0R",
+        "FAM-61DY2V",
+        "FAM-7B6N3Y4Q",
+        "FAM-04M3Z0",
+        "FAM-FQ8TF2",
+        "FAM-PBAB60",
+        "FAM-KQQE74ZT",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-AH7C5V",
+      "items": [
+        "sha256:643038df096562e6d03d2ce063530306ca39ecc282c32bd52d878dcc4d24a8f6"
+      ],
+      "reason": "Examined all 8 route-adjacent families (FAM-DGPZ0R, FAM-61DY2V, FAM-7B6N3Y4Q, FAM-04M3Z0, FAM-FQ8TF2, FAM-PBAB60, FAM-KQQE74ZT, FAM-NQQP2T): none states a joint guarantee matching empty-family examined admission without distorting its existing promise, and §1/§2 are disjoint edge-case branches within one writer module rather than an emergent multi-boundary guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-3ETQAF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+            "content": "sha256:f2aed1893e623d61ef13f27fc4b8329ef2048020523be96a8b1d6584009fc2cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "884bfca77d3918141360d799434cf4234f069731",
+            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EN62HA",
+      "items": [
+        "sha256:bf6c4a1dce7c0313f017cee18710513bcd24dc19dce25b34d407044be0330953"
+      ],
+      "reason": "Registering test_family_row_writer_gate_alignment.py in test-evidence-lanes.toml and evidence-lifecycle.toml preserves all catalog consistency rules.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:4ddc7df3a2eb33c823416635effeef6f6e217f85ab7f82de69db0ef9c4bb4fa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/family_rows.py"
+          },
+          "before": {
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+            "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-2TSM0M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EQKPZ8",
+      "items": [
+        "sha256:f46f8d6f8eba43b3ecb100634fd7e4d5e6448a7b8eb0c56e1d80fa48834d4586"
+      ],
+      "reason": "L57 extracted the family-row construction body (including family_effect_refusal and candidate family revision stamping) from HistoryRowAuthoring._family_row into family_rows.py::build_family_row while keeping the invariant meaning unchanged.",
+      "revision": 1,
+      "subject": "INV-FT42W0"
+    },
+    {
+      "considered": [
+        "FAM-DGPZ0R",
+        "FAM-61DY2V",
+        "FAM-7B6N3Y4Q",
+        "FAM-04M3Z0",
+        "FAM-FQ8TF2",
+        "FAM-PBAB60",
+        "FAM-KQQE74ZT",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-F1CWQT",
+      "items": [
+        "sha256:6b4f2a3e6202e624d36b1fe93cf5ec526155f39a200414008cb241321dcfd62b"
+      ],
+      "reason": "Examined all 8 route-adjacent families (FAM-DGPZ0R, FAM-61DY2V, FAM-7B6N3Y4Q, FAM-04M3Z0, FAM-FQ8TF2, FAM-PBAB60, FAM-KQQE74ZT, FAM-NQQP2T): none states a joint guarantee matching candidate-first base-revision fallback for departed examined members without distorting its existing promise, and §1/§2 are disjoint branches inside family_rows.py rather than a cross-boundary family.",
+      "revision": 1,
+      "subject": "membership:INV-CEM7AB"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+            "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-XJ80YW"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-FF5PQS",
+      "items": [
+        "sha256:71a775e7fffec08a21b5f4ed0b26ead80e89081c049709a7a601c999ec5ade01"
+      ],
+      "reason": "Retiring this L26/L48 file-residence note because family-row effect checks moved to family_effect.py (KNO-L3) and family-row construction moved to family_rows.py::build_family_row (261112-BUG-L57), so R48 row logic no longer resides solely in authoring_rows.py. Evidence (L57-retire-INV-QY70J3): 261112-BUG-L57 extracted family-row construction from HistoryRowAuthoring._family_row into mcp/src/agents_remember/application/knowledge_writer/family_rows.py::build_family_row (following KNO-L3 extraction of family_effect.py), superseding this L26/L48 file-residence note.",
+      "revision": 1,
+      "subject": "INV-QY70J3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9daa2d59c004011cbd853e8d2aa1c19ffc422493",
+            "content": "sha256:102d2d2bc7e382cbf2d0dcb2d50b0fe50757e50f7b075aa93df70ef8a236f151",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "before": {
+            "blob": "0dcb19a85407326cce0a0c572b16e2e278a5665c",
+            "content": "sha256:bf8d35ce208c9553b219673cd87d8ad417bac781bf3f4a6ac5a6445bd7e37df6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "id": "RLZ-87J2WX"
+        },
+        {
+          "after": {
+            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "content": "sha256:9fb5092e1ac450b633957075f89dac5e8b9d9e9c4e91bf0c101cde55be4543e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": {
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+            "content": "sha256:1fd232dba5490a49298f00437fdae56b8d2be44c98b0c21cae58ebb218653de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-999BVN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FHFXM0",
+      "items": [
+        "sha256:b8c10b7a532d64aa2d0e9859091b8885b3ba153c32d6417dce8b5cfb7e2f3856"
+      ],
+      "reason": "Adding reached_family_members on Authoring and wiring it through HistoryRowAuthoring preserves the existing authoring and history-row construction invariants.",
+      "revision": 2,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "content": "sha256:96d075953c0a2916155ee0f174469a093968d82b8e8a7fece8253cf93abac369",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": {
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
+            "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-5C8WZE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HM2GAG",
+      "items": [
+        "sha256:efffd9b1700ac01dc8aee0890a629b443c4682efa45bceb399477e78ff6e8a12"
+      ],
+      "reason": "INV-EH65RT is already retired; HistoryRowAuthoring._family_row remains the delegating entry point validating FamilyRow via family_rows.build_family_row, so the retired summary is unaffected.",
+      "revision": 1,
+      "subject": "INV-EH65RT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K2Y0CW",
+      "items": [
+        "sha256:58220967245fa403bb82a9a340edd2935f6892323e6307ea2d39e4f41219ecb5"
+      ],
+      "reason": "Authored new onboarding card and verified citation sidecar covering ReachedFamilyFacts, reached_family_facts, build_family_row, _allows_empty_examined, _resolve_examined, and _base_revisions.",
+      "sources": [
+        {
+          "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/family_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/family_rows.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K491F7",
+      "items": [
+        "sha256:c237eb5f629dd05f9ac4ec8ec8d858b57f64b11f06ea42434e3dc66ddd339f32"
+      ],
+      "reason": "TYPE_CHECKING import of ReachedFamilyFacts in authoring_rows.py for static type checking of the HistoryRowAuthoring protocol attribute; carries no runtime invariant of its own.",
+      "subject": "hunk:sha256:c237eb5f629dd05f9ac4ec8ec8d858b57f64b11f06ea42434e3dc66ddd339f32"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KD64ZW",
+      "items": [
+        "sha256:d179386ad45102b52c8e91da2a2b89a49eb59d77064d2e78028bd64a1247d886"
+      ],
+      "reason": "Module-level import swap in authoring_rows.py replacing family_effect_refusal with build_family_row after delegating family-row construction to family_rows.py; behavioral guarantees are anchored on build_family_row and _family_row.",
+      "subject": "hunk:sha256:d179386ad45102b52c8e91da2a2b89a49eb59d77064d2e78028bd64a1247d886"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M3YB19",
+      "items": [
+        "sha256:3d7f82f0ed5b726cf68e582d0229b20f313aecfdf491a037f52c78ffe6fcef22"
+      ],
+      "reason": "Documented Authoring.reached_family_members propagation from persisted knowledge-worklist.json and refreshed citation anchors.",
+      "sources": [
+        {
+          "blob": "9daa2d59c004011cbd853e8d2aa1c19ffc422493",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MBNWVZ",
+      "items": [],
+      "reason": "DPD-78737N (CONTRIBUTING.md, rev 25) carries open 261124-CAP-L5 deferral DFR-RBZQP6 from crossing merge 4559dabe83cb and is pre-base stale on scripts/instruction_renewal/budgets.py; 261112-BUG-L57 leaves DPD-78737N and its deferral strictly untouched.",
+      "revision": 25,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MQTN8B",
+      "items": [
+        "sha256:f52d69455c5cb017082150ebafcaa9c4d0cffa712042a766ed3482ff9d40a349"
+      ],
+      "reason": "Documented delegation from HistoryRowAuthoring._family_row to family_rows.build_family_row and refreshed citation anchors.",
+      "sources": [
+        {
+          "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N7F9MC",
+      "items": [
+        "sha256:fd47c4b43c5e99f7aca2692ec5c7bf372dfd1380c057c7dd5b85554a4bbab06f"
+      ],
+      "reason": "Documented reached_family_facts(request.worklist) extraction into Authoring and refreshed citation anchors.",
+      "sources": [
+        {
+          "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/writer.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "41eb43d848a91d3d8f82fbb23fa464c47aeba3de",
+            "content": "sha256:f2aed1893e623d61ef13f27fc4b8329ef2048020523be96a8b1d6584009fc2cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "884bfca77d3918141360d799434cf4234f069731",
+            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P01FE4",
+      "items": [
+        "sha256:226d965a9a09047d57c6156ac705a51deb0879b0c530f9f2a0da4f4b573d319b"
+      ],
+      "reason": "Adding test_family_row_writer_gate_alignment.py to the test catalogs preserves the catalog-backed test discovery and evidence-lifecycle contract.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QACJRK",
+      "items": [],
+      "reason": "Confirmed docs/reference/knowledge-system.md at post-CAP synced L57 candidate 13efa4c0afbe after writer.py wired reached_family_facts and extracted family_rows.py; zero contradictions.",
+      "revision": 12,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+            "content": "sha256:454a355bcfc2bbd1305fe396a56bdb33085bf51315ac2fe5e5bab4fc15d0a0e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QG20GW",
+      "items": [
+        "sha256:43250fffa7467c7091ac1a76f9c6e541a6ebef6967f0d459952fd633c06367ac"
+      ],
+      "reason": "Adding mcp/tests/test_family_row_writer_gate_alignment.py to the unit-regression lane leaves the test-evidence-lanes.toml classification invariant intact.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QKEFX8",
+      "items": [],
+      "reason": "Confirmed docs/design/python-pytest-bootstrap.md at post-CAP synced L57 candidate 13efa4c0afbe (845 modules: 693 unit-regression, 124 integration, 24 architecture-fitness) and shifted test-evidence-lanes.toml stress-durability anchor to 864-866; zero contradictions.",
+      "revision": 34,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TC8DAA",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated catalog counts (845 total / 693 unit-regression / 124 integration / 24 architecture-fitness), added test_family_row_writer_gate_alignment.py at line 191, and refreshed shifted line anchors.",
+      "sources": [
+        {
+          "blob": "2921c43a93e1c3ef5cb836daff336c721aafb2ed",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TSRCTC",
+      "items": [
+        "sha256:b89595e9932a70e87bbf5c1765556bca4d5e09ef76fedba07e439849737cb71e"
+      ],
+      "reason": "Module-level import of reached_family_facts in writer.py to wire worklist facts into Authoring; behavioral invariants are anchored on write_knowledge and reached_family_facts.",
+      "subject": "hunk:sha256:b89595e9932a70e87bbf5c1765556bca4d5e09ef76fedba07e439849737cb71e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
+            "content": "sha256:c93e9f8e1226cebb4fdcb8667dc563ec54994545865fde21db88acc63d5a7aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "before": {
+            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+            "content": "sha256:a9c42371fdfb9d2fb83bd052db17f776233976b6ed698c5f8f73870b7363333c",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "id": "RLZ-EYFZY9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XJYGDR",
+      "items": [
+        "sha256:a362766f44a960d58bcf538ef8399b473b0bb060b491ef8b44be3eca45ec509c"
+      ],
+      "reason": "write_knowledge gained the reached_family_members=reached_family_facts(request.worklist) argument while preserving all existing worklist validation, rollback, and writer guarantees.",
+      "revision": 1,
+      "subject": "INV-A6571D"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:08ced255cfecd35808cf1a931cfc22fb49d8be9ab7eaf3e03f58e00a686de4ba",
+      "record": "DPD-78737N",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T21:29:18+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:799ec752d973f59eb65f7b26823c22501eb0ad0353d0191bb3173d767f19b3ac",
+      "record": "DPD-78737N",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T22:05:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:800e62d30ffca0003664d0a18a10bd505857ca4c07957e75a2025904bd6fc513",
+      "record": "DPD-78737N",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T22:46:28+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:056dda256322c26c92f5c0f628315633df9f18cb38aa15043eeaef7dfb49779c",
+      "record": "DPD-TXRND9",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T22:46:28+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f8d9440f9166c8ce9ec7c6246d466794039e9d4500b6fef11454938024053e30",
+      "record": "DPD-TXRND9",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T23:32:27+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:18d71347f649908dd96c4ade9a188c74ed5e11fb9252c159c461fc4029754263",
+      "record": "DPD-ZT8YY7",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-26T21:29:18+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7c46abdcb7d48600c4524c75c750288b2eb6e7834ae353a5ec98ae3443c0d202",
+      "record": "DPD-ZT8YY7",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-26T22:05:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e96d725a08e3c45b571f9b967ed488d5008c45edf3634322a99677aaa42329f7",
+      "record": "DPD-ZT8YY7",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T22:46:28+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:300bc21f26a8f0a915cbc0daf549a3dac4a94dcf3ed1bc8a72805b0ccd2f74ef",
+      "record": "DPD-ZT8YY7",
+      "revision": 34,
+      "writer": {
+        "at": "2026-11-26T23:32:27+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:178ddfaf1815e2897a4f6a58941a0a987952a2ffa92e44331ce8223e1d2cb922",
+      "record": "INV-3ETQAF",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T21:29:18+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a2b8fe5cea9bf5bd86e035f3604f5d03a04b579facb28ddfd320da85d7e896da",
+      "record": "INV-CEM7AB",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T21:29:18+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L57",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

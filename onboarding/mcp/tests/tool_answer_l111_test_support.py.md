@@ -20,6 +20,8 @@ The delegating spy captures post-validation wholes at `finalize_tool_response` b
 
 The task-document illustration includes `put_open_question` in `_L111_TASK_DOC_UPDATED`, with the synthetic text `put_open_question applied`. This is an operation-specific updated-answer example, not proof of task ownership, concurrent keyed publication or a live operation result.
 
+`RECORD_LANDING_REFUSAL_CODES` (lines 687-696) declares the six `worktree_record_landing` refusal codes (`commit-missing`, `landing-target-missing`, `commit-not-on-landing-target`, `legacy-format`, `knowledge-gate-refused`, and `contract-abandoned`), consumed by `test_standalone_master_pr_finalize.py` to check `CONTRACT_ABANDONED_CODE` registration and `is_valid_tool_code`.
+
 ## Evidence
 
 - Shared table rows distinguish authored illustrations and live proof paths. [1]
@@ -44,3 +46,5 @@ The task-document illustration includes `put_open_question` in `_L111_TASK_DOC_U
 - The updated-answer illustration supplies the put_open_question operation text; it is not a live task-document publication result. [7]
 
 - The deep-root role_start case carries the recorded locator, handover path and log path for the sizing gate. [8]
+
+- `RECORD_LANDING_REFUSAL_CODES` registers the six `worktree_record_landing` refusal codes including `contract-abandoned`. [9]

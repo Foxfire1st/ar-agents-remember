@@ -65,50 +65,6 @@
         }
       ]
     },
-    "3": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_curator_review_assessment_publication.py` among the exact consumers of `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
-            "locator": {
-              "end": 251,
-              "kind": "line_range",
-              "start": 251
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
-            "locator": {
-              "end": 1290,
-              "kind": "line_range",
-              "start": 1290
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
-            "locator": {
-              "end": 2779,
-              "kind": "line_range",
-              "start": 2779
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "4": {
       "note": "The publication wiring the cases drive, including the exact-coverage obligation they leave untouched.\n\nAnchor: `CuratorCoherenceRecord._judgments_cover_candidates_exactly`",
       "targets": [
@@ -256,6 +212,50 @@
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lifecycle catalog lists `mcp/tests/test_curator_review_assessment_publication.py` among the exact consumers of `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 1292,
+              "kind": "line_range",
+              "start": 1292
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 2781,
+              "kind": "line_range",
+              "start": 2781
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
         }
       ]
     }

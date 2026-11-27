@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Together Rules 1-5 close the full PR-landed standalone master end path (eligibility, finalize readiness, pre-Completed cleanup admission, abandoned-contract recording guard, and Manager procedure); no single rule alone guarantees both end-to-end completion without manual status edits and that abandoned contracts cannot re-enter through record_landing."
+  },
+  "guarantee": "A pull-request-landed standalone master ends through the ordered worktree_record_landing, lifecycle_finalize_task, and retire_master sequence without prior closeout or manual status edits, while cleanup stays before task-document completion and abandoned, sprint-commanded, checkpointed, or leaf contracts cannot enter that end path.",
+  "id": "FAM-GE1MEV",
+  "members": [
+    "INV-SK1G68",
+    "INV-H93WMT",
+    "INV-V6R1JB",
+    "INV-BZXP67",
+    "INV-CWFT4B"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "fam-standalone-pr-end",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/worktrees/integration",
+    "mcp/src/agents_remember/worktrees/modules",
+    "mcp/tests",
+    "skills/l-01-agent-lifecycles/reference/coordination/shared"
+  ],
+  "schema": "ar-family/v1",
+  "title": "PR-landed standalone masters end cleanly while abandoned contracts stay closed",
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

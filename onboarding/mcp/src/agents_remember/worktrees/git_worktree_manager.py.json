@@ -87,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
-              "end": 133,
+              "end": 140,
               "kind": "line_range",
-              "start": 40
+              "start": 47
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },

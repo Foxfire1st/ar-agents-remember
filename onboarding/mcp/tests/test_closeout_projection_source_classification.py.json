@@ -73,6 +73,63 @@
         }
       ]
     },
+    "14": {
+      "note": "The lifecycle catalog lists `mcp/tests/test_closeout_projection_source_classification.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [9]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "locator": {
+              "end": 1273,
+              "kind": "line_range",
+              "start": 1273
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "locator": {
+              "end": 2738,
+              "kind": "line_range",
+              "start": 2738
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "locator": {
+              "end": 5236,
+              "kind": "line_range",
+              "start": 5236
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The real raiser refuses the sprint's own authored graph, and its declared code classifies `invalid`.",
       "targets": [
@@ -224,63 +281,6 @@
               "start": 72
             },
             "path": "mcp/tests/test_closeout_queue.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_closeout_projection_source_classification.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 208
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
-            "locator": {
-              "end": 1271,
-              "kind": "line_range",
-              "start": 1271
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
-            "locator": {
-              "end": 2736,
-              "kind": "line_range",
-              "start": 2736
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
-            "locator": {
-              "end": 5230,
-              "kind": "line_range",
-              "start": 5230
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

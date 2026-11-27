@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+        "content": "sha256:179e517292e3b8d8bd04df85c88fb0a4b38231b3f9b4c934cd986270afe22e2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "abandoned_contract_reason"
+        }
+      },
+      "id": "RLZ-9KATV9",
+      "invariant": "INV-BZXP67",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 4",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Detects contract.cleanup == 'abandoned' or an 'abandoned' task-document status while returning None when the task document is missing or unreadable.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+        "content": "sha256:da5e8204c929403132b05ce03e55522f1b01fbdbb3aa1b4c683117aba43b5e44",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_pr_landed_standalone_candidate"
+        }
+      },
+      "id": "RLZ-J2GR2A",
+      "invariant": "INV-SK1G68",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 1",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Defines the shared contract-side eligibility predicate matching series contracts with integration_strategy == 'pr', integration_status == 'completed', and closeout_status != 'completed'.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+        "content": "sha256:808af339ef2537727e431891f3658f361e9b861d6f72ce788f130a447eb08edf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_external_memory_landed"
+        }
+      },
+      "id": "RLZ-VK7CNJ",
+      "invariant": "INV-H93WMT",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 2",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Checks that an external-memory standalone master's integrated_memory_content_commit is non-empty and an ancestor of memory_source_branch.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+        "content": "sha256:51aec3ccf5d578ba6cb61eb96fd62f5813fa316de031840716994448e17ae694",
+        "locator": {
+          "kind": "symbol",
+          "name": "pr_landed_standalone_blockers"
+        }
+      },
+      "id": "RLZ-Y4NY9Z",
+      "invariant": "INV-H93WMT",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 2",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Computes the exact readiness blocker list for PR-landed standalone masters: master-abandoned, landed-commit-missing, not-landed-on-target-branch, and memory-carryover-incomplete.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`PR_STRATEGY` and `CONTRACT_ABANDONED_CODE` define the shared PR strategy label and abandoned-contract refusal code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:fce23418a68d9439d3f6c74813420fd871c05a822eb6e034e6cc9b2e1ff20a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PR_STRATEGY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:54aa00689d2e71a9f7aca0ced13c68a96a9196653865a97ebcfb38cdeadd197b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONTRACT_ABANDONED_CODE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`is_pr_landed_standalone_candidate` matches only non-closed-out series contracts with `integration_strategy == \"pr\"` and `integration_status == \"completed\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:da5e8204c929403132b05ce03e55522f1b01fbdbb3aa1b4c683117aba43b5e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_pr_landed_standalone_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`pr_landed_standalone_blockers` and `_external_memory_landed` compute `master-abandoned`, `landed-commit-missing`, `not-landed-on-target-branch`, and `memory-carryover-incomplete` without requiring `closeout_status == \"completed\"` or `code_commit`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:51aec3ccf5d578ba6cb61eb96fd62f5813fa316de031840716994448e17ae694",
+            "locator": {
+              "kind": "symbol",
+              "name": "pr_landed_standalone_blockers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:808af339ef2537727e431891f3658f361e9b861d6f72ce788f130a447eb08edf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_external_memory_landed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`abandoned_contract_reason`, `_read_task_status`, and `_contract_task_status` refuse abandoned contracts and task documents while leaving missing or unreadable documents to existing checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:179e517292e3b8d8bd04df85c88fb0a4b38231b3f9b4c934cd986270afe22e2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "abandoned_contract_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:8efbb0ff8216c627f534a5aefae5a598d7ad05781e73009275ad89bf5c903da5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_task_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
+            "content": "sha256:c8c1d75ec42f191c30dd982a153658c9e10f968285b6902c79f9b8bb9b030ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_task_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

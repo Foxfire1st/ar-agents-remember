@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
+        "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
+        "content": "sha256:5bf2d41cefaf5915e5c788a1281b9f1554196c09dcf18e592697ed4a1e722ccd",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-9P71EB",
+      "invariant": "INV-CWFT4B",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 5",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Documents the three-step Manager procedure to end a PR-landed standalone master in order without pre-finalization set_status.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
         "content": "sha256:0d7c24a180dc9b2dcd3a4ed271ee4a4fa6f0ce034982e071f1f3d7c2bae4d23f",
         "locator": {
           "end": 7,
@@ -22,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
+        "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
         "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
         "locator": {
-          "end": 19,
+          "end": 27,
           "kind": "line_range",
-          "start": 19
+          "start": 27
         }
       },
       "id": "RLZ-F5HVF3",
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
+        "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
         "content": "sha256:4b90784759aa880ab30a8adc36938ee57795ec74602b8250496f554ee27fa9f2",
         "locator": {
-          "end": 17,
+          "end": 25,
           "kind": "line_range",
-          "start": 17
+          "start": 25
         }
       },
       "id": "RLZ-M2JNVX",
@@ -60,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
+        "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
         "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
         "locator": {
-          "end": 19,
+          "end": 27,
           "kind": "line_range",
-          "start": 19
+          "start": 27
         }
       },
       "id": "RLZ-TQAGWQ",
@@ -84,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
+            "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
             "content": "sha256:eab722bceff756ba4eab4142f9702ea0310a4d27386fa9e8bd580f73882e7c54",
             "locator": {
               "end": 7,
@@ -101,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
+            "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
             "content": "sha256:40bb7f4187504fe187678aa2104e83e95709f0cc3b2589447273c39ba9573411",
             "locator": {
               "end": 13,
@@ -113,8 +132,25 @@
         }
       ]
     },
-    "3": {
-      "note": "The Manager role reference index points here for master state (`task_doc`, `worktree_abandon`, `record_landing`).\n\nAnchor: `master-state.md`",
+    "4": {
+      "note": "`## End a standalone master` prescribes `worktree_record_landing`, `lifecycle_finalize_task` without prior `set_status`, and `task_doc retire_master` (dry run first) because finalization never archives a series master.\n\nAnchor: `End a standalone master`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "422d9a0dadc19e581343bb29193cb56157bae866",
+            "content": "sha256:5bf2d41cefaf5915e5c788a1281b9f1554196c09dcf18e592697ed4a1e722ccd",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Manager role's Reference index links `master-state.md` under Master (`task_doc`/`worktree_abandon`/`record_landing`). [3]",
       "targets": [
         {
           "anchor": {

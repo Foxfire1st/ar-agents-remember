@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+        "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+        "content": "sha256:6c6aec573c4ff9721f7e01774ce1209e1d193bc8d4937fa129b571abdd959a1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_readiness"
+        }
+      },
+      "id": "RLZ-0670N9",
+      "invariant": "INV-H93WMT",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 2",
+        "leaf": "261112-BUG-L59"
+      },
+      "rationale": "Routes eligible PR-landed standalone masters through standalone_master_status and pr_landed_standalone_blockers while leaving all other contracts on the existing closeout readiness checks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
         "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
-        "content": "sha256:96866cea1414279deee0496bd8b9fe9415aa479792e9c4de807bec309128c8a1",
+        "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+        "content": "sha256:8fd67c397445441c28b3ce4a4fc39c661594807fb95f040d3ac3fb14f141eadd",
         "locator": {
           "kind": "file"
         }
@@ -43,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -201,12 +219,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
-              "end": 133,
+              "end": 140,
               "kind": "line_range",
-              "start": 40
+              "start": 47
             }
           },
           "kind": "code"
@@ -218,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -250,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -273,6 +291,22 @@
               "name": "reconcile_series_documents"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "`_readiness` routes PR-landed standalone masters (`is_pr_landed_standalone_candidate` and non-`None` `standalone_master_status`) through `pr_landed_standalone_blockers` while keeping closeout readiness checks for all other contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
+            "content": "sha256:6c6aec573c4ff9721f7e01774ce1209e1d193bc8d4937fa129b571abdd959a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_readiness"
+            }
           },
           "kind": "code"
         }
@@ -318,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
             "locator": {
               "kind": "symbol",

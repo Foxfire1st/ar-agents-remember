@@ -605,102 +605,6 @@
         }
       ]
     },
-    "50": {
-      "note": "The integration lane selects `mcp/tests/test_knowledge_diff_boundaries.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_boundaries.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 756,
-              "kind": "line_range",
-              "start": 756
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 377,
-              "kind": "line_range",
-              "start": 377
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 954,
-              "kind": "line_range",
-              "start": 954
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 1448,
-              "kind": "line_range",
-              "start": 1448
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 2905,
-              "kind": "line_range",
-              "start": 2905
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 3854,
-              "kind": "line_range",
-              "start": 3854
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
-            "locator": {
-              "end": 3908,
-              "kind": "line_range",
-              "start": 3908
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "51": {
       "note": "A test-only mutation adds one invariant and one revision and changes the candidate digest. After the continuation is refused, the candidate counters account for those two additions and show no change in the other counted tables.",
       "targets": [
@@ -741,6 +645,102 @@
               "kind": "symbol",
               "name": "test_the_record_comparison_reports_exactly_the_payload_field_that_changed"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "60": {
+      "note": "The integration lane selects `mcp/tests/test_knowledge_diff_boundaries.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_boundaries.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [50]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 757,
+              "kind": "line_range",
+              "start": 757
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 378
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 956,
+              "kind": "line_range",
+              "start": 956
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1450,
+              "kind": "line_range",
+              "start": 1450
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 2908,
+              "kind": "line_range",
+              "start": 2908
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 3858,
+              "kind": "line_range",
+              "start": 3858
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 3912,
+              "kind": "line_range",
+              "start": 3912
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

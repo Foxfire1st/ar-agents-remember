@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
-            "content": "sha256:a9c42371fdfb9d2fb83bd052db17f776233976b6ed698c5f8f73870b7363333c",
+            "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
+            "content": "sha256:c93e9f8e1226cebb4fdcb8667dc563ec54994545865fde21db88acc63d5a7aaf",
             "locator": {
-              "end": 239,
+              "end": 241,
               "kind": "line_range",
-              "start": 133
+              "start": 134
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

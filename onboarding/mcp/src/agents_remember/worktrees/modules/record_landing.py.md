@@ -22,33 +22,33 @@ Successful PR recording adds emptyLanding=true for a pair equal to recorded base
 
 The PR landing path forwards only the supplied landed code and memory-content commits into the shared `LandedIntegration` writer. It requests no ledger commit and cannot turn cache refresh into evidence that a remote landing occurred.
 
-`record_landing_result(args)`, which also asks the mandatory gate on converted memory (section below), cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:602-693)
+`record_landing_result(args)`, which also asks the mandatory gate on converted memory (section below), cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:603-702)
 refuses unless the call is approved or a dry run
-cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:604-604),
-loads the contract, and then short-circuits to `already-recorded` when the cell already records a
+cit:(["recording a landing requires explicit developer approval"], mcp/src/agents_remember/worktrees/modules/record_landing.py:605-605),
+loads the contract, refuses disabled contracts first (`is_disabled_contract`), and then calls `abandoned_contract_reason(contract)` (lines 611-618) **before** the `already-recorded` short-circuit: when `contract.cleanup == "abandoned"` or the contract's own task document reads `"abandoned"`, it returns `state_refusal_result(..., state="refused", code=CONTRACT_ABANDONED_CODE, error=abandoned_reason)` (`"contract-abandoned"`) in both dry run and apply without overwriting `cleanup: abandoned`, while leaving missing or unreadable task documents to the existing checks. For non-abandoned contracts, it short-circuits to `already-recorded` when the cell already records a
 landed integration — `completed` or `checkpointed`
-cit:(["already-recorded"], mcp/src/agents_remember/worktrees/modules/record_landing.py:623-623) —
+cit:(["already-recorded"], mcp/src/agents_remember/worktrees/modules/record_landing.py:632-632) —
 so a repeat is idempotent rather than a second write.
 
-It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src/agents_remember/worktrees/modules/record_landing.py:512-512)
+It then requires the landed commit cit:(["requires landed_code_commit"], mcp/src/agents_remember/worktrees/modules/record_landing.py:513-513)
 and resolves the branches that commit may legitimately have landed on. Both shapes occur: a master
 integrates into its recorded source branch (the super branch), while a task whose branch was merged
 straight to the protected default bypasses super entirely — which is what happened to
-`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:86-100)
+`ar/260831_lifecycle-owned-completion-relay`. `_landing_targets` cit:([`_landing_targets`], mcp/src/agents_remember/worktrees/modules/record_landing.py:87-101)
 therefore returns the recorded `code_source_branch` plus `main` when it exists locally, keeping only
 targets that are actually present.
 
 The anti-fabrication check is an ancestry test against those targets
-cit:(["not reachable from any landing target"], mcp/src/agents_remember/worktrees/modules/record_landing.py:542-542):
+cit:(["not reachable from any landing target"], mcp/src/agents_remember/worktrees/modules/record_landing.py:543-543):
 a commit that landed nowhere cannot set the cell. A `dry_run` reports `would-record` and writes
-nothing cit:(["would-record"], mcp/src/agents_remember/worktrees/modules/record_landing.py:648-648).
-The real path records `strategy=PR_STRATEGY` cit:([`PR_STRATEGY`], mcp/src/agents_remember/worktrees/modules/record_landing.py:83-83)
+nothing cit:(["would-record"], mcp/src/agents_remember/worktrees/modules/record_landing.py:657-657).
+The real path records `strategy=PR_STRATEGY` (imported from `worktrees/integration/standalone_pr_landing.py:26`, used at line 667)
 through the shared writer, so the cell says which route landed the work. The
 call bundles its landed facts into the shared `LandedIntegration` record (the same record the local
 routes build) and appends no `checkpoint` flag, so this route still records a final landing
 cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66).
 
-The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:436-442)
+The result payload is built by `_identity_payload` cit:([`_identity_payload`], mcp/src/agents_remember/worktrees/modules/record_landing.py:437-443)
 rather than by `status_payload`. That is deliberate: this operation has no worktree or provider state
 to report, and avoiding the status payload keeps the operation callable and unit-testable without
 bound worktree services.
@@ -102,8 +102,7 @@ When those preconditions accept debt, `staleEntries` carries its count, full fin
 
 ### Conventions
 
-The route label is a module constant, not a string literal at the call site, so the cell's value is
-greppable and single-sourced.
+The route label `PR_STRATEGY` and refusal code `CONTRACT_ABANDONED_CODE` are single-sourced constants in `worktrees/integration/standalone_pr_landing.py` imported here (lines 46-50), rather than string literals at call sites.
 
 Reachable task-state preconditions return `ok:false`, their existing code and unchanged sentence before any landing record is written; caller bugs, I/O failures and unrecognized internal failures retain their named exception behavior. Legacy-format recovery is selected from the central refusal’s existing case value, not its text: converted-source case offers `worktree_sync` with the exact contract and merge-memory arguments; never-converted case offers the first-conversion program/subcommand and actual memory/code roots as separate values with a `shlex.join` display; unknown case offers no next step. The presentation changes neither conversion admission nor sync behavior.
 
@@ -111,9 +110,9 @@ Reachable task-state preconditions return `ok:false`, their existing code and un
 
 The `already-recorded` short-circuit covers **both** landing states:
 `contract.integration_status in {"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/modules/record_landing.py:617-617),
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/modules/record_landing.py:626-626),
 and the summary branches on which one it found
-cit:(["This contract already records a checkpointed integration"], mcp/src/agents_remember/worktrees/modules/record_landing.py:627-627).
+cit:(["This contract already records a checkpointed integration"], mcp/src/agents_remember/worktrees/modules/record_landing.py:636-636).
 
 The `checkpointed` half is not cosmetic. The full-record path below writes `completed` plus
 `cleanup="pending"`, and that pending cleanup is exactly what `worktree_cleanup` requires before it
@@ -156,6 +155,8 @@ The following current source boundaries establish the ledger-retirement behavior
 - The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts. [5]
 - The `already-recorded` guard covers both `completed` and `checkpointed` states so a checkpointed series is never upgraded into a reclaimable integration. [8]
 - The checkpointed summary preserves its still-open state and names `worktree_integrate` as its completion route. [9]
+- `record_landing_result` refuses abandoned contracts and abandoned task documents with `CONTRACT_ABANDONED_CODE` (`contract-abandoned`) before the `already-recorded` short-circuit without overwriting `cleanup: abandoned`. [20]
+
 - `_landing_request` sets `master_end=True` and `document_base=master_document_base(contract, code_commit=code, memory_commit=memory_commit)` for series contracts (and `None` for leaves). [19]
 
 - Conversion guidance follows the central case value, with exact sync arguments or separately carried first-conversion argv; unknown supplies no step. [18]

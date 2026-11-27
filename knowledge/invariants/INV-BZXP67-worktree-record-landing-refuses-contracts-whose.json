@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across standalone_pr_landing.py::abandoned_contract_reason, record_landing.py::record_landing_result, and tool_answer_l111_test_support.py::RECORD_LANDING_REFUSAL_CODES, proved by test_record_landing_refuses_abandoned_contract_and_preserves_missing_doc, and prevents an abandoned contract from overwriting cleanup: abandoned with pending."
+  },
+  "applicability": "Every worktree_record_landing dry-run and apply call on any series or leaf contract.",
+  "conditions": [
+    "Evaluated immediately after is_disabled_contract and before the integration_status in {'completed', 'checkpointed'} already-recorded short-circuit.",
+    "Refuses with code contract-abandoned when contract.cleanup == 'abandoned' or the contract's own task document reads abandoned, without writing cleanup: pending.",
+    "RECORD_LANDING_REFUSAL_CODES in tool_answer_l111_test_support.py includes contract-abandoned."
+  ],
+  "exclusions": [
+    "A missing or unreadable task document is not treated as abandoned here and falls through to existing checks.",
+    "Disabled contracts, which still refuse first through opt_out_refusal_result."
+  ],
+  "id": "INV-BZXP67",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_pr_finalize.py::test_record_landing_refuses_abandoned_contract_and_preserves_missing_doc (pytest exit 0, 144 passed)"
+      ],
+      "path": "l59-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R59@v1 Rule 4",
+    "leaf": "261112-BUG-L59",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "worktree_record_landing refuses contracts whose cleanup or own task document reads abandoned with refusal code contract-abandoned before the already-recorded short-circuit, without treating a missing task document as abandoned and without overwriting cleanup: abandoned, and tool_answer_l111_test_support registers the code.",
+  "supersedes": [],
+  "title": "worktree_record_landing refuses abandoned contracts with contract-abandoned",
+  "writer": {
+    "at": "2026-11-26T22:17:16+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+    "task": "261112-BUG"
+  }
+}

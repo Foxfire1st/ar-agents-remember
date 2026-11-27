@@ -264,12 +264,12 @@
       ]
     },
     "11": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.\n\nAnchor: `require_parent_series`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
-            "content": "sha256:adb98b4ad2b137027edeb544d7102ea297d86c01140eeb6d0b93872a03d22800",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "content": "sha256:e3b5d57b068db1fa5920c16ee57d4475709457a9bb1c6f134027a458e71cbca2",
             "locator": {
               "kind": "file"
             },
@@ -1525,7 +1525,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",

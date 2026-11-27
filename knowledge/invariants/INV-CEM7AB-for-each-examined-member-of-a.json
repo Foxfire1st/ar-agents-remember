@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Departed-member revision stamping coordinates worklist extraction in writer.py/family_rows.py, candidate-first base fallback in _resolve_examined and _base_revisions, and FamilyRow validation in authoring_rows.py, and only the focused alignment tests distinguish candidate-first base fallback from rejecting departed members or admitting unknown names."
+  },
+  "applicability": "Examined member entries on family history rows authored through knowledge_write",
+  "conditions": [
+    "Candidate stored invariants are checked first so surviving members stamp their candidate revision",
+    "Fallback to reached_family facts.members applies only when the member is absent from candidate stored invariants and carries an integer base revision of at least 1 (rejecting absent, boolean, or non-positive values)"
+  ],
+  "exclusions": [
+    "Names present in neither candidate stored invariants nor valid reached_family facts.members, which keep the existing not-a-stored-invariant refusal",
+    "Stored non-invariant records (such as families or decisions), which remain refused even if named in examined"
+  ],
+  "id": "INV-CEM7AB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer Code R1 PASS: notes/reports/reviewer/e6d511f4-f94d-5c9b-8cf1-a45e916c3faf/role-launch/261112-BUG-L57-R1-code-verdict.md; the departed member is stamped at its base revision and the survivor at its candidate revision, family_row_open accepts the row, and unknown names, stored non-invariants and missing/non-positive bases keep the present refusal.",
+        "mcp/tests/test_family_row_writer_gate_alignment.py::test_member_that_left_candidate_stamps_base_revision_and_answers_gate, mcp/tests/test_family_row_writer_gate_alignment.py::test_examined_member_neither_stored_nor_in_worklist_facts_is_refused"
+      ],
+      "path": "l57-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R57@v1 §2",
+    "leaf": "261112-BUG-L57",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For each examined member of a family history row, knowledge_write resolves the member from the candidate's stored invariants first and, only when it is absent there, accepts it at its base revision of 1 or more from the reached_family worklist item's facts.members, refusing names found in neither place with the existing message.",
+  "supersedes": [],
+  "title": "Departed family members stamp base revision from reached_family facts",
+  "writer": {
+    "at": "2026-11-26T21:29:18+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L57",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+    "task": "261112-BUG"
+  }
+}

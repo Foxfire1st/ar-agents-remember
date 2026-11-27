@@ -57,4 +57,5 @@ No Domain Documentation entries are configured in `system/sources.md`. These are
 
 
 
+
 - The writer performs leaf shape admission and collects worklist problems after virtual authoring, before publication. [6]

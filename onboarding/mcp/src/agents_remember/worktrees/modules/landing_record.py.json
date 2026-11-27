@@ -154,12 +154,12 @@
       ]
     },
     "7": {
-      "note": "The pull-request route calls the same writer. (`record_landed_integration(`) Anchor: \"record_landed_integration(\"",
+      "note": "The pull-request route calls the same writer. (`record_landed_integration(`)",
       "targets": [
         {
           "anchor": {
-            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
-            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
             "locator": {
               "kind": "symbol",
               "name": "record_landing_result"
@@ -201,12 +201,12 @@
       ]
     },
     "9": {
-      "note": "The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`)",
+      "note": "The series abandon guard reads the same cell before retiring a master's branch and refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`)",
       "targets": [
         {
           "anchor": {
-            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
-            "content": "sha256:1e197b6149a772806531bf7f977cd1fab40aec99483c96ca8862b7def50a6cbd",
+            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "content": "sha256:d7b9e66f6a600ab02723ce52819df9b3de74fab29893827e117b1a3e4bf39fac",
             "locator": {
               "kind": "symbol",
               "name": "_require_series_task_terminal"

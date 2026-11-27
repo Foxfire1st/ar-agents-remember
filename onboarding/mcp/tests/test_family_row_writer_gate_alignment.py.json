@@ -1,0 +1,262 @@
+{
+  "path": "mcp/tests/test_family_row_writer_gate_alignment.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+        "content": "sha256:dc280fc6fe5b4073757e7a2645887ab5deefbbc2a3399758afc3a16a10593021",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_empty_examined_refused_without_reached_family_item_or_worklist"
+        }
+      },
+      "facet": "Verifies that an empty or omitted examined list is refused with the existing message when no persisted worklist is supplied or no reached_family item covers that family.",
+      "id": "PRF-3D76XW",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+        "content": "sha256:9b1f9cab60372c5618037aa5b9017bc981a4cba9a86e96627ded362964fcf642",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_examined_member_neither_stored_nor_in_worklist_facts_is_refused"
+        }
+      },
+      "facet": "Verifies that unknown names, stored non-invariant IDs, and facts.members entries with missing, boolean, or non-positive base revisions are refused with the existing not-a-stored-invariant message.",
+      "id": "PRF-4F8MPA",
+      "invariant": "INV-CEM7AB",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §2",
+        "leaf": "261112-BUG-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+        "content": "sha256:42f9602bbd0e5d920f6d66b6afd4b7d9f804070bfb05d6619e1debffcbc33ef3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_empty_examined_refused_when_family_has_members_at_either_side"
+        }
+      },
+      "facet": "Verifies that an empty or omitted examined list is refused with the existing message whenever either worklist facts.members or the candidate family record carries a member.",
+      "id": "PRF-7AVB5T",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+        "content": "sha256:e9cc4c7a504de83ac552aa276d9474ec5e7cec2f0ce6165fefb49d3276559e57",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_empty_examined_refused_when_same_write_adds_a_member"
+        }
+      },
+      "facet": "Verifies that adding a member to a previously empty family in the same handoff batch prevents empty examined from being admitted against the stale empty worklist.",
+      "id": "PRF-B702CS",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+        "content": "sha256:64148ea7a67bfe7587aee7bf6e4d8768e8f5b0c371e12aaf409447d7f1c3ff65",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_member_that_left_candidate_stamps_base_revision_and_answers_gate"
+        }
+      },
+      "facet": "Verifies that an examined member absent from K_C stamps its positive integer base revision from reached_family facts.members while a surviving member stamps its K_C revision, and the resulting row satisfies family_row_open.",
+      "id": "PRF-FY8WRV",
+      "invariant": "INV-CEM7AB",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §2",
+        "leaf": "261112-BUG-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+        "content": "sha256:bef08a31b8895a80663b41a0eb85e5818c14cb8f15581dcc2f0d22ad5f1dd98b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_empty_family_admits_empty_or_omitted_examined_and_answers_gate"
+        }
+      },
+      "facet": "Verifies that an active or retired family with empty worklist facts.members and empty candidate members admits both empty and omitted examined lists and satisfies family_row_open and the full leaf gate.",
+      "id": "PRF-NF4BCM",
+      "invariant": "INV-3ETQAF",
+      "origin": {
+        "handoffEntry": "BUG-R57@v1 §1",
+        "leaf": "261112-BUG-L57"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Active and retired empty families admit explicit `[]` and omitted `examined` and satisfy both `family_row_open` and `evaluate_leaf_gate`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+            "content": "sha256:bef08a31b8895a80663b41a0eb85e5818c14cb8f15581dcc2f0d22ad5f1dd98b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_family_admits_empty_or_omitted_examined_and_answers_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Empty or omitted `examined` is refused when members exist at `K_B` only or `K_C` only, without a `reached_family` item or worklist, or when the same write adds a member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+            "content": "sha256:42f9602bbd0e5d920f6d66b6afd4b7d9f804070bfb05d6619e1debffcbc33ef3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_examined_refused_when_family_has_members_at_either_side"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+            "content": "sha256:dc280fc6fe5b4073757e7a2645887ab5deefbbc2a3399758afc3a16a10593021",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_examined_refused_without_reached_family_item_or_worklist"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+            "content": "sha256:e9cc4c7a504de83ac552aa276d9474ec5e7cec2f0ce6165fefb49d3276559e57",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_examined_refused_when_same_write_adds_a_member"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A member absent from `K_C` stamps its worklist base revision and satisfies `family_row_open`, while unknown names, non-invariants, and invalid bases are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+            "content": "sha256:64148ea7a67bfe7587aee7bf6e4d8768e8f5b0c371e12aaf409447d7f1c3ff65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_member_that_left_candidate_stamps_base_revision_and_answers_gate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fb90d51a53e267a3e48068c60bf14eea010e95",
+            "content": "sha256:9b1f9cab60372c5618037aa5b9017bc981a4cba9a86e96627ded362964fcf642",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_examined_member_neither_stored_nor_in_worklist_facts_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module is selected in `unit-regression` and listed on its four source-derived artifact consumer lists. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
+            "locator": {
+              "end": 2845,
+              "kind": "line_range",
+              "start": 2845
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
+            "locator": {
+              "end": 4099,
+              "kind": "line_range",
+              "start": 4099
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
+            "locator": {
+              "end": 5246,
+              "kind": "line_range",
+              "start": 5246
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

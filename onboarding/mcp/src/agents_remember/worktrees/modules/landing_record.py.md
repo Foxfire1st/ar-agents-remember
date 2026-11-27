@@ -16,7 +16,7 @@ This file exists because the cell it writes is read as an authority, not as a re
 `worktree_cleanup` refuses until `integration_status == "completed"`
 cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:874-877), and the series
 abandon guard reads the same cell to decide whether a master's work has left it
-cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276).
+cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:252-302).
 Two writers would therefore mean two definitions of "landed", and the one that was never called is
 the one that matters when someone later decides a half-finished master's work was discarded.
 
@@ -55,7 +55,7 @@ Three callers reach it and no others: the local final integration result
 cit:(["def _integrated_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:642-692), the local
 checkpoint result cit:(["def _checkpoint_result("], mcp/src/agents_remember/worktrees/modules/integrate.py:1014-1058),
 and the pull-request entry point, which since MIK-R09 first checks the landed memory commit on converted memory
-cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:597-688).
+cit:([`record_landing_result`], mcp/src/agents_remember/worktrees/modules/record_landing.py:603-702).
 `LandedIntegration` is why the signature could gain `checkpoint` at all: threading a fifth keyword
 onto the writer would have pushed it past the enabled argument-count rule, and bundling the landed
 facts keeps the one writer the single definition of "landed" that this module exists to be.
@@ -119,13 +119,11 @@ The following current source boundaries establish the ledger-retirement behavior
 
 
 
-- The pull-request route calls the same writer. (`record_landed_integration(`) Anchor: "record_landed_integration(" [7]
-
-
+- The pull-request route calls the same writer. (`record_landed_integration(`) [7]
 
 > Retained earlier citation wording: - Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) [8]
 
-- The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) [9]
+- The series abandon guard reads the same cell before retiring a master's branch and refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) [9]
 
 ### Cross-Repo References
 

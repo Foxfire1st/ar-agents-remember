@@ -1,0 +1,213 @@
+{
+  "path": "mcp/tests/test_standalone_master_pr_finalize.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+        "content": "sha256:d3cd38720343ed6807abc1d4f69cda7bf5d68ff5f1e6d12596a7778826c64d8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pr_landed_standalone_master_end_to_end_records_finalizes_and_retires"
+        }
+      },
+      "facet": "Proves the documented three-step sequence (worktree_record_landing -> lifecycle_finalize_task without prior set_status -> retire_master dry run and apply) completes the standalone master, releases activation, skips finalize archive, and archives the folder into 0_archive/.",
+      "id": "PRF-7WASTP",
+      "invariant": "INV-CWFT4B",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 5",
+        "leaf": "261112-BUG-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+        "content": "sha256:cffb6ddd0424d2a9ed253e6ca4337b9dc2450c9ec2d78d38b2b43fb59436d365",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalize_refusals_for_missing_unlanded_and_abandoned_standalone_master"
+        }
+      },
+      "facet": "Proves that missing code commit, missing or unreachable external memory commit, unlanded code commit, and abandoned contract or master document each produce their exact finalize readiness blocker without requiring closeout-not-complete.",
+      "id": "PRF-82HDBT",
+      "invariant": "INV-H93WMT",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 2",
+        "leaf": "261112-BUG-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+        "content": "sha256:22d665cf181c024ea33d4f504e4ce95b0f45a60a3a1c40172c6bba1be4018438",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pr_landed_standalone_master_is_directly_cleanable_before_completed"
+        }
+      },
+      "facet": "Proves direct worktree_cleanup succeeds on a PR-landed standalone master before its task document reads Completed, releasing activation and permitting subsequent finalization.",
+      "id": "PRF-96HAD1",
+      "invariant": "INV-V6R1JB",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 3",
+        "leaf": "261112-BUG-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+        "content": "sha256:63c6ed36262930cf21f4bead3db7025954565695ad00f893715e8f9f153dd207",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_checkpoint_sprint_master_and_pr_leaf_keep_todays_refusals"
+        }
+      },
+      "facet": "Proves that checkpoints, sprint-attached masters, and PR-landed leaves without closeout are excluded from the PR-landed standalone master class and keep their existing refusals.",
+      "id": "PRF-PF3DYS",
+      "invariant": "INV-SK1G68",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 1",
+        "leaf": "261112-BUG-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+        "content": "sha256:1fb0bb4ebd421b8d567a7b56625fc2c70d29c5d21a10e9ee493619581bc0df2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalize_cleanup_failure_leaves_master_document_unchanged"
+        }
+      },
+      "facet": "Proves that when cleanup fails on an unmerged branch commit during finalization, lifecycle_finalize_task returns cleanup-blocked and leaves the master task document inProgress.",
+      "id": "PRF-SWN18Z",
+      "invariant": "INV-V6R1JB",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 3",
+        "leaf": "261112-BUG-L59"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+        "content": "sha256:e4a92cf38dbe2d9b6521a17c5f8e97796302510c1ed3999fd9f61c3fd5586ddf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_landing_refuses_abandoned_contract_and_preserves_missing_doc"
+        }
+      },
+      "facet": "Proves worktree_record_landing refuses abandoned cleanup cells and abandoned master or leaf documents with contract-abandoned in dry run and apply without modifying stored cleanup, preserves missing-document fallthrough to commit-missing, and verifies RECORD_LANDING_REFUSAL_CODES registration.",
+      "id": "PRF-XQMPZA",
+      "invariant": "INV-BZXP67",
+      "origin": {
+        "handoffEntry": "BUG-R59@v1 Rule 4",
+        "leaf": "261112-BUG-L59"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`StandalonePrWorld` creates series contracts starting from `cleanup: pending` and non-`Completed` master status, with helpers for sprint attachment and child leaves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:8d4bd76995597326cac67aab265ac3e6e0185c78b23aa93a90d4f4e3cc780d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StandalonePrWorld"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "End-to-end test exercises `worktree_record_landing_tool`, `lifecycle_finalize_task_tool`, and `task_doc_tool` (`retire_master`) into `0_archive/`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:d3cd38720343ed6807abc1d4f69cda7bf5d68ff5f1e6d12596a7778826c64d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pr_landed_standalone_master_end_to_end_records_finalizes_and_retires"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Direct cleanup before `Completed` and cleanup-before-task-documents failure ordering are each asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:22d665cf181c024ea33d4f504e4ce95b0f45a60a3a1c40172c6bba1be4018438",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pr_landed_standalone_master_is_directly_cleanable_before_completed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:1fb0bb4ebd421b8d567a7b56625fc2c70d29c5d21a10e9ee493619581bc0df2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_cleanup_failure_leaves_master_document_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Finalize refusals for missing/unlanded commits, abandoned state, checkpoints, sprint-attached masters, and PR-landed leaves are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:cffb6ddd0424d2a9ed253e6ca4337b9dc2450c9ec2d78d38b2b43fb59436d365",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_refusals_for_missing_unlanded_and_abandoned_standalone_master"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:63c6ed36262930cf21f4bead3db7025954565695ad00f893715e8f9f153dd207",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkpoint_sprint_master_and_pr_leaf_keep_todays_refusals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Abandoned-contract refusal in `worktree_record_landing` and missing-document fallthrough are asserted alongside `RECORD_LANDING_REFUSAL_CODES`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14edf5cad1cf4e4d3443dc7143b8281491c600aa",
+            "content": "sha256:e4a92cf38dbe2d9b6521a17c5f8e97796302510c1ed3999fd9f61c3fd5586ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_abandoned_contract_and_preserves_missing_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

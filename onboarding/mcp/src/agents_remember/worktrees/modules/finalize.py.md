@@ -20,20 +20,15 @@ is what makes the task edge finalization actually reachable.
 ## Code Commentary
 
 `FinalizeArgs` carries the contract path, optional leaf task document path,
-optional parent/master task document path plus subtask number, and `dry_run`. `finalize_result` loads the contract and refuses to
-finalize until closeout is completed, a code commit is recorded, integration is
-completed, the landed commit (`integrated_code_commit` when present, otherwise
-`code_commit`) is an ancestor of the local `code_source_branch`, and
-`guidance.carryover_done` reports external-memory carryover complete.
+optional parent/master task document path plus subtask number, and `dry_run`. `finalize_result` loads the contract and evaluates `_readiness(contract)`:
 
-The readiness check treats PR-gated and direct branch edges the same after the
-PR process is done and the parent branch has been pulled locally: it checks Git
-ancestry on the local recorded source branch. It intentionally does not infer
-squash-merge equivalence; squash recovery is a manual/emergency path because it
-breaks commit-lineage based memory lookup.
+- For a pull-request-landed standalone master (`is_pr_landed_standalone_candidate(contract)` true and `standalone_master_status(contract)` non-`None`, proving `kind == "series"`, `sprint_ref is None`, `integration_strategy == "pr"`, `integration_status == "completed"`, and `closeout_status != "completed"`), `_readiness` delegates to `pr_landed_standalone_blockers(contract, master_status=master_status)` in `worktrees/integration/standalone_pr_landing.py`. That path does not require `closeout_status == "completed"` or `code_commit`; it refuses `master-abandoned` (when the master document or `contract.cleanup` reads `abandoned`), `landed-commit-missing` (when `integrated_code_commit` is missing or, for external memory, `integrated_memory_content_commit` is missing or unreachable from `memory_source_branch`), `not-landed-on-target-branch` (when `integrated_code_commit` is not an ancestor of `code_source_branch`), and `memory-carryover-incomplete` (from `guidance.carryover_done`).
+- For every other contract (sprint-commanded masters, checkpoints, leaves, and closed-out series), `_readiness` keeps the existing checks: `closeout_status == "completed"`, non-empty `code_commit`, `integration_status == "completed"`, ancestry of the landed commit (`integrated_code_commit` when present, otherwise `code_commit`) on local `code_source_branch`, and `guidance.carryover_done`.
+
+Both readiness branches check Git ancestry on the local recorded source branch rather than inferring squash-merge equivalence; squash recovery remains a manual/emergency path because it breaks commit-lineage based memory lookup.
 
 Cleanup is handled as part of the finalization operation, and it is the **only** route that reclaims an integrated enclosure: `worktree_integrate` lands the refs and stops, so a landed-but-unfinalized leaf still owns its worktrees, its merged local branches, its reports directory, its enclosure root and its outside scratch root. `_run_or_verify_cleanup` is the whole seam
-cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:284-318):
+cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:323-383):
 
 - If the contract is already cleaned, `_run_or_verify_cleanup` asks `outside_scratch.terminal_blocker` first: it removes a recorded root still on disk, reports one it could not remove as a `blocked` return code 2, and otherwise records `already-completed` with the root's entry under `outsideScratch` without calling `cleanup_result` at all.
 - Otherwise it delegates to `cleanup_result` with `approved=not dry_run` and `dry_run`
@@ -46,7 +41,7 @@ cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/final
 **The report is shaped here, and only for a real reclamation (260831-LOCR-L31).** A real,
 completed reclamation is passed through
 `cleanup_report(contract, result.payload)`
-cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:316-318)
+cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:373-383)
 — the operator-facing sentence and inventory documented on its own card. The gate in front of that
 call is load-bearing in both directions: when `args.dry_run` or `result.returncode != 0`, the cleanup
 payload is returned **unchanged**, because a preview lists what cleanup *would* remove (so shaping it
@@ -243,3 +238,5 @@ tree.
 - The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [6]
 
 - Cleanup behavior and branch/worktree removal are delegated here. [4]
+
+- `_readiness` routes PR-landed standalone masters (`is_pr_landed_standalone_candidate` and non-`None` `standalone_master_status`) through `pr_landed_standalone_blockers` while keeping closeout readiness checks for all other contracts. [21]

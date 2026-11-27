@@ -24,14 +24,9 @@ A record row's subject kinds are one list, `RECORD_ROW_KINDS`: decisions, incide
 
 ## The Family Row Constructor (MIK-R48)
 
-`HistoryRowAuthoring._family_row` is the single constructor
-for family history rows: it resolves the candidate family record, stores that
-record's own revision and the effect authored for a changed row. It delegates effect admission to `family_effect_refusal` and refuses
-unsupported input (missing or invalid effect, curator-supplied revision, member
-revision, effect on another disposition) before anything is written.
+`HistoryRowAuthoring._family_row` is the single constructor for family history rows: it delegates effect admission, `examined` resolution, family-revision recording and optional `effect` population to `family_rows.build_family_row` (which uses `family_effect_refusal` and `reached_family_members` from the persisted worklist), then validates the built row against `FamilyRow` before anything is written. Through `build_family_row`, it refuses unsupported effect input (missing or invalid effect, curator-supplied revision, member revision, effect on another disposition), admits an empty or omitted `examined` list only when both the persisted `reached_family` item and the produced family record have no members, and resolves a member absent from `K_C` to its persisted base revision (`>= 1`) while still refusing unknown or non-invariant members.
 
-
-- One constructor stores the family revision with the authored effect. [2]
+- One constructor delegates family-row population to `family_rows.build_family_row` and validates the resulting `FamilyRow`. [2]
 
 
 ### History cover destinations and planned-reference ownership

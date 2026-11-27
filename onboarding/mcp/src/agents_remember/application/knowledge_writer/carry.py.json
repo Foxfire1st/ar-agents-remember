@@ -105,12 +105,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+            "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
             "content": "sha256:3f87edf8c07c7b3127661d4099c999ef868b78f14488f3ead434784fb55c0931",
             "locator": {
-              "end": 173,
+              "end": 175,
               "kind": "line_range",
-              "start": 171
+              "start": 173
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

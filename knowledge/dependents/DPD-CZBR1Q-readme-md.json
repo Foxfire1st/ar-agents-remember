@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
-    "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
-    "task": "261112-BUG",
-    "uncommitted": false
+    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
+    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
+    "role": "curator",
+    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: re-read all 221 lines of README.md after L59 edited record_landing.py (pre-short-circuit contract-abandoned guard); README overview, Python 3.14 / 3.0.8 notes, and install links remain accurate with zero contradictions.",
+    "task": "261112-BUG-L59",
+    "uncommitted": true
   },
   "document": "README.md",
   "id": "DPD-CZBR1Q",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,20 +86,20 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
     {
-      "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+      "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:03:52+01:00",
+    "at": "2026-11-27T00:41:03+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L59",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "role": "curator",
+    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
     "task": "261112-BUG"
   }
 }

@@ -168,50 +168,6 @@
         }
       ]
     },
-    "21": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
-            "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 169
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
-            "locator": {
-              "end": 1259,
-              "kind": "line_range",
-              "start": 1259
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
-            "locator": {
-              "end": 2697,
-              "kind": "line_range",
-              "start": 2697
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "22": {
       "note": "Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain.\n\nAnchor: Current test/support source",
       "targets": [
@@ -253,6 +209,50 @@
               "kind": "line_range",
               "start": 352
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [21]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 1261,
+              "kind": "line_range",
+              "start": 1261
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "209c76e78bf3bfb625de89d89cbf919ab0cb6ce2",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 2699,
+              "kind": "line_range",
+              "start": 2699
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

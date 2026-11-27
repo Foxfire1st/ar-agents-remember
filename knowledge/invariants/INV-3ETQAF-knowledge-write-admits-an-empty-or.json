@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Empty-family admission spans worklist extraction in writer.py, state propagation in authoring.py, dual-side emptiness validation in family_rows.py, and FamilyRow validation in authoring_rows.py, and only the focused writer-gate alignment tests distinguish dual-side emptiness from memory-HEAD or single-side checks."
+  },
+  "applicability": "Family history rows authored through knowledge_write on converted memory",
+  "conditions": [
+    "The persisted leaf knowledge-worklist.json contains a reached_family item for the named family whose facts.members list is empty",
+    "The candidate family record after record writes in the same batch also has an empty members list",
+    "Family status (active or retired) is not used to gate empty-examined admission"
+  ],
+  "exclusions": [
+    "Family rows without a persisted worklist or without a reached_family item for that family, which keep the existing refusal",
+    "Empty families that gain a member in the same handoff batch, which must examine that member"
+  ],
+  "id": "INV-3ETQAF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer Code R1 PASS: notes/reports/reviewer/e6d511f4-f94d-5c9b-8cf1-a45e916c3faf/role-launch/261112-BUG-L57-R1-code-verdict.md; 6 functions / 11 collected cases in the new module and 305 focused tests passed on tree 2906df6934a6; full leaf gate and family_row_open accept the empty-family rows and the refusal cases keep the present message.",
+        "mcp/tests/test_family_row_writer_gate_alignment.py::test_empty_family_admits_empty_or_omitted_examined_and_answers_gate, mcp/tests/test_family_row_writer_gate_alignment.py::test_empty_examined_refused_when_family_has_members_at_either_side, mcp/tests/test_family_row_writer_gate_alignment.py::test_empty_examined_refused_without_reached_family_item_or_worklist, mcp/tests/test_family_row_writer_gate_alignment.py::test_empty_examined_refused_when_same_write_adds_a_member"
+      ],
+      "path": "l57-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R57@v1 §1",
+    "leaf": "261112-BUG-L57",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_write admits an empty or omitted examined list on a family history row only when the persisted worklist's reached_family item for that family has an empty members list and the produced family record after the write also has no members, regardless of family status.",
+  "supersedes": [],
+  "title": "Empty examined admitted only when reached family is empty at both sides",
+  "writer": {
+    "at": "2026-11-26T21:29:18+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L57",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+    "task": "261112-BUG"
+  }
+}
