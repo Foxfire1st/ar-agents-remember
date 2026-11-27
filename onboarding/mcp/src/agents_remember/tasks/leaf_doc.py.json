@@ -154,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "blob": "b30c1dfc28a78b8493d6e1e31c22a03730026703",
             "content": "sha256:f0d9f734be5aa03935c499b71411355cefac2a2bf57989e1246d35a7352c7e9a",
             "locator": {
-              "end": 126,
+              "end": 127,
               "kind": "line_range",
-              "start": 126
+              "start": 127
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/refusal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ProposalRefusal` subclasses `Exception`, initializes the message with `detail`, and stores `code` and `detail` attributes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15fbea476bc22151add92abfc975114355108a86",
+            "content": "sha256:7a5a811de62e80dc9faeb319c7c5fc5e41c3c36581351e60cc906b720bc89975",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProposalRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module docstring establishes that consolidation proposal refusals carry a code and a remediation sentence.\n\nAnchor: \"code and its sentence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15fbea476bc22151add92abfc975114355108a86",
+            "content": "sha256:8b6b508efbcc8472d6bf231b54ef2590c77e462a0c7b65e71f2e6091fc61c3f6",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

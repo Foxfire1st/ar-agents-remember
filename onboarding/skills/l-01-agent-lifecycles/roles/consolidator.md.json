@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/consolidator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+        "content": "sha256:32fd44e071b8344472166000afb61e83601b4e70059a0b12b10cdc9b0aa159d8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1EVSH6",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Canonical Tier-1 role manual for the Consolidator seat.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The role body defines the Consolidator's leaf mission, MCP call scoping, family-first code-and-proof examination, three outcome rules, mandatory proof evidence, and allowed memory-only edits.\n\nAnchor: `# Consolidator`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+            "content": "sha256:24cfcb325a3369a729156278cc9c45a8fe8783099bcdf7aa0740cbb729aec8d1",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`## Boundaries` enforces single-writer discipline, forbids code edits, Git writes, role starts, fake hashes, and model/harness keys, caps failed repairs at 3 per item, and governs `worktree_sync` and `task_doc(set_step)`.\n\nAnchor: `## Boundaries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+            "content": "sha256:c5339aedd23772816dd78d4ba8b07e99c0142ee8ee3c0b8963a43d58149a1a9d",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`## Reference index` maps pass, knowledge, write/family, coherence/message, and sync/escalation triggers to their detail pointers, including `reference/consolidation-pass.md`.\n\nAnchor: `## Reference index`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eb8f1e2786721a6b35c600caed56226e427f1d3",
+            "content": "sha256:5ac7c60fe67aad5548aedef3f22623a904eec0e382e05e0daf750a2890e5e3a9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

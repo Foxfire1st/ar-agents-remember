@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans history_consolidation.py models and knowledge_writer/row_tests.py enforcement across consolidation passes, guarded by consolidation pass tests."
+  },
+  "applicability": "Invariant and family history rows authored in a consolidation task.",
+  "conditions": [
+    "Invariant and family rows admit stands and unresolved dispositions only for listed consolidation subjects, with every consolidation task rule row requiring testsRun, testsNotRun (with reason), or noProofRecorded: true.",
+    "Adding a missing title to an existing rule leaves its revision unchanged and closes the listed item with stands."
+  ],
+  "exclusions": [
+    "Ordinary non-consolidation leaves, where stands and unresolved are not admitted and proof-evidence fields are not required on invariant rows."
+  ],
+  "id": "INV-VETCYM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_consolidation_pass.py and sbx-e8 Evidence 8 SBX-C1-L1/L2 history rows."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 6 & Rule 7",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Consolidation history rows admit stands and unresolved dispositions and require proof evidence (testsRun, testsNotRun with reason, or noProofRecorded: true) on every rule row of a consolidation task, while title-only additions keep revision unchanged and use stands.",
+  "supersedes": [],
+  "title": "Consolidation stands/unresolved rows, proof evidence, and title-only stands",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

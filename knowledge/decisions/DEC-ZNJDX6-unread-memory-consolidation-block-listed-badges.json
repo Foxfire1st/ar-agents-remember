@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed explicit listed-unknown wording against hiding or zero-counting outcomes and constrains TaskSummary.consolidation and dashboard unread-memory rendering."
+  },
+  "alternatives": [
+    {
+      "option": "Render '{total} listed · outcomes not known yet' in the header, 'listed' badges on rows, and an amber unread-memory notice.",
+      "reason": "Shows the authored pass scope truthfully while distinguishing unknown outcomes from zeroed outcome counts.",
+      "status": "chosen"
+    },
+    {
+      "option": "Hide the Consolidation block or show zeroed outcome counts when memoryRead is false.",
+      "reason": "Hiding the block conceals the leaf's authored consolidationList, and rendering zero counts falsely implies memory was read and every outcome is zero.",
+      "reconsider_when": "Reconsider if dashboard task-page projection guarantees synchronous memory readability for every consolidation leaf state.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "TaskSummary.consolidation carries memoryRead explicitly.",
+    "consolidationBlock.tsx renders the listed-only summary and badges whenever memoryRead is false."
+  ],
+  "context": "When the dashboard projects a consolidation leaf whose memory tree cannot yet be read (memoryRead is false), the Consolidation block still has the task document's consolidationList IDs but no verified per-subject outcomes.",
+  "decider": "Developer ruling D1052 (261112-KNO-L5 / KNO-R05@v3)",
+  "id": "DEC-ZNJDX6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-HPD40B"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels/detail-panel"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "951963b5479bae2e8638d1cb135c3c0eb33a16db",
+        "content": "sha256:45fdf49920c60218300d1b75986c763415868a420c6cd3c09e7680d3548e6015",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/detail-panel/consolidationBlock.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard vitest (skeleton-bounds.test.tsx, DocumentChat.test.tsx, RoleLauncher.standalone.test.tsx, contract.test.ts), npm run codegen/lint/typecheck, and Evidence 9 pictures."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 11 & D1052",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

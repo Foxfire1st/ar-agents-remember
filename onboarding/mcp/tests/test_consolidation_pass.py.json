@@ -1,0 +1,158 @@
+{
+  "path": "mcp/tests/test_consolidation_pass.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+        "content": "sha256:90eb9ffc8fc699702111866ce20c3da4a98104095aef04aa5736dcf051d8c59d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_rule_row_of_a_consolidation_task_names_its_tests"
+        }
+      },
+      "facet": "Verifies every consolidation task rule row requires testsRun, testsNotRun, or noProofRecorded: true.",
+      "id": "PRF-8X6794",
+      "invariant": "INV-VETCYM",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 6 & Rule 7",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+        "content": "sha256:ee800037a134733b585097a49354cdab264456e9e7cba77b3c98687d5a5584dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stands_unresolved_and_untested_rows_and_a_title_that_raises_no_revision"
+        }
+      },
+      "facet": "Verifies stands, unresolved, untested refusal, and title-only addition preserving revision with stands.",
+      "id": "PRF-K7GRCH",
+      "invariant": "INV-VETCYM",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 6 & Rule 7",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+        "content": "sha256:334f1eaa0c6d8b8558a2f9e4edf67c3c74281f2fb029b5f23157c2582a9945dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_persisted_consolidation_target_worklist_passes_writer_shape_check"
+        }
+      },
+      "facet": "Verifies persisted consolidation_target items pass writer worklist shape validation.",
+      "id": "PRF-N7RYJZ",
+      "invariant": "INV-1PBH5A",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+        "content": "sha256:e6e0a73ec636746fa6484c57483ba854df0211dfafa8f6bf544ed7c26b140e82",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_list_raises_one_item_per_family_and_rule_beside_todays_and_none_unlisted"
+        }
+      },
+      "facet": "Verifies deduplicated consolidation_target worklist emission for listed families and reached rules without raising unlisted unchanged records.",
+      "id": "PRF-SGHH9H",
+      "invariant": "INV-1PBH5A",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+        "content": "sha256:8c4e44b3e7de1929cf43e468b6e8a28ad87d5973ca3c13bad728141ab5e9ac18",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_gate_holds_until_each_item_of_the_list_and_beside_it_is_closed"
+        }
+      },
+      "facet": "Verifies the closeout gate holds until every consolidation_target and ordinary worklist item is closed.",
+      "id": "PRF-Z469EV",
+      "invariant": "INV-1PBH5A",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+        "leaf": "261112-KNO-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies `consolidation_target` deduplication across shared family members, revision-sensitive item IDs, `LISTED_MARK` tagging on today's items, and zero items for unlisted unchanged records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+            "content": "sha256:e6e0a73ec636746fa6484c57483ba854df0211dfafa8f6bf544ed7c26b140e82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_list_raises_one_item_per_family_and_rule_beside_todays_and_none_unlisted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies `evaluate_leaf_gate` stays blocked when a family `stands` row leaves `reached_family` open and passes once a single `no_impact` row closes both items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+            "content": "sha256:8c4e44b3e7de1929cf43e468b6e8a28ad87d5973ca3c13bad728141ab5e9ac18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_holds_until_each_item_of_the_list_and_beside_it_is_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies `stands` and `unresolved` predicate gating against `touched_invariant`, `reached_family`, and `consolidation_target` (including stale revision, missing row, and unknown subject).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+            "content": "sha256:974fae2697253410626c92d5920066d4406ac917a7bc33c0d0b48fef35a0c1af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stands_and_unresolved_close_todays_items_only_in_the_listed_cases"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Verifies `write_knowledge` records `consolidationSubjects`, preserves revision on title-only edits, and writes `stands`, `unresolved`, `testsRun`/`testsNotRun`, and `noProofRecorded` rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73bd089e9298e11d6d6908f556e8b49a2092c39",
+            "content": "sha256:ee800037a134733b585097a49354cdab264456e9e7cba77b3c98687d5a5584dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stands_unresolved_and_untested_rows_and_a_title_that_raises_no_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

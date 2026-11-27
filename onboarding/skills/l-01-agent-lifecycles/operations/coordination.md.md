@@ -49,7 +49,9 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 
+
 - Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. A message to a recipient already in a turn may be held until that turn ends, and a recipient at a permission prompt is never sent a message, because that would answer the permission. The product's active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents. [1]
+
 
 
 
@@ -63,7 +65,10 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 
+
+
 - Current coordination text keeps exact role/task bindings all-role, scopes individual stage starts, direct peer handovers, messaging, receipts and closeout-recovery/permission links to coordinating roles, and scopes the first Reviewer intake and admitted-notice boundary to Manager; audience markers do not create another owner. [3]
+
 
 
 - Current coordination separates coordinating-role stage-start and seat/message boundaries from Manager-specific first Reviewer intake and notice duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message. [4]

@@ -5,7 +5,7 @@
     ],
     "justification": "The six member obligations together promise the leaf's seats run their loop directly with exact objects, own bookkeeping and own recovery while the Manager keeps only its named occasions; no single member states that joint guarantee."
   },
-  "guarantee": "A leaf's Worker, Reviewer and Curator run the leaf's work between their three seats: each hands the exact freeze, sealed verdict, producer list, memory candidate or code concern directly, each seat keeps its own ordinary bookkeeping lane and its own pending-and-retry discipline, and the Manager receives only its named occasions and relays none of a hand-over's contents.",
+  "guarantee": "A leaf's seats — Worker, Reviewer and Curator on ordinary leaves, or Consolidator and Reviewer on consolidation leaves — run the leaf's work directly between their seats: each hands the exact freeze, sealed verdict, producer list, memory candidate or code concern directly, each seat keeps its own ordinary bookkeeping lane and its own pending-and-retry discipline, and the Manager receives only its named occasions and relays none of a hand-over's contents.",
   "id": "FAM-83BTBD",
   "members": [
     "INV-ZNJ14G",
@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "skills/l-01-agent-lifecycles/roles",
     "skills/l-01-agent-lifecycles/operations",
@@ -38,14 +38,14 @@
   "schema": "ar-family/v1",
   "title": "The leaf's seats run their loop directly",
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

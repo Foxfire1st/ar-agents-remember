@@ -75,9 +75,13 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 ### Repo-Internal References
 
 
+
 - Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. [10]
 
+
+
 - The packaged Manager is the master-scoped owner of the leaf closeout chain. [11]
+
 
 
 
@@ -108,13 +112,17 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 
 
 
+
 - The Manager decides routine paired closeout under standing series authority (covering leaves of all masters, including standalone masters, with passing reviews, final checks, clean preview, full evidence map and Curator's zero-stale dependent-document read) and integration within delegated authority, sends non-routine closeouts and other Architect matters to the Architect, and requests beyond-settings rounds through its reporting route and records the approval. [7]
+
 
 - The packaged Manager coordinates one selected master and does not own the portfolio; it sends its final report path to its launch parent's role and task references, and routes Architect matters (except direct qualifying skeleton handovers), developer-needed questions and permission notices to an Architect-instructed reporting recipient when recorded, otherwise its launch parent ID. [2]
 
 
 
+
 - The Manager uses its handover refs, packets and paths, reads docs via file tools and edits canonical docs via `task_doc` first, keeping each leaf's 1 primary requirement in its AR-paired enclosure. [3]
+
 
 
 - For ordinary delivery, the Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator after code review passes; prerequisite-sync reconciliation follows its separately admitted Curator start. [4]
@@ -122,10 +130,14 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 
 
 
+
 - The Manager hands over a whole stage (not a chain of steps), repairs its own mistakes and names repairs in the report, and stops for open permissions, standing refusals (except covered-write recovery), out-of-authority questions or outside effects. [8]
 
 
+
+
 - The generated Manager role directs leaf stages and relays through the shared leaf coordination procedures. [9]
+
 
 
 - MCP package data is copied from canonical skills and checked for drift. [6]

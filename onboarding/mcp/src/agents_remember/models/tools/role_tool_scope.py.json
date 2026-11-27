@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
+        "blob": "495df417e4f0098b87dc1eb7a778685b60f46877",
         "content": "sha256:e116aaed8f4b46dae2d11e9a2cbf129a879911a7ab0f493d1395abeadd7e69d9",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
-        "content": "sha256:213379f66e141df7c83311a5a9b0f863a759b56cb244aac85a9e32e1a336894e",
+        "blob": "495df417e4f0098b87dc1eb7a778685b60f46877",
+        "content": "sha256:8fdc832fa9a8b004f369ec4e429a69d3ca20833be5816078241a0f1a7531f023",
         "locator": {
           "kind": "symbol",
           "name": "ROLE_TOOL_ALLOWLISTS"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
+        "blob": "495df417e4f0098b87dc1eb7a778685b60f46877",
         "content": "sha256:0fc6e34e5d9e4dec7ae11791b2e7698f317c92d60636c6245432e91d045a1e8b",
         "locator": {
           "kind": "symbol",
@@ -62,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
-            "content": "sha256:213379f66e141df7c83311a5a9b0f863a759b56cb244aac85a9e32e1a336894e",
+            "blob": "495df417e4f0098b87dc1eb7a778685b60f46877",
+            "content": "sha256:8fdc832fa9a8b004f369ec4e429a69d3ca20833be5816078241a0f1a7531f023",
             "locator": {
               "kind": "symbol",
               "name": "ROLE_TOOL_ALLOWLISTS"
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
+            "blob": "495df417e4f0098b87dc1eb7a778685b60f46877",
             "content": "sha256:0fc6e34e5d9e4dec7ae11791b2e7698f317c92d60636c6245432e91d045a1e8b",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
+            "blob": "495df417e4f0098b87dc1eb7a778685b60f46877",
             "content": "sha256:e116aaed8f4b46dae2d11e9a2cbf129a879911a7ab0f493d1395abeadd7e69d9",
             "locator": {
               "kind": "symbol",

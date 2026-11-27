@@ -12,7 +12,9 @@ Author judgment rows in the owner's writable history while preserving product-re
 
 `_write_rows` reads the owner's writable attempt before building judgment rows and refuses a closed one. An authored judgment can place a record and add its stamped revision to that same attempt. The history writer reloads the in-memory attempt after building those judgments, then replaces its `rows` while keeping the produced `written` section and other product-owned fields.
 
-It validates and writes eight judgment row kinds -- invariant, family, onboarding trace, unexplained change, planned, reconsideration, membership and record -- and fills each row's items, revisions, source bindings and anchors. Membership and decision/facet record judgments are separate kinds, not family rows.
+It validates and writes eight judgment row kinds -- invariant, family, onboarding trace, unexplained change, planned, reconsideration, membership and record -- and fills each row's items, revisions, source bindings and anchors.
+
+On consolidation tasks, `_write_rows` stamps sorted `consolidationSubjects` from the worklist's `consolidation_target` items onto the history document (`with_consolidation_subjects`), admits `stands` and `unresolved` dispositions with `testsRun`/`testsNotRun`/`noProofRecorded` on invariant and family rows, and enforces `missing_rule_tests_refusal` on rule rows of consolidation passes. Membership and decision/facet record judgments are separate kinds, not family rows.
 
 `_onboarding_row` accepts `updated` or `no_impact` and rejects covers, effect, because, examined, considered and ref. It fills `sources` from the candidate code snapshot as `{path, blob}`, with `absent` for deletion. A card subject takes every source of the leaf's persisted worklist item of its subject -- a file card's identical-copy group as much as a route overview's governed files -- so the row binds a whole group of copies; a card no item names binds its own path, and an overview no item covers is refused. `_row_sources` owns that choice and `_onboarding_row` supplies it to the row. It preserves crossing marker text and rerun IDs. An `updated` row requires a real counted Markdown or reference change from the recorded memory base to the produced candidate. Realization-only, proof-only and mechanical reference changes do not count. The writer compares a readable recorded base in the candidate's format even when the persisted counted flag disagrees. If the recorded card comparison is unavailable, the writer uses a persisted flag for that subject when present, then compares with the operation base. Ordinary unchanged-card judgments use `no_impact`; this describes the writer, not a backfill instruction for the bounded L53 rollout.
 
@@ -42,7 +44,9 @@ A reconsideration `raise` checks the task-owner question port before changing th
 
 ### Repo-Internal References
 
+
 - History-row assembly reloads the attempt after any row placements and preserves its produced written revisions. [10]
+
 - The re-point revision's writer evidence survives beside its judgment row. [11]
 
 

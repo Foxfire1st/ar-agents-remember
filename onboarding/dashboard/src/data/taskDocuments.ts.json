@@ -76,12 +76,12 @@
       ]
     },
     "5": {
-      "note": "That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404.\n\nAnchor: `_projected_document`",
+      "note": "That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404.",
       "targets": [
         {
           "anchor": {
-            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
-            "content": "sha256:ff5ac511e0d698f5f84ad870b6a061f08c95a504abeea453f0ee998e356b059f",
+            "blob": "b30c1dfc28a78b8493d6e1e31c22a03730026703",
+            "content": "sha256:4169665c76d138929c2b086f218d0128b300eb7ca5b4613511865de34d6260f9",
             "locator": {
               "kind": "file"
             },

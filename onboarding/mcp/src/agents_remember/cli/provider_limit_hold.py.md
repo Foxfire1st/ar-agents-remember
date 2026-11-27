@@ -22,4 +22,4 @@ Delivery is not this module's: a held message waits for the reset and is release
 
 ## Evidence
 
-- Registers `provider-limits status|suppress|unsuppress` arguments and delegates all mutations to `serving.paseo.provider_limits`, printing JSON with exit codes 0/1/2. [1]
+- Registers `provider-limits status|suppress|unsuppress` arguments and delegates all mutations to `serving.paseo.provider_limits`, printing JSON with exit codes 0/1/2. [2]

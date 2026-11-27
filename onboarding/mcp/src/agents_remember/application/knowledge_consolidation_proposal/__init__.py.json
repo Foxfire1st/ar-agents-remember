@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring maps `.store`, `.history_facts`, `.first_written`, `.proposal`, and `.view` as the `consolidation_proposal` reader pipeline.\n\nAnchor: \"consolidation_proposal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d99b9a84176d89cb2a826ab0b464990321bfa81d",
+            "content": "sha256:2b43aa09e569ce38900a663326e325a40bde90d149fc08b07c9d047321e7c142",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`__all__` exposes only `PROPOSAL_VIEW`, `ProposalRefusal`, `ProposalRequest`, and `proposal_view` from `.refusal` and `.view`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d99b9a84176d89cb2a826ab0b464990321bfa81d",
+            "content": "sha256:8a2ca2db700962a9e126dec4b1055665e430f2dd19dcbf07e72e91ee5ccdce23",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

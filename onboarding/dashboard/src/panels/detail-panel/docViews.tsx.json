@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9fb68c1344589e5515826a5dc2602ea963a371a9",
-        "content": "sha256:a3a14e86982285d5cd6b1113e4a00ced3c20d3b2b97449cdf7f66666ce7783b9",
+        "blob": "bfe3978c9c00f3d0382830c2a5bfe665142bea1b",
+        "content": "sha256:087e6877dd2a0adc9069f988925c9a4c8569addcfe323a3e587b978380151947",
         "locator": {
           "kind": "symbol",
           "name": "RecordViews"
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Shared content-view dispatch preserves form-specific collection ownership.\n\nAnchor: `DocContentView`",
+      "note": "Shared content-view dispatch preserves form-specific collection ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fb68c1344589e5515826a5dc2602ea963a371a9",
-            "content": "sha256:a6cae716d96c6ca5dfc7b4d61d609851be3d349738fe2fcd2eebda378053709f",
+            "blob": "bfe3978c9c00f3d0382830c2a5bfe665142bea1b",
+            "content": "sha256:c139ac44a99b27790788ad4b95923fb3379308fa5ec6efc338171ae39d4e0878",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "Reference views retain server-resolved artifact handlers rather than flattening links.\n\nAnchor: `ReferencesView`",
+      "note": "Reference views retain server-resolved artifact handlers rather than flattening links.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fb68c1344589e5515826a5dc2602ea963a371a9",
-            "content": "sha256:a6cae716d96c6ca5dfc7b4d61d609851be3d349738fe2fcd2eebda378053709f",
+            "blob": "bfe3978c9c00f3d0382830c2a5bfe665142bea1b",
+            "content": "sha256:c139ac44a99b27790788ad4b95923fb3379308fa5ec6efc338171ae39d4e0878",
             "locator": {
               "kind": "file"
             }
@@ -56,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fb68c1344589e5515826a5dc2602ea963a371a9",
-            "content": "sha256:a3a14e86982285d5cd6b1113e4a00ced3c20d3b2b97449cdf7f66666ce7783b9",
+            "blob": "bfe3978c9c00f3d0382830c2a5bfe665142bea1b",
+            "content": "sha256:087e6877dd2a0adc9069f988925c9a4c8569addcfe323a3e587b978380151947",
             "locator": {
               "kind": "symbol",
               "name": "RecordViews"

@@ -464,7 +464,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+            "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "end": 81,
@@ -2807,8 +2807,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16989165e155eb17986848e5f06e66d2f310f31f",
-            "content": "sha256:a40bd88b9f9dbb36ce4567f2ccdcd9e26a9a697867057e90cf8d9b71a8708ca1",
+            "blob": "2c39cab20d4cd29defc1d2c9909c2aa8316c5208",
+            "content": "sha256:34251018de14885c370fffa99211c45c8c2ae9ce35251ab3eb6329fbbe5fb9ed",
             "locator": {
               "end": 32,
               "kind": "line_range",
@@ -2867,12 +2867,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
-              "end": 246,
+              "end": 247,
               "kind": "line_range",
-              "start": 208
+              "start": 209
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -2880,12 +2880,12 @@
         },
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:21c71743c7dab4f97fdac5a0347c8e4b2de40eb0c90d5383fabe53d88fe5c1b9",
             "locator": {
-              "end": 448,
+              "end": 449,
               "kind": "line_range",
-              "start": 399
+              "start": 400
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -2893,12 +2893,12 @@
         },
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:3e73c5fcb01c84990ca56c32925343a15c4d52d2a781da72c286f058e5941ea2",
             "locator": {
-              "end": 529,
+              "end": 530,
               "kind": "line_range",
-              "start": 450
+              "start": 451
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -3000,12 +3000,12 @@
       ]
     },
     "301": {
-      "note": "**Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology\n\nAnchor: `resolve_role_launch_context`",
+      "note": "**Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology",
       "targets": [
         {
           "anchor": {
-            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
+            "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+            "content": "sha256:05888860c04f6e9d1ec2f1bd77c8ff55e3028fd4d4cdda1f2c4e291bacf57098",
             "locator": {
               "kind": "file"
             },
@@ -3020,8 +3020,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
-            "content": "sha256:24f5ce386d9c4f4b6c4b097184cfa8139218598bdefb3f92a5111eaf9945db3f",
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
+            "content": "sha256:5d18007d7c41c667d4f32c74f467bcdf21f4b9af3e1997092a65ba673d4e9bab",
             "locator": {
               "end": 835,
               "kind": "line_range",
@@ -3192,7 +3192,7 @@
         },
         {
           "anchor": {
-            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
               "end": 252,
@@ -3205,12 +3205,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
             "content": "sha256:f3934786bc2aa73ea0f877a636640e2bdd73297b7d9c02aa46f373af420bd23d",
             "locator": {
-              "end": 741,
+              "end": 727,
               "kind": "line_range",
-              "start": 711
+              "start": 697
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3242,8 +3242,8 @@
         },
         {
           "anchor": {
-            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
-            "content": "sha256:5c135f9257d645c1b7fec5ef80e91e56cb912e6a500ae07f9aa549146aae1737",
+            "blob": "932147f1ec94bc0228c0709d7722b56a9ee1203c",
+            "content": "sha256:364b8e34ae15ef8188ebdb50655c6456846e0f6b1c8d7d43f34f328ad67f144a",
             "locator": {
               "kind": "file"
             },
@@ -3285,12 +3285,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+            "blob": "01afa70c008ae34ebf1f81b0ffab4bb47952036b",
             "content": "sha256:98140684ab120315f502842c9bd3eda8bcf9ae928ce9ee5278aea19b9990c15f",
             "locator": {
-              "end": 369,
+              "end": 405,
               "kind": "line_range",
-              "start": 318
+              "start": 354
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -3298,12 +3298,12 @@
         },
         {
           "anchor": {
-            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+            "blob": "01afa70c008ae34ebf1f81b0ffab4bb47952036b",
             "content": "sha256:420d64a1c4d95836582ea0d2b4c008c227a361917b3e2879fe89b28a56a32414",
             "locator": {
-              "end": 590,
+              "end": 626,
               "kind": "line_range",
-              "start": 506
+              "start": 542
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -3612,8 +3612,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
-            "content": "sha256:f809131a7402b6feb4b1c9f6aa02b2de335a2bf656c57a07f9d34400aeedaf2b",
+            "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
+            "content": "sha256:f557f97d230fde1f2693d3780c8176288b020c33587cb3dff931ae466d4efb52",
             "locator": {
               "end": 114,
               "kind": "line_range",
@@ -3626,12 +3626,12 @@
       ]
     },
     "331": {
-      "note": "Worker code and Curator memory failures count independently; incomplete history stays unknown.\n\nAnchor: Current source; preserved L88 property 325",
+      "note": "Worker code and Curator memory failures count independently; incomplete history stays unknown.",
       "targets": [
         {
           "anchor": {
-            "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
-            "content": "sha256:d156649dee6626036467c78b24418be0fddb44d7cdd18fbd9d1f2ba4845c34bb",
+            "blob": "a972ce4ce0b8955ea2a85aa521b5b8750e8a181d",
+            "content": "sha256:467324e8ddf314c3ef5335b7e8c42cde7859dfd0092001b1d5267f981430ac12",
             "locator": {
               "end": 316,
               "kind": "line_range",
@@ -4331,8 +4331,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
-            "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
+            "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
+            "content": "sha256:86458aa87a94a4499035ec33715d7dfeafd9bb8bf0f2b4ff522f48b7840af52d",
             "locator": {
               "kind": "file"
             },
@@ -4944,7 +4944,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
             "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
               "kind": "symbol",
@@ -4961,7 +4961,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "blob": "932147f1ec94bc0228c0709d7722b56a9ee1203c",
             "content": "sha256:bb432f7b53b7c8bc6a232bcbb73e853c364ff05ae7dd5656a0354df7fcc26ece",
             "locator": {
               "kind": "symbol",
@@ -5085,12 +5085,12 @@
         },
         {
           "anchor": {
-            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
             "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
             "locator": {
-              "end": 228,
+              "end": 229,
               "kind": "line_range",
-              "start": 213
+              "start": 214
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -5251,12 +5251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+            "blob": "ceb7522bd6fc0d82fd14dd7a603e3fd782707f36",
             "content": "sha256:e649894afd7b9e62df54a712b563d037ff37d821a56d18025254434e4d13f71b",
             "locator": {
-              "end": 332,
+              "end": 354,
               "kind": "line_range",
-              "start": 324
+              "start": 346
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -5322,22 +5322,6 @@
               "kind": "file"
             },
             "path": "scripts/sync-runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "402": {
-      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
-            "content": "sha256:8a21490df8c758f59277601791b8db45c9e5b797113446beadeefa0dd0cbfb08",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
           },
           "kind": "code"
         }
@@ -5540,12 +5524,12 @@
         },
         {
           "anchor": {
-            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
             "content": "sha256:002082cab6d8e0e50e216016e007ee4393ff8d98442ead0d1d9d3d10f6e777c8",
             "locator": {
-              "end": 225,
+              "end": 227,
               "kind": "line_range",
-              "start": 220
+              "start": 222
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -5553,12 +5537,12 @@
         },
         {
           "anchor": {
-            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
             "content": "sha256:45c14a3a984936634088d098d4a94d833017537623d05eb3b0e925b88ad1846d",
             "locator": {
-              "end": 87,
+              "end": 88,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             },
             "path": "mcp/src/agents_remember/cli/role_step_up.py"
           },
@@ -5727,12 +5711,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:6c839cffdf3fc3afcbfb759887708c643b039372681af57d2d2a8082b24f7d53",
             "locator": {
-              "end": 142,
+              "end": 143,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -5850,12 +5834,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+            "blob": "c2c9b4346f852ba071706f09c32a57bc41fb72e8",
             "content": "sha256:37dcceb9a8aeb558e96be1f181e136d44f6ded047798acfec5a89a09ea5a34ce",
             "locator": {
-              "end": 2716,
+              "end": 2721,
               "kind": "line_range",
-              "start": 2558
+              "start": 2563
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -5886,6 +5870,40 @@
       ]
     },
     "429": {
+      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d6ef35cc5624ccdf04284f69da136d965f2b2dc",
+            "content": "sha256:3efd70e9197bb3419600600d35daf15d14c862abde2358ccd0ab3ffe7ee8f5ca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "**Retained historical source account — superseded by the current route account:** The leaf package statement.\n\nAnchor: \"The family-complete leaf read of a converted memory tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1045a920290aba9733f9dc7bb2df5d36dd002f83",
+            "content": "sha256:b683199d568bac4b81ffc5921d088311e0ee4b6b68a813af04209ae185731a70",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_leaf/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "431": {
       "note": "Window-scoped provider-limit suppression persists `recordedAt` and suppressions in `provider-limit-suppressions.json` via `serving/paseo/provider_limit_suppressions.py` and `provider_limits.py`, hooks bound live tool calls off-loop in `mcp/server.py`, and exposes `agents-remember provider-limits` (`status`, `suppress`, `unsuppress`) via `cli/__main__.py` and `cli/provider_limit_hold.py`.",
       "targets": [
         {
@@ -5945,24 +5963,6 @@
         }
       ]
     },
-    "43": {
-      "note": "**Retained historical source account — superseded by the current route account:** The leaf package statement.\n\nAnchor: \"The family-complete leaf read of a converted memory tree\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1045a920290aba9733f9dc7bb2df5d36dd002f83",
-            "content": "sha256:b683199d568bac4b81ffc5921d088311e0ee4b6b68a813af04209ae185731a70",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_leaf/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "44": {
       "note": "**Retained historical source account — superseded by the current route account:** A path seed of the published-intent block is read as a leaf.\n\nAnchor: `prepare_leaf`",
       "targets": [
@@ -5996,8 +5996,8 @@
         },
         {
           "anchor": {
-            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
-            "content": "sha256:e0fa97857b207f0950dc308642de3469fbc4d73315ff67ad07e3f275a6671c3c",
+            "blob": "b4e367f74cf99e83ed876df07c80f0579e9055bd",
+            "content": "sha256:a2ce2026d594c7f206a1c6f7ba261b70a55d12610561938492d167ea2ffd2991",
             "locator": {
               "kind": "file"
             },
@@ -6058,7 +6058,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16989165e155eb17986848e5f06e66d2f310f31f",
+            "blob": "2c39cab20d4cd29defc1d2c9909c2aa8316c5208",
             "content": "sha256:819d4ad74e6b71226fe3f393197fc02580e6a65b1b529af46a6679bf8904538b",
             "locator": {
               "kind": "symbol",
@@ -6188,7 +6188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+            "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -6205,7 +6205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+            "blob": "01afa70c008ae34ebf1f81b0ffab4bb47952036b",
             "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
             "locator": {
               "kind": "symbol",
@@ -6307,8 +6307,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
-            "content": "sha256:bc1a2a27bd2726f35b6df525dc0aeaf7befcd429f767b2bec2989312e4cbde5a",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
+            "content": "sha256:e4b2b52902ae6568b9d905f19c89e908607f87999cbcda517fff72e944b1349f",
             "locator": {
               "kind": "file"
             },
@@ -6339,12 +6339,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+            "blob": "ebd9c7653054484424f0e2c8051ea300693daf93",
             "content": "sha256:7ee2da3127a980defd0eff7f9137d74b8b4bbbd1949ecfcebf4c4c1000696a28",
             "locator": {
-              "end": 411,
+              "end": 422,
               "kind": "line_range",
-              "start": 405
+              "start": 416
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -6375,7 +6375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "blob": "b4e367f74cf99e83ed876df07c80f0579e9055bd",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -6421,12 +6421,12 @@
         },
         {
           "anchor": {
-            "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+            "blob": "ebd9c7653054484424f0e2c8051ea300693daf93",
             "content": "sha256:de5f1accf54aee06c2ed765ab5a05273dddebce8973c798c3f8d32b3ec9f5db5",
             "locator": {
-              "end": 425,
+              "end": 436,
               "kind": "line_range",
-              "start": 414
+              "start": 425
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -6485,7 +6485,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3ea3d44f09ba0802cfe5e4292c87fd8d1dd9010",
+            "blob": "244b1e06ca7a6bf7b8e6ba91d37fe1fff6d48b17",
             "content": "sha256:e8d4a28e6c3fbf9995a4547295f0e43b349db309ab92d30fc59dac8307765819",
             "locator": {
               "end": 245,

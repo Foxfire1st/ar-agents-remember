@@ -359,6 +359,7 @@ Membership selects evidence without proving invocation.
 
 
 
+- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. \[867] [930]
 
 
 - The lane catalog declares 853 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [930]
@@ -368,6 +369,16 @@ Membership selects evidence without proving invocation.
 
 
 - The lane catalog declares 853 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [932]
+
+- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. \[869] [931]
+
+
+
+
+
+
+
+- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. \[870] [932]
 
 
 
@@ -382,15 +393,12 @@ Membership selects evidence without proving invocation.
 
 
 
+
 - `mcp/tests/test_master_end_document_staleness.py` is declared once in `unit-regression` in canonical order; membership selects evidence and certifies no invocation. [912]
 
 - `mcp/tests/test_state_conversion_worklist.py` is registered once in `unit-regression` at line 603 (699 unit-regression, 853 total). [913]
 
 
-
-
-- `mcp/tests/test_family_row_writer_gate_alignment.py` is registered once in `unit-regression` at line 194 (699 unit-regression, 853 total). [924]
-
 - `mcp/tests/test_kno_r07_briefs_and_pairing.py` and `mcp/tests/test_kno_r07_knowledge_queries.py` are declared once each in `unit-regression` in canonical order; membership selects evidence and certifies no invocation. [934]
 
-- `mcp/tests/test_provider_limit_suppression.py` is registered once in `unit-regression` at line 464 (699 unit-regression, 853 total). [935]
+- `mcp/tests/test_provider_limit_suppression.py` is registered once in `unit-regression` at line 464 (699 unit-regression, 853 total). [936]

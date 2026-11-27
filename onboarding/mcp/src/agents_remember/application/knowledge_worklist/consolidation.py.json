@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/consolidation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1ef48e5ed015b83bc141cfabb06cc251bedccfdd",
+        "content": "sha256:217374940491180f04878700c43433b0ee0b58b2681f28fc5eb3b0b7d3263c76",
+        "locator": {
+          "kind": "symbol",
+          "name": "consolidation_pass"
+        }
+      },
+      "id": "RLZ-J2ZCYF",
+      "invariant": "INV-1PBH5A",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Expands consolidationList into deduplicated consolidation_target worklist items beside ordinary items without raising unlisted unchanged records.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1ef48e5ed015b83bc141cfabb06cc251bedccfdd",
+        "content": "sha256:06f221493de177fc7fd62e7640f9d11d5f8ce4a71a04712b26eaa01afa69fc84",
+        "locator": {
+          "kind": "symbol",
+          "name": "consolidation_target_open"
+        }
+      },
+      "id": "RLZ-ZZA6CQ",
+      "invariant": "INV-1PBH5A",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 3 & Rule 4",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Evaluates whether a consolidation_target item remains open at the closeout gate.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Module import registers `CONSOLIDATION_KIND` (`consolidation_target`, `^(?:INV|FAM)-`, owner `KNO-R05`) in the worklist item registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef48e5ed015b83bc141cfabb06cc251bedccfdd",
+            "content": "sha256:894fab533c509a9f3e487f34e49813c19840892727474d39649143d657130d55",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSOLIDATION_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`consolidation_pass` expands listed families (using K_B and K_C membership) and listed rules into deduplicated, sorted `consolidation_target` items and records the reached subject set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef48e5ed015b83bc141cfabb06cc251bedccfdd",
+            "content": "sha256:217374940491180f04878700c43433b0ee0b58b2681f28fc5eb3b0b7d3263c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "consolidation_pass"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`consolidation_target_open` rejects unknown listed IDs, missing or stale-revision rule/family rows, and family rows whose examined members moved revision in K_C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef48e5ed015b83bc141cfabb06cc251bedccfdd",
+            "content": "sha256:06f221493de177fc7fd62e7640f9d11d5f8ce4a71a04712b26eaa01afa69fc84",
+            "locator": {
+              "kind": "symbol",
+              "name": "consolidation_target_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`new_disposition_reason` limits `unresolved` and `stands` on ordinary items to `consolidationListed` subjects, restricting `stands` to meaning-neutral `touched_invariant` items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef48e5ed015b83bc141cfabb06cc251bedccfdd",
+            "content": "sha256:66db608c7c33733191bcc425927808fe701b5a09936f7a2162cd6e311ad52179",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_disposition_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

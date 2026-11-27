@@ -48,7 +48,7 @@ of exactly its inputs cit:([`build_curator_coherence_record`], mcp/src/agents_re
 
 ### Conventions
 
-Only the exact leaf curator, the owning sprint architect, or — for a task of a master that no sprint commands — a caller at that master may publish. Content-addressed generations
+Only the exact leaf curator or consolidator (`_LEAF_PUBLISHER_ROLES = {"curator", "consolidator"}`), the owning sprint architect, or — for a task of a master that no sprint commands — a caller at that master may publish. Content-addressed generations
 are immutable; a byte collision is a developer-decision failure rather than overwrite permission.
 Dependency declarations are built with the shared evidence-dependency encoding, exactly as the
 currentness validator re-derives them.

@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans record_state.py standing derivation, consolidation_outcomes.py index aggregation, and worktrees/review_note.py closeout notes, guarded by consolidation state tests."
+  },
+  "applicability": "Revision standing derivation, closeout review notes, and knowledge_read(view='writers') aggregation over converted memory trees.",
+  "conditions": [
+    "A closed consolidation pass carrying a passed memory review handed over by a Consolidator marks written revisions, standing listed subjects, and card-only rule changes (including non-retiring card-entry deleted rows with effect != 'retire') as consolidated while unresolved and unlisted subjects keep prior state.",
+    "Closing a consolidation pass without a passed memory review appends 'Nothing was consolidated.' beside the no-pass sentence.",
+    "The writers view counts consolidationKept, consolidationCorrected, consolidationMerged, consolidationRetired, and consolidationUnresolved for the writer of the revision read."
+  ],
+  "exclusions": [
+    "Retiring a rule (effect == 'retire'), which retires the record rather than marking the revision consolidated."
+  ],
+  "id": "INV-HD8CC1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_consolidation_state.py (including card-only deleted regression), test_knowledge_record_state.py, test_knowledge_writer_table.py, and sbx-e8 Evidence 8 post-closeout knowledge_read proof (6 consolidated, INV-2SYT0A99 reviewed, writers consolidationKept=6 consolidationUnresolved=1)."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "After a closeout carrying a passed memory review handed over by a Consolidator, written revisions, standing listed subjects, and card-only rule changes (including non-retiring card-entry deleted rows) read consolidated while unresolved and unlisted subjects keep prior state; unpassed closeouts append 'Nothing was consolidated.'; writers view counts consolidationKept/Corrected/Merged/Retired/Unresolved per writer of the revision read.",
+  "supersedes": [],
+  "title": "Consolidated standing, unpassed notice, and five writer consolidation counts",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

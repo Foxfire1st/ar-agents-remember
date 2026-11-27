@@ -115,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
             "content": "sha256:30b166acf861f594e5f33f7db4e6984230a84908c4ade30c8310a4c1457e6591",
             "locator": {
-              "end": 671,
+              "end": 672,
               "kind": "line_range",
-              "start": 659
+              "start": 660
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -159,12 +159,12 @@
         },
         {
           "anchor": {
-            "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+            "blob": "c2c9b4346f852ba071706f09c32a57bc41fb72e8",
             "content": "sha256:e69418213740b5846279b4c1a68541ea548ce8ef4a9787697bb63e83ba88fa12",
             "locator": {
-              "end": 1422,
+              "end": 1427,
               "kind": "line_range",
-              "start": 1417
+              "start": 1422
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },

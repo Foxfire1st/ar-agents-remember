@@ -17,6 +17,8 @@ A clicked hosted target promotes that pending agent in the shared active warmup 
 
 `/api/role-launch/document-chats` keeps exact-request admission, primary roles and bounded pages of three per-agent reads. Missing receipts and well-shaped records without hosted agent/workspace identity yield no chat; unreadable or malformed receipt/projection data refuses with HTTP 409, never an empty discovery result. The shared projection retains role, stored selection, creation time and execution kind/IDs. Tree discovery uses a separate read-only live-ID census, not the host’s whole hierarchy or unrecorded agents.
 
+Leaf document-chat discovery includes `consolidator` receipts alongside the other leaf roles when ordering and projecting primary chats.
+
 ## Evidence
 
 
@@ -34,12 +36,18 @@ An exact task-bound Investigator request is read only when explicitly selected w
 
 ## Current contract evidence
 
+
 - The route resolves the admitted context and serves the read endpoint.  Anchor: `register_document_chat_route` [1]
+
+
 - Record selection follows the admitted roles and refuses a foreign document or request receipt.  Anchor: `_records` [2]
+
 - The launched request's agent is projected with its document labels. [3]
 - Host reads are bounded and paged, existence is verified, and an unreachable host is distinct from an empty answer. [4]
 - The current source implements this file’s stated Investigator boundary. [5]
+
 - The selected-document read is the correcting authority for a document’s launch-record chats. It checks each recorded native agent’s existence/archive state; the separate tree read preloads the same receipt-derived discovery before a selection click. [6]
+
 
 ## Role blocks and the pages that follow them
 
@@ -49,6 +57,8 @@ Records are grouped one block per role, newest first, and `_role_records` reads 
 - A bootstrap seat behind architect records is reached across pages, and naming the free agent answers with its own seat. [9]
 
 
+
 - After the ordinary receipt scan, selected leaf lookup derives canonical master/leaf, reads its environment and host state, and appends a reachable found unarchived seat under Explainer; no launch receipt is fabricated. [10]
+
 
 - Role-record pagination bounds its own scan; the separately appended explainer lookup has its own host check. [7]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
         "content": "sha256:5418222ea258cb6891c3f705815512fd46db1a7205c17173058065f6b516a111",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
-        "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+        "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
+        "content": "sha256:30468e80b0959417ebf611ab0eeb81edfcddd2384d386e9f837c9a38333617a0",
         "locator": {
           "kind": "file"
         }
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
         "content": "sha256:5418222ea258cb6891c3f705815512fd46db1a7205c17173058065f6b516a111",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
         "content": "sha256:5418222ea258cb6891c3f705815512fd46db1a7205c17173058065f6b516a111",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
         "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
         "locator": {
           "kind": "symbol",
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
             "content": "sha256:c57a75f0a25aa52a8c8a6e45108c1a1734ba06beaae78a50b30f151b5905424c",
             "locator": {
               "kind": "symbol",
@@ -113,12 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
             "content": "sha256:49f750781eb156ac1952010c3c98f57fc72f769e34495b63c8a25806c8768de0",
             "locator": {
-              "end": 99,
+              "end": 101,
               "kind": "line_range",
-              "start": 64
+              "start": 66
             }
           },
           "kind": "code"
@@ -126,12 +126,12 @@
       ]
     },
     "2": {
-      "note": "Every row of the owner's file, as problems.\n\nAnchor: `owner_history_problems`",
+      "note": "Every row of the owner's file, as problems.",
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
-            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
+            "content": "sha256:30468e80b0959417ebf611ab0eeb81edfcddd2384d386e9f837c9a38333617a0",
             "locator": {
               "kind": "file"
             }
@@ -141,12 +141,12 @@
       ]
     },
     "3": {
-      "note": "Invariant and family row checks.\n\nAnchor: `_row_messages`",
+      "note": "Invariant and family row checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
-            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
+            "content": "sha256:30468e80b0959417ebf611ab0eeb81edfcddd2384d386e9f837c9a38333617a0",
             "locator": {
               "kind": "file"
             }
@@ -156,12 +156,12 @@
       ]
     },
     "4": {
-      "note": "A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy.\n\nAnchor: `owner_history_problems`",
+      "note": "A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy.",
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
-            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
+            "content": "sha256:30468e80b0959417ebf611ab0eeb81edfcddd2384d386e9f837c9a38333617a0",
             "locator": {
               "kind": "file"
             }
@@ -175,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
             "content": "sha256:a3d28fc52505d21b8e41965767c5da4a5b3291441398c20b5b0187640ec2595a",
             "locator": {
               "kind": "symbol",
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
             "content": "sha256:de44e03ca872897b86a4888c162830f5fb7c3e202f6cfec5883a03a3f5901c1f",
             "locator": {
               "kind": "symbol",
@@ -207,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
             "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
             "locator": {
               "kind": "symbol",
@@ -235,12 +235,12 @@
       ]
     },
     "9": {
-      "note": "Drift refuses until the row is named again at the current revision.\n\nAnchor: `owner_history_problems`",
+      "note": "Drift refuses until the row is named again at the current revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
-            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "blob": "45b3264049b25c3f7c9f3ece7e0d9701cce37ef3",
+            "content": "sha256:30468e80b0959417ebf611ab0eeb81edfcddd2384d386e9f837c9a38333617a0",
             "locator": {
               "kind": "file"
             }

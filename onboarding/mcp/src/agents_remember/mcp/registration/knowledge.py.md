@@ -154,14 +154,25 @@ No cross-repository behavior is implemented in this file. It declares one tool f
 
 No meaningful cross-repo references found.
 
+
 - The read response carries its projected view. The diff response names the report for changed files. The integrity response carries validation and the persisted worklist when the caller names a leaf. [20]
 
+
+
 - The four registered handlers: the read registrar that forwards the caller's own root, the configured workspace root, configured repositories, and coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone. [11]
-- The registered reader names all ten views (`source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`) and forwards their filters. Its writers view returns bounded aggregates and a full report path. [12]
+
+
+- The registered reader names all eleven views (`source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, `consolidation_proposal`) and forwards their filters including `masterId`. Its writers view returns bounded aggregates and a full report path. [12]
+
+
 - The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. [13]
+
 - The comparison registrar forwards the selected trees and scope to the comparison handler. The mounted response names counts, bounded decision records and the full report. [14]
+
 - Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced. [22]
+
 
 - The shared registrar tuple lists this family before the explainer. Its entry point registers read, diff, integrity and write in that order. The initial three-operation description remains in the module docstring. [9]
 
-- The registration keeps all ten views, auto-paired code-tree arguments, `recordId`/`recordIds`, and both writer commands within the 500-character raw description ceiling (471 characters). [23]
+
+- The registration keeps all eleven views (including `consolidation_proposal` with `masterId`), auto-paired code-tree arguments, `recordId`/`recordIds`, and both writer commands within the 500-character raw description ceiling (476 characters). [23]

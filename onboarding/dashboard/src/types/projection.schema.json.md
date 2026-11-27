@@ -117,7 +117,9 @@ No configured external domain source applies.
 - `ActionAvailability` declares reducer-decided action safety for the cockpit. [3]
 
 
+
 - The optional task-intent reference on the lifecycle operation projection. [6]
+
 
 - The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. [7]
 
@@ -156,7 +158,9 @@ and unreadable outcomes. The schema remains projection-only; it does not transfe
 authority to the dashboard or to the disposable closeout projection.
 
 
+
 - The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. [8]
+
 
 
 - The generated TypeScript mirror requires the legalControls array on its operation observation. [9]

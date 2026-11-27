@@ -25,27 +25,19 @@
     "leaf": "261112-KNO-L3",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The index checks eligible reviews against the record ID, revision and meaning in each named tree, including an earlier filename. A current revision reads reviewed through its writing attempt, or consolidated through a Consolidator write or qualifying keep. Competing content sharing a revision number needs an exact proof for its credit. Unambiguous old standing can survive conversion. Other current revisions read proposed. Retired records have no state.",
+  "statement": "The index checks eligible reviews against the record ID, revision and meaning in each named tree, including an earlier filename. A current revision reads reviewed through its writing attempt, or consolidated through a Consolidator write or qualifying keep (stands, no_impact, moved, extended, or non-retiring card-entry deleted row on a listed subject with a passed memory review). Competing content sharing a revision number needs an exact proof for its credit. Unambiguous old standing can survive conversion. Other current revisions read proposed. Retired records have no state.",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-KNO-L3",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-KNO",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

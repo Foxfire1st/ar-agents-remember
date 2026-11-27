@@ -6,11 +6,11 @@
 
 ## Purpose
 
-This authored manifest is the prose-free routing metadata for canonical role and operation sources. `SKILL.md` remains the thin selector and `skills/` the authoritative source tree. The native route composes the selected role followed by one applicable operation; task and workspace facts remain separate handover data. Retained core/launcher/registry metadata does not inject shared core prose or expand the eight canonical roles this native launcher exposes.
+This authored manifest is the prose-free routing metadata for canonical role and operation sources. `SKILL.md` remains the thin selector and `skills/` the authoritative source tree. The native route composes the selected role followed by one applicable operation; task and workspace facts remain separate handover data. Retained core/launcher/registry metadata does not inject shared core prose or expand the nine canonical roles this native launcher exposes.
 
 Its authored declarations are separate from its generated `derived` fields: the parser that consumes it is explicit that "the
 declared vocabulary is authoritative over the manifest, not the other way round", so a manifest edit
-"can therefore not quietly mint a new role or a ninth operation."
+"can therefore not quietly mint a new role or an eleventh operation."
 
 ## Current Source Qualification
 
@@ -22,20 +22,20 @@ The `bootstrap` role's tool list holds `server_info`, `context_packet`, `read_ar
 
 **Identity and composition.** The schema is `ar-role-capsule-composition/v1`, the router is `SKILL.md` and the authoritative tree is `skills/`. Native `composition_order` is `role` then `operation`. Canonical task/workspace facts travel as separate handover data.
 
-**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/Investigator without a synthetic task. `role_order` and the frozen role vocabulary hold the eight launchable roles, including Bootstrap; the system-specialist spelling is an alias of Investigator that the launcher code reads, not a manifest role.
+**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/Investigator without a synthetic task. `role_order` and the frozen role vocabulary hold the nine launchable roles, including Consolidator and Bootstrap; the system-specialist spelling is an alias of Investigator that the launcher code reads, not a manifest role.
 
-**`operations` declares each operation's source and the roles that may run it.** Nine entries —
-orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery
-and bootstrap — each with a `source` under `operations/`, a one-line `purpose`, and an
-`applies_to_roles` list. Two of them are narrow on purpose: `implementation` applies to `worker`
-alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all eight roles and
+**`operations` declares each operation's source and the roles that may run it.** Ten entries —
+orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery,
+consolidation and bootstrap — each with a `source` under `operations/`, a one-line `purpose`, and an
+`applies_to_roles` list. Three of them are narrow on purpose: `implementation` applies to `worker`
+alone, `consolidation` to `consolidator` alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all nine roles and
 `planning` to the Architect and the Orchestrator. The role side repeats the same applicability from the other
 direction; the parser refuses a manifest where the two disagree rather than letting the compiler
 resolve the conflict at selection time.
 
 **Core metadata.** The seven `core` entries name authority, invariants, lifecycle-frame, loop, acceptance, launcher and the separately delivered every-role digest. The map records source ownership: a role capsule receives no shared core block, and the digest accompanies the capsule in its first message. The lifecycle-frame purpose names task worktree records and the landing chain contract lifecycle, not ambient adoption. `derived.core.every-role.roles` stores the shared digest's generated audience, separately from the authored `core` source and purpose metadata.
 
-**`roles` is the per-seat registry and is where the selection actually happens.** Each of the eight
+**`roles` is the per-seat registry and is where the selection actually happens.** Each of the nine
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
 may use), `skills` (the skill pointers it may reference), `seat` (the one-line statement of what the
 seat is), `core` (retained core-selection metadata, not shared instruction injection), `operations` (the authoritative applicability
@@ -53,7 +53,7 @@ skill by origin, URI and root source (`agents-remember/skills`, `skill://agents-
 content*, so its identity is server/repository origin plus skill URI — a bare name would collide
 across servers." `launcher` is the ambient launcher's composition: `is_role: false`, the routing
 condition it belongs to, `core/launcher.md` as its instruction source, the `launcher` core block,
-orientation and coordination as its operations, and no template. The `references` block holds 56 entries: the digest map, the `criteria/` and `templates/` trees, the detail files under the `reference/` subject folders and the template entries. 44 declare `step_detail: true`, including `writing/visual-explainers`, and 10 declare `step_detail: false`. Entries carry `injected: false`; authored entries own reference membership, sources and `step_detail` classification. Their reader roles and read steps are stored in `derived.references` and joined by `compose_manifest`; step details remain outside the inline instruction body.
+orientation and coordination as its operations, and no template. The `references` block holds 57 entries: the digest map, the `criteria/` and `templates/` trees, the detail files under the `reference/` subject folders and the template entries. 45 declare `step_detail: true`, including `consolidation-pass` and `writing/visual-explainers`, and 10 declare `step_detail: false`. Entries carry `injected: false`; authored entries own reference membership, sources and `step_detail` classification. Their reader roles and read steps are stored in `derived.references` and joined by `compose_manifest`; step details remain outside the inline instruction body.
 
 **The identity keys say what the file is and where its authority sits.** `schema` fixes the document
 vocabulary at `ar-role-capsule-composition/v1`; `authority` names `SKILL.md` as the thin router and
@@ -61,18 +61,18 @@ this file as metadata only; `entry_router` names the router file a session enter
 `authoritative_tree` is `skills/`, which is the canonical authored tree the packaged copies are
 generated from.
 
-**`operations` declares each operation's source and the roles that may run it.** Nine entries —
-orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery
-and bootstrap — each with a `source` under `operations/`, a one-line `purpose`, and an
-`applies_to_roles` list. Two of them are narrow on purpose: `implementation` applies to `worker`
-alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all eight roles and
+**`operations` declares each operation's source and the roles that may run it.** Ten entries —
+orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery,
+consolidation and bootstrap — each with a `source` under `operations/`, a one-line `purpose`, and an
+`applies_to_roles` list. Three of them are narrow on purpose: `implementation` applies to `worker`
+alone, `consolidation` to `consolidator` alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all nine roles and
 `planning` to the Architect and the Orchestrator. The role side repeats the same applicability from the other
 direction; the parser refuses a manifest where the two disagree rather than letting the compiler
 resolve the conflict at selection time.
 
 **`core` names the block sources the corpus holds, but a dispatched role seat composes none of them into its capsule.** The manifest's `composition_order` is exactly `role` then `operation` (the manifest's `composition_order`); the frozen core map remains metadata for compiler compatibility and shared core blocks are not injected. `models/role_capsules/selection.py:158-163` returns `core_blocks=()` for a dispatched role seat: the manifest declaration tells a reader where the doctrine lives, it is not what the seat is sent; the seat's binding text is its role and operation, the every-role digest and each detail read at its named step.
 
-**`roles` is the per-seat registry and is where the selection actually happens.** Each of the eight
+**`roles` is the per-seat registry and is where the selection actually happens.** Each of the nine
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
 may use), `skills` (the skill pointers it may reference), `seat` (the one-line statement of what the
 seat is), `core` (retained shared-block metadata, not injected role instructions), `operations` (the authoritative applicability
@@ -101,7 +101,7 @@ package paths, because the corpus root is supplied by the consumer. Every list t
 iterates is an array of strings or of objects with a `source`/`purpose` pair; nothing is keyed by a
 display name where an identity would do, and the one skill entry carries origin plus URI rather than
 a bare name. Duplicated knowledge is deliberate and testable: the operations' `applies_to_roles` and
-the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The `notes` array states role/operation-only composition, core metadata as source ownership with the digest accompanying the capsule, separate handover facts, eight launchable roles and nine operations with agreeing applicability, and Paseo as host with `role_start` and `role_message`.
+the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The `notes` array states role/operation-only composition, core metadata as source ownership with the digest accompanying the capsule, separate handover facts, nine launchable roles and ten operations with agreeing applicability, and Paseo as host with `role_start` and `role_message`.
 
 The file is a flat JSON object with `snake_case` keys, ordered so the document reads from identity to
 registry to composition to notes. Values that select a file are root-relative POSIX strings
@@ -118,11 +118,11 @@ the roles' `operations` are two views of one applicability, and the parser refus
 - **The manifest carries no instruction prose.** It selects sources; the prose lives in `core/`,
   `roles/`, `operations/`, `criteria/` and `templates/`, and the file
   holds no instruction text of its own.
-- **The role registry is exactly `role_order`.** Eight roles; the launcher is a routing condition with
-  `is_role: false` and is not a ninth entry.
+- **The role registry is exactly `role_order`.** Nine roles; the launcher is a routing condition with
+  `is_role: false` and is not a tenth entry.
 - **The declared vocabulary is authoritative over the file.** The consumer parses these bytes against
   frozen role and operation sets and refuses a manifest that disagrees, so an edit cannot mint a role
-  or a tenth operation by writing one.
+  or an eleventh operation by writing one.
 - **Operation applicability must agree on both sides.** A role's `operations` list and the
   operation's `applies_to_roles` list are checked against each other at parse time; a disagreement is
   a `manifest-inconsistent-applicability` refusal rather than a selection-time surprise.
@@ -141,13 +141,13 @@ No task-independent follow-up is recorded. The current reference entries all exp
 
 ## Current composition and authoring contract
 
-Operations declare `audience`: `sections` for the eight marked operation sources and `all` for the protected authorized-closeout source. The stage markers select common text and named-role text rather than requiring the complete multi-role operation in every capsule. Selected role text remains whole; task facts remain separate handover data.
+Operations declare `audience`: `sections` for the nine marked operation sources (including `consolidation`) and `all` for the protected authorized-closeout source. The stage markers select common text and named-role text rather than requiring the complete multi-role operation in every capsule. Selected role text remains whole; task facts remain separate handover data.
 
-The references registry declares 44 non-injected step-detail entries, including the writing profile and visual explainer. Authored reference entries own membership, sources, descriptions, `injected` and `step_detail` classification, optional `rolesReason` explanations and legal explicit `step: null` decisions. No authored reference entry carries `roles`; current reader roles and step wording come from `derived.references` through `compose_manifest`. Five authored references carry `rolesReason`, and six ordinary references explicitly carry `step: null`. The generated `derived.core.every-role.roles` carries the shared digest audience. An empty generated audience remains a recorded derived value rather than a new admission gate. Registration is not proof of a real start or a read at the named step.
+The references registry declares 45 non-injected step-detail entries (57 reference entries total), including `reference/consolidation-pass.md`, the writing profile and visual explainer. Authored reference entries own membership, sources, descriptions, `injected` and `step_detail` classification, optional `rolesReason` explanations and legal explicit `step: null` decisions. No authored reference entry carries `roles`; current reader roles and step wording come from `derived.references` through `compose_manifest`. Five authored references carry `rolesReason`, and six ordinary references explicitly carry `step: null`. The generated `derived.core.every-role.roles` carries the shared digest audience. An empty generated audience remains a recorded derived value rather than a new admission gate. Registration is not proof of a real start or a read at the named step.
 
-Retained core metadata remains non-injected for native role capsules; the eight-role, nine-operation vocabulary matches the native launcher roster. Requested tools are metadata, not grants; public start admission owns may-start permission. Each role's `tools` array lists the same tools, in the same `PUBLIC_TOOLS` order, as that role's entry in `ROLE_TOOL_ALLOWLISTS` in `mcp/src/agents_remember/models/tools/role_tool_scope.py`: Architect 26, Orchestrator 27, Manager 32, Worker 8, Curator 17, Reviewer 11, Investigator 10, Bootstrap 8. That table, not this array, decides what a role-bound task server advertises and what a Codex seat is granted. No code derives the array from the table and no test compares the two; tests pin the Investigator array and every role's `role_message` and `role_start` membership.
+Retained core metadata remains non-injected for native role capsules; the nine-role, ten-operation vocabulary matches the native launcher roster. Requested tools are metadata, not grants; public start admission owns may-start permission. Each role's `tools` array lists the same tools, in the same `PUBLIC_TOOLS` order, as that role's entry in `ROLE_TOOL_ALLOWLISTS` in `mcp/src/agents_remember/models/tools/role_tool_scope.py`: Architect 26, Orchestrator 27, Manager 32, Worker 8, Curator 17, Consolidator 13, Reviewer 11, Investigator 10, Bootstrap 8. That table, not this array, decides what a role-bound task server advertises and what a Codex seat is granted. No code derives the array from the table and no test compares the two; tests pin the Investigator array and every role's `role_message` and `role_start` membership.
 
-The current template lists are: Architect, Investigator and the launcher none; Orchestrator `manager-brief.md`, `master-handover-packet.md`, `impact-analysis.md`, `onboarding-coherency.md` and `curator-handoff-list.md`; Manager `manager-brief.md`, `curator-brief.md`, `master-handover-packet.md`, `verdict.md` and `turn-report.md`; Worker `turn-report.md` and `curator-handoff-list.md`; Curator `curator-brief.md`, `curator-handoff-list.md` and `curator-handoff-ingestion.md`; Reviewer `verdict.md`, `impact-analysis.md`, `onboarding-coherency.md` and `curator-handoff-list.md`; Bootstrap `bootstrap-report.md`. No seat lists `architect-brief.md`, `worker-brief.md` or `conversation-handover-packet.md`. The Reviewer seat is an independent Reviewer hosted on a leaf whose intake selects the reviewed candidate, requirement and seam.
+The current template lists are: Architect, Investigator and the launcher none; Orchestrator `manager-brief.md`, `master-handover-packet.md`, `impact-analysis.md`, `onboarding-coherency.md` and `curator-handoff-list.md`; Manager `manager-brief.md`, `curator-brief.md`, `master-handover-packet.md`, `verdict.md` and `turn-report.md`; Worker `turn-report.md` and `curator-handoff-list.md`; Curator `curator-brief.md`, `curator-handoff-list.md` and `curator-handoff-ingestion.md`; Consolidator `curator-handoff-ingestion.md`; Reviewer `verdict.md`, `impact-analysis.md`, `onboarding-coherency.md` and `curator-handoff-list.md`; Bootstrap `bootstrap-report.md`. No seat lists `architect-brief.md`, `worker-brief.md` or `conversation-handover-packet.md`. The Reviewer seat is an independent Reviewer hosted on a leaf whose intake selects the reviewed candidate, requirement and seam.
 
 ## Evidence
 
@@ -172,7 +172,9 @@ install-time corpus anchor, and the corpus test that pins the registry wiring.
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [15]
 
-- The nine operation blocks, each with its source, purpose and the roles that may run it. [16]
+
+- The ten operation blocks, each with its source, purpose and the roles that may run it. [16]
+
 
 - The seven block names the corpus holds (including the launcher block authored here so the registry holds only roles, and the every-role digest); the manifest composes role then operation only, and a dispatched seat receives no shared core block (`models/role_capsules/selection.py:158-163` returns `core_blocks=()`).
 
@@ -192,28 +194,40 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (renewed)
 
+
 - The role registry itself and the two role entries that show the per-seat shape. Anchor: `"roles": {` [5]
+
 
 - The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role` [8]
 
+
 - The role registry itself and the two role entries that show the per-seat shape. Anchor: `"roles": {` [18]
+
 
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). Anchor: `templates` [20]
 - The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role` [21]
 
-- All nine operation entries declare audience selection. The references registry contains 56 entries, 44 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. [29]
-- The manifest declares audience selection for all nine operations and records 56 reference entries, 44 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. [30]
-- The registry contains 44 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file. [33]
+
+- All ten operation entries declare audience selection. The references registry contains 57 entries, 45 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. [29]
+
+
+- The manifest declares audience selection for all ten operations and records 57 reference entries, 45 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. [30]
+
+
+- The registry contains 45 non-injected step-detail entries, including `consolidation-pass`, `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file. [33]
+
 
 ## Current Investigator contract impact
 
-The manifest exposes canonical Investigator among the eight native roles, requests the ten tools of its allowlist (`server_info`, `context_packet`, `read_ar_files`, `memory_quality_check`, `worktree_status`, `task_doc`, `role_message`, `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`) and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
+The manifest exposes canonical Investigator among the nine native roles, requests the ten tools of its allowlist (`server_info`, `context_packet`, `read_ar_files`, `memory_quality_check`, `worktree_status`, `task_doc`, `role_message`, `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`) and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
 
 ## Refreshed current evidence
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
 
-- The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
+
+- The ten operation blocks, each with its source, purpose and the roles that may run it. [3]
+
 
 ## Canonical Source Ownership
 
@@ -225,19 +239,28 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 
 - The core-source map's lifecycle-frame entry names task worktree records and the landing chain's lifecycle, not session adoption; the lifecycle-frame source points to the public worktree_start, worktree_attach and terminal-lifecycle references. [4]
 
-- The manifest retains canonical Investigator with ten declared tool IDs, matching its allowlist entry, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+
+- The manifest retains canonical Investigator with ten declared tool IDs, matching its allowlist entry, and separately names Bootstrap; the current public LauncherRole roster has nine canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+
 
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
 
+
 - The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [22]
+
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [27]
+
 
 - The curator role requests `knowledge_write` beside the other knowledge operations, so the mounted writer is among the tools its capsule may name. [31]
 
+
 - The role registry in canonical order and the two routing conditions, with the non-role launcher declared separately. [32]
+
 
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
 
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
+
 
 - The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [9]

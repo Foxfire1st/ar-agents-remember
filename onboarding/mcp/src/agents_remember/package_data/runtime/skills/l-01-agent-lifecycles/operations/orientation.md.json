@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
-        "content": "sha256:cec64492c4ea9fbcdf71060c6c08adf8313981c36bd575abb9e6b3254789dcb5",
+        "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
+        "content": "sha256:8db591e5b0556d517f97c7afcb38e2c41fffe77fa6eac78cacbbcf8a596eb2e5",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
             "content": "sha256:99f349fee444c8a3bad24be9030df7a157fd94ec3a3c374de477771b478681f4",
             "locator": {
               "end": 6,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
             "content": "sha256:acaaead26a835264fe13759f8478cf7360f15bca787fc8ed1dbc46286ef3e1f7",
             "locator": {
               "end": 32,
@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
-            "content": "sha256:ccd9be17f1ef3c3d6c0b655b6f336cee8d16cef6c9f8ccf10ac253850d9a296b",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
+            "content": "sha256:dc3e6a3d97fb1e44ad3da925b3d0ae4e28a76b0164f6a7005ed663e31175c99b",
             "locator": {
               "end": 51,
               "kind": "line_range",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
             "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
             "locator": {
               "end": 2,
@@ -92,12 +92,12 @@
       ]
     },
     "5": {
-      "note": "The launcher supports these eight role IDs, including the taskless `bootstrap` setup role.",
+      "note": "The launcher supports these nine role IDs, including `consolidator` and the taskless `bootstrap` setup role.",
       "targets": [
         {
           "anchor": {
-            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
-            "content": "sha256:c19b914b14c301420b2405564d0667f15f985580fc08a14822ed236af95d6848",
+            "blob": "44016dc9a9474a64e3eb33a2b6270c65e4d14c00",
+            "content": "sha256:b32073bdeb2222dc8b1b3f4e4cb1a3a30e4b3621724f1c6c4b153f442deb5861",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -110,12 +110,12 @@
       ]
     },
     "6": {
-      "note": "Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery.\n\nAnchor: `## Confirm the assignment`",
+      "note": "Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
-            "content": "sha256:1f83beb0bfd172d89991d0e50ee981561a0d5c39e17e7a56b1874b4547851078",
+            "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
+            "content": "sha256:d2360988751dabc47f00450db0e31b989a056af220f09283247f3eea165bb0f8",
             "locator": {
               "end": 14,
               "kind": "line_range",

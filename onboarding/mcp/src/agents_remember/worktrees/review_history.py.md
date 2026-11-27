@@ -49,7 +49,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 - The handover stamp uses current leaf receipts and explains unresolved or ambiguous attribution. [19]
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+
 - Record-only memory identity comes from memory authority, never the sibling code root. [6]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]
@@ -80,5 +82,7 @@ verification metadata remains blank until a genuine commit-owned refresh.
 - Review admission uses a typed error boundary, the settings-owned round cap and an explicit pending round. [1]
 
 - The review owner validates reported fields, parses the governing approval and records the sealed baseline. [2]
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
+
 - The review owner binds the recorded round to the admitted result. A record-only correction preserves first handover attribution. [8]

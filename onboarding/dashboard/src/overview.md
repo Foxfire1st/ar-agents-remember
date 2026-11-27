@@ -497,7 +497,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 - Declared task sources become one entry forest with worktree binding kept separate from task admission. [66]
 
 
+
 - Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state. [67]
+
 
 - Retained body responses are keyed by the revision actually returned, not the requested revision. [68]
 

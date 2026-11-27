@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d44a7a8f5e3b8664d88d8934ca6ad3b593eb0fda",
-            "content": "sha256:baf0f64c54eb4d81cf3d407b0c2b708f443f3425bd331f2e61995e8bf4e7bff3",
+            "blob": "e4cb4b59d7925c583eac8ff632421393b13de8f4",
+            "content": "sha256:8552a40724813448077619442fee1a051fa700dd186458eb3658663bcad9da51",
             "locator": {
               "kind": "symbol",
               "name": "test_the_registered_handlers_read_a_memory_tree_and_take_no_database_path"

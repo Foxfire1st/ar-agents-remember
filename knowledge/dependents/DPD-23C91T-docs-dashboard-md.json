@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "4032fac6253b4b4594fe13e5719bbd766de5b7c2",
-    "commit": "ad3d765da8fd525c688fe107bf5b2ef946bbb7f7",
-    "role": "curator",
-    "statement": "Audited docs/dashboard.md lines 336-346 against post-L61 synced L60 candidate (BUG-R60@v1, base ad3d765da8fd): window-scoped automatic live-turn and operator provider-limit suppression semantics, clearedSeats release propagation, and Paseo usage reports as sole limit creator match live code; re-deferred L61 open deferral DFR-THCPWR (originally L62 DFR-73APGD, lines 256-262 pre-BUG-R62 20 s timeout prose) onto L60 candidate blob of docs/dashboard.md without lifting it.",
-    "task": "261112-BUG-L60",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: merged docs/dashboard.md carries both BUG-R60@v1 lines 336-346 and KNO-R05@v3 Consolidation block row with shifted role_launch_routes.py anchor 214-235; preserves open deferral DFR-NDPEXV (lines 256-262 pre-BUG-R62 20 s timeout prose) bound to merged docs/dashboard.md blob without lifting it.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
   "deferrals": [
     {
@@ -15,7 +15,7 @@
       },
       "createdAt": "2026-11-27T05:40:52.706277Z",
       "createdByLeaf": "261112-BUG-L60",
-      "fileBlob": "88c357b0424d5bc0e3192908f9261729eec5804b",
+      "fileBlob": "b41657ee78918b4cb1e833731f5f59b95bad900a",
       "id": "DFR-NDPEXV",
       "owner": "261112-BUG",
       "passage": "docs/dashboard.md lines 256-262 (Chats frame timeout and first-visit 20 s recovery)",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
     },
     {
-      "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+      "blob": "67fd827411b726fc622af1a177534644708fdd00",
       "kind": "file",
       "path": "dashboard/src/cockpit/roleLaunchModel.ts"
     },
@@ -61,7 +61,7 @@
       "path": "dashboard/src/cockpit/paseoFrameModel.ts"
     },
     {
-      "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+      "blob": "ea1b923bbbb4b420f986af77d41e35d3fdcd693f",
       "kind": "file",
       "path": "dashboard/src/cockpit/document-chat/model.ts"
     },
@@ -71,12 +71,12 @@
       "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
     },
     {
-      "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+      "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
       "kind": "file",
       "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
     },
     {
-      "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+      "blob": "6c52d16e5f50441880f5f5902cc6bbce081f6843",
       "kind": "file",
       "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
     },
@@ -136,7 +136,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+      "blob": "f8bc35784fb9693af38d3c477b1fc7ebc18ef01f",
       "kind": "file",
       "path": "dashboard/src/panels/eventSummary.ts"
     },
@@ -179,7 +179,7 @@
     },
     {
       "anchor": {
-        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+        "blob": "932147f1ec94bc0228c0709d7722b56a9ee1203c",
         "content": "sha256:34b956fc0cc8e53f661805c9b9c3cf97f635f7166966600af1f083303699f396",
         "locator": {
           "kind": "symbol",
@@ -350,7 +350,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -364,7 +363,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -378,7 +376,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
       },
-      "heading": "The buttons",
       "kind": "anchor"
     },
     {
@@ -392,7 +389,6 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -406,21 +402,19 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
-      "heading": "The buttons",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+        "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
         "content": "sha256:04d56886385a9cd5a5ce52d3223fe4b4255316b4ef9cf14632bb3d2995c98cf7",
         "locator": {
-          "end": 234,
+          "end": 235,
           "kind": "line_range",
-          "start": 213
+          "start": 214
         },
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -461,14 +455,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:40:50+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

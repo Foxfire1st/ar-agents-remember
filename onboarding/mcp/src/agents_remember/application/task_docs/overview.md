@@ -155,7 +155,9 @@ A newly created subTask with no supplied `intentReview` receives `pending`. The 
 
 
 
+
 - The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner. [5]
+
 - Task-document batches keep each root/document destination, check one graph-bearing document and refuse task-root escapes before the common batch publisher. [16]
 - Audited never-started discard retains source/evidence CAS and central preview/publication; reopen delegates the exact same contract identity to its owner. [17]
 
@@ -167,5 +169,7 @@ A newly created subTask with no supplied `intentReview` receives `pending`. The 
 - A generic `record_review` call validates supplied memory `verdictRef` values through `require_bound_memory_verdict_ref` and can publish a route BLOCK when it records a sanctioned code addition through `addedFindings` and prior route evidence exists. [26]
 
 - Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence. Anchor: `run_task_doc_call` `publish_task_doc_transaction_and_refresh` `validate_task_doc_transaction` `task_doc_tool` [13]
+
 - task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session. [15]
+
 - Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures. [18]

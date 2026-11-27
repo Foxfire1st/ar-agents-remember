@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
-    "commit": "130545f8071e7c9fd369e170b0851da63abee6f6",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Audited docs/reference/settings-json.md in full (lines 1-1083) against synced Attempt-5 tree d1e7bbbc (base 130545f8; pre-base-stale on paseo_launch.py from BUG-L51): all settings keys, paseoRuntime rules, orchestration launch/extraArgs propagation, handover-locator recovery note, and First tool call preapproval grants remain accurate with no contradiction or omission from BUG-L51 seat-identity binding confirmation.",
-    "task": "261124-CAP-L3",
+    "statement": "Verified docs/reference/settings-json.md against 17c064d8 (including Round 5 KNO-L5-F07 fix to lines 591-596 counting afterTries for worker, curator, and consolidator).",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -84,12 +84,12 @@
       "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
     },
     {
-      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
     },
     {
-      "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+      "blob": "9c254c77ef570d89c9a32e66bd3e83f22204317d",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
     },
@@ -109,7 +109,7 @@
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
     {
-      "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+      "blob": "895749d238b2f70b01c12a7074cacfe6d7d1eeaa",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
     },
@@ -235,14 +235,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:16:07+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

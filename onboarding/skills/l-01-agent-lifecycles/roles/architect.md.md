@@ -21,7 +21,9 @@ Message-file payload and receipt rules are routed from the Architect's Reference
 
 ## Purpose
 
-This canonical Architect owns the developer conversation, semantic requirements and approved plan. Its explicit Projects launch may be taskless: missing outcome or registered repository is asked for, never inferred. New independently falsifiable obligations become approved stable-ID/version packets before task topology; an existing assignment recovers durable approvals and current task evidence.
+This canonical Architect owns the developer conversation, semantic requirements and approved plan.
+
+The Architect also authors consolidation leaves (`consolidationList`) using `knowledge_read(view="consolidation_proposal", masterId=...)` to select candidate families and rules for a Consolidator pass. Its explicit Projects launch may be taskless: missing outcome or registered repository is asked for, never inferred. New independently falsifiable obligations become approved stable-ID/version packets before task topology; an existing assignment recovers durable approvals and current task evidence.
 
 Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
 
@@ -104,10 +106,14 @@ The Architect keeps the developer conversation and may check, measure, run tests
 - The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority. [1]
 
 
+
 - Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and keeps the actual returned role identities, while it answers formal permission prompts only as far as its own seat's permissions reach. [2]
 
 
+
+
 - The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator. [6]
+
 
 
 - Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted. [8]

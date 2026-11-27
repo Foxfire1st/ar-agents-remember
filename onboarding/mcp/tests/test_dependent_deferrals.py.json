@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:42430e5a148509fcf490265719a6474062361900c5297c3830bfadae74f35f5b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:3e9d0c3e9d82088a56c061d7c5ac87e9e77fb5c4af229f55306d193dc2b0a8a2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:d2e4a1f15ea28d7431a50d85caea9c7a2bf5895dd8e1a21ebc5772e6cd45f424",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:624e53cd72c9287430f9c82163c6f15bbda87352b39ca7d2a3cb8c4a9d333066",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:dc75be352064e49393d1a8b13a260d83db6247c58a2a702993817ba770147114",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:6b153fe2c8eba238dac68e5ef080f4242b2bdc5c74d0dadf1d938ccabd93d578",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:4bf6410bdf6569bd96a145071aa45917d53ed87a72a5eb89be2e856d4e742607",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:cd1a1c213c65694fa6fd0ba6a56f17d2602edf7b9605b6238e35a132b2e5ffcd",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:e2fe7e6aaf3be443145e8686ebcae28eab004e355967d9c577ad42d2dcd01083",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,24 @@
     },
     {
       "anchor": {
-        "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+        "content": "sha256:72dc470bbe6977bdd205f56ca7e50eed756913decc15b6f4d07b5257b8e236ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_crossing_write_adopts_validated_explicit_deferrals_and_clears_on_empty"
+        }
+      },
+      "facet": "Verifies a crossing write validates and persists explicit merged deferrals (including task-only entries and earlier or settled fileBlob hashes), supports resolveDeferrals, and removes deferrals on [] or None.",
+      "id": "PRF-PF1SS8",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
         "content": "sha256:45b90daf9034ad7ae63d1c38fb205ba8c4124b96d9512d2bf6cd680a42273711",
         "locator": {
           "kind": "symbol",
@@ -170,6 +187,40 @@
         "handoffEntry": "BUG-R52@v2 §1",
         "leaf": "261112-BUG-L52"
       }
+    },
+    {
+      "anchor": {
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+        "content": "sha256:c92d6c68472619a12e4a54584ea5e58972fda8719b6d08e45010cf1c2d3de2cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_crossing_write_resolves_deferred_dependent_preserving_before_deferrals"
+        }
+      },
+      "facet": "Verifies a crossing write at code_base == snapshot.commit resolves a conflicted dependent carrying an open deferral, updates revision, confirmed, and stands_on, and preserves before['deferrals'].",
+      "id": "PRF-QJ6JMS",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+        "content": "sha256:1289255c3460ef0248583c0973f5ed9371a798c70266c8b392f08b8669d1b94a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_crossing_write_refuses_invalid_deferrals_and_preserves_leaf_refusals"
+        }
+      },
+      "facet": "Verifies a crossing write refuses invalid deferrals (non-list, non-object, schema error, duplicate id, missing condition.file) while leaf direct-deferrals and unedited-confirmation refusals stay enforced.",
+      "id": "PRF-W7W2CJ",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      }
     }
   ],
   "realizes": [],
@@ -179,11 +230,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8391aec07a71ec375c66ea82c067c59bac71e67",
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
             "content": "sha256:624e53cd72c9287430f9c82163c6f15bbda87352b39ca7d2a3cb8c4a9d333066",
             "locator": {
               "kind": "symbol",
               "name": "test_01_deferral_validation_refuses_invalid_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Crossing-sync tests prove preserved `before[\"deferrals\"]`, validated explicit deferral adoption and `[]`/`None` clearing, invalid crossing deferral refusals, and preserved non-crossing leaf refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+            "content": "sha256:c92d6c68472619a12e4a54584ea5e58972fda8719b6d08e45010cf1c2d3de2cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_resolves_deferred_dependent_preserving_before_deferrals"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+            "content": "sha256:72dc470bbe6977bdd205f56ca7e50eed756913decc15b6f4d07b5257b8e236ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_adopts_validated_explicit_deferrals_and_clears_on_empty"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+            "content": "sha256:1289255c3460ef0248583c0973f5ed9371a798c70266c8b392f08b8669d1b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_refuses_invalid_deferrals_and_preserves_leaf_refusals"
             }
           },
           "kind": "test"

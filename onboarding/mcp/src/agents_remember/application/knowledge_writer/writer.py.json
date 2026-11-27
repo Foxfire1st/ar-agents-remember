@@ -634,12 +634,12 @@
         },
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
             "content": "sha256:6e1aac86d53102826724fe3d56f62cee5d745e4177fb80b107c8c10f1d8c81e6",
             "locator": {
-              "end": 496,
+              "end": 494,
               "kind": "line_range",
-              "start": 476
+              "start": 474
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },

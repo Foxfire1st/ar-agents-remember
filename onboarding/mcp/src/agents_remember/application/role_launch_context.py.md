@@ -22,9 +22,15 @@ Role classes define which sprint/master/leaf references a start carries: a sprin
 Investigator has Projects, selected-sprint, standalone-master, and sprint/master launch classes. Resolving these classes uses actual canonical topology and refuses a leaf selection before launch preparation creates anything. This extends the old taskless investigation scope; it does not infer task identity from a report path or weaken caller containment.
 
 
+
 - Frozen implementation of resolve_role_launch_context supporting the stated file behavior. [1]
+
+
 - The current source implements this file’s stated Investigator boundary. [3]
+
+
 - The parentless row that admits no document reference for the free agent. [6]
+
 
 
 
@@ -36,6 +42,8 @@ Investigator has Projects, selected-sprint, standalone-master, and sprint/master
 
 `ROLE_LEVELS` gives `bootstrap` the `free-agent` level, so no per-level task override applies to it and its role row is its whole set of launch choices. It is taskless with `architect` and `investigator`: its execution receipt is keyed by the request id because the selection holds no document at all, not because it is a second identity of another role. `PARENTLESS_START_SELECTIONS` admits it with no sprint, master or leaf reference, so a document reference carried by a bootstrap start is a refused selection rather than an ignored one. The task-document resolution for every other role is unchanged.
 
+
 - The level the free agent holds, which no per-level override reaches. [4]
+
 - The taskless set whose receipts are keyed by their request id. [5]
 - The free agent is a launcher role with no document and no parent, and every document reference on its start is refused. [7]

@@ -20,4 +20,5 @@ Target of all four Family-2 `refusal_references.py` pointers (`#verify-repaired-
 
 - Round-limit verification, unchanged-candidate record rechecks, and the three sanctioned `addedFindings` post-seal routes define exact `task_doc` admission and refusal boundaries. [1]
 
+
 - Protocol refusals, forged-state boundaries, proportional review (honest-agent starting-state and adversarial-review gate), omission/whole-set verification, `OM-6` memory-review checks (`cutCards`, `addedFiles`, `deferral_lifted`), and stop rules govern review conduct. [2]

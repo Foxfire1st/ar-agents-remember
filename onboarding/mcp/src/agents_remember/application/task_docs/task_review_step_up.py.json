@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
-            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
+            "blob": "a972ce4ce0b8955ea2a85aa521b5b8750e8a181d",
+            "content": "sha256:f89917f6b1d9a9216545fa82da6a31e6b62ef9f23e833040c66c281393905789",
             "locator": {
               "end": 316,
               "kind": "line_range",
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
-            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
+            "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
+            "content": "sha256:2fa2d4d15f3995e5fec3b3228c3c38e953b1c3e14aca6ed7c0ec0b4c66cbd557",
             "locator": {
               "end": 87,
               "kind": "line_range",
@@ -57,12 +57,12 @@
       ]
     },
     "4": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L13–L65",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "4275baa402a6f13e77dcd678521ef0f41bc31980",
-            "content": "sha256:ed485682ea1932553c8bb311feee6a8a6325803be1652fb23a46403a22af9d4d",
+            "blob": "be36b6d9766fa2a00d38b425eae2b2a2e732b099",
+            "content": "sha256:5f6723264b281414ad6279ddb591c5771d40d03b44469ff462c8ca1238661756",
             "locator": {
               "end": 65,
               "kind": "line_range",

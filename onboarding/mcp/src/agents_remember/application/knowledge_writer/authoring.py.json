@@ -525,8 +525,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
-            "content": "sha256:c040fc08e0fc86dd459b46659f8ab3d739a57cfb2d5581666541cf9b9bbbb7ca",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
+            "content": "sha256:a393d203a8604bc500306b6f1e6a345558f5195ee753171c8d83eae0c80203c6",
             "locator": {
               "end": 1058,
               "kind": "line_range",
@@ -538,12 +538,12 @@
         },
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
             "content": "sha256:96d075953c0a2916155ee0f174469a093968d82b8e8a7fece8253cf93abac369",
             "locator": {
-              "end": 1071,
+              "end": 1068,
               "kind": "line_range",
-              "start": 1060
+              "start": 1057
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -593,12 +593,12 @@
         },
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
             "content": "sha256:fcdab3d118135e6affc8fc2928e02152ac9ffd84f16c1cb2d278bf368ee2ddd2",
             "locator": {
-              "end": 392,
+              "end": 390,
               "kind": "line_range",
-              "start": 389
+              "start": 387
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -606,12 +606,12 @@
         },
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
             "content": "sha256:ac826aad197bd8c30e21c747b9b91cb941662eb2851a3012aac8ec7bfb7fd737",
             "locator": {
-              "end": 393,
+              "end": 391,
               "kind": "line_range",
-              "start": 393
+              "start": 391
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -619,12 +619,12 @@
         },
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
             "content": "sha256:ea8972baf54078883b35035d50e6930a0b8025d7c9f77f53b25407dcab79a82a",
             "locator": {
-              "end": 504,
+              "end": 502,
               "kind": "line_range",
-              "start": 476
+              "start": 474
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -632,25 +632,25 @@
         },
         {
           "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
             "content": "sha256:301101d6e241cc5442f4cf8613a7bbea68c8a54a96db6e5e2ee83ae1bf89523d",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8619444bc5d35668016e653d1fd9caeffc01db67",
+            "content": "sha256:1fe9a871942bf023371cd910843be102113e8bc75638f1a980ec68e6cd969518",
             "locator": {
               "end": 245,
               "kind": "line_range",
-              "start": 239
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
-            "content": "sha256:1fe9a871942bf023371cd910843be102113e8bc75638f1a980ec68e6cd969518",
-            "locator": {
-              "end": 248,
-              "kind": "line_range",
-              "start": 246
+              "start": 243
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },

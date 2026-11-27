@@ -58,13 +58,19 @@ Worker implements the approved leaf only, leaves code uncommitted, uses memory r
 
 - The worker records the complete acceptance envelope exactly once for its owned primary stable requirement ID and version. [8]
 
+
 - The worker implements one selected leaf and writes one report at the handover's report path. [10]
+
+
 
 
 - The Worker implements the selected leaf's approved primary requirement and preservation constraints. The handover supplies the canonical task, exact packet, paired roots, contract and report path. Completion requires clean-copy handover checks on the frozen candidate and any listed final checks once on the code-passed tree, with reports to the Reviewer and Manager. [1]
 
 
+
+
 - Worker reads selected packets and rendered task files via file tools (no .json), verifies paired roots and contract agreement, writes code only with memory read-only as context, and reports missing bindings/fields to their owner without guessing a different task or workspace. [2]
+
 
 
 

@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
             "locator": {
               "kind": "symbol",
@@ -137,12 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
             "locator": {
-              "end": 966,
+              "end": 971,
               "kind": "line_range",
-              "start": 952
+              "start": 957
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },

@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
             "content": "sha256:44e697be2cfd017270df7c08a83f7b981a74591383c355ad4626d958582bba79",
             "locator": {
-              "end": 430,
+              "end": 432,
               "kind": "line_range",
-              "start": 429
+              "start": 431
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -191,12 +191,12 @@
         },
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
             "content": "sha256:699bc43cd2a97d49b3d2949e1b1c60384305055b72578c0c58883faaed41199f",
             "locator": {
-              "end": 388,
+              "end": 390,
               "kind": "line_range",
-              "start": 387
+              "start": 389
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -409,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
             "content": "sha256:44e697be2cfd017270df7c08a83f7b981a74591383c355ad4626d958582bba79",
             "locator": {
-              "end": 430,
+              "end": 432,
               "kind": "line_range",
-              "start": 429
+              "start": 431
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -498,12 +498,12 @@
         },
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
             "content": "sha256:699bc43cd2a97d49b3d2949e1b1c60384305055b72578c0c58883faaed41199f",
             "locator": {
-              "end": 388,
+              "end": 390,
               "kind": "line_range",
-              "start": 387
+              "start": 389
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -621,12 +621,12 @@
         },
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
             "content": "sha256:44e697be2cfd017270df7c08a83f7b981a74591383c355ad4626d958582bba79",
             "locator": {
-              "end": 430,
+              "end": 432,
               "kind": "line_range",
-              "start": 429
+              "start": 431
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -710,12 +710,12 @@
         },
         {
           "anchor": {
-            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "blob": "185655bf16efaefa78e88862f9d678fb588d498e",
             "content": "sha256:699bc43cd2a97d49b3d2949e1b1c60384305055b72578c0c58883faaed41199f",
             "locator": {
-              "end": 388,
+              "end": 390,
               "kind": "line_range",
-              "start": 387
+              "start": 389
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0601566579ef39fe6cab0b43e547041eb7359a57",
-    "commit": "3e4c8d678835d3d077dfee722c1bfb89f1bf5359",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Verified docs/workflows.md against synced 3e4c8d678 + KNO-R07 candidate: task lifecycle workflows remain accurate; post-landing brief refresh is advisory and knowledge_read query views are additive.",
-    "task": "261112-KNO-L7",
+    "statement": "Verified docs/workflows.md against 17c064d8: consolidation task workflow variant (Consolidator and Reviewer with no Worker/Curator) matches KNO-R05@v3.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+      "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -151,20 +151,20 @@
       "path": "mcp/src/agents_remember/worktrees/sync_source_strategy.py"
     },
     {
-      "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+      "blob": "ebd9c7653054484424f0e2c8051ea300693daf93",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T03:56:55+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
     "task": "261112-KNO"
   }
 }

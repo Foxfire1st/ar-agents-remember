@@ -30,7 +30,7 @@ recipient; the developer when it has no parent).
 
 ## Logic
 
-For each dependency-ready real leaf, the manager starts Worker alone at build, Reviewer at the Worker's freeze and Curator after code review passes,
+For each dependency-ready ordinary leaf, the manager starts Worker alone at build, Reviewer at the Worker's freeze and Curator after code review passes; for a consolidation leaf (`consolidationList` present), the manager starts Consolidator alone and Reviewer at Consolidator's freeze,
 with individual `role_start` calls on the `agents-remember-task` tool server,
 naming the role and the exact canonical leaf references with a request ID it chooses. The call
 resolves or creates the AR paired enclosure and writes the complete handover; it returns the agent
@@ -83,7 +83,7 @@ are curator blockers, not authority to write current onboarding intent.
 ## Invariants And Boundaries
 
 - Manager identity is the canonical master document plus `manager` role.
-- Manager never becomes a native sub-agent, worker, reviewer, curator, orchestrator, or architect.
+- Manager never becomes a native sub-agent, worker, reviewer, curator, consolidator, orchestrator, or architect.
 - The Manager retires only child seats it started.
 - Manager owns reviewer dispatch at two altitudes: leaf review on the leaf document and, when requested,
   master-exit review on the acceptance and delivery-proof leaf named by the master task data; both generations are stamped back to this manager.
@@ -115,7 +115,9 @@ A Worker repairing an owned finding needs no plan, account or go-ahead from Mana
 
 ## Evidence
 
+
 - When the resolved memory layer holds the publication file, the Manager follows it: claiming a leaf assigns its issue and sets In progress before the start, and the issue is closed after the landing and both pushes; without that file nothing is published. [14]
+
 
 
 ## Current Investigator contract impact
@@ -133,14 +135,21 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 ## Current Source Evidence
 
 
+
 - The Manager sets no step for another agent; skeletons within planned gaps stay with Manager while qualifying ones go directly to Architect, and coordination, gate and publication powers stay with their owners. [12]
+
+
 
 
 - One Manager coordinates one canonical master, reads the complete changed-file diff, both verdicts and the Worker’s report of any listed final checks, and retains closeout, integration, acceptance and landing order while preserving the Curator’s memory ownership and the requirement for AR acceptance evidence. [1]
 
 
 
+
+
 - The Manager starts Worker alone at build, Reviewer at Worker freeze and Curator after code PASS using individual role_start calls under its canonical master. It keeps the returned IDs, report and handover paths with each assignment and reconciles an uncertain start with its original request ID. [2]
+
+
 
 
 
@@ -149,32 +158,52 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 
+
+
 - The Manager's report names its rulings, requirement-change and status records, developer-decision and final report-path messages, exact handover evidence and pending questions; its boundary keeps task truth and paired Git publication with their existing owners. [4]
+
+
 
 
 - Manager routes Architect matters, developer-needed matters and permission notices to the recorded reporting recipient or handover parent (routing Architect matters through an assigned Orchestrator except direct qualifying skeleton handovers), sends no status-only messages, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references. [5]
 
 
+
+
 - Each leaf has one primary requirement revision and adjacent revisions remain constraints. The Manager inspects the complete changed-file diff, both verdicts and the Worker's report of any required final checks. It preserves stable requirement and finding identifiers and distinguishes implementation, review, curation and publication. [6]
 
 
+
+
 - The Manager may start an Investigator under its own master, naming its sprint when one commands it, for a check belonging to no leaf, sends the scoped concern first to its returned ID, and exercises its three-way authority split including standing routine paired closeout. [7]
+
+
 
 
 - The Manager settles precedent-covered matters with non-reclaiming case reservations, records approval for a round beyond the settings limit, sends Architect and developer matters upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route. [8]
 
 
 
+
+
 - Manager starts Worker, Reviewer and Curator individually at build, freeze and code PASS; ordinary peer handovers stay direct. It owns whole-stage transaction boundaries, repairs its own recording/address/input faults and requests beyond-settings rounds through its assigned reporting route with the Worker's property-and-construction account. [9]
+
+
 
 
 - Start, finalize and abandon publish task stage and mirror it into the master row; explicit status correction and organizational-master completion use task_doc set_status. The Manager also writes the master parts changed by each start and landing in that turn. [10]
 
 
+
+
 - The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync (with pair reporting and Curator refresh for a changed pair) versus overlap/failing focused tests follows the separately stated review rule. [11]
 
 
+
+
 - Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests rerun and the Manager obtains the Curator's refreshed read for a changed pair before routine closeout, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record; a case reservation covers only what it names. [13]
+
+
 
 
 - On an `IDENTITY MISMATCH:` notice from a child seat, the Manager archives that seat, checks its task folder and the reported binding's folder for writes, and starts a replacement. \[15] [15]

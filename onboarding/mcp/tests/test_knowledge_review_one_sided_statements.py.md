@@ -155,7 +155,7 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
 
 
-- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [24]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [25]
 
 
 

@@ -8,7 +8,7 @@
 
 Typed agentic settings models, constants, and validation primitives. The settings family (``orchestration.*``) is merged from a global and an optional repo-local settings file. This module owns the typed models, the fail-loud key vocabularies, the shared shape/type validators, and the seeded defaults; the parsers live in responsibility-split siblings and the loader in :mod:`agents_remember.kern...
 
-Defines typed role knobs and inherited agentic settings defaults. There are no expectation or notifier models: their old family keys, harness execution fields and role launch/session fields are accepted but not read or checked, and `unused_orchestration_keys` reports their dotted names. `KNOWN_ROLES` holds the eight lifecycle roles; the removed role names in `UNUSED_ROLES` (`designer`, `strategist`) and a `portfolio` loop posture of `strategist` are accepted the same way and reported by their dotted names. `AgenticSettings` carries effective harness IDs, not native adapter objects; settings compatibility never restores a launch implementation. Unknown keys outside the declared active-or-unused vocabularies still fail loud.
+Defines typed role knobs and inherited agentic settings defaults. There are no expectation or notifier models: their old family keys, harness execution fields and role launch/session fields are accepted but not read or checked, and `unused_orchestration_keys` reports their dotted names. `KNOWN_ROLES` holds the nine lifecycle roles (including `consolidator`); the removed role names in `UNUSED_ROLES` (`designer`, `strategist`) and a `portfolio` loop posture of `strategist` are accepted the same way and reported by their dotted names. `AgenticSettings` carries effective harness IDs, not native adapter objects; settings compatibility never restores a launch implementation. Unknown keys outside the declared active-or-unused vocabularies still fail loud.
 
 Defines role defaults and LandingSettings.commit_check_timeout_seconds=900 with the sole commitCheckTimeoutSeconds key.
 
@@ -77,16 +77,24 @@ Existing review maxRounds, roleMessageLimit, landing timeout, optional profile-o
 - No-op validation compares the effective stated feature and tier values without a local fast/priority alias. [5]
 
 
+
 - Effective flat/altitude merge rechecks distinctness. [6]
+
 
 
 - Test source checks no-op alternatives from altitude or equal effective values; host-offered spelling is resolved at launch. [7]
 
 
+
 - Three is the counted-role threshold default, not a new review budget. [8]
 
+
+
 - Worker and Curator read independent persisted lanes. [9]
+
+
 - Only recorded rounds ending with findings in the role’s kind count. [10]
+
 
 ### Repo-Internal References
 
@@ -98,7 +106,9 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - `RoleKnobs` holds one role's frozen knob overrides; `None` means the role-file default. [1]
 
 
+
 - `AgenticSettings` is the merged, typed agentic settings value for one read (global <- local). [2]
+
 
 
 ## Quality Executor Ownership
@@ -115,7 +125,7 @@ Executor identity belongs to the repository certification profile, not to these 
 
 The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force. `DEFAULT_LOOP_PER_LEVEL` seeds only `leaf` (`scored`) and `master` (`seam-required`); `portfolio` remains a known loop level with no default posture.
 
-- The eight known roles and the removed role names kept as inert keys [12]
+- The nine known roles and the removed role names kept as inert keys [12]
 - Per-level loop defaults name only leaf and master [13]
 - Unused-key report names removed role rows and a portfolio strategist posture [14]
 

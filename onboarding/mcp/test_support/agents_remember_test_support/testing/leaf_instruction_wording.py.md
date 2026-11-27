@@ -32,7 +32,9 @@ When `assert_action_pointer` finds a missing or repeated action pointer, its ass
 
 
 
+
 - MESSAGE_HANDOVER_SOURCE pins reference/message-handover.md and MESSAGE_HANDOVER_ACTIONS names each role's pointer action. The busy-retry alternatives require a pending record, independent work, one resend before turn end and a still-pending state after another full-store refusal. The consuming clause_surface path checks this detail through the actual admitted role and operation; the literal oracle does not establish that a live sender followed it. [3]
+
 
 
 - The Manager's refused-write pointer stands at its task retirement and movement action. [5]

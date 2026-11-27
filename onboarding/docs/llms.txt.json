@@ -3,12 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bd96b2d4a697c46c7330dac87140ae57d65118d8",
+        "blob": "599b6a37cc0028e09d228770c19e6384491de241",
+        "content": "sha256:97ee62f4c18d71b013dd8d80710e5eaecd87e8dd5716514d68be9a16a93e7ab5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PYN607",
+      "invariant": "INV-3ZXAD9",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 12",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Names all 9 roles including Consolidator in the roster and links roles.md as the nine roles.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "599b6a37cc0028e09d228770c19e6384491de241",
         "content": "sha256:5c2661f85968c32df81f35597e552b9c14d2c0e56106e97256ac74c8a44949e3",
         "locator": {
-          "end": 55,
+          "end": 56,
           "kind": "line_range",
-          "start": 51
+          "start": 52
         }
       },
       "id": "RLZ-TPGPXF",
@@ -27,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd96b2d4a697c46c7330dac87140ae57d65118d8",
-            "content": "sha256:42bbc253547ace9ce1525151cc118f668a35ef741cd792af0ba322a14db4e36d",
+            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
+            "content": "sha256:fbfd42cadc2d94d2fd9a2992934b2b104da3b30777715889e50ef09e210dff0b",
             "locator": {
               "end": 44,
               "kind": "line_range",
@@ -44,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd96b2d4a697c46c7330dac87140ae57d65118d8",
+            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
             "content": "sha256:b95bae0b7537da15f9daef4ab3b99f1fa4018dda1b0e0325bf2c7fbeb4fc796c",
             "locator": {
-              "end": 56,
+              "end": 57,
               "kind": "line_range",
-              "start": 45
+              "start": 46
             }
           },
           "kind": "code"
@@ -61,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd96b2d4a697c46c7330dac87140ae57d65118d8",
+            "blob": "599b6a37cc0028e09d228770c19e6384491de241",
             "content": "sha256:4d6ac935db20446cddd7f94cf29f39d6c476d35010816c10307af0f9c56b5561",
             "locator": {
-              "end": 89,
+              "end": 90,
               "kind": "line_range",
-              "start": 58
+              "start": 59
             }
           },
           "kind": "code"

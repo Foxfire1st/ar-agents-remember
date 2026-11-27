@@ -22,7 +22,9 @@ A non-raise `still_rejected`, `planned:` or `hunk:` request must answer an exist
 
 A genuinely new row about a record whose origin names this leaf is refused when no worklist subject names it. A subject already held in this leaf's trusted pre-authoring history may instead renew its existing row without that worklist subject. `_prior_own_subjects` reads immutable `MemoryState.files`, not the candidate rows already authored into mutable documents; checking the latter would let a new row authorize itself. `raise` rows retain their existing exemption, while their question/publication authority stays with the other owners.
 
-Only exact owner/attempt paths accepted by `owner_history_attempt` are parsed through `parse_history_document`; the parsed history must be a leaf history with the same owner ID. Malformed or undecodable histories grant no exception and remain subject to normal validation. The prior-subject set is collected once outside the row loop. This is neither foreign-history permission nor permission to rewrite the worklist, waive the whole-history after-anchor check, or use candidate source as a live leaf producer. Missing/unreadable worklists still refuse before this eligibility test.
+Only exact owner/attempt paths accepted by `owner_history_attempt` are parsed through `parse_history_document`; the parsed history must be a leaf history with the same owner ID.
+
+On consolidation tasks, `worklist_checks` checks `consolidation_target` subjects alongside ordinary worklist subjects and enforces that `stands` and `unresolved` rows answer listed consolidation subjects. Malformed or undecodable histories grant no exception and remain subject to normal validation. The prior-subject set is collected once outside the row loop. This is neither foreign-history permission nor permission to rewrite the worklist, waive the whole-history after-anchor check, or use candidate source as a live leaf producer. Missing/unreadable worklists still refuse before this eligibility test.
 
 ### Governing-row check
 
@@ -44,7 +46,9 @@ The public writer gathers these problems after virtual authoring/carry/render ch
 No Domain Documentation entries are configured in `system/sources.md`. These are repository-local implementation and fixture facts; the governing requirement is MIK-R54@v1 rule1.
 
 - Missing or malformed consumed worklist shapes receive a named compute/recompute refusal. [1]
+
 - Item scalar types, actual integer base revisions and consumed collection shapes are checked without claiming full-schema validation. [2]
+
 - Own-origin records need a worklist subject for a genuinely new judgment; trusted pre-operation same-owner history permits existing-row renewal without authorizing candidate-created or foreign rows. [3]
 
 - Renewal eligibility comes from parseable pre-authoring own-leaf history bytes; current-operation rows, foreign history and unreadable documents grant none. [10]

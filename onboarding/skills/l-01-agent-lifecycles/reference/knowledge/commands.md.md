@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Maps the public knowledge, workflow, runtime and settings commands and the knowledge-related MCP tools to their effects, callers, bindings and owning sources, for all eight roles. It grants no write, review, commit, integration or cleanup authority.
+Maps the public knowledge, workflow, runtime and settings commands and the knowledge-related MCP tools to their effects, callers, bindings and owning sources, for all nine roles. It grants no write, review, commit, integration or cleanup authority.
 
 ## Code Commentary
 
@@ -20,12 +20,16 @@ A fuller `read_ar_files` reply can name applicable cards and overviews and inclu
 
 ## Evidence
 
+
 - The reference grants no authority, keeps task contracts and binds examples and CLI work to supplied bindings and the serving build. [1]
+
 - The public CLI tables give each subcommand's effect, caller and example, and name the internal dispatcher branch. [2]
 
 
 
+
 - The knowledge and workflow tool tables keep write effects, previews and role gates. [3]
+
 
 
 - Asynchronous results are polled with their run identifier, and a started run is not clean. [4]

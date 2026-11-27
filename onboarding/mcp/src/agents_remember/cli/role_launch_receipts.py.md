@@ -187,7 +187,9 @@ A receipt moved by Start between inspection and reading is treated as absent.
 
 - The receipt executor restores stored launch artifacts when present, runs the same saved launch call (or delegates deferred held starts), settles confirmed predecessor replacements, and publishes the observed outcome. [1]
 
+
 - `_read_receipt` (in `role_receipt_files.py`, re-exported here) distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
+
 
 
 - The current source implements this file’s stated Investigator boundary. [14]

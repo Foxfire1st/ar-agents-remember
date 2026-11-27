@@ -119,7 +119,9 @@ by that number.
 
 - Extracted CloseoutQueueNode has unbounded members; sourceProblems and candidate reasons retain their 256-item ceilings. [5]
 
+
 - Task documents remain the projected hierarchy; the actual TaskDocNode/dependency definitions live in projection_task_documents, while projection re-exports them. [2]
+
 
 - TaskSummary and its TaskDocNode extension carry optional directGrant display evidence. TaskDocNode.subTasks holds TaskSubTaskRefNode drill-in references, which do not carry that grant. These are read models, not authorization. [6]
 

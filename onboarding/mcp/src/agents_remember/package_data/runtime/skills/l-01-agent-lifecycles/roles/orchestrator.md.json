@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
-        "content": "sha256:867bc51d025a287c4667ffa9dc647579929fd8e466e6551f5d4b120a0b864add",
+        "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+        "content": "sha256:029daa3fe482995e53143dab52252d33e33ca1212f7d2fb2255b49ffcdc57472",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The Orchestrator reuses each existing Manager named in the Architect's handover and starts one Manager for each other master with role_start under its own sprint; those Managers coordinate their Workers, Reviewers and Curators.\n\nAnchor: `role_start`",
+      "note": "The Orchestrator reuses each existing Manager named in the Architect's handover and starts one Manager for each other master with role_start under its own sprint; those Managers coordinate their Workers, Reviewers and Curators.",
       "targets": [
         {
           "anchor": {
-            "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
-            "content": "sha256:0c2cdcc0ef2c6986c11711f1ac7063f1f9cad99f30bc104aadf207b11d43a5e2",
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
+            "content": "sha256:b7187add88a0ca8f2fe88b159f362a65c5cb3a4709cfbda12817a8728f752fc3",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
             "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
             "locator": {
               "end": 4,
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
             "content": "sha256:3ae51175d347a654971ec1b686d4028f1f6f8b9aa560f2a94bb808ef77782099",
             "locator": {
               "end": 16,
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
+            "blob": "438bbacb911428b067a0013d5b720d84402ea67b",
             "content": "sha256:7a6bf2b92e236d3c159666e3a4ea7f3e2a53ffdbc49db7ba6eda17e17155768b",
             "locator": {
               "end": 20,

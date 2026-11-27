@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_consolidation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "48fbde218943b5b560339b5f336b1b309554353f",
+        "content": "sha256:cf2285402ede5eb151f08b72ff0560282eb852d73fd27587af7e1c63cff5bb1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_consolidation_node"
+        }
+      },
+      "id": "RLZ-YHTS7Y",
+      "invariant": "INV-HPD40B",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 11 & D1052",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Projects TaskSummary.consolidation counts, memoryRead flag, and subject rows for consolidation tasks.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`consolidation_fields` folds the full serialized `TaskConsolidationNode` into a SHA-256 `body_revision` and drops `rows` only on `preview=True`, leaving non-consolidation documents untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48fbde218943b5b560339b5f336b1b309554353f",
+            "content": "sha256:997430f546a724c8642874cf7da88ec6f5e993a8a011f5202ad9a44a8be20598",
+            "locator": {
+              "kind": "symbol",
+              "name": "consolidation_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`task_consolidation_node` reads the task's memory worktree and history, builds per-subject rows and outcome counts, and records whether memory was readable in `memoryRead`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48fbde218943b5b560339b5f336b1b309554353f",
+            "content": "sha256:cf2285402ede5eb151f08b72ff0560282eb852d73fd27587af7e1c63cff5bb1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_consolidation_node"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_subjects` emits each subject once in deterministic order: listed families, listed rules, then members discovered from each listed family's record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48fbde218943b5b560339b5f336b1b309554353f",
+            "content": "sha256:b0b9cc4fdc957c37fc435155d94c0af43a9315ece45275f6a8290692cd0476d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_outcome` classifies history rows as `\"open\"` (missing), `\"stands\"` (`stands`/`no_impact`), `\"unresolved\"` (`unresolved`), or `\"corrected\"` (any other disposition).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48fbde218943b5b560339b5f336b1b309554353f",
+            "content": "sha256:c02f7e2e16e0721dd2e33719a45481825f911682d2edbe29d46dc2a40b09df83",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

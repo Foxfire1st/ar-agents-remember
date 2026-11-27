@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
-            "content": "sha256:aeeea8e7ac9185318a01a46f2124d8414179f4cdd45f159439ea2ff6831fba2d",
+            "blob": "0f0c5232b46027b9e7c05032b744a0e351c4c665",
+            "content": "sha256:0c7953e9d4cc0a6bb63ac4fee721f0375a8d7532eff7bfa98945d5da0e537958",
             "locator": {
               "kind": "symbol",
               "name": "test_moved_piece_pointers_reach_each_required_compile_and_reject_removal"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "blob": "0f0c5232b46027b9e7c05032b744a0e351c4c665",
             "content": "sha256:79d0ef5b83c7b4dbf030deac07355fc0f72dc36a06fc0f65551a01e4a95a2776",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "blob": "0f0c5232b46027b9e7c05032b744a0e351c4c665",
             "content": "sha256:9310b2af5bc411f93baabd13c450cc321047f6242aa60dfe9b7b0433deee64d0",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "blob": "0f0c5232b46027b9e7c05032b744a0e351c4c665",
             "content": "sha256:3ec17aa0ab62656d7a0252035737ed45dbef4485fb1c5eb952433e7548a8777d",
             "locator": {
               "kind": "symbol",

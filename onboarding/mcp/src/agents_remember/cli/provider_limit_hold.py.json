@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
-        "content": "sha256:213763126ed88f1398c8382d0c771a2f832d107c4a884bd37b859c57e40166a2",
+        "blob": "08a8a992459f0017790ac2486a1e2fc50c223007",
+        "content": "sha256:9906384bb87426eca44648d614c4543066345ac09ee62bec6e6ec032339cf87a",
         "locator": {
           "kind": "symbol",
           "name": "read_usage_for_agents"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
-        "content": "sha256:213763126ed88f1398c8382d0c771a2f832d107c4a884bd37b859c57e40166a2",
+        "blob": "08a8a992459f0017790ac2486a1e2fc50c223007",
+        "content": "sha256:9906384bb87426eca44648d614c4543066345ac09ee62bec6e6ec032339cf87a",
         "locator": {
           "kind": "symbol",
           "name": "read_usage_for_agents"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
+        "blob": "08a8a992459f0017790ac2486a1e2fc50c223007",
         "content": "sha256:bdff6601411217989a7096556330ef82891d1b8e302d936413986b4b94eea142",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "823edb6381fa382cb42a65c8380e6c9fbc182ca6",
-        "content": "sha256:1b46af6c6659dc2814be24c6cb5d199145700174d769f9ff65b6003e1fa53093",
+        "blob": "d314e163e975c2572394c668bb05748bd695a0cc",
+        "content": "sha256:64cfd57e58457ba48786ab6b9c2f825f3ecf3da8fb79d77e8f1386c673277c78",
         "locator": {
           "kind": "file"
         }
@@ -74,7 +74,7 @@
     }
   ],
   "references": {
-    "1": {
+    "2": {
       "note": "Registers `provider-limits status|suppress|unsuppress` arguments and delegates all mutations to `serving.paseo.provider_limits`, printing JSON with exit codes 0/1/2.",
       "targets": [
         {

@@ -1,0 +1,323 @@
+{
+  "closed": true,
+  "leaf": "261112-KNO-L8",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T11:26:55+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-KNO-L8",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "c0516232-04e2-53e4-86ba-78998c8e367b",
+      "task": "261112-KNO"
+    },
+    "reviewer": {
+      "at": "2026-11-27T11:26:55+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-KNO-L8",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "df365d96-30a3-5724-8845-526036d5f2d8",
+      "task": "261112-KNO",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "4eb1d420863aefb3276075755c8000cfc0dc8601",
+    "verdictRef": "notes/reports/reviewer/df365d96-30a3-5724-8845-526036d5f2d8/memory-round-2/verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-4RKRF2",
+      "items": [
+        "sha256:38020784d8950b04e3b8955774602f184ebd61989b16701a9c5fb80b79db2aa8",
+        "sha256:4e701bad846f85de306fec74d94bea5f4fb28f4eccac16ff805cfc64587f71e3"
+      ],
+      "reason": "Updated card purpose, test coverage list, and citations [1]-[2] for the three new crossing-sync deferral tests against candidate tree f1c21b6e.",
+      "sources": [
+        {
+          "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+          "path": "mcp/tests/test_dependent_deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_dependent_deferrals.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8312KB",
+      "items": [
+        "sha256:f78bf2a664b51ed6fd84ab5332bf5977822db9818c73aa8bfbc423e1e18f0939"
+      ],
+      "reason": "Mechanical extraction of Pydantic ValidationError formatting in _build_deferral to shared helper _format_validation_error; preserves identical error wording and adds no new obligation.",
+      "subject": "hunk:sha256:f78bf2a664b51ed6fd84ab5332bf5977822db9818c73aa8bfbc423e1e18f0939"
+    },
+    {
+      "because": [
+        {
+          "id": "KNO-R08",
+          "packet": "requirements/KNO-R08-v1-crossing-write-resolves-deferred-dependents.md",
+          "task": {
+            "path": "261112_knowledge-tools-and-retrieval",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+            "content": "sha256:72dc470bbe6977bdd205f56ca7e50eed756913decc15b6f4d07b5257b8e236ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_adopts_validated_explicit_deferrals_and_clears_on_empty"
+            },
+            "path": "mcp/tests/test_dependent_deferrals.py"
+          },
+          "before": "absent",
+          "id": "PRF-PF1SS8"
+        },
+        {
+          "after": {
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+            "content": "sha256:c92d6c68472619a12e4a54584ea5e58972fda8719b6d08e45010cf1c2d3de2cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_resolves_deferred_dependent_preserving_before_deferrals"
+            },
+            "path": "mcp/tests/test_dependent_deferrals.py"
+          },
+          "before": "absent",
+          "id": "PRF-QJ6JMS"
+        },
+        {
+          "after": {
+            "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+            "content": "sha256:1289255c3460ef0248583c0973f5ed9371a798c70266c8b392f08b8669d1b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_refuses_invalid_deferrals_and_preserves_leaf_refusals"
+            },
+            "path": "mcp/tests/test_dependent_deferrals.py"
+          },
+          "before": "absent",
+          "id": "PRF-W7W2CJ"
+        },
+        {
+          "after": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:18022f0b7e316750e73d52245c13154904e031511bbab687172c7a7895661c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_dependent"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "before": {
+            "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+            "content": "sha256:18022f0b7e316750e73d52245c13154904e031511bbab687172c7a7895661c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_dependent"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "id": "RLZ-4DJ8NY"
+        },
+        {
+          "after": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:285e9509b53351ba66a6c41b87ca8588a73f2a136bb2f1e5824dd2e6024cc866",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_crossing_deferral"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "before": "absent",
+          "id": "RLZ-5QY6DK"
+        },
+        {
+          "after": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:d89b2f3be88286675edf20e6a601c79c2c2cf1c20730ef66566cbc186e577b1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_adopt_crossing_deferrals"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DP68FJ"
+        },
+        {
+          "after": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:ce9313d8de4613b26b664c8a7b298103ec81e4fc0f44ed6985cb023b94e146ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_unedited_deferred"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "before": "absent",
+          "id": "RLZ-F39YAF"
+        },
+        {
+          "after": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:4ce9ff81f7efb44f2b62987953a62af142673c24d0b9c875c4f617b5733827fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_batch"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HJC5XD"
+        },
+        {
+          "after": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:48b792b5d1886e0dfd7b4b47bdf751af1ff6baf5f3686251e4678c3a092d4e90",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_confirmation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZS1PGZ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-BY1PT5",
+      "items": [
+        "sha256:1da8a6d5ca84a89171c33efa326c42fe29d0fcd3d97a8185950c8c0eeef36779"
+      ],
+      "reason": "Completed the owner.kind == 'crossing' carveout under KNO-R08@v1 (D1067): scoped the unedited-confirmation refusal condition to non-crossing owners (leaf, wave), documented that crossing writes (gated on owner.kind == 'crossing') skip leaf-only unedited-confirmation refusals, preserve omitted before['deferrals'], clear on []/None, and validate/adopt explicit DependentDeferral lists with unique IDs (accepting task-only deferrals and checking condition.file against settled blobs when present while accepting earlier fileBlob values), updated admission to ten targeted writer tests, attached the five realization anchors, updated RLZ-4DJ8NY rationale, and added the three crossing proof tests. Evidence (KNO-R08@v1 §1-2): mcp/tests/test_dependent_deferrals.py::test_crossing_write_resolves_deferred_dependent_preserving_before_deferrals; mcp/tests/test_dependent_deferrals.py::test_crossing_write_adopts_validated_explicit_deferrals_and_clears_on_empty; mcp/tests/test_dependent_deferrals.py::test_crossing_write_refuses_invalid_deferrals_and_preserves_leaf_refusals Evidence (KNO-R08@v1 §3): mcp/tests/test_dependent_deferrals.py::test_crossing_write_refuses_invalid_deferrals_and_preserves_leaf_refusals; mcp/tests/test_dependent_deferrals.py::test_04_confirming_deferred_document_without_edit_is_refused_naming_deferral; mcp/tests/test_dependent_deferrals.py::test_new_dependent_with_confirmation_and_deferral_without_edit_is_refused",
+      "revision": 2,
+      "subject": "INV-8CNH3X"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CMYW8V",
+      "items": [
+        "sha256:1f6cf9c45fbb567b15c6cfe86fd1a79acbc02cf44f9730412b09bf767fd61200"
+      ],
+      "reason": "Reviewed mcp/tests/overview.md against test_dependent_deferrals.py changes: the unit-regression module is documented on its own file card and the route overview remains accurate unchanged.",
+      "sources": [
+        {
+          "blob": "c6a06c89b7ca8980dd35485247c11b9c40d02edb",
+          "path": "mcp/tests/test_dependent_deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CYME31",
+      "items": [
+        "sha256:983524ae479ac2a94007ae3da20343f6a98115a5f58cd906c530c16731184b51"
+      ],
+      "reason": "Routes _author_deferral_only batch setup through shared _start_batch helper with early return on None; crossing deferral adoption and validation are realized on _start_batch, _adopt_crossing_deferrals, and _validate_crossing_deferral under INV-8CNH3X, and non-crossing deferral-only behavior is unchanged.",
+      "subject": "hunk:sha256:983524ae479ac2a94007ae3da20343f6a98115a5f58cd906c530c16731184b51"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P77ASE",
+      "items": [
+        "sha256:493ce309835e7606a2bd99aa206efb7b9d7ae576faf64379b89da4b3c1815df6"
+      ],
+      "reason": "Reviewed application/overview.md against deferrals.py changes: its crossing-writer snapshot paragraph (L41) and high-level dependent-deferrals module summary (L56) remain accurate unchanged.",
+      "sources": [
+        {
+          "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RAS5FF",
+      "items": [
+        "sha256:ae7aa5eafbe78a24d87c478f387e2eec9b5e0236bd6c30f68e6f861f69fd1385"
+      ],
+      "reason": "Updated card purpose, confirmation logic, crossing-sync deferral preservation/adoption behavior (including task-only acceptance and conditional condition.file checking), relationships, and citations [1]-[3] to match candidate tree f1c21b6e.",
+      "sources": [
+        {
+          "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/deferrals.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-82NDFH",
+          "revision": 1
+        },
+        {
+          "id": "INV-8CNH3X",
+          "revision": 2
+        },
+        {
+          "id": "INV-MH7M10",
+          "revision": 1
+        },
+        {
+          "id": "INV-N6WPHK",
+          "revision": 1
+        },
+        {
+          "id": "INV-NW74GN",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q2KM31",
+          "revision": 1
+        },
+        {
+          "id": "INV-XT13GK",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SQQ92S",
+      "items": [
+        "sha256:e3ec075d01fca4d700daa4a17c80ef8a3f700b9f519897df55137281d4722e3e"
+      ],
+      "reason": "Examined all seven members after amending INV-8CNH3X to revision 2 under KNO-R08@v1: the family guarantee ('never silently confirm it, survive crossing syncs by ID') holds unchanged because crossing writes resolve two-sided conflicts at settled code_base == snapshot.commit while preserving or validating/adopting explicit deferrals by ID and preserving all non-crossing leaf unedited-confirmation refusals.",
+      "revision": 2,
+      "subject": "FAM-FQ8TF2"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:296676c77607c593dd0456752dac5be02607fe5a032752355074de42781a5b6f",
+      "record": "INV-8CNH3X",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T11:16:36+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L8",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c0516232-04e2-53e4-86ba-78998c8e367b",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

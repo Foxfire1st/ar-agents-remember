@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
-    "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
-    "role": "curator",
-    "statement": "Audited docs/reference/runtime-layout.md lines 165-166 against post-CAP-L5 crossing-6 synced L60 candidate (BUG-R60@v1, base 5cb9f97940b5): provider-limits.json v1 projection, sibling provider-limit-suppressions.json sidecar under provider-limits.lock, and CAP-L5 cleared host/scratch layout prose all match live code with zero contradictions.",
-    "task": "261112-BUG-L60",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: docs/reference/runtime-layout.md reflects both BUG-R60@v1 and KNO-R05@v3.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
   "document": "docs/reference/runtime-layout.md",
   "id": "DPD-327MNX",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+      "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+      "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_identity.py"
     },
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:18:52+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

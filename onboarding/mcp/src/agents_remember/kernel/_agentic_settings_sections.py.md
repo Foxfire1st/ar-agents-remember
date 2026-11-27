@@ -71,13 +71,17 @@ Loop budgets, quality memoryCapBytes-only parser, landing timeout and accepted-u
 ## Evidence
 
 
+
 - Existing role parsing attaches one typed alternative. [4]
+
 
 
 - Ordinary shape parsing is shared without adding a new execution adapter. [5]
 
 
+
 - Counted-role-only threshold defaults to three and refuses nested/unknown fields. [6]
+
 
 - Test source names exact author file/key for invalid alternatives. [7]
 
@@ -109,7 +113,9 @@ The parser accepts no executor key, including a Dagger-valued key. The optional 
 The one earlier role key and canonical Investigator key are compared within each settings file before layering. Equal effective values normalize once; conflicting values refuse with the shared role-alias notice rather than choosing a winner. Stored settings files are not rewritten and no additional aliases are admitted.
 
 
+
 - The earlier `system-specialist` key and the canonical Investigator key are compared within one settings file: equal content normalizes once and different content refuses. [3]
+
 
 
 ## Refreshed current evidence
@@ -118,6 +124,9 @@ The one earlier role key and canonical Investigator key are compared within each
 - `_parse_roles` resolves the role keys, skips removed role rows and builds one `RoleKnobs` per role. [2]
 
 
+
 - `_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. [9]
+
+
 
 - `_resolve_role_keys` also admits the removed role names in `UNUSED_ROLES`, so an old `designer` or `strategist` row passes the unknown-key refusal as an inert key [12]

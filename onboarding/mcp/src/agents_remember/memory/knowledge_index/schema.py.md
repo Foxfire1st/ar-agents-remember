@@ -10,7 +10,9 @@
 
 ## Code Commentary
 
-`INDEX_DDL` creates `ix_meta` (name/value: format, key, source, location, state, converted, builtAt), `ix_problem`, `ix_record`, `ix_entry`, `ix_member` and `ix_route`, `ix_link`, `ix_history_row`, `ix_revision`, and the FTS5 virtual table `ix_fts` (`record_id UNINDEXED, kind UNINDEXED, title, statement, conditions, applicability, tokenize='porter unicode61'`). The revision table uses the record and revision as its key and carries standing and writer attribution. History rows are keyed `(path, id)` (MIK-R74 rule 4): two closed files may hold the same row ID, and both are indexed. Secondary indexes cover the reverse lookups. Every regular `ix_*` table is `STRICT` while `ix_fts` is an FTS5 virtual table; each record, entry and row keeps its canonical JSON `document` so a lookup returns what the file recorded.
+`INDEX_DDL` creates `ix_meta` (name/value: format, key, source, location, state, converted, builtAt), `ix_problem`, `ix_record`, `ix_entry`, `ix_member` and `ix_route`
+
+Under `ar-knowledge-index/v8`, `ix_revision` also stores a `consolidation` column recording what a consolidation pass did with the revision it read, alongside `ix_fts` for FTS5 keyword search., `ix_link`, `ix_history_row`, `ix_revision`, and the FTS5 virtual table `ix_fts` (`record_id UNINDEXED, kind UNINDEXED, title, statement, conditions, applicability, tokenize='porter unicode61'`). The revision table uses the record and revision as its key and carries standing and writer attribution. History rows are keyed `(path, id)` (MIK-R74 rule 4): two closed files may hold the same row ID, and both are indexed. Secondary indexes cover the reverse lookups. Every regular `ix_*` table is `STRICT` while `ix_fts` is an FTS5 virtual table; each record, entry and row keeps its canonical JSON `document` so a lookup returns what the file recorded.
 
 ### Invariants And Boundaries
 
@@ -22,8 +24,13 @@
 
 - History rows are keyed by file and ID [7]
 
+
 - The index format name a cached file must carry is v8. [5]
 
+
+
 - The derived revision table keys each row by record and revision. [8]
+
+
 
 - The `ix_*` tables, reverse lookups, and `ix_fts` virtual table are defined in the derived index layout. [6]

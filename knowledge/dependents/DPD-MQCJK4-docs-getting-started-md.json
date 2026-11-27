@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Verified docs/getting-started.md against KNO-R07 candidate: getting-started setup and workflow guidance remain accurate; KNO-R07 additions are additive.",
-    "task": "261112-KNO-L7",
+    "statement": "Verified docs/getting-started.md against 17c064d8: install, setup, and initial workflow guidance remain accurate after KNO-R05@v3.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "deferrals": [
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+      "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -147,9 +147,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:09:08+01:00",
+    "at": "2026-11-27T11:49:22+01:00",
     "by": "product",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "none",
     "harness": "product",
     "model": "none",

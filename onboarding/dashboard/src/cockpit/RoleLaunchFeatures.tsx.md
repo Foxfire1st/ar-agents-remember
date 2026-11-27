@@ -24,9 +24,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
 
+
+
 - The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule. [5]
+
 - RoleLaunchFeatures retains settings-owned permissions and non-applied Base previews; feature labels match host IDs or labels without a built-in speed alias. [6]
 
 - The instruction chip appears when notes are present and identifies their source and baseline treatment. [7]

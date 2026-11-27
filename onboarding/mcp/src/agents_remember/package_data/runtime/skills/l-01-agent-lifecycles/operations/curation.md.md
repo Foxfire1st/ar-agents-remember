@@ -132,7 +132,9 @@ No meaningful cross-repository implementation dependency.
 ## Current Contract Evidence
 
 
+
 - Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records. [3]
+
 
 
 

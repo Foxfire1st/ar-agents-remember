@@ -19,7 +19,9 @@ role_launch_preparation._role_defaults retains its patchable seam and reads the 
 ## Evidence
 
 
+
 - Repository/altitude defaults and alternative projection are one per-use read. [1]
+
 
 - Preparation keeps the host-read wrapper. [2]
 

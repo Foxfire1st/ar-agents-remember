@@ -6,7 +6,7 @@
     ],
     "justification": "Realized in role_tool_scope.py, which holds the table and its lookups, and in public_roster.py, whose order every entry keeps; a test checks the order, the union and the unknown-role refusal."
   },
-  "applicability": "The eight canonical AR roles and the role-tool lookups of models/tools/role_tool_scope.py.",
+  "applicability": "The nine canonical AR roles (including consolidator) and the role-tool lookups of models/tools/role_tool_scope.py.",
   "conditions": [
     "The role is named canonically or by the supported system-specialist alias."
   ],
@@ -26,27 +26,19 @@
     "leaf": "261124-CAP-L1",
     "task": "261124-CAP"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each AR role has one canonical MCP tool allowlist in models/tools/role_tool_scope.py, every entry a non-empty ordered subsequence of PUBLIC_TOOLS, and the union of the eight entries is exactly the 44-tool public roster.",
+  "statement": "Each AR role has one canonical MCP tool allowlist in models/tools/role_tool_scope.py, every entry a non-empty ordered subsequence of PUBLIC_TOOLS, and the union of the nine entries (including consolidator) is exactly the 44-tool public roster.",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261124-CAP-L1",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261124-CAP",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

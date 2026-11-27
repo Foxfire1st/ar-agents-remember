@@ -304,7 +304,7 @@
       ]
     },
     "7": {
-      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.\n\nAnchor: `memory_quality_check`",
+      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.",
       "targets": [
         {
           "anchor": {
@@ -321,8 +321,8 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",

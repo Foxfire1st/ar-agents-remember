@@ -22,6 +22,6 @@ Reference inventory of the directories and files Agents Remember creates or mana
 
 - Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, `.cache/skill-corpus/`, and paseo-native-executions paths. [1]
 
-- Host-home files under `<home>/agents-remember/` include `role-agents.json`, `host-activity.json`, `provider-limits.json`, and its sibling sidecar `provider-limit-suppressions.json`. [4]
+- Host-home files under `<home>/agents-remember/` include `role-agents.json`, `host-activity.json`, `provider-limits.json`, and its sibling sidecar `provider-limit-suppressions.json`. [5]
 
 - Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths. [3]

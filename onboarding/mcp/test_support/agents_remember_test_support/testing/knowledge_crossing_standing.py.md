@@ -10,6 +10,8 @@ Builds record fixtures and assertions for review credit across crossing sync and
 
 ## Evidence
 
+
 - The fixture matrix records the intended branch-selection cases. [1]
+
 - The assertions inspect standing on the original fixture lines before crossing. [2]
 - The fixture helper applies conversion to saved test lines. [3]

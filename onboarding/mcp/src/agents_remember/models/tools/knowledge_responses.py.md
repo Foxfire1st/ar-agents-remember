@@ -17,6 +17,8 @@ The write response includes bounded notes, such as an updated legacy rule still 
 
 KnowledgeReadResponse retains view/page/snapshot/completeness and opaque continuation, but its delivered rows are text ID, kind, computed state and memory-file/heading or line locations. `memoryCommit` and `memoryDirty` bind location provenance; worktree reads join relative files to the absolute memoryTree.memoryRoot, while no-worktree reads use absolute files with commit. The application still computes rich family-complete selection, proofs and currentness internally; projected names and compact derived status cross the mounted boundary for the ordinary naming projections, not record bodies or proof facets; the requirement-authorized marks rows carry the weakness's own statement and optional measurement, and no record body. `report` is an admitted optional field, not evidence that a retired queue/worklist view is callable. Since MIK-R118 and MIK-R124 the `weakness` and `dependent` views answer through three more optional fields: `rows` (that kind's rows), `counts` (their counts) and `readOn` (how to read the rest when rows remain). They carry rows of the named kind, not a second payload contract.
 
+`KnowledgeReadResponse` also admits the `consolidation_proposal` view payload (candidate families/rules scoped to an optional `masterId`) and the expanded `writers` rows carrying the five `consolidation*` outcome counts.
+
 KnowledgeWriteResponse declares `reportPath` and `reportError` as a pair: where the whole write report was written, and why it was not when it could not be (MIK-R108 rule 3). A run whose report could not be written keeps its own outcome and says that nothing about the report is claimed.
 
 KnowledgeDiffResponse holds before/after revisions and both compared trees, counts by kind, at most the list-bound `decisionRecords` and their total `decisionRecordCount`, plus a caller-readable whole-comparison report. Its strict declared fields contain no `threshold`, `complete`, `diff` or `leftOut`: neither patches nor a patch-overflow/omission body form is this response. The report retains the rich comparison for file/dashboard readers; no semantic effect label is inferred. This schema account does not itself claim an executed bound measurement.
@@ -198,45 +200,83 @@ No meaningful cross-repo references found.
 - The integrity handler reports text-tree validation. [9]
 
 
+
 - The read builder returns the reader-owned payload and read extras. [28]
+
+
 
 
 
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [1]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [10]
+
+
 
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [11]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [13]
+
+
 
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [14]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [17]
+
+
 
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [2]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [3]
+
+
 
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [34]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [4]
+
+
 
 - The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. [44]
 
+
+
 - The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. [45]
+
+
 
 - The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. [46]
 
+
+
 - The read model declares view, snapshot, memory tree and index completeness fields. The mounted projection names record locations. [47]
+
+
 
 - The read model declares completeness and continuation beside its memory-tree and index fields. [48]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [5]
+
+
 
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
 
+
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [6]
+
 
 
 - The write response declares notes and a separate truncation flag alongside the full report location. [55]

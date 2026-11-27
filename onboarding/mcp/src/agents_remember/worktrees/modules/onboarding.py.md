@@ -126,4 +126,5 @@ No additional cross-repository evidence applies.
 
 - The gate reads a run's groups through one strict reader: a malformed or representative-omitting group raises rather than shortening into a single source. (`identical_changes_from_run`; `IdenticalChangesUnreadable`) [14]
 
+
 - The curator trace entry takes the candidate blobs and the run's identical-copy groups through one OnboardingTraceInputs value. [13]

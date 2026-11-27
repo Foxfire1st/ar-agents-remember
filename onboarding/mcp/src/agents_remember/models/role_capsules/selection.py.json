@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
             "content": "sha256:d4716549eced6f3552e322ec280697b9e0fc213bf5fe35da7169e1831369ba1a",
             "locator": {
-              "end": 174,
+              "end": 179,
               "kind": "line_range",
-              "start": 162
+              "start": 167
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -21,12 +21,12 @@
         },
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
             "content": "sha256:5920db69099c13c03c83f13e5f9ca7d41d5b7ca91a74858271b832790eab8c94",
             "locator": {
-              "end": 176,
+              "end": 181,
               "kind": "line_range",
-              "start": 164
+              "start": 169
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:8ed65327877d3be0f1b3f9a59eaa2f203a4cb6af2d00b2a036c5f74e9bb174a3",
             "locator": {
               "kind": "symbol",
@@ -240,7 +240,7 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:3a92fe8fd182fad2f9b0ab3412b11d646fd36cca8906ee1848a7bbfb964bcf0a",
             "locator": {
               "kind": "symbol",
@@ -252,7 +252,7 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:0a49cc6a6539ce4cf3e28eb6cad84efc18b9e19754048c2b6c1eb29b8d3e58cd",
             "locator": {
               "kind": "symbol",
@@ -264,7 +264,7 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:7bd4b5a3154aa74960b8eccb44e9e6706933811c2d5fe00c166302864abf9099",
             "locator": {
               "kind": "symbol",

@@ -83,7 +83,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [11]
+
 - Record-only memory identity comes from memory authority, never the sibling code root. [12]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
@@ -128,7 +130,9 @@ semantics. Part of the landed L25 candidate `99dc249b`.
 - Branch review is canonical-leaf opt-in under the live grant, not a runtime setting.
 
 
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [10]
+
 
 - The task_doc facade dispatches ordinary and routed review recording through its candidate-preparation function. [8]
 

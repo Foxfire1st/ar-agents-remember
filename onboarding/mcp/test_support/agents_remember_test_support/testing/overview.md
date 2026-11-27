@@ -154,7 +154,9 @@ The generated route index lists the source files of this route and their cards.
 - Fixture Git uses a private HOME and captures command failure output. [40]
 - Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [41]
 
+
 - The current role pointer fixtures bind compact role reference-index rows to `reference/knowledge/use.md` (with section fragments pinned in `ROLE_POINTER_QUALIFICATIONS` for architect and investigator). [42]
+
 
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]

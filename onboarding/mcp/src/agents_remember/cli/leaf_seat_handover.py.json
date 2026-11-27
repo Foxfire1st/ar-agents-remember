@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/cli/leaf_seat_handover.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`leaf_seats` derives the leaf's role roster from `task.document` via `leaf_seat_roles` and builds `roleMessageArguments` for every sibling except the current `role` without naming agent IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b76c6718f470564cd0a01c3767c9715b1fbb5b3d",
+            "content": "sha256:79447fbb2b12f7e157b38c4c05d9951f8f4199ee06042e1e6d068477fde26bda",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_seats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`sprint_document_ref` is included in sibling `role_message` arguments only when `seat_selection[\"sprintDocumentRef\"]` is present, supporting standalone-master leaves without a sprint.\n\nAnchor: \"sprintDocumentRef\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b76c6718f470564cd0a01c3767c9715b1fbb5b3d",
+            "content": "sha256:e8720b953d4a2cc26fbc5d89e435a681262846ae6601cf65ebf4a4aa7d2e3721",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
         "content": "sha256:f52368bbcd14b98d6522392acb8ed4f66476fcc3856cd6973116fe695ec63461",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
+        "content": "sha256:a30b3b6e623d74c77a0e3f00e3e8e4d4d1219b44623784b9957fe1ee6f91d228",
+        "locator": {
+          "kind": "symbol",
+          "name": "_keeps_revision"
+        }
+      },
+      "id": "RLZ-DH31WH",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Treats stands, no_impact, moved, extended, and non-retiring card-entry deleted rule rows (effect != 'retire') on listed subjects as keeping the revision for consolidated standing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
         "content": "sha256:e3d86dad2e311d601c3c66745f2a52ad57c6e7ab38a4ed220a9ae5e99e4e7d63",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
         "content": "sha256:32a8792d05cdb217237b380afabee768606ae49c7dab85ff5f76dcc4288a07b1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
         "content": "sha256:08bbe93ed175bf941dbb3f726302133fe510e3eb6d57c0e9ae242e9efc2e2084",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
+        "content": "sha256:2789e906e131105881dbe2045f47f263d84f25c88c5ebc644397b3e7dbae6a54",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates"
+        }
+      },
+      "id": "RLZ-TA8FCF",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Derives consolidated standing from closed Consolidator history files scoped by consolidationSubjects and passed ReviewFact.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
         "content": "sha256:f52368bbcd14b98d6522392acb8ed4f66476fcc3856cd6973116fe695ec63461",
         "locator": {
           "kind": "symbol",
@@ -93,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
-        "content": "sha256:db519a9abc9842187a02b9eaa12476ab6053e88a94e57d9e7242c5877a3980c3",
+        "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
+        "content": "sha256:2789e906e131105881dbe2045f47f263d84f25c88c5ebc644397b3e7dbae6a54",
         "locator": {
           "kind": "symbol",
           "name": "RevisionStates"
@@ -116,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
-            "content": "sha256:db519a9abc9842187a02b9eaa12476ab6053e88a94e57d9e7242c5877a3980c3",
+            "blob": "fb49b4615b68340bbf04ef366c15fe4e4931468e",
+            "content": "sha256:2789e906e131105881dbe2045f47f263d84f25c88c5ebc644397b3e7dbae6a54",
             "locator": {
               "kind": "symbol",
               "name": "RevisionStates"

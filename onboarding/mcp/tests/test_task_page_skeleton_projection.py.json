@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_task_page_skeleton_projection.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b058eab5338057619fe34bf19ddd9b143e8afd49",
+        "content": "sha256:3026b146e0337505b7a1200fea03f6116e2e8f56e1f374fb1677521dd9f705a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationProjectionTests.test_without_the_memory_the_ids_stand_as_listed_and_no_outcome_is_read"
+        }
+      },
+      "facet": "Verifies memoryRead=false projects listed rows with no fabricated outcomes per D1052.",
+      "id": "PRF-AFDJWP",
+      "invariant": "INV-HPD40B",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 11 & D1052",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b058eab5338057619fe34bf19ddd9b143e8afd49",
+        "content": "sha256:71f23a2c34cc44b59bbf4b439a8961c5bd7f95a797cd09f0118a6c1e13dd4bc0",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationProjectionTests.test_counts_each_outcome_of_the_expanded_list_and_serves_rows_in_the_body"
+        }
+      },
+      "facet": "Verifies TaskSummary.consolidation outcome counts and subject rows when memory is readable.",
+      "id": "PRF-CE3KJ8",
+      "invariant": "INV-HPD40B",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 11 & D1052",
+        "leaf": "261112-KNO-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b8bf8af1e4bd2dac17d1c5b0a5904c2c2a67490",
-            "content": "sha256:ba283c7cb6ccad628382ca99eca8a015d728c34a9b4631302fa864691bfec5ef",
+            "blob": "b058eab5338057619fe34bf19ddd9b143e8afd49",
+            "content": "sha256:2c0ce6a13e998e6963c9e4caa2590a20170baaec44772084c861e7fb8e174ad8",
             "locator": {
               "end": 364,
               "kind": "line_range",

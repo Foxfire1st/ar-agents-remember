@@ -58,8 +58,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
-        "content": "sha256:6f4047c8011117df21dd256670e0e3b7b9becb92c9a9a8d83c4167c073082726",
+        "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+        "content": "sha256:3038d19d34b1cd7b90f915e38f6e5b9c3fc11b4c1303fec555636444ba2e8cdc",
         "locator": {
           "end": 20,
           "kind": "line_range",
@@ -77,19 +77,19 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T20:34:48+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

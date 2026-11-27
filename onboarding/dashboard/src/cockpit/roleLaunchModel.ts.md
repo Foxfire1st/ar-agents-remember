@@ -10,7 +10,7 @@ The pure model carries canonical role, document and request identity and the exp
 
 ## Code Commentary
 
-Entry option helpers follow server-ordered children and exact references for the seven roles' canonical reference needs; they do not rebuild topology from documents and series. `masterOptionsFor` answers a chosen sprint's masters, or the masters the served tree places outside every sprint when no sprint is chosen; `sprintRequiredForLaunch` requires a sprint only for the Orchestrator, while every master-naming role may start without one. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Choice matching accepts host IDs or labels without case; there is no built-in fast-to-priority alias. Another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes` and their advertised `defaultModeId`. Defaults carry `mode`, `featureValues` and per-choice sources. `RoleAgentOverride` can carry an explicit `modeId`. `roleAgentOverrideFor` retains that value independently of model, effort and feature values. Selection equality compares the mode and sorted feature entries.
+Entry option helpers follow server-ordered children and exact references for the eight launcher roles' canonical reference needs (`architect`, `investigator`, `orchestrator`, `manager`, `worker`, `consolidator`, `reviewer`, `curator`, with `consolidator` included in `LEAF_ROLES`); they do not rebuild topology from documents and series. `masterOptionsFor` answers a chosen sprint's masters, or the masters the served tree places outside every sprint when no sprint is chosen; `sprintRequiredForLaunch` requires a sprint only for the Orchestrator, while every master-naming role may start without one. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Choice matching accepts host IDs or labels without case; there is no built-in fast-to-priority alias. Another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes` and their advertised `defaultModeId`. Defaults carry `mode`, `featureValues` and per-choice sources. `RoleAgentOverride` can carry an explicit `modeId`. `roleAgentOverrideFor` retains that value independently of model, effort and feature values. Selection equality compares the mode and sorted feature entries.
 
 ## Invariants And Boundaries
 
@@ -54,7 +54,9 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 
 
 
+
 - The launcher model keys selected Investigator executions by request and preserves the original Projects storage slot. [4]
+
 
 
 
@@ -67,7 +69,9 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 
 
 
+
 - The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule. [8]
+
 
 
 - Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot. [9]
@@ -76,5 +80,6 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 - The same start-only reason enters saved retry payload and POST body. [10]
 
 - The launcher model carries the requested step-up reason, an explicit mode override, and optional receipt choice metadata with a distinct observed-mode field. [11]
+
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [7]

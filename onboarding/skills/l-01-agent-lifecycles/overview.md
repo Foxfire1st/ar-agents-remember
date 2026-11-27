@@ -4,7 +4,7 @@
 
 This area owns the canonical instruction sources and routing metadata for Agents Remember role capsules: role responsibilities, selected operations, preparation and intake templates, reports, review criteria and detail files. `templates/` holds the task, requirement-packet, report, verdict, brief, handoff and onboarding layout templates; `reference/` holds the detail files that role pointers name, grouped into `coordination/architect`, `coordination/shared`, `curator`, `knowledge`, `review`, `tasks`, `worker`, `writing` and `bootstrap` beside a few flat files; `capsule-budgets-current.json` holds authored word ceilings and renewal measurements (while live Turn-1 wire-token and compiled-capsule token ceilings live in `wire_budget.py`), with `capsule-budgets.json` as the historical registry and `capsule-budgets-d694.json` as the frozen predecessor. `SKILL.md` selects supplied bindings; `roles/` owns seat duties; `operations/` owns procedures; `composition-manifest.json` owns routing metadata. Canonical task facts and paired workspace bindings arrive separately in the handover.
 
-The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. `system-specialist` is an earlier Investigator spelling, not another responsibility. The composition manifest holds exactly these eight roles. The historical capsule registry `capsule-budgets.json` still keys retired `designer/` and `strategist/` capsules, and both it and the current budget record `capsule-budgets-current.json` also key `launcher/` capsules beside the eight roles. Native role capsules compose the selected role followed by one applicable operation, without shared core blocks. `core/` doctrine and `reference/` detail files are reached through the role and operation pointers; its existence does not mean it is injected into every role capsule.
+The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator, Consolidator and Bootstrap. `system-specialist` is an earlier Investigator spelling, not another responsibility. The composition manifest holds exactly these nine roles and ten operations. The historical capsule registry `capsule-budgets.json` still keys retired `designer/` and `strategist/` capsules, and both it and the current budget record `capsule-budgets-current.json` also key `launcher/` capsules beside the nine roles. Native role capsules compose the selected role followed by one applicable operation, without shared core blocks. `core/` doctrine and `reference/` detail files are reached through the role and operation pointers; its existence does not mean it is injected into every role capsule.
 
 The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream.
 
@@ -26,7 +26,7 @@ Architect delegates one master to one Manager, or concurrent masters to an Orche
 
 An individual role start takes its permission mode from launch-time resolution. After a start with overrides, the shared instructions give the starter responsibility for checking and setting features.
 
-Normal delivery starts Worker at build, Reviewer at the Worker freeze, and Curator after code PASS, using one individual `role_start` per stage. Worker first tells Manager to start Reviewer, then sends the freeze directly once that seat exists. Reviewer first tells Manager of code PASS, then sends the passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator and Reviewer exchange the memory candidate and memory verdict directly. The Manager reads reports, decides delegated gates, and owns task acceptance, closeout, integration and landing order; it does not relay ordinary freeze, finding, verdict or memory contents.
+Normal delivery starts Worker at build, Reviewer at the Worker freeze, and Curator after code PASS, using one individual `role_start` per stage; consolidation leaves (`consolidationList` present) start Consolidator alone and Reviewer at Consolidator's memory freeze. Worker first tells Manager to start Reviewer, then sends the freeze directly once that seat exists. Reviewer first tells Manager of code PASS, then sends the passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator and Reviewer exchange the memory candidate and memory verdict directly. The Manager reads reports, decides delegated gates, and owns task acceptance, closeout, integration and landing order; it does not relay ordinary freeze, finding, verdict or memory contents.
 
 Native start, finalize and abandon already publish task stage and its mirrored parent row. The Manager must not repeat those transitions with a separate status call; `task_doc set_status` remains for an explicit correction or organizational-master completion. This narrows redundant coordination work without granting a new task-state, review or paired-Git power to another role. Canonical Manager instructions own this account; the single packaged serving copy is generated propagation, not separate authority.
 
@@ -38,9 +38,9 @@ Handoffs carry actual code/memory candidates, report and verdict paths, unresolv
 
 The canonical tree is `skills/`. `mcp/.venv/bin/python scripts/renew-instructions.py` renews current instruction facts and declared package copies; `--check` reports stale values without writing. Its copy plan uses the targets owned by `scripts/sync-skills.py` and declared in `generated-copies.json`: the MCP package-data tree only, served to a harness as MCP resources, with no harness starter tree or coordination-root skill tree to maintain. The generated copy is a propagation target, not an independent doctrine owner, and the generator's declared target does not establish that this candidate was synchronized or installed.
 
-The pure capsule compiler consumes admitted bindings, source bytes and optional verified task projection, resolves instructions and narrows requested capabilities. Its semantic digest covers composed bytes and admitted facts, not timestamps or unselected sources. Source admission and launch preparation remain separate boundaries. Native role selection has no nearest-role or fallback-operation rule. The compiler vocabulary and older ambient-launcher composition must be distinguished from the eight-role native launcher.
+The pure capsule compiler consumes admitted bindings, source bytes and optional verified task projection, resolves instructions and narrows requested capabilities. Its semantic digest covers composed bytes and admitted facts, not timestamps or unselected sources. Source admission and launch preparation remain separate boundaries. Native role selection has no nearest-role or fallback-operation rule. The compiler vocabulary and older ambient-launcher composition must be distinguished from the nine-role native launcher.
 
-Role responsibility is structural and artifact-based. Architect owns sprint composition and semantic planning; Orchestrator coordinates its sprint and master handovers; Manager coordinates one selected master and its leaf gates; Worker implements one leaf in its paired code worktree and leaves publication to the transaction owner; Reviewer independently adjudicates the assigned seam; Curator owns affected memory and admitted knowledge; Investigator investigates and reports before authorized remediation. A dashboard-started role needs no invented parent.
+Role responsibility is structural and artifact-based. Architect owns sprint composition and semantic planning; Orchestrator coordinates its sprint and master handovers; Manager coordinates one selected master and its leaf gates; Worker implements one leaf in its paired code worktree and leaves publication to the transaction owner; Reviewer independently adjudicates the assigned seam; Curator owns affected memory and admitted knowledge on ordinary leaves; Consolidator runs memory-only consolidation passes over a leaf's `consolidationList`; Investigator investigates and reports before authorized remediation. A dashboard-started role needs no invented parent.
 
 Reviewer scope is explicit: organizational leaf, atomic-master integration, master exit, portfolio plan or super exit. Its verdict goes to that seam's recipient. Reviewer identity is independent of authorship, and a helper of the author cannot supply independent review. Rendering claims need mounted-UI evidence, ordering claims operation-level evidence, persisted shapes parsed artifacts, and doctrine its source and enforcing mechanism. An unstamped or underspecified seam must not acquire authority by guessing between plan and super review.
 
@@ -177,7 +177,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
+
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
+
 
 
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
@@ -203,9 +205,13 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The Curator report carries writer-report state, written record and entry identifiers and paths, history rows, refusal reasons and explicit family coverage. [39]
 
 
+
 - Shared role-capsule routing doctrine is canonical here, with `composition-manifest.json` as the routing metadata authority. [42]
 
+
+
 - Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
+
 
 - This source owns the route’s Investigator selection or execution boundary. [57]
 
@@ -213,7 +219,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The Curator reconciles one leaf's intent and implementation, writes and checks its affected memory, and hands over the structured coherence record. [45]
 
 
+
 - The Manager decides its leaf gates and retains closeout, integration, status, acceptance writes and landing order. [46]
+
 
 
 
@@ -238,13 +246,19 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - Curation writes files: without `--commit` ingest plans and writes nothing, and `--commit` authorizes file writes, never a Git commit or acceptance. [65]
 
+
 - Verification of repaired findings stays on the items raised before; settings govern ordinary rounds and Manager-recorded Architect or developer approval is required beyond them. [73]
+
+
 
 
 - Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion. [78]
 
 
+
+
 - The Curator reads the shared writing profile before drafting statements, guarantees or history reasons and compares meanings independently before publication. [81]
+
 
 
 
@@ -266,10 +280,14 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The Reviewer marks its review step done only after its last round is recorded as passed. [86]
 
 
+
 - The Manager sets no step for another agent; a Worker repairs a sealed finding without the Manager's plan or go-ahead. [87]
 
 
+
+
 - The review operation keeps memory reports, finding identifiers and pass count separate from code state, under the same pass limit and with Manager-recorded approval beyond it. [89]
+
 
 
 - Leaf sync and repair rules own clean sync (including pair reporting for Curator refresh), and the implementation operation owns the direct repair/evidence path. [92]
@@ -279,7 +297,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The review operation owns missing-entry return without a round. [93]
 
 
+
 - The Manager role owns its three-way authority split, standing routine paired closeout, precedent settlement (with non-reclaiming case reservations) and Architect/developer escalation boundaries. [94]
+
 
 
 
@@ -300,7 +320,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The planned-row history form in the writer's input sections. [8]
 
+
 - The Reviewer's declaration check inspects `expectedKnowledgeEffects`. [9]
+
 
 
 - The onboarding-row history form in the writer's input sections. [10]
@@ -356,11 +378,15 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The decision-lifting duty: turn each developer ruling and requirement-packet choice that still constrains code into a decision record; task-only choices remain in the task. [5]
 
-- Current router explicitly supports eight roles including Bootstrap, selected role plus operation and no injected shared core. [59]
+
+- Current router explicitly supports nine roles including Consolidator and Bootstrap, selected role plus operation and no injected shared core. [59]
+
 
 - Role compiler scope distinguishes ambient launcher core from dispatched role composition. [60]
 
+
 - Launcher wire vocabulary retains system-specialist as an alias of Investigator. Anchor: `LauncherRole`, `RoleSelection.canonical_role_id` [61]
+
 
 - Canonical skills and the single package-serving target come from generated-copies.json through the shared parser; skill_targets projects that declaration rather than a separate TARGETS tuple. This is source authority, not a sync verdict. [62]
 
@@ -387,7 +413,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - Named report/refuse policies instead of blanket exemptions. [77]
 
+
 - The composition manifest declares section audiences for marked operations and `all` for authorized closeout. [79]
+
 
 - The Curator's memory handover follows the separate memory review lane and receives memory findings or a passing verdict directly from the Reviewer. [88]
 
@@ -401,7 +429,9 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The manifest declares the every-role digest separately, delivered once beside the capsule in the first message and not composed into it. [96]
 
 - The writer section names knowledge-ingest or mounted knowledge_write under the task contract; when trusted CLI authority settings cannot publish a raise, the same hand-off goes through mounted knowledge_write with the declared arguments, preview and file-write word. [22]
+
 - The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order` [53]
+
 
 
 

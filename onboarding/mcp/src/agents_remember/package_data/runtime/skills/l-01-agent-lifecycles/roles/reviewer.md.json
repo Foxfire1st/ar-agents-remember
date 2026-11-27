@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-        "content": "sha256:a9597d18cffbc9d1613cce89f32a88b69813b4c12e99c7f8e0ba92d68473ad0c",
+        "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+        "content": "sha256:5c1c4fe02e88a332a58dd03af15b7ac52e1623d2d640a0a363097325d0f7644f",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
   ],
   "references": {
     "13": {
-      "note": "The Reviewer checks targeted tests, running full suites and drift reporting only on request or when listed under `## Final checks`.\n\nAnchor: `## Final checks`",
+      "note": "The Reviewer checks targeted tests, running full suites and drift reporting only on request or when listed under `## Final checks`.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -56,12 +56,12 @@
       ]
     },
     "16": {
-      "note": "Full suites and drift reporting run only on request or under `## Final checks`, while curation always requires full `memory_quality_check` (blocking on Curator-actionable findings).\n\nAnchor: `memory_quality_check`",
+      "note": "Full suites and drift reporting run only on request or under `## Final checks`, while curation always requires full `memory_quality_check` (blocking on Curator-actionable findings).",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -77,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:4ebb2af948f50d1a4e8eae25415d661d12168ae70cfcb7fb5a916c1631cd43e5",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
             "locator": {
               "end": 35,
@@ -106,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:22fe20f859d6dd15aca4a6cc342bed8b019ff35503922378ee7814f515e3029b",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:6d3ec207ef76a37140867bb02d908027ba452311caf34d3edb3c45abed0cf293",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -123,8 +123,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:4ebb2af948f50d1a4e8eae25415d661d12168ae70cfcb7fb5a916c1631cd43e5",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
             "locator": {
               "end": 15,
@@ -147,8 +147,8 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
             "locator": {
               "end": 25,
@@ -176,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
             "locator": {
               "end": 25,
@@ -193,8 +193,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:3f52a4546303520f008bfeecfe63fd51d3a69684465130ee350b45f6d2460451",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -206,12 +206,12 @@
       ]
     },
     "28": {
-      "note": "The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work.\n\nAnchor: `## Boundaries`",
+      "note": "The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:79ba9b6179e2ba6d5a73e17090761b4db0c9f88b52ed251ae68d2a44f023dd85",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:6bfa7e63060f786df22f4a78e375fe3355fdfb63f6876484f0084186ed4166b7",
             "locator": {
               "end": 25,
               "kind": "line_range",
@@ -227,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:3f52a4546303520f008bfeecfe63fd51d3a69684465130ee350b45f6d2460451",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -244,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -261,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -313,8 +313,8 @@
         },
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -330,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
             "content": "sha256:07d3356c259adf2ecf75dd2bc2cf51e60b16ba242bedc572cc9b7396fbb98454",
             "locator": {
               "end": 25,
@@ -361,12 +361,12 @@
       ]
     },
     "7": {
-      "note": "The Reviewer binds the seam's required criteria catalogs (`code-seam`, `report-verification`, plus `doctrine` for docs/skills and `onboarding-memory` for memory); briefs never override catalogs, and bound catalogs are recorded in Catalog Binding.\n\nAnchor: `## Bind the seam and catalogs`",
+      "note": "The Reviewer binds the seam's required criteria catalogs (`code-seam`, `report-verification`, plus `doctrine` for docs/skills and `onboarding-memory` for memory); briefs never override catalogs, and bound catalogs are recorded in Catalog Binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:c504cb8a5c43e969019019c4ccc980365860621283e588f0d228b592edbee232",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:7282beae94e8d66b11dafd9fe4429f3381944ed5fab651dce27d384e8ae05f71",
             "locator": {
               "end": 19,
               "kind": "line_range",

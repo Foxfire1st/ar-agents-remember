@@ -93,12 +93,12 @@
       ]
     },
     "3": {
-      "note": "Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records.\n\nAnchor: `reviewKind=memory`",
+      "note": "Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records.",
       "targets": [
         {
           "anchor": {
-            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
-            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
+            "blob": "a1f679d7e4a74886a85d0cceb49f427a011ae40a",
+            "content": "sha256:e3588177fc1fbf110ba76a3dc4da21a37893632b85ae281adb76da8a93b838b7",
             "locator": {
               "end": 34,
               "kind": "line_range",
@@ -211,7 +211,7 @@
         },
         {
           "anchor": {
-            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "blob": "07f37b69df9aa36c430b3833cc6a8e6e09ec986f",
             "content": "sha256:01a9e34ef16506512dc5c5f7fe6e3d47af16e5c4d88575e4251eb9faafb9f34c",
             "locator": {
               "end": 51,

@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/consolidation-pass.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "246acac534c5c0635e9234ab1b31540c4e7678dd",
+        "content": "sha256:ef40509fa29d94ce0e997b0b5b337e8fc281523b6234d4dd8787606029e6856b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RD5P87",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Canonical Tier-2 reference detailing consolidation pass preparation, proof test cleanliness, outcome rules, and handover reporting.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`## Prepare the pass` requires stopping on a missing/empty `consolidationList` and persisting deduplicated `consolidation_target` items via contract-scoped `memory_quality_check`.\n\nAnchor: `## Prepare the pass`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "246acac534c5c0635e9234ab1b31540c4e7678dd",
+            "content": "sha256:b838bc1cc78648983ac45b49e107dddddb7f2508e660914813e18103c367db90",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`## Run named proof tests cleanly` restricts runs to named/newly-linked proof tests, confines caches/temps to scratch, verifies an unchanged code worktree, and records unrunnable tests in `testsNotRun`.\n\nAnchor: `## Run named proof tests cleanly`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "246acac534c5c0635e9234ab1b31540c4e7678dd",
+            "content": "sha256:04296db21e35b55d57ffe644f13b19320e194885fc9d1c771de696e8ae4513b6",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`## Decide each outcome` defines `stands`, corrected, and `unresolved` rules, mandatory `testsRun`/`testsNotRun`/`noProofRecorded` proof evidence, condition/exclusion preservation, and single-row closure of listed-plus-touched items.\n\nAnchor: `## Decide each outcome`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "246acac534c5c0635e9234ab1b31540c4e7678dd",
+            "content": "sha256:16c6570c9a23c0d0481c256b6e149a1fb230c81073c5e9050fae60ef9dc0bb86",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`## Report and hand over` specifies the six required report elements, direct Reviewer handover with the 40-character memory Git tree (`candidateTree`), and Manager notification of `unresolved` items and gaps.\n\nAnchor: `## Report and hand over`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "246acac534c5c0635e9234ab1b31540c4e7678dd",
+            "content": "sha256:80e62f60ebede4a8128532d6329e7719c21182e2be0b5499b34d9b95a087fcf0",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

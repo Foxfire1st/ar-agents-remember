@@ -40,4 +40,5 @@ Proves, on the shipped lifecycle corpus with no corpus or compiler patch, that t
 
 - Digest homes declare audiences without injecting the map. [8]
 
+
 - The current pointer fixtures bind the five consuming roles' knowledge index triggers to `reference/knowledge/use.md` (named fragments for Architect/Investigator and whole-detail `use` pointers for Worker/Reviewer/Curator). [10]

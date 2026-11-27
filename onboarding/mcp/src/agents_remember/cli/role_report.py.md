@@ -34,7 +34,9 @@ Every refusal is named: report-selection-invalid, report-receipt-invalid, report
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 - The listing reads recorded starts filtered by task, capped at twenty. [7]
+
 - The page target completes to the canonical task chain. [8]
+
 - Live and archived receipts open through the confined path. [9]
 - The row cap bounds the reports answer. [10]
 
@@ -56,5 +58,6 @@ Task-bound Investigator report lookup requires its exact request UUID and follow
 - The recorded file must be the launch-derived name directly under the root. [2]
 - The read-only regular-file read with bounded size. [4]
 - The canonical file serves when the access alias is absent. [5]
+
 
 - The file's Investigator boundary and request identity. [6]

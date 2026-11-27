@@ -196,12 +196,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "blob": "6c52d16e5f50441880f5f5902cc6bbce081f6843",
             "content": "sha256:0925bd92d68f648a62c62432c01fbe37f66ba3bc6f6cb85c195ca7cfe6007fb8",
             "locator": {
-              "end": 180,
+              "end": 181,
               "kind": "line_range",
-              "start": 172
+              "start": 173
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -209,12 +209,12 @@
         },
         {
           "anchor": {
-            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "blob": "6c52d16e5f50441880f5f5902cc6bbce081f6843",
             "content": "sha256:1467093f1230940e33bb15fb11a0828e46b0ba7800ec389a7277ee805c0efe85",
             "locator": {
-              "end": 245,
+              "end": 247,
               "kind": "line_range",
-              "start": 203
+              "start": 205
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },

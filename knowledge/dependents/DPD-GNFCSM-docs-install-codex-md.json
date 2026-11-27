@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/install/codex.md on CAP-L5 tree af88a85d to state Codex startup preapproval covers ROLE_TOOL_ALLOWLISTS[role] and role-scoped agents-remember-task runs alongside full-roster agents-remember while preserving secondCopyLoaded: true also when no such registration exists; resolved DFR-EV2TJQ.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/install/codex.md against post-CAP-L5 synced tree e273d1c9 after CAP-L5 resolved its deferral: Codex startup grant for ROLE_TOOL_ALLOWLISTS[role], role settings, and skill-resource guidance remain accurate.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/install/codex.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+      "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_agents.py"
     },
@@ -150,14 +150,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:45:16+01:00",
+    "at": "2026-11-27T07:33:39+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f5b268ec6210b45d1c9e2b44731f7b0f48fca7e7",
+        "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
         "content": "sha256:0fde5d8cd47bb2f1a93883513895d6a7ab6904057288c608518251d63519c7c5",
         "locator": {
           "end": 203,
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5b268ec6210b45d1c9e2b44731f7b0f48fca7e7",
+            "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
             "content": "sha256:cd872f38724c302d6001056619c7e1a71c881e1ce125f7753acc26edfd22af57",
             "locator": {
               "end": 151,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5b268ec6210b45d1c9e2b44731f7b0f48fca7e7",
+            "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
             "content": "sha256:576e4c6559d67c027ca68ddff59cc4d962b61489899e86e9593a93dfb3c67d1e",
             "locator": {
               "end": 209,
@@ -57,16 +57,16 @@
       ]
     },
     "3": {
-      "note": "MCP tool server read-only versus mutating trust boundaries, role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke refusal pointers, answer token bounds, and tool-log locations.\n\nAnchor: `## The tool server`",
+      "note": "MCP tool server read-only versus mutating trust boundaries, role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke refusal pointers, answer token bounds, and tool-log locations.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5b268ec6210b45d1c9e2b44731f7b0f48fca7e7",
+            "blob": "25406bf9ac2ec3cf711c2d86817dd0faf92ccac2",
             "content": "sha256:29082506ccaab8af4b1b79410312f190fa3253c5c53da8d8cf19f840d289f3ee",
             "locator": {
-              "end": 396,
+              "end": 400,
               "kind": "line_range",
-              "start": 359
+              "start": 363
             }
           },
           "kind": "code"

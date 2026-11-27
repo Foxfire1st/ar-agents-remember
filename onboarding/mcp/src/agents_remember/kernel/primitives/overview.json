@@ -612,8 +612,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0866515684aa632f534294be7451aa0a58b5589",
-            "content": "sha256:6b6b2bf502c8b69429486d810824094b1ebc4429f1d02b6a7bad30200c667f33",
+            "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
+            "content": "sha256:97f46650bf0348f518a96b02412c347fc410dccba07ecf16b861b4ee2296fd24",
             "locator": {
               "kind": "symbol",
               "name": "resolved_role_knobs"
@@ -629,7 +629,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "817859d6603358979ad914eac8ce1b45dcc3fbb5",
+            "blob": "9c254c77ef570d89c9a32e66bd3e83f22204317d",
             "content": "sha256:a5df2717f2db4ac7c03a1e4ba24cf0bb184d85e34e14f5b2686c9fdc773b354b",
             "locator": {
               "kind": "symbol",

@@ -31,7 +31,7 @@ Traversal is refused for a parametrized set including `../outside.md`, `/etc/pas
 
 ### Conventions
 
-The root-local admission cases build a small `tmp_path` corpus. Shipped-manifest cases read the real manifest and source paths, and the shipped-corpus cases loop over all eight roles and each role's manifest-declared operations. The synthetic compiler property module remains distinct; this module is not the only reader of real bytes.
+The root-local admission cases build a small `tmp_path` corpus. Shipped-manifest cases read the real manifest and source paths, and the shipped-corpus cases loop over all nine roles (including `consolidator`, with ten operations including `consolidation`) and each role's manifest-declared operations. The synthetic compiler property module remains distinct; this module is not the only reader of real bytes.
 
 ### Invariants And Boundaries
 
@@ -88,7 +88,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The frozen vocabulary and its completeness guard the vocabulary group pins. [1]
+
 
 - The manifest parser the shipped-manifest group exercises against the real file. [2]
 
@@ -110,6 +112,8 @@ No meaningful cross-repo references found.
 
 - The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [10]
 
+
 - Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compares addressed operation content with an independent source-section projection. [7]
+
 
 - The shipped request includes role-addressed declared details in its admitted skill sources. The no-frontmatter check independently reconstructs delivered prose after removing a closed leading frontmatter block and typed composition-metadata lines, while retaining the complete source revision; deletion, relocation, leaked metadata and wrong-revision controls must fail. Six edge concerns are defined in the distinct manifest-edge module: lookup, specialization shape/blank identity, absent override winner, invalid root, missing selected manifest and composing roots. [9]

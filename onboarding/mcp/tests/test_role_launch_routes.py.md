@@ -48,4 +48,5 @@ app so each case observes the answer the dashboard receives.
 
 
 
+
 - Fixtures cover canonical report links, binding reuse, public result fields, project dispatch and taskless identity. [1]

@@ -75,7 +75,9 @@ and its answers and errors are the same.
 
 
 
+
 - The root/nested allowlists consume normative fields, including fixed nonGoals/acceptance, not structural waitsFor or audit completedAt. [13]
+
 
 
 

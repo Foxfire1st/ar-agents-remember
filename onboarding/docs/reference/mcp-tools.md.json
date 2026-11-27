@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
         "content": "sha256:dcb8284fcc1232af8fd4ffcb07378fc99d243cff2c098333a64a2622d9037709",
         "locator": {
-          "end": 302,
+          "end": 325,
           "kind": "line_range",
-          "start": 294
+          "start": 317
         }
       },
       "id": "RLZ-6VTKE9",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
-        "content": "sha256:9ae03aed4adeb48058756ccb97875199cbaef594ed2e266c228bd69f5c7d5d53",
+        "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+        "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,48 @@
     },
     {
       "anchor": {
-        "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+        "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+        "content": "sha256:57ac55118935c09cd203dc0e82767d1d5db31f8bc76505e0f32b0544b6eb1839",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C1M5FZ",
+      "invariant": "INV-3ZXAD9",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 12",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Documents Consolidator and the consolidation seat set in role_start_set, who-can-start rows, selection, and enclosure preparation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "content": "sha256:63be1c89f4385bcf2f194349fa7e779685da0d6b389989f136b055d0562444ed",
+        "locator": {
+          "end": 525,
+          "kind": "line_range",
+          "start": 521
+        }
+      },
+      "id": "RLZ-CEDSYE",
+      "invariant": "INV-J4MDWS",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 10 & Evidence 8 review binding",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Documents candidateTree and verdictRef on record_review for reviewKind='memory'.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
         "content": "sha256:cc410c746b299c570a8692802770eec28e2d0e44a3471b07e9d0829cca25d383",
         "locator": {
-          "end": 767,
+          "end": 794,
           "kind": "line_range",
-          "start": 758
+          "start": 785
         }
       },
       "id": "RLZ-KPHK0W",
@@ -58,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
-        "content": "sha256:5d38041c61e04900f04a05f44d7075f36d2b8e6523fc5998170ad1e52355a4eb",
+        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+        "content": "sha256:eeb18b49e85d98b0e162087159a84883fabab145c2dd0c9a15f0a6e5b772c371",
         "locator": {
           "end": 203,
           "kind": "line_range",
@@ -77,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
-          "end": 371,
+          "end": 394,
           "kind": "line_range",
-          "start": 369
+          "start": 392
         }
       },
       "id": "RLZ-WA23J8",
@@ -96,12 +132,12 @@
     },
     {
       "anchor": {
-        "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+        "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
-          "end": 317,
+          "end": 340,
           "kind": "line_range",
-          "start": 315
+          "start": 338
         }
       },
       "id": "RLZ-YKJ4F4",
@@ -120,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
-              "end": 317,
+              "end": 340,
               "kind": "line_range",
-              "start": 315
+              "start": 338
             }
           },
           "kind": "code"
@@ -137,12 +173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
-              "end": 371,
+              "end": 394,
               "kind": "line_range",
-              "start": 369
+              "start": 392
             }
           },
           "kind": "code"
@@ -150,11 +186,11 @@
       ]
     },
     "5": {
-      "note": "The MCP reference groups tools and their main arguments; the mounted schema supplies the complete argument contract with lossless wire compaction, role-scoped allowlists, and fail-closed bindings.\n\nAnchor: `# MCP Tool Reference`",
+      "note": "The MCP reference groups tools and their main arguments; the mounted schema supplies the complete argument contract with lossless wire compaction, role-scoped allowlists, and fail-closed bindings.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ef6444ab177abd02a8b2f64e07ad46627a32b0d",
+            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
             "content": "sha256:159c45ab606f6f2f3c0d84033fe40143b0458ddb2338d3160c7b8d126a6c063f",
             "locator": {
               "end": 10,

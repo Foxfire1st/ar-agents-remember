@@ -20,12 +20,12 @@
       ]
     },
     "10": {
-      "note": "Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset.\n\nAnchor: `memory_quality_check`",
+      "note": "Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset.",
       "targets": [
         {
           "anchor": {
-            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
-            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "blob": "cfe623a9bb0589a4617a7be7d9f1dd652a11b799",
+            "content": "sha256:ee39d9c74bbce21ba45f0759d0be3aeb790c9a2ce0390a37a61fa6e1e3cc9065",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "blob": "44016dc9a9474a64e3eb33a2b6270c65e4d14c00",
             "content": "sha256:349e8630cdb780d1cffca9c046cb75c2eaf259d769e87f9fb0814123aa25ecc9",
             "locator": {
               "end": 39,

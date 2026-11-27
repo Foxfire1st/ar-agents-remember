@@ -1,0 +1,89 @@
+{
+  "path": "dashboard/src/panels/detail-panel/consolidationBlock.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "951963b5479bae2e8638d1cb135c3c0eb33a16db",
+        "content": "sha256:45fdf49920c60218300d1b75986c763415868a420c6cd3c09e7680d3548e6015",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KV2XHR",
+      "invariant": "INV-HPD40B",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 11 & D1052",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Renders the Consolidation block, all-subjects view, and D1052 unread-memory wording ('{total} listed · outcomes not known yet' and 'listed' row badges).",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`outcomeCountsText` formats the one-line header summary, distinguishing unread memory (`<total> listed · outcomes not known yet`) from live `stands`/`corrected`/`unresolved`/`open` counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "951963b5479bae2e8638d1cb135c3c0eb33a16db",
+            "content": "sha256:34acc8f8c2fd7b2786c3cec7cc47aadbd79d953f5bb4af3c4810d283665ea37e",
+            "locator": {
+              "kind": "symbol",
+              "name": "outcomeCountsText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ConsolidationRow` renders each subject with its outcome tone, switching an `open` badge to `listed` when `memoryRead` is false, and joins family membership with the row reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "951963b5479bae2e8638d1cb135c3c0eb33a16db",
+            "content": "sha256:67b4d70cf4db809ec349d171b264ef58d1aaee8603b87d9de148b32f04b2b6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConsolidationRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ConsolidationBlock` hides itself without consolidation data, caps inline subjects at `REVIEW_INLINE_BOUND`, and exposes a counted link to `{ kind: 'consolidation' }`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "951963b5479bae2e8638d1cb135c3c0eb33a16db",
+            "content": "sha256:bd29fba50da47467699ba05b84a929ff907c21c7e9e5c549c62456f1f7676cc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConsolidationBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`ConsolidationViewBody` renders the complete subject list in the drill-down view or a loading placeholder when `rows` have not arrived with the document body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "951963b5479bae2e8638d1cb135c3c0eb33a16db",
+            "content": "sha256:6f32cff91497e822d423caf9ca5fa0039050ce40ef9bf67ab424a605ef77aa3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConsolidationViewBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

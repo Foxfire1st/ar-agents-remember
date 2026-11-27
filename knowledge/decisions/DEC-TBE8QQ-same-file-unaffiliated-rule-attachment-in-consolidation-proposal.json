@@ -1,0 +1,78 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed exact same-file entry.path attachment against directory-route attachment and constrains how consolidation_proposal and future retrieval experiments scope unaffiliated rule attachment."
+  },
+  "alternatives": [
+    {
+      "option": "Attach unaffiliated rules realized in the exact files (entry.path) where a family's members are realized.",
+      "reason": "File-level exact match bounds proposal size tightly on real memory (median 11.5, max 67, FAM-AWDGE2 29 attached rules) while keeping every co-located unaffiliated rule visible to the Consolidator.",
+      "status": "chosen"
+    },
+    {
+      "option": "Attach unaffiliated rules matching any directory route owned by the family.",
+      "reason": "Broad directory routes pull in hundreds of unrelated rules across unrelated modules, making consolidation passes unmanageably large.",
+      "reconsider_when": "Reconsider if a future semantic or similarity-based proposal selector (such as the KNO-L7 similarity experiment) bounds folder-level candidates without flooding consolidation passes.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "ProposalStore indexes exact realization entry.path values per family and attaches unaffiliated rules sharing those exact paths.",
+    "Rules in the same directory but in other files remain reachable via folder or standalone rule selection."
+  ],
+  "context": "knowledge_read(view='consolidation_proposal') proposes families for a consolidation pass alongside unaffiliated rules that should be reviewed with those families. Matching unaffiliated rules by broad family directory routes attached up to hundreds of unrelated rules (such as 368 attached rules on a root-routed family), bloating pass lists.",
+  "decider": "Developer ruling D1049 (261112-KNO-L5 / KNO-R05@v3)",
+  "id": "DEC-TBE8QQ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-4R5HAZ"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/application/knowledge_consolidation_proposal"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "6868d05720f269119be8541c83e4d22a0baa8481",
+        "content": "sha256:9701e079a505d714a684e6ac653ff655d151e56c4a31fae80d0109121a7beba5",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProposalStore"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/store.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_consolidation_proposal.py and real-memory Evidence 6 run under D1049 (median=11.5, max=67, FAM-AWDGE2=29 attached rules)."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 5 (D1049)",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

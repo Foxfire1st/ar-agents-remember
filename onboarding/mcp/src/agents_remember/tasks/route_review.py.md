@@ -60,7 +60,9 @@ RouteReviewRecord adds optional baseCommit with the same object-ID shape as cand
 
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+
 - Record-only memory identity comes from memory authority, never the sibling code root. [6]
 
 ### Docs References
@@ -82,7 +84,9 @@ At the historical L41 preparation, the source bytes were SHA-256
 (`8050` bytes, `209` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.
 
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
+
 
 - Fixed-list finding, round-cap permission fields, and review-state validation. [2]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]

@@ -16,4 +16,5 @@ Contract markers are removed from rendered instructions while retaining their or
 
 - Marker removal preserves source-addressed metadata and validates malformed or off-audience declarations. [1]
 
+
 - The shipped contract enumeration requires exactly matching sender/receiver sides and field lists. [2]

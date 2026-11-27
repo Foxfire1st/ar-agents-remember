@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
-    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
-    "role": "curator",
-    "statement": "Confirmed accurate against BUG-R58@v2 candidate: OpenClaw install documentation is unaffected by deferred held-seat reservation.",
-    "task": "261112-BUG-L58",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L58 and 261112-KNO-L5 onto bf8bda3fb: docs/install/openclaw.md remains accurate.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
   "document": "docs/install/openclaw.md",
   "id": "DPD-6528VF",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "5a73ff018dc943db077805b8e7c293f6b8caaea8",
+      "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+      "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

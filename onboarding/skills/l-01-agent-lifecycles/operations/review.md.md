@@ -8,6 +8,8 @@
 
 Message-file payload rules live in `reference/message-handover.md`; `operations/review.md` directs direct peer verdict/list handovers and the single ready-for-closeout notice to Manager after code PASS, memory PASS, and settled final checks.
 
+On consolidation leaves (`consolidationList` present), review runs in the memory lane only (no code review round); findings and PASS verdicts hand directly between Reviewer and Consolidator, and ready-for-closeout goes to Manager once memory PASS settles.
+
 ## Governing Overview
 
 [overview](../overview.md)
@@ -31,21 +33,32 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - On leaf code PASS, Reviewer first tells Manager to start Curator, then hands the verdict directly to Worker and the passed freeze/verdict to Curator once that seat exists. Memory review and its verdict stay direct and separate. [1]
 
 
+
 - Fix-verification checks the sealed outstanding IDs; ordinary rounds follow the settings limit and extras need recorded Architect-or-developer approval. [2]
+
+
 
 
 - Reviewer does not implement, accept tasks, start roles or publish Git. It records its ordinary review begin/result; separately recorded MEMORY reports, IDs and pass counts do not reset CODE, and scoped record-write recovery retains its own conditions. [3]
 
 
+
+
 - A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round (with the Manager obtaining the Curator's read for a changed pair before routine closeout). Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE. [4]
 
+
 - Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync (where the Manager obtains the Curator's read for a changed pair before routine closeout). [8]
+
 
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
 
 
+
+
 - Current review separates common output/round/boundary rules from Architect advisory-review routing and Reviewer handover and code-concern duties, records MEMORY as a separate lane under the same settings limit, and delegates record-only repair checks to reference/review/rounds-and-late-findings.md. [6]
+
+
 
 
 - A baseline review reruns and repeats the Worker's focused-test search, and fix-verification applies it to the repair's own names. [9]

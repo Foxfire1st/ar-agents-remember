@@ -20,4 +20,5 @@ The Reviewer compares the leaf's base and candidate in Git (the code trees and t
 
 - Findings and verdicts travel directly between Reviewer and Curator, without a Manager relay. [3]
 
+
 - The review operation's rounds section holds the memory lane's separate reports, identifiers and pass count. [4]

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/history_facts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`master_writes` enforces `MASTER_ID_PATTERN` (`bad_master`), counts open and closed leaf history files (`selector_absent` when none exist), and combines closed-file writes with `rule_origins` matching the master prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2845c8c89bcc01d9d58009e9dec34ca169a8430e",
+            "content": "sha256:9450e2fa791583336a1a8fae60fb2f661563b81ae5e976d9d735288b0c18a05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_writes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`last_consolidations` scans only files containing `\"consolidator\"`, requires closed files whose review was handed over by a consolidator, and records each reached family's latest reviewer timestamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2845c8c89bcc01d9d58009e9dec34ca169a8430e",
+            "content": "sha256:083a2ec9893a9ed7319cbf5fa8349f7595f6d008d58426f4fd4b0a7dd9bc2991",
+            "locator": {
+              "kind": "symbol",
+              "name": "last_consolidations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_rules_written` counts invariant records in `written` and `InvariantRow` rows in `CARD_OR_TEXT_DISPOSITIONS`, ignoring read-only dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2845c8c89bcc01d9d58009e9dec34ca169a8430e",
+            "content": "sha256:3767c7cef610f3406bf49a94b22ebb471150603edd2527e01ffbdcabb47f9bdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rules_written"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_files` parses matching JSON history files through `history_document` and converts `OSError`/`ValueError` into `ProposalRefusal(\"unavailable\", ...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2845c8c89bcc01d9d58009e9dec34ca169a8430e",
+            "content": "sha256:fcd16b177ee0f7640b69a584b8c7d18a27db243f06de4b30379fddad626b400d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

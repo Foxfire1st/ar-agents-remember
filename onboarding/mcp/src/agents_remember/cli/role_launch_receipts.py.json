@@ -437,8 +437,8 @@
         },
         {
           "anchor": {
-            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
-            "content": "sha256:d229d1aa0236e47d44882464a96cea5ac53aa288fac0ab683ce8185e1100c42b",
+            "blob": "932147f1ec94bc0228c0709d7722b56a9ee1203c",
+            "content": "sha256:18c13d027b534be63951d87dd1d28db9e1e639f5d8c7fb34b7dd74d6eb01e27e",
             "locator": {
               "end": 154,
               "kind": "line_range",
@@ -450,12 +450,12 @@
         },
         {
           "anchor": {
-            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "blob": "932147f1ec94bc0228c0709d7722b56a9ee1203c",
             "content": "sha256:38d1bcbe450afe890bb922f68a266bf13f643a0305b6239b9224a23a3868992d",
             "locator": {
-              "end": 250,
+              "end": 253,
               "kind": "line_range",
-              "start": 223
+              "start": 226
             },
             "path": "mcp/src/agents_remember/cli/role_document_chats.py"
           },

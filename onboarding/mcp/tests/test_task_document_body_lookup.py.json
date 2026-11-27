@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0296bd693712736ed87568dc2a71001ba5dc11bb",
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
             "content": "sha256:e482c45e3d110a00982634d3608a4d43b38463d26bd5f3a5a4a7a06ab59ea07a",
             "locator": {
               "end": 629,
@@ -168,12 +168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "blob": "b30c1dfc28a78b8493d6e1e31c22a03730026703",
             "content": "sha256:efdf8b27e651e85833bb5fe057c74476f33202ea7b8107cdd37f90870df95721",
             "locator": {
-              "end": 214,
+              "end": 215,
               "kind": "line_range",
-              "start": 135
+              "start": 136
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },

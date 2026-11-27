@@ -25,14 +25,19 @@ Projects, sprint, commanded master and leaf roles retain explicit selection admi
 
 
 
+
 - The current source implements this file’s stated Investigator boundary. [4]
+
 
 
 
 ## Refreshed current evidence
 
 
+
 - An unsupported selection admits no start, and the ordinary Projects selection keeps its own role set. [5]
+
+
 
 
 - The agent pick matches the document key, skips archived records and picks the newest stable record. [2]

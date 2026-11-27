@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
-        "content": "sha256:610aaac13134a318a185f20d20b5cf830fb14596ba7818ed2646751af780a299",
+        "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
+        "content": "sha256:805e27f2f746ffc03cde030f6a9917a757a4e148b7797b2c9a10849c09acb466",
         "locator": {
           "kind": "symbol",
           "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
-        "content": "sha256:1c59819d9dedc3acbf62dd7ee816514d9a8b7f85425f83a55f01013b6b9b0d24",
+        "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
+        "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
         "locator": {
           "kind": "symbol",
           "name": "SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6afa15c0de4cf3e5b14692e166fc9538f0a1e286",
+            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
             "content": "sha256:7bab40ff0cc245f871dff2f90ef71e8e3ef284de9738c217dcbec581641f07be",
             "locator": {
-              "end": 232,
+              "end": 233,
               "kind": "line_range",
-              "start": 216
+              "start": 217
             }
           },
           "kind": "test"

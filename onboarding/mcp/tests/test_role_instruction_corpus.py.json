@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
+        "content": "sha256:e685768c8a9255765f66be0003aca7d1eeec7069e3441ec540bc025ad19b3ff1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_manifest_resolves_every_role_and_operation_source"
+        }
+      },
+      "facet": "Verifies all 9 canonical role sources and 10 operation sources declared by composition-manifest.json resolve cleanly.",
+      "id": "PRF-00ENVZ",
+      "invariant": "INV-3ZXAD9",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 12",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:43d488b8f085d000371db395f0f9ded1d856123893b2225ad1ea8b29d291e4d4",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:392408864951ae724473dfe558c772ac4c373def6ffcc126ab519255a172e710",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
         "locator": {
           "kind": "symbol",
@@ -124,7 +141,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
         "content": "sha256:392408864951ae724473dfe558c772ac4c373def6ffcc126ab519255a172e710",
         "locator": {
           "kind": "symbol",
@@ -147,12 +164,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+            "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
             "content": "sha256:661dffee802e82084f6713b5f70e2619b8d89e9da6a0c6936eff222b688f4c17",
             "locator": {
-              "end": 166,
+              "end": 167,
               "kind": "line_range",
-              "start": 153
+              "start": 154
             }
           },
           "kind": "test"
@@ -164,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+            "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
             "content": "sha256:3d8ddf6e7a091da09769dff9f9a7aa88457bece00c58b671dc1097ac331efdc3",
             "locator": {
               "kind": "symbol",
@@ -180,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -193,7 +210,7 @@
         },
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
             "content": "sha256:f657ca4a79e44dd339e0199c6c5a7f219c9b2ada1d263c310bdbe5e1e188294d",
             "locator": {
               "end": 4,
@@ -206,12 +223,12 @@
         },
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
             "content": "sha256:a99ff78812f4ba8840370589fc2dc832d742c95ffe58e905f5b9e14eec6ce5f7",
             "locator": {
-              "end": 16,
+              "end": 17,
               "kind": "line_range",
-              "start": 16
+              "start": 17
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -271,12 +288,12 @@
         },
         {
           "anchor": {
-            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+            "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
             "content": "sha256:8ddd4575a7efa1cecedb1b1bc65ee975422cf82336a25023f8b81f1c021b05a0",
             "locator": {
-              "end": 943,
+              "end": 944,
               "kind": "line_range",
-              "start": 934
+              "start": 935
             }
           },
           "kind": "test"

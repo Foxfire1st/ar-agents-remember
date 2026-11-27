@@ -1,0 +1,108 @@
+{
+  "path": "mcp/tests/test_consolidation_state.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a26bc2a3c51a4cb0fa7dc9db426482671586c2b1",
+        "content": "sha256:36f329381a6ae6becc2682ca5cb1b99086b3d72b28d5db00f29afcd5a0690e53",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_after_a_passed_closeout_written_standing_and_card_only_revisions_read_consolidated"
+        }
+      },
+      "facet": "Verifies consolidated standing for written, standing, and card-only (including non-retiring deleted) revisions after passed Consolidator closeout.",
+      "id": "PRF-NTFZ1X",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a26bc2a3c51a4cb0fa7dc9db426482671586c2b1",
+        "content": "sha256:58ed2ae7a4e3bea6d1c4d6712055d67159e13db03e929a8c09ba3a794b485b82",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_consolidator_columns_count_per_writer_of_the_revision_read"
+        }
+      },
+      "facet": "Verifies the five consolidation* writer-table columns count against the writer of the revision read.",
+      "id": "PRF-R35RKW",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a26bc2a3c51a4cb0fa7dc9db426482671586c2b1",
+        "content": "sha256:80cdad50de035113dd5c90c37d06245a6425fcebbe054146b4a357d77d75ffc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_without_a_pass_read_revisions_keep_their_state_and_the_answer_says_both_sentences"
+        }
+      },
+      "facet": "Verifies unpassed consolidation closeout preserves prior standing and emits 'Nothing was consolidated.'.",
+      "id": "PRF-WP4BYA",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies a passed consolidation closeout marks written, `stands`, card-only (`extended`/non-retiring `deleted`), and `stands`-family revisions `\"consolidated\"`, while keeping `unresolved` and unlisted families `\"reviewed\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a26bc2a3c51a4cb0fa7dc9db426482671586c2b1",
+            "content": "sha256:36f329381a6ae6becc2682ca5cb1b99086b3d72b28d5db00f29afcd5a0690e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_after_a_passed_closeout_written_standing_and_card_only_revisions_read_consolidated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies an unpassed consolidation closeout leaves written revisions `\"proposed\"`, read revisions `\"reviewed\"`, and emits both `NO_PASS_SENTENCE` and `NOTHING_CONSOLIDATED_SENTENCE` on closeout notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a26bc2a3c51a4cb0fa7dc9db426482671586c2b1",
+            "content": "sha256:80cdad50de035113dd5c90c37d06245a6425fcebbe054146b4a357d77d75ffc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_without_a_pass_read_revisions_keep_their_state_and_the_answer_says_both_sentences"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies the `writers` view tallies all five consolidation outcome columns (`consolidationKept`..`consolidationUnresolved`) per writer of the read revision and records backing revision IDs in the report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a26bc2a3c51a4cb0fa7dc9db426482671586c2b1",
+            "content": "sha256:58ed2ae7a4e3bea6d1c4d6712055d67159e13db03e929a8c09ba3a794b485b82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_consolidator_columns_count_per_writer_of_the_revision_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

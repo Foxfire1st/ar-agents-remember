@@ -93,11 +93,14 @@ The role-tool-scope module, `test_role_tool_scope.py`, is declared as an exact c
 
 The tool-schema-compaction module, `test_tool_schema_compaction.py`, is likewise declared as an exact consumer of the existing `_user_settings_guard.py` (line 884) and Node-profile `package-lock.json` (line 3426) artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation. `test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` (line 799) and the portable Node-profile `package-lock.json` (line 3341) artifacts; membership is dependency accounting and certifies no invocation. `test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py` (line 319), the portable Node-profile `package-lock.json` (line 2861), `knowledge_writer_test_support.py` (line 4128), and `writer_worklist_test_support.py` (line 5290); membership is dependency accounting and certifies no invocation. `test_standalone_master_pr_finalize.py` is declared as an exact consumer of `_user_settings_guard.py` (line 795, 853 consumers), portable Node-profile `package-lock.json` (line 3337, 853 consumers), and `tool_answer_l111_test_support.py` (line 5033, 16 consumers); membership is dependency accounting and certifies no invocation. `test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py` (line 624, 853 consumers), portable Node-profile `package-lock.json` (line 3166, 853 consumers), and `paseo_runtime_test_support.py` (line 4542, 77 consumers); membership is dependency accounting and certifies no invocation.
 
+
 The four DEP-R07 type-checker defect regression modules (`test_judged_history_closing_restore.py`, `test_organizational_completion_repair.py`, `test_quality_continuation_declaration.py`, and `test_type_hint_contracts.py`) are declared as exact consumers of `_user_settings_guard.py` and the portable Node-profile `package-lock.json` artifact, and `test_organizational_completion_repair.py` is additionally declared on `fixtures/repository_profiles/node/package.json` and `repository_profile_test_support.py`. Membership is dependency accounting and certifies no invocation.
 
 The master-end document-staleness module, `test_master_end_document_staleness.py`, is declared as an exact consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation.
 
 The dashboard oxlint scope test module, `mcp/tests/test_code_quality_dashboard_lint_scope.py`, is declared as an exact consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts; membership is dependency reachability accounting, not test execution.
+
+The four KNO-R05@v3 consolidator test modules (`test_consolidation_pass.py`, `test_consolidation_state.py`, `test_consolidator_role.py`, and `test_knowledge_consolidation_proposal.py`) extend 13 existing exact artifact consumer lists (including `_user_settings_guard.py` and the portable Node-profile `package-lock.json` at 852 consumers each, plus `knowledge_review_fact_test_support.py` at 43 consumers); the catalog retains 18 contracts and 123 artifacts, and membership is dependency accounting rather than execution.
 
 The exact derived consumer list for writer_worklist_test_support.py declares test_closeout_live_gate.py and test_workspace_wake_zero_census.py. The settings-guard and Node-fixture canonicalization only restores validator-link-target ordering, without changing those two membership sets. The complete owner-generated repair spans both catalogs and reinterprets no category, scope, guard, limit or replacement contract.
 
@@ -109,7 +112,7 @@ Native reapply and task-document Order remain declared on the existing Node lock
 
 ### Current Contract
 
-The shared review-fact fixture is a permanent, affected test-support artifact. Its row names the replacement test and 41 exact consumers, with no implication that a consumer ran.
+The shared review-fact fixture is a permanent, affected test-support artifact. Its row names the replacement test and 43 exact consumers, with no implication that a consumer ran.
 
 The current source TOML declares 18 contract rows and 123 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 Native source-reference currency alone cannot establish semantic correspondence.
@@ -826,7 +829,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The shared review-fact support declares test_file_briefs.py among its 41 exact consumers. [342]
+
+- The shared review-fact support declares test_file_briefs.py among its 43 exact consumers. [342]
+
 
 
 
@@ -901,7 +906,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file [580]
+- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file [584]
 
 
 
@@ -1563,6 +1568,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - Knowledge-writer test support lists the crossing dependent writer test as a consumer. [341]
 
 
@@ -1580,13 +1586,14 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [581]
+- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [585]
 
 
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [576]
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [582]
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [586]
+
 
 
 
@@ -2236,4 +2243,4 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [575]
 
 
-- `mcp/tests/test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, and `paseo_runtime_test_support.py` (18 contracts, 123 artifacts). [583]
+- `mcp/tests/test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, and `paseo_runtime_test_support.py` (18 contracts, 123 artifacts). [587]

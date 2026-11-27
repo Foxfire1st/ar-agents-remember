@@ -16,7 +16,9 @@ A matching saved model list stays selectable when fresh inventory is unavailable
 
 ## Evidence
 
+
 - The guide describes ordered Refresh, selectable saved inventory, and the separate treatment of feature overrides on Start and Retry. [1]
+
 - The pane waits for current metadata, caches each shown pair, and sends feature overrides on new Start only with fresh options. [2]
 
 - The dashboard guide identifies controls by their visible labels or accessible names and explains role starts, chats, tasks and repository knowledge. [4]

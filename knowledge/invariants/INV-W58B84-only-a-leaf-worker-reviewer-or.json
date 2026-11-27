@@ -6,9 +6,9 @@
     ],
     "justification": "The constructor value is checked by the leaf-handover tests over the three eligible and four protected roles."
   },
-  "applicability": "Every Worker, Reviewer or Curator handover the launch constructor compiles for a canonical leaf.",
+  "applicability": "Every Worker, Reviewer, Curator or Consolidator handover the launch constructor compiles for a canonical leaf.",
   "conditions": [
-    "The value names all three seat roles and both other-seat role_message arguments with canonical master and leaf references, and the sprint reference when the selection has one.",
+    "The value names the leaf's admitted seat roles (three seats on ordinary leaves or two seats on consolidation leaves) and sibling role_message arguments with canonical master and leaf references, and the sprint reference when the selection has one.",
     "No sibling agent id is listed, because the occupant can change."
   ],
   "exclusions": [
@@ -28,27 +28,19 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Only a leaf Worker, Reviewer or Curator handover gains leafSeats with all three seat roles and exact sibling role-message arguments containing canonical master and leaf references, and the sprint reference when the selection has one, without sibling agent IDs.",
+  "statement": "Only a leaf Worker, Reviewer, Curator or Consolidator handover gains leafSeats with the leaf's seat roles (Worker, Reviewer and Curator on ordinary leaves; Consolidator and Reviewer on consolidation leaves) and exact sibling role-message arguments containing canonical master and leaf references, and the sprint reference when the selection has one, without sibling agent IDs.",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-RSM-L1",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-RSM",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

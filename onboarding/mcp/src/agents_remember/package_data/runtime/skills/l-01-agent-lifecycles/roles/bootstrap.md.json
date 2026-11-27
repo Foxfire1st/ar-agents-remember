@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:fbf404b74f40cb8713a3521f2ced6bdb34fe450c533e21a92c51de30f7b85f60",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"
@@ -91,12 +91,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+            "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
             "content": "sha256:41a1855468023a35609b286d959a230a98f18cdb3b4a4431e842dbae7451a2ec",
             "locator": {
-              "end": 458,
+              "end": 459,
               "kind": "line_range",
-              "start": 414
+              "start": 415
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
@@ -310,12 +310,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
             "content": "sha256:87493687e619f40c59eb325499aee24e8ebc16840f218eca3f0e673b6ab01a83",
             "locator": {
-              "end": 548,
+              "end": 599,
               "kind": "line_range",
-              "start": 516
+              "start": 567
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
