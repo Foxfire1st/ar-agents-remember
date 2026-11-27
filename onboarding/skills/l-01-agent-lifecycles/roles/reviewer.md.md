@@ -23,7 +23,7 @@ Memory curation review requires a full `memory_quality_check` (blocking on Curat
 
 ## Code Commentary
 
-The Reviewer opens briefs (`read_ar_files`), calls `knowledge_read` on changed files, inspects every changed and unattributed file, checks card dates against commits, and preserves Curator producer fields.
+The Reviewer opens briefs (`read_ar_files`), calls `knowledge_read` on changed files, carries the exact inline complete-diff rule (`inspect all changed/unattributed files`), checks card dates against commits, and preserves Curator producer fields.
 
 ### Bound native review intake
 

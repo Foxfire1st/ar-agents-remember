@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
-        "content": "sha256:64a11d94602cc5607fa2c9698baaf4a1c70746bbe30a9d99524954187516ca29",
+        "blob": "4d51d2ccbaa7aaaefa8d9f97048d63b4c112b2f5",
+        "content": "sha256:caae7297568cd054f3221492bfcca1093c9af74bc31a92bc7b858bf0d91dbbb4",
         "locator": {
           "end": 194,
           "kind": "line_range",
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
+            "blob": "4d51d2ccbaa7aaaefa8d9f97048d63b4c112b2f5",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
+            "blob": "4d51d2ccbaa7aaaefa8d9f97048d63b4c112b2f5",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
+            "blob": "4d51d2ccbaa7aaaefa8d9f97048d63b4c112b2f5",
             "content": "sha256:30d55484d027763bad5a0442eeae31346fff77202433d08ccd83e5afd16028fc",
             "locator": {
               "end": 172,
@@ -74,12 +74,12 @@
       ]
     },
     "4": {
-      "note": "The Status section gives package version 3.0.8 and Python 3.14, then directs readers to the release notes before installation.",
+      "note": "The Status section gives package version 3.1.1 and Python 3.14, then directs readers to the release notes before installation.",
       "targets": [
         {
           "anchor": {
-            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
-            "content": "sha256:a1ac091d017866e45822ec6a2399a1b658a6a6426fb6d48dab683fa5285ded7b",
+            "blob": "4d51d2ccbaa7aaaefa8d9f97048d63b4c112b2f5",
+            "content": "sha256:e9258ef4cc962890b0846bc1b35ae8bc34ab919452c1eac543bdab724ef6a2cb",
             "locator": {
               "end": 200,
               "kind": "line_range",

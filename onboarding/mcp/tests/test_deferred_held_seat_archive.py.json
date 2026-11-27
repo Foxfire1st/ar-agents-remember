@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
-        "content": "sha256:7ab08b6c1476f8cd0a48c9edf8c575f1f344f2b196874530ca853a23766987ae",
+        "blob": "0249f35bb35bd240905a01fb88ffe5d54b315395",
+        "content": "sha256:5b2066d6bc2f1dfbd74aec925a4e86a3effaedd2693129248dc75094cd23c83b",
         "locator": {
           "kind": "symbol",
           "name": "DeferredHeldSeatArchiveTests.test_entered_deferred_held_open_settles_through_host_and_reports_debt"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
+        "blob": "0249f35bb35bd240905a01fb88ffe5d54b315395",
         "content": "sha256:117b9b11a79c0496722b0aa284fb8966aedb9dd4588e5a82d9b9984368703e4e",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`DeferredHeldSeatArchiveTests` verifies uncreated deferred held seats settle as `gone` with zero host calls across finalize/cleanup/abandon/preview, while `heldOpenPending=True` seats settle through the host and record `owed` debt when unreachable.",
+      "note": "`DeferredHeldSeatArchiveTests` verifies uncreated deferred held seats settle as `gone` with zero host calls across finalize/cleanup/abandon/preview, while `heldOpenPending=True` seats settle through the host (dry-run `agent-state` preview debt check and applied retry-once `agent-archive`, `agent-state`, `agent-archive` sequence) and record `owed` debt when unreachable.",
       "targets": [
         {
           "anchor": {
-            "blob": "94e4c4aa5222d242d1371d649d579a8c9d26b91a",
-            "content": "sha256:0eee5277ec442f1a038e440b01e6da2c538e2d5cd73ef2ea9922e7b27fe53c2b",
+            "blob": "0249f35bb35bd240905a01fb88ffe5d54b315395",
+            "content": "sha256:48fb58af4c2482b8bd385e5a337c852f5bdea326ab4e2d605ff823c8e46003fc",
             "locator": {
               "kind": "symbol",
               "name": "DeferredHeldSeatArchiveTests"
