@@ -164,7 +164,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. Anchor: `_line_converted` `_knowledge_gate_refusal` [2]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): Master and checkpoint landing wait for valid, current knowledge. [3]
+
 
 - Parent resolution validates the named or exact folder master and refuses a missing leaf, master or matching row; standalone completion is not an admitted fallback. [4]
 
@@ -257,7 +259,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
 
+
 - `_leaf_landing_lock` rejudges a converted landed or landing-line memory pair and falls back to `leaf_cutover_refusal` only when neither side is converted. [52]
+
 - Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
 - `integration_gate_block` and `record_landing._landing_request` supply `master_document_base(...)` as `document_base` on master-end series requests and `None` on checkpoints or leaves. [104]
 
@@ -280,10 +284,8 @@ These superseded descriptions retain their historical wording; the current accou
 - Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
 
 - Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
-
 - Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate. [70]
-
-- Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
+- Protected publication rereads contract/source identity, delegates exact pair ref movement, and runs advisory `briefs/` refresh. [71]
 
 - Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 
@@ -312,12 +314,6 @@ These superseded descriptions retain their historical wording; the current accou
 - Source-bound item construction and stored predicate. [85]
 
 - **Retained historical source account — superseded by the current route account:** Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
-
-- **Retained historical source account — superseded by the current route account:** Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
-
-- **Retained historical source account — superseded by the current route account:** Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate. [70]
-
-- **Retained historical source account — superseded by the current route account:** Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
 
 - **Retained historical source account — superseded by the current route account:** Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 
@@ -387,5 +383,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - The landing check prepares and cleans up lockfile-matched `dashboard/node_modules` borrowing pre-spawn and delegates its hook run to `commit_check_process`. [102]
 - Pre-spawn `dashboard/node_modules` borrowing requires primary directory presence, byte-identical `dashboard/package-lock.json`, and gitignored candidate target, refusing as `unrunnable` otherwise. [103]
+
 
 - `finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit. [106]

@@ -273,12 +273,12 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:71ee01a215fe8e64333a9a45e032d20811a4c94da97c8138cbf2ed2f46d80bac",
             "locator": {
-              "end": 307,
+              "end": 308,
               "kind": "line_range",
-              "start": 233
+              "start": 234
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -286,12 +286,12 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:aaf23b3f05a648c8e098cb89f6a5d58f19d78f7297731bf47fa896739fcdd377",
             "locator": {
-              "end": 730,
+              "end": 731,
               "kind": "line_range",
-              "start": 695
+              "start": 696
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },

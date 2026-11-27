@@ -3,7 +3,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad4d2d850a016720a5f59a58a02edcb0b0f32f5f",
+        "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
+        "content": "sha256:f0f4077ca540b999c3e5a838192b556424eafabccb481cba8ae37425c2d2623c",
+        "locator": {
+          "end": 75,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "id": "RLZ-A78A5J",
+      "invariant": "INV-ZYKN6P",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 3",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Selects IN_THE_FILE only when location.current is true and IN_THE_FILE_NOT_CURRENT when the saved brief on disk is missing or stale.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
+        "content": "sha256:6dd4f641a683f887c33d1ba25699b86bcc2848d4fdbda90305ce762917c6f428",
+        "locator": {
+          "kind": "symbol",
+          "name": "counts_notice"
+        }
+      },
+      "id": "RLZ-BT05NT",
+      "invariant": "INV-ZYKN6P",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 3",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Switches the batch counts-only notice between current briefs and missing or older briefs based on all_current.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
+        "content": "sha256:d9fc5df80b2bc9d463362cf77bd5d341c84f9ac2c4901e1c2e66ed61f3605c6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "without_rule_texts"
+        }
+      },
+      "id": "RLZ-W73AD7",
+      "invariant": "INV-ZYKN6P",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 3",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Gates LEFT_OUT and RULE_LEFT_OUT notices on whether the row's saved brief is current instead of instructing callers to read a missing or older file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
         "content": "sha256:da9c14ba4d45dc6f94de1659096a2b3af6c32f5fd3fdeb96f8f1e9f5e3a5f5e8",
         "locator": {
           "kind": "symbol",
@@ -26,11 +81,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4d2d850a016720a5f59a58a02edcb0b0f32f5f",
+            "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
             "content": "sha256:da9c14ba4d45dc6f94de1659096a2b3af6c32f5fd3fdeb96f8f1e9f5e3a5f5e8",
             "locator": {
               "kind": "symbol",
               "name": "fit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Short-answer and counts-only notices distinguish current from missing or older disk briefs and direct callers to `knowledge_read` when a saved brief is not current.\n\nAnchor: `whole`; `without_rule_texts`; `counts_notice`; `_named_only`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad78f82133ea337cb0c43ee46463b032db687706",
+            "content": "sha256:6d03456cb75e4e1cf9bfb3ea96d934d202c8a8d94b6ead64bd4722c1efa5232c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

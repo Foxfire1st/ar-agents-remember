@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The derived v8 ix_fts index, minimal MCP registration and 5,000-token answer bound, and bounded impact/search/records/compact-dependent query builders jointly deliver complete drafting and verification retrieval without expanding the MCP tool roster or breaking token ceilings."
+  },
+  "guarantee": "knowledge_read remains a single read-only MCP tool within role schema byte budgets and the 500-character raw description ceiling while serving deterministic Porter FTS5 live-record search, family-grouped impact, verbatim 20-record batch retrieval inside a 5,000-token bound with inline staleAnchors, and compact dependent rows backed by the derived v8 SQLite index.",
+  "id": "FAM-ZPQR9K",
+  "members": [
+    "INV-TT65V5",
+    "INV-KTGZFV",
+    "INV-FM7P08"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "knowledge-read-query-views",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/memory/knowledge_index",
+    "mcp/src/agents_remember/mcp/registration",
+    "mcp/src/agents_remember/models/tools",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/mcp/tools"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Bounded drafting and verification queries on knowledge_read",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

@@ -197,7 +197,9 @@ No meaningful cross-repo references found.
 - The integrity model carries validator inputs, report and optional leaf worklist fields. [8]
 - The integrity handler reports text-tree validation. [9]
 
+
 - The read builder returns the reader-owned payload and read extras. [28]
+
 
 
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [1]

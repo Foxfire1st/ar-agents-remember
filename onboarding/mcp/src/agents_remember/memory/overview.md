@@ -21,7 +21,7 @@ A selected Git tree is read through objects without checkout; working-directory 
 
 The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.
 
-The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v7`, with history identity `(path, id)`. Each filename also binds the immutable loaded-build source digest. An unknown build uses a private cache-instance namespace and reuses no persistent dataset. `open_cached_index` reopens only a known loaded build’s existing index without touching usage bookkeeping; age and size eviction still cover every SQLite namespace.
+The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v8`, with history identity `(path, id)` and derived FTS5 virtual table `ix_fts`. Each filename also binds the immutable loaded-build source digest. An unknown build uses a private cache-instance namespace and reuses no persistent dataset. `open_cached_index` reopens only a known loaded build’s existing index without touching usage bookkeeping; age and size eviction still cover every SQLite namespace.
 
 Readers open existing index datasets through SQLite read-only handles. The store validates the one declared schema, reads identities/revisions, rechecks revision payload seals, and computes logical identity. Recorded-scope selection and paging remain separate operations. Application consumers supply exact selected datasets and source bindings; the index does not promote a record into an obligation or an approval.
 
@@ -257,7 +257,9 @@ Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
 
 
 
+
 - The index builder reads a memory snapshot and reports the file and reason for each recorded parse or placement problem. [103]
+
 
 
 
@@ -384,8 +386,12 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 
 - open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]
 
+
 - Index build derives current standing and writer evidence from one selected tree. [189]
+
+
 - The declared cache schema stores both current standing and per-revision writer evidence. [190]
+
 - Revision-standing conversion plans stored state-word removal and companion review facts. [191]
 
 - Crossing merges authored fields and applies selected-side or product writer evidence. [192]
@@ -401,8 +407,12 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
 - Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
 
-- The current logical store is schema v10, with an explicitly pinned fingerprint. The rebuildable index uses layout v7. [155]
+
+- The current logical store is schema v10, with an explicitly pinned fingerprint. The rebuildable index uses layout v8. [155]
+
+
 - The schema's v2 record explains the inaugural cache rebuild after the payload-seal change. A cached index whose format differs from the current format is rebuilt. [9]
+
 - Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
 - Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
 - Parser completeness is distinct from validator integrity and history files are retained by path. [151]

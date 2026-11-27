@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_code_pairing.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+        "content": "sha256:41a70d87ebf025244a667cc5a3ae008a8c96d14c2d55f4382e8abf7d41e41b61",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_paired_code_root"
+        }
+      },
+      "id": "RLZ-HMXB8Z",
+      "invariant": "INV-4NNXH1",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 7",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Implements the four-tier pairing precedence: explicit repositoryRoot, leaf contractPath or enclosure sibling worktree, config.repositories match by repo_id or memoryRoot, and workspace_root fallback without guessing unconfigured paths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+        "content": "sha256:5c036094db04b2e8d54b45d14b431a2edb6279ee2c8312df0d5b1a26106dd4f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_code_source"
+        }
+      },
+      "id": "RLZ-PR45WB",
+      "invariant": "INV-4NNXH1",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 7",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Observes the resolved code root (clean HEAD or dirty working-tree capture) so every fresh and resumed page receives a live CodeState.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`resolve_paired_code_root` enforces four-tier pairing precedence: explicit root, leaf worktree, configured repository, and `workspace_root` fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+            "content": "sha256:41a70d87ebf025244a667cc5a3ae008a8c96d14c2d55f4382e8abf7d41e41b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_paired_code_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`observe_code_source` captures dirty working trees and raises `NoCodeTreeError` only on explicit unreadable roots or unpaired `working-tree` requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+            "content": "sha256:5c036094db04b2e8d54b45d14b431a2edb6279ee2c8312df0d5b1a26106dd4f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_code_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`code_tree_of` forwards `capture.object_directory` onto the returned `CodeTree`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+            "content": "sha256:727d3e5742a18effe1c39bff3b29d570e3a762837675359253af9101a61ac264",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_tree_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_leaf_code_worktree` resolves `contractPath`, enclosure manifest, and `memory-<slug>` sibling worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+            "content": "sha256:0569edabd2f10bf795b5fc10e9276ea0e678e6a4cb977f8759eddaecb3c76d8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_code_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_configured_code_root` pairs by `repo_id`, exact `memory_root`, or shared `--git-common-dir`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "768ced09f9e436e7b3617fe73ece9b8e6fb8ec8b",
+            "content": "sha256:ed18394f89ad002a0280fc672ad17206aba2dfbeed6ced1d4504102247472b06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_code_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

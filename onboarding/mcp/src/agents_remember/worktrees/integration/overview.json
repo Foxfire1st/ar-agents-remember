@@ -272,26 +272,14 @@
       ]
     },
     "17": {
-      "note": "Public integration evaluates handover and converted knowledge before ancestry preview/apply.\n\nAnchor: `_handover_or_apply_integration` `_knowledge_gate_block`",
+      "note": "Public integration evaluates handover and converted knowledge before ancestry preview/apply.\n\nAnchor: `_handover_or_apply_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:003da821fec014e91e5fe1786aed367f9adce33d609da62628440cb11657886f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_handover_or_apply_integration"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -703,10 +691,10 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
-              "end": 1100,
+              "end": 1115,
               "kind": "line_range",
               "start": 1
             },

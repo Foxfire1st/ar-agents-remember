@@ -153,7 +153,6 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The exact lifecycle field row carries proposed and reviewed on the same authored revision. [9]
 - The renderer exercises synthetic before and after statement values in its own component fixture. [18]
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
-- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [16]
 
 
 
@@ -167,10 +166,11 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. [11]
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
 
+
 - The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module. [16]
 
 
 
+
+
 - The lifecycle catalog lists `mcp/tests/test_knowledge_review_one_sided_statements.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [22]
-
-

@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans knowledge_code_pairing.py and mcp/tools/knowledge.py, is verified by multi-page and leaf-precedence tests, and jointly ensures knowledge_read resolves live code trees without manual SHA passing."
+  },
+  "applicability": "Converted-memory knowledge_read calls across paged, record, marks, and drafting query views.",
+  "conditions": [
+    "Resolves paired code root in four-tier precedence: explicit repositoryRoot, leaf contractPath or sibling enclosure worktree, configured repository match by repo_id or memoryRoot, then workspace_root fallback without guessing unconfigured paths.",
+    "Observes clean HEAD or dirty working-tree capture on fresh and continuation reads without mutating raw request.code_tree_id so _resume_refusal remains bound to caller-supplied overrides."
+  ],
+  "exclusions": [
+    "A caller-named repositoryRoot that resolves no Git tree still refuses selected_input_unavailable.",
+    "When no code root can be resolved, pairing returns None and currentness honestly reports unverifiable."
+  ],
+  "id": "INV-4NNXH1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_briefs_and_pairing.py + scratch real-memory verification (0 unverifiable)"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 7",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_read automatically pairs memoryRoot to its code repository on every fresh and continuation page using explicit-argument, leaf-enclosure, configured-repository, and fallback precedence while keeping _resume_refusal bound to the raw request codeTreeId.",
+  "supersedes": [],
+  "title": "knowledge_read auto-pairs memoryRoot to code across pages and resumes",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

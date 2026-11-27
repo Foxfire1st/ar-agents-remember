@@ -7,6 +7,21 @@
     "task": "261112-BUG-L59",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/reference/knowledge-system.md",
+        "note": "Update docs/reference/knowledge-system.md for clause_title (~80 chars), ten knowledge_read views, automatic code-tree pairing, post-landing brief refresh, and agents-remember memory-briefs."
+      },
+      "createdAt": "2026-11-27T01:47:08.380157Z",
+      "createdByLeaf": "261112-KNO-L7",
+      "fileBlob": "b57ee9b5a4726d4b95947fa831f9bd6dbd2d0424",
+      "id": "DFR-5W723Z",
+      "owner": "261112-KNO",
+      "passage": "docs/reference/knowledge-system.md lines 30-31 (first six words fallback), lines 386-388 (knowledge_read never returns record text), lines 401-403 and 486-496 (omitting post-landing brief refresh and memory-briefs CLI), and lines 425-429 (omitting automatic code-tree pairing)",
+      "reason": "KNO-R07 replaces six-word untitled fallback with ~80-char first-clause clause_title, adds verbatim records/impact/search/compact-dependent views on knowledge_read, adds automatic memoryRoot-to-code pairing, and adds post-landing brief refresh plus agents-remember memory-briefs CLI; Curator cannot edit docs/ files in code root."
+    }
+  ],
   "document": "docs/reference/knowledge-system.md",
   "id": "DPD-TXRND9",
   "origin": {

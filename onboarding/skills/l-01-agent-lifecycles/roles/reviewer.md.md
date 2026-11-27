@@ -163,6 +163,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 
+
 - Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them. [11]
 
 

@@ -102,22 +102,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_integrated_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -130,22 +118,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:834b50635720414156aad7ce60d8689a5d5c0077188e1d782679d4b640d55ddd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_checkpoint_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -158,11 +134,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:048290356b8761cb0e03a382bda2ad54d0663c0fe6a0657e13187a21ed04ef03",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },

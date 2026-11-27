@@ -1,0 +1,208 @@
+{
+  "path": "mcp/tests/test_kno_r07_knowledge_queries.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:bef2a8becc076bd4c0f7f9c0df0ef4d72235512a0cf14167bf0bbf41bc08cd9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_impact_30_member_family_names_every_out_of_scope_sibling"
+        }
+      },
+      "facet": "Demonstrates that impact_view names every out-of-scope family sibling as a 1-line summary even for a 30-member family inside token bounds.",
+      "id": "PRF-5P2FT1",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:f020c88800249ba6a8d6ac28f710b50fd26c51bec2dab5055fbe09c1b5acfe8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_records_preserves_symbols_at_15_ids_and_all_multi_symbol_proofs"
+        }
+      },
+      "facet": "Demonstrates verbatim batch records preserving realization symbols at 15 IDs and complete multi-symbol proof entries.",
+      "id": "PRF-E5B02J",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:a81634b80ba150297ba9f606b50450911e872b55dd1e81429d8c25967de738d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compact_dependent_row_aggregates_multiple_deferrals"
+        }
+      },
+      "facet": "Demonstrates compact dependent aggregation of multiple deferrals into conditionTask/conditionFile lists without 40-char blob hashes.",
+      "id": "PRF-EX4GXJ",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:9df0e08ef01ac405f07525e78034058944b5847a8246060ef1410f3ca52ec7fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_ix_fts_is_deterministic_and_excludes_retired_closed_and_history"
+        }
+      },
+      "facet": "Demonstrates deterministic ix_fts population over live records and exclusion of retired invariants, closed weaknesses, and history files.",
+      "id": "PRF-JYVXD8",
+      "invariant": "INV-TT65V5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 8",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:6b5eda7f79a0eb5c971059425601830b8fbb260151061b2d171a6b9be8424434",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_read_records_and_compact_dependent"
+        }
+      },
+      "facet": "Demonstrates mounted knowledge_read batch records and compact dependent dispatch within the 5,000-token answer ceiling.",
+      "id": "PRF-T08Z4G",
+      "invariant": "INV-KTGZFV",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 9",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:fa96624c65dfbd28a3b1cfece65ece835e16a6ee015d9c8ff0debb1e92396233",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_read_impact_search_records_and_compact_dependent"
+        }
+      },
+      "facet": "Demonstrates end-to-end bounded impact, search, verbatim records, and compact dependent views through mounted knowledge_read.",
+      "id": "PRF-VGGQNG",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+        "content": "sha256:6b5eda7f79a0eb5c971059425601830b8fbb260151061b2d171a6b9be8424434",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_read_records_and_compact_dependent"
+        }
+      },
+      "facet": "Demonstrates verbatim batch records with inline staleAnchors and compact dependent projection contracts.",
+      "id": "PRF-ZSSC25",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies `INDEX_FORMAT == \"ar-knowledge-index/v8\"` deterministic FTS5 ranking and exclusion of retired, closed, and history records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+            "content": "sha256:9df0e08ef01ac405f07525e78034058944b5847a8246060ef1410f3ca52ec7fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ix_fts_is_deterministic_and_excludes_retired_closed_and_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies `impact` and `search` views within 3,500-token bound, family siblings, 80-word trimming, and `history` refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+            "content": "sha256:fa96624c65dfbd28a3b1cfece65ece835e16a6ee015d9c8ff0debb1e92396233",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_impact_search_records_and_compact_dependent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies `records` (verbatim statements, inline `staleAnchors`, 25-ID cap, 5,000-token bound) and compact `dependent` rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+            "content": "sha256:6b5eda7f79a0eb5c971059425601830b8fbb260151061b2d171a6b9be8424434",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_records_and_compact_dependent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Verifies 15-ID `records` pagination preserves every `realizedIn` and 4-symbol `proofs` locator verbatim without collapse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+            "content": "sha256:f020c88800249ba6a8d6ac28f710b50fd26c51bec2dab5055fbe09c1b5acfe8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_records_preserves_symbols_at_15_ids_and_all_multi_symbol_proofs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Verifies 30-member family `impact` enumerates all 29 out-of-scope `familySiblings` across 2 pages without truncation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3265fe7f1cf4f552200307d7037062a183ecb808",
+            "content": "sha256:bef2a8becc076bd4c0f7f9c0df0ef4d72235512a0cf14167bf0bbf41bc08cd9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_impact_30_member_family_names_every_out_of_scope_sibling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

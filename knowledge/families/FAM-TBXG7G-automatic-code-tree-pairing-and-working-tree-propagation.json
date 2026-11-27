@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Code-root pairing resolution in knowledge_code_pairing and CodeTree/object_directory propagation through tree_read jointly ensure fresh and resumed knowledge_read pages evaluate real anchor currentness instead of reporting false unverifiable states."
+  },
+  "guarantee": "Converted-memory knowledge_read calls automatically pair memoryRoot to its code repository under deterministic four-tier precedence (explicit repositoryRoot, leaf contract/enclosure sibling worktree, configured repository match, workspace fallback) and propagate the resolved CodeTree and dirty working-tree object directory across fresh and resumed pages while keeping explicit continuation overrides fail-closed.",
+  "id": "FAM-TBXG7G",
+  "members": [
+    "INV-DW999J",
+    "INV-4NNXH1"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "code-tree-auto-pairing",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/mcp/tools"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Automatic code-tree pairing and working-tree propagation",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

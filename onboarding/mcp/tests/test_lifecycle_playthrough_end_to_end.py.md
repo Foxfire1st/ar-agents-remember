@@ -188,7 +188,9 @@ No external domain claim is required.
 
 - The public tools the master-level beats drive. [6]
 
+
 - The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
+
 
 - The shared world fixture and Git helper this module composes instead of re-implementing. [8]
 
@@ -211,6 +213,5 @@ No meaningful cross-repo references found.
 
 
 
+
 - The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [20]
-
-

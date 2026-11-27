@@ -126,12 +126,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+            "blob": "e847930d44b35a21df3ab12eb97a23fce9ee5561",
             "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
             "locator": {
-              "end": 174,
+              "end": 178,
               "kind": "line_range",
-              "start": 134
+              "start": 138
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
           },
@@ -139,12 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+            "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
             "content": "sha256:d6202ce2490710b9e6edeff594e0421d3fd9fb8d5aa059030b85557af8566c2d",
             "locator": {
-              "end": 132,
+              "end": 133,
               "kind": "line_range",
-              "start": 80
+              "start": 81
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },

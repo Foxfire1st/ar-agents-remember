@@ -185,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
             "locator": {
               "kind": "symbol",
@@ -198,15 +198,14 @@
       ]
     },
     "106": {
-      "note": "`finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit.",
+      "note": "`finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit.\n\nAnchor: `_readiness`; `record_landing_result`",
       "targets": [
         {
           "anchor": {
             "blob": "0e7d45cabcd48665950a5e2042d63cc0fa682e56",
-            "content": "sha256:6c6aec573c4ff9721f7e01774ce1209e1d193bc8d4937fa129b571abdd959a1b",
+            "content": "sha256:8fd67c397445441c28b3ce4a4fc39c661594807fb95f040d3ac3fb14f141eadd",
             "locator": {
-              "kind": "symbol",
-              "name": "_readiness"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -214,11 +213,10 @@
         },
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:048290356b8761cb0e03a382bda2ad54d0663c0fe6a0657e13187a21ed04ef03",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -422,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -533,12 +531,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:c37e22cd9045bf316672d3f14d7db587ddb38016375cc167cbb8505504c2f669",
             "locator": {
-              "end": 642,
+              "end": 643,
               "kind": "line_range",
-              "start": 642
+              "start": 643
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -682,12 +680,12 @@
       ]
     },
     "3": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Master and checkpoint landing wait for valid, current knowledge.\n\nAnchor: `_knowledge_gate_block`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Master and checkpoint landing wait for valid, current knowledge.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
             },
@@ -1249,28 +1247,16 @@
       ]
     },
     "52": {
-      "note": "`_leaf_landing_lock` rejudges a converted landed or landing-line memory pair and falls back to `leaf_cutover_refusal` only when neither side is converted.",
+      "note": "`_leaf_landing_lock` rejudges a converted landed or landing-line memory pair and falls back to `leaf_cutover_refusal` only when neither side is converted.\n\nAnchor: `_leaf_landing_lock`",
       "targets": [
         {
           "anchor": {
             "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
-            "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_leaf_landing_lock"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "content": "sha256:468a4db1b3107bd44495a096322a9ec06f9535efaba3488bcf3694f129de351c",
             "locator": {
               "kind": "file"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },
           "kind": "code"
         }
@@ -1281,7 +1267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -1622,8 +1608,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
             },
@@ -1651,12 +1637,12 @@
       ]
     },
     "70": {
-      "note": "Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate.\n\nAnchor: `_knowledge_gate_block` `_leaf_landing_lock`",
+      "note": "Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
             },
@@ -1667,15 +1653,14 @@
       ]
     },
     "71": {
-      "note": "Protected publication rereads contract/source identity and delegates exact pair ref movement.",
+      "note": "Protected publication rereads contract/source identity, delegates exact pair ref movement, and runs advisory `briefs/` refresh.\n\nAnchor: `_publish_integration_edge`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:f3d4cd655c8a1a332af3690694d1b34c9601496f1f826c25f9542c8c45a737c2",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_integration_edge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -1688,7 +1673,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -1700,7 +1685,7 @@
         },
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
             "locator": {
               "kind": "symbol",

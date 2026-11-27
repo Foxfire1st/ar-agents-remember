@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/marks_compact.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6b1404c86cd18b1522cc5bab72a246b14dc918a5",
+        "content": "sha256:77d9da39ed71eb93d2b6e8aca46a45bc1254291d9acb9ed08e084c767f3eb7e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_dependent_row"
+        }
+      },
+      "id": "RLZ-S323PC",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Projects dependent rows into the short compact shape with aggregated conditionTask/conditionFile, 10-char confirmedCommit, confirmedUncommitted, and movedLinks count, omitting 40-char blob hashes and movingCommitUnknown prose.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`compact_dependent_row` omits blob hashes and boilerplate prose, shortens `confirmedCommit` to 10 characters, and emits an integer `movedLinks` count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b1404c86cd18b1522cc5bab72a246b14dc918a5",
+            "content": "sha256:77d9da39ed71eb93d2b6e8aca46a45bc1254291d9acb9ed08e084c767f3eb7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_dependent_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_aggregate_conditions` deduplicates and sorts task and file conditions across multiple deferrals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b1404c86cd18b1522cc5bab72a246b14dc918a5",
+            "content": "sha256:4a1a922308ec1b9fa9cc01eb3c871b06d6c18b7653132288a18f8d551819f270",
+            "locator": {
+              "kind": "symbol",
+              "name": "_aggregate_conditions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

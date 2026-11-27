@@ -114,7 +114,9 @@ No external domain claim is required.
 
 > Retained earlier citation wording: - The report shaper whose exact sentence and inventory the first case asserts. [3]
 
+
 - The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. [4]
+
 
 - The projection that names the finalization move. [5]
 

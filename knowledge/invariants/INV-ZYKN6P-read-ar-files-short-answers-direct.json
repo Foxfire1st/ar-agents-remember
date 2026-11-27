@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans short_answer.py and read_files_briefs.py, is guarded by test_short_answer_gates_read_current_brief_notices_on_location_current, and prevents callers from being told to open missing or stale brief files."
+  },
+  "applicability": "File-brief short-answer row notices and batch counts-only notices emitted by read_ar_files.",
+  "conditions": [
+    "Emits open-the-brief guidance (IN_THE_FILE, LEFT_OUT, RULE_LEFT_OUT, and current counts_notice) only when on-disk brief freshness marks location.current true.",
+    "Emits honest not-current notices directing callers to knowledge_read or current briefs only whenever a saved brief is missing or older than the selected memory tree."
+  ],
+  "exclusions": [
+    "Does not write or refresh saved brief files on disk during read_ar_files.",
+    "Applies to converted-memory file briefs; paths without an eligible brief omit brief notices."
+  ],
+  "id": "INV-ZYKN6P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_briefs_and_pairing.py::test_short_answer_gates_read_current_brief_notices_on_location_current"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 3",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "read_ar_files short answers direct callers to open the current brief file only when location.current is true and report missing or older briefs honestly otherwise.",
+  "supersedes": [],
+  "title": "read_ar_files short-answer brief notices gated on location.current",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

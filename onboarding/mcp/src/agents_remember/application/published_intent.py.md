@@ -14,7 +14,7 @@ Select published text knowledge for the ordinary paired read. Its coordination c
 
 `resolve_published_intent` selects a converted memory tree or reports `legacy-format`. `converted_memory_tree` accepts only a directory holding `knowledge/layout.json`; a `knowledge.sqlite` file and a parent inferred from its filename are not accepted tree inputs. Selection requires a coordination root for the derived cache, and partial indexes stay incomplete. Selecting the index leaves the memory folder untouched.
 
-Source resolution is a root/tree pair or is unrequested, never half-invented. Path seeds prepare family-complete leaf selections; identity seeds use the scope walk. The whole knowledge block fits the shared threshold and resumes through `knowledge_read`.
+Source resolution is a root/tree pair or is unrequested, never half-invented; `_open_context` forwards `code_state` (`"working-tree"` when the resolved source pair captured a dirty working tree, `"commit"` otherwise, or `None` when unrequested) into `open_read_context`. Path seeds prepare family-complete leaf selections; identity seeds use the scope walk. The whole knowledge block fits the shared threshold and resumes through `knowledge_read`.
 
 ### Invariants And Boundaries
 
@@ -33,10 +33,8 @@ adds a `currentness` block beside the pages: the state of every invariant and fa
 and each family's stale members, computed once per block by `knowledge_paging.currentness.WalkCurrentness`
 inside `_tree_block`, so the block is measured with it (MIK-R02, ruling F3 of 2026-09-29 20:40:40). **The tree it observes
 is the one this route already resolved for the source it returns** (architect ruling 1, 2026-09-29T18:42:37):
-the `sourceResolution` pair, the code root's `HEAD^{tree}`. That is the read's own resolved tree, not a
-fallback. The block names it (`codeTree.treeId`) and states its scope in `treeScope` (`_TREE_SCOPES`: "states
-observed at the committed code tree <id> this read resolved; uncommitted working-tree edits are not
-reflected"). When the route resolves no pair, `codeTree` is `null`, there is no `treeScope`, and every realized
+the `sourceResolution` pair, resolved via `hold_observed_code_tree` (committed `HEAD^{tree}` when clean, or a captured working tree when dirty). That is the read's own resolved tree, not a
+fallback. The block names it (`codeTree.treeId`), sets `currentness["codeState"] = pair.code_state`, and states its scope in `treeScope` (`_TREE_SCOPES` carries distinct scopes for `"commit"` and `"working-tree"`). When the route resolves no pair, `codeTree` is `null`, there is no `treeScope`, and every realized
 invariant is `unverifiable` ("no code tree was requested"). The computation never raises (ruling N2,
 19:13:41), so this function holds no `try` of its own. MIK-R29 may add an explicit tree selector later.
 
@@ -101,8 +99,7 @@ inside the read — `_seed_json` asks the value for its own `model_dump` and ans
   `sourceResolution` (`repositoryRoot` plus `codeTreeId`, or `null` when the pair was unrequested), plus
   `memoryTree` only when the selection is a converted memory tree. It claims nothing about history and never
   claims that `context_packet` retrieved invariants.
-- `read_git`-style subprocess access goes through the shared `kernel.git_command.run_git` owner; this module
-  runs exactly one Git command itself (`rev-parse HEAD^{tree}`) and never a working-tree read; the Git
+- `_source_pair` delegates code-tree observation to `hold_observed_code_tree`, which uses the shared `kernel.git_command.run_git` owner to resolve `HEAD^{tree}` or capture a dirty working tree; the Git
   commands that capture a converted tree's key run inside `memory/knowledge_index/tree.py`.
 
 ### Invariants And Boundaries
@@ -146,7 +143,7 @@ No configured domain documentation could be checked.
 
 
 
-- **The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.** [8]
+- **The read itself: the shipped taskless context constructor (forwarding `code_state`) plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.** [8]
 
 
 
@@ -185,7 +182,7 @@ No configured domain documentation could be checked.
 - **MIK-R01: an index that is not the selected tree's is a named seed failure.** [16]
 - **MIK-R05: a path seed's `registration_absent` refusal carries its route chain.** [19]
 
-- The published-intent case: the resolved tree and `treeScope`, an uncommitted edit that changes nothing, and no resolved tree. [22]
+- The published-intent case: the resolved committed tree, captured dirty working tree (`codeState=working-tree`), `treeScope`, and no resolved tree. [22]
 
 - **A page from a partial index is never presented as complete.** [23]
 
