@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-        "content": "sha256:59b69c1389f51f2bb6f1bad1f8c70f029752b2002c181a2ebd066772da4cb4f4",
+        "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+        "content": "sha256:641e5977b0280c2791ad6da096495f6028c2e10a1f2932c1e88a02cb666afd21",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
         "content": "sha256:de1372d7b5482f0ab0340e49130f58713c468baf6f7101a151adf96dc55aa208",
         "locator": {
-          "end": 28,
+          "end": 30,
           "kind": "line_range",
-          "start": 28
+          "start": 30
         }
       },
       "id": "RLZ-Y2N80G",
@@ -62,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:44fe6e8ba5d1a39fabd70ca4eab4dbcafeb37df2771b189f158c5d423187b5c8",
             "locator": {
-              "end": 34,
+              "end": 36,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             }
           },
           "kind": "code"
@@ -115,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
             "locator": {
-              "end": 22,
+              "end": 24,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             }
           },
           "kind": "code"
@@ -163,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:44fe6e8ba5d1a39fabd70ca4eab4dbcafeb37df2771b189f158c5d423187b5c8",
             "locator": {
-              "end": 34,
+              "end": 36,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -177,12 +177,12 @@
       ]
     },
     "7": {
-      "note": "Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`.\n\nAnchor: `knowledge_read`",
+      "note": "Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -199,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:aae3b2e23b0d19e3e9f2ad76ea5b8fe0c658c147220fc66f0612a821d111354f",
             "locator": {
               "end": 12,
@@ -225,14 +225,14 @@
       ]
     },
     "9": {
-      "note": "Normal workflow reconciles intent and code, ingests invariants in scope and updates families only with justification and a re-examined guarantee, and runs full quality checks (including the closeout stale `dependent` check) and the independent OM-2 fact-check.\n\nAnchor: `## Workflow`",
+      "note": "Normal workflow reconciles intent and code, ingests invariants in scope and updates families only with justification and a re-examined guarantee, and runs full quality checks (including the closeout stale `dependent` check) and the independent OM-2 fact-check.",
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-            "content": "sha256:c5afb216c98a6251372e2f13694f82fdd2bb1b5376bbc75f827e0c487a9eb1c2",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:df233583d99a02b4962f4c6d5f2816d9b22aafc4c8830f31caeb1f568f710844",
             "locator": {
-              "end": 22,
+              "end": 24,
               "kind": "line_range",
               "start": 10
             }

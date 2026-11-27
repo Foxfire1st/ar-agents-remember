@@ -100,7 +100,9 @@ No additional work is asserted by this card. Actual project publication and sema
 - The curation workflow verifies writer outputs resolve in `workspace.memoryRoot` and reads scoped `knowledge_read` plus full `knowledge_diff` before semantic changes; orientation binds curation decisions and writes to the starting server or serving-build CLI. [8]
 
 
+
 - Normal workflow reconciles intent and code, ingests invariants in scope and updates families only with justification and a re-examined guarantee, and runs full quality checks (including the closeout stale `dependent` check) and the independent OM-2 fact-check. [9]
+
 
 
 - Curation boundaries keep code, Git and transaction ownership with their owners, require `curator_coherence` when `checklistStatus=coherence-required`, keep partial/refused handovers partial, and send the memory candidate directly to the Reviewer via `role_message`. [10]
@@ -142,7 +144,9 @@ No meaningful cross-repository implementation dependency.
 - Curation requires the complete memory-quality operation, the Manager leaf closeout dependent-document read (`view="dependent"`, `staleOnly=true`) recorded in the curation report, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
 
 
+
 - Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]
+
 
 
 - The mirror carries the same authoring fields as the canonical operation. [1]

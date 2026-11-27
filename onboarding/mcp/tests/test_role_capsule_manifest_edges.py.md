@@ -38,13 +38,21 @@ Real-corpus cases bind the Investigator's instruction-shortfall review, the Arch
 - Source assertion: test_an_admitted_set_that_drops_the_manifest_mid_compile_is_refused. The declaration is not an execution receipt. [7]
 - Source assertion: test_composing_roots_answers_what_each_seat_kind_can_actually_contribute. The declaration is not an execution receipt. [8]
 
+
 - The every-role digest is delivered once outside the capsule instructions and seals each role's semantic digest. [12]
+
+
 
 
 - The Reviewer's complete-diff rule stands inline once in its role file and not in the knowledge-use detail. [15]
 
-- The Architect's template pointers must survive compilation; a removed or displaced pointer fails. [16]
-- The Curator's inline workflow paragraphs must reach its delivered Normal workflow; a removed paragraph fails. [17]
+
+
+- The Architect's template links remain reachable through its Tier-2 document-authoring detail reference; dropping either layer fails. [16]
+
+
+- The Curator's inline workflow paragraphs must reach its delivered Workflow section; a removed paragraph fails. [17]
+
 
 - Every digest place, clause and unit has exactly one home with matching hashes, headings and audiences; lost or ambiguous bindings fail. [10]
 
@@ -52,7 +60,9 @@ Real-corpus cases bind the Investigator's instruction-shortfall review, the Arch
 
 - Retired core units require the exact recorded retirement decision and carry no live binding. [13]
 
+
 - The Git-root scope rule has one complete source unit and one digest home for every role. [14]
+
 
 
 - Real-corpus cases bind the Investigator's instruction-shortfall review, the Architect's and Manager's third-rejected-round progress judgment and the Architect's Curator-measurement detail to their declared source, roles and step and to the exact read action that links them, with clause-removal and displaced-action controls. The composed core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [9]

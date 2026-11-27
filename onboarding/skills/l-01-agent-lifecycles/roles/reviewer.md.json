@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-        "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
         "locator": {
           "end": 15,
           "kind": "line_range",
@@ -286,7 +286,7 @@
       ]
     },
     "10": {
-      "note": "Reviewer reads only the assigned seam's selected packets and rendered task files via file tools (no .json or unrelated corpus), edits canonical task docs via task_doc, and writes verdicts under notes/reports/.",
+      "note": "Reviewer reads only the assigned seam's selected packets and rendered task files via file tools (no .json or unrelated corpus), edits canonical task docs via task_doc, and writes local report-folder verdicts (template for verdictRef).",
       "targets": [
         {
           "anchor": {

@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The witness compiles one admitted role and operation from a copied corpus.",
+      "note": "The witness compiles one admitted role and operation from a copied corpus and returns its rendered instructions and detail reference paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "965a4ef86155a79bf23d6136c292f94bb20e6df8",
-            "content": "sha256:751fca3166022e7bfe0e3dd7401afb75c09db0b6f324e73956d3423e775dd0df",
+            "blob": "a8bacafb1b1197616ace18ab3f3f8bc8c449bb82",
+            "content": "sha256:7b48e6b9344631c147e7d688946ba06f97e6a4cbc14401bb9ee8f9a7a917b5ed",
             "locator": {
               "kind": "symbol",
               "name": "_compile_moved_piece_witness"
@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "The Architect's template pointers must survive compilation; a removed or displaced pointer fails.",
+      "note": "The Architect's template links remain reachable through its Tier-2 document-authoring detail reference; dropping either layer fails.",
       "targets": [
         {
           "anchor": {
-            "blob": "965a4ef86155a79bf23d6136c292f94bb20e6df8",
-            "content": "sha256:d90c5ae7c5c2ff182f45362846c677ff576fdaf0f8f3811337e258e88dcfaf6d",
+            "blob": "a8bacafb1b1197616ace18ab3f3f8bc8c449bb82",
+            "content": "sha256:9e6c869ab95e1173e866388cba90053acbab7bc708e412b7e45123da705467f1",
             "locator": {
               "kind": "symbol",
               "name": "test_architect_ordinary_template_reach_rejects_compiled_pointer_loss"
@@ -35,12 +35,12 @@
       ]
     },
     "3": {
-      "note": "The Curator's inline workflow paragraphs must reach its delivered Normal workflow; a removed paragraph fails.",
+      "note": "The Curator's inline workflow paragraphs must reach its delivered Workflow section; a removed paragraph fails.",
       "targets": [
         {
           "anchor": {
-            "blob": "965a4ef86155a79bf23d6136c292f94bb20e6df8",
-            "content": "sha256:68d0d049472c247b77bd1481d0933bcb3b047acd7eb6cc1274af53af54f69574",
+            "blob": "a8bacafb1b1197616ace18ab3f3f8bc8c449bb82",
+            "content": "sha256:7173d75e1ae9bbdb1f5a6cd6bf1f7a696c416b3d3c046decb8a833155114a2ad",
             "locator": {
               "kind": "symbol",
               "name": "test_curator_inline_workflow_rejects_compiled_owner_paragraph_loss"

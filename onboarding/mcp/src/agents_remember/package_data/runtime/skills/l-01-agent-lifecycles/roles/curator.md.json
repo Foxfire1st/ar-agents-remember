@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-        "content": "sha256:a87590170e4a5857f4411ae66534cf53435a1e9037a6eac345a9faa4666b38b8",
+        "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+        "content": "sha256:356bdb331c6971b987292bd9921439b4f16293decc360194fb89a3006e74fe1f",
         "locator": {
           "kind": "file"
         }
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -148,8 +148,8 @@
         },
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:f68e3bd4d2372758f1e450c608f81ffbdfd8cab1ab1957da39fe63de6c2a1a91",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -179,12 +179,12 @@
       ]
     },
     "3": {
-      "note": "The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes, uncommitted fingerprints or silencing attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`.\n\nAnchor: `## Boundaries`",
+      "note": "The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes, uncommitted fingerprints or silencing attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:cd844584ff89591caa6a11f857bdec6c7004d0372a03f94c8657c8420865d6f5",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:77b5edde6d0cb126a761c44b2b2336cb440fd4fd41ece65e186027dbcaa783be",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -214,12 +214,12 @@
       ]
     },
     "7": {
-      "note": "The Curator writes `onboarding/` and `knowledge/` via `knowledge_write` or the serving-build CLI with `--commit`/`commit: true` (writing files, not Git), and never edits derived indexes.\n\nAnchor: `knowledge_write`",
+      "note": "The Curator writes `onboarding/` and `knowledge/` via `knowledge_write` or the serving-build CLI with `--commit`/`commit: true` (writing files, not Git), and never edits derived indexes.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:78c872aff6f4ed0e59b6c2598bdc48d1baac4e60cc9ae4b369a359b9c47152ef",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -231,12 +231,12 @@
       ]
     },
     "8": {
-      "note": "The Curator marks its curation step `done` via `task_doc(set_step)`.\n\nAnchor: `task_doc(set_step)`",
+      "note": "The Curator marks its curation step `done` via `task_doc(set_step)`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:afec075119d9fe0643d56aa97c20a7d069e081b9eba90414325b0e281a2760e8",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -252,8 +252,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:afec075119d9fe0643d56aa97c20a7d069e081b9eba90414325b0e281a2760e8",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
             "locator": {
               "end": 21,
               "kind": "line_range",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-        "content": "sha256:2ebc6cb756bc4375b282337dcf8472558e110d12dbe052cc362695a92b5138d2",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+        "content": "sha256:a9597d18cffbc9d1613cce89f32a88b69813b4c12e99c7f8e0ba92d68473ad0c",
         "locator": {
           "kind": "file"
         }
@@ -102,7 +102,7 @@
       ]
     },
     "2": {
-      "note": "The Reviewer independently examines one assigned seam or leaf review round against bound criteria catalogs and writes its verdict under `notes/reports/` (non-leaf seams are linked in the reference index).",
+      "note": "The Reviewer independently examines one assigned seam or leaf review round against bound criteria catalogs and writes local report-folder verdicts (template for verdictRef; non-leaf seams are linked in the reference index).",
       "targets": [
         {
           "anchor": {
@@ -119,7 +119,7 @@
       ]
     },
     "22": {
-      "note": "The Reviewer writes verdicts under `notes/reports/`, edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks `system/tools.md` targeted tests (and requested drift) plus full `memory_quality_check` curation evidence, and makes no gate decisions.",
+      "note": "The Reviewer writes local report-folder verdicts (template for verdictRef), edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks focused tests (full/drift on request or Final checks) plus full `memory_quality_check` curation evidence, and makes no gate decisions.",
       "targets": [
         {
           "anchor": {
@@ -223,7 +223,7 @@
       ]
     },
     "3": {
-      "note": "The Reviewer starts on owner assignment after receiving the required intake and writes its durable verdict under `notes/reports/`.",
+      "note": "The Reviewer starts on owner assignment after receiving the required intake and writes local report-folder verdicts (template for verdictRef).",
       "targets": [
         {
           "anchor": {

@@ -10,7 +10,7 @@ Describes source-level checks that canonical curator/planner guidance and writer
 
 ## Code Commentary
 
-Whitespace-normalized canonical role/template text must retain handoff handles, replace_evidence, worklist recomputation, line_range, link_target and refresh recovery wording. Architect/planning text must describe preimplementation expected effects and undeclared intent. Writer/gate docstrings must omit retired installed-cutover guidance and retain converted-input/unreadable-layout policy.
+Whitespace-normalized canonical role/template text must retain handoff handles, replace_evidence, worklist recomputation, line_range, link_target and refresh recovery wording. Architect/planning text must describe pre-implementation expected effects (`pre-build` in `roles/architect.md` and `before implementation` in `operations/planning.md`) and undeclared intent. Writer/gate docstrings must omit retired installed-cutover guidance and retain converted-input/unreadable-layout policy.
 
 ## Invariants And Boundaries
 

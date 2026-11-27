@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15c10f70f6e931e93fc46ba86770662f8db079e8",
-    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
+    "codeTree": "35aff1724ecab78abe2572eab397e23f1de035ca",
+    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
     "role": "curator",
-    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against final synced code tree 15c10f70 (base 6eb67e8e): pins no counts; all seven accepting lanes, diagnostic lane, canonical catalog rules (841 modules, 18 contracts / 123 artifacts), fixtures, quality obligations, DependencyOwnershipGraph, retry-v3, and commands match live code with zero contradictions.",
-    "task": "261124-CAP-L3",
+    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against CAP-L6 candidate tree 35aff1724eca (off synced base 63ff759a8): pins no counts or runtime-installer implementation details; clean_room.py's dropped_selectors stderr notice, .dagger/src/agents_remember_quality/main.py's uv-managed Python 3.14 container base, and the updated test-evidence-lanes.toml / evidence-lifecycle.toml catalogs leave every documented altitude, lane, catalog, fixture, quality-obligation, selection, retry-v3, causal, and command contract accurate with zero contradictions.",
+    "task": "261124-CAP-L6",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,22 +61,22 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py"
     },
     {
-      "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+      "blob": "f6d4444edb1a2fd4d5daf89f4dac989d6f48af85",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+      "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "884bfca77d3918141360d799434cf4234f069731",
+      "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
     {
-      "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+      "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T21:11:14+01:00",
+    "at": "2026-11-27T01:42:36+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261124-CAP-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "seat": "fc6f5c77-19c8-5951-815d-de85e40746b6",
     "task": "261124-CAP"
   }
 }

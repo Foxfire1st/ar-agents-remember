@@ -197,7 +197,7 @@
         }
       ]
     },
-    "105": {
+    "106": {
       "note": "`finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit.",
       "targets": [
         {

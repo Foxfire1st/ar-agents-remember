@@ -115,11 +115,15 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
-- The Reviewer independently examines one assigned seam or leaf review round against bound criteria catalogs and writes its verdict under `notes/reports/` (non-leaf seams are linked in the reference index). [2]
+
+- The Reviewer independently examines one assigned seam or leaf review round against bound criteria catalogs and writes local report-folder verdicts (template for verdictRef; non-leaf seams are linked in the reference index). [2]
 
 
 
-- The Reviewer starts on owner assignment after receiving the required intake and writes its durable verdict under `notes/reports/`. [3]
+
+
+- The Reviewer starts on owner assignment after receiving the required intake and writes local report-folder verdicts (template for verdictRef). [3]
+
 
 
 
@@ -182,11 +186,15 @@ No meaningful cross-repo references found.
 
 
 
-- The Reviewer writes verdicts under `notes/reports/`, edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks `system/tools.md` targeted tests (and requested drift) plus full `memory_quality_check` curation evidence, and makes no gate decisions. [22]
+
+- The Reviewer writes local report-folder verdicts (template for verdictRef), edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks focused tests (full/drift on request or Final checks) plus full `memory_quality_check` curation evidence, and makes no gate decisions. [22]
+
+
 
 
 
 - Review starts on owner assignment and requires mode, seam, requirement IDs/versions/packets/approval, exact candidate with passing clean-copy checks, Worker attempts, and `system/tools.md`/guidelines before inspecting. [26]
+
 
 
 

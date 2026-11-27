@@ -388,4 +388,4 @@ These superseded descriptions retain their historical wording; the current accou
 - The landing check prepares and cleans up lockfile-matched `dashboard/node_modules` borrowing pre-spawn and delegates its hook run to `commit_check_process`. [102]
 - Pre-spawn `dashboard/node_modules` borrowing requires primary directory presence, byte-identical `dashboard/package-lock.json`, and gitignored candidate target, refusing as `unrunnable` otherwise. [103]
 
-- `finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit. [105]
+- `finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit. [106]

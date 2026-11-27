@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 727,
+              "end": 726,
               "kind": "line_range",
-              "start": 727
+              "start": 726
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -73,7 +73,7 @@
         }
       ]
     },
-    "13": {
+    "14": {
       "note": "The lifecycle catalog lists `mcp/tests/test_closeout_projection_source_classification.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [9]",
       "targets": [
         {

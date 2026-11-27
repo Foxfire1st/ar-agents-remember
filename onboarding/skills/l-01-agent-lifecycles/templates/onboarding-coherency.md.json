@@ -128,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:7aa0552d7a4f8c22ec003d45f12351264c2e3fa288e2ee60e93fcb1931132c8f",
             "locator": {
-              "end": 16,
+              "end": 18,
               "kind": "line_range",
-              "start": 14
+              "start": 16
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -146,12 +146,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

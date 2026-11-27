@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 765,
+              "end": 764,
               "kind": "line_range",
-              "start": 765
+              "start": 764
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f06a52de496dc66c58311b32502860f8addce9b",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 765,
+              "end": 764,
               "kind": "line_range",
-              "start": 765
+              "start": 764
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -133,7 +133,7 @@
         }
       ]
     },
-    "17": {
+    "19": {
       "note": "The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]\n\nAnchor: `pause_result`; `_already_stopped_result`; `require_parent_series`",
       "targets": [
         {
@@ -160,7 +160,23 @@
         }
       ]
     },
-    "18": {
+    "2": {
+      "note": "The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecyclePlaythroughTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
       "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [11]",
       "targets": [
         {
@@ -225,22 +241,6 @@
               "start": 5263
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
-            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecyclePlaythroughTests"
-            }
           },
           "kind": "test"
         }
