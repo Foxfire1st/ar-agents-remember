@@ -21,7 +21,7 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 
 ## Held set and message wire states
 
-`RoleStartSetCall` carries one set request UUID and exact leaf references with separate Worker/Reviewer/Curator choices, optional Reviewer first work and replacement IDs. `SeatLaunchOverride` carries speed choices only. Both single starts and set replacement carry explicit interruption permission. `RoleStartStatus` and `RoleMessageStatus` admit `held`: a held seat exists without a turn, and a held message is product-stored rather than host-accepted. Message output names waiting IDs/counts, retained terminal lines and held-seat opening; withdrawal is a distinct input. `RoleStartSetResponse` reports each seat and partial completion without implying task acceptance.
+`RoleStartSetCall` carries one set request UUID and exact leaf references with separate Worker/Reviewer/Curator choices, optional Reviewer first work and replacement IDs. `SeatLaunchOverride` carries speed choices only. Both single starts and set replacement carry explicit interruption permission. `RoleStartStatus` and `RoleMessageStatus` admit `held`: a held seat is reserved on disk without a host turn (creating on first message under deferred held seats, or re-confirming for legacy pre-created held seats), and a held message is product-stored rather than host-accepted. `RoleMessageResponse` declares `recipientAgentId` (updated to the live opened agent ID, including after a single BUG-R51 retry) and `bindingConfirmation` alongside waiting IDs/counts, retained terminal lines, and held-seat opening; withdrawal is a distinct input. `RoleStartSetResponse` reports each seat and partial completion without implying task acceptance.
 
 For consolidation leaves (`consolidationList` present), `RoleStartSetCall` accepts optional `consolidator` overrides alongside `reviewer`, and `RoleStartSetResponse` reports the two-seat Consolidator/Reviewer set with no Worker or Curator.
 
@@ -43,13 +43,10 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - Frozen implementation of RoleStartCall supporting the stated file behavior. [1]
 
-- Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. Anchor: RoleMessageCall [2]
-
-
+- Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. [2]
 - Frozen implementation of RoleStartResponse supporting the stated file behavior. [3]
+- Current response DTO declares its listed message/held fields (including `recipientAgentId` and `bindingConfirmation`), admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence. [4]
 
-
-- Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence. [4]
 
 
 ## MIK-R95 Preparation Answer Model

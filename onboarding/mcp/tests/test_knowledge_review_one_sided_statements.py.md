@@ -156,6 +156,13 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 
 
 
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [25]
+
+
+
+
+
+
 - An invariant text record stores one numeric revision and one statement. It accepts a separate optional title. [20]
 - Two independently built snapshots exercise one addition, one removal and the same retained revision whose lifecycle becomes reviewed. [6]
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
@@ -168,7 +175,10 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 
 
 
+
 - The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module. [16]
+
+
 
 
 

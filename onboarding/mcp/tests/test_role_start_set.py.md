@@ -4,19 +4,16 @@
 
 ## Contract
 
-Operation-level fake-host tests prove both Manager-owned leaf-set paths: the three-seat ordinary path (Worker opens, Reviewer and Curator exist held) and the two-seat consolidation path (Consolidator opens, Reviewer exists held, with no Worker or Curator); optional Reviewer work opens only Reviewer, and the first addressed message opens one held seat with its handover. A repeated set retains all three agent identities, and partial creation is completed under the same set UUID without a fourth agent or a spontaneous held opening.
+Operation-level fake-host tests prove both Manager-owned leaf-set paths: the three-seat ordinary path (Worker opens on the host, Reviewer and Curator are reserved on disk as deferred held seats with `hostAgentExists: false` and zero host calls until first message) and the two-seat consolidation path (Consolidator opens, Reviewer is reserved held, with no Worker or Curator); optional Reviewer work opens only Reviewer, and the first addressed message creates and opens one held seat with its handover. A repeated set retains all seat identities, and partial creation is completed under the same set UUID without an extra agent or a spontaneous held opening.
 
 The suite also refuses an Architect set and a wrong-master Manager set without launch effects, while an ordinary Architect single Worker start remains admitted. These are executable fixture assertions, not evidence of the required paid sandbox/real-host journey.
 
-Set start publishes all three role facts. When an older held receipt lacks its role index, the first addressed message restores the Reviewer registration before agent-create starts its turn; the other held seat stays closed.
+Set start publishes role facts for opened seats and reserves deferred held receipts. When a deferred held seat receives its first addressed message, the opener publishes role facts before native `agent-create` creates and opens it; the other held seat stays reserved without a host agent.
 
 ## Evidence
 
-- Held opener restores missing role facts before native agent-create and leaves the other held. [4]
-
-
-- One Manager call creates three agents with exactly the Worker opened. [1]
-
-- A partial creation completes with the same set identities and held seats intact. [2]
+- Held opener restores missing role facts before native `agent-create` and leaves the other seat reserved. [4]
+- One Manager call opens Worker on the host and reserves Reviewer and Curator as deferred held seats. [1]
+- A partial creation completes with the same set identities and deferred held seats intact. [2]
 
 - A set does not enlarge the existing role may-start matrix. [3]

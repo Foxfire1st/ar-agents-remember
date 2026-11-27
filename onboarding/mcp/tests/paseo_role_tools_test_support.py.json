@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c18d124d6db858ef11a6978a8209184b7764cc53",
-            "content": "sha256:a45dca775fdc6ab65b1a1e2f02f9b7e8837f913073d7d72ab8e7ef41800f8d87",
+            "blob": "c482e0e6e33ed454b34adb95a996882a02f6ad44",
+            "content": "sha256:619ddb0039b9df85fb4683ce0cf52af5878a714be0227a549f7684846be8d79d",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +22,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c18d124d6db858ef11a6978a8209184b7764cc53",
-            "content": "sha256:a45dca775fdc6ab65b1a1e2f02f9b7e8837f913073d7d72ab8e7ef41800f8d87",
+            "blob": "c482e0e6e33ed454b34adb95a996882a02f6ad44",
+            "content": "sha256:619ddb0039b9df85fb4683ce0cf52af5878a714be0227a549f7684846be8d79d",
             "locator": {
               "kind": "file"
             }

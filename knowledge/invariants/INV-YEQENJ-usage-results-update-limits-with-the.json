@@ -8,9 +8,9 @@
   },
   "applicability": "Every update of provider-limits.json from one tick's usage results.",
   "conditions": [
-    "The writer holds the file lock from the reread through the whole replacement.",
-    "A seat's usable non-empty answer replaces that seat's mapping; a refresh the bridge marks failed is not applied.",
-    "A failed, timed-out or identity-less answer keeps the prior fact and mapping."
+    "The writer holds provider-limits.lock from reread through atomic replacement of provider-limit-suppressions.json and ar-provider-limits/v1 provider-limits.json, rolling back the sidecar if the limits write raises.",
+    "Usage reads preserve existing recordedAt for unchanged live (reportId, windowId, resetsAt) windows, prune expired sidecar entries, and project exhausted windows through project_reports_with_suppressions.",
+    "A seat's usable non-empty answer replaces that seat's mapping; a refresh the bridge marks failed is not applied, and a failed, timed-out, or identity-less answer keeps the prior fact and mapping."
   ],
   "exclusions": [
     "A successful stamped read whose answer explicitly lists zero reports for the agent: that answer clears the seat's mapping.",
@@ -28,27 +28,20 @@
     "leaf": "261112-BUG-L37",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Usage results update limits with the existing report verdict under one read-merge-replace lock, and failed periodic reads retain the fact.",
+  "statement": "Usage results update limits with the existing report verdict and live window-scoped suppressions under one read-merge-replace lock, preserving per-window recordedAt, pruning expired sidecar entries, committing the sidecar and v1 limits file atomically, and retaining prior facts on failed periodic reads.",
   "supersedes": [],
+  "title": "Locked usage writes merge suppressions, preserve recordedAt, retain failures",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L37",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

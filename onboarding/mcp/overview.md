@@ -47,7 +47,7 @@ For memory retrieval, select the repository and task scope before selecting file
 
 Converted knowledge is authored text: onboarding cards and sidecars plus records, histories, and census files. SQLite here is a disposable derived index, keyed by a captured memory tree and stored outside Git working trees, not a canonical write destination. Partial index input cannot become a complete-looking result. The family-complete leaf read returns the seed's invariants and entries, containing families and their remaining members, reference rows for already returned members, and an advertised one-hop frontier. Mechanical governing route-chain families follow that content, including for an entry-less governed path. This is retained internal family-complete content. Mounted `read_ar_files` is stateless naming and carries no chain body or session-served state; mounted `knowledge_read` projects its selected content to names.
 
-The retained published_intent block declares the 8,000 `tiktoken:o200k_base` threshold. Mounted knowledge_read leaf pages instead cut their delivered naming projection against bound_for("knowledge_read") and TOOL_ANSWER_LIST_MAX - 1, reserving the header entry; the internal threshold is not the public answer bound. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. Internally, a single indivisible oversized row is returned whole with its explicit flag; the mounted `knowledge_read` answer adds no such exception, and its public answer guard replaces any over-bound answer with its short form. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
+The retained published_intent block declares the 8,000 `tiktoken:o200k_base` threshold. Mounted `knowledge_read` legacy tree-view pages (`source_context`, `invariant`, `family`) instead cut their delivered naming projection against `TOOL_ANSWER_EXCEPTION_MAX_TOKENS` (4,000 tokens via `tree_read._delivered_bound()`) and `TOOL_ANSWER_LIST_MAX - 1`, reserving the header entry for leaf pages, while `bound_for("knowledge_read")` stays at 5,000 tokens for verbatim batch `records`; the internal threshold is not the public answer bound. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. Internally, a single indivisible oversized row is returned whole with its explicit flag; the mounted `knowledge_read` answer adds no such exception, and its public answer guard replaces any over-bound answer with its short form. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
 
 For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. For counted-card comparison, the leaf route supplies the contract’s recorded memory base (`K_B`). If the writer cannot read that base in the candidate’s format, it uses the persisted worklist’s counted-change flag for the subject, including `false`. It compares against the operation base when both the recorded base and the subject flag are unavailable. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
 
@@ -870,7 +870,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+
 
 
 
@@ -882,7 +884,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
+
 
 
 
@@ -894,7 +898,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
+
 
 
 
@@ -906,7 +912,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
+
 
 
 
@@ -962,8 +970,12 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
-- Eager-provider binding confirmation, single retry with fresh `agentId`, `skipToolServerWait` send, `open-held` re-confirmation, and receipt-apply helpers live in `role_launch_confirmation.py` and its launch callers. [427]
+
+- Eager-provider binding confirmation, single retry with fresh `agentId`, `skipToolServerWait` send, `open-held` re-confirmation, and receipt-apply helpers live in `role_launch_confirmation.py` and its launch callers; deferred held-seat reservation (`role_deferred_held.py`) and create-on-first-message opening (`role_held_opening.py`) defer host creation until first `role_message` and return the live `recipientAgentId` and `bindingConfirmation`. [427]
 
 
 
 - Opening brief identity self-check and Paseo plugin `IDENTITY MISMATCH:` turn-end interception forward the verbatim mismatch line directly to the parent without waking the seat. [428]
+
+
+- Window-scoped provider-limit suppression persists `recordedAt` and suppressions in `provider-limit-suppressions.json` via `serving/paseo/provider_limit_suppressions.py` and `provider_limits.py`, hooks bound live tool calls off-loop in `mcp/server.py`, and exposes `agents-remember provider-limits` (`status`, `suppress`, `unsuppress`) via `cli/__main__.py` and `cli/provider_limit_hold.py`. [431]

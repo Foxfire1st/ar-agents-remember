@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
-    "role": "curator",
-    "statement": "Verified docs/guides/review-page-and-explainer.md against 17c064d8: lines 267-270 describe ordinary Curator history dispositions while consolidation-pass stands/unresolved dispositions are documented in docs/concepts.md:749-756; ruled non-contradictory by Reviewer 13ac4090 in KNO-L5-F07 (verdict SHA-256 35120ca0b1ea83388db4f57a5a62262f95f84f5a27381eb7ebf871c1cebb1eb8).",
-    "task": "261112-KNO-L5",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L61 and 261112-KNO-L5 onto bf8bda3fb: docs/guides/review-page-and-explainer.md remains accurate.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
   "document": "docs/guides/review-page-and-explainer.md",
   "id": "DPD-PMZ21Z",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -111,7 +111,7 @@
       "path": "dashboard/src/explainer/FirstRequestForm.tsx"
     },
     {
-      "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+      "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
       "kind": "file",
       "path": "dashboard/src/tray/traySend.ts"
     },
@@ -181,7 +181,7 @@
       "path": "dashboard/src/panels/changeset/DiffPane.tsx"
     },
     {
-      "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+      "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
       "kind": "file",
       "path": "dashboard/src/explainer/columnState.ts"
     },
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+      "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:45:08+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

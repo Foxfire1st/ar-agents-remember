@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
-    "role": "curator",
-    "statement": "Verified docs/reference/mcp-tools.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 role-scoped allowlists, lossless compaction, and fail-closed bindings alongside KNO-R05@v3 Consolidator/consolidation_proposal docs while re-deferring pre-existing KNO-R07 DFR-5EZYPH (lines 31, 203) under 261112-KNO.",
-    "task": "261112-KNO-L5",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: merged docs/reference/mcp-tools.md carries both BUG-R60@v1 and KNO-R05@v3; preserves pre-existing KNO-R07 lines 31 & 203 deferral bound to merged blob without lifting it.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/reference/mcp-tools.md",
-        "note": "Update docs/reference/mcp-tools.md line 31 to 5,000 tokens and line 203 to all eleven knowledge_read views."
+        "note": "Update docs/reference/mcp-tools.md line 31 (5,000-token knowledge_read ceiling) and line 203 (all eleven knowledge_read views including records/impact/search/compact/consolidation_proposal, auto-pairing, and post-landing brief refresh)."
       },
-      "createdAt": "2026-11-27T06:28:50.484690Z",
-      "createdByLeaf": "261112-KNO-L5",
-      "fileBlob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
-      "id": "DFR-CAA340",
+      "createdAt": "2026-11-27T06:18:55.167384Z",
+      "createdByLeaf": "261112-BUG-L60",
+      "fileBlob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
+      "id": "DFR-XP94XS",
       "owner": "261112-KNO",
-      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read summary omits KNO-R07 views and verbatim record return)",
-      "reason": "KNO-L5 merged docs/reference/mcp-tools.md onto CAP-L5 (e273d1c9), advancing its blob; pre-existing KNO-R07 lines 31 and 203 remain deferred under 261112-KNO (accepted in KNO-L5-F07)."
+      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read lists 7 views and states open named files for record text)",
+      "reason": "Re-deferred from CAP-L5 DFR-5EZYPH onto L60 candidate blob of docs/reference/mcp-tools.md: L60 edited only lines 758-767 (provider-limit hold release semantics for BUG-R60@v1) and did not modify lines 31 or 203 (which still omit KNO-R07 5,000-token knowledge_read ceiling and ten views); preserving KNO deferral scope intact until lines 31 and 203 are updated."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 33,
+  "revision": 34,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -158,12 +158,12 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+      "blob": "6675ae0efcc058995796a95178906cbaea7365e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+      "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -410,7 +410,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -438,14 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

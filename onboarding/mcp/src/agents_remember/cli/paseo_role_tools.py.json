@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:352aeecbb61b1546e1c531078d752b12ab659017adad5b11888bfa7f3a6ffadb",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:e8e7f45bb79d62397080e1431a2720d28274496a14c69a2664c809695cfea3c0",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:f2648a011286e749c3cf2700a091edb7fa8db7f082cecc57b003e9097d62b41d",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
-        "content": "sha256:cf9432d1746a1f173f6afa5fb7d752e7df3662f538c9eeef1c94a8c01949014c",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+        "content": "sha256:a93c7d5d6c4f7e7e33dd492960afb9624fc288727645e550a5166e8430eb83b0",
         "locator": {
           "kind": "file"
         }
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+        "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deliver_or_hold"
+        }
+      },
+      "id": "RLZ-6HF52M",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "L58-INV-4DQMNE",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Skips provider_limit_hold when is_deferred_held_receipt is true so the opening message proceeds, while applying MIK-R190 limit holds to opened seats.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -111,12 +129,12 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:d9c486831df4838ded9e6993733bcfb0961a4c32142f7e6bdfd15c0491c35cfe",
         "locator": {
-          "end": 1059,
+          "end": 1057,
           "kind": "line_range",
-          "start": 1021
+          "start": 1019
         }
       },
       "id": "RLZ-BVTKAZ",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:3f1461afcbff4c641264899f280e711396af8b35840b8cff5944e60a34dc6f20",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
         "locator": {
           "kind": "symbol",
@@ -166,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
           "kind": "symbol",
@@ -184,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
-        "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+        "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
         "locator": {
           "kind": "symbol",
           "name": "_deliver_or_hold"
@@ -202,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
-        "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+        "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
         "locator": {
           "kind": "symbol",
           "name": "_deliver_or_hold"
@@ -220,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
-        "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+        "content": "sha256:6ab4815f9125c705da5141e197dd016fab30b6c77174503b81e0f2969d5c3272",
         "locator": {
           "kind": "symbol",
           "name": "_held_then_delivered"
@@ -238,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -256,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
         "content": "sha256:f2648a011286e749c3cf2700a091edb7fa8db7f082cecc57b003e9097d62b41d",
         "locator": {
           "kind": "symbol",
@@ -274,8 +292,8 @@
     },
     {
       "anchor": {
-        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
-        "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+        "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+        "content": "sha256:6ab4815f9125c705da5141e197dd016fab30b6c77174503b81e0f2969d5c3272",
         "locator": {
           "kind": "symbol",
           "name": "_held_then_delivered"
@@ -314,12 +332,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
             "content": "sha256:694e9bf81ae3b2dcdcb9e69f5f6790f6ba06cbed892d1baa993d5b54efcf83f5",
             "locator": {
-              "end": 936,
+              "end": 934,
               "kind": "line_range",
-              "start": 919
+              "start": 917
             }
           },
           "kind": "code"
@@ -331,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
             "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
             "locator": {
               "kind": "symbol",
@@ -343,12 +361,12 @@
       ]
     },
     "14": {
-      "note": "Upstream held-message ordering is decided before native send; permission holding never answers a prompt.",
+      "note": "Upstream held-message ordering is decided before native send (bypassing pre-open provider-limit holds for uncreated deferred held seats and propagating live `recipientAgentId` and `bindingConfirmation` on held-seat open); permission holding never answers a prompt.",
       "targets": [
         {
           "anchor": {
-            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
-            "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
+            "content": "sha256:dcd1ca68a5f81090bc581adf02f4caacb9627c175e485a073557309beb399097",
             "locator": {
               "kind": "symbol",
               "name": "_deliver_or_hold"
@@ -413,8 +431,32 @@
       ]
     },
     "18": {
-      "note": "Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption.",
+      "note": "Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption.\n\nAnchor: `publish_launch_role_agent`, `_execute_prepared_launch`, `started_answer`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
+            "content": "sha256:1600ec17021e147bf20fddc989bd7f8305aba43470f5810c182f7b6a6db24f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
+            "content": "sha256:612ca20a5d158914f857d2d18b07ebb7fb80289f46eb95aef6e11822b7d4a56d",
+            "locator": {
+              "kind": "symbol",
+              "name": "started_answer"
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
@@ -425,19 +467,6 @@
               "start": 13
             },
             "path": "mcp/src/agents_remember/cli/role_activity.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
-            "content": "sha256:839bffcc6edea9158629bd8f2fa442a200bdc46ec2e5453c1e977598ba14894f",
-            "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 131
-            },
-            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         },
@@ -522,7 +551,7 @@
         },
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
             "locator": {
               "end": 278,

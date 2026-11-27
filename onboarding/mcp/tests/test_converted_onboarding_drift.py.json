@@ -135,12 +135,12 @@
         },
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
             "content": "sha256:677b08a743ccc029a935bfddeea1563408ab3ee04ae20644e5bece03ac5c0b63",
             "locator": {
-              "end": 87,
+              "end": 92,
               "kind": "line_range",
-              "start": 87
+              "start": 92
             },
             "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
           },

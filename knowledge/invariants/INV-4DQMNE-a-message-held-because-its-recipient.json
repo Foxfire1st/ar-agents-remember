@@ -14,7 +14,8 @@
     "The sweep stays the fallback and visits receipts that hold messages before the other receipts.",
     "A closed session may be reopened by ordinary delivery. A running turn or an open permission still defers a send under the existing policy.",
     "The provider limit check reads the limit file before the ordinary recipient host read. The provider-limit hold carries the reset time.",
-    "A limited recipient published ended may receive one exact archive-or-absence confirmation for a new event stamp, or for the boot stamp when event time is absent. Confirmed archive or absence resolves waiting messages as undelivered. An unreachable host releases the drain claim with a host-unreachable outcome. Otherwise the hold remains until reset. A closed session incurs no confirmation read. After reset, eligible messages drain in order when the bounded receipt cursor reaches the recipient. Later ticks can be needed."
+    "A limited recipient published ended may receive one exact archive-or-absence confirmation for a new event stamp, or for the boot stamp when event time is absent. Confirmed archive or absence resolves waiting messages as undelivered. An unreachable host releases the drain claim with a host-unreachable outcome. Otherwise the hold remains until reset. A closed session incurs no confirmation read. After reset, eligible messages drain in order when the bounded receipt cursor reaches the recipient. Later ticks can be needed.",
+    "A reserved deferred held seat (is_deferred_held_receipt) has no host agent or usage report yet, so _deliver_or_hold and pause_for_provider_limit bypass provider-limit holds and ended-stamp absence reads before opening; once opened, later messages are held normally."
   ],
   "exclusions": [
     "No later message is needed or sent to trigger the delivery.",
@@ -33,20 +34,20 @@
     "leaf": "260928-MIK-L171",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "A held message can be delivered after the activity publication reports the recipient idle, closed or ended and ordinary delivery gates allow it, with unstamped turn-end entries deduplicated per reader once per plugin boot without fabricating event timestamps. The product’s own tick visits bounded units without a whole per-tick census. A provider-limit hold carries its reset time. An ended observation during that hold can be confirmed as archive or absence, resolving its waiting messages undelivered.",
+  "statement": "A held message can be delivered after the activity publication reports the recipient idle, closed or ended and ordinary delivery gates allow it, with unstamped turn-end entries deduplicated per reader once per plugin boot without fabricating event timestamps. The product’s own tick visits bounded units without a whole per-tick census. A provider-limit hold carries its reset time and applies only once a host agent exists: a reserved deferred held seat bypasses pre-open provider-limit holds and ended-stamp absence reads on its first message, while post-open messages are held normally. An ended observation during a live recipient's hold can be confirmed as archive or absence, resolving its waiting messages undelivered.",
   "supersedes": [],
   "title": "Turn-end and provider-limit delivery with per-boot unstamped dedup",
   "writer": {
-    "at": "2026-11-25T17:49:01+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L35",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
     "task": "261112-BUG"
   }
 }

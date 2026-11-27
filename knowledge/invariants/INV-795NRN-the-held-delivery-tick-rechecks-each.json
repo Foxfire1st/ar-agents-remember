@@ -9,9 +9,9 @@
   "applicability": "Every held-delivery tick while the limit file holds a live report whose next check is due.",
   "conditions": [
     "A report is due when the later of its observedAt and its lastReadAttemptAt is at least five minutes old.",
-    "The tick claims the attempt under the same file lock that writes the replacement, before the host call.",
-    "A due report is read through one eligible mapped seat that is still in the role record.",
-    "A stamped-end read keeps its own observedAt and does not postpone a due periodic read."
+    "The tick claims the attempt and prunes expired provider-limit-suppressions.json entries under the same provider-limits.lock that writes the replacement, before the host call, including sidecar pruning in claim_due_reports change detection.",
+    "When periodic projection drops any live report covered by an active sidecar suppression, _periodic_update recomputes _updated_clear_markers so held work drains cleanly.",
+    "A due report is read through one eligible mapped seat that is still in the role record; a stamped-end read keeps its own observedAt and does not postpone a due periodic read."
   ],
   "exclusions": [
     "A report whose reset has passed and that no role mapping names.",
@@ -29,27 +29,20 @@
     "leaf": "261112-BUG-L37",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The held-delivery tick rechecks each active limit after five minutes through one mapped seat, with a persisted attempt time and a forced refresh for any role.",
+  "statement": "The held-delivery tick rechecks each active unsuppressed limit after five minutes through one mapped seat with a persisted attempt time and forced refresh, while pruning expired sidecar entries and emitting clear markers when periodic projection drops a suppressed report.",
   "supersedes": [],
+  "title": "Held-delivery tick rechecks due limits and prunes expired sidecar entries",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L37",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

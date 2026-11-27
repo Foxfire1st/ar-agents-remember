@@ -1,18 +1,88 @@
 {
   "path": "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+        "content": "sha256:24760c611d907d63964b743341cc5811ec8bfc8520bc40f37de33067755af609",
+        "locator": {
+          "kind": "symbol",
+          "name": "settles to unavailable at the 45 s cold-load cap without reloading when onLoad never arrives"
+        }
+      },
+      "facet": "Verifies missing onLoad settles to unavailable at 45_000 ms without reloading generation 1, leaves zero dangling timers, and recovers via late pong without reload.",
+      "id": "PRF-BSQVV8",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+        "content": "sha256:114d1632050d64156913a5092be4e3425f0536e45fbeec34e0ddaa9d1408e8a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "restores document-page behaviour via ready-path ar.page when Paseo strips ?arPage=document"
+        }
+      },
+      "facet": "Exercises the real plugin bridge on a URL whose ?arPage=document query was stripped and verifies ready-path ar.page restores document-page mode.",
+      "id": "PRF-FKB5ZZ",
+      "invariant": "INV-K6HXG4",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §2",
+        "leaf": "261112-BUG-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+        "content": "sha256:7fee1709cf4903bcee48e4dc02fc32a6576ef26d5dd6c4b182c34d515662bad6",
+        "locator": {
+          "kind": "symbol",
+          "name": "counts the channel as unavailable only when that ping stays unanswered too, keeps waiting with Retry, and accepts a late ready"
+        }
+      },
+      "facet": "Verifies landed === agentId without confirmed shown keeps the waiting notice and Retry button while control is unavailable, then clears both and opens WORKER on late ready.",
+      "id": "PRF-JTYYM8",
+      "invariant": "INV-K6HXG4",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §2",
+        "leaf": "261112-BUG-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+        "content": "sha256:5f6ff7cb6746097eeeb5081abacf7be477d3fc6c8098598db4ff90b3ad3e34d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "survives bootstrapEmbed's 14-20+ s double-load without pinging or reloading before the second onLoad settles"
+        }
+      },
+      "facet": "Verifies two iframe onLoad events at 7 s and 15 s reset the readiness deadline with zero pings or reloads by 22 s, and ready then restores ar.page=document and opens WORKER in generation 1.",
+      "id": "PRF-PSDA2H",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The suite contrasts responsive late answers with true ping silence and checks each loaded document's own readiness wait, input release, native failure and legacy capability notices.\n\nAnchor: \"describe(\"a change of the selection while the host is slow\"\"",
+      "note": "The suite contrasts responsive late answers with ping silence, verifies double-load survival, 45 s non-reloading cold cap, unconfirmed URL-landed waiting notice with Retry, input release, native failure, legacy capability notices and stripped arPage restoration.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
-            "content": "sha256:ba8bd6dead89de333c05deca24a6888c988bcf43d67b037621746cf635595042",
+            "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
+            "content": "sha256:fb7b0a29563a50b7c084f20494cf75f09b5e46f2d93f8a5e78e6d411dd55127d",
             "locator": {
-              "end": 338,
+              "end": 440,
               "kind": "line_range",
-              "start": 80
+              "start": 81
             }
           },
           "kind": "test"
@@ -24,36 +94,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
             "content": "sha256:43ea3650b8ac685cd6d24f7054d5147121e5b86b01f53c4869a9ed294ad77d7f",
             "locator": {
-              "end": 29,
+              "end": 30,
               "kind": "line_range",
-              "start": 26
+              "start": 27
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
             "content": "sha256:c70fab90986cd3f20bd2d9560da072a079abaa7aa96f1438eeab304127ef02cc",
             "locator": {
-              "end": 87,
+              "end": 88,
               "kind": "line_range",
-              "start": 81
+              "start": 82
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "blob": "7de7c0e6514029a7a21caaddb59480487d908f4c",
             "content": "sha256:58342e40de0b571fc2b7ad7a4c053fbb3eb977c0cbd3a92fab272cc6dffdd6c1",
             "locator": {
-              "end": 322,
+              "end": 390,
               "kind": "line_range",
-              "start": 303
+              "start": 371
             }
           },
           "kind": "test"

@@ -1,0 +1,1019 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L61",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T06:00:03+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L61",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T06:00:03+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L61",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "e8fa2468-179e-5b8c-ade1-b736e8ccd5df",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "ac8ed2f09b0fa0755bf5b98e4ec2f393a1383536",
+    "verdictRef": "notes/reports/reviewer/e8fa2468-179e-5b8c-ade1-b736e8ccd5df/role-launch/261112-BUG-L61-memory-review-r3-verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0R6GMM",
+      "items": [
+        "sha256:626bcdce36b78add8693c3625689d4a5662b3c12e803685a7de687b27a5528fc"
+      ],
+      "reason": "Re-anchored whole-file catalog realizations in test-evidence-lanes.toml and evidence-lifecycle.toml after registering test_developer_messages_taskless.py; outside-scratch-root rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2KGESA",
+      "items": [
+        "sha256:9098dd2eaee214acb6edaea6aa35ad0c64b96a8a43a081a5e76bc84be9a9acf9",
+        "sha256:cdb0229b5d30254440c15a59d953c501936865cb042b121129e2665eceafeaea"
+      ],
+      "reason": "Confirmed docs/dashboard.md section Sending (lines 734-745) against post-L62 synced L61 candidate for BUG-R61@v1 rule 4, and re-deferred L62 open deferral DFR-73APGD (lines 256-262 pre-BUG-R62 20 s timeout prose) onto L61 candidate blob of docs/dashboard.md because L61 edited only section Sending.",
+      "revision": 12,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3MSJXZ",
+      "items": [
+        "sha256:e08062ecc922c8c16b4b790ecf16cc7f828624c8d5a8d7bcdf8fd1cc3d5d8229"
+      ],
+      "reason": "Module docstring update in developer_message_files.py describing unified taskless/<agent id>/ filing; carries no separate invariant.",
+      "subject": "hunk:sha256:e08062ecc922c8c16b4b790ecf16cc7f828624c8d5a8d7bcdf8fd1cc3d5d8229"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3NPSSZ",
+      "items": [],
+      "reason": "Confirmed docs/design/python-pytest-bootstrap.md against post-crossing-5 synced L61 candidate after mcp/tests/test-evidence-lanes.toml holds KNO-L7, L58, L59, and L61 test_developer_messages_taskless.py (852 distinct modules: 698 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability; stress-durability anchor shifted to lines 871-873).",
+      "revision": 38,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-46A26Z",
+      "items": [
+        "sha256:13219ee2b868b8e5a53d2c445918f74d08b1fdde7714ca2b1f3eacb982336b21"
+      ],
+      "reason": "Re-anchored whole-file catalog realizations in evidence-lifecycle.toml (18 contracts / 123 artifacts) and test-evidence-lanes.toml (852 distinct modules) after adding test_developer_messages_taskless.py on post-crossing-5 tree; rule meaning is unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4VQW5Z",
+      "items": [
+        "sha256:5e895b3348658a60e788fc242e9c29764ef9f40a0af93ca45bd9e42bc5162b15",
+        "sha256:88d1aa27ff3b1b0971dfdb3a4d0bca2b4c2dd48f7687fa8a5e0420a9dbae0171",
+        "sha256:bef2eb270f80d344bfed43c0c2b9c69041e2232f592c0ef5087447e6ca80f070",
+        "sha256:cd61b9ffc32e8f83736a0f955c16a9fb05ec35a6a68dd1cd3245f848b3b305f1"
+      ],
+      "reason": "Updated traySend.test.ts card logic prose and references [3]-[4] for repository-omitted taskless Projects Architect send coverage.",
+      "sources": [
+        {
+          "blob": "24bdb0d1e5b55fee92f8e88a504b08d6be5b924b",
+          "path": "dashboard/src/tray/traySend.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/traySend.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6fc0da6636a5d10becf907ed3c29fdec5778ef9a",
+            "content": "sha256:fe5290ec1bc7e2ff3662be72c9edc7c901057aadb55823ff240c4aaacc654114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_messages.py"
+          },
+          "before": {
+            "blob": "ba0abf0ae1394f6cdd47fb1d454d0af840250ae3",
+            "content": "sha256:f28905f863df54e18653d6519cb63e85c4bb826b2d2d2a88ba67f8cc3a942f3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_messages.py"
+          },
+          "id": "RLZ-0S6B4V"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-50AEVX",
+      "items": [
+        "sha256:55628ddb23afa961f9d56c7d7b2eb71c94f6d485b2cbbc2290797c9a3cafaaf6"
+      ],
+      "reason": "Re-anchored _prepare realization in developer_messages.py after removing the unknown-repository check; server pick, image, and message byte bounds are unchanged.",
+      "revision": 1,
+      "subject": "INV-TMFQYP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5ABAPV",
+      "items": [
+        "sha256:c7c7bf4be7973d0c7b842f5d74a23f1cb44dd45af7152a3975f412ca497d9523"
+      ],
+      "reason": "Module docstring update in developer_message_files.py describing taskful, unified taskless, and legacy read-back patterns; carries no separate invariant.",
+      "subject": "hunk:sha256:c7c7bf4be7973d0c7b842f5d74a23f1cb44dd45af7152a3975f412ca497d9523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6AXC8D",
+      "items": [
+        "sha256:ba602ea7dd3e66ab557d2cd811a2618d9ac37e97da158bf6e6ca334f0c5f3259"
+      ],
+      "reason": "Re-authored tray overview references [3] and [8] against updated dashboard/src/tray/traySend.ts; overview prose remains accurate.",
+      "sources": [
+        {
+          "blob": "ae6a12860b5be5bb665cf5d1b8a5b41445843932",
+          "path": "dashboard/src/tray/TrayPanel.test.tsx"
+        },
+        {
+          "blob": "24bdb0d1e5b55fee92f8e88a504b08d6be5b924b",
+          "path": "dashboard/src/tray/traySend.test.ts"
+        },
+        {
+          "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+          "path": "dashboard/src/tray/traySend.ts"
+        },
+        {
+          "blob": "ff4503770f6ddfb489fc108960103e62426b193b",
+          "path": "dashboard/src/tray/types.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-86RES9",
+      "items": [
+        "sha256:c1dd204f63397cd3338499162a132abb1f43a638dc30583c338ef346c11759bc"
+      ],
+      "reason": "Updated developer_message_files.py card logic prose and reference [1] for unified taskless/<agent_id>/ routing and legacy */taskless/* read-back.",
+      "sources": [
+        {
+          "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+          "path": "mcp/src/agents_remember/cli/developer_message_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/developer_message_files.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:74b734303333ea68cd9891c0ae8a913605a52512f040ffcb3a5c0d7c40af9645",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:9b0b5e9817e3472a9ff45dfc7a41c7e8ef8cf4fb773de2c1a883ae182407671f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "PRF-ZQHN83"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8FA8CX",
+      "items": [
+        "sha256:608544e542878094bc342edba694a5912299d1cff3d1cb1f20716bba272a92c9"
+      ],
+      "reason": "Re-anchored test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order proof in test_developer_messages.py after updating taskless path assertions to developer-messages/taskless/<agent_id>/; composition rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-T6DV0Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:29d060edb67eeb14e829f98aa653f57a0fa995e49802b232d52d1c584ae46cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "TasklessDeveloperSendTests.test_taskless_send_without_repository_succeeds_across_server_repo_counts"
+            },
+            "path": "mcp/tests/test_developer_messages_taskless.py"
+          },
+          "before": "absent",
+          "id": "PRF-B3A8CM"
+        },
+        {
+          "after": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:74b734303333ea68cd9891c0ae8a913605a52512f040ffcb3a5c0d7c40af9645",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:9b0b5e9817e3472a9ff45dfc7a41c7e8ef8cf4fb773de2c1a883ae182407671f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "PRF-MSE7MM"
+        },
+        {
+          "after": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:1a8fbb4a9e402bbe41c6fcb714e539286b62630b11e540817832b877e3340a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "TasklessDeveloperSendTests.test_target_folder_routes_taskful_and_taskless_recipients"
+            },
+            "path": "mcp/tests/test_developer_messages_taskless.py"
+          },
+          "before": "absent",
+          "id": "PRF-P4HEXK"
+        },
+        {
+          "after": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:11987a59f730d0b2e73ed610e52a66e0f5ec861f8915b318bf2ec6946ee84706",
+            "locator": {
+              "kind": "symbol",
+              "name": "TasklessDeveloperSendTests.test_legacy_repo_scoped_taskless_files_read_back_dedupe_and_settle"
+            },
+            "path": "mcp/tests/test_developer_messages_taskless.py"
+          },
+          "before": "absent",
+          "id": "PRF-VVBT8Z"
+        },
+        {
+          "after": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:63b7a5a30a288fc31c31bd70391a4b4b1223ff5e0b3c30f8740f833c89830c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TasklessDeveloperSendTests.test_unknown_request_repository_never_blocks_taskful_or_taskless_sends"
+            },
+            "path": "mcp/tests/test_developer_messages_taskless.py"
+          },
+          "before": "absent",
+          "id": "PRF-YP7T66"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
+            "content": "sha256:47f36edd7a691ac43233b2b9bb6bc8fb27fd185458575546938c4d3ea69c1335",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 709
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-0S1X9J"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "ba0abf0ae1394f6cdd47fb1d454d0af840250ae3",
+            "content": "sha256:3394ca77f60cefe07040478455c9b0a28472030a55cebd23157fd9494facc327",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repository"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_messages.py"
+          },
+          "id": "RLZ-7XN9MC"
+        },
+        {
+          "after": {
+            "blob": "6fc0da6636a5d10becf907ed3c29fdec5778ef9a",
+            "content": "sha256:fe8b63c437bc0489a8946a3afcdf0888f9a7198b0ff2eda48281eca873deff76",
+            "locator": {
+              "kind": "symbol",
+              "name": "send_developer_message"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_messages.py"
+          },
+          "before": {
+            "blob": "ba0abf0ae1394f6cdd47fb1d454d0af840250ae3",
+            "content": "sha256:9b99e77fb5ff52a080d44d3092d1e8804121e72410b0e682fefee05a05e5ca85",
+            "locator": {
+              "kind": "symbol",
+              "name": "send_developer_message"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_messages.py"
+          },
+          "id": "RLZ-BDY70K"
+        },
+        {
+          "after": {
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+            "content": "sha256:309ab7fbf5254cfe22ed9efe19f531e80bfeb1355e98477d9a83ccc8b6bcd5b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_filed"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_message_files.py"
+          },
+          "before": "absent",
+          "id": "RLZ-C8CZK2"
+        },
+        {
+          "after": {
+            "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+            "content": "sha256:6e47f5db40715604eeee04ccb7a585c7ddc0c55754fd33d1e99453c47d98768b",
+            "locator": {
+              "kind": "symbol",
+              "name": "target_folder"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_message_files.py"
+          },
+          "before": {
+            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "content": "sha256:479eeea0476e520846b11661db822dcc845c10e8c2d7a19a9e525594b096c397",
+            "locator": {
+              "kind": "symbol",
+              "name": "target_folder"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_message_files.py"
+          },
+          "id": "RLZ-WFGRYS"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
+            "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownPage"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-WZSWBY"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-9G8PP6",
+      "items": [
+        "sha256:8e45b15a4824ece6d2ee19d03ae0206b4fe70fd57d172f8cb747c8884423a170"
+      ],
+      "reason": "Removed deleted _repository realization (RLZ-7XN9MC) and obsolete Cockpit.tsx page-repository taskless-filing realizations (RLZ-0S1X9J, RLZ-WZSWBY) per BUG-R61@v1 rules 1-3 (optional request.repository no longer participates in filing), re-anchored target_folder (RLZ-WFGRYS with unified taskless rationale), send_developer_message (RLZ-BDY70K), and PRF-MSE7MM, and attached _filed realization plus four taskless/legacy read-back proofs from test_developer_messages_taskless.py; invariant statement and conditions remain true unchanged. Evidence (L61-INV-G1K3QN-taskless-filing): Worker producer list role-reports/worker/5b441f1d-89f2-505a-9eff-d062d35ff73c/role-launch/261112-BUG-L61-worker-producer-list-freeze-1.json (SHA-256 e89a67dc4795a3788d00d24237dd4d987eecb1a068954e71a3b679959873d6c2, handoff-check: clean); Code R1 PASS verdict role-reports/reviewer/e8fa2468-179e-5b8c-ade1-b736e8ccd5df/role-launch/261112-BUG-L61-code-review-r1-verdict.md (SHA-256 1f75ea13017ccfc1da9c67ee908dd77c86df6c6dcccd8b13b268840c921a6d0b) on codeTree a20c7ee6055c38f337ebb9d10a784436b801696c.",
+      "revision": 1,
+      "subject": "INV-G1K3QN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AJ1Q0W",
+      "items": [
+        "sha256:58656085359650527d0f12e02c65d4be7ed732833a14e9e53071ab1b9bf4e480"
+      ],
+      "reason": "Updated types.ts card logic prose to record optional repository?: string on TrayMessageBody.",
+      "sources": [
+        {
+          "blob": "ff4503770f6ddfb489fc108960103e62426b193b",
+          "path": "dashboard/src/tray/types.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/types.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CQ0AVN",
+      "items": [
+        "sha256:424bdd8c29a30e2c1fa87d853033bd035d6750c676ec2a5a234ab56b14198c46"
+      ],
+      "reason": "Module docstring update in developer_messages.py documenting taskful/taskless folder selection and non-blocking optional repository context; carries no separate invariant.",
+      "subject": "hunk:sha256:424bdd8c29a30e2c1fa87d853033bd035d6750c676ec2a5a234ab56b14198c46"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CR3G08",
+      "items": [
+        "sha256:b804879b4d41b859390eb23438bd8d79e61c22d64d5a2dffabb9fed22c20da1f"
+      ],
+      "reason": "Reviewed test_developer_messages.py.md against L61 edits: all described composition, refusal, held, seat-list and sent-log cases remain accurate after moving taskless coverage to test_developer_messages_taskless.py; sidecar references were mechanically refreshed.",
+      "sources": [
+        {
+          "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+          "path": "mcp/tests/test_developer_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_messages.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:439f5f816eb189d9aa68748d61d2b6705f0e970c4b73bedd05dfca6e4ed3725b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/traySend.ts"
+          },
+          "before": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/traySend.ts"
+          },
+          "id": "RLZ-DJBF34"
+        },
+        {
+          "after": {
+            "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+            "content": "sha256:f2549e5d5efd2a3e7cb32d55bc2bcc8970ed5c55d294d299ecaf2d4990f29c46",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:244428e11ae1062222f4b1da11b21944326576caa01f317051408572397806eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "RLZ-DT8Y58"
+        },
+        {
+          "after": {
+            "blob": "ff4503770f6ddfb489fc108960103e62426b193b",
+            "content": "sha256:31cb79a62726e26d5b86cc245ff28401e4bbefde849ade916f105181b56da007",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/types.ts"
+          },
+          "before": {
+            "blob": "ccda15a3989e7f5458620c250ea2252549b83c30",
+            "content": "sha256:024ad5edbcebb22eff8e2d8001645c36b2dc790e8551cb2352d31518623bf754",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/types.ts"
+          },
+          "id": "RLZ-H0MQ62"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FCDRPM",
+      "items": [
+        "sha256:07f37aa618eec2af50a8991f20fdcdcff520ea77dcab767514aa53165f7d3147"
+      ],
+      "reason": "Re-anchored whole-file realizations in traySend.ts, types.ts, and test_developer_messages.py after BUG-R61@v1 optional-repository edits; held turn-end and provider-limit delivery semantics are unchanged.",
+      "revision": 5,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GN4EV6",
+      "items": [
+        "sha256:4f63335fe472403e41b2721353d82da42da80f112517946a051ee627e3ac6c93"
+      ],
+      "reason": "Re-anchored whole-file realization in test-evidence-lanes.toml after registering test_developer_messages_taskless.py on post-crossing-5 tree (852 distinct modules, all present on tree); rule meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GTVAJP",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml card prose counts (852 distinct modules: 698 unit-regression including test_developer_messages_taskless.py at L155, 126 integration including test_standalone_master_pr_finalize.py at L813, stress-durability at L871-873) and refreshed references.",
+      "sources": [
+        {
+          "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HWTADB",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated evidence-lifecycle.toml card prose (adding test_developer_messages_taskless.py consumer rows and shifted line references, 18 contracts / 123 artifacts) and refreshed shifted references.",
+      "sources": [
+        {
+          "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J90T79",
+      "items": [
+        "sha256:e80432306fb7fd18da40735e82223008deb5db601ec831a6f0a89e8ed4aa0fe9"
+      ],
+      "reason": "Updated traySend.ts card logic prose and references [1]-[4] to reflect optional non-blocking repository context without unknown-repository refusal.",
+      "sources": [
+        {
+          "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+          "path": "dashboard/src/tray/traySend.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/traySend.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MVSV8R",
+      "items": [
+        "sha256:a53c7e07e09484ebeb958e956f38ddf7dff89d509b1fc12ff7a1ee2e01bb2550"
+      ],
+      "reason": "Reviewed mcp/overview.md against L61's developer_messages.py and developer_message_files.py edits: package-level architecture prose does not pin taskless folder paths or unknown-repository refusals and remains accurate unchanged.",
+      "sources": [
+        {
+          "blob": "96c3124f5c164e40702ef487bc98d61d104c9bbc",
+          "path": "mcp/src/agents_remember/cli/developer_message_files.py"
+        },
+        {
+          "blob": "6fc0da6636a5d10becf907ed3c29fdec5778ef9a",
+          "path": "mcp/src/agents_remember/cli/developer_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NXV4GE",
+      "items": [
+        "sha256:fdff65aa22a74cea5f6e570550ea7247e0dadb3faa09ea7aa358f46118a08edd"
+      ],
+      "reason": "Delete-only removal of _Prepared.repository in developer_messages.py after dropping unknown-repository refusals.",
+      "subject": "hunk:sha256:fdff65aa22a74cea5f6e570550ea7247e0dadb3faa09ea7aa358f46118a08edd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R2BC48",
+      "items": [
+        "sha256:fb230c28f09f4e2c1233fe964c51b79b52da6e68a53006c45317f588c9504967"
+      ],
+      "reason": "Updated developer_messages.py card boundaries prose and references [1]-[3] for recipient-only sends without unknown-repository refusals.",
+      "sources": [
+        {
+          "blob": "6fc0da6636a5d10becf907ed3c29fdec5778ef9a",
+          "path": "mcp/src/agents_remember/cli/developer_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/developer_messages.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+            "content": "sha256:5155f24e80c25943734bd092d453b80b60eeaab653ed839bf399929bb5968f25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "content": "sha256:224406d8293983c179ba2a71be647f43056bc124a10e8d55e2bf094764525caa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+            "content": "sha256:6bdc2045f14f15bbafa5a798971fa79c5e6feeb8a0108da4ca85787d16210611",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R5F730",
+      "items": [
+        "sha256:35ba5a736ad098d99832163bee2a5f24d6f1fc7043f28584bcc95015acf37c34"
+      ],
+      "reason": "Re-anchored whole-file catalog realizations in test-evidence-lanes.toml and evidence-lifecycle.toml after registering test_developer_messages_taskless.py; silent turn-end policy is unchanged.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-0WDKPN",
+          "revision": 1
+        },
+        {
+          "id": "INV-G1K3QN",
+          "revision": 1
+        },
+        {
+          "id": "INV-P7QEA9",
+          "revision": 1
+        },
+        {
+          "id": "INV-T6DV0Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RAKSH7",
+      "items": [
+        "sha256:40c37f7b93d744962d0797aea701dda4ca3d1e5d2a0f501a5651495d6bc40c83",
+        "sha256:dd2e6e5163c8d02e8b05900be710d7705efb73d96daa90e50b97d3123938eafc"
+      ],
+      "reason": "Examined all four family members at revision 1 after L61 unified taskless filing and decoupled page repository from filing (BUG-R61@v1 rules 1-3): removed obsolete dashboard/src/cockpit route after removing RLZ-0S1X9J and RLZ-WZSWBY from INV-G1K3QN so FAM-DB8S4B routes match its live realization routes (dashboard/src/tray, mcp/src/agents_remember/cli); the joint guarantee remains true unchanged.",
+      "revision": 2,
+      "subject": "FAM-DB8S4B"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S6HM7D",
+      "items": [
+        "sha256:f580691277ef81a56cca4d42f02235b71ed1dba38d0e58fa13434de3fcd14044"
+      ],
+      "reason": "Authored new onboarding card and sidecar for mcp/tests/test_developer_messages_taskless.py covering unified taskless filing, optional repository context across server repo counts, and legacy taskless read-back/settlement.",
+      "sources": [
+        {
+          "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+          "path": "mcp/tests/test_developer_messages_taskless.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_messages_taskless.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V5PWDR",
+      "items": [
+        "sha256:17bee004bdea952b94ffb8c3cdcffdd032935cfb269cff372fa23f5d368a2bed"
+      ],
+      "reason": "Confirmed docs/guides/review-page-and-explainer.md against post-L62 synced L61 candidate: traySend.ts minimal optional-repository alignment preserves shownStore selection provenance and all documented review-page and explainer tray behavior unchanged.",
+      "revision": 20,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VMG9XV",
+      "items": [
+        "sha256:5ef7d8d033f28f22d1ac633ae82b6df8b2f52f0afa50d65db183bfc2b405bff7"
+      ],
+      "reason": "Inline comment update on DeveloperMessageRequest.repository in developer_messages.py clarifying it is optional non-blocking page context; carries no separate invariant.",
+      "subject": "hunk:sha256:5ef7d8d033f28f22d1ac633ae82b6df8b2f52f0afa50d65db183bfc2b405bff7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z7VEHP",
+      "items": [
+        "sha256:09493aa20069bdc4d4851f432b4715449da97bd9b227874a3ad7ef80ae36cae0",
+        "sha256:291430e94523d7357af29dfd6f4f4b4c0d936991c5244ed791da77d8546b8a91",
+        "sha256:3201da16d10e1ca9d1635c28e11990ae756b4e60e9dfc5637380c67c2e963dba",
+        "sha256:474de8079b19b4f3039ebffe2283733ccc4e62f58ffaebf964147dd08d26881e",
+        "sha256:8a6d50602cbd2fa4c1afb716042bf4b494881cf621864d8438ca9682d0f510b1",
+        "sha256:c210f8f772d0b2771eb3dd10df93143a2064f088c222c30e3546edf3848b39f7",
+        "sha256:df8b2c4a2b3483cdadea6be59e6d95e787eb287d408f153603d247ff7813140d",
+        "sha256:e938bf88a587e19f76994ea8acd1b56a50793407c6b1dbdfafe28bf0139a5472",
+        "sha256:ef4603fd191a8be1258f0247354f4bf2ec687d42ea0f33194206c847d057347e"
+      ],
+      "reason": "Updated TrayPanel.test.tsx card logic prose and reference [17] for the updated taskless Projects Architect send tests without a page repository.",
+      "sources": [
+        {
+          "blob": "ae6a12860b5be5bb665cf5d1b8a5b41445843932",
+          "path": "dashboard/src/tray/TrayPanel.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/TrayPanel.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZF0HDE",
+      "items": [
+        "sha256:937a114cc9bfab495baf743e2a3edb1e410fae5b2afe6e460bf56088f906001b"
+      ],
+      "reason": "Updated mcp/tests/overview.md prose to include test_developer_messages_taskless.py alongside post-crossing-5 modules with live counts (852 distinct modules / 698 unit-regression / 126 integration) and refreshed shifted catalog references.",
+      "sources": [
+        {
+          "blob": "a1e2052fcb7ce0b3db29deaf89e5926bc3700aa1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "28d307cfb113ce8a6a56247713875642d6c12adc",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "a6d46c54bbf1eb7cdb5fa654f8e45599ef6573df",
+          "path": "mcp/tests/test_developer_messages.py"
+        },
+        {
+          "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+          "path": "mcp/tests/test_developer_messages_taskless.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:573202369167f222b2a12c77fb73b161f635c8a97bf8ef7af8b387890807aa73",
+      "record": "DPD-23C91T",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T03:23:25+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f92b968f316ff467fbc09c9bea837de497f6d3e28933a269404523164ba55a33",
+      "record": "DPD-23C91T",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-27T05:37:33+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1731975fc40f234e4d50ba7fe9ff0117d7c6d5d7b0f6692655a86a7d9064255a",
+      "record": "DPD-PMZ21Z",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-27T03:23:25+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:85158f4514b49951a0d67a6eebabf388826bd867a12f05e7bbccf7b3a2f615c7",
+      "record": "DPD-PMZ21Z",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-27T05:37:33+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:4d63cccb3a55353e69c83727742e9eec42bf3bcb38a70f1e18e937427d298bde",
+      "record": "DPD-ZT8YY7",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T01:27:06+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:407fff5591d7b2988529d29741551b51a3db42b407c7e998f851c067796fd59d",
+      "record": "DPD-ZT8YY7",
+      "revision": 36,
+      "writer": {
+        "at": "2026-11-27T03:23:25+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:da66caf7a7d640fb20dc6a4dfa3da8ec836c151ca2dc2e29094abd2bfef4f602",
+      "record": "DPD-ZT8YY7",
+      "revision": 37,
+      "writer": {
+        "at": "2026-11-27T04:58:26+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0d143fb11fda77f2413f631113f10b9583c0b4462944fb81e9837e25bbf34402",
+      "record": "DPD-ZT8YY7",
+      "revision": 38,
+      "writer": {
+        "at": "2026-11-27T05:37:33+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:dee065b9dcbebdbf7d89bd158c6a0d0285531e5c2ba44305de5856a7f0488baf",
+      "record": "FAM-DB8S4B",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T01:46:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L61",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

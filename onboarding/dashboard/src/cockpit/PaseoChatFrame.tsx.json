@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:011f51091c3826cba23b53b50b6b8895f19e466aa1f445f4eeb6a35a49890ef2",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:7d921bb35da93c4e10ce384580e215b0cdf69e209ffdee50fe5cd03d0c025300",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
         "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
         "locator": {
           "kind": "symbol",
@@ -38,12 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:52779ed6470faab67d0ad0c3607267ef4bcdd8005fc8f14ea862cd2817feaca2",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:4d9fd6a26ccb9c18387a0c27d1fdad4e1304cef9d4b457ac0850c602ba15297d",
         "locator": {
-          "end": 309,
+          "end": 355,
           "kind": "line_range",
-          "start": 285
+          "start": 328
         }
       },
       "id": "RLZ-6CV9KK",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:3c5f0380ec70248470ba50eab1aa60c87ebc2bbcebb42a2e049a18dd3a8af960",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:4d9fd6a26ccb9c18387a0c27d1fdad4e1304cef9d4b457ac0850c602ba15297d",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -75,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
         "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
         "locator": {
-          "end": 355,
+          "end": 402,
           "kind": "line_range",
-          "start": 355
+          "start": 402
         }
       },
       "id": "RLZ-93GQVS",
@@ -94,8 +94,62 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:8d719ce1f1f595f0be72d7a6b36bdf942ed03cb62dacf8cf0f7e151c59f3b894",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameNotices"
+        }
+      },
+      "id": "RLZ-FV1CWD",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Renders an explicit Retry button inside paseo-frame-agent-problem that calls onRetryAgent when control is ready and onRetry when unavailable, remaining inside the frame shell outside the tray dock.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:94c2d09f97568abb6b9deac1597a071b9f498c4f2bf09ef806c10835a305fe76",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFrameController"
+        }
+      },
+      "id": "RLZ-FWDKDR",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Invokes controller.resyncIfUnshown when active transitions from false to true with a non-null target not already steered in the same render.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:2415e2d3e868b65fbf518527ade04110ac5a2959bec61c6aab044c8a030e0312",
+        "locator": {
+          "kind": "symbol",
+          "name": "frameWait"
+        }
+      },
+      "id": "RLZ-HHGM6H",
+      "invariant": "INV-K6HXG4",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §2",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Keeps unconfirmed URL-landed targets under a waiting notice with Retry while control is unavailable unless showing.urlOnly confirms an explicit non-open-agent plug-in, amending INV-D0QATN.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -112,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:2415e2d3e868b65fbf518527ade04110ac5a2959bec61c6aab044c8a030e0312",
         "locator": {
           "kind": "symbol",
           "name": "frameWait"
@@ -130,8 +184,26 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-NJRQ3X",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Wires the iframe onLoad handler to controller.onFrameLoad so post-load readiness timing starts and resets on each iframe document load.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -148,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -166,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-        "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+        "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+        "content": "sha256:2415e2d3e868b65fbf518527ade04110ac5a2959bec61c6aab044c8a030e0312",
         "locator": {
           "kind": "symbol",
           "name": "frameWait"
@@ -185,16 +257,15 @@
   ],
   "references": {
     "1": {
-      "note": "The stable controller dispatches known target changes before paint and receives frame messages.\n\nAnchor: \"function useFrameController({ scope, target, page }: PaseoChatFrameProps) {\"",
+      "note": "The stable controller dispatches changed targets before paint, re-syncs unshown targets on reveal without reload, and receives frame messages.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-            "content": "sha256:c7a4fc61095f067877f1ac5bed4772b8fd71b9f6819e2309ac3f81bea6e76879",
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:94c2d09f97568abb6b9deac1597a071b9f498c4f2bf09ef806c10835a305fe76",
             "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 171
+              "kind": "symbol",
+              "name": "useFrameController"
             }
           },
           "kind": "code"
@@ -206,12 +277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
             "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
             "locator": {
-              "end": 283,
+              "end": 326,
               "kind": "line_range",
-              "start": 254
+              "start": 297
             }
           },
           "kind": "code"
@@ -219,28 +290,37 @@
       ]
     },
     "3": {
-      "note": "The frame component forwards the steered selection scope into EmbeddedFrame, whose container renders data-scope. Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert.",
+      "note": "The frame component forwards the steered selection scope and onLoad/Retry handlers into EmbeddedFrame and FrameNotices; generation keys the iframe, clipboard permission names the embedded origin, held input is blurred and inert, and agent-problem Retry resends ar.open when ready or reloads when unavailable.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-            "content": "sha256:b3dee5250129eeb0845b2f65822e5f38f8a080b73f1140db63b528d1c7cffdb6",
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:4d9fd6a26ccb9c18387a0c27d1fdad4e1304cef9d4b457ac0850c602ba15297d",
             "locator": {
-              "end": 309,
-              "kind": "line_range",
-              "start": 297
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-            "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:d061aa3349e544822f736858fea6da5aa75d892f173616dc76bc8ca12119ccf7",
             "locator": {
-              "end": 396,
-              "kind": "line_range",
-              "start": 335
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:8d719ce1f1f595f0be72d7a6b36bdf942ed03cb62dacf8cf0f7e151c59f3b894",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameNotices"
             }
           },
           "kind": "code"
@@ -248,16 +328,26 @@
       ]
     },
     "4": {
-      "note": "The selected screen's shown/on-chat/loaded state determines input reachability and its waiting line.\n\nAnchor: \"function frameWait(showing: PaseoFrameShowing, agentId: string \\| undefined, page: PaseoChatFrameProps[\"",
+      "note": "Shown, on-chat, control availability and explicit urlOnly state determine input reachability and the waiting notice with Retry.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
-            "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:f5051c0e3541a721c3ac34fe106a84df765833d7bc56f9b26480fffb91482f5b",
             "locator": {
-              "end": 243,
-              "kind": "line_range",
-              "start": 236
+              "kind": "symbol",
+              "name": "unconfirmedWait"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32d59b32e5031db42d9c344b50e6e9f92d437112",
+            "content": "sha256:2415e2d3e868b65fbf518527ade04110ac5a2959bec61c6aab044c8a030e0312",
+            "locator": {
+              "kind": "symbol",
+              "name": "frameWait"
             }
           },
           "kind": "code"

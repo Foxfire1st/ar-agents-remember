@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across serving/paseo/provider_limit_suppressions.py and serving/paseo/provider_limits.py, proven by three unit tests in mcp/tests/test_provider_limit_suppression.py, and required so suppression releases seats cleanly without masking other real limits."
+  },
+  "applicability": "Every projection of exhausted account-wide usage windows onto provider-limits.json during usage reads, periodic updates, and suppression mutations.",
+  "conditions": [
+    "Exhausted windows are filtered against live suppressions keyed on exact (report_id, window_id, resetsAt) tuples through project_reports_with_suppressions.",
+    "When a multi-window report retains at least one unsuppressed exhausted window, report.until is recomputed to max(remaining.resetsAt) and the remaining window keeps holding seats.",
+    "When no unsuppressed exhausted window remains, the report is dropped and clearedSeats is recomputed via _updated_clear_markers under provider-limits.lock so held messages drain and periodic polling stops."
+  ],
+  "exclusions": [
+    "A suppression for one resetsAt does not suppress a future window of the same reportId and windowId with a different resetsAt.",
+    "Suppression never creates a new limit report or extends an existing resetsAt deadline."
+  ],
+  "id": "INV-SDEXYK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_provider_limit_suppression.py (multi-window until recomputation, single-window clearedSeats/polling-stop, and periodic drop clearedSeats cases) on clean tree 54a3d3198b5f47b34a4987cbadf2c9ca58a20a4d"
+      ],
+      "path": "261112-BUG-L60-curator-ingest"
+    },
+    "handoffEntry": "BUG-R60@v1 R2",
+    "leaf": "261112-BUG-L60",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every limit write filters exhausted windows against live suppressions keyed on (report_id, window_id, resetsAt) through one shared projection helper, recomputing report.until to max(remaining.resetsAt) on multi-window reports and dropping the report with clearedSeats updated under the same lock when no unsuppressed exhausted windows remain.",
+  "supersedes": [],
+  "title": "Shared projection recomputes until or drops report with clear markers",
+  "writer": {
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
+  }
+}

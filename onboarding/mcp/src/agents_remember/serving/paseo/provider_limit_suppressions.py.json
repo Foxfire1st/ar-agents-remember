@@ -1,0 +1,200 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/provider_limit_suppressions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:27d6916e5d8b4391f3b89e91ec04a9ef78c3a9be79d7caba5dfd75894aacf2aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "update_sidecar_for_usage_reads"
+        }
+      },
+      "id": "RLZ-066H45",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Preserves existing recordedAt across usage re-reads for unchanged live (reportId, windowId, resetsAt) windows, stamps newly judged windows, and drops expired entries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:e6b8d2d8c5e6603a84ee6245bc40fc4f0804c5de72a1551b8f0dc95af0f48029",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProviderLimitSuppressions"
+        }
+      },
+      "id": "RLZ-4NQ9KF",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Defines the ar-provider-limit-suppressions/v1 sibling sidecar schema carrying recordedWindows and suppressedWindows so provider-limits.json stays strictly ar-provider-limits/v1 for mixed-version extra=forbid readers.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:52b8dec61c907d3ae81b15161234f2fdc416404a98afaa13a1e6b87606d7d877",
+        "locator": {
+          "kind": "symbol",
+          "name": "auto_suppression_candidates"
+        }
+      },
+      "id": "RLZ-9RK6EF",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Selects only mapped live exhausted windows with an explicit recordedAt strictly less than turnStartedAt, failing closed on legacy records without recordedAt and on equal or earlier turn starts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:c564d24af6a40d319b5e55083cfab5072ec005cf31225945fa31115a61d20eca",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_reports_with_suppressions"
+        }
+      },
+      "id": "RLZ-Q079PF",
+      "invariant": "INV-SDEXYK",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R2",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Single shared projection helper filtering exhausted windows against live suppressions keyed on (report_id, window_id, resetsAt), recomputing report.until to max(remaining.resetsAt), and dropping reports with no unsuppressed exhausted windows.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+        "content": "sha256:d546408fc7c6aa4c5e85b5ce7a69ab4c03b5c0389434ba57d85de745d9aa7c49",
+        "locator": {
+          "kind": "symbol",
+          "name": "prune_sidecar"
+        }
+      },
+      "id": "RLZ-R4KS46",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Reclaims expired sidecar recordedWindows and suppressedWindows entries where resetsAt <= now and returns the same object when unchanged so quiet periodic ticks perform no writes.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines the `ar-provider-limit-suppressions/v1` sidecar models (`RecordedLimitWindow`, `SuppressedLimitWindow`, `ProviderLimitSuppressions`) with `extra=\"forbid\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:e6b8d2d8c5e6603a84ee6245bc40fc4f0804c5de72a1551b8f0dc95af0f48029",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderLimitSuppressions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared projection helper filters suppressed windows by `(report_id, window_id, resetsAt)`, recomputes `report.until`, and drops empty reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:c564d24af6a40d319b5e55083cfab5072ec005cf31225945fa31115a61d20eca",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_reports_with_suppressions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preserves existing `recordedAt` across re-reads, stamps newly judged windows, and prunes expired sidecar entries without mutating unchanged snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:d546408fc7c6aa4c5e85b5ce7a69ab4c03b5c0389434ba57d85de745d9aa7c49",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_sidecar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:27d6916e5d8b4391f3b89e91ec04a9ef78c3a9be79d7caba5dfd75894aacf2aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "update_sidecar_for_usage_reads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Selects automatic suppression candidates only when explicit `recordedAt` strictly precedes `turn_started_at`, failing closed on legacy or non-later timestamps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:52b8dec61c907d3ae81b15161234f2fdc416404a98afaa13a1e6b87606d7d877",
+            "locator": {
+              "kind": "symbol",
+              "name": "auto_suppression_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Resolves operator `status`, `suppress`, and `unsuppress` selectors and produces exit-2 named refusals for non-live reports/windows or omitted multi-window selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:4360bb00cc4b61ad6a88d240a6b7e8c4e9710849f8ae7c3201587c1fe84acc01",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_operator_suppressions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "282d2c3322b5ac7df7001fbcfe01ed5c85117481",
+            "content": "sha256:6caff99f21ea0dfa19908ec93fb0fb5bfa69d6739ee356bab595a69f6916a228",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_suppressions_for_unsuppress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

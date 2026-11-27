@@ -11,6 +11,19 @@
     {
       "condition": {
         "file": "docs/concepts.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.074126Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
+      "id": "DFR-A96ARN",
+      "owner": "261112-BUG",
+      "passage": "docs/concepts.md ### Held (lines 660-662: 'exists in the host')",
+      "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats exist on disk (hostAgentExists=false, execution={}) with zero host creation until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-Y5Q4JY untouched; code freeze preserved per Manager directive."
+    },
+    {
+      "condition": {
+        "file": "docs/concepts.md",
         "note": "Update docs/concepts.md line 425 for KNO-R07 records/impact/search/compact-dependent views and 5,000-token ceiling."
       },
       "createdAt": "2026-11-27T06:28:50.317700Z",
@@ -483,14 +496,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "at": "2026-11-27T11:49:22+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

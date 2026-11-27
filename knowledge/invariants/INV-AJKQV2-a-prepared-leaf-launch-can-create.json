@@ -6,10 +6,12 @@
     ],
     "justification": "The race lets a live leaf agent outlive the closing archive and removal; the mark and merge prevent it across three files."
   },
-  "applicability": "The prepared-start boundary between a leaf closing archive pass and a not-yet-created launch.",
+  "applicability": "Any prepared leaf start or deferred held-seat opening concurrent with leaf closing.",
   "conditions": [
-    "The closing mark is durable under the existing receipt lock and is written before host I/O.",
-    "A stale ordinary publication merges the same request's retirement metadata."
+    "The closing mark is checked before host creation and under the receipt lock after creation.",
+    "An unentered deferred held-seat open encountering a closing mark settles waiting messages undelivered and marks the seat gone with zero host calls.",
+    "An entered leaf creation or heldOpenPending open encountering a closing mark archives both the primary agentId and any retried_agent_id minted during BUG-R51 retry without erasing archival debt.",
+    "A stale ordinary receipt writer merges closing mark, archive debt, and refusal fields."
   ],
   "exclusions": [
     "A created agent inside an already-entered RPC is archived on return, not prevented.",
@@ -28,27 +30,20 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A prepared leaf start cannot create an agent past its leaf's closing boundary and then publish a running retired start: the closing mark is read before replay and under the lock after creation, a not-yet-entered creation is refused, and an already-entered creation's minted target stays owed until its returned agent is archived and the start refused, without erasing the retirement record.",
+  "statement": "A leaf closing mark fences prepared starts and deferred held-seat openings under the receipt lock: an unentered creation or unentered deferred held-seat open settles as gone with zero host calls (and waiting messages undelivered), while an entered creation or entered heldOpenPending open settles through the host and archives any retried agent ID minted under BUG-R51 without erasing retirement attribution or archival debt.",
   "supersedes": [],
+  "title": "Closing mark fences launches, deferred held opens, and retried seats",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L76",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:48:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
   }
 }

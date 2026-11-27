@@ -20,5 +20,7 @@ The module decides nothing about refusing a call: which writes a stale installed
 
 - Only an installed, stale reading is returned to annotate ordinary answers. [1]
 - The reading is set for one call and always reset on exit. [2]
+
 - The MCP dispatch takes the reading and runs the call inside the context manager. [3]
+
 - Response enrichment attaches the filtered reading as `buildCurrentness`. [4]

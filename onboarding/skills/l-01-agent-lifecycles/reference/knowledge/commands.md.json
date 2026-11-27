@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+        "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
         "content": "sha256:76cff30584bfa738d4420a7990db3973b6b6396afec98358cd09c4ad38ed1510",
         "locator": {
-          "end": 79,
+          "end": 84,
           "kind": "line_range",
-          "start": 79
+          "start": 84
         }
       },
       "id": "RLZ-59FG0Y",
@@ -22,7 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+        "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+        "content": "sha256:bb44bf43a448c2aa01568d1fcfba52052aeaa0d64c23517434e0c2ace4dfea2d",
+        "locator": {
+          "end": 36,
+          "kind": "line_range",
+          "start": 36
+        }
+      },
+      "id": "RLZ-9D1XYD",
+      "invariant": "INV-XXG2W0",
+      "origin": {
+        "handoffEntry": "BUG-R64-INV-XXG2W0-flags",
+        "leaf": "261112-BUG-L64"
+      },
+      "rationale": "Documents public CLI subcommand memory-briefs in one four-column table row under Knowledge and memory using its real flags (--repo/--config or --memory-root --code-root --coordination-root, --code-commit, --json) while preserving the knowledge_read tool row unchanged.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
         "content": "sha256:2545f4afd1342b36e468538939400a02c0aeef5e5be04014fecd045af0c38c03",
         "locator": {
           "end": 17,
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+        "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
         "content": "sha256:3588289e4f62a9f22d76c4fb72ba738526f8e6616745d0fef25808c7c438075a",
         "locator": {
-          "end": 81,
+          "end": 86,
           "kind": "line_range",
-          "start": 81
+          "start": 86
         }
       },
       "id": "RLZ-D7DJK9",
@@ -60,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+        "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
         "content": "sha256:76cff30584bfa738d4420a7990db3973b6b6396afec98358cd09c4ad38ed1510",
         "locator": {
-          "end": 79,
+          "end": 84,
           "kind": "line_range",
-          "start": 79
+          "start": 84
         }
       },
       "id": "RLZ-YK10GS",
@@ -84,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
             "content": "sha256:d05f6d65122c2249237e5fc674daae70b3c4f338dff54402944185304925982f",
             "locator": {
               "end": 17,
@@ -97,14 +116,14 @@
       ]
     },
     "2": {
-      "note": "The public CLI tables give each subcommand's effect, caller and example, and name the internal dispatcher branch.\n\nAnchor: `agents-remember-mcp`",
+      "note": "The public CLI tables give each subcommand's effect, caller and example (including `memory-briefs` and `provider-limits`), and name the internal dispatcher branch.\n\nAnchor: `agents-remember-mcp`",
       "targets": [
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
-            "content": "sha256:ee88e0e5db1e07fc813043ded75aeaef6583e93f395ff9d56ab4cca17380e7cf",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+            "content": "sha256:55f00e672db4d3eb4a8d4632596f51b668dfbd6e8a5816df3efcb5dbaea57e89",
             "locator": {
-              "end": 56,
+              "end": 61,
               "kind": "line_range",
               "start": 19
             }
@@ -118,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
             "content": "sha256:33f3349f0b1f3b7e79c3429f42ce9657ceabfe5eec9277cf58db668c56d5b1da",
             "locator": {
-              "end": 93,
+              "end": 98,
               "kind": "line_range",
-              "start": 58
+              "start": 63
             }
           },
           "kind": "code"
@@ -135,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
             "content": "sha256:b32a08a410949625ea303e0ce48e6326a7b8604d9d279a749f2190cd8002983e",
             "locator": {
-              "end": 99,
+              "end": 104,
               "kind": "line_range",
-              "start": 95
+              "start": 100
             }
           },
           "kind": "code"
@@ -152,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
             "content": "sha256:bb266f36b658e27a3101d6972d80a5fc056074f7f35d7729e4bdf8f698552b30",
             "locator": {
-              "end": 128,
+              "end": 133,
               "kind": "line_range",
-              "start": 101
+              "start": 106
             }
           },
           "kind": "code"
@@ -165,16 +184,16 @@
       ]
     },
     "6": {
-      "note": "The owning CLI and MCP sources are named.\n\nAnchor: `leaf_enclosure_start.py::COMMAND`",
+      "note": "The owning CLI and MCP sources are named (including `provider_limit_hold.py::add_arguments`).\n\nAnchor: `leaf_enclosure_start.py::COMMAND`",
       "targets": [
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
-            "content": "sha256:08143afdb5bf476b3873c06330e2d478e771cfef58cfaf9cc7052f60cd073192",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+            "content": "sha256:2e3205e5c7c758ecb4aaae3e66cbbe544da52cfece19a57cbc6d73224f3cf892",
             "locator": {
-              "end": 136,
+              "end": 141,
               "kind": "line_range",
-              "start": 130
+              "start": 135
             }
           },
           "kind": "code"
@@ -186,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -238,12 +257,12 @@
         },
         {
           "anchor": {
-            "blob": "566abf60d8e0bcf14f1fecd02bc5569f3dae18cc",
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
             "content": "sha256:76cff30584bfa738d4420a7990db3973b6b6396afec98358cd09c4ad38ed1510",
             "locator": {
-              "end": 79,
+              "end": 84,
               "kind": "line_range",
-              "start": 79
+              "start": 84
             }
           },
           "kind": "code"

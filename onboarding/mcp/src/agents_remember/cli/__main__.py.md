@@ -10,7 +10,7 @@
 that dispatches subcommands. Its subcommands include `dashboard`, `memory-citations`,
 `memory-backfill`, `memory-briefs`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-convert-states`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings` and `removed-stores` — and
+`knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `provider-limits`, `upgrade-user-settings` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -34,7 +34,7 @@ each subparser through its adapter's own `add_arguments`. Finite commands dispat
 `knowledge_census.add_arguments`/`knowledge_census.run`,
 `knowledge_copies.add_arguments`/`knowledge_copies.run`,
 `explainer_browser.add_arguments`/`explainer_browser.run`,
-`paseo_runtime.add_arguments`/`paseo_runtime.run` and
+`paseo_runtime.add_arguments`/`paseo_runtime.run`, `provider_limit_hold.add_arguments`/`provider_limit_hold.run` and
 `tool_log_stats.add_arguments`/`tool_log_stats.run`. For public commands, `main(argv=None)`
 parses and dispatches to `args.func(args)`, returning its int exit code. Before that public parser,
 the internal `leaf_enclosure_start.COMMAND` child-process route delegates to its own entry point;
@@ -172,6 +172,7 @@ Source: mcp/src/agents_remember/cli/__main__.py
 
 - Frozen implementation of build_parser supporting the stated file behavior. [16]
 
-- The runtime-command registry registers upgrade-user-settings with its existing adapter; handoff-check is registered separately in the knowledge-command registry. [18]
+- The runtime-command registry registers `provider-limits` and `upgrade-user-settings` with their adapters; `handoff-check` is registered separately in the knowledge-command registry. [18]
+
 
 - Registers `memory-briefs` under `_register_memory_commands` to refresh derived `briefs/` in a converted external memory checkout. [26]

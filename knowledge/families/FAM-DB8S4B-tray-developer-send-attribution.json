@@ -21,31 +21,22 @@
     "leaf": "260928-MIK-L89",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/tray",
-    "mcp/src/agents_remember/cli",
-    "dashboard/src/cockpit"
+    "mcp/src/agents_remember/cli"
   ],
   "schema": "ar-family/v1",
   "title": "Attributable developer Send and recoverable picked payload",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L89",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T01:46:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L61",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c24ae4e7-61ed-5ccc-89ab-e784677f4605",
+    "task": "261112-BUG"
   }
 }

@@ -5,25 +5,6 @@
     {
       "anchor": {
         "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
-        "content": "sha256:47f36edd7a691ac43233b2b9bb6bc8fb27fd185458575546938c4d3ea69c1335",
-        "locator": {
-          "end": 710,
-          "kind": "line_range",
-          "start": 709
-        }
-      },
-      "id": "RLZ-0S1X9J",
-      "invariant": "INV-G1K3QN",
-      "origin": {
-        "handoffEntry": "L89-CURATOR-TRAY09-shown-page-repository",
-        "leaf": "260928-MIK-L89"
-      },
-      "rationale": "Publishes the selected page repository without fabricating a task binding or recipient, so downstream taskless filing can use the current repository context.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
         "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
         "locator": {
           "end": 585,
@@ -478,24 +459,6 @@
       },
       "rationale": "Cockpit owns actual agent/chat target requests and the view switch used by bell navigation.",
       "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
-        "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
-        "locator": {
-          "kind": "symbol",
-          "name": "shownPage"
-        }
-      },
-      "id": "RLZ-WZSWBY",
-      "invariant": "INV-G1K3QN",
-      "origin": {
-        "handoffEntry": "L89-CURATOR-TRAY09-shown-page-repository",
-        "leaf": "260928-MIK-L89"
-      },
-      "rationale": "Supplies the review repository or Operations task repository as the current filing context for taskless developer messages; File Viewer leaves repository ownership to its own page, and unrelated pages supply null. This is context propagation support, not the filing transaction authority.",
-      "role": "propagation-persistence"
     },
     {
       "anchor": {

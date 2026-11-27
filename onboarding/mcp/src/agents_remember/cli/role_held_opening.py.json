@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_held_opening.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+        "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_held_seat"
+        }
+      },
+      "id": "RLZ-59PWQ7",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L58-INV-RTQCXN",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Opens a deferred held seat on first role_message by running its stored replayRequest verbatim in create mode and delivering pre-open waiting messages in one turn.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+        "content": "sha256:7a424f13d610af5345c15b2cd0670b56f622d2f468f3bc2376aa650dd16c53fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_held_open_call"
+        }
+      },
+      "id": "RLZ-GPC1C1",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "L58-INV-AJKQV2",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Fences leaf deferred held-seat openings against a concurrent closing mark before and after creation, forwarding any retried_agent_id to refuse_retired_start.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+        "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_held_seat"
+        }
+      },
+      "id": "RLZ-P8GZ74",
+      "invariant": "INV-EQAWP7",
+      "origin": {
+        "handoffEntry": "BUG-R58@v2 §6",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Sets allowMissingParent true on the agent-create call whenever the stored deferred held call names a parentAgentId.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+        "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_held_seat"
+        }
+      },
+      "id": "RLZ-R6PF51",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "BUG-R51@v1 §2-p2-reattach",
+        "leaf": "261112-BUG-L51"
+      },
+      "rationale": "Moved from role_held_messages._open_held_seat to role_held_opening.open_held_seat; runs mode=create for deferred held seats and mode=open-held for legacy pre-created held seats.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+        "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_held_seat"
+        }
+      },
+      "id": "RLZ-XRBVHQ",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Moved from role_held_messages._open_held_seat to role_held_opening.open_held_seat; retains _stage_batch_ends before _remove_ids on delivery.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_run_held_open_call` fences leaf held-seat openings via `_leaf_before_create(..., opening_held=True)`, archives both original and retried IDs on concurrent close via `_refuse_closing_launch`, and clears `heldOpenPending` on completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+            "content": "sha256:7a424f13d610af5345c15b2cd0670b56f622d2f468f3bc2376aa650dd16c53fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_held_open_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`open_held_seat` restores handover artifacts, bounds waiting batches, sets `allowMissingParent=True`, runs `mode=\"create\"` for deferred held receipts (or `\"open-held\"` for legacy), stages delivery ends before removal, and settles seat-lost outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+            "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_held_seat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

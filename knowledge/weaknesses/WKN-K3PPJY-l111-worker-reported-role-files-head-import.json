@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "fbf31d5aede06e44b81ce73a5594069abec3cbb6",
-    "content": "sha256:10239ee4c27705656eed26f37da788007cf5dec4ef2424ea38bf6e3cba8cc8fb",
+    "blob": "bc2b3421dc4a719fb74416c26563d000b821a826",
+    "content": "sha256:fea9cdef33c365705d4b9744c607ee123c2cef6efe99c5d40687237e633be692",
     "locator": {
       "kind": "file"
     },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -26,14 +26,14 @@
   "state": "open",
   "statement": "L111 Worker reported role files at HEAD import cli/role_message_delivery.py and cli/role_message_files.py that exist only as untracked files; not reproducible in master or the L111 tree (no such imports at HEAD). The files, if present, belong to the L117 candidate (untracked until it lands); no action here. Also: a bare git stash pop grabs another seat's parked WIP (shared stack);",
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T02:48:12+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
   }
 }

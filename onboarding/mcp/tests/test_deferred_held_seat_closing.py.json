@@ -1,0 +1,76 @@
+{
+  "path": "mcp/tests/test_deferred_held_seat_closing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+        "content": "sha256:45022fff795e572b3cfb49b5cfd4513fb4f877e7bea8145c52d17fe882b04e00",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldSeatRetirementAndClosing.test_retire_deferred_held_seat_sends_zero_host_calls_and_records_caller_and_reason"
+        }
+      },
+      "facet": "Verifies retiring a parent with an open deferred held child refuses naming the child, and retiring an uncreated deferred held seat itself uses zero host calls while recording caller and reason.",
+      "id": "PRF-73YVKV",
+      "invariant": "INV-KRCG05",
+      "origin": {
+        "handoffEntry": "L58-INV-KRCG05-ext",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+        "content": "sha256:88d1ff2ddfa4ec077377a89faa145bf2a466f32ddb37ee525f0b07e92d8ea50f",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldSeatRetirementAndClosing.test_d1046_site7_site8_and_closing_retry_race"
+        }
+      },
+      "facet": "Verifies concurrent closing during launch retry archives both the original and retried agent IDs with zero live orphans.",
+      "id": "PRF-BKYMM6",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "L58-INV-AJKQV2",
+        "leaf": "261112-BUG-L58"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+        "content": "sha256:d36baab1bb054c7eb6ad00f9ea5fb8e1b96a68913ca6fa8aee35bfc88c9e510b",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestDeferredHeldSeatRetirementAndClosing.test_rule4_unentered_opening_meets_closing_mark_and_closing_during_retry_archives_orphan"
+        }
+      },
+      "facet": "Verifies an unentered deferred held-seat open encountering a closing mark makes zero host calls and settles waiting messages undelivered, and a closing mark landing mid-BUG-R51-retry archives the retried agent ID too.",
+      "id": "PRF-BQS81D",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "L58-INV-AJKQV2",
+        "leaf": "261112-BUG-L58"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`TestDeferredHeldSeatRetirementAndClosing` covers host-free retirement, D1046 Sites 7–8 (`_public_execution` and `_reconcile_agent`), unentered closing-mark refusal, and mid-BUG-R51-retry orphan archival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b766ebc8a3e488cc4e4359ceebce8561044419cd",
+            "content": "sha256:ae6e6de22885943447bf4b008e14a6a374d46378b1c92e54f23c16168f1612fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestDeferredHeldSeatRetirementAndClosing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

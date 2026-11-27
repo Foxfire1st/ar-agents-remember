@@ -1,0 +1,147 @@
+{
+  "closed": true,
+  "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-3X23GP",
+      "items": [],
+      "reason": "Merged 261112-BUG-L58 and 261112-KNO-L7 confirmations in crossing-5 with live stress-durability anchor test-evidence-lanes.toml:870-872.",
+      "revision": 37,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-HGWT25",
+      "items": [],
+      "reason": "Merged 261112-BUG-L58 and 261112-KNO-L7 confirmations in crossing-5 against merged code tip.",
+      "revision": 22,
+      "subject": "DPD-K2QMWQ"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-10YCT2",
+      "revision": 22
+    },
+    {
+      "record": "DPD-K2QMWQ",
+      "revision": 21
+    },
+    {
+      "record": "DPD-MQCJK4",
+      "revision": 21
+    },
+    {
+      "record": "DPD-NGC2F6",
+      "revision": 24
+    },
+    {
+      "conflictingWriter": {
+        "at": "2026-11-27T00:41:03+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L59",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
+        "task": "261112-BUG"
+      },
+      "record": "DPD-TXRND9",
+      "revision": 13
+    },
+    {
+      "record": "DPD-ZT8YY7",
+      "revision": 36
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:bba3a1a3c2e6eedfd847afb783abdb5f1549c4f80f8248cc3c3477bebce744d6",
+      "record": "DPD-10YCT2",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T05:09:08+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:b1e4fce0c486ec9f6221045242a095efb93c2d841bb640b193435ceab8b92255",
+      "record": "DPD-K2QMWQ",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T05:23:00+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cbdc72d64894e886eb490f1463176bc910fd803ffd282e1dcc46d334acbef3c0",
+      "record": "DPD-MQCJK4",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-27T05:09:08+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:ef0182999746efc35603af96e1d2ef4c74a60fd19c60ff8017a3ad23378a5949",
+      "record": "DPD-NGC2F6",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-27T05:09:08+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:9ed7c35e3473690b9e1149dc948c6e7e6817459c5a6c476fb975c2469b65faca",
+      "record": "DPD-ZT8YY7",
+      "revision": 37,
+      "writer": {
+        "at": "2026-11-27T05:23:00+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

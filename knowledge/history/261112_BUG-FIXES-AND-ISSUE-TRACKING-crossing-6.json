@@ -1,0 +1,131 @@
+{
+  "closed": true,
+  "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-2N58G0",
+      "items": [],
+      "reason": "Merged 261112-BUG-L61 and 261124-CAP-L5 confirmations in crossing-6 with live stress-durability anchor test-evidence-lanes.toml:871-873.",
+      "revision": 39,
+      "subject": "DPD-ZT8YY7"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "conflictingWriter": {
+        "at": "2026-11-27T02:47:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+        "task": "261112-KNO"
+      },
+      "record": "DPD-633P3W",
+      "revision": 19
+    },
+    {
+      "record": "DPD-71WYH4",
+      "revision": 35
+    },
+    {
+      "record": "DPD-MQCJK4",
+      "revision": 21
+    },
+    {
+      "record": "DPD-QFGFS0",
+      "revision": 11
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:e1c9526d24462ccaa316a136f6ced94d0e64d223cbe974829bb61f1080371058",
+      "record": "DPD-10YCT2",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-27T06:55:38+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:963f4adcf8d598cb0d5d37c07da3a01c35741c7af6ab30dc17b12502442ff32d",
+      "record": "DPD-71WYH4",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-27T06:55:38+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:6fd62cb07567ea28b405fca09bee8c9a5594a011906828aff9d459bc5eeb79b1",
+      "record": "DPD-NGC2F6",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-27T06:55:38+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:32b2a655fb10fc70f34def7e29e4330884cfbc846d44aa83d8536034d7532d3b",
+      "record": "DPD-QFGFS0",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-27T06:55:38+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:4809d0e4f4cc105da4f860e396930eef0b018866bb774f7200214bd32e31cdab",
+      "record": "DPD-ZT8YY7",
+      "revision": 39,
+      "writer": {
+        "at": "2026-11-27T07:02:02+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

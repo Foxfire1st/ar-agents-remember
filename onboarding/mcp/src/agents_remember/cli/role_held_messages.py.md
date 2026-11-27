@@ -4,7 +4,7 @@
 
 ## Contract
 
-Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient's own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Store admission, claims, and settlement run under the recipient's launch-receipt lock (`cli/role_held_store.py::open_held_store`, using atomic replacement and fsync), refuse closed seats or missing workspaces without creating a store or folder, admit at most twenty messages and never drop an existing message to make room. Hold-time admission stores texts accepted at the message input boundary without summarizing; at held-seat open time, `_open_held_seat` enforces `settings.role_message_limit` across the rendered FIFO batch via `role_opening_offload.prepare_held_opening_batch`, offloading over-limit batches to content-addressed `.held-batch-<sha256>.md`. The store is independent of hosted-seat/control-plane messaging.
+Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient's own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Store admission, claims, and settlement run under the recipient's launch-receipt lock (`cli/role_held_store.py::open_held_store`, using atomic replacement and fsync), refuse closed seats or missing workspaces without creating a store or folder, admit at most twenty messages and never drop an existing message to make room. Hold-time admission stores texts accepted at the message input boundary without summarizing; at held-seat open time, `_open_held_seat` delegates to `role_held_opening.open_held_seat`, which enforces `settings.role_message_limit` across the rendered FIFO batch via `role_opening_offload.prepare_held_opening_batch`, offloading over-limit batches to content-addressed `.held-batch-<sha256>.md`. The store is independent of hosted-seat/control-plane messaging.
 
 ## Delivery and recovery
 
@@ -28,28 +28,21 @@ Before a resend, a message attempted under a host id goes alone and under that i
 
 ## Held-seat opening and batch offload
 
-`_open_held_seat` invokes the receipt owner's `_restore_launch_handover` with the saved launch call (verifying and restoring `.handover.txt`, `.handover.json`, `.step-up.json`, `.opening-message.md`, and frozen details, or validating frozen details directly when no artifact references exist). After restoration succeeds, `_open_held_seat` calls `role_opening_offload.prepare_held_opening_batch(batch.config, batch.receipt, combined_text(messages))` to enforce `settings.role_message_limit` (offloading over-limit batches to `<report_stem>.held-batch-<sha256>.md`), and joins the restored `opening` (which ends with its suffix `artifact_line`), any applicable `product_start_message` for a held leaf Reviewer or Curator, and `bounded_batch` with `"\n\n"`. It executes `run_launch_call` with `LaunchExecutionPolicy(mode="open-held", on_retry_agent=...)` so eager-harness held seats confirm exclusive `agents-remember-task` binding before receiving their first message (settling waiting messages via `held_seat_lost_settlement` / `settle_held_store` when binding fails twice or the seat is lost, and recording `bindingConfirmation` and retried `agentId`/`replayRequest` via `apply_held_open_confirmation`).
+`_check_drain_readiness` bypasses host `read_agent` for deferred held receipts (`is_deferred_held_receipt`), and `_open_held_seat` delegates directly to `role_held_opening.open_held_seat(batch)`. `open_held_seat` invokes the receipt owner's `_restore_launch_handover` with the saved launch call (verifying and restoring `.handover.txt`, `.handover.json`, `.step-up.json`, `.opening-message.md`, and frozen details, or validating frozen details directly when no artifact references exist), calls `role_opening_offload.prepare_held_opening_batch(batch.config, batch.receipt, combined_text(messages))` to enforce `settings.role_message_limit` (offloading over-limit batches to `<report_stem>.held-batch-<sha256>.md`), and joins the restored `opening` (which ends with its suffix `artifact_line`), any applicable `product_start_message` for a held leaf Reviewer or Curator, and `bounded_batch` with `"\n\n"`. It sets `allowMissingParent=True` when `parentAgentId` is present and executes `run_launch_call` (fenced for leaf closing marks via `role_held_opening._run_held_open_call`) with `LaunchExecutionPolicy(mode="create", ...)` for deferred held seats (creating and confirming exclusive `agents-remember-task` binding on first message) or `mode="open-held"` for legacy pre-created held seats; `apply_drain_to_receipt` sets `hostAgentExists=True` and writes `execution`, `bindingConfirmation`, and retried `agentId`/`replayRequest` via `apply_held_open_confirmation`.
 
 A `ValueError` from `_restore_launch_handover` releases the claim and returns `cannot-open` with the recovery detail; an `(AgenticSettingsError, OSError, ValueError)` from `prepare_held_opening_batch` releases the claim, preserves all waiting messages without calling `run_launch_call`, and returns `open-failed`. Successful opening stages terminal metadata before removal, and FIFO, batching, store limits, permission guards, and bounded sweep contracts remain intact.
 
 ## Evidence
 
-
 - Admission appends under the store lock and refuses overflow without dropping text. [1]
-
-- A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
+- A drain delegates claim/readiness checks (bypassing host reads for deferred held receipts) and whole-first FIFO delivery. [2]
 
 - Terminal lines are published separately from ended text and retain failure state. [3]
-
-
-
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
 
 - Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]
 
-- `_open_held_seat` runs handover restoration (`cannot-open` on `ValueError`) and `prepare_held_opening_batch` (`open-failed` on `AgenticSettingsError`/`OSError`/`ValueError`) before host launch, releasing the claim and preserving waiting messages on failure. [5]
-
+- `role_held_opening.open_held_seat` (delegated from `_open_held_seat`) runs handover restoration (`cannot-open` on `ValueError`) and `prepare_held_opening_batch` (`open-failed` on `AgenticSettingsError`/`OSError`/`ValueError`) before host launch, releasing the claim and preserving waiting messages on failure. [5]
 - Held-seat opening checks frozen details and restores or verifies recorded handover/opening artifact files before composing its message. [6]
-
 - The held opening inserts its product notice between the restored prompt (ending with its suffix `artifact_line`) and the bounded FIFO batch. [9]

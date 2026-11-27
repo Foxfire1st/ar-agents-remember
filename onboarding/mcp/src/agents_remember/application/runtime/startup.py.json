@@ -192,12 +192,12 @@
         },
         {
           "anchor": {
-            "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 105,
+              "end": 110,
               "kind": "line_range",
-              "start": 93
+              "start": 98
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

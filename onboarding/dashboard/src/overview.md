@@ -108,7 +108,7 @@ Engine Room currently composes enclosures, their process map/stack, boot timelin
 
 Chats mounts one persistent RoleChats/Paseo iframe whose own sidebar and terminal pane stand beside the chat, so that frame is wider than the chat column and the tray is measured against the message box inside it rather than against the frame. Operations and the review page share the retained right-rail document-chat frame, which is itself the column; the message box inside it can sit inset from that column's edges — the retained measured case puts it at left 16 and width 268 in a 300 px column at both 1920 and 1440, so the tray that used to span the whole column now takes the box's 268 px — and the review supplies its own task reference and closed-column preloading. The host’s list owns native navigation. On Operations a known selection switches by trusted ar.open with the click; bounded tree preknowledge is refreshed by one batch while pane and tab are visible, and a fresh document answer corrects it. Unknown lookup keeps the application’s current screen visible and inert under one waiting line. Only a confirmed agentless selection hides the frame behind its bound launcher. Role-launch selectors and document-chat bindings use shared entries’ ordered children and canonical references.
 
-A slow host or native drawing answer remains waiting while the application answers pings. Recovery URL loads require application-ping silence, explicit Retry or a returned host; a plugin explicitly unable to open agents keeps its separate URL-only path. With the current plugin, input belongs to the selected native screen once on-chat is reported, the waiting line stays through drawing, and the application's own failed-load pane/Retry ends that wait without dashboard-invented failure prose. A less capable older plugin still switches and its notice names provisioning and any early-answer limitation. Draft/scroll preservation is only the host's native behavior, not an extra dashboard promise.
+A slow host or native drawing answer remains waiting while the application answers pings. Post-`onLoad` readiness timeouts and the 45-second outer cold-load cap settle control unavailable without reloading the in-flight frame, keeping a waiting notice with Retry for unconfirmed URL-landed chats while accepting a late `ready`/`pong`; recovery URL loads require an unanswered open-request ping, a subsequent unavailable selection, explicit Retry while unavailable, or a returned host, and a plugin explicitly unable to open agents keeps its separate URL-only path. Explainer frame targeting stays `null` whenever `showFrame` is false (no non-explainer row selected in `placeholder`, `first-request`, `building`, or `retired` phases; an explicitly selected non-explainer row keeps `showFrame` true), re-syncs without reload on reveal, and offers explicit Retry on agent-problem notices. With the current plugin, input belongs to the selected native screen once on-chat is reported, the waiting line stays through drawing, and the application's own failed-load pane/Retry ends that wait without dashboard-invented failure prose. A less capable older plugin still switches and its notice names provisioning and any early-answer limitation. Draft/scroll preservation is only the host's native behavior, not an extra dashboard promise.
 
 The plugin's Parent action retains the live selected-source/relation checks. Canonical selection, exact launched-request identity, dynamic model/effort/tier validation and observed host values remain their existing owners; chat cache and display messages acquire no task acceptance or launch authority.
 
@@ -380,6 +380,8 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; the separate status line was removed. Saved and unknown provenance still inform choice checks in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+- Launcher provenance and its saved, unknown and known-empty catalog cases are stated and cited in the child cards this route points at; the deleted component carries no current claim here.
+
 - Operations retains its mounted task, ordinary diff, intent review and notes surfaces across a bottom-tab visit. [97]
 - The tab handler restores an owned remembered reader, dismisses one whose served task is absent after hydration, and resets on a repeated Operations press. [98]
 
@@ -444,7 +446,7 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Native execution results are scoped by document identity and, for selections using request receipts, by the active request ID. Stored/saved receipts are selected only under those scopes. [46]
 
-- Frame descriptor activation and explicit retry are separate from retained frame identity [47]
+- Frame descriptor activation and explicit retry are separate from retained frame identity. [47]
 
 - Every leaf's review entry opens the page's own default comparison — the live candidate for a live leaf, the delivered recorded pair for a closed one — independently of summary availability [48]
 
@@ -563,11 +565,7 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - The tree’s All changes count names measured/pending/unavailable totals; non-text inventory remains a comparison-viewer fact. [64]
 
-- Opt-in hidden preload starts the client without an agent URL; the descriptor answer uses current visibility. [90]
-
 - The frame controller validates the configured origin and the actual frame window before parsing. [93]
-
-- The ready-bound subscription is released on relink or stop. [94]
 
 - Relinking and stopping release the previous tray subscription. [95]
 
@@ -575,9 +573,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - A composer measurement may carry the box's optional left and width, which the model admits only as a pair of finite values with a positive width. [92]
 
-- The explainer’s exact-task header menu is the explicit way to choose another chat in that column. Explain and the matching first-request signal open a fixed-target form; its Send starts the build, while ordinary opening only reads state. A leaf document in active Operations also exposes the explainer’s Retire control, including from a cold state read. In Review, the top-line Review \| Explanation switch replaces only the reading body, while the tree and shared chat remain outside it; a planned page shows intended effects, and supplied explainer grades remain inference in the shared tree and reading order. [96]
-
-- Launcher provenance and its saved, unknown and known-empty catalog cases are stated and cited in the child cards this route points at; the deleted component carries no current claim here. [96]
+- Opt-in hidden preload starts the client without an agent URL; the descriptor answer uses current visibility. [90]
+- The ready-bound subscription is released on relink or stop. [94]
+- The explainer's exact-task header menu is the explicit way to choose another chat in that column, while resolveDocumentFrameProps gates explainer frame targeting on showFrame over the shared persistent frame. [96]
 
 
 - The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]

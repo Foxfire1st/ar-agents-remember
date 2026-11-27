@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:d2ecd23d85c7895c638576d4e23a11af114eedbfcfa83dad9fe4c26752a43378",
         "locator": {
           "end": 212,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:7bfcb72d3a8d5969e880309bec97e18e7b539dc5a6df3ede8291694aae41ce74",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:bb8f6b676753bab374286098e3c0263a38b6989bd194dc1dc56f9dedd36f0b90",
         "locator": {
           "end": 136,
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:a432fc33697c9ddb9f172ef455c3ecbea0e692884a1ba12f35df9ac55aa0d88e",
         "locator": {
           "end": 266,
@@ -78,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:090fb273e0bd4aaab0219247aba6f734114dee26e8f4755eff72429878214e38",
         "locator": {
           "kind": "symbol",
@@ -96,7 +96,25 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+        "content": "sha256:a8317fa78605cca66e3228fff439990cc0c4e4b50cc9330efbeb08a198a6b67a",
+        "locator": {
+          "kind": "symbol",
+          "name": "computeFrameTarget"
+        }
+      },
+      "id": "RLZ-H3G193",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      },
+      "rationale": "Returns null whenever showFrame is false (no non-explainer row selected; phase placeholder, first-request, building, or retired), while forwarding a non-null target when showFrame is true (live/closed explainer or an explicitly selected non-explainer row).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:a91a7e6d574ea9cac96eec54d7bebb019704fc1b518107cb4e55e92ed58d923b",
         "locator": {
           "kind": "symbol",
@@ -114,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:9606ac92682372e2141ea4c8722a9a17c5e45d93e0f9238b7c25d8785f7a765b",
         "locator": {
           "kind": "symbol",
@@ -132,7 +150,7 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
         "content": "sha256:3dc3ab4a4de67fc00b322b38f1f067ac8a1b409e7d53b2b53c9978e0cba30109",
         "locator": {
           "kind": "symbol",
@@ -150,8 +168,8 @@
     },
     {
       "anchor": {
-        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
-        "content": "sha256:ae9ffc6a35933b5238f539f969ca660ee7f38275e7954b4c3903924b17fd5bc1",
+        "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+        "content": "sha256:5a4e97a660897351b36c0a540e31f04a34bf4103ecf2ae33776156912eb0cbc7",
         "locator": {
           "kind": "symbol",
           "name": "useExplainerColumn"
@@ -173,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+            "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
             "content": "sha256:a31eb7010c4857552e43c879b082c534260613f921420ad8b198dc9e42757624",
             "locator": {
               "end": 177,
@@ -190,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+            "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
             "content": "sha256:9606ac92682372e2141ea4c8722a9a17c5e45d93e0f9238b7c25d8785f7a765b",
             "locator": {
               "end": 318,
@@ -203,12 +221,23 @@
       ]
     },
     "3": {
-      "note": "One call states the whole column: the read, the form, the rows, Send and Retire, and the frame target and shown chat",
+      "note": "One call states the whole column (read, form, rows, Send, Retire, shown chat) and computeFrameTarget gates frameTarget on showFrame (Boolean(selectedRow) || phase === 'live' || phase === 'closed'), returning null whenever showFrame is false (no non-explainer row selected; phase placeholder, first-request, building, or retired).",
       "targets": [
         {
           "anchor": {
-            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
-            "content": "sha256:ae9ffc6a35933b5238f539f969ca660ee7f38275e7954b4c3903924b17fd5bc1",
+            "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+            "content": "sha256:a8317fa78605cca66e3228fff439990cc0c4e4b50cc9330efbeb08a198a6b67a",
+            "locator": {
+              "kind": "symbol",
+              "name": "computeFrameTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e1a64e67d7cc2d84da7d88ce8d9196f67bb30e1",
+            "content": "sha256:5a4e97a660897351b36c0a540e31f04a34bf4103ecf2ae33776156912eb0cbc7",
             "locator": {
               "kind": "symbol",
               "name": "useExplainerColumn"

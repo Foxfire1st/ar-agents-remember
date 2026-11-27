@@ -7,6 +7,21 @@
     "task": "261112-KNO-L5",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/reference/role-capsules.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.093995Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "246b45f9ea072fea09dc823369e3e654edfeea2d",
+      "id": "DFR-69Y75A",
+      "owner": "261112-BUG",
+      "passage": "docs/reference/role-capsules.md ## Held starts and held messages (lines 33-36: 'exists in the host')",
+      "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats are stored on disk without creating a host agent until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-BKQ5CP untouched; code freeze preserved per Manager directive."
+    }
+  ],
   "document": "docs/reference/role-capsules.md",
   "id": "DPD-QFGFS0",
   "origin": {
@@ -82,14 +97,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:33:39+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "at": "2026-11-27T11:49:22+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

@@ -3,12 +3,13 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "A selection during recovery could otherwise cause another load and prevent readiness from arriving."
+    "justification": "Prevents selection changes arriving during cold-load readiness waits from triggering premature or destructive fallback reloads while keeping late ready recovery intact."
   },
   "applicability": "Selection changes during the readiness wait started by a document load.",
   "conditions": [
     "Only the latest requested selection is retained.",
-    "Ready or pong restores a supported message channel."
+    "Ready or pong restores a supported message channel and sends the held selection by message.",
+    "Unanswered post-load ping or cold-load cap expiry settles unavailable without destroying the in-flight frame."
   ],
   "exclusions": [
     "An explicitly unsupported-open plugin remains URL-only."
@@ -25,27 +26,20 @@
     "leaf": "260928-MIK-L140",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A change of the selection made while a load's ready report is still awaited is held: it goes out by message at the report, and it loads only when the ping after that load stays unanswered too.",
+  "statement": "A change of the selection made while a load's ready report is still awaited is held: it goes out by message at ready or pong, and if the post-load ping stays unanswered or the 45 s cold-load cap expires, control settles unavailable without reloading the in-flight frame while late ready or explicit Retry can still recover it.",
   "supersedes": [],
+  "title": "Selections during load readiness wait are held for ready without reload",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L140",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T01:50:04+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L62",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "task": "261112-BUG"
   }
 }

@@ -1,12 +1,27 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
-    "role": "curator",
-    "statement": "Verified docs/dashboard.md against 17c064d8 (including Round 5 KNO-L5-F07 Consolidation block table row at line 484 and shifted role_launch_routes.py anchor 214-235).",
-    "task": "261112-KNO-L5",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: merged docs/dashboard.md carries both BUG-R60@v1 lines 336-346 and KNO-R05@v3 Consolidation block row with shifted role_launch_routes.py anchor 214-235; preserves open deferral DFR-NDPEXV (lines 256-262 pre-BUG-R62 20 s timeout prose) bound to merged docs/dashboard.md blob without lifting it.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/dashboard.md",
+        "note": "Update docs/dashboard.md lines 256-262 to reflect BUG-R62@v1 onLoad-anchored readiness, 45 s non-reloading cold-load cap, and unconfirmed URL-landed waiting notice with Retry."
+      },
+      "createdAt": "2026-11-27T05:40:52.706277Z",
+      "createdByLeaf": "261112-BUG-L60",
+      "fileBlob": "b41657ee78918b4cb1e833731f5f59b95bad900a",
+      "id": "DFR-NDPEXV",
+      "owner": "261112-BUG",
+      "passage": "docs/dashboard.md lines 256-262 (Chats frame timeout and first-visit 20 s recovery)",
+      "reason": "Re-deferred from L61 DFR-THCPWR (originally L62 DFR-73APGD) onto L60 candidate blob of docs/dashboard.md: L60 edited only lines 336-346 for BUG-R60@v1 window-scoped provider-limit suppression and did not modify lines 256-262 (which still describe the pre-BUG-R62 20 s first-visit timeout and single URL reload); preserving deferral scope intact until lines 256-262 are updated."
+    }
+  ],
   "document": "docs/dashboard.md",
   "id": "DPD-23C91T",
   "origin": {
@@ -17,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +56,7 @@
       "path": "dashboard/src/cockpit/roleLaunchModel.ts"
     },
     {
-      "blob": "0b222683100abd582daa85755533e41d9728ce83",
+      "blob": "3671067d0c09cf7c184db9c1f6a3652ce4f6f983",
       "kind": "file",
       "path": "dashboard/src/cockpit/paseoFrameModel.ts"
     },
@@ -116,7 +131,7 @@
       "path": "dashboard/src/cockpit/roleChatResult.ts"
     },
     {
-      "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+      "blob": "55ea11293361efe0b37290de4d45b1a3eec2f96c",
       "kind": "file",
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
@@ -335,7 +350,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -349,7 +363,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -363,7 +376,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
       },
-      "heading": "The buttons",
       "kind": "anchor"
     },
     {
@@ -377,7 +389,6 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -391,12 +402,11 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
-      "heading": "The buttons",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+        "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
         "content": "sha256:04d56886385a9cd5a5ce52d3223fe4b4255316b4ef9cf14632bb3d2995c98cf7",
         "locator": {
           "end": 235,
@@ -405,7 +415,6 @@
         },
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -446,14 +455,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

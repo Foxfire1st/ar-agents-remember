@@ -165,4 +165,6 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 
 
 
+
+
 - The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [43]

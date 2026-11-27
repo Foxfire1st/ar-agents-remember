@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "31ef0c75a9a7f18d7f903b44a4d5b47b0e61c682",
-    "content": "sha256:57b8b7d6d02c8e7faff1dc60414d1a5f21808b6817abd466063c4cb19e6ae02f",
+    "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+    "content": "sha256:01bfb16950c33a3a43473ff6e37a17a70e7d6b025d6169833dddad95ad875e18",
     "locator": {
       "kind": "symbol",
       "name": "AgentsRememberMCP"
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -27,21 +27,14 @@
   "state": "open",
   "statement": "The docstring says that every undeclared input of a tool call is rejected before the handler runs, while a call that carries an undeclared argument is answered as if the argument were absent.",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

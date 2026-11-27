@@ -34,6 +34,23 @@
         "handoffEntry": "L84-CUR-07",
         "leaf": "260928-MIK-L84"
       }
+    },
+    {
+      "anchor": {
+        "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+        "content": "sha256:e8e53dcbf89910601bf40f53134d6375774a18c728a5ab2f7294d0da5c27d508",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_public_command_requires_its_documentation_owner"
+        }
+      },
+      "facet": "Demonstrates that public CLI subcommand memory-briefs has exactly one four-column documentation row in skills/l-01-agent-lifecycles/reference/knowledge/commands.md.",
+      "id": "PRF-YMG7QX",
+      "invariant": "INV-XXG2W0",
+      "origin": {
+        "handoffEntry": "BUG-R64-INV-XXG2W0-flags",
+        "leaf": "261112-BUG-L64"
+      }
     }
   ],
   "realizes": [],

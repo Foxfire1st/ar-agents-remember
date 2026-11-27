@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+        "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
         "content": "sha256:274997cf278cde1e5c28fc2d05cd73b78a3219085dc7bb579eb8dcb4ac08c09c",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+        "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
         "content": "sha256:d75f3632666e9152185c0e266769f3eced03ac67c72860872837ac9fe864a017",
         "locator": {
           "kind": "symbol",
@@ -53,6 +53,24 @@
       },
       "rationale": "The answer model admits opened as its own value, so a host outcome that does not exist is never rendered as created or found.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
+        "content": "sha256:95f6d4ef278f82da23620ffc6368f936961343d89df480c3dd71cc00db4cbfb5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageResponse"
+        }
+      },
+      "id": "RLZ-B0HJPE",
+      "invariant": "INV-JV7S6Y",
+      "origin": {
+        "handoffEntry": "L58-INV-JV7S6Y",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Declares optional recipientAgentId and bindingConfirmation on the strict response schema so opened answers validate without stripping confirmation metadata.",
+      "role": "propagation-persistence"
     },
     {
       "anchor": {
@@ -126,7 +144,7 @@
     },
     {
       "anchor": {
-        "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+        "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
         "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
         "locator": {
           "kind": "symbol",
@@ -144,7 +162,7 @@
     },
     {
       "anchor": {
-        "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+        "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
         "content": "sha256:23ee5c83a8ac5129a4120af2ad0f68f2dbb44ba8ea4752bb9a62f68005c8cb80",
         "locator": {
           "end": 80,
@@ -168,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
             "locator": {
               "kind": "symbol",
@@ -184,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:7f3534010ee2c81dd0f7779673922aa241b7710e8ec593b7ffb064591bc3f6e4",
             "locator": {
               "end": 46,
@@ -201,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:718ee737a5e25dc32ead341d21ca4bb812abaa4c632985fc8e7eccea57972270",
             "locator": {
               "end": 206,
@@ -218,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
             "locator": {
               "kind": "symbol",
@@ -234,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:d75f3632666e9152185c0e266769f3eced03ac67c72860872837ac9fe864a017",
             "locator": {
               "kind": "symbol",
@@ -250,10 +268,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
-            "content": "sha256:d07904c1541dff9cf568e44fd87bcc57a7e1dc213cfa50806d05a62ebf9d0f1c",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
+            "content": "sha256:d8cf25c4d5d943b133633b058cff0281c67b32bc03523fccb03c16d167000a21",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleStartResponse"
             }
           },
           "kind": "code"
@@ -265,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:2b865da3b67a81a25a5a35362e0879e240fc54ecc6aff7baa6c900e33d1a98d3",
             "locator": {
               "end": 178,
@@ -277,7 +296,7 @@
         },
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:2267188b169bd63d2f596f44be17ff380e1768c3540c7633dcc05ab2c8fb6ad6",
             "locator": {
               "end": 229,
@@ -290,14 +309,27 @@
       ]
     },
     "2": {
-      "note": "Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. Anchor: RoleMessageCall",
+      "note": "Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads.",
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
-            "content": "sha256:d07904c1541dff9cf568e44fd87bcc57a7e1dc213cfa50806d05a62ebf9d0f1c",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
+            "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleMessageCall"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
+            "content": "sha256:b80ae1261009e7e5378402d854ebdbc442b9ec878c1d1c180816085286bf5030",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 88
             }
           },
           "kind": "code"
@@ -309,10 +341,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
-            "content": "sha256:d07904c1541dff9cf568e44fd87bcc57a7e1dc213cfa50806d05a62ebf9d0f1c",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
+            "content": "sha256:d8cf25c4d5d943b133633b058cff0281c67b32bc03523fccb03c16d167000a21",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleStartResponse"
             }
           },
           "kind": "code"
@@ -320,12 +353,12 @@
       ]
     },
     "4": {
-      "note": "Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence.",
+      "note": "Current response DTO declares its listed message/held fields (including `recipientAgentId` and `bindingConfirmation`), admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
-            "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
+            "content": "sha256:95f6d4ef278f82da23620ffc6368f936961343d89df480c3dd71cc00db4cbfb5",
             "locator": {
               "kind": "symbol",
               "name": "RoleMessageResponse"
@@ -340,7 +373,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:369fe088ca21c96fe9a3d266dbd61f4511abba3e2be75bf47e75c3b94c697488",
             "locator": {
               "end": 140,
@@ -357,7 +390,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71b2d1936689ce8f01f51d7ae1da4f1f958c276b",
+            "blob": "6c55580db402fcce2c6b445fba347f26a7f364b3",
             "content": "sha256:d8cf25c4d5d943b133633b058cff0281c67b32bc03523fccb03c16d167000a21",
             "locator": {
               "kind": "symbol",

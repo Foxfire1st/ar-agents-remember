@@ -429,7 +429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -478,12 +478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
             "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
             "locator": {
-              "end": 60,
+              "end": 61,
               "kind": "line_range",
-              "start": 48
+              "start": 49
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -491,12 +491,12 @@
         },
         {
           "anchor": {
-            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
+            "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
             "content": "sha256:f19eec9780ea0b5e9f5a21b773f4e71b405e9d40607de2897a7088e3e00679b3",
             "locator": {
-              "end": 233,
+              "end": 240,
               "kind": "line_range",
-              "start": 225
+              "start": 232
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -1271,7 +1271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
             "content": "sha256:bbfd1937021076d96de292d1b156ca0ecfcc2ad34b7afac7ab45dbb9ed15bd80",
             "locator": {
               "end": 109,
@@ -1579,7 +1579,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -1891,7 +1891,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -2679,12 +2679,12 @@
         },
         {
           "anchor": {
-            "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+            "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
             "content": "sha256:334c3016ebb9b3e44f23bd75183abe9215f91636a073430aaddd8d8ffd300056",
             "locator": {
-              "end": 155,
+              "end": 158,
               "kind": "line_range",
-              "start": 97
+              "start": 100
             },
             "path": "mcp/src/agents_remember/cli/role_retire.py"
           },
@@ -4464,7 +4464,7 @@
         },
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -4477,12 +4477,12 @@
         },
         {
           "anchor": {
-            "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
-            "content": "sha256:b18d5ec241432b6393a68408f76080e2c04dad4689c8f12e2f14838e184ef6c7",
+            "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
+            "content": "sha256:1a6e6dc9976bc5cb33ad76b970e2d99db586205bfdf736f01e6ab77c0bcf5901",
             "locator": {
-              "end": 895,
+              "end": 916,
               "kind": "line_range",
-              "start": 859
+              "start": 877
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4503,7 +4503,7 @@
         },
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:a0a3235a43d6ce24322ab1a105dafe32fd93bd7a37772c0e42630e7b0bdc2508",
             "locator": {
               "end": 774,
@@ -4516,7 +4516,7 @@
         },
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:03bef96cd22b7e70f503758c3623a53ff11a92b4566b7b0ecf822973b8b1fe29",
             "locator": {
               "end": 833,
@@ -4542,7 +4542,7 @@
         },
         {
           "anchor": {
-            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "blob": "9ed8f658a4fac81065a481f1c77a01b7315b5e1f",
             "content": "sha256:185ca4acf08305cfe192427ccf684a13a90c07fb783b93426eb9cdb9c8d1d63d",
             "locator": {
               "end": 440,
@@ -4555,12 +4555,12 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
-            "content": "sha256:5456b15ae254c9372c12ac455a713ce64adc3660bba07ce095bf0b0f924d8262",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:57a8b27e0972420a8941a60843d82e1a92a3ee11853f02e23635285a9127fb71",
             "locator": {
-              "end": 263,
+              "end": 258,
               "kind": "line_range",
-              "start": 235
+              "start": 225
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -4568,12 +4568,12 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
-            "content": "sha256:9852e0f1c86f3d15b0975ff8c82ce6c1276f302e0e097ea8417298647ed231c7",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
+            "content": "sha256:f09d61927bff06a4a5e9621fe82be4304935a00d8230c7e9b1e14d269015e845",
             "locator": {
-              "end": 417,
+              "end": 414,
               "kind": "line_range",
-              "start": 296
+              "start": 291
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -4581,12 +4581,12 @@
         },
         {
           "anchor": {
-            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "blob": "190368f9a131fbe2e5c8a78d35158873137b76d7",
             "content": "sha256:0f56026d2282c75995fe899363cb20f80788dd3465a7a674607e4a232dbe8602",
             "locator": {
-              "end": 1132,
+              "end": 1041,
               "kind": "line_range",
-              "start": 1089
+              "start": 998
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -4633,12 +4633,12 @@
         },
         {
           "anchor": {
-            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "blob": "2a29108757394bb6c66baa607c8f979b7815a77c",
             "content": "sha256:91f5b4e4420ea1c5aa0362b424ebc783469590ce419a62543589996a7c719334",
             "locator": {
-              "end": 770,
+              "end": 768,
               "kind": "line_range",
-              "start": 722
+              "start": 720
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
@@ -4918,7 +4918,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -4931,7 +4931,7 @@
         },
         {
           "anchor": {
-            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
             "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
             "locator": {
               "end": 5111,
@@ -4944,7 +4944,7 @@
         },
         {
           "anchor": {
-            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
             "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
               "end": 5396,
@@ -4957,7 +4957,7 @@
         },
         {
           "anchor": {
-            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4970,10 +4970,10 @@
         },
         {
           "anchor": {
-            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
-            "content": "sha256:70f7835f056a3c05f28eec21fe11963304fac2f97696a76bf20fa75892a2a3e4",
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:e3f59f11c2c61e6cb385a931115920cf490fb563b19c424b664d4aa020a19b17",
             "locator": {
-              "end": 6282,
+              "end": 6286,
               "kind": "line_range",
               "start": 6186
             },
@@ -5262,7 +5262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+            "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -5411,7 +5411,7 @@
       ]
     },
     "73": {
-      "note": "The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 5,000-token delivered bound and a 20-entry list cap.",
+      "note": "The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read legacy tree-view pager uses a 4,000-token delivered bound (`TOOL_ANSWER_EXCEPTION_MAX_TOKENS`) and a 20-entry list cap, while `bound_for(\"knowledge_read\")` stays at 5,000 tokens for verbatim batch `records`.",
       "targets": [
         {
           "anchor": {
@@ -5452,8 +5452,8 @@
         },
         {
           "anchor": {
-            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
-            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
+            "blob": "cb555efcf61550390f3cd0e770ef7ac59e679676",
+            "content": "sha256:ee7bc87ba5a43e8165dd696177fdfb4012bc8471cf21e01db7f35f8c709b4ea1",
             "locator": {
               "kind": "file"
             },
@@ -5687,7 +5687,7 @@
         },
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:cb94ffe1a8e22c556f660c379c37ca5bcf1d117726726a9acc80b91e8f7edb04",
             "locator": {
               "end": 277,

@@ -1,0 +1,104 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Reverses eager 0-turn held-seat creation (MIK-R100 rule 2) after live Hermes zombie-process disproof and constrains every future seat reader, opener, retirement, and closing-archive path."
+  },
+  "alternatives": [
+    {
+      "option": "Adopt Option C (BUG-R58@v2): reserve held Reviewer and Curator seats on disk with status='held', hostAgentExists=false, execution={}, pre-minted agentId, handover files on disk, and stored replayRequest without calling host agent-create during role_start_set; defer host agent creation and BUG-R51 binding confirmation until the first addressed role_message opens the seat (keeping legacy mode='open-held' for pre-existing pre-created held receipts).",
+      "reason": "Eliminates 0-turn Hermes zombie MCP server leaks and avoids unnecessary host creation while preserving pre-minted seat identity, handover custody, and BUG-R51 exclusive binding confirmation at actual open time.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep eager 0-turn host creation on role_start_set (MIK-R100 rule 2 / BUG-R58@v1) and repair only BUG-R51 retry response propagation.",
+      "reason": "Disproved by live Rule 1 Hermes measurement: eager 0-turn host creation leaks zombie agents-remember-task processes on archive before first turn and triggers unnecessary host creation and binding-confirmation failures for unused held seats.",
+      "reconsider_when": "Paseo and all supported harnesses guarantee deterministic zero-leak server teardown on 0-turn agent-create/archive AND a product requirement demands host-visible idle held seats before first message.",
+      "status": "rejected"
+    },
+    {
+      "option": "Skip BUG-R51 binding confirmation for held seats during role_start_set while still eagerly creating host agents.",
+      "reason": "Still creates unused host agents with leaked 0-turn MCP processes on Hermes and weakens exclusive seat-binding protection.",
+      "reconsider_when": "Host runtimes natively isolate and garbage-collect per-agent MCP processes without pre-turn leaks.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Modifies MIK-R100 rule 2: reserved held seats exist on disk (hostAgentExists=false, execution={}) with zero host calls until first role_message creates and opens them.",
+    "Every seat reader, occupancy check, provider-limit guard, archive/preview pass, and retirement path must recognize uncreated deferred held seats without querying the host.",
+    "Standing docs describing held seats as existing on the host before first message (docs/tool-details.md, package_data copy, docs/concepts.md, docs/reference/role-capsules.md) carry open deferrals until their next doc edit."
+  ],
+  "context": "BUG-R58@v2 / D1045: Under MIK-R100 rule 2, role_start_set eagerly created held Reviewer and Curator agents on Paseo with zero turns. Live measurement on Paseo 0.16.2 showed Hermes spawns MCP servers eagerly during 0-turn agent-create and never cleans them up when archived before a first turn, leaking zombie agents-remember-task processes that later collide with BUG-R51 seat-binding confirmation and waste host resources when held seats never open.",
+  "decider": "Developer D1045 (BUG-R58@v2), verified by Reviewer R2 and Worker W2 Evidence 1 on Paseo 0.16.2.",
+  "id": "DEC-DZHAHE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-RTQCXN"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-JV7S6Y"
+    },
+    {
+      "relation": "constrains",
+      "target": "FAM-N6S3XT"
+    },
+    {
+      "relation": "constrains",
+      "target": "FAM-VNK792"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "de2422d1961f1794c1c6af65291ff4ee6a472b60",
+        "content": "sha256:af2e1ad5d250e1fbe0155c4f44b99c40f769b8066ee2d1cad66ec354a4c23f87",
+        "locator": {
+          "kind": "symbol",
+          "name": "defer_held_launch"
+        },
+        "path": "mcp/src/agents_remember/cli/role_deferred_held.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "d145d8cfb06deeacd49b8570c2988aab4293ade0",
+        "content": "sha256:aadcceff67b7b600b19f575d97b0632b6013e9e3d592a25cfc2556ef9245fc1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_held_seat"
+        },
+        "path": "mcp/src/agents_remember/cli/role_held_opening.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/reviewer/5538da82-cf5b-54b2-a305-9a2bc9d2dd34/role-launch/261112-BUG-L58-R2-fix-verification-verdict.md"
+      ],
+      "path": "l58-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R58@v2/W2/R2",
+    "leaf": "261112-BUG-L58",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-27T02:48:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L58",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "task": "261112-BUG"
+  }
+}

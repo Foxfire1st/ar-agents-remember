@@ -20,7 +20,26 @@
     },
     {
       "anchor": {
-        "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+        "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+        "content": "sha256:35d3c706696fea1f6081c522065b3652bc1d21024fcbffdb485e9213a6df76e2",
+        "locator": {
+          "end": 166,
+          "kind": "line_range",
+          "start": 165
+        }
+      },
+      "id": "RLZ-E6WS0R",
+      "invariant": "INV-VEGPXX",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R5",
+        "leaf": "261112-BUG-L60"
+      },
+      "rationale": "Documents provider-limits.json v1 projection and the sibling provider-limit-suppressions.json sidecar written under provider-limits.lock.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
         "content": "sha256:ddbe4c41800cbbe166d5a4d1e67e8c1c7de6cc6126397d00529f8d8e8a732ceb",
         "locator": {
           "end": 82,
@@ -44,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
             "content": "sha256:95f38cdc128c0860c8fa2eb1225cd7d0848fe349626b28754ce1948ef6c7354b",
             "locator": {
               "end": 55,
@@ -56,34 +75,34 @@
         }
       ]
     },
-    "2": {
-      "note": "Host-home files under `<home>/agents-remember/` including `role-agents.json`, `host-activity.json`, and `provider-limits.json`.",
+    "3": {
+      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
-            "content": "sha256:ea78b1f23a7b0b0a574521721aabf8fe73b392625c5f1a494746468c7f2db43a",
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "content": "sha256:ffd1e61c7696111f81a8e87d8671075812e535db6a078c8b1a52c0d7ba2a5fcb",
             "locator": {
-              "end": 169,
+              "end": 209,
               "kind": "line_range",
-              "start": 153
+              "start": 171
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.",
+    "5": {
+      "note": "Host-home files under `<home>/agents-remember/` include `role-agents.json`, `host-activity.json`, `provider-limits.json`, and its sibling sidecar `provider-limit-suppressions.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8759e8224735956ef1ab3d379aea2c1f42e0144e",
-            "content": "sha256:ffd1e61c7696111f81a8e87d8671075812e535db6a078c8b1a52c0d7ba2a5fcb",
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "content": "sha256:94406831926ad00d3a94b238e5fe25715d365cb6a190e1b91add0c034ed0e810",
             "locator": {
-              "end": 208,
+              "end": 170,
               "kind": "line_range",
-              "start": 170
+              "start": 153
             }
           },
           "kind": "code"

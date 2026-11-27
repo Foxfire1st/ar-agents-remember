@@ -1,0 +1,399 @@
+{
+  "path": "mcp/tests/test_provider_limit_suppression.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:cd10224e1cedd6ca525e66f64b2463ddcc1068b02dc923a3cbcdec08ac88418a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mcp_server_unbound_and_malformed_bindings_snapshot_none_and_skip_hook"
+        }
+      },
+      "facet": "Verifies unbound and malformed role bindings snapshot _bound_agent_id as None and skip the suppression hook completely.",
+      "id": "PRF-2FN8J7",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:0e019095464d03124c289fe1e3411dfb03d91d07349a22c8d8ba3c3b83febd0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_suppression_write_rolls_back_sidecar_when_limits_write_fails"
+        }
+      },
+      "facet": "Verifies _commit_pair_locked rolls back the sidecar when the paired provider-limits.json write raises an exception.",
+      "id": "PRF-2WF616",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:f3799e659376838b4b8dc428a6ef03ed3f3d80d5f55a786501d11c86d49965d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_auto_suppression_fails_closed_on_missing_or_malformed_host_activity_and_legacy_record"
+        }
+      },
+      "facet": "Verifies auto-suppression fails closed when host-activity.json is missing, incomplete, or malformed, or when a legacy limit has no explicit sidecar recordedAt.",
+      "id": "PRF-73DCXF",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:ca6a1615e13f44badd7afdcfc3ed7c24f444a5bd3e2e8b903773ba39ddd07645",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mcp_server_hook_runs_off_event_loop_suppresses_and_contains_io_errors"
+        }
+      },
+      "facet": "Verifies AgentsRememberMCP._maybe_suppress_provider_limits executes off the event loop via asyncio.to_thread, suppresses qualifying windows, and swallows I/O exceptions without failing the MCP tool call.",
+      "id": "PRF-8RYGX2",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:82babf7575ec62301b00073c8adc198793d0702daa48635014018232f7261347",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_recorded_at_is_preserved_across_rereads_and_v1_schema_stays_clean"
+        }
+      },
+      "facet": "Verifies repeated usage reads preserve existing per-window recordedAt timestamps in the sidecar while keeping provider-limits.json strictly ar-provider-limits/v1.",
+      "id": "PRF-94M3XT",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:988d74c8a8bcbfcc055d85df9b168dca9ab7db036fd3224f053936a118a026a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_periodic_update_emits_clear_markers_when_dropping_sidecar_suppressed_report"
+        }
+      },
+      "facet": "Verifies _periodic_update computes _updated_clear_markers whenever sidecar-backed projection drops a previously live report.",
+      "id": "PRF-BXVFDX",
+      "invariant": "INV-SDEXYK",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R2",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:38d51439406ab8ecce30b651a15ec624d1ce85760eb4c2f5ca001b8d5472b753",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_auto_suppression_succeeds_for_strictly_later_active_turn_and_records_evidence"
+        }
+      },
+      "facet": "Verifies auto-suppression commits auto-tool-call evidence and drops the falsely limited report when host-activity shows an active turn strictly after recordedAt.",
+      "id": "PRF-F4KTP7",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:3db6239fac5ed98f835d3a0376347c4f25f7b90daeec5a1194e88e681f0286db",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_auto_suppression_fails_closed_without_strict_post_limit_active_turn"
+        }
+      },
+      "facet": "Verifies auto-suppression refuses when the seat is not in-turn/permission or when host-activity eventAt is earlier than or equal to recordedAt.",
+      "id": "PRF-FEZ3B5",
+      "invariant": "INV-ESZKHN",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R3",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:9999ad75c933092d6cbea6d84e27eebeae47d1437852fcc485347ded6fbc7383",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_single_window_suppression_drops_report_sets_cleared_seats_and_stops_polling"
+        }
+      },
+      "facet": "Verifies suppressing the sole exhausted window drops the report, records clearedSeats under lock, and leaves no due report for periodic polling.",
+      "id": "PRF-MYT23Z",
+      "invariant": "INV-SDEXYK",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R2",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:97302c4af4b1e9a878806ebdf1d6bf202aecb6084797607847a1f7f8d76535fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_expired_sidecar_entries_prune_in_usage_reads_and_periodic_update"
+        }
+      },
+      "facet": "Verifies expired recordedWindows and suppressedWindows entries are pruned during both record_usage_reads and _periodic_update.",
+      "id": "PRF-NBWC7X",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:3f049ef0bf5ed30bfb486b877be4cfa70fc673631ea71c5af352c19b66dfb74d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_v1_provider_limits_without_sidecar_reads_as_live_limit"
+        }
+      },
+      "facet": "Verifies a v1 provider-limits.json without a sibling sidecar is read cleanly as an active unsuppressed limit.",
+      "id": "PRF-NS5E2E",
+      "invariant": "INV-41J2Q6",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R1",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:c94b7be2b5d44807c831948d3e2fc5c6d3280c4d8033d22499fbc689ad065c64",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_multi_window_suppression_recomputes_until_and_keeps_other_window_live"
+        }
+      },
+      "facet": "Verifies suppressing one window of a multi-window report recomputes report.until to the remaining unsuppressed window's resetsAt and keeps the seat held.",
+      "id": "PRF-SJ5SHD",
+      "invariant": "INV-SDEXYK",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R2",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:25734975525bed030e1541ed524bcb2026cb93ebc27423762e871912b2e33659",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_provider_limits_cli_status_and_refusals"
+        }
+      },
+      "facet": "Verifies provider-limits status JSON output and exit-code-2 named refusals for non-live reports, unknown windows, and multi-window omission without --window.",
+      "id": "PRF-X1HWF0",
+      "invariant": "INV-2PVK9H",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R4",
+        "leaf": "261112-BUG-L60"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+        "content": "sha256:956cc8a084b1489b090ad740cd91a581164c14cbccb45fccb11bba23b607f827",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_provider_limits_cli_suppress_and_unsuppress"
+        }
+      },
+      "facet": "Verifies operator suppress and unsuppress sub-actions mutate the sidecar and provider-limits.json through the single serving writer and emit expected JSON and exit codes.",
+      "id": "PRF-YEWHKX",
+      "invariant": "INV-2PVK9H",
+      "origin": {
+        "handoffEntry": "BUG-R60@v1 R4",
+        "leaf": "261112-BUG-L60"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies legacy v1 compatibility without a sidecar, `recordedAt` preservation across re-reads, and expired sidecar pruning at sizes 2 and 20.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:3f049ef0bf5ed30bfb486b877be4cfa70fc673631ea71c5af352c19b66dfb74d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_v1_provider_limits_without_sidecar_reads_as_live_limit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:82babf7575ec62301b00073c8adc198793d0702daa48635014018232f7261347",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_at_is_preserved_across_rereads_and_v1_schema_stays_clean"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:97302c4af4b1e9a878806ebdf1d6bf202aecb6084797607847a1f7f8d76535fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_expired_sidecar_entries_prune_in_usage_reads_and_periodic_update"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies multi-window `until` recomputation, single-window report drop with `clearedSeats` and stopped polling, periodic drop clear markers, and two-file rollback on limits-write failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:c94b7be2b5d44807c831948d3e2fc5c6d3280c4d8033d22499fbc689ad065c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_multi_window_suppression_recomputes_until_and_keeps_other_window_live"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:9999ad75c933092d6cbea6d84e27eebeae47d1437852fcc485347ded6fbc7383",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_single_window_suppression_drops_report_sets_cleared_seats_and_stops_polling"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:988d74c8a8bcbfcc055d85df9b168dca9ab7db036fd3224f053936a118a026a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_periodic_update_emits_clear_markers_when_dropping_sidecar_suppressed_report"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:0e019095464d03124c289fe1e3411dfb03d91d07349a22c8d8ba3c3b83febd0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_suppression_write_rolls_back_sidecar_when_limits_write_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies the fail-closed causal guard matrix, `in-turn`/`permission` auto-suppression, off-loop MCP hook execution with I/O error containment, and unbound/malformed binding skips.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:3db6239fac5ed98f835d3a0376347c4f25f7b90daeec5a1194e88e681f0286db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_auto_suppression_fails_closed_without_strict_post_limit_active_turn"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:38d51439406ab8ecce30b651a15ec624d1ce85760eb4c2f5ca001b8d5472b753",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_auto_suppression_succeeds_for_strictly_later_active_turn_and_records_evidence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:ca6a1615e13f44badd7afdcfc3ed7c24f444a5bd3e2e8b903773ba39ddd07645",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mcp_server_hook_runs_off_event_loop_suppresses_and_contains_io_errors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Verifies `agents-remember provider-limits status`, `suppress`, and `unsuppress` JSON outputs and exit-2 refusals end-to-end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:25734975525bed030e1541ed524bcb2026cb93ebc27423762e871912b2e33659",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_provider_limits_cli_status_and_refusals"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4d634d5fef7b9c768bc14f70590eb3a575c252",
+            "content": "sha256:956cc8a084b1489b090ad740cd91a581164c14cbccb45fccb11bba23b607f827",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_provider_limits_cli_suppress_and_unsuppress"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

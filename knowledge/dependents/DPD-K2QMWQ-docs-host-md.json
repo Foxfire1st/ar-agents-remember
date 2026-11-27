@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
-    "role": "curator",
-    "statement": "Verified docs/host.md against KNO-R07 candidate: MCP server host registration, dashboard, and CLI host behavior remain accurate after adding memory-briefs and knowledge_read query views.",
-    "task": "261112-KNO-L7",
-    "uncommitted": true
+    "codeTree": "aaf984732687f90beee1a456d63d12fb0f704a57",
+    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
+    "role": "manager",
+    "statement": "Crossing-5 merge confirmation on 7ff6e80f139c combining 261112-BUG-L58 (role_launch_preparation.py:207-227, paseo_bridge.mjs:734-751) and 261112-KNO-L7 (PR #303/#83): docs/host.md remains accurate across both merged lines.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+    "uncommitted": false
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+      "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -168,11 +168,11 @@
     {
       "anchor": {
         "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
-        "content": "sha256:494b2564265a935dd2283abffd1a839b316d833274b1c652d9cd5c8ca98548c3",
+        "content": "sha256:b71fadad0622db128c871576a5d114f73d8f95f85dd88cb3d2e6e3d5cbb8abb5",
         "locator": {
-          "end": 256,
+          "end": 227,
           "kind": "line_range",
-          "start": 236
+          "start": 207
         },
         "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
       },
@@ -193,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "c7e0acf7e75287322001e431ea9b686c0677d369",
+        "blob": "f0ec1e03caf60f8774245f5325ae288ee046db74",
         "content": "sha256:2ba7260a1a79b25900fe8a17262fcaddb1a5f2ce0b938706cba05a890ea317f2",
         "locator": {
-          "end": 737,
+          "end": 751,
           "kind": "line_range",
-          "start": 720
+          "start": 734
         },
         "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
       },
@@ -265,14 +265,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T05:23:00+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

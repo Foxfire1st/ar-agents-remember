@@ -26,8 +26,6 @@ not the active renewal or a new source measurement.
 
 ## Evidence
 
-
-
 - Generated measurements cover current capsules, declared details and the shared digest without individual item limits. [2]
 
 

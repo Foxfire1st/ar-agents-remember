@@ -7,6 +7,21 @@
     "task": "261112-KNO-L5",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
+        "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
+      },
+      "createdAt": "2026-11-27T01:48:17.056593Z",
+      "createdByLeaf": "261112-BUG-L58",
+      "fileBlob": "40638134662ff715f51b378d410ab63214cb8c71",
+      "id": "DFR-YWM2GX",
+      "owner": "261112-BUG",
+      "passage": "package_data/runtime/docs/tool-details.md role_start_set ('each exists on the host') and retire_child (omits host-free retirement of uncreated deferred held seats)",
+      "reason": "Parity copy of docs/tool-details.md contradicted by BUG-R58@v2 Option C (D1045): deferred held seats have no host agent until first role_message and retire host-free when uncreated. Code freeze preserved per Manager directive; update alongside docs/tool-details.md."
+    }
+  ],
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
   "id": "DPD-NGC2F6",
   "origin": {
@@ -239,14 +254,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "at": "2026-11-27T11:49:22+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

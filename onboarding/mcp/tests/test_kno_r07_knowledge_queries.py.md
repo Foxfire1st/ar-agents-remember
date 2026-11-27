@@ -17,7 +17,7 @@ Focused unit test suite proving KNO-R07 rules 8–10 and Attempt 2 regressions: 
 
 ## Relationships
 
-- Tests `memory/knowledge_index/fts.py`, `application/knowledge_impact.py`, `application/knowledge_search.py`, `application/knowledge_reader/{records_batch,marks_compact}.py`, `mcp/tools/knowledge_queries.py`, and `mcp/tools/knowledge.py`.
+- Tests `memory/knowledge_index/fts.py`, `application/knowledge_impact.py`, `application/knowledge_search.py`, `application/knowledge_reader/{records_batch,marks_compact}.py`, `application/knowledge_queries.py`, and `mcp/tools/knowledge.py`.
 - Registered in `mcp/tests/test-evidence-lanes.toml` (`unit` lane) and `mcp/tests/evidence-lifecycle.toml`; sibling of `mcp/tests/test_kno_r07_briefs_and_pairing.py`.
 
 ## Evidence

@@ -378,7 +378,7 @@
         },
         {
           "anchor": {
-            "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
+            "blob": "7b476b181dd790dd9ad89cec3113dbc202c31add",
             "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
             "locator": {
               "end": 229,
@@ -468,12 +468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bb228699109eb502942edc5088dd6c8878d90f7",
+            "blob": "110905c498c836b76b43e94314dcb569d93e3749",
             "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
             "locator": {
-              "end": 668,
+              "end": 702,
               "kind": "line_range",
-              "start": 646
+              "start": 680
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 699 unit-regression (including `test_code_quality_dashboard_lint_scope.py`, `test_consolidation_pass.py` at line 126, `test_consolidation_state.py` at line 127, `test_consolidator_role.py` at line 128, `test_family_row_writer_gate_alignment.py`, `test_crossing_merge_writer_stamp.py`, `test_dependent_deferrals.py`, `test_dependent_deferrals_gate_and_replay.py`, `test_knowledge_consolidation_proposal.py` at line 240, `test_knowledge_state_conversion_verdict_ref.py`, `test_launch_identity_brief.py`, `test_launch_identity_confirmation.py`, `test_master_end_document_staleness.py`, `test_memory_verdict_ref.py`, `test_server_bindings.py`, and `test_state_conversion_worklist.py`), 3 public-contract, 125 integration (including `test_standalone_master_pr_finalize.py` at line 813) and 24 architecture-fitness and one stress-durability member (852 total); stress-durability (lines 871-873) selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree. The integration lane includes `test_closed_held_store.py` and `test_role_launch_terminal_publication.py`.
+The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 699 unit-regression (including `test_developer_messages_taskless.py`, `test_code_quality_dashboard_lint_scope.py`, `test_family_row_writer_gate_alignment.py`, `test_crossing_merge_writer_stamp.py`, `test_dependent_deferrals.py`, `test_dependent_deferrals_gate_and_replay.py`, `test_kno_r07_briefs_and_pairing.py`, `test_kno_r07_knowledge_queries.py`, `test_knowledge_state_conversion_verdict_ref.py`, `test_launch_identity_brief.py`, `test_launch_identity_confirmation.py`, `test_master_end_document_staleness.py`, `test_memory_verdict_ref.py`, `test_provider_limit_suppression.py` at line 464, `test_server_bindings.py`, and `test_state_conversion_worklist.py`), 3 public-contract, 126 integration (including `test_standalone_master_pr_finalize.py` at line 814) and 24 architecture-fitness and one stress-durability member (853 total); stress-durability (lines 872-874) selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree. The integration lane includes `test_closed_held_store.py` and `test_role_launch_terminal_publication.py`.
 
 The integration lane selects the crossing dependent writer test once. It checks that the mounted dry plan uses the settled code tree and that the branch name resolves to its commit.
 
@@ -111,7 +111,7 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 ## Developer-message regression membership
 
-`mcp/tests/test_developer_messages.py` is selected once in `unit-regression`, beside the dashboard-host and developer-question modules. The declaration supplies selection metadata; it establishes neither invocation nor pass.
+`mcp/tests/test_developer_messages.py` and `mcp/tests/test_developer_messages_taskless.py` (line 155) are each selected once in `unit-regression`, beside the dashboard-host and developer-question modules. The declaration supplies selection metadata; it establishes neither invocation nor pass.
 
 ## New-test lane registration
 
@@ -157,13 +157,13 @@ The existing unit-regression lane declares the four surviving L192 regression mo
 
 Membership selects evidence without proving invocation.
 
-`test_memory_quality_source_files.py` is declared in integration. The current catalog has 852 modules, including 125 integration modules; membership selects evidence and claims no execution result.
+`test_memory_quality_source_files.py` is declared in integration. The current catalog has 853 modules, including 126 integration modules; membership selects evidence and claims no execution result.
 
 `test_role_tool_scope.py` is declared once, in unit-regression, between `test_role_step_up.py` and `test_route_index_memory_scope.py`; membership selects evidence and certifies no invocation.
 
 `test_tool_schema_compaction.py` is declared once, in unit-regression, at line 674; membership selects evidence and certifies no invocation.
 
-`test_judged_history_closing_restore.py` (line 229), `test_organizational_completion_repair.py` (line 403), `test_quality_continuation_declaration.py` (line 469), and `test_type_hint_contracts.py` (line 677) are each declared once in unit-regression in canonical order; membership selects evidence and certifies no invocation. `test_memory_verdict_ref.py` is declared once in `unit-regression` at line 374 between `test_memory_scope_task_derivation.py` and `test_message_handover_contract.py`, and `test_state_conversion_worklist.py` is declared once in unit-regression at line 603; membership selects evidence and certifies no invocation.
+`test_judged_history_closing_restore.py` (line 229), `test_organizational_completion_repair.py` (line 402), `test_quality_continuation_declaration.py` (line 469), and `test_type_hint_contracts.py` (line 677) are each declared once in unit-regression in canonical order; membership selects evidence and certifies no invocation. `test_memory_verdict_ref.py` is declared once in `unit-regression` at line 373 between `test_memory_scope_task_derivation.py` and `test_message_handover_contract.py`, `test_state_conversion_worklist.py` is declared once in unit-regression at line 603, and `test_provider_limit_suppression.py` is declared once in unit-regression at line 464; membership selects evidence and certifies no invocation.
 
 `test_code_quality_dashboard_lint_scope.py` is declared once, in `unit-regression`, between `test_code_quality_check_scope.py` and `test_code_quality_targeted.py`; membership selects evidence and certifies no invocation.
 
@@ -199,7 +199,7 @@ Membership selects evidence without proving invocation.
 
 - The seven lane identities remain declared; this is membership, not execution.
 
-- The lane catalog declares seven lanes and 852 distinct module paths: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Stress-durability selects the native stdio memory regression. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.
+- The lane catalog declares seven lanes and 853 distinct module paths: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Stress-durability selects the native stdio memory regression. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.
 - The current catalog selects `test_landing_workflow_setting.py` and `test_publication_merge_admission.py`, the existing explainer suites, and `test_dashboard_autostart_after_discovery.py`. The after-discovery suite’s source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. Membership names the selected population and supplies no invocation or passing result.
 
 - The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules; the five removed provider-specific L192 suites and the retired provider-current-state suite have no lane registration.
@@ -319,7 +319,9 @@ Membership selects evidence without proving invocation.
 
 
 
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [925]
+
 
 
 
@@ -339,7 +341,9 @@ Membership selects evidence without proving invocation.
 
 
 
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [927]
+
 
 
 
@@ -357,7 +361,28 @@ Membership selects evidence without proving invocation.
 
 
 
-- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. \[864] [929]
+
+
+
+- The lane catalog declares 853 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [929]
+
+
+
+
+
+- The lane catalog declares 853 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [930]
+
+
+
+
+
+
+- The lane catalog declares 853 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. [931]
+
+
+
+
+- The lane catalog declares 853 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [932]
 
 
 
@@ -365,23 +390,7 @@ Membership selects evidence without proving invocation.
 
 
 
-- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. \[867] [930]
 
-
-
-
-
-
-
-- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. \[869] [931]
-
-
-
-
-
-
-
-- The lane catalog declares 852 distinct modules across seven lanes: 699 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. \[870] [932]
 
 
 
@@ -397,14 +406,14 @@ Membership selects evidence without proving invocation.
 
 
 
+
+
+
 - `mcp/tests/test_master_end_document_staleness.py` is declared once in `unit-regression` in canonical order; membership selects evidence and certifies no invocation. [912]
 
+- `mcp/tests/test_state_conversion_worklist.py` is registered once in `unit-regression` at line 603 (699 unit-regression, 853 total). [913]
 
-- `mcp/tests/test_state_conversion_worklist.py` is registered once in `unit-regression` at line 603 (699 unit-regression, 852 total). [913]
-
-
-
-
-- `mcp/tests/test_family_row_writer_gate_alignment.py` is registered once in `unit-regression` at line 194 (699 unit-regression, 852 total). [924]
 
 - `mcp/tests/test_kno_r07_briefs_and_pairing.py` and `mcp/tests/test_kno_r07_knowledge_queries.py` are declared once each in `unit-regression` in canonical order; membership selects evidence and certifies no invocation. [934]
+
+- `mcp/tests/test_provider_limit_suppression.py` is registered once in `unit-regression` at line 464 (699 unit-regression, 853 total). [936]

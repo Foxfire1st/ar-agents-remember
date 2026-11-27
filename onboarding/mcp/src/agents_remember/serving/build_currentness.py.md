@@ -28,5 +28,7 @@ Callers: the MCP tool dispatcher reads it before each call, attaches it to the r
 - Checkout mode is decided from the resolved checkout's package path. [4]
 - An ordinary checkout call gets no reading. [5]
 - The digest covers `*.py` files only. [6]
+
 - The tool dispatcher refuses a declared write of an installed stale build. [7]
+
 - The reading's fields. [8]

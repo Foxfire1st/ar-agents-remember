@@ -24,6 +24,8 @@ The memoized export avoids remounting the panel during parent rerenders. The bou
 
 Warmup states describe observed loading work, not a guarantee that every agent is loaded. Hiding and holding the mounted frame are separate from native plugin display acknowledgement.
 
+In explainer mode, ordinary document discovery is disabled and `useExplainerColumn` owns state: `resolveDocumentFrameProps` gates the explainer's `target` on `explainerColumn.showFrame` (passing `null` whenever `showFrame` is false — no non-explainer row selected in `placeholder`, `first-request`, `building`, or `retired` phases — and forwarding the target when `showFrame` is true, including an explicitly selected non-explainer row) and `ColumnChrome` displays its placeholder, form, progress or header. Pending unbound review identity retains the screen under its wait line; known missing identity displays the named problem. The frame wrapper remains keyed `persistent-chat-frame` across modes and the sibling `TrayColumnDock` remains `persistent-tray-dock`. Ordinary visible targets publish via `documentShownChat`; explainer targets publish through `columnState`, including a placeholder identity when no seat exists. [7]
+
 
 ## Evidence
 
@@ -31,12 +33,7 @@ Warmup states describe observed loading work, not a guarantee that every agent i
 - The state owner distinguishes documentless and unresolved review-task scopes, and gates chat reads on active visibility. [5]
 - Warmup wording preserves loaded, failed, skipped and pending meanings. [6]
 
-Compose ordinary document-chat chrome or the review leaf's explainer chrome above one persistent native frame and one tray dock. Ordinary documents retain their bound launcher, warmup and held-frame behavior. An explainer target disables ordinary document discovery and uses useExplainerColumn instead: resolveDocumentFrameProps supplies the explainer's frame target and showFrame state, while ColumnChrome displays its placeholder, form, progress or header. Pending unbound review identity retains the screen under its wait line; known missing identity displays the named problem. The frame wrapper remains keyed persistent-chat-frame across modes and the sibling TrayColumnDock remains persistent-tray-dock. Ordinary visible targets publish via documentShownChat; explainer targets publish through columnState, including a placeholder identity when no seat exists.
-
-- Compose ordinary document-chat chrome or the review leaf's explainer chrome above one persistent native frame and one tray dock. Ordinary documents retain their bound launcher, warmup and held-frame behavior. An explainer target disables ordinary document discovery and uses useExplainerColumn instead: resolveDocumentFrameProps supplies the explainer's frame target and showFrame state, while ColumnChrome displays its placeholder, form, progress or header. Pending unbound review identity retains the screen under its wait line; known missing identity displays the named problem. The frame wrapper remains keyed persistent-chat-frame across modes and the sibling TrayColumnDock remains persistent-tray-dock. Ordinary visible targets publish via documentShownChat; explainer targets publish through columnState, including a placeholder identity when no seat exists. [7]
-
 - DocumentChatImpl chooses ordinary document state or the leaf explainer state; the ordinary branch publishes its effective shown target, while explainer publication is owned by columnState. [1]
-
-- DocumentChatImpl composes ordinary or explainer chrome over the same persistent frame wrapper, takes visibility/target/preload from resolveDocumentFrameProps and places the document tray dock after that wrapper. [2]
-
+- DocumentChatImpl composes ordinary or explainer chrome over the same persistent frame wrapper, takes visibility, showFrame-gated target and preload from resolveDocumentFrameProps, and places the document tray dock after that wrapper. [2]
 - The persistent-chat-frame wrapper stays mounted in DocumentChatImpl across ordinary document and explainer modes; a hidden phase sets display:none and aria-hidden instead of unmounting it. [4]
+- resolveDocumentFrameProps gates explainer frame targeting on showFrame while ColumnChrome and DocumentChatImpl compose ordinary or explainer chrome over persistent-chat-frame and persistent-tray-dock. [7]

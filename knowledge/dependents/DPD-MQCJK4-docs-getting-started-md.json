@@ -7,6 +7,21 @@
     "task": "261112-KNO-L5",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/getting-started.md",
+        "note": "Update docs/getting-started.md lines 196-200 to match BUG-R62@v1 onLoad-anchored readiness and 45 s outer cold-load cap."
+      },
+      "createdAt": "2026-11-27T01:39:09.842481Z",
+      "createdByLeaf": "261112-BUG-L62",
+      "fileBlob": "1b3be23cea168bdec51dedcc87ecb6c0d369aece",
+      "id": "DFR-JPRPD6",
+      "owner": "261112-BUG",
+      "passage": "docs/getting-started.md lines 196-200 (Step 5 first-visit 20 s timeout workaround)",
+      "reason": "Lines 196-200 still describe the pre-BUG-R62 ~20 s first-visit timeout to 'embedded chat control unavailable', whereas BUG-R62@v1 anchors the 10 s readiness window to iframe onLoad (resetting across bootstrap double-loads) with a 45 s outer cold-load cap; deferred to preserve the passed frontend-only code freeze."
+    }
+  ],
   "document": "docs/getting-started.md",
   "id": "DPD-MQCJK4",
   "origin": {
@@ -132,14 +147,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "at": "2026-11-27T11:49:22+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

@@ -21,7 +21,7 @@ queue does not mention is still found through bounded discovery.
 Store and queue: `ar-held-messages/v1` with `MAX_HELD_PER_RECIPIENT = 20` per recipient at
 `<workspace>/.ar-product/held-messages/<agent id>.json`, and the queue `ar-held-message-queue/v1` at
 `<coordination_root>/temp/held-message-queue.json` with `HELD_QUEUE_MAX_ENTRIES = 512` and a 24-hour age bound.
-`store_path_for` refuses a name that is not a canonical UUID, so a directory entry is never read as a store.
+`store_path_for` refuses a name that is not a canonical UUID, so a directory entry is never read as a store. `recount_waiting` also recognizes reserved deferred held receipts (`status: "held"`, `hostAgentExists: false`) when recounting waiting messages directly from their store file.
 
 Authority reading is bounded end to end: `MAX_HELD_AUTHORITY_RECEIPTS = 512`, `MAX_HELD_AUTHORITY_STORES = 64`,
 `MAX_HELD_AUTHORITY_RETAINED = 1024` receipts and `MAX_HELD_AUTHORITY_ROWS = 256`, with the enumeration share

@@ -7,8 +7,8 @@
   },
   "applicability": "The product reference pages that describe held-message limits and the runtime's limit file.",
   "conditions": [
-    "docs/reference/mcp-tools.md names the five-minute recheck and the early drain of held messages.",
-    "docs/reference/runtime-layout.md describes the recheck attempts and the early clear release in provider-limits.json."
+    "docs/reference/mcp-tools.md names the five-minute recheck, automatic post-limit live-turn suppression, operator provider-limits suppress/unsuppress, and the early drain of held messages.",
+    "docs/reference/runtime-layout.md describes provider-limits.json (recheck attempts, recomputed until on partial suppression, and early clear release) and its sibling provider-limit-suppressions.json sidecar written under provider-limits.lock."
   ],
   "exclusions": [
     "No dashboard control to check a limit again."
@@ -25,27 +25,20 @@
     "leaf": "261112-BUG-L37",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The product reference describes the five-minute recheck, the early release of held work and the plug-in's recorded clear time.",
+  "statement": "The product reference describes the five-minute recheck, window-scoped automatic and operator suppressions stored in provider-limit-suppressions.json, the early release of held work, and the plug-in's recorded clear time.",
   "supersedes": [],
+  "title": "Product reference covers rechecks, window-scoped suppressions, and release",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L37",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

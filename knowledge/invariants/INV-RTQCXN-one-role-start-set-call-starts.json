@@ -5,16 +5,17 @@
     ],
     "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
   },
-  "applicability": "One owning Manager’s set request for a canonical leaf and receipt-bound held-seat opening.",
+  "applicability": "One owning Manager's leaf-set start, deferred held-seat reservation, replacing held starts, and receipt-bound first-message held-seat opening (MIK-R100 rule 2 as revised by D1045 / BUG-R58@v2).",
   "conditions": [
     "The set request derives stable per-role seat request identities and retries partial creation without duplicating seats.",
-    "Optional Reviewer work opens Reviewer; ordinary preparation leaves Reviewer (and Curator on ordinary leaves) without turns.",
-    "One unarchived agent holds a leaf seat, including while closed; explicit authorized replacement and ambiguous-resolver refusal retain that rule."
+    "Optional Reviewer work opens Reviewer on the host immediately; ordinary held preparation reserves Reviewer (and Curator on ordinary leaves; only Reviewer alongside open Consolidator on consolidation leaves carrying consolidationList) on disk with status=held, hostAgentExists=false, execution={}, handover on disk, and stored replayRequest without calling host agent-create.",
+    "A replacing held start archives a live predecessor immediately and checks finish_replacing_predecessor before reserving the new seat; any archive or settlement-write failure publishes status=unknown with pendingArchiveAgentId debt and reserves nothing.",
+    "Unretired, non-closing deferred held seats are treated as live occupants by seat readers and occupancy reconciliation without host reads, and open on first role_message using the stored replayRequest verbatim.",
+    "One unarchived agent holds a leaf seat, including while closed or reserved; explicit authorized replacement and ambiguous-resolver refusal retain that rule."
   ],
   "exclusions": [
-    "A held manual single-role launcher start.",
-    "Taskless role capacity or a broadened role may-start table.",
-    "A real-host sandbox witness; evidence item five remains not shown."
+    "A held manual single-role launcher start outside deferred held-seat preparation.",
+    "Taskless role capacity or a broadened role may-start table."
   ],
   "id": "INV-RTQCXN",
   "origin": {
@@ -28,19 +29,20 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "One role_start_set call starts the leaf's lead seat open at once with its sibling seats held (Worker open with Reviewer and Curator held on an ordinary leaf; Consolidator open with Reviewer held on a consolidation leaf carrying consolidationList), repeat sends are identical, held seats open via role_message with held receipts, and one-seat occupancy with resolver refusal holds.",
+  "statement": "One role_start_set call starts the leaf's lead seat open on the host immediately while reserving its sibling seats on disk as deferred held seats (Worker open with Reviewer and Curator reserved held on an ordinary leaf; Consolidator open with Reviewer reserved held on a consolidation leaf carrying consolidationList; status held, hostAgentExists false, execution {}, pre-minted agentId, handover on disk, and stored replayRequest with zero host calls); repeat sends reconcile identical seat identities; replacing a live predecessor archives and settles it before reserving the new seat (keeping pendingArchiveAgentId debt under status unknown and reserving nothing if archive or settlement write fails); every seat reader keeps unretired, non-closing deferred held seats live without host reads; the first role_message creates and opens the addressed held seat with its stored replayRequest verbatim and delivers pre-open held messages in one turn; and one-seat occupancy with resolver refusal holds.",
   "supersedes": [],
+  "title": "Leaf-set start defers held seat creation until first message",
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

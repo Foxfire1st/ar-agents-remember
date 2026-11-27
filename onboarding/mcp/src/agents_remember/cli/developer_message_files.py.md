@@ -12,7 +12,7 @@ Keeps target-scoped complete developer messages, hashed picks and bounded sent-l
 
 ### Logic
 
-Uses guarded blob reuse and message-filing compensation for newly created unpublished files; reads filed message by ID; appends bounded logs, reconciles a held row from its own receipt/request terminal end and updates its message path/hash truthfully.
+Routes taskful messages to `<repository>/<task_id>/` and taskless targets to unified `taskless/<agent_id>/`, while reading back taskful folders, unified `taskless/*/*_<id>*.md`, and legacy `*/taskless/*/*_<id>*.md` files; uses guarded blob reuse and message-filing compensation for newly created unpublished files; appends bounded logs, reconciles a held row from its own receipt/request terminal end and updates its message path/hash truthfully.
 
 ### Invariants And Boundaries
 
@@ -20,6 +20,7 @@ Compaction evicts logs, never durable message/pick files. Published or previousl
 
 ## Evidence
 
-- Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history. [1]
+- Keeps target-scoped complete developer messages (taskful and unified taskless), legacy taskless read-back, hashed picks and bounded sent-log history. [1]
+
 - Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history. [2]
 - Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history. [3]

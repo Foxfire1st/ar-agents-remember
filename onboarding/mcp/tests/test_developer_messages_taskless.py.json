@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_developer_messages_taskless.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+        "content": "sha256:29d060edb67eeb14e829f98aa653f57a0fa995e49802b232d52d1c584ae46cbf",
+        "locator": {
+          "kind": "symbol",
+          "name": "TasklessDeveloperSendTests.test_taskless_send_without_repository_succeeds_across_server_repo_counts"
+        }
+      },
+      "facet": "Taskless sends with omitted or None repository deliver and save hashed pick blobs under taskless/<agent_id>/ across single-repo, multi-repo, and zero-repo servers.",
+      "id": "PRF-B3A8CM",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L61-INV-G1K3QN-taskless-filing",
+        "leaf": "261112-BUG-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+        "content": "sha256:1a8fbb4a9e402bbe41c6fcb714e539286b62630b11e540817832b877e3340a33",
+        "locator": {
+          "kind": "symbol",
+          "name": "TasklessDeveloperSendTests.test_target_folder_routes_taskful_and_taskless_recipients"
+        }
+      },
+      "facet": "Taskful recipients route to <repo>/<task>/ while taskless recipients (missing repository or task_id) route to unified taskless/<agent_id>/.",
+      "id": "PRF-P4HEXK",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L61-INV-G1K3QN-taskless-filing",
+        "leaf": "261112-BUG-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+        "content": "sha256:11987a59f730d0b2e73ed610e52a66e0f5ec861f8915b318bf2ec6946ee84706",
+        "locator": {
+          "kind": "symbol",
+          "name": "TasklessDeveloperSendTests.test_legacy_repo_scoped_taskless_files_read_back_dedupe_and_settle"
+        }
+      },
+      "facet": "Legacy <repo>/taskless/<agent_id>/ files remain readable by message ID, refuse reused message IDs before host send, and settle held losses to .undelivered.md.",
+      "id": "PRF-VVBT8Z",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L61-INV-G1K3QN-taskless-filing",
+        "leaf": "261112-BUG-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+        "content": "sha256:63b7a5a30a288fc31c31bd70391a4b4b1223ff5e0b3c30f8740f833c89830c0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "TasklessDeveloperSendTests.test_unknown_request_repository_never_blocks_taskful_or_taskless_sends"
+        }
+      },
+      "facet": "An unconfigured request.repository string never blocks taskful or taskless sends and creates no folder under that repository name.",
+      "id": "PRF-YP7T66",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L61-INV-G1K3QN-taskless-filing",
+        "leaf": "261112-BUG-L61"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks `target_folder` routing for taskful and taskless targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:1a8fbb4a9e402bbe41c6fcb714e539286b62630b11e540817832b877e3340a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_target_folder_routes_taskful_and_taskless_recipients"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks taskless sends without `repository` succeed across single-, multi- and zero-repository server configurations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:29d060edb67eeb14e829f98aa653f57a0fa995e49802b232d52d1c584ae46cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_taskless_send_without_repository_succeeds_across_server_repo_counts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks an unknown `request.repository` string never blocks taskful or taskless sends and creates no folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:63b7a5a30a288fc31c31bd70391a4b4b1223ff5e0b3c30f8740f833c89830c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_request_repository_never_blocks_taskful_or_taskless_sends"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks legacy repo-scoped taskless files still read back, refuse reused message ids and settle held undelivered rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9099adffa4a45f4050538111f84cb72358a5a986",
+            "content": "sha256:11987a59f730d0b2e73ed610e52a66e0f5ec861f8915b318bf2ec6946ee84706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_legacy_repo_scoped_taskless_files_read_back_dedupe_and_settle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:1cc8f1e7d83a6092f697c03eb724cd8e4afd09c48fe2d4bc131a02bb592feef6",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:8ff603dd73f0d580a9c93870be1058c6fb06511f7cf7fe711c6d8ce37791c390",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:5642738769b267dd3cb17fc8735d8dcfd762fcdd0d849e1233babd1930209e0e",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
-        "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+        "content": "sha256:90e11b882c50e3837eff09a1567a875dcfcd3019a5d8dc65475d3ce91234383f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt._settle_target"
+        }
+      },
+      "id": "RLZ-4868Q0",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "L58-INV-VPXD65",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Settles uncreated deferred held targets as gone with zero host calls, zero owed debt, and LeafAgentArchive retirement attribution.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+        "content": "sha256:85bcdb733418b9f7bfb42631e9c7bb7151ab6825f3e447fe7334035b154139a0",
         "locator": {
           "kind": "symbol",
           "name": "refuse_retired_start"
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:1cc8f1e7d83a6092f697c03eb724cd8e4afd09c48fe2d4bc131a02bb592feef6",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:1cc8f1e7d83a6092f697c03eb724cd8e4afd09c48fe2d4bc131a02bb592feef6",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,25 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+        "content": "sha256:4280a764a6ff35573c531f49177dc49173ef93013698746a3d8f9dbeed9bec38",
+        "locator": {
+          "kind": "symbol",
+          "name": "_is_uncreated_deferred_held"
+        }
+      },
+      "id": "RLZ-7PAZG3",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "L58-INV-AJKQV2",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Identifies uncreated deferred held seats (status held, hostAgentExists false, not heldOpenPending) eligible for host-free gone settlement.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:e86ff729cb653eb7eea435675390db430f32f8a95cb76eecd239d0d1a240bf6e",
         "locator": {
           "kind": "symbol",
@@ -129,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:171a0f8289c1f1d14ca6792e43be2af05eb3b1ab2b0813b267fe51d3c0c7aa5c",
         "locator": {
           "kind": "symbol",
@@ -147,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:1cc8f1e7d83a6092f697c03eb724cd8e4afd09c48fe2d4bc131a02bb592feef6",
         "locator": {
           "kind": "symbol",
@@ -165,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:4ff4deb0b5cccfa21d2b08879abe8c3d880bff1ffd8e1ebe146113d24604791f",
         "locator": {
           "kind": "symbol",
@@ -183,7 +219,25 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+        "content": "sha256:61b5bd61da28fbe07a9a47b33eebd241786b531b791bb7b66fd4a355b042af5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_settle_refused_targets"
+        }
+      },
+      "id": "RLZ-AZN32B",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "L58-INV-AJKQV2",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Settles uncreated deferred held targets as gone without host calls and archives both primary and retried agent IDs on mid-retry close.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:4ff4deb0b5cccfa21d2b08879abe8c3d880bff1ffd8e1ebe146113d24604791f",
         "locator": {
           "kind": "symbol",
@@ -201,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:5642738769b267dd3cb17fc8735d8dcfd762fcdd0d849e1233babd1930209e0e",
         "locator": {
           "kind": "symbol",
@@ -219,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:1cc8f1e7d83a6092f697c03eb724cd8e4afd09c48fe2d4bc131a02bb592feef6",
         "locator": {
           "kind": "symbol",
@@ -237,8 +291,8 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
-        "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+        "content": "sha256:85bcdb733418b9f7bfb42631e9c7bb7151ab6825f3e447fe7334035b154139a0",
         "locator": {
           "kind": "symbol",
           "name": "refuse_retired_start"
@@ -255,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:c030c680ac1e3d9fcce5335ede89660146b92742bd506fc7a4aefefee6414ca0",
         "locator": {
           "kind": "symbol",
@@ -273,7 +327,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:fd2a960f127ca6187509c31f87dc940b8e05c478ff894db2279b43a95b39da77",
         "locator": {
           "kind": "symbol",
@@ -291,7 +345,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:1cc8f1e7d83a6092f697c03eb724cd8e4afd09c48fe2d4bc131a02bb592feef6",
         "locator": {
           "kind": "symbol",
@@ -309,7 +363,7 @@
     },
     {
       "anchor": {
-        "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
         "content": "sha256:8ff603dd73f0d580a9c93870be1058c6fb06511f7cf7fe711c6d8ce37791c390",
         "locator": {
           "kind": "symbol",
@@ -324,6 +378,24 @@
       },
       "rationale": "This host request archives an exact agent and requests no deletion of reports, handovers or chat.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+        "content": "sha256:1883b00cf099defb75936d835aab68c5fc3e7137c24c0798d46f9a09d015f248",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt.preview"
+        }
+      },
+      "id": "RLZ-ZRS4XM",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "L58-INV-VPXD65",
+        "leaf": "261112-BUG-L58"
+      },
+      "rationale": "Reports uncreated deferred held seats as gone in dry-run preview without issuing host agent-state calls.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -332,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
             "content": "sha256:5e8444022e8baef880a6995c712201e679ecedaae8f3f758205d43cb24aea00c",
             "locator": {
               "kind": "symbol",
@@ -348,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
             "content": "sha256:4616fa06d9dbe05837ae556f8d731a85954482e81c970d8fd8267fecc1a0bae3",
             "locator": {
               "kind": "symbol",
@@ -360,12 +432,12 @@
       ]
     },
     "3": {
-      "note": "A marked start is refused and a returned creation settled, with `_record_retired_target` recording `LeafAgentArchive` `retiredBy` attribution on confirmed archives.\n\nAnchor: `ArchiveAttempt._record_retired_target`",
+      "note": "A marked start is refused and a returned creation (including any `retried_agent_id`) settled while uncreated deferred held seats settle as `gone` without host I/O, with `_record_retired_target` recording `LeafAgentArchive` `retiredBy` attribution on confirmed archives.\n\nAnchor: `refuse_retired_start`, `_settle_refused_targets`, `_is_uncreated_deferred_held`, `_record_retired_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
-            "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:85bcdb733418b9f7bfb42631e9c7bb7151ab6825f3e447fe7334035b154139a0",
             "locator": {
               "kind": "symbol",
               "name": "refuse_retired_start"
@@ -375,24 +447,33 @@
         },
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
-            "content": "sha256:a4332d6b99002dadcb8a545acbd46ed9b16def9042aaf11fb607fc697e073819",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:61b5bd61da28fbe07a9a47b33eebd241786b531b791bb7b66fd4a355b042af5d",
             "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 165
+              "kind": "symbol",
+              "name": "_settle_refused_targets"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
+            "content": "sha256:4280a764a6ff35573c531f49177dc49173ef93013698746a3d8f9dbeed9bec38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_uncreated_deferred_held"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
             "content": "sha256:171a0f8289c1f1d14ca6792e43be2af05eb3b1ab2b0813b267fe51d3c0c7aa5c",
             "locator": {
-              "end": 417,
-              "kind": "line_range",
-              "start": 392
+              "kind": "symbol",
+              "name": "_record_retired_target"
             }
           },
           "kind": "code"
@@ -404,7 +485,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
             "content": "sha256:fd2a960f127ca6187509c31f87dc940b8e05c478ff894db2279b43a95b39da77",
             "locator": {
               "kind": "symbol",
@@ -420,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
             "content": "sha256:8ff603dd73f0d580a9c93870be1058c6fb06511f7cf7fe711c6d8ce37791c390",
             "locator": {
               "kind": "symbol",
@@ -436,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "blob": "fee48fcc27a13f23d473a77e826a42e977bce8de",
             "content": "sha256:162febe30c71e5904eb439931802f50377b3f767ea58fc0bc3f196d73f29e76f",
             "locator": {
               "kind": "symbol",

@@ -5,7 +5,7 @@
     ],
     "justification": "No member alone delivers the promise: agent-alone navigation without the display gate can acknowledge a missing screen, the gate without truthful deadline naming can wait silently, and naming without navigation reaches nothing. Together they promise the selected chat appears or its problem is named."
   },
-  "guarantee": "For an open-capable channel, the selected document agent is opened by native agent-only navigation with no extra frame or unsupported workspace hop. shown requires exact host-workspace route, stored focused pane, no contradicting visible tab and mounted nonloading chat. Negotiated on-chat releases input after identity holds while waiting for drawing; negotiated native load-failed ends the dashboard wait and leaves only the application's own failure/Retry. A responsive late answer stays a named wait, not a failure or automatic load. Missing ready/open answer is probed; only ping silence names the unsettled agent and permits one fallback if its URL is not already loaded, then the load's ready wait holds newer selections. Explicit unsupported-open capability uses each agent URL with its notice. The pane shows the application's actual screen, not an indefinitely preserved earlier picture.",
+  "guarantee": "For an open-capable channel, the selected document agent is opened by native agent-only navigation with no extra frame or unsupported workspace hop. shown requires exact host-workspace route, stored focused pane, no contradicting visible tab and mounted nonloading chat. Negotiated on-chat releases input after identity holds while waiting for drawing; negotiated native load-failed ends the dashboard wait and leaves only the application's own failure/Retry. A responsive late answer stays a named wait, not a failure or automatic load. Missing post-onLoad ready or open answer is probed: unanswered open-request ping names the unsettled agent and permits one fallback if its URL is not already loaded, while unanswered post-load ping or the 45 s cold-load cap settles unavailable without reloading, names whether the frame already named the agent or stayed open, keeps a waiting notice with Retry for unconfirmed URL loads, and continues accepting late ready/pong. Explicit unsupported-open capability uses each agent URL with its notice. The pane shows the application's actual screen, not an indefinitely preserved earlier picture.",
   "id": "FAM-JY9AN3",
   "members": [
     "INV-72Y8R3",
@@ -20,7 +20,7 @@
     "leaf": "260928-MIK-L121",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/cockpit",
     "mcp/src/agents_remember/package_data/paseo_plugin"
@@ -28,21 +28,14 @@
   "schema": "ar-family/v1",
   "title": "The selected document's agent chat appears, or the pane names its problem",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T01:50:04+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L62",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8020008c-c42e-5a45-a4cd-7c59e86bd184",
+    "task": "261112-BUG"
   }
 }

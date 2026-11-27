@@ -39,16 +39,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One Manager call creates three agents with exactly the Worker opened.\n\nAnchor: `SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats`",
+      "note": "One Manager call opens Worker on the host and reserves Reviewer and Curator as deferred held seats.",
       "targets": [
         {
           "anchor": {
-            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
-            "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
+            "blob": "5afeb345ed2737b42fc4a3e28d6f08a01b777a36",
+            "content": "sha256:1c59819d9dedc3acbf62dd7ee816514d9a8b7f85425f83a55f01013b6b9b0d24",
             "locator": {
-              "end": 76,
-              "kind": "line_range",
-              "start": 52
+              "kind": "symbol",
+              "name": "test_the_manager_set_creates_three_agents_with_held_seats"
             }
           },
           "kind": "test"
@@ -56,16 +55,15 @@
       ]
     },
     "2": {
-      "note": "A partial creation completes with the same set identities and held seats intact.",
+      "note": "A partial creation completes with the same set identities and deferred held seats intact.",
       "targets": [
         {
           "anchor": {
-            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
-            "content": "sha256:8414939b149a6e946d06b851dd74f172e086d06c3a8a81200abde78257745eae",
+            "blob": "5afeb345ed2737b42fc4a3e28d6f08a01b777a36",
+            "content": "sha256:610aaac13134a318a185f20d20b5cf830fb14596ba7818ed2646751af780a299",
             "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 87
+              "kind": "symbol",
+              "name": "test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
             }
           },
           "kind": "test"
@@ -77,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
+            "blob": "5afeb345ed2737b42fc4a3e28d6f08a01b777a36",
             "content": "sha256:7bab40ff0cc245f871dff2f90ef71e8e3ef284de9738c217dcbec581641f07be",
             "locator": {
-              "end": 233,
+              "end": 234,
               "kind": "line_range",
-              "start": 217
+              "start": 218
             }
           },
           "kind": "test"
@@ -90,12 +88,12 @@
       ]
     },
     "4": {
-      "note": "Held opener restores missing role facts before native agent-create and leaves the other held.",
+      "note": "Held opener restores missing role facts before native `agent-create` and leaves the other seat reserved.",
       "targets": [
         {
           "anchor": {
-            "blob": "503271be17c8eebca12f0e44c528218d88c3dde6",
-            "content": "sha256:436c850241439a47f7d84d3a6a3582f6262b408d5442cf9b57636291b3149620",
+            "blob": "5afeb345ed2737b42fc4a3e28d6f08a01b777a36",
+            "content": "sha256:22f2dabd1cc888128e07e883cbd9059171ebee7e9b1eada1804de70304da4f17",
             "locator": {
               "kind": "symbol",
               "name": "test_a_first_message_opens_a_held_seat_and_leaves_the_other_held"

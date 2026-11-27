@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
         "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
         "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-        "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+        "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+        "content": "sha256:439f5f816eb189d9aa68748d61d2b6705f0e970c4b73bedd05dfca6e4ed3725b",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
         "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
         "locator": {
           "kind": "symbol",
@@ -76,14 +76,15 @@
   ],
   "references": {
     "1": {
-      "note": "messageRepository chooses the message filing repository from the shown page, the first structured reference or the recipient’s task; it does not post or decide whether an archived explainer target is diverted.\n\nAnchor: `messageRepository`",
+      "note": "messageRepository supplies optional repository context from the shown page, the first structured reference or the recipient’s task (omitted when absent); it does not post or decide whether an archived explainer target is diverted.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:4e5ae6fabd235eb18be2c59cb52468d4a639103065f65e43f7f553eee402cc9c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "messageRepository"
             }
           },
           "kind": "code"
@@ -91,14 +92,15 @@
       ]
     },
     "2": {
-      "note": "parseDelivery accepts named delivered, held or refused answers and retains message-file identity, reason, detail and a supplied provider-limit reset without treating other answers as a delivery.\n\nAnchor: `parseDelivery`",
+      "note": "parseDelivery accepts named delivered, held or refused answers and retains message-file identity, reason, detail and a supplied provider-limit reset without treating other answers as a delivery.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:f5c0c399f1e3ccf808697231194415625c2ad9bb25da6ffc947c51e44ade8bd3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "parseDelivery"
             }
           },
           "kind": "code"
@@ -106,14 +108,15 @@
       ]
     },
     "3": {
-      "note": "serverDetail reads a textual server detail or joins validation error locations and messages so a refused ordinary send retains the host’s stated reason.\n\nAnchor: `serverDetail`",
+      "note": "serverDetail reads a textual server detail or joins validation error locations and messages so a refused ordinary send retains the host’s stated reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:642090f7ecad9cc53c611e7c5d3825c74f54d6544330ec1e32d927b593c388e0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "serverDetail"
             }
           },
           "kind": "code"
@@ -121,14 +124,15 @@
       ]
     },
     "4": {
-      "note": "Before a native send, sendTray separates archived/placeholder explainer targets from live recipients. The first archived target opens its leaf's first-request form with the current text; when no live target remains it returns without wiring picks or posting, preserving the collection. In a mixed selection, the remaining live targets still post and their ordinary settlement applies; this module does not report the first-request handoff as a delivered message. Mixed selections follow ordinary live-target settlement, which can consume the shared picks for successful live recipients.\n\nAnchor: `sendTray`",
+      "note": "Before a native send, sendTray separates archived/placeholder explainer targets from live recipients. The first archived target opens its leaf's first-request form with the current text; when no live target remains it returns without wiring picks or posting, preserving the collection. In a mixed selection, the remaining live targets still post and their ordinary settlement applies; this module does not report the first-request handoff as a delivered message. Mixed selections follow ordinary live-target settlement, which can consume the shared picks for successful live recipients.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
-            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "blob": "7de9032cfd4d595e79d0c220146e2d4ebcd1540f",
+            "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "sendTray"
             }
           },
           "kind": "code"

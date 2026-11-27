@@ -1,17 +1,35 @@
 {
   "path": "dashboard/src/cockpit/PaseoChatFrame.test.tsx",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
+        "content": "sha256:f83a47f1e0fb9b2f13e28acb66c775a5bd9970a10a2902aa5eaab637e816a0a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the in-flight frame open on cold timeout without reloading, and accepts a late ready"
+        }
+      },
+      "facet": "Verifies cold timeout keeps generation 1 open with kept-open problem copy, rejects wrong-origin/wrong-source ready messages, and clears stale problem to open WORKER on a late trusted ready.",
+      "id": "PRF-QYD7EW",
+      "invariant": "INV-KVEKXR",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §1",
+        "leaf": "261112-BUG-L62"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The recovery fixtures require unanswered application ping before URL fallback and preserve explicit Retry.\n\nAnchor: \"it('keeps the frame, shows the banner after an unanswered ping, and shows executions by URL'\"",
+      "note": "The recovery fixtures anchor post-load readiness to onLoad, require unanswered request ping before URL fallback, keep waiting notice with Retry when unconfirmed, and preserve explicit Retry.",
       "targets": [
         {
           "anchor": {
-            "blob": "12b391ebb43339f4326b9a698be4d87919db08ae",
-            "content": "sha256:6f237a21b66b03e4db3ef5e9e7efeb307850f3776758957215732b59317dfd04",
+            "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
+            "content": "sha256:ad86cddaf4c97aea8a53b4e45f7864ccca94d949cdb729728baa465ab82c555d",
             "locator": {
-              "end": 549,
+              "end": 558,
               "kind": "line_range",
               "start": 452
             }
@@ -21,16 +39,16 @@
       ]
     },
     "2": {
-      "note": "The no-second-load case pins the settle behavior.\n\nAnchor: \"it('after Retry without the channel, the frame that names the agent is not loaded a second time'\"",
+      "note": "The no-second-load case pins that cold readiness timeout keeps generation 1 open and Retry reloads once.",
       "targets": [
         {
           "anchor": {
-            "blob": "12b391ebb43339f4326b9a698be4d87919db08ae",
-            "content": "sha256:8a98f51393806173dd8609eda51e2bb3bbab5ff9b92767e6ebb0226f7b43e161",
+            "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
+            "content": "sha256:aa20f204f9f13e18bbc08420d10fb0c111b9899512a2832fb867abf56e50797d",
             "locator": {
-              "end": 566,
+              "end": 583,
               "kind": "line_range",
-              "start": 551
+              "start": 560
             }
           },
           "kind": "test"
@@ -42,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b391ebb43339f4326b9a698be4d87919db08ae",
+            "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
             "content": "sha256:1a88b0f3902ea8a29a3562101c54b03161fc23daf80e52510dce782185d2b957",
             "locator": {
-              "end": 649,
+              "end": 666,
               "kind": "line_range",
-              "start": 595
+              "start": 612
             }
           },
           "kind": "test"
@@ -59,12 +77,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b391ebb43339f4326b9a698be4d87919db08ae",
+            "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
             "content": "sha256:ab6bd18b5dd368e9f54f5c6a18b68c2420f5c59e96747c793ba6fb73963f9f2c",
             "locator": {
-              "end": 593,
+              "end": 610,
               "kind": "line_range",
-              "start": 572
+              "start": 589
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cold-load cap settles without reloading while rejecting wrong-origin/wrong-source messages and accepting a late trusted ready.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "122822a286664c3d4f2bd27bcd93af32a247e52f",
+            "content": "sha256:f83a47f1e0fb9b2f13e28acb66c775a5bd9970a10a2902aa5eaab637e816a0a6",
+            "locator": {
+              "end": 787,
+              "kind": "line_range",
+              "start": 753
             }
           },
           "kind": "test"

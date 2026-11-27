@@ -77,5 +77,4 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 
 
-
 - The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls. [5]

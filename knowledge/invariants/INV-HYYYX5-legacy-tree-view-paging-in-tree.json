@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans application/knowledge_paging/tree_read.py and models/tools/tool_answer.py, is guarded by focused projection, answer-table, and stdio memory tests, and prevents raising knowledge_read's batch envelope from silently breaking legacy tree-view pagination and stdio memory bounds."
+  },
+  "applicability": "Delivered page-size budgeting for mounted knowledge_read legacy tree views (source_context, invariant, family) versus verbatim batch records.",
+  "conditions": [
+    "application/knowledge_paging/tree_read.py::_delivered_bound returns TOOL_ANSWER_EXCEPTION_MAX_TOKENS (4,000 tokens) for cut_page across source_context, invariant, and family walks.",
+    "models/tools/tool_answer.py::TOOL_ANSWER_EXCEPTIONS retains ('knowledge_read', None): 5000 so verbatim batch records keep their 5,000-token envelope bound."
+  ],
+  "exclusions": [
+    "Does not alter the internal 8,000-token knowledge_paging threshold metadata or the 3,500-token impact and search query view budgets."
+  ],
+  "id": "INV-HYYYX5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R64@v1 §3; pytest mcp/tests/test_knowledge_name_projection.py mcp/tests/test_kno_r07_knowledge_queries.py mcp/tests/test_tool_answer_table.py and pytest -m integration mcp/tests/test_mcp_memory_bounded_stdio.py; role-reports/worker/5da3c782-cae6-5289-9d7e-0bc71bba6ae3/role-launch/261112-BUG-L64-worker-5da3c782-cae6-5289-9d7e-0bc71bba6ae3.md"
+      ],
+      "path": "curator-ingest-run1.json"
+    },
+    "handoffEntry": "BUG-R64-Option3B-tree-bound",
+    "leaf": "261112-BUG-L64",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Legacy tree-view paging in tree_read._delivered_bound cuts source_context, invariant, and family pages at TOOL_ANSWER_EXCEPTION_MAX_TOKENS (4,000 tokens), while TOOL_ANSWER_EXCEPTIONS[('knowledge_read', None)] stays at 5,000 tokens for verbatim batch records.",
+  "supersedes": [],
+  "title": "Legacy tree_read pages cut at 4,000 while knowledge_read keeps 5,000",
+  "writer": {
+    "at": "2026-11-27T08:20:21+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L64",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f5500511-d459-5681-b091-6d0186621e40",
+    "task": "261112-BUG"
+  }
+}

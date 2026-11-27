@@ -1,0 +1,657 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L64",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T13:33:49+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L64",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "f5500511-d459-5681-b091-6d0186621e40",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T13:33:49+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L64",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "2a9f7b0d-85f7-5180-b843-d122a6a9be9f",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "6d35026e02b3029ec27f45be3bedf53545a29b10",
+    "verdictRef": "notes/reports/reviewer/2a9f7b0d-85f7-5180-b843-d122a6a9be9f/261112-BUG-L64-memory-review-r1-verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "content": "sha256:7cb00865765008c5df939bc86d2d03ea22aa83535a4478877d90d2d497b66ff7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0J5EYE",
+      "items": [
+        "sha256:cef63adf0c33012b708ce9bddf95a6ba57f5bd638fe79f4ca679e9b2320ba62d"
+      ],
+      "reason": "Re-anchored RLZ-RHRQZQ onto renewed skills/l-01-agent-lifecycles/capsule-budgets-current.json after scripts/renew-instructions.py updated reference/knowledge/commands.md measurements (2,425 to 2,647 words) without changing authored ceilings or compiled capsule tokens.",
+      "revision": 3,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6Y0ZZ0",
+      "items": [
+        "sha256:612652c26fd3a6285850388fcb91300c38241a453aa322887f770211a92dc879"
+      ],
+      "reason": "Added a sentence in test_knowledge_database_retired.py.md recording the three _ROW_WRITERS derived-index SQL writer modules (including memory/knowledge_index/fts.py) and refreshed moved anchors.",
+      "sources": [
+        {
+          "blob": "726b4fc980fa5a1a609123709b2fde4626f94b3b",
+          "path": "mcp/tests/test_knowledge_database_retired.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_database_retired.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7CXF31",
+      "items": [
+        "sha256:f35e8eb30e7643d03ec6d031322792edb7234c242f4b6eb29ea14c0177beffc9"
+      ],
+      "reason": "Updated application/overview.md line 142 to document the 4,000-token legacy tree-view paging bound versus 5,000-token batch records exception and the relocated application/knowledge_queries.py dispatcher, and refreshed citations [295] and [315].",
+      "sources": [
+        {
+          "blob": "cb555efcf61550390f3cd0e770ef7ac59e679676",
+          "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+        },
+        {
+          "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+          "path": "mcp/src/agents_remember/application/knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7DFASJ",
+      "items": [
+        "sha256:86c73ea54fcb65446cd6df082fc7af40623dc15d23644ca9a2abc6158c6e4470"
+      ],
+      "reason": "Mechanical import adjustment in tree_read.py importing TOOL_ANSWER_EXCEPTION_MAX_TOKENS instead of bound_for to support _delivered_bound (which carries the Option 3B invariant).",
+      "subject": "hunk:sha256:86c73ea54fcb65446cd6df082fc7af40623dc15d23644ca9a2abc6158c6e4470"
+    },
+    {
+      "considered": [
+        "FAM-ZPQR9K",
+        "FAM-TBXG7G",
+        "FAM-8SX6BT"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-7XCK4K",
+      "items": [],
+      "reason": "Examined FAM-ZPQR9K (KNO-R07 query-view dispatch/indexing), FAM-TBXG7G (tool-answer table bounds), and FAM-8SX6BT (knowledge paging); INV-HYYYX5 is a standalone boundary rule splitting legacy tree-view delivery paging (4,000) from batch knowledge_read exceptions (5,000) without adding a joint guarantee to those families.",
+      "revision": 1,
+      "subject": "membership:INV-HYYYX5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-85WY49",
+      "items": [
+        "sha256:c97abbb490d7fd0614698f7a5063da2207304350a1884f66a28cf318156ed485"
+      ],
+      "reason": "Test-only docstring count update in test_knowledge_database_retired.py ('two modules' to 'three modules') matching the three derived-index row writers.",
+      "subject": "hunk:sha256:c97abbb490d7fd0614698f7a5063da2207304350a1884f66a28cf318156ed485"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8XGCNN",
+      "items": [
+        "sha256:656e8dd26a33b2d08f1e21375f3043e7a6fda12316166661c505f76abb5b4a8f"
+      ],
+      "reason": "Test-only registration of memory/knowledge_index/fts.py in _ROW_WRITERS inside test_knowledge_database_retired.py, aligning the static SQL writer allowlist with INV-TT65V5's derived-index builder.",
+      "subject": "hunk:sha256:656e8dd26a33b2d08f1e21375f3043e7a6fda12316166661c505f76abb5b4a8f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E31JGM",
+      "items": [
+        "sha256:04b792d2fcce3a5299e57a591a2dc8dc218518d676a8c6109939d577416d573e"
+      ],
+      "reason": "Retired onboarding/mcp/src/agents_remember/mcp/tools/knowledge_queries.py.{md,json} after relocating RLZ-JDA910 (INV-FM7P08) and the card prose and fresh citations to onboarding/mcp/src/agents_remember/application/knowledge_queries.py.{md,json}.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EHPVAA",
+      "items": [
+        "sha256:3922018725d0d8f13348e4152b4b2eb8313fdc6e9f2b653559823d914cfcad8a"
+      ],
+      "reason": "Re-reviewed skills/l-01-agent-lifecycles/overview.md after adding memory-briefs and Option A provider-limits rows to commands.md and renewing capsule-budgets-current.json; overview contract holds unchanged.",
+      "sources": [
+        {
+          "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FAMBSY",
+      "items": [
+        "sha256:226c75ac100efe08051c4b64a3fdb792af2ba01b539f5dd31b5c346078e4f9fb",
+        "sha256:371b368c726d526fa1ea574b7e27a966c4cc20bec1fb6c4990cd27e0ef9df193",
+        "sha256:6745b99de958b1557c435c2ec81b9aa06632145978e5a9af1a7b3a1be1a72b4c",
+        "sha256:b7c76358e251a14053662fce42238898c0edf7be68507ca5bd10aa317ec22e20"
+      ],
+      "reason": "Updated test_knowledge_views.py.md for the post-KNO-L5 merged test file: eleven admitted views (including consolidation_proposal), _RegistrationConfig.repositories, and 24 registered knowledge_read parameters (masterId plus the eight KNO-R07 parameters), covering all test-only hunks.",
+      "sources": [
+        {
+          "blob": "1a40a9881eb105e4259e0779ff0f662d25bf9b62",
+          "path": "mcp/tests/test_knowledge_views.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_views.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FZKSJK",
+      "items": [
+        "sha256:b17ea8ce66cba3760cb4c55bf86da614014864cdba2a3b22e4eb47a0e58b55cc"
+      ],
+      "reason": "Re-reviewed mcp/tests/overview.md against the post-KNO-L5 merged test_knowledge_views.py, test_knowledge_database_retired.py, and knowledge_read_largest.json; overview contract and counts hold unchanged.",
+      "sources": [
+        {
+          "blob": "30efe2cb19b1e0c0f20f0e12dac1d8fe558b1144",
+          "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json"
+        },
+        {
+          "blob": "726b4fc980fa5a1a609123709b2fde4626f94b3b",
+          "path": "mcp/tests/test_knowledge_database_retired.py"
+        },
+        {
+          "blob": "1a40a9881eb105e4259e0779ff0f662d25bf9b62",
+          "path": "mcp/tests/test_knowledge_views.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HK7FHE",
+      "items": [
+        "sha256:e2f90a2489e248e6000525d9c0f262a4f2b2f4d97c762fa0c981dd22296b307f"
+      ],
+      "reason": "Updated commands.md.md line 15 and references [2] and [6] for both memory-briefs and D1062/D1066 Option A provider-limits (status, suppress, unsuppress) and provider_limit_hold.py::add_arguments.",
+      "sources": [
+        {
+          "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J3A3FP",
+      "items": [
+        "sha256:954eb852c8286aa526643eb8b5668416cde8a9c9a6f481be0b84bb18bbc09fab"
+      ],
+      "reason": "Updated tree_read.py.md CutBudget prose to reflect TOOL_ANSWER_EXCEPTION_MAX_TOKENS (4,000) for legacy tree views while bound_for('knowledge_read') remains 5,000 for batch records, and re-authored stale citations [4], [5], [12], [14], [17], and [18].",
+      "sources": [
+        {
+          "blob": "cb555efcf61550390f3cd0e770ef7ac59e679676",
+          "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-8F4C0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-M36NT5",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        },
+        {
+          "id": "INV-XXG2W0",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZYKN6P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PBFD93",
+      "items": [],
+      "reason": "Examined all seven members of FAM-0TR1G5 after clarifying INV-XXG2W0's CLI flag names (--memory-root, --code-root, --coordination-root) and attaching commands.md:36 (already covered by existing route skills/l-01-agent-lifecycles/reference/knowledge); the family guarantee holds unchanged.",
+      "revision": 2,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QH9VWC",
+      "items": [
+        "sha256:e6ff3d1bd824f2ffc6e27c007f5ae0f018e76ff7613ba5e2eeee2ac81fd34ec8"
+      ],
+      "reason": "Presentation-only documentation rows in commands.md:50-53 for already-landed BUG-L60 provider-limits CLI subcommands (status, suppress, unsuppress) added under D1062/D1066 Option A; carries no new invariant.",
+      "subject": "hunk:sha256:e6ff3d1bd824f2ffc6e27c007f5ae0f018e76ff7613ba5e2eeee2ac81fd34ec8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QRGQCB",
+      "items": [
+        "sha256:eb13a25c6cdf4970fb243637a4f54f64b3c5887f06a927063e715a464e58af23"
+      ],
+      "reason": "Re-bound onboarding:mcp/tools/overview to post-KNO-L5 knowledge.py and deleted mcp/tools/knowledge_queries.py; line 59 records eleven views and delegation of records/impact/search to application/knowledge_queries.py.",
+      "sources": [
+        {
+          "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3N8PY",
+      "items": [
+        "sha256:05715501a35a7fbcc5163f8637c0c432993dcce82499dd53c08201198879edf3",
+        "sha256:14ddd38e4cc73cc1dae4633644b5ca3cc49d1897457b33fbdecc1402bee9b602",
+        "sha256:3fda8826930a4fcd0fefb70acdd1beb0a1e8691a547d6e480aaffea663675d34",
+        "sha256:60ae57def85da3ed9584711051e4ead51932bbc9c46f77a1a832c44a958cd445",
+        "sha256:b3ba96754621e181facc9d178314fbcd56ee842b46355422d7debaaab75e97e3",
+        "sha256:fcf95ebc334fec8aa501e113fc612cf0ba8c5a46f2e2744524e5d59d117829a0",
+        "sha256:fe4254e7667d9236b834108eee0d4c9f19e93aa6f8090c5f4ab8d06dc5170347"
+      ],
+      "reason": "Updated knowledge_read_largest.json.md line 17 from 9/16 rows to the regenerated 4,000-token fixture shape (7 record rows across 12 returned / 25 remaining) and re-authored citations [1] and [2]; all six fixture hunks reflect this regenerated test fixture and carry no separate invariant.",
+      "sources": [
+        {
+          "blob": "30efe2cb19b1e0c0f20f0e12dac1d8fe558b1144",
+          "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:e8e53dcbf89910601bf40f53134d6375774a18c728a5ab2f7294d0da5c27d508",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_public_command_requires_its_documentation_owner"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
+          },
+          "before": "absent",
+          "id": "PRF-YMG7QX"
+        },
+        {
+          "after": {
+            "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+            "content": "sha256:bb44bf43a448c2aa01568d1fcfba52052aeaa0d64c23517434e0c2ace4dfea2d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+          },
+          "before": "absent",
+          "id": "RLZ-9D1XYD"
+        },
+        {
+          "after": {
+            "blob": "c5e9620c5b830bef6c200edb2b025aef975fe00f",
+            "content": "sha256:87d79391ad26addabc0e383dae816213806dfd445b9fb1960ab78cbfed5afba5",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            },
+            "path": "mcp/src/agents_remember/cli/memory_briefs.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K8JY0G"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SHNPHS",
+      "items": [
+        "sha256:3a0987e1605b29713d6b5c81328db211466e09c9cea8d1bee7d1e5749ca88244"
+      ],
+      "reason": "Corrected drifted CLI flag names in INV-XXG2W0 conditions from --memory/--code to the authoritative --repo, --config, --memory-root, --code-root, --coordination-root, and --code-commit flags defined by cli/memory_briefs.py::add_arguments, and anchored the commands.md:36 presentation row and add_arguments realization at the post-KNO-L5/Option-A code candidate. Evidence (BUG-R64-INV-XXG2W0-flags): BUG-R64@v1 §1; mcp/src/agents_remember/cli/memory_briefs.py::add_arguments; skills/l-01-agent-lifecycles/reference/knowledge/commands.md:36; pytest mcp/tests/test_role_instruction_corpus_policies.py",
+      "revision": 2,
+      "subject": "INV-XXG2W0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SX3ZNK",
+      "items": [
+        "sha256:ebc8da09eb8d1a375ec4498c051d84381b112265888d8a7d39a1c992dccc0653"
+      ],
+      "reason": "Presentation-only line 22 note in commands.md adding provider-limits beside paseo and knowledge-census as requiring subcommands under D1062/D1066 Option A; carries no new invariant.",
+      "subject": "hunk:sha256:ebc8da09eb8d1a375ec4498c051d84381b112265888d8a7d39a1c992dccc0653"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TWPZ2T",
+      "items": [
+        "sha256:02599480b9c9c00f0d089acad0662699bf0ceef2863a6b928ce81ff05aa09478"
+      ],
+      "reason": "Re-bound onboarding:mcp/overview to the post-sync package mirror blobs; line 50 distinguishes the 4,000-token legacy tree-view paging bound from the 5,000-token batch knowledge_read exception.",
+      "sources": [
+        {
+          "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "4a8714fd4c2fc77d369b9574f249e55963df980b",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+            "content": "sha256:6bcb77857b42795bade7031b0cf6a331e40e83a2c1bcfcb2c9348b70cc861d7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_query_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_queries.py"
+          },
+          "before": {
+            "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+            "content": "sha256:6bcb77857b42795bade7031b0cf6a331e40e83a2c1bcfcb2c9348b70cc861d7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_query_view"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py"
+          },
+          "id": "RLZ-JDA910"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VMXASP",
+      "items": [
+        "sha256:554c81bed7ccde551441543422f0ad62b204829a80d19c446872ae02e6e4eafa"
+      ],
+      "reason": "Relocated internal drafting/verification query dispatcher knowledge_queries.py byte-identically from mcp/tools/ to application/ so mcp/tools/ retains only _tool_payload choke-point modules; INV-FM7P08's query-view guarantees hold unchanged.",
+      "revision": 1,
+      "subject": "INV-FM7P08"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-FM7P08",
+          "revision": 1
+        },
+        {
+          "id": "INV-KTGZFV",
+          "revision": 2
+        },
+        {
+          "id": "INV-TT65V5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VSF10K",
+      "items": [
+        "sha256:611e9bbbfd0b5592977f4985c444124524e6493006f84414a5aa39f78985a3dd",
+        "sha256:9c85a607f38378109d7e69f20a7c0f212af3863350d728c3061712aa69804aaf"
+      ],
+      "reason": "Re-examined all three members of FAM-ZPQR9K at post-KNO-L5 revisions (INV-FM7P08 rev 1, INV-KTGZFV rev 2, INV-TT65V5 rev 1) after removing emptied route mcp/src/agents_remember/mcp/tools; the joint drafting/verification query guarantee holds unchanged.",
+      "revision": 2,
+      "subject": "FAM-ZPQR9K"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W6A1TJ",
+      "items": [
+        "sha256:7ba31d0ee04f890128d17f3103bd2179142a3d025109f88bc0d2a5dfb8af7870"
+      ],
+      "reason": "Re-bound onboarding:mcp/tools/knowledge.py to the post-KNO-L5 merged knowledge.py blob; prose reflects application/knowledge_queries.py::run_query_view alongside KNO-L5's eleven views, and citations are refreshed.",
+      "sources": [
+        {
+          "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/knowledge.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WKSWX8",
+      "items": [
+        "sha256:c3acc4b150da6cfd94d892d3ad0634196c3e1b3f8892256d10dbaf90b2aff8b3"
+      ],
+      "reason": "Created onboarding/mcp/src/agents_remember/application/knowledge_queries.py.{md,json} (relocated from mcp/tools/knowledge_queries.py) with RLZ-JDA910 (INV-FM7P08) and three fresh references.",
+      "sources": [
+        {
+          "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+          "path": "mcp/src/agents_remember/application/knowledge_queries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_queries.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WXZ45V",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Re-reviewed capsule-budgets-current.json.md after scripts/renew-instructions.py updated reference/knowledge/commands.md measurements (2,425 to 2,647 words); authored ceilings and card prose remain accurate and only reference [2] range is refreshed.",
+      "sources": [
+        {
+          "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "content": "sha256:7cb00865765008c5df939bc86d2d03ea22aa83535a4478877d90d2d497b66ff7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z6R612",
+      "items": [
+        "sha256:e87c8289ab4a2578c3717afc22bbc0938733ad308695638cb367eb76cb47f541"
+      ],
+      "reason": "Re-anchored RLZ-9J6CEC onto regenerated package copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json, byte-identical to its canonical source after scripts/renew-instructions.py.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d51d8a4ec2ec708da6110828fb4a90405d2fcb5",
+            "content": "sha256:4451bd6f6ce98175890d90a97374890210c12499621f9f31bc85f01c0366639d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "96faf1383c3fdb5718d4e56f125ddbba13abcc0f",
+            "content": "sha256:7cb00865765008c5df939bc86d2d03ea22aa83535a4478877d90d2d497b66ff7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZC5ZCA",
+      "items": [
+        "sha256:8746abd5a48824311fd54bf336a0248322cec05e2130d0b5e73e7a776a8810c2"
+      ],
+      "reason": "Re-anchored RLZ-9FX5WR onto renewed skills/l-01-agent-lifecycles/capsule-budgets-current.json; generated measurements updated only for reference/knowledge/commands.md (2,425 to 2,647 words) while authored COMPILED_CAPSULE_TOKEN_CEILINGS and frozen historical registries remain unchanged.",
+      "revision": 7,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZJDYS1",
+      "items": [
+        "sha256:6462d5400e36ae0a6ac42f2a5c1f0f9905b79a0a4f99f96b066c2e824bc1ab8a"
+      ],
+      "reason": "Mechanical import update in mcp/tools/knowledge.py importing QUERY_VIEWS, QueryViewContext, and run_query_view from agents_remember.application.knowledge_queries after module relocation.",
+      "subject": "hunk:sha256:6462d5400e36ae0a6ac42f2a5c1f0f9905b79a0a4f99f96b066c2e824bc1ab8a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZPPYVS",
+      "items": [
+        "sha256:34da794b9fcd7d4b7f47c0b18acb36736908c6d32f2c11b30f3c1c972b560385"
+      ],
+      "reason": "Delete-only hunk removing the old relative import of knowledge_queries from mcp/tools/knowledge.py after relocation to application/knowledge_queries.py.",
+      "subject": "hunk:sha256:34da794b9fcd7d4b7f47c0b18acb36736908c6d32f2c11b30f3c1c972b560385"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZZ3DRB",
+      "items": [
+        "sha256:576184071c52fab207436822b59bcd104ffcbdf54fe3891cce55380fa0eda531"
+      ],
+      "reason": "Presentation-only owning-source pointer in commands.md:137 naming provider_limit_hold.py::add_arguments under D1062/D1066 Option A; carries no new invariant.",
+      "subject": "hunk:sha256:576184071c52fab207436822b59bcd104ffcbdf54fe3891cce55380fa0eda531"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:8c18cdc3716d35f1048d77a3a4ecd2fbb76b7da946f348e4ee4cafafcec03374",
+      "record": "FAM-ZPQR9K",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T08:20:21+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L64",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f5500511-d459-5681-b091-6d0186621e40",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1c47ad1732a93275e700c16baa0101bb8961a34514b698bba9b42b5ca0f0a87a",
+      "record": "INV-HYYYX5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-27T08:20:21+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L64",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f5500511-d459-5681-b091-6d0186621e40",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:340aeca80a0e7e6d0eb527a4d35e9671175d6a54d7ca36b26bc1ba83bb708837",
+      "record": "INV-XXG2W0",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-27T08:20:21+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L64",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "f5500511-d459-5681-b091-6d0186621e40",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

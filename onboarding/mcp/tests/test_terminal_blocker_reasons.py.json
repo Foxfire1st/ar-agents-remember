@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 822,
+              "end": 827,
               "kind": "line_range",
-              "start": 822
+              "start": 827
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
+            "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 822,
+              "end": 827,
               "kind": "line_range",
-              "start": 822
+              "start": 827
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -507,8 +507,50 @@
         },
         {
           "anchor": {
-            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
-            "content": "sha256:6b6b0dd2d6d28189100737a887a5fd2887d984b5f30fb8c2ae0b7b084a74b3d8",
+            "blob": "ebef670bc23f1844c3817c76f43fa7b59717e59e",
+            "content": "sha256:43ed394c585278a10efaa99f570d272bfa73f27e2c2adc95e0b32afa85c70974",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:83d4754bdd27c3db9adeb00fe0bd52039df020676021b2ab568d544c71d623de",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:9d09ab9899aa01dae2331e6de03728a08c81eb1ec8b7ff5b67f7e6d188480c27",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 545
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebef670bc23f1844c3817c76f43fa7b59717e59e",
+            "content": "sha256:43ed394c585278a10efaa99f570d272bfa73f27e2c2adc95e0b32afa85c70974",
             "locator": {
               "kind": "file"
             },

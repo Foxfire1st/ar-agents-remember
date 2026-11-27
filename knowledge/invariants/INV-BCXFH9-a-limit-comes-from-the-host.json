@@ -8,9 +8,9 @@
   },
   "applicability": "Every limit the product attributes to a role seat, on every send path except the presenter's.",
   "conditions": [
-    "The host's usage report for that seat is the only source of a limit and of its reset.",
-    "One reader writes one file, and every other reader reads that file only; a report holds work solely on an exhausted account-wide window with a future reset.",
-    "An enabled extra usage or a positive credits balance releases the seat, and a read happens at a new stamped turn end or at the five-minute recheck of a live report."
+    "The host's usage report for that seat is the only source that creates a limit and its reset.",
+    "One writer updates provider-limits.json (strictly ar-provider-limits/v1) and its sibling provider-limit-suppressions.json sidecar atomically under provider-limits.lock, and every other reader reads provider-limits.json only; a report holds work solely on an unsuppressed exhausted account-wide window with a future reset.",
+    "An enabled extra usage, a positive credits balance, or a window-scoped suppression (auto-tool-call with strict post-limit live turn proof, or operator provider-limits suppress) releases covered windows; a read happens at a new stamped turn end or at the five-minute recheck of a live report."
   ],
   "exclusions": [
     "Chat text, error strings and model names produce no limit, and no API key or login store is read.",
@@ -29,27 +29,20 @@
     "leaf": "260928-MIK-L184",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A limit comes from the host's usage report only: one reader, one file, one answer at a time, and no assumption that produces a limit.",
+  "statement": "A limit comes from the host's usage report only: one reader, one locked file pair (provider-limits.json v1 and its sibling provider-limit-suppressions.json sidecar), one projected answer at a time, and no assumption that produces a limit.",
   "supersedes": [],
+  "title": "Host usage report is sole limit creator; suppressions filter live windows",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L37",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:21:57+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L60",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
+    "task": "261112-BUG"
   }
 }

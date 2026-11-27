@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
-    "role": "curator",
-    "statement": "Verified mcp/README.md against post-CAP-L5 synced tree e273d1c9: MCP server package layout, prerequisites, and CLI/test instructions remain accurate.",
-    "task": "261112-KNO-L5",
-    "uncommitted": true
+    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
+    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
+    "role": "manager",
+    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: mcp/README.md remains accurate.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 29,
+  "revision": 30,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -56,20 +56,20 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+      "blob": "9b65760dd084a578951cf1f1b8b867165a114ca8",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T12:00:07+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

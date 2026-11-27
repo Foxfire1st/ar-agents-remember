@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+        "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
         "content": "sha256:0ce3b58e88f62d4180e5fcbcf739eed8b6887ddb5db9944e97f12699802c6d52",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+        "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
         "content": "sha256:0ce3b58e88f62d4180e5fcbcf739eed8b6887ddb5db9944e97f12699802c6d52",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+        "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
+        "content": "sha256:0f7989910ca74e747d81b41b36565d653c5547dd525c4512a191ec10273a860b",
+        "locator": {
+          "kind": "symbol",
+          "name": "never steers hidden explainer frame during > 8 s mid-build identity, then sends exactly one ar.open on live without leaving Operations"
+        }
+      },
+      "facet": "Verifies the composed CockpitShell/RightRail/DocumentChat emits zero ar.open across > 8 s of hidden mid-build polling and exactly one ar.open on live while staying in Operations.",
+      "id": "PRF-B4SK8X",
+      "invariant": "INV-Z5M5WQ",
+      "origin": {
+        "handoffEntry": "BUG-R62@v1 §3",
+        "leaf": "261112-BUG-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
         "content": "sha256:0257cb34b6fa34efa48e2d23b25e7e0fc22d75f160462407f990c0f12c8ddb86",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+        "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
         "content": "sha256:df2b41a25d3e9394b76ec1b8ff5510cc4e1603ccf314f8bf7188656a36c7b819",
         "locator": {
           "kind": "symbol",
@@ -77,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+            "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
             "content": "sha256:7055bc64bd3bf1c46b71b5cf73b4ddc8b073d75c123e4f05c84be7147c7987f9",
             "locator": {
               "end": 65,
@@ -94,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+            "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
             "content": "sha256:56a37b5d2fcf87cd83c07ae25b963fc4f461d84abc783d8172980a23b67a4da6",
             "locator": {
               "end": 157,
@@ -111,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+            "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
             "content": "sha256:0ce3b58e88f62d4180e5fcbcf739eed8b6887ddb5db9944e97f12699802c6d52",
             "locator": {
               "end": 245,
@@ -128,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+            "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
             "content": "sha256:75cb35383677b336f3d92b4b3cf8ce5cb462c670f7863ffbb9939f57e4547914",
             "locator": {
-              "end": 452,
+              "end": 568,
               "kind": "line_range",
-              "start": 445
+              "start": 561
             }
           },
           "kind": "test"
@@ -145,12 +162,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98a81582633951cf7eb95bf7bf2fe2d90ddf89c9",
+            "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
             "content": "sha256:df2b41a25d3e9394b76ec1b8ff5510cc4e1603ccf314f8bf7188656a36c7b819",
             "locator": {
               "end": 428,
               "kind": "line_range",
               "start": 247
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The composed CockpitShell/RightRail/DocumentChat mid-build case emits zero ar.open while hidden for > 8 s and exactly one ar.open on live without leaving Operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27944d70afb5a6ca04622717df92f2988a0ee75",
+            "content": "sha256:730562abf2d193363559fa1320cab4cc41352916d34e5c6c531502c82da3b434",
+            "locator": {
+              "end": 545,
+              "kind": "line_range",
+              "start": 430
             }
           },
           "kind": "test"
