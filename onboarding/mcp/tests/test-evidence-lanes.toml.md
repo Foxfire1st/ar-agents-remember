@@ -161,11 +161,13 @@ Membership selects evidence without proving invocation.
 
 `test_role_tool_scope.py` is declared once, in unit-regression, between `test_role_step_up.py` and `test_route_index_memory_scope.py`; membership selects evidence and certifies no invocation.
 
-`test_tool_schema_compaction.py` is declared once, in unit-regression, at line 668; membership selects evidence and certifies no invocation.
+`test_tool_schema_compaction.py` is declared once, in unit-regression, at line 670; membership selects evidence and certifies no invocation.
 
-`test_judged_history_closing_restore.py` (line 226), `test_organizational_completion_repair.py` (line 397), `test_quality_continuation_declaration.py` (line 463), and `test_type_hint_contracts.py` (line 671) are each declared once in unit-regression in canonical order; membership selects evidence and certifies no invocation. `test_memory_verdict_ref.py` is declared once in `unit-regression` at line 368 between `test_memory_scope_task_derivation.py` and `test_message_handover_contract.py`, and `test_state_conversion_worklist.py` is declared once in unit-regression at line 597; membership selects evidence and certifies no invocation.
+`test_judged_history_closing_restore.py` (line 226), `test_organizational_completion_repair.py` (line 399), `test_quality_continuation_declaration.py` (line 465), and `test_type_hint_contracts.py` (line 673) are each declared once in unit-regression in canonical order; membership selects evidence and certifies no invocation. `test_memory_verdict_ref.py` is declared once in `unit-regression` at line 370 between `test_memory_scope_task_derivation.py` and `test_message_handover_contract.py`, and `test_state_conversion_worklist.py` is declared once in unit-regression at line 599; membership selects evidence and certifies no invocation.
 
 `test_code_quality_dashboard_lint_scope.py` is declared once, in `unit-regression`, between `test_code_quality_check_scope.py` and `test_code_quality_targeted.py`; membership selects evidence and certifies no invocation.
+
+`mcp/tests/test_kno_r07_briefs_and_pairing.py` and `mcp/tests/test_kno_r07_knowledge_queries.py` are declared once each in `unit-regression` in canonical order; membership selects evidence and certifies no invocation.
 
 - The current lane catalog declares test populations; no invocation or pass is implied.
 
@@ -315,6 +317,7 @@ Membership selects evidence without proving invocation.
 
 
 
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [925]
 
 
@@ -350,6 +353,7 @@ Membership selects evidence without proving invocation.
 
 
 
+- The lane catalog declares 848 distinct modules across seven lanes: 695 unit-regression, 3 public-contract, 125 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [930]
 
 - The lane catalog declares 849 distinct modules across seven lanes: 695 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. [931]
 
@@ -378,3 +382,5 @@ Membership selects evidence without proving invocation.
 
 
 - `mcp/tests/test_family_row_writer_gate_alignment.py` is registered once in `unit-regression` at line 191 (695 unit-regression, 849 total). [924]
+
+- `mcp/tests/test_kno_r07_briefs_and_pairing.py` and `mcp/tests/test_kno_r07_knowledge_queries.py` are declared once each in `unit-regression` in canonical order; membership selects evidence and certifies no invocation. [934]

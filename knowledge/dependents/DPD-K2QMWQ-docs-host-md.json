@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
-    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
-    "role": "curator",
-    "statement": "Confirmed accurate against BUG-R58@v2 candidate with role_launch_preparation.py (207-227) and paseo_bridge.mjs (734-751) anchors re-pointed after allowMissingParent addition; docs/host.md describes native host adapter behavior accurately.",
-    "task": "261112-BUG-L58",
-    "uncommitted": true
+    "codeTree": "aaf984732687f90beee1a456d63d12fb0f704a57",
+    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
+    "role": "manager",
+    "statement": "Crossing-5 merge confirmation on 7ff6e80f139c combining 261112-BUG-L58 (role_launch_preparation.py:207-227, paseo_bridge.mjs:734-751) and 261112-KNO-L7 (PR #303/#83): docs/host.md remains accurate across both merged lines.",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+    "uncommitted": false
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -265,14 +265,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
+    "at": "2026-11-27T05:23:00+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

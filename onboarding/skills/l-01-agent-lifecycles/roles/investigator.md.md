@@ -31,4 +31,5 @@ Reading needed source, memory, tasks, reports and logs and checking in scratch o
 
 - Investigator reports what is and what is not with evidence, states no requirement, ruling or duty of its own, and names a needed change as an open question for its parent rather than a fix to apply. [2]
 
+
 - The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [3]

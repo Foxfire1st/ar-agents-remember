@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:a860b6c17292ff917c3fba3bedb37f615f6ef52184d8e29ef2e3e90d13f56a73",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-        "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+        "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -40,7 +40,25 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+        "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landing_result"
+        }
+      },
+      "id": "RLZ-5D6YBS",
+      "invariant": "INV-8F4C0F",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 2",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Calls refresh_recorded_landing_memory_briefs after record_landed_integration completes and surfaces any advisory briefsProblem in the returned landing payload.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -58,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:34faeaedf44113beebc1a00bb92135a45d33b4d28f199753f19827c528670b23",
         "locator": {
           "kind": "symbol",
@@ -76,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-        "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+        "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -94,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-        "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+        "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
         "locator": {
           "kind": "symbol",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -166,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:14a1d6808ecfef93dc9cb354f21cc6ab32139ed298e07446b4f376c6eac08b12",
         "locator": {
           "kind": "symbol",
@@ -184,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
         "locator": {
           "kind": "symbol",
@@ -202,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-        "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+        "content": "sha256:887048c71b23bcacf8f405651831462d3ec9b8c5961831fbfb658a4b1e8fa250",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -220,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:fbd40047a32f8b9c92ad60db2919eb1a9e4b3f8376d0b2ef3e57be044f3ef986",
         "locator": {
           "kind": "symbol",
@@ -238,12 +256,12 @@
     },
     {
       "anchor": {
-        "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+        "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
         "content": "sha256:673ea2bc1b9ccd163ab2403332c8f4695e70f987ef2e85072d63fec96e70df75",
         "locator": {
-          "end": 405,
+          "end": 406,
           "kind": "line_range",
-          "start": 401
+          "start": 402
         }
       },
       "id": "RLZ-XJG9AA",
@@ -357,7 +375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -373,7 +391,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
             "locator": {
               "kind": "symbol",
@@ -389,7 +407,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
             "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
             "locator": {
               "kind": "symbol",
@@ -401,15 +419,14 @@
       ]
     },
     "20": {
-      "note": "`record_landing_result` refuses abandoned contracts and abandoned task documents with `CONTRACT_ABANDONED_CODE` (`contract-abandoned`) before the `already-recorded` short-circuit without overwriting `cleanup: abandoned`.",
+      "note": "`record_landing_result` refuses abandoned contracts and abandoned task documents with `CONTRACT_ABANDONED_CODE` (`contract-abandoned`) before the `already-recorded` short-circuit without overwriting `cleanup: abandoned`.\n\nAnchor: `record_landing_result`; `abandoned_contract_reason`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:048290356b8761cb0e03a382bda2ad54d0663c0fe6a0657e13187a21ed04ef03",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -417,12 +434,26 @@
         {
           "anchor": {
             "blob": "75c5226c60f160a59221424c4a1d0167c8707cc0",
-            "content": "sha256:179e517292e3b8d8bd04df85c88fb0a4b38231b3f9b4c934cd986270afe22e2b",
+            "content": "sha256:947407482bd0b30ce261b5f8328869b47698296578de64095b8e343538f08ee3",
             "locator": {
-              "kind": "symbol",
-              "name": "abandoned_contract_reason"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/standalone_pr_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Advisory post-recording `briefs/` refresh attaches `briefsProblem` on recorded PR landings.\n\nAnchor: `record_landing_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:048290356b8761cb0e03a382bda2ad54d0663c0fe6a0657e13187a21ed04ef03",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -433,11 +464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:ec49cf69bc052498158732feb26df4f6e5dff3f40fcde33cac4e595bdac989b9",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "end": 702,
+              "kind": "line_range",
+              "start": 695
             }
           },
           "kind": "code"
@@ -477,22 +509,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_integrated_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -505,11 +525,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:048290356b8761cb0e03a382bda2ad54d0663c0fe6a0657e13187a21ed04ef03",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -521,11 +540,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
-            "content": "sha256:5a82833e8b4b023afc942e425b43cf2011808a89743c90e1ddbd25d236a06e14",
+            "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
+            "content": "sha256:048290356b8761cb0e03a382bda2ad54d0663c0fe6a0657e13187a21ed04ef03",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             }
           },
           "kind": "code"

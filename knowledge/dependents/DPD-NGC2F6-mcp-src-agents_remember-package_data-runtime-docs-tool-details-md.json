@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
-    "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
-    "task": "261112-BUG",
-    "uncommitted": false
+    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
+    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "role": "curator",
+    "statement": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md against KNO-R07 candidate: packaged tool-details copy matches docs/tool-details.md and remains accurate.",
+    "task": "261112-KNO-L7",
+    "uncommitted": true
   },
   "deferrals": [
     {
@@ -248,20 +248,21 @@
       "path": "mcp/src/agents_remember/install/checkout_environments.py"
     },
     {
-      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
-    "task": "261112-BUG"
+    "at": "2026-11-27T05:09:08+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

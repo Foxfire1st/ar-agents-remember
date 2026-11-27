@@ -522,7 +522,9 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
 
+
 - Shaped bounds, final rows, interim ownership and exceptions each participate in bound resolution. [298]
+
 
 - Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
 

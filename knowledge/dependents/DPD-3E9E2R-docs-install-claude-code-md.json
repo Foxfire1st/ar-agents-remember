@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
+    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
     "role": "curator",
-    "statement": "Audited docs/install/claude-code.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): Claude Code setup, lazy first-turn MCP server start, and server_info grant remain accurate after Rule-21 provider_starts_tool_server_at_create(provider) keeps claude non-eager; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Verified docs/install/claude-code.md against KNO-R07 candidate: Claude Code install/setup instructions and CLI entrypoints remain accurate after adding agents-remember memory-briefs.",
+    "task": "261112-KNO-L7",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
     },
     {
-      "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -82,14 +82,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-27T02:47:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

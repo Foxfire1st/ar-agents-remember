@@ -34,4 +34,5 @@ A fuller `read_ar_files` reply can name applicable cards and overviews and inclu
 
 
 
+
 - The workflow table distinguishes compact replies with applicable card status and saved-brief pointers from fuller replies that can include rule text. A covering write renews a missing or older brief when the writer can refresh it. [7]

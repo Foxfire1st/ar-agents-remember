@@ -65,7 +65,7 @@ Memory quality receives one mode-discriminated request and dispatches sync/start
 
 The knowledge family selects converted memory roots rather than exposing database-path or caller-namespace inputs. Read receives the workspace default repository and coordination-root cache location separately; the caller's `repositoryRoot` is forwarded as supplied. Diff receives `coordination_root` for writing the full comparison report; integrity takes the server alone. The registered family contains no change or project tool. The family mounts four operations: read, diff, integrity and write. `knowledge_write` carries the command's leaf, crossing and wave target selection, takes server settings for a raise, plans by default and writes only with the explicit file-write flag, then returns the report or a refusal — the same plan, write, refusal and report behaviour as the command route, with its admission boundary and no Git commit.
 
-The read description advertises `Read memory. Views:` naming seven views — `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent`, and `writers` — states that rows return ID, kind, state and location (never text), notes `recordId` accepts text IDs (`INV-`/`WKN-`/`DPD-`) and `repositoryRoot`/`codeTreeId` select the measured code tree, names the CLI write commands (`agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`), and points to `docs/reference/mcp-tools.md`. Stable ordering, paging, continuations, route-chain rows, and family-complete internal selection remain owned by the knowledge reader application layer.
+The read description advertises `Read memory. Views:` naming ten views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, and `writers` — notes automatic code-tree pairing via `repo_id`/`contractPath`/`memoryRoot` with `repositoryRoot`/`codeTreeId` override, notes `recordId`/`recordIds` accept text IDs (`INV-`/`WKN-`/`DPD-`), names the CLI write commands (`agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`), and points to `docs/reference/mcp-tools.md`. Stable ordering, paging, continuations, route-chain rows, and family-complete internal selection remain owned by the knowledge reader application layer.
 
 Integrity now accepts `memoryRoot`, `codeRoot`, `contractPath`, and `baseCommits`, constructing `IntegrityCheckRequest`. Its description names validator output and the leaf's latest change-to-knowledge worklist. The former `databasePath`/`repositoryId` and `runId`/`inputDigest` registration accounts no longer describe this wire signature.
 
@@ -235,5 +235,6 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 - `citation_fix` repairs moved citation anchors and authors sidecar references in a leaf memory worktree. [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
+
 
 - The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations. [22]

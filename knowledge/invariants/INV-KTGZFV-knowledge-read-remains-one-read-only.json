@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans mcp/registration/knowledge.py and models/tools/tool_answer.py, is guarded by description, schema-budget, and records-view tests, and preserves bounded MCP surface cost while enabling verbatim 20-record batch pages."
+  },
+  "applicability": "MCP registration and tool-answer token-bound enforcement for knowledge_read.",
+  "conditions": [
+    "Exposes only minimal read-only selector parameters (repo_id, contractPath, files, folder, query, kinds, recordIds, compact) with no write or format flags, keeps raw tool description <= 500 characters, and stays within role schema byte budgets.",
+    "Raises only TOOL_ANSWER_EXCEPTIONS[('knowledge_read', None)] to 5,000 tokens via exception_ceiling_for while keeping every other tool exception capped at 4,000 tokens."
+  ],
+  "exclusions": [
+    "Does not add a second mounted knowledge-read tool or raise the 4,000-token ceiling for any other MCP tool."
+  ],
+  "id": "INV-KTGZFV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_role_tool_scope.py + test_tool_descriptions.py + test_tool_answer_table.py + test_kno_r07_knowledge_queries.py"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 9",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_read remains one read-only MCP tool with minimal selector parameters within CAP-L4 role byte budgets and the 500-character raw description ceiling, with its tool-answer exception raised to 5,000 tokens.",
+  "supersedes": [],
+  "title": "knowledge_read keeps minimal selectors, 500-char description, 5000 bound",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

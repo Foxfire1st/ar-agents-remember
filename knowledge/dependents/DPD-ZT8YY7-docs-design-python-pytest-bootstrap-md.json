@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b0dac92d93544aca06d9dfa72579354719d5177",
-    "commit": "d4cdaaa088169b11c29cf62ae4b5284fca5bec40",
-    "role": "curator",
-    "statement": "Confirmed accurate against BUG-R58@v2 candidate with test-evidence-lanes.toml anchor re-pointed to lines 868-870 after adding the three deferred held-seat test modules.",
-    "task": "261112-BUG-L58",
-    "uncommitted": true
+    "codeTree": "aaf984732687f90beee1a456d63d12fb0f704a57",
+    "commit": "7ff6e80f139c7034565c25157056511c05e0a555",
+    "role": "manager",
+    "statement": "Crossing-5 merge confirmation on 7ff6e80f139c combining 261112-BUG-L58 and 261112-KNO-L7 (PR #303/#83): docs/design/python-pytest-bootstrap.md remains accurate with 851 cataloged modules (697 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability at test-evidence-lanes.toml:870-872).",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 36,
+  "revision": 37,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+      "blob": "743fa7f3906b8f157e4ee727a209bfef65e18fa4",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+        "blob": "743fa7f3906b8f157e4ee727a209bfef65e18fa4",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 870,
+          "end": 872,
           "kind": "line_range",
-          "start": 868
+          "start": 870
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
+    "at": "2026-11-27T05:23:00+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

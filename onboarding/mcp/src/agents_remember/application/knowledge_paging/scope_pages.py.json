@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
             "content": "sha256:7fd55171ed710e820f62b9fb73a717feeb6ba99a4708da5400b9ff527df95414",
             "locator": {
               "end": 14,
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
             "content": "sha256:afc1c80d5b0902149f9e7ff3348036d61e035105a8addf3d35275b907c9fc531",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
             "content": "sha256:f4fa355a6d8042341c9863abc08c2b7826eaee4582037a84b634edcd0ce76a3e",
             "locator": {
               "kind": "symbol",
@@ -53,36 +53,14 @@
       ]
     },
     "4": {
-      "note": "A prepared seed, deferred or collapsed.\n\nAnchor: `PreparedScope` `collapsed`",
+      "note": "A prepared seed, deferred or collapsed.\n\nAnchor: `PreparedScope`; `collapsed`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
-            "content": "sha256:f57878fc228e4ece58cc143ea8e0402f51a183d914918ba1cff98acd77685153",
+            "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
+            "content": "sha256:da9095aa226c898fcdeae007c5e3fdc0dcf723dc528e45e251fe311e08ad5d24",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
-            "content": "sha256:e7ff9460988b1df3d4b8588988c1878c6edea418500d602ccf6faa1ce8ef33ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "PreparedScope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
-            "content": "sha256:7038f66056379dc7bdf81941cb6151d71c62d4c4e6213bf47841411cc6799712",
-            "locator": {
-              "kind": "symbol",
-              "name": "collapsed"
             }
           },
           "kind": "code"
@@ -90,36 +68,14 @@
       ]
     },
     "5": {
-      "note": "Selecting and checking a resumed position.\n\nAnchor: `prepare_scope` `_next_manifest`",
+      "note": "Selecting, binding `code_state`, and checking a resumed position.\n\nAnchor: `prepare_scope`; `_next_manifest`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
-            "content": "sha256:f57878fc228e4ece58cc143ea8e0402f51a183d914918ba1cff98acd77685153",
+            "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
+            "content": "sha256:da9095aa226c898fcdeae007c5e3fdc0dcf723dc528e45e251fe311e08ad5d24",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
-            "content": "sha256:01c51272cf483d1d010cb119188371873e667079041c1cc69bb2cabe1ab294ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepare_scope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
-            "content": "sha256:cd2b6e1dd568a36f0c2ba9b60dc07ab29afbae474cfffb18ff1614efffcc152b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_next_manifest"
             }
           },
           "kind": "code"
@@ -131,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "blob": "ab7ec558fdd0c3e79a377cad3d873ef8ae90c3b6",
             "content": "sha256:7a5ccc1f063724817366f52d4a7dd168d301aa53e2f74c98a019e487e5783446",
             "locator": {
               "kind": "symbol",

@@ -154,7 +154,7 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The renderer exercises synthetic before and after statement values in its own component fixture. [18]
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
 
-- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [23]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [24]
 
 
 
@@ -168,6 +168,7 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
 - The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. [11]
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
+
 
 - The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module. [16]
 

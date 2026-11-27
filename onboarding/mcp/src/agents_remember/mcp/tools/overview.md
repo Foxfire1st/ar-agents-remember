@@ -118,13 +118,19 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - Mode routing and background admission stay in the memory payload owner. [64]
 
+
 - The named refusal of a root with no code tree. [1]
+
 
 - A converted tree's projection reads each view whole. [2]
 
+
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
 
+
+
 - Converted-tree refusals state the threshold. [5]
+
 
 - The read's currentness, at the walk's code tree, prepared once per page with the proofs. [6]
 
@@ -134,7 +140,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - A key mismatch is a selection failure. [9]
 
+
 - Three delegates serve read, Git diff and tree validation. [10]
+
 
 - The MCP adapter delegates completed-response ownership to the application. [11]
 
@@ -195,7 +203,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
 
+
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
+
 
 - **Retained historical source account — superseded by the current route account:** Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts. [55]
 
@@ -227,8 +237,13 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
 
+
 - The seam that pages a converted tree's read, and the per-page extras. [4]
 
+
+
 - **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
+
+
 
 - The writer answer carries bounded notes and a full report location. The writers branch returns a writer aggregate. [69]

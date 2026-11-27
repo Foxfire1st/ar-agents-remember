@@ -64,8 +64,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
-        "content": "sha256:29a6fb6caa6208f64f914fcc0f11973aab14dd32003d131a31a3dd65a2238a4c",
+        "blob": "41c3cc0d4c10b050843f34e7cf1e7b8d58b65fd3",
+        "content": "sha256:893a17a3fd6370056486efa211edf5ed187db21655f300a01dc41f76162c0881",
         "locator": {
           "kind": "file"
         },
@@ -123,27 +123,19 @@
     "leaf": "260928-MIK-L59",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-KNO-L4",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-KNO",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

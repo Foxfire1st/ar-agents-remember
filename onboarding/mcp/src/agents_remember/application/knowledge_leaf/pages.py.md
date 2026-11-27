@@ -12,12 +12,12 @@
 
 ### Logic
 
-- **`LeafRequest`.** The index path, the memory tree ID, the index state, the seed (a `path`, or since MIK-R05 a `family` ID; `path` is optional and `seed_json` gives `{"kind": "path", "path"}` or `{"kind": "family", "id"}`, which `PreparedLeaf.seed_json` now delegates to), the code tree entries are observed at (MIK-R03; its ID is what the walk binds) and an optional continuation to resume.
+- **`LeafRequest`.** The index path, the memory tree ID, the index state, the seed (a `path`, or since MIK-R05 a `family` ID; `path` is optional and `seed_json` gives `{"kind": "path", "path"}` or `{"kind": "family", "id"}`, which `PreparedLeaf.seed_json` now delegates to), the code tree entries are observed at (MIK-R03; its ID is what the walk binds), an optional `code_state: CodeState | None = None`, and an optional continuation to resume.
 - **`prepare_leaf(request)`** opens the index with `expected_key` set to the memory tree, then:
   - the seed is selected through `_select` (a path's `select_leaf`, or a family's `select_family`);
   - a path with no live entry **and no governing family** returns `registration_absent_refusal(path=…, with_proofs=True)`, whose wording names "realization or proof claim" (ruling N6, 2026-09-30 00:08:39); a family seed the tree holds no live family for returns `selector_absent_refusal(record_id=…, kind="live family")`;
   - otherwise it computes the selection's currentness once (`_currentness`), the rows (`leaf_rows`) and the counts (`leaf_counts`);
-  - it binds the page with a `PageBinding`: the memory tree, policy `family-complete-leaf` / `v2` (bumped by MIK-R05, ruling Q4 of 2026-09-30 03:32:18), the structure's manifest digest and the code tree ID;
+  - it binds the page with a `PageBinding`: the memory tree, policy `family-complete-leaf` / `v2` (bumped by MIK-R05, ruling Q4 of 2026-09-30 03:32:18), the structure's manifest digest, the code tree ID, and `code_state=request.code_state`;
   - a resumed read is checked with L02's `position_refusal` against the manifest and the row total;
   - queued seeds (`rest`) have the first one's manifest computed (`_next_manifest`, which selects through `_select`, so a queued seed may be a path or a family), and a queued seed that selects nothing is refused `continuation_binding_mismatch` rather than skipped.
 - **`_currentness`.** `invariant_currentness` at the code tree, with each family header's `FamilyCurrentness` counting live members only. A failure in `CURRENTNESS_FAILURES` returns the rows with states unset and the reason in `problem`: currentness is advisory beside the answer (L03 ruling N2).
@@ -69,12 +69,9 @@ No configured live documentation source was available for this pass.
 
 - The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row. [1]
 
-- The view a leaf walk resumes on, and the request with its path or family seed. [2]
-
+- The view a leaf walk resumes on, and the request with its path or family seed and optional `code_state`. [2]
 - The prepared leaf with its page, deferred and collapsed forms, each minting a `leaf` token. [3]
-
-
-- The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding, and the position check of a resumed walk. [4]
+- The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding (with `code_state`), and the position check of a resumed walk. [4]
 
 - Currentness computed once per selection, advisory on failure, family headers counting live members. [5]
 - The first queued seed's manifest, selected through the path-or-family step, and the refusal of a queued seed that selects nothing. [6]

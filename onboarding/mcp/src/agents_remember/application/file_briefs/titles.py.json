@@ -1,17 +1,53 @@
 {
   "path": "mcp/src/agents_remember/application/file_briefs/titles.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8ebda317eb3dd9fcb6a054e127f030f1c4a8f133",
+        "content": "sha256:b596216429cc2ed05a4c23fd9da299459cef599a3dea391d3aed56a252da434c",
+        "locator": {
+          "kind": "symbol",
+          "name": "clause_title"
+        }
+      },
+      "id": "RLZ-D3YCX5",
+      "invariant": "INV-WWRX4E",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 5",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Computes a readable first-sentence or clause boundary fallback capped around 80 characters with an ellipsis only when forced to break on words.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8ebda317eb3dd9fcb6a054e127f030f1c4a8f133",
+        "content": "sha256:636e3707b311b369503d8013163b6906caa2718cea6a9fa89348a362fbe7feae",
+        "locator": {
+          "kind": "symbol",
+          "name": "rule_title"
+        }
+      },
+      "id": "RLZ-TXS65S",
+      "invariant": "INV-WWRX4E",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 5",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Preserves recorded invariant titles verbatim and delegates untitled statements to clause_title without mutating stored records.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The title selector distinguishes an existing title from a derived display title.",
+      "note": "The title selector returns a normalized recorded title or derives a readable <=80-character first-clause fallback via `clause_title`.\n\nAnchor: `rule_title`; `clause_title`",
       "targets": [
         {
           "anchor": {
-            "blob": "e219ac6ddf09b8d1767c9b4acdfd83e3f6cbda8d",
-            "content": "sha256:93b417ad3d0e3167655bc4270c480ed29e05d0a5f76d80655db72a201bb73550",
+            "blob": "8ebda317eb3dd9fcb6a054e127f030f1c4a8f133",
+            "content": "sha256:e8a537e307d806c5a9a2efdf0a2fe52eb8a97c8b04591c50df9329ae3e997fb9",
             "locator": {
-              "kind": "symbol",
-              "name": "rule_title"
+              "kind": "file"
             }
           },
           "kind": "code"

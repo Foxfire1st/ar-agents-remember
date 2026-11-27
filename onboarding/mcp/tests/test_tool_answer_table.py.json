@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+        "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
         "content": "sha256:00c55123b2e969e80aad098a1c902d86843b84a96f9a25519da44895f92d05e5",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+        "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
         "content": "sha256:55c468ba322e2a0094e88f07fecf0ebe1d879ce73f9ea5dc5e23248eb5a201e0",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "704b8efd2e058fcc5210efdc3e79519550cbb569",
+            "blob": "f8305a84bff28ad307d34188b02abf824187b0c9",
             "content": "sha256:be26165859dfe0965812002585f16cc0f47d2314b4f5ad0a17c66813d33473f9",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+            "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
             "content": "sha256:55c468ba322e2a0094e88f07fecf0ebe1d879ce73f9ea5dc5e23248eb5a201e0",
             "locator": {
               "end": 243,
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "704b8efd2e058fcc5210efdc3e79519550cbb569",
+            "blob": "f8305a84bff28ad307d34188b02abf824187b0c9",
             "content": "sha256:42177258d3478085014935889d03303ecb36215c82f8d7cf1fff986ea1718da4",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "704b8efd2e058fcc5210efdc3e79519550cbb569",
+            "blob": "f8305a84bff28ad307d34188b02abf824187b0c9",
             "content": "sha256:520d62a40d2867090b4100215dbe9e4f6624a4fa40933c785554b61b4e9d7a11",
             "locator": {
               "end": 173,
@@ -156,7 +156,7 @@
         },
         {
           "anchor": {
-            "blob": "704b8efd2e058fcc5210efdc3e79519550cbb569",
+            "blob": "f8305a84bff28ad307d34188b02abf824187b0c9",
             "content": "sha256:eea5d6a2c290c4b7553407505897564e9bfc272e426e0d108bad44f95863c030",
             "locator": {
               "end": 231,
@@ -170,12 +170,12 @@
       ]
     },
     "8": {
-      "note": "The table covers every registered tool with no extras and each task-document row covers every operation. Anchor: `ToolAnswerTableTests`",
+      "note": "The table covers every registered tool with no extras and each task-document row covers every operation.\n\nAnchor: `ToolAnswerTableTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "5578da0ac7474a500363b772c35181faf3696a92",
-            "content": "sha256:f4e79875f2c8d3a3c43064139b0588af0142bf7a7a01d145789cd8ec33c9a357",
+            "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
+            "content": "sha256:b3467b5e149039aefa09d89afe8b891e70e1e41d989bd1da44a95e2b924bcba3",
             "locator": {
               "kind": "file"
             }
@@ -185,12 +185,12 @@
       ]
     },
     "9": {
-      "note": "The three largest answers are operation-produced and pinned. Anchor: `L109LargestProductionTests`",
+      "note": "The three largest answers are operation-produced and pinned.\n\nAnchor: `L109LargestProductionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "5578da0ac7474a500363b772c35181faf3696a92",
-            "content": "sha256:f4e79875f2c8d3a3c43064139b0588af0142bf7a7a01d145789cd8ec33c9a357",
+            "blob": "85eafcd7bc9ff928efc765a7e162a0e34fe00699",
+            "content": "sha256:b3467b5e149039aefa09d89afe8b891e70e1e41d989bd1da44a95e2b924bcba3",
             "locator": {
               "kind": "file"
             }

@@ -183,15 +183,14 @@
       ]
     },
     "3": {
-      "note": "The closed register gives each registered process state one treatment and a reason.",
+      "note": "The closed register gives each registered process state one treatment and a reason.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
             "blob": "d8a58c2b8744da1161e26388435a9a792e7b298a",
-            "content": "sha256:a32e4d62acf9fc69884ab6517d7527c4062305b04d59f9cde8d118de30e650de",
+            "content": "sha256:a622e1110de08db0714ac98d6cdea7406cfbeb4b6a1a1ab1ea11710d047a0140",
             "locator": {
-              "kind": "symbol",
-              "name": "PROCESS_MUTABLE_STATES"
+              "kind": "file"
             }
           },
           "kind": "code"

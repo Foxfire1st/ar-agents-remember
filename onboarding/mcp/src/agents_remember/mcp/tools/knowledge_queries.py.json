@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/knowledge_queries.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+        "content": "sha256:6bcb77857b42795bade7031b0cf6a331e40e83a2c1bcfcb2c9348b70cc861d7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_query_view"
+        }
+      },
+      "id": "RLZ-JDA910",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Pairs code trees automatically and dispatches impact, search, and records views inside knowledge_read with uniform continuation and refusal envelopes.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Declares `QUERY_VIEWS` (`impact`, `search`, `records`) and `QueryViewContext`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+            "content": "sha256:352529eee26f16f2212121df99c6d126b93240534313ca3258ae57136f063d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "QUERY_VIEWS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`run_query_view` pairs code source, closes resources safely, maps refusals, lifts `continuation`, and gates `completeWithinDeclaredScope` on `tree.index_state == \"complete\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+            "content": "sha256:6bcb77857b42795bade7031b0cf6a331e40e83a2c1bcfcb2c9348b70cc861d7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_query_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_dispatch` routes `impact`, `search`, and `records` requests to their application view functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b9654ac62eb6ccde4c7949ec4978e52afd6c9a",
+            "content": "sha256:a329801fb507ae7b63af33a0b45d2fb0f3bb19c618fadb51f92d2ec0a2b28bfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dispatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

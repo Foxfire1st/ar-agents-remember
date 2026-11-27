@@ -17,7 +17,7 @@ The reviewer child's enabled memo shares document parses keyed by the exact byte
 - `parse_tree(snapshot)` walks indexed JSON files in sorted order into a `ParsedTree` (records, entries, file and route sidecars, histories, the layout marker, problems). Markdown prose companions are skipped before decoding and parsing; their bytes are retained by the snapshot for worklist comparison, not interpreted as JSON. A JSON file that fails to decode or parse is appended to `problems` with its path and the first 2,000 characters of the reason; `ParsedTree.state` is `partial` when any problem exists.
 - `_parse_knowledge_file` accepts only `knowledge/<kind-dir>/<file>.json`: `history/` attempt files parse as `HistoryFile` keyed by owner. The converted review catalog has separate parsing and contributes its review evidence; any other directory must be a record directory, the record must be that directory's kind, its ID must equal the file name's ID, and a second file claiming an ID already indexed is a problem.
 - `_parse_onboarding_file` accepts file sidecars (whose `path` must map back to where the sidecar sits, and whose realization and proof entry IDs must be unique across the tree) and route sidecars (same location rule); any other onboarding JSON is a problem.
-- `build_index(snapshot, destination)` opens a new SQLite file with journaling off, runs `create_or_validate_schema` (the store's logical tables), then in one transaction creates the `ix_*` tables, writes the rows and named revisions, calls `projection.project`, and writes `ix_meta`. It returns a `BuildReport` (key, state, converted, problems, record/entry/history-row counts).
+- `build_index(snapshot, destination)` opens a new SQLite file with journaling off, runs `create_or_validate_schema` (the store's logical tables), then in one transaction creates the `ix_*` tables, writes the rows and named revisions, populates the derived FTS5 table via `populate_fts(connection, parsed)`, calls `projection.project`, and writes `ix_meta`. It returns a `BuildReport` (key, state, converted, problems, record/entry/history-row counts).
 - `_write_rows` writes problems, records (with `ix_member`/`ix_route` for a family and `member`/`supersedes` links), entries (with the anchor's `path` filled from the sidecar), sidecar references as `cites` links (record, anchor or requirement endpoints), and history rows with their `because` links.
 - `_write_link` classifies a link target: an `Anchor`, a `RequirementReference` (keyed `repository/path#id@version`), a `route:` target, or a record ID.
 - **History files by path, and each owner's merged history (L37 reopen ruling).** `ParsedTree.history_files` holds
@@ -79,11 +79,14 @@ No cross-repo boundary is crossed by this file.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge_index/build.py::parse_tree - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_onboarding_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_knowledge_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The index builds record standing and the named-revision rows together in its write transaction. [16]
+- The index builds record standing, named-revision rows, and `ix_fts` together in its write transaction. [16]
+
 - A converted review catalog is parsed as review evidence separately from owner attempts. [17]
 
 - The builder names parse problems and derives revision standing from the selected memory tree's history and exact review evidence. [1]
+
 - The parsed tree keeps each history file by path and each owner's merged history. [10]
-- One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata. [6]
+
+- One transaction: the store schema, the `ix_*` tables, the rows, `populate_fts`, the projection and the metadata. [6]
 - The row writers: records, entries, members, routes, links, references and history rows. [7]
 - The parsed tree and its completeness. [2]

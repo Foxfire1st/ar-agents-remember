@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_search.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "df6ff1cf9d8532274741f8314398f1710a24480f",
+        "content": "sha256:f22eb1896fd37b9357c9c01eec4e933fa43576201ebce97e58a24f236aca30c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "search_view"
+        }
+      },
+      "id": "RLZ-9Y4XAZ",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Runs ix_fts search with default invariant/family/weakness kinds, rejects history, supports files/folder scoping, surfaces termsMatched, and trims statements > 80 words inside <= 3,500 tokens.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`search_view` validates query/kinds/cursor, runs FTS5 search, hydrates a 60-hit window, and paginates within `DEFAULT_SEARCH_BUDGET_TOKENS` (`3350`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df6ff1cf9d8532274741f8314398f1710a24480f",
+            "content": "sha256:f22eb1896fd37b9357c9c01eec4e933fa43576201ebce97e58a24f236aca30c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "search_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_validate_kinds` defaults to `DEFAULT_SEARCH_KINDS`, expands `\"all\"`, and refuses unsupported kinds such as `\"history\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df6ff1cf9d8532274741f8314398f1710a24480f",
+            "content": "sha256:fb27d47713643e99e7f8445069338824da7efc10d608980a6aad446a7df3ef0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_kinds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_format_hit` formats `termsMatched` (`+phrase`), standing, 80-word trimmed statement, and capped `at` paths (or compact line).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df6ff1cf9d8532274741f8314398f1710a24480f",
+            "content": "sha256:dcccf8d2138403b78469af0b37093909b55300ac1713be68349e46be3e87b912",
+            "locator": {
+              "kind": "symbol",
+              "name": "_format_hit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

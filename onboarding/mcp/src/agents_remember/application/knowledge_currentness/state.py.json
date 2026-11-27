@@ -20,12 +20,12 @@
       ]
     },
     "10": {
-      "note": "The stale-proof cases.\n\nAnchor: `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale`",
+      "note": "The stale-proof cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
             "locator": {
               "kind": "file"
             },
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
             "content": "sha256:60b320f601e7c8aa1bb63fbb20ff9286b0e7f505071fb2c7e3b361d8cbb22e39",
             "locator": {
               "kind": "symbol",
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
             "content": "sha256:33ede548960e0a284c923df27a572df43a517aef48c54fddb10366218fcea731",
             "locator": {
               "kind": "symbol",

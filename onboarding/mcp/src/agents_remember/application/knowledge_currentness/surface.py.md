@@ -21,11 +21,7 @@ and families an answer returns, computes their state with `invariant_currentness
   (a text ID containing `/`), claim, anchor and member UUIDs are ignored. The counts therefore cover every
   invariant the answer carries, whether it names the invariant (for example as a relationship) or returns
   it in full, plus every member of a family it carries (review N5, 19:13:41).
-- **Which tree `knowledge_read` asks at (ruling 2, 18:42:37).** Only a named `codeTreeId` counts; a
-  `repositoryRoot` alone, or nothing, requests nothing, so the block is `unverifiable`, and `HEAD` is never
-  substituted. Since MIK-R02 the converted-tree `knowledge_read` applies that rule in
-  `knowledge_paging/tree_read.py` (`_at_code_tree`: only the named `codeTreeId`, or the continuation's tree
-  on a resumed page) and computes the block through `evaluate_answer`. **`requested_code_tree` and
+- **Which tree `knowledge_read` asks at.** `knowledge_read` observes the explicit `codeTreeId` when supplied, or auto-pairs from the resolved code root (via `application/knowledge_code_pairing`), and stays `unverifiable` when no code root resolves; `knowledge_paging/tree_read.py` (`_at_code_tree`) binds that resolved tree and computes the block through `evaluate_answer`. **`requested_code_tree` and
   `read_currentness` were removed as dead exports (MIK-R73 rule 9):** no production path had called them
   since MIK-R02, so the rule now has one implementation instead of a second, unused one.
 - **The published-intent block's tree (ruling 1, 18:42:37)** is chosen by its caller, `published_intent.py`:
@@ -94,13 +90,8 @@ No configured live documentation source was available for this pass.
 
 
 
-- The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. Anchor: `read_published_intent` [10]
-
-
-
-- No tree, or only a repository, is unverifiable and never reads `HEAD`. [11]
-
-
+- The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. [10]
+- Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable. [11]
 - A failing step degrades to a reason and never refuses the read. [12]
 
 

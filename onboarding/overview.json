@@ -478,12 +478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
             "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
             "locator": {
-              "end": 59,
+              "end": 60,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -491,12 +491,12 @@
         },
         {
           "anchor": {
-            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "blob": "a5d640e6780fd1cad1612ed25388894de078aaa4",
             "content": "sha256:f19eec9780ea0b5e9f5a21b773f4e71b405e9d40607de2897a7088e3e00679b3",
             "locator": {
-              "end": 226,
+              "end": 233,
               "kind": "line_range",
-              "start": 218
+              "start": 225
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -771,8 +771,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
-            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
+            "blob": "7d88cffcf1a7db9f2bdb175ec644ef6785c7d436",
+            "content": "sha256:22405ae8c267c60c8722a28eeb29dda22e8c4a7550ce90a9de39d55f5f7f1ab6",
             "locator": {
               "kind": "file"
             },
@@ -1592,7 +1592,7 @@
         },
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
             "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
             "locator": {
               "end": 120,
@@ -1605,10 +1605,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
-            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+            "content": "sha256:3c1a348d7cfa45de1bb40dc5a48c75b8a1bf0bb1559a37321d0699f5bdfc29e3",
             "locator": {
-              "end": 215,
+              "end": 231,
               "kind": "line_range",
               "start": 158
             },
@@ -1671,8 +1671,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
-            "content": "sha256:d2e09968807dec56860cba68aa784efdf258555dbb83498d84dafa5af2cecc47",
+            "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+            "content": "sha256:fd84418ef45b2ec526e57e85a0b7cc426a00bd36178148109025bef5ca43e19f",
             "locator": {
               "kind": "file"
             },
@@ -1904,7 +1904,7 @@
         },
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
             "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
             "locator": {
               "end": 120,
@@ -1917,10 +1917,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
-            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+            "content": "sha256:3c1a348d7cfa45de1bb40dc5a48c75b8a1bf0bb1559a37321d0699f5bdfc29e3",
             "locator": {
-              "end": 215,
+              "end": 231,
               "kind": "line_range",
               "start": 158
             },
@@ -4971,9 +4971,9 @@
         {
           "anchor": {
             "blob": "93ac4fcbb2ddc5ead275164bd8bea102e50588fc",
-            "content": "sha256:6e45415d4d420520c09f85b4458a8f8bd9a1cc38f2bfca76e6dc28cd152336f6",
+            "content": "sha256:fef10ba71e019e2df380ce56bcedae08381efe59a6e0b2fd866999c2bc1d85fb",
             "locator": {
-              "end": 6271,
+              "end": 6282,
               "kind": "line_range",
               "start": 6186
             },
@@ -5275,7 +5275,7 @@
         },
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
             "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
             "locator": {
               "end": 120,
@@ -5288,10 +5288,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
-            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
+            "content": "sha256:3c1a348d7cfa45de1bb40dc5a48c75b8a1bf0bb1559a37321d0699f5bdfc29e3",
             "locator": {
-              "end": 215,
+              "end": 231,
               "kind": "line_range",
               "start": 158
             },
@@ -5411,16 +5411,16 @@
       ]
     },
     "73": {
-      "note": "The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap.",
+      "note": "The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 5,000-token delivered bound and a 20-entry list cap.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
-            "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
+            "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+            "content": "sha256:d67e21d7649904d6c2f9d967b13b6b58bb329e812fb724568dc964eb40feee53",
             "locator": {
-              "end": 123,
+              "end": 134,
               "kind": "line_range",
-              "start": 120
+              "start": 131
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
@@ -5452,8 +5452,8 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
               "kind": "file"
             },
@@ -5819,12 +5819,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:1de87e10c1c92b8b3716abb5bac549dcdac11dc0d46a195e17f3db7e5f94ff0a",
             "locator": {
-              "end": 807,
+              "end": 808,
               "kind": "line_range",
-              "start": 793
+              "start": 794
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },

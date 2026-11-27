@@ -12,7 +12,7 @@ Land an accepted code/memory pair into its named source branches, or checkpoint 
 
 ### Current Contract
 
-Integration preserves invariant judgment and ref-publication order. Handover-gate blockers and incomplete closeout preconditions are answered in both dry and real calls; checkpoint on a non-series contract returns contract-not-a-series, and recognized CloseoutQueueError retains its code/sentence. Checkpoints keep a still-open master open. No arbitrary RuntimeError is silently converted and no bounded next-step presentation grants publication.
+Integration preserves invariant judgment and ref-publication order. Handover-gate blockers and incomplete closeout preconditions are answered in both dry and real calls; checkpoint on a non-series contract returns contract-not-a-series, and recognized CloseoutQueueError retains its code/sentence. Checkpoints keep a still-open master open. No arbitrary RuntimeError is silently converted and no bounded next-step presentation grants publication. After final or checkpoint contract finalization, `_publish_integration_edge` runs an advisory `briefs/` refresh through `refresh_integrated_memory_briefs` against the landed code/memory commits and branch; any refresh problem is attached as `briefsProblem` on the returned payload without altering `returncode` or reversing the landing.
 
 ### Logic
 
@@ -74,7 +74,6 @@ These current source spans identify the implementation owners and the specific a
 - **Retained historical source account — superseded by the current contract:** Addressed handover gates and publication preserve the operation's real identity. [4]
 
 - Admission before ancestry and publication judges leaf or master pairs in `integration_gate_block` without writing refused state. [5]
-
 - **Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation. [6]
 
 
@@ -98,3 +97,4 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 
 - Integration preserves invariant judgment and ref-publication order. Handover-gate blockers and incomplete closeout preconditions are answered in both dry and real calls; checkpoint on a non-series contract returns contract-not-a-series, and recognized CloseoutQueueError retains its code/sentence. Checkpoints keep a still-open master open. No arbitrary RuntimeError is silently converted and no bounded next-step presentation grants publication. [10]
+- Advisory post-finalization `briefs/` refresh attaches `briefsProblem` without failing the landing. [11]

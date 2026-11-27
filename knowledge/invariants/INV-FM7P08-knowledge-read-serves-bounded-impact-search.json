@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans knowledge_impact.py, knowledge_search.py, records_batch.py, marks_compact.py, and knowledge_queries.py, is guarded by five focused contract tests, and delivers bounded drafting and verification retrieval in one MCP surface."
+  },
+  "applicability": "Drafting and verification queries served by knowledge_read views impact, search, records, and dependent (compact=true).",
+  "conditions": [
+    "impact deduplicates and groups invariants by family with guarantees, 1-line out-of-scope familySiblings, weaknesses, dependents, 80-word statement trims, compact mode, and multi-page continuation inside <= 3,500 tokens.",
+    "search runs ix_fts over default invariant/family/weakness kinds, rejects history, supports files/folder scoping, surfaces termsMatched, and trims statements > 80 words inside <= 3,500 tokens.",
+    "records fetches up to 25 requested recordIds verbatim without statement trimming at up to 20 records per page inside the 5,000-token bound, naming bounded staleAnchors inline whenever stale > 0.",
+    "dependent with compact=true projects rows with aggregated conditionTask/conditionFile, 10-char confirmedCommit, confirmedUncommitted, and movedLinks count, omitting 40-char blob hashes and movingCommitUnknown prose."
+  ],
+  "exclusions": [
+    "All four query shapes are strictly read-only and never modify records, sidecars, or derived briefs."
+  ],
+  "id": "INV-FM7P08",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_knowledge_queries.py + real-memory Q1-Q6 verification"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 10",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_read serves bounded impact, search, verbatim batch records (with inline staleAnchors when stale > 0), and compact dependent views that satisfy their token budgets and field contracts.",
+  "supersedes": [],
+  "title": "knowledge_read serves bounded impact, search, records, compact dependent",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

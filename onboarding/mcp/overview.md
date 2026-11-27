@@ -436,7 +436,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** A decision is never an export. [42]
 - **Retained historical source account — superseded by the current route account:** The leaf package statement. [43]
 - **Retained historical source account — superseded by the current route account:** A path seed of the published-intent block is read as a leaf. [44]
+
 - **Retained historical source account — superseded by the current route account:** The mounted read's leaf response, of a path or (since MIK-R05) a family seed. [317]
+
 - **Retained historical source account — superseded by the current route account:** The module statement. [46]
 - **Retained historical source account — superseded by the current route account:** The stored predicate for the gate. [47]
 - **Retained historical source account — superseded by the current route account:** Step 6 of the run. [48]
@@ -448,14 +450,18 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The planned row. [54]
 - **Retained historical source account — superseded by the current route account:** The task owner's strict lookup and decision answer. [55]
 - **Retained historical source account — superseded by the current route account:** The paging package statement. [56]
+
 - **Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch. [57]
+
 - **Retained historical source account — superseded by the current route account:** The whole-block bound of the published-intent block. [58]
 - **Retained historical source account — superseded by the current route account:** The rule's statement for converted trees. [59]
 - The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). [61]
 - **Retained historical source account — superseded by the current route account:** The package statement. [62]
 - **Retained historical source account — superseded by the current route account:** The `knowledge_read` surface, reached through the per-page extras since MIK-R02. [63]
 
+
 - **Retained historical source account — superseded by the current route account:** The published-intent surface. Anchor: `read_published_intent` `_TREE_SCOPE` [64]
+
 
 - The leaf imports the single recomputation owner from leaf_completion: it computes and persists the worklist, names Git failures as git and turns other failures into an incomplete result; leaf_worklist can receive the gate's exact candidate trees. [65]
 - **Retained historical source account — superseded by the current route account:** The CLI subcommand. [66]
@@ -475,7 +481,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The seven route rules in the registry. [85]
 - **Retained historical source account — superseded by the current route account:** The command's report and exit statuses. [87]
 
+
 - **Retained historical source account — superseded by the current route account:** The one dataset resolution every knowledge read applies. Anchor: `select_knowledge_dataset` [88]
+
 
 - **Retained historical source account — superseded by the current route account:** The command's inputs, scope answer and exit statuses. [91]
 - Named reporting and refusing routes. [312]
@@ -526,7 +534,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** Current contract-scoped file writing [199]
 
+
 - **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** Anchor: `published_intent_block` `open_read_context` `read_knowledge_scope` [208]
+
 
 - Historical published-intent response carrier. The current strict response uses NamedFile rows with optional brief data and has no published_intent field. [318]
 
@@ -841,7 +851,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The worklist gate uses the contract's recorded bases and exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
 
 
+
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. [103]
+
+
 
 
 
@@ -849,7 +862,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
+
 - **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
+
+
 
 
 
@@ -857,7 +874,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [83]
+
+
 
 
 
@@ -865,20 +886,29 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
+
+
 
 
 
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
 
 
+
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
+
 
 
 
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
 
+
+
 - The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
+
 
 - The worktree layer checks whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner's history closed. [5]
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]

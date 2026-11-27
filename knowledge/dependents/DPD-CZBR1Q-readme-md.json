@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6a6fd4266b85fb6590b06d65a16385594f34c284",
-    "commit": "20088100b964f21128db1f3c1c64159e087fa6e6",
+    "codeTree": "0601566579ef39fe6cab0b43e547041eb7359a57",
+    "commit": "3e4c8d678835d3d077dfee722c1bfb89f1bf5359",
     "role": "curator",
-    "statement": "Post-CAP+L57 sync onto 20088100b964 / candidate codeTree 6a6fd4266b85: re-read all 221 lines of README.md after L59 edited record_landing.py (pre-short-circuit contract-abandoned guard); README overview, Python 3.14 / 3.0.8 notes, and install links remain accurate with zero contradictions.",
-    "task": "261112-BUG-L59",
+    "statement": "Verified README.md against synced 3e4c8d678 + KNO-R07 candidate: project overview, installation, and CLI command references remain accurate; memory-briefs is an additive subcommand.",
+    "task": "261112-KNO-L7",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,20 +86,20 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
     {
-      "blob": "7e1c1434781e9a2cfa579fb6714b5e14c3414187",
+      "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T00:41:03+01:00",
+    "at": "2026-11-27T03:56:55+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L59",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "94744643-9d95-59af-a6d5-4979d459b87e",
-    "task": "261112-BUG"
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

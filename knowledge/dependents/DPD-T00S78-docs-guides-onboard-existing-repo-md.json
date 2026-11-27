@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
+    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/guides/onboard-existing-repo.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Verified docs/guides/onboard-existing-repo.md against KNO-R07 candidate: existing-repo onboarding guide remains accurate after additive memory-briefs CLI registration.",
+    "task": "261112-KNO-L7",
     "uncommitted": true
   },
   "document": "docs/guides/onboard-existing-repo.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
     {
-      "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+      "blob": "27bf6c5fa9b27ac9eb9fdac78d13a4d107a2007f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/read_files_briefs.py"
     },
@@ -67,14 +67,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-27T02:47:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-KNO-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

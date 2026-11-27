@@ -188,7 +188,9 @@ No external domain claim is required.
 
 - The public tools the master-level beats drive. [6]
 
+
 - The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
+
 
 - The shared world fixture and Git helper this module composes instead of re-implementing. [8]
 

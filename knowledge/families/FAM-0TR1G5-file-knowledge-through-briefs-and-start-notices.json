@@ -3,14 +3,18 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The generated files, the source read and the start notification jointly keep the detailed record reachable when a response boundary limits text."
+    "justification": "Brief generation, post-landing and manual CLI refresh, honest location.current short-answer notices, and role-start change reports jointly keep detailed file knowledge accurate and reachable when bounded replies omit full text."
   },
-  "guarantee": "A reader can recover governing file knowledge from its selected task memory. A current source brief contains the detail omitted from a bounded reply, and a reply marks missing or older disk detail until a covering write. An eligible converted role start gives the recipient a separate change report.",
+  "guarantee": "A reader can recover governing file knowledge from its selected task memory. A current source brief contains the detail omitted from a bounded reply, short-answer notices direct callers to open a saved brief only when location.current is true, and external-memory landings (integration, checkpoint, and recorded PR landings with matching HEAD) plus the manual agents-remember memory-briefs CLI keep derived briefs refreshed while surfacing any refresh failure strictly as an advisory briefsProblem. An eligible converted role start gives the recipient a separate change report.",
   "id": "FAM-0TR1G5",
   "members": [
     "INV-T50898",
     "INV-47NR7E",
-    "INV-9Z6T69"
+    "INV-9Z6T69",
+    "INV-M36NT5",
+    "INV-8F4C0F",
+    "INV-ZYKN6P",
+    "INV-XXG2W0"
   ],
   "origin": {
     "handoff": {
@@ -20,7 +24,7 @@
     "leaf": "261112-KNO-L4",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "docs",
     "mcp/src/agents_remember/application",
@@ -36,22 +40,14 @@
   "schema": "ar-family/v1",
   "title": "File knowledge through briefs and start notices",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-KNO-L4",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-KNO",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
   }
 }

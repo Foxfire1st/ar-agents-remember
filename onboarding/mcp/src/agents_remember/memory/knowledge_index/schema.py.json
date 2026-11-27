@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
-        "content": "sha256:b12a2bd50fd77cd23bfe523907d6dd3c02f214d99e610416d1f2d84d0f6bdf94",
+        "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+        "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R6HM2T",
+      "invariant": "INV-TT65V5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 8",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Bumps INDEX_FORMAT to ar-knowledge-index/v8 and declares the derived ix_fts FTS5 virtual table in INDEX_DDL.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+        "content": "sha256:26a6f86e96d0c678f7b14b970f10d1346f37339aad5954e0c8db73d298c992a9",
         "locator": {
           "kind": "symbol",
           "name": "INDEX_FORMAT"
@@ -16,22 +33,20 @@
         "handoffEntry": "L3-W1-09",
         "leaf": "261112-KNO-L3"
       },
-      "rationale": "The index table ix_revision holds each named revision's stamp; the index format is ar-knowledge-index/v7.",
+      "rationale": "schema.py defines INDEX_FORMAT (now ar-knowledge-index/v8 with ix_fts) so derived SQLite caches of any mismatched format are deterministically rebuilt.",
       "role": "propagation-persistence"
     }
   ],
   "references": {
     "5": {
-      "note": "The index format name a cached file must carry is v7.",
+      "note": "The index format name a cached file must carry is v8.\n\nAnchor: `INDEX_FORMAT`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
-            "content": "sha256:b12a2bd50fd77cd23bfe523907d6dd3c02f214d99e610416d1f2d84d0f6bdf94",
+            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+            "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
             "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 29
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -39,15 +54,14 @@
       ]
     },
     "6": {
-      "note": "The ix tables and their reverse lookups are defined in the derived index layout.",
+      "note": "The `ix_*` tables, reverse lookups, and `ix_fts` virtual table are defined in the derived index layout.\n\nAnchor: `INDEX_DDL`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
-            "content": "sha256:39f22b17bb90bfc1379ff62fba96d35c358f7082d92c73afef9a613621ae702c",
+            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+            "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
             "locator": {
-              "kind": "symbol",
-              "name": "INDEX_DDL"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -59,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
+            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
             "content": "sha256:01fa4fe982e23e1db8f4bde0fb785c58beedfb302297a1b64b2f0d1a7f250941",
             "locator": {
-              "end": 104,
+              "end": 106,
               "kind": "line_range",
-              "start": 94
+              "start": 96
             }
           },
           "kind": "code"
@@ -76,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
+            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
             "content": "sha256:59b84d88ccdd55de1b00c75aec0797cdd7866add529ea629ef6ea52f25e8b5ee",
             "locator": {
-              "end": 116,
+              "end": 118,
               "kind": "line_range",
-              "start": 107
+              "start": 109
             }
           },
           "kind": "code"

@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_impact.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+        "content": "sha256:cd6107dd343f95f106274cc0aaa1d2e1270554b35efed79c54d389729df93d05",
+        "locator": {
+          "kind": "symbol",
+          "name": "impact_view"
+        }
+      },
+      "id": "RLZ-X8GMXT",
+      "invariant": "INV-FM7P08",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 10",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Produces deduplicated, family-grouped impact pages with family guarantees, 1-line out-of-scope familySiblings, weaknesses, dependents, 80-word statement trims, compact mode, and multi-page hints inside <= 3,500 tokens.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`impact_view` validates scope and cursor, loads live invariants/families/currentness, and paginates within `DEFAULT_IMPACT_BUDGET_TOKENS` (`3150`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+            "content": "sha256:cd6107dd343f95f106274cc0aaa1d2e1270554b35efed79c54d389729df93d05",
+            "locator": {
+              "kind": "symbol",
+              "name": "impact_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_render_impact_page` separates rule and sibling counts, attaches page-0 weaknesses/dependents, and emits multi-page `compact=true` hints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+            "content": "sha256:d21d2654cbbd05ce5a0759913db760bad98d760cfbc31b120d52722af900f990",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_impact_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_build_rule_units` orders families/rules deterministically and appends out-of-scope family siblings as paginatable units.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+            "content": "sha256:5807fa3569225af0fb6ad2e3f05c2499de1cd21f19ff343be4f1814a4725125a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_rule_units"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_scope_dependents` gathers file-matched and invariant-standing dependents and projects them via `compact_dependent_rows`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26b013d8ff23b788a244e3b9d77426404ca60241",
+            "content": "sha256:a8ce7fab4d1e75b5ccd557fb9d7c4cd2e15638f587bc0fb86325745789312c48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_dependents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

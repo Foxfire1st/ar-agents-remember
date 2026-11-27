@@ -118,4 +118,5 @@ Every requested path is confined again when `_overview_locations` derives its ov
 
 - The memory-format switch selects the converted index when available and names no card for other memory states. [3]
 
+
 - A fuller naming row can carry its governing card and action records. A compact row keeps its path and any recorded existence. A refusal has its code. Other compact rows give card status and any brief pointer with saved freshness. [6]

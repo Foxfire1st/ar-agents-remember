@@ -8,7 +8,7 @@
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
 that dispatches subcommands. Its subcommands include `dashboard`, `memory-citations`,
-`memory-backfill`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
+`memory-backfill`, `memory-briefs`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-convert-states`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
 `knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
@@ -22,7 +22,7 @@ Owns the one Agents Remember command parser and subcommand dispatch.
 each subparser through its adapter's own `add_arguments`. Finite commands dispatch through
 `_run_finite_command`; `dashboard` retains its adapter directly:
 `dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`,
-`memory_backfill.add_arguments`/`memory_backfill.run`,
+`memory_backfill.add_arguments`/`memory_backfill.run`, `memory_briefs.add_arguments`/`memory_briefs.run` (registered under `_register_memory_commands` to refresh derived `briefs/` in a converted external memory checkout),
 `knowledge_ingest.add_arguments`/`knowledge_ingest.run`,
 `knowledge_bootstrap.add_arguments`/`knowledge_bootstrap.run`,
 `knowledge_format.add_arguments`/`knowledge_format.run`,
@@ -173,3 +173,5 @@ Source: mcp/src/agents_remember/cli/__main__.py
 - Frozen implementation of build_parser supporting the stated file behavior. [16]
 
 - The runtime-command registry registers upgrade-user-settings with its existing adapter; handoff-check is registered separately in the knowledge-command registry. [18]
+
+- Registers `memory-briefs` under `_register_memory_commands` to refresh derived `briefs/` in a converted external memory checkout. [26]

@@ -139,7 +139,7 @@ Record standing and source currentness answer different questions. The selected 
 
 Selection distinguishes no seed from a named seed selecting nothing. Missing identity/revision is `selector_absent`; an entry-less path can still have a governing route chain. A recorded empty subject is not an absent subject. Family route chains include equal/ancestor directories, nearest route first, then family identity, never child/sibling territory. Already expanded families still have chain rows; the retained `shorten_served` helper uses only its caller-supplied predicate and owns no session/lifecycle state. A fuller `read_ar_files` brief can carry directly related families by title and counts. The current saved brief, when present, supplies their context. A family seed uses exact revision checking on fresh reads and continuation alike.
 
-Mounted `knowledge_read` pages are cut at the 4,000-token `knowledge_read` bound, beside whole rows and a shared binding to memory tree, seed, policy, effective ordering and page-one code tree; the paging package's own declared shared threshold remains 8,000 tokens. Tokens contain no local root path and require the resolved repository to hold their tree. A mismatch refuses without a partial page or server cursor state. A continuing family starts with its literal header reference. Oversized-row and insufficient-page cases stay distinct; deferred seed tails collapse and an excessive queue has its named `seed_queue_exceeded` refusal. The earlier projection artifact bound and first-64-row issue are historical, not current projection functionality. Token accounting now records counts in the answer log rather than restoring the old response envelope.
+Mounted `knowledge_read` pages are cut at the 5,000-token `knowledge_read` bound, beside whole rows and a shared binding to memory tree, seed, policy, effective ordering and page-one code tree; the paging package's own declared shared threshold remains 8,000 tokens. Tokens contain no local root path and require the resolved repository to hold their tree. A mismatch refuses without a partial page or server cursor state. A continuing family starts with its literal header reference. Oversized-row and insufficient-page cases stay distinct; deferred seed tails collapse and an excessive queue has its named `seed_queue_exceeded` refusal. The earlier projection artifact bound and first-64-row issue are historical, not current projection functionality. Token accounting now records counts in the answer log rather than restoring the old response envelope.
 
 Whole-file dependent links share their derived movement rule between knowledge reads and landing. When exact confirmation and selected-tree metadata supply the old and new `project.version`, a changed blob stays current only if each complete version token is unchanged or is that exact old-to-new substitution, its existing empty/v/V prefix stays unchanged, and every other byte stays identical. Changed epochs, further release components, prerelease/postrelease/development/local suffixes, other bytes and missing exact provenance receive no exemption. Text alone cannot distinguish a dependency that has the same complete old/new version pair as the product; that remains an open weakness, not semantic package-ownership detection. Anchor-content and record-revision links retain their own movement rules.
 
@@ -335,12 +335,16 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The one-sided statement cases: the complete present-side statement beside the named absent side, with the comparison's own side-absence code. [74]
 - The renderer that owns how the two sides are drawn, and the four branches it decides from declared state. [75]
 
+
 - Historical canonical-publication declaration account; references and targets remain for custody. Current resolve_published_intent selects the converted memory tree through its derived index; published_dataset_path and PUBLISHED_DATASET_NAME are retired. [78]
+
 
 - The context owner that decides *which* memory root the declared location is. [79]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The current CLI is the converted file handoff route, not this retired destination/allocation/publication adapter. Historical account: **The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.** [80]
 
+
 - The consequence repair this landing forced, stated on the card where the claims live. [82]
+
 
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The before-half placement adapter retired; current file authoring uses the admitted memory route. Historical account: **The CLI side of the seam: the one gate that decides whether the run may fill the half, and the handoff that delegates what the half then is.** [88]
 - Historical baseline-placement argument/refusal account; references and targets remain for custody. The current run loads its contract before dispatching the converted leaf or crossing writer. The baseline-placement argument/check is retired. [89]
@@ -422,13 +426,19 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Converted-memory sync attempts to settle the generated briefs ignore stanza before reporting remaining conflicts. An authored conflict or an edit to the working conflict stays open for resolution. [228]
 - The layer rule that forces the split, enforced by a test rather than documented. [229]
 
+
 - Historical canonical-publication dataset-path account; references and targets retained for custody. Current boundary: published_dataset_path is absent. select_knowledge_dataset accepts only converted memory roots and selects their derived index. published_intent_block still resolves the converted tree, seeds the requested paths and calls the retained bounded read_published_intent route; it is not attached to the registered `read_ar_files` response. Historical account: **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** [239]
+
+
 
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [431]
 
+
 - **The shipped read the new route delegates to, reused unchanged by this leaf.** [241]
 
+
 - The `read_ar_files` application entry point can name cards and overviews and add rule text in a fuller reply. A compact reply can keep only the bounded row fields and brief pointer. The response model has no `published_intent` field. [242]
+
 
 - A memory tree other than converted names no governing card. [243]
 
@@ -483,7 +493,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The package map. [281]
 - The check order and the cache contract. [282]
 
+
 - The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response. [285]
+
 
 - The sides, refusing mixed formats. [287]
 - The cache path shared by the worklist and the gate. [290]
@@ -491,7 +503,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The one declared threshold. [292]
 - A cut of whole rows: blocked versus oversized. [293]
 - Retained internal whole-block published-intent computation and per-seed tail. [294]
+
 - The converted-tree branch of `knowledge_read`. [295]
+
 - The whole verified selection a page is cut from. [296]
 - The kind, registered on import. [298]
 - The reconciliation and its matching. [299]
@@ -506,11 +520,15 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The inherited row owner preserves entry identity while relocating its source path. [308]
 - The leaf package statement. [309]
 - The selection and its declared order, which since MIK-R05 ends with the route-chain rows. [310]
+
 - One prepared leaf for both surfaces, with the literal reference row and, since MIK-R05, a path page's `routeChain`. [311]
+
 - A path seed of the block is read as a leaf. [312]
 - The block's policy follows the seeds asked. [313]
 - Each kind's tail, or the named queue refusal. [314]
+
 - The leaf response of the mounted read (since MIK-R05 of a path or a family seed), and refusals that name the tree. [315]
+
 - Each requirement link target of the run's records, with the owner's resolution. [317]
 - The writer's coordination root and the report's endpoints. [318]
 - One endpoint outcome; unresolved is reported on the value, while a changed unresolved link refuses at the writer when a coordination root is held. [319]
@@ -526,7 +544,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The family seed's selection. [336]
 - The family seed on the mounted read, and one rule for a named revision. [337]
 
+
 - The mounted read_ar_files route can return governing locations, states and rule text when space permits. Compact rows can retain paths, status and brief pointers with freshness. Source, card and overview bodies stay in their files. [338]
+
 
 - A proof entry links its path in a tree index. [343]
 - The entry point, its views and the envelope. [345]
@@ -720,7 +740,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409] [440]
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450] [451]
 
+
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [240]
+
 
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current mounted read_ar_files reports memoryState=unconverted and card=None; the legacy block belongs to the retired body-serving route. Historical account: Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]
 
@@ -800,7 +822,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The statement-side projection's whole surface: the three-outcome side contract, the conditions reader, the comparison's own field roster, and the value reader that reserves `None` for absence. [69]
 - Crossing confirmation identifies the resolved commit that supplied the code tree. [527]
 
+
 - The reply fits bounded rule rows against final delivery metadata and can refit after a late log error. [542]
+
 
 - The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
 - The rule 9 refusal in the quality controller. [271]
@@ -808,7 +832,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Planned history rows and their reference resolution moved to the inherited history-row owner. [302]
 - The inherited row owner authors explicit no-invariant dispositions. [332]
 - **Retained historical source account — superseded by the current route account:** The findings over one recomputed worklist. [364]
+
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
+
 - The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [539]
 
 - `knowledge_gate/document_staleness.py` classifies incremental and master-end dependent-document staleness, attributing own-leaf debt, checking post-landing parent repairs, filtering tip-only unverifiable links, and rendering per-kind answers and refusal messages. [543]

@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by clause_title fallback tests and prevents unreadable six-word truncated rule headings in briefs that obscure what legacy invariants require."
+  },
+  "applicability": "Display title selection in file briefs and read_ar_files short answers for legacy invariant records lacking a stored title field.",
+  "conditions": [
+    "Returns stored titles after whitespace normalization unchanged.",
+    "For untitled statements, keeps normalized statements <= 80 characters whole, cuts longer ones at the first sentence separator (. , ? , ! ) in characters 20-80 without ellipsis, else at the last clause separator in 20-80 with ellipsis, else at the last word boundary up to 80 characters with ellipsis.",
+    "Never mutates the underlying stored invariant record."
+  ],
+  "exclusions": [
+    "Does not waive the requirement that newly authored invariants carry an explicit one-line title of at most 80 characters."
+  ],
+  "id": "INV-WWRX4E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_kno_r07_briefs_and_pairing.py::test_clause_title_handles_short_sentence_clause_and_word_fallbacks"
+      ],
+      "path": "kno-l7-curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R07@v1 Rule 5",
+    "leaf": "261112-KNO-L7",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Untitled invariants derive a non-mutating readable fallback title from their first sentence or clause up to roughly 80 characters instead of blind 6-word truncation.",
+  "supersedes": [],
+  "title": "Untitled invariants derive non-mutating ~80-char first-clause titles",
+  "writer": {
+    "at": "2026-11-27T02:47:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
+    "task": "261112-KNO"
+  }
+}

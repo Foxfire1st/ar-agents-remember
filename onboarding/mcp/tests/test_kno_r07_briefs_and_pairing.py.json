@@ -1,0 +1,276 @@
+{
+  "path": "mcp/tests/test_kno_r07_briefs_and_pairing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:498fc54bec97006fb332256cd0ffdd184636d8811732fe6013d995fff31eaa58",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_recorded_landing_briefs_refreshes_matching_head_and_reports_unpulled"
+        }
+      },
+      "facet": "Demonstrates that recorded PR landings refresh checkouts matching the landed memory HEAD and return an advisory briefsProblem naming memory-briefs when no checkout matches.",
+      "id": "PRF-6D4V5Y",
+      "invariant": "INV-8F4C0F",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 2",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:810bd269d9b69f5e9ae891d14db5087d8419a6923fa643dc7492a6729b11c0c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_landing_kept_keys_preserves_briefs_problem_on_all_landing_routes"
+        }
+      },
+      "facet": "Demonstrates that LANDING_KEPT_KEYS preserves briefsProblem in projected answers for worktree_integrate, worktree_checkpoint_landing, and worktree_record_landing.",
+      "id": "PRF-8ND43J",
+      "invariant": "INV-M36NT5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 1",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:fd891d97fc9b4c5f4c733647d3673ccd6af12c88acdbf16d627963713d317f50",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_clause_title_handles_short_sentence_clause_and_word_fallbacks"
+        }
+      },
+      "facet": "Demonstrates short-whole, sentence-boundary, clause-boundary, and word-boundary fallback title derivation around 80 characters without mutating records.",
+      "id": "PRF-ASX9HK",
+      "invariant": "INV-WWRX4E",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 5",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:b729fd2e6bec52e0b8a2b1aeda3fcf3fc0891ea62fccc5b8f3aa8a732c84c5fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_integrated_memory_briefs_skips_ledger_only_and_refreshes_content_changes"
+        }
+      },
+      "facet": "Demonstrates that refresh_integrated_memory_briefs skips ledger-only diffs and regenerates briefs/ on checked-out branch worktrees when non-ledger memory files change.",
+      "id": "PRF-B96K9V",
+      "invariant": "INV-M36NT5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 1",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:139b54441542121221c00b301d18d9102d09910de5b344e193268abd74961aed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_worktree_precedence_beats_configured_main_and_observes_dirty_working_tree"
+        }
+      },
+      "facet": "Demonstrates that leaf worktree pairing forwards the dirty working-tree capture into currentness evaluation instead of reporting unverifiable.",
+      "id": "PRF-FKR51H",
+      "invariant": "INV-DW999J",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 6",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:e9f86b3d91af4c76832e3fb3b03b2a3d3dc01ed0ea315cf34693116eb3b8d99a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dirty_working_tree_two_page_resume_succeeds_unchanged_and_refuses_when_mutated"
+        }
+      },
+      "facet": "Demonstrates that a two-page continuation over a dirty working tree preserves object_directory while unchanged and refuses when the working tree changes.",
+      "id": "PRF-N8ZAD9",
+      "invariant": "INV-DW999J",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 6",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:8bbf011bb4c6c4cb2c6a49443239e6b21258aef200e32375b6dbc4075b6453a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_projects_mount_two_page_continuation_pairs_code_tree_with_zero_unverifiable"
+        }
+      },
+      "facet": "Demonstrates automatic memoryRoot-to-code pairing on both fresh and continuation pages with zero unverifiable entries under a non-repo mount workspace.",
+      "id": "PRF-V1D098",
+      "invariant": "INV-4NNXH1",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 7",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:139b54441542121221c00b301d18d9102d09910de5b344e193268abd74961aed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_worktree_precedence_beats_configured_main_and_observes_dirty_working_tree"
+        }
+      },
+      "facet": "Demonstrates that leaf contractPath/enclosure sibling worktree precedence beats configured main checkout and observes dirty working-tree state.",
+      "id": "PRF-V9PTGV",
+      "invariant": "INV-4NNXH1",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 7",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:d429b0604e3980de38a3a1ca0c11f0d2860d228e58bcd90a1430ef963e272bc8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_integrated_memory_briefs_returns_advisory_problem_on_failure"
+        }
+      },
+      "facet": "Demonstrates that a brief-refresh exception is caught and returned as an advisory briefsProblem string rather than aborting integration.",
+      "id": "PRF-XSGASC",
+      "invariant": "INV-M36NT5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 1",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:a1c1f418ac22d1f53541fb836362bc60e8f584791d2a67a7872f84c1f78008eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_short_answer_gates_read_current_brief_notices_on_location_current"
+        }
+      },
+      "facet": "Demonstrates that short-answer row notices and counts_notice direct callers to open saved briefs only when location.current is true and report missing or older briefs honestly otherwise.",
+      "id": "PRF-XT5R49",
+      "invariant": "INV-ZYKN6P",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 3",
+        "leaf": "261112-KNO-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+        "content": "sha256:b458d16022b98d2c4658597f406175a42ca5f2c12b051493614aa9ad2ae11c1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_memory_briefs_cli_refreshes_briefs_and_refuses_legacy"
+        }
+      },
+      "facet": "Demonstrates that agents-remember memory-briefs regenerates briefs/ for converted checkouts and refuses unconverted legacy directories.",
+      "id": "PRF-ZMD00V",
+      "invariant": "INV-XXG2W0",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 4",
+        "leaf": "261112-KNO-L7"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies `refresh_integrated_memory_briefs` skips ledger-only commits and refreshes on non-ledger content changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+            "content": "sha256:b729fd2e6bec52e0b8a2b1aeda3fcf3fc0891ea62fccc5b8f3aa8a732c84c5fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integrated_memory_briefs_skips_ledger_only_and_refreshes_content_changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies `refresh_recorded_landing_memory_briefs` refreshes matching `HEAD` checkouts and returns explicit pull/CLI guidance when unpulled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+            "content": "sha256:498fc54bec97006fb332256cd0ffdd184636d8811732fe6013d995fff31eaa58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_landing_briefs_refreshes_matching_head_and_reports_unpulled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies `memory-briefs` CLI refreshes converted checkouts (exit 0) and refuses unconverted checkouts as `legacy-format` (exit 2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+            "content": "sha256:b458d16022b98d2c4658597f406175a42ca5f2c12b051493614aa9ad2ae11c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_briefs_cli_refreshes_briefs_and_refuses_legacy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Verifies leaf sibling worktree precedence over configured `main` and dirty working-tree observation with 0 unverifiable rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+            "content": "sha256:139b54441542121221c00b301d18d9102d09910de5b344e193268abd74961aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_worktree_precedence_beats_configured_main_and_observes_dirty_working_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Verifies dirty working-tree two-page continuation resumes unchanged and refuses after working-tree mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a8f8e050111005106a8ff16c0b1e602367a228b",
+            "content": "sha256:e9f86b3d91af4c76832e3fb3b03b2a3d3dc01ed0ea315cf34693116eb3b8d99a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dirty_working_tree_two_page_resume_succeeds_unchanged_and_refuses_when_mutated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

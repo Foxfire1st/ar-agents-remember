@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 768,
+              "end": 767,
               "kind": "line_range",
-              "start": 768
+              "start": 767
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8fbe5c1d565177898dbb78747c8ed2e6c999ded",
+            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 768,
+              "end": 767,
               "kind": "line_range",
-              "start": 768
+              "start": 767
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -181,12 +181,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 484,
+              "end": 483,
               "kind": "line_range",
-              "start": 484
+              "start": 483
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -194,7 +194,7 @@
         },
         {
           "anchor": {
-            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
               "end": 1146,
@@ -207,12 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1334,
+              "end": 1332,
               "kind": "line_range",
-              "start": 1334
+              "start": 1332
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -220,12 +220,12 @@
         },
         {
           "anchor": {
-            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 3020,
+              "end": 3017,
               "kind": "line_range",
-              "start": 3020
+              "start": 3017
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -233,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "36f2c1d669d37c337fe095a8380978536b22eaf8",
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 5285,
+              "end": 5277,
               "kind": "line_range",
-              "start": 5285
+              "start": 5277
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -408,22 +408,10 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:a16db128d5ec8a1080ac425941d434c99b1d2fb4f6963d523dcdd258ba616aa0",
-            "locator": {
-              "kind": "symbol",
-              "name": "checkpoint_landing_eligibility"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },

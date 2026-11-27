@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+        "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+        "content": "sha256:72a5d352622a67db33849bebedfe7484518be7becf23d9e463549ab86e8ac299",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_integration_edge"
+        }
+      },
+      "id": "RLZ-1PYXHB",
+      "invariant": "INV-M36NT5",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 1",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Invokes the post-finalize brief refresh only after _integrated_result or _checkpoint_result is committed and attaches any advisory failure as briefsProblem without touching the Git ref CAS.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
         "content": "sha256:e0da0eaa4aaa70451eae1f19d885b4503171acd196eb16ede43b0737f4fd5fa1",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+        "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
         "content": "sha256:aaf23b3f05a648c8e098cb89f6a5d58f19d78f7297731bf47fa896739fcdd377",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:31f5e901eca0520386a24db34ba81f51a9345d8ddc09f9e66c941e86e159b918",
             "locator": {
               "kind": "symbol",
@@ -55,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:e0da0eaa4aaa70451eae1f19d885b4503171acd196eb16ede43b0737f4fd5fa1",
             "locator": {
               "kind": "symbol",
@@ -71,8 +89,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Advisory post-finalization `briefs/` refresh attaches `briefsProblem` without failing the landing.\n\nAnchor: `_publish_integration_edge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
             }
@@ -86,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:ba8d15728ad805325046bba8dbfb2e6f04b9e1f3ba38b203b76b40df7ffe430e",
             "locator": {
               "kind": "symbol",
@@ -97,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:9b16ed0609bb09552b46fa424a8557d10c08a8f5e320f1d100caa84a43c4f46b",
             "locator": {
               "kind": "symbol",
@@ -108,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:47754fdb95861dea341d23297fd57445beee653b575170bd4376bea910d68073",
             "locator": {
               "kind": "symbol",
@@ -124,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:5761c18fb223f962b503b55cb8bb23666243c89768cbe9f7c956b0dfd0054647",
             "locator": {
               "kind": "symbol",
@@ -135,7 +168,7 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:ad0e3d948673b77b4ee136f173b00afa9a1162f8284792d851b103b953469efc",
             "locator": {
               "kind": "symbol",
@@ -151,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:f3343d44b826e5c66cf979cd752fd0cdc9fd7e8f97bc0a13739b9720401a268f",
             "locator": {
               "kind": "symbol",
@@ -162,7 +195,7 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
             "content": "sha256:c00e5cc5e5d1de950c1394faee01b8143af72e07d4b8a47c853583442e6f5cdf",
             "locator": {
               "kind": "symbol",
@@ -174,15 +207,14 @@
       ]
     },
     "5": {
-      "note": "Admission before ancestry and publication judges leaf or master pairs in `integration_gate_block` without writing refused state.\n\nAnchor: `_handover_or_apply_integration`",
+      "note": "Admission before ancestry and publication judges leaf or master pairs in `integration_gate_block` without writing refused state.\n\nAnchor: `integration_gate_block`; `_handover_or_apply_integration`",
       "targets": [
         {
           "anchor": {
             "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
-            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
+            "content": "sha256:468a4db1b3107bd44495a096322a9ec06f9535efaba3488bcf3694f129de351c",
             "locator": {
-              "kind": "symbol",
-              "name": "integration_gate_block"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },
@@ -190,8 +222,8 @@
         },
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
             }
@@ -201,12 +233,12 @@
       ]
     },
     "6": {
-      "note": "**Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation.\n\nAnchor: `_integrated_result` `_checkpoint_result`",
+      "note": "**Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation.\n\nAnchor: `_integrated_result`; `_checkpoint_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
+            "content": "sha256:6f6f6d597843fd099835010dd62809fb039dfd7b4309f06d275143700dfe076d",
             "locator": {
               "kind": "file"
             }

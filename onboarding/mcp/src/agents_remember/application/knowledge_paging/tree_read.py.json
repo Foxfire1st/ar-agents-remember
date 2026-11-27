@@ -4,8 +4,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-        "content": "sha256:e52b128c93495e57f4c537a9fba2e60adf35d8c208e0e6e55275a11be41ddcd1",
+        "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+        "content": "sha256:2679ac106735021edc01011e13d8d9b85154bcac898cb945593be54fd006ad15",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resumed_working_tree"
+        }
+      },
+      "id": "RLZ-84EE5N",
+      "invariant": "INV-DW999J",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 6",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Re-verifies dirty working-tree captures across continuation pages, preserving object_directory while refusing if the working tree changed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+        "content": "sha256:1871c278bb5eb02bc8a4606b9849c4eb24c23f4ec8e70b6b23f69bf763e1d208",
+        "locator": {
+          "kind": "symbol",
+          "name": "_at_code_tree"
+        }
+      },
+      "id": "RLZ-JW8PXZ",
+      "invariant": "INV-DW999J",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 6",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Evaluates anchor currentness using the observed CodeTree and its working-tree object_directory when present rather than discarding it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+        "content": "sha256:2679ac106735021edc01011e13d8d9b85154bcac898cb945593be54fd006ad15",
         "locator": {
           "kind": "symbol",
           "name": "_resumed_working_tree"
@@ -19,6 +55,24 @@
       },
       "rationale": "A resumed walk must re-observe its tree, because no capture outlives the page that made it; this is where a continuation either re-captures or refuses.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+        "content": "sha256:17142fe90af0237d98ee6460f630466ba68d876171afe2dceeb49c4d44c1e9bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fresh_read"
+        }
+      },
+      "id": "RLZ-YPNR5S",
+      "invariant": "INV-DW999J",
+      "origin": {
+        "handoffEntry": "KNO-R07@v1 Rule 6",
+        "leaf": "261112-KNO-L7"
+      },
+      "rationale": "Forwards the resolved context code_tree_id and code_state object_directory into the walk cursor and currentness evaluation instead of raw request.code_tree_id.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -27,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:da59ad5a5226595e604123dc7efa0e5e4fc7ee93600693fc1c9704cc6abcbf6c",
             "locator": {
               "end": 26,
@@ -44,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:15d773d2870340bf74179440b77dd787a93638ced7d1f6f7f34f542d32b0c47e",
             "locator": {
               "kind": "symbol",
@@ -55,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:15a4b43ac08a3897eb5f84ee1d4ed60706cb4d4118d0c560b3e0cea6e6902890",
             "locator": {
               "kind": "symbol",
@@ -66,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:4747c3fad29ee2d5b1ef0d71f89cb41e190acecd3fd6e1d0a173f00559e76dfb",
             "locator": {
               "kind": "symbol",
@@ -77,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:6c64adf6bae3f1a7ab449206cabb47ef85899230acff87265e8d1996e0afa4bf",
             "locator": {
               "kind": "symbol",
@@ -93,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:df1b65da41644f5c9b92ebecb0f7e41614462842f0f3e22ce90896286ee74c6a",
             "locator": {
               "kind": "symbol",
@@ -104,7 +158,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:38b8c58b4bd27539f05b1a0ad24c4dcbe8b2ed62ceda81b9ff39273372ba54ee",
             "locator": {
               "kind": "symbol",
@@ -116,15 +170,14 @@
       ]
     },
     "12": {
-      "note": "The leaf page of a path or a family seed, one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain.\n\nAnchor: `absent_chain`",
+      "note": "The leaf page of a path or a family seed (preserving `code_state`), one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain.\n\nAnchor: `_leaf_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:8fdc5c240c49f2f15ecf87b4ac628e1ac2345b4fe5f971db8f01e0b3421b0f86",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
-              "kind": "symbol",
-              "name": "_leaf_response"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -136,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:e7915fe76391216d593616b7a81f509c7adb03b7202bf2bc197bdb58b9adc95c",
             "locator": {
               "kind": "symbol",
@@ -147,12 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:927db2aaddce5ddd709720ff49e9f9a0be1b42deaa992a0863cf7c99746801a3",
             "locator": {
-              "end": 244,
+              "end": 248,
               "kind": "line_range",
-              "start": 234
+              "start": 238
             }
           },
           "kind": "code"
@@ -160,26 +213,14 @@
       ]
     },
     "14": {
-      "note": "Page 1 of a fresh read, or the refusal of a seed the tree does not hold.",
+      "note": "Page 1 of a fresh read, or the refusal of a seed the tree does not hold.\n\nAnchor: `_fresh_read`; `_fresh_seed_absent`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:6fb771e32f66b5a01896c5589d0b70a8e79386e5591028b43c9de747e358f0e9",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
-              "kind": "symbol",
-              "name": "_fresh_read"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:f80d517a3203a9fd4474b7490235aee397606b1cb2cd707db4475428ec5f3acc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_fresh_seed_absent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -191,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:4747c3fad29ee2d5b1ef0d71f89cb41e190acecd3fd6e1d0a173f00559e76dfb",
             "locator": {
               "kind": "symbol",
@@ -236,8 +277,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`TreeReadScope` carries `object_directory` and `paired_code_root` for fresh working-tree observation and resumed code-root fallback.\n\nAnchor: `TreeReadScope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
               "kind": "file"
             }
@@ -251,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:9688f3a3c46202c703d0c8067d8e9c498cc4de00fbbd8c464837d0270973b05f",
             "locator": {
               "kind": "symbol",
@@ -262,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:62023bed51f832dd1db52491087f623fbff7c2559e68e09f2dd96cdb73ff3d6e",
             "locator": {
               "kind": "symbol",
@@ -278,7 +334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:6c771fc1c8fbda2303f28b964e6116414e835b618d6ddcb51dffa5a083472812",
             "locator": {
               "kind": "symbol",
@@ -290,15 +346,14 @@
       ]
     },
     "4": {
-      "note": "The dispatch and the checks before any selection.",
+      "note": "The dispatch and the checks before any selection.\n\nAnchor: `read_tree_page`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:24c34bcf9733410d1c3b76f98624f7e230c837b5292888559704d894241543c3",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
-              "kind": "symbol",
-              "name": "read_tree_page"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -306,37 +361,14 @@
       ]
     },
     "5": {
-      "note": "The walk's code tree, and a root that does not hold it.",
+      "note": "The walk's code tree, paired code-root fallback, and a root that does not hold it.\n\nAnchor: `_at_code_tree`; `_missing_code_tree`; `_holds_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:b9380406a4ff3db3e70b5000526ce77ac7a6a0bdadff4c13d79c7d67a163e214",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
+            "content": "sha256:f15f1ab1483fb6baf5fae14ef2791567f535d06666ce3f8e3c0f535377b50138",
             "locator": {
-              "kind": "symbol",
-              "name": "_at_code_tree"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:ba0db640790cd688f7ecd3b0e3cacfd4a46cae994fa5638bcbe7dd9a2d5fb304",
-            "locator": {
-              "kind": "symbol",
-              "name": "_missing_code_tree"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
-            "content": "sha256:0a7175bfebdf3dc661805af2667dc79c0cd39aed47f99faa76cc49e3f07b7f87",
-            "locator": {
-              "kind": "symbol",
-              "name": "_holds_tree"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -348,7 +380,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:9d731812d4aed0981017a5a3daaeb28d609def112c0e1eba7bb86bf1db91fedd",
             "locator": {
               "kind": "symbol",
@@ -359,7 +391,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:268cc0d2036674636a0b9f9bc76ba17b0b7dc08e40454cf8b14efddf23ac6df8",
             "locator": {
               "kind": "symbol",
@@ -375,7 +407,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:6625b0c40d39e4704f07b82d66dd54cb17f9c7631f88a801fddb2d6f3152e091",
             "locator": {
               "kind": "symbol",
@@ -391,7 +423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:aee3629a1e1e3348af5bd375f60250e1d5302c8b89e35f07c219c97e1240b76b",
             "locator": {
               "kind": "symbol",
@@ -402,7 +434,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:03597a7dbb91d98cd576110042727fbfe912f4e28140197c524aba0f315cf769",
             "locator": {
               "kind": "symbol",
@@ -418,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:b8f742268d79c964bf30613cada479c6679c74ab196bd31aa339caa23a25ee02",
             "locator": {
               "kind": "symbol",
@@ -429,7 +461,7 @@
         },
         {
           "anchor": {
-            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "blob": "9282cd893d1a035640a4b2604660a645023c66e1",
             "content": "sha256:1b0b9fc318917259cd937ff56a9a008c5822ce65c64199bd02a14dcb93129e02",
             "locator": {
               "kind": "symbol",
