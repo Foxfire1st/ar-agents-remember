@@ -7,36 +7,52 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "blob": "9202f81fb89cde5dbc8910168d1386435cebc108",
             "content": "sha256:bc3ba8ad53778ab9e6f7f2d400c7405775d1ee8b24e0faa8afbe1c3d6b40da79",
             "locator": {
-              "end": 120,
+              "end": 121,
               "kind": "line_range",
-              "start": 104
+              "start": 105
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "blob": "9202f81fb89cde5dbc8910168d1386435cebc108",
             "content": "sha256:d839f9a9f6f9bdb44f86454e276d117f85c80b038b77bb355b7c7698968bb951",
             "locator": {
-              "end": 200,
+              "end": 201,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "blob": "9202f81fb89cde5dbc8910168d1386435cebc108",
             "content": "sha256:3a2388c5b0c3daada2ab8167c76d913993046621f8ae963a6baa2690c07c98c8",
             "locator": {
-              "end": 352,
+              "end": 356,
               "kind": "line_range",
-              "start": 340
+              "start": 344
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_grammar_identity` hashes tree-sitter and grammar packages alongside the default `LanguageSet` `extractor_version` so query changes separate memo namespaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9202f81fb89cde5dbc8910168d1386435cebc108",
+            "content": "sha256:7e17f2a7632406cc2a448fa18e338aa56b297ce7bfa1eafa1a89f8aa41312bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grammar_identity"
             }
           },
           "kind": "code"

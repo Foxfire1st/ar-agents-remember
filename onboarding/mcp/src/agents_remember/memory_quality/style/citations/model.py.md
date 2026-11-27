@@ -26,7 +26,7 @@ The live reader recognizes additional Lean name spellings when the row cites Lea
 - `Claim` (class) — One citation as parsed, wherever it was written.
 - `masked` (function) — ``text`` with every code span blanked, so a scan outside them cannot see in.
 - `code_span_texts` (function) — The contents of each code span, delimiters stripped whatever their run length.
-- `anchors_in` (function) — ``(anchors, count of backticked spans that are not anchors)``.
+- `anchors_in` (function) — ``(anchors, count of backticked spans that are not anchors)``; accepts an optional `language_set` scope and threads it into TypeScript spelling resolution via `grammars.language_set_scope`.
 - `unescape_quote` (function) — Unescape only quote-grammar escapes; leave paths and ``\n``-like text literal.
 - `split_segments` (function) — The segments of a source list, splitting only on separators OUTSIDE a code span.
 - `unwrapped` (function) — ``piece`` with an enclosing code span removed, if it is entirely one.
@@ -75,7 +75,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 
-- The anchor parser returns the recognized anchors and the count of unrecognized code spans. [11]
+- The anchor parser returns the recognized anchors and the count of unrecognized code spans, threading an optional `LanguageSet` scope into TypeScript spelling resolution. [11]
 
 
 

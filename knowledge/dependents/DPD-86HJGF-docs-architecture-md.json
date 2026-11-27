@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4212fe7d4146d226cf68c1329ba1ce590ab3a19b",
-    "commit": "5cb9f97940b5deb2df95bea020ce1ac26f2a5308",
+    "codeTree": "e122f928d620ee2485100752a3d16ed709100bac",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Audited docs/architecture.md against post-CAP-L5 crossing-6 synced L60 candidate (base 5cb9f97940b5): mcp/server.py off-loop _maybe_suppress_provider_limits, cli/__main__.py provider-limits command, and serving/paseo/provider_limit_suppressions.py preserve all documented architectural boundaries with zero contradictions.",
-    "task": "261112-BUG-L60",
+    "statement": "Audited docs/architecture.md in full against KNO-R10@v1 candidate tree e122f928: extents.py::definition_scope gained an optional language_set parameter and provider-version cache keying while preserving all documented architectural and request-scope lifetime contracts.",
+    "task": "261112-KNO-L10",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -134,8 +134,8 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
         "locator": {
           "kind": "symbol",
           "name": "definition_scope"
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:18:52+01:00",
+    "at": "2026-11-27T17:57:42+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L60",
+    "leaf": "261112-KNO-L10",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4f43cc3-e041-5aa8-b816-da12d671c4ab",
-    "task": "261112-BUG"
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
   }
 }

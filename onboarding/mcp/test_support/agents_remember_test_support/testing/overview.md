@@ -31,7 +31,7 @@ The closed product-process register now includes agents_remember.kernel.primitiv
 
 ## Construction And Operating Model
 
-The reset register names the process owners for TypeScript anchor inputs and lifecycle journal records. Tests of native calls observe separate request scopes that clear their own state.
+The reset register names the process owners for TypeScript anchor inputs, compiled citation query caching (`tags_engine.compile_query`), and lifecycle journal records. Tests of native calls observe separate request scopes that clear their own state.
 
 Ordinary local pytest uses the reusable bootstrap. Pytest configuration installs the shared test loop factory for Runner and the public asyncio loop constructor. Cleanup restores both aliases. The factory caps idle selector waits at 50 milliseconds so a denied wake-up send cannot leave a queued callback waiting for a socket event. Test-authored dashboard and historical-review children use the same factory. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
 
@@ -131,11 +131,9 @@ The generated route index lists the source files of this route and their cards.
 
 
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [26]
-
-- The process register declares separate reset, restored, constant-for-tests and quiescent treatments. [19]
-
 - The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [27]
 
+- The process register declares separate reset, restored, constant-for-tests and quiescent treatments, including `tags_engine.compile_query`. [19]
 - The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. [28]
 
 

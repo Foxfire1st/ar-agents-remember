@@ -39,7 +39,7 @@ The generic bounded memo can charge the reachable Python graph of a key and valu
 | --- | --- | --- | --- |
 | `TREE_ENTRIES` | (root, tree id, confined path) | the `ls-tree` entry `(mode, kind, object id)` or `None` | 16,384 entries, unit-priced |
 | `BLOB_LINES` | (root, blob id) | the blob's lines as a tuple | 32 Mi weight units: characters plus 64 per line (`_lines_weight`) |
-| `BLOB_DEFINITIONS` | (root, blob id, grammar and script test-file class) | read-only mapping from names to immutable extent tuples (`Definitions`) | 65,536 units: one per name and per extent (`_definitions_weight`) |
+| `BLOB_DEFINITIONS` | (root, blob id, grammar key, active provider version, and script test-file class) | read-only mapping from names to immutable extent tuples (`Definitions`) | 65,536 units: one per name and per extent (`_definitions_weight`) |
 
 ### Conventions
 
@@ -92,7 +92,7 @@ No configured domain documentation could be checked.
 - **The three tables, their keys and capacities, and the approximate-weight statement above them.** [5]
 - The complete-id pattern is the storage models' own object-id pattern (imported from `models/knowledge/base.py`), compiled once for the admission test. [6]
 
-- The recorded reader caches successful tree, blob and definition answers under complete identities. The definitions key includes repository, blob, grammar and script test-file class. [7]
+- The recorded reader caches successful tree, blob, and definition answers under complete identities. The definitions key includes repository, blob, grammar, active provider version, and script test-file class. [7]
 
 
 - The named tests check weight-bounded eviction and agreement under concurrent access. [8]

@@ -38,6 +38,23 @@
     {
       "anchor": {
         "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_product_process_state_has_an_exact_register"
+        }
+      },
+      "facet": "Verifies PROCESS_MUTABLE_STATES matches the exact syntactically discovered process state population including tags_engine.compile_query.",
+      "id": "PRF-QVTX06",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
         "content": "sha256:7cfc7bea20d2b41d9ab59dae315882fef5542e243198eec3b5d024a778eee3b8",
         "locator": {
           "kind": "symbol",

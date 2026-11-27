@@ -127,7 +127,9 @@ No configured domain documentation could be checked.
 
 
 
+
 - Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate. [9]
+
 
 > Retained earlier citation wording: - The read boundary module occupies the integration lane row; registration is not execution evidence.
 

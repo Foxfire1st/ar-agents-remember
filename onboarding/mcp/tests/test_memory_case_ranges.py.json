@@ -55,6 +55,23 @@
     {
       "anchor": {
         "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:19f171f8385aa7395f27d9956e0fa3e3fc60313d2f3c11a98b91ffc51d9a8893",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_case_that_runs_and_that_no_name_reaches_is_admitted"
+        }
+      },
+      "facet": "Verifies test_case_range admits running unnamable cases from tests.scm call sites by exact extent.",
+      "id": "PRF-M9QJMJ",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
         "content": "sha256:3845b080d5b3571edde300a55f0730270bafab063f1af74623c0676cf0ce359d",
         "locator": {
           "kind": "symbol",

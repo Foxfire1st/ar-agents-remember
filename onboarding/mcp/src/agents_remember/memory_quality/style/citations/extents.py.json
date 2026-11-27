@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+        "locator": {
+          "kind": "symbol",
+          "name": "qualified_spans"
+        }
+      },
+      "id": "RLZ-BAEAZY",
+      "invariant": "INV-QQ8TQ7",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §4",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Provides the single holder-containment and exact-binding qualification rule shared by writer, conversion, and recorded-anchor reads.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
         "locator": {
           "kind": "symbol",
           "name": "definition_scope"
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-        "content": "sha256:39e53668a40407fc6d862ccbaa2d0ea7a63201fa4235d2e2fa9d9f0ace98c221",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
         "locator": {
           "kind": "symbol",
           "name": "definitions"
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
         "content": "sha256:6bfe2019d1c09093fa73eb95259cf83dc3a12cce93bad85b09b544beed31d850",
         "locator": {
           "kind": "symbol",
@@ -90,18 +108,37 @@
       },
       "rationale": "Matches precise complete possible names and keeps separate verified names usable.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
+        "locator": {
+          "kind": "symbol",
+          "name": "definitions"
+        }
+      },
+      "id": "RLZ-N05T9E",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Keys the call-scoped _DefinitionCache by path, grammar key, active provider version, and source lines while preserving per-call definition_scope lifetimes.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "26": {
-      "note": "`qualified_spans` owns the qualified symbol boundary.",
+      "note": "`qualified_spans` owns the qualified symbol boundary shared across writer, conversion, reference checker, and recorded anchor reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "qualified_spans"
             }
           },
           "kind": "code"
@@ -113,10 +150,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:7ba8ac147225146dfcf17db89eefede25ae5a3ce0b7ba58a1b4845dfc0778523",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "Extent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:afb745c678be70a659be248c873ec74e8927fcba309b4b98735a35e8fad72b79",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "code"
@@ -124,14 +174,15 @@
       ]
     },
     "35": {
-      "note": "`definitions` returns names and extents with detached containers.",
+      "note": "`definitions` returns names and extents with detached containers keyed by path, grammar, provider version, and source lines.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "definitions"
             }
           },
           "kind": "code"
@@ -139,14 +190,15 @@
       ]
     },
     "36": {
-      "note": "The writer, conversion and reference checker use the same symbol-binding rule.",
+      "note": "The writer, conversion, reference checker, and recorded anchor reader use the same symbol-binding rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "qualified_spans"
             }
           },
           "kind": "code"
@@ -158,24 +210,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:c9b8899706995283bded3f872ea9063dec83fdd343744e56f30950c10e41ee02",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:edf36cf15655224909eba1fd9ed4aefd8dfd7edea28fa3046c38515074da06c7",
             "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 70
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:017d698e5b5183951caf4802373fca96a685edff9b182565566bebe832039dbc",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 118
+              "kind": "symbol",
+              "name": "_direct_spans"
             }
           },
           "kind": "code"
@@ -183,12 +222,12 @@
       ]
     },
     "52": {
-      "note": "The outer scope owns and releases the table while nested operations join it.",
+      "note": "The outer scope owns and releases the provider-version-keyed table while nested operations join it.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
             "locator": {
               "kind": "symbol",
               "name": "definition_scope"
@@ -199,27 +238,15 @@
       ]
     },
     "53": {
-      "note": "Whole-name lookup preserves room for unresolved Lean scope and applies dotted containment only to other readers.",
+      "note": "Whole-name lookup preserves room for unresolved Lean scope and applies dotted containment only to non-exact-binding readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
-            "content": "sha256:e41690e41befc5ab81f285a943ffa9f95c526b78f1c5671fff5fa03b5e7a6789",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 118
             }
           },
           "kind": "code"

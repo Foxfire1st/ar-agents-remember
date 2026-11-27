@@ -27,6 +27,23 @@
           "name": "test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence"
         }
       },
+      "facet": "Verifies line-range proofs authored through the writer resolve and pair against declarative tests.scm case extents.",
+      "id": "PRF-CK6C9C",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+        "content": "sha256:799326b157fbeb4df83ce24311c1a568e5473a44d9312407395369a2fe1bae9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence"
+        }
+      },
       "facet": "Writes a line-range anchor with the candidate blob and content and reports the paired evidence proof_written.",
       "id": "PRF-SQH15R",
       "invariant": "INV-B37MWR",

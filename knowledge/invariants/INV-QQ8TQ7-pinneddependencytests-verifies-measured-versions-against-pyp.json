@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans grammars version pins, PinnedDependencyTests guard, recorded-anchor qualified lookup, and shared extents holder containment, guarded by dependency-pin and shared-containment tests."
+  },
+  "applicability": "Tree-sitter dependency pins in grammars.MEASURED_VERSIONS and qualified symbol lookups in read_anchors._defining_extents and extents.qualified_spans.",
+  "conditions": [
+    "grammars.MEASURED_VERSIONS aligns tree-sitter at 0.26.1 alongside pinned grammar packages matching pyproject.toml bounds, uv.lock, and installed wheels.",
+    "PinnedDependencyTests verifies every measured version and default provider query compilation without dead OFFLINE_PROBE code.",
+    "read_anchors._defining_extents delegates to extents.qualified_spans so recorded-anchor reads apply the same enclosing-holder containment as writer and conversion."
+  ],
+  "exclusions": [
+    "Exact-binding providers such as Lean resolve exact keys only and do not apply dotted holder containment."
+  ],
+  "id": "INV-QQ8TQ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_citation_grammars.py::PinnedDependencyTests, mcp/tests/test_language_set_and_tags_engine.py::test_read_anchors_and_extents_share_holder_containment_for_qualified_names; clean-copy tree e122f928d620ee2485100752a3d16ed709100bac"
+      ],
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "KNO-R10@v1 §4",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "PinnedDependencyTests verifies MEASURED_VERSIONS against pyproject.toml bounds, uv.lock (aligned at tree-sitter 0.26.1), and installed wheels; dead OFFLINE_PROBE is deleted; and read_anchors._defining_extents shares extents.qualified_spans holder-containment semantics.",
+  "supersedes": [],
+  "title": "Pinned grammar versions match lock/wheels and read_anchors shares containment",
+  "writer": {
+    "at": "2026-11-27T17:57:42+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L10",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8c096656cf80466390bf133b7935d89c98b1d870",
-    "commit": "bf8bda3fbf4960cadf85af41573d606e604e9712",
-    "role": "manager",
-    "statement": "Crossing-7 merge of 261112-BUG-L60 and 261112-KNO-L5 onto bf8bda3fb: updated test-evidence-lanes.toml stress-durability anchor to lines 876-878 (857 total: 703 unit-regression, 3 public-contract, 126 integration, 24 architecture-fitness, 1 stress-durability).",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "uncommitted": false
+    "codeTree": "e122f928d620ee2485100752a3d16ed709100bac",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "role": "curator",
+    "statement": "Audited docs/design/python-pytest-bootstrap.md in full against KNO-R10@v1 candidate tree e122f928: test-evidence-lanes.toml added test_language_set_and_tags_engine.py to unit-regression (704 unit-regression, 858 total) and shifted stress-durability to lines 877-879; all documented pytest bootstrap, lane, and bounded-memory rules remain accurate.",
+    "task": "261112-KNO-L10",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 41,
+  "revision": 42,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
+      "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "594505e979db5f3bef3c8cf075401ef1f872c9a7",
+        "blob": "f9c78d573351f4019f6eaeba59bce6affee5ee2d",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 878,
+          "end": 879,
           "kind": "line_range",
-          "start": 876
+          "start": 877
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T12:00:07+01:00",
+    "at": "2026-11-27T17:57:42+01:00",
     "by": "agent",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L10",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
-    "task": "261112-BUG"
+    "role": "curator",
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
   }
 }

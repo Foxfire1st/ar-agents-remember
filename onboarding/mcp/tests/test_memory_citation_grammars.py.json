@@ -1,17 +1,88 @@
 {
   "path": "mcp/tests/test_memory_citation_grammars.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+        "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "PinnedDependencyTests"
+        }
+      },
+      "facet": "Verifies MEASURED_VERSIONS against mcp/pyproject.toml bounds, mcp/uv.lock, installed distributions, and query compilation across every default provider.",
+      "id": "PRF-W4S5SQ",
+      "invariant": "INV-QQ8TQ7",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §4",
+        "leaf": "261112-KNO-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+        "content": "sha256:6d862d0da739eb4365a4b91ce440fd9be37def3825e165951de3fb31224239d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestCaseDefinitionTests"
+        }
+      },
+      "facet": "Verifies declarative tests.scm extraction preserves JS/TS test-file eligibility, nested describe qualification, escape/UTF-16 decoding, ambiguity, and refusal remedies.",
+      "id": "PRF-X5YEWF",
+      "invariant": "INV-5FFC2H",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §3",
+        "leaf": "261112-KNO-L10"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+        "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "PinnedDependencyTests"
+        }
+      },
+      "id": "RLZ-210WCP",
+      "invariant": "INV-QQ8TQ7",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §4",
+        "leaf": "261112-KNO-L10"
+      },
+      "rationale": "Restores the guard verifying MEASURED_VERSIONS against mcp/pyproject.toml pins, mcp/uv.lock, installed distributions, and query compilation while removing unused OFFLINE_PROBE.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "12": {
       "note": "The unsupported-form cases assert the reason and that the offered remedy is a line range only where a range reaches the case.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ca97e1b896dcd2a523e778c4a979c2a6d96e1c5",
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
             "content": "sha256:7d46b77d233482fc6348b25715ca3c6322968f72f53ea18df37ffda6c2e72c3b",
             "locator": {
               "kind": "symbol",
               "name": "test_unsupported_case_forms_explain_the_reason_and_offer_line_ranges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`PinnedDependencyTests` checks `grammars.MEASURED_VERSIONS` against `pyproject.toml`, `uv.lock`, and installed wheels, and verifies query compilation across every default provider.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "PinnedDependencyTests"
             }
           },
           "kind": "test"
@@ -23,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca97e1b896dcd2a523e778c4a979c2a6d96e1c5",
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
             "content": "sha256:0435779fc48cdc8c723e0aae3f3dd34bc000dcde8d4c579d87cd072356010f75",
             "locator": {
               "kind": "symbol",
@@ -39,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca97e1b896dcd2a523e778c4a979c2a6d96e1c5",
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
             "content": "sha256:7d15d6d9058dbada4455f7ee96d382d0a7a6c72f3208ce94eb95903b762f1bd7",
             "locator": {
               "kind": "symbol",
@@ -55,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca97e1b896dcd2a523e778c4a979c2a6d96e1c5",
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
             "content": "sha256:ccaa779876ece1b6ef11d0c530e0244ccbfa05f6e099a4aae30ac2a1b6798ac9",
             "locator": {
               "kind": "symbol",
@@ -71,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca97e1b896dcd2a523e778c4a979c2a6d96e1c5",
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
             "content": "sha256:87fa112b9de5431a9dd25a46c26b035796f453363b358bf0735e160688a2f53f",
             "locator": {
               "kind": "symbol",
@@ -87,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ca97e1b896dcd2a523e778c4a979c2a6d96e1c5",
+            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
             "content": "sha256:02ef2acc0c260f4e26a226eac70a167919b03ca4dbc82712c3dcb165df825b1d",
             "locator": {
               "kind": "symbol",

@@ -27,11 +27,13 @@ The checklist's actionable count is exactly repairable findings plus missing onb
 
 Interactive `finalFullCatalog` remains a non-certifying readiness projection: the controller supplies no affected-closure plan digest and the catalog reports `finalizationEligible: false`. The prepared application adapter and its production affected-execution/final-certification composition were removed. Core certificate issuance and finalization still require their exact result, prefix and current-memory-input authority, but their existence is not a live Gate-5 producer or successful certification execution.
 
-`extents.definition_scope` owns reusable definition results for one operation and enters `grammars.parsing_scope` for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Definition extraction outside its definition scope parses independently.
+`extents.definition_scope(language_set=None)` owns reusable definition results for one operation (keyed by path, grammar, active provider version, and source lines) and enters `grammars.parsing_scope` (and `language_set_scope` when supplied) for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Definition extraction outside its definition scope parses independently.
 
-Lean symbol extents come from the built-in declaration scan. Each alias binder has its own symbol name and shares the command extent through the target identifier. Whole written and full names share the scan's extent, with verified full names taking precedence. If the scanner retains competing namespace qualifications for the requested declaration key, the key is unverifiable and a line range remains available. The sidecar citation check reports this state separately.
+`style/citations/language_set.py` and `style/citations/tags_engine.py` provide the explicit `LanguageProvider`/`LanguageSet` `ContextVar` seam and declarative tree-sitter `tags.scm`/`tests.scm` execution engine behind `grammars.py`. Each `TreeSitterLanguageProvider` hashes its packaged `.scm` queries into its provider version, `LanguageSet.extractor_version` derives one deterministic identity from `tree-sitter` (`0.26.1`) and every registered provider, and `.lean` is permanently reserved for the built-in `LeanLanguageProvider`.
 
-TypeScript anchor parsing memoizes each exact input, including an unresolved spelling, in the active request. Callers without a request owner use the separate process memo.
+Lean symbol extents come from `LeanLanguageProvider` wrapping the built-in declaration scan. Each alias binder has its own symbol name and shares the command extent through the target identifier. Whole written and full names share the scan's extent, with verified full names taking precedence. If the scanner retains competing namespace qualifications for the requested declaration key, the key is unverifiable and a line range remains available. The sidecar citation check reports this state separately.
+
+TypeScript anchor parsing memoizes each exact `(provider.version, text)` input, including an unresolved spelling, in the active request. Callers without a request owner use the separate process memo on the default `LanguageSet` or parse directly under a scoped override.
 
 MCP tool dispatch and finite CLI handlers establish the operation boundary; the dashboard server handler remains outside it. A background quality worker enters its own fresh context and definition scope. Completed validation results remain independently computed.
 
@@ -233,22 +235,16 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
 
 - The curator checklist renderer owns deterministic grouping, closeout-provenance separation and atomic publication. [7]
-- Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
 - The defaulted without-proof input, row shape and informational rendering. [47]
 - The checklist's defaulted worklist inputs. [49]
 - Checklist actionability has three terms; operational report and attestation receive separate atomic writes and exact bindings, and the returned whole result retains the three blocking populations. [84]
-
-- definition_scope owns call-local definition results, joins nested scopes, enters parsing_scope and clears retained values on exit. [99]
-- parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
-
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
-
-
-
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
-
 - The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]
-
 - Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
 
-- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. [104]
+- Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
+- `definition_scope` owns call-local definition results keyed by path, grammar, active provider version, and lines, joins nested scopes, enters `parsing_scope`, and clears retained values on exit. [99]
+- `parsing_scope` retains diagnostic parse trees and declarative `tests.scm` call sites only within the active call and clears them on exit. [100]
+
+- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request, keyed by active provider version. Unscoped callers use the separate process memo on the default `LanguageSet`. [104]

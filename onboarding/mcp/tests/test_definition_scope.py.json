@@ -51,6 +51,23 @@
         "handoffEntry": "BUG-R09@v3 rule 1",
         "leaf": "261112-BUG-L9"
       }
+    },
+    {
+      "anchor": {
+        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+        "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+        }
+      },
+      "facet": "Verifies call-scoped definition reuse parses once per distinct (path, grammar, provider version, lines) key.",
+      "id": "PRF-KKCVFF",
+      "invariant": "INV-KQ8BKK",
+      "origin": {
+        "handoffEntry": "KNO-R10@v1 §1",
+        "leaf": "261112-KNO-L10"
+      }
     }
   ],
   "realizes": [],

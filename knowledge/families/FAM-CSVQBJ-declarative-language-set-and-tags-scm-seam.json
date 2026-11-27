@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Active LanguageSet scoping and cache-key isolation, declarative tags.scm extraction with .lean reservation, and declarative tests.scm case-call capture together guarantee consistent language-agnostic anchor resolution across writer, conversion, currentness, recorded reads, and test isolation without per-language AST walkers or cross-set cache leakage."
+  },
+  "guarantee": "Every tree-sitter citation consumer resolves source bindings and JS/TS test-case call sites declaratively through the active LanguageSet ContextVar and language-agnostic tags.scm/tests.scm engine, derives extractor identity from pinned versions and query digests across all downstream caches, and keeps .lean permanently reserved for the built-in Lean declaration scanner.",
+  "id": "FAM-CSVQBJ",
+  "members": [
+    "INV-KQ8BKK",
+    "INV-ZYP9YD",
+    "INV-5FFC2H"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff.json"
+    },
+    "handoffEntry": "kno-r10-declarative-language-set-seam",
+    "leaf": "261112-KNO-L10",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application/knowledge_currentness",
+    "mcp/src/agents_remember/application/knowledge_writer",
+    "mcp/src/agents_remember/memory/conversion",
+    "mcp/src/agents_remember/memory/knowledge",
+    "mcp/src/agents_remember/memory_quality/style/citations",
+    "mcp/test_support/agents_remember_test_support/testing"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Declarative LanguageSet and tags.scm citation extraction seam",
+  "writer": {
+    "at": "2026-11-27T17:57:42+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L10",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
+  }
+}

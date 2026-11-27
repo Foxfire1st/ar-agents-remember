@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
-    "commit": "d7b08155a88066fe08ba556c8230961f0042e90d",
+    "codeTree": "e122f928d620ee2485100752a3d16ed709100bac",
+    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
     "role": "curator",
-    "statement": "Audited skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md in full against Round-4 CODE PASS tree b3131ef2: CAP-L3 updated only one citation-anchor link; ranged identifier lookup, extended Lean names, explicit line ranges, and card-format rules match all four standing code anchors.",
-    "task": "261124-CAP-L3",
+    "statement": "Audited skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md in full against KNO-R10@v1 candidate tree e122f928: model.py::anchors_in gained an optional language_set scope and code_anchors.py::_symbol_range resolves via active_language_set(); all documented card-format, ranged-identifier, and Lean citation rules remain accurate.",
+    "task": "261112-KNO-L10",
     "uncommitted": true
   },
   "document": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md",
@@ -17,13 +17,13 @@
     "leaf": "261123-SUB-L1",
     "task": "261123-SUB"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
-        "content": "sha256:9772cb9c0612a151b635f58712357424b251f885b03ad3048eef0c8925ab2678",
+        "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+        "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
         "locator": {
           "kind": "symbol",
           "name": "anchors_in"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
-        "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
+        "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+        "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
         "locator": {
           "kind": "symbol",
           "name": "_symbol_range"
@@ -70,14 +70,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-27T17:57:42+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-KNO-L10",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "task": "261112-KNO"
   }
 }
