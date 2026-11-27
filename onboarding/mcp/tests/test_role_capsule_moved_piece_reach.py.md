@@ -10,11 +10,11 @@ The test proves that a compiled capsule keeps the pointer or inline paragraph th
 
 ## Code Commentary
 
-`_compile_moved_piece_witness` routes an admission for one role and operation through the copied corpus's manifest, compiles it with the shipped binding and returns the rendered instructions.
+`_compile_moved_piece_witness` routes an admission for one role and operation through the copied corpus's manifest, compiles it with the shipped binding, and returns `(rendered_instructions, detail_paths)` where `detail_paths` is the set of `detail_references` source paths.
 
-The Architect case runs for the requirement-packet, leaf and master templates. The pointer `<action> [<label>](../templates/<name>.md)` must occur once in `roles/architect.md`, the template must hold its pinned clause, and the compiled planning capsule must carry the pointer. Removing the pointer, or replacing its action with unrelated wording, fails with `missing template action pointer`, and restoring the source passes again.
+The Architect case runs for the `requirement-packet`, `leaf-task`, and `master-task` templates through two-tier progressive disclosure: `[authoring]({{detail:reference/tasks/document-authoring.md}})` must occur once in `roles/architect.md` and resolve in `detail_references`, and `[<label>](../../templates/<name>.md)` must occur once in `reference/tasks/document-authoring.md` pointing to the template holding its pinned clause. Mutating either layer fails with `missing authoring detail pointer` or `missing template link`, and restoring the source passes again.
 
-The Curator case takes the two `operations/curation.md` paragraphs that begin with the `worktree_status` read before writing memory and with the intake-staleness rule. Each must stand in the delivered `## Normal workflow` section of the Curator's curation capsule, and removing it fails with `missing inline workflow paragraph`.
+The Curator case takes the two `operations/curation.md` paragraphs that begin with `Verify writer outputs resolve in \`workspace.memoryRoot\`. Read \`worktree_status\`` and with the intake-staleness rule (`Record staleness known at task intake as the task’s curation work.`). Each must stand in the delivered `## Workflow` section of the Curator's curation capsule, and removing it fails with `missing inline workflow paragraph`.
 
 ## Relationships
 
@@ -22,6 +22,11 @@ Compilation goes through `compile_admitted_capsule` and `routed_admission_for`; 
 
 ## Evidence
 
-- The witness compiles one admitted role and operation from a copied corpus. [1]
-- The Architect's template pointers must survive compilation; a removed or displaced pointer fails. [2]
-- The Curator's inline workflow paragraphs must reach its delivered Normal workflow; a removed paragraph fails. [3]
+
+- The witness compiles one admitted role and operation from a copied corpus and returns its rendered instructions and detail reference paths. [1]
+
+
+- The Architect's template links remain reachable through its Tier-2 document-authoring detail reference; dropping either layer fails. [2]
+
+
+- The Curator's inline workflow paragraphs must reach its delivered Workflow section; a removed paragraph fails. [3]

@@ -105,5 +105,5 @@ returned summary alone.
 - The unavailable-capsule-path regression requires the refusal message to contain the shared renewal command while preserving the selected mode and writing no coordination root or startup file. [15]
 
 
-- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [6]
 
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [6]

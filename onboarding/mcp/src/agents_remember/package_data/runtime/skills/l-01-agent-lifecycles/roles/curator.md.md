@@ -147,27 +147,38 @@ Read authoring at Curation workflow 1: Reconcile, and card formats/citations at 
 
 - Curation reconciles three bodies of evidence (current intent, ruled change intent and implemented reality) and succeeds when they agree or every material divergence has reached its answering seat. [2]
 
+
 - The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes, uncommitted fingerprints or silencing attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`. [3]
+
 
 
 - On converted memory a role agent that wrote none of the leaf's cards or records checks every changed card, sidecar and record statement by statement before closeout; judgment history belongs in content-bound Curator rows and a counted card edit alone never closes a trace. [6]
 
+
 - The Curator writes `onboarding/` and `knowledge/` via `knowledge_write` or the serving-build CLI with `--commit`/`commit: true` (writing files, not Git), and never edits derived indexes. [7]
+
+
 
 
 - The Curator marks its curation step `done` via `task_doc(set_step)`. [8]
 
 
+
+
 - The Curator fixes faulty inputs on the same writer, repairs its own, tool and coherence faults, and stops to tell the Manager after 3 failed repairs on one item. [9]
+
 
 
 - Curation is evidence, not a gate; the Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state. [12]
 
 
+
 - The Curator starts on a leaf task document only (`Leaf task doc only`). [13]
 
 
+
 - The mirror carries the same effect contract as the canonical role. [1]
+
 
 
 

@@ -288,12 +288,12 @@
       ]
     },
     "24": {
-      "note": "Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited.\n\nAnchor: `knowledge_write`",
+      "note": "Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a53741134415a10630ca49345c855c68138a5f0d8c81e4e490c903ec44128386",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -323,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:81341d9014737b333aabfbe7a4ac723edb139336c62326f6d2af57a6fa6d1fb4",
             "locator": {
               "end": 7,
@@ -336,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:0fbd2fb41e9a5ba9c604ae61fd9a24c9bba3c4de577130e7d4e7067d53ab2a92",
             "locator": {
-              "end": 25,
+              "end": 27,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -392,12 +392,12 @@
       ]
     },
     "27": {
-      "note": "The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes.\n\nAnchor: `knowledge_write`",
+      "note": "The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:78c872aff6f4ed0e59b6c2598bdc48d1baac4e60cc9ae4b369a359b9c47152ef",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:a81e0f5563eac783b87bf4013222f27c8a457f4c181ae1a3ad984b85e5af71f5",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -596,10 +596,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-            "content": "sha256:57e3e8cdebe59ffddd1cef9ea60a2880a44aaf3a2f31ae555e87c4528a336705",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:d2df033ff5dd938abe112e661e6adb06f14a4467c1507ecfb1eeab7ee6caf753",
             "locator": {
-              "end": 25,
+              "end": 27,
               "kind": "line_range",
               "start": 12
             },
@@ -609,8 +609,8 @@
         },
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:981509555ea41e027ba78d3cecea1a262afdc26e29090425eeb6d3cb4bec7bb8",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:3ccce24fcfd84671aef2a77919dccf24fdbe9ebcb089e90167ca5ee11bfb1f1a",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -746,7 +746,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
             "content": "sha256:bb98570680b91e26cb4258212a8ba36a0fd194a2b813d06e6ceea3a40362cc31",
             "locator": {
               "end": 8,
@@ -936,10 +936,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-            "content": "sha256:57e3e8cdebe59ffddd1cef9ea60a2880a44aaf3a2f31ae555e87c4528a336705",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:d2df033ff5dd938abe112e661e6adb06f14a4467c1507ecfb1eeab7ee6caf753",
             "locator": {
-              "end": 25,
+              "end": 27,
               "kind": "line_range",
               "start": 12
             },
@@ -949,8 +949,8 @@
         },
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:caa85a4c30b6b7dbad7211719280de94dcc434e7fd928c30ead19e4776754d33",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:63a4ea71bc018833b502fd4e104fe295df60b1e2614781c2142e29e236334850",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -967,12 +967,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1392,12 +1392,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
             "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
             "locator": {
-              "end": 28,
+              "end": 30,
               "kind": "line_range",
-              "start": 22
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1534,7 +1534,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
             "content": "sha256:52d4838f16d0fb55b773eeb76b36080275f27719c941cbd940b0fa753a171f4b",
             "locator": {
               "end": 30,
@@ -1578,10 +1578,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
-            "content": "sha256:16a2f10d1b42fcf2c933ca07f2e2b8b6c80e671bdf43faa8c55df893a01a3e67",
+            "blob": "832790575f7677f4bfd68dd7c95e0aa96599e297",
+            "content": "sha256:d5715421a949e279ffb3ea8ba868a6ca6ec2bb31265c8c556e6cd84d16892a21",
             "locator": {
-              "end": 24,
+              "end": 26,
               "kind": "line_range",
               "start": 6
             },
@@ -1623,12 +1623,12 @@
       ]
     },
     "84": {
-      "note": "The Curator marks only its completed task-document step; incomplete, blocked, progress or escalation reports mark nothing done.\n\nAnchor: `set_step`",
+      "note": "The Curator marks only its completed task-document step; incomplete, blocked, progress or escalation reports mark nothing done.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
-            "content": "sha256:afec075119d9fe0643d56aa97c20a7d069e081b9eba90414325b0e281a2760e8",
+            "blob": "307ca6ffd983e0832c019e85f12da5dd5629c4a2",
+            "content": "sha256:5dbd41992900011b41c7732c16d61120c59737bbf159fce53262bbd35d0f6df5",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -1676,7 +1676,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -1748,7 +1748,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,

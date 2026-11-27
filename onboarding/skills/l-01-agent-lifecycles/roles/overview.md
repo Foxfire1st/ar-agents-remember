@@ -171,13 +171,19 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - The serving-build and ingest-report details supply the writer invocation and written/planned/refused report reading; the Curator report names writer state, written record and entry identifiers and paths, history rows and refusal reasons. [5]
 
 
+
 - Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits recovery for that same tool and input class; no other write gains the exception. [6]
+
+
 
 
 - Curation keeps scope and producer-ownership boundaries; the serving-build and ingest-report details hold the invocation and report-reading method. [8]
 
 
+
+
 - The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; code, gate, lifecycle and closeout writes stay outside the seat, and task-document edits stay within its own assignment. [9]
+
 
 
 - Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
@@ -198,7 +204,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - The ordinary converted-memory onboarding row is updated with a counted card change or no_impact, and the writer binds it to every covered source file's blob. [17]
 
+
 - The Curator's file-writer step uses mounted knowledge_write or the admitted serving-build command-line writer. [18]
+
 
 
 - Taskless subject and one coordinating agent under the Architect. [19]
@@ -210,10 +218,14 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - Bound uncommitted Worker duty. [22]
 
 
+
 - Independent exact assigned review and sealed findings. [23]
 
 
+
+
 - Bound and preserved normal Curator duties. [24]
+
 
 
 
@@ -222,7 +234,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Current native Curator launch resolves and validates the canonical master and leaf, with the sprint when one commands the master; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
 
+
 - The Curator keeps the admitted writer for normal records, sidecar entries and history, and never edits the derived index. A covered correct-input write refusal uses only its declared same-tool/input-class recovery, with owner notice, manual provenance and working checks. [26]
+
 
 
 - The canonical role owns this concern and mutation boundary. [27]
@@ -312,7 +326,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - The shared writing profile governs invariant statements, family guarantees, history reasons and walkthrough prose, and preserves conditions, exceptions, quantifiers and negation. [51]
 
+
 - Worker, Curator and Reviewer each mark only the task step naming their own part done; with no such step they report and set nothing, and the Reviewer marks its step only after the last round is recorded passed. [52]
+
 
 
 - Memory review keeps separate sealed reports, finding identifiers and pass count, recorded with reviewKind=memory, and changes no code review state. [53]
@@ -328,7 +344,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream. [66]
 
+
 - Curator authors scope, reads the full knowledge_diff before semantic changes and completes full MQC and candidate-bound coherence; Reviewer owns the Git base/candidate handover comparison, with no separate Curator Git comparison. [39]
+
 
 
 - Architect, Manager, and Orchestrator share the child `IDENTITY MISMATCH:` recovery rule: archive the seat, check both its task folder and the reported binding's folder for writes, and start a replacement. \[70] [70]

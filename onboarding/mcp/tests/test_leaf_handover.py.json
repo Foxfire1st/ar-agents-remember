@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
-        "content": "sha256:7dfc781d77b7f035cbc9e2a49446540beecc0dbe2d8ede2e1a890f9a0e393df0",
+        "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+        "content": "sha256:f81c73406e59d45c46a8e2f4265f936b5d6f7192c27398e56a95ca3dba5d8095",
         "locator": {
           "kind": "symbol",
           "name": "test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+        "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
         "content": "sha256:dda4151be2269ab1e797bc7e7df0cb00e1ae4c1c12e66876732ee0e7be4fa88b",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
-        "content": "sha256:cc007eff9e5110243cd8a35c43a84c1581ee3dd476fec88ce389a6c938fb9b71",
+        "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+        "content": "sha256:105827702ff0603e0769e3b8ae8a0e803035614a7279c60da3e6cf5fa22f5358",
         "locator": {
           "kind": "file"
         }
@@ -57,27 +57,15 @@
   ],
   "references": {
     "1": {
-      "note": "The compiled handover carries the exact sibling addresses for each leaf role.",
+      "note": "The compiled handover carries the exact sibling addresses for each leaf role while the inline prompt projects compact leafSeats without roleMessageArguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
-            "content": "sha256:7dfc781d77b7f035cbc9e2a49446540beecc0dbe2d8ede2e1a890f9a0e393df0",
+            "blob": "69ff30df1c8b8d416fb8e3f6610ea4a7551a77bc",
+            "content": "sha256:f81c73406e59d45c46a8e2f4265f936b5d6f7192c27398e56a95ca3dba5d8095",
             "locator": {
               "kind": "symbol",
               "name": "test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
-            "content": "sha256:498cad0bf26459435c7cc99c814433fc247ef6d20349dc48aabc8ae7b5c00aa1",
-            "locator": {
-              "end": 48,
-              "kind": "line_range",
-              "start": 24
             }
           },
           "kind": "test"

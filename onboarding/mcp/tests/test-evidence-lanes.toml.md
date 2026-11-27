@@ -302,27 +302,41 @@ Membership selects evidence without proving invocation.
 - The unit-regression lane selects `mcp/tests/test_code_quality_dashboard_lint_scope.py` once between `test_code_quality_check_scope.py` and `test_code_quality_targeted.py`; membership selects evidence and certifies no invocation. [907]
 
 
+
 - Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. [837]
+
+
 
 
 - The current lane catalog declares test populations; no invocation or pass is implied. [908]
 
 
+
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [909]
+
+
 
 
 - The current lane catalog declares test populations; no invocation or pass is implied. [910]
 
 
+
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [911]
 
 
+
+
 - The seven lane identities remain declared; this is membership, not execution. [863]
+
 - The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [864]
 - The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [867]
 - The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. [869]
 - The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [870]
+
 - The four DEP-R07 type-checker defect regression modules are declared once each in unit-regression in canonical order; membership selects evidence and certifies no invocation. [882]
+
 
 
 - `mcp/tests/test_master_end_document_staleness.py` is declared once in `unit-regression` in canonical order; membership selects evidence and certifies no invocation. [912]
