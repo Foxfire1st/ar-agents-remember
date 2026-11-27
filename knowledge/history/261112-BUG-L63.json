@@ -1,0 +1,234 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L63",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-27T02:18:31+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L63",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "3f06f647-7da8-54bc-8d0a-2290078807fd",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-27T02:18:31+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L63",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "ea901a53-aa49-5afa-bce3-9ede3885fb5c",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "89309af7351d60b7895cd88b18d97917c9800d71",
+    "verdictRef": "notes/reports/reviewer/ea901a53-aa49-5afa-bce3-9ede3885fb5c/memory-review-r2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-09XEN1",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "Updated card prose and added reference [12] for canvas.kit_references._js_language (_clear_cache); re-anchored stale references [1]-[5] and [7]-[11] to exact symbols and line ranges; removed past-change headings and freeze/attempt notes (STOP-delta, attempt14, L184, 260928-MIK-L177 A9, fifth-freeze retirement note) while preserving current present-tense contracts.",
+      "sources": [
+        {
+          "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-17DMN0",
+      "items": [
+        "sha256:14176231681677fc11289c7403c5d4b6082eb96d1fe8166654e7d87d472848f7",
+        "sha256:cdc2abc067221d1d4a49d5c2275fda7114fb222e0f0bb01b1107a9fd64918226"
+      ],
+      "reason": "Reviewed test_canvas_motion.py.md against the HANG_GUARD_SECONDS import and 40-button interactive-sweep deadline update; card prose remains accurate with no contract change, and reference [1] was re-anchored to lines 224-305.",
+      "sources": [
+        {
+          "blob": "ac2c7659ca1186924cb54b5528106e5c29b01466",
+          "path": "mcp/tests/test_canvas_motion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_motion.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1C08MN",
+      "items": [
+        "sha256:18c890f18a124b3619298dc8d74ef8d4663e313c8c44259ddde84e8277c23b79",
+        "sha256:233978c0580917f4de79d3eb2219d6d103afccf874e85b0b4a1f08ec06cff6d5",
+        "sha256:32ffe7ea14419694433d13bb4e88ad39428089e0cc4ec04399627663cc391c72",
+        "sha256:33183ea07606958e48d1d3926cf9aa336c92c368e193168b7474be9294e9b025",
+        "sha256:3a9273dff246db3d297ad38ca5fb091f9f0915d62ee210e69148293a9d77760e",
+        "sha256:3c01f8c2c8ea0074f391d63abeab6f0b839805572aee1aeb6242b51c5997073e",
+        "sha256:3c6545cde7d99e0db76987a55f5f942c93d10fa8b7c22a1a2f23bc99dd54b23e",
+        "sha256:3c7092cb650ea7a4d925c1f6e0ab3e7eee665b888efa3397dcc7df2e184ba011",
+        "sha256:561e391f227bb4c16d732fa90caf2b4b4a54f0843bc5f52d588299e4a8bc9f5c",
+        "sha256:563304a534d5b6dd40a133cdc0d46427926752db2787adb860379a082b859a04",
+        "sha256:625a4ee0a7ce58b2b61306e4d0997dc1ec42e3bb436ce00224e9dfb2affde970",
+        "sha256:72908f33b61a74e46a11d256bb37634eee07dcdaa93655ea8dcfc90b4f7f3fae",
+        "sha256:766d48daf4246e1489d5f13d3c77fc96bea012707c2a13b094ac0fd9b5b5e4b2",
+        "sha256:7eac9481e8cf2d1b4c2f74e97f3beb15aeffaed928c1d490f767a8b6d89dbcc5",
+        "sha256:9147d1b8e1d0861c371498dec06659609854ed738b1cb7c72f2fb7ae0a6142e6",
+        "sha256:a23927953fdf6c5231055961bce7f6f447ff7ec9aaaf14221227fd8bca78adfc",
+        "sha256:a436b4a42fcb1890d183beb9a6a654531cb0f1a41db08e895e3dd1c20427eb99",
+        "sha256:a6cd5a50de239da78744d3a2aa146769f329ee80cdeb1680932036c485a563a8",
+        "sha256:a6d3c011167474180202595dcca57d4d70d712308e6e2861732a5d0a87c9ed42",
+        "sha256:a812aa7a750065737509858df27501b3d34c8d7ef5d06f451294f317a3392a53",
+        "sha256:a9b61a4e4832fbaa31c773d16babb11b5c31fcc4c327638aa0a663ad003a9fff",
+        "sha256:d3fe75ddd9445cec2af4ce711bddc0d5c28f33b453cd1ab41c117cc25f47bd13",
+        "sha256:e4ac2444da40071cbd0630cf9e1ffca64c2d5a249014f71cfe929b8d24a5995f",
+        "sha256:e64dfabdc858feab6c194cc1a2091f37596b518d31153ec71e8b3e955eae98f4",
+        "sha256:e8a87e322b7b1d0acdc5435fee7c38f4ef5cc9b07d40ebe0c84f98d97a8a85a8",
+        "sha256:eecc1976c7cf1f8f32c89f5895dedf60dc5ca66dded7614cb959b0c90408fdc6",
+        "sha256:f0783d9e8be695bae2de1478884d5998006d834d3b5224cd0d3b52e87d0abcfb",
+        "sha256:f7c6a063d4f2184019640c3662ec9f4cc38ff02496bbced223d4a81b9ae762c0"
+      ],
+      "reason": "Updated Code Commentary to replace the retired pruner-scoped barrier description with the current HANG_GUARD_SECONDS event handshakes, _observe_contending_lock try_file_lease exclusion probe, and concurrent-render start barrier; refreshed reference anchors [1]-[5].",
+      "sources": [
+        {
+          "blob": "61d81649d25d30a9028cb3b189d785df5f7032c3",
+          "path": "mcp/tests/test_explainer_staging_and_checks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_staging_and_checks.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+            "content": "sha256:3dfde744774d6bc4c866d096e3d3b3184e6c0664d28cfba3e1bde4c4103aea84",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:b5b30225570cccb39961ba4a30e988a89cb653516850680b239c01e1bd837ac8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5NDAV9",
+      "items": [
+        "sha256:97e0e58fdacea8d6a5821d465f01581ccd84146092c6beaa35fb935ef7f1c001"
+      ],
+      "reason": "Re-anchored PROCESS_MUTABLE_STATES (RLZ-1563PY) after registering agents_remember.canvas.kit_references._js_language with _clear_cache; the closed process-state register invariant meaning is unchanged (BUG-R63@v1 §1, tree 1b4690b02d26670b90f416f1089ced2474bcdddc).",
+      "revision": 2,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-HPV3GA",
+      "items": [
+        "sha256:a17458178fa776633f5cfdd5c23d35e50721e6c04675a22cc927ff831237d185"
+      ],
+      "reason": "Examined all three members (INV-5YPFVJ rev 4, INV-KE2ZHT rev 2, INV-KJN5GP rev 2) and family routes after registering canvas.kit_references._js_language in PROCESS_MUTABLE_STATES; the family guarantee, membership, and routes remain exact and unchanged.",
+      "revision": 5,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac2c7659ca1186924cb54b5528106e5c29b01466",
+            "content": "sha256:7a4239985c0840387a766bf768b1a6f9edcb6c52412e8464ecf31a8cad487a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interactive_sweep_deadline_keeps_unvisited_out_of_errors"
+            },
+            "path": "mcp/tests/test_canvas_motion.py"
+          },
+          "before": {
+            "blob": "b5bb469df1efc2be3d5d37c989a70171ce2c54ce",
+            "content": "sha256:6356302a02ad03b3a0e9e5ae54dd2bc66a354f2da586ba67217db6b603ea767a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interactive_sweep_deadline_keeps_unvisited_out_of_errors"
+            },
+            "path": "mcp/tests/test_canvas_motion.py"
+          },
+          "id": "PRF-Q1KMCG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JXSEKD",
+      "items": [
+        "sha256:5f8181de9c9c33363e3eb6d4cf08158a840ece67f0abf3fc30c7c974cd9262b2"
+      ],
+      "reason": "Re-anchored test_interactive_sweep_deadline_keeps_unvisited_out_of_errors (PRF-Q1KMCG) after replacing its hardcoded 19.0s timeout with HANG_GUARD_SECONDS and 40 buttons; the interactive sweep deadline invariant and proof facet are unchanged (BUG-R63@v1 §2, tree 1b4690b02d26670b90f416f1089ced2474bcdddc).",
+      "revision": 1,
+      "subject": "INV-ES66EB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NVXA0M",
+      "items": [
+        "sha256:3c5183ec9ff45b8e61ffff4befbef1831dc4988fa9f4d31a3555bd7064688479"
+      ],
+      "reason": "Reviewed mcp/tests/overview.md against changes in test_canvas_motion.py and test_explainer_staging_and_checks.py; both test updates conform to the existing load-independent wait and lock-exclusion conventions without changing route-level composition, lane membership, or overview contracts.",
+      "sources": [
+        {
+          "blob": "ac2c7659ca1186924cb54b5528106e5c29b01466",
+          "path": "mcp/tests/test_canvas_motion.py"
+        },
+        {
+          "blob": "61d81649d25d30a9028cb3b189d785df5f7032c3",
+          "path": "mcp/tests/test_explainer_staging_and_checks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P7WQTZ",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "Refreshed stale overview references [19], [26], [27], [28], and [29] targeting global_state.py from whole-file/shifted-range anchors to exact current symbols and line ranges; route-level overview prose remains accurate with no contract change.",
+      "sources": [
+        {
+          "blob": "bec072420ceb5fb666f30288fbf44487e2fb2456",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -130,11 +130,8 @@ The generated route index lists the source files of this route and their cards.
 
 
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [26]
-
 - The process register declares separate reset, restored, constant-for-tests and quiescent treatments. [19]
-
 - The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [27]
-
 - The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. [28]
 
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
