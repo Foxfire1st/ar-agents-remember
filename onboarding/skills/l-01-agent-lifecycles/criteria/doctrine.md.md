@@ -26,7 +26,9 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 
 - Canonical doctrine source binds its review through the Reviewer table and the shared catalog rules. [1]
 
+
 - The reviewer binding table selects doctrine where the review type and change surfaces require it. [2]
+
 
 
 - D-1 requires mechanism-backed enforcement claims; D-2 sweeps contradictory sibling doctrine; D-3 walks stuck states. [4]

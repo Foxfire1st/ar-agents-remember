@@ -93,7 +93,9 @@ after checking live sources.
 
 - Delivery refuses while any discovered skill is unreadable, checked before the read. [3]
 - The request records both entry-point families take. [4]
+
 - The frozen operation vocabulary the capsule request carries. [5]
+
 
 - The consumer obligations recorded for a non-MCP caller of these entry points. [7]
 

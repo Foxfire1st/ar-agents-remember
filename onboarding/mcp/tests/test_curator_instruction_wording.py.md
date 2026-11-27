@@ -56,7 +56,9 @@ The foundation and correction cases require a real task/enclosure, producer hand
 
 - In split module `test_curator_instruction_wording_delivery.py`, writer admission is pinned in the role, serving-build detail, publication report, exceptions-and-recovery detail, and operation texts (including dependent `knowledge_read` parameters, candidate matching, and response receipt fields), and the parser refuses the removed options with exit 2. [2]
 
+
 - The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity. [1]
+
 
 
 

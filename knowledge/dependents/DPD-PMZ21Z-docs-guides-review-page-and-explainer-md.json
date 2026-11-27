@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Audited docs/guides/review-page-and-explainer.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 216-229 (nine effects) and 265-270 (invariant, family, and membership dispositions) match live models/knowledge_files/history.py and records.py unchanged by DPD-only deferral dispositions.",
-    "task": "261112-BUG-L52",
+    "statement": "Verified docs/guides/review-page-and-explainer.md against 17c064d8: lines 267-270 describe ordinary Curator history dispositions while consolidation-pass stands/unresolved dispositions are documented in docs/concepts.md:749-756; ruled non-contradictory by Reviewer 13ac4090 in KNO-L5-F07 (verdict SHA-256 35120ca0b1ea83388db4f57a5a62262f95f84f5a27381eb7ebf871c1cebb1eb8).",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py"
     },
     {
-      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+      "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -206,7 +206,7 @@
       "path": "mcp/src/agents_remember/application/master_architect_record.py"
     },
     {
-      "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+      "blob": "01afa70c008ae34ebf1f81b0ffab4bb47952036b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+      "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -266,7 +266,7 @@
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
     {
-      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "blob": "ecd1e409ff24a3f0cb1d8385a08193d0bcb1cfab",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-27T06:45:08+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
-    "task": "261112-BUG"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

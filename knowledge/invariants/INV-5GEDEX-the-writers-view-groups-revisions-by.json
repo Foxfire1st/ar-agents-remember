@@ -25,27 +25,19 @@
     "leaf": "261112-KNO-L3",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The writers view groups revisions by role, harness and model, then counts reviewed, changed and retired revisions. Its index derives the current revision's review credit from the same content decision as the record view. The tool answer names a report with the revisions behind each count.",
+  "statement": "The writers view groups revisions by role, harness and model, then counts reviewed, changed, retired, and five consolidation outcome columns (consolidationKept, consolidationCorrected, consolidationMerged, consolidationRetired, consolidationUnresolved) attributed to the writer of the revision read. Its index derives the current revision's review credit from the same content decision as the record view. The tool answer names a report with the revisions behind each count.",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-KNO-L3",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-KNO",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

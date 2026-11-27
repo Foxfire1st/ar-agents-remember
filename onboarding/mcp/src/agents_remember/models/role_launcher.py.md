@@ -22,9 +22,13 @@ RoleDispatchRequest declares optional step_up aliased stepUp, constrained to str
 ## Evidence
 
 
+
 - Worker/Curator typed review census, record-only exclusion and unknown history. [6]
 
+
+
 - Step-up reason admission and threshold govern choice of an alternative. An alternative takes mode from its own settings row. It inherits omitted launch fields only when its provider and model both match the role defaults. [7]
+
 
 
 - The wire models carry optional provider and model IDs for selected options, explicit dispatch overrides and replacement markers, and a saved request UUID for Result. [8]
@@ -56,9 +60,13 @@ Investigator is canonical in new selection output. The parsed selection retains 
 
 `LauncherRole` admits `bootstrap`, the free agent a new user reaches through the one start call; `system-specialist` normalizes to `investigator`. `RoleDispatchRequest` carries `caller_harness` (`callerHarness`, at most 120 characters), the harness the calling chat itself runs: absent means the caller named none, and nothing substitutes a provider for it. Neither addition authorizes a start, a parent or a replacement.
 
+
 - The launcher role set that includes the free agent. [9]
+
 - The dispatch request, which carries the caller's harness name. [10]
+
 
 - The earlier system-specialist spelling names Investigator; Bootstrap and callerHarness remain launcher model data rather than caller permission. [11]
 
-- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [6]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.

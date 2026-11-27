@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_knowledge_consolidation_proposal.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1d4f938ee12e5143b7afecfe9814de275e2a6495",
+        "content": "sha256:b360bd1bcbe4a064d044228f3291396c395f2be72725ae8087532bed59aca82e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_read_naming_two_subjects_or_an_unknown_master_is_refused"
+        }
+      },
+      "facet": "Verifies conflicting selectors and unknown masterId refuse cleanly.",
+      "id": "PRF-EFD12W",
+      "invariant": "INV-4R5HAZ",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 5 (D1049)",
+        "leaf": "261112-KNO-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d4f938ee12e5143b7afecfe9814de275e2a6495",
+        "content": "sha256:da2bd8e721bd615aabc2e02ffebeb7248e9aa22adbe3bc30ba0e153870de6cff",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_three_ways_propose_families_with_the_loose_rules_of_their_files"
+        }
+      },
+      "facet": "Verifies masterId, family, folder, and default proposal modes with exact same-file unaffiliated rule attachment.",
+      "id": "PRF-TFFC5K",
+      "invariant": "INV-4R5HAZ",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 5 (D1049)",
+        "leaf": "261112-KNO-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_memory` constructs a two-commit converted Git memory tree so family creation order, realization sidecars, master writes, and prior consolidator history are all exercised over real commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d4f938ee12e5143b7afecfe9814de275e2a6495",
+            "content": "sha256:c23c67f7e8141ed72e09086fd0ae404a6a3213d045e4a102024bed3ded4d9640",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Verifies master-scoped, family/folder-scoped, and oldest-first consolidation proposals, same-file-only loose-rule attachment, `rulesInNoFamily`, `lastConsolidated`, counts, and report output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d4f938ee12e5143b7afecfe9814de275e2a6495",
+            "content": "sha256:da2bd8e721bd615aabc2e02ffebeb7248e9aa22adbe3bc30ba0e153870de6cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_three_ways_propose_families_with_the_loose_rules_of_their_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verifies supplying conflicting selectors refuses with `bad_selector` and an unknown `master_id` refuses with `selector_absent`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d4f938ee12e5143b7afecfe9814de275e2a6495",
+            "content": "sha256:b360bd1bcbe4a064d044228f3291396c395f2be72725ae8087532bed59aca82e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_naming_two_subjects_or_an_unknown_master_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

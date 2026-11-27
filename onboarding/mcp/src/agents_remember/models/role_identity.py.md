@@ -14,8 +14,11 @@ The role levels and leaf/taskless membership move byte-for-byte to the light mod
 
 canonical_role maps only system-specialist to investigator. role_spellings enumerates the canonical name and that one earlier spelling for existing read addresses. Every other value remains itself. ROLE_ALIAS_NOTICE is the single public notice. Normalization is input/read identity handling, not a migration, second role implementation or runtime authorization.
 
+`LEAF_ROLES` includes `consolidator` alongside `worker`, `reviewer`, and `curator`; `canonical_role` keeps `consolidator` unchanged.
+
 ## Evidence
 
 - The source owns the documented investigation, identity or request boundary. [1]
+
 
 - The role levels and leaf/taskless membership move byte-for-byte to the light model owner; imported launch members retain their original meaning. [2]

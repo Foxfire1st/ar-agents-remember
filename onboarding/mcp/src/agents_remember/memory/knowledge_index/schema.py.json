@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
-        "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
+        "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
+        "content": "sha256:86458aa87a94a4499035ec33715d7dfeafd9bb8bf0f2b4ff522f48b7840af52d",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+        "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
         "content": "sha256:26a6f86e96d0c678f7b14b970f10d1346f37339aad5954e0c8db73d298c992a9",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
   ],
   "references": {
     "5": {
-      "note": "The index format name a cached file must carry is v8.\n\nAnchor: `INDEX_FORMAT`",
+      "note": "The index format name a cached file must carry is v8.",
       "targets": [
         {
           "anchor": {
-            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
-            "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
+            "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
+            "content": "sha256:86458aa87a94a4499035ec33715d7dfeafd9bb8bf0f2b4ff522f48b7840af52d",
             "locator": {
               "kind": "file"
             }
@@ -54,12 +54,12 @@
       ]
     },
     "6": {
-      "note": "The `ix_*` tables, reverse lookups, and `ix_fts` virtual table are defined in the derived index layout.\n\nAnchor: `INDEX_DDL`",
+      "note": "The `ix_*` tables, reverse lookups, and `ix_fts` virtual table are defined in the derived index layout.",
       "targets": [
         {
           "anchor": {
-            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
-            "content": "sha256:5c91482d939d7dad10cd5760450d6a301af5afb9b33adb6c382cc4babcde71f8",
+            "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
+            "content": "sha256:86458aa87a94a4499035ec33715d7dfeafd9bb8bf0f2b4ff522f48b7840af52d",
             "locator": {
               "kind": "file"
             }
@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
+            "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
             "content": "sha256:01fa4fe982e23e1db8f4bde0fb785c58beedfb302297a1b64b2f0d1a7f250941",
             "locator": {
-              "end": 106,
+              "end": 107,
               "kind": "line_range",
-              "start": 96
+              "start": 97
             }
           },
           "kind": "code"
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71937652a4601002065d595ae0f21e9f13aa0a6",
-            "content": "sha256:59b84d88ccdd55de1b00c75aec0797cdd7866add529ea629ef6ea52f25e8b5ee",
+            "blob": "138ba0a694646332bf4af6a9e7385dde088a7f0b",
+            "content": "sha256:ee5d5036ee488668410a0f91e0aefd2ae1029dfae06e6e3d3146c4285acb2e66",
             "locator": {
               "end": 118,
               "kind": "line_range",

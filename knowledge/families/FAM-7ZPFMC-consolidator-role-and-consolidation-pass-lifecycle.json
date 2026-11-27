@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The nine KNO-R05 invariants span task schema, role launch, worklist/gate/writer, index/readers, dashboard, and skill manuals so that a consolidation pass can only produce honest consolidated standing and writer metrics when all nine parts agree."
+  },
+  "guarantee": "Across task documents, role launch/settings, worklist/gate/writer enforcement, proposal reads, derived index standing/writer counts, dashboard projection, and skill/doc guidance, a consolidation leaf marked by consolidationList runs a two-seat Consolidator-and-Reviewer memory-only pass whose listed families and reached rules are tracked through consolidation_target items, stands/unresolved proof-evidenced rows, exact memory review bindings, consolidated standing, five per-writer consolidation outcome counts, and honest unread-memory display.",
+  "id": "FAM-7ZPFMC",
+  "members": [
+    "INV-SAK9RR",
+    "INV-HE32N8",
+    "INV-1PBH5A",
+    "INV-4R5HAZ",
+    "INV-VETCYM",
+    "INV-HD8CC1",
+    "INV-J4MDWS",
+    "INV-HPD40B",
+    "INV-3ZXAD9"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_consolidator_role.py, test_role_start_set.py, test_role_wire_token_budgets.py (all 9 default pairs pass wire ceilings; all 37 matrix keys pass compiled ceilings), and source audit confirming zero automatic consolidator start paths."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 1",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels/detail-panel",
+    "docs",
+    "mcp/src/agents_remember/application/knowledge_consolidation_proposal",
+    "mcp/src/agents_remember/application/knowledge_worklist",
+    "mcp/src/agents_remember/application/knowledge_writer",
+    "mcp/src/agents_remember/application/role_capsules",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/memory/knowledge_index",
+    "mcp/src/agents_remember/models/knowledge_files",
+    "mcp/src/agents_remember/serving/projections/snapshots_impl",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees",
+    "skills/l-01-agent-lifecycles"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Consolidator role and memory-only consolidation pass lifecycle",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

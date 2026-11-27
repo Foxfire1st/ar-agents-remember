@@ -231,12 +231,12 @@
       ]
     },
     "7": {
-      "note": "A closed owner history without a review fact yields the no-pass sentence.\n\nAnchor: `committed_review_note`",
+      "note": "A closed owner history without a review fact yields the no-pass sentence.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
-            "content": "sha256:3b452b5cc09e5ae3c81a61f71cc96ff67466f81d73cb85bfbc77db28f307039b",
+            "blob": "9866ef371a2ee68c39e2c588355253acbb2517d2",
+            "content": "sha256:91ea57da50a038a0eda2955c46a87635de805f336b20222a52088e2fb5df4f3d",
             "locator": {
               "kind": "file"
             },

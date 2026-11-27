@@ -10,7 +10,7 @@ Select one user-owned role alternative from typed review facts without mutating 
 
 ## Current Contract
 
-Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
+Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator and Consolidator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
 
 select_step_up uses an explicit one-sentence reason, a prior selected step-up or a reached configured threshold. A reason requires a configured alternative; absent settings keep the role’s own choices, warning when a prior selection no longer has configuration. Reasons are trimmed, single-line, nonblank and at most 1000 characters.
 
@@ -23,12 +23,18 @@ A prior selection is retained while an alternative remains configured, not an im
 ## Evidence
 
 
+
 - Threshold, manual and prior selection carry scoped choices and sanitized provenance. [1]
+
 
 - The manual reason has an explicit bounded single-sentence shape. [2]
 - Only settings-origin selections are relabeled. [3]
+
 - Failed counts use role-specific typed lanes, not total record operations. [4]
+
+
 - Incomplete typed history yields unknown, not an invented zero/count. [5]
+
 - Test source keeps record-only checks and the memory sequence independent. [6]
 
 

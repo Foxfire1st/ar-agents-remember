@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake",
+      "family_guarantee"
+    ],
+    "justification": "Spans Tier-1 review.md, Tier-2 rounds-and-late-findings.md, and docs/reference/mcp-tools.md; omitting candidateTree or verdictRef causes closeout to drop review credit and emit 'Nothing was consolidated.' on a passing consolidation pass."
+  },
+  "applicability": "Reviewer memory-lane instructions and MCP tool documentation for task_doc(record_review, reviewKind='memory').",
+  "conditions": [
+    "Reviewer Tier-1 operations/review.md, Tier-2 rounds-and-late-findings.md, and docs/reference/mcp-tools.md instruct Reviewer to pass the exact 40-character memory Git tree as candidateTree and a task-relative verdictRef so closeout verifies the passed memory tree and writes the review fact into knowledge/history/."
+  ],
+  "exclusions": [
+    "Code-lane record_review calls, which bind the code candidate tree."
+  ],
+  "id": "INV-J4MDWS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sbx-e8 Evidence 8 Run 3 live proof: both SBX-C1-L1 (89bd9f9) and SBX-C1-L2 (69e43a9) Reviewers recorded memoryTree + verdictRef on record_review(reviewKind='memory') and closeout wrote the review fact into knowledge/history/."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 10 & Evidence 8 review binding",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Memory review instructions require Reviewer to pass candidateTree (exact 40-char memory Git tree) and verdictRef on task_doc(record_review, reviewKind='memory') so closeout can verify the passed memory tree and write the review fact into knowledge/history/.",
+  "supersedes": [],
+  "title": "Memory record_review requires exact candidateTree and verdictRef",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

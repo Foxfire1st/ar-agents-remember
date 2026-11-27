@@ -48,4 +48,3 @@ simulated where the tooling inspects `/proc` or a process record.
 
 
 - `SandboxCase` hides named harness configuration markers at ancestors outside its owned fixture through a scoped existence view, while the fixture's own paths and all others use the real filesystem. [2]
-

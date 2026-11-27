@@ -20,15 +20,21 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 ## Evidence
 
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
+
+
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]
 
-- The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule. [2]
+
+- The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule.
+
 
 
 
 - The launcher model restores the saved taskless request ID, pending flag and override with a trimmed reason. Investigator retains its original storage slot. [3]
+
 
 
 

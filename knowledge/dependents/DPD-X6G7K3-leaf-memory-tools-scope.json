@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
-    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Confirmed CAP-L5 edits to docs/reference/mcp-tools.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): all CAP-L5 passages (role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke skill:// pointers) are accurate and CAP deferral resolved; KNO-R07 lines 31 and 203 contradiction remains openly deferred under DFR-5EZYPH (owner 261112-KNO).",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/reference/mcp-tools.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 role-scoped allowlists, lossless compaction, and fail-closed bindings alongside KNO-R05@v3 Consolidator/consolidation_proposal docs while re-deferring pre-existing KNO-R07 DFR-5EZYPH (lines 31, 203) under 261112-KNO.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/reference/mcp-tools.md",
-        "note": "Update docs/reference/mcp-tools.md lines 31 and 203 for KNO-R07 5,000-token knowledge_read ceiling, ten views (including records/impact/search/compact), auto-pairing, and post-landing brief refresh."
+        "note": "Update docs/reference/mcp-tools.md line 31 to 5,000 tokens and line 203 to all eleven knowledge_read views."
       },
-      "createdAt": "2026-11-27T04:33:25.250953Z",
-      "createdByLeaf": "261124-CAP-L5",
-      "fileBlob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
-      "id": "DFR-5EZYPH",
+      "createdAt": "2026-11-27T06:28:50.484690Z",
+      "createdByLeaf": "261112-KNO-L5",
+      "fileBlob": "df38c6af9b2b5219ad32edca43a401713b847ecc",
+      "id": "DFR-CAA340",
       "owner": "261112-KNO",
-      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read lists 7 views and states open named files for record text)",
-      "reason": "KNO-R07 (landed in 1063f65132b1) raises the knowledge_read ceiling to 5,000 tokens in tool_answer.py, adds records/impact/search/compact-dependent views and auto-pairing in knowledge.py/marks.py/truth.py, and adds post-landing brief refresh in record_landing.py, directly contradicting lines 31 and 203; codeRoot is frozen at Code Round 4 PASS and Curator cannot edit docs/ files."
+      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read summary omits KNO-R07 views and verbatim record return)",
+      "reason": "KNO-L5 merged docs/reference/mcp-tools.md onto CAP-L5 (e273d1c9), advancing its blob; pre-existing KNO-R07 lines 31 and 203 remain deferred under 261112-KNO (accepted in KNO-L5-F07)."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
+      "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -108,7 +108,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+      "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -143,12 +143,12 @@
       "path": "mcp/src/agents_remember/mcp/read_only.py"
     },
     {
-      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+      "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+      "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/role_launch_context.py"
     },
@@ -168,7 +168,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "800ca61f745d1c208a04ccaa6c1ac667fda46e94",
+      "blob": "c2c9b4346f852ba071706f09c32a57bc41fb72e8",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -198,12 +198,12 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
     },
     {
-      "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
+      "blob": "a972ce4ce0b8955ea2a85aa521b5b8750e8a181d",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/review_history.py"
     },
     {
-      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+      "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -351,7 +351,7 @@
     },
     {
       "anchor": {
-        "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+        "blob": "b4e367f74cf99e83ed876df07c80f0579e9055bd",
         "content": "sha256:3ebb97025105171a88b5a176c9a9d9e5317c5116b3bc90648c6a27d044a3dbe7",
         "locator": {
           "kind": "symbol",
@@ -438,14 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T05:42:30+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

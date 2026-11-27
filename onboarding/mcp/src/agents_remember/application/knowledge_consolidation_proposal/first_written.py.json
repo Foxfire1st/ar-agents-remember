@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/first_written.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_FIRST_ADDS` queries Git once over `FAMILY_DIRECTORY` with `--no-renames`, `--diff-filter=A`, NUL-prefixed commit ISO timestamps, and `--name-only`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfa4412bc252e6215d77399bb3b75fb295dffba2",
+            "content": "sha256:82dc18856fbf5d45d3dc8069c78c4d6c0042bc21b4e4565a34d0082f61cdce0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FIRST_ADDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`first_written` tracks the earliest add-commit `datetime` per known family and returns an empty dict on Git failure or non-zero exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfa4412bc252e6215d77399bb3b75fb295dffba2",
+            "content": "sha256:7e38fcfb571a63d196e711166fd1261866683ea641cd53188da7326e66b76248",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_written"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_family_of` parses the `<prefix>-<id>` record identifier from family filenames so slug changes preserve record identity, filtering to known families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfa4412bc252e6215d77399bb3b75fb295dffba2",
+            "content": "sha256:62670ae34282008118b6645e6bc37cb10243bb52773c50a2a3c674eebe8e17c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

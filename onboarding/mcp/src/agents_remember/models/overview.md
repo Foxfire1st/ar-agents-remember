@@ -26,7 +26,7 @@ The MIK-R109 naming fields still identify locations and state. `NamedFile` carri
 
 A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`, except a `server-build-stale` dispatch refusal, which validates through `base.py::StaleBuildRefusalResponse`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
-tools/public_roster.py owns the advertised 44-name ordinary tuple and tools/tool_registry.py maps current names to their response models. tools/role_tool_scope.py owns `ROLE_TOOL_ALLOWLISTS`, the canonical per-role allowlist: each of its eight entries is an ordered subsequence of that tuple, together they cover it, and both the role-bound task server and the seat's preapproval policy (currently for Codex seats) read it. tools/tool_schema_compaction.py exports `compact_tool_schema`, a pure, stdlib-only, non-mutating JSON-Schema-aware helper that strips only schema-level `title`, redundant `default: null`, and immediate top-level `$defs` model-level `description` strings while preserving literal `title`/`default`/`description` property names, `required`, constraints, combinators, `$ref`, and non-null defaults; `mcp/server.py::_compact_server_tool_schemas` invokes it before role narrowing without altering runtime Pydantic validation. These are model-layer wire vocabulary and pure schema transforms, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
+tools/public_roster.py owns the advertised 44-name ordinary tuple and tools/tool_registry.py maps current names to their response models. tools/role_tool_scope.py owns `ROLE_TOOL_ALLOWLISTS`, the canonical per-role allowlist: each of its nine entries (including `consolidator` with 13 tools) is an ordered subsequence of that tuple, together they cover it, and both the role-bound task server and the seat's preapproval policy (currently for Codex seats) read it. tools/tool_schema_compaction.py exports `compact_tool_schema`, a pure, stdlib-only, non-mutating JSON-Schema-aware helper that strips only schema-level `title`, redundant `default: null`, and immediate top-level `$defs` model-level `description` strings while preserving literal `title`/`default`/`description` property names, `required`, constraints, combinators, `$ref`, and non-null defaults; `mcp/server.py::_compact_server_tool_schemas` invokes it before role narrowing without altering runtime Pydantic validation. These are model-layer wire vocabulary and pure schema transforms, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
 
 The current ordinary public source roster has 44 names, including mounted knowledge_write, user_settings_init, citation_note_revision and explainer_control; the earlier41-name and pre-sync R11142-name compositions remain historical source epochs. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.
 
@@ -475,11 +475,19 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The attempt-qualified history path. [273]
 
+
 - Current imported source owns this scoped route boundary. [275]
+
+
 - Current imported source owns this scoped route boundary. [277]
+
+
 - Current imported source owns this scoped route boundary. [278]
 
+
+
 - Current imported source owns this scoped route boundary. [276]
+
 
 - The dashboard's tokens for the codes. [280]
 
@@ -596,11 +604,15 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - The settings initializer's answer shape. [333]
 
+
 - The start answer that declares the seat's continuation. [334]
+
 
 - The current literal ordinary public roster declares 44 names, including knowledge_write, user_settings_init, citation_note_revision and explainer_control; this source census is not live advertisement or acceptance. [335]
 
+
 - Launcher selections include Bootstrap, normalize the earlier system-specialist spelling to Investigator, and carry the caller harness as separate request data. [336]
+
 
 - The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]
 
@@ -690,7 +702,9 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
 - The dashboard launcher carries modeId and role-start tool inputs omit mode. Permission-bearing start-call features still refuse. [341]
+
 - Why a row cannot govern an invariant whose revision the leaf changed. [274]
+
 
 - Both successful landing states share the short-form bound. The next step, stale-entry count and capped keys each stay only if they fit with the exact locator reserved. A fitted count stays when the keys or their omission notice are dropped. Where the count does not fit, the cut omits staleEntries and the named detail retains the whole debt. [342]
 
@@ -715,8 +729,12 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - The family identity, the immutable revision aggregate and its self-consistency rules. [108]
 - The history schema in the dispatch table. [268]
 - **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
+
 - The history file: one owner, one row per subject, a strict `closed` flag. [265]
+
+
 - The reconsideration row retains its own subject and disposition grammar. [66]
+
 
 - The models declare optional compact file briefs, optional stored titles and product start notice reports. [346]
 - `compact_tool_schema` returns a lossless, deep-copied MCP tool JSON Schema that strips only schema-level `title`, redundant `default: null`, and immediate top-level `$defs` model descriptions while preserving literal property names and all wire constraints. [343]

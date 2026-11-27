@@ -116,7 +116,10 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The Reviewer independently examines one assigned seam or leaf review round against bound criteria catalogs and writes local report-folder verdicts (template for verdictRef; non-leaf seams are linked in the reference index). [2]
+
+
 
 
 
@@ -128,13 +131,17 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The Reviewer prohibits seat absorption alongside code/onboarding edits, requirement rewrites, task acceptance, role starts, Git publishes, gate decisions and operator-setting changes. [5]
 
 
 
 - A baseline review runs the bound catalogs, required routes and exploratory mandate, covers all three lenses explicitly, and tries to refute each claim before confirming it. [6]
 
+
 - The Reviewer binds the seam's required criteria catalogs (`code-seam`, `report-verification`, plus `doctrine` for docs/skills and `onboarding-memory` for memory); briefs never override catalogs, and bound catalogs are recorded in Catalog Binding. [7]
+
+
 
 
 
@@ -148,7 +155,9 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
 - The onboarding staleness criterion checks every present-tense card or overview sentence against the as-landed code, keeps historical accounts in history rows, and does not accept a true paragraph added beside a contradictory claim. [14]
+
 
 
 
@@ -159,7 +168,10 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 
+
+
 - The Reviewer writes the verdict in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) using the linked verdict template and records memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`. [19]
+
 
 
 
@@ -188,7 +200,10 @@ No meaningful cross-repo references found.
 
 
 
+
 - The Reviewer writes local report-folder verdicts (template for verdictRef), edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks focused tests (full/drift on request or Final checks) plus full `memory_quality_check` curation evidence, and makes no gate decisions. [22]
+
+
 
 
 
@@ -202,12 +217,16 @@ No meaningful cross-repo references found.
 
 
 
+
+
 - The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work. [28]
 
 
 
 
+
 - The Reviewer marks review `done` via `task_doc(set_step)` only after the last round passes. [32]
+
 
 
 

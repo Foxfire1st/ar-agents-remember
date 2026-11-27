@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Confirmed mcp/src/agents_remember/package_data/runtime/docs/tool-details.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) as the byte-identical packaged mirror of updated docs/tool-details.md renewed via scripts/renew-instructions.py.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md against post-CAP-L5 synced tree e273d1c9 (byte-identical mirror of docs/tool-details.md including CAP-L5 and KNO-L5).",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
+      "blob": "7d6ef35cc5624ccdf04284f69da136d965f2b2dc",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
@@ -105,7 +105,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+      "blob": "fa6129979a8e82276b5e6b9cb20a7f9ea4a48cba",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
     },
@@ -239,14 +239,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:55:00+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

@@ -7,6 +7,21 @@
     "task": "261124-CAP-L5",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "ROADMAP.md",
+        "note": "Update ROADMAP.md line 137 to reflect knowledge_read FTS5 word search."
+      },
+      "createdAt": "2026-11-27T05:21:53.021838Z",
+      "createdByLeaf": "261112-KNO-L5",
+      "fileBlob": "aea3f91850e82875762348cd5c92a3525a30a89a",
+      "id": "DFR-CHCWF5",
+      "owner": "261112-KNO",
+      "passage": "ROADMAP.md line 137 ('no tool searches the memory by words')",
+      "reason": "Pre-existing KNO-R07 contradiction (knowledge_read view='search' provides FTS5 word search); accepted as non-L5 deferral under 261112-KNO by Reviewer in KNO-L5-F07."
+    }
+  ],
   "document": "ROADMAP.md",
   "id": "DPD-3P9XTZ",
   "origin": {

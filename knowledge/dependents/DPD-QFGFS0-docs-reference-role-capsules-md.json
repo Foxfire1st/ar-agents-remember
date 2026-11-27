@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/reference/role-capsules.md on CAP-L5 tree af88a85d for three-tier progressive disclosure, nested <stem>.details/<source_path> snapshots, .opening-message.md/.held-batch-<sha256>.md/.step-up.json sidecars, trailing AR handover artifacts locator, Link roots, slimmed wire projection, and role_message skill:// refusal pointers; resolved DFR-BKQ5CP.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/reference/role-capsules.md against post-CAP-L5 synced tree e273d1c9 after CAP-L5 resolved its deferral: three-tier progressive disclosure, handover artifacts, and held/message semantics remain accurate.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+      "blob": "44016dc9a9474a64e3eb33a2b6270c65e4d14c00",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+      "blob": "127ed491cba3ce33cdf2d5562b9092bc842eff27",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -82,14 +82,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T23:45:16+01:00",
+    "at": "2026-11-27T07:33:39+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

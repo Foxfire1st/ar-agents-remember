@@ -30,20 +30,20 @@
     "leaf": "261112-BUG-L41",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Manager applies routine paired closeout across all masters (including standalone masters) under standing series authority when the exact candidate has passing code and memory reviews, passing listed final checks, a clean preview (passing standing leaf authority as intent_note when commit_approval_required is true), an unwaived evidence map, and the Curator's exact-pair stale-dependent knowledge_read showing zero stale dependent-document rows (refreshed by the existing Curator after any clean sync that changes the pair while keeping the existing review).",
+  "statement": "The Manager applies routine paired closeout across all masters (including standalone masters) under standing series authority when the exact candidate has passing code and memory reviews (memory review alone on a consolidation leaf), passing listed final checks, a clean preview (passing standing leaf authority as intent_note when commit_approval_required is true), an unwaived evidence map, and the Curator's or Consolidator's exact-pair stale-dependent knowledge_read showing zero stale dependent-document rows (refreshed by the existing Curator or Consolidator after any clean sync that changes the pair while keeping the existing review).",
   "supersedes": [],
   "title": "Manager standing routine paired closeout and zero-stale dependent proof",
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
-        "content": "sha256:28b456b8e1d56b169ef6516b9721a8a9acb4595b6960fa7764623545bea671e6",
+        "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
+        "content": "sha256:4d9a399fc606a39ccdea18330001af44f28cccf2f390b78ba78d2639427d8a4e",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
             "content": "sha256:2101e1b0cc37cfe789b26c9fa5c644525c8e4f91a2f528474dc1a30c3b612f80",
             "locator": {
               "kind": "symbol",
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
             "content": "sha256:84227da51fea414326f69b842b910efc3f439b41cedb4768ae0f437fd4f9d636",
             "locator": {
               "kind": "symbol",
@@ -60,11 +60,11 @@
       ]
     },
     "2": {
-      "note": "Evidence, retirement and audience checks remain separately expressed.\n\nAnchor: `_assert_core_dispositions` / `_assert_digest_audiences` (and `_assert_core_retirements` at `41-56`)",
+      "note": "Evidence, retirement and audience checks remain separately expressed.\n\nAnchor: `_assert_core_dispositions`, `_assert_digest_audiences`, `_assert_core_retirements`",
       "targets": [
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
             "content": "sha256:0e56019bcb9ec841531e9d530fdd439c25f0e863592f1df2bb837a9d4958032b",
             "locator": {
               "kind": "symbol",
@@ -75,8 +75,8 @@
         },
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
-            "content": "sha256:b1f58234b5cd4f868b69214029a71150f28d3ec9233bcd1171b8dc99814e7e2e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
+            "content": "sha256:1487c6273be12437c798eb7212d53bbd0668ea788098a3a4e65a687df4afcd9f",
             "locator": {
               "kind": "symbol",
               "name": "_assert_digest_audiences"
@@ -86,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "blob": "80d5f988e19ae766369bcb63b24c2f471c673e95",
             "content": "sha256:07e0b8133cc8a652ed9397f382f8254a8a66b6389f596a32196c8dc4fc1c74b4",
             "locator": {
               "kind": "symbol",

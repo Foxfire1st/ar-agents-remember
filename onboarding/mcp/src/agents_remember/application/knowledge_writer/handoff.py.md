@@ -13,6 +13,8 @@ checks the document's own shape and collects every problem, so one refusal names
 
 `RowRequest` accepts optional non-empty `deferralIds` (`DFR-` IDs) on history row requests for dependent deferral dispositions.
 
+`RowRequest` also accepts consolidation-pass dispositions (`stands`, `unresolved`) and test-evidence fields (`testsRun`, `testsNotRun`, `noProofRecorded`) on invariant and family history row requests.
+
 ## Code Commentary
 
 ### Logic
@@ -276,7 +278,9 @@ Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 - Four problems refused in one operation, each named. [21]
 - An entry that names no record is refused. [22]
 
+
 - Case evidence decodes JSON-quoted JavaScript/TypeScript test titles, merges them with Python references in appearance order and deduplicates them. [26]
+
 Retained authoring-row wording:
 
 Finding: The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag.
@@ -285,7 +289,9 @@ Anchor:
 
 Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py:642-674
 
+
 - History item parsing uses read_row_items and attaches its refusals to the specific row and subject. [28]
+
 
 
 ### Cross-Repo References
@@ -314,13 +320,19 @@ Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 - The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag.
 
 - An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. [10]
+
 - The two test forms and the bare test module, read in order and once each. [11]
+
 - Full writer intake requires scope, admission, a verbatim statement and a title for a new invariant. [17]
 - Record intake checks the kind and fields, refuses writer-owned fields and validates the invariant title. [18]
 
+
 - History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
 
+
+
 - The row keys and the request field a planned row's `ref` travels in. [20]
+
 
 - A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]
 

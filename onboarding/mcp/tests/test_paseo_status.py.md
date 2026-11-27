@@ -25,4 +25,3 @@ The open-execution and unreadable-holder cases assert `catalog` then `agent-stat
 
 
 - Tests cover status, Revive, saved catalogue answers, lock-free host reads and launch-in-progress responses with zero host calls. [1]
-

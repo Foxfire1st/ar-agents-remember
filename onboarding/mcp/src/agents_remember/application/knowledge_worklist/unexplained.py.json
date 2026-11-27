@@ -242,12 +242,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16989165e155eb17986848e5f06e66d2f310f31f",
+            "blob": "2c39cab20d4cd29defc1d2c9909c2aa8316c5208",
             "content": "sha256:c16f4be68071ea31f9aec73c7866e4572986ecf529fcc488e1b5576b4140bdba",
             "locator": {
-              "end": 279,
+              "end": 287,
               "kind": "line_range",
-              "start": 251
+              "start": 259
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
           },

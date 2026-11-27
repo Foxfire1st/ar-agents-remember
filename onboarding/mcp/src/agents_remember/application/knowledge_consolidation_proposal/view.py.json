@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/view.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4dfb968ace3900ad85288084d21dfa374274c116",
+        "content": "sha256:b350c07ef1963b40860a787e0789d3e2be10ec332f7a171c16084afe2c091816",
+        "locator": {
+          "kind": "symbol",
+          "name": "proposal_view"
+        }
+      },
+      "id": "RLZ-E7NXZ3",
+      "invariant": "INV-4R5HAZ",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 5 (D1049)",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Projects bounded consolidation_proposal tool responses and full JSON reports for all four seed modes.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`proposal_view` checks for a converted `memory_tree`, builds the store and proposal, writes the full report, caps rows to `TOOL_ANSWER_LIST_MAX`, and fits the answer to the token budget.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb968ace3900ad85288084d21dfa374274c116",
+            "content": "sha256:b350c07ef1963b40860a787e0789d3e2be10ec332f7a171c16084afe2c091816",
+            "locator": {
+              "kind": "symbol",
+              "name": "proposal_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_proposal` refuses multiple selectors (`bad_selector`) or an absent live family (`selector_absent`), dispatches `masterId`/`recordId`/`sourcePath`, and defaults to `oldest_first`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb968ace3900ad85288084d21dfa374274c116",
+            "content": "sha256:f47452f2e483fdba851dec127ecd1a13b7b3b07959f133e3658b7a93a2fa3b31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proposal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_fitted` drops trailing rows while `count_response_tokens(answer)` exceeds `bound_for(\"knowledge_read\") - _BOUNDARY_RESERVE`, updating `rowsReturned` and `familiesRemaining`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb968ace3900ad85288084d21dfa374274c116",
+            "content": "sha256:2f60d1a72dddec07ed28e7b6f1457e2ec4893ebd4eefad31182b2c2c007c1487",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_write_report` writes the full unshortened proposal payload via `write_report(REPORT_STEM, ...)` and translates `ReportWriteError` into `ProposalRefusal(\"report-unwritable\", ...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb968ace3900ad85288084d21dfa374274c116",
+            "content": "sha256:45f0078c14f510e0705b4f6d9168e8d20825c697a732c102827916b10ba6d98c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

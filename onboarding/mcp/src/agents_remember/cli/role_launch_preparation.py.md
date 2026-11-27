@@ -30,7 +30,7 @@ Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded
 
 `_task_document_read_metadata` tells launched roles to read the rendered task document with native file tools, use `task_doc` first, and never parse rendered copies back. When `shared_block` is present and already carries the `refused-write.md` ladder and `"never keep a blanket ban on writing it by hand"`, `_task_document_read_metadata` conditionally omits the duplicate recovery ladder from `first_read`; when `shared_block` is absent or lacks those phrases, it retains the full `refused-write.md` recovery clause so no witnessed launch loses the rule.
 
-`ROLE_START_OPERATIONS` binds `bootstrap` alongside the other seven roles to its capsule operation. Taskless assignments (architect, investigator, bootstrap) live in `cli.role_launch_assignments`, with `investigator_assignment` selecting parent-first-message vs developer-request wording from `started_by`. Enclosure preparation (`_leaf_contract_path`, `_resolve_workspace`, `_ensure_leaf_enclosure`) lives in `cli/role_launch_workspace.py`.
+`ROLE_START_OPERATIONS` binds `bootstrap` alongside the other eight roles (including `consolidator` -> `consolidation`) to its capsule operation. Taskless assignments (architect, investigator, bootstrap) live in `cli.role_launch_assignments`, with `investigator_assignment` selecting parent-first-message vs developer-request wording from `started_by`. Enclosure preparation (`_leaf_contract_path`, `_resolve_workspace`, `_ensure_leaf_enclosure`) lives in `cli/role_launch_workspace.py`.
 
 ## Evidence
 
@@ -41,7 +41,9 @@ Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded
 - Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [7]
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
 - Defaults extraction preserves host-role lookup. [12]
+
 - The capsule operation each launcher role is compiled from, including the free agent. [15]
+
 - The assignment the bootstrap seat carries, which names no task. [16]
 
 - The shared preparer resolves launch choices before workspace preparation, then compiles the bound task readers and handover. [1]
@@ -49,7 +51,9 @@ Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded
 - The parented handover values: `ownerRelation` from `_owner_relation` (with verified `owning_architect_id` direct skeletons), `developerQuestions` from `_developer_questions`, and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`). [4]
 - An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. [8]
 
+
 - `_compile_handover` compiles instructions, names canonical task and copied documents, records starter and leaf peers through bound role addresses, and populates `host.developerQuestionRoute`. [10]
+
 
 - Selection validation and the native Antigravity refusal run before workspace and enclosure preparation. [11]
 

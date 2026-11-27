@@ -417,7 +417,9 @@ The following complete predecessor retains useful explanations, old observations
 
 - A cover revises a realization entry's rationale in place. [51]
 
+
 - The history row records the resolved invariant or family’s own revision. [52]
+
 - `Authoring.reached_family_members` carries persisted `reached_family` member facts into family-row authoring. [70]
 
 

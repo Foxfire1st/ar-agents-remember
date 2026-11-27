@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/history_consolidation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f302b4b739880671b2e0963c59f1cfcd14efe67",
+        "content": "sha256:032ebd73f6ab7e9af6d5ec84b33250076fd652460ed6450eda6305faae5cbb66",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConsolidationEvidence"
+        }
+      },
+      "id": "RLZ-FMYCJ3",
+      "invariant": "INV-VETCYM",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 6 & Rule 7",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Defines the typed testsRun, testsNotRun, and noProofRecorded evidence fields on history rows.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`CONSOLIDATION_DISPOSITIONS` pairs the `STANDS` (`\"stands\"`) and `UNRESOLVED` (`\"unresolved\"`) disposition constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f302b4b739880671b2e0963c59f1cfcd14efe67",
+            "content": "sha256:d111e618c4065dcad1efbac00c23fca955470f322c1174bb2e154569e36b3513",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSOLIDATION_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`TestRun` validates a `{test, result}` entry with `result` constrained to `\"passed\"` or `\"failed\"` and `__test__ = False`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f302b4b739880671b2e0963c59f1cfcd14efe67",
+            "content": "sha256:fab6e8884052cd3e29d1458c9be2160fdb8287f9f1017fbe9fc2bd87c35df9b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestRun"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`TestNotRun` validates a `{test, reason}` entry with `__test__ = False` for named tests that could not be executed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f302b4b739880671b2e0963c59f1cfcd14efe67",
+            "content": "sha256:6fc2f47bcf281e61a0d58e06c4aeba59db36fe432623f80e050da04c44c6a28c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestNotRun"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`ConsolidationEvidence` validates non-empty `testsRun`/`testsNotRun`, true-only `noProofRecorded`, cross-list test uniqueness via `_require_distinct_tests`, and exposes `names_tests()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f302b4b739880671b2e0963c59f1cfcd14efe67",
+            "content": "sha256:032ebd73f6ab7e9af6d5ec84b33250076fd652460ed6450eda6305faae5cbb66",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConsolidationEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

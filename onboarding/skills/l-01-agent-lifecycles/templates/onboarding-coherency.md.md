@@ -55,7 +55,9 @@ The template holds no TODO and needs no sibling-repository evidence for this rep
 
 - Helpers are not AR seats or independent review; Curator authoring retains one writer. [12]
 
+
 - Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset. [10]
+
 
 
 

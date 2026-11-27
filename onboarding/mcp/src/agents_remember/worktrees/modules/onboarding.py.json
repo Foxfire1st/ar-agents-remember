@@ -409,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
+            "blob": "ceb7522bd6fc0d82fd14dd7a603e3fd782707f36",
             "content": "sha256:f29abc65adc6897d368884b642b99ccdf5dd964dd3a1923daa8057b4083f9532",
             "locator": {
-              "end": 446,
+              "end": 468,
               "kind": "line_range",
-              "start": 422
+              "start": 444
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -435,8 +435,8 @@
         },
         {
           "anchor": {
-            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
-            "content": "sha256:9bc86f53f5a5117af072c51bf2733db46a08c9985ea8f9d02895af369833f80c",
+            "blob": "ceb7522bd6fc0d82fd14dd7a603e3fd782707f36",
+            "content": "sha256:90315b3159f78f118136bd247d97897bb70f9b537e548f34876964fa185ae5a4",
             "locator": {
               "kind": "file"
             },

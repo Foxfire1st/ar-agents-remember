@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+            "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
             "content": "sha256:1aa882612b7932f7d7e7d487eadb49954f04dcf128b750a5be95ca00618a6db2",
             "locator": {
-              "end": 48,
+              "end": 47,
               "kind": "line_range",
-              "start": 48
+              "start": 47
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

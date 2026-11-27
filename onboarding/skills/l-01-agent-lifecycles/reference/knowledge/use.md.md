@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Explains how all eight roles combine attributed repository knowledge with direct code inspection at their working step, with additional sections for the Architect, Investigator, Worker and Reviewer.
+Explains how all nine roles combine attributed repository knowledge with direct code inspection at their working step, with additional sections for the Architect, Investigator, Worker and Reviewer.
 
 ## Code Commentary
 

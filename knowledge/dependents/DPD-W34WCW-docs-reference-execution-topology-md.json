@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "33a879fe63de8ef94f792a0510424676d819e8ee",
-    "commit": "79d3d3a18fb39302c203314bd1e96110df66f973",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "The execution topology reference still distinguishes atomic and organizational masters and a graph-less sprint from a declared DAG, with attach, detach and retirement acting on the named master reference.",
-    "task": "261112-KNO-L4",
+    "statement": "Verified docs/reference/execution-topology.md against 17c064d8: sprint/master/leaf topology and enclosure contracts remain accurate after KNO-R05@v3.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/reference/execution-topology.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
     },
     {
-      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+      "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -107,22 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-KNO-L4",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-KNO",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

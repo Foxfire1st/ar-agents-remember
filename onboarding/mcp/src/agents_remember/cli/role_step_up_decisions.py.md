@@ -27,4 +27,3 @@ This is launch metadata published by the canonical task owner, not evidence that
 
 
 - Test source preserves unrelated same-label prose and requested-vs-observed destination. [5]
-

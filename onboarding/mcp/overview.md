@@ -133,7 +133,7 @@ Role-message transport runs from `mcp/registration/role_agents.py` through `mcp/
 Fresh converted leaf closeout validates its exact output in `worktrees/modules/closeout_external.py`. Its `require_gated_recovery`, leaf integration in `worktrees/modules/integration_gate.py`, and leaf recording in `worktrees/modules/record_landing.py` call `leaf_pair_refusal` again. Recovery uses the parent memory tip; integration uses the current source memory tip; recording requires the contract's recorded memory base and retains the closed-history check. Recording judges the recorded closeout code when the landed code contains it, otherwise the landed code itself. Master/checkpoint integration and master recording use the landing-gate port, with net staleness and newly closed history ownership in `application/knowledge_gate/landing.py`, plus the chain proof in `worktrees/series_closeout.py`. Final integration requires all non-abandoned canonical leaves landed; checkpoint and recorded landing prove the leaves already landed, up to the pair they publish or record.
 
 - Retrieval doctrine uses onboarding/route indexes and harness-native search, not CGC/GrepAI; the retired provider package and watcher-stop module have been removed.
-- Public native `role_start`, `role_start_set` and `role_message` enter through the role-agent registration/payload adapters and `cli/paseo_role_tools.py`. Only the owning Manager starts the three-seat leaf set through `role_start_set`: Worker opens immediately, Reviewer opens with its optional first message or is held, and Curator is held. `cli/role_launch_routes.dispatch_leaf_set` derives per-seat request identities and reconciles partial retries. `cli/role_launch_liveness.py` owns occupied-seat replacement, including the explicit launcher path; public `retire_child` instead reaches `cli/role_retire.retire_native_seat` and checks the original starter. Workspace-local held delivery lives in `cli/role_held_messages.py` and the serving lifespan actor, not the retired public hosted-seat messaging path. L113 removes the separate public `dispatch_agent` structural/ambient route; this account does not restore it. Permission decisions remain developer-owned: pending prompts are held rather than answered by message delivery. Execution receipts remain separate from task acceptance.
+- Public native `role_start`, `role_start_set` and `role_message` enter through the role-agent registration/payload adapters and `cli/paseo_role_tools.py`. Only the owning Manager starts a leaf set through `role_start_set`: an ordinary leaf prepares three seats (Worker opens immediately, Reviewer opens with its optional first message or is held, and Curator is held), while a consolidation leaf (`consolidationList` present) prepares two seats (Consolidator opens immediately, Reviewer opens with its optional first message or is held, with no Worker or Curator). `cli/role_launch_routes.dispatch_leaf_set` derives per-seat request identities and reconciles partial retries. `cli/role_launch_liveness.py` owns occupied-seat replacement, including the explicit launcher path; public `retire_child` instead reaches `cli/role_retire.retire_native_seat` and checks the original starter. Workspace-local held delivery lives in `cli/role_held_messages.py` and the serving lifespan actor, not the retired public hosted-seat messaging path. L113 removes the separate public `dispatch_agent` structural/ambient route; this account does not restore it. Permission decisions remain developer-owned: pending prompts are held rather than answered by message delivery. Execution receipts remain separate from task acceptance.
 
 The packaged Worker role text delegates candidate setup to repository tool notes (`system/tools.md`): build the code worktree's own environment, run candidate checks in it, disclose a missing build command and record the interpreter actually used. This does not replace the landed tool server or memory CLI with the candidate, alter the shared runtime pin, or make a focused test a certification result. `scripts/bootstrap-mcp-venv.sh` resolves uv from PATH and accepts the minimum in `scripts/python-runtime-contract.env` or newer without installing uv. The certified container's `.dagger/src/agents_remember_quality/main.py` installs exactly that contract uv version.
 
@@ -600,13 +600,19 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
 - **Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
+
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
+
 
 - Integration and checkpoint preview and apply share the knowledge-gate boundary in `integration_gate_block`, while leaf and series predicates differ. [298]
 
+
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
 
+
+
 - **Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments. [302]
+
 
 - **Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes. Held launch calls omit the first host prompt. [303]
 
@@ -616,7 +622,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The bridge's internal daemon client and its first-message delivery, and the two chat routes over them: the tree's preloaded live-agent answer and the single-document read that corrects it. [310]
+
 
 
 
@@ -738,9 +746,13 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
 - The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time. [329]
 
+
 - User alternatives select by manual, prior or threshold facts. Mode comes from the alternative row, and other scope-bound choices are cleared across scopes. [330]
 
+
+
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
+
 
 
 
@@ -903,15 +915,21 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
+
+
 
 
 
 - The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
 
 
+
 - The worktree layer checks whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner's history closed. [5]
+
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
+
 
 - **Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
 
@@ -933,7 +951,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Source bindings, membership and record models. [313]
 - The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
 
-- The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. [402]
+
+- The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [429]
 
 
 

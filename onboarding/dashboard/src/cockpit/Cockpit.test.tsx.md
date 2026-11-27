@@ -129,7 +129,9 @@ No relevant domain documentation was found for this file.
 
 - The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [36]
 
+
 - The task-state mark labels itself Task progress: <statusLabel(taskStatusKey(entry))> with no phase suffix. Presentation takes the served activity when present, otherwise the served stage. The Cockpit accessibility case asserts a React Aria option named Task progress: paused before opening the attention layer, preserving the row-name absorption behavior rather than a lifecycle-phase label. [37]
+
 
 - Typed entry/summary/projection builders keep the composition fixtures checked against the served contract; the former taskDoc/metricsFor anchors are retired.
 

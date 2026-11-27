@@ -110,7 +110,9 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
+
 - The frozen role and operation vocabulary these types are declared against. [1]
+
 
 - The stable refusal codes a binding or selection defect resolves to. [2]
 

@@ -24,6 +24,8 @@ assertion that the old row-only reconsideration adapter remains in use.
 
 Registration covers the membership and touched-record kinds as well as the prior invariant, family, route, onboarding, unexplained, planned and reconsideration kinds. Family-route conditions remain addressed by subject, and planned/reconsideration kinds retain their registered rules. It also covers the two mark kinds, `weakness_anchor` (MIK-R118 rule 7) and `changed_document` (MIK-R124 rule 5). [3]
 
+The gate also registers the `consolidation_target` predicate (`knowledge_worklist/consolidation.py::consolidation_target_open`, KNO-R05@v3): every listed family and reached rule requires a current invariant/family history row, admitting `stands` (meaning-neutral) and `unresolved` only on listed subjects (`consolidationListed`) and refusing missing listed records with `task_doc (set_field consolidationList)`.
+
 The earlier amended R53 rollout exception was task-scoped, not a general relaxation of these
 candidate-code predicates. Its former deferred-work statement is not a current implementation
 contract: family admission here continues to check own revision, guarantee disposition, examined
@@ -92,7 +94,9 @@ record; any other disposition leaves the item open, naming the disposition and t
 - Membership/record revision and disposition predicates with registrations. [3]
 
 
+
 - Governing changed-row violations take diagnostic precedence and retain missing-cover details. [4]
+
 - Reconsideration delegates with candidate knowledge and code, translating CodeReadError into GitReadFailed. [5]
 - Link-target items are answered by absence of the target in candidate knowledge, never by a history row. [6]
 

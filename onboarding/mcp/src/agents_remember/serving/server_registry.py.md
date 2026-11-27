@@ -30,4 +30,3 @@ Keeps one small record per running MCP server and dashboard process under the co
 
 
 - `server_info` and `runtime_install` list the running servers. Anchor: `server_inventory(config)` [7]
-

@@ -132,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
             "content": "sha256:52185f064fdb220e8abb2ed16a6c631628513dcd7bee3ba63edaa066f80a70f8",
             "locator": {
-              "end": 3750,
+              "end": 3760,
               "kind": "line_range",
-              "start": 3701
+              "start": 3711
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

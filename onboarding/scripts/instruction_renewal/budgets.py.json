@@ -86,7 +86,7 @@
       ]
     },
     "2": {
-      "note": "`_check_ceilings` validates all 34 compiled capsule measurements against `COMPILED_CAPSULE_TOKEN_CEILINGS` and raises `AuthorityError` naming the developer's decision on missing keys or over-ceiling totals.",
+      "note": "`_check_ceilings` validates all 37 compiled capsule measurements against `COMPILED_CAPSULE_TOKEN_CEILINGS` and raises `AuthorityError` naming the developer's decision on missing keys or over-ceiling totals.",
       "targets": [
         {
           "anchor": {

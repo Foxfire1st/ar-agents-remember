@@ -1137,12 +1137,12 @@
         },
         {
           "anchor": {
-            "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
+            "blob": "b4e367f74cf99e83ed876df07c80f0579e9055bd",
             "content": "sha256:e18f50c0e44c3b44efaffe6a07d77411f8f998655cf972e6b82c784d14475b71",
             "locator": {
-              "end": 720,
+              "end": 679,
               "kind": "line_range",
-              "start": 709
+              "start": 668
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

@@ -214,7 +214,9 @@ None.
 
 [6] mcp/src/agents_remember/kernel/_agentic_settings_core.py — lines 435-464
 
+
 - Agentic settings keep model, effort and service tier as separate role knobs and resolve the role-settings precedence (level override over role default). [6]
+
 
 [7] mcp/src/agents_remember/kernel/_agentic_settings_sections.py — lines 252-271
 

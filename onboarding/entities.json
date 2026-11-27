@@ -408,12 +408,12 @@
       ]
     },
     "21": {
-      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.\n\nAnchor: `task_doc set_status`",
+      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
-            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
+            "blob": "d5ea59401b00821cc84191bb29d749dcc1e6b6aa",
+            "content": "sha256:42494704d35cfb8f68d73b8e97c57cdc4529647d0c33c4c7b43ef388d7c91790",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -473,12 +473,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
-              "end": 529,
+              "end": 530,
               "kind": "line_range",
-              "start": 501
+              "start": 502
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -486,12 +486,12 @@
         },
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:3e22d398f99072599657b0eb648c6ae1cbd7dd15c54a6e8ed712d7c3de83c441",
             "locator": {
-              "end": 633,
+              "end": 634,
               "kind": "line_range",
-              "start": 532
+              "start": 533
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -499,12 +499,12 @@
         },
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
             "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "end": 697,
+              "end": 698,
               "kind": "line_range",
-              "start": 676
+              "start": 677
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -512,8 +512,8 @@
         },
         {
           "anchor": {
-            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
-            "content": "sha256:bf35277c68855ae6f49e15abbf8d2088a8a3cfe7a428298cc9e1b0c97a903e81",
+            "blob": "78dbb31c2aee1a8494668e5e622c97ce3c9df50d",
+            "content": "sha256:598dbf99bec6cfd1f9321e5a070310d09812d3ac0ecec56456682d04ec087e5e",
             "locator": {
               "kind": "file"
             },

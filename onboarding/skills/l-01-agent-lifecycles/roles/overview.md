@@ -2,13 +2,13 @@
 
 ## Purpose
 
-This area owns the canonical instruction file for each lifecycle role: the seat's responsibility, assignment, permitted work, refusals, communication and durable handoff. Its governing source overview is the parent `skills/l-01-agent-lifecycles` route. The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. The composition manifest names these eight launchable roles; the historical capsule registry also retains retired-role and launcher entries. Each role file states its core duties and reaches procedures through a Reference index table pointing to operations, templates and detail files under `reference/` (`coordination/{architect,shared}`, `curator`, `knowledge`, `review`, `tasks`, `worker`, `writing`, `bootstrap`, plus the flat files).
+This area owns the canonical instruction file for each lifecycle role: the seat's responsibility, assignment, permitted work, refusals, communication and durable handoff. Its governing source overview is the parent `skills/l-01-agent-lifecycles` route. The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator, Consolidator and Bootstrap. The composition manifest names these nine launchable roles; the historical capsule registry also retains retired-role and launcher entries. Each role file states its core duties and reaches procedures through a Reference index table pointing to operations, templates and detail files under `reference/` (`coordination/{architect,shared}`, `curator`, `knowledge`, `review`, `tasks`, `worker`, `writing`, `bootstrap`, plus the flat files).
 
 Architect owns the developer conversation, requirement meaning and semantic plan. One master normally receives one Manager; concurrent work on two or more masters receives one Orchestrator on the sprint and one Manager per master. Only the developer chooses direct Architect coordination or an Orchestrator above a single master. Worker implements the approved leaf; Reviewer independently examines the assigned candidate; Curator reconciles current intent, ruled intent and implemented reality and authors affected memory through its admitted surfaces. Coordinators retain acceptance and paired publication authority. Native host execution changes none of these ownership boundaries.
 
 ## Hot Path Summary
 
-The Worker, Reviewer, Curator and Investigator retrieve briefs for their relevant files. Fuller replies can include rule text. Compact rows can retain a pointer even when the saved brief is missing. Open the current saved brief when present. Each role uses knowledge_read and its own file tools for whole records and supporting evidence.
+The Worker, Reviewer, Curator, Consolidator and Investigator retrieve briefs for their relevant files. Fuller replies can include rule text. Compact rows can retain a pointer even when the saved brief is missing. Open the current saved brief when present. Each role uses knowledge_read and its own file tools for whole records and supporting evidence.
 
 Worker and Bootstrap intake now obtain naming/orientation and open source/card/overview files natively; this changes reading, not grants, scratch placement, CODE/MEMORY ownership, question provenance or peer handover. Curator family authoring follows its operation and the family-obligations detail.
 
@@ -20,7 +20,7 @@ The first message also delivers the shared every-role digest beside the rendered
 
 The Architect hands execution coordination to its Manager or Orchestrator and continues the developer conversation and status reading without waiting for execution completion. When a second master begins, an Orchestrator reuses the existing Manager; the Architect's explicit message changes that Manager's reporting recipient, not its fixed launch parent. Coordinators record operational rulings, proposed requirement-sentence changes and current seat ownership in durable notes. Ordinary interpretations within the intended promise stay with them; new or dropped scope, a changed promise and human-pinned decisions return to the developer. In a case ruling, the Architect names only the outcome that needs it and leaves each decision belonging to the Manager with the Manager; an Orchestrator forwards a Manager's Architect matters unchanged.
 
-For normal leaf delivery, the Manager uses individual `role_start` calls: Worker at build, Reviewer at the Worker freeze, Curator after code PASS. Worker first tells Manager to start Reviewer and then sends its freeze directly once the seat exists. Reviewer first tells Manager of code PASS, then supplies its passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator sends its memory candidate to Reviewer in a separate sealed lane. The Manager reads reports, receives the specified authority/recovery notices and readiness notice, inspects the complete diff and both verdicts, and decides acceptance and landing. It does not relay routine freezes, findings, verdicts or memory changes.
+For normal leaf delivery, the Manager uses individual `role_start` calls: Worker at build, Reviewer at the Worker freeze, Curator after code PASS; for a consolidation leaf (`consolidationList` present), the Manager starts Consolidator first and Reviewer at the Consolidator's freeze. Worker first tells Manager to start Reviewer and then sends its freeze directly once the seat exists. Reviewer first tells Manager of code PASS, then supplies its passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator sends its memory candidate to Reviewer in a separate sealed lane. The Manager reads reports, receives the specified authority/recovery notices and readiness notice, inspects the complete diff and both verdicts, and decides acceptance and landing. It does not relay routine freezes, findings, verdicts or memory changes.
 
 Before writing bodies, the Worker sends a skeleton to its Manager when the plan leaves types, modules or signatures open or it proposes a planned shape change, and follows the requirement's pre-edit report instructions. The Manager answers skeletons that fill only gaps the plan leaves open, and sends a skeleton directly to the Architect (also past an Orchestrator) only when the requirement asks for a pre-edit report, it changes a set placement or signature, or it adds an unlisted file, folder or public interface. The Architect shows the developer a skeleton that changes the planned shape, and the Worker writes bodies after the Manager or Architect answers.
 
@@ -76,7 +76,7 @@ Curator scopes leaf tools by the enclosure contract and checks returned roots; u
 
 Repository-foundation curation is regular task work: after setup reports memory and baseline state, the user starts the Architect, which opens the real foundation task — a registered leaf under a master — and this seat starts on that task document with its actual enclosure contract for the registered repository, resolved context, available sources and current knowledge state. Onboarding is optional input; the procedure neither requires it nor writes it. No fake leaf, task, worktree or enclosure is made to satisfy an argument list. No instructed session substitutes for task admission: without a task, Bootstrap reads and reports the state and names the Architect. The writer is the task's leaf writer, `knowledge-ingest` under the contract (or the mounted `knowledge_write`), with authorization and the developer's write word. Partial scope remains partial with unreached areas named. Existing onboarding and baseline readiness do not establish knowledge-foundation completeness.
 
-Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. Bootstrap is admitted by the eight-role launcher for its taskless setup procedure.
+Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. Bootstrap is admitted by the nine-role native launcher for its taskless setup procedure.
 
 Investigator handles one scoped concern of any kind at Projects, sprint, standalone-master or sprint/master scope; a leaf may be named in the concern but is never its selected start scope. The parent's first message supplies the concern, or a parentless launch uses the developer request. It distinguishes observations from root-cause hypotheses, writes a report before any explicitly authorized system remediation. Checks belong in scratch or an admitted repository sandbox. Code, memory, task, lifecycle and Git changes remain with their owners; a separate order does not grant Worker/Curator authority. The historical `system-specialist` spelling remains a canonicalized input alias. The selected Investigator capacity owner declares eight open IDs; taskless and selected-task identity must not be conflated with primary coordinator ownership.
 
@@ -186,16 +186,22 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
+
 
 
 
 - Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]
 
 
-- The capsule vocabulary holds eight roles — architect, orchestrator, manager, worker, curator, reviewer, investigator and bootstrap — the same set the launcher can select; the launcher also accepts the system-specialist alias. [12]
+
+- The capsule vocabulary holds nine roles — architect, orchestrator, manager, worker, curator, reviewer, consolidator, investigator and bootstrap — the same set the launcher can select; the launcher also accepts the system-specialist alias. [12]
+
+
 
 - Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
+
 
 
 - The graph-less atomic default describes sprint shape. Commanded-master order is a stable tie-break, and independent masters can proceed concurrently. [68]
@@ -212,14 +218,18 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - Taskless subject and one coordinating agent under the Architect. [19]
 
 
+
 - Master coordination under the Architect and exact paired scope. [20]
+
 
 
 - Bound uncommitted Worker duty. [22]
 
 
 
+
 - Independent exact assigned review and sealed findings. [23]
+
 
 
 
@@ -232,7 +242,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - Taskless real concern and report-first remediation. [25]
 
 
+
 - Current native Curator launch resolves and validates the canonical master and leaf, with the sprint when one commands the master; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
+
 
 
 - The Curator keeps the admitted writer for normal records, sidecar entries and history, and never edits the derived index. A covered correct-input write refusal uses only its declared same-tool/input-class recovery, with owner notice, manual provenance and working checks. [26]
@@ -242,13 +254,19 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - The canonical role owns this concern and mutation boundary. [27]
 
 
+
 - Stage boundaries, the settings-owned review budget, local working-child waits and recorded approval duties are carried by the role instruction sources, for example the Manager's stop list. [28]
+
+
 
 
 
 - Role registry and native supported-role vocabulary are distinct; the prior Investigator spelling is canonicalized on input. [29]
 
+
+
 - Independent MEMORY review reads both landing reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [31]
+
 
 
 
@@ -261,10 +279,14 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - Worker leaves code uncommitted; sync conflict content, staging and continuation have separate owners. [34]
 
 
+
 - Reviewer independently checks exact attempts, knowledge-effect declarations and separately sealed memory evidence. [35]
 
 
+
+
 - Settings-bound fix verification preserves existing findings; beyond-limit work requires recorded architect/developer approval through Manager. [36]
+
 
 
 - The retained repository-context admission helper refuses enclosure_in_scope; the current authoring route is separately admitted inside the actual Architect task/enclosure. [42]
@@ -276,13 +298,17 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion. [49]
+
 
 
 - Worker repairs owned findings directly and retains the per-finding freeze trail. [63]
 
 
+
 - Manager settles covered precedents (with non-reclaiming case reservations) and adds no pre-repair go-ahead. [64]
+
 
 
 
@@ -297,10 +323,14 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - The decision-lifting duty is read in the governing-sources detail: lift decisions that keep governing code; task-only choices remain in the task. [1]
 
+
 - The Reviewer checks declared `expectedKnowledgeEffects` during review. [2]
 
 
+
+
 - Sprint coordination above one Manager per master and separate evidence. [21]
+
 
 
 - Role selection checks operation applicability and selects no shared core for a dispatched role. For every card cut by the quality check, the Curator cites source evidence proving the removed text untrue; text is never cut merely to clear a finding. [30]
@@ -322,16 +352,22 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - Non-author second-reader fact-check before closeout. [47]
 
 
+
 - The composition manifest declares each operation's section audience ("sections", or "all" for authorized closeout) and the roles it applies to; these are source declarations, not execution acceptance. [50]
+
+
 
 - The shared writing profile governs invariant statements, family guarantees, history reasons and walkthrough prose, and preserves conditions, exceptions, quantifiers and negation. [51]
 
 
-- Worker, Curator and Reviewer each mark only the task step naming their own part done; with no such step they report and set nothing, and the Reviewer marks its step only after the last round is recorded passed. [52]
+
+- Worker, Curator, Consolidator and Reviewer each mark only the task step naming their own part done; with no such step they report and set nothing, and the Reviewer marks its step only after the last round is recorded passed. [52]
+
 
 
 
 - Memory review keeps separate sealed reports, finding identifiers and pass count, recorded with reviewKind=memory, and changes no code review state. [53]
+
 
 
 - The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]
@@ -339,13 +375,16 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. [40]
 
+
 - Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover. [67]
+
 
 
 - The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream. [66]
 
 
 - Curator authors scope, reads the full knowledge_diff before semantic changes and completes full MQC and candidate-bound coherence; Reviewer owns the Git base/candidate handover comparison, with no separate Curator Git comparison. [39]
+
 
 
 

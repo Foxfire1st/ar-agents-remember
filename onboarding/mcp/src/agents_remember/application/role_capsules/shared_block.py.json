@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+        "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
         "content": "sha256:ac23c18c452336757989b9964e7c9a1138617657a45322bde5bb27054bb4a0c8",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
             "content": "sha256:ac23c18c452336757989b9964e7c9a1138617657a45322bde5bb27054bb4a0c8",
             "locator": {
               "kind": "symbol",
@@ -38,11 +38,11 @@
       ]
     },
     "2": {
-      "note": "`_RECOGNIZED_ROLE_LABELS` and `_parse_role_prefix` recognize the eight canonical roles plus `system-specialist` and leave non-role prefixes universal.",
+      "note": "`_RECOGNIZED_ROLE_LABELS` and `_parse_role_prefix` recognize the nine canonical roles plus `system-specialist` and leave non-role prefixes universal.",
       "targets": [
         {
           "anchor": {
-            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
             "content": "sha256:e248e2f2f01d911d06f7632a024380f830d0af897c7d436cdc57bb2f9c50adf2",
             "locator": {
               "kind": "symbol",
@@ -53,8 +53,8 @@
         },
         {
           "anchor": {
-            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
-            "content": "sha256:57f7c301163afc70feb01375c63af69b93a0b5c1e5968f4581ef01918447974d",
+            "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
+            "content": "sha256:a8f69616b31701014c0da8677586951b0263926b6ccfe7e1d84da47e133c991d",
             "locator": {
               "end": 29,
               "kind": "line_range",
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
             "content": "sha256:f7d4ed36de9c4cf4caf5ff4c1c6d829d136fae3580d3f81ebae989911cd1f9b3",
             "locator": {
               "kind": "symbol",
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
             "content": "sha256:3201ac463c76ae8f6facd99a5cbcbac0dd523271fe18da0539831f41e9f3fafa",
             "locator": {
-              "end": 75,
+              "end": 76,
               "kind": "line_range",
-              "start": 58
+              "start": 59
             }
           },
           "kind": "code"
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "blob": "4061c069e078dedbde9001ba50ba1e502a1b38bd",
             "content": "sha256:613745cb65ed808ea8d470a1e806167b54878098e92eebcd387936f0f014465b",
             "locator": {
               "kind": "symbol",

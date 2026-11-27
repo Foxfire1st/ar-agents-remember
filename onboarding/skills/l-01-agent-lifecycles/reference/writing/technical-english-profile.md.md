@@ -18,7 +18,9 @@ The profile applies to new or revised statements, guarantees, history reasons an
 
 ## Evidence
 
+
 - The profile selects ASD-STE100 principles without claiming compliance or a new standard. [1]
+
 - One precise, testable promise per invariant, with precision over the word target and no automatic splitting. [2]
 - Project vocabulary comes from existing term records, and the four evidence states stay distinct. [3]
 - Statement and scope fields stay connected, and structural fields keep their owners. [4]

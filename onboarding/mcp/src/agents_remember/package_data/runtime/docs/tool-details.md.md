@@ -10,9 +10,9 @@ Serves the tool argument details produced from the canonical `docs/tool-details.
 
 ## Code Commentary
 
-Coherence publication binds the leaf's place in its master and any sprint that commands the master. The Curator names the leaf document in the caller argument. Other authorized roles name the commanding sprint document or the standalone master document.
+Coherence publication binds the leaf's place in its master and any sprint that commands the master. The Curator or Consolidator names the task's own document in the caller argument. Other authorized roles name the commanding sprint document or the standalone master document.
 
 ## Evidence
 
-- The served tool contract binds the master and any commanding sprint and names the caller's task document by role. [1]
-- The canonical tool contract names the leaf for a Curator and the commanding sprint or standalone master for other authorized callers. [2]
+- The served tool contract binds the master and any commanding sprint and names the caller's task document by role. [3]
+- The canonical tool contract names the task's own document for a Curator or a Consolidator and the commanding sprint or standalone master for other authorized callers. [4]

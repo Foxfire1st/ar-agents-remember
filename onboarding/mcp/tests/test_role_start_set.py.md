@@ -4,7 +4,7 @@
 
 ## Contract
 
-Operation-level fake-host tests prove the Manager-owned three-seat path: Worker opens, Reviewer and Curator exist without turns, optional Reviewer work opens only Reviewer, and the first addressed message opens one held seat with its handover. A repeated set retains all three agent identities, and partial creation is completed under the same set UUID without a fourth agent or a spontaneous held opening.
+Operation-level fake-host tests prove both Manager-owned leaf-set paths: the three-seat ordinary path (Worker opens, Reviewer and Curator exist held) and the two-seat consolidation path (Consolidator opens, Reviewer exists held, with no Worker or Curator); optional Reviewer work opens only Reviewer, and the first addressed message opens one held seat with its handover. A repeated set retains all three agent identities, and partial creation is completed under the same set UUID without a fourth agent or a spontaneous held opening.
 
 The suite also refuses an Architect set and a wrong-master Manager set without launch effects, while an ordinary Architect single Worker start remains admitted. These are executable fixture assertions, not evidence of the required paid sandbox/real-host journey.
 

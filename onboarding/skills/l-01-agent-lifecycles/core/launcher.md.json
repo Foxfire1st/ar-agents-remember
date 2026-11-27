@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
+            "blob": "e323af67d2e727ace06153d4365d98193d75eb44",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 570,
+              "end": 621,
               "kind": "line_range",
-              "start": 557
+              "start": 608
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+            "blob": "be4b9527d49eb88b7d7b18cd4b519fbd054abf21",
             "content": "sha256:e685768c8a9255765f66be0003aca7d1eeec7069e3441ec540bc025ad19b3ff1",
             "locator": {
               "kind": "symbol",
@@ -126,12 +126,12 @@
         },
         {
           "anchor": {
-            "blob": "0ef8d7516a099fb1a9020c464e64391f4112894f",
+            "blob": "a65274bcf7e6f1f6bfda666a0ff483e294b36a32",
             "content": "sha256:f6cad09e64771c0562f477176bbac5e6e3164496fcb291278e0e64b4a8f49f9a",
             "locator": {
-              "end": 110,
+              "end": 115,
               "kind": "line_range",
-              "start": 104
+              "start": 109
             },
             "path": "docs/roles.md"
           },

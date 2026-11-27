@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/cli/leaf_set_seats.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "86320c44437c3ce4e86c4fc85a070674fe590def",
+        "content": "sha256:3163f7718f96becade74121118278bbf47a504f5b570c8857f028c36a7872262",
+        "locator": {
+          "kind": "symbol",
+          "name": "set_seat_roles"
+        }
+      },
+      "id": "RLZ-1ABDK4",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Enforces role_start_set seat selection from the task document and refuses mixed ordinary/consolidation role sets.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`OPEN_AT_ONCE_SEATS` restricts immediate set opening to `worker` and `consolidator`, while `NAMEABLE_SEATS` defines the universe of seats a set call may override or replace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86320c44437c3ce4e86c4fc85a070674fe590def",
+            "content": "sha256:cdfe160e69e89de200a6003cfe0993e5438755d7545a2c5a9e45e472ed49fa59",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPEN_AT_ONCE_SEATS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`set_seat_roles` refuses unknown `replaces` entries, resolves the leaf's seat tuple from the task document (or `ORDINARY_LEAF_SEATS` without a ref), and refuses any foreign seat before preparation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86320c44437c3ce4e86c4fc85a070674fe590def",
+            "content": "sha256:3163f7718f96becade74121118278bbf47a504f5b570c8857f028c36a7872262",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_seat_roles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_named_seats` gathers every seat for which the call supplies an `agent`, `model`, `effort`, `feature_values`, or `replaces` entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86320c44437c3ce4e86c4fc85a070674fe590def",
+            "content": "sha256:b71486f7dbf591235a29aea20a9978da724c234d084b94b18001eb2fe3625448",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named_seats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_foreign_detail` distinguishes consolidation tasks (naming `consolidationList`) from ordinary tasks and enforces that a set never mixes Worker with Consolidator or Curator with Consolidator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86320c44437c3ce4e86c4fc85a070674fe590def",
+            "content": "sha256:527d9888facb2930a339bf00b24bb7a5fc6ad5059fa6857c718de9ac38ef4a26",
+            "locator": {
+              "kind": "symbol",
+              "name": "_foreign_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The frozen role and operation vocabulary these types are declared against.",
+      "note": "The frozen role and operation vocabulary these types are declared against.\n\nAnchor: `CAPSULE_ROLES`, `CAPSULE_OPERATIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:fbf404b74f40cb8713a3521f2ced6bdb34fe450c533e21a92c51de30f7b85f60",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"
@@ -19,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:44b075eb2e448ef6320631af36d2b5602905b53a49d4c8ee26fee08bd6fd3bcd",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_OPERATIONS"
@@ -31,8 +31,8 @@
         },
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:0bf274271690841733f58b8bc693f116df6e639a82269d456b9aa3544cf012cd",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:0d059b3f789faf65528a1b10e20d51f0db6125ba6e0375bc33f0fdbcf37df04b",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -254,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
               "kind": "symbol",
@@ -266,7 +266,7 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
             "locator": {
               "kind": "symbol",
@@ -278,12 +278,12 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:af0689e280645346bf39bdb24a61d66c358135d1dc894f09389c80c72d18f1fe",
             "locator": {
-              "end": 384,
+              "end": 389,
               "kind": "line_range",
-              "start": 373
+              "start": 378
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -291,12 +291,12 @@
         },
         {
           "anchor": {
-            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "blob": "94f2d7c637f37975ae31b95ce4d73da45f12e44e",
             "content": "sha256:2f4dfead8ec9ce69279fc95f0315fe1d3a38aa543f12346e2aae63e65ab0015e",
             "locator": {
-              "end": 442,
+              "end": 447,
               "kind": "line_range",
-              "start": 418
+              "start": 423
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },

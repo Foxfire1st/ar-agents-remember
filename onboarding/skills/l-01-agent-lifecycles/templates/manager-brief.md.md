@@ -101,7 +101,9 @@ Each leaf stage starts through `role_start`, which prepares its admitted task en
 
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority.
 
+
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
 
 
 - Manager brief values bind execution nature and the canonical source edge without compiling branch names; each leaf's exact owned primary revision is compiled separately from adjacent dependency and preservation revisions before dispatch. [1]

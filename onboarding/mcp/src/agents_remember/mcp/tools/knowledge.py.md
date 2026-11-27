@@ -37,7 +37,7 @@ database files refuse before an open; change/project and selected-run fields are
 
 ### Logic
 
-`knowledge_read_payload` refuses a view outside its ten admitted views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
+`knowledge_read_payload` refuses a view outside its eleven admitted views — `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, `consolidation_proposal` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (dispatching `writers` and `consolidation_proposal` through `knowledge_views/record_views.py`) (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
 
 **Code-tree resolution and automatic pairing.** Code-tree resolution is delegated to `application/knowledge_code_pairing` (`observe_code_source`, `resolve_paired_code_root`, `code_tree_of`, `NoCodeTreeError` aliased as `_NoCodeTreeError`, `ObservedCodeSource` aliased as `_ObservedSource`). `knowledge_read_payload` and `_read_result` accept `repositories`. For paged views, `_read_result` resolves `paired_code_root` via `resolve_paired_code_root`, observes the code source on fresh reads via `_observe_source`, and forwards `code_state`, captured working-tree `object_directory`, and `paired_code_root` into `open_read_context` and `TreeReadScope`. `_record_view` and `_marks_view` obtain their code tree through `_observed_source_or_none` -> `_code_tree_of`, auto-pairing when no explicit `codeTreeId` is given and degrading to `None`/unverifiable when no root resolves. A caller-named `repositoryRoot` that resolves no tree raises `_NoCodeTreeError` (`selected_input_unavailable`).
 
@@ -164,7 +164,9 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
+
 - The public read projects names from its selected rich page; code-source observation and internally prepared proof/currentness extras remain distinct. [1]
+
 
 
 
@@ -206,8 +208,12 @@ No configured domain documentation could be checked.
 
 
 - The paged tree read this module hands a converted selection to. [71]
+
 - A named root that resolves no code tree is its own error, refused `selected_input_unavailable` naming the root. [72]
+
+
 - `_observe_source` / `observe_code_source` raises `NoCodeTreeError` for a caller-named root without a tree. [73]
+
 - The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed). [74]
 
 
@@ -217,8 +223,12 @@ No configured domain documentation could be checked.
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
 
+
 - The mounted reader dispatches `QUERY_VIEWS` (`records`, `impact`, `search`), writers aggregate, record, and mark views through `_one_view`. [79]
+
+
 - Code-tree observation and pairing resolve explicit or paired code roots (refusing a caller-named root without a tree) or leave the pair unrequested when no root resolves. [80]
+
 
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
 
@@ -230,19 +240,35 @@ No cross-repository contract is established by this file.
 - All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status. [56]
 
 - Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named. [61]
+
 - The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one. [75]
+
+
 - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 
+
+
 - A converted tree's read is handed to the paged tree read right after the selection. [68]
+
+
 - A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer. [70]
+
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
+
+
 - Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
+
+
 - Admitted views include `records`, `impact`, and `search`; `_marks_rows` applies `folder` fallback and `compact_dependent_rows` when `compact=True`. [87]
+
 
 
 - The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
 
+
 - The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
+
 
 
 - The writer route publishes a bounded answer of problems, violations and notes beside its full report. [86]

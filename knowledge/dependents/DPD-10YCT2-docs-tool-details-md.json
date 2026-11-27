@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
-    "commit": "53dbac3fb28901915dd614f82674ef048a4b5207",
+    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
+    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
     "role": "curator",
-    "statement": "Updated docs/tool-details.md on synced CAP-L5 base 53dbac3fb (BUG-L54+L33 + CAP-L6) to document fail-closed malformed bindings on server_info, skill:// refusal pointers on curator_coherence, memory_quality_check, and retire_child, and >1,000-character opening/held-batch offloading on role_start_set; merged with crossing-3 stands_on blobs.",
-    "task": "261124-CAP-L5",
+    "statement": "Verified docs/tool-details.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 fail-closed server_info, skill:// refusal pointers, and role_start_set offloading alongside KNO-L5 Consolidator tool details and Round 5 lines 288-290.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -148,7 +148,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+      "blob": "fa6129979a8e82276b5e6b9cb20a7f9ea4a48cba",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
     },
@@ -272,14 +272,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:55:00+01:00",
+    "at": "2026-11-27T07:28:48+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L5",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
-    "task": "261124-CAP"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }

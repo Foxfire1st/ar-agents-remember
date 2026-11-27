@@ -18,6 +18,8 @@ Pairs with `test_l84_unique_detail_pointers.py` (imports `_assert_moved_action_p
 
 ## Evidence
 
+
 - Full role/operation matrix test pins `every-role.md` filtering, `IN8.8` settings-authority pointer, and `MOVED_INDEX_POINTERS` with removal/duplication mutation checks. [1]
+
 - Leaf-creation and Architect action/task-layout tests verify retained-evidence lifecycle, 9 named Architect scenarios, and `requirement-design.md` sections with mutation teeth. [2]
 - Retirement stop boundary test confirms canonical `core/authority.md`, digested `core/every-role.md`, Manager's delivered `refused-write.md`, and other roles' served `skill://` link preserve permission stops. [3]

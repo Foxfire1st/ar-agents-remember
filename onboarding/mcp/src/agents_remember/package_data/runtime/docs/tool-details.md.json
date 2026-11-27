@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
-        "content": "sha256:a613bdc8bb462b6c654e826568c9dad8bdacb1eec88e84471cfe8de251a9f5da",
+        "blob": "7d6ef35cc5624ccdf04284f69da136d965f2b2dc",
+        "content": "sha256:ecac668992cf2dd0f7899c45b9b0eae903e82a336352d68d60c8b191e02b41fe",
         "locator": {
-          "end": 289,
+          "end": 290,
           "kind": "line_range",
           "start": 283
         }
@@ -22,13 +22,13 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The served tool contract binds the master and any commanding sprint and names the caller's task document by role.",
+    "3": {
+      "note": "The served tool contract binds the master and any commanding sprint and names the caller's task document by role.\n\nAnchor: [1]",
       "targets": [
         {
           "anchor": {
-            "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
-            "content": "sha256:9b879f65dbefa8750cc1afa554fa42afe06c6ae19871f9d4d4734f31935e341c",
+            "blob": "7d6ef35cc5624ccdf04284f69da136d965f2b2dc",
+            "content": "sha256:ecac668992cf2dd0f7899c45b9b0eae903e82a336352d68d60c8b191e02b41fe",
             "locator": {
               "end": 290,
               "kind": "line_range",
@@ -39,13 +39,13 @@
         }
       ]
     },
-    "2": {
-      "note": "The canonical tool contract names the leaf for a Curator and the commanding sprint or standalone master for other authorized callers.",
+    "4": {
+      "note": "The canonical tool contract names the task's own document for a Curator or a Consolidator and the commanding sprint or standalone master for other authorized callers.\n\nAnchor: [2]",
       "targets": [
         {
           "anchor": {
-            "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
-            "content": "sha256:9b879f65dbefa8750cc1afa554fa42afe06c6ae19871f9d4d4734f31935e341c",
+            "blob": "7d6ef35cc5624ccdf04284f69da136d965f2b2dc",
+            "content": "sha256:ecac668992cf2dd0f7899c45b9b0eae903e82a336352d68d60c8b191e02b41fe",
             "locator": {
               "end": 290,
               "kind": "line_range",

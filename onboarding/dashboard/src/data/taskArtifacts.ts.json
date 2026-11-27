@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "The task reader wraps its prose with the requirements provider that produces these targets.\n\nAnchor: `TaskRequirementLinksProvider`",
+      "note": "The task reader wraps its prose with the requirements provider that produces these targets.",
       "targets": [
         {
           "anchor": {
-            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
-            "content": "sha256:82805ff8a3713ade6c30508c8f06281896b47515419deb4f756aec756a13228a",
+            "blob": "6c52d16e5f50441880f5f5902cc6bbce081f6843",
+            "content": "sha256:cf96916aa30608377a9af90f344e9ca0168a5079e1361d95c1c4d87460e73813",
             "locator": {
               "kind": "file"
             },

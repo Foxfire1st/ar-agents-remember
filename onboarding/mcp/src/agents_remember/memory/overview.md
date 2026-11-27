@@ -387,10 +387,14 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]
 
 
+
 - Index build derives current standing and writer evidence from one selected tree. [189]
 
 
+
+
 - The declared cache schema stores both current standing and per-revision writer evidence. [190]
+
 
 - Revision-standing conversion plans stored state-word removal and companion review facts. [191]
 
@@ -411,7 +415,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - The current logical store is schema v10, with an explicitly pinned fingerprint. The rebuildable index uses layout v8. [155]
 
 
+
 - The schema's v2 record explains the inaugural cache rebuild after the payload-seal change. A cached index whose format differs from the current format is rebuilt. [9]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
 - Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]

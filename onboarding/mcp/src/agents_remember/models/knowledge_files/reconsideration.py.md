@@ -139,7 +139,9 @@ No cross-repo boundary is crossed by this file.
 - The standalone cold recomputation computes the worklist without reading an earlier persisted document. [15]
 
 
+
 - Direct landing computes its worklist over exact sides before judging. [16]
+
 
 - The registered reconsideration gate forwards candidate knowledge, opened code and rows to the candidate-aware owner; only its final remaining-change check uses the pure helper. [17]
 

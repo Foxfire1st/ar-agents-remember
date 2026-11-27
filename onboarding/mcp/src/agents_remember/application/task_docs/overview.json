@@ -35,8 +35,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
-            "content": "sha256:1c7f1637467a3a8468c0795177ccfa132dcb43972e3d95418f3324cba414675f",
+            "blob": "e86a6ec1a1f09d24eec3d703febaab570656f088",
+            "content": "sha256:babf8c6259ca456b3c0fe7ea9c3b42f58b7304f348ac8283f01a0a5c2bb52e19",
             "locator": {
               "end": 198,
               "kind": "line_range",
@@ -341,12 +341,12 @@
       ]
     },
     "5": {
-      "note": "The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner.\n\nAnchor: _MUTABLE_FIELDS",
+      "note": "The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
-            "content": "sha256:1c7f1637467a3a8468c0795177ccfa132dcb43972e3d95418f3324cba414675f",
+            "blob": "e86a6ec1a1f09d24eec3d703febaab570656f088",
+            "content": "sha256:2f7b104a1a91a407172dbf5bde5a0de3d992eb01849e70ac432c26ddc3309d14",
             "locator": {
               "kind": "file"
             },

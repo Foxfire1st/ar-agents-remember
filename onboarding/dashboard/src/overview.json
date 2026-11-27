@@ -204,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "blob": "67fd827411b726fc622af1a177534644708fdd00",
             "content": "sha256:27947e2886962c8e1ac6e7f5cbee84a495eb0834496e138706848e032dc5cf87",
             "locator": {
-              "end": 482,
+              "end": 487,
               "kind": "line_range",
-              "start": 475
+              "start": 480
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },
@@ -384,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+            "blob": "d9c674677c35b4cf4e4870f25a25a6d9b0c7c68f",
             "content": "sha256:3392bfcc22276f192aed9fa84c970db0395da4b0b61a2f84855546c3b833b504",
             "locator": {
               "kind": "symbol",
@@ -464,7 +464,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+            "blob": "d9c674677c35b4cf4e4870f25a25a6d9b0c7c68f",
             "content": "sha256:1e8dcd4d0de939997e84b63be374b12baa726481047761a5f27a26e693697fb1",
             "locator": {
               "end": 334,
@@ -482,7 +482,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1541aea74b7669a700a5eb337062ba13d34ffdc3",
+            "blob": "62b3bfe2dc6ccc1646d271b14cbc901a3312c72f",
             "content": "sha256:b3aef66b9f34eae8b9828a80aa3f57e86f30e104a2cc3ecc8906efc2755d04f9",
             "locator": {
               "end": 685,
@@ -1741,11 +1741,11 @@
       ]
     },
     "67": {
-      "note": "Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state.",
+      "note": "Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state.\n\nAnchor: `TaskStatusWord`, `taskStatusReading`",
       "targets": [
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
             "content": "sha256:50ba2324b13d627caa87ce9cea377110f794bead4ecfc7ed8e08c5336bbd0c8a",
             "locator": {
               "kind": "symbol",
@@ -1757,7 +1757,7 @@
         },
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
             "content": "sha256:8657e7cba2795e4372839b6be97cc4f685971f9c5fca9a6bf05e6cddec60610e",
             "locator": {
               "kind": "symbol",
@@ -1769,8 +1769,8 @@
         },
         {
           "anchor": {
-            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
-            "content": "sha256:c4c01fea27bb0930b922c2397a93d401757edb6784435aefcb88c1f093c5c713",
+            "blob": "b099f0649ddab6e0c1da6658c2f5ad39ac9b8b3f",
+            "content": "sha256:977c874181f0b6cf702a7e5eda43878cee847eef8686a6c26ff58a0643716142",
             "locator": {
               "kind": "file"
             },
@@ -1860,12 +1860,12 @@
         },
         {
           "anchor": {
-            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "blob": "67fd827411b726fc622af1a177534644708fdd00",
             "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
             "locator": {
-              "end": 131,
+              "end": 133,
               "kind": "line_range",
-              "start": 118
+              "start": 120
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },

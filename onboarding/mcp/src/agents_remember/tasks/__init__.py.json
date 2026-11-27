@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+            "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
             "content": "sha256:7b79f7eb5968da95a337c3c1094fd9d9a00ddf3375040e75f776abadf5fda1a6",
             "locator": {
-              "end": 690,
+              "end": 691,
               "kind": "line_range",
-              "start": 690
+              "start": 691
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -21,12 +21,12 @@
         },
         {
           "anchor": {
-            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "blob": "97c8f09833f38b5d7d420d5cdc36af16c805817b",
             "content": "sha256:1162f99dfdf356e50737bcc386fd34194c8de4104614e9a0460979890031b5f7",
             "locator": {
-              "end": 46,
+              "end": 47,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -47,12 +47,12 @@
         },
         {
           "anchor": {
-            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+            "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
             "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
             "locator": {
-              "end": 1043,
+              "end": 1011,
               "kind": "line_range",
-              "start": 1043
+              "start": 1011
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -60,12 +60,12 @@
         },
         {
           "anchor": {
-            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+            "blob": "2d6a03291a0180acbf5af12f07a9f509d0238911",
             "content": "sha256:997f5b0640ada7d6be05fa7783e6228bf8c52237d3264d29c6d7d61d5ef32bd8",
             "locator": {
-              "end": 669,
+              "end": 670,
               "kind": "line_range",
-              "start": 669
+              "start": 670
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

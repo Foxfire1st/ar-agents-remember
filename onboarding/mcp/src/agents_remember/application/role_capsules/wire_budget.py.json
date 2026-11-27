@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
         "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
+        "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate_wire_token_ceilings"
+        }
+      },
+      "id": "RLZ-R9DGST",
+      "invariant": "INV-SAK9RR",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 1",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Enforces WIRE_TOKEN_CEILINGS (consolidator/consolidation <= 3000) and COMPILED_CAPSULE_TOKEN_CEILINGS (consolidator/{orientation,consolidation,recovery} <= 2000) without raising existing ceilings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
         "content": "sha256:d543aae5b6e562d1236a3945c000f7ce64ae9f776a7e0e666c31ef07989e72c3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
         "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
         "locator": {
           "kind": "symbol",
@@ -58,12 +76,12 @@
   ],
   "references": {
     "1": {
-      "note": "`WIRE_TOKEN_CEILINGS` exports immutable Turn-1 ceilings for all eight default launch pairs (2,500 / 3,000 / 3,800) beside 34-key `COMPILED_CAPSULE_TOKEN_CEILINGS` (1,500 / 2,000 / 2,600).",
+      "note": "`WIRE_TOKEN_CEILINGS` exports immutable Turn-1 ceilings for all nine default launch pairs (2,500 / 3,000 / 3,800) beside 37-key `COMPILED_CAPSULE_TOKEN_CEILINGS` (1,500 / 2,000 / 2,600).\n\nAnchor: `WIRE_TOKEN_CEILINGS`, `COMPILED_CAPSULE_TOKEN_CEILINGS`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
-            "content": "sha256:13bfe4ca8cf8b9ee39b3d9d0ac2846f5f3bbc4e5f5e7fedfebc90bd365512dac",
+            "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
+            "content": "sha256:141c295b8b060aeb7e3a4ab36abe0f8bfafeb5b9510d6a358f596cf3ee2a581e",
             "locator": {
               "kind": "symbol",
               "name": "WIRE_TOKEN_CEILINGS"
@@ -73,8 +91,8 @@
         },
         {
           "anchor": {
-            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
-            "content": "sha256:f745e1a189f6304eaa54fb922f62fbc044ee06f85a2abfd3fedf6f894a9f545a",
+            "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
+            "content": "sha256:33508e4a8d636f351b53922b26e4ae010e482a7f33660035ed1b2d08210bb3a1",
             "locator": {
               "kind": "symbol",
               "name": "COMPILED_CAPSULE_TOKEN_CEILINGS"
@@ -89,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
             "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
             "locator": {
               "kind": "symbol",
@@ -105,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
             "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
             "locator": {
               "kind": "symbol",
@@ -121,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "blob": "ec81bb3b77ea5d9a5b4c13ceeb88512fad0140d0",
             "content": "sha256:d543aae5b6e562d1236a3945c000f7ce64ae9f776a7e0e666c31ef07989e72c3",
             "locator": {
               "kind": "symbol",

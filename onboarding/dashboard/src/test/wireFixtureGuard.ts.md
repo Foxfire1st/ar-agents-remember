@@ -205,7 +205,9 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - The registry, planted bypasses and vacuity checks this module deliberately does not own. [14]
 
 
+
 - The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently. [15]
+
 
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]

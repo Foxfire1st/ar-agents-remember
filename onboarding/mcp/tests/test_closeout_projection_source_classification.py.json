@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebd23ee04faedfb23a32a0c98508fe03a1f97c08",
+            "blob": "1ca54dd8bf9b1d83da1da0e907abf171d817911c",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 729,
+              "end": 733,
               "kind": "line_range",
-              "start": 729
+              "start": 733
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
               "end": 208,
@@ -91,8 +91,8 @@
         },
         {
           "anchor": {
-            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:99d61310ddb8a3382bee26faf8687b9fd6b3b2086fbbe6fcc349b356a2a1410c",
             "locator": {
               "end": 1277,
               "kind": "line_range",
@@ -104,8 +104,8 @@
         },
         {
           "anchor": {
-            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:2f389afbd3bd21da6198d5fff3b3e35b90d55a3386da62dbdda1c0dd1ff95d4f",
             "locator": {
               "end": 2742,
               "kind": "line_range",
@@ -117,8 +117,8 @@
         },
         {
           "anchor": {
-            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
-            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "blob": "b53659be7168819c9ccfa5d49b2cca418f579cd6",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
             "locator": {
               "end": 5250,
               "kind": "line_range",

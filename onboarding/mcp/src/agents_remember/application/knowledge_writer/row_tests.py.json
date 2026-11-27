@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/row_tests.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "25bfc7ac108ec23983bf4534d0efff57ee6bf36f",
+        "content": "sha256:b9b590ddf644ca79ac1d81ec8b69e1a1dd7bdf7b6f39f8230856a96c733073db",
+        "locator": {
+          "kind": "symbol",
+          "name": "missing_rule_tests_refusal"
+        }
+      },
+      "id": "RLZ-X0PY1W",
+      "invariant": "INV-VETCYM",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 6 & Rule 7",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Requires proof evidence on every rule row of a consolidation task and records consolidationSubjects on the leaf history file.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`read_row_tests` extracts `TEST_KEYS` from raw row input and validates their shape through `ConsolidationEvidence.model_validate`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25bfc7ac108ec23983bf4534d0efff57ee6bf36f",
+            "content": "sha256:24ee974e0261e73752e5f68293bc5541c10a87eb7329fc572a378aeff4437cad",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_row_tests"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`misplaced_tests_refusal` rejects test-evidence keys on rows whose subject is neither an `invariant` nor a `family`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25bfc7ac108ec23983bf4534d0efff57ee6bf36f",
+            "content": "sha256:fc2292e164fed9bc8f7e75df944df476a879aa44652b00345cc95a43fbddac3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "misplaced_tests_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`missing_rule_tests_refusal` refuses rule rows in a consolidation task that omit all of `testsRun`, `testsNotRun`, and `noProofRecorded`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25bfc7ac108ec23983bf4534d0efff57ee6bf36f",
+            "content": "sha256:b9b590ddf644ca79ac1d81ec8b69e1a1dd7bdf7b6f39f8230856a96c733073db",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_rule_tests_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`consolidation_subjects_of` collects the sorted distinct subjects of `CONSOLIDATION_KIND` worklist items for persistence on the history file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25bfc7ac108ec23983bf4534d0efff57ee6bf36f",
+            "content": "sha256:615cabcedb5a896f3b13ce66848acde9a49c3ddbdba9551a8cb1b2b86941d335",
+            "locator": {
+              "kind": "symbol",
+              "name": "consolidation_subjects_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

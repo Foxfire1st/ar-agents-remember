@@ -24,6 +24,8 @@ Launch preparation and receipt records retain their internal identity and task-c
 
 The prepared start writes each held seat's handover and `heldOpeningPrompt` before creation while omitting the creation prompt. Worker opens at once; optional direct `opening_message` (such as Reviewer work on a non-held seat) is bounded by `role_message_limit` and offloaded to `.opening-message.md` when over limit. A successor's handover names the prior report paths. Same-request replay, exclusive receipt publication, source-scope checks and leaf-closing archival debt remain with their existing owners.
 
+`dispatch_leaf_set` branches on whether the leaf carries `consolidationList`: consolidation leaves prepare Consolidator (opened) and Reviewer (held) with no Worker or Curator, while ordinary leaves prepare Worker, Reviewer, and Curator.
+
 ## Grant-backed leaf preparation and revival
 
 Dashboard leaf Revive uses the shared grant-aware scope verifier before native bridge revival. It compares the saved canonical leaf and contract against the current pair: readable direct grant plus master series contract, or ordinary leaf enclosure. Stored direct-looking context is not permission. Receipt UUID/reconciliation, capacity, launch-before-runtime and report ownership remain with their existing owners.

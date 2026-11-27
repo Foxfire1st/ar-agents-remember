@@ -1,0 +1,24 @@
+{
+  "path": "docs/roles.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a65274bcf7e6f1f6bfda666a0ff483e294b36a32",
+        "content": "sha256:77c1c67aeb48526ff413d18053e896c57801a3815d013d2fdaff71ec748d267a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-25YEF1",
+      "invariant": "INV-3ZXAD9",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 12",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Documents the Consolidator role, consolidation tasks, and updated 9-role roster.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

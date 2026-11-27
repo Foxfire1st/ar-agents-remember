@@ -293,7 +293,9 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 > leaf; the model's own validation still runs on the whole document. The field is classified `LIFECYCLE`,
 > not `NORMATIVE` (architect ruling 4), so setting it does not change the task's intent digest.
 
+
 - The shared settable allowlist belongs to task_doc_phrases, including `knowledgeMaintenanceScope`; the extracted applier consumes it. [22]
+
 
 - **Retained historical source account — superseded by the current contract:** The field's `LIFECYCLE` classification. [23]
 
@@ -310,7 +312,9 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 > declaration against the packet (ruling Q3). No real task document may carry it before the L37 install
 > (ruling Q2, 2026-09-29T21:56:18+02:00).
 
+
 - The shared settable allowlist belongs to task_doc_phrases, including `expectedKnowledgeEffects`; model validation remains the declaration-shape backstop. [24]
+
 
 - **Retained historical source account — superseded by the current contract:** `set_field` sets it, the digest changes, and clearing restores it. [25]
 
@@ -398,7 +402,9 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
+
 - Retained history: get formerly showed readable directGrant without an authored grant field. Current get/read_steps are removed; rendered/projected grant display is a separate input and never canonical task JSON. [30]
+
 
 Retained authoring-row wording:
 
@@ -412,7 +418,9 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:463-500;
 
 - Ordinary and remove operations prepare per-root document pairs for the same source-CAS transaction. [34]
 
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [36]
+
 
 - Record-only memory identity comes from memory authority, never the sibling code root. [37]
 
@@ -443,7 +451,9 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [38]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [39]
 
+
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [35]
+
 
 - Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
 - Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication. [40]
@@ -452,4 +462,5 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 - `replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. The archived operation inventory is not the live read surface. [1]
 - Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence. [21]
 - This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
+
 - Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]

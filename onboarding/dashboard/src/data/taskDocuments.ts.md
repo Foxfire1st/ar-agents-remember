@@ -50,7 +50,9 @@ The transport fetches the qualified visible body; the store resource owns retent
 - The serving route maps projection readiness and the confined snapshot read to HTTP responses. [3]
 
 
+
 - That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404. [5]
+
 
 
 ### Cross-Repo References

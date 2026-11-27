@@ -56,7 +56,7 @@ Task-document and reopen builders forward to task-domain application services. T
 
 The registration family imports the read, diff, integrity and write operations directly. The writer answer includes the bounded note, problem and violation lists beside its full report. `knowledge_read` selects a caller-named converted memory root holding `knowledge/layout.json`, then selects the derived index of its current tree state. The namespace is server-owned. Missing roots return `selected_input_unavailable`; existing unconverted directories and database files return `legacy-format` with conversion guidance. There is no database-path fallback and no mounted projection destination. The family does mount an authoring builder: `knowledge_write` shares the command's plan, write, refusal and report behaviour and the same leaf, crossing and wave target selection, and commits no Git. Records and assessments are attributed data; this route must not invent classifications, effect labels, drafts or decisions to resolve ambiguity.
 
-Read admits `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent` and `writers`. The `writers` view uses writer aggregates instead of individual record rows. The first three use tree-bound paging; `weakness` and `dependent` use bounded lists with `rows:<n>` mark cursors. The unpaged `record` view takes a `recordId` text identity and returns a bounded link-state, timeline, count and location projection without record prose. Ordering is validated before opening the tree; the default applies only when the caller supplies none. Selection and indexing failures map to named refusals, including index-key mismatch and a named repository root that cannot resolve a code tree. Anchor-context construction can complete a caller root with its current Git tree, or use the workspace when neither half was requested and a tree is available. Git resolution has a 20-second timeout and validates a 40- or 64-character hexadecimal tree id. This context-completion step is distinct from paging currentness: a fresh walk binds only the requested `codeTreeId`, and a continuation restores its bound tree. With no requested walk tree, the pager clears source resolution for the walk rather than treating resolved HEAD as currentness evidence.
+Read admits eleven views: `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, and `consolidation_proposal`. The `writers` view uses writer aggregates (including five consolidation outcome columns: `consolidationKept`, `consolidationCorrected`, `consolidationMerged`, `consolidationRetired`, `consolidationUnresolved`) instead of individual record rows, and `consolidation_proposal` builds candidate consolidation families/rules scoped to an optional `masterId`. The first three use tree-bound paging; `weakness` and `dependent` use bounded lists with `rows:<n>` mark cursors. The unpaged `record` view takes a `recordId` text identity and returns a bounded link-state, timeline, count and location projection without record prose. Ordering is validated before opening the tree; the default applies only when the caller supplies none. Selection and indexing failures map to named refusals, including index-key mismatch and a named repository root that cannot resolve a code tree. Anchor-context construction can complete a caller root with its current Git tree, or use the workspace when neither half was requested and a tree is available. Git resolution has a 20-second timeout and validates a 40- or 64-character hexadecimal tree id. This context-completion step is distinct from paging currentness: a fresh walk binds only the requested `codeTreeId`, and a continuation restores its bound tree. With no requested walk tree, the pager clears source resolution for the walk rather than treating resolved HEAD as currentness evidence.
 
 Converted reads delegate to the shared pager. Continuations bind memory selection, policy/version, subject, ordering and code tree; mismatches refuse. Unheld seeds return `selector_absent` rather than an empty complete view. Path source-context reads and leaf continuations use the family-complete leaf path; family seeds have their own resolution. Nondefault ordering is refused for a fresh leaf read. Leaf selection preserves its shared manifest/selection machinery with published intent, while invariant responses name containing families. Tree/index state remains visible, partial indexes remain explicitly incomplete, and post-selection refusals include the memory tree and threshold. Page rendering measures fixed tree/index fields and prepared extras with the page. Proof entries identify recorded evidence, not successful tests or established invariant truth. Currentness is prepared for candidate records and cut to the answer; the documented currentness failure set becomes a failure document rather than a fresh read refusal. This is narrower than a promise to swallow every possible exception.
 
@@ -119,7 +119,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 - Mode routing and background admission stay in the memory payload owner. [64]
 
 
+
 - The named refusal of a root with no code tree. [1]
+
 
 
 - A converted tree's projection reads each view whole. [2]
@@ -129,7 +131,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 
 
+
 - Converted-tree refusals state the threshold. [5]
+
 
 
 - The read's currentness, at the walk's code tree, prepared once per page with the proofs. [6]
@@ -141,7 +145,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 - A key mismatch is a selection failure. [9]
 
 
+
 - Three delegates serve read, Git diff and tree validation. [10]
+
 
 
 - The MCP adapter delegates completed-response ownership to the application. [11]
@@ -242,7 +248,10 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
+
+
 
 
 

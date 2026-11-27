@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans serving _task_consolidation.py projection and dashboard consolidationBlock.tsx presentation, guarded by skeleton projection tests."
+  },
+  "applicability": "Dashboard launcher/chat role discovery, serving TaskSummary.consolidation projection, and Consolidation block rendering.",
+  "conditions": [
+    "TaskSummary.consolidation projects counts, memoryRead flag, and subject rows for consolidation tasks.",
+    "When memoryRead is false, consolidationBlock.tsx renders '{total} listed · outcomes not known yet' with 'listed' row badges and the amber notice instead of zeroed counts."
+  ],
+  "exclusions": [
+    "Ordinary tasks without consolidationList, which omit TaskSummary.consolidation."
+  ],
+  "id": "INV-HPD40B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard vitest (skeleton-bounds.test.tsx, DocumentChat.test.tsx, RoleLauncher.standalone.test.tsx, contract.test.ts), npm run codegen/lint/typecheck, and Evidence 9 pictures."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 11 & D1052",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard includes Consolidator in the launcher and consolidation task chats, projects TaskSummary.consolidation with counts and rows, and renders the Consolidation block showing '{total} listed · outcomes not known yet' and 'listed' row badges (with the amber notice) whenever memoryRead is false.",
+  "supersedes": [],
+  "title": "Dashboard Consolidator launcher, TaskSummary.consolidation, D1052 unread",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

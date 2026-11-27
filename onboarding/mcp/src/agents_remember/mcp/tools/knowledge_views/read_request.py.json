@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/knowledge_views/read_request.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ReadToolRequest` captures all flat `knowledge_read` wire arguments—including `master_id`, `record_id`, `source_path`, and server-owned `repository_id = INDEX_REPOSITORY_ID`—as one frozen dataclass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "294e64fd33e5a72a7c6231aab25e48dee05ea27a",
+            "content": "sha256:0029e02603001f10d3b1ae36b431bf29ed1a30159e2c7e775a763e1a1cd6857b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadToolRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_refused_read` constructs the typed refusal envelope (`ok: True`, `state: \"refused\"`, `refusalCode`, `refusalDetail`) shared across single-record view adapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "294e64fd33e5a72a7c6231aab25e48dee05ea27a",
+            "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_ObservedSource` owns the scratch `WorktreeCapture` for the duration of a read and releases it on `close()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "294e64fd33e5a72a7c6231aab25e48dee05ea27a",
+            "content": "sha256:782d4dfe40c99e9c4d3a16599b592dc6969781d610f6358b660093be7a5a8c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ObservedSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_observe_source` resolves `\"working-tree\"`, explicit commit trees, and clean-or-dirty checkout defaults, raising `_NoCodeTreeError` for an explicit unresolvable root while tolerating a non-repo workspace default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "294e64fd33e5a72a7c6231aab25e48dee05ea27a",
+            "content": "sha256:cd6baad3af0eca70673d6da336f2d0a97e064578948a9ecef96d7be5dda01776",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

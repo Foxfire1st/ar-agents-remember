@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
-        "content": "sha256:04acc78ac1a5e3e7b89d2a0505368f968ca6feb5a0a94973dbf7fde97ced2a14",
+        "blob": "9866ef371a2ee68c39e2c588355253acbb2517d2",
+        "content": "sha256:1fe7c48cc0c701bbf055ee2d7cb423b9cedb509051593549d0b7a5bbbeaaaec4",
         "locator": {
           "kind": "symbol",
           "name": "committed_review_note"
@@ -18,16 +18,34 @@
       },
       "rationale": "Emits the same unmapped verdictRef sentence when resumed closeout or direct landing reads a committed closed history file whose review.verdictRef is not in collected form.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9866ef371a2ee68c39e2c588355253acbb2517d2",
+        "content": "sha256:5c5efe1f7801a90ec95524ed8e9866805e0adaf6048d42f58e8e6c7c4050ace6",
+        "locator": {
+          "kind": "symbol",
+          "name": "closed_history_review_note"
+        }
+      },
+      "id": "RLZ-711V1T",
+      "invariant": "INV-HD8CC1",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 8 & Rule 9",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Emits both the no-pass sentence and 'Nothing was consolidated.' when a consolidation task closes without a passed review.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "A readable closed history without `review` returns `NO_PASS_SENTENCE`, one whose `review.verdictRef` fails `is_collected_report_ref` returns `unmapped_verdict_ref_note(verdict_ref)`, and missing, open, unreadable, or collected-ref histories return empty string.",
+      "note": "A readable closed history without `review` returns `NO_PASS_SENTENCE`, one whose `review.verdictRef` fails `is_collected_report_ref` returns `unmapped_verdict_ref_note(verdict_ref)`, and missing, open, unreadable, or collected-ref histories return empty string.\n\nAnchor: `committed_review_note`, `_history_review_note`",
       "targets": [
         {
           "anchor": {
-            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
-            "content": "sha256:04acc78ac1a5e3e7b89d2a0505368f968ca6feb5a0a94973dbf7fde97ced2a14",
+            "blob": "9866ef371a2ee68c39e2c588355253acbb2517d2",
+            "content": "sha256:1fe7c48cc0c701bbf055ee2d7cb423b9cedb509051593549d0b7a5bbbeaaaec4",
             "locator": {
               "kind": "symbol",
               "name": "committed_review_note"
@@ -37,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
-            "content": "sha256:647e1595fa5076ea14229849ce888d504e89570ea7574590605982519144f6aa",
+            "blob": "9866ef371a2ee68c39e2c588355253acbb2517d2",
+            "content": "sha256:b378f2582e6c6dc2c5caffa0086c223d0d853d31d2aca0de810d690050dbff62",
             "locator": {
               "kind": "symbol",
               "name": "_history_review_note"
@@ -48,12 +66,12 @@
         },
         {
           "anchor": {
-            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+            "blob": "9866ef371a2ee68c39e2c588355253acbb2517d2",
             "content": "sha256:329912a40bc6286d0c1cee601a28564bb74eaff979a909d4e4e29678411a29e3",
             "locator": {
-              "end": 64,
+              "end": 78,
               "kind": "line_range",
-              "start": 56
+              "start": 70
             }
           },
           "kind": "code"

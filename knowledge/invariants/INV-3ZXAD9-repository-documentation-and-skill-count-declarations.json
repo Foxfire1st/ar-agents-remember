@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans docs/roles.md, docs/llms.txt, docs/workflows.md, docs/reference/mcp-tools.md, docs/reference/skills.md, and skills/l-01-agent-lifecycles/SKILL.md, guarded by corpus consistency tests."
+  },
+  "applicability": "Public documentation under docs/ and canonical skill router/manifest under skills/l-01-agent-lifecycles/.",
+  "conditions": [
+    "Public docs and SKILL.md reflect 9 canonical roles (8 launcher roles) and 10 operation files including Consolidator and consolidation.md, plus consolidation-reviewer, role_start_set, consolidation_proposal, and writer-table consolidation columns."
+  ],
+  "exclusions": [
+    "Separate pre-existing CAP-L5 and KNO-R07 documentation deferrals tracked on dependent records."
+  ],
+  "id": "INV-3ZXAD9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Evidence 10 count audit and KNO-L5-F03/F04 doc repairs across docs/ (including llms.txt, workflows.md, reference/mcp-tools.md), skills/, mcp/src/, mcp/tests/, dashboard/src/ plus test_role_instruction_corpus.py, test_enclosure_doctrine_parity.py, test_role_instruction_wording_handover.py, and scripts/renew-instructions.py --check."
+      ],
+      "path": "run2a.json"
+    },
+    "handoffEntry": "KNO-R05@v3 Rule 12",
+    "leaf": "261112-KNO-L5",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repository documentation and skill count declarations reflect 9 roles (8 launcher roles) and 10 operation files, documenting consolidation tasks, consolidation-reviewer, role_start_set, consolidation_proposal, and writer-table consolidation columns.",
+  "supersedes": [],
+  "title": "Docs and skill census reflect 9 roles, 10 operations, consolidation surface",
+  "writer": {
+    "at": "2026-11-27T06:21:49+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
+  }
+}

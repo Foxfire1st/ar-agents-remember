@@ -46,7 +46,9 @@ None recorded.
 ## Evidence
 
 - After joining the proven outputs, recovery reconstructs the note from the committed owner history. [6]
+
 - A closed owner history without a review fact yields the no-pass sentence. [7]
+
 
 
 ### Docs References

@@ -113,12 +113,16 @@ No relevant documentation was configured in the resolved source registry; task a
 
 Worker envelope, reviewer verdict template, manager exact-set dispatch, and governing route overview.
 
+
 - Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. [1]
+
 
 
 - The verdict template structurally repeats one adjudication block per stable ID. [2]
 
+
 - The reviewer emits its own curator hand-off list in the shared producer shape. [3]
+
 
 
 
@@ -146,20 +150,31 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 `roles/reviewer.md` ends with its `## Reference index` table; scratch-root rules are carried by `core/every-role.md` and `reference/sandbox-actors.md` rather than a closing scratch paragraph in `roles/reviewer.md`.
 
+
 - Leaf binding never uses the hosting enclosure; the full five-seam table (organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit) and intake candidate identity rule live in reference/review/non-leaf-seams-and-catalogs.md. [5]
+
+
 
 
 - The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate. [6]
 
 
+
+
 - The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round. Record-only repair reuses the last round only after every candidate finding closes and candidate bytes stay unchanged. A finding states the required property the candidate breaks and identifies the operation or honest step that reaches its starting state. The case supplies the proof. [7]
+
+
 
 
 - Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and the ready-for-closeout notice names the passed freeze, both passed verdicts and any required final-check evidence. After repair it pairs the original report with the successor's targeted results. [9]
 
 
 
+
+
 - Reviewer reads only the assigned seam's selected packets and rendered task files via file tools (no .json or unrelated corpus), edits canonical task docs via task_doc, and writes local report-folder verdicts (template for verdictRef). [10]
+
+
 
 
 
@@ -172,7 +187,11 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 
 
+
+
 - Reviewer inspects every changed and unattributed file of the candidate diff, reads the linked review-baseline detail, and requires a full memory_quality_check on curation (blocking on Curator-actionable findings). [12]
+
+
 
 
 
@@ -180,21 +199,30 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - Baseline is sealed under reference/review-baseline.md (linked from the Reference index); fix-verification checks sealed IDs only with no whole-review mandate. [13]
 
 
+
+
 - Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged. [14]
+
+
 
 
 - A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with its Catalog Binding section and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list and durable reports for material routes. [15]
 
 
 
+
+
 - The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance. [17]
+
 
 
 - A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review. [18]
 
 
 
+
 - Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage. [19]
+
 
 
 - Reviewer repairs its own recording or evidence faults and answers input-fault refusals through the same tool; record-only repair preserves a round only while all candidate findings are closed and candidate bytes remain unchanged. [20]

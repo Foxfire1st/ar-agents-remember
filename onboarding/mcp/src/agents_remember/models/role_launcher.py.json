@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
-        "content": "sha256:54f9a7d000b83998d1f2e33ea1606e4bff75d51215d75d43e07808dd7a85ab51",
+        "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
+        "content": "sha256:6a57878d9870f3f201718304bbb3e1d403831abba3a1757c11b67c7a0fa695f8",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:8d1d0947f12616edc007da49926186ec7cffaec310ad78ef070b88c3b200a934",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
@@ -53,11 +53,11 @@
       ]
     },
     "11": {
-      "note": "The earlier system-specialist spelling names Investigator; Bootstrap and callerHarness remain launcher model data rather than caller permission.",
+      "note": "The earlier system-specialist spelling names Investigator; Bootstrap and callerHarness remain launcher model data rather than caller permission.\n\nAnchor: `canonical_role`, `LauncherRole`, `RoleDispatchRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
             "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
             "locator": {
               "kind": "symbol",
@@ -69,8 +69,8 @@
         },
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
-            "content": "sha256:e15e9e9fbb08a43542e1401acb3e6ba1f5bbf051f7b4f2cba4128ebcd48548bc",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
+            "content": "sha256:83d5515d7e5d4ea1ad2aaf36780078344aa0ba3f94db44ead26bc2472b909551",
             "locator": {
               "kind": "symbol",
               "name": "LauncherRole"
@@ -80,7 +80,7 @@
         },
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:9ec474cab516dfa6fb8db235bd3e83ab8ffc3a559f55f559b2c4ea8637d0929c",
             "locator": {
-              "end": 49,
+              "end": 50,
               "kind": "line_range",
-              "start": 40
+              "start": 41
             }
           },
           "kind": "code"
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:8d1d0947f12616edc007da49926186ec7cffaec310ad78ef070b88c3b200a934",
             "locator": {
               "kind": "symbol",
@@ -140,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
             "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
             "locator": {
               "kind": "symbol",
@@ -152,7 +152,7 @@
         },
         {
           "anchor": {
-            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
             "content": "sha256:f2c7438ee933042bbff257c4c0cc7e098dc2f55b3b27a2794183a20442b93c7e",
             "locator": {
               "kind": "symbol",
@@ -169,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
@@ -181,12 +181,12 @@
       ]
     },
     "6": {
-      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.",
       "targets": [
         {
           "anchor": {
-            "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
-            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
+            "blob": "a972ce4ce0b8955ea2a85aa521b5b8750e8a181d",
+            "content": "sha256:f89917f6b1d9a9216545fa82da6a31e6b62ef9f23e833040c66c281393905789",
             "locator": {
               "end": 316,
               "kind": "line_range",
@@ -199,12 +199,12 @@
       ]
     },
     "7": {
-      "note": "Step-up reason admission and threshold govern choice of an alternative. An alternative takes mode from its own row at either scope.",
+      "note": "Step-up reason admission and threshold govern choice of an alternative. An alternative takes mode from its own settings row. It inherits omitted launch fields only when its provider and model both match the role defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
-            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
+            "blob": "cb9e560291de989692e3124f74421da1d1fd592a",
+            "content": "sha256:2fa2d4d15f3995e5fec3b3228c3c38e953b1c3e14aca6ed7c0ec0b4c66cbd557",
             "locator": {
               "end": 87,
               "kind": "line_range",
@@ -221,12 +221,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
             "content": "sha256:588ff42b6178dad47170efcf3e8583abc4fea2f8cea54ab8d937b813a3a10816",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 77
+              "start": 78
             }
           },
           "kind": "code"
@@ -238,8 +238,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
-            "content": "sha256:e15e9e9fbb08a43542e1401acb3e6ba1f5bbf051f7b4f2cba4128ebcd48548bc",
+            "blob": "fdfe00e4159d2c80677bfa363263e414f93827e3",
+            "content": "sha256:83d5515d7e5d4ea1ad2aaf36780078344aa0ba3f94db44ead26bc2472b909551",
             "locator": {
               "kind": "symbol",
               "name": "LauncherRole"

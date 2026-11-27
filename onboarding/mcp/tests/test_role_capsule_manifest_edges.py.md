@@ -68,4 +68,5 @@ Real-corpus cases bind the Investigator's instruction-shortfall review, the Arch
 - Real-corpus cases bind the Investigator's instruction-shortfall review, the Architect's and Manager's third-rejected-round progress judgment and the Architect's Curator-measurement detail to their declared source, roles and step and to the exact read action that links them, with clause-removal and displaced-action controls. The composed core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [9]
 
 
+
 - The current `KNOWLEDGE_USE_CONSUMERS` fixture binds each of the five consuming roles' (`architect`, `worker`, `reviewer`, `investigator`, `curator`) index-table row triggers and link labels to `reference/knowledge/use.md`. [18]

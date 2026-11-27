@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
         "content": "sha256:c34329895afbe23e7aac751cb15de83764427ecd6345def0b2a93525405134dd",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
         "content": "sha256:c34329895afbe23e7aac751cb15de83764427ecd6345def0b2a93525405134dd",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
         "content": "sha256:0bfbc33b0d2652ba40e6f7449099c8b17d168b6b0d9ed1070c4aa06661253cb0",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
         "content": "sha256:0bfbc33b0d2652ba40e6f7449099c8b17d168b6b0d9ed1070c4aa06661253cb0",
         "locator": {
           "kind": "symbol",
@@ -76,12 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
         "content": "sha256:4fd7946ddff242f3daa40e06c7f53e6ba274e3d9a52a920fb562ba332a02cf6b",
         "locator": {
-          "end": 110,
+          "end": 111,
           "kind": "line_range",
-          "start": 77
+          "start": 78
         }
       },
       "id": "RLZ-RA6D0D",
@@ -95,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-        "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+        "content": "sha256:8f47a2e4df3ed63c0461a72826e3e7052722a74aedc75808c51253f2e102c54e",
         "locator": {
           "kind": "symbol",
           "name": "PARENTLESS_START_SELECTIONS"
@@ -113,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-        "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+        "content": "sha256:8f47a2e4df3ed63c0461a72826e3e7052722a74aedc75808c51253f2e102c54e",
         "locator": {
           "kind": "symbol",
           "name": "PARENTLESS_START_SELECTIONS"
@@ -131,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
         "content": "sha256:2fac881f7633ac595c45e44b08bff1612b59def1a86b9ab06430cb092a2b2ca3",
         "locator": {
           "end": 9,
@@ -150,8 +150,8 @@
     },
     {
       "anchor": {
-        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-        "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
+        "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+        "content": "sha256:8f47a2e4df3ed63c0461a72826e3e7052722a74aedc75808c51253f2e102c54e",
         "locator": {
           "kind": "symbol",
           "name": "PARENTLESS_START_SELECTIONS"
@@ -169,12 +169,12 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of resolve_role_launch_context supporting the stated file behavior.\n\nAnchor: `resolve_role_launch_context`",
+      "note": "Frozen implementation of resolve_role_launch_context supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
+            "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+            "content": "sha256:05888860c04f6e9d1ec2f1bd77c8ff55e3028fd4d4cdda1f2c4e291bacf57098",
             "locator": {
               "kind": "file"
             }
@@ -188,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
             "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
             "locator": {
               "kind": "symbol",
@@ -204,8 +204,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
+            "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+            "content": "sha256:05888860c04f6e9d1ec2f1bd77c8ff55e3028fd4d4cdda1f2c4e291bacf57098",
             "locator": {
               "kind": "file"
             }
@@ -219,8 +219,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
-            "content": "sha256:d49a923e52a43539c1c40ef136cb3a70bcb028c9ecbcea4a5444f8e65aa8d50e",
+            "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
+            "content": "sha256:71702c063c4c5a9bf68b12e30e1917c986a6709711511203978aa5291c58eb65",
             "locator": {
               "kind": "symbol",
               "name": "ROLE_LEVELS"
@@ -236,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "blob": "eaa80b15a8cb525216fee33b67ed58739e06313c",
             "content": "sha256:b4d998c454a1ab4b666d9fefe473a52c921b55000f5e9b301ee264eab2c13a3b",
             "locator": {
               "kind": "symbol",
@@ -249,12 +249,12 @@
       ]
     },
     "6": {
-      "note": "The parentless row that admits no document reference for the free agent.\n\nAnchor: `PARENTLESS_START_SELECTIONS`",
+      "note": "The parentless row that admits no document reference for the free agent.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
-            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
+            "blob": "e99cbd8edad10a663933895a4feaf2c6aeb2b18a",
+            "content": "sha256:05888860c04f6e9d1ec2f1bd77c8ff55e3028fd4d4cdda1f2c4e291bacf57098",
             "locator": {
               "kind": "file"
             }

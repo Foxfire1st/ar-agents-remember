@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_consolidation_proposal/proposal.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "be49591386d8e54ca805973021fd8fa6372e12e1",
+        "content": "sha256:69e3b1344909cf01cbf7d06ab2b2625f1d79856d143cda07dac51e628d0e6528",
+        "locator": {
+          "kind": "symbol",
+          "name": "for_master"
+        }
+      },
+      "id": "RLZ-YDQ324",
+      "invariant": "INV-4R5HAZ",
+      "origin": {
+        "handoffEntry": "KNO-R05@v3 Rule 5 (D1049)",
+        "leaf": "261112-KNO-L5"
+      },
+      "rationale": "Builds master-scoped family proposals with pass timestamps and same-file attached rules.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`for_master` ranks live families by descending count of master-written member rules then family ID, and lists live written rules outside all families in `rules_in_no_family`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be49591386d8e54ca805973021fd8fa6372e12e1",
+            "content": "sha256:69e3b1344909cf01cbf7d06ab2b2625f1d79856d143cda07dac51e628d0e6528",
+            "locator": {
+              "kind": "symbol",
+              "name": "for_master"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`for_folder` selects live families having any member realized at or under the normalized folder path (with `\"\"`/`.` matching all folders), sorted by family ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be49591386d8e54ca805973021fd8fa6372e12e1",
+            "content": "sha256:d1ea8aea7a0fc83f5af8069e85f9e16ec79452b2d27f4c576df86e9f998d305b",
+            "locator": {
+              "kind": "symbol",
+              "name": "for_folder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`oldest_first` places never-consolidated families first (ordered by `_first_written_key`) followed by consolidated families ordered oldest `last_consolidated` first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be49591386d8e54ca805973021fd8fa6372e12e1",
+            "content": "sha256:dc31d22495d442118c5bfb975a94e1898c4bdefeb6297275aa51490398118597",
+            "locator": {
+              "kind": "symbol",
+              "name": "oldest_first"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_proposed` constructs each `ProposedFamily` from `ProposalStore`, attaching sorted loose rules realized in its members' files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be49591386d8e54ca805973021fd8fa6372e12e1",
+            "content": "sha256:eac4941a88441766ebc5cd6276009a40054c803b6c99215b09cb8137ea78a8f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proposed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

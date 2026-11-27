@@ -138,12 +138,12 @@
       ]
     },
     "6": {
-      "note": "The role and operation vocabulary this module imports rather than retypes.\n\nAnchor: `CapsuleRole`",
+      "note": "The role and operation vocabulary this module imports rather than retypes.",
       "targets": [
         {
           "anchor": {
-            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
-            "content": "sha256:c787b2683b559e97f883a1079ab9b3fbe6526d604c77f23900bd20af0967e4d0",
+            "blob": "89229a581d2e3e79af8e714c0a36cc07a558b8ba",
+            "content": "sha256:01d55617fe4f0e7d1bcae3cc9e814bcb4ed87449d74bfbabb55932f95712b76e",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -177,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "blob": "1f18f24c98ca3465d84f99ae5e78af2530f9e417",
             "content": "sha256:2621e56d55e0fb0455d1af05b2d3a65bafd1c0f7b69d33b0656132c56ad1e1ed",
             "locator": {
               "kind": "symbol",

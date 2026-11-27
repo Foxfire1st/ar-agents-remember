@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "blob": "dbcd85a3b374bac09d024df88c56b8febde167e0",
             "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
             "locator": {
               "kind": "symbol",
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "blob": "dbcd85a3b374bac09d024df88c56b8febde167e0",
             "content": "sha256:323b5ad262c99244d1d9b74f77ba55747862d16bd5450aa0424bb1b47e255482",
             "locator": {
-              "end": 843,
+              "end": 847,
               "kind": "line_range",
-              "start": 809
+              "start": 813
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

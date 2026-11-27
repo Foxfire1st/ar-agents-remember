@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
+            "blob": "eb85333add4e0f3876db3cb49183aec90ddd296e",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
+            "blob": "eb85333add4e0f3876db3cb49183aec90ddd296e",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
@@ -91,12 +91,12 @@
         },
         {
           "anchor": {
-            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
+            "blob": "eb85333add4e0f3876db3cb49183aec90ddd296e",
             "content": "sha256:0a9a7d7f15fab6b072267116ac4c2fe239e2fcc2fba1a53a2b790e41abbf8980",
             "locator": {
-              "end": 100,
+              "end": 101,
               "kind": "line_range",
-              "start": 91
+              "start": 92
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -104,12 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
+            "blob": "eb85333add4e0f3876db3cb49183aec90ddd296e",
             "content": "sha256:a9e52a834bf87343152e69f3d6f87a37555d0af87a0e38d78d08aa7fea410b00",
             "locator": {
-              "end": 102,
+              "end": 103,
               "kind": "line_range",
-              "start": 93
+              "start": 94
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -117,12 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
+            "blob": "eb85333add4e0f3876db3cb49183aec90ddd296e",
             "content": "sha256:e4582d7c637f96de9f7388a11a9005dea66037574e6766d84ed6865cfa04d703",
             "locator": {
-              "end": 98,
+              "end": 99,
               "kind": "line_range",
-              "start": 89
+              "start": 90
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },

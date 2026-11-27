@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
+    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
     "role": "curator",
-    "statement": "Verified docs/install/openclaw.md (lines 1-99) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): OpenClaw installation and MCP server setup remain accurate under BUG-R41@v1.",
-    "task": "261112-BUG-L41",
+    "statement": "Verified docs/install/openclaw.md against 17c064d8: OpenClaw install and MCP wiring instructions remain accurate after KNO-R05@v3.",
+    "task": "261112-KNO-L5",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
+      "blob": "899e1683d5c73859944c67ebd5735125bf837c94",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+      "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-27T06:21:49+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261112-KNO-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
+    "task": "261112-KNO"
   }
 }
