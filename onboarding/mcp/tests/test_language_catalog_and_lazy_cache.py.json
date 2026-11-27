@@ -1,0 +1,309 @@
+{
+  "path": "mcp/tests/test_language_catalog_and_lazy_cache.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:b709e12588b9a031c2aa46aa17c9930c79b942bb30c258d7bd059476f92a3962",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_custom_local_language_bend2_end_to_end_and_abi_check"
+        }
+      },
+      "facet": "Verifies local custom tree-sitter shared library loading (bend2), PyCapsule wrapping, ABI 13-15 validation, and query/binary digest inclusion in extractor_version.",
+      "id": "PRF-1M5P5E",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:659a179906f3f2fcf803a28a9bed96e74b1be287b75ce11f76fdc2bed06cf03c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repository_languages_json_and_custom_bend2_wire_through_production_consumers"
+        }
+      },
+      "facet": "Verifies repository languages.json overrides and custom local languages wire end-to-end through production read, write, conversion, currentness, reference, and review consumers.",
+      "id": "PRF-2HACRN",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:c4c3ee2266a943958a7f6bf55657d7b968b90d59ec5a47579919322791f4b12b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_languages_json_security_boundary_rejects_remote_urls"
+        }
+      },
+      "facet": "Verifies languages.json and user settings reject remote URLs and forbidden download-URL keys.",
+      "id": "PRF-3ANCX7",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:84660cbffb89327cb7b97af224871a1d148bd371eb74cefcecf214609e8779b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dependency_purity_pyproject_uv_lock_and_zero_hardcoded_language_lists"
+        }
+      },
+      "facet": "Verifies language_catalog.lock.json schema/pins, zero tree-sitter-* grammar dependencies in pyproject.toml and uv.lock, and zero hardcoded language tables across mcp/src/agents_remember.",
+      "id": "PRF-5ECHC0",
+      "invariant": "INV-559QV5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §1",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:26e291d9cf8db16a44a88481ad91e82733b82a36b02682f60ceb0cfd34513a3b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unknown_enable_disable_ids_and_catalog_shadowing_are_refused"
+        }
+      },
+      "facet": "Verifies unknown enable/disable/override language ids and custom ids shadowing catalog entries are refused.",
+      "id": "PRF-B0J9BC",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:3de4dec57917bc9755ab0cbcc663639df6b07731a5fb94f452641e198f768701",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_languages_scan_warm_and_ci_bootstrap_contracts"
+        }
+      },
+      "facet": "Verifies agents-remember languages scan/warm CLI behavior alongside Dagger, certification profile, and post-transaction bootstrap pre-warm contracts.",
+      "id": "PRF-B2MGGC",
+      "invariant": "INV-CSJ1ZD",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §4",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:45d338d9cb0ca3633c6e4b4a93c8aaf3fe834cb1e28156083b8353e7e7dbd613",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_corrupt_hash_and_download_failure_preserve_read_write_asymmetry"
+        }
+      },
+      "facet": "Verifies corrupt wheel digests and download failures leave no partial cache state and preserve read-degrade versus write-refuse asymmetry.",
+      "id": "PRF-G2GD7Q",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:3dc69b2a5a5d62578ade1ca5fc11f150e11734b91fd382c97de2c7cc08a52774",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_language_pack_provider_lazy_install_and_hash_verification"
+        }
+      },
+      "facet": "Verifies tree-sitter-language-pack provider lazy installation, SHA-256 verification, and isolated loading.",
+      "id": "PRF-J53KB5",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:91dfda107b213599535def493992d3a5d9d40cc7471b82531caad9db7dd7621f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lazy_pinned_download_and_warm_cache_reuse_without_mutating_venv"
+        }
+      },
+      "facet": "Verifies lazy pinned wheel download into AR_LANGUAGE_CACHE without mutating the venv and warm-cache reuse with zero network calls.",
+      "id": "PRF-MD6M48",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:14e2d7634f1189d49eecabd7131995641966608f77042495e6ff609393687043",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repo_auto_scan_ambiguous_suffixes_overrides_shebangs_and_lean_reservation"
+        }
+      },
+      "facet": "Verifies repository auto-scanning for suffixes, exact filenames, shebangs, ambiguous suffix isolation, and permanent .lean reservation.",
+      "id": "PRF-RHJVS3",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "AST and lockfile checks enforce zero `tree-sitter-*` grammar dependencies in `pyproject.toml`/`uv.lock` and zero hardcoded language tables in product source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:84660cbffb89327cb7b97af224871a1d148bd371eb74cefcecf214609e8779b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dependency_purity_pyproject_uv_lock_and_zero_hardcoded_language_lists"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lazy wheel installation, `tree-sitter-language-pack` support, warm-cache reuse without venv mutation, and corrupt-hash/download failure asymmetry are verified end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:91dfda107b213599535def493992d3a5d9d40cc7471b82531caad9db7dd7621f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lazy_pinned_download_and_warm_cache_reuse_without_mutating_venv"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:3dc69b2a5a5d62578ade1ca5fc11f150e11734b91fd382c97de2c7cc08a52774",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_language_pack_provider_lazy_install_and_hash_verification"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:45d338d9cb0ca3633c6e4b4a93c8aaf3fe834cb1e28156083b8353e7e7dbd613",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_corrupt_hash_and_download_failure_preserve_read_write_asymmetry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Repository scanning, ambiguous suffix reporting, shebang detection, `.lean` reservation, remote-URL rejection, and unknown-ID/shadowing refusals are tested.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:14e2d7634f1189d49eecabd7131995641966608f77042495e6ff609393687043",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repo_auto_scan_ambiguous_suffixes_overrides_shebangs_and_lean_reservation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:c4c3ee2266a943958a7f6bf55657d7b968b90d59ec5a47579919322791f4b12b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_languages_json_security_boundary_rejects_remote_urls"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:26e291d9cf8db16a44a88481ad91e82733b82a36b02682f60ceb0cfd34513a3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_enable_disable_ids_and_catalog_shadowing_are_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Custom local language loading (`bend2`), ABI verification, CLI `languages scan`/`warm`, and full production-consumer wiring through `.agents-remember/languages.json` are verified.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:b709e12588b9a031c2aa46aa17c9930c79b942bb30c258d7bd059476f92a3962",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_custom_local_language_bend2_end_to_end_and_abi_check"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:3de4dec57917bc9755ab0cbcc663639df6b07731a5fb94f452641e198f768701",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_languages_scan_warm_and_ci_bootstrap_contracts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+            "content": "sha256:659a179906f3f2fcf803a28a9bed96e74b1be287b75ce11f76fdc2bed06cf03c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_languages_json_and_custom_bend2_wire_through_production_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

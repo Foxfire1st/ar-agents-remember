@@ -21,6 +21,7 @@ The tests instrument the production grammar parser. Dispatch and background-work
 ## Evidence
 
 - Path, contents and grammar all distinguish parse inputs. [1]
+
 - Nested scopes detach returned containers and discard results on error. [2]
 - Test diagnostics share their parse without retaining ordinary trees. [3]
 - Copied contexts share work but return independent containers. [4]

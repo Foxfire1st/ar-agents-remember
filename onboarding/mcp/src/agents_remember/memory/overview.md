@@ -187,6 +187,7 @@ Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
 
 - A recorded symbol observation returns the defining extents when the selected key is established, sharing `extents.qualified_spans` containment. [19]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
 
 - Retained reference account (no fresh execution or acceptance inferred): **The shared observation vocabulary and its two construction rules.** [21]
@@ -341,7 +342,8 @@ Numbered findings [116] and [149] describe converted carryover planning, convers
 - Selection freezes directly containing families before expansion; paging preserves total and cumulative counts. [157]
 
 
-- A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. [158]
+- A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. Anchor: `_observed_entry`, `_recorded_lines`, `_blob_definitions` [158]
+
 
 
 - Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence. [159]

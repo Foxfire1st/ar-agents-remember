@@ -1587,6 +1587,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - Knowledge-writer test support lists the crossing dependent writer test as a consumer. [341]
 
 
@@ -2143,6 +2144,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - The lifecycle catalog declares `mcp/tests/test_code_quality_dashboard_lint_scope.py` as an exact consumer of `_user_settings_guard.py` and the Node-profile `package-lock.json` fixture; membership is dependency reachability accounting, not test execution. [544]
 
 
@@ -2173,6 +2175,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 - The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. [546]
+
 
 
 
@@ -2219,6 +2222,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 - The current lifecycle catalog declares test_unexplained_change_disposition.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. [549]
+
 
 
 
@@ -2490,6 +2494,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - The settings guard and Node lockfile each declare the after-discovery, publication-merge-admission and landing-workflow-setting tests as consumers. The after-discovery regression asserts that scheduling follows the discovery answer and that the first call starts the same work when discovery was skipped. [568]
 
 
@@ -2506,7 +2511,9 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. Both settings-guard and Node-lockfile artifact rows declare the four surviving unit-regression L192 retired-provider tests (the five removed provider-specific L192 suites, including test_l192_projection_watch_roots.py, are absent from the shared rows and Paseo runtime support). The two shared rows also declare the after-discovery, publication merge admission and landing workflow setting cases. The retired provider-current-state module has no exact consumer declaration. These source declarations establish no execution or passing result. [569]
+
 
 
 
@@ -2575,6 +2582,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
+
 - The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. [574]
 
 
@@ -2584,6 +2592,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [575]
+
 
 
 

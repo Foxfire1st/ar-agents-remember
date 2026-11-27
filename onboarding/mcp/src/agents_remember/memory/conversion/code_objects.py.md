@@ -94,10 +94,14 @@ No configured live documentation source was available for this pass.
 
 The object store's read-only surface.
 
-- `CodeObjects` reads code objects and keeps raw blob bytes, blob-keyed split lines, and provider-version-keyed definitions in its instance while restricting `SYMBOL_SPANS` reuse to the default `LanguageSet`. [1]
-- `CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit. [2]
-- `CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix. [3]
-- `CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`. [6]
+- `CodeObjects` reads code objects and keeps raw blob bytes, blob-keyed split lines, and provider-version-keyed definitions in its instance while restricting `SYMBOL_SPANS` reuse to the default `LanguageSet`. Anchor: `CodeObjects` [1]
+
+- `CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit. Anchor: `CodeObjects.commit` [2]
+
+- `CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix. Anchor: `CodeObjects.commits_with_prefix` [3]
+
+- `CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`. Anchor: `CodeObjects.prefetch` [6]
+
 - The shared binding rule preserves qualified symbol extents and unique binding. [9]
 
 - The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored.

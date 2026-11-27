@@ -251,12 +251,19 @@ No meaningful cross-repo references found.
 - **The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.** [2]
 - **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** [3]
 - The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. [5]
-- **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** [7]
+
+- **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** Anchor: `_observed_entry`, `_observed_symbol`, `_observed_line_range` [7]
+
 - An established symbol key returns its distinct defining extents as structured ranges. An uncertain Lean key retains the recorded blob identity and returns no range. [8]
-- Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup delegates to `extents.qualified_spans` and selects distinct ranges in document order. [11]
-- The memo keeps a tree entry or its definite absence, blob lines, and definitions keyed by grammar, active provider version, and script test-file class. Entries require complete identities and successful observation. [12]
-- The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. [13]
+
+- Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup delegates to `extents.qualified_spans` and selects distinct ranges in document order. Anchor: `_blob_definitions`, `_defining_extents` [11]
+
+- The memo keeps a tree entry or its definite absence, blob lines, and definitions keyed by grammar, active provider version, and script test-file class. Entries require complete identities and successful observation. Anchor: `_tree_entry`, `_recorded_lines`, `_blob_definitions` [12]
+
+- The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. Anchor: `anchor_resolver_for`, `_observed_entry`, `_observed_symbol`, `_blob_definitions` [13]
+
 - The recorded symbol reader preserves blob identity when an exact Lean key is unverifiable. [22]
+
 - Exact keys precede dotted holder containment via `extents.qualified_spans`, and Lean uses the exact key only. [23]
 
 - **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** [9]

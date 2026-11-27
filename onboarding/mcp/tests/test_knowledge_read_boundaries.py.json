@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d05826602feb043c81fd81d1dd991c26a9a8632b",
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
             "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
             "locator": {
-              "end": 771,
+              "end": 772,
               "kind": "line_range",
-              "start": 771
+              "start": 772
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -320,12 +320,12 @@
       ]
     },
     "9": {
-      "note": "Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate.\n\nAnchor: `_tree_entry`, `_TreeLookupFailed`, `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
+      "note": "Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate. Anchor: `_tree_entry`, `_TreeLookupFailed`, `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             },

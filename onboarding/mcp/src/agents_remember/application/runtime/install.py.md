@@ -74,7 +74,9 @@ currentness: a dry run calls read-only `preview_server_inventory` (leaving dead 
 
 
 
+
 - A dry run plans and an applied install refreshes a running dashboard; an observed dashboard's action is reported under `dashboard`, a `failed` or `lock-held` action fails `ok`, and the running servers are reported with their currentness. [6]
+
 
 
 - An applied install leaves an absent dashboard stopped and otherwise ensures it serves the installed build. [7]

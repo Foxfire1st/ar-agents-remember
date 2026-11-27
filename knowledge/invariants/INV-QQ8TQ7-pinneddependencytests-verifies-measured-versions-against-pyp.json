@@ -4,12 +4,12 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "Spans grammars version pins, PinnedDependencyTests guard, recorded-anchor qualified lookup, and shared extents holder containment, guarded by dependency-pin and shared-containment tests."
+    "justification": "Spans PinnedDependencyTests dependency/query guard and read_anchors/extents shared qualified holder containment, guarded by dependency-pin and shared-containment tests."
   },
-  "applicability": "Tree-sitter dependency pins in grammars.MEASURED_VERSIONS and qualified symbol lookups in read_anchors._defining_extents and extents.qualified_spans.",
+  "applicability": "Catalog tree-sitter dependency pin checks in PinnedDependencyTests and qualified symbol lookups in read_anchors._defining_extents and extents.qualified_spans.",
   "conditions": [
-    "grammars.MEASURED_VERSIONS aligns tree-sitter at 0.26.1 alongside pinned grammar packages matching pyproject.toml bounds, uv.lock, and installed wheels.",
-    "PinnedDependencyTests verifies every measured version and default provider query compilation without dead OFFLINE_PROBE code.",
+    "language_catalog.load_language_catalog().tree_sitter.version aligns tree-sitter at 0.26.1 with mcp/pyproject.toml, mcp/uv.lock, and the installed distribution, with zero tree-sitter-* grammar package dependencies.",
+    "PinnedDependencyTests verifies the catalog tree-sitter pin, dependency purity, and default catalog provider query compilation without dead OFFLINE_PROBE code.",
     "read_anchors._defining_extents delegates to extents.qualified_spans so recorded-anchor reads apply the same enclosing-holder containment as writer and conversion."
   ],
   "exclusions": [
@@ -27,20 +27,20 @@
     "leaf": "261112-KNO-L10",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "PinnedDependencyTests verifies MEASURED_VERSIONS against pyproject.toml bounds, uv.lock (aligned at tree-sitter 0.26.1), and installed wheels; dead OFFLINE_PROBE is deleted; and read_anchors._defining_extents shares extents.qualified_spans holder-containment semantics.",
+  "statement": "PinnedDependencyTests verifies the bundled language catalog's tree-sitter pin (0.26.1) against pyproject.toml, uv.lock, and the installed wheel, enforces zero privileged tree-sitter-* grammar dependencies, checks query compilation across default catalog providers without dead OFFLINE_PROBE, and read_anchors._defining_extents shares extents.qualified_spans holder-containment semantics.",
   "supersedes": [],
-  "title": "Pinned grammar versions match lock/wheels and read_anchors shares containment",
+  "title": "Catalog tree-sitter pin matches lock/wheel and read_anchors shares containment",
   "writer": {
-    "at": "2026-11-27T17:57:42+01:00",
+    "at": "2026-11-27T21:03:08+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L10",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "904214d2-fab0-5550-9d36-7e2cacf7d477",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

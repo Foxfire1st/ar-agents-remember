@@ -120,9 +120,13 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The extractor version, the supported kinds, and the 8,192-entry bound with its memory estimate. [2]
-- The requested tree, and one read of its file list with a named problem for none or an unreadable tree. [4]
+
+- The requested tree, and one read of its file list with a named problem for none or an unreadable tree. Anchor: `CodeTree`, `open_code_tree` [4]
+
 - The cache key threads `active_extractor_version()`. [6]
-- The ruling-N1 order (with symbol UTF-8 validation before unchanged-blob shortcut): no tree, absent path, symbol UTF-8, unchanged blob, then an unsupported kind. [11]
+
+- The ruling-N1 order (with symbol UTF-8 validation before unchanged-blob shortcut): no tree, absent path, symbol UTF-8, unchanged blob, then an unsupported kind. Anchor: `_decided_without_resolving` [11]
+
 - The observation-rule version is v2 and combines with the active `LanguageSet`'s `grammars.extractor_version()`. [19]
 
 - The state table, the check order, the no-fallback rule and the cache contract. [1]
@@ -130,7 +134,9 @@ No configured live documentation source was available for this pass.
 - One entry's observation and its wire shape. [5]
 - The verdict: the checks that need no resolution, then resolution and comparison; since MIK-R09 its read errors propagate to `observe_entry`. [7]
 - The two causes of a failed read, told apart (L09 review R2-3). [8]
-- The observation catches every read error and sets `read_failed` only for a Git failure. [9]
+
+- The observation catches every read error and sets `read_failed` only for a Git failure. Anchor: "read_failed: bool = False" [9]
+
 - A persistent unavailability is not a Git failure. [10]
 The retained ruling-N1 summary below describes the earlier ordering. The current ordering inserts
 the symbol UTF-8 check between absent-path handling and the unchanged-blob shortcut; the historical
@@ -153,6 +159,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - Currentness reuses the worklist’s `CodeTrees` reader and `resolve` method. The reader distinguishes a missing blob from a Git read failure. [14]
+
 
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/code.py::CodeTrees - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

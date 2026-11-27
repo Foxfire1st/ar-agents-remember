@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified docs/llms.txt against frozen tree 58741cf1: lines 49-59 now accurately document all eleven knowledge_read views, text-bearing impact/search/records replies, compact dependent triage, and INV-47NR7E read_ar_files brief guidance, resolving DFR-WQXFSQ.",
-    "task": "261112-KNO-L14",
+    "statement": "Audited docs/llms.txt against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): llms.txt index and links remain accurate after BUG-L32/L34 and L11 updates.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/llms.txt",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -33,12 +33,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+      "blob": "f8539861d43158f3b4eb9f0be9cd5e950fef2d98",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -69,14 +69,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
     "task": "261112-KNO"
   }
 }

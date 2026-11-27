@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
         "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LanguageSet"
+        }
+      },
+      "id": "RLZ-MH9S9H",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Applies glob and suffix overrides while keeping .lean permanently reserved and hashes overrides, custom binary digests, and query digests into extractor_version.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
         "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-        "content": "sha256:30e0d1b2661454362fa720bc6417e3201768db2608a11e915e338645d50a9a1d",
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:3977e516af81450c94fccf8b03f999cd67ca59118413d92b7e8cad824716b993",
         "locator": {
           "kind": "symbol",
           "name": "LeanLanguageProvider"
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-        "content": "sha256:e837acd14aa0171ad84803abe7b869bc4290020fd2e550312560cdc74ff7ab27",
+        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
         "locator": {
           "kind": "symbol",
           "name": "LanguageSet"
@@ -80,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-            "content": "sha256:c2c3685cfed0aea56612f104cbfc818ba5639d26c6e1f63e1fc16c90e9da0c3f",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:a8054390e826e76392d9df90cf5d457cb20efc3393820ddacbb2d3d9f7d342df",
             "locator": {
               "kind": "symbol",
               "name": "LanguageProvider"
@@ -96,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-            "content": "sha256:654648b2e01865a226a33c36606ab333382fdc8ecdae196624571ca05c939127",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:d17a2ff03f564eb2861e231f3156342e721cb60f687cfe9d457e2ee4b1763f66",
             "locator": {
               "kind": "symbol",
               "name": "TreeSitterLanguageProvider"
@@ -112,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
             "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
             "locator": {
-              "end": 188,
+              "end": 214,
               "kind": "line_range",
-              "start": 168
+              "start": 194
             }
           },
           "kind": "code"
@@ -129,8 +147,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-            "content": "sha256:e837acd14aa0171ad84803abe7b869bc4290020fd2e550312560cdc74ff7ab27",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
             "locator": {
               "kind": "symbol",
               "name": "LanguageSet"
@@ -145,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
             "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
             "locator": {
               "kind": "symbol",
@@ -161,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-            "content": "sha256:e286f16eb39ecdb1a9fa4ff2fbfa12323c79dfd0bb2e5bd637055e2c0f4e54e8",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:9614b3569318208fd2758599f7bde815529f3fd354c0a18b4522a2e11777068a",
             "locator": {
               "kind": "symbol",
               "name": "_build_extractor_version"
@@ -177,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
-            "content": "sha256:70dd3d62636b901e25d5222853286b205085488ac017a409f5f368dec0da7fec",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:5d5d4d49f8d05474f2d6b9cd2c21ac8e7e69f002f7708d464cde793194233545",
             "locator": {
               "kind": "symbol",
               "name": "language_set_scope"

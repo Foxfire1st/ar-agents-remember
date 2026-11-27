@@ -59,8 +59,11 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 ## Evidence
 
 - A range proof answers the locator, the pairing titles, or the reason the lines are no case. [1]
-- The case check is the grammar module's, run over the candidate bytes with the snapshot's name question. [2]
+
+- The case check is the grammar module's, run over the candidate bytes with the snapshot's name question. Anchor: `test_case_range` [2]
+
 - An unreadable blob or an unavailable grammar is a refusal rather than an exception. [3]
+
 - A title reaches the case only when the snapshot resolves that name to the same content the case's extent holds. [4]
 - A named proof lands under its own reference and a range proof under the titles it pairs with. [5]
 - The first outcome recorded for a title stands, so a case proved twice is one result. [6]

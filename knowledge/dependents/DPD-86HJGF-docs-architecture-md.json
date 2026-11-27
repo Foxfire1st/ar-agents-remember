@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
     "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Crossing-8 merge of 261112-KNO-L14/L10 and 261112-BUG-L32 onto a96cc14d2: docs/architecture.md accurately documents knowledge_read views, read_ar_files briefs, extents.py::definition_scope, and serving ResetDeliveryPorts boundaries.",
-    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
-    "uncommitted": false
+    "statement": "Audited docs/architecture.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): package layering, ResetDeliveryPorts, knowledge_read views, and L11 uniform language catalog/lazy cache boundaries remain accurate.",
+    "task": "261112-KNO-L11",
+    "uncommitted": true
   },
   "document": "docs/architecture.md",
   "id": "DPD-86HJGF",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+        "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
         "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
         "locator": {
           "kind": "symbol",
@@ -158,7 +158,7 @@
     },
     {
       "anchor": {
-        "blob": "c437f47431c06e2247812f46f7c1d012efdf6349",
+        "blob": "14b15e463e11eb3da54bba34c27f5cd07a613203",
         "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
         "locator": {
           "kind": "symbol",
@@ -182,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
-        "content": "sha256:800e9795e3c2782a3450b9c03a1e7d1a5850845f293febf0cb73112eaf470050",
+        "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
+        "content": "sha256:9c3da1ee755b11bfbc1f6b620fedcc93dfaafac51032bd4ad129fae35ffb3a20",
         "locator": {
           "kind": "symbol",
           "name": "_complete_quality_run"
@@ -218,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "a233ab3fe2581897d83112343d331b2f980d34fc",
+        "blob": "dc5e32a2d7eb2dd8f8ae08e1e81cde77a33f518f",
         "content": "sha256:68a71d0d063bbf3928f0411825fed8bf0e88083d42d14d17337f096720803d9f",
         "locator": {
           "kind": "symbol",
@@ -290,11 +290,11 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:57:01+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
-    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
     "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",

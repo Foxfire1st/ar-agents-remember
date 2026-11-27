@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -76,8 +76,26 @@
     },
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_runtime_install"
+        }
+      },
+      "id": "RLZ-T6NGGJ",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Scans and pre-warms configured repositories' detected catalog languages during runtime installation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -94,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -182,8 +200,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -198,8 +216,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"

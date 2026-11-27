@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Spans cache installation, repository scanning, CLI/init/install pre-warm hooks, and read-vs-write error handling across seven modules, guarded by four dedicated tests, and completes FAM-CSVQBJ's runtime provisioning contract."
+  },
+  "applicability": "External grammar cache installation, repository language scanning/warming, and grammar-load failure handling across language_cache.py, language_scanner.py, cli/languages.py, memory_initialization.py, runtime/install.py, read_anchors.py, and code_anchors.py.",
+  "conditions": [
+    "Pinned wheels and tree-sitter-language-pack wheels download lazily into isolated AR_LANGUAGE_CACHE targets after SHA-256 verification and atomic zip extraction without mutating the MCP venv.",
+    "Warm cached receipts reuse installed grammars with zero network traffic and enforce tree-sitter ABI 13-15 compatibility.",
+    "Unresolved or failing grammar loads degrade reads to unsupported_locator while refusing symbol anchor writes with actionable AnchorResolutionError naming the GrammarUnavailableError cause.",
+    "Repository auto-scanning leaves ambiguous suffixes (.h, .m, .v) unbound by default and keeps .lean permanently reserved for the built-in Lean scanner."
+  ],
+  "exclusions": [
+    "User-supplied local custom shared libraries bypass PyPI wheel downloads and are loaded directly from local filesystem paths under KNO-R11@v1 §3."
+  ],
+  "id": "INV-KJDERT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/python -m pytest -q mcp/tests/test_language_catalog_and_lazy_cache.py (clean-copy tree 825dedbe9356776ebe13f67d9a5dc9c331c295d6)"
+      ],
+      "path": "261112-KNO-L11-curation"
+    },
+    "handoffEntry": "KNO-R11@v1 §2",
+    "leaf": "261112-KNO-L11",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repository language auto-scanning and lazy hash-verified wheel installation populate the isolated AR_LANGUAGE_CACHE directory without mutating the frozen virtual environment, reuse warm cached grammars with zero network traffic, preserve read-degrade versus write-refuse error asymmetry on load failures, default ambiguous suffixes to occurrence matching, and keep .lean permanently reserved for the built-in Lean scanner.",
+  "supersedes": [],
+  "title": "Lazy hash-verified AR_LANGUAGE_CACHE install with read/write asymmetry",
+  "writer": {
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
+  }
+}

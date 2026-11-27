@@ -20,14 +20,20 @@ Each `TreeSitterLanguageProvider` builds its `version` string from `grammar_vers
 
 ## Relationships
 
-`grammars.py` builds the default `LanguageSet` from `MEASURED_VERSIONS` and packaged `.scm` queries, re-exports the seam helpers, and dispatches `bindings`, `test_case_refusal`, and `test_case_range` through the active provider. `tags_engine.py` supplies `Binding`, `DestructuringSpec`, query compilation/digests, and declarative tag/test extraction for `TreeSitterLanguageProvider`. `lean_declarations.py` supplies the Lean declaration scanner wrapped by `LeanLanguageProvider`.
+`language_scanner.py` constructs `TreeSitterLanguageProvider` and `LeanLanguageProvider` instances from `language_catalog.py` and `language_config.py` (including optional glob selectors and lazy `language_cache` loaders). `grammars.py` builds the default `LanguageSet` via `language_scanner.build_language_set()`, re-exports the seam helpers alongside `repository_language_set_scope`, and dispatches `bindings`, `test_case_refusal`, and `test_case_range` through the active provider. `tags_engine.py` supplies `Binding`, `DestructuringSpec`, query compilation/digests, and declarative tag/test extraction for `TreeSitterLanguageProvider`. `lean_declarations.py` supplies the Lean declaration scanner wrapped by `LeanLanguageProvider`.
 
 ## Evidence
 
 - `LanguageProvider` declares the uniform key, suffix, version, tree-sitter/exact-binding, and test-case interface. [1]
+
 - `TreeSitterLanguageProvider` hashes `tags.scm` and optional `tests.scm` queries into its version and delegates extraction to `tags_engine`. [2]
+
 - `LeanLanguageProvider.extract_bindings` preserves full-name precedence over possible and written aliases while marking uncertain scope. [3]
+
 - `LanguageSet` owns immutable key/suffix maps, derived set builders, and deterministic `extractor_version` and `language_identity`. [4]
+
 - `_register_suffix` enforces normalized dot-prefixed suffixes, rejects duplicate claims, and permanently reserves `.lean` for the built-in Lean scanner. [5]
+
 - `_build_extractor_version` combines `tree-sitter` and sorted provider versions and suffixes into one deterministic version string. [6]
+
 - `current_language_set`, `has_language_set_override`, and `language_set_scope` bind and restore the active `LanguageSet` `ContextVar`. [7]

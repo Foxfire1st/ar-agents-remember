@@ -4,6 +4,23 @@
     {
       "anchor": {
         "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_product_process_state_has_an_exact_register"
+        }
+      },
+      "facet": "Verifies global_state.PROCESS_MUTABLE_STATES registers every new language catalog, cache, and scanner process-global state owner.",
+      "id": "PRF-2G5A48",
+      "invariant": "INV-CSJ1ZD",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §4",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
         "content": "sha256:9d63e36ce56e7b59b7775386d903d71553ef0e2e333db646e9ef3724ade05eb8",
         "locator": {
           "kind": "symbol",

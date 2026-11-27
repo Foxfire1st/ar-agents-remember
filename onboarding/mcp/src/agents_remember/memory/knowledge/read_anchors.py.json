@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
-        "content": "sha256:4c5f5ca27498f435eb98fb474b15b59b187f36f4a6cb1eb68b9751a8b1b862a7",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
         "locator": {
           "kind": "symbol",
           "name": "_blob_definitions"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
-        "content": "sha256:4c5f5ca27498f435eb98fb474b15b59b187f36f4a6cb1eb68b9751a8b1b862a7",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
         "locator": {
           "kind": "symbol",
           "name": "_blob_definitions"
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_symbol"
+        }
+      },
+      "id": "RLZ-3FAAVQ",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Binds the repository's configured LanguageSet and degrades gracefully to unsupported_locator when GrammarUnavailableError occurs on read paths without hardcoding language sets.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
         "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
         "locator": {
           "kind": "symbol",
@@ -56,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
         "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
         "locator": {
           "kind": "symbol",
@@ -74,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
         "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
         "locator": {
           "kind": "symbol",
@@ -92,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
-        "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
         "locator": {
           "kind": "symbol",
           "name": "_observed_symbol"
@@ -109,7 +127,7 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
         "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
         "locator": {
           "kind": "symbol",
@@ -126,8 +144,8 @@
     },
     {
       "anchor": {
-        "blob": "145151185996395878dd19a4227261b393a6da2b",
-        "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+        "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+        "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
         "locator": {
           "kind": "symbol",
           "name": "_observed_symbol"
@@ -149,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -160,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:2ca33e9b6a9aae9d879c6a71c5a75c3a67319d81f43cc9a874ab00ec556ae305",
             "locator": {
               "kind": "symbol",
@@ -171,7 +189,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:20abb41e24de5aa9b91673cccec7a7452e4c9c3c496acfb8227ae17dbcb9931e",
             "locator": {
               "kind": "symbol",
@@ -187,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:8965416a0ebb24e6b5812c1db2cc986cfdeae20b5fb4286abb99dd215cf027e3",
             "locator": {
               "kind": "symbol",
@@ -199,12 +217,12 @@
       ]
     },
     "11": {
-      "note": "Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup delegates to `extents.qualified_spans` and selects distinct ranges in document order.\n\nAnchor: `_blob_definitions`, `_defining_extents`",
+      "note": "Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup delegates to `extents.qualified_spans` and selects distinct ranges in document order. Anchor: `_blob_definitions`, `_defining_extents`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:4c5f5ca27498f435eb98fb474b15b59b187f36f4a6cb1eb68b9751a8b1b862a7",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
             "locator": {
               "kind": "symbol",
               "name": "_blob_definitions"
@@ -214,7 +232,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
             "locator": {
               "kind": "symbol",
@@ -226,12 +244,12 @@
       ]
     },
     "12": {
-      "note": "The memo keeps a tree entry or its definite absence, blob lines, and definitions keyed by grammar, active provider version, and script test-file class. Entries require complete identities and successful observation.\n\nAnchor: `_tree_entry`, `_recorded_lines`, `_blob_definitions`",
+      "note": "The memo keeps a tree entry or its definite absence, blob lines, and definitions keyed by grammar, active provider version, and script test-file class. Entries require complete identities and successful observation. Anchor: `_tree_entry`, `_recorded_lines`, `_blob_definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             }
@@ -241,12 +259,12 @@
       ]
     },
     "13": {
-      "note": "The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity.\n\nAnchor: `anchor_resolver_for`, `_observed_entry`, `_observed_symbol`, `_blob_definitions`",
+      "note": "The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. Anchor: `anchor_resolver_for`, `_observed_entry`, `_observed_symbol`, `_blob_definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             }
@@ -429,7 +447,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",
@@ -494,8 +512,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -510,7 +528,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:0c9a0a336c105b72b42e5e0573b19e1055d97de40f03c0b52f54159628cef42c",
             "locator": {
               "kind": "symbol",
@@ -526,7 +544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
             "locator": {
               "kind": "symbol",
@@ -537,7 +555,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:4c5aac44aba12702668c799f1f4d4f1bc11570169d3ec88466bd81459f94afe3",
             "locator": {
               "kind": "symbol",
@@ -548,7 +566,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
               "kind": "symbol",
@@ -559,7 +577,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:1c0602e811691ffa334ba461731dc248fd78e3ec14ee74d212cd44bbfa774b80",
             "locator": {
               "kind": "symbol",
@@ -592,7 +610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:d4531f57e5c69f17628ad313df7a9555b7b0492aa986e742f7ea79ab28a539a6",
             "locator": {
               "kind": "symbol",
@@ -603,7 +621,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:0ea7ecb27d8f5ea4cbc904337efa60921100c10580d0d46e8410af162baa896e",
             "locator": {
               "kind": "symbol",
@@ -614,7 +632,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:46148201232cbdca872d79c8aff9237655b6ab64c9d5aed52734a51c62d32e2d",
             "locator": {
               "kind": "symbol",
@@ -625,7 +643,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:a9aa35c34fadaba98e6b29155e8c793d17dcd253fce1600d2ae30823baa9c594",
             "locator": {
               "kind": "symbol",
@@ -678,12 +696,12 @@
       ]
     },
     "7": {
-      "note": "**The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.**\n\nAnchor: `_observed_entry`, `_observed_symbol`, `_observed_line_range`",
+      "note": "**The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** Anchor: `_observed_entry`, `_observed_symbol`, `_observed_line_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             }
@@ -697,8 +715,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -713,7 +731,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",

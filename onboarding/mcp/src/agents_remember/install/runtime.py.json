@@ -135,8 +135,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -152,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
             "content": "sha256:b2a7e2beeba2fa2b9a24be0dcd2f4db50d65523ddd43812a1c2eceb6b64bc0ff",
             "locator": {
-              "end": 43,
+              "end": 46,
               "kind": "line_range",
-              "start": 40
+              "start": 43
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
@@ -347,8 +347,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+            "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+            "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
         "content": "sha256:9fee6b1197e090c5aa91aa6bb9043bb26171706b886d42a4a7309e3bedf479f3",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+        "content": "sha256:3a9140af9ab7f085d72b1350f3184254b24033c3c835b9624a8efbd77a7cdf9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_portable_candidate_container"
+        }
+      },
+      "id": "RLZ-VJWBES",
+      "invariant": "INV-CSJ1ZD",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §4",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Mounts the shared AR_LANGUAGE_CACHE cache volume and exports AR_LANGUAGE_CACHE in portable certification containers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
         "content": "sha256:c404a93523cefb50363c667e624e64e578fd94bd4b047faf2c71572b58ae3acc",
         "locator": {
           "kind": "symbol",
@@ -36,6 +54,24 @@
       },
       "rationale": "The candidate venv check supplies the proof files the run exports.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+        "content": "sha256:8070aa242318d6a3e3a00b54649e53f845c53f2295070f3963829f52aa30ea1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_candidate_base"
+        }
+      },
+      "id": "RLZ-YHMZYX",
+      "invariant": "INV-CSJ1ZD",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §4",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Mounts the shared AR_LANGUAGE_CACHE cache volume, exports AR_LANGUAGE_CACHE, and runs agents-remember languages warm --repo /workspace before rails execute.",
+      "role": "enforcement"
     }
   ],
   "references": {},

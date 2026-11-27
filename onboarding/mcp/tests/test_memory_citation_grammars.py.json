@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
-        "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+        "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+        "content": "sha256:d6876da7e222663fca8ced1b895dc23925f77aa4836c3c28d74733018af4a9f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PinnedDependencyTests"
+        }
+      },
+      "facet": "Verifies catalog tree-sitter pin matches pyproject.toml, uv.lock, and installed distribution and compiles packaged queries for every default catalog provider.",
+      "id": "PRF-T1FTTM",
+      "invariant": "INV-559QV5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §1",
+        "leaf": "261112-KNO-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+        "content": "sha256:d6876da7e222663fca8ced1b895dc23925f77aa4836c3c28d74733018af4a9f1",
         "locator": {
           "kind": "symbol",
           "name": "PinnedDependencyTests"
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+        "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
         "content": "sha256:6d862d0da739eb4365a4b91ce440fd9be37def3825e165951de3fb31224239d2",
         "locator": {
           "kind": "symbol",
@@ -39,8 +56,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
-        "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+        "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+        "content": "sha256:d6876da7e222663fca8ced1b895dc23925f77aa4836c3c28d74733018af4a9f1",
         "locator": {
           "kind": "symbol",
           "name": "PinnedDependencyTests"
@@ -52,7 +69,7 @@
         "handoffEntry": "KNO-R10@v1 §4",
         "leaf": "261112-KNO-L10"
       },
-      "rationale": "Restores the guard verifying MEASURED_VERSIONS against mcp/pyproject.toml pins, mcp/uv.lock, installed distributions, and query compilation while removing unused OFFLINE_PROBE.",
+      "rationale": "Verifies bundled catalog tree-sitter pin against mcp/pyproject.toml, mcp/uv.lock, and installed distribution, asserts zero tree-sitter-* grammar dependencies, and verifies query compilation across catalog providers while keeping unused OFFLINE_PROBE removed.",
       "role": "enforcement"
     }
   ],
@@ -62,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
             "content": "sha256:7d46b77d233482fc6348b25715ca3c6322968f72f53ea18df37ffda6c2e72c3b",
             "locator": {
               "kind": "symbol",
@@ -74,12 +91,12 @@
       ]
     },
     "13": {
-      "note": "`PinnedDependencyTests` checks `grammars.MEASURED_VERSIONS` against `pyproject.toml`, `uv.lock`, and installed wheels, and verifies query compilation across every default provider.",
+      "note": "`PinnedDependencyTests` checks `language_catalog.load_language_catalog().tree_sitter.version` against `pyproject.toml`, `uv.lock`, and the installed `tree-sitter` wheel, asserts zero `tree-sitter-*` grammar deps, and verifies query compilation across every catalog provider.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
-            "content": "sha256:b3977285c48d3cafc1e58928356141e12c01e33fcd47e54239dde1c7d20a01b0",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
+            "content": "sha256:d6876da7e222663fca8ced1b895dc23925f77aa4836c3c28d74733018af4a9f1",
             "locator": {
               "kind": "symbol",
               "name": "PinnedDependencyTests"
@@ -94,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
             "content": "sha256:0435779fc48cdc8c723e0aae3f3dd34bc000dcde8d4c579d87cd072356010f75",
             "locator": {
               "kind": "symbol",
@@ -110,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
             "content": "sha256:7d15d6d9058dbada4455f7ee96d382d0a7a6c72f3208ce94eb95903b762f1bd7",
             "locator": {
               "kind": "symbol",
@@ -126,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
             "content": "sha256:ccaa779876ece1b6ef11d0c530e0244ccbfa05f6e099a4aae30ac2a1b6798ac9",
             "locator": {
               "kind": "symbol",
@@ -142,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
             "content": "sha256:87fa112b9de5431a9dd25a46c26b035796f453363b358bf0735e160688a2f53f",
             "locator": {
               "kind": "symbol",
@@ -158,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a93d372e740d74414f9bc9d01d08fc6c789ab22",
+            "blob": "5aade519837dcf79c643319015f6d690d7082f8b",
             "content": "sha256:02ef2acc0c260f4e26a226eac70a167919b03ca4dbc82712c3dcb165df825b1d",
             "locator": {
               "kind": "symbol",

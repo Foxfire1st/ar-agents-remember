@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+        "content": "sha256:b7279f6ee60c025103f86f145f853d474d250a8a9f485d625b2fb8b83d203fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_init_tool"
+        }
+      },
+      "id": "RLZ-A5V4DJ",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Auto-scans and pre-warms detected repository languages into AR_LANGUAGE_CACHE during repository memory initialization.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
         "content": "sha256:ae5997c75a3f9b9702040723b9c6b0a30ddef7a3a651258c3b1344406c65d441",
         "locator": {
-          "end": 152,
+          "end": 171,
           "kind": "line_range",
-          "start": 148
+          "start": 167
         }
       },
       "id": "RLZ-GFATR9",
@@ -22,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
         "content": "sha256:910178dbc0247244e141b02e44b602b499401c0af9db5b9fa94e9d992bb89e05",
         "locator": {
-          "end": 30,
+          "end": 33,
           "kind": "line_range",
-          "start": 26
+          "start": 29
         }
       },
       "id": "RLZ-MF9P9F",
@@ -41,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
         "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
         "locator": {
           "kind": "symbol",
@@ -59,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
         "content": "sha256:7ef380476ad350970442b0914c3a71a14bb4114fe50df852a1834179bc78e67f",
         "locator": {
-          "end": 124,
+          "end": 143,
           "kind": "line_range",
-          "start": 116
+          "start": 135
         }
       },
       "id": "RLZ-PCQR3A",
@@ -78,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
-        "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+        "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+        "content": "sha256:b7279f6ee60c025103f86f145f853d474d250a8a9f485d625b2fb8b83d203fb6",
         "locator": {
           "kind": "symbol",
           "name": "memory_init_tool"
@@ -101,8 +119,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
-            "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
+            "content": "sha256:b7279f6ee60c025103f86f145f853d474d250a8a9f485d625b2fb8b83d203fb6",
             "locator": {
               "kind": "symbol",
               "name": "memory_init_tool"
@@ -117,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
             "content": "sha256:d29b7b083d56d64b9754c1c069410bdec6ed9e2d02656f1895a0e6c92cc9f9ab",
             "locator": {
               "kind": "symbol",
@@ -133,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "blob": "ff9a1f16cca87b6dbce25d68cdbb341b36d1b90e",
             "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
             "locator": {
               "kind": "symbol",

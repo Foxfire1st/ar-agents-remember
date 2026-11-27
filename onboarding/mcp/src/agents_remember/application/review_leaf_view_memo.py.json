@@ -302,12 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "32b468e307d43909fa4abb9ad4cf27f31384665f",
+            "blob": "b9d685899110493177ae5483ae4b24095dc6256a",
             "content": "sha256:3931efd74b39a7336bb56c4a4b94c7935fa6b037d8216f5316844855c8411c5e",
             "locator": {
-              "end": 567,
+              "end": 571,
               "kind": "line_range",
-              "start": 548
+              "start": 552
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },

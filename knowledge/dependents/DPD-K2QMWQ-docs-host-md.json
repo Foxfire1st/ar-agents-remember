@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
-    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
+    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Verified all 415 lines of docs/host.md against post-L32 synced L34 candidate atop L32 rev 23: host setup, daemon config, host profiles, and Antigravity ACP guidance remain accurate with refreshed role_launch_preparation.py (220-232) and paseo_bridge.mjs createAgent (668-682) anchors.",
-    "task": "261112-BUG-L34",
+    "statement": "Audited docs/host.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): host setup, daemon config, Antigravity ACP guidance, and refreshed role_launch_preparation.py/paseo_bridge.mjs anchors remain accurate alongside L11 CLI/install updates.",
+    "task": "261112-KNO-L11",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -244,7 +244,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+      "blob": "16250406ac4e1e246f17713ee131ee995b443880",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/runtime/install.py"
     },
@@ -254,25 +254,25 @@
       "path": "mcp/src/agents_remember/install/checkout_environments.py"
     },
     {
-      "blob": "3ba169bca082b592cb6eeca2556b8d2b6b7abee7",
+      "blob": "2ff86b1f520e1e134b2495685423cef3df3a65ef",
       "kind": "file",
       "path": "scripts/bootstrap-mcp-venv.sh"
     },
     {
-      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:06:38+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L34",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
-    "task": "261112-BUG"
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
   }
 }

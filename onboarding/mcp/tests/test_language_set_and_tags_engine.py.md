@@ -27,8 +27,12 @@ Registered once in `mcp/tests/test-evidence-lanes.toml` under `unit-regression` 
 ## Evidence
 
 - Asserts `.lean` cannot be bound to a tree-sitter provider and resolves to `LeanLanguageProvider` in the default set. [1]
+
 - Asserts `LanguageSet.extractor_version` derivation and cache-key isolation across `extents`, `observe`, `CodeSnapshot`, `CodeObjects`, and `read_anchors`. [2]
 - Asserts declarative `tags.scm` wrapper widening, destructuring, `has_error` skipping, and import/key/default/attribute exclusions on Python and TSX. [3]
+
 - Asserts `model.anchors_in` accepts an explicit `language_set` scope. [4]
+
 - Asserts `read_anchors.observe_anchor` shares `extents.qualified_spans` holder-containment semantics for qualified names. [5]
+
 - Asserts upstream `@doc` and `@local.definition` captures are ignored and `merge_entries` preserves document order. [6]

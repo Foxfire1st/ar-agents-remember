@@ -493,6 +493,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal. [309]
 
 
+
 - The invariant gate reuses a compatible observed verdict or recomputes from exact sides. Open items, incomplete inputs and refusing validator violations are repair findings. The local legacy applicability rule leaves cutover refusal to its own owner. [317]
 
 - Whole-sprint archive is an additional explicit authority with terminal/readiness predicates, recorded moves and cleanup retry. [319]
@@ -743,6 +744,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - Candidate environment bootstrap is frozen, explicit replacement restores on failure, and successful replacement removes the backup. [325]
+
 
 
 - Canonical declaration data drives copy recognition; only exact regular candidate source/copy equality suppresses a copy obligation, while present nonregular declarations remain named refusals. This is not synchronization or delivery evidence. [334]

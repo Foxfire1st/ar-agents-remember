@@ -97,14 +97,14 @@
       ]
     },
     "5": {
-      "note": "The writer resolves an anchor at the selected candidate without replacing its identity.\n\nAnchor: `CodeSnapshot.resolve`",
+      "note": "The writer resolves an anchor at the selected candidate without replacing its identity. Anchor: `CodeSnapshot.resolve`",
       "targets": [
         {
           "anchor": {
-            "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
-            "content": "sha256:318ebb51a6b0ea119ee47b8b9ec40eb74ddf5ebd916796988de78a4550e23305",
+            "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+            "content": "sha256:ea8c3fff85822ce559ba15ddc9aad9d452163f39b243f963688ebe297e701757",
             "locator": {
-              "end": 171,
+              "end": 172,
               "kind": "line_range",
               "start": 149
             },

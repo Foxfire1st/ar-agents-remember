@@ -4,8 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-        "content": "sha256:66e31f9e204b9907081813aef8b907f9dc9de92398b59c6bdce205d0ab444883",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:f29cb2543de405d8b6a79fc759d5b176bc265cf7689229a4d72d0f895fa98d93",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeObjects.symbol_span"
+        }
+      },
+      "id": "RLZ-9TCG78",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Binds the repository's LanguageSet for live conversion and worklist symbol resolution while preserving legacy Format 1 byte identity.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
         "locator": {
           "kind": "symbol",
           "name": "CodeObjects.qualified_spans"
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
         "content": "sha256:ef7d2276f3f905a1c8650d419d5b264397d6a2a627f33cb2551eea74166444e8",
         "locator": {
           "end": 77,
@@ -41,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-        "content": "sha256:66e31f9e204b9907081813aef8b907f9dc9de92398b59c6bdce205d0ab444883",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
         "locator": {
           "kind": "symbol",
           "name": "CodeObjects.qualified_spans"
@@ -59,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
         "content": "sha256:dd7dc91c834766ce625cc583dc54a864cfd8e57afe1dd1849d56d24097eb6446",
         "locator": {
           "kind": "symbol",
@@ -77,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-        "content": "sha256:2aa1e08f165e633bb2abd48490f1bebb7876d1e8e8d07f8bf079b05a7e63140b",
+        "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+        "content": "sha256:eae46a4ccd86d9ba37156a220d05eadd34d61a5a3d41ded8cc37d213ccfb7435",
         "locator": {
           "kind": "symbol",
           "name": "CodeObjects"
@@ -96,12 +114,12 @@
   ],
   "references": {
     "1": {
-      "note": "`CodeObjects` reads code objects and keeps raw blob bytes, blob-keyed split lines, and provider-version-keyed definitions in its instance while restricting `SYMBOL_SPANS` reuse to the default `LanguageSet`.\n\nAnchor: `CodeObjects`",
+      "note": "`CodeObjects` reads code objects and keeps raw blob bytes, blob-keyed split lines, and provider-version-keyed definitions in its instance while restricting `SYMBOL_SPANS` reuse to the default `LanguageSet`. Anchor: `CodeObjects`",
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-            "content": "sha256:ff57425f352d4e8c7c894db32224e8e546ea79a2744329868eece62ba0dcf290",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -115,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
               "end": 184,
@@ -128,12 +146,12 @@
       ]
     },
     "2": {
-      "note": "`CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit.\n\nAnchor: `CodeObjects.commit`",
+      "note": "`CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit. Anchor: `CodeObjects.commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-            "content": "sha256:ff57425f352d4e8c7c894db32224e8e546ea79a2744329868eece62ba0dcf290",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -143,12 +161,12 @@
       ]
     },
     "3": {
-      "note": "`CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix.\n\nAnchor: `CodeObjects.commits_with_prefix`",
+      "note": "`CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix. Anchor: `CodeObjects.commits_with_prefix`",
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-            "content": "sha256:ff57425f352d4e8c7c894db32224e8e546ea79a2744329868eece62ba0dcf290",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -162,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:456988b59ee57b545888a5d5731ce707ca867cc13013072dfa328ac68917bb9a",
             "locator": {
               "end": 167,
@@ -179,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "end": 61,
@@ -191,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:542974dfebba194c6d17618baa57fd25640b5c633220e5a03c884c8c4c9f21e7",
             "locator": {
               "end": 263,
@@ -204,12 +222,12 @@
       ]
     },
     "6": {
-      "note": "`CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`.\n\nAnchor: `CodeObjects.prefetch`",
+      "note": "`CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`. Anchor: `CodeObjects.prefetch`",
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
-            "content": "sha256:ff57425f352d4e8c7c894db32224e8e546ea79a2744329868eece62ba0dcf290",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:81cc292a505f14e0bb6ca0d527d41e04242080cf4ef6dc7f4c838bd42f67a02e",
             "locator": {
               "kind": "file"
             }
@@ -223,12 +241,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:bc108c15b98e7c62712a7c9800b30e409435384d49a6664bfc08fba87fd528c5",
             "locator": {
-              "end": 447,
+              "end": 455,
               "kind": "line_range",
-              "start": 415
+              "start": 423
             }
           },
           "kind": "code"

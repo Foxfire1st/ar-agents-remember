@@ -249,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+            "blob": "b94453568a2e4367b5599c5e07936e49b70c8032",
             "content": "sha256:bc17b517227631b5ae60f4d2dbd2f079cdb0f8ed3116ff35ab1aa48f992f3d1e",
             "locator": {
               "kind": "symbol",
@@ -1216,12 +1216,12 @@
       ]
     },
     "158": {
-      "note": "A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator.\n\nAnchor: `_observed_entry`, `_recorded_lines`, `_blob_definitions`",
+      "note": "A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. Anchor: `_observed_entry`, `_recorded_lines`, `_blob_definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             },
@@ -1265,7 +1265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:e8c77574bd5ade8cf84872075080d750f769cb2e722e4cddd4810394d0dcbf06",
             "locator": {
               "end": 126,
@@ -1482,7 +1482,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+            "blob": "b94453568a2e4367b5599c5e07936e49b70c8032",
             "content": "sha256:83c81c45414d8c0341c34cff9880616ffff920d4382e43006428ae55742e59e7",
             "locator": {
               "end": 118,
@@ -1674,7 +1674,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -1707,8 +1707,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:d430fbcf541dd191badc7cf3fae891cf056dd09afec6719f27697a68116186c6",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:b04c936a72a090d68b7a85648992453d960ec67a7c2d1a8593adc410fa798405",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -1791,7 +1791,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -1803,7 +1803,7 @@
         },
         {
           "anchor": {
-            "blob": "8e38eb185a5255ea0cde8bc99ee66e8a20620baf",
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
             "content": "sha256:57c63d42827354cbfafd543d94611297372fa8a782554d7a775f5f21371749d3",
             "locator": {
               "end": 231,
@@ -2206,7 +2206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -2218,7 +2218,7 @@
         },
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",

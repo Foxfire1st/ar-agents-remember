@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans packaging, internal grammar consumers, Dagger, bootstrap, pytest isolation, and process-state reset registration, guarded by CLI/bootstrap and process-state tests, preventing re-introduction of privileged venv grammar wheels or broken offline CI/pytest runs."
+  },
+  "applicability": "Packaging metadata (mcp/pyproject.toml, mcp/uv.lock), internal grammar consumers (canvas/kit_references.py, review_memo_store.py), Dagger candidate/portable containers, post-transaction bootstrap (scripts/bootstrap-mcp-venv.sh), pytest HOME isolation (mcp/tests/conftest.py), and process-state reset registration (global_state.py).",
+  "conditions": [
+    "mcp/pyproject.toml and mcp/uv.lock depend only on core tree-sitter==0.26.1 with zero privileged tree-sitter-* grammar packages.",
+    "Internal consumers load grammars and compute memo namespaces through the uniform catalog seam instead of direct tree_sitter_* imports.",
+    "Dagger containers mount and warm AR_LANGUAGE_CACHE, bootstrap-mcp-venv.sh pre-warms strictly after trap - EXIT outside the venv transaction, conftest.py preserves host AR_LANGUAGE_CACHE across HOME isolation, and global_state.py registers all new module caches."
+  ],
+  "exclusions": [
+    "Offline hosts where post-transaction bootstrap pre-warm warns still retain a valid frozen venv and warm grammars lazily when next needed."
+  ],
+  "id": "INV-CSJ1ZD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "./.githooks/_gate.sh fast (PASS 10/10), ./.githooks/_gate.sh targeted (PASS), wheel packaging check (PASS), 37-module clean-copy pytest (377 passed, 4 skipped, 142 subtests passed), 3-module Dagger/profile pytest (16 passed), and live Dagger cadence-evidence (exit 0, warmed=javascript,python,tsx,typescript) on exact tree 825dedbe9356776ebe13f67d9a5dc9c331c295d6"
+      ],
+      "path": "261112-KNO-L11-curation"
+    },
+    "handoffEntry": "KNO-R11@v1 §4",
+    "leaf": "261112-KNO-L11",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "mcp/pyproject.toml and mcp/uv.lock declare zero privileged tree-sitter-* grammar packages (only core tree-sitter), all internal consumers load grammars through the uniform catalog seam, wheel packaging ships the lock and query files, and Dagger, certification rails, post-transaction bootstrap, and pytest pre-warm and share AR_LANGUAGE_CACHE.",
+  "supersedes": [],
+  "title": "Zero tree-sitter-* venv deps with shared AR_LANGUAGE_CACHE pre-warm",
+  "writer": {
+    "at": "2026-11-27T21:03:08+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "task": "261112-KNO"
+  }
+}

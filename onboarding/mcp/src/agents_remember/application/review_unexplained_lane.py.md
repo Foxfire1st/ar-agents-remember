@@ -123,7 +123,8 @@ No configured live documentation source was available for this pass.
 
 - The lane and file reads dispatched.
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:165-170 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b. Retired means the anchor no longer stands, not that the cited subject was deleted [11]
+- The lane and file reads dispatched. [11]
+
 
 
 - The entry's count carried on the summary. [12]

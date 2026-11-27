@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/cli/languages.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+        "content": "sha256:bdb0c8898b58707a6ef70dcdb071623116b2763b849093e8aee261a6cc922e95",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-38FXST",
+      "invariant": "INV-KJDERT",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §2",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Exposes the agents-remember languages scan and agents-remember languages warm CLI subcommands.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`LanguagesCliArgs` and `add_arguments` define the `languages scan` and `languages warm` CLI flags (`--repo`, `--cache-dir`, `--language`, `--dry-run`, `--json`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+            "content": "sha256:4ef2cc3fec5ed4095ba242e44da184b5d778d34cbcd199ad3cc3b1aae0fd71fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguagesCliArgs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+            "content": "sha256:3266745bbf2d7a27a5718234e7c0cf4d91d407a161e23b81256c4f259269fbad",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`run` executes repository language scanning or cache warming, formats JSON or text output, and maps `AgentsRememberError` or failed warm results to exit code 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+            "content": "sha256:bdb0c8898b58707a6ef70dcdb071623116b2763b849093e8aee261a6cc922e95",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

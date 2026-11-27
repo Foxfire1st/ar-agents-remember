@@ -92,7 +92,8 @@ No configured domain documentation could be checked.
 - **The three tables, their keys and capacities, and the approximate-weight statement above them.** [5]
 - The complete-id pattern is the storage models' own object-id pattern (imported from `models/knowledge/base.py`), compiled once for the admission test. [6]
 
-- The recorded reader caches successful tree, blob, and definition answers under complete identities. The definitions key includes repository, blob, grammar, active provider version, and script test-file class. [7]
+- The recorded reader caches successful tree, blob, and definition answers under complete identities. The definitions key includes repository, blob, grammar, active provider version, and script test-file class. Anchor: `_recorded_lines`, `_blob_definitions`, `_tree_entry` [7]
+
 
 
 - The named tests check weight-bounded eviction and agreement under concurrent access. [8]

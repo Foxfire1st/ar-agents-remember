@@ -98,13 +98,9 @@ the source rather than being repeated here; it is the same string
 `server_info` reports, and it stays aligned with
 `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
-### The Parser Wheel Comment Names The Recorded Platforms
+### Parser Runtime Pin And External Grammar Catalog
 
-The comment above the `tree-sitter` dependency pins states which platform wheels the lock records
-cover — manylinux x86_64 and aarch64, musllinux x86_64, and macOS x86_64 and arm64 — and
-explicitly records the two absent cells (`tree-sitter` and `tree-sitter-typescript` musllinux
-aarch64, which need a source build). The comment is a checked statement about the lock's records,
-not a coverage promise.
+Core dependencies pin only `tree-sitter==0.26.1`; no `tree-sitter-*` language grammar wheel is declared in `mcp/pyproject.toml` or `mcp/uv.lock`. All language grammar wheels (and `tree-sitter-language-pack` wheels) are pinned with per-platform URLs and SHA-256 digests in `mcp/src/agents_remember/package_data/citations/language_catalog.lock.json` and installed lazily on demand into the external language cache (`AR_LANGUAGE_CACHE` or `${XDG_STATE_HOME:-~/.local/state}/agents-remember/grammars`) without mutating the MCP venv.
 
 ### The SQLite Binding Is A Binary Wheel With A Build-Time Capability
 

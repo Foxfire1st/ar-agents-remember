@@ -243,6 +243,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
 
+
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
 - The read that decides the block's state, and the unavailable form its states come from. [25]
 
@@ -270,6 +271,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 
 - Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]
+
 
 
 - Typed quality execution and public run translation are owned by the controller. [5]

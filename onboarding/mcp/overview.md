@@ -703,6 +703,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 
 
+
 - The packaged host contract. [252]
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
 - The production review port delegates the candidate-bound complete review through the recorded-answer owner. [377]
@@ -873,7 +874,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+
 
 
 
@@ -887,7 +890,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
+
 
 
 
@@ -901,7 +906,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
+
 
 
 
@@ -915,7 +922,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
+
 
 
 

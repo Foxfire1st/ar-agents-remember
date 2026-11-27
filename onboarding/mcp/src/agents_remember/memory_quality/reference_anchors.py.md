@@ -46,12 +46,14 @@ None recorded.
 - The module states the four classes, the exact-pair requirement and the fixer reuse it is built on. [1]
 
 
+
 - The census schema tag and the rule id the validator registers. [2]
 - A locator is rendered as one comparable line for the three locator kinds. [3]
 - Every start whose same-length lines carry the recorded content. [4]
 
 
-- One anchor's state at one pair, and what closes it, decided through the shipped fixer's function. [5]
+- One anchor's state at one pair, and what closes it, decided through the shipped fixer's function. Anchor: `observe` [5]
+
 
 
 - The observation record, its `current` test and the row projection. [6]

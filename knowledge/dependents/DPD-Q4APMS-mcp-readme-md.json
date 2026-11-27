@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
+    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
     "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
     "role": "curator",
-    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: mcp/README.md remains accurate against merged mcp/pyproject.toml, cli/dashboard.py, and docs/reference/mcp-tools.md.",
-    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
-    "uncommitted": false
+    "statement": "Audited mcp/README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): MCP package structure, CLI/dashboard entry points, and L11 zero grammar-dep pyproject.toml/languages command remain accurate.",
+    "task": "261112-KNO-L11",
+    "uncommitted": true
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "4da9cd5823dbb3c2c79afdd165ab72b08e161ac2",
+      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -62,11 +62,11 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:57:01+01:00",
+    "at": "2026-11-27T23:21:59+01:00",
     "by": "agent",
-    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
     "role": "curator",
     "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",

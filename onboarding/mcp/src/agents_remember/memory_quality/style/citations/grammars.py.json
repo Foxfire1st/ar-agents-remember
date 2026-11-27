@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
         "locator": {
           "kind": "symbol",
           "name": "bindings"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:fa78b8bd401d960d54493214bf1a61bc8982c651bde14324daf644323e4754ba",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
         "locator": {
           "kind": "symbol",
           "name": "test_case_range"
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:df05926a33ec7c917a3ab19eaee930c1d15dcf7d66c0c0a70c4a00779ce0adfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "repository_language_set_scope"
+        }
+      },
+      "id": "RLZ-40NFRD",
+      "invariant": "INV-EW1ST5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §3",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Binds a repository's configured LanguageSet across production citation, read, write, conversion, currentness, reference, and review-memo seams while respecting explicit language_set_scope overrides.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
         "content": "sha256:59cb28ddff1e2bd3c8e7e0afa65bed67aa75f31d8aec4ac300eb4dfff464a2fc",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:fa78b8bd401d960d54493214bf1a61bc8982c651bde14324daf644323e4754ba",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
         "locator": {
           "kind": "symbol",
           "name": "test_case_range"
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
         "content": "sha256:c0e3394a53290c8171a867ea8fc2adfd4c0a6041267932a2abb369b4686d014e",
         "locator": {
           "kind": "symbol",
@@ -93,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
         "locator": {
           "kind": "symbol",
           "name": "bindings"
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
         "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
         "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
         "locator": {
           "kind": "symbol",
@@ -147,8 +165,26 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:2f763f385704d548a70e9440c51ccc3c978ece135255918a876b8e324831bd38",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:ca4c391bbde02d90454cf88a4db1c7bb433a714e9edca98a24985a9a6eee858f",
+        "locator": {
+          "kind": "symbol",
+          "name": "DEFAULT_LANGUAGE_SET"
+        }
+      },
+      "id": "RLZ-N4TQ3E",
+      "invariant": "INV-559QV5",
+      "origin": {
+        "handoffEntry": "KNO-R11@v1 §1",
+        "leaf": "261112-KNO-L11"
+      },
+      "rationale": "Builds the default LanguageSet purely from the catalog lock through language_scanner.build_language_set without hardcoded GRAMMAR_PACKAGES, SUFFIX_GRAMMARS, or MEASURED_VERSIONS tables.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
         "locator": {
           "kind": "symbol",
           "name": "typescript_anchor_identifier"
@@ -165,26 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:b5eb72c6cccd36ce45d5d8fc1229d76dcd614f8cca281a3c6752464083629178",
-        "locator": {
-          "kind": "symbol",
-          "name": "MEASURED_VERSIONS"
-        }
-      },
-      "id": "RLZ-VKDBA8",
-      "invariant": "INV-QQ8TQ7",
-      "origin": {
-        "handoffEntry": "KNO-R10@v1 §4",
-        "leaf": "261112-KNO-L10"
-      },
-      "rationale": "Updates tree-sitter measured version from 0.26.0 to 0.26.1 so it matches mcp/uv.lock and the installed wheel.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:9470ed3912c77900163c64625b404bdc0733f9b3f0d0ee3111a9d7806c09229f",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:69af759838de282ba67b9de63e4b5ab2d935353eaf65589d90f6da5e44c2ce11",
         "locator": {
           "kind": "symbol",
           "name": "parsing_scope"
@@ -201,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:2f763f385704d548a70e9440c51ccc3c978ece135255918a876b8e324831bd38",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
         "locator": {
           "kind": "symbol",
           "name": "typescript_anchor_identifier"
@@ -224,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
             "content": "sha256:c25efe2e35788e74efb68cbe3b24f1f900ad1d20770d69747f451d2e24e9b3b5",
             "locator": {
               "kind": "symbol",
@@ -240,8 +258,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:fa78b8bd401d960d54493214bf1a61bc8982c651bde14324daf644323e4754ba",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:93b8693cf46042005bbf3d30d9913d65b7856203f668247c5c26b9264f3b34ce",
             "locator": {
               "kind": "symbol",
               "name": "test_case_range"
@@ -256,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
             "content": "sha256:2ab2e5e1f5162c2ba5053cba2c518585909ae3eab9145502a68956bb49203ce8",
             "locator": {
               "kind": "symbol",
@@ -272,23 +290,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:9470ed3912c77900163c64625b404bdc0733f9b3f0d0ee3111a9d7806c09229f",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:69af759838de282ba67b9de63e4b5ab2d935353eaf65589d90f6da5e44c2ce11",
             "locator": {
               "kind": "symbol",
               "name": "parsing_scope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:80acdf310df2bff266589377d0520c13d99e6060be67984e2c404c179b7dd507",
-            "locator": {
-              "end": 338,
-              "kind": "line_range",
-              "start": 293
             }
           },
           "kind": "code"
@@ -300,8 +306,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
             "locator": {
               "kind": "symbol",
               "name": "bindings"
@@ -316,12 +322,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8656ff764847230b37b4eef4db9df9226a4187d8",
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
             "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
             "locator": {
-              "end": 188,
+              "end": 214,
               "kind": "line_range",
-              "start": 168
+              "start": 194
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
           },
@@ -330,15 +336,26 @@
       ]
     },
     "23": {
-      "note": "`MEASURED_VERSIONS` pins `tree-sitter` at `0.26.1` alongside the shipped Python, TypeScript, and JavaScript grammar versions, and `DEFAULT_LANGUAGE_SET` wires packaged `.scm` queries and `LeanLanguageProvider`.",
+      "note": "`DEFAULT_LANGUAGE_SET` builds from the shipped catalog lockfile (`language_catalog.lock.json`) and `repository_language_set_scope` layers per-repo `languages.json` overrides.",
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:b5eb72c6cccd36ce45d5d8fc1229d76dcd614f8cca281a3c6752464083629178",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:9737cc4ecb53dd8e6b6e97dbcfde53e759b74d490e7304c19c90eb0d4eca4e0e",
             "locator": {
               "kind": "symbol",
-              "name": "MEASURED_VERSIONS"
+              "name": "default_language_set"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:df05926a33ec7c917a3ab19eaee930c1d15dcf7d66c0c0a70c4a00779ce0adfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_language_set_scope"
             }
           },
           "kind": "code"
@@ -350,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
             "content": "sha256:c0e3394a53290c8171a867ea8fc2adfd4c0a6041267932a2abb369b4686d014e",
             "locator": {
               "kind": "symbol",
@@ -366,12 +383,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
             "content": "sha256:6fb6cbf9fab65503f090e926d159bdfe3d414852217f4453d1e4269e0f82e8dc",
             "locator": {
-              "end": 347,
+              "end": 214,
               "kind": "line_range",
-              "start": 345
+              "start": 212
             }
           },
           "kind": "code"
@@ -383,8 +400,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:2f763f385704d548a70e9440c51ccc3c978ece135255918a876b8e324831bd38",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:ee668d2ba9641194751d22892d232bdf2f1104d2a3e22d8c02ba5747d2ec352b",
             "locator": {
               "kind": "symbol",
               "name": "typescript_anchor_identifier"
@@ -399,12 +416,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-            "content": "sha256:0cef424167c021967be2e1f137eade95c3f8455fbf5e45e6c140135368c8aec6",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:68431929c417c45639447a50963a5ef7aa089a3f15fdd3329d3250c0e0d5b5ce",
             "locator": {
-              "end": 178,
+              "end": 139,
               "kind": "line_range",
-              "start": 166
+              "start": 130
             }
           },
           "kind": "code"
@@ -416,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "692260d121200b222b91a28b1abcc14e0d292059",
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
             "content": "sha256:0c5004795331d10af09af19f0fc3f1b7a7dfd99e1fe2fdd13b0f2a3dfeb87ed9",
             "locator": {
               "kind": "symbol",

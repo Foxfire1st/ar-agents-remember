@@ -137,12 +137,12 @@
       ]
     },
     "23": {
-      "note": "The resolver supplies structured ranges for established symbol and line-range locators on their exact recorded blob.\n\nAnchor: `_observed_symbol`, `_observed_line_range`",
+      "note": "The resolver supplies structured ranges for established symbol and line-range locators on their exact recorded blob. Anchor: `_observed_symbol`, `_observed_line_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             },

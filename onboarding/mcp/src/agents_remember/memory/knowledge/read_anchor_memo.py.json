@@ -149,12 +149,12 @@
       ]
     },
     "7": {
-      "note": "The recorded reader caches successful tree, blob, and definition answers under complete identities. The definitions key includes repository, blob, grammar, active provider version, and script test-file class.\n\nAnchor: `_recorded_lines`, `_blob_definitions`, `_tree_entry`",
+      "note": "The recorded reader caches successful tree, blob, and definition answers under complete identities. The definitions key includes repository, blob, grammar, active provider version, and script test-file class. Anchor: `_recorded_lines`, `_blob_definitions`, `_tree_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "145151185996395878dd19a4227261b393a6da2b",
-            "content": "sha256:286d176aba07dd3d98579559c20892226927c62442d730dfda1cd1d38c2532f1",
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:48f81d58f04ba98e47284463aacd450c2a4c4aadbaed7ebf11d3af322ab53b3d",
             "locator": {
               "kind": "file"
             },

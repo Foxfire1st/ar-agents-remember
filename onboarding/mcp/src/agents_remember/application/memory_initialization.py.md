@@ -15,5 +15,6 @@ The initializer delegates scaffold creation to the kernel and measures knowledge
 ## Evidence
 
 - Actual scaffold creation invokes the brief refresh and retains any resulting advisory. [1]
+
 - Brief publication uses the initialized root and the selected code branch commit. [2]
 - The knowledge measurement reports an unavailable, partial, recorded or empty foundation without authoring records. [3]
