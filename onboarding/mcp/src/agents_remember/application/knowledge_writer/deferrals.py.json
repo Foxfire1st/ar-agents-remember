@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
         "content": "sha256:6632203aa10602e0b9dfd432fd9c6e4bce2c992a2b254b0d13592f5110841375",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
         "content": "sha256:18022f0b7e316750e73d52245c13154904e031511bbab687172c7a7895661c72",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,30 @@
         "handoffEntry": "BUG-R52@v2 §3-4",
         "leaf": "261112-BUG-L52"
       },
-      "rationale": "Owns deferral operations, task/file validation, re-deferral rules, partial resolution on edited docs, and refusal of unedited confirmations (new or existing) naming open deferrals.",
+      "rationale": "Owns deferral operations, task/file validation, re-deferral rules, partial resolution, non-crossing refusal of unedited confirmations (new or existing) naming open deferrals, and crossing-sync deferral preservation, clearing, and validated adoption.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+        "content": "sha256:285e9509b53351ba66a6c41b87ca8588a73f2a136bb2f1e5824dd2e6024cc866",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_crossing_deferral"
+        }
+      },
+      "id": "RLZ-5QY6DK",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      },
+      "rationale": "Validates each crossing deferral entry against DependentDeferral, enforces unique IDs, accepts task-only deferrals, and when condition.file is present checks its existence in settled code blobs without rejecting earlier fileBlob hashes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
         "content": "sha256:e832f9e197ae24801efc632612961e102f1a69adba666e14bf709c228ad58b91",
         "locator": {
           "kind": "symbol",
@@ -54,15 +72,87 @@
       },
       "rationale": "Refuses any write that lifts a deferral without a deferral_lifted history row in the same write.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+        "content": "sha256:d89b2f3be88286675edf20e6a601c79c2c2cf1c20730ef66566cbc186e577b1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_adopt_crossing_deferrals"
+        }
+      },
+      "id": "RLZ-DP68FJ",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      },
+      "rationale": "Clears batch.deferrals on null/empty list, refuses non-list crossing 'deferrals', and replaces batch.deferrals and batch.taken with the validated merged list.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+        "content": "sha256:ce9313d8de4613b26b664c8a7b298103ec81e4fc0f44ed6985cb023b94e146ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_unedited_deferred"
+        }
+      },
+      "id": "RLZ-F39YAF",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §3",
+        "leaf": "261112-KNO-L8"
+      },
+      "rationale": "Refuses non-crossing unedited confirmations whenever open deferrals remain on the batch, naming every open deferral.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+        "content": "sha256:4ce9ff81f7efb44f2b62987953a62af142673c24d0b9c875c4f617b5733827fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start_batch"
+        }
+      },
+      "id": "RLZ-HJC5XD",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      },
+      "rationale": "Initializes the deferral batch from before['deferrals'] and delegates explicit crossing 'deferrals' adoption when owner.kind == 'crossing' and 'deferrals' is supplied.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+        "content": "sha256:48b792b5d1886e0dfd7b4b47bdf751af1ff6baf5f3686251e4678c3a092d4e90",
+        "locator": {
+          "kind": "symbol",
+          "name": "_author_confirmation"
+        }
+      },
+      "id": "RLZ-ZS1PGZ",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "KNO-R08@v1 §1-2",
+        "leaf": "261112-KNO-L8"
+      },
+      "rationale": "Skips leaf-only unedited-confirmation refusals when owner.kind == 'crossing' while preserving lift-with-confirmation refusal, confirmation resolution, and deferral operations.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "`author_dependent` enforces deferral-only confirmation preservation, condition validation, partial resolution, and unedited-confirmation refusal for new and existing dependents.",
+      "note": "`author_dependent` refuses direct `deferrals` outside crossing syncs and dispatches deferral-only updates and confirmation writes.",
       "targets": [
         {
           "anchor": {
-            "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
             "content": "sha256:18022f0b7e316750e73d52245c13154904e031511bbab687172c7a7895661c72",
             "locator": {
               "kind": "symbol",
@@ -78,11 +168,60 @@
       "targets": [
         {
           "anchor": {
-            "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
             "content": "sha256:e832f9e197ae24801efc632612961e102f1a69adba666e14bf709c228ad58b91",
             "locator": {
               "kind": "symbol",
               "name": "verify_lifted_deferral_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_author_confirmation`, `_start_batch`, `_adopt_crossing_deferrals`, and `_validate_crossing_deferral` skip leaf-only unedited-confirmation refusals for crossing syncs, preserve omitted `before[\"deferrals\"]`, clear on `None`/`[]`, and validate/adopt explicit `DependentDeferral` lists with unique IDs, accepting task-only deferrals and checking `condition.file` against settled code blobs when present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:48b792b5d1886e0dfd7b4b47bdf751af1ff6baf5f3686251e4678c3a092d4e90",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_confirmation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:4ce9ff81f7efb44f2b62987953a62af142673c24d0b9c875c4f617b5733827fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_batch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:d89b2f3be88286675edf20e6a601c79c2c2cf1c20730ef66566cbc186e577b1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_adopt_crossing_deferrals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e66beb170d37633f7b38f1c8f6c4b64d12b6d1ee",
+            "content": "sha256:285e9509b53351ba66a6c41b87ca8588a73f2a136bb2f1e5824dd2e6024cc866",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_crossing_deferral"
             }
           },
           "kind": "code"
