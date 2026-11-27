@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "af88a85dc8da08e4a316a4b458227cad59e76c91",
+    "commit": "021fb21ad55e9964c7186b48309321206775a51d",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/role-capsules.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Updated docs/reference/role-capsules.md on CAP-L5 tree af88a85d for three-tier progressive disclosure, nested <stem>.details/<source_path> snapshots, .opening-message.md/.held-batch-<sha256>.md/.step-up.json sidecars, trailing AR handover artifacts locator, Link roots, slimmed wire projection, and role_message skill:// refusal pointers; resolved DFR-BKQ5CP.",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "deferrals": [
@@ -20,17 +20,6 @@
       "owner": "261112-BUG",
       "passage": "docs/reference/role-capsules.md ## Held starts and held messages (lines 33-36: 'exists in the host')",
       "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats are stored on disk without creating a host agent until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-BKQ5CP untouched; code freeze preserved per Manager directive."
-    },
-    {
-      "condition": {
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T12:09:27.104933Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-BKQ5CP",
-      "owner": "261124-CAP",
-      "passage": "docs/reference/role-capsules.md intro (lines 3-9), ## The files of a launch (lines 14-29), and ## Held starts and held messages (lines 39-51)",
-      "reason": "Directly contradicted by CAP-L1/L3: claims flat .detail-<sha256>.md files instead of nested <stem>.details/ with Link roots, and claims AR handover artifacts opens the first message instead of trailing it; omits 3-tier disclosure, token ceilings, and Poka-Yoke refusal pointers; owned by 261124-CAP-L5."
     }
   ],
   "document": "docs/reference/role-capsules.md",
@@ -52,22 +41,22 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+      "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
     },
     {
-      "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+      "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
     },
     {
-      "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+      "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
     {
-      "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+      "blob": "5082d1efe6a569515ba833f11bb769fa053a02ad",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
     },
@@ -77,7 +66,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -92,12 +81,12 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+      "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+      "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -108,14 +97,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
-    "task": "261112-BUG"
+    "at": "2026-11-27T06:55:38+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

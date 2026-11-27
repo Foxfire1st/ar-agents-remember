@@ -53,7 +53,7 @@ The standing schema contract is that FastMCP derives tool inputs from Python sig
 
 Native `retire_child` accepts the receipt-tracked agent_id and interrupt_turn through seat_retirement.py and delegates to the original-starter retirement owner. It is not a hosted-seat dispatch adapter. role_start/role_start_set/role_message keep their actual native selection, starter, held-message and permission-feature refusal boundaries; no undeclared-dispatch schema hook remains.
 
-The core readers accept a task-scoped reader context where applicable. Their descriptions require the task-document reference and contract path together for canonical leaf reads; configured Projects scope applies when it is omitted. Retained attach/status resolution uses the shared `TaskRef` locator vocabulary; it does not restore public `resolve_context`.
+The core readers accept a task-scoped reader context where applicable. Their descriptions require the task-document reference and contract path together for canonical leaf reads (`read_ar_files` names `(task_document_ref, contract_path)` matching `TaskScopedReaderContext.model_fields`); configured Projects scope applies when it is omitted. Retained attach/status resolution uses the shared `TaskRef` locator vocabulary; it does not restore public `resolve_context`.
 
 `runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its compact description summarizes preserving user data, replacing scaffolds, provisioning the pinned Paseo host/plugin (reconciling daemon settings and leaving host restart to the developer), reporting leftover removed stores without deleting them and server currentness, and refreshing a running dashboard, pointing to `docs/tool-details.md` for details. There is no host-selection parameter. Detailed experiment-selection and absent-block application semantics remain in the application owner and are not established by this registrar description.
 
@@ -75,7 +75,7 @@ The knowledge family mounts four operations — read, diff, integrity and write 
 
 ### Worktree, task, and publication descriptions
 
-Worktree registration advertises contract-addressed reconciliation with memory-sync choice, continue/cancel actions and the `repository-default` sync source. Status constructs a `TaskRef` and delegates read-only observation; it has no registered wait counterpart. Enclosure adoption is present in both the current registrar and roster.
+Worktree registration advertises contract-addressed reconciliation with memory-sync choice, continue/cancel actions, the `repository-default` sync source, and the warning that memory merges only through `worktree_sync` and raw `git merge` is an unsupported hand edit. Status constructs a `TaskRef` and delegates read-only observation; it has no registered wait counterpart. Enclosure adoption is present in both the current registrar and roster.
 
 The pause/checkpoint distinction remains explicit in the registered descriptions. Pause releases atomic-series activation and hands control to the developer without publication, ref movement, commit, landing, or ledger row; it retains the master's branches, worktrees, enclosure, and unstarted leaves. Checkpoint landing publishes an unfinished master's accumulated committed pair to its source branch under explicitly requested developer approval, keeps the master open, and does not retire or clean it up. These are distinct verbs in separate families.
 

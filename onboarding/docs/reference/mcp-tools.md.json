@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+        "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
         "content": "sha256:dcb8284fcc1232af8fd4ffcb07378fc99d243cff2c098333a64a2622d9037709",
         "locator": {
-          "end": 292,
+          "end": 302,
           "kind": "line_range",
-          "start": 284
+          "start": 294
         }
       },
       "id": "RLZ-6VTKE9",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
-        "content": "sha256:364358932ff4fd311379743ab0e4ab7f465921fe04fc4be2f583b9fb202c91e4",
+        "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
+        "content": "sha256:cb0a033f0729d3133650ea18d3a245dc58e05bf6a99bef4495e4ebe9d424cafc",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+        "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
         "content": "sha256:5d38041c61e04900f04a05f44d7075f36d2b8e6523fc5998170ad1e52355a4eb",
         "locator": {
-          "end": 193,
+          "end": 203,
           "kind": "line_range",
-          "start": 193
+          "start": 203
         }
       },
       "id": "RLZ-QGFMNE",
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+        "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
-          "end": 361,
+          "end": 371,
           "kind": "line_range",
-          "start": 359
+          "start": 369
         }
       },
       "id": "RLZ-WA23J8",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+        "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
-          "end": 307,
+          "end": 317,
           "kind": "line_range",
-          "start": 305
+          "start": 315
         }
       },
       "id": "RLZ-YKJ4F4",
@@ -101,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
-              "end": 307,
+              "end": 317,
               "kind": "line_range",
-              "start": 305
+              "start": 315
             }
           },
           "kind": "code"
@@ -118,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
-              "end": 361,
+              "end": 371,
               "kind": "line_range",
-              "start": 359
+              "start": 369
             }
           },
           "kind": "code"
@@ -131,14 +131,14 @@
       ]
     },
     "5": {
-      "note": "The MCP reference groups tools and their main arguments. The mounted schema supplies the complete argument contract.",
+      "note": "The MCP reference groups tools and their main arguments; the mounted schema supplies the complete argument contract with lossless wire compaction, role-scoped allowlists, and fail-closed bindings.\n\nAnchor: `# MCP Tool Reference`",
       "targets": [
         {
           "anchor": {
-            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
-            "content": "sha256:160b175698e090ecf9d4d4ad876435efdba2304db6d6e355814d7360742bf932",
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
+            "content": "sha256:159c45ab606f6f2f3c0d84033fe40143b0458ddb2338d3160c7b8d126a6c063f",
             "locator": {
-              "end": 5,
+              "end": 10,
               "kind": "line_range",
               "start": 1
             }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
-        "content": "sha256:eb3ac1bde13c70a0e8c7a42ddf9381509ac2da164c2011c906072a29fec939f6",
+        "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+        "content": "sha256:a2c422d3b327331c33c30bf0e578a0530d46e760f6f372dab63c55a3bfb1ca24",
         "locator": {
           "kind": "file"
         }
@@ -25,29 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:d092f25893dbf5da0ebcb81a6227fb0de3711016330e2ed721f4fc753fe0305d",
             "locator": {
-              "end": 255,
+              "end": 257,
               "kind": "line_range",
-              "start": 225
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
-            "content": "sha256:4133d2e174f77fa5e6b86e65bb967f389d5330abb4ac5055626067da0dcfc81b",
-            "locator": {
-              "end": 174,
-              "kind": "line_range",
-              "start": 111
+              "start": 227
             }
           },
           "kind": "test"
@@ -59,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
             "locator": {
-              "end": 215,
+              "end": 217,
               "kind": "line_range",
-              "start": 190
+              "start": 192
             }
           },
           "kind": "test"
@@ -76,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:e9a34b7197b84b1d9168d68192ee3a90510fbe7242aaec22500f1ecf29e0d889",
             "locator": {
-              "end": 421,
+              "end": 423,
               "kind": "line_range",
-              "start": 319
+              "start": 321
             }
           },
           "kind": "test"
@@ -93,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:232b9d770912766addc39ec652afd000e8687220178258fbd79c4b0fd7f51c4f",
             "locator": {
-              "end": 498,
+              "end": 500,
               "kind": "line_range",
-              "start": 426
+              "start": 428
             }
           },
           "kind": "test"
@@ -110,36 +93,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
             "locator": {
-              "end": 542,
+              "end": 544,
               "kind": "line_range",
-              "start": 519
+              "start": 521
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
             "locator": {
-              "end": 574,
+              "end": 576,
               "kind": "line_range",
-              "start": 546
+              "start": 548
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
             "locator": {
-              "end": 629,
+              "end": 631,
               "kind": "line_range",
-              "start": 601
+              "start": 603
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement.\n\nAnchor: `lines 111-177`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
+            "content": "sha256:4a2f94484f3935406e343185786aee8ed7dc8f17b6a0e4d9d6e195c5b66a3fe8",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "test"

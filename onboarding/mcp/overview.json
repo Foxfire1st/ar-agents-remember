@@ -5328,12 +5328,12 @@
       ]
     },
     "402": {
-      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md.",
+      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target.",
       "targets": [
         {
           "anchor": {
-            "blob": "40638134662ff715f51b378d410ab63214cb8c71",
-            "content": "sha256:5ed667bf0fdf53daa68ded6db0e2f03d4fb531cb07ebfcd12fac5e1d0ed06ed1",
+            "blob": "0506e84f3585dcdde0448b7f90e4a3e0dc9d40e7",
+            "content": "sha256:8a21490df8c758f59277601791b8db45c9e5b797113446beadeefa0dd0cbfb08",
             "locator": {
               "kind": "file"
             },

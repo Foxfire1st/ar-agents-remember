@@ -130,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
             "content": "sha256:cf64f642ff6e81c14f50c0af40a635ef68eba13f5a5435dbea9cee112233aa9e",
             "locator": {
               "end": 129,
@@ -144,12 +144,12 @@
       ]
     },
     "2": {
-      "note": "The tool declaration exposes `runtime_install` as a public tool.\n\nAnchor: file",
+      "note": "The tool declaration exposes `runtime_install` as a public tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
-            "content": "sha256:e985eda391e72f8d9a41556ac080c7874c1a1e9bcf750ef7abc77a73bf640d56",
+            "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+            "content": "sha256:abb37125b3cf6a99387f4c7c11faf4355dd1b49bb9407e7f0b832c84e20cc2d5",
             "locator": {
               "kind": "file"
             },

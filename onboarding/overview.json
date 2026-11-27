@@ -1220,12 +1220,12 @@
         },
         {
           "anchor": {
-            "blob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
+            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
             "content": "sha256:7966d22bb88ffde688184c10411a22c4e29f4b914fce61537c99db17fcc3c28f",
             "locator": {
-              "end": 401,
+              "end": 403,
               "kind": "line_range",
-              "start": 388
+              "start": 390
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1255,8 +1255,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
-            "content": "sha256:517155c5fe947f77ad365e742885ac5c6b6d12e89ff14f773e10aebd61f5c60e",
+            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
+            "content": "sha256:5a060ee0d78602ac771cdb012e6fc7bcfe29058518da443de264f027639313ab",
             "locator": {
               "kind": "file"
             },
@@ -1271,12 +1271,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba3bd3b043316bde1414d609715e382c030ff08",
+            "blob": "29e41d8b089975a68eeeb953305b0b23df691687",
             "content": "sha256:bbfd1937021076d96de292d1b156ca0ecfcc2ad34b7afac7ab45dbb9ed15bd80",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 104
+              "start": 105
             },
             "path": "docs/reference/runtime-layout.md"
           },
@@ -1423,12 +1423,12 @@
         },
         {
           "anchor": {
-            "blob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
+            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
             "content": "sha256:a987f35360e6c923130e35e738e51fe98cdeea1499aa0eab7ea4e391d72ba5ec",
             "locator": {
-              "end": 395,
+              "end": 397,
               "kind": "line_range",
-              "start": 388
+              "start": 390
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1579,12 +1579,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "end": 90,
+              "end": 100,
               "kind": "line_range",
-              "start": 90
+              "start": 100
             },
             "path": "docs/reference/mcp-tools.md"
           },
@@ -1891,12 +1891,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "end": 90,
+              "end": 100,
               "kind": "line_range",
-              "start": 90
+              "start": 100
             },
             "path": "docs/reference/mcp-tools.md"
           },
@@ -4786,16 +4786,16 @@
       ]
     },
     "369": {
-      "note": "Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts.\n\nAnchor: `## Generated copies` / `scripts/renew-instructions.py`, `Source`: `CONTRIBUTING.md:133-158`",
+      "note": "Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts.\n\nAnchor: `## Generated copies`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
-            "content": "sha256:31231b8377b3de5c6777fef78eea8a724b20e871b97c9f7a2a944eb09fed6d05",
+            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
+            "content": "sha256:fcb57e07c69242e57cf402b54e7177fa03764b47fb25050ddb65e4d460be6816",
             "locator": {
-              "end": 157,
+              "end": 160,
               "kind": "line_range",
-              "start": 132
+              "start": 129
             },
             "path": "CONTRIBUTING.md"
           },
@@ -5027,8 +5027,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
-            "content": "sha256:517155c5fe947f77ad365e742885ac5c6b6d12e89ff14f773e10aebd61f5c60e",
+            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
+            "content": "sha256:5a060ee0d78602ac771cdb012e6fc7bcfe29058518da443de264f027639313ab",
             "locator": {
               "kind": "file"
             },
@@ -5262,12 +5262,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5109b9458addc645e67dbe7b8c305d36dd69a9c6",
+            "blob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "end": 90,
+              "end": 100,
               "kind": "line_range",
-              "start": 90
+              "start": 100
             },
             "path": "docs/reference/mcp-tools.md"
           },

@@ -3,7 +3,7 @@
     "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
     "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
     "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/llms.txt remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "statement": "Crossing merge resolution at 4559dabe combining BUG-L33/L54 and CAP-L3 confirmations: docs/llms.txt remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
     "task": "261112-BUG",
     "uncommitted": false
   },

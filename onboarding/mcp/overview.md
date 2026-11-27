@@ -933,7 +933,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Source bindings, membership and record models. [313]
 - The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
 
-- The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+- The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. [402]
+
 
 
 

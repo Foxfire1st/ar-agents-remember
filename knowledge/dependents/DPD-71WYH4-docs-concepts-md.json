@@ -1,13 +1,26 @@
 {
   "confirmed": {
-    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
-    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
     "role": "curator",
-    "statement": "docs/concepts.md remains accurate on synced post-L54 base 8fe83ceb2352 because mcp/pyproject.toml's comment update (version 3.0.8) and tool_answer.py's added checkoutEnvironments field do not alter the documented package commands or tool-answer overflow concepts.",
-    "task": "261112-BUG-L33",
+    "statement": "Confirmed CAP-L5 edits to docs/concepts.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): all CAP-L5 passages (3-tier role capsules, slimmed wire projection, >1,000-char offloading, trailing AR handover artifacts locator, Poka-Yoke skill:// pointers) are accurate and CAP deferrals resolved; pre-existing line 425 KNO-R07 contradiction remains openly deferred under DFR-A19SP8 (owner 261112-KNO).",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "deferrals": [
+    {
+      "condition": {
+        "file": "docs/concepts.md",
+        "note": "Update docs/concepts.md line 425 for KNO-R07 verbatim batch records view and 5,000-token knowledge_read ceiling."
+      },
+      "createdAt": "2026-11-27T04:33:25.233800Z",
+      "createdByLeaf": "261124-CAP-L5",
+      "fileBlob": "a4cd8f85d3c687f5538b0215ce749f90d773af10",
+      "id": "DFR-A19SP8",
+      "owner": "261112-KNO",
+      "passage": "docs/concepts.md line 425 (knowledge_read returns names and locations only)",
+      "reason": "KNO-R07 (landed in 1063f65132b1) raises the knowledge_read tool-answer exception ceiling to 5,000 tokens in tool_answer.py and adds verbatim batch full-text records plus impact/search/compact-dependent views, directly contradicting line 425; codeRoot is frozen at Code Round 4 PASS and Curator cannot edit docs/ files."
+    },
     {
       "condition": {
         "file": "docs/concepts.md",
@@ -20,19 +33,6 @@
       "owner": "261112-BUG",
       "passage": "docs/concepts.md ### Held (lines 660-662: 'exists in the host')",
       "reason": "Contradicted by BUG-R58@v2 Option C (D1045): reserved deferred held seats exist on disk (hostAgentExists=false, execution={}) with zero host creation until first role_message. Preserves existing open 261124-CAP-L5 deferral DFR-Y5Q4JY untouched; code freeze preserved per Manager directive."
-    },
-    {
-      "condition": {
-        "file": "docs/concepts.md",
-        "task": "261124-CAP-L5"
-      },
-      "createdAt": "2026-11-26T22:03:54.860508Z",
-      "createdByLeaf": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
-      "fileBlob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
-      "id": "DFR-Y5Q4JY",
-      "owner": "261124-CAP",
-      "passage": "docs/concepts.md ### Role capsule (lines 622-627) and ### Handover (lines 629-634)",
-      "reason": "Crossing merge resolution at 4559dabe8: preserves open CAP-L5 deferral DFR-YBSKMH (omits CAP-L1/L3 3-tier progressive disclosure, role-filtered core/every-role.md, compact Link roots, trailing AR handover artifacts locator, slimmed inline projection, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5)."
     }
   ],
   "document": "docs/concepts.md",
@@ -169,7 +169,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+      "blob": "38918297d798b1d5a22c240e704075e759f8735b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
@@ -224,7 +224,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+      "blob": "1c485db71ada40dc1f62d06ae5ccc33a7c8e5514",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -254,7 +254,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -269,7 +269,7 @@
       "path": "mcp/src/agents_remember/cli/role_message_files.py"
     },
     {
-      "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+      "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
@@ -349,32 +349,32 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
+      "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+      "blob": "f6902925631dc9f3ccc6fcc52d20c7b019f8831e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+      "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
+      "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
+      "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
+      "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -399,7 +399,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -429,7 +429,7 @@
       "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
     },
     {
-      "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+      "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
@@ -496,14 +496,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:48:12+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L58",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "f05ca898-ff46-5ad7-b7cd-b46e4223b3e8",
-    "task": "261112-BUG"
+    "at": "2026-11-27T06:55:38+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-6",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

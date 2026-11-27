@@ -760,13 +760,17 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs. [124]
 
 
+
 - Contributor guidance separates host feedback from Dagger-owned certifying evidence. [281]
 
 
 
 
 
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]
+
 
 
 - Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication. [46]

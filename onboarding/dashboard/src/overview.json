@@ -165,12 +165,12 @@
         },
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
             "locator": {
-              "end": 542,
+              "end": 544,
               "kind": "line_range",
-              "start": 519
+              "start": 521
             },
             "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
           },
@@ -178,12 +178,12 @@
         },
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
             "locator": {
-              "end": 574,
+              "end": 576,
               "kind": "line_range",
-              "start": 546
+              "start": 548
             },
             "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
           },
@@ -191,12 +191,12 @@
         },
         {
           "anchor": {
-            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "blob": "905dc4746abe42313dc247e1818318c3d4834375",
             "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
             "locator": {
-              "end": 629,
+              "end": 631,
               "kind": "line_range",
-              "start": 601
+              "start": 603
             },
             "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
           },

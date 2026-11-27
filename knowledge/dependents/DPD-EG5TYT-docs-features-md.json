@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
-    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
-    "role": "manager",
-    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/features.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
-    "task": "261112-BUG",
-    "uncommitted": false
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
+    "role": "curator",
+    "statement": "Confirmed CAP-L5 edits to docs/features.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): all CAP-L5 passages (3-tier role capsules, KV-prefix launch ordering, offloading, role-scoped allowlists, fail-closed bindings, lossless schema compaction, six-family skill:// pointers) are accurate; KNO-R07 lines 204 and 388-390 contradiction remains openly deferred under re-deferred DFR-CB8YJ8 (owner 261112-KNO).",
+    "task": "261124-CAP-L5",
+    "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/features.md",
-        "note": "Update docs/features.md line 204 and lines 372-374 for the 5,000-token knowledge_read ceiling and the records/impact/search/compact-dependent views."
+        "note": "Update docs/features.md line 204 and lines 388-390 for the 5,000-token knowledge_read ceiling and the records/impact/search/compact-dependent views."
       },
-      "createdAt": "2026-11-27T01:47:08.364919Z",
-      "createdByLeaf": "261112-KNO-L7",
-      "fileBlob": "ee2fa5a9f8e5fbca7083e9a8ca241aa3ea53c5b4",
-      "id": "DFR-JQM92D",
+      "createdAt": "2026-11-27T04:36:13.802239Z",
+      "createdByLeaf": "261124-CAP-L5",
+      "fileBlob": "f5b268ec6210b45d1c9e2b44731f7b0f48fca7e7",
+      "id": "DFR-CB8YJ8",
       "owner": "261112-KNO",
-      "passage": "docs/features.md line 204 (knowledge_read returns names and locations only) and lines 372-374 (4,000-token knowledge_read exception ceiling)",
-      "reason": "KNO-R07 raises the knowledge_read tool-answer exception ceiling from 4,000 to 5,000 tokens and adds verbatim batch full-text records plus impact/search/compact-dependent views, directly contradicting lines 204 and 372-374; Curator cannot edit docs/ files in code root."
+      "passage": "docs/features.md line 204 (knowledge_read returns names and locations only) and lines 388-390 (4,000-token knowledge_read exception ceiling)",
+      "reason": "Re-deferred KNO-R07 contradiction on CAP-L5's updated docs/features.md blob (lines shifted from 372-374 to 388-390): KNO-R07 raises the knowledge_read ceiling to 5,000 tokens and adds verbatim batch full-text records plus impact/search/compact-dependent views; codeRoot is frozen at Code Round 4 PASS and Curator cannot edit docs/ files."
     }
   ],
   "document": "docs/features.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 36,
+  "revision": 37,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -63,7 +63,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
     },
     {
-      "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+      "blob": "89079681f7bff9aebbe95d76acb34ac65a2bfb78",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
     },
@@ -73,7 +73,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -310,14 +310,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-27T05:42:30+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261124-CAP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

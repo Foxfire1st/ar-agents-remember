@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
-        "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+        "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+        "content": "sha256:89a6195b6e820ef1cda784428f63965d46c1ed836adac69c780d2fbf4fc1bec9",
         "locator": {
           "kind": "symbol",
           "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"

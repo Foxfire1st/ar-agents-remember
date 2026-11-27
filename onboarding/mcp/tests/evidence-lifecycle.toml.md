@@ -901,7 +901,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file [577]
+- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file [580]
 
 
 
@@ -1569,7 +1569,6 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. [515]
 
 
@@ -1579,7 +1578,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [578]
+- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [581]
 
 
 
@@ -1588,10 +1587,10 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [576]
 
 
-- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [579]
+- The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result. [582]
 
 
 
@@ -1908,9 +1907,6 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 
-
-
-
 - The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts. [343]
 
 
@@ -1936,8 +1932,6 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 - The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. [347]
-
-
 
 
 
@@ -2234,3 +2228,7 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 
 
 - `mcp/tests/test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_writer_test_support.py`, and `writer_worklist_test_support.py` (18 contracts, 123 artifacts). [573]
+
+- The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. [574]
+
+- The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. [575]

@@ -20,4 +20,5 @@ Both directions link the `Tool log` entry of `docs/concepts.md`, which says how 
 
 - A sync caller who stopped waiting finds the outcome in the tool log and the current state through worktree_status. [1]
 - A closeout caller who stopped waiting finds the outcome in the tool log. [2]
-- The MCP reference groups tools and their main arguments. The mounted schema supplies the complete argument contract. [5]
+
+- The MCP reference groups tools and their main arguments; the mounted schema supplies the complete argument contract with lossless wire compaction, role-scoped allowlists, and fail-closed bindings. [5]

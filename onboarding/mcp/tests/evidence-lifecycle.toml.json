@@ -3633,7 +3633,52 @@
         }
       ]
     },
-    "577": {
+    "574": {
+      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census.\n\nAnchor: whole file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "575": {
+      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.\n\nAnchor: whole file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "576": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "448297333f5d01a6af7f7648738b1166ee3797a9",
+            "content": "sha256:a542af6623e303edd7dfdb538805ccfba681ad724f5c7eba9708b3d678a62efa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "580": {
       "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file",
       "targets": [
         {
@@ -3648,7 +3693,7 @@
         }
       ]
     },
-    "578": {
+    "581": {
       "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.",
       "targets": [
         {
@@ -3663,7 +3708,7 @@
         }
       ]
     },
-    "579": {
+    "582": {
       "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
       "targets": [
         {

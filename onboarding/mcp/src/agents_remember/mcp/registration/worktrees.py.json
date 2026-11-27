@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-        "content": "sha256:a4543c48577f503ae05e09521ac61a49632ba8e0930e5dd04e511e08b33cdcbb",
+        "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+        "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
         "locator": {
           "kind": "file"
         }
@@ -16,13 +16,13 @@
         "handoffEntry": "CAP-R04@v1 §3 description optimization",
         "leaf": "261124-CAP-L4"
       },
-      "rationale": "Optimizes all six worktree tool descriptions as plain literal docstrings while preserving Reference: docs/reference/mcp-tools.md., worktree_pause pins, and all pinned state words.",
+      "rationale": "Optimizes all six worktree tool descriptions as plain literal docstrings (<= 500 raw chars; worktree_sync 426 raw chars warning memory merges only through worktree_sync and raw git merge is an unsupported hand edit) while preserving Docs pointers, worktree_pause pins, and all pinned state words.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-        "content": "sha256:f76f7dbd114948f2d1f386710dea7bd5bcb659978cdd3ebdbfd03da72a70644a",
+        "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+        "content": "sha256:082cab09ab7894853bc81c9ca696c927abadbd0192e26fa03ffd051c29b98c62",
         "locator": {
           "kind": "symbol",
           "name": "worktree_sync"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+        "blob": "38918297d798b1d5a22c240e704075e759f8735b",
         "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
         "locator": {
           "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
             "content": "sha256:00d0d0a306b15f3f52edeb7b9282a679f15efec7aeef931627220935bc9f86ea",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
             "content": "sha256:87afead0ffb9e2e5a7b87802fa44d65ee458aa78a9161726cb7ba6cad488993b",
             "locator": {
               "kind": "symbol",
@@ -102,7 +102,7 @@
       ]
     },
     "11": {
-      "note": "The pairing this registrar performs: `worktree_sync` builds `SyncResolutionInput(action=resolution_action, source=sync_source)` from the shared continue/cancel and repository-default vocabulary.",
+      "note": "The pairing this registrar performs: `worktree_sync` builds `SyncResolutionInput(action=resolution_action, source=sync_source)` from the shared continue/cancel and repository-default vocabulary.\n\nAnchor: `worktree_sync`",
       "targets": [
         {
           "anchor": {
@@ -118,17 +118,6 @@
         },
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-            "content": "sha256:f76f7dbd114948f2d1f386710dea7bd5bcb659978cdd3ebdbfd03da72a70644a",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:43c6fa84ed6466890bc1b6cc0e855becae8a930f815b69ede3453930d87fa2a3",
             "locator": {
@@ -139,6 +128,27 @@
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
+            "content": "sha256:cf16a16167e0b91ecc2374aa74b904acda4ada11ca3aced5afa55a9de3d3edd0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -147,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
             "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
             "locator": {
               "kind": "symbol",
@@ -159,15 +169,14 @@
       ]
     },
     "13": {
-      "note": "Current sync accepts `contract_path`, `memory_sync_choice`, `resolution_action`, `dry_run` and `sync_source` and packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`; its compact single-line description is 358 characters raw (within the 500-character raw ceiling in `test_role_tool_scope.py` and the 600-character bound in `test_tool_descriptions.py`).",
+      "note": "Current sync accepts `contract_path`, `memory_sync_choice`, `resolution_action`, `dry_run` and `sync_source`, packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`, and warns that memory merges only through `worktree_sync` and raw `git merge` is an unsupported hand edit; its compact single-line description is 426 characters raw (within the 500-character raw ceiling in `test_role_tool_scope.py` and the 600-character bound in `test_tool_descriptions.py`).\n\nAnchor: `worktree_sync`",
       "targets": [
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-            "content": "sha256:f76f7dbd114948f2d1f386710dea7bd5bcb659978cdd3ebdbfd03da72a70644a",
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -175,12 +184,12 @@
       ]
     },
     "14": {
-      "note": "Worktree declarations use light `worktree_tool_requests` types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.\n\nAnchor: `register_worktree_tools`",
+      "note": "Worktree declarations use light `worktree_tool_requests` types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.",
       "targets": [
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-            "content": "sha256:a4543c48577f503ae05e09521ac61a49632ba8e0930e5dd04e511e08b33cdcbb",
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
             "locator": {
               "kind": "file"
             }
@@ -190,15 +199,14 @@
       ]
     },
     "2": {
-      "note": "Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`; there is no `knowledge_resolution` argument.",
+      "note": "Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one `SyncResolutionInput`; there is no `knowledge_resolution` argument.\n\nAnchor: `worktree_sync`",
       "targets": [
         {
           "anchor": {
-            "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-            "content": "sha256:f76f7dbd114948f2d1f386710dea7bd5bcb659978cdd3ebdbfd03da72a70644a",
+            "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+            "content": "sha256:3b9fb1eae571ef30523d302cbbffe086520b3294f709e56ef61a3c57c299973a",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync"
+              "kind": "file"
             }
           },
           "kind": "code"

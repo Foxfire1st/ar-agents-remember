@@ -1,23 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
-    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
+    "codeTree": "f361cfb957234e62b11314b8d67e17c2ecd70a22",
+    "commit": "1063f65132b14c554b324625b3d218e5c82b314e",
     "role": "curator",
-    "statement": "docs/reference/mcp-tools.md remains accurate with respect to L33's tool_answer.py change on synced post-L54 base 8fe83ceb2352 (short_form is byte-identical and runtime_install answer fields are delegated to docs/tool-details.md), noting the pre-existing non-L33 outside-docs relative link at line 276.",
-    "task": "261112-BUG-L33",
+    "statement": "Confirmed CAP-L5 edits to docs/reference/mcp-tools.md on Code Round 4 PASS synced tree f361cfb95723 (base 1063f65132b1): all CAP-L5 passages (role-scoped allowlists, fail-closed bindings, lossless schema compaction, Poka-Yoke skill:// pointers) are accurate and CAP deferral resolved; KNO-R07 lines 31 and 203 contradiction remains openly deferred under DFR-5EZYPH (owner 261112-KNO).",
+    "task": "261124-CAP-L5",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
-        "task": "261124-CAP-L5"
+        "file": "docs/reference/mcp-tools.md",
+        "note": "Update docs/reference/mcp-tools.md lines 31 and 203 for KNO-R07 5,000-token knowledge_read ceiling, ten views (including records/impact/search/compact), auto-pairing, and post-landing brief refresh."
       },
-      "createdAt": "2026-11-26T12:09:27.184476Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-YQ7ENB",
-      "owner": "261124-CAP",
-      "passage": "docs/reference/mcp-tools.md ## Tool answers (lines 73-77), ## Knowledge knowledge_write row (line 194), ### task_doc operations (lines 480-505), and ### Holds and refusals (lines 750-759)",
-      "reason": "Omits CAP-L3 Poka-Yoke See skill://...#<anchor>. refusal guidance pointers across six core refusal families including paseo_role_tools.py, review_history.py, and knowledge_write_answer.py refused-state notes; doc updates owned by 261124-CAP-L5."
+      "createdAt": "2026-11-27T04:33:25.250953Z",
+      "createdByLeaf": "261124-CAP-L5",
+      "fileBlob": "a6d8fb3182277fa478d2dd139dbba3d795fe3dc0",
+      "id": "DFR-5EZYPH",
+      "owner": "261112-KNO",
+      "passage": "docs/reference/mcp-tools.md line 31 (4,000-token ceiling) and line 203 (knowledge_read lists 7 views and states open named files for record text)",
+      "reason": "KNO-R07 (landed in 1063f65132b1) raises the knowledge_read ceiling to 5,000 tokens in tool_answer.py, adds records/impact/search/compact-dependent views and auto-pairing in knowledge.py/marks.py/truth.py, and adds post-landing brief refresh in record_landing.py, directly contradicting lines 31 and 203; codeRoot is frozen at Code Round 4 PASS and Curator cannot edit docs/ files."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -30,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 31,
+  "revision": 32,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +73,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
     {
-      "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+      "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -91,7 +93,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+      "blob": "a81167233211adc513fd82b9836207cd12cb2fb5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -126,12 +128,12 @@
       "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
     },
     {
-      "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
+      "blob": "38918297d798b1d5a22c240e704075e759f8735b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -161,7 +163,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+      "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -196,7 +198,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
     },
     {
-      "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+      "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/review_history.py"
     },
@@ -296,7 +298,7 @@
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
     {
-      "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+      "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
@@ -316,12 +318,12 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
     },
     {
-      "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+      "blob": "e847930d44b35a21df3ab12eb97a23fce9ee5561",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
+      "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
     },
@@ -331,7 +333,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
     },
     {
-      "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+      "blob": "161ed6eaaf9a19429339f172240b48f3e9c530ab",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     },
@@ -349,7 +351,7 @@
     },
     {
       "anchor": {
-        "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+        "blob": "2b56de46de8029a9c20921f0922360110eb3ce02",
         "content": "sha256:3ebb97025105171a88b5a176c9a9d9e5317c5116b3bc90648c6a27d044a3dbe7",
         "locator": {
           "kind": "symbol",
@@ -361,7 +363,7 @@
     },
     {
       "anchor": {
-        "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+        "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
         "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
         "locator": {
           "kind": "symbol",
@@ -385,7 +387,7 @@
     },
     {
       "anchor": {
-        "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+        "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
         "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
         "locator": {
           "kind": "symbol",
@@ -397,7 +399,7 @@
     },
     {
       "anchor": {
-        "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
+        "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -436,15 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T22:34:46+01:00",
-    "by": "product",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
-    "effort": "none",
-    "harness": "product",
-    "model": "none",
-    "operation": "crossing-merge",
-    "role": "product",
-    "seat": "product",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+    "at": "2026-11-27T05:42:30+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "070ba77b-3cd4-5c53-bf76-974cdc140846",
+    "task": "261124-CAP"
   }
 }

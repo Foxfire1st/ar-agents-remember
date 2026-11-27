@@ -333,7 +333,7 @@ The current named regression is `test_dashboard_autostart_after_discovery.py`. I
 
 Four unit-regression modules — `test_organizational_completion_repair.py`, `test_quality_continuation_declaration.py`, `test_judged_history_closing_restore.py`, and `test_type_hint_contracts.py` — pin the DEP-R07 type-checker defect fixes (atomic organizational-repair recovery and durability, quality continuation authority admission via `AUTHORITY_SCHEMA_VERSION`, non-short-circuiting boolean restoration in `_JudgedHistoryClosing.restore`, and runtime/annotation contracts for `lifecycle_operation_location`, `quality_plan`, and `authoring_rows`). Membership and source assertions establish no execution.
 
-`test_tool_schema_compaction.py` (selected in `unit-regression`) verifies lossless schema compaction, immutability, `$defs` inlining/pruning, and `create_server` contract parity for every advertised tool; `test_role_tool_scope.py` pins per-role compacted byte ceilings (`COMPACT_BYTE_BUDGETS`), the 500-character raw description ceiling, and real stdio compacted tool listing and validation. Membership and source assertions establish no execution.
+`test_tool_schema_compaction.py` (selected in `unit-regression`) verifies lossless schema compaction (stripping schema-level `title`, `default: null`, and immediate top-level `$defs` model descriptions while preserving `$defs`), immutability, literal `const`/`enum`/non-`null` `default` payload preservation on both production compaction and `_contract_signature`, `create_server` contract parity for every advertised tool, and registered description pins (`worktree_sync` memory-merge-only / raw-`git merge` warning and `read_ar_files` `TaskScopedReaderContext` input fields `(task_document_ref, contract_path)`); `test_role_tool_scope.py` pins per-role compacted byte ceilings (`COMPACT_BYTE_BUDGETS`), the 500-character raw description ceiling, and real stdio compacted tool listing and validation. Membership and source assertions establish no execution.
 
 ## Additional source contracts
 
@@ -640,8 +640,6 @@ The recorded-base suite tests inheritance across an untrailed memory merge, exac
 - The module docstring names the instruction-wording and ignored-environment duties. The four cases protect shipped instruction wording and ignored-environment accounting, with no lifecycle execution. [1708]
 
 - The install case checks an overflow answer and the uniquely filed reports for the first and updated calls, including host facts and redaction. It matches reportPath when supplied. [1701]
-
-Candidate isolation, three plugin registrations and ordinary/certifying composition are explicit. [1716]
 
 Lane selection proves explicit source membership and refuses incomplete/stale catalogs. [1719]
 
@@ -1130,7 +1128,6 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - Reconsideration cases assert successor suppression, a still-open changed target without a successor and an unchanged base item despite an unrelated candidate decision. Pytest declares limits of 10,000 unit and 2,000 integration cases, enforced after collection. [1714]
 - Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
-- Source controls cover cut measure, threshold, deletion proof and overviews. [1716]
 - Source cases retain committed leaf deltas and exclude files already present in an updated base. [1717]
 
 
@@ -1364,7 +1361,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1914]
+- The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1919]
 
 
 
@@ -1482,3 +1479,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 - `mcp/tests/test_family_row_writer_gate_alignment.py` exercises BUG-R57@v1 writer-gate family-row alignment (empty-family `examined` admission and departed-member base-revision fallback) and is registered in `unit-regression` and the lifecycle catalog's four consumer rows (698 unit-regression, 852 total). [1901]
+
+- Candidate isolation and three plugin registrations (`pytest_plugins`) are explicit. [1915]
+
+- Ordinary and certifying pytest composition (`pytest_configure` through `worktree_services`) is explicit. [1916]
+
+- Source controls cover cut measure, threshold, deletion proof and overviews. [1917]
