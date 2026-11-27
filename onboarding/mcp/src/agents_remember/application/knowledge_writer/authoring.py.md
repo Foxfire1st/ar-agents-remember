@@ -188,7 +188,7 @@ The following complete predecessor retains useful explanations, old observations
 >
 > - The task owner's answer about a decision, injected into the writer. [6]
 > - The resolver field; `None` has no task owner. [7]
-> - The writer's planned rows and every refusal. [11]
+> - The writer's planned rows and every refusal. \[11]
 >
 > ## 260928-MIK-L06 A Moved Row Relocates Its Entry To Another File (MIK-R06, Ruling Q6)
 >
@@ -378,6 +378,7 @@ The following complete predecessor retains useful explanations, old observations
 - The resolver field; `None` has no task owner. [7]
 
 - The writer's planned rows and every refusal. [11]
+
 
 
 - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical.

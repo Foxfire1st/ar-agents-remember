@@ -1,0 +1,30 @@
+{
+  "closed": true,
+  "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-6",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-CZBR1Q",
+      "revision": 21
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:c684b50259ce3b18e31488be8409dbee1e212bfd2ed0367a82ccc523fc8e1dea",
+      "record": "DPD-CZBR1Q",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-27T20:59:54+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-6",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

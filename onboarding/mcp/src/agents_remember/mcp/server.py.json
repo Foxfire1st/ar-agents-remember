@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:3676027595eab60a93de89d550a933082300dd53f25fb20ee5b184eb7b85863b",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -35,13 +35,13 @@
         "handoffEntry": "CAP-R04@v1 §2 server wiring",
         "leaf": "261124-CAP-L4"
       },
-      "rationale": "Wires _compact_server_tool_schemas once over the whole registered surface immediately after apply_read_only_marks and before _bound_role_tools / _scope_server_tools.",
+      "rationale": "Enables registration-time read-only classification (enforce_read_only_marks=True), registers all tools, enables listed-schema compaction via _compact_server_tool_schemas(server), and then narrows by role binding via _bound_role_tools / _scope_server_tools.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:bc5079ebff54878518d0de262728685e89d6d820723ee8478daa47377d0c274a",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:f75580bd14dfe45e161744a2579de86d73fd0ab2f5c276b58dcc095e7758a0d8",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -107,13 +107,13 @@
         "handoffEntry": "L109-source-read-only-annotations",
         "leaf": "260928-MIK-L109"
       },
-      "rationale": "The product server applies the central classification after tool registrars, so actual advertisement cannot silently default an unlisted public tool.",
+      "rationale": "The product factory constructs AgentsRememberMCP with enforce_read_only_marks=True so add_tool attaches read_only_annotations during registration and cannot default an unlisted public tool.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:86b6acf9df3d227afcb92bc0b2c9e3a4c526dae9a8e3b9815927fc78ab9f4ac3",
         "locator": {
           "kind": "symbol",
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
         "locator": {
           "kind": "symbol",
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
         "locator": {
           "kind": "symbol",
@@ -202,7 +202,25 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:4bb1fd792f0778f36be443d9fe0ab35bc533d4e13e634444021eab54211555ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP"
+        }
+      },
+      "id": "RLZ-7DM4BE",
+      "invariant": "INV-H9Z24G",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R2",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Subclasses MCPServer and owns public add_tool, list_tools, and call_tool(name, arguments, context), deferred start_after_discovery latch, request/definition/heap-trim scopes, synchronous write lock, and UnexpectedToolError-to-ToolError message preservation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
         "locator": {
           "kind": "symbol",
@@ -220,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -238,8 +256,26 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        }
+      },
+      "id": "RLZ-8XSFMV",
+      "invariant": "INV-H9Z24G",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R2",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Constructs AgentsRememberMCP with enforce_read_only_marks=True, subscriptions=False, extensions=[build_skills_extension()], and handshake extension preservation middleware, registers all tool families, enables listed-schema compaction, and narrows by role binding.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -251,13 +287,13 @@
         "handoffEntry": "CAP-R01@v1 §2 bound pruning",
         "leaf": "261124-CAP-L1"
       },
-      "rationale": "create_server applies read-only marks, runs _compact_server_tool_schemas, and then narrows the advertised surface via _bound_role_tools / _scope_server_tools so surviving tools keep their order, compacted schemas, and annotations.",
+      "rationale": "create_server enables registration-time read-only marks (enforce_read_only_marks=True), registers all tools, enables listed-schema compaction via _compact_server_tool_schemas, and then narrows the advertised surface via _bound_role_tools / _scope_server_tools so surviving tools keep their order, compacted schemas, and annotations.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
@@ -274,8 +310,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:72d85e00289e88237fe2a4195f5fcca9711a2ca7cc64a58389a9e3c586e34725",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._dispatch_tool"
@@ -287,31 +323,13 @@
         "handoffEntry": "MIK-R213@v1 rule 1",
         "leaf": "260928-MIK-L202"
       },
-      "rationale": "Dispatch keeps the original Tool validation and conversion while wrapping synchronous execution.",
+      "rationale": "Delegates to MCPServer.call_tool for argument validation and context injection while registered synchronous handlers execute through the tool_wrapper offload bridge.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
-        "locator": {
-          "kind": "symbol",
-          "name": "AgentsRememberMCP._dispatch_tool"
-        }
-      },
-      "id": "RLZ-EQ7EC0",
-      "invariant": "INV-8NDEQB",
-      "origin": {
-        "handoffEntry": "BUG-R27@v1 Rule 2 pre-handler cancellation",
-        "leaf": "261112-BUG-L27"
-      },
-      "rationale": "Catches cancellation at lock acquisition while the handler has not yet been called.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:0aec9e29a3bed9dd8dc0e62b3fe2aee63bdd187d8ef10adb68c844a606f66522",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:c4ff886996d234e64584c43dbfa4043fa2f196ebb93f59432e0f2cf07736ed51",
         "locator": {
           "kind": "symbol",
           "name": "_register_process_binding"
@@ -323,13 +341,49 @@
         "handoffEntry": "BUG-R51@v1 §1-curator-attach",
         "leaf": "261112-BUG-L51"
       },
-      "rationale": "Reads the process agent binding and registers bound, unbound, or unreadable server-binding state before FastMCP starts.",
+      "rationale": "Reads the process agent binding and registers bound, unbound, or unreadable server-binding state before MCPServer starts.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:72d85e00289e88237fe2a4195f5fcca9711a2ca7cc64a58389a9e3c586e34725",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP._dispatch_tool"
+        }
+      },
+      "id": "RLZ-EVWBWA",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Delegates tool calls directly to super().call_tool and normalizes UnexpectedToolError to ToolError without reading _subscriptions, _tool_manager.get_tool, or internal tool.run.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:6c5b5c21c0c1c5feb48e9cb6dded1f1585e870a13d934cb6971fe09e7d6552a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.list_tools"
+        }
+      },
+      "id": "RLZ-F2G69T",
+      "invariant": "INV-NZ27V7",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 INV-NZ27V7 update",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Compacts each advertised MCPTool's inputSchema on a copied instance when listed-schema compaction is enabled, leaving stored SDK tool definitions unmutated.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:6450559436c42e2ff12c1fbb64a0c34374a0d285fc85bf155b1ef533b86a900f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
@@ -346,8 +400,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._execute_tool_call"
@@ -364,26 +418,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
-        "locator": {
-          "kind": "symbol",
-          "name": "_threaded"
-        }
-      },
-      "id": "RLZ-GA8TM7",
-      "invariant": "INV-T3CE64",
-      "origin": {
-        "handoffEntry": "MIK-R213@v1 rule 1",
-        "leaf": "260928-MIK-L202"
-      },
-      "rationale": "The synchronous wrapper delegates to the common thread bridge, which carries ContextVars and drains cancellation before the dispatch ordering lock can release.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -400,7 +436,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
         "locator": {
           "kind": "symbol",
@@ -418,8 +454,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:eed34d6bb0ab3cac65162813c6786e6929da3877ae6f7dc50599472138a0d31c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:a07f60fa73593b74f0377985b4f98ada275e196b490b07ad1b8f2af12ac9375c",
         "locator": {
           "kind": "symbol",
           "name": "_compact_server_tool_schemas"
@@ -431,13 +467,13 @@
         "handoffEntry": "CAP-R04@v1 §2 server wiring",
         "leaf": "261124-CAP-L4"
       },
-      "rationale": "Replaces each registered FastMCP Tool's advertised parameters with compact_tool_schema(tool.parameters) while leaving fn_metadata.arg_model runtime Pydantic validation untouched.",
+      "rationale": "Enables listing-time inputSchema compaction on AgentsRememberMCP so list_tools compacts copied MCPTool instances without mutating stored SDK tool definitions or runtime validation.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:72d85e00289e88237fe2a4195f5fcca9711a2ca7cc64a58389a9e3c586e34725",
         "locator": {
           "kind": "symbol",
           "name": "_dispatch_tool"
@@ -449,13 +485,31 @@
         "handoffEntry": "CAP-R01@v1 §2 excluded dispatch",
         "leaf": "261124-CAP-L1"
       },
-      "rationale": "An unknown name resolves to no registered tool here, so the call goes to FastMCP's rejection instead of any retained handler.",
+      "rationale": "Delegates directly to MCPServer.call_tool so an excluded or unknown tool name fails as UnexpectedToolError (normalized to ToolError) without invoking any handler.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:6c5b5c21c0c1c5feb48e9cb6dded1f1585e870a13d934cb6971fe09e7d6552a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.list_tools"
+        }
+      },
+      "id": "RLZ-QHR0V0",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Applies lossless inputSchema compaction to copied MCPTool instances on public list_tools output without mutating stored SDK tool definitions through _tool_manager.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._execute_tool_call"
@@ -472,8 +526,26 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.add_tool"
+        }
+      },
+      "id": "RLZ-RMS2C6",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Overrides public MCPServer.add_tool to attach central read-only annotations, wrap handlers with stale-build, write-lock, and compact-result behavior, and maintain the server's own registration-order ledger without mutating _tool_manager.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -490,8 +562,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._execute_tool_call"
@@ -508,7 +580,7 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:4c924bbd4ae6635383a1026cf74562a28a9fbda7589dd61dd3ae0c6d3034fadb",
         "locator": {
           "kind": "symbol",
@@ -526,8 +598,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:b8d3ca9dd3dc74a3a7902f5012aafef93e03625b9b22f3c4f2b8a795f5b31fd3",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._execute_tool_call"
@@ -539,12 +611,12 @@
         "handoffEntry": "MIK-R84@v5 retained v1 rule2 as amended v2/v4",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "Checks installed stale currentness and returns the named structured refusal before dispatching a classified publication handler.",
+      "rationale": "Reads installed stale build currentness and carries tool_build_currentness into dispatch so wrap_registered_tool returns the named structured refusal before calling a classified publication handler.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
         "content": "sha256:86b6acf9df3d227afcb92bc0b2c9e3a4c526dae9a8e3b9815927fc78ab9f4ac3",
         "locator": {
           "kind": "symbol",
@@ -562,8 +634,8 @@
     },
     {
       "anchor": {
-        "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-        "content": "sha256:2c7ca4d5dad59f8b023dd667801f46709868ff8a2ded5237f78c461f3947f661",
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:58c791ad879a65d8e4fa00b111df6a075383408164863abf94f9e3c883097f42",
         "locator": {
           "kind": "symbol",
           "name": "_scope_server_tools"
@@ -575,18 +647,36 @@
         "handoffEntry": "CAP-R01@v1 §2 bound pruning",
         "leaf": "261124-CAP-L1"
       },
-      "rationale": "Removal is the only change this function makes, and it uses FastMCP's public remove_tool, which is why order and annotations survive.",
+      "rationale": "Removal is the only change this function makes; it iterates server.registered_tool_names() and calls MCPServer's public remove_tool, so order and annotations survive.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:58c791ad879a65d8e4fa00b111df6a075383408164863abf94f9e3c883097f42",
+        "locator": {
+          "kind": "symbol",
+          "name": "_scope_server_tools"
+        }
+      },
+      "id": "RLZ-Y5XGAW",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Prunes tools outside a bound role's allowlist by iterating server.registered_tool_names() and calling public server.remove_tool without touching _tool_manager._tools.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "`create_server` builds the FastMCP instance, snapshots `_bound_agent_id`, invokes the registered tool families, compacts every advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the result to the allowlist of a bound role.",
+      "note": "`create_server` builds `AgentsRememberMCP` with `version=SERVER_VERSION`, `extensions=[build_skills_extension()]`, `middleware=[preserve_handshake_extensions(extensions)]`, `subscriptions=False`, and `enforce_read_only_marks=True`, snapshots `_bound_agent_id`, invokes the tool registrars, enables listing-time schema compaction (`_compact_server_tool_schemas`), and narrows to a bound role's allowlist.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
@@ -597,17 +687,28 @@
       ]
     },
     "10": {
-      "note": "Threaded synchronous dispatch retains the registered validation and conversion path.",
+      "note": "`_dispatch_tool` delegates to public `super().call_tool` and maps `UnexpectedToolError` to `ToolError`, while registration-time `wrap_registered_tool` runs synchronous offload and compact `CallToolResult` conversion.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:72d85e00289e88237fe2a4195f5fcca9711a2ca7cc64a58389a9e3c586e34725",
             "locator": {
-              "end": 228,
-              "kind": "line_range",
-              "start": 206
+              "kind": "symbol",
+              "name": "_dispatch_tool"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -618,12 +719,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:b500dba00d72e964c33584080b15292c3ca591ab4f4a69285f610cdcfdf8b851",
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:ed60c7ef19be7ce6b27e4140671458c80f9886ee1478a76eeab16969c2396d65",
             "locator": {
               "kind": "symbol",
-              "name": "_nonwriting_call"
-            }
+              "name": "nonwriting_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -634,12 +736,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:e024abc5f7f04cf1b9cae7510ca0ee1e4ebd097257ca723e62344612eed16064",
             "locator": {
               "kind": "symbol",
-              "name": "_threaded"
-            }
+              "name": "_run_sync_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         },
@@ -658,17 +761,28 @@
       ]
     },
     "13": {
-      "note": "A stale installed build's publication writes are refused before dispatch; before entering `tool_build_currentness`, a bound server runs `_maybe_suppress_provider_limits` off the event loop and swallows any failure, then dispatches under the carried currentness reading.",
+      "note": "`_execute_tool_call` reads `build_currentness`, runs `_maybe_suppress_provider_limits` off-loop inside `suppress(Exception)`, and dispatches under `tool_build_currentness`; `wrap_registered_tool` refuses stale installed publication writes before calling the handler.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:b33708787113f827366da4f87e25bd823c724372ff067e2b0eb8110563190961",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
             "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 160
+              "kind": "symbol",
+              "name": "_execute_tool_call"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }
@@ -679,8 +793,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:0aec9e29a3bed9dd8dc0e62b3fe2aee63bdd187d8ef10adb68c844a606f66522",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:c4ff886996d234e64584c43dbfa4043fa2f196ebb93f59432e0f2cf07736ed51",
             "locator": {
               "kind": "symbol",
               "name": "_register_process_binding"
@@ -690,7 +804,7 @@
         },
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:86b6acf9df3d227afcb92bc0b2c9e3a4c526dae9a8e3b9815927fc78ab9f4ac3",
             "locator": {
               "kind": "symbol",
@@ -737,24 +851,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:2944f09fcb77d5b7f928b5ffc31d751ba2727e2ba12a5a11b1b1e8554fa05de1",
             "locator": {
-              "end": 144,
+              "end": 214,
               "kind": "line_range",
-              "start": 137
+              "start": 207
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:24bd089a7ec9afbdcea8bfe913631d7904220e7f0dde982ca175b9acab325ec3",
             "locator": {
-              "end": 189,
+              "end": 232,
               "kind": "line_range",
-              "start": 185
+              "start": 228
             }
           },
           "kind": "code"
@@ -766,7 +880,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:9a81521a6b171be9b9f58c9186e33c10aa6c3b5f96a3d2dc3d69c89ae229669b",
             "locator": {
               "kind": "symbol",
@@ -782,7 +896,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:bc5079ebff54878518d0de262728685e89d6d820723ee8478daa47377d0c274a",
             "locator": {
               "kind": "symbol",
@@ -798,7 +912,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
             "locator": {
               "kind": "symbol",
@@ -810,12 +924,12 @@
       ]
     },
     "2": {
-      "note": "The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring.\n\nAnchor: `TOOL_REGISTRARS` `__all__`",
+      "note": "The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring.",
       "targets": [
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:e1cfb1d0b54ab0387e3c407d5a4ce057611cb133006b605a3496a680bc112567",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_REGISTRARS"
@@ -826,7 +940,7 @@
         },
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
             "content": "sha256:dc2073ea4ae2f2e7197038a9a969ff15134dcb8da4095d3c87d7d2b70b1e8d94",
             "locator": {
               "kind": "symbol",
@@ -838,8 +952,21 @@
         },
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
             "content": "sha256:81b381ab8ef9d70679dc502b1e04ec59f307345d6a59cad1ab4ae0f7ad132988",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:0775198a6b2b44ae40b4bbe07d846a142eb9c0face35570436d44859b17c6082",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -851,21 +978,8 @@
         },
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:0775198a6b2b44ae40b4bbe07d846a142eb9c0face35570436d44859b17c6082",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 23
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:d4a3177819f2f7372a5f1f177f9e5cd66f9efce016ca77fd4d4650b4e5082bdf",
             "locator": {
               "kind": "file"
             },
@@ -876,11 +990,11 @@
       ]
     },
     "20": {
-      "note": "`_bound_role_tools` resolves the binding precedence, and `_scope_server_tools` removes every tool outside a role's allowlist after the read-only marks, keeping the survivors' order.",
+      "note": "`_bound_role_tools` resolves the binding precedence, and `_scope_server_tools` iterates `registered_tool_names()` to remove tools outside the allowlist via public `remove_tool`, keeping survivors' order.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:3676027595eab60a93de89d550a933082300dd53f25fb20ee5b184eb7b85863b",
             "locator": {
               "kind": "symbol",
@@ -891,8 +1005,8 @@
         },
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:2c7ca4d5dad59f8b023dd667801f46709868ff8a2ded5237f78c461f3947f661",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:58c791ad879a65d8e4fa00b111df6a075383408164863abf94f9e3c883097f42",
             "locator": {
               "kind": "symbol",
               "name": "_scope_server_tools"
@@ -907,7 +1021,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:4c924bbd4ae6635383a1026cf74562a28a9fbda7589dd61dd3ae0c6d3034fadb",
             "locator": {
               "kind": "symbol",
@@ -923,7 +1037,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:738703d3eaca028d4dad63484553ec2741023a275bc50cb940db87c5e0b1c63f",
             "locator": {
               "kind": "symbol",
@@ -1019,7 +1133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -1031,12 +1145,12 @@
       ]
     },
     "7": {
-      "note": "`create_server` installs compact content, initializes the application services, snapshots `_bound_agent_id`, registers every tool family, adds a bound explainer surface, applies the read-only marks, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and then removes every tool outside the allowlist of a bound role.",
+      "note": "`create_server` wires registration-time read-only annotations (`enforce_read_only_marks=True`), listing-time schema compaction (`_compact_server_tool_schemas`), and role narrowing without mutating stored SDK tools.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
@@ -1046,8 +1160,8 @@
         },
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:eed34d6bb0ab3cac65162813c6786e6929da3877ae6f7dc50599472138a0d31c",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:a07f60fa73593b74f0377985b4f98ada275e196b490b07ad1b8f2af12ac9375c",
             "locator": {
               "kind": "symbol",
               "name": "_compact_server_tool_schemas"
@@ -1058,28 +1172,26 @@
       ]
     },
     "9": {
-      "note": "Initialization installs the worktree supplier and every ordinary tool family, adds the four explainer tools for a bound launch, and narrows the tools to the allowlist of a role-bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings.",
+      "note": "Initialization installs the worktree supplier and tool registrars, adds explainer tools for a bound launch, and narrows by role binding; `list_tools` schedules `start_after_discovery` after producing its answer, and `call_tool` uses the same latch as fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:6c5b5c21c0c1c5feb48e9cb6dded1f1585e870a13d934cb6971fe09e7d6552a6",
             "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 98
+              "kind": "symbol",
+              "name": "list_tools"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
-              "end": 577,
-              "kind": "line_range",
-              "start": 554
+              "kind": "symbol",
+              "name": "create_server"
             }
           },
           "kind": "code"
@@ -1087,11 +1199,9 @@
         {
           "anchor": {
             "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-            "content": "sha256:40ec448338dfb2e5e1e077d5d721647b88ff6292ac0923d5491255976eaef55c",
+            "content": "sha256:3c50eca9ecb4285b8aae618987a0451c15475bfd0478c335fa60a636e8b48f9e",
             "locator": {
-              "end": 221,
-              "kind": "line_range",
-              "start": 213
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },

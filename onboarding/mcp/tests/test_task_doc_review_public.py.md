@@ -78,6 +78,7 @@ No external documentation source was configured for this test module.
 
 - Settings-budget exhaustion, recorded architect/developer approval, cumulative extra rounds and pending replay. [5]
 
+
 - The master document the fixture now writes first, without which the leaf the review API is exercised on could not be authored at all. [6]
 
 ### Cross-Repo References
@@ -104,6 +105,7 @@ verification metadata remains blank until governed closeout stamps a genuine cod
 
 
 - Canonical JSON is read through _leaf_doc; absent-state projection uses review_state_payload, and _effective_limit combines settings with additionalRounds. Legacy get-named methods no longer call get. Begin/record responses still expose reviewState/limit, while mutation/refusal assertions reread stored state. These helper/application seams preserve rounds, count, sealed findings and budget rules without claiming a removed read operation remains supported. [7]
+
 
 
 

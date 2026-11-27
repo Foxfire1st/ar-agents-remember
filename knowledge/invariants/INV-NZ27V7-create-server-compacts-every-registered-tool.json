@@ -6,12 +6,13 @@
     ],
     "justification": "Omitting post-registration compaction or running it out of order relative to explainer registration and role narrowing leaves uncompacted tool schemas and clips Manager tools above the 48,312 B pack cap; guarded by server parity, budget, and stdio tests."
   },
-  "applicability": "Applies to every FastMCP server constructed by create_server(config) in mcp/src/agents_remember/mcp/server.py across unbound, role-bound, and explainer configurations.",
+  "applicability": "Applies to every MCPServer server constructed by create_server(config) in mcp/src/agents_remember/mcp/server.py across unbound, role-bound, and explainer configurations.",
   "conditions": [
-    "Runs once over the entire registered surface immediately after apply_read_only_marks and before _bound_role_tools / _scope_server_tools."
+    "create_server enables listing-time compaction via _compact_server_tool_schemas(server) after registration-time read-only classification and before _bound_role_tools / _scope_server_tools.",
+    "AgentsRememberMCP.list_tools returns compacted inputSchema copies on each public tools/list answer while leaving stored SDK tool definitions unmutated."
   ],
   "exclusions": [
-    "Does not alter FastMCP fn_metadata.arg_model runtime Pydantic validation, tool registration order, read-only annotations, or role allowlists."
+    "Does not alter runtime Pydantic argument validation, tool registration order, read-only annotations, or role allowlists."
   ],
   "id": "INV-NZ27V7",
   "origin": {
@@ -26,27 +27,20 @@
     "leaf": "261124-CAP-L4",
     "task": "261124-CAP"
   },
-  "revision": 1,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "create_server compacts every registered tool's advertised inputSchema in place immediately after apply_read_only_marks and before role narrowing, covering unbound, role-bound, and explainer tools without changing runtime Pydantic validation, tool order, or read-only annotations.",
+  "statement": "AgentsRememberMCP.list_tools compacts every advertised tool's inputSchema on copied MCPTool instances when create_server enables compaction after registration-time read-only classification and before role narrowing, covering unbound, role-bound, and explainer surfaces without mutating stored SDK tool definitions or changing runtime validation, tool order, or read-only annotations.",
   "supersedes": [],
+  "title": "AgentsRememberMCP.list_tools compacts advertised schemas without mutating tools",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261124-CAP-L4",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261124-CAP",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T21:28:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L4",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "task": "261125-DEP"
   }
 }

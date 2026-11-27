@@ -335,6 +335,7 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 
 - The support classifier extracts the model name from validation detail and compares it with the registered response model. [32]
 
+
 - The ordinary sibling classifier also compares the validation error model name with the tool’s registered response model. [52]
 
 - The extracted invalid-argument control calls citation_fix without repo_id and requires the citation_fixArguments arm. [53]
@@ -360,6 +361,7 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 - The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser.
 
 - The extracted control patches a server handler to withhold its answer and requires a named three-second timeout, handler closure and a successful next call. [46]
+
 
 Anchor: `test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`
 
@@ -396,6 +398,7 @@ No repository or external-system boundary is proved by this module.
 
 
 
+
 - The support world declares an empty unmarked-refusal map. The main test compares it with both the classified and directly counted populations. [30]
 
 
@@ -404,7 +407,9 @@ No repository or external-system boundary is proved by this module.
 
 
 
+
 - The support call uses 60-second limits for session initialization, tool response and session cleanup. A named timeout leaves call without entering the product outcome classifier. [45]
+
 
 - `EntryPointProbeTests` owns the current boundary described above. Anchor: `EntryPointProbeTests` [47]
 
@@ -416,7 +421,9 @@ No repository or external-system boundary is proved by this module.
 
 
 
+
 - The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [50]
+
 
 
 
@@ -428,13 +435,16 @@ No repository or external-system boundary is proved by this module.
 
 
 
+
 - Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
 
 
 
 
 
+
 - The main probe retains exact equality between observed raisers and the current pin. [59]
+
 
 
 

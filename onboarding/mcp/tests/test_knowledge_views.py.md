@@ -22,11 +22,11 @@ without weakening production registration, and the registered `knowledge_read` i
 covers all 24 admitted parameters (including KNO-L5's `masterId` and the eight KNO-R07 parameters
 `compact`, `contractPath`, `files`, `folder`, `kinds`, `query`, `recordIds`, `repo_id`) while keeping
 `databasePath` and `repositoryId` absent. The §6 cases drive the registered `knowledge_read`,
-`knowledge_diff` and `knowledge_integrity_check` handlers through a real FastMCP server over a
+`knowledge_diff` and `knowledge_integrity_check` handlers through a real `MCPServer` over a
 converted memory tree, so those three operations execute rather than merely appearing in the roster;
 `knowledge_write` is covered here as roster and schema — its name in the public roster and its
 response model — not as an executed handler.
 
 ## Evidence
 
-- The file realizes its current contract: eleven admitted `knowledge_read` views (including `consolidation_proposal`), four mounted tools, registered `knowledge_read` schema covering `masterId` and the eight KNO-R07 parameters with no `databasePath`/`repositoryId`, and read, diff and integrity executing through registered handlers. [1]
+- The file realizes its current contract at the corrected candidate: six admitted views, four mounted names, and read, diff and integrity executing through the registered handlers. [1]

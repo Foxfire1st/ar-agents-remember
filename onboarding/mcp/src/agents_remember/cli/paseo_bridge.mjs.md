@@ -64,6 +64,7 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 - `agentCreation` uses the selected settings role and supplies its applied options (plus `allowMissingParent` handling in `createAgent`). The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four. [5]
 
+
 - The host-activity reconciliation opts into background agents and asks only open, unarchived AR role seats for subagents. [8]
 
 - An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone. [9]

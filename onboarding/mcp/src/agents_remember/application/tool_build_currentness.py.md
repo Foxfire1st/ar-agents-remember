@@ -23,4 +23,5 @@ The module decides nothing about refusing a call: which writes a stale installed
 
 - The MCP dispatch takes the reading and runs the call inside the context manager. [3]
 
+
 - Response enrichment attaches the filtered reading as `buildCurrentness`. [4]

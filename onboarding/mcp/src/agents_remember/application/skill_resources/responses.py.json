@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
-            "content": "sha256:dff2844fde0f4c222393a15010a2a6985f11267e5d6925e10c031798049c1a4a",
+            "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+            "content": "sha256:d2cca34a665c1c1650a37643b37fa8991c8db376387af5612f5286d64e1c84d8",
             "locator": {
               "kind": "symbol",
               "name": "_skills_list_handler"

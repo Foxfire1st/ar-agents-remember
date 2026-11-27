@@ -8,7 +8,7 @@
   },
   "applicability": "Registered synchronous MCP handlers on one AgentsRememberMCP server.",
   "conditions": [
-    "FastMCP continues validating arguments, injecting context and converting results.",
+    "MCPServer continues validating arguments and injecting context while AgentsRememberMCP builds CallToolResult via tool_results.build_call_tool_result.",
     "Potentially mutating synchronous calls share that server's ordering lock until their worker exits, including cancellation."
   ],
   "exclusions": [
@@ -28,27 +28,20 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Synchronous MCP handlers execute off the event loop with per-call ContextVars, while potentially mutating synchronous calls retain FIFO ordering until their worker exits.",
   "supersedes": [],
+  "title": "Synchronous MCP handlers offload off-loop with FIFO write ordering",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L202",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

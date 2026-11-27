@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-        "content": "sha256:58b2d7342e62a7b7c769f37ef096450b57a883f06d4715e2e450f06fca633c7c",
+        "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+        "content": "sha256:3c7293ea8a0169b4b0303a35f93bf71cfbfe0c4746057789cd54df10b71895b8",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-        "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+        "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+        "content": "sha256:0f1df0fbd785b340a1f01b21b9e04abb04ec78d759eb48fb188604b985881272",
         "locator": {
           "kind": "symbol",
           "name": "_register_task_document_tools"
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:59024859859a75b210005e367c13660aed8b93ef556d4bc1f49adb908de066f5",
             "locator": {
               "end": 57,
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
               "kind": "symbol",
@@ -137,11 +137,11 @@
       ]
     },
     "6": {
-      "note": "The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities.\n\nAnchor: `_TASK_DOC_TOOL_DESCRIPTION`, `_register_task_document_tools`",
+      "note": "The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities.",
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
               "kind": "symbol",
@@ -152,8 +152,8 @@
         },
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-            "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+            "content": "sha256:0f1df0fbd785b340a1f01b21b9e04abb04ec78d759eb48fb188604b985881272",
             "locator": {
               "kind": "symbol",
               "name": "_register_task_document_tools"
@@ -164,12 +164,12 @@
       ]
     },
     "7": {
-      "note": "Descriptions include keyed open-question writes and require master authority for finalization.\n\nAnchor: `_register_task_finalizer_tools`, `_TASK_DOC_TOOL_DESCRIPTION`",
+      "note": "Descriptions include keyed open-question writes and require master authority for finalization.",
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-            "content": "sha256:1cf5b9d7d49792a96ac58ec3a4936eda5557bbbbc55f932221e6220b3ddd640a",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+            "content": "sha256:1ae4d562b82ceb955eefcf47b5e24ec80a48df4a6bec851941b9bf1dc43074b2",
             "locator": {
               "kind": "symbol",
               "name": "_register_task_finalizer_tools"
@@ -179,7 +179,7 @@
         },
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
               "kind": "symbol",
@@ -191,12 +191,12 @@
       ]
     },
     "8": {
-      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.\n\nAnchor: `register_task_tools` and `_register_*`",
+      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.",
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
-            "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
+            "content": "sha256:ce1a7e9d1de20f3e03a8e38b4cfc3e085db082b5646c9b81f638d73e52c12186",
             "locator": {
               "kind": "symbol",
               "name": "register_task_tools"
@@ -211,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+            "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
             "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
               "end": 61,

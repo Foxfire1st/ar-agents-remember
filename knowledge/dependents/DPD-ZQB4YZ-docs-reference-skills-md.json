@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "39b7bfbd8f61c30ea846d1f26bc74a3dc2f5b355",
+    "commit": "11cd92e384253e666c47a1acc25ac57aec56a9ec",
     "role": "curator",
-    "statement": "Verified docs/reference/skills.md against post-CAP-L5 synced tree e273d1c9: preserves CAP-L5 three-tier progressive disclosure and .cache/skill-corpus/ docs alongside KNO-R05@v3 9-role/10-op surface.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited docs/reference/skills.md against 261125-DEP-L4 tree 39b7bfbd (DEP-R04@v2 public-API-only mcp 2.3.0 boundary): SEP-2640 skills extension serving and resource publication remain accurate with zero contradictions.",
+    "task": "261125-DEP-L4",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },
     {
-      "blob": "5865a5625745237980b5f2727a2b258b47488104",
+      "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
@@ -72,14 +72,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T07:28:48+01:00",
+    "at": "2026-11-27T21:28:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261125-DEP-L4",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "task": "261125-DEP"
   }
 }

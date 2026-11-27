@@ -83,9 +83,11 @@ No Domain Documentation source is configured.
 
 - The live registration is compared to this tuple, in order, by the inventory suite. [3]
 
+
 - The shared adapter finalizes one application result. Anchor: `_tool_payload` [4]
 
 - Registrars are the only published declaration family. [5]
+
 
 ### Cross-Repo References
 
@@ -136,13 +138,13 @@ it, while this tuple and `models/tools/tool_registry.py` both omitted it — and
 `finalize_tool_response` indexes that registry by tool name, so the advertised tool raised instead
 of returning a payload. Nothing exercised the invariant this card states. `mcp/public_surface.py`
 compares a live `list_tools()` result against this tuple, and `mcp/registration/__init__.py`
-documents that FastMCP publishes in registration order, but the only test comparing them built its
+documents that `MCPServer` publishes tools in registration order, but the only test comparing them built its
 list FROM `PUBLIC_TOOLS`: `server_info` reports `list(PUBLIC_TOOLS)` (`mcp/tools/core.py`), so the
 comparison was self-referential and a registered-but-unlisted tool was invisible to a fully green
 suite.
 
 `PublicSurfaceInventoryTests` (`mcp/tests/test_tools.py`) closes the hole. It registers every entry
-in `TOOL_REGISTRARS` against a probe `FastMCP` and asserts the live `list_tools()` names equal this
+in `TOOL_REGISTRARS` against a probe `MCPServer` and asserts the live `list_tools()` names equal this
 tuple in order, then asserts the advertised names have validating response models. Order is part of
 the comparison because publication follows registration order, so a misplaced row is a reordering
 bug rather than a missing one. Do not replace this with an assertion against `server_info`: that

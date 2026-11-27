@@ -1,21 +1,23 @@
 # test_compact_content.py
 
-## Current operative account — MIK-R112
+## Current operative account
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+`test_compact_content.py` (`CompactToolResultWireTests`) verifies the MCP 2.x direct `CallToolResult` wire contract in `mcp/tool_results.py` and `AgentsRememberMCP` over `Client(server, mode="legacy")`:
 
-- Current test calls server_info via _call_server_info.
-- Minified text equality and structured-content assertions survive.
+- `test_dict_content_blocks_are_compact_utf8_json` verifies `compact_content_blocks` serializes dict results into compact UTF-8 JSON `TextContent` blocks without indentation.
+- `test_wire_tool_list_answers_and_extension_match_start_tree_contract` verifies `initialize` capabilities (`extensions` and `experimental={}`), all 44 public tools' `<name>DictOutput` schemas, compact JSON text mirroring `structured_content`, exact validation and unknown-tool `ToolError` wire texts, `skills/list`, `skills/get`, and `skill://index.json`.
+- `test_explainer_tools_and_early_refusals_preserve_start_tree_wire_shape` verifies bare-dict explainer tools omit `outputSchema` and emit compact JSON without `structured_content`, while forged-seat and stale-build early refusals emit indented JSON text with `structured_content`.
+- `test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools` verifies base `MCPServer.list_tools` schemas stay uncompacted, `server_info` advertises only `readOnlyHint: True`, `read_ar_files` omits `refresh`, and every canonical role and `system-specialist` alias matches the unbound wire slice byte-for-byte.
+- `test_no_private_mcp_sdk_access_remains_in_repository` scans `mcp/src`, `mcp/test_support`, `scripts`, and `mcp/tests` via AST to fail on any private MCP SDK attribute access or internal SDK module import.
 
-### Superseded inventory
+## Evidence
 
-- Pre-repair card claim: Card says the real MCP probe calls ping via _call_ping. This is superseded archival wording, not a current prescription.
+- Direct `CallToolResult` construction and compact JSON serialization live in `mcp/tool_results.py` (`build_call_tool_result`, `compact_content_blocks`, `build_early_refusal_result`), replacing the retired `compact_content.py` monkeypatch. [1]
+- `create_server()` constructs `AgentsRememberMCP` with `build_skills_extension()`, `preserve_handshake_extensions`, and `enforce_read_only_marks=True`, and dispatches tool results through registration-time `wrap_registered_tool` (`build_call_tool_result` and `build_early_refusal_result`). [2]
 
-### Source and authority bounds
+- MCP settings fixtures come from `test_config.py`. [3]
 
-- Source comparison: `mcp/tests/test_compact_content.py:50-79`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+- Role wire-byte parity, unmutated stored tool schemas, and repository-wide private MCP SDK access AST guard live in `CompactToolResultWireTests`. [4]
 
 ## Historical original card — preserved, not the current operative account
 
@@ -28,46 +30,12 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Purpose
 
-`test_compact_content.py` verifies the FastMCP compact-content shim: that it
-installs once, leaves non-JSON blocks alone, and minifies the JSON text mirror of
-a real tool call without disturbing structured content.
+`test_compact_content.py` originally verified the 1.x FastMCP compact-content shim (`compact_content.py`, retired under `261125-DEP-L3`): that it installed once, left non-JSON blocks alone, and minified the JSON text mirror of a real tool call without disturbing structured content.
 
 ## Code Commentary
 
 ### Logic
 
-`test_install_is_idempotent` calls `install_compact_content()` twice and asserts
-the converter reference is unchanged after the second call.
-
-`test_non_json_text_blocks_pass_through` feeds a plain string through the patched
-`func_metadata._convert_to_content` and asserts the text is returned verbatim.
-
-`test_tool_call_text_block_is_compact_and_matches_structured` builds a real
-server with `create_server()` (which installs the shim), calls the `ping` tool
-through an in-memory client session (`create_connected_server_and_client_session`
-driven with `anyio.run`), and asserts the text block parses as JSON, contains no
-newline, equals `result.structuredContent`, and reports `ok`.
-
-### Conventions
-
-The in-process session uses `server._mcp_server` (the low-level server behind
-FastMCP) and the in-memory transport from `mcp.shared.memory`, so no stdio
-subprocess is required. The `ping` tool is used because it needs no fixture state
-beyond trusted settings.
-
-### Invariants And Boundaries
-
-The shim is text-mirror-only: the parsed text must equal `structuredContent`, and
-the compaction must never raise on non-JSON content.
-
-## Evidence
-
-### Repo-Internal References
-
-- The shim under test installs the FastMCP converter patch. [1]
-
-- MCP settings fixtures come from `test_config.py`. [3]
+Historical 1.x cases (`test_install_is_idempotent`, `test_non_json_text_blocks_pass_through`, `test_tool_call_text_block_is_compact_and_matches_structured`) tested `install_compact_content()` and `func_metadata._convert_to_content` over `create_connected_server_and_client_session`. Those cases were replaced by `CompactToolResultWireTests` against `mcp/tool_results.py` and `Client(server, mode="legacy")`.
 
 </details>
-
-- `create_server()` installs the shim before registering tools. [2]

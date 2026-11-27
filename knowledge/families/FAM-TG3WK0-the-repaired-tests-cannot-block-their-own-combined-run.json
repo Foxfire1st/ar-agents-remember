@@ -3,12 +3,11 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Factory dispatch lets the reader exchange start, named phase limits make unanswered operations visible, and the test-owned selector lets the runner service queued completions when the socket wake-up is denied."
+    "justification": "Named phase limits make unanswered reader and sweep operations visible, and the test-owned selector lets the runner service queued completions when the socket wake-up is denied."
   },
-  "guarantee": "The reader protocol test composes its own server through the product factory. The reader exchange and Git status observations and the sweep's session initialization, tool response and session cleanup have explicit limits. The sweep reports its own deadline as a named failure outside the product-raiser classification. Test-owned loops from the shared fixture factory also return from selector waits to service queued callbacks when a socket wake-up is denied, including while the runner joins its executor. The test-owned loops retain normal shutdown and require executor jobs to be able to finish. The fixtures' shared Git helpers git and init_repo in test_worktree_support.py and the sweep's _git remain outside the protocol timeout guarantee.",
+  "guarantee": "The reader exchange and Git status observations and the sweep's session initialization, tool response and session cleanup have explicit limits. The sweep reports its own deadline as a named failure outside the product-raiser classification. Test-owned loops from the shared fixture factory also return from selector waits to service queued callbacks when a socket wake-up is denied, including while the runner joins its executor. The test-owned loops retain normal shutdown and require executor jobs to be able to finish. The fixtures' shared Git helpers git and init_repo in test_worktree_support.py and the sweep's _git remain outside the protocol timeout guarantee.",
   "id": "FAM-TG3WK0",
   "members": [
-    "INV-X0BRG0",
     "INV-2S0FEY",
     "INV-W4XGR4",
     "INV-0ZEX0D"
@@ -21,31 +20,22 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/tests",
-    "mcp/src/agents_remember/mcp/registration",
     "mcp/test_support/agents_remember_test_support/testing"
   ],
   "schema": "ar-family/v1",
   "title": "The reader and sweep protocol waits end at a limit",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L16",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

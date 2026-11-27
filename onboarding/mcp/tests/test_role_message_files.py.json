@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
             "content": "sha256:b6986708450be49bdb2a53d40d23960c8ae1354adefb3614486dc950b4c93418",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
             "content": "sha256:a5fa3bee4820f90595c9805ba6786d4d2c25936a97efabae91d6a141a20b8155",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
             "content": "sha256:8264855c5909f59c3b489c04ef9631d712fea65ea7c6f92f0bf010cd1eb97d64",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
             "content": "sha256:303f44eb9c69744a4356a19a5d646a5b93def7afb102d5247a4d0fe584472977",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
             "content": "sha256:827822cd540f77b406c509dea1072ef35a2cf253bbb50ab5691f7eaf9e2f1725",
             "locator": {
               "kind": "symbol",
@@ -77,8 +77,8 @@
         },
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
-            "content": "sha256:4f8fc1334c4c07b50c374016d92b9fa06eedd32898f095d54a58875ea0c69795",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
+            "content": "sha256:e471990a9db24a8c2e4c16b9fdc219cb23d8b6a0ce74bb1b4b5471f6af137c3b",
             "locator": {
               "kind": "symbol",
               "name": "RegisteredRefusalTests"
@@ -93,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
-            "content": "sha256:8304337c3d46cedac3dbe7682b7e7ea3d95ab00e9cf7cf17d74f9faa7d6b20f3",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
+            "content": "sha256:7fad7dda54638b5975347d2088c581d79d9f73ff526ea422c5a28c7f4a219738",
             "locator": {
               "kind": "file"
             }
@@ -108,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
-            "content": "sha256:8304337c3d46cedac3dbe7682b7e7ea3d95ab00e9cf7cf17d74f9faa7d6b20f3",
+            "blob": "20621ff04885281ef431146f5829a88f95d2010a",
+            "content": "sha256:7fad7dda54638b5975347d2088c581d79d9f73ff526ea422c5a28c7f4a219738",
             "locator": {
               "kind": "file"
             }

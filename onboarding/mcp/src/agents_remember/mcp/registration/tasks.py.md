@@ -216,7 +216,7 @@ The current compact `curator_coherence` description names its four actions (`pre
 > The tool itself had refused `light` since the light-task removal; only the *published* description
 > still advertised it, so the surface and the behaviour disagreed in the direction this master
 > exists to find — a capability refused by a surface that still advertises it (`D13`'s class,
-> reversed). The pin is taken from the **registered** FastMCP surface
+> reversed). The pin is taken from the **registered** `MCPServer` surface
 > (`TOOL_REGISTRARS` → the real `task_doc` description), not from this constant, by
 > `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
@@ -240,6 +240,8 @@ Source: mcp/src/agents_remember/mcp/registration/tasks.py
 
 - The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities. [6]
 
+
 - Descriptions include keyed open-question writes and require master authority for finalization. [7]
+
 
 - Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call. [8]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6cf9de2bb802b7506c9ad1d2472cd8dd8c4e0128",
+        "blob": "a48ddb3996b4e145358ffb251fb962f96de18283",
         "content": "sha256:a9e5a6f6494328d7ccae71bf060ee488d1557ff8578092f9dae9981487fb2942",
         "locator": {
           "end": 7,
@@ -22,8 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "6cf9de2bb802b7506c9ad1d2472cd8dd8c4e0128",
-        "content": "sha256:c8ca767e248b473aa82813c971681c1d7390e8da33d7de97dcd155a1ebe3addd",
+        "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
+        "content": "sha256:1a1423229b8fc64d3e30a3d143d6fc5477220b1c8163e0ce3eb3379ad15f98e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XQXATE",
+      "invariant": "INV-DY0898",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R1-proof",
+        "leaf": "261125-DEP-L3"
+      },
+      "rationale": "Pins mcp 2.3.0 and its transitive dependency delta (adding httpcore2, httpx2, httpx2-jsfetch, mcp-types, truststore; removing httpx-sse, pydantic-settings, python-dotenv) while holding every other direct dependency steady.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "02ec575d5ef4467b43d2f912d32dd099fc9c0fb6",
+        "content": "sha256:1a1423229b8fc64d3e30a3d143d6fc5477220b1c8163e0ce3eb3379ad15f98e2",
         "locator": {
           "kind": "file"
         }
@@ -34,7 +51,7 @@
         "handoffEntry": "DEP-R01@v2 §1",
         "leaf": "261125-DEP-L1"
       },
-      "rationale": "Records the >=1.30.0,<2 mcp specifier and resolves the locked 1.x dependency graph consumed by frozen sync.",
+      "rationale": "Records the >=2.3.0,<3 mcp specifier and resolves the locked mcp 2.3.0 dependency graph consumed by frozen sync.",
       "role": "propagation-persistence"
     }
   ],
@@ -44,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cf9de2bb802b7506c9ad1d2472cd8dd8c4e0128",
+            "blob": "a48ddb3996b4e145358ffb251fb962f96de18283",
             "content": "sha256:a5e9e10114a21243e4658daac6c41a27bb55f4298326e95724f037b42f8d3a6a",
             "locator": {
               "end": 20,

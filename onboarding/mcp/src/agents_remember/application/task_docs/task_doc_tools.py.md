@@ -399,7 +399,7 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 
 **`T43` is repaired on both sides, per the `T50` precedent**: the description in
 `mcp/registration/tasks.py` no longer advertises `'light'`, and this refusal now names the
-vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
+vocabulary it does accept. Pinned against the **registered** `MCPServer` surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
 

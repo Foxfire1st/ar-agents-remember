@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-        "content": "sha256:d08309beeb0c0f52fa43370b1aa3df3e8f1cc4cd98aaae7c3add50fb23023c9b",
+        "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+        "content": "sha256:bb0217837512ca158044e678292727df3bf9c9aaa0340de30e75bb60f7538fb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "DispatchConcurrencyTests.test_cancelled_write_drains_before_next_write_and_keeps_context"
+        }
+      },
+      "facet": "Verifies synchronous write-lock FIFO ordering, thread_workers offload, and ContextVar isolation under cancellation.",
+      "id": "PRF-06SQRQ",
+      "invariant": "INV-H9Z24G",
+      "origin": {
+        "handoffEntry": "DEP-R03@v2-R2",
+        "leaf": "261125-DEP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+        "content": "sha256:93eeb21c632d47e5532987343b346cba157a22b3ae0610455f0a329655dfa0e5",
         "locator": {
           "kind": "symbol",
           "name": "DispatchConcurrencyTests.test_transport_poll_and_read_answer_while_long_call_is_running"
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-        "content": "sha256:1981ed9d08ad144170b2eb59a174104b429a044acf2bcc8268d32495f25ab1a1",
+        "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+        "content": "sha256:a7a097090ac040bde5aa40e224c07b5d2336a2f8ca024ae349336be1ada7c571",
         "locator": {
           "kind": "symbol",
           "name": "DispatchConcurrencyTests.test_concurrent_calls_keep_context_caches_and_answer_logs_separate"
@@ -37,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-        "content": "sha256:8ff93425a8f317bd047a6ec5bc45ffbe9b25ca36bdd244f05d7a633ddb718863",
+        "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+        "content": "sha256:6537d1d47a2603e0b70e4ab080806e99e633b98df6c82c89f2808e2927439858",
         "locator": {
           "kind": "symbol",
           "name": "test_trim_follows_success_refusal_and_error_after_call_scope_exits"
@@ -54,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-        "content": "sha256:20030558c3f26272ca9d9f9bb886cc2fef5670d39791f7d22703febc5e148f4f",
+        "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+        "content": "sha256:bb0217837512ca158044e678292727df3bf9c9aaa0340de30e75bb60f7538fb3",
         "locator": {
           "kind": "symbol",
           "name": "DispatchConcurrencyTests.test_cancelled_write_drains_before_next_write_and_keeps_context"
@@ -71,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-        "content": "sha256:ae20c19a70adf94a8809d5d72973b32bfa24382dcff83b54795cfa710a917d8e",
+        "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+        "content": "sha256:1ab550a1c9d9db826ff8c2c6b301175eac78587205bbf9247bbea33528b2c90f",
         "locator": {
           "kind": "symbol",
           "name": "test_cancelled_role_start_drains_before_clearing_journal_and_trimming"
@@ -90,12 +107,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A poll and read answer before a long synchronous call is released.\n\nAnchor: `DispatchConcurrencyTests.test_transport_poll_and_read_answer_while_long_call_is_running`",
+      "note": "A poll and read answer before a long synchronous call is released.",
       "targets": [
         {
           "anchor": {
-            "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-            "content": "sha256:d08309beeb0c0f52fa43370b1aa3df3e8f1cc4cd98aaae7c3add50fb23023c9b",
+            "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+            "content": "sha256:93eeb21c632d47e5532987343b346cba157a22b3ae0610455f0a329655dfa0e5",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -111,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
-            "content": "sha256:f9208b23ca9497e53217d4f411eaa89d395738fcb8f0f1a055061280d90c401d",
+            "blob": "36e27f96682c55501960706ef01ab24b73c5f640",
+            "content": "sha256:6b734b47d76863295723fd3ebb3eafeeb2b7260ce7ded87b0f00e455f160d2d7",
             "locator": {
               "kind": "symbol",
               "name": "DispatchConcurrencyTests"

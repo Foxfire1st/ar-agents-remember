@@ -18,7 +18,7 @@ Compaction does not rewrite `anyOf` nullability, inline or rename `$defs`/`$ref`
 
 ## Relationships
 
-[`mcp/server.py`](../../mcp/server.py.md) calls `compact_tool_schema` through `_compact_server_tool_schemas` inside `create_server` immediately after `apply_read_only_marks` and before `_bound_role_tools` / `_scope_server_tools`, compacting unbound, role-bound, and explainer surfaces alike while leaving FastMCP's `fn_metadata.arg_model` untouched. The module sits at layer rank 2 beside [`role_tool_scope.py`](role_tool_scope.py.md) and [`tool_descriptions.py`](tool_descriptions.py.md), imports stdlib only (`copy`, `collections.abc`, `typing`), and is protected by [`test_tool_schema_compaction.py`](../../../../../tests/test_tool_schema_compaction.py.md) and [`test_role_tool_scope.py`](../../../../../tests/test_role_tool_scope.py.md).
+[`mcp/server.py`](../../mcp/server.py.md) calls `compact_tool_schema` through `_compact_server_tool_schemas` inside `create_server` immediately after `apply_read_only_marks` and before `_bound_role_tools` / `_scope_server_tools`, compacting unbound, role-bound, and explainer surfaces alike while leaving `MCPServer`'s `fn_metadata.arg_model` untouched. The module sits at layer rank 2 beside [`role_tool_scope.py`](role_tool_scope.py.md) and [`tool_descriptions.py`](tool_descriptions.py.md), imports stdlib only (`copy`, `collections.abc`, `typing`), and is protected by [`test_tool_schema_compaction.py`](../../../../../tests/test_tool_schema_compaction.py.md) and [`test_role_tool_scope.py`](../../../../../tests/test_role_tool_scope.py.md).
 
 ## Evidence
 

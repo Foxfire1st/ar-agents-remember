@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
-    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
+    "codeTree": "97ae746841518096ec9b9e9df994f142ececd6dd",
+    "commit": "f5c8619dc316f4a0465f4e0a4706a1c5a893923e",
     "role": "curator",
-    "statement": "Verified docs/install/cursor.md against post-L32 synced L34 candidate: Cursor install guidance remains accurate after BUG-R34@v1.",
-    "task": "261112-BUG-L34",
-    "uncommitted": true
+    "statement": "Resolved crossing-7 sync conflict for docs/install/cursor.md on merged code commit f5c8619dc316 (tree 97ae74684151): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-BUG-L34 (main 882d41531b3d) with zero code overlap or contradiction.",
+    "task": "261125-DEP-L3",
+    "uncommitted": false
   },
   "document": "docs/install/cursor.md",
   "id": "DPD-21GMJ5",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+      "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:06:38+01:00",
+    "at": "2026-11-27T22:47:55+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L34",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
-    "task": "261112-BUG"
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "task": "261125-DEP"
   }
 }

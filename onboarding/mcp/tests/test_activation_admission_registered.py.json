@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:5245ba4233f5bb6f9a85f598ca3e6cb1a7b17e05d95e7f3c4b9d6fed72986417",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:33771e5f679cb4a3266418334e69eeeb8061586408e02ca54684135e0e13586a",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_status_projects_activation_without_mutation"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:76a85bc971c405bb57d551ac2d77f66d694376005891a900b831e4e8c04f20f5",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:3b4c9a053d6ee4e72315067bc679799d906317e2b6af3b75c1d6cd46d2ad4eca",
             "locator": {
               "kind": "symbol",
               "name": "_assert_bounded_parser_refusal"
@@ -34,8 +34,8 @@
         },
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:862080bd58689854b11f7ece6e60e2d4357bb9991deace320f472b3e44f867c4",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:fb2076879aecfaa996e59c4347096296eaaade3a209b0e13d4ae1c192fa06d80",
             "locator": {
               "end": 350,
               "kind": "line_range",
@@ -46,8 +46,8 @@
         },
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:75580c5648d138b2c33282930968f55d190ad457e6cc42e806653f6a1b942b99",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:de16923cffbe8eafd5ea1f29ad7ffb0e0be1897776b8487939ca7362f73ec5dc",
             "locator": {
               "end": 532,
               "kind": "line_range",
@@ -63,8 +63,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:5c910268117e4ae41a7a61f630f82814f62d1b47eaf958b2300098e3591b7b39",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:fc890a85b4196a8508e6be6a31d583d1467d69e65ad465273262ab66fd7b1289",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_sync_refusal_addresses_only_this_contracts_own_state"
@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:9c4c6db98516fa8a293492e6692f1bf7b6a32d0bc63b983b73d8136cc485c19a",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:bb2ca55f5ce3ffefb01b7708a3bb621303a30b452f3fd79b6dcf9fa4665b654c",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_sync_refusal_distinguishes_vacant_and_unreadable"
@@ -95,8 +95,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:d357c56182dacb05699fcddbdff4b1263fc273dfdcaa8a72ecd187be0f43b3b5",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:1de6181adb1aa77f103361a18e6b86c1c9eaa6c5820dc9eeccb264682cb1afd3",
             "locator": {
               "end": 331,
               "kind": "line_range",
@@ -112,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:1cd94ba1491a167d1415f197710f0fbfffdfa9d824b5639c3047919a4a8eb4cd",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:1a6df948a2097a4d01f9ba75cb2091829e2b1d1824ac5f11b0b93d87d0237b7d",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_start_refusal_reports_contract_edges"
@@ -128,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:a89f1744848fdeb9f16dc59891b5865368f97e7b1c68f2d0669eacf4ec8c6658",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:78bab0b98a73525b04b7db438f6d980c2aecf9c60e14f913238b5c7d03114c46",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_start_reread_refusal_preserves_edges_and_guidance"
@@ -144,8 +144,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:d000c28e7b97f8d4a7899d50be69f456522a44034e20cbce49ca1456e347a520",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:a36e9f686f74ac7c45665a3c5f02a7a2521905941cfc8dd331da26c3200b0324",
             "locator": {
               "end": 514,
               "kind": "line_range",
@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "482aadf6dbb31126c35169fdef0f43901b769626",
-            "content": "sha256:ebb499bb13e3acbdc520fc8a7b7dd913649e64175165f8792321bc2a43273fb5",
+            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
+            "content": "sha256:9f491d634eafa2a75e8f53097c31a7b7157aabfa968da275fa86f0c70ea2d8f3",
             "locator": {
               "kind": "symbol",
               "name": "RegisteredActivationAdmissionTests"

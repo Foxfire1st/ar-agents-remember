@@ -151,18 +151,29 @@
       ]
     },
     "7": {
-      "note": "The tool dispatcher refuses a declared write of an installed stale build.",
+      "note": "The tool dispatcher reads build currentness and the registration wrapper refuses declared publication writes of an installed stale build.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:4749f0cc98c1e6f3a8f3619c8c094e738a482bf39aee8d5c525fc8ecfd655792",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:cacaa21aa7a6bca41c790ff2933137d389c9101e1b339df9e88cdc5bf94a782f",
             "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 160
+              "kind": "symbol",
+              "name": "_execute_tool_call"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
+            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrap_registered_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
           },
           "kind": "code"
         }

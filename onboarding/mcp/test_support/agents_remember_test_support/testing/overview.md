@@ -140,6 +140,7 @@ The generated route index lists the source files of this route and their cards.
 
 
 
+
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
 
 - The collection register and explicit kernel service-holder reset are separate module-isolation paths. The collection register includes the explainer and watcher collections. [29]

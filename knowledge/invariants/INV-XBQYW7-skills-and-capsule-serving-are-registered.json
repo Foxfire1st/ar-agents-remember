@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans skills_extension.py and capsule_serving.py, guarded by stdio and legacy wire tests, preventing process-wide ServerSession monkeypatches or stripped capabilities.extensions on pre-2026 handshakes."
+  },
+  "applicability": "SEP-2640 skills capability declaration, skills/list and skills/get methods, and skill:// resources served by AgentsRememberMCP.",
+  "conditions": [
+    "create_server builds SkillsExtension via build_skills_extension() and passes it to MCPServer(extensions=[...]) with no process-wide ServerSession monkeypatch.",
+    "preserve_handshake_extensions middleware restores capabilities.extensions and capabilities.experimental={} on pre-2026 initialize responses."
+  ],
+  "exclusions": [
+    "The optional resources/directory/read method gated behind directoryRead, which remains unimplemented and undeclared."
+  ],
+  "id": "INV-XBQYW7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "pytest -m \"\" mcp/tests/test_capsule_serving_surface.py mcp/tests/test_capsule_serving.py mcp/tests/test_global_state_isolation.py"
+      ],
+      "path": "261125-DEP-L3-curator-pass1.json"
+    },
+    "handoffEntry": "DEP-R03@v2-R3-skills-extension",
+    "leaf": "261125-DEP-L3",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Skills and capsule serving are registered through mcp 2.x SEP-2133 Extension, MethodBinding, and ResourceBinding passed to MCPServer(extensions=[...]) with no process-wide ServerSession monkeypatch, plus ServerMiddleware preserving capabilities.extensions on pre-2026 initialize handshakes.",
+  "supersedes": [],
+  "title": "Skills and capsules use SEP-2133 Extension with handshake preservation",
+  "writer": {
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
+  }
+}

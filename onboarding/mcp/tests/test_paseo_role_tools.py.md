@@ -53,6 +53,7 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 
 
+
 - The serialization test observes the second Start reaching the held dispatch lock before it checks that the call remains pending. [2]
 
 
@@ -72,7 +73,9 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 
 
+
 - A native binding refusal carries no redundant operation envelope. [4]
+
 
 
 

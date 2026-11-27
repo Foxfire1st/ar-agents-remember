@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a4f026f8fda8838d20b19dae774506d1a8b3d24b",
-    "commit": "29195b213c2b2065cee45958b650e07b76cf2aa3",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Audited docs/release-checklist.md against L11 candidate tree a4f026f8 after pyproject.toml, uv.lock, and certification-profile-v1.json updates; release packaging, wheel/sdist, and verification steps remain accurate.",
-    "task": "261112-KNO-L11",
-    "uncommitted": true
+    "statement": "Resolved crossing-8 sync conflict for docs/release-checklist.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
+    "task": "261125-DEP-L3",
+    "uncommitted": false
   },
   "document": "docs/release-checklist.md",
   "id": "DPD-0K35N0",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,12 +36,12 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "cc0b41fec35e3c753461668ff0c6f7d65d3689fc",
+      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "3a90a71f3c01e73e7f0442a89cd5c26d252f90e7",
+      "blob": "75666896c9253c112c36592690f5521a934ca963",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/version.py"
     },
@@ -142,14 +142,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T21:03:08+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "task": "261125-DEP"
   }
 }

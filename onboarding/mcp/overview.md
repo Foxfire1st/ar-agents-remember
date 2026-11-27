@@ -32,7 +32,7 @@ Native read reuse remains an optimization of those owners. The app-local change-
 
 The packaged task templates (`leaf-task.md`, `master-task.md`, `requirement-packet.md`) are synchronized projections of the canonical l-01 skill's `templates/`; the renderer names the task templates as its authoring scaffolds and the packet projection takes its canonical packet shape from the requirement-packet template. Creation numbers are stable identities, the master list is an index, and exact same-master waitsFor fields authored through task_doc derive Order. Fixed prose belongs to its typed home rather than duplicated free-form sections or dependency notes; copied instructions are not separate authority or an executed workflow.
 
-MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty repository-relative path strings. A fuller reply can include the governing card, available state counts and action headings, and governing overviews once per call, nearest first. Eligible rows can add current rule text and related knowledge as space permits. Compact rows keep each path, its existence or refusal, card status where applicable, and any brief pointer with reported saved freshness. A pointer can name a missing or older brief, or one whose age is unknown. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. If refresh cannot proceed, the writer reports `briefsProblem` and leaves the saved brief as it was. Use native file tools for the source, card, overview and current saved brief. Use `knowledge_read` to locate whole records and proof evidence. The reader keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false. After `apply_read_only_marks`, `create_server` runs `_compact_server_tool_schemas` (delegating to `models/tools/tool_schema_compaction.py::compact_tool_schema`) to losslessly compact every registered tool's advertised JSON input schema before optional role-allowlist scoping, and every ordinary registered description stays within the 500-character raw ceiling pinned by `test_role_tool_scope.py`.
+MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty repository-relative path strings. A fuller reply can include the governing card, available state counts and action headings, and governing overviews once per call, nearest first. Eligible rows can add current rule text and related knowledge as space permits. Compact rows keep each path, its existence or refusal, card status where applicable, and any brief pointer with reported saved freshness. A pointer can name a missing or older brief, or one whose age is unknown. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. If refresh cannot proceed, the writer reports `briefsProblem` and leaves the saved brief as it was. Use native file tools for the source, card, overview and current saved brief. Use `knowledge_read` to locate whole records and proof evidence. The reader keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` at registration time in `AgentsRememberMCP.add_tool` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false. `create_server` enables listing-time schema compaction (`_compact_server_tool_schemas`, applied on copied `MCPTool` instances in `list_tools()` via `models/tools/tool_schema_compaction.py::compact_tool_schema` without mutating stored tools) before optional role-allowlist scoping, and every ordinary registered description stays within the 500-character raw ceiling pinned by `test_role_tool_scope.py`.
 
 Historical L109 composition declared 41 names after removal of `resolve_context`; pre-sync R111 and other 42-name accounts are historical. The current ordinary successor declares 44 names, including mounted `knowledge_write`, `user_settings_init`, architect `explainer_control` and leaf-scoped `citation_note_revision`. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. A successful role start puts missing requirement filenames before step-up advice so the names have priority in a short warning. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict.
 
@@ -385,7 +385,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
 
 
+
 - Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock. [389]
+
 
 - Citation preview adds modes to the existing declaration. [390]
 
@@ -599,7 +601,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
 - **Retained historical source account — superseded by the current route account:** The batch blob reader. [272]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
+
 - **Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
+
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
 
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
@@ -831,7 +835,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Ordinary checkout calls carry no currentness reading; installed builds compare loaded code with their package files. [397]
 - A stale installed build refuses declared publication writers, not reads or dry runs. [398]
 
-- The stale-writer refusal runs before dispatch. [399]
+- The stale-writer refusal runs before calling the registered tool handler. [399]
+
 - Each running server registers a live-process record that installation and status read back. [400]
 
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
@@ -857,11 +862,13 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
 
+
 - The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance. [423]
 
 - The memory leg writes the qualifying review fact while closing history, then refreshes route indexes and entity fingerprints. A failed prepublication refresh restores the closing bytes. [422]
 
 - Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write. [133]
+
 
 - Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The worklist gate uses the contract's recorded bases and exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
 
@@ -977,6 +984,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 - `register_server_binding` writes per-PID binding/ancestry records under `runtime/server-bindings/`, `live_server_bindings` reclaims dead/recycled records, and `harness_root_pids` locates root harness PIDs via `/proc`. [426]
+
 
 
 

@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "4636c7021495014a17bd00881441ca9f8376ac7e",
-    "content": "sha256:a5a4909b07f4e1f4a28cc33aef8fee76d82c880da17cef1212d6d4959f655d09",
+    "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
+    "content": "sha256:3eeb399bb272e3d10d98eeaf2dc0335b24d232acdbfe1ffcf1c52770196e1a03",
     "locator": {
       "kind": "symbol",
       "name": "_register_worktree_start_tools"
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -27,14 +27,14 @@
   "state": "open",
   "statement": "Tool schemas offer arguments that do nothing on a fresh installation: memory_mode here, and the target host-authority of user_settings_init.",
   "writer": {
-    "at": "2026-11-25T22:16:56+01:00",
+    "at": "2026-11-27T18:55:24+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261125-DEP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
     "task": "261125-DEP"
   }
 }

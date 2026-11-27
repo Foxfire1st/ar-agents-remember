@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-        "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+        "content": "sha256:bdbae024ff5ccdf5333b21b5cf71149be6c686c7080962aef40054bc972a2f15",
         "locator": {
           "kind": "file"
         }
@@ -21,11 +21,29 @@
     },
     {
       "anchor": {
-        "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-        "content": "sha256:7fae5cf30851fea2b6957ce1017b9a79794b5429844f648ff405f9e69a408e6d",
+        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+        "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
         "locator": {
           "kind": "symbol",
-          "name": "apply_read_only_marks"
+          "name": "read_only_annotations"
+        }
+      },
+      "id": "RLZ-1SRZR0",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Builds registration-time ToolAnnotations(read_only_hint=...) for MCPServer.add_tool and raises UnknownReadOnlyMark for unlisted tools, replacing post-registration mutation of _tool_manager._tools.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+        "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_only_annotations"
         }
       },
       "id": "RLZ-667KAE",
@@ -34,12 +52,12 @@
         "handoffEntry": "CAP-R01@v1 §2 bound pruning",
         "leaf": "261124-CAP-L1"
       },
-      "rationale": "Running this before pruning is what keeps an unclassified tool excluded for the role from shipping unmarked; it still fails server construction.",
+      "rationale": "Building ToolAnnotations(read_only_hint=...) during registration keeps an unclassified tool excluded for the role from shipping unmarked; UnknownReadOnlyMark still fails server construction before role narrowing.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
         "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
         "locator": {
           "kind": "symbol",
@@ -58,21 +76,11 @@
   ],
   "references": {
     "1": {
-      "note": "The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent.\n\nAnchor: `READ_ONLY_TOOLS` `MUTATING_TOOLS`",
+      "note": "The current partition marks retained capabilities, including mutating `retire_child`, and omits retired `dispatch_agent`.",
       "targets": [
         {
           "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
             "content": "sha256:43a88c177efadc6cf26038e3781f459f92feb21e390f14cc927f3620fa8bed43",
             "locator": {
               "kind": "symbol",
@@ -83,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
             "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
             "locator": {
               "kind": "symbol",
@@ -99,10 +107,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_only_hint"
             }
           },
           "kind": "code"
@@ -110,36 +119,39 @@
       ]
     },
     "3": {
-      "note": "Annotations are applied after registrars from the same partition.",
+      "note": "Registration-time `ToolAnnotations` are built from the same central partition and replace any registration-site hints.",
       "targets": [
         {
           "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The mutating set that now carries the settings initializer.\n\nAnchor: `MUTATING_TOOLS`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_only_annotations"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The mutating set that carries the settings initializer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
             "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
             "locator": {
               "kind": "symbol",
@@ -155,10 +167,33 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
-            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:515e6751da1e41c4735177904ce1465cc8b5cba96b2e5a1781cc82f85b8462da",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "EXPLAINER_READ_ONLY_TOOLS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:d60b5a9bf3306bde2f6dc246cec911729a36ab92b9c8397f4da3f3cc167cb41e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLAINER_MUTATING_TOOLS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_only_hint"
             }
           },
           "kind": "code"

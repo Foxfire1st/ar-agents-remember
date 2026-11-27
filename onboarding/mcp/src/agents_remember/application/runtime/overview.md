@@ -78,4 +78,4 @@ No Domain Documentation source is configured. No cross-repository implementation
 
 - Startup installs only the workspace tool writer, snapshots its launch-bound caller once and falls back to an unbound chat when that binding cannot be read. [7]
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
+- Preparation is declaration-only. list_tools produces its answer before scheduling start_after_discovery, and call_tool reaches the same latch as fallback. The sweep attempt consumes the latch even without config; dashboard autostart needs config/settings. The heavy sweep owner is imported only in a one-shot child with stdin=DEVNULL. Source order does not attest client receipt. [8]

@@ -94,4 +94,5 @@ Current source: The ordinary benign table has 44 distinct literal keys matching 
 
 
 
+
 - `call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. _ToolCallTimeout still reaches the ordinary sweep deadline handling and is classified as unvalidatable rather than as a product exception. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [15]

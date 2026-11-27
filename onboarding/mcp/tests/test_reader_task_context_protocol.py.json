@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-        "content": "sha256:28016fa8168937d0ed9e7e7ea1b4a0a07f34705a1c9ccc097b5c5ba671ce6259",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+        "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-        "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+        "content": "sha256:095f8aaee0209f06f66ea1fed664fe827bc588bee31b54ab8af35a08d82c3ed4",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
@@ -34,29 +34,30 @@
         "handoffEntry": "PNT-R04@v1 §4 / F10",
         "leaf": "260928-MIK-L90"
       }
-    },
-    {
-      "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-        "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
-        "locator": {
-          "kind": "symbol",
-          "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
-        }
-      },
-      "facet": "Builds its server through the product factory and completes the protocol exchange in a process where the extended request union is installed, where the bare-FastMCP fixture dropped the request.",
-      "id": "PRF-X4GZX5",
-      "invariant": "INV-X0BRG0",
-      "origin": {
-        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
-        "leaf": "260928-MIK-L70"
-      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+        "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
+        }
+      },
+      "id": "RLZ-J1B01E",
+      "invariant": "INV-RX14F5",
+      "origin": {
+        "handoffEntry": "DEP-R04@v2 Rule 1",
+        "leaf": "261125-DEP-L4"
+      },
+      "rationale": "Injects the slow tools/list coroutine by patching public self.server.list_tools instead of mutating self.server._lowlevel_server request handlers.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
         "locator": {
           "kind": "symbol",
@@ -74,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:0f12e34c0afbba96924c11edc11e02c82224dda336af787e44848d7f9c7d5412",
         "locator": {
           "kind": "symbol",
@@ -92,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+        "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
         "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
         "locator": {
           "kind": "symbol",
@@ -107,24 +108,6 @@
       },
       "rationale": "The one helper that puts a limit on the reader's protocol waits and turns a passed limit into the named assertion; the 60-second driver and the 3-second late-response check both go through it.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-        "content": "sha256:5e36922cc9e59959f18b38c7c8daace74db32b435cdd2a66c80c1b56a0c0d536",
-        "locator": {
-          "kind": "symbol",
-          "name": "RegisteredTaskReaderContextProtocolTests.setUp"
-        }
-      },
-      "id": "RLZ-Z4WCTE",
-      "invariant": "INV-X0BRG0",
-      "origin": {
-        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
-        "leaf": "260928-MIK-L70"
-      },
-      "rationale": "The fixture is where the server under test is composed; a bare FastMCP built here is what dropped every request after another test had installed the extended request union.",
-      "role": "enforcement"
     }
   ],
   "references": {
@@ -133,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-            "content": "sha256:98ef3fef775ced99c68c648f8e684236d5a21b03813e3e367f907a13a428f772",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+            "content": "sha256:e45c763e9c3a646b1ccb22c2f5c69e13dbfab85197e8d16e8b71fecf835f921d",
             "locator": {
               "kind": "file"
             }
@@ -144,12 +127,12 @@
       ]
     },
     "2": {
-      "note": "The factory that pairs the process-wide request union with its per-server dispatcher, through the tool registrars it runs.",
+      "note": "The product factory `create_server` composes `AgentsRememberMCP` with `SkillsExtension` and invokes `TOOL_REGISTRARS`.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
@@ -165,24 +148,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
             "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
             "locator": {
-              "end": 344,
+              "end": 336,
               "kind": "line_range",
-              "start": 332
+              "start": 324
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
             "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
             "locator": {
-              "end": 391,
+              "end": 383,
               "kind": "line_range",
-              "start": 376
+              "start": 368
             }
           },
           "kind": "test"
@@ -190,16 +173,15 @@
       ]
     },
     "4": {
-      "note": "The late-response case that holds its handler and starts its deadline after session initialization.\n\nAnchor: `` `test_late_tool_list_response_times_out_and_closes_the_handler` ``",
+      "note": "The late-response case that patches public `self.server.list_tools` to hold its handler and starts its deadline after session initialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-            "content": "sha256:28016fa8168937d0ed9e7e7ea1b4a0a07f34705a1c9ccc097b5c5ba671ce6259",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+            "content": "sha256:9615d90776677f97fb82508bb2afc0418ddc18b2d62f8e7c37265ee2484c0509",
             "locator": {
-              "end": 325,
-              "kind": "line_range",
-              "start": 295
+              "kind": "symbol",
+              "name": "test_late_tool_list_response_times_out_and_closes_the_handler"
             }
           },
           "kind": "test"
@@ -211,12 +193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
             "content": "sha256:e82cb62ec38ce20b0f5e1b1551de6ac58b094c8287bd5b8344f5305a2e1fbb21",
             "locator": {
-              "end": 120,
+              "end": 118,
               "kind": "line_range",
-              "start": 119
+              "start": 117
             }
           },
           "kind": "test"

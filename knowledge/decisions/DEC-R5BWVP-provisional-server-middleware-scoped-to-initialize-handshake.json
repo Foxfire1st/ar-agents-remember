@@ -1,0 +1,97 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed documented initialize-only ServerMiddleware against private SDK monkeypatching and deferred removal until mcp exposes a stable hook, constraining future mcp upgrades and server dispatch wiring."
+  },
+  "alternatives": [
+    {
+      "option": "Use documented ServerMiddleware from mcp.server.context strictly on the initialize method in preserve_handshake_extensions while keeping call_tool dispatch on public MCPServer.call_tool subclassing.",
+      "reason": "Preserves pre-2026 SEP-2640 capability fields without touching any private SDK attribute or placing provisional middleware on the tool-call path.",
+      "status": "chosen"
+    },
+    {
+      "option": "Monkeypatch mcp.server.lowlevel or ServerCapabilities internals to emit pre-2026 extension fields without middleware.",
+      "reason": "Couples the server to private SDK internals that DEP-R04@v2 forbids and that break across mcp 2.x releases.",
+      "reconsider_when": "Never under the public-API boundary; only a documented public SDK hook may replace middleware.",
+      "status": "rejected"
+    },
+    {
+      "option": "Remove ServerMiddleware entirely and configure initialize capability extension serialization through a stable non-middleware mcp SDK option.",
+      "reason": "mcp 2.3.0 provides no stable non-middleware hook for preserving pre-2026 initialize capabilities.extensions and capabilities.experimental.",
+      "reconsider_when": "When the pinned mcp SDK version adds a stable non-middleware hook for pre-2026 ServerCapabilities extension serialization or stabilizes ServerMiddleware.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "ServerMiddleware from mcp.server.context is the sole provisional SDK API retained in the repository, confined to initialize in skills_extension.py, while all tool registration, listing, compaction, dispatch, and tests stay strictly on stable public SDK APIs."
+  ],
+  "context": "Upgrading to mcp 2.3.0 strips pre-2026 ServerCapabilities.extensions and ServerCapabilities.experimental during initialize schema validation unless preserved through a server hook; DEP-R04@v2 retired all private SDK attributes and required any retained provisional SDK API to be explicitly bounded and recorded.",
+  "decider": "Developer rulings D998/D1003 and DEP-R04@v2 Rule 2",
+  "id": "DEC-R5BWVP",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
+        "content": "sha256:ae91c1f63a0c838b7f3f2af3a36bd303a7b56bdebf3e07b1450f15c8d115086b",
+        "locator": {
+          "kind": "symbol",
+          "name": "preserve_handshake_extensions"
+        },
+        "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+        "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "b89cbe63f638861e3ac4ecb5ff20449a96ec67eb",
+        "content": "sha256:b6a5a41ee2069fb9a09ea3411ab44ddd4ef17e08275624610d5c0b91af0187fb",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        },
+        "path": "mcp/pyproject.toml"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "dep-l4-curator-ingest.json"
+    },
+    "handoffEntry": "decision-provisional-server-middleware",
+    "leaf": "261125-DEP-L4",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-27T21:28:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L4",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "task": "261125-DEP"
+  }
+}

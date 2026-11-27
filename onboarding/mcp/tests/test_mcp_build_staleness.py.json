@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
-        "content": "sha256:bc013fbf2b8cc9dbb68a55b312587bcc82f5fa19d0d43b89140afb33715461f9",
+        "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+        "content": "sha256:53f8e5c5a3ea1816d04ecf8c834d814950d6c4e54a080c9d6f0ef6da02b8a71d",
         "locator": {
           "kind": "symbol",
           "name": "MCPBuildStalenessTests.test_each_publication_refuses_before_its_handler_and_dry_run_answers"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
-        "content": "sha256:43abc2473b23e26293e581b5888ca71cf63a8a4c2432541a6fb511381842a0ed",
+        "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+        "content": "sha256:6ecfe11406e7d09b2546af84258bd628c8f6be5f5a0e4ed83f8b595734aeb9a5",
         "locator": {
           "kind": "symbol",
           "name": "MCPBuildStalenessTests.test_reads_messages_planning_and_unknown_tools_are_not_publication"
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
-            "content": "sha256:c55e3861ce3f2444c730e4a2de460e02797c9f06089a2fd14cd0b48856169eb6",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "content": "sha256:4e6c674fb1d046a2f4382aed79e8278d4744b7fe65baea730a43ba37d435b5ef",
             "locator": {
               "kind": "symbol",
               "name": "test_stale_refusal_is_structured_over_the_mcp_transport"
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
-            "content": "sha256:bc013fbf2b8cc9dbb68a55b312587bcc82f5fa19d0d43b89140afb33715461f9",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "content": "sha256:53f8e5c5a3ea1816d04ecf8c834d814950d6c4e54a080c9d6f0ef6da02b8a71d",
             "locator": {
               "kind": "symbol",
               "name": "test_each_publication_refuses_before_its_handler_and_dry_run_answers"
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
-            "content": "sha256:43abc2473b23e26293e581b5888ca71cf63a8a4c2432541a6fb511381842a0ed",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "content": "sha256:6ecfe11406e7d09b2546af84258bd628c8f6be5f5a0e4ed83f8b595734aeb9a5",
             "locator": {
               "kind": "symbol",
               "name": "test_reads_messages_planning_and_unknown_tools_are_not_publication"
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
             "content": "sha256:d6c9df896f44065ab2d4a207807dc9a889428baf081c53abcf6e4873281ce3c8",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
             "content": "sha256:ff2fcc5e70afaf5a239fa58e9e3257401bd9f894de2ec91bc967713c8787297d",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
             "content": "sha256:62f5a4c3f11c814bf74dfc9933d288d992b1ed8fa233dc31241930e434c433a9",
             "locator": {
               "kind": "symbol",
@@ -139,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef78ad99d5c8001880d5945657d8e65ad61785a4",
+            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
             "content": "sha256:5350d5c90a18a448857c2760e4e175a1bc7611bcec0d1386ce9a5ae9ac506530",
             "locator": {
               "kind": "symbol",

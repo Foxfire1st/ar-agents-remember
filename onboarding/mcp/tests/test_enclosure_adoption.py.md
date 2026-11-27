@@ -27,7 +27,9 @@ The dry-run witness keeps the delivered envelope free of `operation`, but assert
 
 
 
+
 - Operation identity is read from the whole result while dry-run and next-action assertions remain. [2]
+
 
 
 

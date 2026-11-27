@@ -66,12 +66,12 @@
       ]
     },
     "3": {
-      "note": "The live registration is compared to this tuple, in order, by the inventory suite.\n\nAnchor: `PublicSurfaceInventoryTests`, `test_live_registration_matches_the_public_inventory_in_order`",
+      "note": "The live registration is compared to this tuple, in order, by the inventory suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
-            "content": "sha256:99af9a6a427cf236127e24d5be61389107383dbbf702a8547b09e09dc08713ed",
+            "blob": "d31651242c5427f608d0446cf2911f4eeddf2db3",
+            "content": "sha256:5ceceb6f8b3a5bc05205e7ce794203a7f6c3468f34a7ffa5c7c46475ba9c0a0b",
             "locator": {
               "kind": "symbol",
               "name": "PublicSurfaceInventoryTests"
@@ -82,8 +82,8 @@
         },
         {
           "anchor": {
-            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
-            "content": "sha256:9b5dae6c11fe566eb7b371edc887037e07c8a9706b502cc29849e48a4b701248",
+            "blob": "d31651242c5427f608d0446cf2911f4eeddf2db3",
+            "content": "sha256:e3aa9494471975df706af67676bc8bc07bac3e5dd5867d82ee81de83bebe74e1",
             "locator": {
               "kind": "symbol",
               "name": "test_live_registration_matches_the_public_inventory_in_order"
@@ -126,21 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:185d879c207c0934b116aa247336e7f9cfb0b4fb73b704363101242d2713e15e",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 33
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:e1cfb1d0b54ab0387e3c407d5a4ce057611cb133006b605a3496a680bc112567",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_REGISTRARS"

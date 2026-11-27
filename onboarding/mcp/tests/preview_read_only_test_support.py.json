@@ -150,12 +150,12 @@
       ]
     },
     "9": {
-      "note": "The current preview regression judges a real workspace-river append without a session lifecycle and rejects a later mode change.\n\nAnchor: real start, second-leaf preview and mode-change rejection",
+      "note": "The current preview regression judges a real workspace-river append without a session lifecycle and rejects a later mode change.",
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:ed7eee2f5f9cac7750d0d807cd7eaf5c430551be44550027e1bf66f763c92e68",
             "locator": {
               "end": 871,
               "kind": "line_range",

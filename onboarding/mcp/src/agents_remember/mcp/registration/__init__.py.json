@@ -8,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:25c0d4ee9cd9492618f7b68df43c088291133df007c6ca1df1c08b7142b556f7",
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:d4a3177819f2f7372a5f1f177f9e5cd66f9efce016ca77fd4d4650b4e5082bdf",
             "locator": {
               "kind": "file"
             }
@@ -65,12 +65,12 @@
       ]
     },
     "7": {
-      "note": "The live tool-list comparison checks the advertised registration against the roster.\n\nAnchor: `test_live_registration_matches_the_public_inventory_in_order`",
+      "note": "The live tool-list comparison checks the advertised registration against the roster.",
       "targets": [
         {
           "anchor": {
-            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
-            "content": "sha256:bee5e062fa3ef3355c514ba67de789acc44794781f2f91fe2b2a9828ba61c87c",
+            "blob": "d31651242c5427f608d0446cf2911f4eeddf2db3",
+            "content": "sha256:655985d0e0f44baa439b3839280a8c2bf06ba8ba225d9edc72b33ce0f611942f",
             "locator": {
               "kind": "file"
             },
@@ -81,14 +81,15 @@
       ]
     },
     "8": {
-      "note": "`TOOL_REGISTRARS` declares the ten family registrars in order.",
+      "note": "`TOOL_REGISTRARS` declares the nine ordinary tool-family registrars in order.",
       "targets": [
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:e1cfb1d0b54ab0387e3c407d5a4ce057611cb133006b605a3496a680bc112567",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
             }
           },
           "kind": "code"
@@ -96,16 +97,15 @@
       ]
     },
     "9": {
-      "note": "The registration module leaves compact serialization, application services and process composition to `create_server`.",
+      "note": "The registration module leaves `SkillsExtension` assembly, application services, and process composition to `create_server`.",
       "targets": [
         {
           "anchor": {
-            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-            "content": "sha256:8ed6cfec39c93d129d6bc8f8dd0bc802ab7b24aef5ff4d8ce96a0a22ef2033f1",
+            "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
+            "content": "sha256:51b87e785c6103d4d575473cf14dacc07290755f7749b8fe35be49dfd6ca6b9f",
             "locator": {
-              "end": 8,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "ToolRegistrar"
             }
           },
           "kind": "code"

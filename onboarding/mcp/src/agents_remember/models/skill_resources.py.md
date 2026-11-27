@@ -118,7 +118,9 @@ extension specification, SEP-2640).
 - Provenance and the constant trust statement every served file carries. [12]
 - The frontmatter reader that fills the verbatim map, refusing constructs it does not implement. [13]
 - The reading half that builds these values and re-checks the revision on delivery. [14]
+
 - The two mandatory methods that return these entries. [15]
+
 - The response contracts that project these values onto this server's own tool surface. [16]
 
 - The same no-`mcp`-import constraint recorded for the roster leaf. [17]

@@ -134,12 +134,12 @@
       ]
     },
     "13": {
-      "note": "Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches.\n\nAnchor: `test_declarations_match_only_the_rows_that_deliver_them_and_mark_every_item`",
+      "note": "Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches.",
       "targets": [
         {
           "anchor": {
-            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
-            "content": "sha256:4f1588452352498062ecf77e5ebc010a470552fc6638e32791882bf0a76cb122",
+            "blob": "f6798605ba745f70849c76c1f7e5881f7e897155",
+            "content": "sha256:52c2aa95417d74fce8560a9ef2a31e493a7fd16f683d2d3e81b93d715ad11f2a",
             "locator": {
               "kind": "file"
             },
@@ -154,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+            "blob": "f6798605ba745f70849c76c1f7e5881f7e897155",
             "content": "sha256:e5843fff97a252979221547a2bb897adadfa857a52373ed518f29daac2bdcfec",
             "locator": {
               "kind": "symbol",

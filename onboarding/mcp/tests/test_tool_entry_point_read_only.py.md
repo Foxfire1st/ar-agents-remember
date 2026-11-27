@@ -22,4 +22,5 @@ A refusal is still an invocation: it is swept like an answer. The ignored prefix
 
 - Every advertised read changes no file of the coordination root or the repositories. [1]
 
+
 - The sweep catches a git metadata write, a runtime write outside the index and an ordinary write. [2]

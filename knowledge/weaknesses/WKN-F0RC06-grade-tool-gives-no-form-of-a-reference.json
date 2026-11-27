@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
-    "content": "sha256:505de2315ee3a77ab21a7a47668ef15276a01c5f75e07a421d3757d87b1d1780",
+    "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
+    "content": "sha256:bdc72cc56260caf07e00c59e079348d5ff70772f2a382fc07e62bc2a1ca596a6",
     "locator": {
       "kind": "symbol",
       "name": "register_judgment_tools"
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -27,21 +27,14 @@
   "state": "open",
   "statement": "The description of the explainer's tool grade gives no form of a reference, a grade asked in words is refused as not-graded with fingerprint-unavailable, and the review page shows nothing of a refused grade; a grade is recorded only when the explainer passes the bare id of a block.",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T18:55:24+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "task": "261125-DEP"
   }
 }

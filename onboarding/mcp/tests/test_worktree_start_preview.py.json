@@ -3,12 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
         "locator": {
-          "end": 761,
+          "end": 764,
           "kind": "line_range",
-          "start": 744
+          "start": 747
         }
       },
       "facet": "A modified earlier log line violates the byte-prefix append requirement.",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
         "locator": {
-          "end": 741,
+          "end": 744,
           "kind": "line_range",
-          "start": 735
+          "start": 738
         }
       },
       "facet": "A differently named file beside the daily log is rejected, not hidden by excluding the logs subtree.",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:ebc3e5d8445732b38d109d03ffd984cb0a0711086022ba273727731986d3376e",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:90ee43d00b4091c352e60d04d5d85423bee2482a8bb226ddea37f30fc928d614",
         "locator": {
           "end": 431,
           "kind": "line_range",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:739b630a13646eca56a5eaf6bbc7662824a0c69607e4f7eabfdf03e163513439",
         "locator": {
           "end": 297,
           "kind": "line_range",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:40aaf8bbd27b01a287f6f90ae5f9bdde8314909bdceb45c2115c6125c493ca29",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:655c5857d27bf822b309257a400fb1ddbe9171451fde03360fd411903f6d9c27",
         "locator": {
           "end": 620,
           "kind": "line_range",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:fc8e708e8ab1b4ed6fb78a9f938ab801cb90742a75865da0cb34d5a98c675099",
         "locator": {
           "end": 556,
           "kind": "line_range",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:1e741ed976629a77686afd756032c6ee36ee1655d527eda25e1184f2d06f7081",
         "locator": {
           "kind": "symbol",
           "name": "test_observer_event_mode_change_is_rejected"
@@ -128,12 +128,12 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
         "locator": {
-          "end": 830,
+          "end": 833,
           "kind": "line_range",
-          "start": 822
+          "start": 825
         }
       },
       "facet": "A directory mtime touch without an admitted new direct child is rejected.",
@@ -146,8 +146,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:7c9ed3bc2d19eb0e45884a79a57ea5bb4d4c1da6be213e4d7eb5fbcd7b03fae8",
         "locator": {
           "end": 502,
           "kind": "line_range",
@@ -164,12 +164,12 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
         "locator": {
-          "end": 819,
+          "end": 822,
           "kind": "line_range",
-          "start": 811
+          "start": 814
         }
       },
       "facet": "An unrelated old-day detail folder is not admitted by daily-record-shaped spelling.",
@@ -182,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:0a37a77b5b8e92cf45118537baeddd6b31cb3309843d4e8a862c2657a5d90dae",
         "locator": {
           "kind": "symbol",
           "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -199,12 +199,12 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
         "locator": {
-          "end": 772,
+          "end": 775,
           "kind": "line_range",
-          "start": 764
+          "start": 767
         }
       },
       "facet": "A new detail file with no new line naming it is rejected.",
@@ -217,8 +217,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:739b630a13646eca56a5eaf6bbc7662824a0c69607e4f7eabfdf03e163513439",
         "locator": {
           "end": 297,
           "kind": "line_range",
@@ -235,12 +235,12 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
         "locator": {
-          "end": 808,
+          "end": 811,
           "kind": "line_range",
-          "start": 799
+          "start": 802
         }
       },
       "facet": "An unrelated old-day line path is not admitted by daily-record-shaped spelling.",
@@ -253,12 +253,12 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
         "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
         "locator": {
-          "end": 796,
+          "end": 799,
           "kind": "line_range",
-          "start": 775
+          "start": 778
         }
       },
       "facet": "A modified earlier workspace event violates the byte-prefix append requirement.",
@@ -273,8 +273,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:2fe880f036e6b8c7fe703c7835323ce88b710f8a9ab7a1a3d3e052b661c61628",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:75f05c2dde7cfdd916b50be75d90e3e58af8f8b56f0023538782749a08597587",
         "locator": {
           "kind": "file"
         }
@@ -290,8 +290,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:236fbaa96427c32c33506b1c05addb5558a9159f342a2b276d5cd839af265ac3",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:b7759ac6f3f41ed1147e7569ef2c8b220cee7d6fb11ca4da62b77be8e7dd97aa",
         "locator": {
           "kind": "symbol",
           "name": "test_a_series_bootstrap_retry_accepts_the_contract_it_already_published"
@@ -308,8 +308,8 @@
     },
     {
       "anchor": {
-        "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-        "content": "sha256:35af32492db76dd4eebce6e27c507d322ce74de4e0ae76ce420b5f4cf8f38d45",
+        "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+        "content": "sha256:f23d01c5e69565ee7e8fc7762a881394a704f160527563d6b1ace4d32b38693b",
         "locator": {
           "end": 260,
           "kind": "line_range",
@@ -332,8 +332,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:7f4419a2b38af0c66acde0e55d0b5622f5276a61841548d86598f0014393e7c2",
             "locator": {
               "end": 725,
               "kind": "line_range",
@@ -349,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
             "content": "sha256:a86b1d3b4dcaf22dffa4ddc8ec4271b03e6e8bb2606eb4890fc57c6f51e00ef4",
             "locator": {
               "kind": "symbol",
@@ -365,8 +365,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:56275bf5b4609b89b6074d0cf83efa2a610055f8d37c99ac0f3204b3d991959f",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:d6268df9418e09e7a64ae40bf46fde1d2fd459cba4bf40cb2cc7e50ecf2df84c",
             "locator": {
               "end": 871,
               "kind": "line_range",
@@ -382,8 +382,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:cdb208d16f99920299df1a6ac241dfa2cc9345527e92b38759da9155d403ca67",
             "locator": {
               "kind": "symbol",
               "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
@@ -398,8 +398,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:ff3d76917193214490f84fe25909e8e34e312d5782fcb4d5eaf9d5255421f3e7",
             "locator": {
               "kind": "symbol",
               "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
@@ -414,8 +414,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:7f4419a2b38af0c66acde0e55d0b5622f5276a61841548d86598f0014393e7c2",
             "locator": {
               "end": 725,
               "kind": "line_range",
@@ -431,8 +431,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:ebc3e5d8445732b38d109d03ffd984cb0a0711086022ba273727731986d3376e",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:90ee43d00b4091c352e60d04d5d85423bee2482a8bb226ddea37f30fc928d614",
             "locator": {
               "end": 431,
               "kind": "line_range",
@@ -444,12 +444,12 @@
       ]
     },
     "18": {
-      "note": "Wrong source/parent assertions refuse in preview and actual calls with corrected executable arguments and no parent publication.\n\nAnchor: `` `test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes` ``",
+      "note": "Wrong source/parent assertions refuse in preview and actual calls with corrected executable arguments and no parent publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:40aaf8bbd27b01a287f6f90ae5f9bdde8314909bdceb45c2115c6125c493ca29",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:655c5857d27bf822b309257a400fb1ddbe9171451fde03360fd411903f6d9c27",
             "locator": {
               "end": 620,
               "kind": "line_range",
@@ -465,8 +465,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:080663dfa3f4222320b0db8a233c42a2091aa8f6d1ae5227416ecb2a05278073",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:b44f16bae6be059a01048ab10c9673826dfbc26808ed2e734fa2b8e12f6e6e77",
             "locator": {
               "end": 331,
               "kind": "line_range",
@@ -482,8 +482,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:1e741ed976629a77686afd756032c6ee36ee1655d527eda25e1184f2d06f7081",
             "locator": {
               "kind": "symbol",
               "name": "test_observer_event_mode_change_is_rejected"
@@ -494,12 +494,12 @@
       ]
     },
     "7": {
-      "note": "Fixture world is always external-memory.  Anchor: `PreviewFixture`\n\nAnchor: `` `PreviewFixture` ``",
+      "note": "Fixture world is always external-memory.  Anchor: `PreviewFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:35af32492db76dd4eebce6e27c507d322ce74de4e0ae76ce420b5f4cf8f38d45",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:f23d01c5e69565ee7e8fc7762a881394a704f160527563d6b1ace4d32b38693b",
             "locator": {
               "end": 260,
               "kind": "line_range",
@@ -515,8 +515,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:739b630a13646eca56a5eaf6bbc7662824a0c69607e4f7eabfdf03e163513439",
             "locator": {
               "end": 297,
               "kind": "line_range",
@@ -532,8 +532,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
-            "content": "sha256:36e9ba2dd735e9c299b8956bc5d2846f5427a811ae0411d60ca250e68495c2bf",
+            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
+            "content": "sha256:2b1b27bd23c75f125a02f2a075bccd0ddce0885533ac83e34d102f66e2877fa0",
             "locator": {
               "kind": "symbol",
               "name": "test_disabled_start_is_refused_before_any_publication"

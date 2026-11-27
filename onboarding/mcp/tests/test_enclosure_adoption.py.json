@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
-            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
+            "blob": "dc768ffd6eea5313fb910164e735ace6f29201e5",
+            "content": "sha256:a283f2d6effb1a6f1395d9204a89c6afc86af838bf78fd68a8a979ffb2cac29b",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "Operation identity is read from the whole result while dry-run and next-action assertions remain.\n\nAnchor: `test_dry_run_is_the_default_and_writes_nothing`",
+      "note": "Operation identity is read from the whole result while dry-run and next-action assertions remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
-            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
+            "blob": "dc768ffd6eea5313fb910164e735ace6f29201e5",
+            "content": "sha256:a283f2d6effb1a6f1395d9204a89c6afc86af838bf78fd68a8a979ffb2cac29b",
             "locator": {
               "kind": "file"
             }
@@ -37,8 +37,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
-            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
+            "blob": "dc768ffd6eea5313fb910164e735ace6f29201e5",
+            "content": "sha256:a283f2d6effb1a6f1395d9204a89c6afc86af838bf78fd68a8a979ffb2cac29b",
             "locator": {
               "kind": "file"
             }

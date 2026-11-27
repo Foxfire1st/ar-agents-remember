@@ -360,9 +360,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. [107]
 - The seat-addressed routing rule for a caller with no task document: `compile_launch_capsule` dispatches to `_compile_free_agent` (`role_capsules/launch.py:511`), which builds `CapsuleSeatAddress` and calls `routed_admission_for` (`:533-537`); `_compile_without_task_enclosure` (`:412`) is the different path that receives an admitted task document or refuses its missing enclosure. [108] [426]
 - The declared exports that make the new names this route's public surface. [109]
-- The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
-- The retained serving launch module owns the launch request identity value; the compiler and selection live above it, and the removed terminal launch points and resolver are not current callers. [111]
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The cited compile-tool boundary is retired; current capsule preparation uses the native launch/compiler route. Historical account: The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
+
+- The retained serving launch module owns the launch request identity value; the compiler and selection live above it, and the removed terminal launch points and resolver are not current callers. [111]
 
 - The `task_reopen_payload` MCP payload builder is declared at this entry point; no `skills_install_payload` builder exists. Anchor: "def task_reopen_payload(" [112]
 

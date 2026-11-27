@@ -18,7 +18,7 @@ The complete original account below, including Purpose, Commentary, invariants, 
 
 ## Purpose
 
-The knowledge operation family module: the one `register_knowledge_tools(server, config)` that declares its family against the server it is handed and delegates every operation to the payload builders in `agents_remember.mcp.tools.knowledge`. It is "**appended** to `TOOL_REGISTRARS`, never inserted: FastMCP publishes tools in registration order, so every existing name keeps the position it was advertised at." **It declares four operations: `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check` and `knowledge_write`,** through `_register_knowledge_read`, `_register_knowledge_diff`, `_register_knowledge_integrity_check` and `_register_knowledge_write`. **`knowledge_change` and `knowledge_project` are no longer registered**: `knowledge_write` is the write plane's mounted route and runs the same file writer as the CLI, and no projection renderer is registered. It deliberately performs no domain reasoning, holds no state, validates nothing itself and opens no dataset; the runtime configuration supplies it the workspace root a read falls back to when the caller names no repository, and the coordination root.
+The knowledge operation family module: the one `register_knowledge_tools(server, config)` that declares its family against the server it is handed and delegates every operation to the payload builders in `agents_remember.mcp.tools.knowledge`. It is "**appended** to `TOOL_REGISTRARS`, never inserted: `MCPServer` publishes tools in registration order, so every existing name keeps the position it was advertised at." **It declares four operations: `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check` and `knowledge_write`,** through `_register_knowledge_read`, `_register_knowledge_diff`, `_register_knowledge_integrity_check` and `_register_knowledge_write`. **`knowledge_change` and `knowledge_project` are no longer registered**: `knowledge_write` is the write plane's mounted route and runs the same file writer as the CLI, and no projection renderer is registered. It deliberately performs no domain reasoning, holds no state, validates nothing itself and opens no dataset; the runtime configuration supplies it the workspace root a read falls back to when the caller names no repository, and the coordination root.
 
 **Historical (retired by MIK-R26).** The earlier five-operation description below — including the registrars for `knowledge_change` and `knowledge_project` and their dataset-selection routes — is retained as the record of the removed registrations; the current module's four registrars are those named above.
 
@@ -36,7 +36,7 @@ Knowledge read/write/diff/integrity handlers resolve the existing request classe
 
 **Only the read registrar consumes runtime configuration.** It forwards the caller's `repositoryRoot` unchanged and supplies `workspace_root` separately as the default repository, alongside `coordination_root` for the derived-index cache. The builder completes a source-resolution pair or names neither half; this registrar does not substitute a root without a code tree. The caller names the converted memory tree with `memoryRoot`, never `databasePath` or a caller-selected index namespace. Diff and integrity take the server alone. The removed `knowledge_change` and `knowledge_project` registrations remain historical only; their authoring route is the CLI file writer, not a refusing mounted tool.
 
-**The three operations are the interface another leaf mounts, and the reviewer surface is not here.** The Intent Reviewer, its cockpit route and its browser client belong to `KS-R22@v1`; this module declares no FastMCP resource, no route, no panel and no client, and its only MCP effect is the three `@server.tool()` registrations.
+**The three operations are the interface another leaf mounts, and the reviewer surface is not here.** The Intent Reviewer, its cockpit route and its browser client belong to `KS-R22@v1`; this module declares no `MCPServer` resource, no route, no panel and no client, and its only MCP effect is the `@server.tool()` registrations.
 
 **The registration order is part of the advertised contract, and this family is appended at the tail.** The roster tail order and the registry tail order record the same decision as the handler order rather than independent choices.
 
@@ -136,12 +136,15 @@ No configured domain documentation could be checked.
 
 
 
+
 - The integrity registrar and handler report validator counts and violations and add a leaf's latest worklist when contractPath is named; runId, inputDigest and compatible are not fields of the current registered contract. [15]
+
 
 - The request value objects and payload builders this module delegates to, imported rather than re-declared here. [16]
 
 
 - The registry registering the knowledge family in TOOL_REGISTRARS (before register_explainer_tools) and the live-registration test that compares the resulting order against the advertised roster. [17]
+
 
 
 - The three advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. [18]
@@ -162,17 +165,23 @@ No meaningful cross-repo references found.
 - The four registered handlers: the read registrar that forwards the caller's own root, the configured workspace root, configured repositories, and coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone. [11]
 
 
+
 - The registered reader names all eleven views (`source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, `consolidation_proposal`) and forwards their filters including `masterId`. Its writers view returns bounded aggregates and a full report path. [12]
+
 
 
 - The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. [13]
 
+
 - The comparison registrar forwards the selected trees and scope to the comparison handler. The mounted response names counts, bounded decision records and the full report. [14]
+
 
 - Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced. [22]
 
 
+
 - The shared registrar tuple lists this family before the explainer. Its entry point registers read, diff, integrity and write in that order. The initial three-operation description remains in the module docstring. [9]
+
 
 
 - The registration keeps all eleven views (including `consolidation_proposal` with `masterId`), auto-paired code-tree arguments, `recordId`/`recordIds`, and both writer commands within the 500-character raw description ceiling (476 characters). [23]

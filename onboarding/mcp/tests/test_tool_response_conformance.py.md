@@ -41,7 +41,7 @@ Two layers answer different questions. `ToolResponseSurfaceTests` checks registr
 The helpers are read-only instruments over source text: `adapter_tool_ids` (`:91-113`) parses the
 adapter's own id literals, `choke_point_handlers` (`:116-151`) counts module-level handlers against
 `_tool_payload(...)` call sites by AST, `advertised_description` (`:154-169`) reads the description
-off the **registered** `FastMCP` surface, and `literal_keyword_values` (`:231-248`) derives the
+off the **registered** `MCPServer` surface, and `literal_keyword_values` (`:231-248`) derives the
 `next_tool=` literals the lifecycle package actually passes. `_RegistrationStub` (`:172-176`) is a
 two-method registrar double, not a fake of the product.
 
@@ -166,7 +166,8 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-- The structural sweep compares the imported response registry, AST-derived adapter IDs, advertised roster and actual registered FastMCP listing. Registry and adapter differences must be empty in both directions. [1]
+- The structural sweep compares the imported response registry, AST-derived adapter IDs, advertised roster and actual registered MCPServer listing. Registry and adapter differences must be empty in both directions. [1]
+
 
 - The fixtures' models are the registry's own objects.
 
@@ -215,6 +216,8 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 
 - The roster tuple contains 44 names. The conformance declarations set ROSTER_SIZE to 44, TOOL_MODULE_COUNT to 14 and TOOL_HANDLER_COUNT to 46. Structural assertions check the exact populations and derive strict and flexible sets from both base classes and extra configuration. [22]
 
+
 - Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [23]
+
 
 - The architecture-fitness lane selects mcp/tests/test_tool_response_conformance.py. Execution evidence is recorded separately. [20]

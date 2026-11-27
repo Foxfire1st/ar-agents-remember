@@ -34,7 +34,7 @@ direct_execution_grant_payload shapes the strict result and the pure facade expo
 
 The present facade groups retained core/context/install, knowledge reader, memory, worktree/direct, explicit enclosure adoption, task/reopen/finalize/coherence/queue and native role-agent adapters. role_agents.py::retire_child_payload adapts receipt-tracked retire_child to cli/role_retire.py::retire_native_seat; original starter and active-turn interruption authority remain owner checks. structural_agent.py/dispatch adapters and exact-id terminal/readiness/inbox/nudge/split-gate/block/wait adapters are absent, not internal calling alternatives. Removed benchmark/providers/capsule_serving/leaf_ref files are not tools-directory owners. No adapter polling replaces the removed worktree-status wait.
 
-`mcp/registration/` owns declarations and their order; `server.py` is described by that registration package as process wiring. Its present ordinary registrar tuple contains ten family registrars, including a historically named capsule/skill registrar that now registers resources and extension methods, not tools. The skill surface provides `skills/list`, `skills/get` and ordinary skill-file resources. `skill://index.json` is this server's separate convenience discovery resource. Optional directory reading is neither implemented nor declared. Serving skill text does not activate a skill, grant permission or turn server text into trusted local-file instructions. The former capsule and skill-catalog payload builders and their corpus-override seam are historical, not current MCP tool capabilities.
+`mcp/registration/` owns declarations and their order; `server.py` is described by that registration package as process wiring. Its present ordinary registrar tuple contains nine tool-family registrars, while `capsule_serving.build_skills_extension` constructs the SEP-2133 `SkillsExtension` passed to `MCPServer(extensions=[...])` at construction time. The skill surface provides `skills/list`, `skills/get` and ordinary skill-file resources. `skill://index.json` is this server's separate convenience discovery resource. Optional directory reading is neither implemented nor declared. Serving skill text does not activate a skill, grant permission or turn server text into trusted local-file instructions. The former capsule and skill-catalog payload builders and their corpus-override seam are historical, not current MCP tool capabilities.
 
 > **Retained historical structural/terminal account — these adapters are absent at both the base and current tree; consult this account only when examining that retired source epoch:**
 > Structural dispatch is addressed by canonical task document and role, with a complete brief. The registered contract distinguishes a proven plane-hosted caller from an ambient launcher without a hosted identity. Hosted callers require authorized direct-child scope; ambient launches have no parent seat but still validate role against document altitude. A present stale, invalid, mismatched, unbound or unauthorized plane identity must refuse rather than switch to ambient mode. Harness selection, runtime identities, readiness, initial brief pinning, delivery correlation and retries remain private control-plane concerns. The adapter itself delegates the request and an override-built runtime to the structural application owner.
@@ -180,7 +180,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. [31]
 
+
 - This server's own index resource, kept deliberately distinct from that method. [32]
+
 
 - Role-agent MCP payload builders delegate start and message calls to the Paseo role tools while retaining the addressed role in the tool-event context. [37]
 > Retained earlier citation wording: - Current imported source owns this scoped route boundary. [37] - - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.
@@ -214,6 +216,7 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 - **Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools [59]
 
 
+
 - The L111 predecessor model-owned public roster had41 after resolve_context removal; the current ordinary source has 44 (including mounted user_settings_init, citation_note_revision and explainer_control; the earlier 42-name epoch is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
 
 
@@ -237,7 +240,8 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 - Read carries tree/index state and partial-index completeness. [34]
 - Legacy paths and unheld current seeds refuse truthfully. [35]
 
-- Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
+- Current ordinary model roster has 44 names, including citation_note_revision, nine ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
+
 
 
 - The seam that pages a converted tree's read, and the per-page extras. [4]

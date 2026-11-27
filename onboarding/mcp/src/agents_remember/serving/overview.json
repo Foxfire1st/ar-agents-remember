@@ -632,6 +632,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
@@ -697,21 +709,8 @@
         },
         {
           "anchor": {
-            "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
-            "content": "sha256:afe208da1375b31816ed0a9d1825ec726f09e649a6a28c733576e072ef19c953",
-            "locator": {
-              "end": 505,
-              "kind": "line_range",
-              "start": 481
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
-            "content": "sha256:c4c43221a3995a9f930d58dea927134267df383098a679ed4d11a05d21f2a1c9",
+            "blob": "22f6f0e290a01b36bc8174aec9d428a7638b0bb7",
+            "content": "sha256:f80331f8cb1a5e3abd4c9df2faaee3b3abee657272f4c742b988baa714a32a1f",
             "locator": {
               "kind": "file"
             },

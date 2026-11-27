@@ -206,6 +206,7 @@ The closeout preview and apply descriptions state that worktree closeout checks 
 
 - Closeout docstrings name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. [13]
 
+
 ## Evidence
 
 ### Docs References
@@ -233,7 +234,9 @@ Source: mcp/src/agents_remember/mcp/registration/closeout.py
 - Refuse to stage anywhere except a task's own throwaway worktree. [5]
 - Refuse before staging when the checkout has unresolved conflicts. [6]
 - Prepare and certify a fresh candidate through the ordinary gate entry point. [7]
+
 - The case that pins the checkpoint description as a partial publication and denies it is the pause. [8]
+
 - The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. [9]
 
 ### Cross-Repo References
@@ -271,6 +274,7 @@ Worktree closeout and direct landing expose optional message fields syntacticall
 
 - The registrar composes four command groups and mounts task-addressed control with retired-journal guidance. Enclosure adoption belongs to the separate worktree registrar. [10]
 
+
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
 > **Retained historical source account — superseded by the current contract:**
@@ -304,6 +308,8 @@ Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
 - Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. [1]
 
+
 - This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof. [11]
+
 
 - Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call. [12]

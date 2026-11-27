@@ -12,7 +12,7 @@
     "The binding validates repository/task/leaf workspace shape, required values and a positive integer generation before registration.",
     "Registration supplies the same explainer implementations on the already-created server instance.",
     "Calls to the four explainer-owned tools check the launch binding against the current seat before their handler runs.",
-    "Central read-only annotations are applied after the combined registration; they describe capability and do not grant permission or prove process-wide purity."
+    "Central read-only annotations are attached at registration time via AgentsRememberMCP.add_tool (enforce_read_only_marks=True); they describe capability and do not grant permission or prove process-wide purity."
   ],
   "exclusions": [
     "An ordinary process with neither marker nor binding retains the ordinary roster.",
@@ -31,27 +31,20 @@
     "leaf": "260928-MIK-L183",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A valid launch-owned explainer binding adds the explainer’s four tools to AR’s general tools on the normal task server. Calls to those four tools revalidate the exact launched seat. Invalid or lost marker-backed launch bindings refuse service, and every registered tool receives its central read-only mark; an unclassified registered tool prevents server creation.",
   "supersedes": [],
+  "title": "Bound explainer server adds four tools with seat guard and read-only marks",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L9",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-27T21:28:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L4",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2db9b00b-8a63-5de8-aa57-db3b054d6d43",
+    "task": "261125-DEP"
   }
 }

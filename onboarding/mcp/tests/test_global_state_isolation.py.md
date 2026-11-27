@@ -43,6 +43,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 
+
 ## Bootstrap Ownership
 
 The state owner lives in `agents_remember_test_support.testing.global_state`. Both ordinary and
@@ -54,6 +55,7 @@ restoration assertions.
 - Every loaded reset row participates in its declared cleanup proof. [2]
 
 
+
 - Each restored table is repaired and its leak named. [3]
 
 - Private tmux failure preserves all existing later teardown. [4]
@@ -61,6 +63,7 @@ restoration assertions.
 
 
 - Reset-row doubles assert owner delegation for sweep and tool-writer cleanup. [5]
+
 
 
 

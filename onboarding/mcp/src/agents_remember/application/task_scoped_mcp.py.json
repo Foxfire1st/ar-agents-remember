@@ -139,12 +139,12 @@
       ]
     },
     "4": {
-      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `` `test_registered_readers_use_call_local_admitted_leaf_context` ``",
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
-            "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
+            "blob": "c76f190b5fb9dbfc40e454d7cdc0653242a3dd05",
+            "content": "sha256:1629783802d35d5082a11157948b36cb00cf8baf06dcfb7748569de72366f442",
             "locator": {
               "end": 293,
               "kind": "line_range",

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Verified docs/FAQ.md against frozen tree 58741cf1: lines 34-47 accurately document all eleven knowledge_read views, text-bearing replies, compact dependent triage, and INV-47NR7E read_ar_files brief guidance.",
-    "task": "261112-KNO-L14",
-    "uncommitted": true
+    "statement": "Resolved crossing-8 sync conflict for docs/FAQ.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L14 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
+    "task": "261125-DEP-L4",
+    "uncommitted": false
   },
   "document": "docs/FAQ.md",
   "id": "DPD-A3XZ3Q",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
     },
     {
-      "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+      "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "task": "261125-DEP"
   }
 }

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
-    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
+    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
+    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
     "role": "curator",
-    "statement": "Audited mcp/README.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): MCP package structure, CLI/dashboard entry points, and L11 zero grammar-dep pyproject.toml/languages command remain accurate.",
-    "task": "261112-KNO-L11",
-    "uncommitted": true
+    "statement": "Resolved crossing-8 sync conflict for mcp/README.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
+    "task": "261125-DEP-L4",
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 33,
+  "revision": 34,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "6b92ec03c216c000250941f6082cc3fe423da8d6",
+      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -46,12 +46,12 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+      "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
     {
-      "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
+      "blob": "22f6f0e290a01b36bc8174aec9d428a7638b0bb7",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
@@ -62,14 +62,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T23:21:59+01:00",
+    "at": "2026-11-28T00:08:30+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L11",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "task": "261125-DEP"
   }
 }

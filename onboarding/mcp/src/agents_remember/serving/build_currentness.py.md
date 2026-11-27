@@ -29,6 +29,7 @@ Callers: the MCP tool dispatcher reads it before each call, attaches it to the r
 - An ordinary checkout call gets no reading. [5]
 - The digest covers `*.py` files only. [6]
 
-- The tool dispatcher refuses a declared write of an installed stale build. [7]
+- The tool dispatcher reads build currentness and the registration wrapper refuses declared publication writes of an installed stale build. [7]
+
 
 - The reading's fields. [8]
