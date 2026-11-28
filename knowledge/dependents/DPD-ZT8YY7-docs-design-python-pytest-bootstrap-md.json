@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ab9944c2fdce9adb5f9a22f4ef8bba3e0cf66596",
-    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
+    "codeTree": "2bda8ec3c06d604c18db161c324b22286234c200",
+    "commit": "23739701ea9306123cb256000907d4f424c53c1f",
     "role": "curator",
-    "statement": "Reconfirmed docs/design/python-pytest-bootstrap.md on the L30 post-sync candidate: _TEMPORARY only drops dir=\"/tmp\", so the temporary root honours TMPDIR (the system default when unset), and the shared hang guard bounds its waits; the bootstrap design remains accurate.",
-    "task": "261112-BUG-L30",
+    "statement": "Re-confirmed docs/design/python-pytest-bootstrap.md against post-sync DEP-R05a@v1 candidate 2bda8ec3c06d604c18db161c324b22286234c200 (synced onto 23739701ea93 / 380aa75a25a6): test-evidence-lanes.toml bootstrap and lane rules (including empty provider-conformance) remain accurate.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 49,
+  "revision": 50,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+      "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
+        "blob": "8524e64d8b95da92d6b131af521a82b0dc8bac7d",
         "content": "sha256:b339770887b57e6cd195a3caaead1d9462ce3c14570df67813856e00cfd640c0",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
+        "blob": "8524e64d8b95da92d6b131af521a82b0dc8bac7d",
         "content": "sha256:0db0090abe8ad1939fb3ec6d81139f02acdf6ae51cd0ab5e1810a44c02d36aed",
         "locator": {
           "kind": "symbol",
@@ -103,8 +103,8 @@
     },
     {
       "anchor": {
-        "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
-        "content": "sha256:d260a189b1f723925c426c8572cfa123b2a1e7074f7d3a225ec6bd0e2f464611",
+        "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
+        "content": "sha256:80e611aab5f5ee5aa6d18c9358f26ada92a21f18b22337658d332fa6d910df90",
         "locator": {
           "end": 881,
           "kind": "line_range",
@@ -129,17 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T13:37:28+01:00",
+    "at": "2026-11-28T15:19:02+01:00",
     "by": "agent",
-    "effort": "unknown",
-    "harness": "hermes",
-    "leaf": "261112-BUG-L30",
-    "model": "opencode-go:deepseek-v4.1-flash",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "the launch receipt does not hold the effort"
-    }
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

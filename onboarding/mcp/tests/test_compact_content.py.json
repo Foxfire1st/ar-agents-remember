@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-        "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+        "content": "sha256:6593df332cd9782c5dd8f102afb3060c1998f524deeab24fce2ee28a697e33f9",
         "locator": {
           "kind": "symbol",
           "name": "CompactToolResultWireTests.test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-        "content": "sha256:614bfe2a671c53714b3e5aa6b87f327de490228d55770c1e38ebf895588eef30",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+        "content": "sha256:a3ff199140a99cca52e1626ffcd2ee192ce0f4311b04e0160bf1b02019795fbd",
         "locator": {
           "kind": "symbol",
           "name": "CompactToolResultWireTests.test_wire_tool_list_answers_and_extension_match_start_tree_contract"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-        "content": "sha256:45b89f1e35da1316d9e2cd86e4abc46b5ac756d961f3e829da22b5e64ffb2468",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+        "content": "sha256:b6f7707a506cd28fbac1b9f96df57421980b99256dfbf2f00e4a46f65a1ac9c2",
         "locator": {
           "kind": "symbol",
           "name": "CompactToolResultWireTests.test_explainer_tools_and_early_refusals_preserve_start_tree_wire_shape"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-        "content": "sha256:614bfe2a671c53714b3e5aa6b87f327de490228d55770c1e38ebf895588eef30",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+        "content": "sha256:a3ff199140a99cca52e1626ffcd2ee192ce0f4311b04e0160bf1b02019795fbd",
         "locator": {
           "kind": "symbol",
           "name": "CompactToolResultWireTests.test_wire_tool_list_answers_and_extension_match_start_tree_contract"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
         "content": "sha256:d62be75201bf658e805dae7661fe9ef004f5280f71d52fae59fe0ce5df6fab38",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
         "content": "sha256:98d507170326587cee0de6195a66be29c52ec6d7261b91cbf61795c093db0d13",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-        "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+        "content": "sha256:6593df332cd9782c5dd8f102afb3060c1998f524deeab24fce2ee28a697e33f9",
         "locator": {
           "kind": "symbol",
           "name": "CompactToolResultWireTests.test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-        "content": "sha256:614bfe2a671c53714b3e5aa6b87f327de490228d55770c1e38ebf895588eef30",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+        "content": "sha256:a3ff199140a99cca52e1626ffcd2ee192ce0f4311b04e0160bf1b02019795fbd",
         "locator": {
           "kind": "symbol",
           "name": "CompactToolResultWireTests.test_wire_tool_list_answers_and_extension_match_start_tree_contract"
@@ -141,7 +141,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+        "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
         "content": "sha256:98d507170326587cee0de6195a66be29c52ec6d7261b91cbf61795c093db0d13",
         "locator": {
           "kind": "symbol",
@@ -160,11 +160,11 @@
   ],
   "references": {
     "1": {
-      "note": "Direct `CallToolResult` construction and compact JSON serialization live in `mcp/tool_results.py` (`build_call_tool_result`, `compact_content_blocks`, `build_early_refusal_result`), replacing the retired `compact_content.py` monkeypatch.",
+      "note": "Direct CallToolResult construction and compact single-line UTF-8 JSON serialization live in mcp/tool_results.py (build_call_tool_result, compact_content_blocks, build_early_refusal_result).",
       "targets": [
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
             "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
             "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
             "locator": {
               "kind": "symbol",
@@ -188,8 +188,8 @@
         },
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
-            "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+            "content": "sha256:c65b2ae97b2897ef1728892442f31435e84a95ac79bcd4f5926d01dfcae4207e",
             "locator": {
               "kind": "symbol",
               "name": "build_early_refusal_result"
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
             "content": "sha256:e22854763582c42f1554890b37300e774a7d7a18074c9c9a3e70fa4eb2d39b69",
             "locator": {
               "kind": "symbol",
@@ -247,12 +247,12 @@
       ]
     },
     "4": {
-      "note": "Role wire-byte parity, unmutated stored tool schemas, and repository-wide private MCP SDK access AST guard live in `CompactToolResultWireTests`.",
+      "note": "Role wire-byte parity, merged server_info ToolAnnotations, unmutated stored tool schemas, and repository-wide private MCP SDK access AST guard live in CompactToolResultWireTests.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-            "content": "sha256:7e86ec0b4dfd8b4fb62786531dbfa9245724fdb0df8cc7bb627a8fcfdbf295e5",
+            "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+            "content": "sha256:6593df332cd9782c5dd8f102afb3060c1998f524deeab24fce2ee28a697e33f9",
             "locator": {
               "kind": "symbol",
               "name": "test_every_roles_wire_tool_list_keeps_exact_bytes_and_unmutated_stored_tools"
@@ -262,7 +262,7 @@
         },
         {
           "anchor": {
-            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
+            "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
             "content": "sha256:98d507170326587cee0de6195a66be29c52ec6d7261b91cbf61795c093db0d13",
             "locator": {
               "kind": "symbol",

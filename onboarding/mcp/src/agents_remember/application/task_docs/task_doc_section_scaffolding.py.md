@@ -63,4 +63,4 @@ No cross-repository boundary is owned by this file.
 
 No meaningful cross-repository references were found.
 
-- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. Anchor: `_build_doc` [2]
+- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. [2]

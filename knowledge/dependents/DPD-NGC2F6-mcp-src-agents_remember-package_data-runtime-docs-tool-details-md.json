@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e273d1c908ab60b4ab2135327141a25ae28c40ea",
-    "commit": "5bfea7adf5b047ca42a4e6b468f94f1215966e2a",
+    "codeTree": "d35efbe2f746a2455624c834e9fc56d8b8229750",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Verified mcp/src/agents_remember/package_data/runtime/docs/tool-details.md against post-CAP-L5 synced tree e273d1c9 (byte-identical mirror of docs/tool-details.md including CAP-L5 and KNO-L5).",
-    "task": "261112-KNO-L5",
+    "statement": "Audited packaged runtime docs/tool-details.md parity copy at DEP-R05a@v1 candidate d35efbe2f746: matches canonical docs/tool-details.md byte-for-byte after renew-instructions.py; pre-existing Option C held-seat deferral re-deferred onto the new blob.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "deferrals": [
@@ -13,13 +13,13 @@
         "file": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
         "note": "Update Option C deferred-held-seat wording when this standing doc is next edited."
       },
-      "createdAt": "2026-11-27T01:48:17.056593Z",
-      "createdByLeaf": "261112-BUG-L58",
-      "fileBlob": "40638134662ff715f51b378d410ab63214cb8c71",
-      "id": "DFR-YWM2GX",
+      "createdAt": "2026-11-28T12:45:48.644689Z",
+      "createdByLeaf": "261125-DEP-L5",
+      "fileBlob": "8e5bcccd11db4589ffcdabaa3c9bc264604ad662",
+      "id": "DFR-DX51NC",
       "owner": "261112-BUG",
       "passage": "package_data/runtime/docs/tool-details.md role_start_set ('each exists on the host') and retire_child (omits host-free retirement of uncreated deferred held seats)",
-      "reason": "Parity copy of docs/tool-details.md contradicted by BUG-R58@v2 Option C (D1045): deferred held seats have no host agent until first role_message and retire host-free when uncreated. Code freeze preserved per Manager directive; update alongside docs/tool-details.md."
+      "reason": "DEP-R05a@v1 refreshed the packaged parity copy via renew-instructions.py for Wave 1a without editing the unrelated BUG-R58@v2 Option C role_start_set/retire_child passage; re-deferred onto the updated blob without lifting."
     }
   ],
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -70,17 +70,17 @@
       "revision": 2
     },
     {
-      "blob": "7d6ef35cc5624ccdf04284f69da136d965f2b2dc",
+      "blob": "8e5bcccd11db4589ffcdabaa3c9bc264604ad662",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
     {
-      "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+      "blob": "63f22fc7b74c34650580e3b87b93c0f953a195b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/tools/core.py"
     },
     {
-      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+      "blob": "81d0835e29e069f9ba1dc94ec0249b30ecee232a",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -90,7 +90,7 @@
       "path": "mcp/src/agents_remember/install/experiment.py"
     },
     {
-      "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+      "blob": "16250406ac4e1e246f17713ee131ee995b443880",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/runtime/install.py"
     },
@@ -135,17 +135,17 @@
       "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
     },
     {
-      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+      "blob": "23a1c6ad9f6bd3901eceb246e102a65b4da76578",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "89986a48b96525b537c9b3fb519c22a409c3adcd",
+      "blob": "3640f06ca7d01c9f029865c564706f5cf3978028",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+      "blob": "c950dc9d4b57657192888bf7aa3fe3aa43aa7c13",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
@@ -155,7 +155,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
     },
     {
-      "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
+      "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -165,7 +165,7 @@
       "path": "mcp/src/agents_remember/serving/build_info.py"
     },
     {
-      "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+      "blob": "a12015160bf05d691718b844b7b8ba9ac9b8ddc3",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
     },
@@ -215,8 +215,8 @@
     },
     {
       "anchor": {
-        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
-        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
+        "blob": "16250406ac4e1e246f17713ee131ee995b443880",
+        "content": "sha256:22eddc56abc6bee2dc2ddfe967800e3fde68c261a4ed6d7ade10ef5ac92cf4f0",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -227,7 +227,7 @@
     },
     {
       "anchor": {
-        "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+        "blob": "d30811c32e55ff7d5c224c5a243d2209fda3f504",
         "content": "sha256:00294c702defca05fdd202e9abd2cf96671f06061401051b10084d0b527fc57e",
         "locator": {
           "kind": "symbol",
@@ -248,21 +248,20 @@
       "path": "mcp/src/agents_remember/install/checkout_environments.py"
     },
     {
-      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+      "blob": "17cdf340ee66cdd49834beb352cc6d9c3098bf2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T11:49:22+01:00",
-    "by": "product",
-    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-7",
-    "effort": "none",
-    "harness": "product",
-    "model": "none",
-    "operation": "crossing-merge",
-    "role": "product",
-    "seat": "product",
-    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

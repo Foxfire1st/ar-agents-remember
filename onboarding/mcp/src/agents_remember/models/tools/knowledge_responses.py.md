@@ -11,7 +11,7 @@
 Strict ToolResponse contracts for the four mounted knowledge operations: knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write. These shapes declare the wire envelope; they neither author knowledge nor reinterpret a view's payload.
 ## Code Commentary
 
-The write response includes bounded notes, such as an updated legacy rule still missing a title. `notesTruncated` signals a partial list, and `reportPath` names the whole writer report.
+The write response includes bounded notes, problems, violations, written paths, and removed paths alongside their exact total counts (`violationCount`, `writtenCount`, `removedCount`), separate truncation indicators (`problemsTruncated`, `violationsTruncated`, `notesTruncated`, `writtenTruncated`, `removedTruncated`), and `reportPath` naming the whole writer report.
 
 ### Logic
 
@@ -199,84 +199,23 @@ No meaningful cross-repo references found.
 - The integrity model carries validator inputs, report and optional leaf worklist fields. [8]
 - The integrity handler reports text-tree validation. [9]
 
-
-
-- The read builder returns the reader-owned payload and read extras. [28]
-
-
-
-
-
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [1]
-
-
-
-- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [10]
-
-
-
-- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [11]
-
-
-
-- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [13]
-
-
-
-- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [14]
-
-
-
-- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [17]
-
-
-
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [2]
-
-
-
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [3]
-
-
-
-- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [34]
-
-
-
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [4]
-
-
-
-- The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. [44]
-
-
-
-- The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. [45]
-
-
-
-- The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. [46]
-
-
-
-- The read model declares view, snapshot, memory tree and index completeness fields. The mounted projection names record locations. [47]
-
-
-
-- The read model declares completeness and continuation beside its memory-tree and index fields. [48]
-
-
-
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [5]
-
-
-
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
-
-
-
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [6]
-
-
-
-- The write response declares notes and a separate truncation flag alongside the full report location. [55]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [10]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [11]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [13]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [14]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [17]
+- The read builder returns the reader-owned payload and read extras. [28]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [34]
+- The optional `proofs` field on the read response sits beside `currentness`, `page`, `threshold`, `families`, and `routeChain`. [44]
+- The optional `currentness` field on the read response sits after `proofs` beside `page`, `threshold`, `families`, and `routeChain`. [45]
+- The `page` state and optional `page` and `threshold` fields on `KnowledgeReadResponse`. [46]
+- The read model declares view, snapshot, memory tree and index completeness fields; the mounted projection names record locations. [47]
+- The read model declares completeness and continuation beside its memory-tree and index fields. [48]
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
+- `KnowledgeWriteResponse` declares bounded problems, violations, notes, written, and removed lists alongside total counts (`violationCount`, `writtenCount`, `removedCount`), truncation flags, and the full report location. [55]

@@ -1,0 +1,91 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed shortening LOCK_WAIT_SECONDS and pooling warm role servers against preserving 60-second serialized cold starts, binding future launch-latency optimizations to measured trace triggers."
+  },
+  "alternatives": [
+    {
+      "option": "Preserve LOCK_WAIT_SECONDS=60 and per-seat cold-start process isolation for role launches in cli/paseo_role_start.py.",
+      "reason": "60 seconds accommodates concurrent multi-seat startups under host load without spurious lock-timeout refusals, and per-seat cold starts guarantee isolated agent bindings and clean build-currentness checks (D1008, D1078, 261120-PKG).",
+      "status": "chosen"
+    },
+    {
+      "option": "Shorten LOCK_WAIT_SECONDS or share a pre-warmed role-server pool across seat launches (D1008, 261120-PKG).",
+      "reason": "Shortening the wait risks false start-lock refusals under heavy parallel role_start_set bursts, and pooling processes introduces cross-seat binding and stale-build hazards.",
+      "reconsider_when": "Measured multi-seat launch traces show start-lock stalls or cold-start delays exceeding user tolerance under normal load AND a per-seat binding isolation design preserves stale-build and identity guarantees.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "LOCK_WAIT_SECONDS remains 60 in cli/paseo_role_start.py.",
+    "Role starts continue to launch isolated per-seat server processes with launch-time binding confirmation."
+  ],
+  "context": "Each role launch spawns an isolated MCP tool server process and serializes overlapping starts under LOCK_WAIT_SECONDS=60 in cli/paseo_role_start.py. During D1008, 261120-PKG, and Council #6 (D1078), shortening LOCK_WAIT_SECONDS or pooling warm role-server processes was weighed against preserving the 60-second lock budget and per-seat cold-start isolation.",
+  "decider": "Developer (D1008, D1078 Council #6, 261120-PKG)",
+  "id": "DEC-NT73GG",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+        "content": "sha256:e7268b9f4c5403a6a21dbbab92cdcb9c1b618744aa3bb35686d800f61282bbf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_role"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+        "content": "sha256:789de0d3e2c8df936ed2f04d2af1c0025cdbaf90b0eb977b3bc3c2bdb9a0ce4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_leaf_set"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "db98b24ece4db859be7ae59e4702eb4aacbc9f9e",
+        "content": "sha256:ca2172c9792f1e49af6b410d1491cccfddf50f560c1943e152d05b440bd38254",
+        "locator": {
+          "kind": "symbol",
+          "name": "LOCK_WAIT_SECONDS"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "dec-wave2-role-start-lock-and-cold-start",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed a shared warm index/explainer daemon against on-disk tree-keyed caches, constraining future serving architecture changes to measured latency triggers."
+  },
+  "alternatives": [
+    {
+      "option": "Keep tree-keyed on-disk derived SQLite caches (open_cached_index) and per-process stdio explainer tool serving without a shared long-lived in-process index daemon.",
+      "reason": "Avoids a second long-lived stateful service and cross-seat cache invalidation bugs while keeping derived indexes disposable, read-only, and strictly keyed to exact Git memory trees (D1006, D1078).",
+      "status": "chosen"
+    },
+    {
+      "option": "Host a shared warm in-process knowledge index and explainer serving daemon across concurrent MCP and explainer seats (D1006).",
+      "reason": "Adds daemon lifecycle, memory-retention, and cross-worktree isolation complexity without measured evidence that on-disk SQLite cache opens dominate seat latency.",
+      "reconsider_when": "Tool-call logs or startup benchmarks show repeated cold SQLite index opens or explainer cache rebuilds dominating Curator, Reviewer, or explainer turn latency across concurrent seats.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "Derived knowledge indexes remain on-disk disposable caches keyed by memory tree hash.",
+    "Explainer seats remain isolated per-launch stdio servers bound to their launched seat marker."
+  ],
+  "context": "Derived SQLite knowledge indexes are cached on disk by memory-tree key via memory/knowledge_index/cache.py and opened per process by MCP tools and explainer seats (canvas/explainer_server.py). Council #6 (D1078) and D1006 weighed keeping on-disk tree-keyed caches per stdio process versus hosting a shared warm in-process index and explainer service.",
+  "decider": "Developer (D1006, D1078 Council #6)",
+  "id": "DEC-RHA6S1",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:574ff7370b00f611674304a60bd72a659b3f523ebe44b905022d72d4cd3b6b2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_cached_index"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:c9c1f05d5a7e1a5008bd0f0203a1d89a4da9b0b056869cf0f25d5bbb033a689f",
+        "locator": {
+          "kind": "symbol",
+          "name": "explainer_authoring"
+        },
+        "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:5e934e7c35e4b849bc5713c201ec85cee9227fc4aff9ce16b0331e69779ca539",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "dec-wave2-knowledge-index-and-explainer-serving",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

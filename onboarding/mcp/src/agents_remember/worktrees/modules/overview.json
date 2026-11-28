@@ -1460,16 +1460,16 @@
       ]
     },
     "63": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records.  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records.",
       "targets": [
         {
           "anchor": {
-            "blob": "252bf69389a9cc885cbc09db347f6295042018f9",
-            "content": "sha256:739b630a13646eca56a5eaf6bbc7662824a0c69607e4f7eabfdf03e163513439",
+            "blob": "2b20f05b32d8a8f258e1e5b9227018d7d3610d3c",
+            "content": "sha256:badb58b968101694fa7ccc2976a92f7d038dddbea4b4808ccd477c2210c55de7",
             "locator": {
-              "end": 297,
+              "end": 302,
               "kind": "line_range",
-              "start": 268
+              "start": 266
             },
             "path": "mcp/tests/test_worktree_start_preview.py"
           },
@@ -2099,7 +2099,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d48d27da6f7456ac6e92ee9d0d4544eb84db5e18",
+            "blob": "3bb5d924395576bd1c20255c99968d9bcd7f885d",
             "content": "sha256:295af77a79ed7e289b35fc237245cb18d60a6292d73281a552b45bf7434d458c",
             "locator": {
               "kind": "symbol",
@@ -2111,7 +2111,7 @@
         },
         {
           "anchor": {
-            "blob": "d48d27da6f7456ac6e92ee9d0d4544eb84db5e18",
+            "blob": "3bb5d924395576bd1c20255c99968d9bcd7f885d",
             "content": "sha256:8a6c7608e9e87c98b5ac0e93c4e5be5596fc6d3dd5c132964926ce89e02c0ae2",
             "locator": {
               "kind": "symbol",
@@ -2123,7 +2123,7 @@
         },
         {
           "anchor": {
-            "blob": "d48d27da6f7456ac6e92ee9d0d4544eb84db5e18",
+            "blob": "3bb5d924395576bd1c20255c99968d9bcd7f885d",
             "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
             "locator": {
               "kind": "symbol",
@@ -2135,7 +2135,7 @@
         },
         {
           "anchor": {
-            "blob": "d48d27da6f7456ac6e92ee9d0d4544eb84db5e18",
+            "blob": "3bb5d924395576bd1c20255c99968d9bcd7f885d",
             "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
             "locator": {
               "kind": "symbol",

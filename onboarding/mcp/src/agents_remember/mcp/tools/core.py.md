@@ -19,7 +19,12 @@ optional launch agentBinding/toolServer, and does not publish tools/reservedTool
 serving-build identity. It adds `buildCurrentness` — the loaded build compared with the Python files
 now at its package root, inspected for a checkout build too (`inspect_checkout=True`) and omitted
 when no reading exists — and `runningServers`, the live records of the running-server registry, each
-with its own currentness. `context_packet_payload` resolves the reader's exact task context
+with its own currentness, in the validated full payload and daily tool log. For the delivered inline
+answer, `_server_info_answer` strips envelope fields and replaces `runningServers` via
+`_compact_running_servers` with a fixed-size summary (`count`, `staleCount`, `roles` counts, and the
+`_SERVER_INFO_RECENT_SERVERS_MAX = 5` most recent entries carrying `pid`, `role`, `loadedDigest`,
+`startedAt`, and `state`), keeping `checkoutBinding`, `openUserSettings`, `buildCurrentness`, and
+`agentBinding` inline. `context_packet_payload` resolves the reader's exact task context
 before calling the rich application builder, then applies `slim_context_packet` with the optional
 serving-build commit. Mounted answers carry roots, task, action lines and short build/pair values;
 the log preserves that delivered slim answer. Rich V2 is rebuilt through the internal/CLI/dashboard
@@ -71,19 +76,14 @@ validation and forwarding stay transport-thin.
 
 ### Runtime Source References
 
-
-- `server_info_payload` reports the server identity, roots, unused keys, serving build, build currentness, running servers and any agent binding. [1]
-
-
 - Frozen implementation of context_packet_payload supporting the stated file behavior. [2]
 
 ## Server info names no harness skill root
 
 `server_info_payload` reports no harness skill root: no skill folder is resolved or installed, so there is no root to name, and `ServerInfoResponse` declares no such field. It reports the roots, allowed repo ids and unused settings keys.
 
-
-- The server-info answer carries no harness skill root. [8]
-
-
 - `server_info` reports the process's build currentness, inspecting a checkout build too. [9]
-- `server_info` lists the running-server registry's live records. [10]
+
+- `server_info_payload` validates the full server-info payload (including full `runningServers` for the daily log) and delivers a compact inline answer with `_compact_running_servers` counts and 5 recent entries. [1]
+- The server-info answer carries no harness skill root. [8]
+- `server_info` retains the full live running-server records in the validated payload and daily log while summarizing them inline via `_compact_running_servers`. [10]

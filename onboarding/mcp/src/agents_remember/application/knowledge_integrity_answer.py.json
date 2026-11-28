@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_integrity_answer.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f870e6ba0137d6c1da37c9b53208cc3de450f8a",
+        "content": "sha256:5f102ede4482334f52891251e316a97bb0cbd002b53c72c01c84d5d7d17d6492",
+        "locator": {
+          "kind": "symbol",
+          "name": "summarize_worklist"
+        }
+      },
+      "id": "RLZ-1KH78F",
+      "invariant": "INV-GTM0WS",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1b",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Retains worklist summary metadata and path inline while leaving per-item rows to the persisted worklist file and daily log.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f870e6ba0137d6c1da37c9b53208cc3de450f8a",
+        "content": "sha256:ca90b406b62174906b95ee6fdab8a674b4700a1aaad0192cf79b777278e178bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "summarize_routes"
+        }
+      },
+      "id": "RLZ-5NRB9T",
+      "invariant": "INV-GTM0WS",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1b",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Aggregates family route rows into familyCount, byStatus, routeUnassigned, routeless, and differs counts.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f870e6ba0137d6c1da37c9b53208cc3de450f8a",
+        "content": "sha256:5539b6ef8050ba33710cfc60fc08ce1ccddde6ff5e18b108b596384cd213f83d",
+        "locator": {
+          "kind": "symbol",
+          "name": "integrity_answer"
+        }
+      },
+      "id": "RLZ-HSRWFG",
+      "invariant": "INV-GTM0WS",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1b",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Produces the compact inline integrity answer while preserving full route rows and worklist items in the logged whole payload.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`summarize_routes` aggregates family route rows into `familyCount`, `byStatus`, `routeUnassigned`, `routeless`, and `differs` counts without per-family inline rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f870e6ba0137d6c1da37c9b53208cc3de450f8a",
+            "content": "sha256:ca90b406b62174906b95ee6fdab8a674b4700a1aaad0192cf79b777278e178bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`summarize_worklist` keeps only `_WORKLIST_SUMMARY_KEYS` and bounded `incomplete` entries inline, omitting `items` so per-item rows stay in the persisted file and tool log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f870e6ba0137d6c1da37c9b53208cc3de450f8a",
+            "content": "sha256:5f102ede4482334f52891251e316a97bb0cbd002b53c72c01c84d5d7d17d6492",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_bounded_validation` caps violation lists at `TOOL_ANSWER_STATUS_ENTRY_MAX` entries and marks `truncated: True` when shortened, and `integrity_answer` assembles the stripped inline projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f870e6ba0137d6c1da37c9b53208cc3de450f8a",
+            "content": "sha256:5539b6ef8050ba33710cfc60fc08ce1ccddde6ff5e18b108b596384cd213f83d",
+            "locator": {
+              "kind": "symbol",
+              "name": "integrity_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

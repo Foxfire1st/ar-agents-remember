@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
-            "content": "sha256:d2a777b628e6d4c1d6da4630655bcffaf92351619beffd6b546daf64278121f1",
+            "blob": "8524e64d8b95da92d6b131af521a82b0dc8bac7d",
+            "content": "sha256:6c784ef8e008ac37e964624062c809d9e3ca4bbf95da186cbbc7b02e0ea270eb",
             "locator": {
               "kind": "symbol",
               "name": "_bind_server"
@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
+            "blob": "8524e64d8b95da92d6b131af521a82b0dc8bac7d",
             "content": "sha256:8e722939d3a3f0c5b43facb040ac8ed128527fd1a0c683b57c5ce639022a4292",
             "locator": {
-              "end": 326,
+              "end": 328,
               "kind": "line_range",
-              "start": 316
+              "start": 318
             }
           },
           "kind": "test"
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6276de0dd204cda480821f3bdc2915e2cd980f",
+            "blob": "8524e64d8b95da92d6b131af521a82b0dc8bac7d",
             "content": "sha256:0db0090abe8ad1939fb3ec6d81139f02acdf6ae51cd0ab5e1810a44c02d36aed",
             "locator": {
               "kind": "symbol",

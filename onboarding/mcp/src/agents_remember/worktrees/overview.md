@@ -233,7 +233,6 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
 - Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
 
-- Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. [11]
 
 - Retained reference account (no fresh execution or acceptance inferred): The stop cannot reach a publication, asserted structurally over the module's import closure. [12]
 - Retained reference account (no fresh execution or acceptance inferred): Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. [13]
@@ -378,3 +377,5 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Completed closeout alone freezes history; the latest owner attempt is closed with reversible exact-byte restoration. [90]
 - `master_document_base` resolves a master's standing document base from `sync_log` ancestry (with `repository-default` and `original_base_pair` fallback), and `landing_document_answer` passes it with `series_contract` on `master_end=True`. [123]
+
+- Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. [11]

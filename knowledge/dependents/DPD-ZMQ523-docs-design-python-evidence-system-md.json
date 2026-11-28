@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9da11f4c449ceef388455616425442310157c9ad",
-    "commit": "8905801b8a5e761fe8e25ef79afa935b8833e58d",
+    "codeTree": "d35efbe2f746a2455624c834e9fc56d8b8229750",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Verified docs/design/python-evidence-system.md against post-sync L13 code tree 9da11f4c449ceef388455616425442310157c9ad (synced onto DEP-L8 main 8905801b8a5e): Pyrefly surface obligations and registering mcp/tests/test_unified_tree_sitter_highlights.py in test-evidence-lanes.toml and evidence-lifecycle.toml leave all evidence-system design rules and budgets accurate.",
-    "task": "261112-KNO-L13",
+    "statement": "Audited docs/design/python-evidence-system.md against DEP-R05a@v1 candidate d35efbe2f746: adding test_wave1a_tool_inspections.py to unit-regression and evidence-lifecycle.toml preserves all documented lane and catalog rules.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 35,
+  "revision": 36,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+      "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+      "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T06:19:30+01:00",
+    "at": "2026-11-28T13:45:45+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L13",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "def410de-2687-53a7-bf31-50157129b105",
-    "task": "261112-KNO"
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

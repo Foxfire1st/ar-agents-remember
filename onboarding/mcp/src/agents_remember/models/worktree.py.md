@@ -84,7 +84,6 @@ The following source-backed definitions and producer seams retain the broader re
 
 
 
-- WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing. [134]
 
 
 
@@ -180,4 +179,5 @@ The following source-backed definitions and producer seams retain the broader re
 
 - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]
 
-- **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. Anchor: `TaskDocResponse` [124]
+- TaskDocResponse permits omitted document identity for structured boundary refusals (ok=False with nonblank code). [124]
+- WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing. [134]

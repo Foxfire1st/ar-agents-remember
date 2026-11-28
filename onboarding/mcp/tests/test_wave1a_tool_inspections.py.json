@@ -1,0 +1,360 @@
+{
+  "path": "mcp/tests/test_wave1a_tool_inspections.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:ba1f5ad27e3f8e10e8aa5c5e7107b85294d115eb977aeb0d63361e59b251e5bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_task_doc_create_refuses_mismatched_top_level_slug_or_repo"
+        }
+      },
+      "facet": "Verifies task_doc.create refuses conflicting fields.slug or fields.repo with task-doc-slug-mismatch and task-doc-repo-mismatch.",
+      "id": "PRF-09XX6T",
+      "invariant": "INV-KQA6XH",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3a",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:a020856de548c9a0419ab788b659c660fe76fd96682e2d67251ee5489b28ba0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_early_refusal_is_compact_single_line_and_knowledge_read_bound_unchanged"
+        }
+      },
+      "facet": "Verifies build_early_refusal_result emits single-line UTF-8 compact JSON with structured_content=None and is_error=False while TOOL_ANSWER_EXCEPTIONS[('knowledge_read', None)] stays 5000.",
+      "id": "PRF-2T6411",
+      "invariant": "INV-CFECGB",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1d",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:ad3a3d739be9ef9d262eaeb557039f104390fea3dd9c6a7b69be3fe71e9630cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_integrity_check_compacts_routes_and_worklist_without_overflow"
+        }
+      },
+      "facet": "Verifies _integrity_answer over 115 family routes and 50 worklist items returns bounded route summary counts and worklist metadata without inline items while logging all 115 routes and 50 worklist items.",
+      "id": "PRF-4M6663",
+      "invariant": "INV-GTM0WS",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1b",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:5a6266b8c262c482c25ba0efbe7269b5856463430e085dd649b71e4c189c402d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_server_info_compacts_large_running_servers_and_retains_full_list_in_log"
+        }
+      },
+      "facet": "Verifies server_info_payload with 128 running servers emits bounded count, staleCount, roles, and 5 recent entries inline with no overflow while logging all 128 full server records.",
+      "id": "PRF-5XNX0X",
+      "invariant": "INV-A73MER",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1a",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:115d561d3bf17c5c1e6e3d8648f6687ebc9178a12281ace149327ebcec012cce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_atomic_master_record_route_review_without_slug_succeeds_and_preserves_leaf"
+        }
+      },
+      "facet": "Verifies atomic-master record_route_review without slug still succeeds against task.json while leaving the leaf document byte-identical.",
+      "id": "PRF-987MZD",
+      "invariant": "INV-KQA6XH",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3a",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:9b7b296cb71f134e3e313cd49c4bcca4b4ea1756d978553a016bfd12ff7206d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_task_doc_and_worktree_status_boundaries_convert_typed_errors"
+        }
+      },
+      "facet": "Verifies task_doc_payload and worktree_status_payload convert TaskDocError, WorktreeTargetResolutionError, and ValidationError into structured ok=false refusals with kebab-case codes while re-raising ImportError and RuntimeError.",
+      "id": "PRF-BGD0ZQ",
+      "invariant": "INV-QK7114",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3b",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:6c54109d3463baf28f1c324b348bb80ba8bc0517eb16f4f72ee91b67549c137e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_typed_basemodel_keeps_structured_output_while_generic_dict_drops_it"
+        }
+      },
+      "facet": "Verifies all 44 generic dict public tools advertise no outputSchema while a BaseModel-returning tool retains outputSchema and structured_content.",
+      "id": "PRF-DVR793",
+      "invariant": "INV-Z7PA5X",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 2a",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:cf9334c61ec7ef14972b4ac3c1084ec5b914748a37380d84f17887075fa663ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_omitted_slug_review_refuses_without_touching_master_task_json"
+        }
+      },
+      "facet": "Verifies begin_review and record_review without slug return review-target-slug-required leaving task.json byte-identical, leaf-bound slug='task' returns review-target-mismatch, and task_doc.create injects top-level repo and slug.",
+      "id": "PRF-HGCJJQ",
+      "invariant": "INV-KQA6XH",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3a",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:54675bfd527164d330b8eb09a6c3d82a20e60660910b430c37454128a82cad56",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_worktree_sync_and_knowledge_write_cap_large_lists_without_overflow"
+        }
+      },
+      "facet": "Verifies 60-file worktree_sync conflict refusals on deep roots overflow at bound 400 and fit under bound 550 with 5-entry capped files plus fileCount and nextTool/cancelArgs, and knowledge_write caps violations, written, and removed at 5 entries with total counts.",
+      "id": "PRF-J2WZG2",
+      "invariant": "INV-Y64JQW",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1c",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:bf9c2af31c52920f023f701b55707711c34dc76d2adcea2a48c8610c213141e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stdio_probe_reads_text_content_json_without_structured_content"
+        }
+      },
+      "facet": "Verifies stdio_probe.probe_tool_server decodes server_info from compact TextContent JSON when structured_content is None.",
+      "id": "PRF-M9CAEZ",
+      "invariant": "INV-Z7PA5X",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 2a",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:1045e62064c05329622f7a5c4349d2366735a0d3911597281c1c357152cd1d74",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_closeout_and_checkpoint_boundaries_convert_typed_errors"
+        }
+      },
+      "facet": "Verifies closeout preview/apply and checkpoint landing boundaries convert SourceLineageRefusal (carrying nextTool='worktree_sync'), LandingCommitCheckRefusal, CommitPublicationRefusal, CloseoutQueueError, and IntegrationBranchAuthorityError while re-raising unexpected errors.",
+      "id": "PRF-S283ZT",
+      "invariant": "INV-QK7114",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3b",
+        "leaf": "261125-DEP-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+        "content": "sha256:c467e829861c3caf8c7a16379d6a6b07aadd90f18d4d80cbd21c836b1c3d0004",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_read_only_annotations_merges_site_hints_and_central_read_only_wins"
+        }
+      },
+      "facet": "Verifies read_only_annotations preserves site title/destructive/idempotent/open_world hints while forcing central read_only_hint=False on context_packet and raising UnknownReadOnlyMark on unclassified tools.",
+      "id": "PRF-W15QQM",
+      "invariant": "INV-7S6YWG",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 2b",
+        "leaf": "261125-DEP-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Compact projection tests cover `server_info` (128 servers), `knowledge_integrity_check` (115 routes and 50 worklist items), `worktree_sync` (60 conflict files, 400-token overflow vs 550-token bound), `knowledge_write` (5-entry caps and counts), compact early refusals, and the 5,000-token `knowledge_read` bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:5a6266b8c262c482c25ba0efbe7269b5856463430e085dd649b71e4c189c402d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_server_info_compacts_large_running_servers_and_retains_full_list_in_log"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:ad3a3d739be9ef9d262eaeb557039f104390fea3dd9c6a7b69be3fe71e9630cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_integrity_check_compacts_routes_and_worklist_without_overflow"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:54675bfd527164d330b8eb09a6c3d82a20e60660910b430c37454128a82cad56",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_sync_and_knowledge_write_cap_large_lists_without_overflow"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:a020856de548c9a0419ab788b659c660fe76fd96682e2d67251ee5489b28ba0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_early_refusal_is_compact_single_line_and_knowledge_read_bound_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Schema, annotation, and probe tests verify generic dict tools omit `outputSchema` while `BaseModel` tools keep it, `read_only_annotations` merges hints with central `read_only_hint` precedence, and `stdio_probe` parses text JSON when `structured_content` is `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:6c54109d3463baf28f1c324b348bb80ba8bc0517eb16f4f72ee91b67549c137e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_typed_basemodel_keeps_structured_output_while_generic_dict_drops_it"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:c467e829861c3caf8c7a16379d6a6b07aadd90f18d4d80cbd21c836b1c3d0004",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_only_annotations_merges_site_hints_and_central_read_only_wins"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:bf9c2af31c52920f023f701b55707711c34dc76d2adcea2a48c8610c213141e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stdio_probe_reads_text_content_json_without_structured_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Target-guard and boundary-refusal tests verify omitted-slug and leaf-bound `slug=\"task\"` refusals with zero `task.json` writes, atomic-master `record_route_review` preservation, `task_doc.create` slug/repo injection and mismatch refusals, and typed-error refusal conversion with unexpected exceptions re-raised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:cf9334c61ec7ef14972b4ac3c1084ec5b914748a37380d84f17887075fa663ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_omitted_slug_review_refuses_without_touching_master_task_json"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:115d561d3bf17c5c1e6e3d8648f6687ebc9178a12281ace149327ebcec012cce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_master_record_route_review_without_slug_succeeds_and_preserves_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:ba1f5ad27e3f8e10e8aa5c5e7107b85294d115eb977aeb0d63361e59b251e5bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_doc_create_refuses_mismatched_top_level_slug_or_repo"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:9b7b296cb71f134e3e313cd49c4bcca4b4ea1756d978553a016bfd12ff7206d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_doc_and_worktree_status_boundaries_convert_typed_errors"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1429735c4d1646a029b44b9b0708ccf30923ee7",
+            "content": "sha256:1045e62064c05329622f7a5c4349d2366735a0d3911597281c1c357152cd1d74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_and_checkpoint_boundaries_convert_typed_errors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

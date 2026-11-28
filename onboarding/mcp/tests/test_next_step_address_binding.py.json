@@ -51,28 +51,16 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
-            "content": "sha256:8eec489a710525c3e91a090ce1b59e685b3823f0fd354ac7a44af83b8b9e1b1b",
+            "blob": "c3452e520b58b90c3587ba6a9876053a60d57609",
+            "content": "sha256:7f5e1418e5af38ff42ae7bc1cf15ba22e01ebfc2ef1fd1db300e1c5055e04ed6",
             "locator": {
-              "end": 293,
+              "end": 292,
               "kind": "line_range",
               "start": 152
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
-            "content": "sha256:9612031039a374929d654988fda4070ea4bd63a743ed45cf25731aded99e640f",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 168
-            }
-          },
-          "kind": "test"
         }
       ]
     },
@@ -81,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+            "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
             "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
             "locator": {
               "end": 401,

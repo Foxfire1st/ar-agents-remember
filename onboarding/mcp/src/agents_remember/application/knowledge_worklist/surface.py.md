@@ -64,7 +64,6 @@ No configured live documentation source was available for this pass.
 
 
 
-- The tool returns the latest worklist and the checklist shows it. Anchor: `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it` [5]
 
 
 
@@ -76,3 +75,5 @@ No meaningful cross-repo references found: the module reads one file in the coor
 No cross-repo boundary is crossed by this file.
 
 - The tool's consumer of these fields. [4]
+
+- The tool returns the latest worklist and the checklist shows it. [5]

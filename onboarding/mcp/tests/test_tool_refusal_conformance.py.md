@@ -16,7 +16,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- The current `BARE_RAISERS` declaration has ten entries and `ALWAYS_ANSWERS` four, with four named shapes across sixteen test definitions. Current source pins and fixture assertions are not a fresh live advertisement or execution census.
+- The current `BARE_RAISERS` declaration has nine entries (after `worktree_status` was converted to a structured refusal) and `ALWAYS_ANSWERS` four, with four named shapes across sixteen test definitions. Current source pins and fixture assertions are not a fresh live advertisement or execution census.
 
 ## Governing Overview
 
@@ -26,7 +26,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ### STOP-delta current source contract
 
-The declared bare-raiser set has ten names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator’s execution.
+The declared bare-raiser set has nine names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator’s execution.
 
 These are source assertions, not a Curator test run, freeze-currentness certification or independent memory acceptance.
 
@@ -41,7 +41,7 @@ The module asserts a delivery-shape contract through the MCP adapter. The census
 
 ### Current Contract
 
-The source declares ten bare-raiser pins, four always-answer pins and four response shapes. These are declarations and fixture assertions, not a live advertisement or execution result.
+The source declares nine bare-raiser pins, four always-answer pins and four response shapes. These are declarations and fixture assertions, not a live advertisement or execution result.
 
 ### Write-Route Description Contract
 
@@ -49,7 +49,7 @@ One case, `test_the_write_plane_is_named_by_both_its_shipped_entry_points`, read
 
 ### Logic
 
-**Four shapes, each named, and the partition is asserted.** A typed refusal has `ok: false`, a refusal identity, a non-empty reason and the navigation required by the response-owned path oracle. A stateful refusal has `ok: true` and `state: refused`. The other shapes are the four declared `ALWAYS_ANSWERS` and the ten declared `BARE_RAISERS`. `test_every_failure_path_answers_in_one_of_the_four_named_shapes` compares observed sets with their declarations in both directions.
+**Four shapes, each named, and the partition is asserted.** A typed refusal has `ok: false`, a refusal identity, a non-empty reason and the navigation required by the response-owned path oracle. A stateful refusal has `ok: true` and `state: refused`. The other shapes are the four declared `ALWAYS_ANSWERS` and the nine declared `BARE_RAISERS`. `test_every_failure_path_answers_in_one_of_the_four_named_shapes` compares observed sets with their declarations in both directions.
 
 **The population is derived at run time, never written as a count.**
 `test_the_censused_population_is_the_advertised_one` (`:410-419`) asserts the live server's
@@ -74,7 +74,7 @@ The test classes and standalone cases use pytest. The module is registered in `u
 
 - **Hermeticity is asserted as a fixture property.** `test_the_module_runs_in_seconds_and_touches_no_real_state` requires fixture repository and memory roots inside the disposable root, the fixture coordination root and that no removed `"providers"` section appears in census settings.
 - **The pin update rule is explicit.** A repair removes its entry in the same change; constants are neither deleted nor widened to hide a new failure.
-- **Delivery shape is the boundary.** A refusal envelope does not prove that the tool made the correct product decision. The current bare-raiser population is the source’s ten-name declaration.
+- **Delivery shape is the boundary.** A refusal envelope does not prove that the tool made the correct product decision. The current bare-raiser population is the source’s nine-name declaration.
 
 ## Retained Source-Epoch Context
 
@@ -325,6 +325,6 @@ No repository or external-system boundary is proved by this module.
 
 - The selected repaired T34 population contains `memory_baseline_adopt`, re-exported by the sweep module and required to return a complete refusal envelope. Anchor: `T34_REPAIRED_TOOLS` [13]
 
-- The test source declares ten bare-raiser names and requires exact equality with the observed non-returned set. [18]
+- The test source declares nine bare-raiser names and requires exact equality with the observed non-returned set. [18]
 
 - The unit-regression lane selects mcp/tests/test_tool_refusal_conformance.py. [16]

@@ -340,12 +340,12 @@
         },
         {
           "anchor": {
-            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
+            "blob": "9ce9ad213c0cd0176930e4545f5635173970f6f1",
             "content": "sha256:4b08a1f122026f5d3ce5012d93a4796f8b12aa73ec9c93b654ceace8e0b7b5e8",
             "locator": {
-              "end": 187,
+              "end": 309,
               "kind": "line_range",
-              "start": 172
+              "start": 294
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
           },

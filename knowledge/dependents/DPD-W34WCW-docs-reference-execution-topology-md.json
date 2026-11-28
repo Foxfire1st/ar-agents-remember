@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "d00ed4669a2867b786ae6a6d39c7620328120777",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Audited docs/reference/execution-topology.md at post-sync code tree 0b0419690d12: touched stands_on files (task_execution_topology.py, task_sprint_linkage.py, kernel/memory_init.py, closeout_projection_members.py) received only behavior-preserving typing adjustments for Pyrefly 1.5.0; execution-topology specification remains accurate.",
-    "task": "261125-DEP-L8",
+    "statement": "Re-confirmed docs/reference/execution-topology.md at DEP-R05a@v1 Freeze 3 candidate d00ed4669a28 after task_doc_tools.py._build_doc recognized master slug='task' file stems; execution-topology documentation remains accurate.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/reference/execution-topology.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_execution_graph_mutations.py"
     },
     {
-      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+      "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:34:14+01:00",
+    "at": "2026-11-28T14:27:15+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
     "task": "261125-DEP"
   }
 }

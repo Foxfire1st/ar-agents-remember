@@ -35,6 +35,23 @@ tool surface (issue #62): closeout is worktree-only.
 partial-master landing route; like its integrate sibling it is transport-thin and owns no authority
 or completion decision of its own.
 
+At the MCP payload boundary, four builders convert their narrow typed domain errors into structured
+`{ok: False, code: ...}` refusal envelopes (routed through `_tool_payload`) so agents receive
+machine-readable refusal codes while direct domain unit tests still observe the raised exceptions
+and unexpected failures (`ImportError`, `RuntimeError`, etc.) still propagate:
+
+- `worktree_status_payload` catches `WorktreeTargetResolutionError` (using its `.code` when valid via
+  `_valid_code`, else `"worktree-target-resolution-failed"`) and Pydantic `ValidationError`
+  (`"worktree-status-validation-failed"`).
+- `worktree_closeout_preview_payload` and `worktree_closeout_apply_payload` catch
+  `SourceLineageRefusal` (via `_source_lineage_refusal_payload`, emitting `code`, `nextTool:
+  "worktree_sync"`, and `nextArgs`), `LandingCommitCheckRefusal` and `CommitPublicationRefusal` (via
+  `_commit_publication_refusal_payload`, emitting `"commit-check-failed"` or
+  `"commit-publication-refused"`).
+- `worktree_checkpoint_landing_payload` catches `CloseoutQueueError` (preserving its code when valid)
+  and `IntegrationBranchAuthorityError` (using its `.code` when valid, else
+  `"integration-branch-authority-failed"`).
+
 `worktree_pause_payload` (260831-LOCR-L37) is the thinnest builder in the module: it takes only
 `contract_path`, forwards it to `worktree_pause_tool`, and wraps the result through `_tool_payload`
 under the operation name `worktree_pause`. It owns no decision — not whether the master may be
@@ -105,11 +122,6 @@ No Domain Documentation source is configured for this memory root.
 
 The source itself and its governing route are sufficient for this thin payload adapter.
 
-- Integration payloads forward contract, strategy, and preview choice without ledger intent. [1]
-
-- Start, sync, attach, pause, and status payload builders preserve typed application inputs, and the sync builder now takes one paired resolution value instead of a bare action. [2]
-
-- The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. [3]
 - The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. [4]
 
 > Retained earlier citation wording: - **The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.** [5]
@@ -131,10 +143,6 @@ dedicated package owner. Tool payloads, task identity, and forwarding behavior a
 
 The current source seams include `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload`. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
 
-### Reconciled Source Evidence
-
-- The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. [6]
-
 ## 260831-CCR-L15 Status-Wait Payload Export
 
 **Superseded.** The `worktree_status_wait_payload` builder and the `worktree_status_wait` tool it
@@ -142,3 +150,8 @@ served were removed; this module exports no wait payload today and the name appe
 worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
 - **The current resolution value this builder forwards, and the application entry point that reads its action for the driver's resolution_action argument. The memory_sync_choice argument is passed independently.**  Anchor: `SyncResolutionInput` `worktree_sync_tool` [5]
+
+- Integration and closeout payloads forward contract, strategy, and preview choice without ledger intent, converting `SourceLineageRefusal`, `LandingCommitCheckRefusal`, and `CommitPublicationRefusal` into structured refusals at the MCP boundary. [1]
+- Start, sync, attach, pause, and status payload builders preserve typed application inputs, with `worktree_status_payload` converting `WorktreeTargetResolutionError` and `ValidationError` into structured refusals. [2]
+- The checkpoint-landing payload builder forwards the contract and typed integration arguments and converts `CloseoutQueueError` and `IntegrationBranchAuthorityError` into structured refusals. [3]
+- The current module exposes `worktree_start_payload`, `worktree_sync_payload`, and `worktree_attach_payload` at this ownership boundary. [6]

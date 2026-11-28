@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Registered stdio client and the readable/structured wire-payload agreement assertion.",
+      "note": "Registered stdio client and the text-JSON/structured wire-payload reader helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:cd01e263b0af1689ba6ebe757d4172a00062f4f06750c8db588b068dcc9709d0",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:11cbeee466d6dd7536e01289fa933d4cfbb4a2da2afc0f5419d56d50fc8d41d4",
             "locator": {
               "kind": "symbol",
@@ -29,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
-            "content": "sha256:12967b3c45184ac2ec608e917a15e37cc99b7b44321d2b1b5965775a932a9feb",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
+            "content": "sha256:0abbe0e658c5981e954d1f23b0bc3b65d980e95647af889a826ca0998248d629",
             "locator": {
               "kind": "symbol",
               "name": "_assert_wire_payload"
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:2945de71f76c8d4a74e970725a7cf7325b50b334afd578c7807fc86d70a7439d",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:8f33d8014cf61791e9ba743758e973e70a407b28e4a3976054e0d50963159f40",
             "locator": {
               "end": 145,
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:2caddb54322db1db4ab7e780d06fb36865384c54a282a1d21aff3e9261d8690a",
             "locator": {
               "end": 106,
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:2caddb54322db1db4ab7e780d06fb36865384c54a282a1d21aff3e9261d8690a",
             "locator": {
               "end": 106,
@@ -107,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:9d95cc56a567098567b464474da5600c311787ebd5782dc583be5d52f1d06f35",
             "locator": {
               "end": 145,
@@ -119,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:90b6670dd235a59f1587e4d3c17eb28f1fa2813703642afe275b245878a7b4ee",
             "locator": {
               "end": 193,
@@ -131,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:cc1968cf90005d399c286090193a687f163ef4644f2e60781d67778e9026fe2e",
             "locator": {
               "end": 221,
@@ -143,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "53b068ef48e82cf7f5fc6efdfa09147d54c75da3",
+            "blob": "2d79785583400c149eedd6338a7b7c72e4c523c8",
             "content": "sha256:26c8a919ac66c0c0c1926a8a5533bca89511aa58a73bdf2cf5ed57d0aaa73d8f",
             "locator": {
               "end": 238,

@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "The `task_doc` / `task_reopen` payload builders.\n\nAnchor: `task_doc_payload`, `task_reopen_payload`",
+      "note": "The `task_doc` / `task_reopen` payload builders.",
       "targets": [
         {
           "anchor": {
-            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
-            "content": "sha256:454d46b1fd16712c3fb739fd0e5bd143ba39e230dbe3dd8a4eb0f6692b609d8c",
+            "blob": "e1103559ffcdae475baf90577fb5b2dd2c42b943",
+            "content": "sha256:bbb019b3e8a1e9344bf071f4ee515262bfc11a1d7adfb60efc92bb01ade9b217",
             "locator": {
               "kind": "symbol",
               "name": "task_doc_payload"
@@ -56,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
+            "blob": "e1103559ffcdae475baf90577fb5b2dd2c42b943",
             "content": "sha256:4caf7f8561354a9a934e4821eb1d038fe69d7bc4381ac7d789b9dc97e124aa53",
             "locator": {
               "kind": "symbol",

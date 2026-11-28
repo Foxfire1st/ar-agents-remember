@@ -19,7 +19,7 @@
 
 `TaskDocResponse` admits optional warning text, including the notice from a recorded review whose step-up advice could not read settings.
 
-TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.
+TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Structured boundary refusals (`ok=False` with a nonblank `code`, including `operation-removed`, `review-target-slug-required`, `review-target-mismatch`, `task-doc-slug-mismatch`, `task-doc-repo-mismatch`, and translated `TaskDocError` codes) may omit parsed document identity via `_identity_or_removed_refusal`; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.
 
 ### Logic
 
@@ -99,16 +99,11 @@ TaskDocResponse adds optional alignmentSweep. Its strict nested model declares t
 
 - Declares strict optional bounded alignmentSweep response metadata. [12]
 
-- Optional rowSurvey and taskArchive admit the archive producers' survey and enclosure outcomes. \[13] [13]
-
 ## Evidence
-
-
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [9]
 
 - Record-only memory identity comes from memory authority, never the sibling code root. [10]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
 
 ### Repo-Internal References
 
@@ -178,7 +173,7 @@ was retired; these model and application owners remain the current contract auth
 
 Retained authoring-row wording:
 
-Finding: TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.
+Finding: TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Structured boundary refusals (`ok=False` with a nonblank `code`, including `operation-removed`, `review-target-slug-required`, `review-target-mismatch`, `task-doc-slug-mismatch`, `task-doc-repo-mismatch`, and translated `TaskDocError` codes) may omit parsed document identity via `_identity_or_removed_refusal`; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.
 
 Anchor:
 
@@ -186,16 +181,13 @@ Source: mcp/src/agents_remember/models/task_doc.py
 
 
 
-- The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master. [6]
-
-
-
-
-- TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused. [7]
-
 - The strict response accepts optional warning text. [14]
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [8]
 
-
 - The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
+
+- The response model declares optional retirement record, state, readiness, preview and archive-result fields for `retire_master`. [6]
+- `TaskDocResponse` permits omitted document identity for any structured boundary refusal (`ok=False` with a nonblank `code`) via `_identity_or_removed_refusal`, while successful writes still require identity and undeclared fields remain refused. [7]
+- File-local implementation of the strict `TaskDocResponse` identity and refusal-validation contract; caller-owned effects and governing workflow are separate evidence. [11]
+- Optional `rowSurvey` and `taskArchive` admit the archive producers' survey and enclosure outcomes. [13]

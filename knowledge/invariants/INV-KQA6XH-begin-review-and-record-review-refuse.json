@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans task_doc_review_target.py and task_doc_tools.py, is guarded by three regression tests, and prevents omitted-slug review calls from silently mutating master task.json or task_doc.create from persisting mismatched slug or repo fields."
+  },
+  "applicability": "task_doc begin_review, record_review, and create calls dispatched through application/task_docs/task_doc_tools.py.",
+  "conditions": [
+    "A leaf contract is active, the caller holds a leaf-bound seat, or the task folder contains sibling leaf JSON documents."
+  ],
+  "exclusions": [
+    "record_route_review, which preserves atomic-master series targeting without a leaf slug, and genuine master-level reviews passed with explicit slug='task' outside leaf contexts."
+  ],
+  "id": "INV-KQA6XH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_omitted_slug_review_refuses_without_touching_master_task_json"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 3a",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "begin_review and record_review refuse an omitted slug when sibling leaf task documents exist and refuse slug mismatch against leaf contracts or bindings with zero writes to master task.json, while record_route_review preserves atomic-master targeting.",
+  "supersedes": [],
+  "title": "begin_review and record_review require explicit leaf slug and guard create",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

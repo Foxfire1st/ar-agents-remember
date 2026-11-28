@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+        "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
         "content": "sha256:53f8e5c5a3ea1816d04ecf8c834d814950d6c4e54a080c9d6f0ef6da02b8a71d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+        "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
         "content": "sha256:6ecfe11406e7d09b2546af84258bd628c8f6be5f5a0e4ed83f8b595734aeb9a5",
         "locator": {
           "kind": "symbol",
@@ -39,15 +39,27 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A stale refusal is structured content over the real MCP transport and the handler is not entered",
+      "note": "A stale refusal emits compact single-line JSON text without `structured_content` over the real MCP transport and the handler is not entered.",
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
-            "content": "sha256:4e6c674fb1d046a2f4382aed79e8278d4744b7fe65baea730a43ba37d435b5ef",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
+            "content": "sha256:0902d9aa8dc284c7e5c6dcdbb76e0ca14d5f7804b6b23ddc2cb86a15b461515c",
             "locator": {
               "kind": "symbol",
               "name": "test_stale_refusal_is_structured_over_the_mcp_transport"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
+            "content": "sha256:db805adb47082bf9d61b3390c00143f0e6185c055a4c36d982c2183ebcf4d637",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "test"
@@ -59,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
             "content": "sha256:53f8e5c5a3ea1816d04ecf8c834d814950d6c4e54a080c9d6f0ef6da02b8a71d",
             "locator": {
               "kind": "symbol",
@@ -75,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
             "content": "sha256:6ecfe11406e7d09b2546af84258bd628c8f6be5f5a0e4ed83f8b595734aeb9a5",
             "locator": {
               "kind": "symbol",
@@ -91,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
             "content": "sha256:d6c9df896f44065ab2d4a207807dc9a889428baf081c53abcf6e4873281ce3c8",
             "locator": {
               "kind": "symbol",
@@ -107,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
             "content": "sha256:ff2fcc5e70afaf5a239fa58e9e3257401bd9f894de2ec91bc967713c8787297d",
             "locator": {
               "kind": "symbol",
@@ -123,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
             "content": "sha256:62f5a4c3f11c814bf74dfc9933d288d992b1ed8fa233dc31241930e434c433a9",
             "locator": {
               "kind": "symbol",
@@ -139,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96333136c3b6c24be1f505268de2c9802f6e0b13",
+            "blob": "cf6028afc4f07bbac05cccfa0e7ca3affd0407b2",
             "content": "sha256:5350d5c90a18a448857c2760e4e175a1bc7611bcec0d1386ce9a5ae9ac506530",
             "locator": {
               "kind": "symbol",

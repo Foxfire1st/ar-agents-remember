@@ -16,8 +16,6 @@ Two answer-shaping cases sit beside the gate: the stale annotation survives the 
 
 ## Evidence
 
-- A stale refusal is structured content over the real MCP transport and the handler is not entered [1]
-
 - Every declared publication refuses before its handler with both digests and the remedy; its dry run answers [2]
 
 - Reads, messages, planning calls and unknown tools are not publication; unknown or absent readings add no annotation [3]
@@ -27,3 +25,5 @@ Two answer-shaping cases sit beside the gate: the stale annotation survives the 
 - The stale annotation survives answer overflow [6]
 - Runtime install previews the dashboard without restarting it and reports a failed restart [7]
 - The publication predicate under test [8]
+
+- A stale refusal emits compact single-line JSON text without `structured_content` over the real MCP transport and the handler is not entered. [1]

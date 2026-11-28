@@ -26,4 +26,4 @@ Authority remains with the existing master-series constructor/admission and dura
 
 - Preview uses the dry-run worktree owner [9]
 
-- The registered first-leaf proof preserves startup/Git state and checks the call records separately. \[10]  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication` [10]
+- The registered first-leaf proof preserves startup/Git state and checks the call records separately. \[10] [10]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "d00ed4669a2867b786ae6a6d39c7620328120777",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Verified docs/workflows.md against frozen tree 58741cf1: workflow overview remains accurate after KNO-R14@v1 added knowledge_read view cues to Tier-1 roles and operations.",
-    "task": "261112-KNO-L14",
+    "statement": "Re-confirmed docs/workflows.md at DEP-R05a@v1 Freeze 3 candidate d00ed4669a28 after task_doc_tools.py._build_doc recognized master slug='task' file stems; workflow documentation remains accurate.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+      "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-28T14:27:15+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
-    "task": "261112-KNO"
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

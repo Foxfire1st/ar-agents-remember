@@ -104,7 +104,7 @@ Same-repository source and tests define the supported task-folder and series-con
 
 - Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist. [6]
 - `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. [7]
-> Retained earlier citation wording: - `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. [8]
+> Retained earlier citation wording: - `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.
 - The finalizer calls the root archive helper for a series contract, which is skipped; leaf finalization skips the archive call. [9]
 - Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. [10]
 - The package order that makes `tasks` the correct home for the vocabulary this module re-exports. [11]
@@ -118,4 +118,4 @@ No sibling repository boundary is needed to explain this file.
 - A root task holding a series contract is skipped, and the skip is worded by the series skip. [12]
 - The skip names the commanding sprint, or the retire route when no sprint commands the master, and keeps today's reason for any other task. [13]
 
-- `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.  Anchor: "def load_contract_from_args" [8]
+- `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. [8]

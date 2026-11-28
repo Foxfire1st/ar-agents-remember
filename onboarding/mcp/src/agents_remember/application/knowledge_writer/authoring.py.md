@@ -377,7 +377,6 @@ The following complete predecessor retains useful explanations, old observations
 - The task owner's answer about a decision, injected into the writer. [6]
 - The resolver field; `None` has no task owner. [7]
 
-- The writer's planned rows and every refusal. [11]
 
 
 
@@ -447,3 +446,5 @@ The following complete predecessor retains useful explanations, old observations
 - The writer merges fields and resolves links before placement. A decision defaults to the active lifecycle word when status is absent. [34]
 - Handle assignment and refresh restoration precede ordered entry processing, records and rows. [60]
 - The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task. [62]
+
+- The writer's planned rows and every refusal. [11]

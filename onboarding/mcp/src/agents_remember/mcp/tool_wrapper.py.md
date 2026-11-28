@@ -31,4 +31,5 @@ Called exclusively from `mcp/server.py` (`AgentsRememberMCP.add_tool`), delegati
 - `nonwriting_call` bypasses the synchronous write lock only for centrally read-only tools and explicitly non-writing modes. [3]
 - `wrap_registered_tool` checks stale-build publication refusal before execution, dispatches async or offloaded sync handlers, and returns compact `CallToolResult` values. [4]
 - `_run_sync_call` offloads synchronous handlers via `run_in_request_thread` and holds the server write lock around potentially mutating calls while logging pre-acquisition cancellations. [5]
-- `AgentsRememberMCP.add_tool` applies `read_only_annotations`, computes `structured_output_spec`, wraps each tool with `wrap_registered_tool`, and registers it via public `MCPServer.add_tool`. [6]
+
+- `AgentsRememberMCP.add_tool` merges `read_only_annotations`, disables `structured_output` for generic `dict[str, Any]`/`dict[str, object]` tools before computing `structured_output_spec`, wraps each tool with `wrap_registered_tool`, and registers it via public `MCPServer.add_tool`. [6]

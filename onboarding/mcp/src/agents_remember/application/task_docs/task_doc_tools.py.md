@@ -36,7 +36,7 @@ Prepared ordinary/remove publications retain each document with its owning task 
 
 The parent-master publication predicate includes an available parent when master synchronization changes it, when a create/replace/set_field payload explicitly contains waitsFor, or when an existing document’s normalized dependency list changes: (original.waitsFor or []) != (doc.waitsFor or []). Thus replacing a nonempty waitsFor list by omitting that field now triggers parent refresh, even if the parent row itself is unchanged. None and [] compare as the same empty dependency list. The resolved parent must still have accepted source bytes. This is the operative RF01 source account, not an unconditional all-path no-stale-master or execution-currentness finding. Historically, F01 cc238585 used only the explicit-key trigger in addition to master_sync.changed and left omitted-replacement dependency removal outside that trigger; retain that earlier defect and evidence as history, not as a current implementation claim.
 
-task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. begin/record answers retain code reviewState and any present independent memoryReviewState, with reviewKind naming the selected lane, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, code/memory review states and reviewKind on review mutations, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError after retirement-proof comparison and before publication. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
+task_doc is the canonical mutating author. get/read_steps are removed and return operation-removed with canonical JSON/rendered-file guidance; surviving observations use file tools and linkage_report. `_resolve` invokes `task_doc_review_target.enforce_review_target` before loading `task.json`, refusing omitted-slug `begin_review`/`record_review` with `review-target-slug-required` (on leaf contracts, leaf-bound seats, or task directories holding sibling leaf documents) and refusing leaf-bound/leaf-contract `slug="task"` with `review-target-mismatch`, while keeping atomic-master `record_route_review` exempt. `_create` injects top-level `target.repo_id` and `target.slug` into `fields` when absent, resolves `kind` before the slug check so `kind == "master"` with `slug == "task"` is accepted as the canonical `task.json` file stem, and refuses all other conflicting `fields["slug"]` or `fields["repo"]` values (including `subTask` with `slug == "task"`) with `task-doc-slug-mismatch` or `task-doc-repo-mismatch`. begin/record answers retain code reviewState and any present independent memoryReviewState, with reviewKind naming the selected lane, while grant display belongs to rendered task/dashboard. fields_file for create/replace/set_field and section_body_file for set_section are mutually exclusive with their inline values: one absolute regular UTF-8 input is read once, then checked against its byte budget and reported with its digest. This is not a pre-read allocation bound. Rich identity, preview and successful masterSync facts remain in the whole result; bounded delivery uses write phrases, create's renderedPath, code/memory review states and reviewKind on review mutations, and wouldLose/diff with the independently retained diff location. For a validly addressed parent, master synchronization failures remain answered master-sync-failed refusals. Invalid caller master references, including cross-series addresses, are checked by the shared master_json_path_from_ref resolver with refusal=TaskDocError after retirement-proof comparison and before publication. The actual shared mutable allowlist lives in task_doc_phrases, and does not admit seriesContractPath/enclosures as generic fields.
 
 Current candidate validation first calls `task_doc_field_homes.enforce_prose_field_homes`, then `enforce_waits_for_write`, before retirement-proof comparison and the shared named-master validation, then disposition/review authority, unresolved-work preservation, terminal status, master completion, register shape and execution-topology checks. Reserved freeform headings/header labels are grandfathered by normalized multiplicity: existing occurrences may be edited or removed, but a new extra reserved occurrence refuses. Nonempty `waitsFor` is validated only when explicitly supplied by `create`, `replace`, or `set_field`; `None`/empty lists return before kind/target checks. That nonempty write requires a subTask, not self, a readable non-sprint master, listed non-abandoned targets, no detected foreign-master child, and no dependency cycle containing the candidate. Missing child payloads are not themselves a target refusal; list membership and the loader predicates matter. This is write-time validation, not start authorization.
 
@@ -226,7 +226,6 @@ The generic review operation delegates through the route-aware recorder with the
 
 ## Evidence
 
-- Edit preparation binds review stamps before recording the memory round. [45]
 - File-option dispatch preserves mutual exclusion and uses the returned raw-byte digest. [46]
 - The extracted reader accepts the same confined class of file inputs and computes the same SHA-256 digest. [47]
 
@@ -242,7 +241,6 @@ The generic review operation delegates through the route-aware recorder with the
 
 - The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. [5]
 
-- `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
 - **Retained historical source account — superseded by the current contract:** Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
 
 Retained authoring-row wording:
@@ -258,7 +256,6 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py; mcp/src
 
 - The renderer this author drives accepts supplied graph titles, direct-grant evidence and master Order; it does not derive Order or read files. [11]
 - The JSON/markdown store this application entry point drives. [12]
-- The payload builder that wraps this application entry point. [13]
 
 - WorktreeContract supplies task-root, contract and lifecycle coordinates used by resolution; this is not a caller-supplied execution grant. [14]
 
@@ -271,12 +268,7 @@ Anchor:
 Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:357-431; mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 
 - The public dispatcher enters the task-root lock before its private body prepares and validates the edit, then delegates preview/apply to the central boundary. [32]
-- Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. [16]
 - The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. [17]
-
-- The fail-closed guard refuses a subTask whose folder master document is absent or does not carry its row, refusing publication with its remedy. [18]
-
-- The `replace` arm of candidate preparation, which builds its candidate through the shared create/replace builder. [19]
 
 - The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
 
@@ -455,12 +447,17 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [35]
 
 
-- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
-- Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication. [40]
 - Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root" [8]
 
-- `replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. The archived operation inventory is not the live read surface. [1]
-- Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence. [21]
-- This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
-
-- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]
+- `replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. [1]
+- `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
+- The payload builder that wraps this application entry point and translates `TaskDocError` into structured refusals. [13]
+- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit `waitsFor` refresh, or changed normalized dependencies, requires accepted parent bytes and in-place target agreement, and supplies prepared-batch overrides to dry-run rendering. [15]
+- Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation; `_create` injects top-level `repo_id` and `slug` and refuses conflicting values. [16]
+- Central publication guards refuse a `subTask` whose folder master document is absent or lacks its row, and `_resolve` enforces `enforce_review_target` before loading `task.json`. [18]
+- The `replace` arm of candidate preparation builds its candidate through the shared create/replace builder. [19]
+- Task edits are prepared with exact accepted sources before candidate validation/publication. [21]
+- This facade exposes `TaskDocTarget`, `TaskDocEdit`, and `task_doc_tool`, while scalar/prose implementations are imported from `task_doc_content_edits`. [26]
+- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, answered sync failure, invalid named-master refusal, parent in-place guard, and parent Order refresh remain separate boundaries. [31]
+- Create defaults a new `subTask` to `pending` (`_pending_intent_review`); replace preserves an omitted existing review and candidate validation checks caller authority, erasure, and stage refusal before publication. [40]
+- Edit preparation binds review stamps before recording the memory round. [45]

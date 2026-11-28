@@ -47,7 +47,6 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 
 
-- May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here. [1]
 
 
 
@@ -60,24 +59,7 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 - The create observer sees the role, task and report registration under the dispatch lock before the host creates the agent. [6]
 
-
-
-
-
-
-
-
+- May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here. [1]
 - The controlled fixture patches the actual bridge, caller, recipient, held-store and retirement owners after extraction. The registry still exposes role_start, role_start_set, user_settings_init and role_message, and an unbound role_start_set call is refused. [3]
-
-
-
-
-
-
 - A native binding refusal carries no redundant operation envelope. [4]
-
-
-
-
-
 - The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls. [5]

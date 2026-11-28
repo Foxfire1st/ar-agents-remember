@@ -122,7 +122,6 @@ No configured live documentation source was available for this pass.
 
 - Step 5 of the run: marks, items and the summary. [12]
 
-- Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches. [13]
 
 
 - A planned row answers its item; the stored predicate agrees. [14]
@@ -147,3 +146,5 @@ These spans and input-card identities were independently rechecked after the sup
 - Family changed rows deliver only the exact declared effect; invariant retirement keeps its separate exception. [15]
 
 - Unmatched declaration facts include nonempty effects for both family and invariant rows. [16]
+
+- Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches. [13]

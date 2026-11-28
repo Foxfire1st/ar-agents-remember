@@ -55,4 +55,4 @@ these structures and asserts on the answers the product returns.
 
 - The user-settings row declares its caller uses and 900-token bound without returning the settings file text. [10]
 
-- The knowledge-write answer row includes notes and notesTruncated. [11]
+- The knowledge-write answer row includes notes, notesTruncated, violationCount, writtenCount, writtenTruncated, removedCount, and removedTruncated. [11]

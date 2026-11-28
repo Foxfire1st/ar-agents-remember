@@ -1,17 +1,52 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_write_answer.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4e397f7c06899b30a36385d5950828ce17d69874",
+        "content": "sha256:3f6cb5ec00ac0dad2168452851bef9d5e00405c9157c953aba7c5090d65a29ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_write_answer"
+        }
+      },
+      "id": "RLZ-3BAV74",
+      "invariant": "INV-Y64JQW",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1c",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Caps violations, written, and removed lists to five entries with total counts and truncation flags for the inline knowledge_write answer.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The response retains the writer’s outcome and points to the complete report.",
+      "note": "`write_answer` retains the writer's outcome, counts, truncation flags, and full report location in the validated payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "6f726908b79ce4dcabffeeab78e267e11f0dff6e",
-            "content": "sha256:fea138bc1e2da123b38c514a4edf4f841ae2ef7a1561343bc9c6dd93b4618690",
+            "blob": "4e397f7c06899b30a36385d5950828ce17d69874",
+            "content": "sha256:8adc75dc97473cabd1be52e2e9ac0d36cd560c887550c9b2f8f65efe647b9ee6",
             "locator": {
               "kind": "symbol",
               "name": "write_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`compact_write_answer` caps `problems`, `violations`, `notes`, `written`, and `removed` at `COMPACT_WRITE_LIST_MAX` (5) inline with total counts and truncation flags while stripping envelope fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e397f7c06899b30a36385d5950828ce17d69874",
+            "content": "sha256:3f6cb5ec00ac0dad2168452851bef9d5e00405c9157c953aba7c5090d65a29ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_write_answer"
             }
           },
           "kind": "code"

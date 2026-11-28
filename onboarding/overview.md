@@ -289,7 +289,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder. Anchor: `Handle a developer-declared takeover` [86]
 
 
-- In task_doc construction, _build_doc refuses kind="light" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master. [98]
 
 - Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync. [74]
 
@@ -586,7 +585,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Development evaluation commands, concrete trial orchestration and attempt accounting have separate responsibilities. [364]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map. [35]
 
 
 - Retained reference account (no fresh execution or acceptance inferred): Development commands, budgets, diagnostic metrics and isolation. [44]
@@ -594,7 +592,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers. [45]
 
 
-- The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`. [276]
 
 
 
@@ -852,3 +849,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - Authored word ceilings remain recorded in `skills/l-01-agent-lifecycles/capsule-budgets-current.json` (Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742), while live Turn-1 wire-token and compiled-capsule token ceilings live in `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS` in `mcp/src/agents_remember/application/role_capsules/wire_budget.py`. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 37 capsules and 45 declared step details; the separately delivered every-role digest measures 342 words, and `reference/coordination/shared/master-state.md` measures 451 words. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and `COMPILED_CAPSULE_TOKEN_CEILINGS` (with siloed word-ceiling enforcement retired), authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [374]
+
+- Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map. [35]
+- In task_doc construction, _build_doc refuses kind="light" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master. [98]
+- The docs index owns the start-here, install, operational and reference map. [276]

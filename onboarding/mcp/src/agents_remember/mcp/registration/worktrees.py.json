@@ -218,12 +218,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
+            "blob": "9ce9ad213c0cd0176930e4545f5635173970f6f1",
             "content": "sha256:694f16aa54f237b6118667f2358ae060cbd57488dc709d3938ae8a89dec0ed6a",
             "locator": {
-              "end": 46,
+              "end": 114,
               "kind": "line_range",
-              "start": 46
+              "start": 114
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
           },
@@ -236,12 +236,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
+            "blob": "9ce9ad213c0cd0176930e4545f5635173970f6f1",
             "content": "sha256:c1750539f94440f2c9ac605180dc44226027d1e852b66433df43871e933baa6a",
             "locator": {
-              "end": 79,
+              "end": 147,
               "kind": "line_range",
-              "start": 79
+              "start": 147
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
           },
@@ -254,12 +254,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
+            "blob": "9ce9ad213c0cd0176930e4545f5635173970f6f1",
             "content": "sha256:9cf6ecacfec5c9e90c3b876e9ac26822943eef82fb4ed93de4b13cb292a27f79",
             "locator": {
-              "end": 93,
+              "end": 161,
               "kind": "line_range",
-              "start": 93
+              "start": 161
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
           },
@@ -272,12 +272,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
+            "blob": "9ce9ad213c0cd0176930e4545f5635173970f6f1",
             "content": "sha256:243080e4c85ff72e2212a1f2ce2d138e6cc1c892db7b4a1dc49019760f66715c",
             "locator": {
-              "end": 59,
+              "end": 127,
               "kind": "line_range",
-              "start": 59
+              "start": 127
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
           },

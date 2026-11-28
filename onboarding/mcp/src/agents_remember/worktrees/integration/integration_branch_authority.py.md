@@ -20,7 +20,7 @@ An unreadable, malformed, foreign or conflicting persisted artifact is never tre
 
 ## Code Commentary
 
-The resolver derives repository default, sprint-super, and active atomic-series surfaces from configured repository identity plus canonical task topology. Exact Git branch/default/worktree facts are delegated to `integration_branch_repository.py`, while the shared immutable request, surface, target, scope, and master-authority records live in `integration_branch_types.py`; this module owns their task-derived policy, rejects owner collisions, binds series and leaf contracts to their exact source/target, and supplies narrow structural guards for start, attach, sync, closeout, integrate, terminal mutation, carryover, and topology publication. Queue-release admission remains owned by the higher closeout-queue lifecycle entrypoints, preventing this low-level resolver from importing the queue and re-entering the start-contract import path. Ordinary work branches cannot alias or occupy any protected surface.
+The resolver derives repository default, sprint-super, and active atomic-series surfaces from configured repository identity plus canonical task topology. `IntegrationBranchAuthorityError` carries an optional keyword-only `code: str | None = None` (for example `contract-not-a-series` when `integration_targets` rejects a non-series contract), allowing MCP payload builders such as `worktree_checkpoint_landing_payload` to emit structured refusal codes while domain callers continue to receive the raised exception. Exact Git branch/default/worktree facts are delegated to `integration_branch_repository.py`, while the shared immutable request, surface, target, scope, and master-authority records live in `integration_branch_types.py`; this module owns their task-derived policy, rejects owner collisions, binds series and leaf contracts to their exact source/target, and supplies narrow structural guards for start, attach, sync, closeout, integrate, terminal mutation, carryover, and topology publication. Queue-release admission remains owned by the higher closeout-queue lifecycle entrypoints, preventing this low-level resolver from importing the queue and re-entering the start-contract import path. Ordinary work branches cannot alias or occupy any protected surface.
 
 Candidate task-document publication confines each live leaf row's proposed JSON path to the exact
 owning master task root as well as the configured repository task tree, then resolves the document
@@ -109,7 +109,6 @@ still starts.
 
 ### Repo-Internal References
 
-- Public census and target projection derive exact protected surfaces. [1]
 - Topology publication validates candidate ownership before task facts can create a protected collision. [2]
 - New-surface validation recognizes only the exact canonical atomic series contract and branch. [3]
 - Sync admits either an ordinary leaf workbench or exact task-owned series authority. [4]
@@ -152,3 +151,5 @@ This change preserves the file's existing authority boundary. No threshold excep
 fallback, or compatibility reader was added.
 
 - Exact parent-series resolution and the leaf target survive; atomic_leaf_parent deferral was removed. [6]
+
+- Public census and target projection derive exact protected surfaces and attach optional `code` values on `IntegrationBranchAuthorityError` (such as `contract-not-a-series`). [1]

@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans read_only.py and server.py, is guarded by test_read_only_annotations_merges_site_hints_and_central_read_only_wins, and prevents registration sites from either losing valid hints or overriding the fail-closed central read_only_hint partition."
+  },
+  "applicability": "Every MCP tool registered on AgentsRememberMCP when enforce_read_only_marks=True.",
+  "conditions": [
+    "Registration optionally supplies ToolAnnotations carrying non-read-only hints such as title, destructiveHint, idempotentHint, or openWorldHint."
+  ],
+  "exclusions": [
+    "Bare test AgentsRememberMCP instances created with enforce_read_only_marks=False."
+  ],
+  "id": "INV-7S6YWG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_read_only_annotations_merges_site_hints_and_central_read_only_wins"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 2b",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Tool annotation registration merges site-declared hints with the central fail-closed read_only_hint so central classification always wins and unclassified tools still raise UnknownReadOnlyMark.",
+  "supersedes": [],
+  "title": "ToolAnnotations merge site hints while central readOnlyHint wins",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

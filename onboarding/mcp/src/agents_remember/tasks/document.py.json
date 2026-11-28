@@ -750,12 +750,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "blob": "3d7f9581170ed766b379e6857c9df543ddf93ca5",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 313,
+              "end": 317,
               "kind": "line_range",
-              "start": 268
+              "start": 272
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -951,7 +951,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6798605ba745f70849c76c1f7e5881f7e897155",
+            "blob": "a6889b14060e78df75f5d5b700eca4e1f225c784",
             "content": "sha256:a4b55beff92a7fb4509fcb741f6d4ac50d42fe32d4532ef9508e12b3c318c8a0",
             "locator": {
               "kind": "symbol",

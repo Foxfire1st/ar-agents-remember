@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans docs/design/mcp-wave-2-roadmap.md and docs/README.md and prevents future contributors from reopening deferred Wave 2 transport, schema, or UI protocol items without meeting concrete triggers or leaking internal ruling IDs into public docs."
+  },
+  "applicability": "docs/design/mcp-wave-2-roadmap.md and its contributor navigation link in docs/README.md.",
+  "conditions": [
+    "Public documentation checked by scripts/check-public-docs.py."
+  ],
+  "exclusions": [
+    "Internal ruling and task identifiers (D1006, D1008, D1078, D1079, 261120-PKG), which reside solely in Curator memory records."
+  ],
+  "id": "INV-PFK6DV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scripts/check-public-docs.py (55 documents, 0 findings on clean freeze tree d35efbe2f746a2455624c834e9fc56d8b8229750)"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 4",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Wave 2 MCP roadmap documents the five deferred platform items and their concrete revisit triggers in plain public prose linked from docs/README.md with zero internal identifiers.",
+  "supersedes": [],
+  "title": "Wave 2 MCP roadmap records deferred platform directions in public prose",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

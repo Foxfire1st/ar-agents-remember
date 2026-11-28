@@ -168,6 +168,4 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 - The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
 - The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]
 
-
-
 - The lifecycle catalog lists `mcp/tests/test_curator_review_assessment_publication.py` among the exact consumers of `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [8]

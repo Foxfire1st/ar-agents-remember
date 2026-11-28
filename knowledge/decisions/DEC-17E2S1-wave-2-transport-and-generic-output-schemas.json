@@ -1,0 +1,111 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed shared warm Streamable HTTP and full typed outputSchemas against per-seat stdio without placeholder DictOutput schemas, constraining future transport and schema changes until measured triggers are met."
+  },
+  "alternatives": [
+    {
+      "option": "Keep per-agent stdio MCP transport with explicit structured_output=False for generic dict tools (omitting placeholder DictOutput outputSchemas and duplicate structuredContent while keeping structured_output for typed BaseModel tools) and preserve the per-server write lock without auto-promoting mutating tools.",
+      "reason": "Eliminates listing schema bloat and 50% wire duplication immediately with zero transport migration risk, preserves per-seat process isolation and fail-closed read_only_hint semantics, and leaves typed BaseModel tools intact (D1078, D1079).",
+      "status": "chosen"
+    },
+    {
+      "option": "Move local role agents onto a shared warm Streamable HTTP MCP server with per-seat routing (D1006).",
+      "reason": "Requires per-seat authentication/binding isolation, lifecycle supervision, and multi-harness Streamable HTTP support not yet uniformly available across local CLI harnesses; Wave 1a compact projections and schema savings deliver immediate context reductions without transport risk.",
+      "reconsider_when": "Measured cold-start latency or memory footprint across concurrent role seats in scripts/measure-ar-server-start.py breaches budget after Wave 1 savings, AND target harnesses support local Streamable HTTP with verified per-seat binding isolation.",
+      "status": "deferred"
+    },
+    {
+      "option": "Author and advertise full typed Pydantic outputSchemas on all 44 public tools instead of dropping placeholder DictOutput schemas (D1079).",
+      "reason": "Full outputSchemas add thousands of listing tokens across every tools/list response while current harnesses do not enforce client-side outputSchema validation on text-JSON tool replies.",
+      "reconsider_when": "Primary harnesses demonstrably consume outputSchema for client-side routing or typed decoding AND the per-role listing token budget accommodates full schemas without trimming tool descriptions.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "All 44 generic dict public tools advertise no outputSchema and emit compact single-line UTF-8 JSON TextContent with structuredContent=None.",
+    "Mutating tools (including context_packet and knowledge_diff) remain non-read-only and are never auto-promoted under the write lock.",
+    "Wave 2 Streamable HTTP and full outputSchemas stay deferred until their concrete triggers fire."
+  ],
+  "context": "After moving to MCP SDK 2.3.0, all 44 public tools return generic dict[str, Any]/dict[str, object] payloads validated internally by Pydantic response models and run over per-seat stdio processes. Council #6 (D1078) and developer approval (D1079) weighed dropping placeholder DictOutput outputSchemas and duplicate structuredContent immediately versus introducing shared warm Streamable HTTP transport (D1006) or full typed outputSchemas.",
+  "decider": "Developer (D1006, D1078 Council #6 with Peer Architect 6697d147, D1079)",
+  "id": "DEC-17E2S1",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
+        "content": "sha256:879d73c2e5a215c5a99d17f269acd4e496e09608077d80e3d2b2cbfee70feaf0",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+        "content": "sha256:137a84f31f13d3e25334517b0fff5c2ea50e249f3e182a59ae402e27cc957285",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify_output_type"
+        },
+        "path": "mcp/src/agents_remember/mcp/tool_results.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
+        "content": "sha256:86b6acf9df3d227afcb92bc0b2c9e3a4c526dae9a8e3b9815927fc78ab9f4ac3",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_server"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+        "content": "sha256:a164bde7a4ba6dd20e189cde02346c580bc3da1c037dd58af8f9eb9873448ab6",
+        "locator": {
+          "kind": "symbol",
+          "name": "structured_output_spec"
+        },
+        "path": "mcp/src/agents_remember/mcp/tool_results.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "dec-wave2-transport-and-schemas",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

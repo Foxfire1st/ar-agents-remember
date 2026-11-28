@@ -158,7 +158,6 @@ No cross-repository behavior is implemented in this file. It declares one tool f
 No meaningful cross-repo references found.
 
 
-- The read response carries its projected view. The diff response names the report for changed files. The integrity response carries validation and the persisted worklist when the caller names a leaf. [20]
 
 
 
@@ -185,3 +184,5 @@ No meaningful cross-repo references found.
 
 
 - The registration keeps all eleven views (including `consolidation_proposal` with `masterId`), auto-paired code-tree arguments, `recordId`/`recordIds`, and both writer commands within the 500-character raw description ceiling (476 characters). [23]
+
+- The read response carries its projected view. The diff response names the report for changed files. The integrity response carries validation and the persisted worklist when the caller names a leaf. [20]

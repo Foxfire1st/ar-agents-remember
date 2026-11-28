@@ -4,12 +4,12 @@
       "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "Guarded by CompactToolResultWireTests and prevents breaking start-tree wire byte parity, explainer schema-less responses, or reintroducing private _convert_to_content monkeypatching."
+    "justification": "Guarded by CompactToolResultWireTests and prevents reintroducing private SDK monkeypatching, indented refusal payloads, or placeholder DictOutput schemas and duplicate structuredContent on generic dict tools."
   },
   "applicability": "Every normal tool return value and early-return guard refusal converted to CallToolResult in AgentsRememberMCP.",
   "conditions": [
-    "build_call_tool_result emits compact UTF-8 JSON text blocks and schema-validated structured_content for dict[str, Any] tools while keeping bare-dict explainer tools without outputSchema or structured_content.",
-    "build_early_refusal_result preserves indented JSON text and structured_content for explainer forged-seat and stale-build early refusals."
+    "build_call_tool_result emits compact single-line UTF-8 JSON text blocks and attaches schema-validated structured_content only when a StructuredOutputSpec is present (typed BaseModel or non-generic returns), omitting outputSchema and structured_content for bare dict, dict[str, Any], dict[str, object], and bare-dict explainer tools.",
+    "build_early_refusal_result emits compact single-line UTF-8 JSON text via compact_json_text with structured_content=None for explainer forged-seat and stale-build early refusals."
   ],
   "exclusions": [
     "Application-layer tool_response.py, which imports no MCP SDK types and stays transport-independent."
@@ -26,20 +26,20 @@
     "leaf": "261125-DEP-L3",
     "task": "261125-DEP"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The retired compact_content monkeypatch is replaced by build_call_tool_result in tool_results.py, constructing compact UTF-8 JSON CallToolResult objects in the MCP adapter while keeping <name>DictOutput schemas on dict[str, Any] tools and no output schema or structuredContent on the four explainer tools.",
+  "statement": "The retired compact_content monkeypatch is replaced by build_call_tool_result and build_early_refusal_result in tool_results.py, constructing compact single-line UTF-8 JSON CallToolResult objects in the MCP adapter with no placeholder DictOutput schema or duplicate structuredContent on generic dict tools, bare-dict explainer tools, or early-return transport refusals, while typed BaseModel tools retain outputSchema and validated structuredContent.",
   "supersedes": [],
-  "title": "MCP adapter builds compact CallToolResult and indented early refusals directly",
+  "title": "MCP adapter builds compact CallToolResult and compact early refusals",
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-28T13:45:45+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
     "task": "261125-DEP"
   }
 }

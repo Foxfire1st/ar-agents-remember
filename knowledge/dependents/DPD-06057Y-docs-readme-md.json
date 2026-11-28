@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "d35efbe2f746a2455624c834e9fc56d8b8229750",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Audited docs/README.md at post-sync code tree 0b0419690d12: mcp/pyproject.toml changed only the dev type-checker extra from pyright to pyrefly>=1.5.0,<2 and comment wording; all documented install/dashboard/documentation links remain accurate.",
-    "task": "261125-DEP-L8",
+    "statement": "Audited docs/README.md at DEP-R05a@v1 candidate d35efbe2f746: adds the plain-prose Wave 2 MCP roadmap link under For contributors; all other navigation links and statements remain accurate.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -47,14 +47,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:34:14+01:00",
+    "at": "2026-11-28T13:45:45+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
     "task": "261125-DEP"
   }
 }

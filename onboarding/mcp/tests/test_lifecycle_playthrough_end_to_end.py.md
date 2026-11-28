@@ -178,7 +178,6 @@ No external domain claim is required.
 - The driver helpers call the registered master-level tools and separately reload the local contract. [3]
 - The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base. [4]
 
-- The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [19]
 
 - The public tools the master-level beats drive. [6]
 
@@ -203,6 +202,5 @@ No meaningful cross-repo references found.
 
 - The `integration` lane selects `mcp/tests/test_lifecycle_playthrough_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:742`). [10] [13]
 
-
-
+- The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. \[5] [19]
 - The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [20]

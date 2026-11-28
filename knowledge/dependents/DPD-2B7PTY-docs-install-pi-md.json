@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
-    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
+    "codeTree": "d35efbe2f746a2455624c834e9fc56d8b8229750",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Verified docs/install/pi.md against post-L32 synced L34 candidate: Pi install guidance remains accurate after BUG-R34@v1.",
-    "task": "261112-BUG-L34",
+    "statement": "Audited docs/install/pi.md against DEP-R05a@v1 candidate d35efbe2f746: Pi MCP installation guidance remains accurate.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/install/pi.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,20 +61,20 @@
       "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py"
     },
     {
-      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+      "blob": "3d79c2cb1b0b4cee4c33d92d9aebef545b09fed7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:06:38+01:00",
+    "at": "2026-11-28T13:45:45+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L34",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
-    "task": "261112-BUG"
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

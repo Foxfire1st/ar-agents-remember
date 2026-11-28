@@ -134,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:1a5e774453b1c59cc5762bab6af0199d33e1aaee4c04a2b4053bbf0c7afa4623",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:310aa5b6d7cdbbe1a78d72419c280c8e8005d2bbb0286c3fa4077c1aaa153696",
             "locator": {
-              "end": 221,
+              "end": 224,
               "kind": "line_range",
-              "start": 177
+              "start": 181
             },
             "path": "mcp/tests/test_activation_admission_registered.py"
           },
@@ -147,12 +147,12 @@
         },
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:3bd52ef7479007db3edcf2dc119cd568a82c1bc428bfe458757d5cd842b6f2c6",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:271f397d7e2624581e77bed353fe743e9f7ff6fcf925e08c504bc176ab1a356e",
             "locator": {
-              "end": 320,
+              "end": 319,
               "kind": "line_range",
-              "start": 267
+              "start": 266
             },
             "path": "mcp/tests/test_activation_admission_registered.py"
           },

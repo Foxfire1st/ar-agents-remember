@@ -28,10 +28,11 @@ The test worlds are task-local fixtures. The direct historical setup helpers and
 
 ### Repo-Internal References
 
-- Registered writer/reader helpers bind the isolated world and compare both repository snapshots around reads. \[1] [1]
 
 - Actual committed-message and Git captures distinguish body-only mentions from a genuine final trailer in both public views. \[2] [2]
 - Own-task preview/write and stored explicit/deferred forms preserve observations and remove the closed mark. \[3] [3]
 - Other-task authoring requires an explicit actual code commit and rejects the five named invalid object classes without partial writes. \[4] [4]
 - Metadata/reanchor/history, recurrent closure and merge cases preserve or distinguish the appropriate closing episode. \[5] [5]
 - A committed closure lacking a usable pair reports unavailable rather than pending attribution. \[6] [6]
+
+- Registered writer/reader helpers bind the isolated world and compare both repository snapshots around reads. \[1] [1]

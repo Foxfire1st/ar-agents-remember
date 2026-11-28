@@ -303,12 +303,12 @@
         },
         {
           "anchor": {
-            "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
+            "blob": "f79576b70d994ff24cf78b1e132e64325dc9b123",
             "content": "sha256:8e7c9a32a5512b0e950e88d0ac614b3d937d29bf3f3cc3b73101b5107a856cba",
             "locator": {
-              "end": 1039,
+              "end": 1035,
               "kind": "line_range",
-              "start": 984
+              "start": 980
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -495,7 +495,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2bf9ffee930084d4af1b2a3a3fec1b429cbb776c",
+            "blob": "b50ce620820ea5867bfaa66e7ef1e8beb180debe",
             "content": "sha256:5e51f1856d20a49f6767ccc99dc8215c45e15b05919f1f30d7a3ae6bbfb8d376",
             "locator": {
               "end": 145,
@@ -508,7 +508,7 @@
         },
         {
           "anchor": {
-            "blob": "2bf9ffee930084d4af1b2a3a3fec1b429cbb776c",
+            "blob": "b50ce620820ea5867bfaa66e7ef1e8beb180debe",
             "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
               "end": 181,
@@ -521,7 +521,7 @@
         },
         {
           "anchor": {
-            "blob": "2bf9ffee930084d4af1b2a3a3fec1b429cbb776c",
+            "blob": "b50ce620820ea5867bfaa66e7ef1e8beb180debe",
             "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
               "end": 216,
@@ -534,8 +534,8 @@
         },
         {
           "anchor": {
-            "blob": "2bf9ffee930084d4af1b2a3a3fec1b429cbb776c",
-            "content": "sha256:37b214717bc54adf7f161783510b61814c4d6d2024356ea27e15c4cc240738f1",
+            "blob": "b50ce620820ea5867bfaa66e7ef1e8beb180debe",
+            "content": "sha256:204a40a179f5328b09421a99fc198d349c4b64df361b2c3b638cd18298e04c56",
             "locator": {
               "kind": "file"
             },

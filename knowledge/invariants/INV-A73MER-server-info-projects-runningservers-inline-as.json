@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by test_server_info_compacts_large_running_servers_and_retains_full_list_in_log and prevents large running-server fleets from overflowing the inline server_info answer and dropping checkoutBinding, openUserSettings, or agentBinding."
+  },
+  "applicability": "Every MCP server_info tool answer built by mcp/tools/core.py::server_info_payload.",
+  "conditions": [
+    "The running-server registry returns zero or more live server records."
+  ],
+  "exclusions": [
+    "The full validated ServerInfoResponse persisted in the daily tool log."
+  ],
+  "id": "INV-A73MER",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_server_info_compacts_large_running_servers_and_retains_full_list_in_log"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 1a",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "server_info projects runningServers inline as a compact summary holding count, staleCount, roles, and at most five recent entries while retaining the full runningServers list in the validated payload and daily tool log.",
+  "supersedes": [],
+  "title": "server_info compacts runningServers inline while logging full list",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

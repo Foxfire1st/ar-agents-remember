@@ -281,7 +281,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The finalization result carries the archive step's skip for a series contract. [60]
 
-- Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records.  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication` [63]
 
 
 - Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
@@ -389,3 +388,5 @@ These superseded descriptions retain their historical wording; the current accou
 
 
 - `finalize._readiness` routes PR-landed standalone masters through `standalone_master_status` and `pr_landed_standalone_blockers`, and `record_landing_result` refuses abandoned contracts with `contract-abandoned` before the `already-recorded` short-circuit. [106]
+
+- Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records. [63]

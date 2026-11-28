@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bf9cd8f25bf47ef7310417b92a995756b3aa90f5",
-    "commit": "63ff759a803bea6a0aed350f555391e6bc7d4f2d",
+    "codeTree": "d35efbe2f746a2455624c834e9fc56d8b8229750",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Verified docs/reference/resolver-c08.md against KNO-R07 candidate: resolver precedence and anchor-resolution rules remain unchanged by automatic knowledge_read code-tree pairing and query views.",
-    "task": "261112-KNO-L7",
+    "statement": "Audited docs/reference/resolver-c08.md against DEP-R05a@v1 candidate d35efbe2f746: resolver contracts remain unchanged.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/reference/resolver-c08.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -68,7 +68,7 @@
       "path": "mcp/src/agents_remember/kernel/git_facts.py"
     },
     {
-      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+      "blob": "17cdf340ee66cdd49834beb352cc6d9c3098bf2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -79,14 +79,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T02:47:05+01:00",
+    "at": "2026-11-28T13:45:45+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L7",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "92d1979d-aa09-5e69-88b1-e28ab7609b7e",
-    "task": "261112-KNO"
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

@@ -22,7 +22,7 @@ Registration constructs the request for the domain builder; the builder delegate
 
 Response enrichment preserves a producer-supplied recovery `nextStep` before deriving guidance from the response's explicit contract path. If no recovery step exists, the exact call argument supplies only the preview approval-stop hint. Guidance naming an artifact is withheld when the response has no address or any guidance spelling contradicts the response's address. Equality or the contract's immediate containing directory is accepted, not arbitrary ancestors. Guidance with no artifact address can remain. This path neither reads an ambient lifecycle enclosure nor automatically resumes an awaiting lifecycle. The answer carries no notifier banner field.
 
-`context_packet` and `read_ar_files` obtain a reader-scoped configuration from the supplied repository and optional exact task context before calling their application owners. `server_info` reports configuration, serving-build information, the loaded build's currentness against its package files, the running-server registry's live records and an optional actual agent binding; it does not return the public roster.
+`context_packet` and `read_ar_files` obtain a reader-scoped configuration from the supplied repository and optional exact task context before calling their application owners. `server_info` reports configuration, serving-build information, the loaded build's currentness against its package files, a bounded inline `runningServers` summary (`count`, `staleCount`, `roles`, 5 `recent` entries, while the full running-server list stays in the validated payload and daily log), and an optional actual agent binding; it does not return the public roster.
 
 A citation-fix legacy refusal retains its central code and conversion message in the caller-visible projection, not solely in a full-result log; converted status counts and bounded entries stay unchanged.
 
@@ -52,9 +52,9 @@ Worktree adapters forward start identity/bases/execution, attach/status task ref
 
 Explicit enclosure adoption is present and advertised. Its adapter confines the contract and expected worktree-group paths to coordination authority, computes a preview, and defaults to dry run. Apply requires approval and a nonempty publication-request id matching the freshly computed preview; a changed preview or interrupted publication returns structured recovery. It delegates adoption to the lifecycle-enclosure services rather than allowing readers to adopt implicitly. Its stated removal condition is an explicit inventory with no readable enclosure lacking an addressable locator and root manifest.
 
-Task-document and reopen builders forward to task-domain application services. The adapter accepts `operation` as a string; it is not the authoritative validator or inventory of task operations. Task authoring is independent of queue activation. Curator coherence delegates a typed request to its contract-owned application authority without adding aliases or publication policy. Closeout queue is a thin adapter over a disposable projection; scheduling and persistence semantics belong to its application owner. The three memory-quality adapters forward synchronous, start and poll DTOs to one controller and use the same response name; they do not reproduce wait, capacity or poll-error policy. Each retains the whole application result beside an answer projected by `application/memory_quality/answer.py`; the common boundary guards the delivered mapping and records the whole material where logging succeeds.
+Task-document and reopen builders forward to task-domain application services; `task_doc_payload` catches `TaskDocError` and converts it into a structured `{ok: False, code: ...}` refusal while letting unexpected exceptions propagate, and `worktree.py` similarly converts narrow typed domain errors on `worktree_status`, `worktree_closeout_preview`, `worktree_closeout_apply`, and `worktree_checkpoint_landing` (`SourceLineageRefusal`, `LandingCommitCheckRefusal`, `CommitPublicationRefusal`, `WorktreeTargetResolutionError`, `ValidationError`, `CloseoutQueueError`, `IntegrationBranchAuthorityError`). The adapter accepts `operation` as a string; it is not the authoritative validator or inventory of task operations. Task authoring is independent of queue activation. Curator coherence delegates a typed request to its contract-owned application authority without adding aliases or publication policy. Closeout queue is a thin adapter over a disposable projection; scheduling and persistence semantics belong to its application owner. The three memory-quality adapters forward synchronous, start and poll DTOs to one controller and use the same response name; they do not reproduce wait, capacity or poll-error policy. Each retains the whole application result beside an answer projected by `application/memory_quality/answer.py`; the common boundary guards the delivered mapping and records the whole material where logging succeeds.
 
-The registration family imports the read, diff, integrity and write operations directly. The writer answer includes the bounded note, problem and violation lists beside its full report. `knowledge_read` selects a caller-named converted memory root holding `knowledge/layout.json`, then selects the derived index of its current tree state. The namespace is server-owned. Missing roots return `selected_input_unavailable`; existing unconverted directories and database files return `legacy-format` with conversion guidance. There is no database-path fallback and no mounted projection destination. The family does mount an authoring builder: `knowledge_write` shares the command's plan, write, refusal and report behaviour and the same leaf, crossing and wave target selection, and commits no Git. Records and assessments are attributed data; this route must not invent classifications, effect labels, drafts or decisions to resolve ambiguity.
+The registration family imports the read, diff, integrity and write operations directly. The writer answer uses `compact_write_answer` (5-entry caps on problems, violations, notes, written, and removed with total counts and truncation flags) beside its full report. `knowledge_read` selects a caller-named converted memory root holding `knowledge/layout.json`, then selects the derived index of its current tree state. The namespace is server-owned. Missing roots return `selected_input_unavailable`; existing unconverted directories and database files return `legacy-format` with conversion guidance. There is no database-path fallback and no mounted projection destination. The family does mount an authoring builder: `knowledge_write` shares the command's plan, write, refusal and report behaviour and the same leaf, crossing and wave target selection, and commits no Git. Records and assessments are attributed data; this route must not invent classifications, effect labels, drafts or decisions to resolve ambiguity.
 
 Read admits eleven views: `source_context`, `invariant`, `family`, `record`, `records`, `impact`, `search`, `weakness`, `dependent`, `writers`, and `consolidation_proposal`. The `records`, `impact` and `search` query views delegate through `knowledge.py::_one_view` to `application/knowledge_queries.py::run_query_view` so `mcp/tools/` retains only `_tool_payload` choke-point modules. The `writers` view uses writer aggregates (including five consolidation outcome columns: `consolidationKept`, `consolidationCorrected`, `consolidationMerged`, `consolidationRetired`, `consolidationUnresolved`) instead of individual record rows, and `consolidation_proposal` builds candidate consolidation families/rules scoped to an optional `masterId`. The first three use tree-bound paging; `weakness` and `dependent` use bounded lists with `rows:<n>` mark cursors. The unpaged `record` view takes a `recordId` text identity and returns a bounded link-state, timeline, count and location projection without record prose. Ordering is validated before opening the tree; the default applies only when the caller supplies none. Selection and indexing failures map to named refusals, including index-key mismatch and a named repository root that cannot resolve a code tree. Anchor-context construction can complete a caller root with its current Git tree, or use the workspace when neither half was requested and a tree is available. Git resolution has a 20-second timeout and validates a 40- or 64-character hexadecimal tree id. This context-completion step is distinct from paging currentness: a fresh walk binds only the requested `codeTreeId`, and a continuation restores its bound tree. With no requested walk tree, the pager clears source resolution for the walk rather than treating resolved HEAD as currentness evidence.
 
@@ -62,7 +62,7 @@ Converted reads delegate to the shared pager. Continuations bind memory selectio
 
 `knowledge_diff` compares knowledge files across memory Git trees, or the working tree when no after revision is supplied, with optional record/path narrowing. It groups raw patches by record/source and does not infer semantic effects. It refuses a directory below the repository root with guidance naming the root, absent narrowing selections and unavailable/unconverted inputs. The internal comparison retains its declared per-file patch bounds. The mounted answer instead names compared trees, counts, bounded changed-record names and a caller-readable comparison report; raw patch groups are not carried inline.
 
-Integrity selects a memory/code root pair, optionally completing missing roots and the memory base from a leaf contract. Insufficient input, unreadable contracts, unconverted memory, nonexistent code roots and unreadable validation inputs return named refusals. It runs the knowledge validator over working files and supplied bases; without bases, the recorded contract is anchor path-existence checking. It adds the latest persisted leaf worklist when a contract is supplied rather than recomputing that worklist. Counts and the whole-result violation list include the full validation result, with refusing violations before report-only findings. The delivered status projection keeps at most 10 violation entries with the full list count and truncation flag when shortened; the common answer guard still applies. The whole result separately sets `violationsTruncated` against the 20-entry general list bound even though it retains every finding. The validator body itself writes nothing and opens no database; the common response boundary can still log the call.
+Integrity selects a memory/code root pair, optionally completing missing roots and the memory base from a leaf contract. Insufficient input, unreadable contracts, unconverted memory, nonexistent code roots and unreadable validation inputs return named refusals. It runs the knowledge validator over working files and supplied bases; without bases, the recorded contract is anchor path-existence checking. It adds the latest persisted leaf worklist when a contract is supplied rather than recomputing that worklist. Counts and the whole-result violation list include the full validation result, with refusing violations before report-only findings. The delivered status projection (`_integrity_answer` -> `application/knowledge_integrity_answer.py::integrity_answer`) keeps at most 10 violation entries with the full list count and truncation flag when shortened, summarizes family route rows into counts (`familyCount`, `byStatus`, `routeUnassigned`, `routeless`, `differs`), and keeps worklist summary metadata without inline `items`, leaving full route rows and worklist items in the daily log and `agents-remember knowledge-routes`; the common answer guard still applies. The whole result separately sets `violationsTruncated` against the 20-entry general list bound even though it retains every finding. The validator body itself writes nothing and opens no database; the common response boundary can still log the call.
 
 Citation repair delegates through the application authority and translates `ConfiguredContractAuthorityError` into a named refusal requiring developer decision. Its current builder retains the whole result and supplies a compact status answer: successes carry repair counts, while failures add slim actionable entries capped at 10 per selected list. Failed converted results project stale, unreadable-sidecar and authoring-refused entries; old-format inputs carry central legacy-format conversion recovery rather than a legacy repair list. Migration answer helpers are removed. The retained 50-entry `_bounded_citation_fix` helper is not called by this builder and does not describe its delivered answer. Finite multi-card selection belongs to the registered `documents` operand and application scope validation.
 
@@ -120,10 +120,7 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 
 
-- The named refusal of a root with no code tree. [1]
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
-- Converted-tree refusals state the threshold. [5]
-- Three delegates serve read, Git diff and tree validation. [10]
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
 
 
@@ -202,7 +199,6 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 - Guidance uses the exact response address, and enrichment precedes serialization. [48]
 
 
-- Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped. [49]
 
 
 - **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
@@ -211,7 +207,6 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 
 
-- **Retained historical source account — superseded by the current route account:** Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts. [55]
 
 - **Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools [59]
 
@@ -228,7 +223,6 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 - The settings payload that answers a refusal instead of raising it. [61]
 
 
-- The server-info answer without a harness skill root. [62]
 
 
 - - A converted tree's citation-fix result is bounded for transport. [43]
@@ -251,8 +245,10 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 
 - **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
 
-
-
-
-
-- The writer answer carries bounded notes and a full report location. The writers branch returns a writer aggregate. [69]
+- The named refusal of a root with no code tree. [1]
+- Converted-tree refusals state the threshold. [5]
+- Three delegates serve read, Git diff and tree validation. [10]
+- Server info reports the agent binding, serving build, and compact runningServers summary inline rather than a roster, and the context-packet reader is task-scoped. [49]
+- Integrity validates paired roots, retains all whole-result findings, and projects bounded violations, route summary counts, and worklist metadata inline via application/knowledge_integrity_answer.py. [55]
+- The server-info answer without a harness skill root. [62]
+- The writer answer uses compact_write_answer with 5-entry caps, total counts, truncation flags, and a full report location. The writers branch returns a writer aggregate. [69]

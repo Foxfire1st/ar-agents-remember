@@ -416,12 +416,12 @@
       ]
     },
     "124": {
-      "note": "**Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. Anchor: `TaskDocResponse`",
+      "note": "TaskDocResponse permits omitted document identity for structured boundary refusals (ok=False with nonblank code).",
       "targets": [
         {
           "anchor": {
-            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
-            "content": "sha256:8eec489a710525c3e91a090ce1b59e685b3823f0fd354ac7a44af83b8b9e1b1b",
+            "blob": "c3452e520b58b90c3587ba6a9876053a60d57609",
+            "content": "sha256:7f5e1418e5af38ff42ae7bc1cf15ba22e01ebfc2ef1fd1db300e1c5055e04ed6",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
@@ -653,22 +653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
-            "content": "sha256:161cb5c67565707d82224c68b7a0f15e50222830fe5ccdd6ae3827df3f29cc79",
+            "blob": "3d79c2cb1b0b4cee4c33d92d9aebef545b09fed7",
+            "content": "sha256:25b30c7084c53e902cf695fcdcbc932b5ce04a852a9b512e4fed4646f254e669",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
-            "content": "sha256:cf16a16167e0b91ecc2374aa74b904acda4ada11ca3aced5afa55a9de3d3edd0",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         },
