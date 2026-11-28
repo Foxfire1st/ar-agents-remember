@@ -353,11 +353,11 @@
       ]
     },
     "19": {
-      "note": "The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view.",
+      "note": "The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "blob": "3f55d23ebc597a4a309c31ebe9f8548cf669d1c0",
             "content": "sha256:29ffa7b4a8507652fe5655b0898456dcd9b663afdd14bcc837d234b4017b3cf5",
             "locator": {
               "end": 13,
@@ -370,10 +370,10 @@
         },
         {
           "anchor": {
-            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
-            "content": "sha256:2988f2c274bf95a7a9f03a8f3b6c36675c3d4aa9f0b223cbe740662c7808512d",
+            "blob": "3f55d23ebc597a4a309c31ebe9f8548cf669d1c0",
+            "content": "sha256:ab4a8d36be06b1268310d53939a83ff25e0ed478010a5d95c1f6691e1355327b",
             "locator": {
-              "end": 65,
+              "end": 66,
               "kind": "line_range",
               "start": 47
             },

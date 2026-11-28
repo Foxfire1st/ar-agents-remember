@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/highlights_service.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c68ccbda6726044c7ce63bbc4a768490df89d424",
+        "content": "sha256:c2d53f327c35ebbac189ff77c0f8479d56447daddfb1b3dfea1618c1cdfa1352",
+        "locator": {
+          "kind": "symbol",
+          "name": "highlight_text"
+        }
+      },
+      "id": "RLZ-FCGRK7",
+      "invariant": "INV-X132KY",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-1.2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Coordinates catalog/custom target resolution, out-of-process smoke-compile caching, generation-keyed LRU caching, and clean degradation to None without failing reads.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Declares thread-safe bounded caches `_VERIFIED_BUNDLES`, `_COMPILED_BUNDLES`, `_HIGHLIGHT_CACHE`, and `_HIGHLIGHT_CACHE_STATS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68ccbda6726044c7ce63bbc4a768490df89d424",
+            "content": "sha256:5e34de991b18a30c70aaa2c81e53c650e2f95e9bb97716d91542cab5f69e2f45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HIGHLIGHT_CACHE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resolves display language via active/repo `LanguageSet` then catalog `display_language_for` with `\"text\"` fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68ccbda6726044c7ce63bbc4a768490df89d424",
+            "content": "sha256:d357e17b095ad04eb67094d0ee333ca2323ad9d39b9c1bc1a6033dec8074b2a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_display_language"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runs out-of-process smoke compilation via `highlights_smoke` before compiling query bundles in-process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68ccbda6726044c7ce63bbc4a768490df89d424",
+            "content": "sha256:d95c0079feaf0ff789c69ef90c5835cfba796c1d5ed32482f9b75615767e2cb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_bundle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Coordinates target resolution, generation-keyed LRU caching, and graceful `None` degradation in `highlight_text`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68ccbda6726044c7ce63bbc4a768490df89d424",
+            "content": "sha256:c2d53f327c35ebbac189ff77c0f8479d56447daddfb1b3dfea1618c1cdfa1352",
+            "locator": {
+              "kind": "symbol",
+              "name": "highlight_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

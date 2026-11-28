@@ -73,16 +73,16 @@
       ]
     },
     "13": {
-      "note": "Unchanged, changed and separate-side card excerpts pass their visibility input to useExcerptMarking and render its note/panel with the excerpt; no SourceContent full-file caller remains in this card owner.\n\nAnchor: \"function UnchangedExcerpt({ card, language, visible }: ExcerptProps) {\"",
+      "note": "Unchanged, changed and separate-side card excerpts pass their visibility input to useExcerptMarking and render its note/panel with the excerpt; no SourceContent full-file caller remains in this card owner.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:de27616024007d66bf0f77c259a50fc874c6fb2b1bbf885be282b5856819e1a6",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:916bc5db62705721034bf5e33a4fefd54476babe60e911237d084ce669f7e8b3",
             "locator": {
-              "end": 655,
+              "end": 669,
               "kind": "line_range",
-              "start": 576
+              "start": 575
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },

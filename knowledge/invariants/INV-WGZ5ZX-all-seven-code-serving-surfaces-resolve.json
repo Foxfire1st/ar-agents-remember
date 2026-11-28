@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Enforces KNO-R13@v1 AC-2 uniform wire schema and catalog-driven language resolution across all seven code-serving routes without duplicating hardcoded extension maps."
+  },
+  "applicability": "All seven code-serving backend surfaces: File Viewer (/api/files/read), Change-Set Viewer (/api/changeset/* via diff_side), Knowledge Reader (truth.code_view), Notes Reader (/api/notes/read), Review Source Content (ReviewSourceSide / review_source_content), Review Expression Cards (review_tree_entries._excerpt), and Role Report Viewer (cli/role_report._read_report_file).",
+  "conditions": [
+    "serving/scope.py language_for delegates directly to resolve_display_language with no hardcoded _LANG_BY_EXT map.",
+    "Textual payloads attach strict immutable SyntaxHighlights ({v, lang, tokens, spans}) when available and null when unavailable, oversized, or degraded.",
+    "Binary and media payloads on files, diff_side, and notes emit explicit highlights: null; ReviewSourceSide enforces structurally that only present textual sides may carry highlights."
+  ],
+  "exclusions": [
+    "Knowledge Reader binary state omits the optional highlights key rather than serializing explicit null (media state emits explicit null; the TypeScript highlights?: SyntaxHighlights | null contract accepts both).",
+    "Client-side rendering of received highlights (covered by AC-3)."
+  ],
+  "id": "INV-WGZ5ZX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_unified_tree_sitter_highlights.py::LiveGrammarHighlightTests::{test_all_serving_surfaces_carry_contract_valid_highlights,test_surface_3_knowledge_reader_code_route_contract} (152 passed, 235 subtests passed on clean-copy tree 8e2b8ed2889265fea2a81be8c3fb8e889a194990)"
+      ],
+      "path": "261112-KNO-L13-curator-handoff"
+    },
+    "handoffEntry": "KNO-R13@v1 AC-2",
+    "leaf": "261112-KNO-L13",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "All seven code-serving surfaces resolve display language from the language catalog (with no hardcoded _LANG_BY_EXT table) and attach compact SyntaxHighlights on textual payloads while emitting highlights: null on binary, media, oversized, or unavailable payloads.",
+  "supersedes": [],
+  "title": "All seven code surfaces resolve catalog languages and attach SyntaxHighlights",
+  "writer": {
+    "at": "2026-11-28T05:27:32+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L13",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
+  }
+}

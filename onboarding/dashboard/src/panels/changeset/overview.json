@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
             "locator": {
               "kind": "symbol",
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:8806057e1f4126c574302654a3671bcc196c4b79905ae08946128c0e758d9b13",
             "locator": {
-              "end": 123,
+              "end": 127,
               "kind": "line_range",
-              "start": 104
+              "start": 108
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -34,38 +34,27 @@
       ]
     },
     "2": {
-      "note": "The two extracted view builders, each with its marks gutter.\n\nAnchor: `splitView` `inlineView`",
+      "note": "The two extracted view builders, each with its marks gutter.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:b199dda24d7eb6fba1ad54f1b60d707e840264644b2963d88084dd84d358841a",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:b199dda24d7eb6fba1ad54f1b60d707e840264644b2963d88084dd84d358841a",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:95bbf5594d45ccadc1950df5823abe984257e70ca4e16b9fa7daf998486cd330",
-            "locator": {
-              "kind": "symbol",
-              "name": "splitView"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:4521265281717798c3c1bd0ffb97d3c6ec0547122dc8c551b76af2b7349ebe24",
-            "locator": {
-              "kind": "symbol",
-              "name": "inlineView"
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -74,38 +63,27 @@
       ]
     },
     "3": {
-      "note": "The optional first lines and the content-sized host.\n\nAnchor: `DiffPane` `fitHost`",
+      "note": "The optional first lines and the content-sized host.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:b199dda24d7eb6fba1ad54f1b60d707e840264644b2963d88084dd84d358841a",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:b199dda24d7eb6fba1ad54f1b60d707e840264644b2963d88084dd84d358841a",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffPane"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
-            "locator": {
-              "kind": "symbol",
-              "name": "fitHost"
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -114,14 +92,16 @@
       ]
     },
     "4": {
-      "note": "The card that passes them.\n\nAnchor: `ChangedExcerpt`",
+      "note": "The card that passes them.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
-              "kind": "file"
+              "end": 772,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -129,11 +109,10 @@
         },
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangedExcerpt"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -186,16 +165,16 @@
       ]
     },
     "52": {
-      "note": "The optional marks and the marked pane.\n\nAnchor: \"marks?: PaneMarks;\"; \"const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);\"",
+      "note": "The optional marks and the marked pane.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:963636f838a021db3e4d2aef8df3e8216a722f3f5a51d8ddd7f705c06c7d03b8",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:a73746bfd91c7a462bddf35888348975092324bce2e2c60bf628e372d840431a",
             "locator": {
-              "end": 272,
+              "end": 334,
               "kind": "line_range",
-              "start": 265
+              "start": 298
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -270,12 +249,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:ab38ac33f4e1353dc181a904b1062896f0247eda64e4bce498866dc8d2ede5bc",
             "locator": {
-              "end": 229,
+              "end": 231,
               "kind": "line_range",
-              "start": 228
+              "start": 230
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -283,12 +262,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:9cb7c1608471f6293a509aa3b3a4375373af844a648aa37982391749ac30f15b",
             "locator": {
-              "end": 88,
+              "end": 90,
               "kind": "line_range",
-              "start": 87
+              "start": 89
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -296,12 +275,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:b52cb6555d13a6037152c24e113693ceb949967d977b1db78682129a9278753e",
             "locator": {
-              "end": 179,
+              "end": 181,
               "kind": "line_range",
-              "start": 179
+              "start": 181
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -309,12 +288,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:6b0f4d5b11103cf0bb12fb25d385a4fdb2e45b0409387d209186935afb8a8f54",
             "locator": {
-              "end": 247,
+              "end": 249,
               "kind": "line_range",
-              "start": 202
+              "start": 204
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -322,12 +301,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:614da064ba7c4cc8bc02c444fdb7701ce5f607abad9401847265f8917ad6ee6d",
             "locator": {
-              "end": 307,
+              "end": 309,
               "kind": "line_range",
-              "start": 277
+              "start": 279
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -383,14 +362,16 @@
       ]
     },
     "58": {
-      "note": "The reused read-only CodeMirror pane + theme + lang map.\n\nAnchor: `FilePane`",
+      "note": "The reused read-only CodeMirror pane + theme + server-computed highlights.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
-              "kind": "file"
+              "end": 174,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -398,11 +379,10 @@
         },
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -557,12 +537,12 @@
         },
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
             "content": "sha256:abdd1cbe8d6a47bada1d3fd40ae2164bf3c5db68c8165db955bda24317416d81",
             "locator": {
-              "end": 681,
+              "end": 683,
               "kind": "line_range",
-              "start": 667
+              "start": 669
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -762,7 +742,7 @@
       ]
     },
     "73": {
-      "note": "Shared numbering, theme and language construction.\n\nAnchor: `numberedFrom`; `codeTheme`; `langExtension`",
+      "note": "Shared numbering, theme, and server-highlight construction.\n\nAnchor: `numberedFrom`; `codeTheme`; `serverHighlightsExtension`",
       "targets": [
         {
           "anchor": {
@@ -777,8 +757,8 @@
         },
         {
           "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:a3db5485291873243d67f46a6e735dc629cf15f7ddd05bb302afdd3fc2e24345",
+            "blob": "2fc125fb5d4b552333f3a0ee24a7a539461a758d",
+            "content": "sha256:21cd6e244484e61dd28cbdda0cecdd52675ed6eedc8b48a601e13182deaa111e",
             "locator": {
               "kind": "file"
             },
@@ -788,23 +768,23 @@
         },
         {
           "anchor": {
-            "blob": "1478b3eb824544d49fc8276496f61aaf257f0641",
-            "content": "sha256:5ceb8478d9a1aa06279f1983d66df5a0d1c9d9920d913c97d706e4f90ce4729c",
+            "blob": "dd23c9cf066a2891e3e9914abca5a767c442b538",
+            "content": "sha256:37939b83b849da5f4459117ae0f2990b3acc7b3a9484aa9fcc364335414bf194",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/file-viewer/langByExtension.ts"
+            "path": "dashboard/src/panels/file-viewer/serverHighlights.ts"
           },
           "kind": "code"
         }
       ]
     },
     "75": {
-      "note": "Diff highlight styling, fitting and effect teardown.",
+      "note": "Diff highlight styling, fitting and effect teardown.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
             "content": "sha256:ea618bb7a7cac1d052a3b7f17c14544c3e1200fcc1a4de4d4470b21b8cc18ab7",
             "locator": {
               "end": 60,
@@ -817,12 +797,12 @@
         },
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:f1afeb8ca78e3f0724595d31b548648b05c249c6087984b1209abd22f358d44b",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:201a4a46633e8c536874278cf5b900779160167d48eebb9bb4759b819fc952f8",
             "locator": {
-              "end": 193,
+              "end": 370,
               "kind": "line_range",
-              "start": 150
+              "start": 302
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -831,15 +811,16 @@
       ]
     },
     "76": {
-      "note": "Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired.",
+      "note": "Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangedExcerpt"
+              "end": 772,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -847,11 +828,12 @@
         },
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:b199dda24d7eb6fba1ad54f1b60d707e840264644b2963d88084dd84d358841a",
             "locator": {
-              "kind": "symbol",
-              "name": "fitHost"
+              "end": 392,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -859,19 +841,7 @@
         },
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffPane"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
             "content": "sha256:8e16b6236191a73b0895f6895b0b021ccfa3397b797b2d44cb39d25d3cd89c92",
             "locator": {
               "end": 143,
@@ -889,12 +859,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
-              "end": 380,
+              "end": 383,
               "kind": "line_range",
-              "start": 323
+              "start": 326
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -902,12 +872,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:5bab569843b75404aeee826ce4d9597cba896f8f2563eecba60aea8853334d45",
             "locator": {
-              "end": 545,
+              "end": 547,
               "kind": "line_range",
-              "start": 444
+              "start": 446
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1089,11 +1059,11 @@
       ]
     },
     "84": {
-      "note": "Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states.",
+      "note": "Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
             "content": "sha256:6a285740046988cc5ec78f2b0a6286b2fc42bc59384a8da00b8afc0aca8f299d",
             "locator": {
               "end": 41,
@@ -1106,7 +1076,7 @@
         },
         {
           "anchor": {
-            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
             "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
             "locator": {
               "end": 114,
@@ -1119,10 +1089,10 @@
         },
         {
           "anchor": {
-            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
-            "content": "sha256:85de5171571dbb9389a19b6c84f08efa64dd315b5f6a943bcd5a322b7f3837be",
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
+            "content": "sha256:b3e35d07dc44b0596a80755bc956d59105936a5faa30eb356084e72d9e8a5987",
             "locator": {
-              "end": 158,
+              "end": 162,
               "kind": "line_range",
               "start": 128
             },
@@ -1137,12 +1107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:face90fb5561f76eca677c7015acb011363a8156278cfcc9a73e1e1642ec7e0c",
             "locator": {
-              "end": 226,
+              "end": 228,
               "kind": "line_range",
-              "start": 202
+              "start": 204
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1163,12 +1133,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
             "locator": {
-              "end": 221,
+              "end": 223,
               "kind": "line_range",
-              "start": 218
+              "start": 220
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1176,12 +1146,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
             "locator": {
-              "end": 226,
+              "end": 228,
               "kind": "line_range",
-              "start": 223
+              "start": 225
             },
             "path": "dashboard/src/data/changeset.ts"
           },

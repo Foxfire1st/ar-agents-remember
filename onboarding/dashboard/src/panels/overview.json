@@ -89,12 +89,12 @@
       ]
     },
     "11": {
-      "note": "Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters.",
+      "note": "Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
-            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "blob": "5a0016f466d8a23a1f7aefc92efb016c534700ca",
+            "content": "sha256:d5e6e55295bbb9c89a52372ab817bfc563faedd7cd3637169222128fada96179",
             "locator": {
               "kind": "file"
             },
@@ -1512,12 +1512,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
             "content": "sha256:be61958be267fb70d427a19057ca7719b5197ad1f150c3eaa7af66bf22b91117",
             "locator": {
-              "end": 263,
+              "end": 262,
               "kind": "line_range",
-              "start": 229
+              "start": 228
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -1989,12 +1989,12 @@
       ]
     },
     "180": {
-      "note": "Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence.",
+      "note": "Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-            "content": "sha256:f7ee053e85c0e265023f7d0d267a21981d0df64f2a3f58e175ad3fad515ffa87",
+            "blob": "852114571550da1e7ba230e8256f02359df8f87a",
+            "content": "sha256:f9015adf35aec361ae60d02488ecc7a5c11458c80b8018dd9c420e3b9df8c1e7",
             "locator": {
               "kind": "file"
             },
@@ -2761,12 +2761,12 @@
       ]
     },
     "212": {
-      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
+      "note": "Current source owners for the review page account.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
               "kind": "file"
             },
@@ -2810,12 +2810,12 @@
       ]
     },
     "213": {
-      "note": "Current lane owners for the review page account.",
+      "note": "Current lane owners for the review page account.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
-            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "blob": "5a0016f466d8a23a1f7aefc92efb016c534700ca",
+            "content": "sha256:d5e6e55295bbb9c89a52372ab817bfc563faedd7cd3637169222128fada96179",
             "locator": {
               "kind": "file"
             },
@@ -3282,12 +3282,12 @@
       ]
     },
     "24": {
-      "note": "ReviewBlockCard renders a shared region with entry-specific rationale and tray actions.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
+      "note": "ReviewBlockCard renders a shared region with entry-specific rationale and tray actions.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
               "kind": "file"
             },
@@ -3970,12 +3970,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
             "content": "sha256:eb765dff111d1504f248a87db20d7d4cb4486c5354bf5228ca05b65681d3c169",
             "locator": {
-              "end": 613,
+              "end": 615,
               "kind": "line_range",
-              "start": 588
+              "start": 590
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -3983,12 +3983,12 @@
         },
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
             "content": "sha256:abdd1cbe8d6a47bada1d3fd40ae2164bf3c5db68c8165db955bda24317416d81",
             "locator": {
-              "end": 681,
+              "end": 683,
               "kind": "line_range",
-              "start": 667
+              "start": 669
             },
             "path": "dashboard/src/data/review.ts"
           },

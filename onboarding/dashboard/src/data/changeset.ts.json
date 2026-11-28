@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
-        "content": "sha256:656d14079ffa174fafbe243a0cbe821ceb798460ccec0992595de50a3c1f8955",
+        "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
+        "content": "sha256:294344e96c2c78dc6217a4524d391016b76594b1e55dbb12ab51cc484dfd9e08",
         "locator": {
           "kind": "file"
         }
@@ -25,36 +25,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:c87098c78ba81a649a35582f80b2ce8ab8fe1bfaa70cfbda110c34cad0657b48",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
-              "start": 72
+              "start": 74
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:3653ba1ba3e72665595c656794db67d919c4c907aba3c304fc3b47ff62a21943",
             "locator": {
-              "end": 78,
+              "end": 80,
               "kind": "line_range",
-              "start": 78
+              "start": 80
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
-              "end": 85,
+              "end": 87,
               "kind": "line_range",
-              "start": 85
+              "start": 87
             }
           },
           "kind": "code"
@@ -62,16 +62,16 @@
       ]
     },
     "10": {
-      "note": "File diffs name which half of the comparison they read",
+      "note": "File diffs name which half of the comparison they read\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
-            "content": "sha256:5617c790d8d9dec0e1f21326d049111bcfa70c63e09a01a33e1d39d08bee6d77",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
+            "content": "sha256:aff8d6d7d0835b6ce62622270abcb716e9b983a668660a6c64c3118affafd742",
             "locator": {
-              "end": 67,
+              "end": 69,
               "kind": "line_range",
-              "start": 49
+              "start": 50
             }
           },
           "kind": "code"
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:de2d059adaf595f3407bd8cbe2e2ce6c2fc3b40ce10177e1898f64135efd289f",
             "locator": {
               "kind": "symbol",
@@ -99,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:16f4fc80e1ee01ca1cf10038008ecf98f96f1d6ebf5e3ca1897d329aeb4a8722",
             "locator": {
               "kind": "symbol",
@@ -115,24 +115,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:ef9647cb60b62dba456f90edb66b12c4424a2a816fa17d51d19db2492bc8a79b",
             "locator": {
-              "end": 188,
+              "end": 190,
               "kind": "line_range",
-              "start": 110
+              "start": 112
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:20dac835a71beb3675ff1c66b3c2e03a7b2e572bdb3bcd9c28436f069c3e82d4",
             "locator": {
-              "end": 246,
+              "end": 248,
               "kind": "line_range",
-              "start": 228
+              "start": 230
             }
           },
           "kind": "code"
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:1a4ba82be6b143ff3ca51af70f8f89aa90b911011c08e3373efcdc3c5c4baddd",
             "locator": {
               "kind": "symbol",

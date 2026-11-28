@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/highlights_smoke.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4e8c3fd4c495796cc6a77acb79baa7676298d908",
+        "content": "sha256:7bca0fdd1df758d4cd9bb7748914be440bb7d18cab3bf1f19b9610f8f19a5b34",
+        "locator": {
+          "kind": "symbol",
+          "name": "_smoke_compile"
+        }
+      },
+      "id": "RLZ-295PZH",
+      "invariant": "INV-X132KY",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-1.2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Compiles every catalog or custom highlight query bundle inside a short-lived child process so malformed queries or native grammar crashes cannot crash the serving host.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Compiles catalog or custom highlight query bundles against their exact tree-sitter `Language` and verifies query count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e8c3fd4c495796cc6a77acb79baa7676298d908",
+            "content": "sha256:7bca0fdd1df758d4cd9bb7748914be440bb7d18cab3bf1f19b9610f8f19a5b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_smoke_compile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provides the stdin/exit-code subprocess entry point used to isolate malformed queries and native crashes from the host process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e8c3fd4c495796cc6a77acb79baa7676298d908",
+            "content": "sha256:1fee96e8826f9d4ca9f8283addd3d84b99cc2df4be20c67c88024869f90dc8a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

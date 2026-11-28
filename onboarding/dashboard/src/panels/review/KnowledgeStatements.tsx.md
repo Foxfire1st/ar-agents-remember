@@ -33,7 +33,9 @@ No configured domain documentation source was available. This account uses repos
 
 The remaining supporting owners are `models/knowledge/review.py::ReviewSideContent`, `application/review_statement_sides.py::side_content`, `SubjectReview.tsx::SelectedStatement`, `IntentWordDiff.tsx::OneSidedStatement` / `IntentStatementBody`, and the complete stored cases in `KnowledgeStatements.test.tsx`.
 
+
 - The exported component counts declared-present sides and retains both state lines outside its two-sided branch. [22]
+
 - The shared two-sided and one-sided diff calls preserve operand language and layout; the available-content call explicitly refuses a diff; all three request fit panes. [23]
 - Supporting current owner mcp/src/agents_remember/models/knowledge/review.py [24]
 - Supporting current owner dashboard/src/panels/review/SubjectReview.tsx [26]

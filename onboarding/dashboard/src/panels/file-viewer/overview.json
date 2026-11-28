@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
             "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
             "content": "sha256:8fdd7019617e9e4568c04ba2d32f046f80fd2f22e3f7b6473d434c729488f717",
             "locator": {
               "kind": "symbol",
@@ -55,14 +55,14 @@
       ]
     },
     "12": {
-      "note": "For source text, CodeSide combines the File Viewer repository with the read file scope and path for FilePane's optional tray gutter. Picture and video content takes the media branch instead.",
+      "note": "For source text, CodeSide combines the File Viewer repository with the read file scope and path for FilePane's optional tray gutter. Picture and video content takes the media branch instead.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
-            "content": "sha256:f378e1680148157e4d21b978ca46026a49b74bdbb41786feb6916a06c3042bd6",
+            "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
+            "content": "sha256:e743180e75a0cbcc4bbda584fbf1ad1401ee3bb70e3b35a5edc19f912e27db01",
             "locator": {
-              "end": 137,
+              "end": 139,
               "kind": "line_range",
               "start": 107
             },
@@ -139,14 +139,14 @@
       ]
     },
     "3": {
-      "note": "The code pane's optional marks.",
+      "note": "The code pane's optional marks.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:3fcdf8f870acaceb60f98e0b757a3cb5e2c03dbfdbc59c6ae16d8303c89a72f0",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:05990c0b585d350c1872dea446537f0e93351d2145238e4f244c0148816d5482",
             "locator": {
-              "end": 70,
+              "end": 71,
               "kind": "line_range",
               "start": 35
             },
@@ -174,28 +174,16 @@
       ]
     },
     "5": {
-      "note": "The code pane's optional first line and content-sized host.",
+      "note": "The code pane's optional first line and content-sized host.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
-              "kind": "symbol",
-              "name": "fitHost"
-            },
-            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
-            "locator": {
-              "end": 71,
+              "end": 174,
               "kind": "line_range",
-              "start": 71
+              "start": 1
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -203,8 +191,21 @@
         },
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:d55bd7acc579e1e6f2f01782969e8f7e657c320cb70d486aaa15736eafa16812",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
               "kind": "file"
             },
@@ -219,12 +220,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+            "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
             "content": "sha256:042b74dfb3a0962f582382f3030dcb1fbb6bbedcd6f58c53c2b1e7de54710669",
             "locator": {
-              "end": 412,
+              "end": 419,
               "kind": "line_range",
-              "start": 362
+              "start": 369
             },
             "path": "mcp/src/agents_remember/serving/files.py"
           },
@@ -237,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "blob": "b38bc3cad6ab252b4f787c5f018822b95bf5d067",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",

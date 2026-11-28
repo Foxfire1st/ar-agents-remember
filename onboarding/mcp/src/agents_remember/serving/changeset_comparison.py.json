@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+        "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
         "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
         "locator": {
           "end": 114,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+        "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
         "content": "sha256:2004ff3886977e74a42ca44019dd8aa47b7256e3bc806fc648423fd938eb54b1",
         "locator": {
           "end": 13,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+        "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
         "content": "sha256:292a565fa20247f7ae73b06e7365848c86656eee94a44026a7ad56c8e36df5e4",
         "locator": {
           "kind": "symbol",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
-        "content": "sha256:85de5171571dbb9389a19b6c84f08efa64dd315b5f6a943bcd5a322b7f3837be",
+        "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
+        "content": "sha256:b3e35d07dc44b0596a80755bc956d59105936a5faa30eb356084e72d9e8a5987",
         "locator": {
           "kind": "symbol",
           "name": "comparison_file_diff"
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
             "content": "sha256:783ab7b384ab9f8d28393380340e929d7bf278f5c796745cd79c2abd4c23390c",
             "locator": {
               "kind": "symbol",
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
             "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
             "locator": {
               "kind": "symbol",
@@ -110,14 +110,14 @@
       ]
     },
     "4": {
-      "note": "File diffs read immutable trees and confine memory paths",
+      "note": "File diffs read immutable trees and confine memory paths\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
-            "content": "sha256:f1250e083f28df506db724ab920e67b4449353656826a5f2ec91abff0d75233d",
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
+            "content": "sha256:c8310eb60d3a88412fb82bdf12f6175acc214f050a35691af8fc5f14a2fe3452",
             "locator": {
-              "end": 158,
+              "end": 162,
               "kind": "line_range",
               "start": 117
             }

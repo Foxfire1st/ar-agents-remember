@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Enforces KNO-R13@v1 AC-1.3 local-only security boundary preventing remote query fetching while allowing repository-local custom grammars such as Bend2 to supply dashboard syntax highlighting."
+  },
+  "applicability": "Per-repository languages.json custom language entries parsed by language_config._parse_one_custom_language into CustomLanguageSpec and loaded by language_scanner.build_provider_from_custom.",
+  "conditions": [
+    "Custom language entries accept optional highlightsQueryPath pointing to a local .scm file resolved relative to the repository root or as a local path.",
+    "Remote URLs (http://, https://, file://, etc.) in highlightsQueryPath are unconditionally rejected at config parse time.",
+    "Custom provider highlight queries are tracked in custom artifact stat tokens for repository language-set cache invalidation and take precedence over catalog entries for that language."
+  ],
+  "exclusions": [
+    "User-global settings.json language defaults (which carry no custom highlight query paths).",
+    "Built-in .lean language reservation."
+  ],
+  "id": "INV-H2XGVE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_unified_tree_sitter_highlights.py::HighlightEngineUnitTests::test_custom_highlights_query_path_rejects_remote_urls"
+      ],
+      "path": "261112-KNO-L13-curator-handoff"
+    },
+    "handoffEntry": "KNO-R13@v1 AC-1.3",
+    "leaf": "261112-KNO-L13",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Per-repo custom languages declare optional local-only highlightsQueryPath in languages.json while unconditionally rejecting remote URLs.",
+  "supersedes": [],
+  "title": "Custom repo languages declare local-only highlightsQueryPath without remote URLs",
+  "writer": {
+    "at": "2026-11-28T05:27:32+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L13",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
+  }
+}

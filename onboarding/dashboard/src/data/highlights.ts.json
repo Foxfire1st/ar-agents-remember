@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/data/highlights.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Declares the eleven backend-aligned `HighlightKind` token families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24b29e95cbd58002ffff49b7e73e738026e806bf",
+            "content": "sha256:5ed86370ee4e2ed5b13e8556ded8a78c740ec6a597971531723425098abef98b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HighlightKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the immutable `SyntaxHighlights` wire shape (`version`, `digest`, `kinds`, `spans`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24b29e95cbd58002ffff49b7e73e738026e806bf",
+            "content": "sha256:1038026f27f31492972f78df3befb2c8d62f0db77b44fe0625b5b1c2c0e75447",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyntaxHighlights"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Mirrors the Pydantic `SyntaxHighlights` contract in `models/highlights.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85c2021f15eafedca70063f2ddcd04e557fb2924",
+            "content": "sha256:8111a072410e014c00d3bc2e963abf547adf5d7ad042d73d915770950696f38f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyntaxHighlights"
+            },
+            "path": "mcp/src/agents_remember/models/highlights.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

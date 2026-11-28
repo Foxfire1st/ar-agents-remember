@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Enforces KNO-R13@v1 AC-3 unified foreground-only highlighting across all dashboard viewers while removing all client Lezer language packs and preserving INV-QK8XNM editor retention."
+  },
+  "applicability": "Dashboard CodeMirror 6 viewers (FilePane, DiffPane, ChangeSetPane, DualPane, ReaderCode, NotesReaderViewer, ExpressionCards, KnowledgeStatements) and dashboard/package.json dependencies.",
+  "conditions": [
+    "serverHighlights.ts maps flat UTF-16 [start, end, tokenIdx] triples into sorted, document-length-clamped Decoration.mark(.cm-ar-tok-*) ranges so malformed spans or drawnText trailing-newline trims never throw.",
+    "codemirrorTheme.ts styles .cm-ar-tok-* classes with foreground-only OKLCH colors (zero background overrides) so citationHighlight and diff background bands remain visible.",
+    "FilePane and DiffPane reconfigure highlights in place via CodeMirror Compartments keyed on highlightDigest without adding highlights to EditorView/MergeView rebuild dependencies, preserving INV-QK8XNM DOM node retention across unchanged polls.",
+    "ChangeSetPane suppresses token highlights by passing highlights={null} in plain (full-file highlight-off) mode, and dashboard/package.json declares no @codemirror/lang-*, @codemirror/language, or @lezer/highlight packages."
+  ],
+  "exclusions": [
+    "Server-side tree-sitter execution and span generation (covered by AC-1.2 and AC-2).",
+    "Markdown rendered preview mode (which does not use CodeMirror)."
+  ],
+  "id": "INV-G0D79N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard Vitest 18/18 files (184/184 tests) + npm run build (bundle-budget PASS) + oxlint + tsc -b on clean-copy tree 8e2b8ed2889265fea2a81be8c3fb8e889a194990"
+      ],
+      "path": "261112-KNO-L13-curator-handoff"
+    },
+    "handoffEntry": "KNO-R13@v1 AC-3",
+    "leaf": "261112-KNO-L13",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard CodeMirror 6 viewers render server-computed UTF-16 highlight spans via foreground-only Decoration.mark classes and per-side Compartments without hardcoded @codemirror/lang-* packages, preserving INV-QK8XNM DOM node retention across unchanged polls and ChangeSetPane plain-mode suppression.",
+  "supersedes": [],
+  "title": "Dashboard viewers render server UTF-16 highlights in place without lang packs",
+  "writer": {
+    "at": "2026-11-28T05:27:32+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L13",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
+  }
+}

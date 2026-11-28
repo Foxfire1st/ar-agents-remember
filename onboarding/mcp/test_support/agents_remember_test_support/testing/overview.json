@@ -165,12 +165,12 @@
       ]
     },
     "19": {
-      "note": "The process register declares separate reset, restored, constant-for-tests and quiescent treatments, including `tags_engine.compile_query`. Anchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The process register declares separate reset, restored, constant-for-tests and quiescent treatments, including `tags_engine.compile_query`. Anchor: `PROCESS_MUTABLE_STATES`\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
-            "content": "sha256:cc04b811d36e704f1003788f37f6d19d2fac8c1791b245a42a6d7ad1a0c2b772",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
+            "content": "sha256:fe42b7e4fd1f3a6abef993f957687a7237940bc234e6d75346c6555de6e8b2bd",
             "locator": {
               "kind": "file"
             },
@@ -367,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
             "content": "sha256:160292d7e4c42d854fe0ec5cfa5a617f4f20673493f839da4b8dabfa25fdec6c",
             "locator": {
               "end": 276,
@@ -385,12 +385,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
             "content": "sha256:b22de22be79a13546d249e67b5de979ef176fc6d9cb061cbee98ef62c40ffdad",
             "locator": {
-              "end": 399,
+              "end": 419,
               "kind": "line_range",
-              "start": 395
+              "start": 415
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -398,12 +398,12 @@
         },
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
             "content": "sha256:870b458e5b8c769edd514627c968c6a5289200ab58d444152ebb2f4cc9e0629f",
             "locator": {
-              "end": 430,
+              "end": 450,
               "kind": "line_range",
-              "start": 421
+              "start": 441
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -412,12 +412,12 @@
       ]
     },
     "28": {
-      "note": "The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. Anchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. Anchor: `PROCESS_MUTABLE_STATES`\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
-            "content": "sha256:cc04b811d36e704f1003788f37f6d19d2fac8c1791b245a42a6d7ad1a0c2b772",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
+            "content": "sha256:fe42b7e4fd1f3a6abef993f957687a7237940bc234e6d75346c6555de6e8b2bd",
             "locator": {
               "kind": "file"
             },
@@ -432,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
             "content": "sha256:19c6e6c7e29f33c8d15fab937469b8310dcf0edb768fd10fdefd8da3d56f5884",
             "locator": {
               "end": 227,
@@ -445,12 +445,12 @@
         },
         {
           "anchor": {
-            "blob": "2173597b810817028e1f90751020961770a272ee",
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
             "content": "sha256:a29c11eb2f4bbfd563f3f47e204c9476a2f69c46715c5414b189234884110a20",
             "locator": {
-              "end": 368,
+              "end": 388,
               "kind": "line_range",
-              "start": 364
+              "start": 384
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },

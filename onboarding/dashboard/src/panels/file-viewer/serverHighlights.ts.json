@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/panels/file-viewer/serverHighlights.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dd23c9cf066a2891e3e9914abca5a767c442b538",
+        "content": "sha256:d942996a738f15ae5555baa3e465e7968d3b4b96e10e548f4f25da0db03d1825",
+        "locator": {
+          "kind": "symbol",
+          "name": "buildHighlightDecorations"
+        }
+      },
+      "id": "RLZ-ZT26J8",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Maps flat UTF-16 highlight triples into ordered, length-clamped CodeMirror 6 Decoration.mark ranges so malformed spans or stripped trailing newlines never throw.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Restricts emitted mark classes to the eleven `HighlightKind` values cached in `MARKS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd23c9cf066a2891e3e9914abca5a767c442b538",
+            "content": "sha256:a544b8e724616376096edcf82c49f550ecee5780344d1e69d024a156c42c634a",
+            "locator": {
+              "kind": "symbol",
+              "name": "markForKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Clamps span endpoints monotonically within `[prevEnd, docLength]` so truncated excerpts or stripped trailing newlines never throw.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd23c9cf066a2891e3e9914abca5a767c442b538",
+            "content": "sha256:2f801cc6a2f72eb46ca55a5c9fac5b969c2360e4fe53ad1ad2ccf15c3063a524",
+            "locator": {
+              "kind": "symbol",
+              "name": "clampSpan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Builds ordered CodeMirror 6 `Decoration.mark` ranges and exports the `EditorView.decorations` extension plus `highlightDigest`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd23c9cf066a2891e3e9914abca5a767c442b538",
+            "content": "sha256:d942996a738f15ae5555baa3e465e7968d3b4b96e10e548f4f25da0db03d1825",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildHighlightDecorations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

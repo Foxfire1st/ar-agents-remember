@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "blob": "c4083e5b45f31a554b90363161810fe855741d5c",
             "content": "sha256:9048fdf0e7738ca617a89afef0157be1ffa0acd470e4bf0b77d35b6b7208d20c",
             "locator": {
-              "end": 545,
+              "end": 546,
               "kind": "line_range",
-              "start": 496
+              "start": 497
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },

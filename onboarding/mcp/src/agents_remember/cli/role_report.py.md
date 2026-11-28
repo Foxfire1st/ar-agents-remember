@@ -13,7 +13,7 @@ Notes link.
 
 ## Code Commentary
 
-`RoleReportRequest` extends the result selection with the recorded request ID and has no path input. `read_role_report` resolves the launch context, computes the launch-derived file name (task-bound: `<document-id>-<role>-<request-id>.md` under the task's report root; taskless: `<request-id>.md` under the workspace's role report root), reads the saved receipt and serves only the recorded canonical file directly below that root. `_recorded_report_path` refuses a sibling, handover, nested or retargeted recorded path; `_report_access_refusal` serves the canonical file when the task's access alias is absent and refuses an actually retargeted alias distinctly; `_read_report_file` checks the regular-file mode and reads within the shared bound. `register_role_report_route` adds the POST route `/api/role-launch/report` beside the existing role-launch routes.
+`RoleReportRequest` extends the result selection with the recorded request ID and has no path input. `read_role_report` resolves the launch context, computes the launch-derived file name (task-bound: `<document-id>-<role>-<request-id>.md` under the task's report root; taskless: `<request-id>.md` under the workspace's role report root), reads the saved receipt and serves only the recorded canonical file directly below that root. `_recorded_report_path` refuses a sibling, handover, nested or retargeted recorded path; `_report_access_refusal` serves the canonical file when the task's access alias is absent and refuses an actually retargeted alias distinctly; `_read_report_file` checks the regular-file mode, reads within the shared bound, resolves the catalog display `language` via `language_for`, and attaches server-computed `highlights` via `highlights_wire_for`. `register_role_report_route` adds the POST route `/api/role-launch/report` beside the existing role-launch routes.
 
 ## 260928-MIK-L126 Current Delta — Per-Task Report Listing
 
@@ -56,8 +56,10 @@ Task-bound Investigator report lookup requires its exact request UUID and follow
 
 - The route resolves the execution and requires the recorded canonical report. [1]
 - The recorded file must be the launch-derived name directly under the root. [2]
+
 - The read-only regular-file read with bounded size. [4]
 - The canonical file serves when the access alias is absent. [5]
+
 
 
 - The file's Investigator boundary and request identity. [6]

@@ -52,7 +52,10 @@ No configured live documentation source was available for this pass.
 
 
 
+
+
 - The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view. [1]
+
 
 
 - The shared pane that marks the cited lines. [2]

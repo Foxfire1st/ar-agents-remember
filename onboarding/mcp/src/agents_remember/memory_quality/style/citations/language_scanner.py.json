@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+        "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
         "content": "sha256:ba63d712ec5870303f88df554525e5a92622df446b8e4c9785d2a92ed49e94f0",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+        "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
         "content": "sha256:02e861628214eb419cb03e42cd2fb49b3784869bda57187d85a64507d005b31a",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+        "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
         "content": "sha256:4e8542a7e21008622980eaaa4799f180d11f2e23f09e81dc7c28f5c840c38571",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "`build_provider_from_catalog` (forwarding `leading_wrappers`, `qualifiers`, and `guarantee_tier`), `build_provider_from_custom`, and `all_catalog_language_ids` construct lazy `LanguageProvider` instances and enumerate non-builtin catalog language IDs uniformly.",
+      "note": "`build_provider_from_catalog` (forwarding `leading_wrappers`, `qualifiers`, and `guarantee_tier`), `build_provider_from_custom`, and `all_catalog_language_ids` construct lazy `LanguageProvider` instances and enumerate non-builtin catalog language IDs uniformly.\n\nAnchor: `build_provider_from_catalog`, `build_provider_from_custom`, `all_catalog_language_ids`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
-            "content": "sha256:3af9ee6a7c46f1709a149499550bb87cf6577487d8c3cb33e8f3625a1f508184",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
+            "content": "sha256:e6830b21ec237e76d5f1f9d35f8066d1bd283d2aa7309c9d40303f062fc869ba",
             "locator": {
               "kind": "symbol",
               "name": "build_provider_from_catalog"
@@ -73,8 +73,8 @@
         },
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
-            "content": "sha256:b3ff8178133a950e39db22e7418d5a2498ec774eb026d633b09294fc985b7283",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
+            "content": "sha256:94e713ad0ece73db614d77372a3f3d525a4bcbf83c7594dcf4588f87acb3a771",
             "locator": {
               "kind": "symbol",
               "name": "build_provider_from_custom"
@@ -84,7 +84,7 @@
         },
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:ba63d712ec5870303f88df554525e5a92622df446b8e4c9785d2a92ed49e94f0",
             "locator": {
               "kind": "symbol",
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:77a5a7d7e31d38a63fa677b1df8f4a719528b4cb43dd2e84c45c75b221ec23b5",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:02e861628214eb419cb03e42cd2fb49b3784869bda57187d85a64507d005b31a",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:b8f51bad7eacc4085f395fb152bb6cfab63fa265ab0f9c55bde2f94bce52af0f",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:4e8542a7e21008622980eaaa4799f180d11f2e23f09e81dc7c28f5c840c38571",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:e5eb8da787bf8b6a2923c2f7bb196a2b7e06e589e36f8abee6a93e78fecbd6e2",
             "locator": {
               "kind": "symbol",
@@ -170,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+            "blob": "9c29caa26ef2f79c2cb8d87abbd8128fc0fc46cd",
             "content": "sha256:66ccc7c4d16f4acb76d99dc079ccf1d2ee44a3230ebbf6e7ca25c0107cba9b2b",
             "locator": {
               "kind": "symbol",

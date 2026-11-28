@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
-        "content": "sha256:162aaf1bcc165c9db0412e9fb5efff8b8d718108e9fdcad19d1c9318410faa30",
+        "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
+        "content": "sha256:e743180e75a0cbcc4bbda584fbf1ad1401ee3bb70e3b35a5edc19f912e27db01",
         "locator": {
           "kind": "symbol",
           "name": "CodeSide"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
-        "content": "sha256:162aaf1bcc165c9db0412e9fb5efff8b8d718108e9fdcad19d1c9318410faa30",
+        "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
+        "content": "sha256:e743180e75a0cbcc4bbda584fbf1ad1401ee3bb70e3b35a5edc19f912e27db01",
         "locator": {
           "kind": "symbol",
           "name": "CodeSide"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+        "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
         "content": "sha256:82f0c3829c18556ba1b8301d22864507cc45957cb52c374801edf45ffe2b5991",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "The read-only CodeMirror pane it hosts on the code side.\n\nAnchor: `FilePane`",
+      "note": "The read-only CodeMirror pane it hosts on the code side.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
               "kind": "file"
             },
@@ -140,16 +140,16 @@
       ]
     },
     "5": {
-      "note": "The `FileContent` type / onboarding pairing it renders.",
+      "note": "The `FileContent` type / onboarding pairing it renders.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
-            "content": "sha256:5680302ab4ac5c4a8b80e2f127dd4ae5d006c1156de1ef1dc42bb95d2859e303",
+            "blob": "b38bc3cad6ab252b4f787c5f018822b95bf5d067",
+            "content": "sha256:d75b73416f68bf12a464c5c448b2dcaab315228db1c4ee4a361f19442f78ce61",
             "locator": {
-              "end": 64,
+              "end": 66,
               "kind": "line_range",
-              "start": 52
+              "start": 53
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -158,14 +158,14 @@
       ]
     },
     "6": {
-      "note": "For source text, CodeSide combines the File Viewer repository with the read file scope and path for FilePane's optional tray gutter. Picture and video content takes the media branch instead.",
+      "note": "For source text, CodeSide combines the File Viewer repository with the read file scope and path for FilePane's optional tray gutter. Picture and video content takes the media branch instead.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
-            "content": "sha256:f378e1680148157e4d21b978ca46026a49b74bdbb41786feb6916a06c3042bd6",
+            "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
+            "content": "sha256:e743180e75a0cbcc4bbda584fbf1ad1401ee3bb70e3b35a5edc19f912e27db01",
             "locator": {
-              "end": 137,
+              "end": 139,
               "kind": "line_range",
               "start": 107
             }

@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "blob": "b38bc3cad6ab252b4f787c5f018822b95bf5d067",
             "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
             "locator": {
               "kind": "symbol",
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "blob": "54208f12a751f312d7c878ed98fd1bb40c8cfb99",
             "content": "sha256:c8d030f7ab11cf8eaf8cc31237b8b270746e02efab01606a44688eb3d51fb08d",
             "locator": {
-              "end": 267,
+              "end": 262,
               "kind": "line_range",
-              "start": 229
+              "start": 224
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
+        "blob": "cab398064480c27db8f3aa7c18646bd24e1cb196",
         "content": "sha256:edc0b31f84ac5f8e9968dbf4e02defcd1c72c42d93226cb32708ce7b90f75a11",
         "locator": {
           "kind": "symbol",
@@ -22,27 +22,28 @@
   ],
   "references": {
     "1": {
-      "note": "The one dashboard call to the report route; readable operation-prefixed errors keep raw parser or network text off the launcher's failure line.",
+      "note": "The one dashboard call to the report route; readable operation-prefixed errors keep raw parser or network text off the launcher's failure line.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
-            "content": "sha256:edc0b31f84ac5f8e9968dbf4e02defcd1c72c42d93226cb32708ce7b90f75a11",
+            "blob": "cab398064480c27db8f3aa7c18646bd24e1cb196",
+            "content": "sha256:d5c46f4a7fe74e4d8f89738e1ea6268ae431e79268d261d965f29ab06b21a0d9",
             "locator": {
-              "kind": "symbol",
-              "name": "readRoleReport"
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
-            "content": "sha256:636b023e26d13b3da34f834a5e869bfccfb80d27231a0c3bcbb534c1582b3827",
+            "blob": "cab398064480c27db8f3aa7c18646bd24e1cb196",
+            "content": "sha256:da29921b9dd06dd7a621f91bea77c9b6ca4e5912b2cafef10781d91f6ca1a9f9",
             "locator": {
-              "end": 23,
+              "end": 30,
               "kind": "line_range",
-              "start": 7
+              "start": 4
             }
           },
           "kind": "code"

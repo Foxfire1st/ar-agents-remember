@@ -50,6 +50,7 @@ Without `repository`, CodeSide supplies no tray target. DualPane performs no JSO
 ### Repo-Internal References
 
 
+
 - The read-only CodeMirror pane it hosts on the code side. [1]
 
 
@@ -62,7 +63,9 @@ Without `repository`, CodeSide supplies no tray target. DualPane performs no JSO
 - The effects-gated boomerang backdrop the `empty` state fills the pane with. [3]
 
 
+
 - The `FileContent` type / onboarding pairing it renders. [5]
+
 
 
 

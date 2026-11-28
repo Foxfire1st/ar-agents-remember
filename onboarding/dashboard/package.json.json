@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+        "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
         "content": "sha256:616ccb1ad5c0a7b638dff7f574a71374965060655f6c87ec5b1b42c5b1502106",
         "locator": {
           "end": 14,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+        "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
         "content": "sha256:020119975b137bc617e8ca84db3a6b8ca741e5c410c0f3ce5d3adc64ad6a91ea",
         "locator": {
-          "end": 74,
+          "end": 66,
           "kind": "line_range",
-          "start": 52
+          "start": 44
         }
       },
       "id": "RLZ-HDYGR9",
@@ -46,12 +46,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
             "content": "sha256:426846889c456fb14af26e9eb94a4e0f80041364d2eaafb721065074469a1934",
             "locator": {
-              "end": 54,
+              "end": 46,
               "kind": "line_range",
-              "start": 54
+              "start": 46
             }
           },
           "kind": "code"
@@ -59,14 +59,14 @@
       ]
     },
     "2": {
-      "note": "The manifest separates dashboard dependencies, development dependencies and executable scripts.",
+      "note": "The manifest separates dashboard dependencies (without `@codemirror/lang-*` packs), development dependencies and executable scripts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
-            "content": "sha256:c47af21846ecb6e71e2221d3364f7646ea2b98e7d8b95a78e9fa3cb97134a70d",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
+            "content": "sha256:060cda6e52afdb5b77d74947b5d413e4d53f19aa0a8ca2f9463f281f0b111838",
             "locator": {
-              "end": 73,
+              "end": 65,
               "kind": "line_range",
               "start": 6
             }
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
             "content": "sha256:b527a4483e9c3b817ce0e2099d4e49e37acd757bda5421683e2fa5a00fbd1eaf",
             "locator": {
               "end": 13,
@@ -92,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
             "content": "sha256:6a51468dfad8cc5ac5135fae9008e967508d3959f3f8f0ee796c6a209169b8c5",
             "locator": {
-              "end": 67,
+              "end": 59,
               "kind": "line_range",
-              "start": 64
+              "start": 56
             }
           },
           "kind": "code"

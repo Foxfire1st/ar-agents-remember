@@ -10,7 +10,7 @@ Construct repository-scoped `LanguageSet` instances from the shipped catalog plu
 
 ## Code Commentary
 
-`build_provider_from_catalog` wraps each `CatalogLanguageSpec` uniformly: `builtin_lean` builds `LeanLanguageProvider`, while `pypi_wheel` and `language_pack` build `TreeSitterLanguageProvider` instances with lazy loader closures backed by `language_cache.ensure_catalog_language`, forwarding `leading_wrappers`, `qualifiers`, and `guarantee_tier`. `build_provider_from_custom` reads the custom language's local `tags.scm` (and optional `tests.scm`), hashes its shared library bytes into the provider version string, and binds a lazy loader backed by `language_cache.load_custom_library_language`.
+`build_provider_from_catalog` wraps each `CatalogLanguageSpec` uniformly: `builtin_lean` builds `LeanLanguageProvider`, while `pypi_wheel` and `language_pack` build `TreeSitterLanguageProvider` instances with lazy loader closures backed by `language_cache.ensure_catalog_language`, forwarding `leading_wrappers`, `qualifiers`, `guarantee_tier`, and catalog `highlights_queries`. `build_provider_from_custom` reads the custom language's local `tags.scm` (and optional `tests.scm` and local `highlightsQueryPath` into `highlights_query_texts`), hashes its shared library bytes into the provider version string, and binds a lazy loader backed by `language_cache.load_custom_library_language`.
 
 `build_language_set` and `build_repository_language_set` merge catalog languages, custom languages, `enable`/`disable` sets, and `suffixes`/`globs` overrides, validating via `_validate_override_identities` and `_validate_override_target_ids` that custom IDs never shadow catalog IDs and that `enable`, `disable`, `suffixes`, and `globs` never reference unknown language IDs. `repository_language_set` memoizes built sets per `(repo_root, config_stat_tokens, custom_artifact_stat_tokens, catalog_path, cache_root)` in a bounded insertion-order cache (`_REPO_LANGUAGE_SETS`) so repeated repository calls avoid rebuilding while automatically invalidating whenever `<repo>/languages.json`, user settings, or custom `.so`/`.scm` files change on disk.
 
@@ -21,6 +21,7 @@ Construct repository-scoped `LanguageSet` instances from the shipped catalog plu
 `language_catalog.py` supplies the validated catalog, `language_config.py` supplies merged overrides, `language_cache.py` performs lazy wheel installation and local shared-library loading, and `language_set.py` defines `LanguageSet` and its `ContextVar` seam. `grammars.py` exposes `repository_language_set_scope` over `repository_language_set`, and `cli/languages.py` exposes `scan_repository_languages`, `all_catalog_language_ids`, and `warm_repository_languages` as the `agents-remember languages` CLI.
 
 ## Evidence
+
 
 - `build_provider_from_catalog` (forwarding `leading_wrappers`, `qualifiers`, and `guarantee_tier`), `build_provider_from_custom`, and `all_catalog_language_ids` construct lazy `LanguageProvider` instances and enumerate non-builtin catalog language IDs uniformly. [1]
 

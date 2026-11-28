@@ -550,6 +550,8 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
 - **Retained historical source account — superseded by the current route account:** **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
 - **Retained historical source account — superseded by the current route account:** **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
+
+
 - **Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [215]
 
 - **Retained historical source account — superseded by the current route account:** The composition root's third review port, and the registration call that passes all three collaborators. Anchor: `read_review_source_content` [216]
@@ -851,6 +853,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 - The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: scripts/sync-runtime.py. [401]
+
+
 
 
 - Supported code media is returned before text-size refusal and the reader renders its media state. [403]

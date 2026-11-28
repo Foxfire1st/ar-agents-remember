@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:e4756a9415bd6b9a89fced90989fc7de28d27292553dd1a994c991baf27ddfc0",
             "locator": {
-              "end": 137,
+              "end": 141,
               "kind": "line_range",
-              "start": 122
+              "start": 126
             }
           },
           "kind": "code"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:aec86b520118f07344e2d64c335ea4c962f2767ad96129f3258d6e4961b6edd2",
             "locator": {
               "end": 40,
@@ -37,16 +37,16 @@
       ]
     },
     "8": {
-      "note": "Per-side fields include explicit range/currentness states and optional locator symbol.\n\nAnchor: \"class ReviewTreeEntrySide(KnowledgeModel):\"",
+      "note": "Per-side fields include explicit range/currentness states and optional locator symbol.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
-            "content": "sha256:d77215d59d6285ee687f24bc5ca0dc25dbb76ce5f6411e490d80b7d6008ff512",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
+            "content": "sha256:200da9c5827681b71dc572127550d9ce7517a418952ab5dbf6eaaf5724eb36e0",
             "locator": {
-              "end": 92,
+              "end": 97,
               "kind": "line_range",
-              "start": 68
+              "start": 76
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:68c190ce5269d240d78500564b3d1df8fcf1cc68a9b673f1545b43d6fbeebdd8",
             "locator": {
-              "end": 109,
+              "end": 113,
               "kind": "line_range",
-              "start": 95
+              "start": 99
             }
           },
           "kind": "code"

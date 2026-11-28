@@ -376,6 +376,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - Technical details projects the current payload without restoring retired assessment/evidence envelopes; open main facts remain a separate owner. [136]
 
+
 - Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence. [180]
 
 - Current shell owners for the review page account. [200]
@@ -395,6 +396,8 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - Current model owners for the review page account. [208]
 
 - Current tree owners for the review page account. [210]
+
+
 
 - Current source owners for the review page account. [212]
 
@@ -446,6 +449,8 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - useChangeSet shares one leaf-wide comparison with model/cards/worklist; useSurface wires active live memory invalidation. [196]
 
+
+
 - ReviewBlockCard renders a shared region with entry-specific rationale and tray actions. [24]
 
 - changeSetModel groups shared regions and gives one order to tree and reading content. [25]
@@ -473,6 +478,8 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
 
 - ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content. [8]
+
+
 - Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters. [11]
 - ReadingContext passes only the matching leaf-wide worklist to page cards and selected semantic content. [123]
 - PageReading places WorklistView in the reading-column replacement slot; selected semantic details retain their own subject worklist. [124]
@@ -485,6 +492,8 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - Current composition owners for the review page account. [199]
 - Current watch owners for the review page account. [206]
 - Current markers owners for the review page account. [209]
+
+
 - Current lane owners for the review page account. [213]
 - Current details owners for the review page account. [214]
 - Current worklist owners for the review page account. [217]

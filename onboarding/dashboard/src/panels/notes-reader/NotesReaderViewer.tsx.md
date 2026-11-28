@@ -100,6 +100,7 @@ The notes client addresses the selected repository and master through same-origi
 
 
 
+
 - The FileContent shape used for non-Markdown note content includes media metadata. [2]
 - Cockpit owns the artifact target and open flag and keeps its controlled reader mounted. Its shellActions callbacks preserve the target on Back, open an artifact explicitly and update the selected note path. [4]
 
@@ -133,6 +134,8 @@ The notes client addresses the selected repository and master through same-origi
 
 
 - The whole-log pane shows authored decisions newest-first with expanded shared rows; retained product records are unnumbered in a separate counted native disclosure. [9]
+
+
 
 
 

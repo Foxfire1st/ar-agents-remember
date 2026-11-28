@@ -228,5 +228,6 @@ No meaningful cross-repo references found.
 
 - Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.supersede.test.ts:40-67 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; dashboard/src/data/files.ts::getJson - cited by 1 anchor in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+
 - The review client re-exports the shared public transport defined by reviewTransport.ts. [43]
 - This module defines getReviewJson. It delegates response handling to the lower-level decodeReviewJson, which the review client does not re-export. [48]

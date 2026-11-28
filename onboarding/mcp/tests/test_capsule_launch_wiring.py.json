@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
               "end": 87,
@@ -215,11 +215,11 @@
       ]
     },
     "25": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
               "end": 169,
@@ -232,12 +232,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
-              "end": 1282,
+              "end": 1283,
               "kind": "line_range",
-              "start": 1282
+              "start": 1283
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -245,12 +245,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
-              "end": 2721,
+              "end": 2722,
               "kind": "line_range",
-              "start": 2721
+              "start": 2722
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

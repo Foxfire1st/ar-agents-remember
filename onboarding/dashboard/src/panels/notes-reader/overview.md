@@ -55,6 +55,8 @@ The current source-backed Notes Reader integration is recorded by the repository
 
 
 
+
+
 - The shared content pane maps notes and requirement packets into rendered Markdown, source text or media through DualPane, with explicit placeholders for load failure or no selection. [3]
 
 

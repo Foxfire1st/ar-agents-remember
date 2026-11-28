@@ -30,6 +30,7 @@ These are behavioral tests of the route on synthetic receipts and reports. They 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 
+
 - Reads the deterministic report of every launchable role, task-bound and taskless, and leaves the receipt, report bytes and mtimes unchanged. [1]
 
 - The request model has no path field; a request that tries to carry one cannot select a sibling file. [2]

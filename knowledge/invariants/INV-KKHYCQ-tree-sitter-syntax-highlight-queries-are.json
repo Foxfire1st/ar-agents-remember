@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Enforces KNO-R13@v1 AC-1.1 supply-chain pinning across lockfile, catalog parser, and provider versioning, ensuring presentation-only highlight query edits never invalidate citation anchor hashes or broaden symbol-extraction languages."
+  },
+  "applicability": "Bundled language_catalog.lock.json parsing, CatalogLanguageSpec / LanguageCatalog display lookup, and TreeSitterLanguageProvider version hashing across all catalog and custom languages.",
+  "conditions": [
+    "Every catalog highlightsQueries entry pins a packaged .scm path and exact SHA-256 digest verified at catalog load time.",
+    "Display-only highlightLanguages (8 language_pack entries plus yaml display_only) and displaySuffixes (.pyi -> python) are indexed separately from anchoring languages so symbol-citation admission is unchanged.",
+    "TreeSitterLanguageProvider hashes highlight queries into highlight_version independently of _version so EXTRACTOR_VERSION remains invariant when highlight queries change."
+  ],
+  "exclusions": [
+    "Symbol-citation anchoring eligibility (tagsQuery / testsQuery and 76 admitted anchoring languages).",
+    "Runtime highlighting execution, caching, or UI rendering (covered by AC-1.2 and AC-3)."
+  ],
+  "id": "INV-KKHYCQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_unified_tree_sitter_highlights.py::HighlightEngineUnitTests::test_highlight_version_is_independent_of_extractor_version (152 passed, 235 subtests passed on clean-copy tree 8e2b8ed2889265fea2a81be8c3fb8e889a194990)"
+      ],
+      "path": "261112-KNO-L13-curator-handoff"
+    },
+    "handoffEntry": "KNO-R13@v1 AC-1.1",
+    "leaf": "261112-KNO-L13",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Tree-sitter syntax highlight queries are provider-matched, SHA-256 pinned in language_catalog.lock.json (with presentation-only highlightLanguages and displaySuffixes separate from anchoring languages), and never alter EXTRACTOR_VERSION.",
+  "supersedes": [],
+  "title": "Highlight queries are hash-pinned separately without changing EXTRACTOR_VERSION",
+  "writer": {
+    "at": "2026-11-28T05:27:32+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L13",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
+  }
+}

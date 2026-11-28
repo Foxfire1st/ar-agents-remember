@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
         "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
-        "content": "sha256:43c64b84db3fe156709c8acb12a1921b41a9a55ec13120ff7b0077e835464001",
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
+        "content": "sha256:a36031c963d950df056d79b02f3ebb81dc595cc8d8ed4a1a3746958bc45cdf4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "TreeSitterLanguageProvider"
+        }
+      },
+      "id": "RLZ-FCXDSK",
+      "invariant": "INV-KKHYCQ",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-1.1",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Exposes highlight_version independently of _version so EXTRACTOR_VERSION remains invariant when highlight queries change.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
+        "content": "sha256:a36031c963d950df056d79b02f3ebb81dc595cc8d8ed4a1a3746958bc45cdf4a",
         "locator": {
           "kind": "symbol",
           "name": "TreeSitterLanguageProvider"
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
         "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
         "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
         "content": "sha256:4a71039996e8a5e3501b1da5d23b7dcf33879fe0f69b4ceabe2b0379c140383c",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
         "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
         "locator": {
           "kind": "symbol",
@@ -116,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
             "content": "sha256:c46d1cb7fbbaa1834b9df0ffb21bb902a62a208d602f665814d26491002bf56c",
             "locator": {
               "kind": "symbol",
@@ -132,8 +150,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
-            "content": "sha256:43c64b84db3fe156709c8acb12a1921b41a9a55ec13120ff7b0077e835464001",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
+            "content": "sha256:a36031c963d950df056d79b02f3ebb81dc595cc8d8ed4a1a3746958bc45cdf4a",
             "locator": {
               "kind": "symbol",
               "name": "TreeSitterLanguageProvider"
@@ -148,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
             "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
             "locator": {
-              "end": 236,
+              "end": 247,
               "kind": "line_range",
-              "start": 216
+              "start": 227
             }
           },
           "kind": "code"
@@ -165,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
             "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
             "locator": {
               "kind": "symbol",
@@ -181,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
             "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
             "locator": {
               "kind": "symbol",
@@ -197,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
             "content": "sha256:9614b3569318208fd2758599f7bde815529f3fd354c0a18b4522a2e11777068a",
             "locator": {
               "kind": "symbol",
@@ -213,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
             "content": "sha256:5d5d4d49f8d05474f2d6b9cd2c21ac8e7e69f002f7708d464cde793194233545",
             "locator": {
               "kind": "symbol",

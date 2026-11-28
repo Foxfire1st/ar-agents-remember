@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+        "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
         "content": "sha256:128ee2a5e822c2f4baec6dec17f35a8f75299c8a030dd286944d876e018e15ab",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+        "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
+        "content": "sha256:f27409a68433db8dc99c2ec74441f62bee701e5be8c3bb80db5da20bde38385b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetPane"
+        }
+      },
+      "id": "RLZ-4K07B8",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Passes per-side diff highlights and suppresses token highlights when plain mode (full file with highlight off) is selected.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
         "content": "sha256:128ee2a5e822c2f4baec6dec17f35a8f75299c8a030dd286944d876e018e15ab",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
-        "content": "sha256:a172299f30a6c70801116383e7abde892df492835192da40d4aca8a28c583b11",
+        "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
+        "content": "sha256:881d602d0b14f1b881ee097915e77a5afb3a04ce91d3660664d7622dd74725e7",
         "locator": {
           "kind": "symbol",
           "name": "ChangeSetBody"
@@ -62,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:dd038e71dafb147cf5446a5b54122dbdd7d0a0ad59afa3940397f6035d982358",
             "locator": {
-              "end": 356,
+              "end": 358,
               "kind": "line_range",
-              "start": 330
+              "start": 332
             }
           },
           "kind": "code"
@@ -79,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:70949560962d7f995edb90ebc672b66ff7ef0e81be23dbb687b143c826016bc8",
             "locator": {
-              "end": 389,
+              "end": 391,
               "kind": "line_range",
-              "start": 330
+              "start": 332
             }
           },
           "kind": "code"
@@ -96,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:9c92d46dd85a6c0e969025e71ea0f65f0278a2ff5ceb55c47151df81da0cfa01",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:abcd5973a2c7100a872156bea8fba4a4bc8356c08fca1f84d0f8d685dadfaca5",
             "locator": {
               "end": 227,
@@ -124,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:c854be72481f21921ce1c1b2daaf051be295fb1ad2d2d3a52ea64770006a029c",
             "locator": {
-              "end": 353,
+              "end": 355,
               "kind": "line_range",
-              "start": 324
+              "start": 326
             }
           },
           "kind": "code"
@@ -137,14 +155,14 @@
       ]
     },
     "2": {
-      "note": "For a text diff in full-file mode, disabling highlighting renders the plain FilePane with the after-content. Media and binary diffs use their own side rendering.",
+      "note": "For a text diff in full-file mode, disabling highlighting renders the plain FilePane with the after-content. Media and binary diffs use their own side rendering.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
-            "content": "sha256:3ca412c4768507decdebf23e38239e8715197ca0eada3f45f0446bc1902f17fd",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
+            "content": "sha256:9e5a07f2eeb2635b42aff8221a785330cfce104573045edf1085962edca72266",
             "locator": {
-              "end": 318,
+              "end": 323,
               "kind": "line_range",
               "start": 299
             }
@@ -153,12 +171,12 @@
         },
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:3da4dd438a26ed98bbfc7119ea88185c51d121958158588c5d1fa038acd3f02e",
             "locator": {
-              "end": 356,
+              "end": 358,
               "kind": "line_range",
-              "start": 341
+              "start": 343
             }
           },
           "kind": "code"
@@ -170,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:6577e15cb433a3fa87ee590fdad65b256efb8ffa41bcc8e4eccc5e0d609ac42c",
             "locator": {
               "end": 50,
@@ -182,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
             "content": "sha256:880e74582cfcc0e7562bd4275a6fc3331a30b88537c2ac7198c199f3e91da3a3",
             "locator": {
               "end": 223,
@@ -213,16 +231,16 @@
       ]
     },
     "5": {
-      "note": "For nonbinary text in diff mode, DiffPane supplies mode and collapse controls.",
+      "note": "For nonbinary text in diff mode, DiffPane supplies mode and collapse controls.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:e749f4bd84e3ae25fd6b36153e00e322c169e23163767e5255cf1d79e498cea7",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:dff3a623664ee75d343bb278d83cc529ee2a4975e8d19a2bc27b716d554b3b0e",
             "locator": {
-              "end": 193,
+              "end": 370,
               "kind": "line_range",
-              "start": 123
+              "start": 286
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -248,12 +266,12 @@
       ]
     },
     "7": {
-      "note": "The plain read-only pane reused for highlight-off / full-file-plain.\n\nAnchor: `FilePane`",
+      "note": "The plain read-only pane reused for highlight-off / full-file-plain.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
               "kind": "file"
             },
@@ -264,16 +282,16 @@
       ]
     },
     "8": {
-      "note": "The FileDiff contract carries before and after sides; each side can contain text or binary/media metadata, and an added or deleted side is null.",
+      "note": "The FileDiff contract carries before and after sides; each side can contain text or binary/media metadata, and an added or deleted side is null.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
-            "content": "sha256:5617c790d8d9dec0e1f21326d049111bcfa70c63e09a01a33e1d39d08bee6d77",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
+            "content": "sha256:aff8d6d7d0835b6ce62622270abcb716e9b983a668660a6c64c3118affafd742",
             "locator": {
-              "end": 67,
+              "end": 69,
               "kind": "line_range",
-              "start": 49
+              "start": 50
             },
             "path": "dashboard/src/data/changeset.ts"
           },

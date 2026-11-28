@@ -89,9 +89,9 @@ offset parts never depend on readdir order (L126-CODE-02).
 
 `read_note(config, repo_id, master, rel)` confines `rel` with `confine_rel` (the realpath
 idiom: `..` traversal, absolute paths, and symlink escapes all raise `AuthorityError`),
-returns fixed-media metadata without reading its payload; otherwise it serves the file size-capped (`_MAX_FILE_BYTES` = 2 MiB, mirroring `serving/files.py`)
-and binary-tolerant (an initial NUL or `UnicodeDecodeError` → `language: "binary"`, empty content — the
-reader shows a placeholder, never raw bytes). The cap is applied through the shared `scope.decode_capped`, which cuts at a UTF-8 codepoint boundary (backward-scan) — a multi-byte char straddling the 2-MiB cap returns the first ~2 MiB with `truncated: true` rather than misdecoding an oversize markdown note into empty `binary`.
+returns fixed-media metadata with explicit `highlights: null` without reading its payload; otherwise it serves the file size-capped (`_MAX_FILE_BYTES` = 2 MiB, mirroring `serving/files.py`)
+and binary-tolerant (an initial NUL or `UnicodeDecodeError` → `language: "binary"`, empty content, `highlights: null` — the
+reader shows a placeholder, never raw bytes; textual notes attach server-computed `highlights` via `highlights_wire_for`). The cap is applied through the shared `scope.decode_capped`, which cuts at a UTF-8 codepoint boundary (backward-scan) — a multi-byte char straddling the 2-MiB cap returns the first ~2 MiB with `truncated: true` rather than misdecoding an oversize markdown note into empty `binary`.
 
 ### Conventions
 
@@ -141,9 +141,12 @@ No meaningful cross-repo references found.
 - `McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement. [4]
 
 
+
+
 - The browser client for these endpoints. [7]
 
 - The repo allow-list authority guard (`require_repo`). [3]
+
 - `language_for` supplies the listing and read `language` field. [5]
 - The changeset route's single-segment master confinement helper (moved to the new selection module by 260921-ICR-L13; `changeset.py` imports it). [6]
 

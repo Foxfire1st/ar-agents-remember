@@ -614,6 +614,7 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]
 
+
 - Entry-side symbol and entry memory values retain explicit path and count meanings. [330]
 
 - role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state. [339]
@@ -675,6 +676,8 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - The full lane reconciles bucket totals for measured and partial results; an unavailable full lane carries no totals. [60]
 
 - The tree view's lane and file_classification fields, and the summary's attribution field. [61]
+
+
 
 - One entry on one side, and on both sides. [57]
 

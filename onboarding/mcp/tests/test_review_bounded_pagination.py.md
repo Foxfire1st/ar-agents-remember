@@ -76,4 +76,6 @@ No Domain Documentation source is configured for this slice.
 
 - Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane. [26]
 
+
+
 - The `unit-regression` lane selects `mcp/tests/test_review_bounded_pagination.py`. The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [42]

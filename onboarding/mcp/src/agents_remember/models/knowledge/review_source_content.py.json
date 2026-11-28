@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+        "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
+        "content": "sha256:982c93a1df02baf1e896997d60b54d2b1932fcf102ed3885d3698db09a9a2c05",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewSourceSide"
+        }
+      },
+      "id": "RLZ-819G7B",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Enforces structurally that only present textual review source sides may carry syntax highlights.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
         "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
         "locator": {
           "kind": "symbol",
@@ -25,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
-            "content": "sha256:4238ed779a8790fb8f72c024a28bd7ddc31a1f7240d482a695d6b0feec7d83b2",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
+            "content": "sha256:982c93a1df02baf1e896997d60b54d2b1932fcf102ed3885d3698db09a9a2c05",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceSide"
@@ -41,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:0b63a74d8f3e792c4d24782b4f54ee357c448b75b20688f3a50a47f5329d2bd3",
             "locator": {
               "kind": "symbol",
@@ -57,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
             "locator": {
               "kind": "symbol",
@@ -68,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:6e01f1e87c13a0ad3f4c407d12db24b6427f14f79e0163ceec39a2a114f67316",
             "locator": {
               "kind": "symbol",
@@ -79,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:7a772cdf657653145cde805715c412939dcb879b5f216daadedfecdb2695638a",
             "locator": {
               "kind": "symbol",
@@ -172,12 +190,12 @@
       ]
     },
     "14": {
-      "note": "**The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.**\n\nAnchor: `read_review_source_content` `_side_content` `admit_source_path` `_currentness`",
+      "note": "**The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.**\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
               "kind": "file"
             },
@@ -269,12 +287,12 @@
       ]
     },
     "17": {
-      "note": "Current model validators preserve per-side text/state constraints, attributed-unchanged admission and one content-or-refusal outcome; the former state-decided SourceContent rendering is historical.",
+      "note": "Current model validators preserve per-side text/state constraints, attributed-unchanged admission and one content-or-refusal outcome; the former state-decided SourceContent rendering is historical.\n\nAnchor: `ReviewSourceSide`, `ReviewSourceExpansion`, `ReviewSourceContentResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
-            "content": "sha256:4238ed779a8790fb8f72c024a28bd7ddc31a1f7240d482a695d6b0feec7d83b2",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
+            "content": "sha256:982c93a1df02baf1e896997d60b54d2b1932fcf102ed3885d3698db09a9a2c05",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceSide"
@@ -284,7 +302,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
             "locator": {
               "kind": "symbol",
@@ -295,7 +313,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
             "locator": {
               "kind": "symbol",
@@ -376,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3024aeb8d698214dab4a02a40af96bc439586158dfce4f1e9a5c7b98e4dbef08",
             "locator": {
               "kind": "symbol",
@@ -387,7 +405,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
             "locator": {
               "kind": "symbol",
@@ -398,7 +416,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:0b63a74d8f3e792c4d24782b4f54ee357c448b75b20688f3a50a47f5329d2bd3",
             "locator": {
               "kind": "symbol",
@@ -409,7 +427,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
             "locator": {
               "kind": "symbol",
@@ -425,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3df3bff746bde383b406b3741ba46e14f4d56695d025bffa61336eb44ae94531",
             "locator": {
               "kind": "symbol",
@@ -441,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:1103ddee3bd957db32fc82994da8c3c571a77810f44f10f61dea3200bdf9c90a",
             "locator": {
               "kind": "symbol",
@@ -457,7 +475,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:b26d741048857cc4e837d95c0ec12dfe7415ba1aa63a58ae2652bc795f5e72e7",
             "locator": {
               "kind": "symbol",
@@ -468,7 +486,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:19ea57503e8179f9bd4a9334f0e56e213b314059d77c293173fca0e6e9e25624",
             "locator": {
               "kind": "symbol",
@@ -484,7 +502,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:54c92b9afc2fd4e7731d0dc4fd8ec21782f8ee08dc496671a69beda3c27aa139",
             "locator": {
               "kind": "symbol",
@@ -495,7 +513,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:2c3e2fbc0da7f7362d7795f8680a36d75cc201bff17e128f010b541adcb34756",
             "locator": {
               "kind": "symbol",
@@ -507,12 +525,12 @@
       ]
     },
     "7": {
-      "note": "**The four structural rules that make a side's content a state rather than a blank: text exactly when textual, no text otherwise, a truncation only on carried text, and no object on an absent side.**",
+      "note": "**The structural rules that make a side's content a state rather than a blank: text exactly when textual, no text otherwise, a truncation only on carried text, and no object on an absent side, and highlights only on a present side.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
-            "content": "sha256:b69acb15c842a56588943411217816a05478d461a734046080f505bc3afad316",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
+            "content": "sha256:1120abe779347a5a0d622b7c196948d318f6feab7ef7f36dc0192a902bd7ce40",
             "locator": {
               "kind": "symbol",
               "name": "_require_text_exactly_when_the_side_is_textual"
@@ -527,7 +545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
             "locator": {
               "kind": "symbol",
@@ -538,7 +556,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:51a707de794723df8559929916829978a2bd74ba5dad414ea77063947d7fe994",
             "locator": {
               "kind": "symbol",
@@ -549,7 +567,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:ea60421e7931eabc6941ddec57f336a7af54f35376be839b54b13a79d51f6870",
             "locator": {
               "kind": "symbol",
@@ -560,7 +578,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:748db6ff530022689c4c8c3e99395bb8697b3225e4d3db03b675a5f8f0e49503",
             "locator": {
               "kind": "symbol",
@@ -576,7 +594,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:68d579b4f63b4547ddc7eda60b5d41289c53a48c46bd1bc954e77e7903158ab2",
             "locator": {
               "kind": "symbol",

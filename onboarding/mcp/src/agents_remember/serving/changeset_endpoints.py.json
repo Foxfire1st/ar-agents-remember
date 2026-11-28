@@ -112,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:ba6854779ea5efa98f3955358664c086bcd7cf45a24315bb765b6a0453978d9d",
             "locator": {
-              "end": 499,
+              "end": 501,
               "kind": "line_range",
-              "start": 444
+              "start": 446
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -125,12 +125,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
             "locator": {
-              "end": 546,
+              "end": 548,
               "kind": "line_range",
-              "start": 507
+              "start": 509
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },

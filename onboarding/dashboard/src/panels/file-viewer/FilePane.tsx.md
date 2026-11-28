@@ -8,17 +8,19 @@
 
 `FilePane` is the reusable **read-only CodeMirror 6** pane — the shared code primitive of the File
 Viewer. `DualPane` mounts it on the code side. L4's Change-Set Viewer reuses it by swapping the single
-`EditorView` for `@codemirror/merge` (same editor core + the same `HighlightStyle`, so tokens are
-identical across plain and diff views). The `EditorView` is created imperatively in an effect and torn
-down on unmount or content change. MIK-R79 rule 9 uses the same pane for the Knowledge reader's cited
-code, with the cited lines marked.
+`EditorView` for `@codemirror/merge` (same editor core + the same `codeTheme` and server-computed
+tree-sitter `Decoration.mark` spans, so tokens are identical across plain and diff views). The
+`EditorView` is created synchronously in an effect and torn down on unmount or content change, while
+`highlights` updates reconfigure a `Compartment` in place without rebuilding the DOM node. MIK-R79 rule 9
+uses the same pane for the Knowledge reader's cited code, with the cited lines marked.
 
 ## Code Commentary
 
 ### Logic
 
-Props are `{ content, language, firstLine? = 1, fit? = false, marks?, highlightedLines?, trayLines? }`.
-**`firstLine` and `fit`** (MIK-L31, focused expression cards) number the gutter from the excerpt's
+Props are `{ content, language, highlights?, firstLine? = 1, fit? = false, marks?, highlightedLines?, trayLines? }`.
+**`highlights`** accepts optional server-computed `SyntaxHighlights | null` and is applied via
+`serverHighlightsExtension` inside a dedicated `Compartment` (`slot`). **`firstLine` and `fit`** (MIK-L31, focused expression cards) number the gutter from the excerpt's
 first line in its file and let the editor grow to its content without an inner scroll box or height cap; the fitted review reading column owns scrolling.  **`marks`**
 (MIK-L34) draws the reviewer's per-hunk intent markers; omitted, no mark gutter exists. **`highlightedLines`**
 (MIK-R79) takes a one-based inclusive `[first, last]` pair on the file's own numbering; the pane adds a
@@ -26,27 +28,31 @@ first line in its file and let the editor grow to its content without an inner s
 scrolls the first one to the top of the pane, so a citation opens at its cited lines. An absent pair
 changes nothing.
 
-A `ref` points at the host div; an effect awaits `langExtension(language)` (the `@codemirror/lang-*`
-packs are code-split, so a language is loaded only when first opened), guarded by a `disposed` flag
-against a late resolve after teardown. The extension set is the marks gutter, `numberedFrom(firstLine)`, an optional trayLineGutter when repository, scope and path are all supplied,
-`EditorState.readOnly.of(true)`, `EditorView.editable.of(false)`, `EditorView.lineWrapping`,
-`codeTheme`, the resolved language when one exists and the citation highlight when asked. Cleanup sets
-`disposed`, calls `drawn(null)` and destroys the view. The effect deps include `highlightedLines`, so a
-new citation range rebuilds the editor.
+A `ref` points at the host div; the build effect creates `EditorView` synchronously with a fresh
+`Compartment` (`slot`), reading `latestHighlights.current` (synced in `useLayoutEffect`) without
+putting `highlights` in the rebuild dependency array. The extension set is built by `buildExtensions`:
+the marks gutter, `numberedFrom(firstLine)`, an optional `trayLineGutter` when repository, scope and path
+are all supplied, `EditorState.readOnly.of(true)`, `EditorView.editable.of(false)`,
+`EditorView.lineWrapping`, `codeTheme`, `slot.of(serverHighlightsExtension(highlights, doc.length))`, and
+the citation highlight when asked. A separate effect keyed solely on `highlightDigest(highlights)`
+dispatches `slot.reconfigure(...)` in place so unchanged 2.5 s polls retain the mounted `EditorView`
+(`INV-QK8XNM`). Cleanup calls `drawn(null)`, destroys the view, and clears `built.current`. The build
+effect deps include `highlightedLines`, so a new citation range rebuilds the editor.
 
 ### Conventions
 
 Panda `css` from `../../../styled-system/css` (relative import). CodeMirror 6 core; the chrome+token
-theme and language map are sibling modules. `data-testid="file-pane"`.
+theme (`codemirrorTheme.ts`) and server-highlight decoration mapper (`serverHighlights.ts`) are sibling
+modules. `data-testid="file-pane"`.
 
 ### Invariants And Boundaries
 
 **Read-only and non-editable** — set by both `EditorState.readOnly` and `EditorView.editable.of(false)`.
-Exactly one `EditorView` per `(content, language, firstLine)` and mark placement; the `disposed` guard
-prevents mounting a view after teardown. It is a **viewer, not an editor** — content, language or
-highlight changes recreate the editor rather than dispatching incremental edits. Presentational: no
-data fetching; the caller supplies already-fetched content, the language id, and the citation range on
-the file's own line numbers.
+Exactly one `EditorView` per `(content, firstLine, placement, highlightedLines, trayTarget)`. It is a
+**viewer, not an editor** — content or citation-range changes recreate the editor, while `highlights`
+updates reconfigure the highlight `Compartment` in place by digest so the CodeMirror DOM node stays
+mounted across polls. Presentational: no data fetching; the caller supplies already-fetched content, the
+language id, optional server-computed `highlights`, and the citation range on the file's own line numbers.
 
 ### Todos
 
@@ -68,24 +74,8 @@ No configured live documentation source was available for this pass.
 
 
 - The pane marks the cited lines and scrolls the first into view. [12]
-
-
-
-- The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view. [13]
-
-
-- The optional range joins the editor's dependencies and rebuilds the view. [14]
-
-
-
-
+- The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines alongside server highlights. Media citations use the separate media view. [13]
+- The optional range joins the editor's dependencies and rebuilds the view, while `highlights` updates reconfigure `slot` in place by digest. [14]
 - The dual pane that mounts the same primitive on the code side. [15]
-
-
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
-
 - The File Viewer-only optional tray target enables the line gutter; other panes omit it. [16]
 - Fitted review source grows into the reading column without an inner scroller. [17]

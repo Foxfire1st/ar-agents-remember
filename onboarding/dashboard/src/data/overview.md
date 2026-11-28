@@ -173,6 +173,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 
 
+
 - The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field. [109]
 
 - **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
@@ -200,6 +201,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 - An unknown code is carried as domain-refused. [78]
 
 - The one GET: the optional abort signal, the body read whatever the status, and the two failures. [79]
+
 
 - The review client imports and re-exports the transport surface. [80]
 
@@ -252,23 +254,32 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The module comment: what the adapter carries and the three answers it keeps apart. [60]
 
+
 - The answer of the route. [61]
 
+
 - One entry on both code sides. [62]
+
 
 - The request, addressed by number, recorded or invariants, with the optional signal. [63]
 
 - The transient codes and the retry delays. [64]
 
+
 - The bounded retry of a transient refusal. [65]
+
 
 - One answer as a read state. [66]
 
+
 - The comparison a payload names; without it no tree read is made. [67]
+
 
 - The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
 
+
 - Leaf-wide tree retry is bounded and its hook aborts/sequence-guards superseded reads; the card-entry hook shares in-flight acquisitions without aborting them, suppresses callbacks after cleanup and returns only its current question's cached answer. [103]
+
 
 - The retained Python source-content model declares six side states; its side validator requires text for present, permits text only for textual states, and keeps absent objects and textless truncation invalid. [43]
 
@@ -278,7 +289,10 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The retained source-content endpoint serializes its port result and preserves unwired and incomplete-generation responses; the removed dashboard source-content client is historical. [46]
 
+
+
 - The retained backend request requires task context, path and both exact tree identities; the response assembly echoes the requested pair. [47]
+
 
 - The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes. [49]
 

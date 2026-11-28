@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "9da11f4c449ceef388455616425442310157c9ad",
+    "commit": "8905801b8a5e761fe8e25ef79afa935b8833e58d",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md at post-sync code tree 0b0419690d12: pyproject.toml budgets (unit_case_budget=10000, integration_case_budget=2000), [tool.coverage.run] (re-anchored from shifted lines 73-78 to 104-109), pytest commands, and lane rules remain accurate; conftest.py and quality_plan.py changes do not affect pytest bootstrap policy.",
-    "task": "261125-DEP-L8",
+    "statement": "Verified docs/design/python-pytest-bootstrap.md against post-sync L13 code tree 9da11f4c449ceef388455616425442310157c9ad (synced onto DEP-L8 main 8905801b8a5e): pyproject.toml budgets, [tool.coverage.run] lines 104-109, and registering mcp/tests/test_unified_tree_sitter_highlights.py in unit-regression leave pytest bootstrap policy, lane selection, and commands accurate.",
+    "task": "261112-KNO-L13",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 47,
+  "revision": 48,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+      "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,8 +103,8 @@
     },
     {
       "anchor": {
-        "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
-        "content": "sha256:4e4f48d598378107acc657473e9b89d02f6da82e2512f3ebf9c720e3d4df40bd",
+        "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+        "content": "sha256:d260a189b1f723925c426c8572cfa123b2a1e7074f7d3a225ec6bd0e2f464611",
         "locator": {
           "end": 881,
           "kind": "line_range",
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:34:14+01:00",
+    "at": "2026-11-28T06:19:30+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
+    "leaf": "261112-KNO-L13",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
-    "task": "261125-DEP"
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
   }
 }

@@ -183,6 +183,8 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 
 
 
+
+
 - The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). [1]
 
 
@@ -280,6 +282,7 @@ limit widening. `LeafSummary` rows carry the new `state` (`committed`/`working`,
 - **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.**
 
 
+
 - **The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.** [14]
 
 - **Whether a breakdown row shows live work or its landed delta.** [15]
@@ -351,6 +354,7 @@ an empty `stateDetail`.
 
 
 ## Additional source references
+
 
 
 

@@ -188,6 +188,7 @@ that measure it against real repositories.
 - The refusals that keep the read confined, now in the admission owner: an unmeasured pair with no admitting change set, a measured pair whose recorded knowledge does not link the path, and a link that could not be determined. [11]
 - The status of an admitted path — the entry's own, `unchanged` for attributed context, and `unknown` when the pair's change set was not measured, rather than a status guessed from the bytes that happen to be there. [12]
 - The second of the two path checks: the spellings Git could not have reported are refused before any argv is built, with the offending input bounded by the admission owner's helper. [21]
+
 - **The wire vocabulary this module fills: six side states, the closed currentness set, the two bounding measurements, the two admissions, and the structural prohibitions that make a non-textual side carrying text unrepresentable.** [22]
 - The expansion value: the requested generation echoed back, the currentness statement, the bounding measurement, the admission, and the command beside the content. [23]
 - The request that carries the task context, the path and the exact generation, and the result that is either the expansion or one typed refusal and never both. [24]
@@ -209,6 +210,8 @@ request names.
 No meaningful cross-repo references found.
 
 
+
+
 - **The module's own statement of the three properties it exists for — the generation is an input, every side states its own truth, and which paths are addressable is decided by the admission owner (inventory entries and recorded realization-or-proof context) — and of what it deliberately does not own (no diff, no re-measurement, no admission policy).**  Anchor: "does not decide which paths are addressable" [1]
 
 - The published surface: the expansion's text bound, the operation's own reference, and the one entry point. [2]
@@ -218,11 +221,17 @@ No meaningful cross-repo references found.
 - **The one entry point: resolve, screen, then read — with the currentness measurement taken after the bytes so it can only qualify them.** [6]
 - **The four admission facts, each a distinct refusal: a complete object identity, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** [7]
 - **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement rather than a refusal.** [8]
+
 - The expansion itself: the measured pair re-asked through the inventory owner, the admission asked of the admission owner, both sides read at the requested trees, and the value assembled with the generation and admission statements. [9]
 - **Whether the requested generation is still the pair the leaf binds: the shipped recheck, and the three statements — current, superseded, unmeasured — that each end by saying the content is the requested generation's and no newer one.** [13]
+
 - **One endpoint's content, with the three outcomes kept apart: an unbound root and an unanswered lookup are `unavailable`, an answered lookup with no entry is `absent`, and only a real entry is read.** [14]
+
 - **The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.** [15]
+
 - A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling. [16]
+
+
 
 
 
@@ -232,6 +241,7 @@ No meaningful cross-repo references found.
 - **One path's entry in one tree, asked with a literal pathspec so a measured name is an address and not a pattern, and checked against the path that was asked about.** [18]
 - The byte-exact blob read through the kernel's own reader, so a file's content is never normalized on its way to a reader. [19]
 
+
 - **Reproduction hints name the exact object IDs. The displayed lookup omits literal pathspec magic and shell quoting is incomplete, so these strings do not guarantee reproduction for every admitted path/root spelling.** [20]
 
 - **The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.** [25]
@@ -240,6 +250,8 @@ No meaningful cross-repo references found.
 
 
 - **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]
+
+
 
 
 

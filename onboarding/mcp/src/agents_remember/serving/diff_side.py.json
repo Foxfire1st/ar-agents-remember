@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1fa90af0019e758974452a4d3a76b87d61d319fb",
+        "blob": "b006fe2f6eee479e7934fc921fe3d1eb9ada2341",
         "content": "sha256:de18b8d5c69327b75d8deda9eef690ace391bfd085d8255316d47b62db0e7fba",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,43 @@
     },
     {
       "anchor": {
-        "blob": "1fa90af0019e758974452a4d3a76b87d61d319fb",
+        "blob": "b006fe2f6eee479e7934fc921fe3d1eb9ada2341",
+        "content": "sha256:819eea44912c4a203682b615ca520043d0375eded0058222467028e266a3472c",
+        "locator": {
+          "kind": "symbol",
+          "name": "side_with_highlights"
+        }
+      },
+      "id": "RLZ-52E96A",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Attaches independent server-computed highlights per diff side on text blobs and explicit null on binary/media sides.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b006fe2f6eee479e7934fc921fe3d1eb9ada2341",
+        "content": "sha256:c6e805341486301dafea1c9b0431c1c10fd29431333f596cb7e6441bb592face",
+        "locator": {
+          "kind": "symbol",
+          "name": "file_diff_payload"
+        }
+      },
+      "id": "RLZ-54R03C",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Centralizes FileDiff wire assembly with catalog language resolution and per-side highlights across changeset diff endpoints.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b006fe2f6eee479e7934fc921fe3d1eb9ada2341",
         "content": "sha256:0069ace6a9ec79f83a8e153ac33939772e91b76e017cf0c5352e6a145e2b94c6",
         "locator": {
           "kind": "symbol",
@@ -40,14 +76,15 @@
   ],
   "references": {
     "1": {
-      "note": "Classifies each present diff side as text, supported media or other binary content.",
+      "note": "Classifies each present diff side as text, media, or binary and assembles `FileDiff` wire responses with catalog language and per-side highlights.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fa90af0019e758974452a4d3a76b87d61d319fb",
-            "content": "sha256:52c39b3398f1ee8cf37d450583a4c8fdda77e6be7dc5d6366febc222ed6e7292",
+            "blob": "b006fe2f6eee479e7934fc921fe3d1eb9ada2341",
+            "content": "sha256:c6e805341486301dafea1c9b0431c1c10fd29431333f596cb7e6441bb592face",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "file_diff_payload"
             }
           },
           "kind": "code"

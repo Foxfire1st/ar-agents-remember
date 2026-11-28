@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`changeset/` is the Change-Set Viewer: a task-scoped screen for inspecting changed code and onboarding files, with up to three columns for the changed-file lists, the selected file's diff, and its code↔sidecar partner. It consumes read-only change-set JSON, counter and byte routes and reuses the File Viewer's read-only editor, theme, language extensions and persisted view flags, plus the shared Markdown renderer.
+`changeset/` is the Change-Set Viewer: a task-scoped screen for inspecting changed code and onboarding files, with up to three columns for the changed-file lists, the selected file's diff, and its code↔sidecar partner. It consumes read-only change-set JSON, counter and byte routes and reuses the File Viewer's read-only editor, theme, server-highlight decoration mapper and persisted view flags, plus the shared Markdown renderer.
 
 The target selects an enclosure scope, a series master net, a leaf's committed or working range, or a numbered recorded review comparison. The cockpit opens the screen as a full-bleed takeover from change-set controls, hides its underlying body while the takeover is open, and restores that body when the reader goes back.
 
@@ -52,7 +52,7 @@ The changed-file rail uses shared `changeset` left-sidebar visibility and a head
 
 For nonbinary text, ChangeSetPane maps its persisted flags to collapsed change-set diff, full-file diff with highlighting, and full-file with highlighting off through FilePane. Split⇄inline selects the diff layout. Each column supplies its own `keyPrefix`, so view flags persist independently across file switches and reloads. Nonbinary Markdown-language files also offer a rendered toggle through the shared Markdown component; it renders after-content, or before-content when the after text is empty.
 
-`DiffPane` builds a read-only CodeMirror merge pane imperatively in an effect. `splitView` creates a `MergeView` with before and after editors; `inlineView` creates a single after editor with `unifiedMergeView`. Both use the shared theme and lazy language extension, read-only/non-editable state and line wrapping, with no revert or accept/reject controls. The asynchronous language resolution has a disposed guard, and teardown destroys the constructed view.
+`DiffPane` builds a read-only CodeMirror merge pane synchronously in an effect. `splitView` creates a `MergeView` with before and after editors and independent per-side highlight `Compartment`s; `inlineView` creates a single after editor with `unifiedMergeView` and an after-side highlight `Compartment`. Both use the shared `codeTheme`, server-computed UTF-16 `Decoration.mark` spans (`serverHighlights.ts`), read-only/non-editable state and line wrapping, with no revert or accept/reject controls. Highlight updates reconfigure compartments in place by digest so unchanged polls retain the mounted DOM node (`INV-QK8XNM`), and teardown destroys the constructed view.
 
 The normal host styles draw changed text as dark muted green addition rectangles and red deletion rectangles. `firstLine` supplies each side's file-relative numbering through `numberedFrom`; absent values start at line 1. The fitted review-page host instead grows to its content, leaves its editor/merge scrollers overflow-visible and has no internal maximum-height box. ChangedExcerpt passes file line origins, fit, marks and the page's collapse setting. LaneFileFocus and its lane windows remain retired. ChangeSetPane remains the comparison viewer's unmarked diff owner.
 
@@ -157,11 +157,18 @@ Historical entry construction used review:{historical:true} for a closed leaf; t
 - The review-capable target type is declared in changeSetTarget. [60]
 - The series view reads net files separately from leaf attribution: the inspection list requests omit leaf rows, while the counter owner supplies the independently loaded attribution. [5]
 
+
 - The optional marks and the marked pane. [52]
+
+
 
 - The two extracted view builders, each with its marks gutter. [2]
 
+
+
 - The optional first lines and the content-sized host. [3]
+
+
 
 - The card that passes them. [4]
 
@@ -187,7 +194,9 @@ Historical entry construction used review:{historical:true} for a closed leaf; t
 - The same-origin client wrapping that API. [55]
 
 
-- The reused read-only CodeMirror pane + theme + lang map. [58]
+
+
+- The reused read-only CodeMirror pane + theme + server-computed highlights. [58]
 
 
 
@@ -218,7 +227,9 @@ Historical entry construction used review:{historical:true} for a closed leaf; t
 
 - Persisted flags use component state and localStorage. [72]
 
-- Shared numbering, theme and language construction. [73]
+- Shared numbering, theme, and server-highlight construction. [73]
+
+
 
 
 
@@ -247,6 +258,8 @@ Historical entry construction used review:{historical:true} for a closed leaf; t
 
 
 
+
+
 - Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [84]
 
 
@@ -256,6 +269,8 @@ Historical entry construction used review:{historical:true} for a closed leaf; t
 
 
 - The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands. [88]
+
+
 
 - Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired. [76]
 

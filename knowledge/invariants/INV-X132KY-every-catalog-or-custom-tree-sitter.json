@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Enforces KNO-R13@v1 AC-1.2 native-grammar crash isolation across engine, smoke subprocess, and LRU service while guaranteeing bounded resource consumption and UTF-16 offset correctness across CRLF, astral characters, and BOM inputs."
+  },
+  "applicability": "All catalog and custom tree-sitter highlight query compilation and text highlighting executed through highlights_service.highlight_text, highlights_smoke._smoke_compile, and highlights_engine.compute_highlights.",
+  "conditions": [
+    "Every catalog or custom query bundle is smoke-compiled in a short-lived child process before in-process compilation, caching verification outcomes in _VERIFIED_BUNDLES.",
+    "Query composition resolves ; inherits: directives recursively with cycle protection and deterministic ordering.",
+    "compute_highlights normalizes CRLF and lone CR on a copy, sweeps overlapping captures in O(M log M) with @none and JSON key suppression, enforces HIGHLIGHT_MAX_BYTES (512 KiB) and HIGHLIGHT_MAX_SPANS (20,000), and emits UTF-16 code-unit offsets.",
+    "Missing grammars, unwarmed caches (when allow_download=False), oversized payloads, smoke-compile failures, or QueryError degrade cleanly to None without failing reads."
+  ],
+  "exclusions": [
+    "Persisting highlight payloads to disk or Git memory trees.",
+    "Client-side CodeMirror decoration clamping or theme styling (covered by AC-3)."
+  ],
+  "id": "INV-X132KY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_unified_tree_sitter_highlights.py (152 passed, 235 subtests passed on clean-copy tree 8e2b8ed2889265fea2a81be8c3fb8e889a194990)"
+      ],
+      "path": "261112-KNO-L13-curator-handoff"
+    },
+    "handoffEntry": "KNO-R13@v1 AC-1.2",
+    "leaf": "261112-KNO-L13",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every catalog or custom tree-sitter highlight query bundle is smoke-compiled out-of-process before in-process use, resolves ; inherits: directives with cycle protection, runs a deterministic O(M log M) precedence sweep handling @none suppression and JSON key suppression, enforces HIGHLIGHT_MAX_BYTES and HIGHLIGHT_MAX_SPANS caps, and emits \\n-normalized UTF-16 code-unit spans.",
+  "supersedes": [],
+  "title": "Highlight bundles smoke-compile out-of-process and emit capped UTF-16 spans",
+  "writer": {
+    "at": "2026-11-28T05:51:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L13",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
+  }
+}

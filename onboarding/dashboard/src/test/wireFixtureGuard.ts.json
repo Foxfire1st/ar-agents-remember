@@ -192,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:cb802f4cfac5fa4f802acc3d2f5821a61ce766c281c56aaf813ca34831835357",
             "locator": {
               "kind": "symbol",
@@ -209,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "blob": "b38bc3cad6ab252b4f787c5f018822b95bf5d067",
             "content": "sha256:2e0a62fadcd51c893c2d319e5299680f2f937dd141a922df3b45a91a618870e0",
             "locator": {
               "kind": "symbol",
@@ -222,14 +222,14 @@
       ]
     },
     "18": {
-      "note": "The coordination-notes client declares FolderEntry, NotesFolder and NoteContent under its Same-origin client header; NoteContent now also carries media metadata and a media URL.",
+      "note": "The coordination-notes client declares FolderEntry, NotesFolder and NoteContent under its Same-origin client header; NoteContent now also carries media metadata and a media URL.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "4b2ad3e134f125cea8de3cfc20e0cbc7e222e0b1",
-            "content": "sha256:e67d0d59f06b7531ef3e30d0de933878b669fd411dea0a3d6a372757815a9ccb",
+            "blob": "63d5070050e62f0b000540ca07d7e0a754eb9cdd",
+            "content": "sha256:220ece9b9a6d6afbe2bd70285a3f369c2cf40851a2d8d98f50386a4ad9441471",
             "locator": {
-              "end": 49,
+              "end": 50,
               "kind": "line_range",
               "start": 1
             },
@@ -332,12 +332,12 @@
         },
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
             "content": "sha256:c654aece1c3a6b0c6c07b3ceecb97edfb3673aac1dfe377c3463e836f178cb06",
             "locator": {
-              "end": 67,
+              "end": 59,
               "kind": "line_range",
-              "start": 66
+              "start": 58
             },
             "path": "dashboard/package.json"
           },
