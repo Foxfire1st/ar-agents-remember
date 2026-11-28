@@ -45,7 +45,6 @@ cases decide whether the directory or unlanded branch actually exists.
 
 
 
-- Live-locator refusals name the remedy for the operation kind. Separate no-locator operation-record and paired-enclosure cases execute their indicated remedy before retrying retirement. [1]
 
 
 
@@ -63,3 +62,5 @@ cases decide whether the directory or unlanded branch actually exists.
 
 
 - Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain. [6]
+
+- Live-locator refusals name the remedy for the operation kind. Separate no-locator operation-record and paired-enclosure cases execute their indicated remedy before retrying retirement. [1]

@@ -25,7 +25,7 @@ give the sweep its inputs (no per-tool ambient arrangement, so no tool is a func
 - **Arms.** `_returned_arm()` validates the whole result under its model and judges the delivered answer,
   `_refusal_arm()` classifies `ok: false` from a delivered code and an actionable next, and `_raised_arm()` decides
   by which model refused. `classify()` is the one classifier the sweep and the controls share.
-- **Shape.** `_judge_delivered()` checks shape, envelope, keys and `ok` in that order,
+- **Shape.** `_judge_delivered()` checks shape, envelope, keys and `ok` in that order (deriving `expected_whole["runningServers"]` for `server_info` through `_compact_running_servers` after validating raw `whole` against `ServerInfoResponse`),
   `_unknown_delivered_path()` names a delivered key neither the whole result nor the shaping owns, and
   `_unknown_in_mapping()`, `_unknown_in_truncated()` and `_unknown_in_list()` do the same for a mapping, a
   truncated list and a retained list item.
@@ -88,11 +88,6 @@ Current source: The ordinary benign table has 44 distinct literal keys matching 
 
 - The ordinary benign table has 44 distinct literal keys matching the 44-name PUBLIC_TOOLS tuple, including citation_note_revision and explainer_control. The citation-note stimulus names an absent sidecar, uses a zero base digest and requests dry_run. This is source preparation, not registration or execution; prior 41/42-key and addition captions remain historical. [10]
 
-
-
 - The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution. [11]
-
-
-
 
 - `call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. _ToolCallTimeout still reaches the ordinary sweep deadline handling and is classified as unvalidatable rather than as a product exception. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [15]

@@ -140,7 +140,6 @@ Source: mcp/src/agents_remember/mcp/registration/tasks.py:54-80; mcp/src/agents_
 
 ### Repo-Internal References
 
-- The `task_doc` / `task_reopen` payload builders. [1]
 
 - The finalize description: proves the landed edge and refuses before cleanup unless every declared step is done, then reconciles the exact parent row; leaves require a master and ancestors are not completed. [2]
 
@@ -245,3 +244,5 @@ Source: mcp/src/agents_remember/mcp/registration/tasks.py
 
 
 - Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call. [8]
+
+- The `task_doc` / `task_reopen` payload builders. [1]

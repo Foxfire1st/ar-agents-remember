@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by test_early_refusal_is_compact_single_line_and_knowledge_read_bound_unchanged and prevents indented JSON plus duplicate structuredContent from doubling refusal wire bytes or accidentally shrinking knowledge_read's 5,000-token ceiling."
+  },
+  "applicability": "Every early-return transport guard refusal built by mcp/tool_results.py::build_early_refusal_result and the knowledge_read 5,000-token bound in models/tools/tool_answer.py.",
+  "conditions": [
+    "An MCP call is refused by a transport guard before entering the tool handler."
+  ],
+  "exclusions": [
+    "Normal handler results built by build_call_tool_result and protocol-level ToolError exceptions."
+  ],
+  "id": "INV-CFECGB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_early_refusal_is_compact_single_line_and_knowledge_read_bound_unchanged"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 1d",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Early transport refusals emit single-line compact UTF-8 JSON TextContent with no structuredContent, and knowledge_read retains its 5,000-token exception bound.",
+  "supersedes": [],
+  "title": "Early transport refusals emit compact JSON without structuredContent",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

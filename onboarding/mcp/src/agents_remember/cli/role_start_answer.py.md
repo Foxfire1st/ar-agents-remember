@@ -59,7 +59,6 @@ For Bootstrap the answer independently adds the dashboard address result and the
 
 
 
-- A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published. [7]
 
 
 
@@ -68,3 +67,5 @@ For Bootstrap the answer independently adds the dashboard address result and the
 
 
 - Dashboard publication requires the owner/origin result; host chat independently derives its route from embed, reported server id and receipt agent id without an HTTP chat-page probe. [8]
+
+- A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published. [7]

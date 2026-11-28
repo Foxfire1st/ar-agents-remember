@@ -51,6 +51,7 @@ Current source: The current test asserts TaskDocResponse declares neither contra
 - An addressless response withholds guidance rather than passing it unchecked. [16]
 
 
-- The current test asserts TaskDocResponse declares neither contractPath nor enclosurePath and bound_next_step returns None for a foreign-address hint on that response. These source assertions establish no new execution or historical repair event. [11]
 
 - The `unit-regression` lane selects `mcp/tests/test_next_step_address_binding.py`. [12]
+
+- The current test asserts TaskDocResponse declares neither contractPath nor enclosurePath and bound_next_step returns None for a foreign-address hint on that response. These source assertions establish no new execution or historical repair event. [11]

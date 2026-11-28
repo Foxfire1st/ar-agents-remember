@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
-    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
+    "codeTree": "d00ed4669a2867b786ae6a6d39c7620328120777",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Resolved crossing-8 sync conflict for docs/FAQ.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L14 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
-    "task": "261125-DEP-L4",
-    "uncommitted": false
+    "statement": "Re-confirmed docs/FAQ.md at DEP-R05a@v1 Freeze 3 candidate d00ed4669a28 after task_doc_tools.py._build_doc recognized master slug='task' file stems; FAQ prose remains accurate.",
+    "task": "261125-DEP-L5",
+    "uncommitted": true
   },
   "document": "docs/FAQ.md",
   "id": "DPD-A3XZ3Q",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
     },
     {
-      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+      "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T00:08:30+01:00",
+    "at": "2026-11-28T14:27:15+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
     "task": "261125-DEP"
   }
 }

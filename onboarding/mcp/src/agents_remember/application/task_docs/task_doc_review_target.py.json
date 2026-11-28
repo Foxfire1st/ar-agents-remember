@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_review_target.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8af4cee0d192e98c8a3384847fcbdbf474d287ca",
+        "content": "sha256:d6e15498f42f9c6682cf235285070272c3908b8ca21a94cf5334d5d21e6a3a03",
+        "locator": {
+          "kind": "symbol",
+          "name": "enforce_review_target"
+        }
+      },
+      "id": "RLZ-8J6XPW",
+      "invariant": "INV-KQA6XH",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3a",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Enforces explicit leaf slug targeting for begin_review and record_review before any task document is read or mutated.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_GUARDED_REVIEW_OPS` limits the guard to `begin_review` and `record_review`, keeping atomic-master `record_route_review` exempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8af4cee0d192e98c8a3384847fcbdbf474d287ca",
+            "content": "sha256:66889e1e927f253a9ca581c1c837c1f8ac6923f68b98d4ad5936c23180c2ecbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GUARDED_REVIEW_OPS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`enforce_review_target` refuses omitted `slug` with `review-target-slug-required` on leaf contracts, leaf-bound seats, or task folders holding sibling leaf documents, and refuses `slug=\"task\"` with `review-target-mismatch` on leaf contracts or leaf-bound seats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8af4cee0d192e98c8a3384847fcbdbf474d287ca",
+            "content": "sha256:d6e15498f42f9c6682cf235285070272c3908b8ca21a94cf5334d5d21e6a3a03",
+            "locator": {
+              "kind": "symbol",
+              "name": "enforce_review_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

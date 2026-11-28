@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:33771e5f679cb4a3266418334e69eeeb8061586408e02ca54684135e0e13586a",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:4074e9eb4bd05c610695b3482d63240b6d8e877ff2147ab5788b251a58bab2d9",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_status_projects_activation_without_mutation"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:3b4c9a053d6ee4e72315067bc679799d906317e2b6af3b75c1d6cd46d2ad4eca",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:d69a70534220dfd7cb128b8635ff963d0e73fee98b9b849b913dd74202113107",
             "locator": {
               "kind": "symbol",
               "name": "_assert_bounded_parser_refusal"
@@ -34,10 +34,10 @@
         },
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:fb2076879aecfaa996e59c4347096296eaaade3a209b0e13d4ae1c192fa06d80",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:8becdf919b1c21052425701e846276f9dbd24b071a105b95fb11eac40dc63e98",
             "locator": {
-              "end": 350,
+              "end": 348,
               "kind": "line_range",
               "start": 293
             }
@@ -46,12 +46,12 @@
         },
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:de16923cffbe8eafd5ea1f29ad7ffb0e0be1897776b8487939ca7362f73ec5dc",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:7633043c4445445568955b6d410718a416052f6b440280ffe9a9027421bd0bda",
             "locator": {
-              "end": 532,
+              "end": 527,
               "kind": "line_range",
-              "start": 453
+              "start": 449
             }
           },
           "kind": "test"
@@ -63,8 +63,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:fc890a85b4196a8508e6be6a31d583d1467d69e65ad465273262ab66fd7b1289",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:249a9e6e2d1295b15d544a976caf96f12e65878c43d8b5bef976bf1aae4a17dc",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_sync_refusal_addresses_only_this_contracts_own_state"
@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:bb2ca55f5ce3ffefb01b7708a3bb621303a30b452f3fd79b6dcf9fa4665b654c",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:b39b63ff2d78f457f7109749a7666a1fd205e3454bb0bdc878947dd8688fd03e",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_sync_refusal_distinguishes_vacant_and_unreadable"
@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:1de6181adb1aa77f103361a18e6b86c1c9eaa6c5820dc9eeccb264682cb1afd3",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:6274653fd66f64c190bd1e050304d890dd76cce253d2b3a9233579f7b4d91089",
             "locator": {
-              "end": 331,
+              "end": 330,
               "kind": "line_range",
-              "start": 276
+              "start": 277
             }
           },
           "kind": "test"
@@ -112,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:1a6df948a2097a4d01f9ba75cb2091829e2b1d1824ac5f11b0b93d87d0237b7d",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:499cac8c32b4f035eff097f2420e8df33629ba3ebcd2163961cb6e4fa3d0bec3",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_start_refusal_reports_contract_edges"
@@ -128,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:78bab0b98a73525b04b7db438f6d980c2aecf9c60e14f913238b5c7d03114c46",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:91a242a4fdf8aef8a2ce61d25f6fa7572b37cf6da4524573475ce73ce10f2fba",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_start_reread_refusal_preserves_edges_and_guidance"
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:a36e9f686f74ac7c45665a3c5f02a7a2521905941cfc8dd331da26c3200b0324",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:f9d0497ef70c6bc0634f7b4e01de836caf8e2a771ec2c7695033fcf57f7bfafe",
             "locator": {
-              "end": 514,
+              "end": 509,
               "kind": "line_range",
-              "start": 436
+              "start": 433
             }
           },
           "kind": "test"
@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57924ba825a6a7efd8c5bed2f8560ed333d53c1e",
-            "content": "sha256:9f491d634eafa2a75e8f53097c31a7b7157aabfa968da275fa86f0c70ea2d8f3",
+            "blob": "67aa49f5bef0c22c7075582e6ac2174d0d1213da",
+            "content": "sha256:2e749ba51a1168055478092e16b6227025bbc1edb0cabc2333873ca6bddd7cf6",
             "locator": {
               "kind": "symbol",
               "name": "RegisteredActivationAdmissionTests"

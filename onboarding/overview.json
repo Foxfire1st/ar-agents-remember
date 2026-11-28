@@ -1088,12 +1088,12 @@
       ]
     },
     "276": {
-      "note": "The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`.",
+      "note": "The docs index owns the start-here, install, operational and reference map.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f13878cab2ee35e930be733549d6218bcd2468b",
-            "content": "sha256:52d237dc5c66edca3c499ad0ed893c3f990b2a43c2f2f2fe6669db93992e62b7",
+            "blob": "5ce939c5423b60d4f10d099b2d0c630f17b20f04",
+            "content": "sha256:c2e7ae740d57ce20a44243ac50c6f16631f34420497adffff793230007472c01",
             "locator": {
               "kind": "file"
             },
@@ -1579,7 +1579,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "blob": "b0e0cf1a44defd5c3e9da0782332e05203a74936",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -1891,7 +1891,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "blob": "b0e0cf1a44defd5c3e9da0782332e05203a74936",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -3897,8 +3897,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f13878cab2ee35e930be733549d6218bcd2468b",
-            "content": "sha256:52d237dc5c66edca3c499ad0ed893c3f990b2a43c2f2f2fe6669db93992e62b7",
+            "blob": "5ce939c5423b60d4f10d099b2d0c630f17b20f04",
+            "content": "sha256:c2e7ae740d57ce20a44243ac50c6f16631f34420497adffff793230007472c01",
             "locator": {
               "kind": "file"
             },
@@ -5262,7 +5262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "blob": "b0e0cf1a44defd5c3e9da0782332e05203a74936",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 100,
@@ -5415,7 +5415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+            "blob": "17cdf340ee66cdd49834beb352cc6d9c3098bf2b",
             "content": "sha256:d67e21d7649904d6c2f9d967b13b6b58bb329e812fb724568dc964eb40feee53",
             "locator": {
               "end": 134,
@@ -5943,12 +5943,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
-            "content": "sha256:ac79289be96ec4ae39eb257c5d7f746466b05dc237ddb41377085cffaca6b20e",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
+            "content": "sha256:3fafe26a6cbf6e8a088017ba3b19d527a20feafcba1c046a52a2ba1d9825340d",
             "locator": {
-              "end": 817,
+              "end": 833,
               "kind": "line_range",
-              "start": 800
+              "start": 822
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

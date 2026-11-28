@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8521daf3a24e5308ac1889f97a4386d9b2598f5b",
-        "content": "sha256:7018f50eb9e91986c2836f771410d92d7b706b5a17e6beaf492d1e00ae62fc32",
+        "blob": "cceb857bce3a5ff6ed3c715cb165e41ad6a00792",
+        "content": "sha256:5caad593d29814f7f2318fa1c8250f1424d3a4d44259710ffdda0c7388de6b5a",
         "locator": {
           "kind": "file"
         }
@@ -17,18 +17,48 @@
       },
       "rationale": "It initializes and probes the tool server through the exact stdio definition the actor receives.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cceb857bce3a5ff6ed3c715cb165e41ad6a00792",
+        "content": "sha256:dd0f3ef1675dcd922809ac5cfd73b3ce5bc77ac779a9f7f08b56fc9571bdccbf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_parse_server_info"
+        }
+      },
+      "id": "RLZ-ZEPGTW",
+      "invariant": "INV-Z7PA5X",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 2a",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Decodes server_info from TextContent JSON when structured_content is None during evaluation probes.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "note": "The module initializes the stdio session with per-step timeouts, rejects duplicate cursors or tool names, and parses `server_info` from `structured_content` or JSON text blocks via `_parse_server_info`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8521daf3a24e5308ac1889f97a4386d9b2598f5b",
-            "content": "sha256:7018f50eb9e91986c2836f771410d92d7b706b5a17e6beaf492d1e00ae62fc32",
+            "blob": "cceb857bce3a5ff6ed3c715cb165e41ad6a00792",
+            "content": "sha256:dd0f3ef1675dcd922809ac5cfd73b3ce5bc77ac779a9f7f08b56fc9571bdccbf",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_parse_server_info"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cceb857bce3a5ff6ed3c715cb165e41ad6a00792",
+            "content": "sha256:8f0797319db635aea1998aa24293ea4315cc385fe51cc36d628330327fd84e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_probe"
             }
           },
           "kind": "code"

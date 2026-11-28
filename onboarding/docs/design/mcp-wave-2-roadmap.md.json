@@ -1,0 +1,24 @@
+{
+  "path": "docs/design/mcp-wave-2-roadmap.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87f2c37f04302957eff218eb1046dece3264ddc6",
+        "content": "sha256:9ef3514d468fbf3b56e2236c600c1de3ca817d9d3096213e375fbf29a68d16fc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9EXZ63",
+      "invariant": "INV-PFK6DV",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 4",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Records the five deferred Wave 2 MCP platform directions and the concrete triggers that would justify reopening each.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

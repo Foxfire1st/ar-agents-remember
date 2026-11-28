@@ -188,11 +188,11 @@
       ]
     },
     "4": {
-      "note": "The module is selected in `unit-regression` and listed on its four source-derived artifact consumer lists.\n\nAnchor: line range",
+      "note": "The module is selected in `unit-regression` and listed on its four source-derived artifact consumer lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+            "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
               "end": 197,
@@ -205,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
               "end": 322,
@@ -218,12 +218,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
-              "end": 2875,
+              "end": 2877,
               "kind": "line_range",
-              "start": 2875
+              "start": 2877
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -231,12 +231,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
-              "end": 4158,
+              "end": 4161,
               "kind": "line_range",
-              "start": 4158
+              "start": 4161
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -244,12 +244,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
-              "end": 5348,
+              "end": 5351,
               "kind": "line_range",
-              "start": 5348
+              "start": 5351
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

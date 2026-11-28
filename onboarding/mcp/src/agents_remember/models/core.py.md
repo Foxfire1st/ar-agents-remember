@@ -28,7 +28,6 @@ and DTO presence are distinct from actual runtime tool advertisement.
 - Current source section contains excerpt `class ServingBuildPayload(BaseModel):`; DTO/control ownership is not execution acceptance. [5]
 
 
-- `server_info_payload` builds the server-info answer this module's DTO declares. [6]
 
 
 ## Response Shapes
@@ -58,7 +57,6 @@ AgentBindingPayload captures launch agent, role, request, report and optional ca
 
 
 
-- Core payload builders serialize these models. [1]
 
 
 
@@ -80,3 +78,6 @@ AgentBindingPayload captures launch agent, role, request, report and optional ca
 
 - One running server's boot identity and observed build currentness. [8]
 - Server info carries the running-server inventory, empty by default. [9]
+
+- Core payload builders serialize these models. [1]
+- `server_info_payload` builds the server-info answer this module's DTO declares. [6]

@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans tool_results.py, server.py, and stdio_probe.py, is guarded by two regression tests, and prevents placeholder DictOutput outputSchemas and duplicate structuredContent from bloating every tool listing and response."
+  },
+  "applicability": "Every MCP tool registered through AgentsRememberMCP.add_tool returning bare dict, dict[str, Any], or dict[str, object], plus stdio_probe._parse_server_info.",
+  "conditions": [
+    "structured_output is not explicitly forced True on the tool registration."
+  ],
+  "exclusions": [
+    "Typed BaseModel or other non-generic structured return tools, which continue to advertise outputSchema and emit validated structured_content."
+  ],
+  "id": "INV-Z7PA5X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_typed_basemodel_keeps_structured_output_while_generic_dict_drops_it"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 2a",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Generic dict[str, Any] and dict[str, object] tools advertise no placeholder DictOutput outputSchema and omit duplicate structuredContent on the wire while typed BaseModel tools continue to support structured output.",
+  "supersedes": [],
+  "title": "Generic dict tools omit placeholder DictOutput schema and structuredContent",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

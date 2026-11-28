@@ -18,6 +18,7 @@ The driver consumes the synthetic leaf fixture, imports paging seeds from the co
 
 ## Evidence
 
-- Server binding verifies the selected build and fixture scope. [1]
 - The read plan requires real prior cursors at the continuation positions. [2]
 - One session runs the complete fixed selection. [3]
+
+- Server binding verifies the selected build and fixture scope. [1]

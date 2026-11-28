@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/task_doc.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e1103559ffcdae475baf90577fb5b2dd2c42b943",
+        "content": "sha256:bbb019b3e8a1e9344bf071f4ee515262bfc11a1d7adfb60efc92bb01ade9b217",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_doc_payload"
+        }
+      },
+      "id": "RLZ-Y4F8QJ",
+      "invariant": "INV-QK7114",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 3b",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Catches TaskDocError at the MCP adapter boundary and emits a structured ok=false refusal carrying a valid kebab-case code.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The application entry point this builder forwards to. Anchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
               "kind": "symbol",
@@ -37,17 +56,44 @@
       ]
     },
     "3": {
-      "note": "The response model the payload validates against. Anchor: `TaskDocResponse`",
+      "note": "The response model the payload validates against, including boundary refusal responses (`ok=False` with `code` and `error`).",
       "targets": [
         {
           "anchor": {
-            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
-            "content": "sha256:8eec489a710525c3e91a090ce1b59e685b3823f0fd354ac7a44af83b8b9e1b1b",
+            "blob": "c3452e520b58b90c3587ba6a9876053a60d57609",
+            "content": "sha256:7f5e1418e5af38ff42ae7bc1cf15ba22e01ebfc2ef1fd1db300e1c5055e04ed6",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`task_doc_payload` catches `TaskDocError` and translates it via `_task_doc_refusal_code` into a structured refusal while letting unexpected exceptions propagate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1103559ffcdae475baf90577fb5b2dd2c42b943",
+            "content": "sha256:bbb019b3e8a1e9344bf071f4ee515262bfc11a1d7adfb60efc92bb01ade9b217",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1103559ffcdae475baf90577fb5b2dd2c42b943",
+            "content": "sha256:a4b5687c809d088aa7a9b0de1b661bea4fba97a9bc1ce9b743cdebccae0c1127",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc_refusal_code"
+            }
           },
           "kind": "code"
         }

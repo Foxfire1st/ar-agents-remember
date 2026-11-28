@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a38df6336022aa7a46fed8a6574886868c3f751f",
-    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
+    "codeTree": "d00ed4669a2867b786ae6a6d39c7620328120777",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Crossing-8 merge of 261112-KNO-L14 and 261112-BUG-L32 onto a96cc14d2: merged docs/reference/mcp-tools.md carries both KNO-R14@v1 eleven knowledge_read views (line 203, lines 217-247) and BUG-R32@v1 16-worker reset-scheduler prose (lines 822-829); retains narrowed deferral DFR-6EWRE4 on line 31 (4,000-token ceiling) bound to merged blob without lifting it.",
-    "task": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
-    "uncommitted": false
+    "statement": "Re-confirmed docs/reference/mcp-tools.md at DEP-R05a@v1 Freeze 3 candidate d00ed4669a28 after task_doc_tools.py resolved kind before the create slug mismatch check; all public MCP tool documentation remains accurate and pre-existing deferral DFR-3XCXXZ remains intact.",
+    "task": "261125-DEP-L5",
+    "uncommitted": true
   },
   "deferrals": [
     {
@@ -13,13 +13,13 @@
         "file": "docs/reference/mcp-tools.md",
         "note": "Update docs/reference/mcp-tools.md line 31 from 4,000-token ceiling to 5,000-token ceiling for knowledge_read and note post-landing brief refresh where appropriate."
       },
-      "createdAt": "2026-11-27T17:29:51.671043Z",
-      "createdByLeaf": "261112-KNO-L14",
-      "fileBlob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
-      "id": "DFR-6EWRE4",
+      "createdAt": "2026-11-28T12:45:48.703954Z",
+      "createdByLeaf": "261125-DEP-L5",
+      "fileBlob": "b0e0cf1a44defd5c3e9da0782332e05203a74936",
+      "id": "DFR-3XCXXZ",
       "owner": "261112-KNO",
       "passage": "docs/reference/mcp-tools.md line 31 (4,000-token higher bound ceiling)",
-      "reason": "Narrowed from DFR-XP94XS and preserved across crossing-8 onto merged blob of docs/reference/mcp-tools.md (combining KNO-R14@v1 lines 203 & 217-247 with BUG-R32@v1 lines 822-829, superseding DFR-9JY22K): line 31 still states a 4,000-token higher bound ceiling."
+      "reason": "DEP-R05a@v1 updated docs/reference/mcp-tools.md for Wave 1a compact projections and refusal guards without modifying the unrelated line 31 4,000-token higher bound ceiling passage; re-deferred onto the updated blob without lifting."
     }
   ],
   "document": "docs/reference/mcp-tools.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 36,
+  "revision": 37,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,42 +58,42 @@
       "path": "mcp/src/agents_remember/models/tools/public_roster.py"
     },
     {
-      "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+      "blob": "5d064ae6b79e1a8263f1832119fbd192812f871f",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
     },
     {
-      "blob": "5865a5625745237980b5f2727a2b258b47488104",
+      "blob": "0893b6627f9bd4da04fb89e3060ca9f5da2f6745",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
+      "blob": "c54a0ae8a4a789429e0d7029f29033d94d82e86f",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
     {
-      "blob": "167b79c78a29118c0f31635edbfe890ad6caa635",
+      "blob": "b13dda1561b88fab6c30d63cf713c8b157539580",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
     {
-      "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+      "blob": "9089e67048af8c8c1b1e26caf2b75500a700f32a",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
+      "blob": "22f6f0e290a01b36bc8174aec9d428a7638b0bb7",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+      "blob": "4da672725e8680bd4b894edcee248d6fe3bed3e3",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "9309d651383f47d266c2d3862538c7558cfa0d17",
+      "blob": "51eccae7827324b1bc2915c0eed4742f5dd0f773",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -103,42 +103,42 @@
       "path": "mcp/src/agents_remember/mcp/registration/lazy.py"
     },
     {
-      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+      "blob": "23a1c6ad9f6bd3901eceb246e102a65b4da76578",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "7301b391662089bbfed276e516fadeff63f6f65d",
+      "blob": "b42e25c48da441656cb7d174a2edc662afc61756",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
     {
-      "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+      "blob": "c950dc9d4b57657192888bf7aa3fe3aa43aa7c13",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
     {
-      "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+      "blob": "ddf5dd288c1951c69665326c29063c3dd256e271",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
     },
     {
-      "blob": "d61ea60a58b5c86ce9818bd8c7e4b2df7577cf98",
+      "blob": "3da926a9f016c622d4e9397a7fddb57437ef13e7",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
     },
     {
-      "blob": "38918297d798b1d5a22c240e704075e759f8735b",
+      "blob": "a2b94ccdd08e85cee093e6bade7f8bb6cb0af283",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+      "blob": "17cdf340ee66cdd49834beb352cc6d9c3098bf2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+      "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/read_only.py"
     },
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+      "blob": "8a2e7bdd5741cfa0145d123c23599a5f9074ca14",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -178,7 +178,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+      "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -248,7 +248,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
     },
     {
-      "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
+      "blob": "252b028a56dc4dbe8159606b0a9e393b55a3d262",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
     },
@@ -298,7 +298,7 @@
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
     {
-      "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+      "blob": "939302c5f4b7452c9f0031ceb1b2f8d6fee44274",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
@@ -323,7 +323,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
+      "blob": "248836913592993fa0ded83aa53a6002022ae5cf",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
     },
@@ -351,7 +351,7 @@
     },
     {
       "anchor": {
-        "blob": "78eb270d8e7e6707e4dd348097984628eeab6fdc",
+        "blob": "f79576b70d994ff24cf78b1e132e64325dc9b123",
         "content": "sha256:3ebb97025105171a88b5a176c9a9d9e5317c5116b3bc90648c6a27d044a3dbe7",
         "locator": {
           "kind": "symbol",
@@ -363,7 +363,7 @@
     },
     {
       "anchor": {
-        "blob": "682c59f651ead75bb5469a5fe8deb363921cf5a8",
+        "blob": "17cdf340ee66cdd49834beb352cc6d9c3098bf2b",
         "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
         "locator": {
           "kind": "symbol",
@@ -387,7 +387,7 @@
     },
     {
       "anchor": {
-        "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+        "blob": "3d79c2cb1b0b4cee4c33d92d9aebef545b09fed7",
         "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
         "locator": {
           "kind": "symbol",
@@ -399,7 +399,7 @@
     },
     {
       "anchor": {
-        "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+        "blob": "3d79c2cb1b0b4cee4c33d92d9aebef545b09fed7",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -410,7 +410,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+      "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -438,14 +438,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:57:01+01:00",
+    "at": "2026-11-28T14:24:18+01:00",
     "by": "agent",
-    "crossing": "261112_KNOWLEDGE-TOOLS-AND-RETRIEVAL-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
-    "task": "261112-KNO"
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
   }
 }

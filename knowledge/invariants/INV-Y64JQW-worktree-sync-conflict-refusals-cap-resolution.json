@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans landing_answer_shapes.py, knowledge_write_answer.py, and tool_answer.py, is guarded by test_worktree_sync_and_knowledge_write_cap_large_lists_without_overflow, and prevents conflict or write lists from overflowing answers and dropping nextTool, nextArgs, cancelArgs, or reportPath."
+  },
+  "applicability": "Inline MCP answers projected by landing_answer_shapes.py::_bound_sync_resolution for worktree_sync and knowledge_write_answer.py::compact_write_answer for knowledge_write.",
+  "conditions": [
+    "A worktree_sync conflict refusal lists files in resolution.files or a knowledge_write payload carries problems, violations, notes, written, or removed lists."
+  ],
+  "exclusions": [
+    "The full validated payloads retained in daily tool logs and full writer reports written to reportPath."
+  ],
+  "id": "INV-Y64JQW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_worktree_sync_and_knowledge_write_cap_large_lists_without_overflow"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 1c",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "worktree_sync conflict refusals cap resolution.files to five entries with fileCount and filesTruncated while keeping nextTool, nextArgs, and cancelArgs intact, and knowledge_write caps violations, written, and removed to five entries with count and truncation flags via the answer projection.",
+  "supersedes": [],
+  "title": "worktree_sync and knowledge_write cap large inline lists at five entries",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

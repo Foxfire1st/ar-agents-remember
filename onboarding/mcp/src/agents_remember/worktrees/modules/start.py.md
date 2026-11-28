@@ -18,6 +18,8 @@ The moved plan/result records and memory blocked projection have one home in [st
 
 ## Code Commentary
 
+`WorktreeTargetResolutionError` carries an optional keyword-only `code: str | None = None` (default `None`) so `worktree_status_payload` at the MCP boundary can emit a machine-readable refusal code while direct domain callers continue to observe the exception.
+
 Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect.
 
 `start_result` refuses removed vocabulary first, at the top, because there it has no worktree, branch, contract, or task binding to unwind: `_removed_vocabulary_result` answers a removed `memory_mode` or `topology` (other than `disabled`) with the `memory-mode-unsupported` typed result and never substitutes `external` for what was asked; `disabled` is refused just below with its own opt-out refusal, never with the `internal` text; and `_unknown_choice_result` answers any other unknown `memory_choice` as an invalid request in the same shape as every mistyped start argument. The CLI no longer offers `disabled-memory` as a choice, so it still parses only so the start can refuse it by name.
@@ -50,15 +52,12 @@ The rest of the path is unchanged, except that an apply records this generation'
 
 - Preview admission and memory preparation use the exact admitted parent. [25]
 
-
-- Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect. [28]
-
-
 ## Historical provider-surface wording
 
 The following earlier wording is retained as provenance, not a current consumer or operation contract:
 
 > Provider setup launches in the background after the contract is written, with `worktree_status` polling until a terminal state.
 
-
 - A tool call records its daily line and required detail under the retained log owner. [21]
+
+- Start refuses open intent review before contract creation and repeats the check at enclosure creation, attach gates a planning leaf only, and `WorktreeTargetResolutionError` carries an optional refusal `code`. [28]

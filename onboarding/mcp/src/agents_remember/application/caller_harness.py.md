@@ -18,6 +18,4 @@ Name the host provider that is the calling chat's own harness, and report `None`
 - The one match rule: equal, leading part either way, or a whole dash-separated segment. [2]
 - Maps a client name onto an offered provider and returns nothing when none matches. [3]
 
-
-
 - A model-only bootstrap call is served on the calling chat's own harness, and a provider the bound harness does not offer is refused before a seat exists. [4]

@@ -58,7 +58,6 @@ No external documentation source was configured for this test module.
 
 ### Repo-Internal References
 
-- Registered stdio client and the readable/structured wire-payload agreement assertion. [1]
 
 - Review-free fixture setup: the leaf review record is cleared. [2]
 
@@ -101,3 +100,5 @@ and `2ec5d244` (2026-09-11) deleted what the remaining failures exposed as dead,
 `route_review_refusal_fields`. The current source reduces the module to the closeout-gate-removal
 proof described above; no focused test pass, landed commit identity, independent review, or
 acceptance is asserted, and commit-owned verification metadata remains closeout-owned.
+
+- Registered stdio client and the text-JSON/structured wire-payload reader helper. [1]

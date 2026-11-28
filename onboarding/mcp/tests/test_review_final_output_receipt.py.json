@@ -107,11 +107,11 @@
       ]
     },
     "24": {
-      "note": "The `unit-regression` lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.\n\nAnchor: line range",
+      "note": "The `unit-regression` lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+            "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
             "content": "sha256:314372f0f72529edc0852bbe828fe7184e05d33ea54d767b8813ca70fdaff923",
             "locator": {
               "end": 533,
@@ -124,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
               "end": 705,
@@ -137,12 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
-              "end": 3258,
+              "end": 3260,
               "kind": "line_range",
-              "start": 3258
+              "start": 3260
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

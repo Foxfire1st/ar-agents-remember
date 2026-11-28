@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
-        "content": "sha256:bdbae024ff5ccdf5333b21b5cf71149be6c686c7080962aef40054bc972a2f15",
+        "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
+        "content": "sha256:ed8e76cd8145ba514863c0a2597cfad8c5ecd762091cd4cdf8d79e46065135f9",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
-        "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
+        "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
+        "content": "sha256:c0c715d843034bd7076105c4a353f4c4227e3d26f72805a97443a2de237ad14c",
         "locator": {
           "kind": "symbol",
           "name": "read_only_annotations"
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
-        "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
+        "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
+        "content": "sha256:c0c715d843034bd7076105c4a353f4c4227e3d26f72805a97443a2de237ad14c",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_only_annotations"
+        }
+      },
+      "id": "RLZ-5VTNJ6",
+      "invariant": "INV-7S6YWG",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 2b",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Merges site ToolAnnotations hints via model_copy while overwriting read_only_hint with the central fail-closed classification.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
+        "content": "sha256:c0c715d843034bd7076105c4a353f4c4227e3d26f72805a97443a2de237ad14c",
         "locator": {
           "kind": "symbol",
           "name": "read_only_annotations"
@@ -52,12 +70,12 @@
         "handoffEntry": "CAP-R01@v1 §2 bound pruning",
         "leaf": "261124-CAP-L1"
       },
-      "rationale": "Building ToolAnnotations(read_only_hint=...) during registration keeps an unclassified tool excluded for the role from shipping unmarked; UnknownReadOnlyMark still fails server construction before role narrowing.",
+      "rationale": "read_only_annotations merges registration-site ToolAnnotations hints while overwriting read_only_hint from the central fail-closed partition so unclassified tools still raise UnknownReadOnlyMark before role narrowing.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+        "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
         "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:43a88c177efadc6cf26038e3781f459f92feb21e390f14cc927f3620fa8bed43",
             "locator": {
               "kind": "symbol",
@@ -91,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
             "locator": {
               "kind": "symbol",
@@ -107,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
             "locator": {
               "kind": "symbol",
@@ -119,12 +137,12 @@
       ]
     },
     "3": {
-      "note": "Registration-time `ToolAnnotations` are built from the same central partition and replace any registration-site hints.",
+      "note": "Registration-time `ToolAnnotations` merge registration-site hints while forcing `read_only_hint` from the central partition.",
       "targets": [
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
-            "content": "sha256:ca1cd0571885f927cb2af6a8afaf70843e85f62d57c47a6de1cb057e3b4ab39d",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
+            "content": "sha256:c0c715d843034bd7076105c4a353f4c4227e3d26f72805a97443a2de237ad14c",
             "locator": {
               "kind": "symbol",
               "name": "read_only_annotations"
@@ -134,8 +152,8 @@
         },
         {
           "anchor": {
-            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
-            "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
+            "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
+            "content": "sha256:516a9fc46df9f3f41c79f380f44c579b314deba5f350e75fd7dd84803eb661d1",
             "locator": {
               "kind": "symbol",
               "name": "add_tool"
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
             "locator": {
               "kind": "symbol",
@@ -167,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:515e6751da1e41c4735177904ce1465cc8b5cba96b2e5a1781cc82f85b8462da",
             "locator": {
               "kind": "symbol",
@@ -178,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:d60b5a9bf3306bde2f6dc246cec911729a36ab92b9c8397f4da3f3cc167cb41e",
             "locator": {
               "kind": "symbol",
@@ -189,7 +207,7 @@
         },
         {
           "anchor": {
-            "blob": "bebceedf2c630bcd3e481b69609d1eb44e2dcccf",
+            "blob": "be0aacbfac1a1c0a4f2eb496fc1303283b568bda",
             "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
             "locator": {
               "kind": "symbol",

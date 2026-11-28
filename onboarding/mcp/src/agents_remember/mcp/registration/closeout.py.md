@@ -226,9 +226,7 @@ Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
-- The payload builders these forward to. [2]
 
-- The checkpoint-landing tool declaration and the payload builder it forwards to. [3]
 
 - `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. [4]
 - Refuse to stage anywhere except a task's own throwaway worktree. [5]
@@ -313,3 +311,6 @@ Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
 
 - Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call. [12]
+
+- The payload builders these forward to. [2]
+- The checkpoint-landing tool declaration and the payload builder it forwards to. [3]

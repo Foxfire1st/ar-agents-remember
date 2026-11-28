@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "d35efbe2f746a2455624c834e9fc56d8b8229750",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Audited docs/install/hermes.md at post-sync code tree 0b0419690d12: touched stands_on files (mcp/pyproject.toml, cli/paseo_role_tools.py) changed only the dev extra to pyrefly and behavior-preserving typing adjustments; Hermes install guide remains accurate.",
-    "task": "261125-DEP-L8",
+    "statement": "Audited docs/install/hermes.md against DEP-R05a@v1 candidate d35efbe2f746: Hermes MCP installation guidance remains accurate.",
+    "task": "261125-DEP-L5",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts"
     },
     {
-      "blob": "83d2f57a90d9d094bb631e3f15dd66f820cc19a1",
+      "blob": "3d79c2cb1b0b4cee4c33d92d9aebef545b09fed7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -112,14 +112,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:34:14+01:00",
+    "at": "2026-11-28T13:45:45+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
+    "leaf": "261125-DEP-L5",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
     "task": "261125-DEP"
   }
 }

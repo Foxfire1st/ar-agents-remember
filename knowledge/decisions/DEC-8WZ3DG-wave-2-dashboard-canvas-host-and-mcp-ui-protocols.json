@@ -1,0 +1,91 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed adopting MCP Apps/A2UI/WebMCP against retaining the sandboxed canvas/dashboard host, binding future UI protocol adoption to harness standardization and security parity triggers."
+  },
+  "alternatives": [
+    {
+      "option": "Retain the sandboxed opaque-origin canvas review iframe (canvas/protocol.py) and FastAPI/Vite dashboard host (serving/app.py) without adopting MCP Apps, A2UI, or WebMCP in Wave 1.",
+      "reason": "Preserves the verified opaque-origin sandbox, connect-src 'none' CSP, offline kit manifest checks, and zero-credential/parent-frame boundary across all harnesses without tying review rendering to immature client UI protocols (D1006, D1078).",
+      "status": "chosen"
+    },
+    {
+      "option": "Adopt MCP Apps, A2UI, or WebMCP as the interactive host protocol for review and dashboard surfaces (D1006).",
+      "reason": "Harness support for MCP Apps, A2UI, and WebMCP is fragmented and does not yet guarantee equivalent opaque-origin sandboxing, offline asset verification, and zero credential exposure.",
+      "reconsider_when": "Primary user harnesses standardize stable MCP Apps, A2UI, or WebMCP rendering with documented opaque-origin sandboxing, offline asset integrity verification, and zero dashboard credential or parent-frame exposure.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "Review explainers continue to render inside the dashboard's sandboxed iframe over canvas/protocol.py.",
+    "MCP Apps, A2UI, and WebMCP adoption stays deferred to Wave 2 pending harness standardization and security parity."
+  ],
+  "context": "Interactive review pages run in an opaque-origin sandboxed iframe served by the dashboard FastAPI host (serving/app.py) over a narrow frame message protocol (canvas/protocol.py) with a manifest-verified offline kit. D1006 and Council #6 (D1078) weighed retaining this sandboxed dashboard/canvas host against adopting emerging MCP Apps, A2UI, or WebMCP host protocols.",
+  "decider": "Developer (D1006, D1078 Council #6)",
+  "id": "DEC-8WZ3DG",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:7b3e508a96071288d2caca4f7db7457ad1222a71f12468b7ddaf4b1bd9369d53",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameMessage"
+        },
+        "path": "mcp/src/agents_remember/canvas/protocol.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "f80913c6c0c03f887222d9ae1b8fb523f2d2844f",
+        "content": "sha256:0112f53ac6a8c48dfee7be224f560ebba39aec58e64bc79e69a1c16a1037e8e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_app"
+        },
+        "path": "mcp/src/agents_remember/serving/app.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:7b3e508a96071288d2caca4f7db7457ad1222a71f12468b7ddaf4b1bd9369d53",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameMessage"
+        },
+        "path": "mcp/src/agents_remember/canvas/protocol.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "dec-wave2-dashboard-canvas-ui-protocols",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

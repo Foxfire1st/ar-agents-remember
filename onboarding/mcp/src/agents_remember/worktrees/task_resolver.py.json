@@ -412,11 +412,11 @@
       ]
     },
     "8": {
-      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.  Anchor: \"def load_contract_from_args\"\n\nAnchor: `load_contract_from_args`, `contract_path_from_args`",
+      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.",
       "targets": [
         {
           "anchor": {
-            "blob": "d48d27da6f7456ac6e92ee9d0d4544eb84db5e18",
+            "blob": "3bb5d924395576bd1c20255c99968d9bcd7f885d",
             "content": "sha256:c1c83640701904e09ab79d92ca6e296b5f51d9bef532c8f7062c1a061b82ff8b",
             "locator": {
               "kind": "symbol",
@@ -428,8 +428,8 @@
         },
         {
           "anchor": {
-            "blob": "d48d27da6f7456ac6e92ee9d0d4544eb84db5e18",
-            "content": "sha256:3f19162064cca36ceb142ed7eacb4a2f674c69d01e1ac9de37b61b58469adbc3",
+            "blob": "3bb5d924395576bd1c20255c99968d9bcd7f885d",
+            "content": "sha256:ea739306968ef476d0420689ee87e8045aaa4e2f27be833feeb47633eebe117e",
             "locator": {
               "kind": "symbol",
               "name": "contract_path_from_args"

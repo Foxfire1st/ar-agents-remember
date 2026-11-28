@@ -29,9 +29,10 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
 
 - The bounded driver and the 60-second Git observation limit. [3]
 
 - The late-response case that patches public `self.server.list_tools` to hold its handler and starts its deadline after session initialization. [4]
 - The product factory `create_server` composes `AgentsRememberMCP` with `SkillsExtension` and invokes `TOOL_REGISTRARS`. [2]
+
+- The scoped current source carries the module/document behavior described above. [1]

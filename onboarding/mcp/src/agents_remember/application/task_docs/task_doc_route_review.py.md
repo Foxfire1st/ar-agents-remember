@@ -48,8 +48,9 @@ while the route verdict remains BLOCK.
 ### Conventions
 
 One shared binding/authority implementation consumed by the facade; no duplicated validators.
-Errors are `TaskDocError` (an `AgentsRememberError` subclass) so the tool surface keeps its typed
-dialect.
+Errors are `TaskDocError` (an `AgentsRememberError` subclass carrying an optional keyword-only
+`code: str | None = None`) so domain callers keep typed exceptions while the MCP tool boundary
+(`mcp/tools/task_doc.py`) translates them into structured `{ok: False, code: ...}` refusals.
 
 ### Invariants And Boundaries
 
@@ -134,12 +135,10 @@ semantics. Part of the landed L25 candidate `99dc249b`.
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [10]
 
 
-- The task_doc facade dispatches ordinary and routed review recording through its candidate-preparation function. [8]
-
 - The binding form that records a review over the resolved candidate document and re-validates. [2]
 - The route-review authority rule (create/replace cannot author or change evidence). [5]
 
-
-- Call-level knobs and the branch-addressed policy gate. [1]
-
 - Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]
+
+- `TaskDocError` carries an optional `code` attribute alongside `TaskDocCall` knobs and the branch-addressed policy gate. [1]
+- The `task_doc` facade dispatches ordinary and routed review recording through its candidate-preparation function. [8]

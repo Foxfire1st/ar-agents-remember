@@ -138,12 +138,12 @@
       ]
     },
     "6": {
-      "note": "`AgentsRememberMCP.add_tool` applies `read_only_annotations`, computes `structured_output_spec`, wraps each tool with `wrap_registered_tool`, and registers it via public `MCPServer.add_tool`.",
+      "note": "`AgentsRememberMCP.add_tool` merges `read_only_annotations`, disables `structured_output` for generic `dict[str, Any]`/`dict[str, object]` tools before computing `structured_output_spec`, wraps each tool with `wrap_registered_tool`, and registers it via public `MCPServer.add_tool`.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
-            "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
+            "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
+            "content": "sha256:516a9fc46df9f3f41c79f380f44c579b314deba5f350e75fd7dd84803eb661d1",
             "locator": {
               "kind": "symbol",
               "name": "add_tool"

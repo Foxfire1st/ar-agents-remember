@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+        "content": "sha256:c65b2ae97b2897ef1728892442f31435e84a95ac79bcd4f5926d01dfcae4207e",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_early_refusal_result"
+        }
+      },
+      "id": "RLZ-6MJY0F",
+      "invariant": "INV-CFECGB",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 1d",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Serializes early refusals with compact_json_text and structured_content=None.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
         "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+        "content": "sha256:137a84f31f13d3e25334517b0fff5c2ea50e249f3e182a59ae402e27cc957285",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify_output_type"
+        }
+      },
+      "id": "RLZ-RHCB09",
+      "invariant": "INV-Z7PA5X",
+      "origin": {
+        "handoffEntry": "DEP-R05a@v1 Rule 2a",
+        "leaf": "261125-DEP-L5"
+      },
+      "rationale": "Classifies bare dict, dict[str, Any], and dict[str, object] as unstructured so placeholder DictOutput schemas are not generated.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
         "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
         "locator": {
           "kind": "symbol",
@@ -39,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
-        "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+        "content": "sha256:c65b2ae97b2897ef1728892442f31435e84a95ac79bcd4f5926d01dfcae4207e",
         "locator": {
           "kind": "symbol",
           "name": "build_early_refusal_result"
@@ -57,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+        "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
         "content": "sha256:a164bde7a4ba6dd20e189cde02346c580bc3da1c037dd58af8f9eb9873448ab6",
         "locator": {
           "kind": "symbol",
@@ -80,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
             "content": "sha256:a164bde7a4ba6dd20e189cde02346c580bc3da1c037dd58af8f9eb9873448ab6",
             "locator": {
               "kind": "symbol",
@@ -91,7 +127,7 @@
         },
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
             "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
             "locator": {
               "kind": "symbol",
@@ -107,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
             "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
             "locator": {
               "kind": "symbol",
@@ -118,7 +154,7 @@
         },
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
             "content": "sha256:bb0a89d252c71e7130a26222cd563bcf68c1a53b9f92e16e13a8346d0ca4d019",
             "locator": {
               "kind": "symbol",
@@ -130,12 +166,12 @@
       ]
     },
     "3": {
-      "note": "`build_early_refusal_result` preserves indented JSON text and `structured_content` for early-return transport guard refusals.",
+      "note": "`build_early_refusal_result` emits compact single-line UTF-8 JSON text via `compact_json_text` with `structured_content=None` for early-return transport guard refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
-            "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
+            "blob": "40095b768eb9b5a9f57270e80a473396002fb227",
+            "content": "sha256:c65b2ae97b2897ef1728892442f31435e84a95ac79bcd4f5926d01dfcae4207e",
             "locator": {
               "kind": "symbol",
               "name": "build_early_refusal_result"
@@ -146,12 +182,12 @@
       ]
     },
     "4": {
-      "note": "`AgentsRememberMCP` computes `structured_output_spec` in `add_tool` and calls `build_call_tool_result` and `build_early_refusal_result` through `wrap_registered_tool` and `_explainer_seat_refusal`.",
+      "note": "`AgentsRememberMCP.add_tool` disables `structured_output` for generic `dict[str, Any]`/`dict[str, object]` return annotations, computes `structured_output_spec`, and routes normal calls and early refusals through `wrap_registered_tool` and `build_early_refusal_result`.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
-            "content": "sha256:19f8560c3636447c98b0ac2bfac41d22f74eda0e73a1b2fa65463097e76b7389",
+            "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
+            "content": "sha256:516a9fc46df9f3f41c79f380f44c579b314deba5f350e75fd7dd84803eb661d1",
             "locator": {
               "kind": "symbol",
               "name": "add_tool"
@@ -159,43 +195,32 @@
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
-            "content": "sha256:6fdb4fe2cd91d73de74c322372caa7e23da088785e7ce2dab6f3265e5216b2e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_explainer_seat_refusal"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4a84d755788bed1d06b34566dbba423de0f16243",
-            "content": "sha256:48c22a79603dc0f189ea2e04e1aa05ed09d6c892e9cc88c45ee316a3dc072ece",
-            "locator": {
-              "kind": "symbol",
-              "name": "wrap_registered_tool"
-            },
-            "path": "mcp/src/agents_remember/mcp/tool_wrapper.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Wire-parity tests verify compact JSON text, structured content, explainer bare-dict outputs, and indented early refusals over `Client(server, mode=\"legacy\")`.",
+      "note": "Wire-parity tests verify compact single-line JSON text, omitted generic `outputSchema` and `structured_content`, bare-dict explainer outputs, and compact early refusals over `Client(server, mode=\"legacy\")`.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bf8fc0d78f0dc1f0c8d8f72ce076acd9318b831",
-            "content": "sha256:a6136a3a67936532ba0fc16bdaa610b8adbabdbc1d1e8fa65e822c4268222727",
+            "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+            "content": "sha256:6a044ae986e2c74a3d7ec9dd0d8770709430710cd1aeb227277290e86c4605e8",
             "locator": {
               "kind": "symbol",
               "name": "CompactToolResultWireTests"
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "99b0182741b5f98fd53f98e7597980d26285e8f3",
+            "content": "sha256:814f89ac698386e7a176ca9076e2a3cf6eca4e676c21dffce7142eb4f7cadbad",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 55
             },
             "path": "mcp/tests/test_compact_content.py"
           },

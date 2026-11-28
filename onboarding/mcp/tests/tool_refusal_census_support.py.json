@@ -142,7 +142,7 @@
         },
         {
           "anchor": {
-            "blob": "98476ce817d312054fa6a6f6b0a7c60fb2260231",
+            "blob": "8cb2d888405c01b61b505fd5b42957ddab38f2b0",
             "content": "sha256:9d897b739d66b64c9a89e3f845a130440eb2925d35c40c031512e593e1d080e3",
             "locator": {
               "end": 308,
@@ -160,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "blob": "f336c317b93c7f1dc58c086b93142b6feaa65e5b",
             "content": "sha256:4315b24910012f05263083517ef81e3396cc62f0d18cf9d68f059978e39821be",
             "locator": {
-              "end": 622,
+              "end": 623,
               "kind": "line_range",
-              "start": 397
+              "start": 398
             },
             "path": "mcp/tests/test_tool_refusal_conformance.py"
           },

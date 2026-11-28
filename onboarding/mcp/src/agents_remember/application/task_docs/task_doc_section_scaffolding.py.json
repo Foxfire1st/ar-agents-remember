@@ -42,12 +42,12 @@
       ]
     },
     "2": {
-      "note": "`_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. Anchor: `_build_doc`",
+      "note": "`_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
-            "content": "sha256:43f269df00d9ef052f3ab56bbb71a262b6af7e19aa21ca26c3b9eb94729a97a1",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
+            "content": "sha256:eaff2b7ec45ed0c582ad188280073f35fd7673923d6c9bfe9326e27479b1a6ab",
             "locator": {
               "kind": "symbol",
               "name": "_build_doc"

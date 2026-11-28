@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans mcp/tools/task_doc.py, mcp/tools/worktree.py, worktrees/modules/start.py, and worktrees/integration/integration_branch_authority.py, is guarded by two regression tests, and prevents typed operational refusals from surfacing as unstructured ToolError text without masking real crashes."
+  },
+  "applicability": "MCP payload builders task_doc_payload, worktree_status_payload, worktree_closeout_preview_payload, worktree_closeout_apply_payload, and worktree_checkpoint_landing_payload.",
+  "conditions": [
+    "The delegated domain call raises one of the enumerated typed refusal exceptions (TaskDocError, WorktreeTargetResolutionError, ValidationError, SourceLineageRefusal, LandingCommitCheckRefusal, CommitPublicationRefusal, CloseoutQueueError, IntegrationBranchAuthorityError)."
+  ],
+  "exclusions": [
+    "Direct domain Python callers (which still observe the raised exceptions) and unexpected programming/environment errors such as ImportError or bare RuntimeError."
+  ],
+  "id": "INV-QK7114",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_wave1a_tool_inspections.py::test_closeout_and_checkpoint_boundaries_convert_typed_errors"
+      ],
+      "path": "261125-DEP-L5-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R05a@v1 Rule 3b",
+    "leaf": "261125-DEP-L5",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "MCP tool boundaries for task_doc, worktree_status, worktree_closeout_preview, worktree_closeout_apply, and worktree_checkpoint_landing convert typed domain refusals into structured ok=false payloads carrying kebab-case codes without catching ImportError or bare RuntimeError.",
+  "supersedes": [],
+  "title": "MCP payload boundaries convert narrow typed domain errors to refusals",
+  "writer": {
+    "at": "2026-11-28T13:45:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L5",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1345d655-dba6-5cae-8bd2-12bc88257e85",
+    "task": "261125-DEP"
+  }
+}

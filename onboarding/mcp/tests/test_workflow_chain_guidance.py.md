@@ -75,9 +75,9 @@ The shared disposable world drives registered operations and contract-addressed 
   previews; the case asserts it was **present** when they ran, that every preview answered
   (`would-*`/`closed`), that the snapshot **survived** the previews, and that the **real** finalize
   reclaimed it — so the preservation claim is not an artefact of nothing ever touching the file.
-- **The stale base and its raiser** (`STALE_BASE_RAISERS`, `mcp/tests/workflow_chain_guidance_test_support.py:149`; `WorkflowChainObservation._stale_base_arrangement`,
+- **The stale base and its empty raiser pin** (`STALE_BASE_RAISERS`, `mcp/tests/workflow_chain_guidance_test_support.py:149`; `WorkflowChainObservation._stale_base_arrangement`,
   `mcp/tests/workflow_chain_guidance_test_support.py:853-888`; `test_a_stale_base_closes_the_envelope_by_raising_and_is_counted`, `mcp/tests/test_workflow_chain_guidance.py:395-424`). The
-  arrangement advances the sibling enclosure's source branch and drives closeout preview and dry-run sync. The fixture requires sync to say `would-sync` and closeout preview to be the sole observed non-answer. It checks that the rendered error detail contains `source-lineage-stale` and `worktree_sync`.
+  arrangement advances the sibling enclosure's source branch and drives closeout preview and dry-run sync. `STALE_BASE_RAISERS` is now empty (`frozenset()`): `worktree_closeout_preview` returns a structured source-lineage refusal carrying `code` and `nextTool="worktree_sync"` rather than raising, and dry-run sync answers `would-sync`.
 - **The declared-requirement channel, `T109`**
   (`test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable`,
   `mcp/tests/test_workflow_chain_guidance.py:428-499`). The test checks three fixture states: the walk observes a live declaration
@@ -416,11 +416,9 @@ No repository or external-system boundary is proved by this module.
 - The nine-operation declaration repeats integration and finalization for preview and apply, and the ordered test compares it with the walk. [1]
 
 
-- One response's own operational triple, and what calling it exactly as published produced. [11]
 
 
 
-- The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session. [12]
 
 
 
@@ -436,7 +434,6 @@ No repository or external-system boundary is proved by this module.
 
 - Each declared operation-state pair is required to occur. The terminal contract cleanup cell must be completed. [2]
 
-- The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
 
 
 - Every observed hop with a top-level next tool has a matching probe of the published tool and arguments. The assertion forbids an unclassified raise and names finalization as the observed no-triple tool. [21]
@@ -460,7 +457,6 @@ No repository or external-system boundary is proved by this module.
 - The classifier's control: an unusable recommendation must be seen as one. [30]
 - The withhold test compares exact tool counts and requires at least one withheld hop with a top-level next tool. [31]
 - `T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed. [32]
-- The stale base driven, and the raiser pinned by set equality. [33]
 
 - The case asserts the cleanup and closeout declarations and the absence of closeout-pending hops. Current phase guidance has three required-argument sites, including carryover. [34]
 
@@ -468,7 +464,6 @@ No repository or external-system boundary is proved by this module.
 
 - The support declaration pins exact withheld counts. The case compares those counts and requires an observed withheld hop with a top-level next tool. [5]
 
-- The stale-base non-answer pin names closeout preview. The case compares the exact non-answer set for the driven closeout preview and sync calls and checks rendered stale-lineage and remedy text. [6]
 
 - The support values fill declared or reported missing arguments in the fixture. The test derives argument names from the call results. [7]
 
@@ -495,3 +490,10 @@ No repository or external-system boundary is proved by this module.
 - Selected phase guidance is augmented with fixture commit messages for closeout apply, integration and finalization; declared required arguments and the workflow fallback are supplied before calling. [15]
 
 - The `unit-regression` lane selects `mcp/tests/test_workflow_chain_guidance.py`. [35]
+
+- STALE_BASE_RAISERS is empty after worktree_closeout_preview returns a structured source-lineage refusal; the case compares the exact non-answer set. [6]
+- The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session. [12]
+
+- One response's own operational triple, and what calling it exactly as published produced. [11]
+- The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
+- The stale base is driven through the tools and the empty raiser set is pinned by set equality. [33]

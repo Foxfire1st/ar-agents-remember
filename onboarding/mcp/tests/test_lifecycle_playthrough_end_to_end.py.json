@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+            "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 781,
+              "end": 782,
               "kind": "line_range",
-              "start": 781
+              "start": 782
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+            "blob": "1dae4f3b3a474a300ab7acdccc2332a43fcb49b9",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 781,
+              "end": 782,
               "kind": "line_range",
-              "start": 781
+              "start": 782
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -134,7 +134,7 @@
       ]
     },
     "19": {
-      "note": "The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]\n\nAnchor: `pause_result`; `_already_stopped_result`; `require_parent_series`",
+      "note": "The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]",
       "targets": [
         {
           "anchor": {
@@ -149,8 +149,8 @@
         },
         {
           "anchor": {
-            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
-            "content": "sha256:e3b5d57b068db1fa5920c16ee57d4475709457a9bb1c6f134027a458e71cbca2",
+            "blob": "939302c5f4b7452c9f0031ceb1b2f8d6fee44274",
+            "content": "sha256:f578bf5fe977ba95cdebea8596debb5c11a43a8c6b9012f537b38de7a92c0e13",
             "locator": {
               "kind": "file"
             },
@@ -177,11 +177,11 @@
       ]
     },
     "20": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.\n\nAnchor: line range",
+      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
               "end": 494,
@@ -194,12 +194,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1163,
+              "end": 1164,
               "kind": "line_range",
-              "start": 1163
+              "start": 1164
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -207,12 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1351,
+              "end": 1352,
               "kind": "line_range",
-              "start": 1351
+              "start": 1352
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -220,12 +220,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 3047,
+              "end": 3049,
               "kind": "line_range",
-              "start": 3047
+              "start": 3049
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -233,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "blob": "6c1c5738a22e83a22c207c5ddd783ab62ae96e8b",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 5365,
+              "end": 5368,
               "kind": "line_range",
-              "start": 5365
+              "start": 5368
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -395,12 +395,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26edb807624799560302a36c0ed6a2935d6e8aca",
+            "blob": "939302c5f4b7452c9f0031ceb1b2f8d6fee44274",
             "content": "sha256:2c69b6bf4581ce6c8ec6582f505f09bf2096ad16dba0a9edb9002bb063828879",
             "locator": {
-              "end": 291,
+              "end": 304,
               "kind": "line_range",
-              "start": 291
+              "start": 304
             },
             "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
           },

@@ -448,12 +448,12 @@
         },
         {
           "anchor": {
-            "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
+            "blob": "ddf1bf7088639211a53bc33d73caa92d7c5d1964",
             "content": "sha256:b9ba5d6ad25727f1353e152a76e136365e35a117771f99e559317612065a4067",
             "locator": {
-              "end": 444,
+              "end": 447,
               "kind": "line_range",
-              "start": 396
+              "start": 399
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

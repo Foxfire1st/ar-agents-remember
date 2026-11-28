@@ -14,13 +14,6 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 - The fixed short part carries `ok`, a checked `code` and any build-currentness reading. [11]
 
-
-
-- The installation answer projection includes the running-server inventory and dashboard part. [12]
-
-
-
-
 - Framework keys admit buildCurrentness and warningCut on every answer row. [13]
 
 ### Current naming-reader bounds
@@ -56,7 +49,7 @@ The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it s
 
 The shaped `role_start` bound is 600 tokens. The `role_message` exception applies a 4,000-token bound over its 150-token shaped row.
 
-SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict.
+SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; `worktree_sync` uses a 550-token bound (recalibrated from 400 after deep-root conflict resolution answers exceeded 400 tokens with the 5-entry `resolution.files` cap), and direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict.
 
 ### Logic
 
@@ -83,16 +76,16 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 - A tool resolves operation/tool exceptions, shaped bounds, explicit interim ownership and final rows before the fallback ceiling. [4]
 
 - Interim ownership is an explicit tool-to-leaf map; `direct_execution_grant` has no entry and takes its shaped 150-token bound. [5]
-
-- Shaped bounds include 600 tokens for `role_start` and 150 for `direct_execution_grant`, which lacks a raw interim-map entry. The `role_message` exception overrides its shaped row. Assembled table rows and the raw interim map have separate owners. `runtime_install` is the sole retained L112 final bound. [6]
 - `TOOL_ANSWER_KNOWLEDGE_READ_MAX_TOKENS` (5000) and `exception_ceiling_for` authorize the 5,000-token `knowledge_read` exception row. [17]
 
 ## The settings answer's bound
 
 `SHAPED_TOOL_BOUNDS` gives `user_settings_init` a 900-token bound: its answer carries the state, the path, the two key lists, the harness of every role and its sources, and the largest measured answer is 572 characters. A bound is a ceiling on the delivered answer, not a promise that every field appears in the short form.
 
-- The shaped-bound table gives user_settings_init a 900-token ceiling. [9]
-
 - explainer_control is attributed to L183 in the retained interim answer vocabulary; its source comment says it stands interim until its leaf lands. Anchor: `INTERIM_TOOL_LEAF` [10]
 
 - The retained 2400 token bound covers the compact read_ar_files brief. [16]
+
+- Shaped bounds include 550 tokens for `worktree_sync`, 600 tokens for `role_start`, and 150 for `direct_execution_grant`, which lacks a raw interim-map entry; `role_message` overrides its shaped row and `runtime_install` is the sole retained L112 final bound. [6]
+- The shaped-bound table gives `user_settings_init` a 900-token ceiling. [9]
+- The installation answer projection includes the running-server inventory and dashboard fields. [12]

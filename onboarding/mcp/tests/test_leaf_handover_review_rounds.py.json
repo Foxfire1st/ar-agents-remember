@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e60195369f3f1f805287d4df26af221a7aba11dd",
-        "content": "sha256:1a24b8fa89558818d4a6f58d46156ed404fbbdc2125050d3f9972eb3bada099e",
+        "blob": "c76a06f881a62f89253d23e7da5292ef78691947",
+        "content": "sha256:aaad0c73da094948840606a6cfe074cc7b3132f6764c609fbbcd558d0a510466",
         "locator": {
           "kind": "symbol",
           "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e60195369f3f1f805287d4df26af221a7aba11dd",
-        "content": "sha256:5d311b37da6a37185b5f3bcf045ea1d1cb3977d856177665386a363a3cbdb55c",
+        "blob": "c76a06f881a62f89253d23e7da5292ef78691947",
+        "content": "sha256:6e1b71790d47efcabefe63c8e99f3605536a867ac10fc07322b604d7f959527a",
         "locator": {
           "kind": "file"
         }
@@ -44,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e60195369f3f1f805287d4df26af221a7aba11dd",
-            "content": "sha256:5d311b37da6a37185b5f3bcf045ea1d1cb3977d856177665386a363a3cbdb55c",
+            "blob": "c76a06f881a62f89253d23e7da5292ef78691947",
+            "content": "sha256:6e1b71790d47efcabefe63c8e99f3605536a867ac10fc07322b604d7f959527a",
             "locator": {
               "kind": "file"
             }

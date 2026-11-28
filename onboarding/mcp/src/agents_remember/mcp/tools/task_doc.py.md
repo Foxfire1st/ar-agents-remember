@@ -15,10 +15,13 @@ since L11, `task_reopen` (reopen a completed leaf task under its exact leaf id).
 
 `task_doc_payload(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
 call: TaskDocCall = DEFAULT_TASK_DOC_CALL)` calls `task_doc_tool(config, target, operation=...,
-edit=..., call=...)` and
-wraps the result through `base._tool_payload("task_doc", ...)`, so the response is validated against
-`TaskDocResponse` and (like every tool) attributed to the active lifecycle at the `_tool_payload`
-choke point.
+edit=..., call=...)` and wraps the result through `base._tool_payload("task_doc", ...)`, so the
+response is validated against `TaskDocResponse` and (like every tool) attributed to the active
+lifecycle at the `_tool_payload` choke point. If `task_doc_tool` raises `TaskDocError`,
+`task_doc_payload` catches it at the MCP boundary and converts it into a structured
+`{"ok": False, "operation": "task_doc", "code": _task_doc_refusal_code(exc), "error": str(exc)}`
+refusal passed through `_tool_payload`, preserving `TaskDocError` raises for direct domain callers
+while letting unexpected exceptions (`ImportError`, `RuntimeError`, etc.) propagate.
 
 Since 260731-EFA-L2 the arguments arrive in two objects that answer two different questions:
 `TaskDocTarget(repo_id, task_name, contract_path, slug)` — which document — and
@@ -50,12 +53,7 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 
 - The shared validation/emission choke point. Anchor: `_tool_payload` [2]
 
-
-
-- The response model the payload validates against.
-
-
-
-- The response model the payload validates against. Anchor: `TaskDocResponse` [3]
-
 - The application entry point this builder forwards to. Anchor: `task_doc_tool` [1]
+
+- The response model the payload validates against, including boundary refusal responses (`ok=False` with `code` and `error`). [3]
+- `task_doc_payload` catches `TaskDocError` and translates it via `_task_doc_refusal_code` into a structured refusal while letting unexpected exceptions propagate. [4]

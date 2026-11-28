@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:f94469e0c55bda0123006be476a24188d87f829519693d00c0add53493947960",
             "locator": {
               "kind": "symbol",
@@ -216,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
             "locator": {
               "kind": "symbol",
@@ -228,7 +228,7 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
             "locator": {
               "kind": "symbol",
@@ -240,7 +240,7 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
             "locator": {
               "kind": "symbol",
@@ -252,7 +252,7 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
             "locator": {
               "kind": "symbol",
@@ -264,12 +264,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:7044d9cb922eae28cad561ebb868d75a747e3e82fa1c91f8189f521ca0e2b75d",
             "locator": {
-              "end": 812,
+              "end": 828,
               "kind": "line_range",
-              "start": 811
+              "start": 827
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -277,12 +277,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:5b5417cda445d817ee0e468192c9f958de7d638afcfeb6db181af1714b668be3",
             "locator": {
-              "end": 816,
+              "end": 832,
               "kind": "line_range",
-              "start": 815
+              "start": 831
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -290,12 +290,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:06335310046314b2784aefb000dcccd4041cf7b53059a064c79906c1c746e186",
             "locator": {
-              "end": 820,
+              "end": 856,
               "kind": "line_range",
-              "start": 819
+              "start": 855
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -303,12 +303,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:32187c62da2ac5ef02e7729d7fda016edd5a9670ac22a12b2c44618597f72e63",
             "locator": {
-              "end": 829,
+              "end": 865,
               "kind": "line_range",
-              "start": 823
+              "start": 859
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -316,12 +316,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:29a8547ba8a633f35d7d4079de11ad2bf2981cc9ea080da75c2bf88ed475a26a",
             "locator": {
-              "end": 842,
+              "end": 878,
               "kind": "line_range",
-              "start": 841
+              "start": 877
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -329,12 +329,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:8c1e140923f6631c683799b5f4884b28f7ba4bcdd06ade29919ec13d76099ba4",
             "locator": {
-              "end": 846,
+              "end": 882,
               "kind": "line_range",
-              "start": 845
+              "start": 881
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -342,12 +342,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:170ad97289505d6ac2f1122c252463adad8f25dd0c9b71b22d612c795ba63f86",
             "locator": {
-              "end": 850,
+              "end": 886,
               "kind": "line_range",
-              "start": 849
+              "start": 885
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -355,12 +355,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:712842a49ae9f0e776fdea2e252852f5a819293e61c16271c9a68e9941b18ac8",
             "locator": {
-              "end": 859,
+              "end": 895,
               "kind": "line_range",
-              "start": 853
+              "start": 889
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -368,12 +368,11 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
-            "content": "sha256:ea1603f4cb4d246b1120b0b2bef516dcf2c4229c1401503debfb7d0c8d2b4b14",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
+            "content": "sha256:eaff2b7ec45ed0c582ad188280073f35fd7673923d6c9bfe9326e27479b1a6ab",
             "locator": {
-              "end": 818,
-              "kind": "line_range",
-              "start": 817
+              "kind": "symbol",
+              "name": "_build_doc"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -381,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:710a99f8dd8bcfabbc8639ffb3a72f8bdc0a3cfc5efa9a18670c48632c2d4b3a",
             "locator": {
-              "end": 822,
+              "end": 858,
               "kind": "line_range",
-              "start": 821
+              "start": 857
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -394,12 +393,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:3ea79c1e31af8c013c31f65bd7da54d5b08737eef47f421f881d5156d4e144f8",
             "locator": {
-              "end": 826,
+              "end": 862,
               "kind": "line_range",
-              "start": 825
+              "start": 861
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -407,12 +406,12 @@
         },
         {
           "anchor": {
-            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "blob": "4e3376aa3731943f2167c379cf90bf7793dc4669",
             "content": "sha256:b6616c9c52cfffa0402e4b511c7ee686155b7557037ee0982d532b18782d27e2",
             "locator": {
-              "end": 835,
+              "end": 871,
               "kind": "line_range",
-              "start": 829
+              "start": 865
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
