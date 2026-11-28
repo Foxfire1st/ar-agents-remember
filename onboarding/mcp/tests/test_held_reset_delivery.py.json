@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
         "content": "sha256:a1c02b4b512d2ce5a8c61b9b6d26e352df1058178131dad670fe34a25ed66dcf",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+        "content": "sha256:498e2230f4d0d1d9a2420f201e088c673584d734cc100d95b232a93823637131",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+        }
+      },
+      "facet": "A due delivery pass visits each recipient once within the pool bound under the shared hang guard.",
+      "id": "PRF-B2BSKK",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
         "content": "sha256:1e293258715d9f8277b2153b87be1fde7e3bd4e2d54e23fd741c18c54899605d",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
         "content": "sha256:417765fda89c44aa5b8f66bb0c042d62ef3f06f7791c0e2a3c024156c1864cb3",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
         "content": "sha256:a1c02b4b512d2ce5a8c61b9b6d26e352df1058178131dad670fe34a25ed66dcf",
         "locator": {
           "kind": "symbol",
@@ -71,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
-        "content": "sha256:3bec52de2587cc21d4b76576f8ed25ea7d0c220759bc7cd682ef2d7a63987f2f",
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+        "content": "sha256:498e2230f4d0d1d9a2420f201e088c673584d734cc100d95b232a93823637131",
         "locator": {
           "kind": "symbol",
           "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
         "content": "sha256:1e293258715d9f8277b2153b87be1fde7e3bd4e2d54e23fd741c18c54899605d",
         "locator": {
           "kind": "symbol",
@@ -104,14 +121,33 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+        "content": "sha256:498e2230f4d0d1d9a2420f201e088c673584d734cc100d95b232a93823637131",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+        }
+      },
+      "id": "RLZ-6G3P3V",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The barrier timeout uses the shared hang guard, so the register guard test passes without a short literal (Q1).",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "`HeldResetDeliveryTests` exercises startup adoption of an aged legacy wait dropped from the 24-hour queue, exact deadline wake, FIFO delivery within thirty seconds, and post-acknowledgement retirement across a fresh scheduler.",
       "targets": [
         {
           "anchor": {
-            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
             "content": "sha256:4daeb39fbb4812ffebd624030561000867edbc9eae1f96c94123740a11c6402c",
             "locator": {
               "kind": "symbol",
@@ -127,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
             "content": "sha256:a1c02b4b512d2ce5a8c61b9b6d26e352df1058178131dad670fe34a25ed66dcf",
             "locator": {
               "kind": "symbol",
@@ -143,11 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
-            "content": "sha256:3bec52de2587cc21d4b76576f8ed25ea7d0c220759bc7cd682ef2d7a63987f2f",
+            "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+            "content": "sha256:498e2230f4d0d1d9a2420f201e088c673584d734cc100d95b232a93823637131",
             "locator": {
-              "kind": "symbol",
-              "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+              "end": 163,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "test"

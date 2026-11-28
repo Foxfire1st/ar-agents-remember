@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "A timing rule lives in the test and in the product or test-support code that makes the observed event exist, so realizations span both; each clause is guarded by the tests that fail when it is broken."
+  },
+  "applicability": "Every test in the repository's Python and dashboard populations whose outcome can turn on scheduling, elapsed host time or the process's own settings, and the product and test-support code those tests drive.",
+  "conditions": [
+    "A wait observes the exact event or condition its assertion needs, directly or through the shared hang guard; a fixed sleep never stands for an event.",
+    "A rate or elapsed-time assertion runs on a clock the test controls, so host load cannot refill or consume it.",
+    "A fixture that drives a background producer or a shared reader releases it only after the page or reader has joined that exact flight, and releases it in cleanup.",
+    "A process-owned mutable state a test observes has one reset owner in the closed census, exercised at module boundaries.",
+    "A product path that drops reusable work names the gate that dropped it."
+  ],
+  "exclusions": [
+    "Nodes that fail because the run's environment forbids what they do are outside the rule.",
+    "How long the checks take is left to 261112-BUG-L29.",
+    "The integrity-check node of 261112-BUG-L25, the node of issue row 672 and the knowledge master's crossing test are not covered.",
+    "No claim is made about scheduler speed or about a whole-suite green beyond the recorded settings."
+  ],
+  "id": "INV-7AAS8F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L30-code-review-verdict-R1.md; L30-R1-review-checks.md (439 passed, 103 subtests); heavy-rule4-995a8483 summary-g3/summary-g4; light-rule4 summary batches A/B1/B2; failing-on-base b2/b3 logs"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "BUG-R30@v1",
+    "leaf": "261112-BUG-L30",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The task's timing- and setting-sensitive tests wait for the event they need, or drive the clock they measure, so each passes on correct code in every setting its checks run it in, and every repaired node passes alone twenty times in each setting where it failed.",
+  "supersedes": [],
+  "title": "Timing-sensitive tests wait for the event they need or drive the clock",
+  "writer": {
+    "at": "2026-11-28T12:24:22+01:00",
+    "by": "agent",
+    "effort": "unknown",
+    "harness": "hermes",
+    "leaf": "261112-BUG-L30",
+    "model": "opencode-go:deepseek-v4.1-flash",
+    "role": "curator",
+    "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "the launch receipt does not hold the effort"
+    }
+  }
+}

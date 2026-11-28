@@ -19,7 +19,7 @@ certifying services.
 - The hermetic bootstrap activates the environment of this pytest process
   (`activate_current_pytest_environment`).
 - Before redirecting `HOME` and XDG directories, `_HOST_LANGUAGE_CACHE` captures `AR_LANGUAGE_CACHE` (falling back to `${XDG_STATE_HOME:-~/.local/state}/agents-remember/grammars`) and passes it into `_ISOLATED_ENVIRONMENT` so hermetic test runs reuse pre-warmed grammar wheels without touching host config or mutating the venv.
-- A temporary directory under `/tmp` becomes `HOME`, the XDG config, data and cache homes and
+- A temporary directory under the process's temporary root — `TMPDIR` when set, otherwise the system default — becomes `HOME`, the XDG config, data and cache homes and
   `CODEX_HOME`; a private `TMUX_TMPDIR` scopes tmux to this pytest process. Git's global and
   system configuration are switched off. Subprocesses of a fixture
   therefore do not inherit the developer's setup.
@@ -85,17 +85,13 @@ scope `all-tests`.
 
 > Retained earlier citation wording: - The environment is restored and the temporary directory removed. [7]
 
-
 > Retained earlier citation wording: - The isolated home directories and the switched-off Git configuration.
 
-
 > Retained earlier citation wording: - The removal of inherited opt-ins and credentials. [9]
-
 
 - The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission. [13]
 - The refusal text for a manifest that cannot be read or parsed. [14]
 - The start-up hook explains a lane manifest that does not parse, and refuses by name a manifest without a `[files]` table or without the two lanes it reads. [15]
-
 
 - The pytest environment owns a private tmux directory. [16]
 
@@ -110,10 +106,7 @@ The session fixture gives code running in this pytest process an isolated outsid
 
 - The environment is restored and the temporary directory removed.  Anchor: `pytest_unconfigure` [7]
 
-
 - The isolated home directories and the switched-off Git configuration. [8]
-
-
 
 - The removal of inherited opt-ins and credentials. [9]
 

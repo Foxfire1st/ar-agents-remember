@@ -15,7 +15,7 @@ Tests the explainer’s mounted render and grade tools, their leaf binding and l
 - The mounted surface provides `render`, `define_category`, `remove_category` and `grade`; publication re-reads the binding under the leaf lock.
 
 
-- A grade at a binding the environment has left is refused; a writer waits on the leaf's lock so neither writer loses keys.
+- A grade at a binding the environment has left is refused; a writer waits on the leaf's lock so neither writer loses keys. The grade-lock case holds the lock from a separate process released on the test's signal, observes the writer's denied attempt through the real lock path and asserts the grade file is still absent.
 
 
 - The browser cases hold the render boundary at its mounted surface: the announce answer names the missing part and the one sentence and begins no run; the serving path answers that announce on a browserless installation instead of raising; and the state payload carries `lastRender` and `browserNotice` read from the workspace's own records.

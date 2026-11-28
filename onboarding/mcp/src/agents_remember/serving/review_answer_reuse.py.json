@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
-        "content": "sha256:be5e918b7e5825f69452b7cce5bfcadc636a21070b3e62e8ebf7c208b9b01e32",
+        "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+        "content": "sha256:0938dc28f6a177e03a2b6c8935759a24b0a0bfdabbc50e4459a3c161d9a2c4ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordedAnswerReuse"
+        }
+      },
+      "id": "RLZ-EXKBAJ",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "Its unretained and evicted answers now log the gate that dropped them, the B.1 diagnostic repair that turns a silent reuse miss into a named one.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+        "content": "sha256:0938dc28f6a177e03a2b6c8935759a24b0a0bfdabbc50e4459a3c161d9a2c4ac",
         "locator": {
           "kind": "symbol",
           "name": "RecordedAnswerReuse"
@@ -22,16 +40,16 @@
   ],
   "references": {
     "5": {
-      "note": "Stable hits are copied; fresh values also pass the optional keep predicate and matching before/after observations.\n\nAnchor: \"def answer[T](\"",
+      "note": "Stable hits are copied; fresh values also pass the optional keep predicate and matching before/after observations.",
       "targets": [
         {
           "anchor": {
-            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
-            "content": "sha256:6d158815c345713a8442e4ffa576f6d7e66ba4e5199907ee0730915ca4a0214f",
+            "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+            "content": "sha256:789d6d31770648976df9cae585ff35b00a7769dd6b509981f9bc5fd0360fe1ab",
             "locator": {
-              "end": 275,
+              "end": 297,
               "kind": "line_range",
-              "start": 218
+              "start": 236
             }
           },
           "kind": "code"
@@ -43,12 +61,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
             "content": "sha256:98f0791be324596a1e687017b65f8c801610f88fa3bd7cbca8eb121467df2175",
             "locator": {
-              "end": 410,
+              "end": 436,
               "kind": "line_range",
-              "start": 405
+              "start": 431
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A value not retained or a kept answer dropped logs the gate that refused it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+            "content": "sha256:87972163f79b171cee4e092a3beecad6e399991f3f6a5d97c8873fefa6f7c240",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 78
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
         "content": "sha256:2295058bb573635dfc0f5726d02eec6eb83e2f8c4c5c59fd653fc5524e158a6b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
         "content": "sha256:cddd17a03fbd99207299dcc92bd3648c5d9a0af3a3b810bbfc94a0ebc3b0b63e",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
-        "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+        "content": "sha256:c68f6c87500aa4bd7ecd39b9ebb9fd6b0f6c3deff649c0655e83b0907d93192d",
         "locator": {
           "kind": "symbol",
           "name": "RecordedReviewAnswers"
@@ -57,7 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+        "content": "sha256:2fc3f4a1a3e0066a580674435ddacc1dea528178c68e09e7302be67a43d6c602",
+        "locator": {
+          "end": 1120,
+          "kind": "line_range",
+          "start": 1113
+        }
+      },
+      "id": "RLZ-T39AVP",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The detail store is constructed with the opening store's ChangesetCache while keeping its own capacity; this is the B.3 product repair.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
         "content": "sha256:3eb98c795829ee651be0b51b22df12267e72cc847c2305426390f761e406eefa",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
         "content": "sha256:7b782fb1dce99b93d77e8150bb926ab3b2c9b6b81730fab293cf78adcb6e9c00",
         "locator": {
           "kind": "symbol",
@@ -93,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
         "content": "sha256:c4866907e0c2184039e7c5d32238e955def26a603b5cb608ff88e058e3596a55",
         "locator": {
           "kind": "symbol",
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
         "content": "sha256:43c5c64e40eea047c8214d54dfd4a669da762d540f401d6f67c8b65d958cb821",
         "locator": {
           "kind": "symbol",
@@ -130,16 +149,34 @@
   ],
   "references": {
     "10": {
-      "note": "Every query selector participates in the tree key.\n\nAnchor: \"def _tree_key(query: ReviewTreesQuery) -> tuple[object, ...]:\"",
+      "note": "Every query selector participates in the tree key.",
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "blob": "d0d2c33e28c7e3e3e86757491d81fd1e4895fc2a",
             "content": "sha256:c13e962c161a7055c95e61b20a4b7188edb71d09eaf3af788d642ecb4997c0f3",
             "locator": {
-              "end": 1111,
+              "end": 150,
               "kind": "line_range",
-              "start": 1095
+              "start": 134
+            },
+            "path": "mcp/src/agents_remember/application/_review_answer_helpers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A first detail read shares the opening store's changeset cache while keeping its own answer capacity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+            "content": "sha256:2fc3f4a1a3e0066a580674435ddacc1dea528178c68e09e7302be67a43d6c602",
+            "locator": {
+              "end": 1120,
+              "kind": "line_range",
+              "start": 1113
             }
           },
           "kind": "code"
@@ -151,12 +188,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
             "content": "sha256:0105135ae4aa8e43019e4e328ac58bf8206dfb739b3c3436336f643ea357e7bd",
             "locator": {
-              "end": 108,
+              "end": 116,
               "kind": "line_range",
-              "start": 100
+              "start": 108
             }
           },
           "kind": "code"
@@ -168,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
             "content": "sha256:b668a4946ed81bed143d0f00d6fc3369b7c69cc2747674cea85d7693a99d9e83",
             "locator": {
-              "end": 210,
+              "end": 171,
               "kind": "line_range",
-              "start": 185
+              "start": 146
             }
           },
           "kind": "code"
@@ -181,16 +218,16 @@
       ]
     },
     "7": {
-      "note": "Intent, numbered entries and tree questions keep their own recorded/closed rules.\n\nAnchor: \"class RecordedReviewAnswers:\"",
+      "note": "Intent, numbered entries and tree questions keep their own recorded and closed rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
-            "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+            "content": "sha256:5f7767f664abb5e0fa218f31b449f87756a7aa75d7a65b1ae2bc898fb14e12fe",
             "locator": {
-              "end": 1056,
+              "end": 608,
               "kind": "line_range",
-              "start": 522
+              "start": 509
             }
           },
           "kind": "code"
@@ -202,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
             "content": "sha256:91da9aa53fb0333de3f580263f105b60ff6dae819b22f4d59ab81db92a4488e4",
             "locator": {
-              "end": 977,
+              "end": 940,
               "kind": "line_range",
-              "start": 920
+              "start": 883
             }
           },
           "kind": "code"
@@ -215,17 +252,18 @@
       ]
     },
     "9": {
-      "note": "Transient index/card-memory failures are returned but not retained.\n\nAnchor: \"def _keepable_tree_view(value: object) -> bool:\"",
+      "note": "Transient index and card-memory failures are returned but not retained.",
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "blob": "d0d2c33e28c7e3e3e86757491d81fd1e4895fc2a",
             "content": "sha256:073e396da65095b7c9f909135a6ce8a01db73fd6028c7b7d0f9626ca7b9fea83",
             "locator": {
-              "end": 1079,
+              "end": 118,
               "kind": "line_range",
-              "start": 1059
-            }
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/application/_review_answer_helpers.py"
           },
           "kind": "code"
         }

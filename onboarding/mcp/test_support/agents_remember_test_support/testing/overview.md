@@ -111,7 +111,6 @@ The generated route index lists the source files of this route and their cards.
 
 - The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make. [13]
 
-
 - The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
 
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
@@ -128,8 +127,6 @@ The generated route index lists the source files of this route and their cards.
 
 - Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check. [23]
 
-
-
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [26]
 - The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [27]
 
@@ -139,17 +136,11 @@ The generated route index lists the source files of this route and their cards.
 
 - The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. Anchor: `PROCESS_MUTABLE_STATES` [28]
 
-
-
-
-
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
 
 - The collection register and explicit kernel service-holder reset are separate module-isolation paths. The collection register includes the explainer and watcher collections. [29]
 
-
 - Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons. [30]
-
 
 - Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]
 
@@ -157,9 +148,6 @@ The generated route index lists the source files of this route and their cards.
 - Fixture Git uses a private HOME and captures command failure output. [40]
 - Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [41]
 
-
 - The current role pointer fixtures bind compact role reference-index rows to `reference/knowledge/use.md` (with section fragments pinned in `ROLE_POINTER_QUALIFICATIONS` for architect and investigator). [42]
-
-
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]

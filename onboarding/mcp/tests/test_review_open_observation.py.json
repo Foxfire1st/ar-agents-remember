@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_review_open_observation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9ccd2f2caae5248f4c1e6a98556daab9b0d77976",
+        "content": "sha256:c7d2550d7a2824912a4b93d78439d5ebad085278d66716518a7fa6f708ee7ef9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_clear_and_process_state_reset_drop_opened_callback_and_page_reads"
+        }
+      },
+      "facet": "Clearing observations and the process-state reset drop the bound opened callback and held page reads.",
+      "id": "PRF-9NDPSF",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02effb8bc27b6912e7b2491c1c61bd3ab1db07e2",
+            "blob": "9ccd2f2caae5248f4c1e6a98556daab9b0d77976",
             "content": "sha256:3d1e6e331166c0fde2c1f7addfcd880d67921e2599e8ac38f87e8876b336a0cb",
             "locator": {
               "kind": "symbol",

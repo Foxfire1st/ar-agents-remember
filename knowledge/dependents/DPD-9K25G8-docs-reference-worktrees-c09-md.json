@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "ab9944c2fdce9adb5f9a22f4ef8bba3e0cf66596",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Audited docs/reference/worktrees-c09.md at post-sync code tree 0b0419690d12: touched stands_on files (closeout.py, direct_landing.py, direct_landing_execution.py, knowledge_gate.py, landing.py, cleanup.py, application/knowledge_gate/landing.py) received only behavior-preserving typing adjustments for Pyrefly 1.5.0; worktree/closeout rules remain accurate.",
-    "task": "261125-DEP-L8",
+    "statement": "Reconfirmed docs/reference/worktrees-c09.md on the L30 post-sync candidate: the branch-file read's fallback warning at review_external_git_movement.py:797 is diagnostic only -- the movement verdict still comes from the measured git evidence, never from the branch label; every worktree transition the document states still stands.",
+    "task": "261112-BUG-L30",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -193,7 +193,7 @@
     },
     {
       "anchor": {
-        "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+        "blob": "a2864ce07e1bc61868867d5f6520ab6a85482c27",
         "content": "sha256:1696c618c5b1ee0bf0db46f41c5d00e686f2f979ebdc98f3639456980744a991",
         "locator": {
           "kind": "symbol",
@@ -290,14 +290,17 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:34:14+01:00",
+    "at": "2026-11-28T13:37:28+01:00",
     "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
-    "model": "gemini-4-neon-high",
+    "effort": "unknown",
+    "harness": "hermes",
+    "leaf": "261112-BUG-L30",
+    "model": "opencode-go:deepseek-v4.1-flash",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
-    "task": "261125-DEP"
+    "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "the launch receipt does not hold the effort"
+    }
   }
 }

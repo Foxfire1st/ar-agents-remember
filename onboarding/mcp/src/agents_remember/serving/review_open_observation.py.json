@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/serving/review_open_observation.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2dbe1f082a44b2664045a8667028f9da7ef4eb56",
+        "content": "sha256:c6ad017b555dab6bfe80db28d8cb0a057f030aeee535925bbcafb3d733f0bede",
+        "locator": {
+          "kind": "symbol",
+          "name": "OpenObservations.clear"
+        }
+      },
+      "id": "RLZ-38SJ7W",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "Clearing also drops the opened producer binding, so the next module cannot inherit the previous module's first-open producer (B.2).",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "OpenObservations serves one open's reads from the observation taken at that open.",
       "targets": [
         {
           "anchor": {
-            "blob": "fde48db34fa3942afb0a738047e9d97f54ffc7e7",
-            "content": "sha256:616ceff60bb4eda7e1f6c8cc7a8e4cfa3592e6ee40472db01f919d9b130580a6",
+            "blob": "2dbe1f082a44b2664045a8667028f9da7ef4eb56",
+            "content": "sha256:47d57d2226a3457f535162eeb33624f3d6ac7a19023063268bad82b8afd90c35",
             "locator": {
               "kind": "symbol",
               "name": "OpenObservations"

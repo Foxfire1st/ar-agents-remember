@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
-    "content": "sha256:54f824e9151d19eb5521b4673ae91316fa7ec6e6c0da9bb51118eed115f9006e",
+    "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
+    "content": "sha256:9392681c953bac42fb44df39ae54c2d270371e4c328bd0e11e72a82af6da35ce",
     "locator": {
       "kind": "symbol",
       "name": "_TEMPORARY"
     },
     "path": "mcp/tests/conftest.py"
+  },
+  "closed": {
+    "reason": "The pytest temporary root now honours TMPDIR (mcp/tests/conftest.py:44), so the recorded literal-/tmp cause is gone.",
+    "task": "261112-BUG-L30"
   },
   "id": "WKN-AVZ1GA",
   "kind": "storage",
@@ -25,23 +29,26 @@
     "leaf": "260928-MIK-L197",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928_maintained-invariant-knowledge"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The test suite creates its shared temporary directory at the literal path /tmp, so a run's TMPDIR cannot redirect that directory; on the host measured here /tmp is tmpfs, and one ordinary lane there died with ENOSPC on tmpfs inode exhaustion while its own TMPDIR and XDG_CONFIG_HOME were correctly set.",
   "writer": {
-    "at": "2026-11-27T21:03:08+01:00",
+    "at": "2026-11-28T13:37:28+01:00",
     "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L11",
-    "model": "gemini-4-neon-high",
+    "effort": "unknown",
+    "harness": "hermes",
+    "leaf": "261112-BUG-L30",
+    "model": "opencode-go:deepseek-v4.1-flash",
     "role": "curator",
-    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
-    "task": "261112-KNO"
+    "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "the launch receipt does not hold the effort"
+    }
   }
 }

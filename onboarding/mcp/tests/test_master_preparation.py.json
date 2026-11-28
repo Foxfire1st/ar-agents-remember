@@ -1,17 +1,36 @@
 {
   "path": "mcp/tests/test_master_preparation.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "21807c2e4a4fe8f70e6bbf4bec7777df6e245c98",
+        "content": "sha256:cd36578d0dbd5eb47ef18b2716577b9e695ba21a4f2c99aaf22b92cb023217c3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-43G61P",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "Both master nodes' waits now observe the exact net job's reader count and the entry into the cancelled job's drain instead of a fixed sleep; the file is the realizing place for those two nodes.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Startup and HTTP join one exact net, and the net does not wait on leaves, witnessed by test_startup_and_http_join_one_exact_net_and_net_does_not_wait_for_leaves",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffb695c03d1d6faf05c49b02203bf784b338a3e",
-            "content": "sha256:97f9d3d2298d5b46007c68a264a484e5069c7a5e6de5bb4fd157a76ee92886f4",
+            "blob": "21807c2e4a4fe8f70e6bbf4bec7777df6e245c98",
+            "content": "sha256:e7622dccf9fa00f154850eacde704b891e987729246139aec76ac56cb9130947",
             "locator": {
-              "kind": "symbol",
-              "name": "test_startup_and_http_join_one_exact_net_and_net_does_not_wait_for_leaves"
+              "end": 72,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "test"

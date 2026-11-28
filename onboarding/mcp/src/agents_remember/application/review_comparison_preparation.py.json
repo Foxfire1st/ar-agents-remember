@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c87ac239f5dfcbec06744de3dbd59ad28af681a0",
+            "blob": "60eb0084dcb099002c709f6e71ee291de8f1f9c1",
             "content": "sha256:97ffe7864bc1b1a0b7cc0948d10e072d26484caa241f2c577631bd428d9883e8",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c87ac239f5dfcbec06744de3dbd59ad28af681a0",
-            "content": "sha256:bceebe89057b40ba0cbb9f95a04845920ca32960b6b737fec69c4b3443c66d51",
+            "blob": "60eb0084dcb099002c709f6e71ee291de8f1f9c1",
+            "content": "sha256:8e105dd8cb6c018bcb9a9616515e0c51686613c0ab199983c419fd0fa4569c06",
             "locator": {
-              "kind": "symbol",
-              "name": "ComparisonInputWitness"
+              "end": 117,
+              "kind": "line_range",
+              "start": 70
             }
           },
           "kind": "code"

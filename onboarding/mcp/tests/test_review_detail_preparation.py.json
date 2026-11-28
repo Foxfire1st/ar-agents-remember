@@ -1,13 +1,31 @@
 {
   "path": "mcp/tests/test_review_detail_preparation.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50151e795f6521a61adf8424682cd66c2faf5592",
+        "content": "sha256:e2367a10c460b38cd1886108e4d155cdff5f9ae0a39e22a4076e98b3c5c0c3c8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MH0N8N",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The four waits observe the queue entry, the cancellation and the page's own build instead of sleeping; the file carries the detail-queue nodes.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Details follow the opening answers in their order, so the page fills in the order it was promised",
       "targets": [
         {
           "anchor": {
-            "blob": "b223607840470794ddacec6fa6d66ea4ed81a596",
+            "blob": "50151e795f6521a61adf8424682cd66c2faf5592",
             "content": "sha256:d0f8f79b1d6261155fcccf73c700cfc8b0ddbb5c5ec4a2a9a5e38479f90b4777",
             "locator": {
               "kind": "symbol",

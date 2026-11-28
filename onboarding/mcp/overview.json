@@ -3928,16 +3928,16 @@
       ]
     },
     "345": {
-      "note": "The subject catalogue's reuse key includes the comparison number; failed recorded tree/card reads are not kept.\n\nAnchor: \"def entries[T](\"; \"def _keepable_tree_view(\"",
+      "note": "The subject catalogue's reuse key includes the comparison number; failed recorded tree/card reads are not kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
             "content": "sha256:10004a703d1b63a9d916d01657e7dd958858a60bfad259f2d60f639c470121f2",
             "locator": {
-              "end": 606,
+              "end": 560,
               "kind": "line_range",
-              "start": 582
+              "start": 536
             },
             "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
           },
@@ -3945,14 +3945,14 @@
         },
         {
           "anchor": {
-            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
-            "content": "sha256:ed8a369839637c8031a71ff216bdda0f223ead1f5b712878aa578144ee2b24aa",
+            "blob": "d0d2c33e28c7e3e3e86757491d81fd1e4895fc2a",
+            "content": "sha256:073e396da65095b7c9f909135a6ce8a01db73fd6028c7b7d0f9626ca7b9fea83",
             "locator": {
-              "end": 1080,
+              "end": 118,
               "kind": "line_range",
-              "start": 1059
+              "start": 98
             },
-            "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+            "path": "mcp/src/agents_remember/application/_review_answer_helpers.py"
           },
           "kind": "code"
         }

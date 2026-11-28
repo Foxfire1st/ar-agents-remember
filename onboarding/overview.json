@@ -1220,12 +1220,12 @@
         },
         {
           "anchor": {
-            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
             "content": "sha256:7966d22bb88ffde688184c10411a22c4e29f4b914fce61537c99db17fcc3c28f",
             "locator": {
-              "end": 403,
+              "end": 408,
               "kind": "line_range",
-              "start": 390
+              "start": 395
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1255,8 +1255,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
-            "content": "sha256:1a4962f2f02143c812f224c0770c31067d19ed2db408c96e30e8f65d902a2d03",
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
+            "content": "sha256:91cc93baa6a168d78f83ce439b2eec79ea05ed9fb12daa8109cabe93080f4df4",
             "locator": {
               "kind": "file"
             },
@@ -1423,12 +1423,12 @@
         },
         {
           "anchor": {
-            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
             "content": "sha256:a987f35360e6c923130e35e738e51fe98cdeea1499aa0eab7ea4e391d72ba5ec",
             "locator": {
-              "end": 397,
+              "end": 402,
               "kind": "line_range",
-              "start": 390
+              "start": 395
             },
             "path": "CONTRIBUTING.md"
           },
@@ -4790,7 +4790,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
             "content": "sha256:fcb57e07c69242e57cf402b54e7177fa03764b47fb25050ddb65e4d460be6816",
             "locator": {
               "end": 160,
@@ -5027,8 +5027,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
-            "content": "sha256:1a4962f2f02143c812f224c0770c31067d19ed2db408c96e30e8f65d902a2d03",
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
+            "content": "sha256:91cc93baa6a168d78f83ce439b2eec79ea05ed9fb12daa8109cabe93080f4df4",
             "locator": {
               "kind": "file"
             },
