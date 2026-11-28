@@ -57,10 +57,14 @@ path is a task artifact and is recorded as prose here (not a repo-relative citat
 
 ### Repo-Internal References
 
+
 - The selector derives and publishes one content-addressed result for full or targeted mode. [1]
+
 - Candidate identity is derived from the Git index and verified against the admitted invocation. [2]
 - Input decisions map to typed select/global-invalidate/irrelevant/unresolved reason rows. [3]
+
 - Output confinement keeps published results inside the candidate or admitted scratch root. [4]
+
 - The provider serializes the canonical v2 selector result through the shared constructor. [5]
 
 ### Cross-Repo References

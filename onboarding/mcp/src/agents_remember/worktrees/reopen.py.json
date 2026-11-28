@@ -109,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6b9454f93495b54295a0c28dd720a720c26ca68",
-            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "blob": "75d1f8d719c6f7a02f2a8a74a57a3928c6ec9a96",
+            "content": "sha256:55136d781a27137066a1de3d27c777c1e6e6b814a2f3530c1f6833c4262f1e34",
             "locator": {
               "kind": "symbol",
               "name": "_reopened_contract"
@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6b9454f93495b54295a0c28dd720a720c26ca68",
+            "blob": "75d1f8d719c6f7a02f2a8a74a57a3928c6ec9a96",
             "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
             "locator": {
               "kind": "symbol",

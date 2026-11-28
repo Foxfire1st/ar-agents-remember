@@ -44,7 +44,9 @@ The approved CCR-R13@v2 requirement packet (requirements/CCR-R13-v2-non-certifyi
 - Durable isolated candidate manifest store with CAS publication. [5]
 
 
+
 - The R12-run-controlled executor consumes these contracts through the trusted authority launcher. [6]
+
 
 
 - The outer certification facade re-exports the same diagnostic surface. [7]

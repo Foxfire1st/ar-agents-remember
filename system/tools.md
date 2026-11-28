@@ -93,7 +93,7 @@ to the graph's full pytest selection. `AR_QUALITY_NO_RETRY=1` disables proof reu
 When reporting implementation results, use
 [`code-quality-report-template.md`](code-quality-report-template.md) as the
 standard reporting shape. Include the actual tool findings: Ruff output,
-Pyright output, pytest counts, coverage summary, Radon CC/MI pressure, CRAP threshold rows,
+Pyrefly output, pytest counts, coverage summary, Radon CC/MI pressure, CRAP threshold rows,
 which findings are in touched files, which are inherited/out of scope, and the
 decision for each in-scope issue. Do not summarize quality as only "tests
 passed" when the tools emitted complexity, coverage, or threshold findings.
@@ -101,7 +101,7 @@ passed" when the tools emitted complexity, coverage, or threshold findings.
 ### Transaction Boundary
 
 The local fast and targeted hook tiers run deterministic non-test checks only: generated-copy
-checks, Ruff, formatting, Pyright, dashboard code generation, lint, and typecheck. Pull requests
+checks, Ruff, formatting, Pyrefly, dashboard code generation, lint, and typecheck. Pull requests
 run the deterministic non-test GitHub check; ordinary branch pushes do not launch a duplicate
 workflow. The tag-only publish workflow requires the tagged commit to be reachable from
 `origin/main`, then builds and publishes without rerunning an optional quality operation.
@@ -149,29 +149,28 @@ For more information on ruff usage use the official documentation: [Ruff Documen
 
 ---
 
-### Pyright
+### Pyrefly
 
-Pyright performs static type checking. It catches mismatches between typed public contracts and the values passed through application entry points, adapters, tests, and response builders before runtime.
+Pyrefly performs static type checking at the pyright `basic` level. It catches mismatches between typed public contracts and the values passed through application entry points, adapters, tests, and response builders before runtime.
 
-Preferred whole-repository type-check commands (use the fast hook tier or the hook's explicit tracked-file-list form, rather than a bare run):
+Preferred whole-repository type-check commands (use the fast hook tier or the hook's explicit tracked-file-list form):
 
 ```text
-.githooks/_gate.sh fast                                                                                         # Preferred: runs the fast gate including Pyright over all tracked Python files.
-git ls-files -z -- '*.py' | xargs -0 -s 262144 mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python  # File-list form matching .githooks/_gate.sh (drop -s 262144 if xargs is non-GNU).
-mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python mcp/src/agents_remember           # Type-check package source paths (a CLI file/dir list replaces [tool.pyright] include).
-mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python mcp/src/agents_remember/models mcp/tests/test_quality_diagnostics.py
+.githooks/_gate.sh fast                                                                                                                               # Preferred: runs the fast gate including Pyrefly over all tracked Python files.
+git ls-files -z -- '*.py' | xargs -0 -s 262144 mcp/.venv/bin/python -m pyrefly check --min-severity error --force-exclude --python-interpreter-path mcp/.venv/bin/python  # File-list form matching .githooks/_gate.sh (drop -s 262144 if xargs is non-GNU).
+mcp/.venv/bin/python -m pyrefly check --min-severity error --force-exclude --python-interpreter-path mcp/.venv/bin/python mcp/src/agents_remember     # Type-check package source paths.
+mcp/.venv/bin/python -m pyrefly check --min-severity error --force-exclude --python-interpreter-path mcp/.venv/bin/python mcp/src/agents_remember/models mcp/tests/test_quality_diagnostics.py
 ```
 
 Bare project-root form:
 
 ```text
-mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python                                   # Bare form: covers the checkout's tracked Python files after excluding nested .venv, node_modules, build/dist, and caches (Pyright 1.1.414+ also applies its default dot-folder exclude independently) (~1.8-2.4 min).
+mcp/.venv/bin/python -m pyrefly check --min-severity error --python-interpreter-path mcp/.venv/bin/python                                              # Bare form: checks project-includes = [".", ".dagger"] after excluding nested environments, build/dist, and caches (~1.5-1.9 s).
 ```
 
-Root `pyproject.toml` `[tool.pyright]` keeps `include = ["."]` and excludes virtual environments, dependency trees, build outputs, and tool caches at any depth (`**/.venv`, `**/node_modules`, `**/venv`, `**/build`, `**/dist`, `**/__pycache__`, `**/*.egg-info`, `**/.cache`, `**/.mypy_cache`, `**/.pytest_cache`, `**/.ruff_cache`) without a blanket dot-folder rule because tracked Python lives under `.dagger/` (Pyright `1.1.414+`'s own default `**/.*` dot-folder exclude applies independently and excludes the 18 tracked `.dagger/` files from Pyright `1.1.414` runs, e.g., `2,539` of `2,557` tracked `.py` on `db236f3c` / `2,544` of `2,562` on `a801c47d`). Note that a CLI file list replaces `[tool.pyright] include`, while `[tool.pyright] exclude` still filters explicitly listed paths; keep `exclude` disjoint from `git ls-files '*.py'`. In a clean copy with bootstrapped `mcp/.venv` and `dashboard/node_modules`, the bare form finished in `107.778 s` wall (`107.167 s` Pyright; `143 s` in a live candidate worktree) checking `2,594` files with `0` diagnostics (matching the hook and wrapper runs identically, vs. `10,756` files and unfinished at a `900 s` stop before the change); on the synced `pyright 1.1.414` clean copy (`2,557` tracked `.py`), `.githooks/_gate.sh fast` passed all `11/11` checks.
+Root `pyproject.toml` `[tool.pyrefly]` sets `project-includes = [".", ".dagger"]`, `disable-project-excludes-heuristics = true` (so `.dagger/` is checked rather than skipped by Pyrefly's default dot-folder heuristic), `search-path = ["mcp/src", "mcp/test_support", "mcp/tests", "scripts", ".dagger/src"]`, `python-version = "3.14"`, `enabled-ignores = ["type", "pyrefly", "pyright"]`, `check-unannotated-defs = false`, `infer-return-types = "annotated"`, and `infer-with-first-use = false`. `project-excludes` skips virtual environments, dependency trees, build outputs, and tool caches at any depth (`**/.git`, `**/__pycache__`, `**/.cache`, `**/.mypy_cache`, `**/.pytest_cache`, `**/.ruff_cache`, `**/.venv`, `**/*.egg-info`, `**/build`, `**/dist`, `**/node_modules`, `**/venv`) without a blanket dot-folder rule, keeping `project-excludes` disjoint from `git ls-files '*.py'`; hooks and the quality wrapper pass `--force-exclude` with their validated file list so excluded paths drop while every tracked file (including `.dagger/`) stays checked. Under `[tool.pyrefly.errors]`, `bad-override-mutable-attribute` and `bad-override-param-name` are disabled to match pyright `basic`, while `unbound-name` stays enabled across the tree; four per-path `[[tool.pyrefly.sub-config]]` blocks disable `missing-argument` only for the four Pydantic `model_construct` partial-fixture test files.
 
-Pyright is part of both Dagger acceptance modes and must not be scoped out of them. Deterministic
-host Pyright remains permitted for fast feedback.
+Pyrefly runs in the neutral `python-typecheck` rail of both Dagger acceptance modes and must not be scoped out of them. Deterministic host Pyrefly remains permitted for fast feedback.
 
 ---
 
@@ -326,7 +325,7 @@ become production CRAP inputs.
 ### Quality Working Rules
 
 - Run quality tools from the source repository root, not from the coordinator root.
-- Use focused pytest, targeted Vitest, Ruff, formatting, Pyright, Radon, dashboard codegen,
+- Use focused pytest, targeted Vitest, Ruff, formatting, Pyrefly, Radon, dashboard codegen,
   lint and typecheck for implementation feedback. Preserve Dagger ownership of certification.
 - Keep review rounds to focused tests and the fast hook tier. Run the requirement's listed final
   checks once on the tree the Reviewer passed. If a listed check fails, use the existing lifecycle
@@ -334,7 +333,7 @@ become production CRAP inputs.
   focused tests of the repair on that successor. Report those results with the original final-check
   report.
 - Run harder, adversarial review only where the requirement or the developer asks for it.
-- Before refactoring complex Python, capture a baseline with Ruff, Pyright, Radon, and the relevant tests. After the change, compare against that baseline.
+- Before refactoring complex Python, capture a baseline with Ruff, Pyrefly, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
 - Treat `Radon` as a map of risk, not a scoring game. Do not split code into tiny helpers just to lower complexity; split by responsibility and purpose.
@@ -457,4 +456,4 @@ Releases**, not a `CHANGELOG.md`. `system/git-workflow.md` is retired; this is i
 - 2026-09-06T21:35:26+00:00 — Reconciled testing guidance to IAS d3610903 source policy: bounded host development suites, diagnostic coverage/production CRAP 20, and master-end full-suite/review ownership. No new verification result is claimed.
 - 2026-09-18 — The collected-case-budget paragraph above was restated at the value the repository actually enforces and now names its home: root `pyproject.toml` `[tool.pytest.ini_options]`, `unit_case_budget = 2300` (`:244`) and `integration_case_budget = 400` (`:245`), measured rather than copied (`grep -n 'case_budget' pyproject.toml` in the `260915-KS-L23` code worktree, code HEAD `2dcacb27`, 2026-09-18T18:17+02:00). It previously read **1000 unit /150 integration** — a stale reading that the root `pyproject.toml` has not enforced since the line grew past it, and one that would have made a terminal reader report the whole accumulation as hundreds of cases over budget. The paragraph now says the pair moves and where the raise history lives; the growth doctrine it carries is unchanged and no rail was lowered. `system/git-workflow.md`'s matching sentence was corrected in the same pass.
 
-The current declared pair is 10000 unit and 2000 integration selected cases at root pyproject.toml:339-340. The 2026-10-26 integration raise from 1000 to 2000 adds headroom while preserving both over-budget refusal directions; it does not weaken a case or move cases between lanes. Its source comment records scenario-level measurements (18.56/20.15 s original, 19.70 s grouped, 27.47 s repaired v2, 38.20 s v3), not whole-suite runtime. The 2026-09-18 2300/400 measurements above remain historical.
+The current declared pair is 10000 unit and 2000 integration selected cases at root pyproject.toml:370-371. The 2026-10-26 integration raise from 1000 to 2000 adds headroom while preserving both over-budget refusal directions; it does not weaken a case or move cases between lanes. Its source comment records scenario-level measurements (18.56/20.15 s original, 19.70 s grouped, 27.47 s repaired v2, 38.20 s v3), not whole-suite runtime. The 2026-09-18 2300/400 measurements above remain historical.

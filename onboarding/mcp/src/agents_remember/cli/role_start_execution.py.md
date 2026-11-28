@@ -21,4 +21,5 @@ The context-local fallback permits broken review evidence to be read diagnostica
 - Exact replay precedes fresh preparation (including `owning_architect_id` lookup for a parented Manager) and validated successor reservation. [1]
 - The diagnostic scope resets on exit. [2]
 - Validated alternatives may infer a base holder without interrupt permission. [3]
+
 - Canonical malformed review source test preserves task bytes and strict ordinary reads. [4]

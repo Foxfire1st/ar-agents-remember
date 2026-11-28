@@ -85,8 +85,8 @@
         },
         {
           "anchor": {
-            "blob": "2640bd3db4f52a42d88f73cc2f086f239227130d",
-            "content": "sha256:d2063f1557237fe22c73b1197f19eac41eafba5dd4360c9c827971bc08000caf",
+            "blob": "1a2943881548b3619b35a9736a7bbb2a75c4e341",
+            "content": "sha256:35939b90a3ec62b80bb41b8034a568de675e8dcfb57b536a328535f56fa6b490",
             "locator": {
               "kind": "file"
             },
@@ -97,7 +97,7 @@
       ]
     },
     "4": {
-      "note": "Accounting and regrading retain observed attempts and separate tooling checks from measurement results.\n\nAnchor: Current declared source extent",
+      "note": "Accounting and regrading retain observed attempts and separate tooling checks from measurement results.",
       "targets": [
         {
           "anchor": {
@@ -114,8 +114,8 @@
         },
         {
           "anchor": {
-            "blob": "273c4776efbcbe1b91e4327a0b097e4419fab1ee",
-            "content": "sha256:60471aae154d98ffc432e28c3bcf3af56f49d84fe9bf4624b6620f357485f3b3",
+            "blob": "608ecb68155cec53641a10552f61ee0afb2a6384",
+            "content": "sha256:600ef5c4acecdee6e86b5a2f9f5db51079ae2089ffdd6a810b2b42073fb3c3bf",
             "locator": {
               "end": 1193,
               "kind": "line_range",

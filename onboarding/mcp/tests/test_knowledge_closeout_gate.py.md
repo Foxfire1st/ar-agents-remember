@@ -105,7 +105,9 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - The direct landing case checks history closure and restoration after refusal. The record landing case checks open and closed attributed memory, a missing commit, and the admission and marker refusals. The shared integration gate case supplies worktree_integrate and checks stale-entry refusal and the maintenance re-anchor. [7]
+
 
 
 

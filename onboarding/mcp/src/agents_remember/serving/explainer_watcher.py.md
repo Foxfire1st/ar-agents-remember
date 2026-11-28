@@ -26,7 +26,9 @@ For an actively watched leaf without an explainer environment, `unexplained_turn
 - The changed-block count comes from the review lane's own hunks and non-text changes [3]
 - The master line is followed at the tip of the line that still holds the bound commit [4]
 - Notices are held in process, bounded per subscriber and deduplicated [5]
+
 - Seat discovery lists watched leaves' own folders rather than walking the task tree [6]
+
 
 - The no-environment turn-end path retains a baseline and offers no Update, with an explicit provisional block minimum; exact-leaf subscriptions and latest history remain bounded and close-owned. 
 

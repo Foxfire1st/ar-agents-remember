@@ -178,4 +178,5 @@ No meaningful cross-repo references found.
 
 - The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
 
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [24]

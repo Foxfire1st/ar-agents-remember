@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+        "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
+        "content": "sha256:a371354e75298223b4d114a5f8c6cb134eb7e68e7839f96c7cad7c32154e77cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fixed_steps"
+        }
+      },
+      "id": "RLZ-89VV5V",
+      "invariant": "INV-8B9XTK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §3",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Constructs the deterministic quality-wrapper Pyrefly step with --min-severity error --force-exclude --python-interpreter-path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
         "content": "sha256:2fcd238f7b6a8b9d985bf9437a0b0c6f14d29dbe2eec45708b99e042625025a0",
         "locator": {
           "kind": "symbol",
@@ -22,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "Immutable inputs and no coverage-floor setting\n\nAnchor: `CheckConfig`",
+      "note": "Immutable inputs and no coverage-floor setting",
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
-            "content": "sha256:fe5869a9629919b2caeebeb0a03041b0547e3836ee41b732b423348749e3c02d",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
+            "content": "sha256:0805f699a4e08789cfb5b15f65ee637d5c2828b056f05958d5a8fbdd4186d704",
             "locator": {
               "kind": "file"
             }
@@ -41,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
             "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
             "locator": {
               "kind": "symbol",
@@ -57,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
             "content": "sha256:e146e2871f698c7f60efbbede1cd1420f1a8129a2f7d672a412c931ebcbd35e6",
             "locator": {
               "kind": "symbol",
@@ -73,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
             "content": "sha256:34973876e5fd5002213ea349baada38cf1bebda64a1eadfd910fabbde3aba4bb",
             "locator": {
               "kind": "symbol",

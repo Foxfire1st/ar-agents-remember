@@ -43,7 +43,7 @@ validation; collections are unique and canonically ordered.
 - Incomplete ownership is a typed defect with every path/reason; it never triggers safe-full or
   language-specific fallback.
 - Retry/cache consumers accept only the exact immutable selection identity (digest).
-- The contract is repository/language agnostic; Python/Pyright/pytest is one R22 profile instance.
+- The contract is repository/language agnostic; Python/Pyrefly/pytest is one R22 profile instance.
 
 ### Todos
 
@@ -61,7 +61,9 @@ No configured Domain Documentation source applies; CCR-R19@v2 is the governing p
 
 - The canonical result and its digest-verified contract. [2]
 - Typed provider inputs normalized into one immutable selector result. [3]
+
 - Normalize and content-address one provider result. [4]
+
 - Selector population validation checks the declared universe against its selected and excluded members. [5]
 - Selector completion validation enforces the declared completion state. [6]
 - Selector output validation requires consistent output reasons. [7]

@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
             "content": "sha256:e146e2871f698c7f60efbbede1cd1420f1a8129a2f7d672a412c931ebcbd35e6",
             "locator": {
               "kind": "symbol",
@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 339
+              "start": 370
             },
             "path": "pyproject.toml"
           },
@@ -239,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 326
+              "start": 357
             },
             "path": "pyproject.toml"
           },
@@ -275,8 +275,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d41a67a3304e4b26e25cf5513344b5f3df647e1e",
-            "content": "sha256:8eed4e17ae1a3e02971065fad11a1a67ec79b908624674596f6cbcb9ca8336cd",
+            "blob": "e0955e87a5b0c04cc4a12a982300d15dbd755246",
+            "content": "sha256:4b0502defaa863ce8a2630b9c4e5ca75a1d5610d7335c78d8c5cccd406b0a7a8",
             "locator": {
               "kind": "file"
             },
@@ -291,8 +291,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d41a67a3304e4b26e25cf5513344b5f3df647e1e",
-            "content": "sha256:8eed4e17ae1a3e02971065fad11a1a67ec79b908624674596f6cbcb9ca8336cd",
+            "blob": "e0955e87a5b0c04cc4a12a982300d15dbd755246",
+            "content": "sha256:4b0502defaa863ce8a2630b9c4e5ca75a1d5610d7335c78d8c5cccd406b0a7a8",
             "locator": {
               "kind": "file"
             },
@@ -323,12 +323,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 339
+              "start": 370
             },
             "path": "pyproject.toml"
           },
@@ -341,8 +341,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
-            "content": "sha256:276519340d6bbbbf2f426c48c03c834eca4031a6cd6a98290b364aac2ffc8de6",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
+            "content": "sha256:f16cc275278c3f4677ca9a118bbabfe37ad015e3f13b3c369d6593761386e5f7",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -354,7 +354,7 @@
         },
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:c3566bb76d04bb29fb5df72925d693a3e7a0aaa01f9c4f0c1603935ac690ea1c",
             "locator": {
               "end": 73,
@@ -367,7 +367,7 @@
         },
         {
           "anchor": {
-            "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
+            "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
             "content": "sha256:2c974185c97c32e3a03ecb066ade1806a9f10f0ec48a1a395edc602a9457ea6f",
             "locator": {
               "end": 20,
@@ -410,12 +410,12 @@
         },
         {
           "anchor": {
-            "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
+            "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
             "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
             "locator": {
-              "end": 220,
+              "end": 218,
               "kind": "line_range",
-              "start": 206
+              "start": 204
             },
             "path": "mcp/tests/conftest.py"
           },
@@ -459,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:f61cf8f9a051b605a4575cddd0ff12ed2045d6f2c788d24ed4784e861ffd2bde",
             "locator": {
               "end": 134,
@@ -472,12 +472,12 @@
         },
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:180034bc767c1eb40e029e3cab1e52160386f38e9f4c3ba537f78a8e71e5e520",
             "locator": {
-              "end": 460,
+              "end": 461,
               "kind": "line_range",
-              "start": 437
+              "start": 438
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
           },
@@ -485,12 +485,12 @@
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:9376dfd235128dc9791a1ccd9417154075b19f80db3f61553041f7e2677349b0",
             "locator": {
-              "end": 94,
+              "end": 125,
               "kind": "line_range",
-              "start": 86
+              "start": 117
             },
             "path": "pyproject.toml"
           },
@@ -503,8 +503,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30d9312d8d6faed241258dc6c14a5d840ead76b0",
-            "content": "sha256:712ed6c40f27e9b7ad71dce5ef44eccfc1686ddbf642e5c72d75f58ad81d0998",
+            "blob": "2befe4024850439a0f0e42db599ba59e667bd1eb",
+            "content": "sha256:ee0c10c9a21fbb930640d797b3295f36f644e8ded487e32b4efb25ed489aa0a5",
             "locator": {
               "kind": "symbol",
               "name": "selection_result"
@@ -515,7 +515,7 @@
         },
         {
           "anchor": {
-            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "blob": "52b9bb1d750ecfcb7a2a655977fcf3da0b3ae1e4",
             "content": "sha256:18504cc1db56a7410235adcd6cdfaef198755b4a0d66847c9712221a621d33d6",
             "locator": {
               "end": 785,

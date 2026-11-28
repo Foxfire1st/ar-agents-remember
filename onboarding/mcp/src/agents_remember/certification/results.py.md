@@ -50,8 +50,12 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - Result construction binds one terminal observation to a planned rail. [1]
+
+
 - Manifest compilation re-admits the plan and accumulates complete catalog and contract findings before publication. [2]
+
 - Catalog validation rejects result omission, insertion, duplication, and substitution. [3]
 - Applicability, artifacts, and evidence are checked against the planned contract. [4]
 - Blocking semantics distinguish enforcing prerequisites from independent or report-only failures. [5]
@@ -59,5 +63,6 @@ No configured domain documentation could be checked.
 ### Cross-Repo References
 
 The result compiler has no knowledge of repository commands or Agents Remember test names.
+
 
 - All result admission is driven by the generic `GatePlan`. [6]

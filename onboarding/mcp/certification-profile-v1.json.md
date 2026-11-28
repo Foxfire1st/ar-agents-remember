@@ -14,7 +14,7 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 The generated-skills input declares only the packaged runtime skills tree and includes generated-copies.json beside the sync script and canonical skills source. The generated-runtime input declares the packaged benchmarks and system trees with their canonical sources and scripts/sync-runtime.py; no generated-harness input is declared, while the generated-harness rail remains declared and runs scripts/sync-skills.py --check. These declarations are not certification or sync execution; the remaining rail/publication-artifact boundaries stay separate.
 
-The profile declares no provider-runtime integration rail. `rails` declares each rail's `identity.railId` with its gate, class, artifacts, evidence contract and execution adapter, and that rail is absent from the declaration and from the gate selections. The mechanical binding table under the build-tooling directory follows this declaration and is follow-through, not a second account of it — it carries no card of its own.
+The profile declares no provider-runtime integration rail. `rails` declares each rail's `identity.railId` with its gate, class, artifacts, evidence contract and execution adapter, and that rail is absent from the declaration and from the gate selections. Gate 1 declares the neutral `python-typecheck` rail (`python-typecheck-adapter`), running Pyrefly with `--min-severity error --force-exclude --python-interpreter-path`. The mechanical binding table under the build-tooling directory follows this declaration and is follow-through, not a second account of it — it carries no card of its own.
 
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
@@ -62,15 +62,8 @@ The exact source declarations below establish the current behavior; this invento
 
 
 - Pinned Dagger execution adapter and actual runtime digest. [2]
-
-
-
 - The declaration carries its own canonical profile digest. [3]
-
-
-
 - 45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed. [4]
-
 - Full/targeted/local selections and explicit applicability. [5]
 
 - Current source-owned selector configuration digest [6]

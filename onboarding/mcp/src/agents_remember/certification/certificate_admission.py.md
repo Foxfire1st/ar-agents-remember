@@ -50,8 +50,12 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 
 ### Repo-Internal References
 
+
 - The admission transaction freezes the dual plan authorities and derives gate identities. [2]
+
+
 - Identity and rail alignment between R11 and R22 refuse mismatches. [3]
+
 - Per-gate semantic inputs include rail definition/adapter/runtime/scope/artifact contracts. [4]
 - Inputs are canonicalized and conflict-rejected. [5]
 

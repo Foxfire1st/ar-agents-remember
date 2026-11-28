@@ -90,7 +90,9 @@ the current working-candidate behavior; historical entries below retain their or
 - The lifecycle recovery owner resumes the generation before execution. [4]
 
 
+
 - Lost-receipt recovery and clean reuse are exercised with real temporary repositories. [5]
+
 
 
 ### Cross-Repo References

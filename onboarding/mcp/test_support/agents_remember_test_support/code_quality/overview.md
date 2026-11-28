@@ -146,7 +146,9 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - Catalog narrowing preserves removed consumers; parser errors remain named refusals. [17]
 
+
 - Profile selection declares full mode explicitly and retains incomplete targeted inputs. [19]
+
 
 - Repository declarations override catalog consumers and must match observed import/literal consumers. [20]
 

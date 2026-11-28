@@ -102,8 +102,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
-            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
+            "blob": "1ca1740fbf2d3777c215e66dbf8c9fb84b3b8b01",
+            "content": "sha256:c3783f24c0fe528212d9093b14e67b50c029a5be543344d399a651ee3a9bba24",
             "locator": {
               "kind": "file"
             },
@@ -679,8 +679,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f512a147ae98bed1b278ba524cc03ceb34adafe5",
-            "content": "sha256:eae2bd394000fc965ea5198178eede91537bc0051b2d5aeb2e972e1f6cddc679",
+            "blob": "b024635a93cecd9eede9bb9524034ba8fff63358",
+            "content": "sha256:e097251870899d033a91bc408c9f4876e3435aec88a74303d7bd87194eb245b2",
             "locator": {
               "kind": "symbol",
               "name": "test_a_context_whose_counts_do_not_describe_its_roster_is_refused"

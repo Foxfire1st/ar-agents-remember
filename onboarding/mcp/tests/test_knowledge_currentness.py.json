@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:1766614ca2ff3dc6d607db22b2083451c97ef167d8ec9d20624bfd1abed0184c",
             "locator": {
               "end": 9,
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:60b320f601e7c8aa1bb63fbb20ff9286b0e7f505071fb2c7e3b361d8cbb22e39",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:267d3264fac15b309b96232f0ebfd76909e72bb0603438c3ddf3e231d9a86923",
             "locator": {
               "kind": "symbol",
@@ -53,12 +53,12 @@
       ]
     },
     "12": {
-      "note": "`knowledge_read` with a named tree.\n\nAnchor: `test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible`",
+      "note": "`knowledge_read` with a named tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }
@@ -68,12 +68,12 @@
       ]
     },
     "13": {
-      "note": "`knowledge_read` without `codeTreeId` pairs a resolved code root and stays unverifiable when no root resolves.\n\nAnchor: `test_knowledge_read_without_a_named_tree_pairs_resolved_code_and_stays_unverifiable_without_root`",
+      "note": "`knowledge_read` without `codeTreeId` pairs a resolved code root and stays unverifiable when no root resolves.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }
@@ -83,12 +83,12 @@
       ]
     },
     "14": {
-      "note": "The published-intent block.\n\nAnchor: `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree`",
+      "note": "The published-intent block.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }
@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
             "locator": {
-              "end": 800,
+              "end": 799,
               "kind": "line_range",
-              "start": 771
+              "start": 770
             }
           },
           "kind": "test"
@@ -133,12 +133,12 @@
       ]
     },
     "2": {
-      "note": "The fixture world, with a fresh private cache by default.\n\nAnchor: `World`; `world`",
+      "note": "The fixture world, with a fresh private cache by default.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }
@@ -148,12 +148,12 @@
       ]
     },
     "3": {
-      "note": "The packet's conforming example.\n\nAnchor: `test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry`",
+      "note": "The packet's conforming example.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:a598b8a1610b62d906cfaffa6af5b0b139a534d4de5fa92f5e1afdf08132663f",
             "locator": {
               "kind": "symbol",
@@ -179,12 +179,12 @@
       ]
     },
     "5": {
-      "note": "Unverifiable reasons and the N1 order.\n\nAnchor: `test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator`",
+      "note": "Unverifiable reasons and the N1 order.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }
@@ -198,12 +198,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:e6a12fb3e414bb8b9b3d368a8c6b5a5a4cb475722ec9f460b65408220f29d169",
             "locator": {
-              "end": 435,
+              "end": 436,
               "kind": "line_range",
-              "start": 423
+              "start": 424
             }
           },
           "kind": "test"
@@ -215,8 +215,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:de0e19812ae05428df7cde62743eef7159f5ebef830931a487ad7cf3a9173b32",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:304a081695a43285c1fa81f191f66c2cdcac0d2b8adb8045418eef12517a8052",
             "locator": {
               "kind": "symbol",
               "name": "test_a_line_range_recorded_against_a_blob_the_store_lacks_is_unverifiable"
@@ -231,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:33ede548960e0a284c923df27a572df43a517aef48c54fddb10366218fcea731",
             "locator": {
               "kind": "symbol",
@@ -243,12 +243,12 @@
       ]
     },
     "9": {
-      "note": "Stale proofs.\n\nAnchor: `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale`",
+      "note": "Stale proofs.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             }

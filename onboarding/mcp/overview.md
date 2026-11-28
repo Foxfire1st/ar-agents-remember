@@ -450,7 +450,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The reconciliation module statement. [52]
 - **Retained historical source account — superseded by the current route account:** The declaration on the task document. [53]
 - **Retained historical source account — superseded by the current route account:** The planned row. [54]
+
 - **Retained historical source account — superseded by the current route account:** The task owner's strict lookup and decision answer. [55]
+
 - **Retained historical source account — superseded by the current route account:** The paging package statement. [56]
 
 - **Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch. [57]
@@ -804,7 +806,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198]
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [161]
 
+
 - The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits. [228]
+
 
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [203]
 
@@ -948,7 +952,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
+
 
 
 

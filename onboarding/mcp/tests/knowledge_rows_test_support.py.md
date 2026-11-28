@@ -22,4 +22,5 @@ The text fixture includes history documents in the same canonical output as reco
 
 - The fixture tree renders and preserves test-owned histories. [2]
 
+
 - The file realizes its current contract at the corrected candidate. [1]

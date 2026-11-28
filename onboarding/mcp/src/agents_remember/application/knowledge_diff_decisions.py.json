@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce59742749c6a342c5fcdc8aee949e205d8fb127",
+            "blob": "393a5c1f40673839a229fac902eede2bd3cc2004",
             "content": "sha256:48c826ec375874b31ec5e86bf88b9aa449fc02f9e5bad5cc194964c818d2cf97",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce59742749c6a342c5fcdc8aee949e205d8fb127",
-            "content": "sha256:6ab42dcb00cbc1617dc535a73b42b6003a5e8908333d212709bdeb2603dc6b4d",
+            "blob": "393a5c1f40673839a229fac902eede2bd3cc2004",
+            "content": "sha256:5c7f34761e54510e2a548bdd27729ebcfc90a21e13138b590dded4262cd18559",
             "locator": {
               "kind": "symbol",
               "name": "decision_records"

@@ -313,12 +313,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
+            "blob": "09be2f86f678fe8f9ade5a891a7660fa50a2879d",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
-              "end": 783,
+              "end": 784,
               "kind": "line_range",
-              "start": 763
+              "start": 764
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -331,7 +331,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb42689cadf8e7ef1f98e7120188ed53e1f306d",
+            "blob": "09be2f86f678fe8f9ade5a891a7660fa50a2879d",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
               "end": 341,

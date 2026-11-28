@@ -156,11 +156,15 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): The header block. [22]
 
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The strict lookup and the decision answer. [23]
+
 - Retained reference account (no fresh execution or acceptance inferred): The one rule for a leaf naming no master, and the sync's own call. [24]
 - Retained reference account (no fresh execution or acceptance inferred): The placement guard. [25]
 - Retained reference account (no fresh execution or acceptance inferred): The task reader records the bytes it parses, an absent file and a failed read. [26]
+
 - Retained reference account (no fresh execution or acceptance inferred): The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included. [27]
+
 - Retained reference account (no fresh execution or acceptance inferred): The packet owner: recorded resolutions, confinement before the read, bytes recorded under the caller's locator. [28]
 - Retained reference account (no fresh execution or acceptance inferred): A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain. [31]
 - Retained reference account (no fresh execution or acceptance inferred): The missing-master message names the sprint, the master, the archive location and the retire operation. [32]
@@ -168,7 +172,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy. [34]
 - Task reads record consumed bytes; the source-pair reader parses retained bytes separately [35]
 - Prepared writes use atomic replacements and restoration; publication only locally requires review intent identity [36]
+
 - Strict lookup retains claimant/nonplain identities or all observations for no claimant [37]
+
 - Completed master terminality requires no blockers; abandonment is independent [38]
 - Parent-row stage mirrors the native task document directly, not a step-derived rollup or an independent landing verdict. [39]
 - Master-to-sprint mirroring uses the native commanding census and exact typed/legacy row correlation with named ambiguity/unreadability refusals. [54]
@@ -187,7 +193,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 
 - Current preflight checks model fields rather than distribution versions [46]
 - Source comparison precedes ordered publication/invalidation/rebuild with reported projection failures [47]
+
 - Shared reopen reset owns typed cleanup and frozen-landing removal [48]
+
 - Exact membership applies scoped unreadability and alias ambiguity refusals [49]
 - Immutable graph admission compares canonical bytes and refuses over-budget population [50]
 - Retirement census explicitly preserves different caller refusal policies [51]

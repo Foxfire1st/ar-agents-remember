@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
-            "content": "sha256:e9b8f8af4acba0103bd3360568ce661a3dae73470b5f7e16687339fc951f48bb",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
+            "content": "sha256:fd02dd98d2b93b51d5ff1d66ea90d0b745fd8c1a0efa6659a7354beaa098948d",
             "locator": {
               "kind": "symbol",
               "name": "compile_certification_admission"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
-            "content": "sha256:5fbe6480ab2724a04a054b13b9abdc19a900758cf4cab61d0b855a6b666da6fe",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
+            "content": "sha256:c6b480d462ca31cab5d2847bdd0c2273fe549e8e767cf8acdcdfad3b0dcf2d69",
             "locator": {
               "kind": "symbol",
               "name": "_require_admission_identity_alignment"
@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
             "content": "sha256:d5bae93067c99de57d30f74ed06dd74691ae1b8053efe91cda69901c461bf672",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
             "content": "sha256:ed36bf1b4a17fa318e6bcc56539c7cc4e1370921e881ff3dba055dda0b017843",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
             "content": "sha256:c30d7e612e37f807a488a3166c6a70dea3acd934b8f2f283a6aec425eef8b787",
             "locator": {
               "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
             "content": "sha256:f3dcf3bbc16a2adf5d61e5dab6c3070c0282343c89d08e304e0699eadb3ef576",
             "locator": {
               "kind": "symbol",

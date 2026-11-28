@@ -82,7 +82,9 @@ The following coverage statuses are retained metadata, outside the operative pro
 
 - No-output cancellation preserves successor candidate differences and refuses moved protected output identities. [10]
 
+
 - Direct-closing receipts precede journal admission, preserve later edits, and preserve closings already landed in HEAD. [11]
+
 
 - Completed disposition checks the shared direct-owner predicate and idle integration claim. [13]
 

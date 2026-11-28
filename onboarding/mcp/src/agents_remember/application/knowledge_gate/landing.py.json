@@ -262,8 +262,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32e5cdc8ade9ee9b20492b3513b716dbb63ca02",
-            "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
+            "blob": "1dc6cf92cb458b6a8de9002bcda4c5f11f18bb67",
+            "content": "sha256:8c712c71c8202f3d4dc0f1dfbe93808a8d2b2b0bf3d86ee21c34d47f08187ca6",
             "locator": {
               "kind": "symbol",
               "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"

@@ -3,24 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-        "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+        "content": "sha256:62f0a87ddb2336580e8ed1d2650069f9b7b01f70d13a599d1243c7b45df26ea5",
         "locator": {
           "kind": "symbol",
-          "name": "test_r6_gate_exports_pyright_ignore_warnings_and_real_type_error_fails"
+          "name": "test_r6_gate_invokes_pyrefly_and_real_type_error_fails"
         }
       },
-      "facet": "The hook silences only Pyright wrapper notices, and a real type error still fails.",
-      "id": "PRF-2GKXH4",
-      "invariant": "INV-AFVK1G",
+      "facet": "Proves .githooks/_gate.sh invokes pyrefly check with --force-exclude and --python-interpreter-path and fails on a real type error.",
+      "id": "PRF-5JQ1GR",
+      "invariant": "INV-8B9XTK",
       "origin": {
-        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
-        "leaf": "261112-BUG-L29"
+        "handoffEntry": "DEP-R08@v1 §3",
+        "leaf": "261125-DEP-L8"
       }
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
         "content": "sha256:f0f7739658860948b00286f3111654bc5535374b189ee7ec354bc5c3e6b79b79",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
         "content": "sha256:0d76f0606be5870e91657b531c85d31bc75c26c14ef2df98f65d68fcdf317717",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
         "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,25 @@
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-        "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+        "content": "sha256:62f0a87ddb2336580e8ed1d2650069f9b7b01f70d13a599d1243c7b45df26ea5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r6_gate_invokes_pyrefly_and_real_type_error_fails"
+        }
+      },
+      "facet": "Proves .githooks/_gate.sh invokes pyrefly check with --force-exclude and --python-interpreter-path and that a real type error still fails.",
+      "id": "PRF-GSMR85",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "DEP-R08-update-INV-AFVK1G",
+        "leaf": "261125-DEP-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+        "content": "sha256:e2e9b756dc24cb3d1d6a58e89e966e20906918f13c9dca83240338edafd38a30",
         "locator": {
           "kind": "symbol",
           "name": "test_r2_hook_batch_matches_separate_spawns_byte_for_byte"
@@ -88,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-        "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+        "content": "sha256:3dd57b18d1f46d8c35400559a755e213a127bcd0e50d036681e943ed0fc11f19",
         "locator": {
           "kind": "symbol",
           "name": "test_r1_xargs_batch_preserves_ordered_files_and_reduces_spawns"
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
         "content": "sha256:f095f77ce2e22a834f40e2f6942c2bed345b04f968156c646ef5ec88945aa65b",
         "locator": {
           "kind": "symbol",
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
         "content": "sha256:6f62fb1358eb8e63408093c78f0ac933a41a88c7f616fc7d390fe4899fc890c9",
         "locator": {
           "kind": "symbol",
@@ -145,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-            "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
+            "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+            "content": "sha256:3dd57b18d1f46d8c35400559a755e213a127bcd0e50d036681e943ed0fc11f19",
             "locator": {
               "kind": "symbol",
               "name": "test_r1_xargs_batch_preserves_ordered_files_and_reduces_spawns"
@@ -161,23 +178,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-            "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
+            "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+            "content": "sha256:e2e9b756dc24cb3d1d6a58e89e966e20906918f13c9dca83240338edafd38a30",
             "locator": {
               "kind": "symbol",
               "name": "test_r2_hook_batch_matches_separate_spawns_byte_for_byte"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-            "content": "sha256:432676426b9f5d241cbed116ad25b03e41cdbc3b6578acdb682e486eb5ced1d2",
-            "locator": {
-              "end": 329,
-              "kind": "line_range",
-              "start": 277
             }
           },
           "kind": "test"
@@ -189,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
             "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
             "locator": {
               "kind": "symbol",
@@ -201,14 +206,15 @@
       ]
     },
     "4": {
-      "note": "The incremental tsc build-info caches stay gitignored and do not trip the landing check.\n\nAnchor: `test_r5_tsc_caches_are_gitignored_and_do_not_trip_landing_commit_check`",
+      "note": "The incremental tsc build-info caches stay gitignored and do not trip the landing check.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-            "content": "sha256:c488c84cee4363ad94c6397cdf995f6d818edbfca63ab2b98a226b981d0e38c4",
+            "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+            "content": "sha256:0d76f0606be5870e91657b531c85d31bc75c26c14ef2df98f65d68fcdf317717",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_r5_tsc_caches_are_gitignored_and_do_not_trip_landing_commit_check"
             }
           },
           "kind": "test"
@@ -216,15 +222,15 @@
       ]
     },
     "5": {
-      "note": "Pyright wrapper notices are silenced and a real type error still fails.",
+      "note": "The hook invokes Pyrefly with `--force-exclude` and `--python-interpreter-path` and a real type error still fails.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
-            "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
+            "blob": "a8bcdd2a6aa146c927bd9f6329ca8bf74f21ab74",
+            "content": "sha256:62f0a87ddb2336580e8ed1d2650069f9b7b01f70d13a599d1243c7b45df26ea5",
             "locator": {
               "kind": "symbol",
-              "name": "test_r6_gate_exports_pyright_ignore_warnings_and_real_type_error_fails"
+              "name": "test_r6_gate_invokes_pyrefly_and_real_type_error_fails"
             }
           },
           "kind": "test"

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "blob": "3683b6e8c2f7a92bb72d566dd6d0a282aa198c78",
             "content": "sha256:eb80b6b7aae2bccc5fc7a0559d5a132c114d27d453c4bfce42c05f74fc649831",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "Compile exact Gates 1-4 without claiming the framework-owned Gate 5.\n\nAnchor: \"def compile_repository_profile_plan\"",
+      "note": "Compile exact Gates 1-4 without claiming the framework-owned Gate 5.",
       "targets": [
         {
           "anchor": {
-            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
-            "content": "sha256:33e40ef884d376e28eece6d8ad4ee5fb1f9bb865c7d69d19d75101be61295421",
+            "blob": "3683b6e8c2f7a92bb72d566dd6d0a282aa198c78",
+            "content": "sha256:48685e8f4dd67766b781d1f8ece72bc5ad8c42bd08bf2b42c334febe49e9e3be",
             "locator": {
               "end": 167,
               "kind": "line_range",
@@ -36,12 +36,12 @@
       ]
     },
     "3": {
-      "note": "Gate compilation binds applicable rails, artifacts and semantic inputs.\n\nAnchor: \"def _compile_gate_plan\"",
+      "note": "Gate compilation binds applicable rails, artifacts and semantic inputs.",
       "targets": [
         {
           "anchor": {
-            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
-            "content": "sha256:4727b30fcd5a7e3b2987572e0ecbb3ed5eeca0a5dff8a413abbb5eea7c328a16",
+            "blob": "3683b6e8c2f7a92bb72d566dd6d0a282aa198c78",
+            "content": "sha256:fa6620cf3b416a07cb754efb2ac3fc3f6a79c1484436d527865718df200ea3bb",
             "locator": {
               "end": 269,
               "kind": "line_range",
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "blob": "3683b6e8c2f7a92bb72d566dd6d0a282aa198c78",
             "content": "sha256:9ecaf690b9c2062ce3d7ea1bace56931e54c342eb61121c4c62e4e01bd4d6d92",
             "locator": {
               "kind": "symbol",

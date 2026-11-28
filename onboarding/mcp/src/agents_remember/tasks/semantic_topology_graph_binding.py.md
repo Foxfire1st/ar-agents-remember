@@ -41,7 +41,9 @@ No external source is needed for this runtime binding.
 
 ### Repo-Internal References
 
+
 - Frozen endpoint, node, edge, and graph subclasses preserve the schema while sealing collections. [1]
+
 - Canonical bytes are the only input to immutable materialization. [2]
 
 ### Cross-Repo References

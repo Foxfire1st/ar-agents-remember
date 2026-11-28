@@ -46,4 +46,5 @@ Investigator has Projects, selected-sprint, standalone-master, and sprint/master
 - The level the free agent holds, which no per-level override reaches. [4]
 
 - The taskless set whose receipts are keyed by their request id. [5]
+
 - The free agent is a launcher role with no document and no parent, and every document reference on its start is refused. [7]

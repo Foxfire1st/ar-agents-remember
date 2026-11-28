@@ -7,14 +7,14 @@
     ],
     "justification": "Spans pyproject.toml and test_code_quality_check_scope.py, is proved by a live Pyright test, and prevents a [tool.pyright] exclude pattern from silently dropping tracked Python files from hook and wrapper file-list checks."
   },
-  "applicability": "Explicit file-list Pyright invocations in .githooks/_gate.sh and quality_plan.py against root pyproject.toml.",
+  "applicability": "Explicit file-list Pyrefly invocations in .githooks/_gate.sh and quality_plan.py against root pyproject.toml.",
   "conditions": [
-    "Pyright runs with --project . and explicit Python file paths passed on the command line.",
-    "Every pattern in [tool.pyright] exclude remains disjoint from tracked Python files so [tool.pyright] exclude drops zero listed tracked files (Pyright 1.1.414+'s independent default **/.* exclude applies separately to dot-folders such as .dagger/)."
+    "Pyrefly runs with --force-exclude --python-interpreter-path and explicit Python file paths passed on the command line.",
+    "Every pattern in [tool.pyrefly] project-excludes remains disjoint from tracked Python files including .dagger/ so --force-exclude drops zero listed tracked files."
   ],
   "exclusions": [
-    "Bare Pyright invocations with no command-line file arguments, which resolve paths through [tool.pyright] include.",
-    "Untracked or ignored files under excluded environment, dependency, build, or cache directories, and Pyright 1.1.414+'s independent default **/.* dot-folder exclusion."
+    "Bare Pyrefly invocations with no command-line file arguments, which resolve paths through [tool.pyrefly] project-includes and disable-project-excludes-heuristics = true.",
+    "Untracked or ignored files under excluded environment, dependency, build, or cache directories."
   ],
   "id": "INV-45HR10",
   "origin": {
@@ -30,20 +30,20 @@
     "leaf": "261112-BUG-L49",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A Pyright command-line file list replaces [tool.pyright] include while Pyright still filters listed files against [tool.pyright] exclude, so the hook (.githooks/_gate.sh) and quality wrapper (quality_plan.py) file-list runs report the exact same diagnostics before and after the change because zero tracked Python files match any [tool.pyright] exclude pattern (Pyright 1.1.414+'s own default **/.* exclude applies independently to dot-folders such as .dagger/).",
+  "statement": "A Pyrefly command-line file list checks listed paths outside project-includes while --force-exclude still filters listed files against [tool.pyrefly] project-excludes, so the hook (.githooks/_gate.sh) and quality wrapper (quality_plan.py) file-list runs drop zero tracked Python files (including .dagger/) because [tool.pyrefly] project-excludes stays disjoint from all tracked Python paths.",
   "supersedes": [],
-  "title": "Pyright CLI file lists replace include while exclude filters listed files",
+  "title": "Pyrefly CLI file lists with --force-exclude match project-excludes",
   "writer": {
-    "at": "2026-11-26T11:13:54+01:00",
+    "at": "2026-11-28T03:29:43+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L49",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
-    "task": "261112-BUG"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

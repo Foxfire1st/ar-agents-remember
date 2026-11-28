@@ -584,7 +584,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - The symmetric linkage. [369]
 
+
 - The facts computed once per read over the lane; a dataset review unchanged. [370]
+
 - Implementation (a) with only the carry exempt, and (b) through the lane's links. [371]
 - The one carry rule, shared with the worklist. [372]
 
@@ -603,7 +605,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat with no scheduled deletion writes none. [385]
 - Current imported source owns this scoped route boundary. [386] [387] [388] [415]
 - Current imported source owns this scoped route boundary. [389]
-- Joining a computation in flight; the bound applies only to a new one. [390] [437]
+
+- Joining a computation in flight; the bound applies only to a new one. [390]
+- Joining a computation in flight; the bound applies only to a new one. [437]
+
 - The child's handlers, alarm, parent-death signal and parent check. [391]
 
 - The memo's key of exact identities. [392]

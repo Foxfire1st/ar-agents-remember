@@ -133,7 +133,9 @@ No configured live documentation source was available for this pass.
 - The module docstring: registration, what is raised, coverage and satisfaction. [1]
 
 
+
 - The one satisfying-row text over both kinds and the coverage split. [2]
+
 
 - A hunk item's row is found by its item ID. [3]
 - Both kinds registered on import with their facts and owner. [4]
@@ -149,12 +151,16 @@ No configured live documentation source was available for this pass.
 - A side's identity; an out-of-range read is a named problem. [10]
 - What an item admits. [11]
 
+
 - Unlinked hunks and non-text changes collected; identical lines share a subject. [12]
+
 
 - A symlink's or submodule's object from its tree entry. [13]
 - The file item bound to its C-side object. [14]
 
+
 - The answering set from covered items only; stray `no_invariant` rows are unnecessary. [16]
+
 
 - The onboarding subjects an uncovered item needs. [18]
 - Open unexplained items. [19]
@@ -181,12 +187,16 @@ No cross-repo boundary is crossed by this file.
 
 
 
+
 - The representative item binds its complete source map, actual counted change and eligible current onboarding row [15]
 
 
 
 
+
+
 - Settlement retains complete source maps and the trace item currency without inventing an answer [17]
+
 
 
 
@@ -198,7 +208,9 @@ No cross-repo boundary is crossed by this file.
 ## Current counted-change evidence
 
 
+
 - The initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item. [27]
+
 
 
 

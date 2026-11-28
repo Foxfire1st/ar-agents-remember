@@ -57,7 +57,9 @@ No Domain Documentation source is configured for this memory root. The approved 
 - Content digests follow the shared certification digest helper. [5]
 - The public package facade re-exports every model here. [6]
 - The durable store serializes and revalidates these records on every read and write. [7]
+
 - The run controller builds attempt records, drafts, and runtime bindings from these models. [8]
+
 
 ### Cross-Repo References
 

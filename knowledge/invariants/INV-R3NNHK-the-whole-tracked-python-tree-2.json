@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across root pyproject.toml and the two pinpoint ValidationError tests, proved by those test cases, and prevents masking real type errors behind blanket error disables or untyped suppressions."
+  },
+  "applicability": "All tracked Python files across product, tests, test support, scripts, and .dagger checked by Pyrefly.",
+  "conditions": [
+    "Pyrefly runs with root [tool.pyrefly] where unbound-name stays enabled and bad-argument-type is not disabled.",
+    "Per-path missing-argument disables apply only to the four model_construct partial-fixture test files."
+  ],
+  "exclusions": [
+    "Two intentional pytest.raises ValidationError extra-field test calls carrying pinpoint # pyrefly: ignore[unexpected-keyword] comments."
+  ],
+  "id": "INV-R3NNHK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261125-DEP-L8-worker-31647c6e-5a21-40e6-abb0-0738908e3e8e.md#evidence-2-zero-errors-and-suppression-census"
+      ],
+      "path": "261125-DEP-L8-curator-ingest"
+    },
+    "handoffEntry": "DEP-R08@v1 §2",
+    "leaf": "261125-DEP-L8",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The whole tracked Python tree (2,654 files) checks at zero Pyrefly errors with zero bad-argument-type suppressions, unbound-name enabled across all files, per-path missing-argument sub-configs restricted to four model_construct partial-fixture test files, and two pinpoint inline unexpected-keyword ignores on intentional pytest.raises ValidationError calls.",
+  "supersedes": [],
+  "title": "Tracked Python checks at zero Pyrefly errors with bounded suppressions",
+  "writer": {
+    "at": "2026-11-28T03:29:43+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L8",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
+  }
+}

@@ -102,7 +102,9 @@ walk's first page must carry the whole roster, while a completed **continued** p
 share is accepted.
 
 - **The two halves of the deliverable: the production composition measured in the sibling module, and the value rules measured here, with the honest fixture explicitly not evidence about the store.** [1]
+
 - **Counts that do not describe the entries and rosters beside them.** [2]
+
 - **A roster page whose completeness, remainder and cursor disagree, so a truncated roster cannot read as the whole one.** [3]
 - A side that recorded no context carrying members or a member count. [4]
 - **A recorded side naming a revision the family owner does not record — the value-level half of the population fix.** [5]

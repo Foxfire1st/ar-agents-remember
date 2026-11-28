@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15c68f6a8e19769232a26cff91782bfb3ac84c78",
+            "blob": "48266d467bccfa32bf6be116e3c57ef0813fedef",
             "content": "sha256:630dfca5b4b86cc88ed5cf83ff93643651863e15053a14f58290702bd5e4aceb",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "Shared helper _contract\n\nAnchor: `_contract`",
+      "note": "Shared helper _contract",
       "targets": [
         {
           "anchor": {
-            "blob": "15c68f6a8e19769232a26cff91782bfb3ac84c78",
-            "content": "sha256:7d80afbcd229e3aaa8cdb9ec100d0645e7da29270ba5f0b210b3c0af9870b240",
+            "blob": "48266d467bccfa32bf6be116e3c57ef0813fedef",
+            "content": "sha256:393dc53a054a492ac50b3dd288221feadfc9a566ea5cd08a654b310dafa176a5",
             "locator": {
               "kind": "file"
             }

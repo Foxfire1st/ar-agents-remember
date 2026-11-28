@@ -61,7 +61,9 @@ The recorded memory verdict retains recorder and handover stamps. Correcting the
 - Source assertion: test_legacy_mixed_code_records_are_not_migrated_into_curator_count. The declaration is not an execution receipt — `test_legacy_mixed_code_records_are_not_migrated_into_curator_count` in mcp/tests/test_memory_review_lane.py. [9]
 - Source assertion: test_invalid_kinds_and_incomplete_memory_count_fail_closed. The declaration is not an execution receipt — `test_invalid_kinds_and_incomplete_memory_count_fail_closed` in mcp/tests/test_memory_review_lane.py. [10]
 
+
 - The same review round keeps its original handover after registration or verdict corrections. [11]
+
 - An unbound recorder and absent handover registration have explicit unknown reasons. [12]
 
 - A memory record answers through the Curator lane without reopening passed code. [1]

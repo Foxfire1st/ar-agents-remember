@@ -240,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
             "locator": {
               "end": 191,
@@ -253,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
             "locator": {
               "end": 191,
@@ -271,8 +271,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
-            "content": "sha256:d5159f063f2f98ec01bef3fd5b281f84c45c8e1788408fdf8c714117bb10aa95",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
+            "content": "sha256:fbdc0993337cde839297b6294f1b9ee42cf6c1a613fd9cbd50bbcdf4f44b9e20",
             "locator": {
               "kind": "symbol",
               "name": "amend_contract"

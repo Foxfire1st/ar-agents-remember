@@ -35,9 +35,13 @@ The module-scoped `deliveries` fixture compiles every role/operation pair the li
 - Step details reach actual files at their actions over the complete matrix. [4]
 
 
+
 - Current truth and all-carrier repair are in the delivered reconciliation detail. [5]
 
+
+
 - All invariant definitions are in the delivered card detail. [6]
+
 
 - The doctrine corpus rejects own-fault-only and blanket debt routing. [7]
 
@@ -45,7 +49,9 @@ The module-scoped `deliveries` fixture compiles every role/operation pair the li
 - Bare-path writer examples are flagged in tables and shell blocks. [9]
 
 
+
 - No Curator delivery or followed skill carries a bare-path writer example. [10]
+
 
 
 

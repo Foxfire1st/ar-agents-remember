@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b20aa4ab780dd73fea739978337153679b4b2360",
+            "blob": "0cc3563c7a460610fb6612ba014f81053f1d3dfb",
             "content": "sha256:dc028333d8268a389f845ada28ea07dffcd60fd9250bab8c7bf147d636affef7",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b20aa4ab780dd73fea739978337153679b4b2360",
-            "content": "sha256:4c5269cd7a1109e25f37621fe575b4fc1c72585d3ae5ab4629ee2f298cd7721d",
+            "blob": "0cc3563c7a460610fb6612ba014f81053f1d3dfb",
+            "content": "sha256:da909be76862e7741e6b0a706b0b052d7df655e96517ed8d3c7a156a93f2cf23",
             "locator": {
               "kind": "symbol",
               "name": "write_sample_repository"

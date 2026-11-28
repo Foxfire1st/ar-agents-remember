@@ -14,7 +14,7 @@ Single-invocation scope-batch emission for the repository's Git hook tiers. It d
 
 ## Relationships
 
-`scope_reporting.py` supplies the line builders and the `hook-batch` subcommand; `.githooks/_gate.sh` calls that subcommand once per run and prints each line before its check. The fixed-step vocabulary is the hook's own: `ruff`, `ruff-format`, `pyright` and `evidence-lifecycle`.
+`scope_reporting.py` supplies the line builders and the `hook-batch` subcommand; `.githooks/_gate.sh` calls that subcommand once per run and prints each line before its check. The fixed-step vocabulary is the hook's own: `ruff`, `ruff-format`, `pyrefly` and `evidence-lifecycle`.
 
 ## Evidence
 

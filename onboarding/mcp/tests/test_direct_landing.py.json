@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
         "content": "sha256:5efaa63befdc35b2582e174d5ccbbc7190a1772ef73335a2a5b82d33b27e1c00",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
-        "content": "sha256:ac362e9805d4a9dfc370fc10a74b73d1ace7a275588b9762a7441566afd4a326",
+        "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
+        "content": "sha256:b331eeeeef2904ffd38948b5d3a7a1c48fc495fe4b5ef0b42ebfe785d0eb5e6d",
         "locator": {
           "kind": "symbol",
           "name": "DirectLandingTests.test_create_precode_census_pins_each_row"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
         "content": "sha256:ccf8fa003a46c6e1685defc41ebecabff013a5a85c0e219f2f2fdf29fa894904",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
         "content": "sha256:0bddc2d1a3886b19007f80173191bb05660bd2297513d270b2299fefeb7ee9a4",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
         "content": "sha256:40c9e5d3e12b81630dd62b90a301a01654e45ffc37e38a223555441a266de505",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
             "content": "sha256:6c79cc36e0f04fb0c6194710d51ec4d313b71ecf3872cad7c43e206080fb916e",
             "locator": {
               "kind": "symbol",
@@ -106,12 +106,12 @@
       ]
     },
     "2": {
-      "note": "The retained scenario proves one content commit and reads its attribution from Git.\n\nAnchor: `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
+      "note": "The retained scenario proves one content commit and reads its attribution from Git.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
-            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
+            "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
+            "content": "sha256:3c4282ac90ff35468ba8f4d98c0698e6a019df79b677980deaae0ad16efb2d54",
             "locator": {
               "kind": "file"
             }
@@ -125,24 +125,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
             "content": "sha256:1c1440bf4223cec18452d070bbfbacee091357bef06eadc48964996e3b788b09",
             "locator": {
-              "end": 2483,
+              "end": 2489,
               "kind": "line_range",
-              "start": 2435
+              "start": 2441
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
             "content": "sha256:2fc2a0195a767b1af8fed1ebb5286a0f1850a2b12aee75fb92c60a12415b59cc",
             "locator": {
-              "end": 2394,
+              "end": 2400,
               "kind": "line_range",
-              "start": 2320
+              "start": 2326
             }
           },
           "kind": "test"
@@ -166,12 +166,12 @@
       ]
     },
     "5": {
-      "note": "The pre-code census case performs grant controls before real edit, reanchor and source-bound trace computation.\n\nAnchor: `DirectLandingTests.test_create_precode_census_pins_each_row`",
+      "note": "The pre-code census case performs grant controls before real edit, reanchor and source-bound trace computation.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
-            "content": "sha256:ac362e9805d4a9dfc370fc10a74b73d1ace7a275588b9762a7441566afd4a326",
+            "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
+            "content": "sha256:ac8834bf515173eb9574237b63ff65cff1983a1a9fcbdd39f3994c8bb5df3220",
             "locator": {
               "end": 1077,
               "kind": "line_range",

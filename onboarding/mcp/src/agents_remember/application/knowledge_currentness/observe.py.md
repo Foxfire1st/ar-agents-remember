@@ -144,8 +144,12 @@ summary is not an unconditional unchanged-blob guarantee.
 
 - Which locator kinds cannot be re-resolved in a changed blob. [12]
 - Resolution through the worklist's resolver; a missing line-range blob is raised as `CodeObjectUnavailable`, and only answers are put in the cache. [13]
+
 - The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale. [15]
+
+
 - A timed-out Git call is unverifiable and is not cached. [16]
+
 - The cache key's contents and its reuse. [17]
 - Symbol UTF-8 decoding precedes the unchanged-blob shortcut and names invalid bytes as unverifiable. [18]
 

@@ -56,7 +56,9 @@ Custody: the preceding sentence is detached from live reference 11; original tar
 - Frozen implementation of status_row supporting the stated file behavior. [2]
 - Frozen implementation of read_agent supporting the stated file behavior. [3]
 - Frozen implementation of resume_agent supporting the stated file behavior. [4]
+
 - `read_live_agents` makes one read-only `agents-live` bridge call and validates a string-ID list plus a boolean completeness flag. Bridge failures and malformed answers become unreachable readings with a reason; a valid incomplete listing keeps its known IDs and cannot classify an absent recorded agent as gone. The existing per-agent first-match status table and explicit resume path remain unchanged. [12]
+
 
 - The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [10]
 

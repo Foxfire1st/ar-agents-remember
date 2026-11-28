@@ -130,4 +130,5 @@ when this run would have created the marker (nothing was written), and the case'
 
 - New-layout initialization creates the layout marker and missing scaffold files, preserving existing system files. A real new-layout call appends the briefs exclusion to an existing root ignore file if needed and preserves its authored rules. [12]
 
+
 - The one git runner this module's `git init` goes through: `git_environment` strips `GIT_REPOSITORY_SELECTOR_ENV`, `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound, and `run_git` applies both. [9]

@@ -20,7 +20,7 @@ Development and repository-verification infrastructure for Python tests, quality
 
 ## Construction And Execution
 
-The root quality configuration explicitly classifies top-level Python packages as product or verification. Ruff, Pyright, structural limits, and dependency checks remain broad. Coverage, diff-coverage, and CRAP measure product authority. Dagger owns certifying execution and its cache volumes. Ordinary isolated host pytest supports development without certification authority. The former Candidate-A command and measurement machinery remain retired.
+The root quality configuration explicitly classifies top-level Python packages as product or verification. Ruff, Pyrefly, structural limits, and dependency checks remain broad. Coverage, diff-coverage, and CRAP measure product authority. Dagger owns certifying execution and its cache volumes. Ordinary isolated host pytest supports development without certification authority. The former Candidate-A command and measurement machinery remain retired.
 
 The certification-profile path uses `code_quality/profile_selection.py` for content-addressed repository-owned selection and `code_quality/profile_rails.py` for executable Python rail adapters. An incomplete ownership result preserves unresolved inputs and blocks targeted test execution instead of silently broadening to the full Python suite. Exact-candidate retry reuse checks the selection digest. Runner-input and manifest ownership use retained consumer declarations rather than a fixed consumer count.
 
@@ -54,7 +54,7 @@ Repository-owned design descriptions live in `docs/design/python-evidence-system
 - Production coverage is diagnostic and CRAP20 is a review trigger. Lint, typing, structural rules, real test failures and malformed diagnostic inputs remain enforcing.
 - The retired causal/retry route-evidence and route-measurement machinery must not be restored as a duplicate measurement path, and removed tests must not be treated as current protection.
 
-Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:334-335` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
+Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:370-371` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
 
 ## File-Level Onboarding Map
 
@@ -75,12 +75,16 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions. [3]
 - The adapter rederives the selector and compares each executable path population exactly. [1]
 
+
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
+
 
 > Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures. [6]
 - Root configuration classifies product and verification packages by operational ownership: scripts/agent_evals is now explicitly a verification root beside the Dagger quality package and test support. Full static scope covers tracked Python while behavioral metrics use product roots. [7]
+
 - Targeted ownership remains typed-incomplete and refuses executable quality configuration when unresolved. [8]
+
 - Exact-candidate cache reuse checks selection identity. [9]
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]
 
@@ -94,8 +98,12 @@ Retained earlier citation wording, outside its current number: - Root configurat
 
 - The projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations and folds the served definitions into the same output. `ServedWorkspaceProjection` declares the served tail fields `servingBuild`, `watcherHealth`, `checkoutBinding`, `buildCurrentness` and `servingProcessId`. [15]
 
+
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md. [20]
+
+
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md. [21]
+
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-test-evidence.md. [22]
 
 - Case budgets are root declarations rather than overview-owned constants. [17]

@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
             "locator": {
               "end": 19,
@@ -238,12 +238,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:76148e490a86380f0f3265f57b779685b4b3d0ee224f857adfc6503284d5b5ef",
             "locator": {
-              "end": 458,
+              "end": 457,
               "kind": "line_range",
-              "start": 386
+              "start": 385
             },
             "path": ".githooks/_gate.sh"
           },
@@ -256,12 +256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:7ad2d78b551e9f693cfad68f91b344bf7d7f5b221843c07d1111a1ece32f601e",
             "locator": {
-              "end": 369,
+              "end": 368,
               "kind": "line_range",
-              "start": 330
+              "start": 329
             },
             "path": ".githooks/_gate.sh"
           },
@@ -375,7 +375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:90847aaa9f7b2bb210eccc1b78f3fe7a2e1e7d70ebfe59bb019d5d8f805ff611",
             "locator": {
               "end": 41,
@@ -567,7 +567,7 @@
         },
         {
           "anchor": {
-            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "blob": "56fef293d71aba0615280a4296032a8886a9a340",
             "content": "sha256:a9ea3272fd38fe4c1bf85435dc265806b7ab4b4d03b6ca15f171e44fd2842ee6",
             "locator": {
               "end": 85,
@@ -580,7 +580,7 @@
         },
         {
           "anchor": {
-            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "blob": "56fef293d71aba0615280a4296032a8886a9a340",
             "content": "sha256:b2b9a34b314920656876ea32bfd4424e08de9a6b98a07dd19da813de773e3b19",
             "locator": {
               "end": 268,
@@ -1220,7 +1220,7 @@
         },
         {
           "anchor": {
-            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
+            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
             "content": "sha256:7966d22bb88ffde688184c10411a22c4e29f4b914fce61537c99db17fcc3c28f",
             "locator": {
               "end": 403,
@@ -1255,8 +1255,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
-            "content": "sha256:5a060ee0d78602ac771cdb012e6fc7bcfe29058518da443de264f027639313ab",
+            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "content": "sha256:1a4962f2f02143c812f224c0770c31067d19ed2db408c96e30e8f65d902a2d03",
             "locator": {
               "kind": "file"
             },
@@ -1423,7 +1423,7 @@
         },
         {
           "anchor": {
-            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
+            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
             "content": "sha256:a987f35360e6c923130e35e738e51fe98cdeea1499aa0eab7ea4e391d72ba5ec",
             "locator": {
               "end": 397,
@@ -2045,7 +2045,7 @@
         },
         {
           "anchor": {
-            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "blob": "81d0835e29e069f9ba1dc94ec0249b30ecee232a",
             "content": "sha256:8539ec83a002a3698b451d43d528a3b408606904ab4070b8963853d6556c312e",
             "locator": {
               "end": 599,
@@ -2058,7 +2058,7 @@
         },
         {
           "anchor": {
-            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "blob": "81d0835e29e069f9ba1dc94ec0249b30ecee232a",
             "content": "sha256:39690552a232cfb7b56ac517f0ace1b76b6a4d743ff60441242be8bac4ac467f",
             "locator": {
               "end": 726,
@@ -2350,7 +2350,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "end": 176,
@@ -2363,7 +2363,7 @@
         },
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:453fa60fd7e1d14c0171d456f4d8bcd58d5be2255a14c3ed6fcf169ae0f9e1ed",
             "locator": {
               "end": 192,
@@ -2376,7 +2376,7 @@
         },
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:62a77742ee64fab78b698abd24ce333efdd8b6f9f5fb5aef63ec057c5d4806ab",
             "locator": {
               "end": 329,
@@ -2389,8 +2389,8 @@
         },
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
-            "content": "sha256:19eb270696db7904b422537e31cb29711f22efe2107a395be2a2d4f496a9fe4b",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
+            "content": "sha256:158a8720aea016627b06526642b107fe4c3def3d669d74787a969dae5a4b7774",
             "locator": {
               "end": 478,
               "kind": "line_range",
@@ -2779,12 +2779,12 @@
         },
         {
           "anchor": {
-            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "blob": "73b5abe6bc826ea186befe492b6f6bddbf0e6fce",
             "content": "sha256:74c8a9a315795103fb7fa80d51d4210284b5fc732592acfb93fda870ae449ed6",
             "locator": {
-              "end": 479,
+              "end": 481,
               "kind": "line_range",
-              "start": 461
+              "start": 463
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
           },
@@ -4140,7 +4140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "blob": "56fef293d71aba0615280a4296032a8886a9a340",
             "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
             "locator": {
               "end": 289,
@@ -4153,7 +4153,7 @@
         },
         {
           "anchor": {
-            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "blob": "56fef293d71aba0615280a4296032a8886a9a340",
             "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
               "end": 379,
@@ -4633,12 +4633,12 @@
         },
         {
           "anchor": {
-            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "blob": "8a2e7bdd5741cfa0145d123c23599a5f9074ca14",
             "content": "sha256:91f5b4e4420ea1c5aa0362b424ebc783469590ce419a62543589996a7c719334",
             "locator": {
-              "end": 768,
+              "end": 775,
               "kind": "line_range",
-              "start": 720
+              "start": 727
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
@@ -4772,12 +4772,12 @@
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 339
+              "start": 370
             },
             "path": "pyproject.toml"
           },
@@ -4790,7 +4790,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
+            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
             "content": "sha256:fcb57e07c69242e57cf402b54e7177fa03764b47fb25050ddb65e4d460be6816",
             "locator": {
               "end": 160,
@@ -4870,7 +4870,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:60b5091e248fda7b888c6cb0d058d473a81ede06e5fd966f6001df08f5e8d3c2",
             "locator": {
               "end": 205,
@@ -4883,12 +4883,12 @@
         },
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:7ad2d78b551e9f693cfad68f91b344bf7d7f5b221843c07d1111a1ece32f601e",
             "locator": {
-              "end": 369,
+              "end": 368,
               "kind": "line_range",
-              "start": 330
+              "start": 329
             },
             "path": ".githooks/_gate.sh"
           },
@@ -5027,8 +5027,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "def2a743fe9661ec9d2e7915327db2b9d406ee50",
-            "content": "sha256:5a060ee0d78602ac771cdb012e6fc7bcfe29058518da443de264f027639313ab",
+            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "content": "sha256:1a4962f2f02143c812f224c0770c31067d19ed2db408c96e30e8f65d902a2d03",
             "locator": {
               "kind": "file"
             },
@@ -5500,12 +5500,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 339
+              "start": 370
             },
             "path": "pyproject.toml"
           },

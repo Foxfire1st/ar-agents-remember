@@ -161,6 +161,8 @@ The extraction of _git_run shares the former run_git setup; it does not make the
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/kernel/git_command.py::_wait_process - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+
 - The cancellation context binds the signal, the runner chooses the wait path, and the group owner handles timeout or cancellation for a new session. [57]
+
 
 - The text, raw-byte and direct-output runners share the environment, identity and execution-option setup. [55]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+        "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
         "content": "sha256:a8ff78834aa8e40d8eb2794197eb0363833aa2df216d9522bbdea822c3b5e288",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
-        "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
+        "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
+        "content": "sha256:82342e3701ede4a47bc9859fd14c1e792d1dc5ff0c363fac4b55de067ec11210",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+        "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
         "content": "sha256:33870b954aab173b125241809fd916b0f653e3897b25cc46e3c3fde5de239196",
         "locator": {
           "kind": "symbol",
@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
-            "content": "sha256:db1284932c90323074f0a2e947a9de55200992c599bb908c813feeee87de20eb",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
+            "content": "sha256:71bc36081351850a70fd120465431682bea8afcffb240fd7a4afaa808fc12f57",
             "locator": {
               "kind": "symbol",
               "name": "BridgeProcessTests"
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
             "content": "sha256:bec7e9da7fc53aeeb9d18c3738cf7eab21ab083f7f6fea61446d558297a5a81b",
             "locator": {
               "kind": "symbol",
@@ -87,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
-            "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
+            "content": "sha256:82342e3701ede4a47bc9859fd14c1e792d1dc5ff0c363fac4b55de067ec11210",
             "locator": {
               "kind": "symbol",
               "name": "test_unconfigured_or_never_started_runtime_refuses_before_any_process"
@@ -103,36 +103,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
             "content": "sha256:d23b973a60b898c7a8f794ea94676449749a9c89ac794b5fbf763d960a03178e",
             "locator": {
-              "end": 612,
+              "end": 615,
               "kind": "line_range",
-              "start": 481
+              "start": 484
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
             "content": "sha256:a8ff78834aa8e40d8eb2794197eb0363833aa2df216d9522bbdea822c3b5e288",
             "locator": {
-              "end": 713,
+              "end": 716,
               "kind": "line_range",
-              "start": 614
+              "start": 617
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
             "content": "sha256:f46181faad3a63ae01e8d9c1c55365e2e694fbefc38626b0c6d74946960d05a6",
             "locator": {
-              "end": 820,
+              "end": 823,
               "kind": "line_range",
-              "start": 765
+              "start": 768
             }
           },
           "kind": "test"

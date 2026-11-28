@@ -92,7 +92,9 @@ No configured external domain-documentation evidence.
 - Memory admission captures the prepared content snapshot and typed candidate in `_operation_candidate` after the gate's closing. [8]
 - Generation creation and action-required public projection. [9]
 - The application owns configured admission and execution serialization. [10]
+
 - The focused integration scenario verifies cache-independent publication and recovery. [11]
+
 - Unconverted input refuses before fresh capture regardless of converted memory elsewhere; converted validation remains unchanged. [12]
 - Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]
 - Exact direct replay retains its generation; only a changed request may replace retired completed evidence. [14]

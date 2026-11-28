@@ -164,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
             "content": "sha256:d88840260d7fa1ffbaa5afb911781496d35adc9d9e6b771525be7328a136113f",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
             "content": "sha256:5fa4ce036de0dfe8a07a0155c47ce7dde07827ff642c1e810ea6069d8341fd94",
             "locator": {
               "kind": "symbol",
@@ -188,7 +188,7 @@
         },
         {
           "anchor": {
-            "blob": "0b11a4a8c64632d71cfed91de47f9d3950d875e3",
+            "blob": "e22f6d3896a4fd20f72b484f9c5f643c8788d77b",
             "content": "sha256:dcf64b1c0c82cc96306f7b447c6a7dd2a0cce40dad131da92c22e1f5c1550a63",
             "locator": {
               "kind": "symbol",

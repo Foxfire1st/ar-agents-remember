@@ -153,12 +153,12 @@
       ]
     },
     "6": {
-      "note": "The strict leaf-document lookup it reuses (L11).\n\nAnchor: `strict_leaf_doc`",
+      "note": "The strict leaf-document lookup it reuses (L11).",
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
               "kind": "file"
             },

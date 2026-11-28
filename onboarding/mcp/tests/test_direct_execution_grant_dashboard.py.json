@@ -1,14 +1,53 @@
 {
   "path": "mcp/tests/test_direct_execution_grant_dashboard.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a64f54acf3d046f2f6e654d37fe1f0d01e8a51aa",
+        "content": "sha256:ec6cd8c85516edd59eaaa51e40b33e9c748798f657dae14cc69a5739c4c042ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeveloperGrantControlTests.test_request_model_rejects_extra_fields"
+        }
+      },
+      "facet": "Exercises the intentional extra-field ValidationError call carrying one of the two pinpoint # pyrefly: ignore[unexpected-keyword] annotations.",
+      "id": "PRF-5JK4VF",
+      "invariant": "INV-R3NNHK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §2",
+        "leaf": "261125-DEP-L8"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a64f54acf3d046f2f6e654d37fe1f0d01e8a51aa",
+        "content": "sha256:3a4d71af6a5b9fd2b2d70dc8f873ebbcd4b2acbeefcd961e529cb2a4917c59c8",
+        "locator": {
+          "end": 122,
+          "kind": "line_range",
+          "start": 111
+        }
+      },
+      "id": "RLZ-DJSSD3",
+      "invariant": "INV-R3NNHK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §2",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Holds one of the two Architect-approved pinpoint inline # pyrefly: ignore[unexpected-keyword] annotations for an intentional ValidationError extra-field test.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Pins the developer grant mutation boundary in disposable task fixtures",
       "targets": [
         {
           "anchor": {
-            "blob": "45e2cab1c18976d09f92df0dd1303bf2e663d872",
-            "content": "sha256:b9e42f21c6353c81241b65e5e7c24bf844c839f82238a5757e77648a25a03cc5",
+            "blob": "a64f54acf3d046f2f6e654d37fe1f0d01e8a51aa",
+            "content": "sha256:1d196748571a2181a7d93d55d92c1e03706b6e2150ca8352e751e2f0a53f7b5a",
             "locator": {
               "end": 230,
               "kind": "line_range",

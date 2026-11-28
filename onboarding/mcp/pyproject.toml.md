@@ -34,7 +34,7 @@ loudly to interval-driven full refreshes when it is missing, so the dependency i
 adaptive behaviour, not for the daemon to run at all. The webstack is a **core** dependency (not an optional
 extra) so `agents-remember dashboard` works on a plain install. Development-only
 quality tools live under the `dev` optional dependency group: Coverage.py, httpx
-(the FastAPI `TestClient` backend), pytest, pytest-cov, pytest-xdist, Pyright, Radon, and Ruff.
+(the FastAPI `TestClient` backend), pytest, pytest-cov, pytest-xdist, Pyrefly (`>=1.5.0,<2`), Radon, and Ruff.
 Ruff is an exact 0.16.1 pin, so a worktree and a package-dev
 environment enforce the same stable rule set instead of interpreting the same configuration under
 different Ruff releases.
@@ -66,7 +66,7 @@ not an omission, and the inline comment in the file records it.
 
 The language line agrees with `requires-python` here. The repository-root `[tool.ruff]
 target-version` stays `py313` as an explicitly reasoned **non-runtime syntax-rewrite policy**
-(one comment line states the reason), while Pyright targets 3.14 and the managed
+(one comment line states the reason), while Pyrefly targets 3.14 and the managed
 development runtime, Dagger graph, GitHub packaging workflow, and GitHub deterministic quality
 workflow all use uv-managed Python 3.14 (per `scripts/python-runtime-contract.env`, with no exact patch pin). Acceptance remains lifecycle-owned; Dagger executes the acceptance profiles, while the
 GitHub jobs prove deterministic lint/package behavior under the same runtime line and are not
@@ -136,7 +136,7 @@ later reader does not have to reconstruct it from a report.
 - Release version bumps should keep this project version aligned with
   `agents_remember.mcp.SERVER_VERSION` so installed server payloads report the
   same version that PyPI installs.
-- Pyright, CRAP-Calculator, and the source quality wrapper rely on the `dev`
+- Pyrefly, CRAP-Calculator, and the source quality wrapper rely on the `dev`
   optional dependency group, not the base MCP runtime dependency set.
 - The package discovery root is `src`; package modules should remain under
   `mcp/src/agents_remember/`.
@@ -186,9 +186,7 @@ later reader does not have to reconstruct it from a report.
 - Both generated dashboard paths are git-ignored, with the reason recorded inline. [14]
 - An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. [15]
 
-- Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyright language configuration. [16]
-
-
+- Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyrefly language configuration. [16]
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
 
 

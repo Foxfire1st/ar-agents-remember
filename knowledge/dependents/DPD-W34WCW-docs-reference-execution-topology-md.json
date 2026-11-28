@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "Verified docs/reference/execution-topology.md against 17c064d8: sprint/master/leaf topology and enclosure contracts remain accurate after KNO-R05@v3.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited docs/reference/execution-topology.md at post-sync code tree 0b0419690d12: touched stands_on files (task_execution_topology.py, task_sprint_linkage.py, kernel/memory_init.py, closeout_projection_members.py) received only behavior-preserving typing adjustments for Pyrefly 1.5.0; execution-topology specification remains accurate.",
+    "task": "261125-DEP-L8",
     "uncommitted": true
   },
   "document": "docs/reference/execution-topology.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
     },
     {
-      "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+      "blob": "17c9045bc3e6501e838db24257ba659f0c1a716e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
     },
     {
-      "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
+      "blob": "252b028a56dc4dbe8159606b0a9e393b55a3d262",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
     },
@@ -101,20 +101,20 @@
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
     {
-      "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
+      "blob": "bcb8aa08c84da1d5f23ee569450558a137ac1efd",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

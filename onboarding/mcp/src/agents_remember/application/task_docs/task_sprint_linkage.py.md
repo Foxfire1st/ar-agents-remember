@@ -166,7 +166,9 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 - Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. [13]
 - The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. [14]
+
 - The detach candidate removes the typed row, the membership aliases and the graph node, and refuses to empty the graph or to leave an edge touching the node. [15]
+
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -209,7 +211,9 @@ lock or lifecycle evidence owner.
 ### Reconciled Source Evidence
 
 
+
 - The current module exposes `SprintLinkageError` and `SprintLinkageRequest` at this ownership boundary; the call context `SprintLinkageCall` is declared in the linkage module. [9]
+
 
 
 

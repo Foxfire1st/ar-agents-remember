@@ -94,7 +94,9 @@ The route fixture's summary callback accepts the optional comparison-number argu
 
 - _shared_base carries the directory used to build independent before/after sides from shared specifications. [16]
 
+
 - Test-only RowStore mutates text-tree fixture rows and rebuilds their derived index without a shipped production admission plane. [15]
+
 - Record-only successors count; a same-guarantee member change stays typed. [19]
 - `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` supplies the current fixture or assertion described above. [12]
 - The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised. [13]

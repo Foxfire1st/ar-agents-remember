@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Explicit product/verification package ownership tests and root `[tool.pyright]` scope and CLI exclusion tests.
+Explicit product/verification package ownership tests and root `[tool.pyrefly]` scope and CLI exclusion tests.
 
 ## Code Commentary
 
@@ -14,7 +14,7 @@ Explicit product/verification package ownership tests and root `[tool.pyright]` 
 
 A newly importable support package refuses until assigned a product or verification owner. Declaring it verification preserves lint/type inclusion while excluding it from product coverage paths. Overlapping and stale ownership declarations refuse.
 
-`PyrightScopeConfigurationTests` validates root `pyproject.toml` via `validate_quality_config`, asserts `include = ["."]`, verifies all eleven depth-independent `**/` `exclude` entries and the absence of blanket dot-folder patterns, and confirms that zero tracked `*.py` files (including `.dagger/`) match any `exclude` entry. It also runs Pyright against temporary checkouts to verify that a CLI file list replaces `include`, that `exclude` still filters explicitly listed paths (`filesAnalyzed == 0` when excluded) while non-dot tracked paths (`scripts/script_err.py`) stay checked (accounting for Pyright `1.1.414+` auto-excluding `**/.*` independently of `[tool.pyright] exclude`), that a bare run checks checkout code outside excluded trees while skipping nested `mcp/.venv` and `dashboard/node_modules`, and that explicit file-list invocations match the legacy top-level `exclude` list identically.
+`PyreflyScopeConfigurationTests` validates root `pyproject.toml` via `validate_quality_config`, asserts `project-includes = [".", ".dagger"]` and `disable-project-excludes-heuristics = true`, verifies all twelve depth-independent `**/` `project-excludes` entries and the absence of blanket dot-folder patterns, and confirms that zero tracked `*.py` files (including `.dagger/`) match any `project-excludes` entry. It also runs Pyrefly with `--force-exclude --python-interpreter-path` against temporary checkouts to verify that an explicit CLI file list checks listed files outside `project-includes`, that `--force-exclude` drops explicitly listed files matching `project-excludes` while keeping tracked paths including `.dagger/` checked, and that a bare run with `project-includes = [".", ".dagger"]` skips nested `mcp/.venv` and `dashboard/node_modules` while checking checkout code including `.dagger/`.
 
 ### Conventions
 
@@ -22,7 +22,7 @@ Source inspection is memory preparation and does not claim a test run or accepta
 
 ### Invariants And Boundaries
 
-Coverage paths describe measurement scope, not a percentage requirement. No fallback ownership broadening is allowed for unowned packages. `[tool.pyright] exclude` patterns must stay disjoint from tracked Python files because Pyright drops explicitly listed paths that match `exclude`, and no blanket dot-folder pattern is permitted while tracked Python lives under `.dagger/`.
+Coverage paths describe measurement scope, not a percentage requirement. No fallback ownership broadening is allowed for unowned packages. `[tool.pyrefly] project-excludes` patterns must stay disjoint from tracked Python files because Pyrefly `--force-exclude` drops explicitly listed paths that match `project-excludes`, and no blanket dot-folder pattern is permitted while tracked Python lives under `.dagger/`.
 
 ### Todos
 
@@ -43,9 +43,8 @@ The retained source anchors below support the fixture roles and assertion bounda
 - New importable package requires explicit product or verification owner. [1]
 - Package authority rejects overlap and stale declarations. [2]
 
-- Root `[tool.pyright]` validates cleanly, excludes nested environments/caches without blanket dot-folder rules, and matches zero tracked Python files including `.dagger/`. [3]
-
-- Real Pyright runs verify CLI file lists replace `include`, `exclude` still filters listed paths, non-dot tracked paths stay checked under Pyright `1.1.414+`, bare runs skip nested environments, and file-list results match legacy excludes. [4]
+- Root `[tool.pyrefly]` validates cleanly, excludes nested environments/caches without blanket dot-folder rules, and matches zero tracked Python files including `.dagger/`. [3]
+- Real Pyrefly runs verify CLI file lists check listed files outside `project-includes`, `--force-exclude` drops excluded paths while keeping `.dagger/` checked, and bare runs skip nested environments while checking checkout code including `.dagger/`. [4]
 
 ### Cross-Repo References
 

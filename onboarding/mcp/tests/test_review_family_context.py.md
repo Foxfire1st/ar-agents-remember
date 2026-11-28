@@ -231,7 +231,9 @@ The old sibling-family revision builder is removed with that ambiguity fixture.
 
 - The population cases this module's fixtures are shared with. [88]
 
+
 - The values cases that pin the construction rules of the same deliverable. [89]
+
 
 ### Cross-Repo References
 
@@ -239,5 +241,6 @@ No cross-repository behavior is exercised by these cases. The enclosure, the two
 code trees and the served application all belong to this repository's own fixture support and to the
 leaf enclosure the resolution selected. No remote, credential, network or external system is involved, so
 no cross-repo reference row is recorded.
+
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [48]

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
-    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "Resolved crossing-8 sync conflict for README.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L3 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
-    "task": "261125-DEP-L3",
-    "uncommitted": false
+    "statement": "Audited README.md at post-sync code tree 0b0419690d12: mcp/pyproject.toml changed only the dev extra from pyright to pyrefly>=1.5.0,<2 while requires-python (>=3.14,<3.15), CLI commands, and product description remain accurate.",
+    "task": "261125-DEP-L8",
+    "uncommitted": true
   },
   "document": "README.md",
   "id": "DPD-CZBR1Q",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+      "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -92,14 +92,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T00:08:30+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "role": "curator",
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
     "task": "261125-DEP"
   }
 }

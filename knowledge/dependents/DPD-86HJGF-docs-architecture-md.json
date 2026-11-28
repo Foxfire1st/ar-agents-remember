@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
-    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "Verified docs/architecture.md against frozen L12 tree e222729eff1b: What a Read May Write now lists five read-side persistent write cases including lazy SHA-256-verified grammar unpacking into AR_LANGUAGE_CACHE, and extents.py changes preserve documented architecture.",
-    "task": "261112-KNO-L12",
+    "statement": "Audited docs/architecture.md at post-sync code tree 0b0419690d12: touched stands_on files (mcp/pyproject.toml, install/runtime.py, kernel/memory_init.py, kernel/git_command.py, kernel/git_freshness.py) received only dev-extra Pyrefly replacement and behavior-preserving typing adjustments; architecture claims remain accurate.",
+    "task": "261125-DEP-L8",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 30,
+  "revision": 31,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+      "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
     {
-      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+      "blob": "81d0835e29e069f9ba1dc94ec0249b30ecee232a",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
     {
-      "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+      "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/git_command.py"
     },
@@ -194,7 +194,7 @@
     },
     {
       "anchor": {
-        "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+        "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
         "content": "sha256:032539c90a6959c16332f1c0c884b82ec12b42f658148bfe1897d693a8903fd2",
         "locator": {
           "kind": "symbol",
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T01:52:22+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L12",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
-    "task": "261112-KNO"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

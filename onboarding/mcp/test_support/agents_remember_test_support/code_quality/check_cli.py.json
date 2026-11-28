@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f05e936aad8d1bef2f96b9c4aa9ee1b52f764ac",
-            "content": "sha256:bd3328783f84086726f557ebd6dfac57d3c613d333d366a6d723240019c40e00",
+            "blob": "9a79fe55ccd42a7d617d0080bda232029c952e95",
+            "content": "sha256:db905a0744b20b6a6d2ba3ce9d3b7d08b018614107573580cd39b527dafa7aeb",
             "locator": {
               "kind": "symbol",
               "name": "build_parser"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f05e936aad8d1bef2f96b9c4aa9ee1b52f764ac",
+            "blob": "9a79fe55ccd42a7d617d0080bda232029c952e95",
             "content": "sha256:b4df7de959f3b8d7b3f010d739bd8d6cdc1f2783bfec36fde6e64ac4ab658d5a",
             "locator": {
               "kind": "symbol",

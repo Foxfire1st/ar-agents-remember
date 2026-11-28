@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+        "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
         "content": "sha256:6ee3c44ed991593d237b6f8abf8f776322178bf100ca92faa2cf07ae9bffa4f8",
         "locator": {
           "end": 69,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
-        "content": "sha256:a8956ffbecbf8efe37f6c55c30d5a27ef99d074e26b78139abcdd68a6a799e40",
+        "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
+        "content": "sha256:efb3705f2c23b0369e0b5018cad52366036a39e909779bca9bf97883ea775c24",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
             "content": "sha256:1e001412aaa35cbc4eae996fa86cdb2994fb08a6e367925866155f740e777d31",
             "locator": {
               "kind": "symbol",
@@ -61,8 +61,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
-            "content": "sha256:a8956ffbecbf8efe37f6c55c30d5a27ef99d074e26b78139abcdd68a6a799e40",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
+            "content": "sha256:8cfa6ee003b9d64eee49dd7bb46ff8d3eb521c15dde2d3fb37cf2112242fc5f9",
             "locator": {
               "end": 105,
               "kind": "line_range",
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
             "content": "sha256:9fcfcb10381b163a3d6f5cf33b7c287426ad4a0d0090233966e69f2d6c633b2f",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
             "content": "sha256:1e001412aaa35cbc4eae996fa86cdb2994fb08a6e367925866155f740e777d31",
             "locator": {
               "kind": "symbol",
@@ -124,12 +124,12 @@
       ]
     },
     "6": {
-      "note": "`run` routes `provision --accept-harness-home-change` to the accepting provisioning and marks an unverifiable process record's harness homes unknown.\n\nAnchor: `provision_with_home_change`",
+      "note": "`run` routes `provision --accept-harness-home-change` to the accepting provisioning and marks an unverifiable process record's harness homes unknown.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
-            "content": "sha256:aba4107adf89ea41b0c598fb47e6fccc2254c28419e234b59a24a2117c3ee3f6",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
+            "content": "sha256:44db4560769ad492b3e97be76f8cef5734774c77b2811e83f7058c8c8b56170c",
             "locator": {
               "end": 96,
               "kind": "line_range",

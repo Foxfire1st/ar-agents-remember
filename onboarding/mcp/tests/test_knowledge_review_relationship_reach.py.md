@@ -55,4 +55,5 @@ No Domain Documentation source is configured for this slice.
 
 - **The two-unpaired-revisions line stated as a retraction with its reason, and never a denial.** [18]
 
+
 - `test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above. [15]

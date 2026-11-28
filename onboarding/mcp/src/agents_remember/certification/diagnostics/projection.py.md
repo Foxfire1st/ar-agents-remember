@@ -46,7 +46,9 @@ No Domain Documentation source is configured for this memory root. CCR-R13@v2 (f
 - Reads the durable per-candidate manifest and newest terminal through the isolated store. [2]
 - Closed immutable base for registry, plan, and result records. [3]
 - Return a stable SHA-256 digest for one JSON-compatible contract value. [4]
+
 - R09 closeout readiness keeps diagnostics explicitly non-certifying through this projection. [5]
+
 - The facade re-exports lane projection helpers for closeout consumers. [6]
 
 ### Cross-Repo References

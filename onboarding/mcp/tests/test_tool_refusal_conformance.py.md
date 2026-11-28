@@ -305,7 +305,9 @@ No repository or external-system boundary is proved by this module.
 
 
 
+
 - The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes. [14]
+
 
 
 

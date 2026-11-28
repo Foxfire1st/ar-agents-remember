@@ -43,9 +43,13 @@ No Domain Documentation source is configured for this memory root. The CCR-R13@v
 
 ### Repo-Internal References
 
+
 - The shared certification plan compiler builds the altitude plan. [2]
+
 - Registry validation gates admission before any plan is compiled. [3]
+
 - The run controller consumes the compiled plan to build its run spec and plan record. [4]
+
 - The diagnostics package imports these three planning helpers. [5]
 - The diagnostics package lists these planning helpers in its public exports. [6]
 - The outer certification facade re-exports these planning helpers. [7]

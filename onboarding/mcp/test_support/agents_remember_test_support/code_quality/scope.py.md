@@ -39,16 +39,16 @@ Module-level surface:
 - `pytest_testpaths` (function, lines 180-189) — Where the suite lives, read from pytest's own declaration.
 - `file_size_armed` (function, lines 192-208) — Whether the wrapper's file-size rail fails the run on a violation.
 - `validate_quality_config` (function, lines 211-261) — Refuse missing or inert configuration used by an ordinary wrapper run.
-- `validate_pyright_venv` (function, lines 264-284) — Reject a declared virtual environment that cannot resolve in this checkout.
-- `path_is_within` (function, lines 287-294)
-- `derive_scope_roots` (function, lines 297-312) — Roots where an untracked sibling is relevant to an existing quality rail.
-- `python_files_under` (function, lines 315-324) — Python files currently present below configured roots, including untracked ones.
-- `parse_oxlint_result_files` (function, lines 327-366) — Parse oxlint JSON output into distinct files with findings.
-- `oxlint_result_files` (function, lines 369-390) — The distinct files with findings reported by the dashboard's installed oxlint.
-- `config_string_array` (function, lines 393-404)
-- `dashboard_build_inputs` (function, lines 407-423)
-- `coverage_json_file_count` (function, lines 426-434)
-- `derive_scope` (function, lines 437-460) — Derive authority-aware rail inputs and report-only untracked exposure.
+- `validate_pyrefly_interpreter` (function, lines 264-286) — Reject a declared Python interpreter path that cannot resolve in this checkout.
+- `path_is_within` (function, lines 288-295)
+- `derive_scope_roots` (function, lines 298-313) — Roots where an untracked sibling is relevant to an existing quality rail.
+- `python_files_under` (function, lines 316-325) — Python files currently present below configured roots, including untracked ones.
+- `parse_oxlint_result_files` (function, lines 328-367) — Parse oxlint JSON output into distinct files with findings.
+- `oxlint_result_files` (function, lines 370-391) — The distinct files with findings reported by the dashboard's installed oxlint.
+- `config_string_array` (function, lines 394-405)
+- `dashboard_build_inputs` (function, lines 408-424)
+- `coverage_json_file_count` (function, lines 427-435)
+- `derive_scope` (function, lines 438-461) — Derive authority-aware rail inputs and report-only untracked exposure.
 
 ### Conventions
 
@@ -91,12 +91,13 @@ This module defines the top-level symbols cited below; each row points at the ex
 - Defines the function `read_pyproject` (lines 169-177). [9]
 - Defines the function `pytest_testpaths` (lines 180-189) — Where the suite lives, read from pytest's own declaration. [10]
 - Defines the function `validate_quality_config` (lines 211-261) — Refuse missing or inert configuration used by an ordinary wrapper run. [11]
-- Defines the function `validate_pyright_venv` (lines 264-284) — Reject a declared virtual environment that cannot resolve in this checkout. [12]
-- Defines the function `path_is_within` (lines 287-294). [13]
-- Defines the function `derive_scope_roots` (lines 297-312) — Roots where an untracked sibling is relevant to an existing quality rail. [14]
-- Defines the function `python_files_under` (lines 315-324) — Python files currently present below configured roots, including untracked ones. [15]
-- Defines the functions `parse_oxlint_result_files` (lines 327-366) and `oxlint_result_files` (lines 369-390) — parse oxlint JSON output and return distinct files with findings from the dashboard's installed oxlint. [16]
-- Defines the function `config_string_array` (lines 393-404). [17]
-- Defines the function `dashboard_build_inputs` (lines 407-423). [18]
-- Defines the function `coverage_json_file_count` (lines 426-434). [19]
-- Defines the function `derive_scope` (lines 437-460) — Derive authority-aware rail inputs and report-only untracked exposure. [20]
+- Defines the function `validate_pyrefly_interpreter` (lines 264-286) — Reject a declared Python interpreter path that cannot resolve in this checkout. [12]
+
+- Defines the function `path_is_within` (lines 288-295). [13]
+- Defines the function `derive_scope_roots` (lines 298-313) — Roots where an untracked sibling is relevant to an existing quality rail. [14]
+- Defines the function `python_files_under` (lines 316-325) — Python files currently present below configured roots, including untracked ones. [15]
+- Defines the functions `parse_oxlint_result_files` (lines 328-367) and `oxlint_result_files` (lines 370-391) — parse oxlint JSON output and return distinct files with findings from the dashboard's installed oxlint. [16]
+- Defines the function `config_string_array` (lines 394-405). [17]
+- Defines the function `dashboard_build_inputs` (lines 408-424). [18]
+- Defines the function `coverage_json_file_count` (lines 427-435). [19]
+- Defines the function `derive_scope` (lines 438-461) — Derive authority-aware rail inputs and report-only untracked exposure. [20]

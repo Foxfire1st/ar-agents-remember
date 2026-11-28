@@ -31,11 +31,16 @@ Abandon now has explicit stage-transaction witnesses: terminal-contract write fa
 
 
 
+
 - No-remains abandon and cleanup with persisted reason are pinned. [1]
 
 
 
+
+
 - Folder-only abandon and conditional cleanup branches preserve distinct no-remains discriminators. [2]
+
+
 
 
 

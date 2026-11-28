@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across root pyproject.toml and mcp/pyproject.toml, proved by PyreflyScopeConfigurationTests, and prevents reintroducing Pyright config or package drift that would split editor and hook type checking."
+  },
+  "applicability": "Repository-wide Python static type checking configured in root pyproject.toml and installed from mcp/pyproject.toml.",
+  "conditions": [
+    "Root pyproject.toml configures [tool.pyrefly] as the sole Python type-checker section.",
+    "The mcp/pyproject.toml dev extra resolves pyrefly>=1.5.0,<2 and omits pyright."
+  ],
+  "exclusions": [
+    "Legacy # pyright: ignore comments kept compatible via enabled-ignores rather than requiring bulk rewrites."
+  ],
+  "id": "INV-Y212FN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261125-DEP-L8-worker-31647c6e-5a21-40e6-abb0-0738908e3e8e.md#evidence-1-configuration-mapping"
+      ],
+      "path": "261125-DEP-L8-curator-ingest"
+    },
+    "handoffEntry": "DEP-R08@v1 §1",
+    "leaf": "261125-DEP-L8",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Pyrefly configured in pyproject.toml under [tool.pyrefly] replaces [tool.pyright] across the whole tracked Python tree including .dagger/, with search-path, python-version 3.14, enabled-ignores [type, pyrefly, pyright], infer-with-first-use = false, check-unannotated-defs = false, infer-return-types = annotated, and unbound-name kept enabled.",
+  "supersedes": [],
+  "title": "Root [tool.pyrefly] and dev extra replace Pyright across tracked Python",
+  "writer": {
+    "at": "2026-11-28T03:29:43+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L8",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
+  }
+}

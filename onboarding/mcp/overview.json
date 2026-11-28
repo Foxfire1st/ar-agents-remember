@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "blob": "2d718557700dd292314a87ca2a53e39191504035",
             "content": "sha256:64f927a98d9a1e5fa4b6fb3e19ae42bf1de7b3557b2c9d966d0c341db1c3f764",
             "locator": {
               "end": 33,
@@ -787,7 +787,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 27,
@@ -1717,7 +1717,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -1746,12 +1746,12 @@
       ]
     },
     "228": {
-      "note": "The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits.\n\nAnchor: `load_paseo_runtime_settings`",
+      "note": "The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
-            "content": "sha256:5d97a90d562382aed414af33d2b2bc9e0029f14ef4e61936151fe44cf5377f01",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
+            "content": "sha256:a0b464f535dbf5274a2a4db5b0102c5e84313fbcd864123bc7813c3e42c20f30",
             "locator": {
               "end": 105,
               "kind": "line_range",
@@ -1763,7 +1763,7 @@
         },
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
             "content": "sha256:b9bd3f96c119c7ac88191d12c2eacb335297ca860b069ff5f543025127aee33f",
             "locator": {
               "end": 14,
@@ -1895,7 +1895,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0e0b4b6e064eb8ae0c96bf4079901a625a992c5",
+            "blob": "da72d972a5133f9cc18fdfb45af14c4745dfd0ae",
             "content": "sha256:bb38938879adc20eb80af2bc13efac5867307f2e3fd8ca1620a810afa0a9a9fa",
             "locator": {
               "end": 67,
@@ -1913,7 +1913,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0e0b4b6e064eb8ae0c96bf4079901a625a992c5",
+            "blob": "da72d972a5133f9cc18fdfb45af14c4745dfd0ae",
             "content": "sha256:ff5ff06e4da0a93623cc17e9987c29106b51b900427fb27708805149b5663f29",
             "locator": {
               "kind": "symbol",
@@ -1930,7 +1930,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0e0b4b6e064eb8ae0c96bf4079901a625a992c5",
+            "blob": "da72d972a5133f9cc18fdfb45af14c4745dfd0ae",
             "content": "sha256:b8566ffeec8caaa0c6f6c8161b39cab293f8bb0aac86afa902ad17e3ed4d3bb0",
             "locator": {
               "kind": "symbol",
@@ -1947,7 +1947,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
               "end": 109,
@@ -1965,7 +1965,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:3a31c5b3a4bed1879a357ff6dcaef0c098db99e1e1f85d6e23fd0b745fa6ed1d",
             "locator": {
               "kind": "symbol",
@@ -2154,12 +2154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
-              "end": 500,
+              "end": 501,
               "kind": "line_range",
-              "start": 469
+              "start": 470
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -2653,12 +2653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 339
+              "start": 370
             },
             "path": "pyproject.toml"
           },
@@ -2758,7 +2758,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "blob": "73b5abe6bc826ea186befe492b6f6bddbf0e6fce",
             "content": "sha256:bc94153dc45ded3d55492c1ee3f241b5b7e8d7b3b040200079337486a47cc163",
             "locator": {
               "end": 35,
@@ -3082,7 +3082,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:33f1d32477b37638c86ec184e8c16b16d0a5476d58ae37993cd8a98b469d5a69",
             "locator": {
               "end": 109,
@@ -3143,12 +3143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
             "locator": {
-              "end": 285,
+              "end": 316,
               "kind": "line_range",
-              "start": 284
+              "start": 315
             },
             "path": "pyproject.toml"
           },
@@ -3179,12 +3179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+            "blob": "82faa7f83cb35b8694e45182dea12a5c769be7ce",
             "content": "sha256:8961406f582bcc4c910ba0c9ccbfd4094470a1c083a678985056bebdc57f489b",
             "locator": {
-              "end": 281,
+              "end": 285,
               "kind": "line_range",
-              "start": 263
+              "start": 267
             },
             "path": "mcp/src/agents_remember/cli/paseo_status.py"
           },
@@ -3578,12 +3578,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 326
+              "start": 357
             },
             "path": "pyproject.toml"
           },
@@ -3831,7 +3831,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
             "locator": {
               "kind": "symbol",
@@ -4259,7 +4259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -4596,7 +4596,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "blob": "ea8c1fca374aaf29d5335c8ed2c8495ccb953aa7",
             "content": "sha256:5f7c9d17adadfe666d3d58a2b7e94135b19d134901b48e1439ab5efbc18f77a1",
             "locator": {
               "end": 15,
@@ -4709,7 +4709,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
               "kind": "symbol",
@@ -5330,7 +5330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37dda3efa0d95d7b81e01e06fb17ed905450d688",
+            "blob": "0b490e5ae00133544facb7653602283095f5dd67",
             "content": "sha256:f6f4c7822e06f0eb404336132bfe1c65ebb76f7b70b09a5f1d9204afdf07186e",
             "locator": {
               "end": 388,
@@ -5742,7 +5742,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:b7f259556f2f2ba66534208b375ff8221789a4d9c8ee4dc6182c05df8fde1c71",
             "locator": {
               "kind": "symbol",
@@ -6005,8 +6005,8 @@
         },
         {
           "anchor": {
-            "blob": "ff25043571dfc07b555aa9f3e71e4e69a4be4929",
-            "content": "sha256:bf13cbfc9111c832f816bc7cb8bae452b7feb7869c0ccab8182f5e637a1577ca",
+            "blob": "046ab31514ee6d9091e51253a212e0b709388b7c",
+            "content": "sha256:a5c2119a9061d3e157d3efe47a843944c6f3f7ce1b10692eb83be5851c1aca31",
             "locator": {
               "kind": "file"
             },
@@ -6091,7 +6091,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "blob": "bbb1a4961a2a8061215547e5911b36278115ab75",
             "content": "sha256:9fab263729d6a821fd2a2abc36eb155b36b1c3a1dd2be7b047d9f901b65f8ae6",
             "locator": {
               "end": 113,
@@ -6104,7 +6104,7 @@
         },
         {
           "anchor": {
-            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "blob": "bbb1a4961a2a8061215547e5911b36278115ab75",
             "content": "sha256:eef13987a34229cd649ed3696f96e29fac806a2224f5b4e826951aa8a4314f2b",
             "locator": {
               "end": 244,
@@ -6117,7 +6117,7 @@
         },
         {
           "anchor": {
-            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "blob": "bbb1a4961a2a8061215547e5911b36278115ab75",
             "content": "sha256:0e914c4a4201a736995ead4f69844f263ebd65ab903cd81574d71f63a6a2364b",
             "locator": {
               "end": 538,
@@ -6220,8 +6220,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
               "kind": "file"
             },
@@ -6551,7 +6551,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",

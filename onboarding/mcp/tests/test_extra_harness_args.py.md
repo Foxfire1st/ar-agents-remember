@@ -16,4 +16,5 @@ The cases cover the settings family's three places and their layering, the shape
 
 ## Evidence
 
+
 - Settings-role launch resolution is exercised through the catalog owner; the explainer-host tests permit launch despite host extra arguments and an unreadable daemon configuration. [1]

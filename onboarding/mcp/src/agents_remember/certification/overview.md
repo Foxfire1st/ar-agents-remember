@@ -128,17 +128,23 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Retained reference account (no fresh execution or acceptance inferred): The production seam resolves the exact profile, binds memory rails and persists admission. [6]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): Persist complete actual terminal catalogs, including red and interrupted gates. [9]
+
 
 - Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report. [11]
 
 - Explicit not-applicable repository gates contribute bounded applicability authority; applicable rail contracts are preserved. [12]
 
+
 - R11/R22 admission compares repository, candidate, selection, and applicable rail contracts, with separate not-applicable alignment. [13]
+
 
 - Original authority and provenance are retained and digest-verified together. [14]
 
+
 - Complete supplied red/interrupted results retain publication; only eligible green results issue certificates. [17]
+
 
 - Every nested evidence/artifact binding is checked against the accepted publication; selected certificate generations are protected. [18]
 

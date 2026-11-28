@@ -26,20 +26,20 @@
     "leaf": "261112-BUG-L29",
     "task": "261112-BUG"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The repository hook dispatches all tracked Python files in one 256 KiB GNU xargs batch on Linux, emits hook-tier scope banners in one Python invocation with lazy python_files_under, runs Python and Dashboard rails concurrently with fixed Python-then-Dashboard output order, runs cache-free oxlint linting and caches incremental tsc -b outputs (*.tsbuildinfo) in gitignored files invisible to closeout, and silences pyright-python wrapper update notices without altering any tier verdict.",
+  "statement": "The repository hook dispatches all tracked Python files in one 256 KiB GNU xargs batch on Linux, emits hook-tier scope banners in one Python invocation with lazy python_files_under, runs Python and Dashboard rails concurrently with fixed Python-then-Dashboard output order, runs cache-free oxlint linting and caches incremental tsc -b outputs (*.tsbuildinfo) in gitignored files invisible to closeout, and invokes Pyrefly with --min-severity error --force-exclude --python-interpreter-path without altering any tier verdict.",
   "supersedes": [],
   "title": "Hook tiers run their checks once, concurrently and from caches",
   "writer": {
-    "at": "2026-11-26T08:53:12+01:00",
+    "at": "2026-11-28T03:29:43+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L6",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
     "task": "261125-DEP"
   }
 }

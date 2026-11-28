@@ -68,4 +68,5 @@ No separate repository evidence is needed; the module reports adjacent repo fact
 
 No static cross-repo references are required.
 
+
 - `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. [1]

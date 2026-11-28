@@ -73,29 +73,45 @@ No configured live documentation source was available for this pass.
 
 - The module statement: real Git code, a converted memory tree, raw-Git edits. [1]
 
+
 - The fixture world, with a fresh private cache by default. [2]
+
+
 - The packet's conforming example. [3]
+
 
 - Stale reasons. [4]
 
+
 - Unverifiable reasons and the N1 order. [5]
+
 
 
 
 - An injected Git timeout reports the entry as unverifiable. The next read observes the real tree and finds the edit stale. [6]
 
 
+
 - A missing recorded line-range blob. [7]
+
 - Precedence and `unrealized`. [8]
 
+
 - Stale proofs. [9]
+
 
 - Per side. [10]
 - The cache key. [11]
 
+
 - `knowledge_read` with a named tree. [12]
+
+
 - `knowledge_read` without `codeTreeId` pairs a resolved code root and stays unverifiable when no root resolves. [13]
+
+
 - The published-intent block. [14]
+
 
 
 

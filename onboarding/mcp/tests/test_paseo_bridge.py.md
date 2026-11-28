@@ -48,9 +48,13 @@ The catalog cases distinguish successful empty listings from unanswered parts. M
 
 ## Evidence
 
+
 - The wrapper's process boundary: unconfigured refusal, the configured runtime as the only target, named failures, undecodable output and an unterminated call. The scoped current source carries the module/document behavior described above. [1]
 
+
+
 - Process-level refuse-before-spawn and single-target behaviour of `bridge_call`. [2]
+
 
 
 

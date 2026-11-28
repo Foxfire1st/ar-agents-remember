@@ -378,12 +378,12 @@
       ]
     },
     "23": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The strict lookup and the decision answer.\n\nAnchor: `strict_leaf_doc` `leaf_decision_refusal`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The strict lookup and the decision answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
               "kind": "file"
             },
@@ -460,12 +460,12 @@
       ]
     },
     "27": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included.\n\nAnchor: `strict_leaf_doc`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included.",
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
               "kind": "file"
             },
@@ -720,14 +720,15 @@
       ]
     },
     "37": {
-      "note": "Strict lookup retains claimant/nonplain identities or all observations for no claimant\n\nAnchor: `strict_leaf_doc`",
+      "note": "Strict lookup retains claimant/nonplain identities or all observations for no claimant",
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:4d050d5cc7c3f6e452dca86a37f05c4b68e9f8761eb62d3ee820751fb86adae7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "strict_leaf_doc"
             },
             "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
           },
@@ -735,11 +736,10 @@
         },
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
-              "kind": "symbol",
-              "name": "strict_leaf_doc"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
           },
@@ -1022,12 +1022,12 @@
       ]
     },
     "48": {
-      "note": "Shared reopen reset owns typed cleanup and frozen-landing removal\n\nAnchor: `_reopened_contract`, `_clear_frozen_landing`",
+      "note": "Shared reopen reset owns typed cleanup and frozen-landing removal",
       "targets": [
         {
           "anchor": {
-            "blob": "f6b9454f93495b54295a0c28dd720a720c26ca68",
-            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "blob": "75d1f8d719c6f7a02f2a8a74a57a3928c6ec9a96",
+            "content": "sha256:55136d781a27137066a1de3d27c777c1e6e6b814a2f3530c1f6833c4262f1e34",
             "locator": {
               "kind": "symbol",
               "name": "_reopened_contract"
@@ -1038,7 +1038,7 @@
         },
         {
           "anchor": {
-            "blob": "f6b9454f93495b54295a0c28dd720a720c26ca68",
+            "blob": "75d1f8d719c6f7a02f2a8a74a57a3928c6ec9a96",
             "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
             "locator": {
               "kind": "symbol",
@@ -1455,12 +1455,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
             "locator": {
-              "end": 890,
+              "end": 891,
               "kind": "line_range",
-              "start": 838
+              "start": 839
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -1468,7 +1468,7 @@
         },
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
             "locator": {
               "kind": "symbol",

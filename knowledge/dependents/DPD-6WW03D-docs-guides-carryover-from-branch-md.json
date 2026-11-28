@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "734d60083fe2bc9c7fec9830d3cc5a61b8a5c36c",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "Audited docs/guides/carryover-from-branch.md against 261125-DEP-L3 tree 734d6008 (DEP-R03@v2 mcp 2.x migration): documented behavior, tool surfaces, and runtime instructions remain accurate with zero contradictions.",
-    "task": "261125-DEP-L3",
+    "statement": "Audited docs/guides/carryover-from-branch.md at post-sync code tree 0b0419690d12: touched stands_on file (memory/carryover.py) received only a behavior-preserving dict[str, Any] annotation for Pyrefly 1.5.0; carryover workflow and trailers remain accurate.",
+    "task": "261125-DEP-L8",
     "uncommitted": true
   },
   "document": "docs/guides/carryover-from-branch.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+      "blob": "56fef293d71aba0615280a4296032a8886a9a340",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/carryover.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:55:24+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L3",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "5046aef4-7521-5f01-9abd-c417ecaf510e",
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
     "task": "261125-DEP"
   }
 }

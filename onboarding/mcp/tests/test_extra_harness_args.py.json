@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
+        "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
         "content": "sha256:38f2ce09980d2bdcb72cf8ff0077c0ad54ce002b37737d442b066bbd652d099b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
+        "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
+        "content": "sha256:6c01b6ae57a63ecc2c960b85c9fedaedef0e7ab68a8b5499551c637b2316939e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_start_call_cannot_carry_extra_arguments"
+        }
+      },
+      "facet": "Exercises the intentional extraArgs ValidationError call carrying the second pinpoint # pyrefly: ignore[unexpected-keyword] annotation.",
+      "id": "PRF-ENJC57",
+      "invariant": "INV-R3NNHK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §2",
+        "leaf": "261125-DEP-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
         "content": "sha256:3c0cafc95d33695950507e9c77c9cedacdb8eeab205793afa21a0d533d34a617",
         "locator": {
           "kind": "symbol",
@@ -39,8 +56,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
-        "content": "sha256:6642bce7b289cfa4034824c98bb797b6cada89e7c9deda2098eb1598014dddf3",
+        "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
+        "content": "sha256:f0c8aab4b534d2eb9521561f1aac403d7896e52856b3e4b12a01f74d93e69694",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +73,27 @@
     },
     {
       "anchor": {
-        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
-        "content": "sha256:6642bce7b289cfa4034824c98bb797b6cada89e7c9deda2098eb1598014dddf3",
+        "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
+        "content": "sha256:5dd9bc6ff70edc70b115fb8ffa03c18ba5ccf4b90bb23611a9c162a48d3d1e56",
+        "locator": {
+          "end": 742,
+          "kind": "line_range",
+          "start": 739
+        }
+      },
+      "id": "RLZ-RW5J7R",
+      "invariant": "INV-R3NNHK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §2",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Holds the second Architect-approved pinpoint inline # pyrefly: ignore[unexpected-keyword] annotation for an intentional ValidationError extraArgs test.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
+        "content": "sha256:f0c8aab4b534d2eb9521561f1aac403d7896e52856b3e4b12a01f74d93e69694",
         "locator": {
           "kind": "file"
         }
@@ -91,8 +127,8 @@
         },
         {
           "anchor": {
-            "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
-            "content": "sha256:6642bce7b289cfa4034824c98bb797b6cada89e7c9deda2098eb1598014dddf3",
+            "blob": "c013df7391227e16cb974c86a5f3bace6535cfbd",
+            "content": "sha256:f0c8aab4b534d2eb9521561f1aac403d7896e52856b3e4b12a01f74d93e69694",
             "locator": {
               "kind": "file"
             }

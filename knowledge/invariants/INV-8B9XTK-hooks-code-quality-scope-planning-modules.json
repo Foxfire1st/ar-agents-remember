@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across .githooks/_gate.sh, scope.py, quality_plan.py, mcp/certification-profile-v1.json, and scenarios.py, proved by the hook and scope tests, and prevents route drift where a hook or rail still invokes removed Pyright."
+  },
+  "applicability": "Local Git hooks, Python quality wrapper planning and scope validation, certification Gate-1 typecheck rail, and replay scenario r17-scenario-04.",
+  "conditions": [
+    "Hooks and quality_plan invoke Pyrefly with --min-severity error --force-exclude --python-interpreter-path.",
+    "Gate-1 certification profile and replay scenario r17-scenario-04 identify the rail neutrally as python-typecheck."
+  ],
+  "exclusions": [
+    "Historical task reports and historical onboarding accounts documenting prior Pyright runs."
+  ],
+  "id": "INV-8B9XTK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261125-DEP-L8-worker-31647c6e-5a21-40e6-abb0-0738908e3e8e.md#evidence-4-switched-places-and-dependency-removal"
+      ],
+      "path": "261125-DEP-L8-curator-ingest"
+    },
+    "handoffEntry": "DEP-R08@v1 §3",
+    "leaf": "261125-DEP-L8",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Hooks, code-quality scope/planning modules, certification profile rail python-typecheck, replay scenario r17-scenario-04, tests, and contributor documentation execute and document Pyrefly instead of Pyright.",
+  "supersedes": [],
+  "title": "Hooks, quality wrapper, and python-typecheck rail execute Pyrefly",
+  "writer": {
+    "at": "2026-11-28T03:29:43+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L8",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
+  }
+}

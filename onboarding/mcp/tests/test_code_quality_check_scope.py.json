@@ -3,56 +3,90 @@
   "proves": [
     {
       "anchor": {
-        "blob": "632f4359ec765d7032dd567add925975d8e648a0",
-        "content": "sha256:dbb4df9aead0ea397c9b0d365e8810ba1a908614408e6e5db23901918cedfaab",
+        "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+        "content": "sha256:b2efcc44ad2697a1ac7fb783daba8228936a68e08e8505166fc093f8b607b719",
         "locator": {
           "kind": "symbol",
-          "name": "PyrightScopeConfigurationTests.test_repo_pyright_config_excludes_nested_environments_and_keeps_tracked_python"
+          "name": "PyreflyScopeConfigurationTests.test_pyrefly_cli_file_list_and_force_exclude_match_project_scope"
         }
       },
-      "facet": "Validates root pyproject.toml via validate_quality_config, verifies include is [\".\"] and all eleven **/ exclude entries without blanket dot-folder patterns, and confirms zero tracked Python files including .dagger/ match any exclude entry.",
-      "id": "PRF-519FMY",
-      "invariant": "INV-EQMWCB",
+      "facet": "Runs real Pyrefly against temporary checkouts to prove explicit CLI file lists check listed paths, --force-exclude drops excluded nested environments, tracked paths including .dagger/ remain checked, and bare runs match the explicit scope.",
+      "id": "PRF-1NNXCR",
+      "invariant": "INV-45HR10",
       "origin": {
-        "handoffEntry": "BUG-R49@v1 §1",
-        "leaf": "261112-BUG-L49"
+        "handoffEntry": "DEP-R08-update-INV-45HR10",
+        "leaf": "261125-DEP-L8"
       }
     },
     {
       "anchor": {
-        "blob": "632f4359ec765d7032dd567add925975d8e648a0",
-        "content": "sha256:9b9d6a6416b44d32ae909cf7c2904bb36e86fcd9823862aa8eddd72d3b1ce1e3",
+        "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+        "content": "sha256:baf9652cd89105d436f3196b8e2d5766fdcfbcb37dd4e0b769f6c5681fe83c60",
         "locator": {
           "kind": "symbol",
-          "name": "PyrightScopeConfigurationTests.test_pyright_cli_file_list_replaces_include_and_exclude_filters_listed_files"
+          "name": "PyreflyScopeConfigurationTests.test_repo_pyrefly_config_excludes_nested_environments_and_keeps_tracked_python"
         }
       },
-      "facet": "Runs real Pyright against temporary checkouts to prove a CLI file list replaces include, exclude filters explicitly listed files to zero analyzed, non-dot tracked paths stay checked under Pyright 1.1.414+, bare runs skip nested environments, and explicit file-list diagnostics match the legacy exclude list.",
-      "id": "PRF-9X97F5",
-      "invariant": "INV-45HR10",
+      "facet": "Validates root pyproject.toml via validate_quality_config, verifies project-includes = [\".\", \".dagger\"], disable-project-excludes-heuristics = true, and all twelve **/ project-excludes patterns without blanket dot-folder patterns, and confirms zero tracked Python files including .dagger/ match any exclude entry.",
+      "id": "PRF-2Y3K4G",
+      "invariant": "INV-EQMWCB",
       "origin": {
-        "handoffEntry": "BUG-R49@v1 §2",
-        "leaf": "261112-BUG-L49"
+        "handoffEntry": "DEP-R08-update-INV-EQMWCB",
+        "leaf": "261125-DEP-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+        "content": "sha256:baf9652cd89105d436f3196b8e2d5766fdcfbcb37dd4e0b769f6c5681fe83c60",
+        "locator": {
+          "kind": "symbol",
+          "name": "PyreflyScopeConfigurationTests.test_repo_pyrefly_config_excludes_nested_environments_and_keeps_tracked_python"
+        }
+      },
+      "facet": "Validates root [tool.pyrefly] via validate_quality_config and verifies project-includes includes .dagger with disable-project-excludes-heuristics enabled and disjoint project-excludes.",
+      "id": "PRF-752FMP",
+      "invariant": "INV-Y212FN",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §1",
+        "leaf": "261125-DEP-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+        "content": "sha256:b2efcc44ad2697a1ac7fb783daba8228936a68e08e8505166fc093f8b607b719",
+        "locator": {
+          "kind": "symbol",
+          "name": "PyreflyScopeConfigurationTests.test_pyrefly_cli_file_list_and_force_exclude_match_project_scope"
+        }
+      },
+      "facet": "Proves explicit Pyrefly CLI file lists with --force-exclude drop excluded paths and check tracked paths including .dagger/.",
+      "id": "PRF-HSBG6G",
+      "invariant": "INV-8B9XTK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §3",
+        "leaf": "261125-DEP-L8"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "632f4359ec765d7032dd567add925975d8e648a0",
-        "content": "sha256:9b9d6a6416b44d32ae909cf7c2904bb36e86fcd9823862aa8eddd72d3b1ce1e3",
+        "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+        "content": "sha256:b2efcc44ad2697a1ac7fb783daba8228936a68e08e8505166fc093f8b607b719",
         "locator": {
           "kind": "symbol",
-          "name": "PyrightScopeConfigurationTests.test_pyright_cli_file_list_replaces_include_and_exclude_filters_listed_files"
+          "name": "PyreflyScopeConfigurationTests.test_pyrefly_cli_file_list_and_force_exclude_match_project_scope"
         }
       },
-      "id": "RLZ-GMXJ8J",
+      "id": "RLZ-XTBBQF",
       "invariant": "INV-45HR10",
       "origin": {
-        "handoffEntry": "BUG-R49@v1 §2",
-        "leaf": "261112-BUG-L49"
+        "handoffEntry": "DEP-R08-update-INV-45HR10",
+        "leaf": "261125-DEP-L8"
       },
-      "rationale": "Runs real Pyright (verified on 1.1.414) to prove CLI file lists replace include, exclude filters explicitly listed files (filesAnalyzed=0 on excluded paths), non-dot tracked paths stay checked under the repo's exclude list (accounting for Pyright 1.1.414+ auto-excluding **/.*), and file-list results match the legacy top-level exclude list.",
+      "rationale": "Runs real Pyrefly against temporary checkouts to exercise explicit CLI file lists, --force-exclude filtering of excluded directories, inclusion of tracked paths including .dagger/, and bare-run parity with project-includes = [\".\", \".dagger\"].",
       "role": "support"
     }
   ],
@@ -62,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+            "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
             "content": "sha256:033725524241dd2d0b2d6fb912a7d1f3aebc6f902b253651037fbd5cb9a56d03",
             "locator": {
               "kind": "symbol",
@@ -78,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+            "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
             "content": "sha256:1f61127e91d9b9f1e230472a403143cac2b6a2a62a9a54098b2f64374e3c5cae",
             "locator": {
               "kind": "symbol",
@@ -90,15 +124,15 @@
       ]
     },
     "3": {
-      "note": "Root `[tool.pyright]` validates cleanly, excludes nested environments/caches without blanket dot-folder rules, and matches zero tracked Python files including `.dagger/`.",
+      "note": "Root `[tool.pyrefly]` validates cleanly, excludes nested environments/caches without blanket dot-folder rules, and matches zero tracked Python files including `.dagger/`.",
       "targets": [
         {
           "anchor": {
-            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
-            "content": "sha256:dbb4df9aead0ea397c9b0d365e8810ba1a908614408e6e5db23901918cedfaab",
+            "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+            "content": "sha256:baf9652cd89105d436f3196b8e2d5766fdcfbcb37dd4e0b769f6c5681fe83c60",
             "locator": {
               "kind": "symbol",
-              "name": "test_repo_pyright_config_excludes_nested_environments_and_keeps_tracked_python"
+              "name": "test_repo_pyrefly_config_excludes_nested_environments_and_keeps_tracked_python"
             }
           },
           "kind": "test"
@@ -106,14 +140,15 @@
       ]
     },
     "4": {
-      "note": "Real Pyright runs verify CLI file lists replace `include`, `exclude` still filters listed paths, non-dot tracked paths stay checked under Pyright `1.1.414+`, bare runs skip nested environments, and file-list results match legacy excludes.\n\nAnchor: `PyrightScopeConfigurationTests.test_pyright_cli_file_list_replaces_include_and_exclude_filters_listed_files`",
+      "note": "Real Pyrefly runs verify CLI file lists check listed files outside `project-includes`, `--force-exclude` drops excluded paths while keeping `.dagger/` checked, and bare runs skip nested environments while checking checkout code including `.dagger/`.",
       "targets": [
         {
           "anchor": {
-            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
-            "content": "sha256:d095a072e4507fd53e63ad27b9e2d6554d98e3370300d601916054ebb82b905d",
+            "blob": "cfbf36d75f6c7a20d893b619f2dae5eab1d8b286",
+            "content": "sha256:b2efcc44ad2697a1ac7fb783daba8228936a68e08e8505166fc093f8b607b719",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_pyrefly_cli_file_list_and_force_exclude_match_project_scope"
             }
           },
           "kind": "test"

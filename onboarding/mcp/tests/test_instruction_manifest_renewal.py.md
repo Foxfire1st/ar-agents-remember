@@ -20,5 +20,7 @@ The renewal manifest planner produces metadata and the model helper composes it 
 
 ### Repo-Internal References (renewed)
 
+
 - Cases separate derivable steps, authored role reasons and no-step decisions, including stale stored derived state. [1]
+
 - Public command cases exercise authored reference changes, no-write checking, renewal and a subsequent clean check. [2]

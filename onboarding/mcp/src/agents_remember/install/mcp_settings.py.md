@@ -26,4 +26,5 @@ Copies the workspace's old MCP settings file (`.claude/mcp/agents-remember-setti
 - The user MCP settings file sits beside the user role settings. [5]
 
 
+
 - The install result carries the copy report. [6]

@@ -30,7 +30,9 @@ state allocation, and a reasoned marker is an explicit exception rather than a r
 The tests inject scanner examples and prove that an unreached shared wait names its condition.
 
 
+
 - Timing violations are path-line-rule findings from the bounded AST scanner. [1]
+
 - The state guard compares syntactically found owners with the closed register in both directions. [2]
 - Real comments exempt explained patterns while string literals do not. [3]
 - Shared waits report the unreached sync or async condition. [4]

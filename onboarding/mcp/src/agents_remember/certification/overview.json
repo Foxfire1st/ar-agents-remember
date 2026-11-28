@@ -164,12 +164,12 @@
       ]
     },
     "13": {
-      "note": "R11/R22 admission compares repository, candidate, selection, and applicable rail contracts, with separate not-applicable alignment.\n\nAnchor: Admission alignment",
+      "note": "R11/R22 admission compares repository, candidate, selection, and applicable rail contracts, with separate not-applicable alignment.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
-            "content": "sha256:d25ef6945fd4ee8f3f5d596b3e8b057bc7aa4fb0bfd684cd290e9b12ff324e2f",
+            "blob": "a33b942b7601c84ab3429332d56c426752561d5d",
+            "content": "sha256:0a71a35c68b367d53e0adcaf464fa20fad7c161fe5f83bf79e0a31a44b684440",
             "locator": {
               "end": 176,
               "kind": "line_range",
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "blob": "bd59ea57a1c3edf04805c972608e134c99d7863b",
             "content": "sha256:f65f6f79eb612270016b133d1fba681ab7891f9c37f7e36b4def3c3cbf559ba8",
             "locator": {
               "end": 223,
@@ -216,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "blob": "bd59ea57a1c3edf04805c972608e134c99d7863b",
             "content": "sha256:fdc2716c3dd976a91febbe9e61bd0e3925316d6c333373693b23c400f5d16ad1",
             "locator": {
               "end": 494,
@@ -300,12 +300,12 @@
       ]
     },
     "17": {
-      "note": "Complete supplied red/interrupted results retain publication; only eligible green results issue certificates.\n\nAnchor: Terminal publication",
+      "note": "Complete supplied red/interrupted results retain publication; only eligible green results issue certificates.",
       "targets": [
         {
           "anchor": {
-            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
-            "content": "sha256:61d185559a7c017e4ed05837d1cce8b58f2f2269d5b5aa3e86f866b1cc791f01",
+            "blob": "bd59ea57a1c3edf04805c972608e134c99d7863b",
+            "content": "sha256:8b548095b0827a30cf17a9a09017940cec44ea249d1051e8292e83024b2738f9",
             "locator": {
               "end": 309,
               "kind": "line_range",
@@ -317,7 +317,7 @@
         },
         {
           "anchor": {
-            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "blob": "bd59ea57a1c3edf04805c972608e134c99d7863b",
             "content": "sha256:58febc099ca943c9887cc111d876d7443ae8086e414bb835453a63089cedab75",
             "locator": {
               "end": 472,
@@ -415,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "blob": "3c4821576a911e4eb0b0e6f6c1a09a21b99a5fb9",
             "content": "sha256:5eb38e833a84d84810afbbbc62cb40ecc74b0eca92b798f2a9eb03d91221d55b",
             "locator": {
               "end": 49,
@@ -428,7 +428,7 @@
         },
         {
           "anchor": {
-            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "blob": "3c4821576a911e4eb0b0e6f6c1a09a21b99a5fb9",
             "content": "sha256:587a16b97af08864de49e8abc27e1637485da4eb9c0d57f715a19c3085cb36cf",
             "locator": {
               "end": 288,
@@ -441,7 +441,7 @@
         },
         {
           "anchor": {
-            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "blob": "9e5df1137cddccc036870fccf7c2d77c5b6a8af5",
             "content": "sha256:5eb38e833a84d84810afbbbc62cb40ecc74b0eca92b798f2a9eb03d91221d55b",
             "locator": {
               "end": 58,
@@ -454,7 +454,7 @@
         },
         {
           "anchor": {
-            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "blob": "9e5df1137cddccc036870fccf7c2d77c5b6a8af5",
             "content": "sha256:eddfc6505f577a0b4a1f9293b7ae9746a9dec7c17f9ed25ab2f09a49ee8b055b",
             "locator": {
               "end": 274,
@@ -666,7 +666,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "blob": "bd59ea57a1c3edf04805c972608e134c99d7863b",
             "content": "sha256:cb859fd48864280c74223e23ac394d39c57da76c89bcc26ea0a77b7d41508c95",
             "locator": {
               "end": 200,
@@ -716,12 +716,12 @@
       ]
     },
     "9": {
-      "note": "Persist complete actual terminal catalogs, including red and interrupted gates.\n\nAnchor: \"def record_published_generation\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Persist complete actual terminal catalogs, including red and interrupted gates.",
       "targets": [
         {
           "anchor": {
-            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
-            "content": "sha256:f0485507e7ffac0b9d7e71d65bcd924b5e276c5ded10b2f0e6eca04267785e52",
+            "blob": "bd59ea57a1c3edf04805c972608e134c99d7863b",
+            "content": "sha256:e97717c7a2d2cfeee5bc4a552cbda302ce42a1ba22eba7306aac713c5809a1e1",
             "locator": {
               "end": 276,
               "kind": "line_range",

@@ -234,5 +234,7 @@ The current converted writer checks persisted leaf worklist shape and authored i
 - The writer gives recorded card-comparison inputs to authoring and validates the produced tree against the operation’s bases. The report registry governs writer findings. A file publication refusal preserves question receipts and distinguishes verified restoration from incomplete or unverifiable rollback. [36]
 - The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [44]
 - The writer passes the resolved stamp to virtual authoring before validation and file publication. [45]
+
 - The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [46]
+
 - `write_knowledge` projects persisted `reached_family` member facts via `reached_family_facts(request.worklist)` into `Authoring.reached_family_members`. [48]

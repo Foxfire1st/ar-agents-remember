@@ -48,12 +48,18 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Gate4 manifest. [8]
 - Repetition identity. [9]
 - Fresh identities. [10]
+
 - Plan record. [11]
+
+
 - Attempt record. [12]
+
 - Environment binding. [13]
 - Authority binding. [14]
 - Teardown record. [15]
+
 - Make draft. [16]
+
 - Make store. [17]
 - Publish run. [18]
 - Store codes. [19]

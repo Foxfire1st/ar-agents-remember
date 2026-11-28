@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "272e3745bfeccf7c207da329e8fe9b7ce12bc0a0",
-        "content": "sha256:820797912c2b523cf12bd0ea06bf5e7a04b48ea4fb6fac775ec1e63237d7a34e",
+        "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
+        "content": "sha256:0e0a474707ff9bc748b88407ef7b498e54d413fc3dff4b72f717f5a5785c37da",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+        "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
         "content": "sha256:47ac738df8028f046cfa20dd8506922a485a057f296d766241fe385c865deae1",
         "locator": {
           "end": 7,
@@ -39,7 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+        "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
+        "content": "sha256:87283b16481897aefe62c930a3c0cd406f70000c50756f669ffe4704c8eb8094",
+        "locator": {
+          "end": 42,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-K062EX",
+      "invariant": "INV-Y212FN",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §1",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Declares pyrefly>=1.5.0,<2 in the dev extra and removes pyright>=1.1,<2 so the locked development environment installs Pyrefly instead of Pyright.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
         "content": "sha256:8e2af88b1be99765f0ff3eb6846d3ba1f83c2ebf7c02d7def44d75948c5f3dc3",
         "locator": {
           "end": 42,
@@ -58,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
-        "content": "sha256:a4cb690be93d8f7848bdb7afe25cea36ad241287dbe85e75ccc451a806657fa4",
+        "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
+        "content": "sha256:b4a57e61211f82e5dd53a6361714bfe993f4ae5323150b88505ee4e67f49a9c4",
         "locator": {
           "end": 17,
           "kind": "line_range",
@@ -77,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+        "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
         "content": "sha256:b6a5a41ee2069fb9a09ea3411ab44ddd4ef17e08275624610d5c0b91af0187fb",
         "locator": {
           "end": 29,
@@ -101,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
             "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
             "locator": {
               "kind": "symbol",
@@ -134,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "blob": "81d0835e29e069f9ba1dc94ec0249b30ecee232a",
             "content": "sha256:517c8a6bf9dd9c30609d30101aa553af6e8a792f28a9d1c0a22c4f46ad748b69",
             "locator": {
               "end": 711,
@@ -324,11 +343,11 @@
       ]
     },
     "16": {
-      "note": "Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyright language configuration.",
+      "note": "Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyrefly language configuration.",
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:66849923cf1e429dc9be66b5ca9be29d75ada44505e180a10a193079e3826c7a",
             "locator": {
               "end": 4,
@@ -346,8 +365,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
-            "content": "sha256:2bf54c904d15b087cac566a605a9e29a3765bc298c0ae8b24f3e162665832e2e",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
+            "content": "sha256:095335f60fd1743aab12bdcc60086559bee662894a61e2378b318fdcf6cf5409",
             "locator": {
               "end": 20,
               "kind": "line_range",
@@ -363,7 +382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
               "end": 92,
@@ -406,7 +425,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a48ddb3996b4e145358ffb251fb962f96de18283",
+            "blob": "d72c5cc38b72865655eefe45c72ea38c138e95e5",
             "content": "sha256:219b9779f4b42c41781ef725793b826df29f1d86e8eacc26863afc6142dcdc2c",
             "locator": {
               "end": 8,
@@ -424,12 +443,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:3ba6c4ba535ae9033fbe06949ca6eca5c5c4f4375e101f3172ee3fcaf52092c4",
             "locator": {
-              "end": 170,
+              "end": 201,
               "kind": "line_range",
-              "start": 170
+              "start": 201
             },
             "path": "pyproject.toml"
           },
@@ -437,12 +456,12 @@
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:70525e47cbd9f3178774a1352cbbf683c00a3ee8c8398143faa2d145d5881347",
             "locator": {
-              "end": 192,
+              "end": 223,
               "kind": "line_range",
-              "start": 192
+              "start": 223
             },
             "path": "pyproject.toml"
           },
@@ -450,12 +469,12 @@
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a2c93a423b219d580128cb62d3ea549600b72ae4da1a3a3f6785aed3eb3193fd",
             "locator": {
-              "end": 350,
+              "end": 381,
               "kind": "line_range",
-              "start": 350
+              "start": 381
             },
             "path": "pyproject.toml"
           },
@@ -468,7 +487,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:47ac738df8028f046cfa20dd8506922a485a057f296d766241fe385c865deae1",
             "locator": {
               "end": 7,
@@ -503,7 +522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:a948321f7f37c2a08a071eff2d30d486e49392e5d274a8e7f7335a37a3814214",
             "locator": {
               "end": 30,
@@ -520,7 +539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -537,7 +556,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+            "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -554,7 +573,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a48ddb3996b4e145358ffb251fb962f96de18283",
+            "blob": "d72c5cc38b72865655eefe45c72ea38c138e95e5",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 39,
@@ -567,7 +586,7 @@
         },
         {
           "anchor": {
-            "blob": "a48ddb3996b4e145358ffb251fb962f96de18283",
+            "blob": "d72c5cc38b72865655eefe45c72ea38c138e95e5",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 104,
