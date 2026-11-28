@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "95234971624e9cfbae7d009db14d7e6280a2ddf5",
-    "commit": "9f1b832ca3c8490833c4d15edd46bc5515cbba54",
+    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
+    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
     "role": "curator",
-    "statement": "Verified docs/reference/knowledge-system.md against post-KNO-L10 synced frozen tree 95234971 (base 9f1b832ca): lines 386-394 document all eleven knowledge_read views, text-bearing replies, and auto-pairing; additive KNO-L10 LanguageSet/tags.scm citation engine preserves documented citation rules; narrowed deferral DFR-DE843V (line 31, lines 408-410, 497-502) remains intact.",
-    "task": "261112-KNO-L14",
+    "statement": "Verified docs/reference/knowledge-system.md against frozen L12 tree e222729eff1b: lines 101-112, 470-480, and 518-519 accurately document the 76-language catalog, qualifier policies, guaranteeTier, JS/TS-only test-case modifier boundary (.each/.for line-range vs .skip/.todo/.skipIf/.runIf/.fails refusal), and languages scan/warm CLI; pre-existing out-of-scope deferral DFR-DE843V is re-deferred onto the L12 blob.",
+    "task": "261112-KNO-L12",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/reference/knowledge-system.md",
-        "note": "Update docs/reference/knowledge-system.md line 31 (clause_title ~80 chars) and lines 408-410, 497-502 (post-landing brief refresh and agents-remember memory-briefs CLI)."
+        "note": "Update docs/reference/knowledge-system.md line 31 (clause_title ~80 chars) and lines 419-421, 513-519 (post-landing brief refresh and agents-remember memory-briefs CLI)."
       },
-      "createdAt": "2026-11-27T17:29:51.630838Z",
-      "createdByLeaf": "261112-KNO-L14",
-      "fileBlob": "d008e755892f80eaa227bfb5cbc9c6b11db2c5a6",
-      "id": "DFR-DE843V",
+      "createdAt": "2026-11-28T00:52:25.807902Z",
+      "createdByLeaf": "261112-KNO-L12",
+      "fileBlob": "b081cce19da9ddfb95da3d467f60e65d87da55d1",
+      "id": "DFR-F45H29",
       "owner": "261112-KNO",
-      "passage": "docs/reference/knowledge-system.md line 31 (first six words fallback) and lines 408-410, 497-502 (omitting post-landing brief refresh and agents-remember memory-briefs CLI)",
-      "reason": "Narrowed and re-deferred from DFR-5W723Z onto KNO-L14 frozen blob of docs/reference/knowledge-system.md: KNO-R14@v1 fixed lines 386-394 (eleven knowledge_read views, text-bearing responses, and automatic code-tree pairing), while line 31 and lines 408-410, 497-502 remain untouched."
+      "passage": "docs/reference/knowledge-system.md line 31 (first six words fallback) and lines 419-421, 513-519 (omitting post-landing brief refresh and agents-remember memory-briefs CLI)",
+      "reason": "Re-deferred onto KNO-L12 frozen blob of docs/reference/knowledge-system.md: KNO-R12@v1 updated symbol-anchoring catalog, JS/TS test-case boundary, and languages CLI rows without touching the pre-existing out-of-scope clause_title fallback or memory-briefs CLI passages."
     }
   ],
   "document": "docs/reference/knowledge-system.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -317,8 +317,8 @@
     },
     {
       "anchor": {
-        "blob": "692260d121200b222b91a28b1abcc14e0d292059",
-        "content": "sha256:d5486d690ad3f4c3034b04adc708a15905bb74018ae7ab5abef7f0940ce2af25",
+        "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+        "content": "sha256:b090ce7c43b64597015bf7fb3c810703113e2b8a561999e25b9b3311caaaf628",
         "locator": {
           "kind": "symbol",
           "name": "bindings"
@@ -329,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+        "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -341,7 +341,7 @@
     },
     {
       "anchor": {
-        "blob": "58174e913802679d6f3ee8bfbd3bd2df9fe69c80",
+        "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
         "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
         "locator": {
           "kind": "symbol",
@@ -403,17 +403,22 @@
       "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+    },
+    {
+      "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:56:49+01:00",
+    "at": "2026-11-28T01:52:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
+    "leaf": "261112-KNO-L12",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
     "task": "261112-KNO"
   }
 }

@@ -195,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+            "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
             "content": "sha256:2ae2ae6e9c785c9488a305aa18b2bb1f3d3b9a14eff317d46187f76e5797a5d3",
             "locator": {
               "end": 165,
@@ -208,12 +208,12 @@
         },
         {
           "anchor": {
-            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+            "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
             "content": "sha256:94c7c81c1baee3096c70b650f98c3f3d7832e2230adc4c1014f8aed8cf34399d",
             "locator": {
-              "end": 258,
+              "end": 259,
               "kind": "line_range",
-              "start": 245
+              "start": 246
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -221,12 +221,12 @@
         },
         {
           "anchor": {
-            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+            "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
             "content": "sha256:0a43c8d5259c19788d88e03b08769ef39af3456bb44248728aab0fcd8e3e7dc0",
             "locator": {
-              "end": 256,
+              "end": 257,
               "kind": "line_range",
-              "start": 237
+              "start": 238
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -380,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+            "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
             "content": "sha256:04e6c1cfb80d069095215884792aee4145606659458cd0ac6627d63db7534797",
             "locator": {
-              "end": 254,
+              "end": 255,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },

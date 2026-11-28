@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d008e755892f80eaa227bfb5cbc9c6b11db2c5a6",
-        "content": "sha256:5163abbec8055e48904fdd25db6a85cf58d59632df51075a37dd2addc74c3171",
+        "blob": "b081cce19da9ddfb95da3d467f60e65d87da55d1",
+        "content": "sha256:359e6976e0470b49da8f1bd197a2401f5a8872cf502770395bccf809a606a737",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,23 @@
         "leaf": "261112-KNO-L14"
       },
       "rationale": "Public knowledge-system reference aligned with eleven knowledge_read views and text-bearing records/impact/search in disjoint section lines 386-388 (DPD-TXRND9).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b081cce19da9ddfb95da3d467f60e65d87da55d1",
+        "content": "sha256:359e6976e0470b49da8f1bd197a2401f5a8872cf502770395bccf809a606a737",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TV09XR",
+      "invariant": "INV-0H5MHX",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 4",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Documents the 76-language hash-pinned catalog, per-language qualifier policies, JS/TS test-case policy boundary versus universal definition anchoring, and languages scan/warm CLI commands.",
       "role": "presentation"
     }
   ],

@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across five public documentation files (docs/reference/knowledge-system.md, docs/features.md, docs/reference/settings-json.md, docs/architecture.md, and docs/reference/runtime-layout.md) that jointly specify AR's multi-language anchoring, cache, and configuration contract."
+  },
+  "applicability": "Public documentation pages docs/reference/knowledge-system.md, docs/features.md, docs/reference/settings-json.md, docs/architecture.md, and docs/reference/runtime-layout.md.",
+  "conditions": [
+    "docs/reference/knowledge-system.md and docs/features.md describe the 75-tree-sitter plus built-in Lean catalog, lazy AR_LANGUAGE_CACHE verification, qualifier policies, guaranteeTier, ambiguous suffix defaults, languages scan/warm CLI, and the JS/TS-only test-case modifier boundary (.each/.for line-range vs .skip/.todo/.skipIf/.runIf/.fails refusal).",
+    "docs/reference/settings-json.md documents user and repo languages.json keys (matching language_config._ALLOWED_CUSTOM_KEYS), Bend2 local custom example, local-only security boundary, and .lean reservation.",
+    "docs/architecture.md records lazy AR_LANGUAGE_CACHE grammar unpacking as a read-side persistent write boundary, and docs/reference/runtime-layout.md lists ~/.local/state/agents-remember/grammars among external files."
+  ],
+  "exclusions": [
+    "Pre-existing out-of-scope doc deferrals on docs/features.md (4,000 vs 5,000 token ceiling) and docs/reference/knowledge-system.md (clause_title fallback and memory-briefs CLI) remain tracked on DPD-EG5TYT and DPD-TXRND9."
+  ],
+  "id": "INV-0H5MHX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/python scripts/check-public-docs.py -> 54 documents, 0 findings (clean freeze tree 5da96f042d7c8ef8a3fad843a83038b1fe9aa4ca)"
+      ],
+      "path": "261112-KNO-L12-curator-ingest.json"
+    },
+    "handoffEntry": "KNO-R12@v1 Rule 4",
+    "leaf": "261112-KNO-L12",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Public documentation describes language-agnostic multi-language symbol anchoring, lazy hash-verified AR_LANGUAGE_CACHE auto-detection, languages.json overrides and local-only custom grammar registration, and the boundary between JS/TS test-case modifier policy and universal definition anchoring, passing check-public-docs.py with zero findings.",
+  "supersedes": [],
+  "title": "Public docs describe multi-language anchors, AR_LANGUAGE_CACHE, and overrides",
+  "writer": {
+    "at": "2026-11-28T01:52:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L12",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+    "task": "261112-KNO"
+  }
+}

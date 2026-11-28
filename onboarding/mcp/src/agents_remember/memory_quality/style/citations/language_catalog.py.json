@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+        "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
         "content": "sha256:f9b3d832d15967a409cac347c35c2bd6a59968cd7c13c64bcb7b74e04affc640",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Loads and validates the bundled catalog lock, verifying packaged tags.scm and tests.scm SHA-256 hashes and refusing reserved or ambiguous default suffix claims.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+        "content": "sha256:5a7df6675fcac93531a9917ae2a6f51a6e0d64b2a3da6f1d8a7a51a204aeae46",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_language_catalog"
+        }
+      },
+      "id": "RLZ-KM64XX",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Validates catalog guaranteeTier, leadingWrappers, qualifiers, wheel hashes, and tags.scm SHA-256 digests before any language entry enters use.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
             "content": "sha256:e6c4167c5ad9961978478fdf4551ed5993cde1a1b26a61463b9b220ba788bcbc",
             "locator": {
               "kind": "symbol",
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
             "content": "sha256:a9195d87ef66a874c18d4e90c44eab1e2b61cafa901befe648af851ae27337dd",
             "locator": {
               "kind": "symbol",
@@ -49,12 +67,12 @@
       ]
     },
     "2": {
-      "note": "Immutable catalog records represent `TreeSitterPin`, `LanguagePackPin`, `WheelArtifact`, `CatalogLanguageSpec`, and `LanguageCatalog` with uniform provider metadata.",
+      "note": "Immutable catalog records represent `TreeSitterPin`, `LanguagePackPin`, `WheelArtifact`, `CatalogLanguageSpec` (including `leading_wrappers`, `qualifiers`, and `guarantee_tier`), and `LanguageCatalog` with uniform provider metadata, validated by `_parse_qualifiers` and `_parse_guarantee_tier`.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
-            "content": "sha256:cb57adbfa59d611c1d5650b2d588853cf1d054436225d2dc11807424b6358095",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "content": "sha256:2a566e359be712acfb5e0e8099b1ae908a324fc6aba9855c9da2529b16c75e0d",
             "locator": {
               "kind": "symbol",
               "name": "CatalogLanguageSpec"
@@ -64,11 +82,33 @@
         },
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
             "content": "sha256:5a33354eb5a8d35829cc3637744365e1c71a3f392358776d4c746af487a726de",
             "locator": {
               "kind": "symbol",
               "name": "LanguageCatalog"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "content": "sha256:483520ebeb42459e2543657ef8b5c493296b6fefb78489e89d90a7c71432cb7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_qualifiers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "content": "sha256:e7c6f7df467e1c67fd3f00c0c151d58d6a7fa0ff5df58f430532b94ebdc0c8ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_guarantee_tier"
             }
           },
           "kind": "code"
@@ -80,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
             "content": "sha256:e6c1e4c9c2510f021ce08ee51d8a7b96a3c38839f63ebc51b3df7c2a497dc482",
             "locator": {
               "kind": "symbol",
@@ -96,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
             "content": "sha256:5a7df6675fcac93531a9917ae2a6f51a6e0d64b2a3da6f1d8a7a51a204aeae46",
             "locator": {
               "kind": "symbol",
@@ -112,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba3e449dba0623c7fc4c97a18f81048da4f9862",
+            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
             "content": "sha256:f9b3d832d15967a409cac347c35c2bd6a59968cd7c13c64bcb7b74e04affc640",
             "locator": {
               "kind": "symbol",

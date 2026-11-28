@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4bf5499c48f9e36af639abfeaeb9dc99082ecf47",
+        "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
         "content": "sha256:64d70515f2e6e264a6c3f1105be60d3622c0a764e1c2d22d59f43c0993404207",
         "locator": {
           "end": 431,
@@ -22,7 +22,24 @@
     },
     {
       "anchor": {
-        "blob": "4bf5499c48f9e36af639abfeaeb9dc99082ecf47",
+        "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
+        "content": "sha256:d208e6e02d64d1d564e088bd153b3f7d09b72985624eca7fbaaa0e8b6d6920af",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-B5AG32",
+      "invariant": "INV-0H5MHX",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 4",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Documents user settings languages defaults, per-repository languages.json keys (suffixes, globs, enable, disable, custom with Bend2 example), local-only security boundary, and .lean reservation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
         "content": "sha256:ae567a364dc0f50d8eff1c90069a47cd12515f3fd2995e160ca642105c8c4ec2",
         "locator": {
           "end": 891,

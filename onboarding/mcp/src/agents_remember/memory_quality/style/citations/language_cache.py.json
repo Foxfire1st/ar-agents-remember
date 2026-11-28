@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+        "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
         "content": "sha256:65effee3f874e1191e411d1b4435c033236fdf432da91cd5d9c8fd9b6714af25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+        "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+        "content": "sha256:ee050cac2ba36a5dbe8174ea658d4d2ea7a5d048318a93fc5faa337795368a1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_load_language_from_cache"
+        }
+      },
+      "id": "RLZ-5BMSDC",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Loads bundled tree-sitter-language-pack bindings directly from the isolated AR_LANGUAGE_CACHE directory without mutating or requiring extra packages in the MCP virtual environment.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
         "content": "sha256:75ef5d48bd9e457ada60d10a7d127eb39cb64f595f919e2413a60a56cc3d8568",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:1e6a00d52262831ab4f2cf665da01cdbeef175aa4bdceae32a95df4276a1521b",
             "locator": {
               "kind": "symbol",
@@ -55,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:543fff6ab9a1aa66bc8477849c5abd80326c22c9ce40500282dbf456d081ace1",
             "locator": {
               "kind": "symbol",
@@ -71,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:e57c76da962126bb57ae7ab3c22a655686252e727c1d112793d261d9cad531e2",
             "locator": {
               "kind": "symbol",
@@ -82,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:65effee3f874e1191e411d1b4435c033236fdf432da91cd5d9c8fd9b6714af25",
             "locator": {
               "kind": "symbol",
@@ -98,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:75ef5d48bd9e457ada60d10a7d127eb39cb64f595f919e2413a60a56cc3d8568",
             "locator": {
               "kind": "symbol",
@@ -109,7 +127,7 @@
         },
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:5cb148ac505318adbf51b60e8bab1334544a98a8e1c35dc4448faa37fc891edc",
             "locator": {
               "kind": "symbol",
@@ -125,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:07cd5f8fdad35d0dd9a7eab35ffeaea39597a45c8a1c53e3725741dc86ceef05",
             "locator": {
               "kind": "symbol",
@@ -136,7 +154,7 @@
         },
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:7ca73c713f613f69d12451dd3ccec8c3b2040190208fa025074df7fa26185e7f",
             "locator": {
               "kind": "symbol",
@@ -147,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
             "content": "sha256:1db795245f7c0be4b5e131f8177d7c568615d0b0f674127ab8c1f699a9fefb3a",
             "locator": {
               "kind": "symbol",
@@ -159,12 +177,23 @@
       ]
     },
     "5": {
-      "note": "`_load_language_from_cache` and `_import_isolated_module` load cached grammar wheels without mutating `sys.path` or the MCP venv.",
+      "note": "`_find_pack_binding`, `_load_extension_module`, `_load_language_from_cache`, and `_import_isolated_module` load bundled language-pack bindings and cached grammar wheels directly from `AR_LANGUAGE_CACHE` without mutating `sys.path` or the MCP venv.",
       "targets": [
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
-            "content": "sha256:96875346c0fccc21870ce8fe66ebbb88e40f6f85934e141d0db36d43a5b1931d",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+            "content": "sha256:246747ff277108d31e84de15b8f4b65edc4144d0830ee6d1b4c1dff3201260c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_find_pack_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+            "content": "sha256:ee050cac2ba36a5dbe8174ea658d4d2ea7a5d048318a93fc5faa337795368a1f",
             "locator": {
               "kind": "symbol",
               "name": "_load_language_from_cache"
@@ -174,8 +203,8 @@
         },
         {
           "anchor": {
-            "blob": "00dcfcdb85a24ec96417bb0fc532c2b12a465523",
-            "content": "sha256:e80559e02faa323e5dd55198bc7eb43c0c20f461f54e2875fe45e4373c937300",
+            "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+            "content": "sha256:1001cc0e389e192bf6d46cdf87024f15132042b2e32f9a9fdb77b3f13a37b3b1",
             "locator": {
               "kind": "symbol",
               "name": "_import_isolated_module"

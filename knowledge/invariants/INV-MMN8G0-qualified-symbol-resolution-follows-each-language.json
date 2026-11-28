@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across tags_engine.py (QualifierSpec) and extents.py (_enclosed_qualified_spans), and guarded by table-driven per-language qualifier and honest-refusal proofs."
+  },
+  "applicability": "Qualified symbol lookup across non-exact-binding tree-sitter languages in tags_engine.QualifierSpec and extents._enclosed_qualified_spans.",
+  "conditions": [
+    "Each language declares its native container separators and optional separatorKinds filters in QualifierSpec (empty separators for flat languages such as C and Bash).",
+    "_enclosed_qualified_spans splits longest-match-first on configured separators, enforces separatorKinds filters, matches explicit @container capture chains and nested lexical enclosure, and returns empty for flat languages or unresolved qualified names."
+  ],
+  "exclusions": [
+    "Exact-binding providers such as built-in Lean (uses_exact_bindings=True) resolve exact whole/full keys only under INV-XA55TP and INV-0KYRK9."
+  ],
+  "id": "INV-MMN8G0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/pytest -q mcp/tests/test_multi_language_catalog_soundness.py (clean freeze tree 5da96f042d7c8ef8a3fad843a83038b1fe9aa4ca)"
+      ],
+      "path": "261112-KNO-L12-curator-ingest.json"
+    },
+    "handoffEntry": "KNO-R12@v1 Rule 3",
+    "leaf": "261112-KNO-L12",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Qualified symbol resolution follows each language's explicit declarative QualifierSpec (dot scope and Go receiver Type.Method, :: for Rust and C++, #/./:: kind-filtered scope for Ruby, \\/::/. for PHP, and explicit container captures for extensions/schemas/HCL blocks) and honestly refuses flat-language qualifiers (C, Bash) and unresolved qualified names.",
+  "supersedes": [],
+  "title": "Declarative per-language QualifierSpec resolves qualifiers or honestly refuses",
+  "writer": {
+    "at": "2026-11-28T01:52:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L12",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+    "task": "261112-KNO"
+  }
+}

@@ -94,7 +94,7 @@ No Domain Documentation source is configured for this slice.
 
 
 
-- The read fixture uses test-only row constructors to build its graph in the test row store and returns the projected record identities. [15]
+- The read fixture uses test-only row constructors to build its graph in the test row store and returns the projected record identities.
 
 
 
@@ -138,12 +138,13 @@ No meaningful cross-repo references found.
 - The optional reviewer leaf creates an exact review fact for the fixture’s extra record. [35]
 - The fixture captures its Git tree through the isolated shared helper. [36]
 
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
+- The read fixture opens the test row store, builds its graph with test-only row constructors and returns projected record identities. [15]
 - `_create_revision` supplies the current fixture or assertion described above. [13]
 - The public builder and the value types a case reads. [21]
 - `build_read_scope_fixture` supplies the current fixture or assertion described above. [11]
 - `_create_invariant` supplies the current fixture or assertion described above. [12]
 - `_create_realization` supplies the current fixture or assertion described above. [14]
 - **The fixture's declared topology and why this graph and not the shared branching one.** [17]
-- The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three declared family guarantees. Anchor: `RETRY_LABEL`; `BATCH_LABEL`; `RESOLUTION_LABEL`; `FAMILY_LABEL`; `OVERLAPPING_FAMILY_LABEL`; `DIRECT_FAMILY_LABEL` [18]
+- The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three declared family guarantees. [18]
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [16]

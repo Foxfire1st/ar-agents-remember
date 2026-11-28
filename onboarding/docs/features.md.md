@@ -10,17 +10,17 @@ Tours Agents Remember's product capabilities—mirrored cards, sidecars, knowled
 
 ## Code Commentary
 
-- Distinguishes reference-anchor currentness (blob and content identity, `stale:blob`) from realization/proof currentness (`current`/`stale`/`unverifiable`) and invariant states (`current`/`stale`/`unverifiable`/`unrealized`).
+- Distinguishes reference-anchor currentness (blob and content identity, `stale:blob`) from realization/proof currentness (`current`/`stale`/`unverifiable`) and invariant states (`current`/`stale`/`unverifiable`/`unrealized`), and describes language-agnostic symbol anchoring across the hash-pinned catalog (75 tree-sitter languages plus built-in Lean), lazy `AR_LANGUAGE_CACHE` unpacking, ambiguous-extension occurrence-only defaults, and `<code-repository>/languages.json` overrides and custom local libraries.
 - Documents `read_ar_files` brief-to-compact row degradation and 11-view `knowledge_read` (`impact`, `search`, verbatim `records` up to 25 IDs, compact `dependent` triage, and the remaining views, reserving native file opens for source code, tests, briefs, and cards), alongside per-build/tree SQLite knowledge-index caching and eviction (14 days / 1 GiB).
 - Defines read-only versus mutating MCP tool trust boundaries (`intent_note`, `dry_run`, answer token bounds, and tool-log routing between `<enclosure>/logs/` and `<coordination-root>/logs/mcp/`).
 
 ## Relationships
 
-- Links outward to `docs/concepts.md`, `docs/workflows.md`, `docs/roles.md`, `docs/dashboard.md`, and `docs/reference/mcp-tools.md`.
+- Links outward to `docs/concepts.md`, `docs/workflows.md`, `docs/roles.md`, `docs/dashboard.md`, `docs/reference/settings-json.md`, and `docs/reference/mcp-tools.md`.
 
 ## Evidence
 
-- Reference-anchor blob and content currentness versus realization/proof and four-state invariant currentness. [1]
+- Reference-anchor blob and content currentness, language-agnostic 75-tree-sitter plus Lean catalog anchoring with lazy `AR_LANGUAGE_CACHE` and `languages.json` overrides, and realization/proof and four-state invariant currentness. [1]
 
 - Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and 11-view text-bearing `knowledge_read` (`impact`, `search`, `records`, and compact `dependent` triage). [2]
 

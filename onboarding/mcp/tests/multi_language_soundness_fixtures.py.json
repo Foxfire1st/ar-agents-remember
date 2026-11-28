@@ -1,0 +1,63 @@
+{
+  "path": "mcp/tests/multi_language_soundness_fixtures.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`PilotFixture`, `LongTailFixture`, `CORE_PILOT_IDS`, `PILOT_FIXTURES`, and `LONG_TAIL_FIXTURES` supply the static soundness, qualifier, and pure-move fixture tables for all 15 core pilots and 56 language-pack entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4a411ef16912c22689033ed0f5c6d91bd452b34",
+            "content": "sha256:746ddbb5f94c270a924d610e18671313912d23c96495f9ac179d961ca6bb9fe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "PilotFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4a411ef16912c22689033ed0f5c6d91bd452b34",
+            "content": "sha256:44aa6e487d3c56679d34608f2c4ee4eef2f578cf4ea5b15b31702489975a6d26",
+            "locator": {
+              "kind": "symbol",
+              "name": "LongTailFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4a411ef16912c22689033ed0f5c6d91bd452b34",
+            "content": "sha256:c1479cc32fbf62b10e9e849cca67929aea419aeaff880444bd2d675814228c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "CORE_PILOT_IDS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`mcp/tests/evidence-lifecycle.toml` registers `multi_language_soundness_fixtures.py` as a permanent `shared-support` artifact with `test_multi_language_catalog_soundness.py` as its exact consumer and replacement node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "content": "sha256:651ff1013c1fb2debd85ab7cc5f8e6bff10b6a8f5ed67276caaff243ee16aaf3",
+            "locator": {
+              "end": 4382,
+              "kind": "line_range",
+              "start": 4366
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

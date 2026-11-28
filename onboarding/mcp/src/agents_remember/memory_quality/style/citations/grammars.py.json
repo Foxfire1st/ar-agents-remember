@@ -322,12 +322,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
             "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
             "locator": {
-              "end": 214,
+              "end": 236,
               "kind": "line_range",
-              "start": 194
+              "start": 216
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
           },

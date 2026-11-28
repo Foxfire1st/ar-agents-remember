@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
-        "content": "sha256:fd0126fc8a847537737ffbc6c292bdad31aba2df90c1788bb1d7f83e70f2d858",
+        "blob": "60732c271887f8015ba04f9708e788be9fde871f",
+        "content": "sha256:05d0715520ccfa6f5ffab6f8db1304b89c5bda5b1638fe3034a20a45f814b81f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6K9201",
+      "invariant": "INV-0H5MHX",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 4",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Lists ~/.local/state/agents-remember/grammars (AR_LANGUAGE_CACHE) among files outside the coordination root.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "60732c271887f8015ba04f9708e788be9fde871f",
+        "content": "sha256:05d0715520ccfa6f5ffab6f8db1304b89c5bda5b1638fe3034a20a45f814b81f",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+        "blob": "60732c271887f8015ba04f9708e788be9fde871f",
         "content": "sha256:35d3c706696fea1f6081c522065b3652bc1d21024fcbffdb485e9213a6df76e2",
         "locator": {
           "end": 166,
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+        "blob": "60732c271887f8015ba04f9708e788be9fde871f",
         "content": "sha256:ddbe4c41800cbbe166d5a4d1e67e8c1c7de6cc6126397d00529f8d8e8a732ceb",
         "locator": {
           "end": 82,
@@ -63,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "blob": "60732c271887f8015ba04f9708e788be9fde871f",
             "content": "sha256:95f38cdc128c0860c8fa2eb1225cd7d0848fe349626b28754ce1948ef6c7354b",
             "locator": {
               "end": 55,
@@ -76,14 +93,14 @@
       ]
     },
     "3": {
-      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.",
+      "note": "Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, `~/.local/state/agents-remember/grammars` (`AR_LANGUAGE_CACHE`), and handover-locator paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
-            "content": "sha256:ffd1e61c7696111f81a8e87d8671075812e535db6a078c8b1a52c0d7ba2a5fcb",
+            "blob": "60732c271887f8015ba04f9708e788be9fde871f",
+            "content": "sha256:8e50f013c990bb653b9b2c4119d1ebbf641bbcec8757ad7fe39599a379ca7d6b",
             "locator": {
-              "end": 209,
+              "end": 210,
               "kind": "line_range",
               "start": 171
             }
@@ -97,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "blob": "60732c271887f8015ba04f9708e788be9fde871f",
             "content": "sha256:94406831926ad00d3a94b238e5fe25715d365cb6a190e1b91add0c034ed0e810",
             "locator": {
               "end": 170,

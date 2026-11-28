@@ -1,0 +1,3027 @@
+{
+  "closed": true,
+  "leaf": "261112-KNO-L12",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-28T02:39:41+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-KNO-L12",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+      "task": "261112-KNO"
+    },
+    "reviewer": {
+      "at": "2026-11-28T02:39:41+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-KNO-L12",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "55c4abe5-0476-5ddd-83d0-28a524237519",
+      "task": "261112-KNO",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "cda4aceca4ffe300ac6403641a9693fb6b5af5eb",
+    "verdictRef": "notes/reports/reviewer/55c4abe5-0476-5ddd-83d0-28a524237519/memory-round-2/verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0G5NWQ",
+      "items": [
+        "sha256:39e535e908c5858114661dff225f85b14db4cc9e13d4d8cd4bb19359c3250068"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language tcl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "74f94d4d5e1050435dc271929aa3d72fe8fb18a8",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/tcl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/tcl/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0TE0CG",
+      "items": [
+        "sha256:ffa4fa6a5c81b9bc477cbfa3e7a5a9cf990f89c36c93f9362ea0ef59a89571b0"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:ffa4fa6a5c81b9bc477cbfa3e7a5a9cf990f89c36c93f9362ea0ef59a89571b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1A82F1",
+      "items": [
+        "sha256:88954752f0ce0b40008ef343a848d2c77dd6e9eeca4ec2871b05e035df6f9927"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:88954752f0ce0b40008ef343a848d2c77dd6e9eeca4ec2871b05e035df6f9927"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-22DDAD",
+      "items": [
+        "sha256:b1c649aafd34bd6a4bae21e5cb536532ecee8e1388d9be033a9454b5bb37e7ec"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language erlang; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "fd205b18d31d9c860db5400fd48b5e29c613d07d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/erlang/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/erlang/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-234CF3",
+      "items": [
+        "sha256:dc458c1c18532fe700a5e16e593cf4622d34583750790a148dbdac2cfd7ef43f"
+      ],
+      "reason": "Re-authored 45 shifted/whole-file evidence-lifecycle.toml and test-evidence-lanes.toml citation references on mcp/tests/overview.md after L12 registered multi_language_soundness_fixtures.py and test_multi_language_catalog_soundness.py.",
+      "sources": [
+        {
+          "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "c4a411ef16912c22689033ed0f5c6d91bd452b34",
+          "path": "mcp/tests/multi_language_soundness_fixtures.py"
+        },
+        {
+          "blob": "dade756cab6395af1f9da4677342c28398b45017",
+          "path": "mcp/tests/read_scope_test_support.py"
+        },
+        {
+          "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "6b679d1f9fe69764dfd3ade0763438efcec6681d",
+          "path": "mcp/tests/test_knowledge_read_boundaries.py"
+        },
+        {
+          "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+          "path": "mcp/tests/test_multi_language_catalog_soundness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2358SW",
+      "items": [
+        "sha256:dcb4ac35037fb73e51cb57bc4cdc5fe3a34b25e5999daca7050b77c8893d3363"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language clojure; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "fb83f053666ecc4127e3091e6a24569429af1668",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/clojure/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/clojure/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-25BDW9",
+      "items": [
+        "sha256:d80317f3d702907ffaaf045e42d361908da25d762fe978c63fa1847a4444939d"
+      ],
+      "reason": "Updated extents.py card prose and refs [26], [29], [36], [53] for Extent.containers/qualifier_kind and declarative QualifierSpec resolution in _enclosed_qualified_spans.",
+      "sources": [
+        {
+          "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2F3P52",
+      "items": [
+        "sha256:af170eb44b91ceece98abdd272e76ed8d3fafb1bc151f7962cd287a431e718ba"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language julia; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "117ccb03c8bae433d6d0266afcdeccda3e919f75",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/julia/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/julia/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2S52A4",
+      "items": [
+        "sha256:76065170972efa9e3bce9524afae547d21917938fe1a29c46a78aa96165e960c"
+      ],
+      "reason": "Updated tags_engine.py card prose and refs [2], [5] for QualifierSpec, Binding.containers/qualifier_kind, widened_span leading_wrappers, _extract_containers, and TagExtractionOptions.",
+      "sources": [
+        {
+          "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-314W9H",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated evidence-lifecycle.toml card prose (18 contracts, 124 artifacts incl. multi_language_soundness_fixtures.py) and re-authored all 159 shifted/whole-file citation references.",
+      "sources": [
+        {
+          "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-36ZBRN",
+      "items": [
+        "sha256:d934c72ba3aa10fe074d10c96debe1b23b0d0d47be31afcbb70ac51a921feb0c"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language commonlisp; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "c6ae59683773c3bae0f7e2302a5432e8c773db62",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/commonlisp/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/commonlisp/tags.scm"
+    },
+    {
+      "deferralIds": [
+        "DFR-Q2J6S3"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-37QH56",
+      "items": [
+        "sha256:29f21b16f8da4309b4ecc1b84ac63cdfd5b9a8c5333511a0bdce335bd6e572bf"
+      ],
+      "reason": "Confirmed docs/features.md at frozen L12 tree e222729eff1b with the new multi-language catalog/AR_LANGUAGE_CACHE summary and re-deferred out-of-scope deferral DFR-M29BGY (shifted to lines 409-410).",
+      "revision": 40,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-38J3S9",
+      "items": [
+        "sha256:6e4fe7207f19d1fe62e499cf805147781a8f940286f146f04a45b3dae4adce52"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language hare; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "0924bca5c36483b31f026bb8dec4093289a719c1",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/hare/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/hare/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3CF9HK",
+      "items": [
+        "sha256:d51999870578366c253a3fe89911e60317dd2f8f0ee1c71b9e16f3ec8b98fe66"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language elm; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "c10195ab992e4481f28cbd56817ef9a7839ad1a6",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/elm/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/elm/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3TK6VD",
+      "items": [
+        "sha256:9b90e05b3edee0b216edc7f536a7bac8a3d4241959e53771278ac448de76e842"
+      ],
+      "reason": "Updated language_cache.py card prose and ref [5] for _find_pack_binding, _load_extension_module, and direct bindings/<lang>*.{so,pyd} language_pack loading.",
+      "sources": [
+        {
+          "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0KYRK9",
+          "revision": 1
+        },
+        {
+          "id": "INV-CK3F9Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZ8R0Q",
+          "revision": 1
+        },
+        {
+          "id": "INV-XA55TP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4BRZJQ",
+      "items": [
+        "sha256:f084c2c5affb11eb5e0e4fd5a2c553d6b428de2cad8cbcf89d2eba53a519adc0"
+      ],
+      "reason": "Examined all four Lean symbol-anchoring members after extents.py::qualified_spans updated its non-exact-binding qualifier path; Lean exact-binding identity, full-name precedence, and uncertain-scope behavior are unchanged.",
+      "revision": 1,
+      "subject": "FAM-04M3Z0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4KW1EK",
+      "items": [
+        "sha256:3026e1b52084bffbcc555b63d8af0248e165ad3bfe70f9b90c5a46b58312ef55"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language rust; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "83fd3dfd7b8afed5a8335ec43e91fa55aaf6fe6b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/rust/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/rust/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4TJAST",
+      "items": [
+        "sha256:404566ddc66fce3c9132ad925d4797fbc8c603b39119857c6d3f7997747c046d"
+      ],
+      "reason": "Created onboarding card and sidecar for new unit-regression suite test_multi_language_catalog_soundness.py covering Rules 1-3 and AC-1/AC-2.",
+      "sources": [
+        {
+          "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+          "path": "mcp/tests/test_multi_language_catalog_soundness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_multi_language_catalog_soundness.py"
+    },
+    {
+      "considered": [
+        "FAM-CSVQBJ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-5DE698",
+      "items": [],
+      "reason": "Public documentation presentation invariant spanning docs/; does not belong to code-routed FAM-CSVQBJ and mirrors standalone public-doc invariant INV-A3XH71.",
+      "revision": 1,
+      "subject": "membership:INV-0H5MHX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5DYHG6",
+      "items": [
+        "sha256:e85e1b67c4a631a4ba6583d31b6b86eee2046585e3d2afba27bbf2ef0dcea1f9"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language thrift; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "71b4c5cc0fd1a6862e4d35d104d21ef4d33bd1e8",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/thrift/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/thrift/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5K1759",
+      "items": [
+        "sha256:0c6ab336c567e6383ff58b099f612302b94126e8238a01b2b021270a9edb55e6"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language cpp; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "1537dcce7b653c94edf70ffc113c99da4dc7a05f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cpp/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/cpp/tags.scm"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-071CY8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6239KW",
+      "items": [
+        "sha256:e0ad951f1223767f0799e475742467b228a89321de291b7733779f594855abfb"
+      ],
+      "reason": "Re-anchored RLZ-071CY8 on extents.py::qualified_spans after L12 passed _qualifier_spec(grammar) to _enclosed_qualified_spans; JS/TS plain-string test-case multiplicity preservation in _direct_spans is unchanged.",
+      "revision": 2,
+      "subject": "INV-B37MWR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-633H9A",
+      "items": [
+        "sha256:139306c640daa29a72556c96d4687529bd81d1c28e6c78734772493242b1bb08"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language gleam; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "8c0369e9685cd31ad2c12b1f5a5ce00f86c07992",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/gleam/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/gleam/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-66KCY4",
+      "items": [
+        "sha256:1d999169f89fdb7fe62842486ba2728619b51181eeb492a1c727f3851384ea9d"
+      ],
+      "reason": "Updated language_catalog.lock.json card prose and ref [1] for the 76 admitted languages (19 pypi_wheel incl. 15 pilots, 56 language_pack on 0.13.0, builtin_lean), guaranteeTier, qualifiers, leadingWrappers, and .scm ambiguous suffix.",
+      "sources": [
+        {
+          "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+          "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-699QH0",
+      "items": [
+        "sha256:f2b70fdce54ff85276f1c9e9cc8b062cc7fdc573aeaa6da66c1c0c55de0799f0"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language php; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "c119aedd3793eebc749ed0cccc5f9c95e4b15792",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/php/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/php/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6DSKMP",
+      "items": [
+        "sha256:20c0cc4f4c39101af31ab19d4893c1117c0e00a1bc533dabf64a8811abc932c8"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language go; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "bf301be24c563732db09f14eda72d15b82d4cca4",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/go/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/go/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6DXXY4",
+      "items": [
+        "sha256:4e0162e31de84255387d887b4cf642a9318cc2a33fa748816b3bced1bc07970f"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language cmake; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "d38a6aa8e4bb68e4bbd602114c5882dfb29cf20e",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cmake/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/cmake/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6M0M4X",
+      "items": [
+        "sha256:c318bdd23c5c2270c9b54355daf279e35d04c21af6779633d49a421c85b73bd0"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:c318bdd23c5c2270c9b54355daf279e35d04c21af6779633d49a421c85b73bd0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7A8RY5",
+      "items": [
+        "sha256:1e0ac03e5531ddeb48c43db4a13d1047f6a7a9b5fca14924125785e667086d18"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language cuda; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "9124cbb0d57ad4864f6987e813c1f8f66648fd5d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cuda/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/cuda/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7AS1QV",
+      "items": [
+        "sha256:e2912cd2bf4dd7f490a5262070f37289754a64e9912a947da634951b72ea8c46"
+      ],
+      "reason": "Supporting CLI argument plumbing (import, LanguagesCliArgs.all_languages field, --all option, and _parse_args wiring) for languages warm --all, whose normative contract is captured on cli/languages.py::run under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:e2912cd2bf4dd7f490a5262070f37289754a64e9912a947da634951b72ea8c46"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7DK7QC",
+      "items": [
+        "sha256:bbacc24838a6a3a7455ad1f59b0d812f0cf4cb05d1a569b28db9867b3999850d"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:bbacc24838a6a3a7455ad1f59b0d812f0cf4cb05d1a569b28db9867b3999850d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7HWMW6",
+      "items": [
+        "sha256:c47d87e56f0dec52705cd7e0f177bcb724306568f0cb0b1532735eca6ff6862d"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language r; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "a0e00a38ce9d6df6c96e8ead686aa5ef3755eb62",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/r/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/r/tags.scm"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "content": "sha256:274f59e05726a4e2526b6e9163b9ea75af5c22f7980d81ed72d637ab610c9530",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+            "content": "sha256:60f960f5260b86b2b9458916eb8758e5a1386cb731d3ecc873985c3ce0982f84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7KENVD",
+      "items": [
+        "sha256:9874fbed5ed85e8bf20d507364c8900ed00533103107df90f0e575bf8c5afe81"
+      ],
+      "reason": "Re-anchored whole-file realizations on evidence-lifecycle.toml and test-evidence-lanes.toml after L12 catalog additions; outside scratch root ownership and tests are unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
+            "content": "sha256:5821e3a67cf193289ef21251d7d5615e923ea1ff8af12385eb16a3c381d33bf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_base"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "before": {
+            "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+            "content": "sha256:8070aa242318d6a3e3a00b54649e53f845c53f2295070f3963829f52aa30ea1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_base"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "id": "RLZ-YHMZYX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7PFC4S",
+      "items": [
+        "sha256:4b36b9f6ed00bcd862e1e16841708655026afa74680797846f1f4da0cb623ec7"
+      ],
+      "reason": "Re-anchored RLZ-YHMZYX on .dagger/src/agents_remember_quality/main.py::_candidate_base after L12 added --all to languages warm; zero tree-sitter-* venv deps and shared AR_LANGUAGE_CACHE pre-warm hold unchanged.",
+      "revision": 1,
+      "subject": "INV-CSJ1ZD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7Q6AVC",
+      "items": [
+        "sha256:4389bbcf9d39266f0a3a7d285c66828869f88d77aa50ba48d682f60bf00b752e"
+      ],
+      "reason": "Supporting QualifierSpec import and LanguageProvider.qualifiers protocol property declaration backing TreeSitterLanguageProvider and extents._enclosed_qualified_spans under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:4389bbcf9d39266f0a3a7d285c66828869f88d77aa50ba48d682f60bf00b752e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7RAW69",
+      "items": [
+        "sha256:4d6165b1db712864d4496bdc858f93c81f0c40e66759182553efb0d0c437a8bc"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language nim; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "b9dbe448c4b059f302d64ab6ebe3d3dbcb6502d9",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/nim/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/nim/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7YN381",
+      "items": [
+        "sha256:de802c6a1f880423c78041199f0e1e04440e9855c581e928f89af70010bd5503"
+      ],
+      "reason": "Supporting import, default QualifierSpec constant, Extent container/qualifier_kind dataclass fields, and internal qualifier matching helpers backing extents.py::_enclosed_qualified_spans under KNO-R12@v1 Rule 3.",
+      "subject": "hunk:sha256:de802c6a1f880423c78041199f0e1e04440e9855c581e928f89af70010bd5503"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8HKDB5",
+      "items": [
+        "sha256:c77cbd145e87b766a94430c1847cd1b2a16a56b7c2d9aad9bc4e464c08a881df"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:c77cbd145e87b766a94430c1847cd1b2a16a56b7c2d9aad9bc4e464c08a881df"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8HNVZ2",
+      "items": [
+        "sha256:02040a56bf8b73e008037c326b6d144237676463171c981a87f423a73b1de8c6"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language nix; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "614a8e4ee89c3ef8300d5880d1fafc3728a60233",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/nix/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/nix/tags.scm"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8MK5JP",
+      "items": [
+        "sha256:e262a7cadf50d31e3f39454850c2a30c17f26ad6bb16e6276b0bb464deae61e1"
+      ],
+      "reason": "Confirmed docs/architecture.md at frozen L12 tree e222729eff1b with the fifth read-side persistent write case (lazy AR_LANGUAGE_CACHE grammar unpacking) and refreshed stands_on blobs.",
+      "revision": 30,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-93A6E1",
+      "items": [
+        "sha256:b917f851d5a6b2091206ebfefa7c3c4379ac1c59d298c392ec503a27fd45bb67"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language gdscript; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "3f644c6a62104ce7ff56700627b03d5497fd9e1d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/gdscript/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/gdscript/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9EMM6G",
+      "items": [
+        "sha256:2e415fddc93e8cb6853fadb3b67e28fb07a9c6fdc91d6751ae7f13614ed86c51"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language solidity; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "f78624936e4f14ef7974c73778f06fd2f3c3dda0",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/solidity/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/solidity/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9EWG1N",
+      "items": [
+        "sha256:ec39b18161d6ca8d82add30de0b085d73e1b18ed9dec4d37cf6cebd4c56d7289"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language glsl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "29f93544a5bf046e8acb3ab0174232d943625d0b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/glsl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/glsl/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9JYYTA",
+      "items": [
+        "sha256:5d551a8a20eb14468577736ee276cc92ccd2495a92ea46c6def5671f61555046"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language swift; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "fb6646d7ef355e539c940ee9574dbd2b37516765",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/swift/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/swift/tags.scm"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "60732c271887f8015ba04f9708e788be9fde871f",
+            "content": "sha256:05d0715520ccfa6f5ffab6f8db1304b89c5bda5b1638fe3034a20a45f814b81f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "before": {
+            "blob": "9c64d8e0549cc6ecad4260c78f69a4a7977a4e57",
+            "content": "sha256:fd0126fc8a847537737ffbc6c292bdad31aba2df90c1788bb1d7f83e70f2d858",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "id": "RLZ-AHFJXT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9PBJZF",
+      "items": [
+        "sha256:7933f65310bc4a8cda44ef4a8ee7aaac6a8afca3dc359f73326cf9b165e66f65"
+      ],
+      "reason": "Re-anchored whole-file realization RLZ-AHFJXT on docs/reference/runtime-layout.md after L12 added the external AR_LANGUAGE_CACHE row; provider-limit recheck and suppression docs are unchanged.",
+      "revision": 2,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9SV9VR",
+      "items": [
+        "sha256:edadffed16fc3c9c1d2c00470bf4a21c492e83ecebc77a1d5af6cfaa5cc957f4"
+      ],
+      "reason": "Supporting CLI argument plumbing (import, LanguagesCliArgs.all_languages field, --all option, and _parse_args wiring) for languages warm --all, whose normative contract is captured on cli/languages.py::run under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:edadffed16fc3c9c1d2c00470bf4a21c492e83ecebc77a1d5af6cfaa5cc957f4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9X0T35",
+      "items": [
+        "sha256:ef47ebaacc33f436cd45f22d0e06144c15bd719c1d0fee32bd7f06d6e9f10331"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language pony; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "7cf77db9ac6aa560250a7449a930d7c9201eafbc",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/pony/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/pony/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A34782",
+      "items": [
+        "sha256:c6c36241c6b8dce303730e10f7c280e36a89e26571f5d931ddf1d8d4db440778"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language hlsl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "169b4f6f70a588bf4209f10b35c3ec9fd71a615c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/hlsl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/hlsl/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A45W4T",
+      "items": [
+        "sha256:8472e5610cba8a35cc262df0319201b96c59b06c987a8934cf97ad0fb586e074"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language fortran; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "7b4d3f548670e0048b7322d1efbc769e5c9796ef",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fortran/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/fortran/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-2PVK9H",
+          "revision": 1
+        },
+        {
+          "id": "INV-41J2Q6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 2
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 2
+        },
+        {
+          "id": "INV-ESZKHN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-SDEXYK",
+          "revision": 1
+        },
+        {
+          "id": "INV-VEGPXX",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-AD539V",
+      "items": [
+        "sha256:ed0d776840c4b8f2629d92eb69ca318cc1f3354b465b09e8f8562ce94040d0e3"
+      ],
+      "reason": "Examined all twelve provider-limit suppression members after docs/reference/runtime-layout.md added an unrelated external AR_LANGUAGE_CACHE row; limit projection, suppression sidecar, and release behavior are unchanged.",
+      "revision": 2,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
+            "content": "sha256:aa4895ec0fa814b4cf86e48336c5058f67f6155999228a1b4473bf742235ac2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/features.md"
+          },
+          "before": {
+            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+            "content": "sha256:e5709d3f2fa2e9c1732acdb6d788932aabbc4fd47e555fec3c029c9122b01b74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/features.md"
+          },
+          "id": "RLZ-ENHE2G"
+        },
+        {
+          "after": {
+            "blob": "8336a69f2fc05189fd590b76fdc0b9b74dfe7296",
+            "content": "sha256:3785d820bff4b6e57b092b40b525e7299fcf7325726ea3a95d3cc15eb9d447b9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/architecture.md"
+          },
+          "before": {
+            "blob": "1731a795b72f95cbbebc1e3e53e5f7f1bec133cb",
+            "content": "sha256:5eaf1a60d07e67e917db0669b600b360150efae787fc12602899ea0038f57f12",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/architecture.md"
+          },
+          "id": "RLZ-FBQJBC"
+        },
+        {
+          "after": {
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "content": "sha256:b42ef288ea28375b62b3c35a60040f0af628b4f5512e647f5fe362eab9e6a648",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "d957387f0aa023a14b76df3bdd55757afcf0abd4",
+            "content": "sha256:e945fcc3600f2e35d88b854415e12ecd53359061311da90d3898b5d8222e3bbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-J6887M"
+        },
+        {
+          "after": {
+            "blob": "b081cce19da9ddfb95da3d467f60e65d87da55d1",
+            "content": "sha256:359e6976e0470b49da8f1bd197a2401f5a8872cf502770395bccf809a606a737",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/knowledge-system.md"
+          },
+          "before": {
+            "blob": "d008e755892f80eaa227bfb5cbc9c6b11db2c5a6",
+            "content": "sha256:5163abbec8055e48904fdd25db6a85cf58d59632df51075a37dd2addc74c3171",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/knowledge-system.md"
+          },
+          "id": "RLZ-QTWS6Q"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AFK6HK",
+      "items": [
+        "sha256:6a6635ff99e9d82c8b7b421a3d5e1c53d7dc7f58226fbe33ac4dd5d3200eb7df",
+        "sha256:f848fdcbf447c13a191cbdd102bfaf008d673c13d0e992669d89217cee07ccb6"
+      ],
+      "reason": "Re-anchored whole-file realizations on docs/architecture.md, docs/features.md, docs/reference/knowledge-system.md (edited by L12) and pre-existing base-stale docs/reference/mcp-tools.md; all eleven knowledge_read views and text-bearing replies remain accurately documented.",
+      "revision": 1,
+      "subject": "INV-A3XH71"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AS7WWG",
+      "items": [],
+      "reason": "Confirmed docs/design/python-evidence-system.md remains accurate against L12 additions to evidence-lifecycle.toml, test-evidence-lanes.toml, and .dagger/src/agents_remember_quality/main.py (0 new stale dependents).",
+      "revision": 33,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B4WGVT",
+      "items": [
+        "sha256:123191f9edcb12907f389076283ae65c1cc6c034d8ec75baab71cfa6e1a5b06a"
+      ],
+      "reason": "Supporting import, default QualifierSpec constant, Extent container/qualifier_kind dataclass fields, and internal qualifier matching helpers backing extents.py::_enclosed_qualified_spans under KNO-R12@v1 Rule 3.",
+      "subject": "hunk:sha256:123191f9edcb12907f389076283ae65c1cc6c034d8ec75baab71cfa6e1a5b06a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BCJ6PN",
+      "items": [
+        "sha256:099f347de16a45c21359ed897c98ac7a075af4654646d571d460e76825fda5eb"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language squirrel; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "c28ae8dbf2b20d498b35cf27151a1c2de49a35c6",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/squirrel/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/squirrel/tags.scm"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BD7WNG",
+      "items": [
+        "sha256:18063c53e609bde00a43a7dac8cf3351ed7cf647d15bfccf6c98a28c26f63f26"
+      ],
+      "reason": "Confirmed docs/reference/settings-json.md at frozen L12 tree e222729eff1b with the new Language Configuration section matching language_config._ALLOWED_CUSTOM_KEYS.",
+      "revision": 24,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "content": "sha256:274f59e05726a4e2526b6e9163b9ea75af5c22f7980d81ed72d637ab610c9530",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+            "content": "sha256:60f960f5260b86b2b9458916eb8758e5a1386cb731d3ecc873985c3ce0982f84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BG2VV0",
+      "items": [
+        "sha256:f7abefe4981d9dd78bbfe356c7f51e1bb62195f20c9eb357aa697385a970085a"
+      ],
+      "reason": "Re-anchored whole-file realization entries on evidence-lifecycle.toml and test-evidence-lanes.toml after L12 registered multi_language_soundness_fixtures.py and test_multi_language_catalog_soundness.py; silent turn-end wake policy is unchanged.",
+      "revision": 10,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BP7BA9",
+      "items": [
+        "sha256:a84caba438ec31712a1229793e48c8912113a227d9843c9a5c11774b9cf45e70"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language ocaml; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "2325775698807aebdd2e6541cf17fdc504a541a1",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ocaml/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/ocaml/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BRM9ZR",
+      "items": [
+        "sha256:3accef316eea8e0a36c3fb6abf12fbd99648403d65286aeca054cd3cf75301ce"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language janet; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "7fcd1a7db1d47716e01223b0e8c3f9d10629e0cd",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/janet/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/janet/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BSCCNG",
+      "items": [
+        "sha256:a64224d481fe4f9089bb74f2683cd007b6919a2d6e6b935c063027294ac71101"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language ocaml_interface; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "772b8241c639231b5a61a3d5fc79c87f274ff79d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ocaml_interface/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/ocaml_interface/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BWZH27",
+      "items": [
+        "sha256:814c96ef1edc6b27960fafe4b1620690df76124de8a12e0f06941f2385af5afa"
+      ],
+      "reason": "Updated packaged citation query inventory in mcp/overview.md from the old 5-file list to 74 language query directories plus 2 tests.scm and the 76-language language_catalog.lock.json.",
+      "sources": [
+        {
+          "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+          "path": "mcp/src/agents_remember/cli/languages.py"
+        },
+        {
+          "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+          "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+        },
+        {
+          "blob": "db15bae5a119c1463810fd150c27725dc512b911",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ada/tags.scm"
+        },
+        {
+          "blob": "dae3047dedad04495755bd808dc3d9ea9b8521a2",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/bash/tags.scm"
+        },
+        {
+          "blob": "0d07ce04a42895ed0ba6cb6a8ba5261ba4f37fab",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/bicep/tags.scm"
+        },
+        {
+          "blob": "1f65b38882e31e2773d51f666b12e36c01f23365",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/c/tags.scm"
+        },
+        {
+          "blob": "130afa877bf6250b493aa869763409d99adc3fc6",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cairo/tags.scm"
+        },
+        {
+          "blob": "fb83f053666ecc4127e3091e6a24569429af1668",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/clojure/tags.scm"
+        },
+        {
+          "blob": "d38a6aa8e4bb68e4bbd602114c5882dfb29cf20e",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cmake/tags.scm"
+        },
+        {
+          "blob": "c6ae59683773c3bae0f7e2302a5432e8c773db62",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/commonlisp/tags.scm"
+        },
+        {
+          "blob": "1537dcce7b653c94edf70ffc113c99da4dc7a05f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cpp/tags.scm"
+        },
+        {
+          "blob": "6bf2c2f152698a8ab7f4e5eb8687a5b266fc1486",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/csharp/tags.scm"
+        },
+        {
+          "blob": "9124cbb0d57ad4864f6987e813c1f8f66648fd5d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cuda/tags.scm"
+        },
+        {
+          "blob": "1e6c373b9bb55a22e116579525731363a204a657",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/d/tags.scm"
+        },
+        {
+          "blob": "0c5d2c27c960d2b03e8cde747a1e8eb2a7ae9358",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/dart/tags.scm"
+        },
+        {
+          "blob": "f441db98c7fe174b3cc1f0f55eeb77c68f94f70f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/dockerfile/tags.scm"
+        },
+        {
+          "blob": "23b368b9980838576372507e86afe37765f10c7e",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/elisp/tags.scm"
+        },
+        {
+          "blob": "ddf91067a7e7222512287f68e3920e9928d556e2",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/elixir/tags.scm"
+        },
+        {
+          "blob": "c10195ab992e4481f28cbd56817ef9a7839ad1a6",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/elm/tags.scm"
+        },
+        {
+          "blob": "fd205b18d31d9c860db5400fd48b5e29c613d07d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/erlang/tags.scm"
+        },
+        {
+          "blob": "9818bec6279f2a2cb3b79aee939c0cdd296b1e77",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fennel/tags.scm"
+        },
+        {
+          "blob": "069d28d7f7aca52e503c9a8ec2da06142be80381",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fish/tags.scm"
+        },
+        {
+          "blob": "7b4d3f548670e0048b7322d1efbc769e5c9796ef",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fortran/tags.scm"
+        },
+        {
+          "blob": "14ff3134b187c99839eaac80bda7a8ff007c972b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fsharp/tags.scm"
+        },
+        {
+          "blob": "3f644c6a62104ce7ff56700627b03d5497fd9e1d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/gdscript/tags.scm"
+        },
+        {
+          "blob": "8c0369e9685cd31ad2c12b1f5a5ce00f86c07992",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/gleam/tags.scm"
+        },
+        {
+          "blob": "29f93544a5bf046e8acb3ab0174232d943625d0b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/glsl/tags.scm"
+        },
+        {
+          "blob": "bf301be24c563732db09f14eda72d15b82d4cca4",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/go/tags.scm"
+        },
+        {
+          "blob": "79fd42e7884a6a27ecc91b93b2ac271b974dec05",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/graphql/tags.scm"
+        },
+        {
+          "blob": "0924bca5c36483b31f026bb8dec4093289a719c1",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/hare/tags.scm"
+        },
+        {
+          "blob": "fde3d27760ae30a7f84ea3db848c6e70d334210d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/haskell/tags.scm"
+        },
+        {
+          "blob": "a154985e1d6623e5f1ca7612b5149035e8510975",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/haxe/tags.scm"
+        },
+        {
+          "blob": "f5c8383fced9015c386e7430b3d36e0b73e197b3",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/hcl/tags.scm"
+        },
+        {
+          "blob": "169b4f6f70a588bf4209f10b35c3ec9fd71a615c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/hlsl/tags.scm"
+        },
+        {
+          "blob": "7fcd1a7db1d47716e01223b0e8c3f9d10629e0cd",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/janet/tags.scm"
+        },
+        {
+          "blob": "935935dbcfa8fd0a1e59705c5a5470d644cb6f2f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/java/tags.scm"
+        },
+        {
+          "blob": "5cfcbc4ced76885abb40690cbd67725291e6c897",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/jsonnet/tags.scm"
+        },
+        {
+          "blob": "117ccb03c8bae433d6d0266afcdeccda3e919f75",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/julia/tags.scm"
+        },
+        {
+          "blob": "0c553793f735dda970610b5fbfff4217ee2c6e8d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/kotlin/tags.scm"
+        },
+        {
+          "blob": "995059f8ce559ddc1fc7f476329394a2a55fb6c2",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/lua/tags.scm"
+        },
+        {
+          "blob": "374325e1086174d881c12d1624a3482c639491b7",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/make/tags.scm"
+        },
+        {
+          "blob": "b9dbe448c4b059f302d64ab6ebe3d3dbcb6502d9",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/nim/tags.scm"
+        },
+        {
+          "blob": "614a8e4ee89c3ef8300d5880d1fafc3728a60233",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/nix/tags.scm"
+        },
+        {
+          "blob": "2325775698807aebdd2e6541cf17fdc504a541a1",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ocaml/tags.scm"
+        },
+        {
+          "blob": "772b8241c639231b5a61a3d5fc79c87f274ff79d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ocaml_interface/tags.scm"
+        },
+        {
+          "blob": "58b3edc1388ec0ec1eaf7bcacbbe59d494261f13",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/odin/tags.scm"
+        },
+        {
+          "blob": "9c2b73d133f5ec6fbf6369711a931da85016e21d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/pascal/tags.scm"
+        },
+        {
+          "blob": "5f57b65a634e661102490fd35356336f56fdf43b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/perl/tags.scm"
+        },
+        {
+          "blob": "c119aedd3793eebc749ed0cccc5f9c95e4b15792",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/php/tags.scm"
+        },
+        {
+          "blob": "7cf77db9ac6aa560250a7449a930d7c9201eafbc",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/pony/tags.scm"
+        },
+        {
+          "blob": "feb00230c1f2bdac0fc289c31858dbbbf0160d68",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/powershell/tags.scm"
+        },
+        {
+          "blob": "17a84436515aabba3aa92e1f9215f1d9a7f172a4",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/prisma/tags.scm"
+        },
+        {
+          "blob": "6fb0f6e5c9b345d870ca3c0194892d09515b427f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/proto/tags.scm"
+        },
+        {
+          "blob": "0c2e8d672e4a9fd450881e9271fcc62e6761dd30",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/puppet/tags.scm"
+        },
+        {
+          "blob": "6b1b884c482fa2d667e26f75622c69f7442df41c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/purescript/tags.scm"
+        },
+        {
+          "blob": "a0e00a38ce9d6df6c96e8ead686aa5ef3755eb62",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/r/tags.scm"
+        },
+        {
+          "blob": "5878c3b34882640df6301e2662ed0e440350b1ad",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/racket/tags.scm"
+        },
+        {
+          "blob": "027dcd60100f424daf02337feb06803c30cc177f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/rego/tags.scm"
+        },
+        {
+          "blob": "6fc38d64fa52329f19e5da9f125d4aa2c628b254",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ruby/tags.scm"
+        },
+        {
+          "blob": "83fd3dfd7b8afed5a8335ec43e91fa55aaf6fe6b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/rust/tags.scm"
+        },
+        {
+          "blob": "c065576dad07cfc7518e75201a8075d8d47912ed",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/scala/tags.scm"
+        },
+        {
+          "blob": "4d8365e0be96195f075f8e81d59b0baf48d39b47",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/scheme/tags.scm"
+        },
+        {
+          "blob": "f78624936e4f14ef7974c73778f06fd2f3c3dda0",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/solidity/tags.scm"
+        },
+        {
+          "blob": "10f16a381253e61a15e4a2f8f79d84302935da2c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/sql/tags.scm"
+        },
+        {
+          "blob": "c28ae8dbf2b20d498b35cf27151a1c2de49a35c6",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/squirrel/tags.scm"
+        },
+        {
+          "blob": "f4f0581793de0f506641d40a6af777bbfa33398a",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/starlark/tags.scm"
+        },
+        {
+          "blob": "fb6646d7ef355e539c940ee9574dbd2b37516765",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/swift/tags.scm"
+        },
+        {
+          "blob": "74f94d4d5e1050435dc271929aa3d72fe8fb18a8",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/tcl/tags.scm"
+        },
+        {
+          "blob": "71b4c5cc0fd1a6862e4d35d104d21ef4d33bd1e8",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/thrift/tags.scm"
+        },
+        {
+          "blob": "c6b967c0e5ae6cc0989500893e6fb0d1f2216ad1",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/vhdl/tags.scm"
+        },
+        {
+          "blob": "026f570e785ae95d0859c5cd0c8d326279ff16ec",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/vim/tags.scm"
+        },
+        {
+          "blob": "16f2c8ae49685d78e43984187933d6cf3cceeb85",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/wgsl/tags.scm"
+        },
+        {
+          "blob": "d1bd551dc0683a5b2ffde7171736d741b826ca6c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/zig/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "deferralIds": [
+        "DFR-F45H29"
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D75FPM",
+      "items": [
+        "sha256:f61b97beff1836157482dbcc26dc26b43a30a50f3c6105d857e9af5f9d4a2ee8"
+      ],
+      "reason": "Confirmed docs/reference/knowledge-system.md at frozen L12 tree e222729eff1b with the updated 76-language catalog, qualifier policy, JS/TS test-case boundary, and languages CLI rows, and re-deferred out-of-scope deferral DFR-DE843V.",
+      "revision": 15,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D7KHAH",
+      "items": [
+        "sha256:5157614be925d1e14cd8ba4d5658a7a145d6c7671944d654edc5eef5a7725949"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language odin; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "58b3edc1388ec0ec1eaf7bcacbbe59d494261f13",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/odin/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/odin/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DAMZA0",
+      "items": [
+        "sha256:8c9de8ff122389d5425b291cbf93035747de697605a593426bda71a267ce7c59"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language pascal; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "9c2b73d133f5ec6fbf6369711a931da85016e21d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/pascal/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/pascal/tags.scm"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+            "content": "sha256:60f960f5260b86b2b9458916eb8758e5a1386cb731d3ecc873985c3ce0982f84",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "content": "sha256:274f59e05726a4e2526b6e9163b9ea75af5c22f7980d81ed72d637ab610c9530",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DANRG2",
+      "items": [
+        "sha256:3d316f38941e0caf3a8f242893b59030127ccb38bedeafa6a0187872273531c7"
+      ],
+      "reason": "Re-anchored whole-file realizations on evidence-lifecycle.toml and test-evidence-lanes.toml after L12 registered multi_language_soundness_fixtures.py and test_multi_language_catalog_soundness.py; exact consumer sets and canonical ordering hold unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DE530C",
+      "items": [
+        "sha256:8b1511af8f6ccb913ebb7697babcec58db7c3c66d0e926a593e8f8e615f43adc"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:8b1511af8f6ccb913ebb7697babcec58db7c3c66d0e926a593e8f8e615f43adc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DHPT06",
+      "items": [
+        "sha256:33d38d37db98d6edd0887ecd471367914c06c0904b8093ae75ff541fe743937b"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language csharp; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "6bf2c2f152698a8ab7f4e5eb8687a5b266fc1486",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/csharp/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/csharp/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DJXCRV",
+      "items": [
+        "sha256:e81f46d439139b93cb03c402b108ed0026cc2adf781448996159e810a81673bb"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language rego; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "027dcd60100f424daf02337feb06803c30cc177f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/rego/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/rego/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DN54KQ",
+      "items": [
+        "sha256:faa966a380cfaded3dbe142046f55b1bc7dd10bb69e6248de94612f3d8f7d10f"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language racket; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "5878c3b34882640df6301e2662ed0e440350b1ad",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/racket/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/racket/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DQMZWX",
+      "items": [
+        "sha256:8639c1001a4a21c4c27716aa49bd3e3b191b5f9181c1aba9548fed46272c2ea6"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:8639c1001a4a21c4c27716aa49bd3e3b191b5f9181c1aba9548fed46272c2ea6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DYQ9N0",
+      "items": [
+        "sha256:adcd89c53fc0be998bff4f9e04a928fbc54b812f83b09e769f7ad4c6d42c4bba"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language fsharp; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "14ff3134b187c99839eaac80bda7a8ff007c972b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fsharp/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/fsharp/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E2MF0H",
+      "items": [
+        "sha256:f49de5c805b628d7ab5ef585a36ab8c4726804c2d22b4b6dd509c3c56554b167"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language cairo; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "130afa877bf6250b493aa869763409d99adc3fc6",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/cairo/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/cairo/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EGY14R",
+      "items": [
+        "sha256:77f404929474522117fa26c63852a20fb64884384f974141ac1dbaab1d32c04d"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language graphql; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "79fd42e7884a6a27ecc91b93b2ac271b974dec05",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/graphql/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/graphql/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EMRWX2",
+      "items": [
+        "sha256:3014d10fcaf9ce869253451af9124e595f7cd20b3dac377f832d872e88051cce"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language hcl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "f5c8383fced9015c386e7430b3d36e0b73e197b3",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/hcl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/hcl/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F27WM5",
+      "items": [
+        "sha256:b1d796f17356ee3707dbba7ed594455fa102a1ba712c7b49d7242389bf2a3a02"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language ruby; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "6fc38d64fa52329f19e5da9f125d4aa2c628b254",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ruby/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/ruby/tags.scm"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-559QV5",
+          "revision": 1
+        },
+        {
+          "id": "INV-5FFC2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-AVRNNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-EW1ST5",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJDERT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KQ8BKK",
+          "revision": 1
+        },
+        {
+          "id": "INV-MMN8G0",
+          "revision": 1
+        },
+        {
+          "id": "INV-TFPK5R",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYP9YD",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-F3K8T4",
+      "items": [
+        "sha256:70ed17d854a238522f1ae8c7bab4f7a1f810edd513e99deb7b2c40cd16a6c657"
+      ],
+      "reason": "Examined all six existing members (after re-anchoring INV-559QV5, INV-KJDERT, INV-KQ8BKK, and INV-ZYP9YD) and admitted the three new KNO-R12@v1 code invariants (Rules 1-3) into FAM-CSVQBJ, strengthening the joint guarantee across the 76-language catalog, leading sibling wrappers, declarative QualifierSpec resolution, and languages warm --all within existing routes.",
+      "revision": 3,
+      "subject": "FAM-CSVQBJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F5XZ5T",
+      "items": [
+        "sha256:20a3df20097dc85b06b0aa337f5130adcfb4ed9bfbad2a686aa92cea89f51821"
+      ],
+      "reason": "Reviewed repository root overview against L12 multi-language catalog expansion and public docs updates; root architecture and retrieval prose remain accurate unchanged.",
+      "sources": [
+        {
+          "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
+          "path": ".dagger/src/agents_remember_quality/main.py"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F76BVV",
+      "items": [
+        "sha256:d4d196d76b71f5de354a099edb9f1bcae52c360c6bbb951868addb4aa03fb823"
+      ],
+      "reason": "Updated language_scanner.py card prose and ref [1] for build_provider_from_catalog forwarding leading_wrappers/qualifiers/guarantee_tier and all_catalog_language_ids.",
+      "sources": [
+        {
+          "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FE7ST0",
+      "items": [
+        "sha256:4613b37fc8e3e6a5320c51e4b91d68bac7d60a61964ec5bec9e904c6618e3da4"
+      ],
+      "reason": "Updated memory_quality/overview.md citation seam summary for the 76-language catalog, guaranteeTier, direct pack-binding loading, QualifierSpec, leading_wrappers, and all_catalog_language_ids, and refreshed ref [46].",
+      "sources": [
+        {
+          "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+        },
+        {
+          "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
+        },
+        {
+          "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py"
+        },
+        {
+          "blob": "9f75a4d87205d5feb66fad62abaa2c01b2c0f3b0",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_scanner.py"
+        },
+        {
+          "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+        },
+        {
+          "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FFSCRT",
+      "items": [
+        "sha256:92d152588de552ee8fda9efbca7a6ee41ce568ae5887f197a011b7cba322a8ae"
+      ],
+      "reason": "Updated cli/languages.py card prose and refs [1]-[2] for --all flag (LanguagesCliArgs.all_languages) and all_catalog_language_ids() full-catalog warming.",
+      "sources": [
+        {
+          "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+          "path": "mcp/src/agents_remember/cli/languages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/languages.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FK7BN1",
+      "items": [
+        "sha256:8c32bf2b5de6c75685e1347ec5e1bf5231d31cc64a7839edc6b6e0d088aba9e4"
+      ],
+      "reason": "Internal extension-loading helper (_find_pack_binding / _load_extension_module) and reuse in _import_isolated_module backing _load_language_from_cache under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:8c32bf2b5de6c75685e1347ec5e1bf5231d31cc64a7839edc6b6e0d088aba9e4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FSDW3V",
+      "items": [
+        "sha256:912be3f9dd6c63fbc54a235e5d67f2b15ae54d125df6f6f276cbaa152cb7531c"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language powershell; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "feb00230c1f2bdac0fc289c31858dbbbf0160d68",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/powershell/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/powershell/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FT1HY1",
+      "items": [
+        "sha256:9df62aab0ed317d96ff735b93a7b758f1fc21bba387b26f70ff49213c02e0c4a"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language ada; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "db15bae5a119c1463810fd150c27725dc512b911",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/ada/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/ada/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FWS53V",
+      "items": [
+        "sha256:07e45ecdfcef86169a66e6086455dc171569652215ac022190ab3aec36fd8b4e"
+      ],
+      "reason": "Supporting CLI argument plumbing (import, LanguagesCliArgs.all_languages field, --all option, and _parse_args wiring) for languages warm --all, whose normative contract is captured on cli/languages.py::run under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:07e45ecdfcef86169a66e6086455dc171569652215ac022190ab3aec36fd8b4e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FYSSGC",
+      "items": [
+        "sha256:8d7ee9326b589dc197da76decd9a2480534253f80cc735161cc9670ab489b4b9"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language scala; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "c065576dad07cfc7518e75201a8075d8d47912ed",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/scala/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/scala/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GH7JJH",
+      "items": [
+        "sha256:64b2c99c5f509dae3ff1619c4466bc5620daf518fae281295997d5d0cb620b8d"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language purescript; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "6b1b884c482fa2d667e26f75622c69f7442df41c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/purescript/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/purescript/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HK9GV0",
+      "items": [
+        "sha256:563fb51168255c68467ce5724a2c1e86d44e03c39a533abc42d1a7d73a67f975"
+      ],
+      "reason": "Updated language_catalog.py card prose and ref [2] for GuaranteeTier, leading_wrappers, QualifierSpec parsing (_parse_qualifiers, _parse_guarantee_tier), and .scm ambiguous suffix.",
+      "sources": [
+        {
+          "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_catalog.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HRSMEY",
+      "items": [
+        "sha256:4fea3ebf413d865188043dede488b164edc31a8467bc6b1ee3974402afd862f2"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language starlark; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "f4f0581793de0f506641d40a6af777bbfa33398a",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/starlark/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/starlark/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J3H8C3",
+      "items": [
+        "sha256:dc6757d66dbbf514e8f17717e4ef3fcb2f19651d227ecb6a9009c75520065867"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language prisma; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "17a84436515aabba3aa92e1f9215f1d9a7f172a4",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/prisma/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/prisma/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JFMMKS",
+      "items": [
+        "sha256:b9995a7ceb3335dedb60720682085bb4f385aa85358c56e6969eb328fae8c9ec"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language zig; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "d1bd551dc0683a5b2ffde7171736d741b826ca6c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/zig/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/zig/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JM56KH",
+      "items": [
+        "sha256:1313d293e08e7034bd6aaeb4a75489b561e6dea66c3a5ebaf555d288d498da77"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language make; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "374325e1086174d881c12d1624a3482c639491b7",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/make/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/make/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JXJM45",
+      "items": [
+        "sha256:ee12635a032033a77aeb5c1b13706ce932c34e6319ddbf384ccf665225bc5605"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language haskell; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "fde3d27760ae30a7f84ea3db848c6e70d334210d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/haskell/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/haskell/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K40Z8G",
+      "items": [
+        "sha256:340011dc59a8a8546a61a5cc25ca59197e32ab481679e2e6da87f2f89da27bb7"
+      ],
+      "reason": "Updated language_set.py card prose and refs [1]-[2] for LanguageProvider.qualifiers, TreeSitterLanguageProvider leading_wrappers/qualifiers/guarantee_tier and policy digest hashing, and LeanLanguageProvider.qualifiers.",
+      "sources": [
+        {
+          "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K6AEFG",
+      "items": [
+        "sha256:02188c7c137365cf02b634adb96ab6c66ccf5cbe2636ca7d97e4e4f14adec507"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language elisp; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "23b368b9980838576372507e86afe37765f10c7e",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/elisp/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/elisp/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K70XFN",
+      "items": [
+        "sha256:f0755bfb2d8f82d8e00ca3ef5de8ead5fc8dbe00cf2e69f7d7ccded45095edc6"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language d; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "1e6c373b9bb55a22e116579525731363a204a657",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/d/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/d/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KK4VXC",
+      "items": [
+        "sha256:0aac867b8a768d5590e65aa225d2f7bc1c388b7bbde8dc179202681a7caba347"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:0aac867b8a768d5590e65aa225d2f7bc1c388b7bbde8dc179202681a7caba347"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KM04TQ",
+      "items": [
+        "sha256:c223e440eca2dec6e7a752bc56df16c1d8e329b7e84333eb32dd74f5057da315"
+      ],
+      "reason": "Created onboarding card and sidecar for new shared-support fixture catalog multi_language_soundness_fixtures.py covering all 15 core pilots and 56 language-pack entries.",
+      "sources": [
+        {
+          "blob": "c4a411ef16912c22689033ed0f5c6d91bd452b34",
+          "path": "mcp/tests/multi_language_soundness_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/multi_language_soundness_fixtures.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KQY033",
+      "items": [
+        "sha256:bd14e9ddc9c770ede07f166e643877316f3552e2f27e9c677d90632226b04c10"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:bd14e9ddc9c770ede07f166e643877316f3552e2f27e9c677d90632226b04c10"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KRR8MB",
+      "items": [],
+      "reason": "Confirmed docs/design/python-pytest-bootstrap.md remains accurate against L12 addition of test_multi_language_catalog_soundness.py to test-evidence-lanes.toml (9837/10000 unit budget; 0 new stale dependents).",
+      "revision": 46,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M503QB",
+      "items": [
+        "sha256:cf35a4e6d9b9285f4812f01d7acc8fad67e5f2839828d67205039ab524618d17"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language fish; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "069d28d7f7aca52e503c9a8ec2da06142be80381",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fish/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/fish/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MA79Z4",
+      "items": [
+        "sha256:cb626c83570c2f9268a660953f6b24bb664949dfd4c599a5f2c65ec8baa581a3"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:cb626c83570c2f9268a660953f6b24bb664949dfd4c599a5f2c65ec8baa581a3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MHFSD4",
+      "items": [],
+      "reason": "Confirmed CONTRIBUTING.md remains accurate against L12 changes to test-evidence-lanes.toml and .dagger/src/agents_remember_quality/main.py (0 new stale dependents).",
+      "revision": 30,
+      "subject": "DPD-78737N"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+            "content": "sha256:2e829eb855a4b5d23a9aecfd6a3fd6ec967884c886459f9464de1925af1c41db",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/languages.py"
+          },
+          "before": {
+            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
+            "content": "sha256:bdb0c8898b58707a6ef70dcdb071623116b2763b849093e8aee261a6cc922e95",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/languages.py"
+          },
+          "id": "RLZ-38FXST"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N4J4CB",
+      "items": [
+        "sha256:2b348eb4f0352b85629a2b5edb031c0673f17a23d358f824707499880db28cd4"
+      ],
+      "reason": "Re-anchored RLZ-38FXST on cli/languages.py::run after L12 added --all full-catalog warming; lazy hash-verified AR_LANGUAGE_CACHE install and read/write failure asymmetry hold unchanged.",
+      "revision": 1,
+      "subject": "INV-KJDERT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N54YPJ",
+      "items": [
+        "sha256:a6282f88d1cf07bde04de328cad0a4e3ea6c9860cca225c8f5476d5a80228624"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:a6282f88d1cf07bde04de328cad0a4e3ea6c9860cca225c8f5476d5a80228624"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-N58PR1",
+      "items": [],
+      "reason": "Confirmed docs/reference/repository-certification-profile.md remains accurate against L12 addition of --all to Dagger languages warm in .dagger/src/agents_remember_quality/main.py (0 new stale dependents).",
+      "revision": 11,
+      "subject": "DPD-FR0VZP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2173597b810817028e1f90751020961770a272ee",
+            "content": "sha256:d75beca8f821a7dbc0b306a3932c44fd3eb970dec85b4c5a7f958cdfa43e992c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "9100985109e69470c20da9af730fc3e33ebd6aec",
+            "content": "sha256:36c213da7b465959d7665dc49eec3113d52a80cfaf1ff7df1cdb9e3fc8e06754",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-CSYDPS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N95N0P",
+      "items": [
+        "sha256:478bf9a4ecf2ad1c41c60ebc2177b32d131dfd82166da58b5bcf1937e7363d09"
+      ],
+      "reason": "Re-anchored pre-existing base-stale RLZ-CSYDPS on global_state.py::PROCESS_MUTABLE_STATES; tags_engine.compile_query remains registered in PROCESS_MUTABLE_STATES and LanguageSet cache isolation holds unchanged.",
+      "revision": 1,
+      "subject": "INV-KQ8BKK"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NAT5EQ",
+      "items": [
+        "sha256:311b65ef0a86b178758f23fe1f9b0d3c9ddbab2f24e891560f440ce7fbfdb716"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language dockerfile; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "f441db98c7fe174b3cc1f0f55eeb77c68f94f70f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/dockerfile/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/dockerfile/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NNTW50",
+      "items": [
+        "sha256:86a7eba2ff7df714edc4dce63b9969c156ce7833982e168c865108ca12ca2942"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language scheme; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "4d8365e0be96195f075f8e81d59b0baf48d39b47",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/scheme/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/scheme/tags.scm"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-BAEAZY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NZ34T4",
+      "items": [
+        "sha256:8714c44b0452daeb93e2a2b65ba5be49649ff07d6005258255803afc0611fff8"
+      ],
+      "reason": "Re-anchored RLZ-BAEAZY on extents.py::qualified_spans after L12 threaded _qualifier_spec(grammar) into _enclosed_qualified_spans; read_anchors._defining_extents still delegates to extents.qualified_spans.",
+      "revision": 2,
+      "subject": "INV-QQ8TQ7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NZK734",
+      "items": [
+        "sha256:9d0c69f3f61ce4f1e5e4296a6306c937c0665d6eb4e5de73698a7c925ef644eb"
+      ],
+      "reason": "Supporting import, GuaranteeTier alias, CatalogLanguageSpec fields (leading_wrappers, qualifiers, guarantee_tier), and internal helper parsers (_parse_qualifiers, _parse_guarantee_tier, _parse_language_spec wiring) backing parse_language_catalog under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:9d0c69f3f61ce4f1e5e4296a6306c937c0665d6eb4e5de73698a7c925ef644eb"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+            "content": "sha256:bbd27cc8ace56b73ceeb96ddd3f4b9130a66638751e7198b34729939ec9cec6b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+          },
+          "before": {
+            "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
+            "content": "sha256:59bde6253a8d48912a24fc69f8098ea1b1df761157252500c35cd549235b57bd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
+          },
+          "id": "RLZ-SY26S8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-P534RK",
+      "items": [
+        "sha256:da197831eba46883362ebe9eb85a09b01d5984f1c5d923640cfd72c75620608f"
+      ],
+      "reason": "Re-anchored RLZ-SY26S8 on language_catalog.lock.json after L12 expanded the catalog lock to 76 languages (19 pypi_wheel incl. 15 pilots, 56 language_pack, builtin_lean); the sole-shipped-lockfile invariant holds unchanged.",
+      "revision": 1,
+      "subject": "INV-559QV5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PQJN3Q",
+      "items": [
+        "sha256:156696056b1bdca9230284d106fd0a62e2ed96e5504376cfe842a80239829ee2"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:156696056b1bdca9230284d106fd0a62e2ed96e5504376cfe842a80239829ee2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+            "content": "sha256:8eb37f46b6b2cc9cd1bf1ca2f25179f876bbb94d3a86c6dd79851d732218607e",
+            "locator": {
+              "kind": "symbol",
+              "name": "extract_tag_entries"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+          },
+          "before": {
+            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "content": "sha256:749a5355cb6333cdc2e58400c06f4693635deae095aa01b51f7363acf80eb45a",
+            "locator": {
+              "kind": "symbol",
+              "name": "extract_tag_entries"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/tags_engine.py"
+          },
+          "id": "RLZ-JPK4QA"
+        },
+        {
+          "after": {
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "content": "sha256:4a71039996e8a5e3501b1da5d23b7dcf33879fe0f69b4ceabe2b0379c140383c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeanLanguageProvider"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "before": {
+            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "content": "sha256:3977e516af81450c94fccf8b03f999cd67ca59118413d92b7e8cad824716b993",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeanLanguageProvider"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "id": "RLZ-VTDT98"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PQJNZ6",
+      "items": [
+        "sha256:a93bf57d96ec045deab9c63254975178b2918b6c5e0a203c0aad1ef30eb4eb1d"
+      ],
+      "reason": "Re-anchored RLZ-JPK4QA (tags_engine.py::extract_tag_entries) and RLZ-VTDT98 (language_set.py::LeanLanguageProvider) after L12 added TagExtractionOptions and QualifierSpec(separators=()); declarative tags.scm execution and .lean reservation hold unchanged.",
+      "revision": 1,
+      "subject": "INV-ZYP9YD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "content": "sha256:274f59e05726a4e2526b6e9163b9ea75af5c22f7980d81ed72d637ab610c9530",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+            "content": "sha256:3e3e56ea4a66a8662a3ff77d1f19e8d12683dded9485537756a379426c78adf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PVD5QM",
+      "items": [
+        "sha256:a8e621de10da0f3edf55bf928c55bd16c8eefaf847a96713a0e1f2ae440a71f4"
+      ],
+      "reason": "Re-anchored whole-file realization RLZ-XQXYDT on test-evidence-lanes.toml after L12 registered test_multi_language_catalog_soundness.py; lane catalog still lists only surviving test modules.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PX8MZN",
+      "items": [
+        "sha256:4c71bffb7e41762b2e5ad5d5cd1c9298ca12416f8f4660b37b237d4d9ac349a2"
+      ],
+      "reason": "Confirmed docs/reference/runtime-layout.md at frozen L12 tree e222729eff1b with the added AR_LANGUAGE_CACHE external-files row and refreshed stands_on blobs.",
+      "revision": 18,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QY2YH0",
+      "items": [
+        "sha256:af09db4fb7f6c32b376ce47f6305fb738f26cdabc59b87e8155982f1ef2b0258"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language haxe; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "a154985e1d6623e5f1ca7612b5149035e8510975",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/haxe/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/haxe/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RF06MR",
+      "items": [
+        "sha256:41596807ea96094b69d43f75df6c5c5d1aa4559c14ee6af94c3f53efd1a5e6bf"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language lua; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "995059f8ce559ddc1fc7f476329394a2a55fb6c2",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/lua/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/lua/tags.scm"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RZVC2W",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml card prose (707 unit-regression, 861 total incl. test_multi_language_catalog_soundness.py at line 398) and re-authored whole-file citation references.",
+      "sources": [
+        {
+          "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SRPS8F",
+      "items": [
+        "sha256:4deb402a12e52d498ae6509f56358b980bca03612fac507f8ed2f040a895b76d"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language vhdl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "c6b967c0e5ae6cc0989500893e6fb0d1f2216ad1",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/vhdl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/vhdl/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SV33M6",
+      "items": [
+        "sha256:3a681d84a2c1501290b8b4f526665eb7311f5f7072601439fae5cc19e53f1343"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language kotlin; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "0c553793f735dda970610b5fbfff4217ee2c6e8d",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/kotlin/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/kotlin/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SYMN3H",
+      "items": [
+        "sha256:2e51a0087d84ee1ec84ca6e8d9a24294af7fbc6ef4285356fc391afdd892204a"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language dart; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "0c5d2c27c960d2b03e8cde747a1e8eb2a7ae9358",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/dart/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/dart/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TAC3MK",
+      "items": [
+        "sha256:7133a59dc85b7497d16b5c1841ff5ea6402c6c940decf3e729e85245724767be"
+      ],
+      "reason": "Supporting import, default QualifierSpec constant, Extent container/qualifier_kind dataclass fields, and internal qualifier matching helpers backing extents.py::_enclosed_qualified_spans under KNO-R12@v1 Rule 3.",
+      "subject": "hunk:sha256:7133a59dc85b7497d16b5c1841ff5ea6402c6c940decf3e729e85245724767be"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TF2Q71",
+      "items": [
+        "sha256:34a62633307ff671111b145d6c8436a206a35ffa25a71149f677f4b98d62eb91",
+        "sha256:46e3a1b88a51aa44bff8375265996ed578288f5fdb356f15d291ff27d8f181f8"
+      ],
+      "reason": "Updated read_scope_test_support.py card after UNPARSED_PATH changed from src/schema.sql to src/schema.dsl (since .sql is now an admitted catalog language), removing duplicate [15] marker and re-authoring refs [11]-[15], [17]-[18], [21].",
+      "sources": [
+        {
+          "blob": "dade756cab6395af1f9da4677342c28398b45017",
+          "path": "mcp/tests/read_scope_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/read_scope_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TH05ZT",
+      "items": [
+        "sha256:3e9ddf6ef6bde8e9e7c8b80ef9156041b8856811339825f6341540d3c8ccfc23"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language vim; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "026f570e785ae95d0859c5cd0c8d326279ff16ec",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/vim/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/vim/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TJG5ZM",
+      "items": [
+        "sha256:9d91ae84cf188e24df978eec045651f8eef967452cdacb063c358577b2bad03b"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language perl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "5f57b65a634e661102490fd35356336f56fdf43b",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/perl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/perl/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TS8WWG",
+      "items": [
+        "sha256:21ec6d41fc6bbaf46b71480ac35b6adbcb338f36c4c2f834dc649e468d597b10"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language sql; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "10f16a381253e61a15e4a2f8f79d84302935da2c",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/sql/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/sql/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TZWYED",
+      "items": [
+        "sha256:b35830a2e635372ba27e787645908dbefc9bd68c3759d4c39675c31c8f607d16"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language bicep; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "0d07ce04a42895ed0ba6cb6a8ba5261ba4f37fab",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/bicep/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/bicep/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V5JSXK",
+      "items": [
+        "sha256:4fab905b140d3485624fd2e84b40774c400b008eb6aef96188f72f92d86b2f7c"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:4fab905b140d3485624fd2e84b40774c400b008eb6aef96188f72f92d86b2f7c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V6QYE5",
+      "items": [
+        "sha256:11699e67315a5fa98310eef9acdb75e94d30f90a35b8d95c46c4676645410746"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language bash; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "dae3047dedad04495755bd808dc3d9ea9b8521a2",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/bash/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/bash/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V912SN",
+      "items": [
+        "sha256:8626aed9e967023fe9ef051b40965ccd691a9edb87a6508985e7ff96b6d14f55"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language jsonnet; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "5cfcbc4ced76885abb40690cbd67725291e6c897",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/jsonnet/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/jsonnet/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V9PCQ4",
+      "items": [
+        "sha256:81949e7bccdf04f9aad819bb3a69e8e253d926afe5bd857607350e11a727e8f6"
+      ],
+      "reason": "Supporting QualifierSpec import and LanguageProvider.qualifiers protocol property declaration backing TreeSitterLanguageProvider and extents._enclosed_qualified_spans under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:81949e7bccdf04f9aad819bb3a69e8e253d926afe5bd857607350e11a727e8f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VF3HGM",
+      "items": [
+        "sha256:2837fa49ad1d92822a2f4e80be9d0501f51b7476e5704edf6b891639d8c48f13"
+      ],
+      "reason": "Internal CatalogLanguageSpec-to-TreeSitterLanguageProvider field forwarding (leading_wrappers, qualifiers, guarantee_tier) in build_provider_from_catalog supporting KNO-R12@v1 Rules 1-3.",
+      "subject": "hunk:sha256:2837fa49ad1d92822a2f4e80be9d0501f51b7476e5704edf6b891639d8c48f13"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-2WHJT7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VNXX27",
+      "items": [
+        "sha256:a431cd05b19e3d73af1dfcafbe0db20c3648fc81acd9e4f2436010bc39094f71"
+      ],
+      "reason": "Re-anchored RLZ-2WHJT7 on extents.py::qualified_spans after L12 updated the non-exact-binding branch; Lean exact-binding lookup still stops at _uses_exact_bindings(grammar) after whole-name lookup.",
+      "revision": 1,
+      "subject": "INV-XA55TP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W7B42Z",
+      "items": [
+        "sha256:f66821c739023e58778fc0793114d0b6ec3470bfe0fe258af3a948e48f7e3d4a"
+      ],
+      "reason": "Internal CatalogLanguageSpec-to-TreeSitterLanguageProvider field forwarding (leading_wrappers, qualifiers, guarantee_tier) in build_provider_from_catalog supporting KNO-R12@v1 Rules 1-3.",
+      "subject": "hunk:sha256:f66821c739023e58778fc0793114d0b6ec3470bfe0fe258af3a948e48f7e3d4a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WD19RD",
+      "items": [
+        "sha256:eadca2ced2606bc4df89ffd8c76b27b2256b8a7de2fb828e0e9d8bf3bd8b1fcc"
+      ],
+      "reason": "Supporting import, default QualifierSpec constant, Extent container/qualifier_kind dataclass fields, and internal qualifier matching helpers backing extents.py::_enclosed_qualified_spans under KNO-R12@v1 Rule 3.",
+      "subject": "hunk:sha256:eadca2ced2606bc4df89ffd8c76b27b2256b8a7de2fb828e0e9d8bf3bd8b1fcc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WJJSDA",
+      "items": [
+        "sha256:61e5d7a3b44994332776f39f3ad6ad624ac34b33864c8dd921e003ac0bf8e346"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language java; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "935935dbcfa8fd0a1e59705c5a5470d644cb6f2f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/java/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/java/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X0AJQ2",
+      "items": [
+        "sha256:ffaaa3f2ea847302299fb83c03355157083f4f12f5ee2fd552132ca561375df7"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language puppet; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "0c2e8d672e4a9fd450881e9271fcc62e6761dd30",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/puppet/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/puppet/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XVM982",
+      "items": [
+        "sha256:2596b9b80b1276363004bb92c74a4804dbc0d16e691bcc775f698bce14c2a388"
+      ],
+      "reason": "Supporting CLI argument plumbing (import, LanguagesCliArgs.all_languages field, --all option, and _parse_args wiring) for languages warm --all, whose normative contract is captured on cli/languages.py::run under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:2596b9b80b1276363004bb92c74a4804dbc0d16e691bcc775f698bce14c2a388"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XWHKDJ",
+      "items": [
+        "sha256:0add4daa4e0978dc9c1cfda0e112828d5a07f047a8cf0e3875dc69497668743c"
+      ],
+      "reason": "Internal extension-loading helper (_find_pack_binding / _load_extension_module) and reuse in _import_isolated_module backing _load_language_from_cache under KNO-R12@v1 Rule 1.",
+      "subject": "hunk:sha256:0add4daa4e0978dc9c1cfda0e112828d5a07f047a8cf0e3875dc69497668743c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YCEC48",
+      "items": [
+        "sha256:353b4af6242c8262b0b5f8258700a23752a808189d4bf875860292d6ea729cf8"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language wgsl; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "16f2c8ae49685d78e43984187933d6cf3cceeb85",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/wgsl/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/wgsl/tags.scm"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YG92JQ",
+      "items": [
+        "sha256:d77223156796d55fe45338ed4ba0cdc6f5de4ed438c213d9e89381a1e910a4f8"
+      ],
+      "reason": "Supporting MappingProxyType import, Binding container/qualifier_kind fields, internal _TagCollector / _extract_containers helpers, and TagExtractionOptions dataclass backing widened_span and extract_tag_entries under KNO-R12@v1 Rules 2-3.",
+      "subject": "hunk:sha256:d77223156796d55fe45338ed4ba0cdc6f5de4ed438c213d9e89381a1e910a4f8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YYN5JR",
+      "items": [
+        "sha256:e8b0fd88417481a64f5b93c2c46999c5e8cd2fe1f3e0bf287d6d8ae1dc6538aa",
+        "sha256:f0ed291366de29f5d6cd8530279abbec4459a71f185cbd7e0eda74b8f5b99b4c"
+      ],
+      "reason": "Reviewed test_knowledge_read_boundaries.py after L12 changed the unsupported-locator fixture language from sql to dsl (since .sql is now an admitted catalog language); card prose remains accurate unchanged and refs [3], [11] were refreshed.",
+      "sources": [
+        {
+          "blob": "6b679d1f9fe69764dfd3ade0763438efcec6681d",
+          "path": "mcp/tests/test_knowledge_read_boundaries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_read_boundaries.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z4YGPJ",
+      "items": [
+        "sha256:4485c32718c12199132691485bd19e54cfcd1ae889fd8255bdeb1876673cef0f"
+      ],
+      "reason": "Supporting import, default QualifierSpec constant, Extent container/qualifier_kind dataclass fields, and internal qualifier matching helpers backing extents.py::_enclosed_qualified_spans under KNO-R12@v1 Rule 3.",
+      "subject": "hunk:sha256:4485c32718c12199132691485bd19e54cfcd1ae889fd8255bdeb1876673cef0f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z8BHR0",
+      "items": [
+        "sha256:db415afc3fa82cada442d1f796df6ce80078cae554841c7fce8d583a7107ad4a"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language fennel; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "9818bec6279f2a2cb3b79aee939c0cdd296b1e77",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/fennel/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/fennel/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZNBN4B",
+      "items": [
+        "sha256:83d3b08e072921e05749eda376db727040f0455565555c033e01e8594f1e45b6"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language c; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "1f65b38882e31e2773d51f666b12e36c01f23365",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/c/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/c/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZQAJCJ",
+      "items": [
+        "sha256:1ccc0bd5b1425b6ed59f24748a3ebc401e7772dac32178a823f9fac100e39638"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language elixir; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "ddf91067a7e7222512287f68e3920e9928d556e2",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/elixir/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/elixir/tags.scm"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZWG0SM",
+      "items": [
+        "sha256:599ef1ed4523899122b3bb061416cd6fcfc065b2d191caf74f4ca217f56cbc7f"
+      ],
+      "reason": "Declarative tree-sitter tags.scm data asset for catalog language proto; governed by language_catalog.lock.json (SHA-256 pinned) and KNO-R12@v1 Rules 1-2 without requiring a separate file card.",
+      "sources": [
+        {
+          "blob": "6fb0f6e5c9b345d870ca3c0194892d09515b427f",
+          "path": "mcp/src/agents_remember/package_data/citations/queries/proto/tags.scm"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/citations/queries/proto/tags.scm"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:3edda3fb575b69776cbef03de09b1a4f86b8318f5fadd3714653018cc4fa3c66",
+      "record": "DPD-327MNX",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4726100d6935b8b982b1ea8f58b0d5f6b20ed6fd740c598c5ba4e9833a6f7a24",
+      "record": "DPD-78737N",
+      "revision": 30,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:f0d8d2360afb88da8d6460a580dc39d73640308da2d8fde70476122c74456da4",
+      "record": "DPD-86HJGF",
+      "revision": 30,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:5c7fd8f89a84f889a61524824f237e42ab3309fb2444f4524453dfcf52f3bb4e",
+      "record": "DPD-EG5TYT",
+      "revision": 40,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:548706311f7ae0a524b9df5b649ece7b822a49804d999fc45149f613c8988855",
+      "record": "DPD-FR0VZP",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:d1d911e61b0ca1cf9fd3af73dceefa234020aff5c389fcc6f0ab7335affe2b5c",
+      "record": "DPD-TXRND9",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:4af376c77130a260861eab639083b75527aaefe7e55e5e58034996a3fd9942e6",
+      "record": "DPD-W0T9V9",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:68b086608cf89279cf03b7cca50380e4c3bc8821be0349bf08d509f71db66a95",
+      "record": "DPD-ZMQ523",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:af587795211cb5371eda8a3ead567f02f4f9d20d96f4a3b7a7e758d580af6c08",
+      "record": "DPD-ZT8YY7",
+      "revision": 46,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:72306cb6e2c10c1a5e31ec620695eaf9703477d9e6e8ce0b9d987135e7c383f6",
+      "record": "FAM-CSVQBJ",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:bc5cb5a0c2a75986309abe147c03beb819d55330d2358d2caee8abeedd28b5b8",
+      "record": "INV-0H5MHX",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:23278e644a27e16d3e8031a584fb638f44b7046393fe40e53d747c7df8d89039",
+      "record": "INV-AVRNNJ",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:5843d7454d97e136fd92336b22f1362bd15c65e8b0d05796f81d84073b23e6a5",
+      "record": "INV-MMN8G0",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    },
+    {
+      "contentDigest": "sha256:ecadd464065d7e329d061c3864b3f21c6fb32ab4a592016dcb2914c2320a2d3a",
+      "record": "INV-TFPK5R",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-28T01:52:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-KNO-L12",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+        "task": "261112-KNO"
+      }
+    }
+  ]
+}

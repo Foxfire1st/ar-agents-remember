@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6a4f9a194a105d584ec86ac1ea917b69375fdd4b",
-    "commit": "b0bb6149fd53990e9e9c63b320836c056488da11",
+    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
+    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
     "role": "curator",
-    "statement": "Verified docs/reference/settings-json.md against post-L32 synced L34 candidate: settings schema and reload semantics remain accurate after BUG-R34@v1.",
-    "task": "261112-BUG-L34",
+    "statement": "Verified docs/reference/settings-json.md against frozen L12 tree e222729eff1b: Language Configuration section (lines 909-968) accurately documents user languages defaults, repository languages.json keys matching language_config._ALLOWED_CUSTOM_KEYS, Bend2 custom example, local-only security boundary, and .lean reservation.",
+    "task": "261112-KNO-L12",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -232,17 +232,22 @@
       "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/style/citations/language_config.py"
     }
   ],
   "writer": {
-    "at": "2026-11-27T22:06:38+01:00",
+    "at": "2026-11-28T01:52:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L34",
+    "leaf": "261112-KNO-L12",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d35ec7c9-cb23-5dd1-afae-140aaeb19c42",
-    "task": "261112-BUG"
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+    "task": "261112-KNO"
   }
 }

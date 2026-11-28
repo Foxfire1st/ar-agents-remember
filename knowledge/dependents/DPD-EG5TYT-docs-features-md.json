@@ -1,25 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "58741cf122bf63ea3bb6dfc88afc8f302b0375f4",
-    "commit": "34a73ee6df2a8f06a97e3e3fa86bf31d6fd4b960",
+    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
+    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
     "role": "curator",
-    "statement": "Verified docs/features.md against frozen tree 58741cf1: lines 197-211 now document all eleven knowledge_read views and text-bearing replies while narrowing pre-existing KNO-R07 deferral DFR-4XVB1B to lines 398-399 (4,000-token ceiling).",
-    "task": "261112-KNO-L14",
+    "statement": "Verified docs/features.md against frozen L12 tree e222729eff1b: lines 137-146 accurately document the 75-tree-sitter plus Lean catalog, lazy AR_LANGUAGE_CACHE verification, ambiguous suffix defaults, and languages.json overrides; pre-existing out-of-scope deferral DFR-M29BGY (shifted to lines 409-410) is re-deferred onto the L12 blob.",
+    "task": "261112-KNO-L12",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
         "file": "docs/features.md",
-        "note": "Update docs/features.md lines 398-399 from 4,000-token to 5,000-token knowledge_read exception ceiling."
+        "note": "Update docs/features.md lines 409-410 from 4,000-token to 5,000-token knowledge_read exception ceiling."
       },
-      "createdAt": "2026-11-27T17:29:51.560514Z",
-      "createdByLeaf": "261112-KNO-L14",
-      "fileBlob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
-      "id": "DFR-M29BGY",
+      "createdAt": "2026-11-28T00:52:25.688762Z",
+      "createdByLeaf": "261112-KNO-L12",
+      "fileBlob": "8240792dc2023c6f219fe628bfb39350b7279640",
+      "id": "DFR-Q2J6S3",
       "owner": "261112-KNO",
-      "passage": "docs/features.md lines 398-399 (4,000-token knowledge_read exception ceiling)",
-      "reason": "Narrowed and re-deferred from DFR-4XVB1B onto KNO-L14 frozen blob of docs/features.md: KNO-R14@v1 fixed lines 197-211 (eleven knowledge_read views and text-bearing responses), while lines 398-399 still state the 4,000-token ceiling rather than 5,000 tokens."
+      "passage": "docs/features.md lines 409-410 (4,000-token knowledge_read exception ceiling)",
+      "reason": "Re-deferred onto KNO-L12 frozen blob of docs/features.md: KNO-R12@v1 added lines 137-146 for multi-language catalog anchors and AR_LANGUAGE_CACHE, shifting the pre-existing out-of-scope 4,000-token ceiling passage from lines 398-399 to lines 409-410 without changing that ceiling claim."
     }
   ],
   "document": "docs/features.md",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 39,
+  "revision": 40,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "1c21210d65dd53d40e164ed7a899ff5c8b56737c",
+      "blob": "d2759addfda330d39e833316cf12ac3a11aa5f51",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -158,12 +158,12 @@
       "path": "mcp/src/agents_remember/observer/native_attention.py"
     },
     {
-      "blob": "a0efdfe20f3f77b6898242e2667f426ccbcef18f",
+      "blob": "8893dece04922f14cfcbbf99ed77b1cf5e47d0ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
     },
     {
-      "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+      "blob": "493c84d2081ef9d3875abc7dcb3b2bfa89697409",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
     },
@@ -307,17 +307,22 @@
       "blob": "4c7673f4ede9b33ec05f397c92db4200aacae87d",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/citations/language_catalog.lock.json"
     }
   ],
   "writer": {
-    "at": "2026-11-27T18:29:49+01:00",
+    "at": "2026-11-28T01:52:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L14",
+    "leaf": "261112-KNO-L12",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b3c99746-f800-5893-bdb3-233959f70423",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
     "task": "261112-KNO"
   }
 }

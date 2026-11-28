@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+        "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
         "content": "sha256:c4df04aaa8fa51bfac9f1429afba18106c402bf37639bfd48835b90170a1c2d9",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
-        "content": "sha256:749a5355cb6333cdc2e58400c06f4693635deae095aa01b51f7363acf80eb45a",
+        "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+        "content": "sha256:52f168b5dd23132cb5818cc8ea7de1b80c778ae59afbe4549a438e9c870d39aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualifierSpec"
+        }
+      },
+      "id": "RLZ-7RX4RB",
+      "invariant": "INV-MMN8G0",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 3",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Declares per-language qualifier separators and separator-to-capture-kind filters so qualifier syntax is data-driven rather than hardcoded.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+        "content": "sha256:8eb37f46b6b2cc9cd1bf1ca2f25179f876bbb94d3a86c6dd79851d732218607e",
         "locator": {
           "kind": "symbol",
           "name": "extract_tag_entries"
@@ -39,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+        "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+        "content": "sha256:8eb37f46b6b2cc9cd1bf1ca2f25179f876bbb94d3a86c6dd79851d732218607e",
+        "locator": {
+          "kind": "symbol",
+          "name": "extract_tag_entries"
+        }
+      },
+      "id": "RLZ-T33ASX",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Runs declarative tags.scm queries with wrapper widening, leading sibling wrappers, container captures, and tracked qualifier kinds while excluding syntax-error nodes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+        "content": "sha256:7b0ec94e580f43be95cae55d55ce47e3ff46603396b100d7612464a3100cf5e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "widened_span"
+        }
+      },
+      "id": "RLZ-VRJCAA",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Extends definition extents upward across both enclosing wrappers and preceding sibling attribute nodes (such as Rust #[derive] and #[inline]) while preserving the declaration line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
         "content": "sha256:d7b7699129d762f8e57436e6a72ecf24558c2e5f86020ad356e58b9142046149",
         "locator": {
           "kind": "symbol",
@@ -62,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
             "content": "sha256:67d4b15ceec76b2406e8dc981b3fa703fd0bf36d0400b9bdfac8664965cd25e1",
             "locator": {
               "kind": "symbol",
@@ -74,12 +128,23 @@
       ]
     },
     "2": {
-      "note": "`Binding` retains a construct's widened line span, own declaration line, test-case flag, and Lean scope metadata.",
+      "note": "`QualifierSpec` and `Binding` retain per-language qualifier policy, widened line spans, own declaration lines, explicit `@container` chains, tracked qualifier kinds, test-case flags, and Lean scope metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
-            "content": "sha256:40b0795b1d892b4b70d3eb8159d16e1eba59f239062e2d7a4ea602b69f4ce4c4",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+            "content": "sha256:52f168b5dd23132cb5818cc8ea7de1b80c778ae59afbe4549a438e9c870d39aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualifierSpec"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+            "content": "sha256:969db5a0e6c723f801e6e9112f37c19fec631c869e44ad5eea4e7aed0def372c",
             "locator": {
               "kind": "symbol",
               "name": "Binding"
@@ -94,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
             "content": "sha256:d7b7699129d762f8e57436e6a72ecf24558c2e5f86020ad356e58b9142046149",
             "locator": {
               "kind": "symbol",
@@ -110,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
             "content": "sha256:d8e89037c25887ffb76350c709a6432edbbd32196e356032f2d30273abac624a",
             "locator": {
               "kind": "symbol",
@@ -122,12 +187,34 @@
       ]
     },
     "5": {
-      "note": "`extract_tag_entries` runs `@definition.*`/`@name` captures, skips `has_error` nodes, deduplicates pairs, widens wrappers, and unpacks destructuring targets.",
+      "note": "`widened_span`, `_extract_containers`, `TagExtractionOptions`, and `extract_tag_entries` run `@definition.*`/`@name`/`@container` captures, skip `has_error` nodes, deduplicate pairs, widen parent and leading sibling wrappers, and unpack destructuring targets.",
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
-            "content": "sha256:749a5355cb6333cdc2e58400c06f4693635deae095aa01b51f7363acf80eb45a",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+            "content": "sha256:7b0ec94e580f43be95cae55d55ce47e3ff46603396b100d7612464a3100cf5e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "widened_span"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+            "content": "sha256:71962830af95580e99b89592b7fd7fad812555d51f2b8bdc80225a7d16dbfc94",
+            "locator": {
+              "kind": "symbol",
+              "name": "TagExtractionOptions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
+            "content": "sha256:8eb37f46b6b2cc9cd1bf1ca2f25179f876bbb94d3a86c6dd79851d732218607e",
             "locator": {
               "kind": "symbol",
               "name": "extract_tag_entries"
@@ -142,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
             "content": "sha256:c4df04aaa8fa51bfac9f1429afba18106c402bf37639bfd48835b90170a1c2d9",
             "locator": {
               "kind": "symbol",
@@ -158,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e004bddd6e6409a8ce7ebd2faf986d314e5dea40",
+            "blob": "1ec29fd10a2d3ab076bf562e5c3799fd86d39249",
             "content": "sha256:6aa6b7618b7a3fcbc41a0f2882163673b3c3afcdb7a5995905b09a6bbe427c99",
             "locator": {
               "kind": "symbol",

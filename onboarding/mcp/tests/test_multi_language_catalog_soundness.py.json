@@ -1,0 +1,244 @@
+{
+  "path": "mcp/tests/test_multi_language_catalog_soundness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:7a7dafd2a2426e094dc1f9cf924f81bde9b67f0c8d81253ef368d56a8b1afdb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_catalog_declares_15_pilots_and_50_plus_language_pack_entries_with_honest_tiers"
+        }
+      },
+      "facet": "Verifies all 15 core pilots declare pinned pypi_wheel artifacts and verified tags.scm hashes, 50+ language_pack entries declare honest guaranteeTier values including best_effort, ambiguous suffixes include .h/.m/.v/.scm, and fixture tables cover every pack entry.",
+      "id": "PRF-19DR5Y",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:be331ab0da478ad5f528b3cda97431e72990cd2095fbaca930f2702e42d8924e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_ambiguous_suffixes_default_occurrence_only_and_resolve_with_languages_json_override"
+        }
+      },
+      "facet": "Verifies .h, .m, .v, and .scm remain occurrence-only by default and resolve with pure-move round trips once mapped via languages.json suffix or glob overrides.",
+      "id": "PRF-1QMW6Y",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:1d858450cd8ea07bf5dc2a829f5ac741a50433d1657eb5170f888a977244f41c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_15_core_pilots_positive_binding_wrappers_and_negative_soundness"
+        }
+      },
+      "facet": "Verifies all 15 core pilots bind exact expected spans (including attributes/decorators/leading wrappers) for every construct class in their tags.scm and reject all forbidden false-definition traps.",
+      "id": "PRF-6DQPPE",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:21ab7f98b21e95278c634acbd1c6b05fb4680540a4d1ce4349cd3f81f89f90ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_15_core_pilots_pure_move_round_trip_code_anchors_read_anchors_and_citation_fix"
+        }
+      },
+      "facet": "Verifies moving a symbol inside a file keeps CodeSnapshot.resolve, read_anchors.observe_anchor, currentness_observe.observe_entry, and reference_state.fix_references in agreement for all 15 pilots.",
+      "id": "PRF-83DDBA",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:64771a20b9debe94c0c5603e5c6beb392a198b5eaf415f124c1a99bfb0a7ede6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_catalog_schema_validation_for_guarantee_tier_qualifiers_and_warm_all_cli"
+        }
+      },
+      "facet": "Verifies parse_language_catalog refuses malformed guaranteeTier and qualifier specs and agents-remember languages warm --all --json warms all 75+ tree-sitter catalog languages.",
+      "id": "PRF-AF21PZ",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:557a9b29fef486583c2884f2d38ccddf1ed6fa33d1ad32ea30b64d2a8578cdaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_15_core_pilots_qualifier_policy_and_honest_refusal"
+        }
+      },
+      "facet": "Verifies per-language qualifier resolution (., ::, #/./::, \\/::/., Go receivers, Rust impl, C++ out-of-line, Swift extensions, SQL schemas, HCL blocks) and honest refusal on flat languages and unresolved qualifiers.",
+      "id": "PRF-C0D6H4",
+      "invariant": "INV-MMN8G0",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 3",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+        "content": "sha256:1ff8cee541f96216641ef04a216f5993c39496cb919803aff92900b6572a8b7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_50_plus_language_pack_entries_positive_negative_and_pure_move_soundness"
+        }
+      },
+      "facet": "Verifies all 56 tree-sitter-language-pack entries pass positive binding, negative soundness, and pure-move round-trip checks.",
+      "id": "PRF-S4RQG0",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_assert_pure_move_round_trip` proves `CodeSnapshot.resolve`, `read_anchors.observe_anchor`, `currentness_observe.observe_entry`, and `reference_state.fix_references` agree across a pure move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:b144fd2abe99ba8eff387594cf11db61079d72187648ff651de9aba38ffa0d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_pure_move_round_trip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seven table-driven tests prove catalog completeness, pilot positive/negative soundness, qualifier policy and honest refusals, pilot and 56-language-pack pure-move round trips, ambiguous-suffix `languages.json` overrides, and schema validation plus `languages warm --all`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:7a7dafd2a2426e094dc1f9cf924f81bde9b67f0c8d81253ef368d56a8b1afdb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_catalog_declares_15_pilots_and_50_plus_language_pack_entries_with_honest_tiers"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:1d858450cd8ea07bf5dc2a829f5ac741a50433d1657eb5170f888a977244f41c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_15_core_pilots_positive_binding_wrappers_and_negative_soundness"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:557a9b29fef486583c2884f2d38ccddf1ed6fa33d1ad32ea30b64d2a8578cdaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_15_core_pilots_qualifier_policy_and_honest_refusal"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:21ab7f98b21e95278c634acbd1c6b05fb4680540a4d1ce4349cd3f81f89f90ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_15_core_pilots_pure_move_round_trip_code_anchors_read_anchors_and_citation_fix"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:1ff8cee541f96216641ef04a216f5993c39496cb919803aff92900b6572a8b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_50_plus_language_pack_entries_positive_negative_and_pure_move_soundness"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:be331ab0da478ad5f528b3cda97431e72990cd2095fbaca930f2702e42d8924e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambiguous_suffixes_default_occurrence_only_and_resolve_with_languages_json_override"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb77c294716becf97828d08dec12995997c0fc04",
+            "content": "sha256:64771a20b9debe94c0c5603e5c6beb392a198b5eaf415f124c1a99bfb0a7ede6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_catalog_schema_validation_for_guarantee_tier_qualifiers_and_warm_all_cli"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`mcp/tests/test-evidence-lanes.toml` selects `test_multi_language_catalog_soundness.py` in `unit-regression`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "content": "sha256:45865ab927862e9d81d345cf31a7dd73d18067a653149fc259215232979b4276",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "492f436d9bbbda6034ae2615a70af21e39fa48e3",
-    "commit": "a96cc14d24cc2cc24b76bf77484b5671b4b10256",
+    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
+    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
     "role": "curator",
-    "statement": "Audited docs/design/python-evidence-system.md against final post-sync L11 frozen candidate 492f436d9bbb (codeBase a96cc14d24cc): evidence-lane and lifecycle catalog design remain accurate with 860 lane modules and 123 governed artifacts.",
-    "task": "261112-KNO-L11",
+    "statement": "Verified docs/design/python-evidence-system.md against frozen L12 tree e222729eff1b: registering multi_language_soundness_fixtures.py in evidence-lifecycle.toml, test_multi_language_catalog_soundness.py in test-evidence-lanes.toml, and --all in Dagger languages warm leaves evidence-system design rules accurate.",
+    "task": "261112-KNO-L12",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,17 +66,17 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "ff78fde064cfeda8c5408e4849a51cf9082ace07",
+      "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "148cb28d2cebda043186b643af55cf573eab0f02",
+      "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
     {
-      "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+      "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
       "kind": "file",
       "path": ".dagger/src/agents_remember_quality/main.py"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T23:21:59+01:00",
+    "at": "2026-11-28T01:52:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L11",
+    "leaf": "261112-KNO-L12",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
     "task": "261112-KNO"
   }
 }

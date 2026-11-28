@@ -71,31 +71,20 @@ returned summary alone.
 
 - The selected install fixture leaves no coordination-root skills directory and none of the withheld startup targets. [2]
 
-
 - The registered tool takes the selection as this run's own input and the record names the input that won. [3]
-
-
 
 - Selected-run facts are asserted from the retained logged whole result. [9]
 
-
 - The fixtures plant the retired startup files with the legacy fingerprint. Both real install modes leave all three paths absent and remove the fingerprint. [10]
 
-
 - An unselected run removes planted startup files. [11]
-
 
 - Its preview reports the planted startup files without removing any. [12]
 - The module docstring must say that an unselected (`legacy`) run keeps the old startup chain's install path while the cutover still retires the `AGENTS.md` copies. [13]
 
-
 - The benchmark asset sync retires the same startup files. [14]
 
-
-
 - The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical. [4]
-
-
 
 - An actual selected install reports an empty startup rollback and leaves no retired startup file. [5]
 
@@ -103,13 +92,5 @@ returned summary alone.
 
 - Private machine settings pre-exist both installations and retain their bytes. Anchor: `user_settings_path_for_write` [8]
 - The unavailable-capsule-path regression requires the refusal message to contain the shared renewal command while preserving the selected mode and writing no coordination root or startup file. [15]
-
-
-
-
-
-
-
-
 
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [17]
