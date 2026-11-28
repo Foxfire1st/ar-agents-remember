@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
-        "content": "sha256:59bde6253a8d48912a24fc69f8098ea1b1df761157252500c35cd549235b57bd",
+        "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+        "content": "sha256:bbd27cc8ace56b73ceeb96ddd3f4b9130a66638751e7198b34729939ec9cec6b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5932S0",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Declares all 76 admitted languages (19 pypi_wheel including the 15 core pilots, 56 language_pack entries, and builtin_lean) with pinned wheel SHA-256 hashes, tagsQuerySha256 digests, explicit guaranteeTier values, qualifier specs, and ambiguous suffixes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+        "content": "sha256:bbd27cc8ace56b73ceeb96ddd3f4b9130a66638751e7198b34729939ec9cec6b",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +38,12 @@
   ],
   "references": {
     "1": {
-      "note": "The lockfile pins `schema` (`ar-language-catalog/v1`), `treeSitter` version `0.26.1` (`abiMin: 13`, `abiMax: 15`), reserved `.lean`, ambiguous `.h`/`.m`/`.v`, and `languagePack` wheels alongside uniform `languages` entries (`python`, `typescript`, `tsx`, `javascript`, `lean`).",
+      "note": "The lockfile pins `schema` (`ar-language-catalog/v1`), `treeSitter` version `0.26.1` (`minAbi: 13`, `maxAbi: 15`), reserved `.lean`, ambiguous suffixes (including `.h`, `.m`, `.v`, `.scm`), `tree-sitter-language-pack==0.13.0` wheels, and 76 uniform `languages` entries (19 `pypi_wheel`, 56 `language_pack`, and `builtin_lean`) with `guaranteeTier`, `qualifiers`, and SHA-256 query pins.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f4cb571a5314321948798637c1b869ab7a6595",
-            "content": "sha256:59bde6253a8d48912a24fc69f8098ea1b1df761157252500c35cd549235b57bd",
+            "blob": "685e20d9fe8b36517c7c5740e467b0580ab6188d",
+            "content": "sha256:bbd27cc8ace56b73ceeb96ddd3f4b9130a66638751e7198b34729939ec9cec6b",
             "locator": {
               "kind": "file"
             }

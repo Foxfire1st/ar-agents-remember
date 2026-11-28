@@ -12,7 +12,7 @@ Reference inventory of the directories and files Agents Remember creates or mana
 
 - Maps `<coordination-root>/` scaffold folders and runtime-created paths (`logs/dashboard/`, `logs/observer/`, `runtime/servers/<pid>.json`, `runtime/knowledge-index/`, `controlplane/`, `temp/tool-reports/`).
 - Documents `<home>/agents-remember/` host-home files including `role-agents.json`, `host-activity.json`, `provider-limits.json` (active unsuppressed limits, last recheck attempts, recomputed `until` on partial suppression, and early clear release), `provider-limit-suppressions.json` (sibling sidecar under `provider-limits.lock` storing per-window `recordedAt` timestamps and window-scoped `auto-tool-call` / `operator` suppressions pruned once `resetsAt` passes), and `turn-ends.jsonl`.
-- Separates Worker/Reviewer/Curator enclosure scratch and report folders from non-leaf `<workspace-root>/.agents-remember/role-executions/<request-id>/`, `/var/tmp/agents-remember/` outside scratch, and `~/projects/.agents-remember/handover-locators/`.
+- Separates Worker/Reviewer/Curator enclosure scratch and report folders from non-leaf `<workspace-root>/.agents-remember/role-executions/<request-id>/`, `/var/tmp/agents-remember/` outside scratch, `~/.local/state/agents-remember/grammars` (`AR_LANGUAGE_CACHE`) hash-verified unpacked grammar wheels, and `~/projects/.agents-remember/handover-locators/`.
 
 ## Relationships
 
@@ -24,4 +24,4 @@ Reference inventory of the directories and files Agents Remember creates or mana
 
 - Host-home files under `<home>/agents-remember/` include `role-agents.json`, `host-activity.json`, `provider-limits.json`, and its sibling sidecar `provider-limit-suppressions.json`. [5]
 
-- Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, and handover-locator paths. [3]
+- Per-role scratch and report folders (including `role-launch/` nested `<stem>.details/` and offload sidecars), `/var/tmp/agents-remember/` outside scratch, `~/.local/state/agents-remember/grammars` (`AR_LANGUAGE_CACHE`), and handover-locator paths. [3]

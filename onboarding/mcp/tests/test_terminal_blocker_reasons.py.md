@@ -10,8 +10,6 @@
 finalize blockage always names the component it stopped on and carries a non-empty reason, so a
 blockage an operator cannot read — and cannot tell apart from a spurious one — is impossible to emit.
 
-
-
 The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:795`).
 The complete lifecycle catalog declares this module as an exact consumer on **12**
 artifact rows. That dependency ownership and the ambient-role runner declaration
@@ -109,21 +107,13 @@ No external source is required for this repository-owned blocker contract.
 
 ### Repo-Internal References
 
-
 - Public abandon preview returns would-abandon with directories.provider_runtime.would_remove true and leaves the leftover provider-runtime directory in place; real abandon removes it directly. [1]
-
-
 
 - Cleanup preview marks a leftover provider-runtime directory for removal and one finalize call completes cleanup directly, removing the directory and worktree group and marking the contract and leaf document completed. [2]
 
-
-
 - An unnameable blocker reason raises at the call site that detected it. [5]
 
-
-
 - The direct removal test exercises worktrees/modules/filesystem.py::remove_tree for absent-path reason, dry-run preview, real removal, and permission-denied failure. [12]
-
 
 - The landed fixture and the public calls the whole-tool cases drive. [14]
 
@@ -132,21 +122,13 @@ No external source is required for this repository-owned blocker contract.
 - The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason. [16]
 - The operator-language answer for a reasonless or malformed result item. [17]
 
-
 - The bundle and the builder the invariant-owner cases drive directly. [18]
-
-
 
 - The direct directory removal helper that answers with an explicit reason whenever it reclaims nothing. [19]
 
-
-
 - The worktree services container and default services builder the fixture rebinds. [20]
 
-
-
 - The public terminal route the whole-tool cases call. [21]
-
 
 - The landing fixture and the public configuration the whole-tool cases build on. [22]
 
@@ -170,25 +152,6 @@ The module has **362 physical lines** and **eight source test definitions**. Its
 
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
 
-
-
-
-
-
-
 - Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [31]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]

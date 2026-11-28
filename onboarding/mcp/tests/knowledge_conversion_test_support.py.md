@@ -76,11 +76,7 @@ The fixture builders.
 - The legacy database in the real column spelling. [4]
 - The committed memory repository. [5]
 
-
-
 > Retained earlier citation wording: - Its catalog row.
-
-
 
 ### Cross-Repo References
 
@@ -89,7 +85,5 @@ No meaningful cross-repo references found: the fixtures are `tmp_path` Git repos
 No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
-
-
 
 - The lifecycle catalog governs knowledge_conversion_test_support.py as a shared-support artifact. [6]

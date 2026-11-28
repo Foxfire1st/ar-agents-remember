@@ -5,15 +5,18 @@
     ],
     "justification": "The bundled hash-pinned catalog, isolated lazy AR_LANGUAGE_CACHE with read/write asymmetry, local-only languages.json and custom library overrides, active LanguageSet cache-key isolation, declarative tags.scm/tests.scm extraction, and .lean reservation together guarantee uniform language-agnostic anchor resolution across every production consumer without privileged grammar dependencies or cross-set cache leakage."
   },
-  "guarantee": "Every tree-sitter citation consumer resolves source bindings and JS/TS test-case call sites declaratively through the active or repository-scoped LanguageSet ContextVar backed by the bundled hash-pinned language_catalog.lock.json, isolated lazy AR_LANGUAGE_CACHE wheel loading, and local-only languages.json/custom-library overrides, derives extractor identity from pinned versions, binaries, and query digests across all downstream caches, preserves read-degrade versus write-refuse failure asymmetry, and keeps .lean permanently reserved for the built-in Lean declaration scanner.",
+  "guarantee": "Every tree-sitter citation consumer resolves source bindings and JS/TS test-case call sites declaratively through the active or repository-scoped LanguageSet ContextVar backed by the bundled hash-pinned language_catalog.lock.json (19 pypi_wheel including 15 core pilots, 56 tree-sitter-language-pack entries with honest guaranteeTier, and builtin_lean), isolated lazy AR_LANGUAGE_CACHE wheel and direct pack-binding loading with full-catalog warm --all, engine-side parent and leading-sibling wrapper widening, declarative per-language QualifierSpec resolution or honest refusal, and local-only languages.json/custom-library overrides; derives extractor identity from pinned versions, binaries, query digests, and non-default policy across all downstream caches; preserves read-degrade versus write-refuse failure asymmetry; and keeps .lean permanently reserved for the built-in Lean declaration scanner.",
   "id": "FAM-CSVQBJ",
   "members": [
+    "INV-559QV5",
+    "INV-5FFC2H",
+    "INV-EW1ST5",
+    "INV-KJDERT",
     "INV-KQ8BKK",
     "INV-ZYP9YD",
-    "INV-5FFC2H",
-    "INV-559QV5",
-    "INV-KJDERT",
-    "INV-EW1ST5"
+    "INV-TFPK5R",
+    "INV-AVRNNJ",
+    "INV-MMN8G0"
   ],
   "origin": {
     "handoff": {
@@ -23,7 +26,7 @@
     "leaf": "261112-KNO-L10",
     "task": "261112-KNO"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",
@@ -36,14 +39,14 @@
   "schema": "ar-family/v1",
   "title": "Uniform language catalog, lazy cache, and declarative LanguageSet seam",
   "writer": {
-    "at": "2026-11-27T21:03:08+01:00",
+    "at": "2026-11-28T01:52:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L11",
+    "leaf": "261112-KNO-L12",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c9c2f2d2-1ee8-5762-8204-92ac38c65042",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
     "task": "261112-KNO"
   }
 }

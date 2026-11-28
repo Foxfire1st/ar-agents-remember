@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
         "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "content": "sha256:43c64b84db3fe156709c8acb12a1921b41a9a55ec13120ff7b0077e835464001",
+        "locator": {
+          "kind": "symbol",
+          "name": "TreeSitterLanguageProvider"
+        }
+      },
+      "id": "RLZ-HB97DY",
+      "invariant": "INV-AVRNNJ",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 2",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Threads catalog leadingWrappers, qualifiers, and guaranteeTier into binding extraction and hashes non-default policy into the provider extractor version.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
         "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
         "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
-        "content": "sha256:3977e516af81450c94fccf8b03f999cd67ca59118413d92b7e8cad824716b993",
+        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+        "content": "sha256:4a71039996e8a5e3501b1da5d23b7dcf33879fe0f69b4ceabe2b0379c140383c",
         "locator": {
           "kind": "symbol",
           "name": "LeanLanguageProvider"
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+        "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
         "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
         "locator": {
           "kind": "symbol",
@@ -94,12 +112,12 @@
   ],
   "references": {
     "1": {
-      "note": "`LanguageProvider` declares the uniform key, suffix, version, tree-sitter/exact-binding, and test-case interface.",
+      "note": "`LanguageProvider` declares the uniform key, suffix, version, tree-sitter/exact-binding, qualifier-policy (`qualifiers`), and test-case interface.",
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
-            "content": "sha256:a8054390e826e76392d9df90cf5d457cb20efc3393820ddacbb2d3d9f7d342df",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "content": "sha256:c46d1cb7fbbaa1834b9df0ffb21bb902a62a208d602f665814d26491002bf56c",
             "locator": {
               "kind": "symbol",
               "name": "LanguageProvider"
@@ -110,12 +128,12 @@
       ]
     },
     "2": {
-      "note": "`TreeSitterLanguageProvider` hashes `tags.scm` and optional `tests.scm` queries into its version and delegates extraction to `tags_engine`.",
+      "note": "`TreeSitterLanguageProvider` hashes `tags.scm`, optional `tests.scm`, and non-default `leading_wrappers`/`qualifiers` policy into its version and delegates extraction to `tags_engine`.",
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
-            "content": "sha256:d17a2ff03f564eb2861e231f3156342e721cb60f687cfe9d457e2ee4b1763f66",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
+            "content": "sha256:43c64b84db3fe156709c8acb12a1921b41a9a55ec13120ff7b0077e835464001",
             "locator": {
               "kind": "symbol",
               "name": "TreeSitterLanguageProvider"
@@ -130,12 +148,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
             "content": "sha256:3e5037dd6e414e03c261095b77b8b1ff643f83c0ffcac9258dfa6faa49b94d2d",
             "locator": {
-              "end": 214,
+              "end": 236,
               "kind": "line_range",
-              "start": 194
+              "start": 216
             }
           },
           "kind": "code"
@@ -147,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
             "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
             "locator": {
               "kind": "symbol",
@@ -163,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
             "content": "sha256:beb7c3d436b86bacb9c179ed0099185c8a50a17467feeb56054c5183038de5c9",
             "locator": {
               "kind": "symbol",
@@ -179,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
             "content": "sha256:9614b3569318208fd2758599f7bde815529f3fd354c0a18b4522a2e11777068a",
             "locator": {
               "kind": "symbol",
@@ -195,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5bc4f32fc69e44be16c99fbc3e16d47c3f15fa30",
+            "blob": "625e3b93d1323982e0294b8fe7fcd70fb7006fa6",
             "content": "sha256:5d5d4d49f8d05474f2d6b9cd2c21ac8e7e69f002f7708d464cde793194233545",
             "locator": {
               "kind": "symbol",

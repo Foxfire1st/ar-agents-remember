@@ -363,28 +363,27 @@
       ]
     },
     "7": {
-      "note": "The writer resolves the path via the active `LanguageSet` and passes the selected grammar to shared qualified lookup. Lean keys are exact. Other readers can use dotted containment after an exact-key miss.\n\nAnchor: `_symbol_range`, `qualified_spans`",
+      "note": "The writer resolves the path via the active `LanguageSet` and passes the selected grammar to shared qualified lookup (`_symbol_range`, `qualified_spans`). Lean keys are exact; other readers apply declarative `QualifierSpec` containment after an exact-key miss.\n\nAnchor: `_symbol_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
-            "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_symbol_range"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+            "content": "sha256:b0302f8d8ca2b2135f49ec7b10f88da86cc2bccf5f1595ef61b607aba5fdd17e",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

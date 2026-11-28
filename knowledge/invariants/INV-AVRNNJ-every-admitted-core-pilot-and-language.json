@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across tags_engine.py (widened_span, extract_tag_entries) and language_set.py (TreeSitterLanguageProvider policy hashing and forwarding), and guarded by table-driven pilot, long-tail, pure-move, and ambiguous-override tests."
+  },
+  "applicability": "Declarative tags.scm extraction, parent and leading sibling wrapper widening, pure-move symbol anchoring across code_anchors/read_anchors/currentness/citation_fix, and ambiguous-suffix handling across all admitted catalog languages.",
+  "conditions": [
+    "widened_span extends definition spans across both parent wrappers and contiguous preceding named sibling leading_wrappers while keeping declaration on the construct's own first line.",
+    "Every admitted pilot and language-pack language binds expected constructs with zero false definitions on imports, calls, literal keys, strings, comments, or field accesses, and preserves symbol content identity across pure moves.",
+    "Ambiguous extensions (.h, .m, .v, .scm) stay occurrence-only by default and resolve cleanly with pure-move agreement once mapped in languages.json."
+  ],
+  "exclusions": [
+    "JS/TS test-case .skip/.todo/.each/.for policy remains scoped to JavaScript and TypeScript test files under INV-5FFC2H and INV-B37MWR."
+  ],
+  "id": "INV-AVRNNJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/pytest -q mcp/tests/test_multi_language_catalog_soundness.py (clean freeze tree 5da96f042d7c8ef8a3fad843a83038b1fe9aa4ca; 9837/9910 total collected tests within 10000 unit budget)"
+      ],
+      "path": "261112-KNO-L12-curator-ingest.json"
+    },
+    "handoffEntry": "KNO-R12@v1 Rule 2",
+    "leaf": "261112-KNO-L12",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every admitted core pilot and language-pack language passes table-driven positive binding accuracy (including wrappers and leading sibling attributes), negative soundness (zero false definitions on imports, calls, literal keys, strings, comments, and field accesses), and pure-move round-trip agreement across code_anchors, read_anchors, currentness, and citation_fix, while ambiguous extensions default to occurrence-only until mapped in languages.json.",
+  "supersedes": [],
+  "title": "Admitted languages pass soundness, wrapper, pure-move, and override proofs",
+  "writer": {
+    "at": "2026-11-28T01:52:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L12",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+    "task": "261112-KNO"
+  }
+}

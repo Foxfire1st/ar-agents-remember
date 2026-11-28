@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+        "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
         "content": "sha256:9fee6b1197e090c5aa91aa6bb9043bb26171706b886d42a4a7309e3bedf479f3",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+        "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
         "content": "sha256:3a9140af9ab7f085d72b1350f3184254b24033c3c835b9624a8efbd77a7cdf9e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
+        "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
         "content": "sha256:c404a93523cefb50363c667e624e64e578fd94bd4b047faf2c71572b58ae3acc",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8e3bd97382f92084d13c94e48ede6c2974a2ae18",
-        "content": "sha256:8070aa242318d6a3e3a00b54649e53f845c53f2295070f3963829f52aa30ea1f",
+        "blob": "72fab32729140db99b44b8a4ae10e5bac1dc2660",
+        "content": "sha256:5821e3a67cf193289ef21251d7d5615e923ea1ff8af12385eb16a3c381d33bf2",
         "locator": {
           "kind": "symbol",
           "name": "_candidate_base"
@@ -70,7 +70,7 @@
         "handoffEntry": "KNO-R11@v1 §4",
         "leaf": "261112-KNO-L11"
       },
-      "rationale": "Mounts the shared AR_LANGUAGE_CACHE cache volume, exports AR_LANGUAGE_CACHE, and runs agents-remember languages warm --repo /workspace before rails execute.",
+      "rationale": "Mounts the shared AR_LANGUAGE_CACHE cache volume, exports AR_LANGUAGE_CACHE, and runs agents-remember languages warm --repo /workspace --all before rails execute.",
       "role": "enforcement"
     }
   ],

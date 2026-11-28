@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
-        "content": "sha256:e5709d3f2fa2e9c1732acdb6d788932aabbc4fd47e555fec3c029c9122b01b74",
+        "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
+        "content": "sha256:aa4895ec0fa814b4cf86e48336c5058f67f6155999228a1b4473bf742235ac2a",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,29 @@
     },
     {
       "anchor": {
-        "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+        "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
+        "content": "sha256:aa4895ec0fa814b4cf86e48336c5058f67f6155999228a1b4473bf742235ac2a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q94ZSY",
+      "invariant": "INV-0H5MHX",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 4",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Summarizes language-agnostic symbol anchors, lazy AR_LANGUAGE_CACHE verification, ambiguous suffix handling, and custom local grammars.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
         "content": "sha256:0fde5d8cd47bb2f1a93883513895d6a7ab6904057288c608518251d63519c7c5",
         "locator": {
-          "end": 205,
+          "end": 216,
           "kind": "line_range",
-          "start": 201
+          "start": 212
         }
       },
       "id": "RLZ-SHWMZJ",
@@ -40,14 +57,14 @@
   ],
   "references": {
     "1": {
-      "note": "Reference-anchor blob and content currentness versus realization/proof and four-state invariant currentness.",
+      "note": "Reference-anchor blob and content currentness, language-agnostic 75-tree-sitter plus Lean catalog anchoring with lazy `AR_LANGUAGE_CACHE` and `languages.json` overrides, and realization/proof and four-state invariant currentness.",
       "targets": [
         {
           "anchor": {
-            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
-            "content": "sha256:cd872f38724c302d6001056619c7e1a71c881e1ce125f7753acc26edfd22af57",
+            "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
+            "content": "sha256:32bd683b79bd3d985b6ef714cea04413011a5e3542163bcc91fb0c831910fa70",
             "locator": {
-              "end": 151,
+              "end": 162,
               "kind": "line_range",
               "start": 123
             }
@@ -61,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+            "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
             "content": "sha256:bcd0a08b6c2ebad0e436568688b458f40dce65d52dcf9ceb9a1724b72c40b107",
             "locator": {
-              "end": 214,
+              "end": 225,
               "kind": "line_range",
-              "start": 191
+              "start": 202
             }
           },
           "kind": "code"
@@ -78,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5607ff455424a3fa854a55fee0b6f88524b0bf45",
+            "blob": "8240792dc2023c6f219fe628bfb39350b7279640",
             "content": "sha256:29082506ccaab8af4b1b79410312f190fa3253c5c53da8d8cf19f840d289f3ee",
             "locator": {
-              "end": 405,
+              "end": 416,
               "kind": "line_range",
-              "start": 368
+              "start": 379
             }
           },
           "kind": "code"

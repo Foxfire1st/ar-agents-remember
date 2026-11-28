@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across language_catalog.lock.json, language_catalog.py, language_cache.py, language_scanner.py, and cli/languages.py, and guarded by multi-language catalog completeness and dependency-purity tests."
+  },
+  "applicability": "Bundled language_catalog.lock.json entries, language_catalog.py validation, language_cache.py direct pack-binding loading, and full-catalog warming via language_scanner.all_catalog_language_ids and cli/languages.py.",
+  "conditions": [
+    "All 15 core pilot languages (c, cpp, rust, zig, go, java, csharp, kotlin, swift, ruby, php, bash, elixir, sql, hcl) are declared as pypi_wheel entries with guaranteeTier verified, pinned wheel SHA-256 hashes, and verified tagsQuerySha256 digests.",
+    "56 tree-sitter-language-pack==0.13.0 entries declare verified tags.scm digests and honest guaranteeTier values (verified or best_effort), loaded directly from AR_LANGUAGE_CACHE bindings/<lang>*.{so,pyd} without adding tree-sitter-* dependencies to mcp/pyproject.toml or mcp/uv.lock.",
+    "agents-remember languages warm --all enumerates all non-builtin catalog language IDs via all_catalog_language_ids() without hardcoding language lists."
+  ],
+  "exclusions": [
+    "Local custom shared-library grammars registered via languages.json are governed by INV-EW1ST5 rather than the shipped catalog lock."
+  ],
+  "id": "INV-TFPK5R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/.venv/bin/pytest -q mcp/tests/test_multi_language_catalog_soundness.py mcp/tests/test_language_catalog_and_lazy_cache.py (clean freeze tree 5da96f042d7c8ef8a3fad843a83038b1fe9aa4ca)"
+      ],
+      "path": "261112-KNO-L12-curator-ingest.json"
+    },
+    "handoffEntry": "KNO-R12@v1 Rule 1",
+    "leaf": "261112-KNO-L12",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The bundled hash-pinned language catalog admits 15 core pilot languages via pinned PyPI wheels and 56 tree-sitter-language-pack languages with verified tags.scm digests, explicit guaranteeTier classification, zero tree-sitter-* dependencies in pyproject.toml or uv.lock, and full-catalog warming via languages warm --all.",
+  "supersedes": [],
+  "title": "Hash-pinned catalog admits 15 pilots and 56 language-pack entries",
+  "writer": {
+    "at": "2026-11-28T01:52:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L12",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+    "task": "261112-KNO"
+  }
+}

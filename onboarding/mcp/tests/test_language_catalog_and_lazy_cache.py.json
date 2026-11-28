@@ -157,6 +157,23 @@
     {
       "anchor": {
         "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
+        "content": "sha256:84660cbffb89327cb7b97af224871a1d148bd371eb74cefcecf214609e8779b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dependency_purity_pyproject_uv_lock_and_zero_hardcoded_language_lists"
+        }
+      },
+      "facet": "Verifies mcp/pyproject.toml and mcp/uv.lock declare zero tree-sitter-* grammar dependencies and core citation modules hardcode no language lists.",
+      "id": "PRF-N8NPN9",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d6f288434f6eea3283b79236b831a66da28bf650",
         "content": "sha256:14e2d7634f1189d49eecabd7131995641966608f77042495e6ff609393687043",
         "locator": {
           "kind": "symbol",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+        "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+        "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-        "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+        "content": "sha256:fab29e07ced1ebb236cafa928f40ed207019d54a4ee8e12a30dd2a1910e78659",
+        "locator": {
+          "kind": "symbol",
+          "name": "_enclosed_qualified_spans"
+        }
+      },
+      "id": "RLZ-90GCWG",
+      "invariant": "INV-MMN8G0",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 3",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Splits qualified queries on the active language's QualifierSpec separators, enforces separatorKinds filters, matches explicit @container chains and lexical enclosure, and returns empty on flat languages or unresolved qualifiers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+        "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
         "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
         "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
         "content": "sha256:6bfe2019d1c09093fa73eb95259cf83dc3a12cce93bad85b09b544beed31d850",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
         "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
         "locator": {
           "kind": "symbol",
@@ -134,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"
@@ -146,27 +164,15 @@
       ]
     },
     "29": {
-      "note": "`Extent` records one source range and its declaration metadata.",
+      "note": "`Extent` records one source range and its declaration, container, and qualifier-kind metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:7ba8ac147225146dfcf17db89eefede25ae5a3ce0b7ba58a1b4845dfc0778523",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:63935503586058da6e8211aa73be7cd26e57e94983782e5d3ff0a9d973478098",
             "locator": {
               "kind": "symbol",
               "name": "Extent"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:afb745c678be70a659be248c873ec74e8927fcba309b4b98735a35e8fad72b79",
-            "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 25
             }
           },
           "kind": "code"
@@ -178,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
             "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
             "locator": {
               "kind": "symbol",
@@ -194,8 +200,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"
@@ -210,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
             "content": "sha256:edf36cf15655224909eba1fd9ed4aefd8dfd7edea28fa3046c38515074da06c7",
             "locator": {
               "kind": "symbol",
@@ -226,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
             "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
             "locator": {
               "kind": "symbol",
@@ -238,15 +244,26 @@
       ]
     },
     "53": {
-      "note": "Whole-name lookup preserves room for unresolved Lean scope and applies dotted containment only to non-exact-binding readers.",
+      "note": "Whole-name lookup preserves room for unresolved Lean scope and delegates non-exact-binding qualified lookups to declarative `_enclosed_qualified_spans` (`QualifierSpec` separators, `separator_kinds`, `@container` chains, lexical enclosure, and honest refusal for flat languages).",
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:fab29e07ced1ebb236cafa928f40ed207019d54a4ee8e12a30dd2a1910e78659",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosed_qualified_spans"
             }
           },
           "kind": "code"

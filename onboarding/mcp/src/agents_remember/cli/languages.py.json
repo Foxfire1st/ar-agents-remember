@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
-        "content": "sha256:bdb0c8898b58707a6ef70dcdb071623116b2763b849093e8aee261a6cc922e95",
+        "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+        "content": "sha256:2e829eb855a4b5d23a9aecfd6a3fd6ec967884c886459f9464de1925af1c41db",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -16,18 +16,36 @@
         "handoffEntry": "KNO-R11@v1 §2",
         "leaf": "261112-KNO-L11"
       },
-      "rationale": "Exposes the agents-remember languages scan and agents-remember languages warm CLI subcommands.",
+      "rationale": "Exposes the agents-remember languages scan and agents-remember languages warm (including --all) CLI subcommands.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+        "content": "sha256:2e829eb855a4b5d23a9aecfd6a3fd6ec967884c886459f9464de1925af1c41db",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-D05K9F",
+      "invariant": "INV-TFPK5R",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 1",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Exposes languages warm --all so CI and offline caches can pre-warm every pinned catalog grammar into AR_LANGUAGE_CACHE.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "`LanguagesCliArgs` and `add_arguments` define the `languages scan` and `languages warm` CLI flags (`--repo`, `--cache-dir`, `--language`, `--dry-run`, `--json`).",
+      "note": "`LanguagesCliArgs` and `add_arguments` define the `languages scan` and `languages warm` CLI flags (`--repo`, `--cache-dir`, `--language`, `--all`, `--dry-run`, `--json`).",
       "targets": [
         {
           "anchor": {
-            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
-            "content": "sha256:4ef2cc3fec5ed4095ba242e44da184b5d778d34cbcd199ad3cc3b1aae0fd71fc",
+            "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+            "content": "sha256:bd0714442b66b54d0f61a647d9e62651ef25eb03f0267d3fd5ced6d888f4c82e",
             "locator": {
               "kind": "symbol",
               "name": "LanguagesCliArgs"
@@ -37,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
-            "content": "sha256:3266745bbf2d7a27a5718234e7c0cf4d91d407a161e23b81256c4f259269fbad",
+            "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+            "content": "sha256:f5726f4a282039e9979279514fcee7de63d86e05ae5402f092b2f1dc41dd5f08",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -49,12 +67,12 @@
       ]
     },
     "2": {
-      "note": "`run` executes repository language scanning or cache warming, formats JSON or text output, and maps `AgentsRememberError` or failed warm results to exit code 1.",
+      "note": "`run` executes repository language scanning or cache warming (including `--all` via `all_catalog_language_ids()`), formats JSON or text output, and maps `AgentsRememberError` or failed warm results to exit code 1.",
       "targets": [
         {
           "anchor": {
-            "blob": "acb9a760ac3bbd184d9e5ce1f2525377eaaec0ba",
-            "content": "sha256:bdb0c8898b58707a6ef70dcdb071623116b2763b849093e8aee261a6cc922e95",
+            "blob": "339a21445a9ec6d9d53ffa9cc0aac97a822c1fbd",
+            "content": "sha256:2e829eb855a4b5d23a9aecfd6a3fd6ec967884c886459f9464de1925af1c41db",
             "locator": {
               "kind": "symbol",
               "name": "run"

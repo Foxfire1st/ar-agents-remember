@@ -6,8 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
-            "content": "sha256:c0d533821b9fa4f4142f99071189bdd8f99848e0bbabeb490c84b70bc9c8d66a",
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:541fe301506cb148e595d914e24ae20970bf6a9f45cb1acaed02d1d07080c2c0",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"

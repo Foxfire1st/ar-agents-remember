@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "f6d589f64e2f948d1fd2d54f44e8229634e8a230",
-    "commit": "a2ed4b366242f6f4d4dd6de39806e9d784a17572",
+    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
+    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
     "role": "curator",
-    "statement": "Resolved crossing-8 sync conflict for docs/architecture.md on merged code commit a2ed4b366242 (tree f6d589f64e2f): preserves independent confirmations from 261125-DEP-L4 (MCP 2.3.0 / public SDK wrapper) and 261112-KNO-L11 (main 0aa5cf516d08, lazy tree-sitter grammars) with zero contradiction.",
-    "task": "261125-DEP-L4",
-    "uncommitted": false
+    "statement": "Verified docs/architecture.md against frozen L12 tree e222729eff1b: What a Read May Write now lists five read-side persistent write cases including lazy SHA-256-verified grammar unpacking into AR_LANGUAGE_CACHE, and extents.py changes preserve documented architecture.",
+    "task": "261112-KNO-L12",
+    "uncommitted": true
   },
   "document": "docs/architecture.md",
   "id": "DPD-86HJGF",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 29,
+  "revision": 30,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -134,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f658f6ba874db1bf62ddc0404730a604ba2762",
+        "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
         "content": "sha256:c8166d15334a80dbaf6d42fa896c3fe0b4826af3d4a803a2ce54023d79c256dd",
         "locator": {
           "kind": "symbol",
@@ -287,17 +287,22 @@
         "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
       },
       "kind": "anchor"
+    },
+    {
+      "blob": "32df1de5d5f62dedd027b42ba665f93ab5a36bd6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/style/citations/language_cache.py"
     }
   ],
   "writer": {
-    "at": "2026-11-28T00:08:30+01:00",
+    "at": "2026-11-28T01:52:22+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-8",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L12",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
-    "task": "261125-DEP"
+    "role": "curator",
+    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
+    "task": "261112-KNO"
   }
 }

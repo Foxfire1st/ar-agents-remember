@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1731a795b72f95cbbebc1e3e53e5f7f1bec133cb",
-        "content": "sha256:5eaf1a60d07e67e917db0669b600b360150efae787fc12602899ea0038f57f12",
+        "blob": "8336a69f2fc05189fd590b76fdc0b9b74dfe7296",
+        "content": "sha256:3785d820bff4b6e57b092b40b525e7299fcf7325726ea3a95d3cc15eb9d447b9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ER09WE",
+      "invariant": "INV-0H5MHX",
+      "origin": {
+        "handoffEntry": "KNO-R12@v1 Rule 4",
+        "leaf": "261112-KNO-L12"
+      },
+      "rationale": "Records lazy AR_LANGUAGE_CACHE grammar unpacking as an explicit read-side persistent write boundary.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8336a69f2fc05189fd590b76fdc0b9b74dfe7296",
+        "content": "sha256:3785d820bff4b6e57b092b40b525e7299fcf7325726ea3a95d3cc15eb9d447b9",
         "locator": {
           "kind": "file"
         }

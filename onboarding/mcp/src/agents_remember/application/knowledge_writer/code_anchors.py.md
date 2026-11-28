@@ -84,7 +84,7 @@ Capture and resolution.
 - A symbol must bind exactly once. Anchor: `_symbol_range` [6]
 
 
-- The writer resolves the path via the active `LanguageSet` and passes the selected grammar to shared qualified lookup. Lean keys are exact. Other readers can use dotted containment after an exact-key miss. [7]
+- The writer resolves the path via the active `LanguageSet` and passes the selected grammar to shared qualified lookup (`_symbol_range`, `qualified_spans`). Lean keys are exact; other readers apply declarative `QualifierSpec` containment after an exact-key miss. [7]
 
 - The crossing snapshot uses the resolved commit ID for both recorded identity and tree lookup. Anchor: `CodeSnapshot.at_commit` [8]
 
