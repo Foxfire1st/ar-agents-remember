@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Binds the five KNO-R13@v1 invariants spanning lockfile query pinning, out-of-process smoke-compiled highlighting, local-only custom queries, all seven code-serving surfaces, and foreground-only CodeMirror 6 Compartment rendering into one coherent cross-stack guarantee."
+  },
+  "guarantee": "Dashboard syntax highlighting across all seven code-serving surfaces uses one catalog-driven, server-computed tree-sitter pipeline without client-side @codemirror/lang-* packages or hardcoded extension tables. Highlight queries are SHA-256 pinned in language_catalog.lock.json (with presentation-only highlightLanguages and displaySuffixes separate from anchoring languages, plus local-only per-repo highlightsQueryPath) and never alter EXTRACTOR_VERSION. Every query bundle smoke-compiles out-of-process before in-process use, sweeps overlapping captures deterministically with @none and JSON key suppression under byte and span caps into \\n-normalized UTF-16 spans, and degrades cleanly to null on binary, media, oversized, or unavailable inputs. Dashboard CodeMirror 6 viewers render those spans via foreground-only .cm-ar-tok-* Decoration.mark classes and per-side Compartments reconfigured by digest, preserving INV-QK8XNM editor retention and ChangeSetPane plain-mode suppression.",
+  "id": "FAM-QGHGXQ",
+  "members": [
+    "INV-KKHYCQ",
+    "INV-X132KY",
+    "INV-H2XGVE",
+    "INV-WGZ5ZX",
+    "INV-G0D79N"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-KNO-L13-curator-handoff"
+    },
+    "handoffEntry": "fam-unified-highlights",
+    "leaf": "261112-KNO-L13",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels/changeset",
+    "dashboard/src/panels/file-viewer",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/memory_quality/style/citations",
+    "mcp/src/agents_remember/models",
+    "mcp/src/agents_remember/serving"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Unified server-computed tree-sitter syntax highlighting for dashboard viewers",
+  "writer": {
+    "at": "2026-11-28T05:27:32+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L13",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
+  }
+}

@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:beb8c2c44a804daa1ca95428dd98d744663d53504c17ba100124dacf8f01846d",
             "locator": {
               "kind": "symbol",
@@ -293,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:1cba8ea6712f6b0657c98175ad42aae67021f1f0bece726c06d866e58dcc88ca",
             "locator": {
               "kind": "symbol",
@@ -520,11 +520,11 @@
       ]
     },
     "26": {
-      "note": "The unit-regression lane selects `mcp/tests/test_knowledge_review_source_content.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_source_content.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
+      "note": "The unit-regression lane selects `mcp/tests/test_knowledge_review_source_content.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_source_content.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
               "end": 299,
@@ -537,7 +537,7 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
               "end": 433,
@@ -550,12 +550,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 1004,
+              "end": 1005,
               "kind": "line_range",
-              "start": 1004
+              "start": 1005
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -563,12 +563,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 1482,
+              "end": 1483,
               "kind": "line_range",
-              "start": 1482
+              "start": 1483
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -576,12 +576,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 2985,
+              "end": 2986,
               "kind": "line_range",
-              "start": 2985
+              "start": 2986
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -589,12 +589,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 3925,
+              "end": 3927,
               "kind": "line_range",
-              "start": 3925
+              "start": 3927
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -602,12 +602,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 3973,
+              "end": 3975,
               "kind": "line_range",
-              "start": 3973
+              "start": 3975
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -615,12 +615,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 4045,
+              "end": 4047,
               "kind": "line_range",
-              "start": 4045
+              "start": 4047
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -628,12 +628,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 4715,
+              "end": 4717,
               "kind": "line_range",
-              "start": 4715
+              "start": 4717
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -774,7 +774,7 @@
       ]
     },
     "6": {
-      "note": "**The routes wired as the composition root wires them, over the real application owners.**\n\nAnchor: `_served` `register_review_routes` `read_review_source_content`",
+      "note": "**The routes wired as the composition root wires them, over the real application owners.**\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
@@ -786,6 +786,31 @@
               "start": 223
             },
             "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:33b2517fb5047cfd099afc6d3876eba9e880ee93eab36f4e8328c19cb5d6691a",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
+            "locator": {
+              "end": 609,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
           "kind": "code"
         },
@@ -812,33 +837,10 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_content.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
-            "content": "sha256:69c7843361f8b53b9b104a801eadbcb73a08919fac717353b4861568a4bb8333",
-            "locator": {
-              "kind": "symbol",
-              "name": "_served"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_review_source_content"
             },
             "path": "mcp/src/agents_remember/application/review_source_content.py"
           },

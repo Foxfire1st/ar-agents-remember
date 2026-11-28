@@ -14,6 +14,8 @@ WireResponse forbids extra fields and is frozen; route declarations describe suc
 
 FileContent and NoteContents carry optional media type and an over-limit flag beside their measured size; their bytes routes supply recognized pictures and videos separately. DiffSide separates text content from binary/media metadata and permits an absent side for an addition or deletion. FileResolution reports whether a repository-relative path exists and whether it is a file or directory, with optional language and media type.
 
+
+
 - File and note metadata, repository path resolution and independently classified diff sides are declared wire shapes. [16]
 
 ## Evidence boundary

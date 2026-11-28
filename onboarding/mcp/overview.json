@@ -382,7 +382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+            "blob": "852114571550da1e7ba230e8256f02359df8f87a",
             "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
             "locator": {
               "kind": "symbol",
@@ -1415,12 +1415,12 @@
       ]
     },
     "215": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.**\n\nAnchor: `read_review_source_content` `admit_source_path`",
+      "note": "**Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.**\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
               "kind": "file"
             },
@@ -1490,7 +1490,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:1cba8ea6712f6b0657c98175ad42aae67021f1f0bece726c06d866e58dcc88ca",
             "locator": {
               "kind": "symbol",
@@ -1502,7 +1502,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
             "locator": {
               "kind": "symbol",
@@ -1514,12 +1514,12 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:1bc99f2898fab28f84753289fe209c3b915a3e4917e1b98e0a8bf4560f75f97c",
             "locator": {
-              "end": 60,
+              "end": 61,
               "kind": "line_range",
-              "start": 60
+              "start": 61
             },
             "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
@@ -1602,7 +1602,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+            "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
             "content": "sha256:c56b60809d8b723995fe5062aeadb76116d6af82dd95b56671609a622684ea22",
             "locator": {
               "end": 19,
@@ -1982,7 +1982,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
             "content": "sha256:21ceee1a7e928822b003a059be69fcb6364a266cd84e023fa8544ca4b8a06e0d",
             "locator": {
               "end": 7,
@@ -4472,7 +4472,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
             "locator": {
               "kind": "symbol",
@@ -5326,14 +5326,14 @@
       ]
     },
     "403": {
-      "note": "Supported code media is returned before text-size refusal and the reader renders its media state.",
+      "note": "Supported code media is returned before text-size refusal and the reader renders its media state.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0b490e5ae00133544facb7653602283095f5dd67",
-            "content": "sha256:f6f4c7822e06f0eb404336132bfe1c65ebb76f7b70b09a5f1d9204afdf07186e",
+            "blob": "248836913592993fa0ded83aa53a6002022ae5cf",
+            "content": "sha256:49c03f83b6b07a891485fac8dd253359e8c307156d4ccb429e297bc22f611331",
             "locator": {
-              "end": 388,
+              "end": 393,
               "kind": "line_range",
               "start": 355
             },
@@ -5343,7 +5343,7 @@
         },
         {
           "anchor": {
-            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "blob": "3f55d23ebc597a4a309c31ebe9f8548cf669d1c0",
             "content": "sha256:22722a0796d22a99f542ba1b357fdb8ba396b3dd12e49d34bcefa5a62066a99d",
             "locator": {
               "end": 37,

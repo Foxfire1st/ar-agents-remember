@@ -1,0 +1,145 @@
+{
+  "path": "dashboard/src/panels/file-viewer/serverHighlights.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+        "content": "sha256:1443c93f579b4c08d45092b8f2c03ad9f3aebb87cebf92b101fb5c4f4aeade2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "serverHighlights and CodeMirror 6 viewers > applies afterHighlights in inline DiffPane without breaking deleted chunks"
+        }
+      },
+      "facet": "Proves inline DiffPane applies afterHighlights alongside unifiedMergeView deleted chunks.",
+      "id": "PRF-C95YZS",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+        "content": "sha256:6f09254cbfd4e6096787ec1f1dccd6b0ef857b2cd999142569a38f1b4dc3ebea",
+        "locator": {
+          "kind": "symbol",
+          "name": "serverHighlights and CodeMirror 6 viewers > handles null, malformed, out-of-range, and drawnText trailing-newline clamped spans safely"
+        }
+      },
+      "facet": "Proves buildHighlightDecorations safely clamps or ignores null, malformed, out-of-range, and drawnText trailing-newline spans without throwing.",
+      "id": "PRF-JN6P8N",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+        "content": "sha256:92e2170f221d79ac9af70fee3307529b290725db5161675274b594975e799328",
+        "locator": {
+          "kind": "symbol",
+          "name": "serverHighlights and CodeMirror 6 viewers > renders server-computed Decoration.mark token classes in FilePane and layers with citationHighlight"
+        }
+      },
+      "facet": "Proves FilePane applies .cm-ar-tok-* mark decorations from server highlights while layering cleanly with citationHighlight.",
+      "id": "PRF-MWDF5B",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+        "content": "sha256:d35bb5593b70e938fa033c1f00c544deb21edb0550fbe17a7ac3fd13c74d88e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "serverHighlights and CodeMirror 6 viewers > respects ChangeSetPane plain (highlight off) mode by suppressing token highlights"
+        }
+      },
+      "facet": "Proves ChangeSetPane passes highlights={null} to FilePane in plain full-file mode so token classes are suppressed.",
+      "id": "PRF-X05ZXD",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+        "content": "sha256:3879d9975620910ab61f6f01bfba09ee0d7bfe36967736b7a6f492df4c626f74",
+        "locator": {
+          "kind": "symbol",
+          "name": "serverHighlights and CodeMirror 6 viewers > applies independent before/after highlight compartments in split DiffPane and preserves DOM node on unchanged digest"
+        }
+      },
+      "facet": "Proves split DiffPane applies independent before/after highlight Compartments and retains the .cm-mergeView DOM node across unchanged polls.",
+      "id": "PRF-YHCCHF",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Proves `FilePane` renders `.cm-ar-tok-*` decorations layered with `.cm-citedLine` and clamps malformed or trailing-newline-stripped spans safely.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+            "content": "sha256:e2de36d6f0ffd6e7f4045b5495c8d81ff898a975bdf268823bd2c74abb3b8a38",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Proves split and inline `DiffPane` per-side highlight compartments, `.cm-mergeView` DOM node retention on unchanged/cleared digests, and `.cm-deletedChunk` compatibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+            "content": "sha256:c737c430d2d91e34bdb3172a8913217a0bd726fe99b3c5719b050f6aed7571bf",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Proves `ChangeSetPane` suppresses token highlights in full-file plain mode when `highlight` is toggled off.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb47ea538620d0f317230286f117e861235f7fc8",
+            "content": "sha256:69cc24e082c47928e4657a8c76019d81ca69ebba96c50f110c4191a73c7fb00c",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

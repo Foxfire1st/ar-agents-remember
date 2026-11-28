@@ -62,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
             "content": "sha256:7ece716a8f1345394af6ff4869e7ad493f7c866be2519c38148f7aeab6d07cf5",
             "locator": {
-              "end": 217,
+              "end": 218,
               "kind": "line_range",
-              "start": 163
+              "start": 164
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },
@@ -75,12 +75,12 @@
         },
         {
           "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
             "content": "sha256:ec4ae8ba2b09702ed4e9df2a500834de95ec3d4aa96452c41e3a3456ba3f246b",
             "locator": {
-              "end": 161,
+              "end": 162,
               "kind": "line_range",
-              "start": 140
+              "start": 141
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },

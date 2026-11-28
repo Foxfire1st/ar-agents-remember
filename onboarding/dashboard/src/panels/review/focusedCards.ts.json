@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
-        "content": "sha256:1dffedab0024acafdd52a1f38f95dc35d280a2836396bbd3f4aca13212194601",
+        "blob": "963db4c03cc9308a66e0db832a0cf54fa01438cb",
+        "content": "sha256:ba0a21c53bb63ddd1c5b3e113017369af52c0e954b9e03bb0a7d889e61f205cd",
         "locator": {
-          "end": 67,
+          "end": 66,
           "kind": "line_range",
           "start": 62
         }
@@ -23,16 +23,15 @@
   ],
   "references": {
     "14": {
-      "note": "focusedCards.ts current behavior at this source owner.\n\nAnchor: \"export function cardVoice(entry: ReviewTreeEntry): CardVoice {\"",
+      "note": "Declares `ExpressionCard`, `CardVoice`, and `cardVoice` choosing recorded side rationale/facet and revisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
-            "content": "sha256:d2e14b699abbaf7a96cee1210f887f4d8a8abc2d5b8392ca147fde56c0b35537",
+            "blob": "963db4c03cc9308a66e0db832a0cf54fa01438cb",
+            "content": "sha256:931c99a2cb61e51acc1a01943f8f8bf8a2ce542855b9fa4e0b55ed2469a6c303",
             "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "cardVoice"
             }
           },
           "kind": "code"
@@ -40,16 +39,15 @@
       ]
     },
     "15": {
-      "note": "focusedCards.ts current behavior at this source owner.\n\nAnchor: \"export function firstLines(card: ExpressionCard): { before: number; after: number } {\"",
+      "note": "Exports `firstLines`, `drawnText`, `rangeLabel`, and `notCurrent` for excerpt numbering and non-current entry marks.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
-            "content": "sha256:e8f8b975284d88ebc27058ec475000906d6e5fb63b5f8659846b2dda96c45f2d",
+            "blob": "963db4c03cc9308a66e0db832a0cf54fa01438cb",
+            "content": "sha256:12e60c5009bfd67d5b097ae785fd8f47a4f1b21067a821fe556a10afcbf8cb66",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 58
+              "kind": "symbol",
+              "name": "firstLines"
             }
           },
           "kind": "code"

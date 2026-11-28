@@ -44,8 +44,7 @@ task document resolves outside the repository tasks folder derived from its phys
 position is skipped with a scope warning naming the contract; its recorded roots cannot admit it.
 `_resolve_within(root, rel)` (cit:([`_resolve_within`], mcp/src/agents_remember/serving/scope.py:218-226)) is the per-call confinement: `""`/`"."` is the
 root, everything else goes through `confine_rel` (so an absolute or escaping path is
-rejected, never silently re-rooted). `language_for(path)` maps a file extension
-to the dashboard language id via `_LANG_BY_EXT` (`text` fallback). `decode_capped(raw, cap)
+rejected, never silently re-rooted). `language_for(path, *, repo_root=None)` delegates to `highlights_service.resolve_display_language` (catalog + repo `languages.json`, `"text"` fallback), replacing the removed hardcoded `_LANG_BY_EXT` map. `highlights_wire_for(path, text, *, language=None, repo_root=None)` returns the wire-serialized `SyntaxHighlights` dict for textual payloads or `None` for empty/missing/binary content or unavailable grammars. `decode_capped(raw, cap)
 -> (text, truncated)` is the shared read-cap decoder (260703-L18 finding 5): it decodes the
 first `cap` bytes as UTF-8 but backward-scans off any partial trailing character first (UTF-8
 continuation bytes are `0b10xxxxxx`, a character is ≤4 bytes, so it steps `end` back ≤3 bytes
@@ -82,7 +81,9 @@ modules.
 
 
 
-- The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for. Anchor: "from agents_remember.serving.scope import FileScope" [2]
+
+
+- The L3 change-set API imports and reuses FileScope, run_scoped and run_scoped_response. Anchor: "from agents_remember.serving.scope import FileScope" [2]
 
 
 - The shared path-confinement helper (`confine_rel`) the scope uses. [3]

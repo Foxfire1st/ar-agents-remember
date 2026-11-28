@@ -119,6 +119,7 @@ No configured domain documentation could be checked.
 
 - **The link owner this module consumes.** [9]
 
+
 - The one caller: the content read hands its inventory here before reading any byte. [10]
 - The inventory owner re-used for the leaf change set. [11]
 - The wire literals this module fills and the validator that ties attributed context to `unchanged` and `requested_generation`. [12]

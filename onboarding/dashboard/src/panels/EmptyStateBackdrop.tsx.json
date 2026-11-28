@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
             "content": "sha256:3033228b4bf23227ab68dfc8fd65e1d163f405b0feeddabde37d36da553edd10",
             "locator": {
-              "end": 194,
+              "end": 195,
               "kind": "line_range",
-              "start": 182
+              "start": 183
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },

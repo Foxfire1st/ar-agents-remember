@@ -522,6 +522,8 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Current tree owners for the review page account. [77]
 
+
+
 - Current source owners for the review page account. [78]
 
 - Current chat owners for the review page account. [79]
@@ -551,6 +553,8 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover. [20]
 
+
+
 - The tree owns one All changes link; card ranges use the page-wide context control and path links reach comparison-bound files. [21]
 
 - Every leaf’s entry opens task context and shows changed-intent counts; the reviewer opens unselected unless explicitly addressed. [22]
@@ -558,6 +562,8 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 - ReviewMain mounts ReviewSurface for a target with or without a selector. [27]
 
 - The review target keeps task/history identity; the page also restores validated selection and older-comparison state from sel/comparison URL keys. [45]
+
+
 
 - Operations review composition and its retained comparison-page overlay have separate owners; whole-file inspection uses comparison viewer links. [61]
 
@@ -590,6 +596,8 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 
 - Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface. [51]
+
+
 - Current lane owners for the review page account. [81]
 - Current watch owners for the review page account. [84]
 - Current composition owners for the review page account. [87]

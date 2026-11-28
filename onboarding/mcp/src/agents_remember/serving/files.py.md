@@ -44,7 +44,7 @@ reason — only a `kind: "file"` row may carry `language`/`hasSidecar`, and only
 
 ### Logic
 
-The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_iter_repo_contracts`/`_find_enclosure_contract`, `_resolve_within`, `_LANG_BY_EXT`) lives in sibling `serving/scope.py`, so `serving/changeset.py` reuses it. `files.py` imports `FileScope`, `_resolve_within`, `language_for` and `run_scoped` from `.scope`,
+The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `highlights_wire_for`, `_iter_repo_contracts`/`_find_enclosure_contract`, `_resolve_within`) lives in sibling `serving/scope.py`, so `serving/changeset.py` reuses it. `files.py` imports `FileScope`, `_resolve_within`, `language_for`, `highlights_wire_for`, and `run_scoped` from `.scope`,
 along with its catalog, decoding and response helpers, and **re-exports** `FileScope` +
 `_resolve_within` for existing callers/tests. The scope resolver and error map are shared with `serving/changeset.py`.
 
@@ -77,9 +77,9 @@ contract (`ContractError`/`OSError` → skip, never abort).
 `list_dir(scope, rel_dir)` lazily lists one level: code children from `code_root`
 (each file annotated with `language` and `hasSidecar` via `route_sidecar_status`)
 plus the parallel onboarding children from `onboarding_root` when present.
-`read_file(scope, rel)` returns fixed-media metadata without reading payload bytes; otherwise it serves a file's content (capped at `_MAX_FILE_BYTES` = 2
+`read_file(scope, rel)` returns fixed-media metadata with explicit `highlights: null` without reading payload bytes; otherwise it serves a file's content (capped at `_MAX_FILE_BYTES` = 2
 MiB with a `truncated` flag; an initial-NUL or non-UTF-8 file degrades to `language:"binary"`,
-empty content) — the cap goes through the shared
+empty content, and `highlights: null`; textual payloads attach server-computed `highlights` via `highlights_wire_for`) — the cap goes through the shared
 `scope.decode_capped`, cutting at a UTF-8 codepoint boundary so a multi-byte char
 straddling the cap returns the first ~2 MiB + `truncated:true` instead of empty
 `binary` — and `_onboarding_meta` (the drift-bearing

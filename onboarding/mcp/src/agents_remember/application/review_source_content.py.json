@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of the three properties it exists for — the generation is an input, every side states its own truth, and which paths are addressable is decided by the admission owner (inventory entries and recorded realization-or-proof context) — and of what it deliberately does not own (no diff, no re-measurement, no admission policy).**  Anchor: \"does not decide which paths are addressable\"",
+      "note": "**The module's own statement of the three properties it exists for — the generation is an input, every side states its own truth, and which paths are addressable is decided by the admission owner (inventory entries and recorded realization-or-proof context) — and of what it deliberately does not own (no diff, no re-measurement, no admission policy).**  Anchor: \"does not decide which paths are addressable\"\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
               "kind": "file"
             }
@@ -142,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:e7f82746491e11a15a321f83abc0a40f2a79458cebea620dff21a3a6ee48c073",
             "locator": {
               "kind": "symbol",
@@ -154,12 +154,12 @@
       ]
     },
     "14": {
-      "note": "**One endpoint's content, with the three outcomes kept apart: an unbound root and an unanswered lookup are `unavailable`, an answered lookup with no entry is `absent`, and only a real entry is read.**",
+      "note": "**One endpoint's content, with the three outcomes kept apart: an unbound root and an unanswered lookup are `unavailable`, an answered lookup with no entry is `absent`, and only a real entry is read.**\n\nAnchor: `_side_content`, `_Unreadable`",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:103ec757f203445b2f0689d878c3ca2af1f58bea986b1bc09b54a2b8285f8fa5",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:fcc771eba4cfd76fa92f19a1fddff5f614526a295b1c10d453ee17754c56db11",
             "locator": {
               "kind": "symbol",
               "name": "_side_content"
@@ -169,7 +169,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:44951a336bc414987e28988306a9ff517bdf8b66041ef2d8289587d765a78e62",
             "locator": {
               "kind": "symbol",
@@ -181,12 +181,12 @@
       ]
     },
     "15": {
-      "note": "**The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.**",
+      "note": "**The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.**\n\nAnchor: `_entry_content`, `_TreeEntry`",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:a5a422ceed02ef1b4316876f67da1f6a7cce1d44a555e16cd3bae81a6742a484",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:9e65c60e9dbfc00de050cb5fe08c6f76c818cf3bb29621036ca26816ddf42984",
             "locator": {
               "kind": "symbol",
               "name": "_entry_content"
@@ -196,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:98067369445c0c2fee1c7d88e2ac7cc49d36fd8493745ddc0f6c25b38669e420",
             "locator": {
               "kind": "symbol",
@@ -208,12 +208,12 @@
       ]
     },
     "16": {
-      "note": "A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling.",
+      "note": "A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling.\n\nAnchor: `_blob_content`, `_symlink_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:ce1a2d96262c95972a8e7067e8ffb977a0d3ac9f09cde7b3fa4504adb9a4d378",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:21deb82f14009dbf8e53934b35ed4f2f988c41acabcc6c32eb5e78a10fab9d8a",
             "locator": {
               "kind": "symbol",
               "name": "_blob_content"
@@ -223,7 +223,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:bc64eabd1018c0abc7f85ca5f818b6827538c70d1af582519003936cb67fa162",
             "locator": {
               "kind": "symbol",
@@ -235,14 +235,14 @@
       ]
     },
     "17": {
-      "note": "**The two inspected reasons for no text form: NUL in the sniff window, or UTF-8 failure in the full small object/capped prefix. Oversized uninspected suffix bytes are not validated.**",
+      "note": "**The two inspected reasons for no text form: NUL in the sniff window, or UTF-8 failure in the full small object/capped prefix. Oversized uninspected suffix bytes are not validated.**\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
-              "end": 601,
+              "end": 609,
               "kind": "line_range",
               "start": 1
             }
@@ -251,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "blob": "54208f12a751f312d7c878ed98fd1bb40c8cfb99",
             "content": "sha256:2fae997a8c54667b84d6c17e203034c93bbada51cdab16588615a487be698f4a",
             "locator": {
-              "end": 101,
+              "end": 96,
               "kind": "line_range",
-              "start": 82
+              "start": 77
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },
@@ -269,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:d3803f61520d8afce2a5340df2179b9ae6efbde0d8171f4990e805ab57677287",
             "locator": {
               "kind": "symbol",
@@ -280,7 +280,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:636497054c33f6d732f84fbe2bb07f98cfba3dfc29b0bb8728dca386c4613a7c",
             "locator": {
               "kind": "symbol",
@@ -296,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:324fdc8b88de3b4a8b3a7ea1996f2f457c15170d01da8082054525d9e4c61d33",
             "locator": {
               "kind": "symbol",
@@ -312,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:0e5c715bd6b63d44867b3b31c23ea624cbfe89107747d2082f208380b13312e4",
             "locator": {
               "kind": "symbol",
@@ -323,7 +323,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:1cba8ea6712f6b0657c98175ad42aae67021f1f0bece726c06d866e58dcc88ca",
             "locator": {
               "kind": "symbol",
@@ -335,12 +335,12 @@
       ]
     },
     "20": {
-      "note": "**Reproduction hints name the exact object IDs. The displayed lookup omits literal pathspec magic and shell quoting is incomplete, so these strings do not guarantee reproduction for every admitted path/root spelling.**",
+      "note": "**Reproduction hints name the exact object IDs. The displayed lookup omits literal pathspec magic and shell quoting is incomplete, so these strings do not guarantee reproduction for every admitted path/root spelling.**\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
               "kind": "file"
             }
@@ -354,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:eebf7779c7f45fcc0a1a360b1dc4735d96075ea97f3b3e35c0ff4dd8f57c491b",
             "locator": {
               "kind": "symbol",
@@ -378,12 +378,12 @@
       ]
     },
     "22": {
-      "note": "**The wire vocabulary this module fills: six side states, the closed currentness set, the two bounding measurements, the two admissions, and the structural prohibitions that make a non-textual side carrying text unrepresentable.**",
+      "note": "**The wire vocabulary this module fills: six side states, the closed currentness set, the two bounding measurements, the two admissions, and the structural prohibitions that make a non-textual side carrying text unrepresentable.**\n\nAnchor: `ReviewSourceSide`, `ReviewSourceSideState`, `ReviewSourceCurrentness`, `ReviewSourcePathBound`, `ReviewSourceAdmission`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
-            "content": "sha256:4238ed779a8790fb8f72c024a28bd7ddc31a1f7240d482a695d6b0feec7d83b2",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
+            "content": "sha256:982c93a1df02baf1e896997d60b54d2b1932fcf102ed3885d3698db09a9a2c05",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceSide"
@@ -394,7 +394,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3df3bff746bde383b406b3741ba46e14f4d56695d025bffa61336eb44ae94531",
             "locator": {
               "kind": "symbol",
@@ -406,7 +406,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:b26d741048857cc4e837d95c0ec12dfe7415ba1aa63a58ae2652bc795f5e72e7",
             "locator": {
               "kind": "symbol",
@@ -418,7 +418,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:19ea57503e8179f9bd4a9334f0e56e213b314059d77c293173fca0e6e9e25624",
             "locator": {
               "kind": "symbol",
@@ -430,7 +430,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:54c92b9afc2fd4e7731d0dc4fd8ec21782f8ee08dc496671a69beda3c27aa139",
             "locator": {
               "kind": "symbol",
@@ -447,7 +447,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
             "locator": {
               "kind": "symbol",
@@ -464,7 +464,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:0b63a74d8f3e792c4d24782b4f54ee357c448b75b20688f3a50a47f5329d2bd3",
             "locator": {
               "kind": "symbol",
@@ -476,7 +476,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "blob": "80cfca93edd64c0eee3097e587d1471905b75e97",
             "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
             "locator": {
               "kind": "symbol",
@@ -673,7 +673,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:beb8c2c44a804daa1ca95428dd98d744663d53504c17ba100124dacf8f01846d",
             "locator": {
               "kind": "symbol",
@@ -684,7 +684,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:63982b467e98242814a54ad9ff8850c997c94e72abe4ffa1976762e90c9db759",
             "locator": {
               "kind": "symbol",
@@ -843,15 +843,16 @@
       ]
     },
     "32": {
-      "note": "The retained source-content route accepts exact generation input, invokes its typed port and serializes content or refusal; the application assembles the requested sides and their generation/admission facts without a current SourceContent renderer.",
+      "note": "The retained source-content route accepts exact generation input, invokes its typed port and serializes content or refusal; the application assembles the requested sides and their generation/admission facts without a current SourceContent renderer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
             "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
-            "content": "sha256:77a7088874866476b25a8429f1a0317bbd80d260a770575eaa17227ad73fdeb8",
+            "content": "sha256:d122e3ced6b43c578342b18aaffd4ee14b8e566856b856d82ce7e29167781c3b",
             "locator": {
-              "kind": "symbol",
-              "name": "source_content_request_from_query"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -859,23 +860,12 @@
         },
         {
           "anchor": {
-            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
-            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:aabc0d96a693678e5ae84b4e46e8321bbc0c2f108e6f3b0a90accda586fce1b6",
             "locator": {
-              "kind": "symbol",
-              "name": "_source_content_response"
-            },
-            "path": "mcp/src/agents_remember/serving/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
-            "locator": {
-              "kind": "symbol",
-              "name": "_content"
+              "end": 609,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -887,7 +877,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:640dbca901635881c6673203d7da11920a6243545ee18b7c225174091743775e",
             "locator": {
               "kind": "symbol",
@@ -898,7 +888,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:679e360c072f008cac6ac1c6878f8081ff72ad9a97a038a37b7aa0b0046a3f24",
             "locator": {
               "kind": "symbol",
@@ -909,7 +899,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:baf89a3b901556268351b5ce06ba3aac8bb1602b0841ed0956a9acf7850778ea",
             "locator": {
               "kind": "symbol",
@@ -925,7 +915,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:35a603c3606a984bf612ad9c2eeef0cce9217818888c428a752c134c56e76983",
             "locator": {
               "kind": "symbol",
@@ -936,7 +926,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:791de331323e2b0455e3c5b168e949287616d1892cb2d74ea9874075c901e42c",
             "locator": {
               "kind": "symbol",
@@ -947,7 +937,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:f57fa0632921072010e711cfdd48448b514b18c77f728bc893c2540551cd4ce9",
             "locator": {
               "kind": "symbol",
@@ -958,7 +948,7 @@
         },
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:f1a6213ebd2a2076329534eb633704404c5a163270ad2d073766249451bf375c",
             "locator": {
               "kind": "symbol",
@@ -974,7 +964,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
             "locator": {
               "kind": "symbol",
@@ -990,7 +980,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:de237539bab3bf29e8c326dc4f9af52f779ef61b4e571237a29d800b044a2e76",
             "locator": {
               "kind": "symbol",
@@ -1006,7 +996,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:ac2e8f6676debd1ee2da4dffc1267922985b0ca3235fc2a6e37f808518958a06",
             "locator": {
               "kind": "symbol",
@@ -1022,8 +1012,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
+            "content": "sha256:c7976cd59e6abb2816788aafa1d8f0eef9eb3d52ffc6ee6650b0e7ace408036e",
             "locator": {
               "kind": "symbol",
               "name": "_content"

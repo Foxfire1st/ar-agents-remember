@@ -39,6 +39,7 @@ The current card owner passes visibility into all three excerpt renderers and dr
 - Side filtering and the scope Back control remain exported. [10]
 - A potentially meaningful marker-status row is reserved before the read, with fixed height, ellipsis and full current text in its title. [15]
 - Stored card-renderer tests cover owner-side hunk placement, separate proof lists, explicit unavailable/mismatch states and marker return. Whole-file fixture texts are supplied as card excerpts; the removed full-file reader is not exercised. [12]
+
 - Unchanged, changed and separate-side card excerpts pass their visibility input to useExcerptMarking and render its note/panel with the excerpt; no SourceContent full-file caller remains in this card owner. [13]
 - A marker inside a collapsed run dispatches uncollapseUnchanged for that run and its mapped sibling run where both editors exist. [14]
 

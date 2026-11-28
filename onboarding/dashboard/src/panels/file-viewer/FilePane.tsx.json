@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+        "content": "sha256:10cb8ada6654eab84e301b3c3ca352a6764c336e51709b371a1ab575d9c7829b",
+        "locator": {
+          "kind": "symbol",
+          "name": "FilePane"
+        }
+      },
+      "id": "RLZ-0CT55Y",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Applies server highlights synchronously through a Compartment reconfigured by digest without rebuilding the EditorView.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
         "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-        "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
+        "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+        "content": "sha256:10cb8ada6654eab84e301b3c3ca352a6764c336e51709b371a1ab575d9c7829b",
         "locator": {
           "kind": "symbol",
           "name": "FilePane"
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-        "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
+        "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+        "content": "sha256:10cb8ada6654eab84e301b3c3ca352a6764c336e51709b371a1ab575d9c7829b",
         "locator": {
           "kind": "symbol",
           "name": "FilePane"
@@ -62,10 +80,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:559f8334946254d3c369d1c740ad36dc93489fbc69d84fd950756ec45b57c78e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "citationHighlight"
             }
           },
           "kind": "code"
@@ -73,29 +92,14 @@
       ]
     },
     "13": {
-      "note": "The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view.",
+      "note": "The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines alongside server highlights. Media citations use the separate media view.\n\nAnchor: `ReaderCode`",
       "targets": [
         {
           "anchor": {
-            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
-            "content": "sha256:29ffa7b4a8507652fe5655b0898456dcd9b663afdd14bcc837d234b4017b3cf5",
+            "blob": "3f55d23ebc597a4a309c31ebe9f8548cf669d1c0",
+            "content": "sha256:2c0086ea473c481151a3e82439d1de0221a5faa29a3ec09367922c82ec0c2b6a",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 9
-            },
-            "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
-            "content": "sha256:2988f2c274bf95a7a9f03a8f3b6c36675c3d4aa9f0b223cbe740662c7808512d",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 47
+              "kind": "file"
             },
             "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
           },
@@ -104,14 +108,15 @@
       ]
     },
     "14": {
-      "note": "The optional range joins the editor's dependencies and rebuilds the view.",
+      "note": "The optional range joins the editor's dependencies and rebuilds the view, while `highlights` updates reconfigure `slot` in place by digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:10cb8ada6654eab84e301b3c3ca352a6764c336e51709b371a1ab575d9c7829b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "FilePane"
             }
           },
           "kind": "code"
@@ -119,29 +124,14 @@
       ]
     },
     "15": {
-      "note": "The dual pane that mounts the same primitive on the code side.",
+      "note": "The dual pane that mounts the same primitive on the code side.\n\nAnchor: `DualPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
-            "content": "sha256:f378e1680148157e4d21b978ca46026a49b74bdbb41786feb6916a06c3042bd6",
+            "blob": "8387c40917b39a00694dd9f3db7cc3377f15cd40",
+            "content": "sha256:f03eee077f2b29d4bfff066dca118109e29c47ef548a2ee9894a3c0a3f9ed68f",
             "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 107
-            },
-            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
-            "content": "sha256:3beda43f3a4c03bddf3a637fa4d9e2b56feb28e1bba479a51e96252c2e238738",
-            "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 198
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },
@@ -150,16 +140,15 @@
       ]
     },
     "16": {
-      "note": "The File Viewer-only optional tray target enables the line gutter; other panes omit it.\n\nAnchor: \"const ref = useRef<HTMLDivElement>(null);\"",
+      "note": "The File Viewer-only optional tray target enables the line gutter; other panes omit it.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:795309e553621c67d86ba5a648da67add70ad9c787934d2e2e027d144411f1f6",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:6aa33568a017b13b0f3014ac5f4df322d581c937b39b4f974af0bd3cffde7952",
             "locator": {
-              "end": 105,
-              "kind": "line_range",
-              "start": 35
+              "kind": "symbol",
+              "name": "buildExtensions"
             }
           },
           "kind": "code"
@@ -167,14 +156,15 @@
       ]
     },
     "17": {
-      "note": "Fitted review source grows into the reading column without an inner scroller.\n\nAnchor: `fitHost`",
+      "note": "Fitted review source grows into the reading column without an inner scroller.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "fitHost"
             }
           },
           "kind": "code"

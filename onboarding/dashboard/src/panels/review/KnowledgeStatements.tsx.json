@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-        "content": "sha256:0367e06be6d7063c922e36f84c6fa143abc6bc39d41d1cc779f6da1fa2bee0e3",
+        "blob": "852114571550da1e7ba230e8256f02359df8f87a",
+        "content": "sha256:51831c3264717abc57db514c4518eab2067b180b5007d86c884d4fac189caaf0",
         "locator": {
           "kind": "symbol",
           "name": "oneSidedDiff"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-        "content": "sha256:db4b8a0a32ca0af3703ce484e4dd4ec7391704cfc72775053fd80622eca6f381",
+        "blob": "852114571550da1e7ba230e8256f02359df8f87a",
+        "content": "sha256:d9bc7c1b09cba5b1c9f73afb6c6567f9dd0b9b29b43ad44790ab2c0b8961619a",
         "locator": {
           "kind": "symbol",
           "name": "availableContent"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-        "content": "sha256:251bdb1175b093c9b53325d620615c4a1d08aed32b7ac62459f2d383154acae2",
+        "blob": "852114571550da1e7ba230e8256f02359df8f87a",
+        "content": "sha256:9938ae7a2164d3aee54b8c151aa049aae13b96d4c8b6309d45a9d4d1f622f916",
         "locator": {
           "kind": "symbol",
           "name": "bothPresent"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+        "blob": "852114571550da1e7ba230e8256f02359df8f87a",
         "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
         "locator": {
           "kind": "symbol",
@@ -76,12 +76,12 @@
   ],
   "references": {
     "22": {
-      "note": "The exported component counts declared-present sides and retains both state lines outside its two-sided branch.\n\nAnchor: `KnowledgeStatements`",
+      "note": "The exported component counts declared-present sides and retains both state lines outside its two-sided branch.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-            "content": "sha256:f7ee053e85c0e265023f7d0d267a21981d0df64f2a3f58e175ad3fad515ffa87",
+            "blob": "852114571550da1e7ba230e8256f02359df8f87a",
+            "content": "sha256:f9015adf35aec361ae60d02488ecc7a5c11458c80b8018dd9c420e3b9df8c1e7",
             "locator": {
               "kind": "file"
             }
@@ -91,14 +91,14 @@
       ]
     },
     "23": {
-      "note": "The shared two-sided and one-sided diff calls preserve operand language and layout; the available-content call explicitly refuses a diff; all three request fit panes.\n\nAnchor: lines 32-94",
+      "note": "The shared two-sided and one-sided diff calls preserve operand language and layout; the available-content call explicitly refuses a diff; all three request fit panes.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-            "content": "sha256:2186a0444295a637601addbc32a0d48572917fd08682d8bcc9d06feb98eb1232",
+            "blob": "852114571550da1e7ba230e8256f02359df8f87a",
+            "content": "sha256:9667f4a68319e9c0165d05a763a83337f3836f2ceebb0d81cd136b4f660b814e",
             "locator": {
-              "end": 94,
+              "end": 98,
               "kind": "line_range",
               "start": 32
             }

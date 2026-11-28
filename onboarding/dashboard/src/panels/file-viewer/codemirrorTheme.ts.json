@@ -1,16 +1,49 @@
 {
   "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2fc125fb5d4b552333f3a0ee24a7a539461a758d",
+        "content": "sha256:822a59ad23e0c69c69888fb2cd8422bbd8d55efe4dc8aefa40475bf226f0b796",
+        "locator": {
+          "kind": "symbol",
+          "name": "codeTheme"
+        }
+      },
+      "id": "RLZ-P5FES9",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Defines foreground-only OKLCH .cm-ar-tok-* token classes without @codemirror/language or @lezer/highlight so citation and diff backgrounds stay visible.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "`FilePane` builds its `EditorView` with this theme bundle.\n\nAnchor: `FilePane`",
+      "note": "`FilePane` builds its `EditorView` with this theme bundle.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:10cb8ada6654eab84e301b3c3ca352a6764c336e51709b371a1ab575d9c7829b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:6aa33568a017b13b0f3014ac5f4df322d581c937b39b4f974af0bd3cffde7952",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -23,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:6a21dc2544a6b64407258861c6dfcf652b4a525e6af86e1fbf76d7853283466c",
+            "blob": "2fc125fb5d4b552333f3a0ee24a7a539461a758d",
+            "content": "sha256:03a527a6b58a91557d4e3f6adf4053022b5af882affe30af91c6bb892471505c",
             "locator": {
               "kind": "symbol",
               "name": "chrome"
@@ -35,15 +68,15 @@
       ]
     },
     "3": {
-      "note": "The syntax-highlight bundle reads the cyan and mint syntax tokens.",
+      "note": "The foreground-only `.cm-ar-tok-*` token classes map server highlight kinds onto amber, mint, cyan, ink, and mid-lightness comment/operator blends.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:6b51590c96ded3f47575ee9a7b1d34e028dd3dc829be8170232005413f42c3bd",
+            "blob": "2fc125fb5d4b552333f3a0ee24a7a539461a758d",
+            "content": "sha256:822a59ad23e0c69c69888fb2cd8422bbd8d55efe4dc8aefa40475bf226f0b796",
             "locator": {
               "kind": "symbol",
-              "name": "highlight"
+              "name": "codeTheme"
             }
           },
           "kind": "code"

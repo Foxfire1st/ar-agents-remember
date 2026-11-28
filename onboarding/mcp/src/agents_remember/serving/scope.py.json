@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/serving/scope.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54208f12a751f312d7c878ed98fd1bb40c8cfb99",
+        "content": "sha256:8c0af58425c35a0a4e9a33eab6269925a7c08c67d50ac824de659613e7c27a8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "language_for"
+        }
+      },
+      "id": "RLZ-B66391",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Replaces the former hardcoded _LANG_BY_EXT map with catalog-backed display language resolution.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The L1 files API that now imports + re-exports these helpers.\n\nAnchor: `resolve_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+            "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
             "content": "sha256:07529da616c5edb1c5b9aadfda044208b0858941ffe31069f936362a0825c54a",
             "locator": {
               "end": 18,
@@ -22,16 +41,16 @@
       ]
     },
     "2": {
-      "note": "The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for. Anchor: \"from agents_remember.serving.scope import FileScope\"",
+      "note": "The L3 change-set API imports and reuses FileScope, run_scoped and run_scoped_response. Anchor: \"from agents_remember.serving.scope import FileScope\"\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
-            "content": "sha256:490eef4d4b2dc4538b33f5246162d525580e8cae3ec1489eaeb426127e86da12",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
+            "content": "sha256:485bf901e349761b5e22c1cf968de1a9d13957255d17eeaefb379bff5a3d4236",
             "locator": {
-              "end": 87,
+              "end": 91,
               "kind": "line_range",
-              "start": 78
+              "start": 91
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -39,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:5a806c50edfc5197e173a83194140f5608aa5687bdaf1bc524dc1ac65824d405",
             "locator": {
-              "end": 73,
+              "end": 77,
               "kind": "line_range",
-              "start": 73
+              "start": 77
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -109,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "blob": "54208f12a751f312d7c878ed98fd1bb40c8cfb99",
             "content": "sha256:680aed2e5f98f339c3ebdd83cb671ef11f9274bbfa1374819b6463dddd996e90",
             "locator": {
-              "end": 154,
+              "end": 149,
               "kind": "line_range",
-              "start": 122
+              "start": 117
             }
           },
           "kind": "code"
@@ -134,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "blob": "54208f12a751f312d7c878ed98fd1bb40c8cfb99",
             "content": "sha256:4af7773a9228a97bc4464a1fe1f54a7d4921e2aa987a327515001f4c54399e02",
             "locator": {
-              "end": 154,
+              "end": 149,
               "kind": "line_range",
-              "start": 129
+              "start": 124
             }
           },
           "kind": "code"

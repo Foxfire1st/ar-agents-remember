@@ -4476,12 +4476,12 @@
       ]
     },
     "330": {
-      "note": "Entry-side symbol and entry memory values retain explicit path and count meanings.",
+      "note": "Entry-side symbol and entry memory values retain explicit path and count meanings.\n\nAnchor: `ReviewTreeEntrySide`, `ReviewEntryMemory`",
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
-            "content": "sha256:6e29bea34586129e82a6ca6638d51175d495d82b7d685ab6f6200c6d1f3a516a",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
+            "content": "sha256:c1b6613a7aafce2c44a029bdd76555dffaea5eb0c58ffdcf7261ef1b9e0a1880",
             "locator": {
               "kind": "symbol",
               "name": "ReviewTreeEntrySide"
@@ -4492,7 +4492,7 @@
         },
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:68c190ce5269d240d78500564b3d1df8fcf1cc68a9b673f1545b43d6fbeebdd8",
             "locator": {
               "kind": "symbol",
@@ -5488,7 +5488,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:4603a24e4848d4af639683c0df1fc25366931999abeed6c1d6f255f3e0ca08b3",
             "locator": {
               "kind": "symbol",
@@ -5500,7 +5500,7 @@
         },
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:8a8599cd0ef832c971072977a0a77ddd0fa1d5fda0e9b7b3a4b5a117d69fdf22",
             "locator": {
               "kind": "symbol",
@@ -5512,7 +5512,7 @@
         },
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:d9784cab59f1881ae77a1f67a68b796806e6d1dc76c09d60d79f00028d622d01",
             "locator": {
               "kind": "symbol",
@@ -5524,7 +5524,7 @@
         },
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:b7ac45b1e06ed6773105b408a3388f30b2aed57b9edda647411f757a33c538d3",
             "locator": {
               "kind": "symbol",
@@ -5537,16 +5537,16 @@
       ]
     },
     "57": {
-      "note": "One entry on one side, and on both sides.",
+      "note": "One entry on one side, and on both sides.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
-            "content": "sha256:6e29bea34586129e82a6ca6638d51175d495d82b7d685ab6f6200c6d1f3a516a",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
+            "content": "sha256:200da9c5827681b71dc572127550d9ce7517a418952ab5dbf6eaaf5724eb36e0",
             "locator": {
-              "end": 92,
+              "end": 97,
               "kind": "line_range",
-              "start": 74
+              "start": 76
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py"
           },
@@ -5554,12 +5554,12 @@
         },
         {
           "anchor": {
-            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "blob": "a364e880d9c4fdcf703c7c2becf3c3763a2d76fc",
             "content": "sha256:dbf8f6c1628ede616913708f95d62246461fec0b528586f800322e01381f4c95",
             "locator": {
-              "end": 138,
+              "end": 142,
               "kind": "line_range",
-              "start": 122
+              "start": 126
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py"
           },

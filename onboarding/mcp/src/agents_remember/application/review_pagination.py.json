@@ -192,12 +192,12 @@
       ]
     },
     "16": {
-      "note": "The client that renders these pages without ever constructing a cursor.",
+      "note": "The client that renders these pages without ever constructing a cursor.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
-            "content": "sha256:6a6b385d7c4dae860e0ac863a83c83787557be17e32a5f198b2ad7a49074fd77",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
+            "content": "sha256:8ba49f5dec57d5bc1e5a09b3f4cb3f30a9253bec477a2d455c8160d52468a1d7",
             "locator": {
               "kind": "file"
             },

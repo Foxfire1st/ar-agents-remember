@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+        "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
+        "content": "sha256:8e39297f0ccb468d70274e2357a2c78ce0de90b86cdcf2eae1c1cb1e7f5e5bea",
+        "locator": {
+          "kind": "symbol",
+          "name": "LanguageCatalog"
+        }
+      },
+      "id": "RLZ-0JGE74",
+      "invariant": "INV-KKHYCQ",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-1.1",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Indexes highlight_languages and display_suffixes separately from anchoring languages while enforcing suffix uniqueness across display lookup.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
         "content": "sha256:f9b3d832d15967a409cac347c35c2bd6a59968cd7c13c64bcb7b74e04affc640",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
-        "content": "sha256:5a7df6675fcac93531a9917ae2a6f51a6e0d64b2a3da6f1d8a7a51a204aeae46",
+        "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
+        "content": "sha256:c8b4b83f6329943239e17a104eeec0b694c256716d89a9021cd47af1c62095d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "CatalogLanguageSpec"
+        }
+      },
+      "id": "RLZ-BQTXPA",
+      "invariant": "INV-KKHYCQ",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-1.1",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Declares optional hash-pinned highlights_queries and highlights_queries_digest separately from tags/tests queries so highlighting never alters anchoring identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
+        "content": "sha256:c6b33b35063cb0d7f0f01f611dd8b6e451af1c136941c5c6b88849f6f409a6a7",
         "locator": {
           "kind": "symbol",
           "name": "parse_language_catalog"
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
             "content": "sha256:e6c4167c5ad9961978478fdf4551ed5993cde1a1b26a61463b9b220ba788bcbc",
             "locator": {
               "kind": "symbol",
@@ -55,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
             "content": "sha256:a9195d87ef66a874c18d4e90c44eab1e2b61cafa901befe648af851ae27337dd",
             "locator": {
               "kind": "symbol",
@@ -67,12 +103,12 @@
       ]
     },
     "2": {
-      "note": "Immutable catalog records represent `TreeSitterPin`, `LanguagePackPin`, `WheelArtifact`, `CatalogLanguageSpec` (including `leading_wrappers`, `qualifiers`, and `guarantee_tier`), and `LanguageCatalog` with uniform provider metadata, validated by `_parse_qualifiers` and `_parse_guarantee_tier`.",
+      "note": "Immutable catalog records represent `TreeSitterPin`, `LanguagePackPin`, `WheelArtifact`, `CatalogLanguageSpec` (including `leading_wrappers`, `qualifiers`, and `guarantee_tier`), and `LanguageCatalog` with uniform provider metadata, validated by `_parse_qualifiers` and `_parse_guarantee_tier`.\n\nAnchor: `CatalogLanguageSpec`, `LanguageCatalog`, `_parse_qualifiers`, `_parse_guarantee_tier`",
       "targets": [
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
-            "content": "sha256:2a566e359be712acfb5e0e8099b1ae908a324fc6aba9855c9da2529b16c75e0d",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
+            "content": "sha256:c8b4b83f6329943239e17a104eeec0b694c256716d89a9021cd47af1c62095d2",
             "locator": {
               "kind": "symbol",
               "name": "CatalogLanguageSpec"
@@ -82,8 +118,8 @@
         },
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
-            "content": "sha256:5a33354eb5a8d35829cc3637744365e1c71a3f392358776d4c746af487a726de",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
+            "content": "sha256:8e39297f0ccb468d70274e2357a2c78ce0de90b86cdcf2eae1c1cb1e7f5e5bea",
             "locator": {
               "kind": "symbol",
               "name": "LanguageCatalog"
@@ -93,7 +129,7 @@
         },
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
             "content": "sha256:483520ebeb42459e2543657ef8b5c493296b6fefb78489e89d90a7c71432cb7d",
             "locator": {
               "kind": "symbol",
@@ -104,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
             "content": "sha256:e7c6f7df467e1c67fd3f00c0c151d58d6a7fa0ff5df58f430532b94ebdc0c8ba",
             "locator": {
               "kind": "symbol",
@@ -120,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
             "content": "sha256:e6c1e4c9c2510f021ce08ee51d8a7b96a3c38839f63ebc51b3df7c2a497dc482",
             "locator": {
               "kind": "symbol",
@@ -136,8 +172,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
-            "content": "sha256:5a7df6675fcac93531a9917ae2a6f51a6e0d64b2a3da6f1d8a7a51a204aeae46",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
+            "content": "sha256:c6b33b35063cb0d7f0f01f611dd8b6e451af1c136941c5c6b88849f6f409a6a7",
             "locator": {
               "kind": "symbol",
               "name": "parse_language_catalog"
@@ -152,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0fb6d3e115fc15356b156291b033cb2133ce5fa",
+            "blob": "9bdbad708a267c6e13bdf216992f34fcf896b72d",
             "content": "sha256:f9b3d832d15967a409cac347c35c2bd6a59968cd7c13c64bcb7b74e04affc640",
             "locator": {
               "kind": "symbol",

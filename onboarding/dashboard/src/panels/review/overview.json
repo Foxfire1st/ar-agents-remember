@@ -248,12 +248,12 @@
         },
         {
           "anchor": {
-            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "blob": "5a0016f466d8a23a1f7aefc92efb016c534700ca",
             "content": "sha256:ba24b727893bfa3aafb89fa1b8fb7893a7455a5e299bb386980f8d529e1dcfe5",
             "locator": {
-              "end": 380,
+              "end": 389,
               "kind": "line_range",
-              "start": 369
+              "start": 378
             },
             "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
           },
@@ -284,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "blob": "5a0016f466d8a23a1f7aefc92efb016c534700ca",
             "content": "sha256:8e66882c19407d6a0456586e61de4e93eb5f859589044eb37baf583e439cec90",
             "locator": {
               "end": 126,

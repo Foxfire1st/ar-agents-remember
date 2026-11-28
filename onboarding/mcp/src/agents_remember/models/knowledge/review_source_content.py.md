@@ -55,12 +55,12 @@ file's bytes and a link's target. Every other state carries none, which is what 
 unrenderable side impossible to present as an empty document.
 
 **`ReviewSourceSide` is one endpoint's content, or the exact state that says why there is none.** Its
-validator (`_require_text_exactly_when_the_side_is_textual`) enforces the four rules that make the
+validator (`_require_text_exactly_when_the_side_is_textual`) enforces the structural rules that make the
 state machine structural: a `present` side must carry text (a present side with no text is a blank that
 reads like an empty file); only a textual state may carry text (an `absent`, `binary`, `submodule` or
 `unavailable` side with text would present itself as a document the endpoint does not hold); only
-carried text can be truncated (a side with no text has no bounded prefix to label); and an `absent`
-side names no object (an object id there would read as an entry this endpoint does not have).
+carried text can be truncated (a side with no text has no bounded prefix to label); an `absent`
+side names no object (an object id there would read as an entry this endpoint does not have); and optional server-computed `highlights: SyntaxHighlights | None` may be carried only on a `present` textual side.
 `object_id` is the object the side's address resolves to at its tree — a blob id for a file or a
 symlink, and the recorded *commit* for a submodule entry — so a reader has the identity even when the
 bytes are not carried.
@@ -169,13 +169,15 @@ Current contract statements are grounded in this module's validators, its shared
 > `application/review_source_content.py`, the route and client that carry them, and the renderer that
 > decides from `state` rather than from text.
 
+
 - **The module's own statement of why the vocabulary is separate from the review payload and of the three structural prohibitions it carries.** [1]
 - The published surface: the request, the result, the expansion, the side, and the three closed literal sets. [2]
 - **The six side states, with the comment that states why `absent` and `unavailable` must never be conflated.** [3]
 - The only two states that may carry text, and the reason every other state carries none. [4]
 - The three-value statement of whether the requested generation is still the pair the leaf binds, and the closed set naming which measurement admitted a path. [5]
 - **Why a path was opened, and the expansion-only status that adds `unchanged` beside the inventory's vocabulary.** [6]
-- **The four structural rules that make a side's content a state rather than a blank: text exactly when textual, no text otherwise, a truncation only on carried text, and no object on an absent side.** [7]
+
+- **The structural rules that make a side's content a state rather than a blank: text exactly when textual, no text otherwise, a truncation only on carried text, and no object on an absent side, and highlights only on a present side.** [7]
 - **The expansion: the requested generation echoed back, the currentness statement, the bounding measurement and the admission with their own details, and the reproduction command beside the content.** [8]
 - **Attributed context is exactly the `unchanged` expansion and is bounded only by the requested generation.** [9]
 - The request that carries the task context, the path and the exact generation the caller read from the listing it is looking at. [10]
@@ -183,6 +185,8 @@ Current contract statements are grounded in this module's validators, its shared
 - The base vocabulary this module extends rather than redeclares: the shared model base and the four length ceilings every field is bounded by. [12]
 
 - The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. [13]
+
+
 
 
 - **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** [14]
@@ -199,4 +203,5 @@ No meaningful cross-repo references found.
 
 
 - The retained serving request parser and serializer carry this backend vocabulary; the former dashboard wire mirror is retired. [16]
+
 - Current model validators preserve per-side text/state constraints, attributed-unchanged admission and one content-or-refusal outcome; the former state-decided SourceContent rendering is historical. [17]

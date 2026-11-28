@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
         "content": "sha256:bfc4ee2c439ed9f3f6c70824ea9beadc4b4ba0240035daaf1e5fc7d4617192e0",
         "locator": {
-          "end": 3056,
+          "end": 3057,
           "kind": "line_range",
-          "start": 3056
+          "start": 3057
         }
       },
       "id": "RLZ-1WK7P0",
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-        "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+        "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
         "locator": {
           "kind": "file"
         }
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
         "content": "sha256:0619c308bf7e3693bf4e089706e2a4e4e9afbb4bc5265d6af206f1913cb75c7f",
         "locator": {
-          "end": 4524,
+          "end": 4526,
           "kind": "line_range",
-          "start": 4524
+          "start": 4526
         }
       },
       "id": "RLZ-A31DQW",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-        "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+        "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
         "locator": {
           "kind": "file"
         }
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-        "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+        "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
         "locator": {
           "kind": "file"
         }
@@ -93,12 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
         "content": "sha256:2850f75115d97a8e9361014f78331d9d3aa97c0bda2d1eeee86f0137e933220a",
         "locator": {
-          "end": 1358,
+          "end": 1359,
           "kind": "line_range",
-          "start": 1358
+          "start": 1359
         }
       },
       "id": "RLZ-TB9TST",
@@ -112,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+        "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
         "content": "sha256:74ff6bbb6ab3e6c1659d7601677a67294699baad4edbdcf2f46ef402a396b938",
         "locator": {
-          "end": 3353,
+          "end": 3354,
           "kind": "line_range",
-          "start": 3353
+          "start": 3354
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -217,12 +217,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 5500,
+              "end": 5502,
               "kind": "line_range",
-              "start": 5497
+              "start": 5499
             }
           },
           "kind": "test"
@@ -234,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -251,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:9d1d851271470019fc874deb2eba60e1f566cf750c68b3d196fe9e3028e93a2d",
             "locator": {
-              "end": 5515,
+              "end": 5517,
               "kind": "line_range",
-              "start": 5497
+              "start": 5499
             }
           },
           "kind": "test"
@@ -304,12 +304,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -357,12 +357,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4730,
+              "end": 4732,
               "kind": "line_range",
-              "start": 4682
+              "start": 4684
             }
           },
           "kind": "test"
@@ -392,12 +392,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -409,12 +409,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -426,12 +426,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -443,12 +443,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -460,12 +460,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -477,12 +477,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -494,12 +494,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -511,7 +511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -528,60 +528,60 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 5500,
+              "end": 5502,
               "kind": "line_range",
-              "start": 5497
+              "start": 5499
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:3e13fb06608cdf54f509e104a83ed24690b049fe7e27cc7107e60f958f6c3353",
             "locator": {
-              "end": 5505,
+              "end": 5507,
               "kind": "line_range",
-              "start": 5502
+              "start": 5504
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
             "locator": {
-              "end": 5510,
+              "end": 5512,
               "kind": "line_range",
-              "start": 5507
+              "start": 5509
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5515,
+              "end": 5517,
               "kind": "line_range",
-              "start": 5512
+              "start": 5514
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:9d1d851271470019fc874deb2eba60e1f566cf750c68b3d196fe9e3028e93a2d",
             "locator": {
-              "end": 5515,
+              "end": 5517,
               "kind": "line_range",
-              "start": 5497
+              "start": 5499
             }
           },
           "kind": "test"
@@ -593,12 +593,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:e5336ed92047d4ead5e41c1087a68425bdd7376eaf1714bcfa3b8343bd9a4d99",
             "locator": {
-              "end": 1199,
+              "end": 1200,
               "kind": "line_range",
-              "start": 1170
+              "start": 1171
             }
           },
           "kind": "test"
@@ -628,24 +628,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:f795cf30e8c5878be2eed8ac355e667ddc68fd67550093db87b6a596bb73e398",
             "locator": {
-              "end": 1140,
+              "end": 1141,
               "kind": "line_range",
-              "start": 1123
+              "start": 1124
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:e5336ed92047d4ead5e41c1087a68425bdd7376eaf1714bcfa3b8343bd9a4d99",
             "locator": {
-              "end": 1199,
+              "end": 1200,
               "kind": "line_range",
-              "start": 1170
+              "start": 1171
             }
           },
           "kind": "test"
@@ -675,12 +675,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37c45ca29f20c16c71cce34687645b274c060a55a7064a6a4a0e465af74fa0bd",
             "locator": {
-              "end": 4651,
+              "end": 4653,
               "kind": "line_range",
-              "start": 4633
+              "start": 4635
             }
           },
           "kind": "test"
@@ -708,36 +708,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:f027265a628fa48d2b4c619fdcb79c726477056ad81f22bb54e97af528ee1ac4",
             "locator": {
-              "end": 4680,
+              "end": 4682,
               "kind": "line_range",
-              "start": 4653
+              "start": 4655
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4730,
+              "end": 4732,
               "kind": "line_range",
-              "start": 4682
+              "start": 4684
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5515,
+              "end": 5517,
               "kind": "line_range",
-              "start": 5512
+              "start": 5514
             }
           },
           "kind": "test"
@@ -749,72 +749,72 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:73881167c0480008f076dc12c546c7d7cc17da735e87a230fc1a3069a03d8920",
             "locator": {
-              "end": 2500,
+              "end": 2501,
               "kind": "line_range",
-              "start": 2472
+              "start": 2473
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:a86a6f50bb81265e680af2fa4ba47297f2122d8c2696ff9de2b33908335e7728",
             "locator": {
-              "end": 2520,
+              "end": 2521,
               "kind": "line_range",
-              "start": 2502
+              "start": 2503
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:e6e5bae1ab68486bbf9c448797cd1fc332b4a84be1129aa1f36a80cb7c7dde54",
             "locator": {
-              "end": 2540,
+              "end": 2541,
               "kind": "line_range",
-              "start": 2522
+              "start": 2523
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:bd7d80cc4f0c99d44eeb949d8d9a81dbc414939639f458ce534cbcb355a92bfa",
             "locator": {
-              "end": 2596,
+              "end": 2597,
               "kind": "line_range",
-              "start": 2580
+              "start": 2581
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:c0f0c2d47e852dd884fc66693a34be625d2543e659f675969764cc02bcb0e816",
             "locator": {
-              "end": 2470,
+              "end": 2471,
               "kind": "line_range",
-              "start": 2442
+              "start": 2443
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:aa4fac7cca6e17cfc4c689c809de8aeda4bcabf07ade391ecbf7ae0ea9f20167",
             "locator": {
-              "end": 2540,
+              "end": 2541,
               "kind": "line_range",
-              "start": 2502
+              "start": 2503
             }
           },
           "kind": "test"
@@ -826,36 +826,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:44a2b8c96e4bbf157f9dc7aa453bcb3fac70b0b0b47992d290e87d3592cf1738",
             "locator": {
-              "end": 4829,
+              "end": 4831,
               "kind": "line_range",
-              "start": 4811
+              "start": 4813
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:755a59f202c6dce53e22a3f6b671780979bdc2ae513e70d96a170371078310ac",
             "locator": {
-              "end": 4854,
+              "end": 4856,
               "kind": "line_range",
-              "start": 4831
+              "start": 4833
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:4034408eaab3d62b71058a147e65955d0c33ff777b196d55c60e803434c5bcdc",
             "locator": {
-              "end": 4854,
+              "end": 4856,
               "kind": "line_range",
-              "start": 4811
+              "start": 4813
             }
           },
           "kind": "test"
@@ -867,12 +867,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:469c3ef7694d58fd6b73ca65699beec5fc267378bc514630f705b97f61c83747",
             "locator": {
-              "end": 5067,
+              "end": 5069,
               "kind": "line_range",
-              "start": 5030
+              "start": 5032
             }
           },
           "kind": "test"
@@ -962,12 +962,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:992f9f63d29085a218450c8b5795f5b59687414c83aa86be086ad159a5ada361",
             "locator": {
-              "end": 2290,
+              "end": 2291,
               "kind": "line_range",
-              "start": 2262
+              "start": 2263
             }
           },
           "kind": "test"
@@ -979,12 +979,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:14b140d954c60ad66f38f61229dd0998e9a92655376bf918131eee23ed757c1f",
             "locator": {
-              "end": 2320,
+              "end": 2321,
               "kind": "line_range",
-              "start": 2292
+              "start": 2293
             }
           },
           "kind": "test"
@@ -996,36 +996,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:14b140d954c60ad66f38f61229dd0998e9a92655376bf918131eee23ed757c1f",
             "locator": {
-              "end": 2320,
+              "end": 2321,
               "kind": "line_range",
-              "start": 2292
+              "start": 2293
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:372f1842a82db77d16b928c3f8ff130b864ef406cadca0a3360fed472e67cc7c",
             "locator": {
-              "end": 2350,
+              "end": 2351,
               "kind": "line_range",
-              "start": 2322
+              "start": 2323
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:992f9f63d29085a218450c8b5795f5b59687414c83aa86be086ad159a5ada361",
             "locator": {
-              "end": 2290,
+              "end": 2291,
               "kind": "line_range",
-              "start": 2262
+              "start": 2263
             }
           },
           "kind": "test"
@@ -1037,36 +1037,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:372f1842a82db77d16b928c3f8ff130b864ef406cadca0a3360fed472e67cc7c",
             "locator": {
-              "end": 2350,
+              "end": 2351,
               "kind": "line_range",
-              "start": 2322
+              "start": 2323
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:3963ae8e7e721d50444e62f09f232cc00edc3678969f674ff018b2b5d82e4661",
             "locator": {
-              "end": 2380,
+              "end": 2381,
               "kind": "line_range",
-              "start": 2352
+              "start": 2353
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:14b140d954c60ad66f38f61229dd0998e9a92655376bf918131eee23ed757c1f",
             "locator": {
-              "end": 2320,
+              "end": 2321,
               "kind": "line_range",
-              "start": 2292
+              "start": 2293
             }
           },
           "kind": "test"
@@ -1078,36 +1078,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:3963ae8e7e721d50444e62f09f232cc00edc3678969f674ff018b2b5d82e4661",
             "locator": {
-              "end": 2380,
+              "end": 2381,
               "kind": "line_range",
-              "start": 2352
+              "start": 2353
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d5af6a7c4ef128a6596a89af811ea9fcd3a98734e2159c5184115e04887ad604",
             "locator": {
-              "end": 2410,
+              "end": 2411,
               "kind": "line_range",
-              "start": 2382
+              "start": 2383
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:372f1842a82db77d16b928c3f8ff130b864ef406cadca0a3360fed472e67cc7c",
             "locator": {
-              "end": 2350,
+              "end": 2351,
               "kind": "line_range",
-              "start": 2322
+              "start": 2323
             }
           },
           "kind": "test"
@@ -1119,36 +1119,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d5af6a7c4ef128a6596a89af811ea9fcd3a98734e2159c5184115e04887ad604",
             "locator": {
-              "end": 2410,
+              "end": 2411,
               "kind": "line_range",
-              "start": 2382
+              "start": 2383
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ff1787d40ee7da1cafa26ca998c15dd009167ebda94802cea8975b655b12e27f",
             "locator": {
-              "end": 2440,
+              "end": 2441,
               "kind": "line_range",
-              "start": 2412
+              "start": 2413
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:3963ae8e7e721d50444e62f09f232cc00edc3678969f674ff018b2b5d82e4661",
             "locator": {
-              "end": 2380,
+              "end": 2381,
               "kind": "line_range",
-              "start": 2352
+              "start": 2353
             }
           },
           "kind": "test"
@@ -1160,36 +1160,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ff1787d40ee7da1cafa26ca998c15dd009167ebda94802cea8975b655b12e27f",
             "locator": {
-              "end": 2440,
+              "end": 2441,
               "kind": "line_range",
-              "start": 2412
+              "start": 2413
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:c0f0c2d47e852dd884fc66693a34be625d2543e659f675969764cc02bcb0e816",
             "locator": {
-              "end": 2470,
+              "end": 2471,
               "kind": "line_range",
-              "start": 2442
+              "start": 2443
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d5af6a7c4ef128a6596a89af811ea9fcd3a98734e2159c5184115e04887ad604",
             "locator": {
-              "end": 2410,
+              "end": 2411,
               "kind": "line_range",
-              "start": 2382
+              "start": 2383
             }
           },
           "kind": "test"
@@ -1201,36 +1201,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:c0f0c2d47e852dd884fc66693a34be625d2543e659f675969764cc02bcb0e816",
             "locator": {
-              "end": 2470,
+              "end": 2471,
               "kind": "line_range",
-              "start": 2442
+              "start": 2443
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:73881167c0480008f076dc12c546c7d7cc17da735e87a230fc1a3069a03d8920",
             "locator": {
-              "end": 2500,
+              "end": 2501,
               "kind": "line_range",
-              "start": 2472
+              "start": 2473
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ff1787d40ee7da1cafa26ca998c15dd009167ebda94802cea8975b655b12e27f",
             "locator": {
-              "end": 2440,
+              "end": 2441,
               "kind": "line_range",
-              "start": 2412
+              "start": 2413
             }
           },
           "kind": "test"
@@ -1242,36 +1242,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:69b8a8d32a47bbd6f0aace90ab4be92aad966439ddade48956d7d94a5ec9b72c",
             "locator": {
-              "end": 3929,
+              "end": 3931,
               "kind": "line_range",
-              "start": 3797
+              "start": 3799
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fd5a49cee30a87a2a4c86ac056dcb8b611b0ea350dd13c25791a58a063cecd3e",
             "locator": {
-              "end": 3661,
+              "end": 3663,
               "kind": "line_range",
-              "start": 3644
+              "start": 3646
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:bc293c3809c4a7540c7e1567668f221b216a13f18e9711aec2cf269bfae24437",
             "locator": {
-              "end": 3713,
+              "end": 3715,
               "kind": "line_range",
-              "start": 3697
+              "start": 3699
             }
           },
           "kind": "test"
@@ -1279,28 +1279,28 @@
       ]
     },
     "287": {
-      "note": "The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/knowledge_writer_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account.",
+      "note": "The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/knowledge_writer_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ec640b42875bf53cb0116afcf063f4e5136f43224e342adca0c0c3cf23ff2690",
             "locator": {
-              "end": 4169,
+              "end": 4171,
               "kind": "line_range",
-              "start": 4169
+              "start": 4171
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 4179,
+              "end": 4181,
               "kind": "line_range",
-              "start": 4179
+              "start": 4181
             }
           },
           "kind": "test"
@@ -1312,24 +1312,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:44a2b8c96e4bbf157f9dc7aa453bcb3fac70b0b0b47992d290e87d3592cf1738",
             "locator": {
-              "end": 4829,
+              "end": 4831,
               "kind": "line_range",
-              "start": 4811
+              "start": 4813
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:755a59f202c6dce53e22a3f6b671780979bdc2ae513e70d96a170371078310ac",
             "locator": {
-              "end": 4854,
+              "end": 4856,
               "kind": "line_range",
-              "start": 4831
+              "start": 4833
             }
           },
           "kind": "test"
@@ -1341,12 +1341,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37c45ca29f20c16c71cce34687645b274c060a55a7064a6a4a0e465af74fa0bd",
             "locator": {
-              "end": 4651,
+              "end": 4653,
               "kind": "line_range",
-              "start": 4633
+              "start": 4635
             }
           },
           "kind": "test"
@@ -1358,36 +1358,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:f027265a628fa48d2b4c619fdcb79c726477056ad81f22bb54e97af528ee1ac4",
             "locator": {
-              "end": 4680,
+              "end": 4682,
               "kind": "line_range",
-              "start": 4653
+              "start": 4655
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4730,
+              "end": 4732,
               "kind": "line_range",
-              "start": 4682
+              "start": 4684
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5515,
+              "end": 5517,
               "kind": "line_range",
-              "start": 5512
+              "start": 5514
             }
           },
           "kind": "test"
@@ -1399,24 +1399,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:231777a940f304e0aacf54313a7056512a44556a769f35bd0820f679ce2fcf63",
             "locator": {
-              "end": 1122,
+              "end": 1123,
               "kind": "line_range",
-              "start": 1051
+              "start": 1052
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:014c5dd4d644bf43305ca1aebaa0dfe5a0020fa45934cd85ec6f7db3beec98a3",
             "locator": {
-              "end": 5496,
+              "end": 5498,
               "kind": "line_range",
-              "start": 5492
+              "start": 5494
             }
           },
           "kind": "test"
@@ -1428,7 +1428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
             "content": "sha256:007154d77ae9705b65ddac136462c9e9961d3b7c8733d63fd4c1ec3eb54ac7b8",
             "locator": {
               "end": 486,
@@ -1446,12 +1446,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1490,
+              "end": 1491,
               "kind": "line_range",
-              "start": 1454
+              "start": 1455
             }
           },
           "kind": "test"
@@ -1463,12 +1463,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1490,
+              "end": 1491,
               "kind": "line_range",
-              "start": 1454
+              "start": 1455
             }
           },
           "kind": "test"
@@ -1480,12 +1480,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1490,
+              "end": 1491,
               "kind": "line_range",
-              "start": 1454
+              "start": 1455
             }
           },
           "kind": "test"
@@ -1497,12 +1497,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1490,
+              "end": 1491,
               "kind": "line_range",
-              "start": 1454
+              "start": 1455
             }
           },
           "kind": "test"
@@ -1514,12 +1514,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fa11f265b09035031170d5bdc2464d8161204aa1e36f1c837b2f4c16eb5e796b",
             "locator": {
-              "end": 4177,
+              "end": 4179,
               "kind": "line_range",
-              "start": 4115
+              "start": 4117
             }
           },
           "kind": "test"
@@ -1531,12 +1531,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:7d612acfeb9aabd0c9282ed341e82832c30ee7351560a18f5852d1d827980cad",
             "locator": {
-              "end": 3929,
+              "end": 3931,
               "kind": "line_range",
-              "start": 3873
+              "start": 3875
             }
           },
           "kind": "test"
@@ -1544,12 +1544,12 @@
       ]
     },
     "343": {
-      "note": "The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts.",
+      "note": "The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1559,12 +1559,12 @@
       ]
     },
     "346": {
-      "note": "The four DEP-R07 type-checker defect regression modules are declared as exact consumers on the settings-guard and Node-lockfile rows, and `test_organizational_completion_repair.py` is also declared on `node/package.json` and `repository_profile_test_support.py`.",
+      "note": "The four DEP-R07 type-checker defect regression modules are declared as exact consumers on the settings-guard and Node-lockfile rows, and `test_organizational_completion_repair.py` is also declared on `node/package.json` and `repository_profile_test_support.py`.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1574,12 +1574,12 @@
       ]
     },
     "347": {
-      "note": "The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer.",
+      "note": "The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1593,48 +1593,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d5a4171e25aa82480855ee3155bf330126d742fb4d588d2882b77be7870fecb9",
             "locator": {
-              "end": 5550,
+              "end": 5552,
               "kind": "line_range",
-              "start": 5547
+              "start": 5549
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:469c3ef7694d58fd6b73ca65699beec5fc267378bc514630f705b97f61c83747",
             "locator": {
-              "end": 5067,
+              "end": 5069,
               "kind": "line_range",
-              "start": 5030
+              "start": 5032
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5821e1faf58918ffd687607d649bfb09b9db65759228aaa80111e8f69b3f0a99",
             "locator": {
-              "end": 5100,
+              "end": 5102,
               "kind": "line_range",
-              "start": 5069
+              "start": 5071
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:47b91b848f95245bf8f3426108439e9f66dcb23c49948263d199ecf7063657e9",
             "locator": {
-              "end": 3981,
+              "end": 3983,
               "kind": "line_range",
-              "start": 3945
+              "start": 3947
             }
           },
           "kind": "test"
@@ -1642,12 +1642,12 @@
       ]
     },
     "515": {
-      "note": "The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution.",
+      "note": "The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1657,12 +1657,12 @@
       ]
     },
     "516": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1672,12 +1672,12 @@
       ]
     },
     "517": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1687,12 +1687,12 @@
       ]
     },
     "518": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1702,12 +1702,12 @@
       ]
     },
     "519": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1717,12 +1717,12 @@
       ]
     },
     "520": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1732,12 +1732,12 @@
       ]
     },
     "521": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1747,12 +1747,12 @@
       ]
     },
     "522": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1762,12 +1762,12 @@
       ]
     },
     "523": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1777,12 +1777,12 @@
       ]
     },
     "524": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1792,12 +1792,12 @@
       ]
     },
     "525": {
-      "note": "The permanent shared settings guard declares its owner, replacement node and exact consumers.",
+      "note": "The permanent shared settings guard declares its owner, replacement node and exact consumers.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1807,12 +1807,12 @@
       ]
     },
     "526": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1822,12 +1822,12 @@
       ]
     },
     "527": {
-      "note": "The role-agent and role-message consumer declarations belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.",
+      "note": "The role-agent and role-message consumer declarations belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1837,12 +1837,12 @@
       ]
     },
     "528": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1852,12 +1852,12 @@
       ]
     },
     "529": {
-      "note": "The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.",
+      "note": "The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1867,12 +1867,12 @@
       ]
     },
     "530": {
-      "note": "The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.",
+      "note": "The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1882,12 +1882,12 @@
       ]
     },
     "531": {
-      "note": "The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution.",
+      "note": "The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1897,12 +1897,12 @@
       ]
     },
     "532": {
-      "note": "The held consumers of `mcp/tests/read_scope_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.",
+      "note": "The held consumers of `mcp/tests/read_scope_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1912,12 +1912,12 @@
       ]
     },
     "533": {
-      "note": "The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution.",
+      "note": "The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1927,12 +1927,12 @@
       ]
     },
     "534": {
-      "note": "The exact consumer populations are eight for test_comparison_changeset.py, twelve for test_knowledge_overview_order.py and thirteen for test_cleanup_repeated_archive_ready.py. conversation_open_test_support.py and eve_adapter_event_test_support.py have no artifact record. reviewer_worklist_process_test_support.py is a declared artifact. These source declarations establish no execution or passing result.",
+      "note": "The exact consumer populations are eight for test_comparison_changeset.py, twelve for test_knowledge_overview_order.py and thirteen for test_cleanup_repeated_archive_ready.py. conversation_open_test_support.py and eve_adapter_event_test_support.py have no artifact record. reviewer_worklist_process_test_support.py is a declared artifact. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1942,12 +1942,12 @@
       ]
     },
     "535": {
-      "note": "The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules.",
+      "note": "The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1957,12 +1957,12 @@
       ]
     },
     "536": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1972,12 +1972,12 @@
       ]
     },
     "537": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -1987,12 +1987,12 @@
       ]
     },
     "538": {
-      "note": "The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts.",
+      "note": "The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -2002,12 +2002,12 @@
       ]
     },
     "539": {
-      "note": "The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance.",
+      "note": "The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -2017,12 +2017,12 @@
       ]
     },
     "540": {
-      "note": "The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists.",
+      "note": "The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -2032,12 +2032,12 @@
       ]
     },
     "541": {
-      "note": "The existing artifact rows name the two Lean modules as consumers.",
+      "note": "The existing artifact rows name the two Lean modules as consumers.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -2047,12 +2047,12 @@
       ]
     },
     "542": {
-      "note": "The settings guard lists the crossing dependent writer test as a consumer.",
+      "note": "The settings guard lists the crossing dependent writer test as a consumer.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -2062,12 +2062,12 @@
       ]
     },
     "543": {
-      "note": "The portable Node lockfile lists the crossing dependent writer test as a consumer.",
+      "note": "The portable Node lockfile lists the crossing dependent writer test as a consumer.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -2077,11 +2077,11 @@
       ]
     },
     "544": {
-      "note": "The lifecycle catalog declares `mcp/tests/test_code_quality_dashboard_lint_scope.py` as an exact consumer of `_user_settings_guard.py` and the Node-profile `package-lock.json` fixture; membership is dependency reachability accounting, not test execution.",
+      "note": "The lifecycle catalog declares `mcp/tests/test_code_quality_dashboard_lint_scope.py` as an exact consumer of `_user_settings_guard.py` and the Node-profile `package-lock.json` fixture; membership is dependency reachability accounting, not test execution.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:8465fdb7d2e52d0ea4fbb661b69a1dd1e7936eedc95cfb5ccaf46f87e1953c4a",
             "locator": {
               "end": 217,
@@ -2093,12 +2093,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:8465fdb7d2e52d0ea4fbb661b69a1dd1e7936eedc95cfb5ccaf46f87e1953c4a",
             "locator": {
-              "end": 2769,
+              "end": 2770,
               "kind": "line_range",
-              "start": 2769
+              "start": 2770
             }
           },
           "kind": "test"
@@ -2106,11 +2106,11 @@
       ]
     },
     "545": {
-      "note": "The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py.",
+      "note": "The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:912d32b528f190709918bb72024942cb56b1589ff6adfe731103ad61171807d3",
             "locator": {
               "end": 235,
@@ -2122,36 +2122,36 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:912d32b528f190709918bb72024942cb56b1589ff6adfe731103ad61171807d3",
             "locator": {
-              "end": 1232,
+              "end": 1233,
               "kind": "line_range",
-              "start": 1232
+              "start": 1233
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:912d32b528f190709918bb72024942cb56b1589ff6adfe731103ad61171807d3",
             "locator": {
-              "end": 1305,
+              "end": 1306,
               "kind": "line_range",
-              "start": 1305
+              "start": 1306
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:912d32b528f190709918bb72024942cb56b1589ff6adfe731103ad61171807d3",
             "locator": {
-              "end": 2787,
+              "end": 2788,
               "kind": "line_range",
-              "start": 2787
+              "start": 2788
             }
           },
           "kind": "test"
@@ -2159,11 +2159,11 @@
       ]
     },
     "546": {
-      "note": "The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
               "end": 406,
@@ -2175,60 +2175,60 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 985,
+              "end": 986,
               "kind": "line_range",
-              "start": 985
+              "start": 986
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 2958,
+              "end": 2959,
               "kind": "line_range",
-              "start": 2958
+              "start": 2959
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 3843,
+              "end": 3845,
               "kind": "line_range",
-              "start": 3843
+              "start": 3845
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 4026,
+              "end": 4028,
               "kind": "line_range",
-              "start": 4026
+              "start": 4028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 5177,
+              "end": 5179,
               "kind": "line_range",
-              "start": 5177
+              "start": 5179
             }
           },
           "kind": "test"
@@ -2236,11 +2236,11 @@
       ]
     },
     "547": {
-      "note": "The current lifecycle catalog declares test_planned_knowledge_effects.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_planned_knowledge_effects.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fa377eaa04ac949870887763adda65172a739965e8babc52a2d5204e9546d7f9",
             "locator": {
               "end": 613,
@@ -2252,24 +2252,24 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fa377eaa04ac949870887763adda65172a739965e8babc52a2d5204e9546d7f9",
             "locator": {
-              "end": 3165,
+              "end": 3166,
               "kind": "line_range",
-              "start": 3165
+              "start": 3166
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fa377eaa04ac949870887763adda65172a739965e8babc52a2d5204e9546d7f9",
             "locator": {
-              "end": 4750,
+              "end": 4752,
               "kind": "line_range",
-              "start": 4750
+              "start": 4752
             }
           },
           "kind": "test"
@@ -2277,11 +2277,11 @@
       ]
     },
     "548": {
-      "note": "The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
               "end": 403,
@@ -2293,48 +2293,48 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 983,
+              "end": 984,
               "kind": "line_range",
-              "start": 983
+              "start": 984
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 2955,
+              "end": 2956,
               "kind": "line_range",
-              "start": 2955
+              "start": 2956
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 3841,
+              "end": 3843,
               "kind": "line_range",
-              "start": 3841
+              "start": 3843
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 4024,
+              "end": 4026,
               "kind": "line_range",
-              "start": 4024
+              "start": 4026
             }
           },
           "kind": "test"
@@ -2342,11 +2342,11 @@
       ]
     },
     "549": {
-      "note": "The current lifecycle catalog declares test_unexplained_change_disposition.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_unexplained_change_disposition.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
               "end": 897,
@@ -2358,24 +2358,24 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 3449,
+              "end": 3450,
               "kind": "line_range",
-              "start": 3449
+              "start": 3450
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 4755,
+              "end": 4757,
               "kind": "line_range",
-              "start": 4755
+              "start": 4757
             }
           },
           "kind": "test"
@@ -2383,11 +2383,11 @@
       ]
     },
     "550": {
-      "note": "The current lifecycle catalog declares test_knowledge_route_chain.py on ten exact artifact consumer lists.",
+      "note": "The current lifecycle catalog declares test_knowledge_route_chain.py on ten exact artifact consumer lists.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
               "end": 438,
@@ -2399,108 +2399,108 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 1009,
+              "end": 1010,
               "kind": "line_range",
-              "start": 1009
+              "start": 1010
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 1334,
+              "end": 1335,
               "kind": "line_range",
-              "start": 1334
+              "start": 1335
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 2990,
+              "end": 2991,
               "kind": "line_range",
-              "start": 2990
+              "start": 2991
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 3851,
+              "end": 3853,
               "kind": "line_range",
-              "start": 3851
+              "start": 3853
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 3928,
+              "end": 3930,
               "kind": "line_range",
-              "start": 3928
+              "start": 3930
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 4050,
+              "end": 4052,
               "kind": "line_range",
-              "start": 4050
+              "start": 4052
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 4165,
+              "end": 4167,
               "kind": "line_range",
-              "start": 4165
+              "start": 4167
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 4718,
+              "end": 4720,
               "kind": "line_range",
-              "start": 4718
+              "start": 4720
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 5178,
+              "end": 5180,
               "kind": "line_range",
-              "start": 5178
+              "start": 5180
             }
           },
           "kind": "test"
@@ -2508,11 +2508,11 @@
       ]
     },
     "551": {
-      "note": "The current lifecycle catalog declares test_reconsideration_surfacing.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_reconsideration_surfacing.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
               "end": 653,
@@ -2524,24 +2524,24 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 3205,
+              "end": 3206,
               "kind": "line_range",
-              "start": 3205
+              "start": 3206
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 4754,
+              "end": 4756,
               "kind": "line_range",
-              "start": 4754
+              "start": 4756
             }
           },
           "kind": "test"
@@ -2549,40 +2549,40 @@
       ]
     },
     "552": {
-      "note": "The current lifecycle catalog declares test_worktree_own_environment.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_worktree_own_environment.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_worktree_own_environment.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_worktree_own_environment.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_worktree_own_environment.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_worktree_own_environment.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 918,
+              "end": 919,
               "kind": "line_range",
-              "start": 918
+              "start": 919
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 1427,
+              "end": 1428,
               "kind": "line_range",
-              "start": 1427
+              "start": 1428
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 3470,
+              "end": 3472,
               "kind": "line_range",
-              "start": 3470
+              "start": 3472
             }
           },
           "kind": "test"
@@ -2590,11 +2590,11 @@
       ]
     },
     "553": {
-      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.",
+      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:465e26863f5577cc869b70477d1974da287b985be415fa7593be04fac70077db",
             "locator": {
               "end": 820,
@@ -2606,60 +2606,60 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:465e26863f5577cc869b70477d1974da287b985be415fa7593be04fac70077db",
             "locator": {
-              "end": 1166,
+              "end": 1167,
               "kind": "line_range",
-              "start": 1166
+              "start": 1167
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:465e26863f5577cc869b70477d1974da287b985be415fa7593be04fac70077db",
             "locator": {
-              "end": 1398,
+              "end": 1399,
               "kind": "line_range",
-              "start": 1398
+              "start": 1399
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:465e26863f5577cc869b70477d1974da287b985be415fa7593be04fac70077db",
             "locator": {
-              "end": 3372,
+              "end": 3373,
               "kind": "line_range",
-              "start": 3372
+              "start": 3373
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:465e26863f5577cc869b70477d1974da287b985be415fa7593be04fac70077db",
             "locator": {
-              "end": 3780,
+              "end": 3782,
               "kind": "line_range",
-              "start": 3780
+              "start": 3782
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:465e26863f5577cc869b70477d1974da287b985be415fa7593be04fac70077db",
             "locator": {
-              "end": 5380,
+              "end": 5382,
               "kind": "line_range",
-              "start": 5380
+              "start": 5382
             }
           },
           "kind": "test"
@@ -2667,11 +2667,11 @@
       ]
     },
     "554": {
-      "note": "The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account.",
+      "note": "The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
               "end": 871,
@@ -2683,252 +2683,252 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 1042,
+              "end": 1043,
               "kind": "line_range",
-              "start": 1042
+              "start": 1043
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 1413,
+              "end": 1414,
               "kind": "line_range",
-              "start": 1413
+              "start": 1414
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2279,
+              "end": 2280,
               "kind": "line_range",
-              "start": 2279
+              "start": 2280
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2309,
+              "end": 2310,
               "kind": "line_range",
-              "start": 2309
+              "start": 2310
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2339,
+              "end": 2340,
               "kind": "line_range",
-              "start": 2339
+              "start": 2340
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2369,
+              "end": 2370,
               "kind": "line_range",
-              "start": 2369
+              "start": 2370
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2399,
+              "end": 2400,
               "kind": "line_range",
-              "start": 2399
+              "start": 2400
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2429,
+              "end": 2430,
               "kind": "line_range",
-              "start": 2429
+              "start": 2430
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2459,
+              "end": 2460,
               "kind": "line_range",
-              "start": 2459
+              "start": 2460
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 2489,
+              "end": 2490,
               "kind": "line_range",
-              "start": 2489
+              "start": 2490
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 3423,
+              "end": 3424,
               "kind": "line_range",
-              "start": 3423
+              "start": 3424
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 3876,
+              "end": 3878,
               "kind": "line_range",
-              "start": 3876
+              "start": 3878
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 3940,
+              "end": 3942,
               "kind": "line_range",
-              "start": 3940
+              "start": 3942
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 4083,
+              "end": 4085,
               "kind": "line_range",
-              "start": 4083
+              "start": 4085
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 4179,
+              "end": 4181,
               "kind": "line_range",
-              "start": 4179
+              "start": 4181
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 4728,
+              "end": 4730,
               "kind": "line_range",
-              "start": 4728
+              "start": 4730
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 5026,
+              "end": 5028,
               "kind": "line_range",
-              "start": 5026
+              "start": 5028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 5054,
+              "end": 5056,
               "kind": "line_range",
-              "start": 5054
+              "start": 5056
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 5089,
+              "end": 5091,
               "kind": "line_range",
-              "start": 5089
+              "start": 5091
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 5119,
+              "end": 5121,
               "kind": "line_range",
-              "start": 5119
+              "start": 5121
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b73717ecea3ca65761fbdb0f2a2ed6f6b79751faefaf14ed9156e47d3f682ca5",
             "locator": {
-              "end": 5185,
+              "end": 5187,
               "kind": "line_range",
-              "start": 5185
+              "start": 5187
             }
           },
           "kind": "test"
@@ -2936,11 +2936,11 @@
       ]
     },
     "555": {
-      "note": "The existing Node package-lock artifact declares test_task_document_order.py as an exact consumer; membership is not execution.",
+      "note": "The existing Node package-lock artifact declares test_task_document_order.py as an exact consumer; membership is not execution.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
               "end": 841,
@@ -2952,12 +2952,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
-              "end": 3393,
+              "end": 3394,
               "kind": "line_range",
-              "start": 3393
+              "start": 3394
             }
           },
           "kind": "test"
@@ -2965,11 +2965,11 @@
       ]
     },
     "556": {
-      "note": "The canonical _user_settings_guard.py artifact declares test_task_document_order.py as an exact consumer; membership is not execution.",
+      "note": "The canonical _user_settings_guard.py artifact declares test_task_document_order.py as an exact consumer; membership is not execution.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
               "end": 841,
@@ -2981,12 +2981,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
-              "end": 3393,
+              "end": 3394,
               "kind": "line_range",
-              "start": 3393
+              "start": 3394
             }
           },
           "kind": "test"
@@ -2994,11 +2994,11 @@
       ]
     },
     "557": {
-      "note": "The reopened-workspace module test_paseo_reopened_workspace.py is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer.",
+      "note": "The reopened-workspace module test_paseo_reopened_workspace.py is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
               "end": 591,
@@ -3010,24 +3010,24 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
-              "end": 3143,
+              "end": 3144,
               "kind": "line_range",
-              "start": 3143
+              "start": 3144
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:e30fa9bbf54b333553073bb502f318e583b97c176b79185c9d33940f66f81ce0",
             "locator": {
-              "end": 4579,
+              "end": 4581,
               "kind": "line_range",
-              "start": 4579
+              "start": 4581
             }
           },
           "kind": "test"
@@ -3035,11 +3035,11 @@
       ]
     },
     "558": {
-      "note": "The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer.",
+      "note": "The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0c938bcc6ddc8d7318cd60bb508671631a5ff02239905087a70046564168bb6b",
             "locator": {
               "end": 817,
@@ -3051,12 +3051,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0c938bcc6ddc8d7318cd60bb508671631a5ff02239905087a70046564168bb6b",
             "locator": {
-              "end": 3369,
+              "end": 3370,
               "kind": "line_range",
-              "start": 3369
+              "start": 3370
             }
           },
           "kind": "test"
@@ -3064,11 +3064,11 @@
       ]
     },
     "559": {
-      "note": "The current lifecycle catalog declares test_conversion_cost_scans.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. The `knowledge_conversion_test_support.py` artifact row declares `test_conversion_cost_scans.py` as an exact consumer.",
+      "note": "The current lifecycle catalog declares test_conversion_cost_scans.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. The `knowledge_conversion_test_support.py` artifact row declares `test_conversion_cost_scans.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
               "end": 232,
@@ -3080,24 +3080,24 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
-              "end": 2784,
+              "end": 2785,
               "kind": "line_range",
-              "start": 2784
+              "start": 2785
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:0429c10cb9952e8e19996e7873c9fb28e8633d00fc915771d4ea082e1b39610b",
             "locator": {
-              "end": 3753,
+              "end": 3755,
               "kind": "line_range",
-              "start": 3753
+              "start": 3755
             }
           },
           "kind": "test"
@@ -3105,11 +3105,11 @@
       ]
     },
     "560": {
-      "note": "The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. This declaration establishes no invocation.",
+      "note": "The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. This declaration establishes no invocation.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:75135d6b91ae9529c1367a6fef532723bb88d0f1eafc205df65661659d1bda50",
             "locator": {
               "end": 779,
@@ -3121,12 +3121,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:75135d6b91ae9529c1367a6fef532723bb88d0f1eafc205df65661659d1bda50",
             "locator": {
-              "end": 3331,
+              "end": 3332,
               "kind": "line_range",
-              "start": 3331
+              "start": 3332
             }
           },
           "kind": "test"
@@ -3134,11 +3134,11 @@
       ]
     },
     "561": {
-      "note": "The Node package-lock artifact declares test_route_review_clean_sync_door.py as an exact consumer. This is source reachability, not an Owner closure plan or execution evidence.",
+      "note": "The Node package-lock artifact declares test_route_review_clean_sync_door.py as an exact consumer. This is source reachability, not an Owner closure plan or execution evidence.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:75135d6b91ae9529c1367a6fef532723bb88d0f1eafc205df65661659d1bda50",
             "locator": {
               "end": 779,
@@ -3150,12 +3150,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:75135d6b91ae9529c1367a6fef532723bb88d0f1eafc205df65661659d1bda50",
             "locator": {
-              "end": 3331,
+              "end": 3332,
               "kind": "line_range",
-              "start": 3331
+              "start": 3332
             }
           },
           "kind": "test"
@@ -3163,40 +3163,40 @@
       ]
     },
     "562": {
-      "note": "The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution.",
+      "note": "The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 918,
+              "end": 919,
               "kind": "line_range",
-              "start": 918
+              "start": 919
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 1427,
+              "end": 1428,
               "kind": "line_range",
-              "start": 1427
+              "start": 1428
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 3470,
+              "end": 3472,
               "kind": "line_range",
-              "start": 3470
+              "start": 3472
             }
           },
           "kind": "test"
@@ -3204,11 +3204,11 @@
       ]
     },
     "563": {
-      "note": "The settings-guard artifact declares test_developer_messages.py as an exact consumer.",
+      "note": "The settings-guard artifact declares test_developer_messages.py as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
               "end": 270,
@@ -3220,60 +3220,60 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 1103,
+              "end": 1104,
               "kind": "line_range",
-              "start": 1103
+              "start": 1104
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 2822,
+              "end": 2823,
               "kind": "line_range",
-              "start": 2822
+              "start": 2823
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 4425,
+              "end": 4427,
               "kind": "line_range",
-              "start": 4425
+              "start": 4427
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 4491,
+              "end": 4493,
               "kind": "line_range",
-              "start": 4491
+              "start": 4493
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 4544,
+              "end": 4546,
               "kind": "line_range",
-              "start": 4544
+              "start": 4546
             }
           },
           "kind": "test"
@@ -3281,11 +3281,11 @@
       ]
     },
     "564": {
-      "note": "The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity.",
+      "note": "The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
               "end": 270,
@@ -3297,60 +3297,60 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 1103,
+              "end": 1104,
               "kind": "line_range",
-              "start": 1103
+              "start": 1104
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 2822,
+              "end": 2823,
               "kind": "line_range",
-              "start": 2822
+              "start": 2823
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 4425,
+              "end": 4427,
               "kind": "line_range",
-              "start": 4425
+              "start": 4427
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 4491,
+              "end": 4493,
               "kind": "line_range",
-              "start": 4491
+              "start": 4493
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:d28e8ee17584ec5ef791801c02ee60f96277e4694338545ff28f48243654db44",
             "locator": {
-              "end": 4544,
+              "end": 4546,
               "kind": "line_range",
-              "start": 4544
+              "start": 4546
             }
           },
           "kind": "test"
@@ -3358,11 +3358,11 @@
       ]
     },
     "565": {
-      "note": "The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence.",
+      "note": "The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
               "end": 251,
@@ -3374,108 +3374,108 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 1311,
+              "end": 1312,
               "kind": "line_range",
-              "start": 1311
+              "start": 1312
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 2803,
+              "end": 2804,
               "kind": "line_range",
-              "start": 2803
+              "start": 2804
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 3756,
+              "end": 3758,
               "kind": "line_range",
-              "start": 3756
+              "start": 3758
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 4253,
+              "end": 4255,
               "kind": "line_range",
-              "start": 4253
+              "start": 4255
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 4421,
+              "end": 4423,
               "kind": "line_range",
-              "start": 4421
+              "start": 4423
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 4487,
+              "end": 4489,
               "kind": "line_range",
-              "start": 4487
+              "start": 4489
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 4539,
+              "end": 4541,
               "kind": "line_range",
-              "start": 4539
+              "start": 4541
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 4899,
+              "end": 4901,
               "kind": "line_range",
-              "start": 4899
+              "start": 4901
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 5342,
+              "end": 5344,
               "kind": "line_range",
-              "start": 5342
+              "start": 5344
             }
           },
           "kind": "test"
@@ -3483,11 +3483,11 @@
       ]
     },
     "566": {
-      "note": "The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer.",
+      "note": "The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
               "end": 841,
@@ -3499,12 +3499,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
             "locator": {
-              "end": 3393,
+              "end": 3394,
               "kind": "line_range",
-              "start": 3393
+              "start": 3394
             }
           },
           "kind": "test"
@@ -3512,11 +3512,11 @@
       ]
     },
     "567": {
-      "note": "The catalog declares test_terminal_notice_commit_recovery.py among the exact consumers of mcp/tests/curator_coherence_test_support.py, mcp/tests/read_boundary_oracle_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. The `read_boundary_oracle_test_support.py` artifact row declares `test_terminal_notice_commit_recovery.py` as an exact consumer.",
+      "note": "The catalog declares test_terminal_notice_commit_recovery.py among the exact consumers of mcp/tests/curator_coherence_test_support.py, mcp/tests/read_boundary_oracle_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. The `read_boundary_oracle_test_support.py` artifact row declares `test_terminal_notice_commit_recovery.py` as an exact consumer.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b2495dc4513c1d929fa7ce9debaa18576510b4165b0d3cb77b9d34e9a98e0225",
             "locator": {
               "end": 862,
@@ -3528,48 +3528,48 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b2495dc4513c1d929fa7ce9debaa18576510b4165b0d3cb77b9d34e9a98e0225",
             "locator": {
-              "end": 1410,
+              "end": 1411,
               "kind": "line_range",
-              "start": 1410
+              "start": 1411
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b2495dc4513c1d929fa7ce9debaa18576510b4165b0d3cb77b9d34e9a98e0225",
             "locator": {
-              "end": 3414,
+              "end": 3415,
               "kind": "line_range",
-              "start": 3414
+              "start": 3415
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b2495dc4513c1d929fa7ce9debaa18576510b4165b0d3cb77b9d34e9a98e0225",
             "locator": {
-              "end": 4269,
+              "end": 4271,
               "kind": "line_range",
-              "start": 4269
+              "start": 4271
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:b2495dc4513c1d929fa7ce9debaa18576510b4165b0d3cb77b9d34e9a98e0225",
             "locator": {
-              "end": 4679,
+              "end": 4681,
               "kind": "line_range",
-              "start": 4679
+              "start": 4681
             }
           },
           "kind": "test"
@@ -3577,7 +3577,7 @@
       ]
     },
     "568": {
-      "note": "The settings guard and Node lockfile each declare the after-discovery, publication-merge-admission and landing-workflow-setting tests as consumers. The after-discovery regression asserts that scheduling follows the discovery answer and that the first call starts the same work when discovery was skipped.",
+      "note": "The settings guard and Node lockfile each declare the after-discovery, publication-merge-admission and landing-workflow-setting tests as consumers. The after-discovery regression asserts that scheduling follows the discovery answer and that the first call starts the same work when discovery was skipped.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
@@ -3594,8 +3594,8 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3605,12 +3605,12 @@
       ]
     },
     "569": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. Both settings-guard and Node-lockfile artifact rows declare the four surviving unit-regression L192 retired-provider tests (the five removed provider-specific L192 suites, including test_l192_projection_watch_roots.py, are absent from the shared rows and Paseo runtime support). The two shared rows also declare the after-discovery, publication merge admission and landing workflow setting cases. The retired provider-current-state module has no exact consumer declaration. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. Both settings-guard and Node-lockfile artifact rows declare the four surviving unit-regression L192 retired-provider tests (the five removed provider-specific L192 suites, including test_l192_projection_watch_roots.py, are absent from the shared rows and Paseo runtime support). The two shared rows also declare the after-discovery, publication merge admission and landing workflow setting cases. The retired provider-current-state module has no exact consumer declaration. These source declarations establish no execution or passing result.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3619,8 +3619,8 @@
         },
         {
           "anchor": {
-            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
-            "content": "sha256:274f59e05726a4e2526b6e9163b9ea75af5c22f7980d81ed72d637ab610c9530",
+            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
+            "content": "sha256:d186c980df9ed30e29858950ffd030f36a0233dd20e68a9a676c7b306a2adfda",
             "locator": {
               "kind": "file"
             },
@@ -3631,12 +3631,12 @@
       ]
     },
     "570": {
-      "note": "The catalog declares 26 recording artifacts with their consumer ownership. Issue 414 owns the general derivation limitation.",
+      "note": "The catalog declares 26 recording artifacts with their consumer ownership. Issue 414 owns the general derivation limitation.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3679,11 +3679,11 @@
       ]
     },
     "571": {
-      "note": "`mcp/tests/test_master_end_document_staleness.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json` artifact, and of no other artifact.",
+      "note": "`mcp/tests/test_master_end_document_staleness.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json` artifact, and of no other artifact.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:a4df14dae656070debc77d3e942c30b386adc120d1a23b06db9a36f05f3aec96",
             "locator": {
               "end": 500,
@@ -3695,12 +3695,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:a4df14dae656070debc77d3e942c30b386adc120d1a23b06db9a36f05f3aec96",
             "locator": {
-              "end": 3052,
+              "end": 3053,
               "kind": "line_range",
-              "start": 3052
+              "start": 3053
             }
           },
           "kind": "test"
@@ -3708,11 +3708,11 @@
       ]
     },
     "572": {
-      "note": "`mcp/tests/test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json`.",
+      "note": "`mcp/tests/test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json`.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ef0e1b8a9b42b1c4759d7483bba4049aeae29f8376e8886c0935226bae2f9558",
             "locator": {
               "end": 807,
@@ -3724,12 +3724,12 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:ef0e1b8a9b42b1c4759d7483bba4049aeae29f8376e8886c0935226bae2f9558",
             "locator": {
-              "end": 3359,
+              "end": 3360,
               "kind": "line_range",
-              "start": 3359
+              "start": 3360
             }
           },
           "kind": "test"
@@ -3737,11 +3737,11 @@
       ]
     },
     "573": {
-      "note": "`mcp/tests/test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_writer_test_support.py`, and `writer_worklist_test_support.py` (18 contracts, 124 artifacts).",
+      "note": "`mcp/tests/test_family_row_writer_gate_alignment.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_writer_test_support.py`, and `writer_worklist_test_support.py` (18 contracts, 124 artifacts).\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
               "end": 322,
@@ -3753,36 +3753,36 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
-              "end": 2874,
+              "end": 2875,
               "kind": "line_range",
-              "start": 2874
+              "start": 2875
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
-              "end": 4156,
+              "end": 4158,
               "kind": "line_range",
-              "start": 4156
+              "start": 4158
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5f08c2505a9ba886737a12eeb1f2238cace440c2d92872d72c48c2af63c60d7a",
             "locator": {
-              "end": 5346,
+              "end": 5348,
               "kind": "line_range",
-              "start": 5346
+              "start": 5348
             }
           },
           "kind": "test"
@@ -3790,12 +3790,12 @@
       ]
     },
     "574": {
-      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census.",
+      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3805,12 +3805,12 @@
       ]
     },
     "575": {
-      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.",
+      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3820,12 +3820,12 @@
       ]
     },
     "576": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3835,12 +3835,12 @@
       ]
     },
     "584": {
-      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file",
+      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3850,12 +3850,12 @@
       ]
     },
     "585": {
-      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.",
+      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3865,12 +3865,12 @@
       ]
     },
     "586": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 124 artifacts. These source declarations establish no execution or passing result.\n\nAnchor: whole file",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             }
@@ -3880,11 +3880,11 @@
       ]
     },
     "587": {
-      "note": "`mcp/tests/test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, and `paseo_runtime_test_support.py` (18 contracts, 124 artifacts).",
+      "note": "`mcp/tests/test_provider_limit_suppression.py` is declared as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`, and `paseo_runtime_test_support.py` (18 contracts, 124 artifacts).\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:9e9bfe02970066420a05cc2782937c2b6051ff5245de00653cc928d997519a61",
             "locator": {
               "end": 632,
@@ -3896,24 +3896,24 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:9e9bfe02970066420a05cc2782937c2b6051ff5245de00653cc928d997519a61",
             "locator": {
-              "end": 3184,
+              "end": 3185,
               "kind": "line_range",
-              "start": 3184
+              "start": 3185
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:9e9bfe02970066420a05cc2782937c2b6051ff5245de00653cc928d997519a61",
             "locator": {
-              "end": 4594,
+              "end": 4596,
               "kind": "line_range",
-              "start": 4594
+              "start": 4596
             }
           },
           "kind": "test"
@@ -4006,12 +4006,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:5175cd781ff3d2ac995e576fa125e2199507ba3319dcf8953ebe2a34406eb100",
             "locator": {
-              "end": 2629,
+              "end": 2630,
               "kind": "line_range",
-              "start": 2616
+              "start": 2617
             }
           },
           "kind": "test"
@@ -4023,12 +4023,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
             "content": "sha256:109a32f3bb37d39cecba57ae8adcbf43efd4a48853aa30c127577b79d131ca94",
             "locator": {
-              "end": 4880,
+              "end": 4882,
               "kind": "line_range",
-              "start": 4856
+              "start": 4858
             }
           },
           "kind": "test"

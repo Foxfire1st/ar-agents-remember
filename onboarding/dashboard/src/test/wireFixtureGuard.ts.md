@@ -212,6 +212,7 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]
 
+
 - The coordination-notes client declares FolderEntry, NotesFolder and NoteContent under its Same-origin client header; NoteContent now also carries media metadata and a media URL. [18]
 
 - Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]

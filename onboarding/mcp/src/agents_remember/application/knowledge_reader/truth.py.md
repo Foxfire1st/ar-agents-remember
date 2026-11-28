@@ -138,6 +138,8 @@ No configured live documentation source was available for this pass.
 - MIK-R20's census report; an unknown census by membership. [7]
 
 
+
+
 - The code reader opens one selected code file, returning media type and measured size for pictures/videos or text with locator resolution for source. Malformed locator JSON or shape remains a bad request. [8]
 
 

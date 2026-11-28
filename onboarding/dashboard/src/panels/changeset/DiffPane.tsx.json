@@ -1,14 +1,33 @@
 {
   "path": "dashboard/src/panels/changeset/DiffPane.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+        "content": "sha256:48ff8b5a5bbaf63f00bec6b427aa27e184719e9cefccad81759a66ead10d1a04",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiffPane"
+        }
+      },
+      "id": "RLZ-P73V3K",
+      "invariant": "INV-G0D79N",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-3",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Applies independent before and after highlight Compartments in split mode and after-side highlights in inline mode, keyed out of rebuild dependencies to preserve INV-QK8XNM.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff.\n\nAnchor: `FilePane`",
+      "note": "Reuses FilePane's read-only extension set, `codeTheme`, and server-highlight decorations so tokens match plain vs diff.\n\nAnchor: `FilePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:7750fbafaf94defbfa8e9729c5e158583e9720b09998a54ae30e8e1795caffff",
             "locator": {
               "kind": "file"
             },
@@ -19,12 +38,12 @@
       ]
     },
     "10": {
-      "note": "The focused card that passes `firstLine` and `fit`.\n\nAnchor: `ChangedExcerpt`",
+      "note": "The focused card that passes `firstLine`, `fit`, and per-side highlights.\n\nAnchor: `ExpressionCards`",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
               "kind": "file"
             },
@@ -35,16 +54,14 @@
       ]
     },
     "11": {
-      "note": "The column wrapper that mounts it and supplies `mode`/`collapse`. Anchor: `ChangeSetPane`",
+      "note": "The column wrapper that mounts it and supplies `mode`, `collapse`, and per-side highlights.\n\nAnchor: `ChangeSetPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
-            "content": "sha256:3ca412c4768507decdebf23e38239e8715197ca0eada3f45f0446bc1902f17fd",
+            "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
+            "content": "sha256:b4b0a84517d0424b6c468382d19d2e336c96da581fcb0c4ff6660e3382d5530d",
             "locator": {
-              "end": 318,
-              "kind": "line_range",
-              "start": 299
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
           },
@@ -53,16 +70,14 @@
       ]
     },
     "12": {
-      "note": "The FileDiff contract carries before and after sides; each side can contain text or binary/media metadata, and an added or deleted side is null.",
+      "note": "The FileDiff contract carries before and after sides with optional `SyntaxHighlights` on text sides and `null` on binary/media sides.\n\nAnchor: `FileDiff`",
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
-            "content": "sha256:5617c790d8d9dec0e1f21326d049111bcfa70c63e09a01a33e1d39d08bee6d77",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
+            "content": "sha256:294344e96c2c78dc6217a4524d391016b76594b1e55dbb12ab51cc484dfd9e08",
             "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 49
+              "kind": "file"
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -71,16 +86,15 @@
       ]
     },
     "13": {
-      "note": "Folds expose native keyboard-equivalent expansion.\n\nAnchor: \"function markFolds(view: EditorView): void {\"",
+      "note": "Folds expose native keyboard-equivalent expansion.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:cd8d378e9bafbb3b0d5b71fd83b2c40f9556dc9c7b8530b382b03df7a79ba3d9",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:81843a52e8c51db6ff438140d456289d06e0a82f718b77416e9f0f6c5598ca00",
             "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 139
+              "kind": "symbol",
+              "name": "foldKeys"
             }
           },
           "kind": "code"
@@ -88,16 +102,15 @@
       ]
     },
     "14": {
-      "note": "Fitted mark updates reconfigure dedicated gutter compartments without destroying current editors.\n\nAnchor: \"const marking = useRef({ gutterFor, drawn });\"",
+      "note": "Fitted mark updates reconfigure dedicated gutter compartments without destroying current editors.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:ea0ca735ca678565ec649deaf6b730c4447737a0d8ad3688e8817cc7911252a5",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:48ff8b5a5bbaf63f00bec6b427aa27e184719e9cefccad81759a66ead10d1a04",
             "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 273
+              "kind": "symbol",
+              "name": "DiffPane"
             }
           },
           "kind": "code"
@@ -105,15 +118,14 @@
       ]
     },
     "2": {
-      "note": "The shared CodeMirror theme (chrome + syntax `HighlightStyle`).",
+      "note": "The shared CodeMirror theme (chrome + foreground-only `.cm-ar-tok-*` token classes).\n\nAnchor: `codeTheme`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:41490c7641b928a6a14d94412fce86bf797a1d18cc9a6f53a0d560d1f049f1c5",
+            "blob": "2fc125fb5d4b552333f3a0ee24a7a539461a758d",
+            "content": "sha256:21cd6e244484e61dd28cbdda0cecdd52675ed6eedc8b48a601e13182deaa111e",
             "locator": {
-              "kind": "symbol",
-              "name": "codeTheme"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts"
           },
@@ -122,31 +134,42 @@
       ]
     },
     "3": {
-      "note": "The lazy language-by-extension map it awaits.",
+      "note": "The server-computed UTF-16 `Decoration.mark` extension and digest helper replacing `langByExtension.ts`.\n\nAnchor: `serverHighlightsExtension`",
       "targets": [
         {
           "anchor": {
-            "blob": "1478b3eb824544d49fc8276496f61aaf257f0641",
-            "content": "sha256:cec276075ea12bb587409a65c951298b3de8202f320a9312327f38bd58008711",
+            "blob": "dd23c9cf066a2891e3e9914abca5a767c442b538",
+            "content": "sha256:37939b83b849da5f4459117ae0f2990b3acc7b3a9484aa9fcc364335414bf194",
             "locator": {
-              "kind": "symbol",
-              "name": "langExtension"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/file-viewer/langByExtension.ts"
+            "path": "dashboard/src/panels/file-viewer/serverHighlights.ts"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "`split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown.\n\nAnchor: `DiffPane` `splitView` `inlineView`",
+      "note": "`splitView` = MergeView (a=before, b=after, independent per-side highlight compartments, no revertControls); `inlineView` = unifiedMergeView (after-side highlight compartment, mergeControls:false); each side numbered from its own first line.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:e6240d8a0270f8a0864dbea9d00e0099468c5fb7e0ca7d928ba3ed63b7fbd8e2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "splitView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:1df6b58c0995d8b01677899aa71582036815ca939e0eb0c6b698803ef2625fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "inlineView"
             }
           },
           "kind": "code"
@@ -154,12 +177,12 @@
       ]
     },
     "5": {
-      "note": "What both builders share, including the marked pane's gutter and `drawn` hooks (MIK-L34).",
+      "note": "What both builders share (`DiffBuild`, `Built`, `commonExtensions`), including per-side mark and highlight compartments.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:2e140469085b64bca69a16e98ba3eb780a2f97abf09fd8bccf83739da71c83a0",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:ddc3ee3ca386b3e4762b5b4a33888b12f364f77f4c28c0505d13191a42505f92",
             "locator": {
               "kind": "symbol",
               "name": "DiffBuild"
@@ -170,16 +193,15 @@
       ]
     },
     "6": {
-      "note": "Fitted panes reconfigure marks in existing editors; content changes and ordinary mark changes rebuild with guarded teardown.\n\nAnchor: \"export function DiffPane({\"",
+      "note": "Synchronous build effect with per-side highlight `Compartment` reconfiguration by digest (`INV-QK8XNM`) and fitted mark-gutter reconfiguration.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:48ff8b5a5bbaf63f00bec6b427aa27e184719e9cefccad81759a66ead10d1a04",
             "locator": {
-              "end": 342,
-              "kind": "line_range",
-              "start": 247
+              "kind": "symbol",
+              "name": "DiffPane"
             }
           },
           "kind": "code"
@@ -187,15 +209,14 @@
       ]
     },
     "7": {
-      "note": "The marks gutter, its portals and the reveal this pane hosts.",
+      "note": "The marks gutter, its portals and the reveal this pane hosts.\n\nAnchor: `useMarkedPane`",
       "targets": [
         {
           "anchor": {
             "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
-            "content": "sha256:a4c75b16aa8487c17d0eefa7b9e71fb9a2f89fdc6a37bea3b3ec1dee65594392",
+            "content": "sha256:1c54dab5e6dc10bfe0e143decb397af292e71f1446ce735f44894c25124ebe04",
             "locator": {
-              "kind": "symbol",
-              "name": "useMarkedPane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
           },
@@ -204,14 +225,15 @@
       ]
     },
     "8": {
-      "note": "The content-sized host an expression card uses (MIK-L31).\n\nAnchor: `fitHost`",
+      "note": "The content-sized host (`fitHost`) an expression card uses.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "fitHost"
             }
           },
           "kind": "code"
@@ -219,15 +241,14 @@
       ]
     },
     "9": {
-      "note": "The gutter that keeps a file's own numbering for an excerpt.",
+      "note": "The gutter that keeps a file's own numbering for an excerpt.\n\nAnchor: `numberedFrom`",
       "targets": [
         {
           "anchor": {
             "blob": "b961de3b6888c054c469b9d0c25747c41a0b8cc4",
-            "content": "sha256:0b4f1e982725f2acda23ff71ef826be806b6751c2f48b3f384ae29907a989a2b",
+            "content": "sha256:bdd5801fe09fabb78bbcfb7f68c60416a3ade0fdbd5967076f073ee73ca3ff9b",
             "locator": {
-              "kind": "symbol",
-              "name": "numberedFrom"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/lineNumbering.ts"
           },

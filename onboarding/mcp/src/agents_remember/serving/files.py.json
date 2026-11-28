@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
-        "content": "sha256:6976348371ba56a225a31c62f3f5a22f1338e76160d8c3b82957171b2ec42f17",
+        "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
+        "content": "sha256:7e9c918263dd52916cc02a9cbd0a5ec038821ca76b130decd45ecfc881b3207f",
         "locator": {
           "kind": "symbol",
           "name": "read_file"
@@ -22,8 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
-        "content": "sha256:ba31b38fb67c978673f12086c71ccb590f648d08bfea0c02c69545018fb1127e",
+        "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
+        "content": "sha256:7e9c918263dd52916cc02a9cbd0a5ec038821ca76b130decd45ecfc881b3207f",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_file"
+        }
+      },
+      "id": "RLZ-EQJSM2",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Attaches server-computed highlights on text file reads and explicit null on binary and media reads.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
+        "content": "sha256:83a86f655ae751b7b4363504ce40beaf7713db7d55a16fc674795ce6f2b59aab",
         "locator": {
           "kind": "symbol",
           "name": "resolve_file_path"
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+        "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
         "content": "sha256:1b57953bf09bf4b1ed6824b0316fb6efc5db34b084c8c4b17df80695f696aa17",
         "locator": {
           "kind": "symbol",
@@ -63,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "blob": "54208f12a751f312d7c878ed98fd1bb40c8cfb99",
             "content": "sha256:2fb25a3b0226d61a4674cd83a7e0bf5d9dd3d1448c5f61270f3cb50598a2bc1f",
             "locator": {
               "kind": "symbol",
@@ -260,12 +278,12 @@
         },
         {
           "anchor": {
-            "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+            "blob": "99263f280e8bb48348645c606f50c4e4a93ef206",
             "content": "sha256:677ce0c88d58cece6c17d4dff36f7a3ae00bc14cf3edc7fdd57f9b484ffe412d",
             "locator": {
-              "end": 295,
+              "end": 302,
               "kind": "line_range",
-              "start": 282
+              "start": 289
             }
           },
           "kind": "code"

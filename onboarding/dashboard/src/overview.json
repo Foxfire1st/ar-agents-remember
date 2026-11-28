@@ -247,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
             "content": "sha256:b527a4483e9c3b817ce0e2099d4e49e37acd757bda5421683e2fa5a00fbd1eaf",
             "locator": {
               "end": 13,
@@ -260,12 +260,12 @@
         },
         {
           "anchor": {
-            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "blob": "19a9318dc06a4d006000ca1613a11d647966e0ff",
             "content": "sha256:6a51468dfad8cc5ac5135fae9008e967508d3959f3f8f0ee796c6a209169b8c5",
             "locator": {
-              "end": 67,
+              "end": 59,
               "kind": "line_range",
-              "start": 64
+              "start": 56
             },
             "path": "dashboard/package.json"
           },
@@ -605,12 +605,12 @@
       ]
     },
     "21": {
-      "note": "The tree owns one All changes link; card ranges use the page-wide context control and path links reach comparison-bound files.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
+      "note": "The tree owns one All changes link; card ranges use the page-wide context control and path links reach comparison-bound files.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
               "kind": "file"
             },
@@ -714,12 +714,12 @@
         },
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
             "content": "sha256:abdd1cbe8d6a47bada1d3fd40ae2164bf3c5db68c8165db955bda24317416d81",
             "locator": {
-              "end": 681,
+              "end": 683,
               "kind": "line_range",
-              "start": 667
+              "start": 669
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -819,12 +819,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
             "content": "sha256:98098bcb151268c1cdee7226d8a6716c8eb559d5a6dce762c84d25cbbf86140c",
             "locator": {
-              "end": 244,
+              "end": 246,
               "kind": "line_range",
-              "start": 235
+              "start": 237
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -832,12 +832,12 @@
         },
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
             "content": "sha256:7fc340dfd567807e7043ee04adf76d30ae951109c7f7fc411100aa6de8010b53",
             "locator": {
-              "end": 467,
+              "end": 469,
               "kind": "line_range",
-              "start": 435
+              "start": 437
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1588,12 +1588,12 @@
       ]
     },
     "61": {
-      "note": "Operations review composition and its retained comparison-page overlay have separate owners; whole-file inspection uses comparison viewer links.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
+      "note": "Operations review composition and its retained comparison-page overlay have separate owners; whole-file inspection uses comparison viewer links.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
               "kind": "file"
             },
@@ -2068,12 +2068,12 @@
       ]
     },
     "78": {
-      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
+      "note": "Current source owners for the review page account.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "blob": "0fa33172926a8edc7c43a05636f416c938416d49",
+            "content": "sha256:a3362da3055c3a8484439a744447d3339cc0278f25c847f9ffbc305c8275e896",
             "locator": {
               "kind": "file"
             },
@@ -2208,12 +2208,12 @@
       ]
     },
     "81": {
-      "note": "Current lane owners for the review page account.",
+      "note": "Current lane owners for the review page account.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
-            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "blob": "5a0016f466d8a23a1f7aefc92efb016c534700ca",
+            "content": "sha256:d5e6e55295bbb9c89a52372ab817bfc563faedd7cd3637169222128fada96179",
             "locator": {
               "kind": "file"
             },

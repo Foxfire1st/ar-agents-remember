@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 831,
+              "end": 832,
               "kind": "line_range",
-              "start": 831
+              "start": 832
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+            "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 831,
+              "end": 832,
               "kind": "line_range",
-              "start": 831
+              "start": 832
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -477,7 +477,7 @@
       ]
     },
     "28": {
-      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
@@ -507,8 +507,8 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             },
@@ -519,7 +519,7 @@
       ]
     },
     "31": {
-      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
@@ -549,8 +549,8 @@
         },
         {
           "anchor": {
-            "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
-            "content": "sha256:1f6624affe932515e46ae98ac8fc4c01d03b754774f5ac769e57ef71e444dc45",
+            "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
+            "content": "sha256:788cc73d026482aa852e631bef3618181b75dfe56c196483677f01906fb1cb2c",
             "locator": {
               "kind": "file"
             },

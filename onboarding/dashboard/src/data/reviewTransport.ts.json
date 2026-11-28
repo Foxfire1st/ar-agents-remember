@@ -265,14 +265,14 @@
       ]
     },
     "43": {
-      "note": "The review client re-exports the shared public transport defined by reviewTransport.ts.",
+      "note": "The review client re-exports the shared public transport defined by reviewTransport.ts.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
-            "content": "sha256:d63717bf1e8905b700c5395e71ed48b9693cf35b5bd857ac65a858e6c2e0660a",
+            "blob": "85fa8f37c726cea7c10078d0efb4f6bd03e16478",
+            "content": "sha256:8093c731463631d951e4c8245d240816a21ccc8fe86eaf792024af28cdf913dd",
             "locator": {
-              "end": 33,
+              "end": 34,
               "kind": "line_range",
               "start": 18
             },
@@ -320,12 +320,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:ef9647cb60b62dba456f90edb66b12c4424a2a816fa17d51d19db2492bc8a79b",
             "locator": {
-              "end": 188,
+              "end": 190,
               "kind": "line_range",
-              "start": 110
+              "start": 112
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -333,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "blob": "712748c7ffd0e87c32977a1ffbc0ab54e1e6135d",
             "content": "sha256:4f0c9a0cd5ec93f9f6c86debb4a2a5da0f0a4fda0433b70d3303ffe63a1127a0",
             "locator": {
-              "end": 238,
+              "end": 240,
               "kind": "line_range",
-              "start": 228
+              "start": 230
             },
             "path": "dashboard/src/data/changeset.ts"
           },

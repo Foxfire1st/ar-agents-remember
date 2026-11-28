@@ -464,7 +464,8 @@ No configured domain documentation; source owners support this current account.
 - The header states a same-origin read-only client and delegated typed-result transport. The actual shared getReviewJson owns body classification; the header is not independent runtime schema validation. [1]
 
 - Semantic side states are present, absent and unresolved; selector kinds are invariant and family. Binary belongs to physical source-side vocabulary, not semantic statement sides. [3]
-- ReviewSideContent declares state, optional text, language and detail. This structural TypeScript interface performs no runtime state/text coherence validation. [4]
+
+- ReviewSideContent declares state, optional text, language, highlights and detail. This structural TypeScript interface performs no runtime state/text coherence validation. [4]
 - ReviewUnresolvedReference carries field, optional recorded_reference and detail for unresolved facts; the type does not prove which consumers render each field. [5]
 - The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived. [6]
 - The per-side revision count and the field transition whose absent value is the recorded fact. [7]
@@ -504,5 +505,7 @@ Anchor: `getJson` `FilesApiError` `qs` [24]
 - The catalogue answer optionally carries the outline [30]
 - Catalogue reads need no new endpoint [31]
 - The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. [32]
+
+
 - The review client delegates transport, re-exports the family and judgment wire shapes and types a required judgment with optional comparison details. [33]
 - The family and invariant outline interfaces carry their own meaning and the candidate tree’s optional record state and writer. [29]

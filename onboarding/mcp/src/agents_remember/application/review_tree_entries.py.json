@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+        "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
         "content": "sha256:f84c2e7b3c2e890204d0da426f1263aa184ecc21ce906b8d56651948ac01a392",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+        "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
         "content": "sha256:5e3532464cc4f947b0e42f557d45da101ff16bbf8516158341331cfe8e427324",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+        "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
         "content": "sha256:95f542909c88f32a55a0df6f4c846272d0670efa2fb5c428d516ada325b63ed3",
         "locator": {
           "kind": "symbol",
@@ -54,6 +54,24 @@
       },
       "rationale": "It asks the four owner index queries at the located path and invariant and caches repeated queries within the read.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
+        "content": "sha256:691e1cb0c32ba01d595009f0f9ab10a2343af5822d4ca9efb10753d09a832838",
+        "locator": {
+          "kind": "symbol",
+          "name": "_excerpt"
+        }
+      },
+      "id": "RLZ-PVY608",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Computes catalog language and highlights alongside each resolved review expression-card excerpt.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -62,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+            "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
             "content": "sha256:90eab7e21bbfe1062de95e0db4a7ad7f185f6c5a2bb060cdbd8e2fc6d0965368",
             "locator": {
-              "end": 102,
+              "end": 106,
               "kind": "line_range",
-              "start": 98
+              "start": 102
             }
           },
           "kind": "code"
@@ -79,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+            "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
             "content": "sha256:535bae96df6290a9d91611861f72947a7a865cafba5dffc93d08c89b135ca4e0",
             "locator": {
-              "end": 316,
+              "end": 320,
               "kind": "line_range",
-              "start": 275
+              "start": 279
             }
           },
           "kind": "code"
@@ -96,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+            "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
             "content": "sha256:8b8c26c416e2fd2b027ed9a616ec75fcfbafb0abd6b16f45e234dbed4ddf7df1",
             "locator": {
-              "end": 400,
+              "end": 404,
               "kind": "line_range",
-              "start": 394
+              "start": 398
             }
           },
           "kind": "code"
@@ -113,12 +131,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+            "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
             "content": "sha256:7399842c9150e809339200f8e813ce000250d6e4830a4742b355d6370838afaa",
             "locator": {
-              "end": 541,
+              "end": 555,
               "kind": "line_range",
-              "start": 510
+              "start": 524
             }
           },
           "kind": "code"
@@ -130,12 +148,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ac978d3b473b563b5e8771ec7f974ba71cee90",
+            "blob": "8d2088f751c314d70bb5e6695af663a578d0e7df",
             "content": "sha256:957f4f7778bf2c1eaadfd9dc0a75ad24b8ab19b0e155c9663b2b13c8e266bd00",
             "locator": {
-              "end": 84,
+              "end": 88,
               "kind": "line_range",
-              "start": 82
+              "start": 86
             }
           },
           "kind": "code"

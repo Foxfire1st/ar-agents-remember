@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+        "blob": "d66bdc6413aac689653325bead553cd660980db8",
         "content": "sha256:854ea5f665f73d46e3e58585ec620c95c542100b0434315baac2a0b31b300197",
         "locator": {
           "kind": "symbol",
@@ -18,16 +18,34 @@
       },
       "rationale": "Validates per-repo languages.json and user settings overrides, refuses remote URLs and download-URL keys as a security boundary, and refuses any override or disable of reserved .lean.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d66bdc6413aac689653325bead553cd660980db8",
+        "content": "sha256:85f60532061793549f3f952ca7906cd5dacdf41998606c893b74437117ce0836",
+        "locator": {
+          "kind": "symbol",
+          "name": "CustomLanguageSpec"
+        }
+      },
+      "id": "RLZ-C865YT",
+      "invariant": "INV-H2XGVE",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-1.3",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Carries optional local highlights_query_path validated against remote URLs so custom languages such as Bend2 supply highlight queries without weakening the local-only security boundary.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "`CustomLanguageSpec` and `LanguageOverrides` hold immutable parsed custom-language definitions and enable/disable/suffix override maps.",
+      "note": "`CustomLanguageSpec` and `LanguageOverrides` hold immutable parsed custom-language definitions and enable/disable/suffix override maps.\n\nAnchor: `CustomLanguageSpec`, `LanguageOverrides`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
-            "content": "sha256:40c32805d77c8a2b0b00b4d49810626f95b86e28a3d9b4a267a3743b02d47c05",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
+            "content": "sha256:85f60532061793549f3f952ca7906cd5dacdf41998606c893b74437117ce0836",
             "locator": {
               "kind": "symbol",
               "name": "CustomLanguageSpec"
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:d74da09e5a84e1d16a8ff23c8bd0ee4599bf0c891bf5919f33f7449026cbcf28",
             "locator": {
               "kind": "symbol",
@@ -53,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:e67476195a24b90bc24538717f4c17d0a959bfa54dfbed2f19390dccac4458b9",
             "locator": {
               "kind": "symbol",
@@ -64,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:854ea5f665f73d46e3e58585ec620c95c542100b0434315baac2a0b31b300197",
             "locator": {
               "kind": "symbol",
@@ -75,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:2898c3c442be35819a13b7338e24bd16c764529fd2d5d144aed92b40583024f4",
             "locator": {
               "kind": "symbol",
@@ -91,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:4aac9be7486eb2c808ede478d418ab3656aeac325f2262b80115e8683b172184",
             "locator": {
               "kind": "symbol",
@@ -102,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:af1c9c772e2b6dd4b104328dce2f63a1df610fccd687b67bdda666dd2300938d",
             "locator": {
               "kind": "symbol",
@@ -118,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:df6ba82f768282857ac8918ec8fbfd5df42e5c335b291679882de78f45ef93ba",
             "locator": {
               "kind": "symbol",
@@ -129,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
             "content": "sha256:89a57f5b97bc99a439c33761cf8f190de87ded3aaf8ea53e7e14f61116659842",
             "locator": {
               "kind": "symbol",
@@ -145,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9132ea5f76172b0303845ed063f6cfb66bf8984",
-            "content": "sha256:74d033093b5cbef171077eab33a74bcdad8b328554c50bb6f334f694ecafa73f",
+            "blob": "d66bdc6413aac689653325bead553cd660980db8",
+            "content": "sha256:d3caafd8f9d06b4798eb602e88bc94a6e582fd53134db206e5b04ed7061690dc",
             "locator": {
               "kind": "symbol",
               "name": "_parse_one_custom_language"

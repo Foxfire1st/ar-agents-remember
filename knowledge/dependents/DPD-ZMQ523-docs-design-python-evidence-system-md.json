@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "9da11f4c449ceef388455616425442310157c9ad",
+    "commit": "8905801b8a5e761fe8e25ef79afa935b8833e58d",
     "role": "curator",
-    "statement": "Re-confirmed docs/design/python-evidence-system.md on post-sync code tree 0b0419690d12100ee208d0d34680df87b9edb6fb (synced onto KNO-L12 main 995a84835 / 2568e723b): Quality obligations by surface table accurately lists Pyrefly and evidence-lane/lifecycle catalog design remains accurate with updated test-evidence-lanes.toml.",
-    "task": "261125-DEP-L8",
+    "statement": "Verified docs/design/python-evidence-system.md against post-sync L13 code tree 9da11f4c449ceef388455616425442310157c9ad (synced onto DEP-L8 main 8905801b8a5e): Pyrefly surface obligations and registering mcp/tests/test_unified_tree_sitter_highlights.py in test-evidence-lanes.toml and evidence-lifecycle.toml leave all evidence-system design rules and budgets accurate.",
+    "task": "261112-KNO-L13",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 34,
+  "revision": 35,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "69164209337a4b393a3712aa4f39daf7c32149af",
+      "blob": "748a4ac9c556f70fc8df35d3011ee11d3179d38f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "0604365a7767a14a4afe55121b4cd8ca223dce84",
+      "blob": "34c9ec3e8e0167b80b5a2bed4703ee118d546573",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:13:06+01:00",
+    "at": "2026-11-28T06:19:30+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
+    "leaf": "261112-KNO-L13",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
-    "task": "261125-DEP"
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
   }
 }

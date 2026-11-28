@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "The file pane's use, through its optional first line.\n\nAnchor: \"numberedFrom(firstLine),\"",
+      "note": "The file pane's use, through its optional first line.\n\nAnchor: `numberedFrom(firstLine)`",
       "targets": [
         {
           "anchor": {
-            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
-            "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
+            "blob": "a57bbe481b985ba3e93991f0d46463080610fcf2",
+            "content": "sha256:f46d9e2bc3dc01734d77f73ce64def723b4830a42a4c1d4424490e03d055caef",
             "locator": {
-              "end": 71,
+              "end": 61,
               "kind": "line_range",
-              "start": 71
+              "start": 61
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -38,16 +38,16 @@
       ]
     },
     "3": {
-      "note": "The diff pane's use, one first line per side.",
+      "note": "The diff pane's use, one first line per side.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:b88a7d7d75284f3cb992d91bdebd8579329c9ba9e3eea6467190d1ef0e17e6d1",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:968012ff5d2ac1facbb659dd4121ec64dbe36dc738eb0461b8ee0ac9a34bf925",
             "locator": {
-              "end": 82,
+              "end": 216,
               "kind": "line_range",
-              "start": 82
+              "start": 216
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -55,25 +55,25 @@
         },
         {
           "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:859d2d5bfe3ffae74d5f84c096f56bc751b91d93ac72f278f3bd809ac9b26902",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 86
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
             "content": "sha256:47e6050b0708f223f848ada7795cb3838b746b6b377773314a41b714268627d6",
             "locator": {
-              "end": 237,
+              "end": 225,
               "kind": "line_range",
-              "start": 237
+              "start": 225
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
+            "content": "sha256:47e6050b0708f223f848ada7795cb3838b746b6b377773314a41b714268627d6",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },

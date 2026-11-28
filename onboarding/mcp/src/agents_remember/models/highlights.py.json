@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/models/highlights.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "85c2021f15eafedca70063f2ddcd04e557fb2924",
+        "content": "sha256:8111a072410e014c00d3bc2e963abf547adf5d7ad042d73d915770950696f38f",
+        "locator": {
+          "kind": "symbol",
+          "name": "SyntaxHighlights"
+        }
+      },
+      "id": "RLZ-CHJE7Z",
+      "invariant": "INV-WGZ5ZX",
+      "origin": {
+        "handoffEntry": "KNO-R13@v1 AC-2",
+        "leaf": "261112-KNO-L13"
+      },
+      "rationale": "Defines the strict, immutable flat UTF-16 span wire model and size/span caps shared by serving responses and knowledge models.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines payload version, 512 KiB byte ceiling, 20,000-span ceiling, and the 11-member `HighlightKind` union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85c2021f15eafedca70063f2ddcd04e557fb2924",
+            "content": "sha256:dc52cb18db8ebb2053f6245e6ec1bcbb423910e09e1bb2b83467c7136ad87ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "HighlightKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Enforces immutable flat non-overlapping UTF-16 span triples with in-range kind indices and plain JSON serialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85c2021f15eafedca70063f2ddcd04e557fb2924",
+            "content": "sha256:8111a072410e014c00d3bc2e963abf547adf5d7ad042d73d915770950696f38f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyntaxHighlights"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

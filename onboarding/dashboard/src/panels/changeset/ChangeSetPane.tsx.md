@@ -17,7 +17,7 @@ own flag namespace.
 ### Logic
 
 Props are `{ diff: FileDiff, keyPrefix: string, narrow?: boolean, mediaSelector?: ChangeSetMediaSelector }`, with `narrow=false`. Four persisted flags use `${keyPrefix}.{fullfile,inline,highlight,rendered}`; `narrow` selects the session-only inline flag (initially true), leaving the persisted inline preference untouched.
-diffContent supplies each side's content, or an empty string for an absent text value. `isMarkdown = diff.language === "markdown"` and `showRendered = isMarkdown && rendered && !binaryDiff` gate the **rendered-markdown** mode: when on, the body is a scrollable, padded `mdScroll` surface (`data-testid="changeset-rendered"`) holding `<Markdown>{after || before}</Markdown>` (after-content, falling back to the removed prose on a pure deletion so the pane is never blank), and the diff toggles are hidden — only the `rendered` toggle (`changeset-rendered-toggle`, shown only for nonbinary markdown) remains. For nonbinary text when **not** rendered: the derived `plain = fullFile && !highlight` is the **highlight-off** state, rendering the plain L2 `<FilePane content={after} language={diff.language} />` (no diff highlighter at all); otherwise `<DiffPane before after language mode={inline ? "inline" : "split"} collapse={!fullFile} />` — so change-set view collapses unchanged regions and full-file view shows everything. The toolbar is React Aria `ToggleButton`s: the `rendered` toggle only for nonbinary markdown; the rest (full-file⇄change-set always; split⇄inline only while a diff is shown, `!plain`; highlight on/off only in full-file) only for nonbinary text while **not** showing the rendered view. A right-aligned label shows
+diffContent supplies each side's content, or an empty string for an absent text value. `isMarkdown = diff.language === "markdown"` and `showRendered = isMarkdown && rendered && !binaryDiff` gate the **rendered-markdown** mode: when on, the body is a scrollable, padded `mdScroll` surface (`data-testid="changeset-rendered"`) holding `<Markdown>{after || before}</Markdown>` (after-content, falling back to the removed prose on a pure deletion so the pane is never blank), and the diff toggles are hidden — only the `rendered` toggle (`changeset-rendered-toggle`, shown only for nonbinary markdown) remains. For nonbinary text when **not** rendered: the derived `plain = fullFile && !highlight` is the **highlight-off** state, rendering `<FilePane content={after} language={diff.language} highlights={null} />` (suppressing both diff markers and token highlights); otherwise `<DiffPane before after beforeHighlights={diff.before?.highlights} afterHighlights={diff.after?.highlights} language mode={inline ? "inline" : "split"} collapse={!fullFile} />` — so change-set view collapses unchanged regions and full-file view shows everything with server-computed per-side highlights. The toolbar is React Aria `ToggleButton`s: the `rendered` toggle only for nonbinary markdown; the rest (full-file⇄change-set always; split⇄inline only while a diff is shown, `!plain`; highlight on/off only in full-file) only for nonbinary text while **not** showing the rendered view. A right-aligned label shows
 `{diff.kind} · {diff.path}`.
 
 ### Conventions
@@ -46,6 +46,8 @@ path. The per-column `keyPrefix` keeps the code column and the sidecar column's 
 
 
 
+
+
 - For a text diff in full-file mode, disabling highlighting renders the plain FilePane with the after-content. Media and binary diffs use their own side rendering. [2]
 
 
@@ -54,10 +56,13 @@ path. The per-column `keyPrefix` keeps the code column and the sidecar column's 
 
 
 
+
 - For nonbinary text in diff mode, DiffPane supplies mode and collapse controls. [5]
 - The localStorage-backed flag hook it reuses (per-column keyPrefix). [6]
 
+
 - The plain read-only pane reused for highlight-off / full-file-plain. [7]
+
 
 
 

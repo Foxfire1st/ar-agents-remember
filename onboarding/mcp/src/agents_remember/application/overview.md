@@ -699,6 +699,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - Foreign-owner evidence preservation. [486]
 
+
 - **Historical source-bound reference account, not an operative override:** The content read hands the inventory to the admission owner before reading any byte. [12]
 - The current review namespace comes only from the derived knowledge index, with the requested repository as fallback. Receipt and baseline-generation precedence are retired historical mechanisms. [14]
 - **Historical source-bound reference account, not an operative override:** **The ten catalogue cases and the re-contracted mechanism case.** [28]
@@ -708,6 +709,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** **The four admissions, each a distinct named refusal: a complete object identity per side, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.** [35]
 - **Historical source-bound reference account, not an operative override:** **The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement.** [36]
 - **Historical source-bound reference account, not an operative override:** **The three generation statements — current, superseded, unmeasured — each of which ends by saying the content beside it is the requested generation's, byte for byte.** [39]
+
 - **Historical source-bound reference account, not an operative override:** **One endpoint's content with the three outcomes kept apart, and the entry's kind deciding before its bytes: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target.** [40]
 - **Historical source-bound reference account, not an operative override:** The two reasons no text form exists, and the bounded decode that carries a prefix rather than the whole object. [41]
 - **Historical source-bound reference account, not an operative override:** **The tree read: a literal pathspec, because a measured pathname is an address and not a pattern, and the answer checked against the path that was asked about.** [42]
@@ -836,6 +838,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** **The pre-publication recheck (for a tree comparison, the memory candidate is recaptured first, MIK-R25) and the refusal that carries both identities, with the one recapture action.** [234]
 
 - **Historical source-bound reference account, not an operative override:** Capture, pin and record a live leaf's four trees; none for an unconverted leaf. [320]
+
 
 - Where an entry lands, and its bounded excerpt. [340]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:191-212 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted. [341]

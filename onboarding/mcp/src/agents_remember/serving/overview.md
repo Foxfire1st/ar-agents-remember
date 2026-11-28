@@ -292,6 +292,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
 
+
+
 - **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
 
 - **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
@@ -347,6 +349,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 - Serving shutdown calls it on a worker thread before the background tasks are cancelled. [91]
 
 - It supplies that owner's shutdown to the app. [93]
+
+
 
 - An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review. [96]
 

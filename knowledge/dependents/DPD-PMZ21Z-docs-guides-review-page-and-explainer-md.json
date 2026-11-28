@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
-    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
+    "codeTree": "9da11f4c449ceef388455616425442310157c9ad",
+    "commit": "8905801b8a5e761fe8e25ef79afa935b8833e58d",
     "role": "curator",
-    "statement": "Audited docs/guides/review-page-and-explainer.md at post-sync code tree 0b0419690d12: touched stands_on file (serving/explainer_watcher.py) received only behavior-preserving typing adjustments for Pyrefly 1.5.0; review page and explainer guide remains accurate.",
-    "task": "261125-DEP-L8",
+    "statement": "Verified docs/guides/review-page-and-explainer.md against post-sync L13 code tree 9da11f4c449ceef388455616425442310157c9ad (synced onto DEP-L8 main 8905801b8a5e): Pyrefly typing updates and migrating DiffPane/ChangeSetPane to server-computed tree-sitter highlight Compartments preserve all review-page modes, navigation, plain-mode toggle, and explainer guidance.",
+    "task": "261112-KNO-L13",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -176,7 +176,7 @@
       "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
     },
     {
-      "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+      "blob": "562264aeda099583dfaf3d350e9bbb626d2e5201",
       "kind": "file",
       "path": "dashboard/src/panels/changeset/DiffPane.tsx"
     },
@@ -271,7 +271,7 @@
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
     },
     {
-      "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+      "blob": "6682e0beb12934a48ce8c90ee9cecca6a88b0400",
       "kind": "file",
       "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
     },
@@ -330,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T04:34:14+01:00",
+    "at": "2026-11-28T06:19:30+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L8",
+    "leaf": "261112-KNO-L13",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
-    "task": "261125-DEP"
+    "seat": "def410de-2687-53a7-bf31-50157129b105",
+    "task": "261112-KNO"
   }
 }

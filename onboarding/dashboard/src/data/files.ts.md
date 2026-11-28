@@ -78,6 +78,8 @@ No configured Domain Documentation source exists for this file.
 
 
 
+
+
 - Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). [1]
 
 - `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code.
@@ -100,6 +102,7 @@ No configured Domain Documentation source exists for this file.
 - `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. [6]
 - The File Viewer's tree loader calls `listDir` per directory level from the shared adapter. [7]
 - `FileTree` consumes the `DirEntry` and `Scope` types. [8]
+
 
 
 

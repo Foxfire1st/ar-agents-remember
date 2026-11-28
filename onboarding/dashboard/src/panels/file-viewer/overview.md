@@ -23,11 +23,11 @@ First active showing → repository catalog → repository/scope selectors → s
 - [`FileViewer.tsx`](FileViewer.tsx.md) owns the page and its component state. React Aria `Select` controls choose the repository and mainline/enclosure scope from the repository catalog. Two trees browse code and onboarding; `DualPane` displays the selection. Opening a code file reads it and resolves its onboarding forward. Opening an existing file sidecar resolves its code partner and follows the same code-opening path. A partnerless onboarding document whose reverse result carries a readable body displays its own markdown full-pane; a result without that body displays an overview placeholder. Changing repository or scope clears the opened-entry history and active index, leaving no derived code or onboarding selection. Split/single mode persists across file switches and reloads through `usePersistedFlag`.
 - [`FileTree.tsx`](FileTree.tsx.md) adapts the shared [`grammar/ExplorerTree.tsx`](../../grammar/ExplorerTree.tsx.md). It supplies the requested side of `/api/files/list`, path-based row identity, `onOpen`, and the code side's “has onboarding” marker. The shared tree owns asynchronous loading, keyboard navigation, selection and expansion; the Knowledge reader uses the same explorer.
 - [`DualPane.tsx`](DualPane.tsx.md) shows code alone in single mode or code on the left and onboarding on the right in split mode, with sizes persisted by `react-resizable-panels`. The onboarding side reuses `grammar/Markdown`. Before any file is opened, `EmptyStateBackdrop` fills the pane with an effects-gated siege-tank boomerang video (`/assets/sc2-siege-tank-boomerang.mp4`, opacity `0.18`). Markdown without a code partner fills the pane in either view mode. Recognized media uses MediaView; other binary code, missing onboarding and overview results without a body use placeholders within the pane layout.
-- [`FilePane.tsx`](FilePane.tsx.md) is the reusable read-only, non-editable CodeMirror 6 pane. It wraps lines, loads the language extension asynchronously and applies the shared podracer theme. Optional `firstLine` defaults to 1; optional `fit` uses an uncapped content-sized editor with visible scroller overflow for the review reading column. Optional `highlightedLines` decorates the cited file-line range with `cm-citedLine` and scrolls its first line into view. The Knowledge reader passes this range when its locator resolves. The Change-Set Viewer uses `FilePane` for plain code and its own `changeset/DiffPane.tsx` for merge rendering with the same numbering, language and theme primitives.
+- [`FilePane.tsx`](FilePane.tsx.md) is the reusable read-only, non-editable CodeMirror 6 pane. It wraps lines, applies the shared podracer theme, and mounts server-computed tree-sitter highlights through a `Compartment` reconfigured by digest without rebuilding the editor. Optional `firstLine` defaults to 1; optional `fit` uses an uncapped content-sized editor with visible scroller overflow for the review reading column. Optional `highlightedLines` decorates the cited file-line range with `cm-citedLine` and scrolls its first line into view. The Knowledge reader passes this range alongside server highlights when its locator resolves. The Change-Set Viewer uses `FilePane` for plain code and its own `changeset/DiffPane.tsx` for merge rendering with the same numbering, theme, and server-highlight primitives.
 - [`lineNumbering.ts`](lineNumbering.ts.md) exports `numberedFrom(first)`: ordinary `lineNumbers()` for line 1, otherwise a gutter offset to the excerpt's file-line numbers. `FilePane` and `changeset/DiffPane.tsx` share it.
 - [`markGutter.tsx`](markGutter.tsx.md) supplies optional marks through `useMarkedPane(marks)`: React portals into owned hosts, a gutter per editor, a `placement` key and the `drawn` callback. The key includes each mark's id, side, line, label and compact text, so changes to those values can rebuild the pane. `FilePane` inserts the “all” gutter before its numbered gutter, calls `drawn` after construction and at teardown, and renders the portals beside its host. `DiffPane` supplies the gutter for each editor side. [`markGutter.test.tsx`](markGutter.test.tsx.md) contains cases for marked collapsed runs, focus across gutter redraws and the bounded reveal hold; this description does not report test execution.
-- [`codemirrorTheme.ts`](codemirrorTheme.ts.md) maps the podracer CSS variables onto editor chrome through `EditorView.theme` and syntax tokens through `HighlightStyle`.
-- [`langByExtension.ts`](langByExtension.ts.md) maps the API's language id to lazily imported JavaScript, TypeScript, JSX, TSX, Python, JSON, CSS, HTML or Markdown support. Other language ids return no language extension and render as plain text; DualPane dispatches recognized media before its unsupported-binary placeholder.
+- [`codemirrorTheme.ts`](codemirrorTheme.ts.md) maps the podracer CSS variables onto editor chrome and eleven foreground-only `.cm-ar-tok-*` server-highlight token classes through `EditorView.theme`, with zero `@codemirror/language` or `@lezer/highlight` dependencies.
+- [`serverHighlights.ts`](serverHighlights.ts.md) replaces the retired `langByExtension.ts`, converting server-computed UTF-16 `SyntaxHighlights` triples into ordered, document-length-clamped CodeMirror 6 `Decoration.mark` extensions plus `highlightDigest`; [`serverHighlights.test.tsx`](serverHighlights.test.tsx.md) verifies `FilePane`, split/inline `DiffPane`, and `ChangeSetPane` highlight rendering, clamping, poll retention, and plain-mode suppression. DualPane still dispatches recognized media before its unsupported-binary placeholder.
 - [`usePersistedFlag.ts`](usePersistedFlag.ts.md) provides a `localStorage`-backed boolean state hook for view-mode persistence. Its numeric sibling, `usePersistedNumber`, persists the Cockpit rails' pixel widths.
 
 FileViewer's shared `files` left-sidebar state remembers Explorer visibility independently of split/single mode. Its toolbar toggle stays outside the Explorer panel; hidden panel and handle props leave both trees mounted. While the page is active it publishes the selected repository for tray-message routing to a chat without a task, and passes that repository into DualPane. File and onboarding reads remain read-only; the page also publishes shared tray context.
@@ -58,9 +58,12 @@ The File Viewer history keeps opened entries, Rendered/Source choices and scroll
 
 - The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. [1]
 
+
 - The code pane's optional marks. [3]
 
 - The excerpt gutter. [4]
+
+
 
 - The code pane's optional first line and content-sized host. [5]
 
@@ -81,6 +84,7 @@ The File Viewer history keeps opened entries, Rendered/Source choices and scroll
 - Fitted excerpts grow without an internal maximum-height scrolling box. [10]
 
 - Only a fully specified tray file target installs the line-pick gutter. [11]
+
 
 
 

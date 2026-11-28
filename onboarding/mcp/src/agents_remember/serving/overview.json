@@ -261,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
             "locator": {
               "kind": "symbol",
@@ -1298,12 +1298,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:ba6854779ea5efa98f3955358664c086bcd7cf45a24315bb765b6a0453978d9d",
             "locator": {
-              "end": 499,
+              "end": 501,
               "kind": "line_range",
-              "start": 444
+              "start": 446
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1311,12 +1311,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
             "locator": {
-              "end": 546,
+              "end": 548,
               "kind": "line_range",
-              "start": 507
+              "start": 509
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1329,7 +1329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
             "locator": {
               "kind": "symbol",
@@ -1341,7 +1341,7 @@
         },
         {
           "anchor": {
-            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "blob": "8bf418b6e466668a41d59f8793f4e404129f69b0",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
               "kind": "symbol",
@@ -1448,16 +1448,16 @@
       ]
     },
     "60": {
-      "note": "**The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.**",
+      "note": "**The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.**\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
-              "end": 380,
+              "end": 383,
               "kind": "line_range",
-              "start": 323
+              "start": 326
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1465,12 +1465,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
-            "content": "sha256:f120b1433c2566fbd6fd4f040fbdca3810028356deb97b10cc848ffd4bf08b9c",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
+            "content": "sha256:e67990364a8effa24de436dbafc61d0b61134c762f807ca3646177248d3738ce",
             "locator": {
-              "end": 414,
+              "end": 416,
               "kind": "line_range",
-              "start": 383
+              "start": 386
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1478,12 +1478,12 @@
         },
         {
           "anchor": {
-            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "blob": "bc619da1b078b6dec2504f6ccd2110d41805a24a",
             "content": "sha256:b590a72879d2e392799021146479a74c061263778255a3892990a907ae3a139e",
             "locator": {
-              "end": 617,
+              "end": 619,
               "kind": "line_range",
-              "start": 605
+              "start": 607
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -1496,7 +1496,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "blob": "8bf418b6e466668a41d59f8793f4e404129f69b0",
             "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
             "locator": {
               "kind": "symbol",
@@ -1508,7 +1508,7 @@
         },
         {
           "anchor": {
-            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "blob": "8bf418b6e466668a41d59f8793f4e404129f69b0",
             "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
             "locator": {
               "kind": "symbol",
@@ -1520,7 +1520,7 @@
         },
         {
           "anchor": {
-            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "blob": "8bf418b6e466668a41d59f8793f4e404129f69b0",
             "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
             "locator": {
               "kind": "symbol",
@@ -1946,7 +1946,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "blob": "b081fc1c2db4c25e3240f3e29df43e569997fe7e",
             "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
             "locator": {
               "kind": "symbol",
@@ -2247,14 +2247,16 @@
       ]
     },
     "96": {
-      "note": "An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review.\n\nAnchor: `useReviewTrees`",
+      "note": "An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review.\n\nAnchor: line range",
       "targets": [
         {
           "anchor": {
-            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
-            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "blob": "5a5600a087e94de51bd045a47eec7f389bb88265",
+            "content": "sha256:686686f2ebba4d2157ad67a21f258d653311787e9a962844ede132c1b0fbae3e",
             "locator": {
-              "kind": "file"
+              "end": 856,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -2262,11 +2264,10 @@
         },
         {
           "anchor": {
-            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
-            "content": "sha256:17bc59450e14c8c4d531e55facd62efb69c577f26623432f47c07a180f569bd9",
+            "blob": "5a5600a087e94de51bd045a47eec7f389bb88265",
+            "content": "sha256:686686f2ebba4d2157ad67a21f258d653311787e9a962844ede132c1b0fbae3e",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewTrees"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
