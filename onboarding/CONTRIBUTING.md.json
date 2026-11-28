@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
-        "content": "sha256:462692ac5786c51ec6d3b4183b7a091f10cb2c32eb53076bb83d54bb4a119587",
+        "blob": "4b86ad071981d024098f34d2130160eb29323359",
+        "content": "sha256:4ca5a986ac868368ba6b09193860a9894262cd3855c1c5a69b55b47fb659a6d6",
         "locator": {
           "end": 385,
           "kind": "line_range",
@@ -19,6 +19,23 @@
       },
       "rationale": "Records the concurrent Python/Dashboard hook rail, cache-free oxlint and incremental tsc -b (*.tsbuildinfo) caches, and bounded sync commit-check behavior in CONTRIBUTING.md.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4b86ad071981d024098f34d2130160eb29323359",
+        "content": "sha256:91cc93baa6a168d78f83ce439b2eec79ea05ed9fb12daa8109cabe93080f4df4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FS0ZY3",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The contributor text now says how to wait for background work and for a second reader, which is the rule 5 obligation.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -27,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
             "content": "sha256:49c587175eb3af01b25586010f9a6e86e0d2096249787600788e9adc42d2bf2d",
             "locator": {
               "end": 5,

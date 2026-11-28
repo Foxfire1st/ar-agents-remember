@@ -16,7 +16,9 @@ The module pins the missing-lock branches: interposed cuts between base snapshot
 read and post-check converge without replay or loss; bursts past the old bound surface
 coherently; concurrent cuts during a protected read wait; unopenable or vanished lockfiles
 and failed shared locks return no rows with the caller cursor unchanged; and a lockless
-clean read returns its first observation only when no writer came into being.
+clean read returns its first observation only when no writer came into being. The
+concurrent-cut wait observes the protected reader's contention on the same flock path
+instead of sleeping a fixed interval.
 
 ## Evidence
 

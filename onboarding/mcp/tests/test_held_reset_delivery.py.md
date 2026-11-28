@@ -28,4 +28,5 @@ These are source-declared unit-regression assertions registered in `unit-regress
 
 - `HeldResetDeliveryTests` exercises startup adoption of an aged legacy wait dropped from the 24-hour queue, exact deadline wake, FIFO delivery within thirty seconds, and post-acknowledgement retirement across a fresh scheduler. [1]
 - `test_live_reset_wins_enrollment_and_a_prior_generation_cannot_retire_it` verifies that `enroll` preserves live entries and a stale generation cannot retire a newer schedule. [2]
+
 - `test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound` verifies concurrent delivery across distinct recipients stays within the configured pool bound with one visit per recipient. [3]

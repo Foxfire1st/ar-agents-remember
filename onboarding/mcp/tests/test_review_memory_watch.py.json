@@ -1,15 +1,34 @@
 {
   "path": "mcp/tests/test_review_memory_watch.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0610f7084563d993c933f5f5a126e166ddfddd1d",
+        "content": "sha256:3e53ac6a8e2f312c03682e4b38507063232a625a40ee4a9de842ed23cda12676",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_change_during_registration_is_not_swallowed_by_baseline"
+        }
+      },
+      "id": "RLZ-0Y40SB",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The subscribe and anext waits now use the test's own signal, and the cleanup cancels and closes the stream; this is the node whose baseline race the repair removes.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Native watch tests drive real async stream, ten edits/publication latency bound (the assertion is a three-second maximum over ten edits, with the asyncio waits bounded by the shared hang guard rather than a fixed per-call timeout), baseline registration race, cancellation during admission, shared real projector reconnection/no idle walks, unwired/native failure with ordinary stream still usable, real HTTP disconnect before shutdown and canonical live-memory admission. This source contains native behavior assertions; this helper did not execute them.",
       "targets": [
         {
           "anchor": {
-            "blob": "7affd86e47174aeb76d681ea7caf92ee25b61e02",
-            "content": "sha256:1129013437fecf202674aa5569134ba8798c05f2601600f7b1c2d7d5ab6a67e7",
+            "blob": "0610f7084563d993c933f5f5a126e166ddfddd1d",
+            "content": "sha256:b9af4ddcdb268e97dc10f3cb5893ebcd17cc1caad87680b0a0a3b99f0b8e8504",
             "locator": {
               "kind": "file"
             }

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b2f403857068acb35eac408c634a88ade37b2259",
+        "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
         "content": "sha256:75294d1a5185a34933fd36a022b712094f112dc8c5f9836564ac3c9a5339768c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f403857068acb35eac408c634a88ade37b2259",
+        "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
         "content": "sha256:1e71f52d5d652b951fe3f40d3067f4742cdb93c711b041f86b9c2eab61a9a1dc",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f403857068acb35eac408c634a88ade37b2259",
+        "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
         "content": "sha256:fdde71378116b8c2f708c88c204045c4744807776b5b221b535f493cd0c452f2",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b2f403857068acb35eac408c634a88ade37b2259",
+        "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
         "content": "sha256:b2ecc470b478ef84fcd8963fd537a3ed5790b528fd08ab359490153f8456c3a5",
         "locator": {
           "kind": "symbol",
@@ -70,14 +70,33 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
+        "content": "sha256:94aeb99d9d6b4caac535a550b5236ebc961dacec6ae539369f18928defec90a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_writer_lock"
+        }
+      },
+      "id": "RLZ-DQZKM5",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The wait observes the protected reader's contention on the same lock through the real flock path instead of sleeping 0.3 s.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Missing-lock reads create no observer file and lose no row.",
       "targets": [
         {
           "anchor": {
-            "blob": "b2f403857068acb35eac408c634a88ade37b2259",
+            "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
             "content": "sha256:b2ecc470b478ef84fcd8963fd537a3ed5790b528fd08ab359490153f8456c3a5",
             "locator": {
               "kind": "symbol",
@@ -93,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f403857068acb35eac408c634a88ade37b2259",
+            "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
             "content": "sha256:7424f0b55cfed62fd1fe36e36934366c99262ce5611916fe6ff9cb114625dc46",
             "locator": {
               "kind": "symbol",

@@ -79,7 +79,6 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
 
 
-> Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures. [6]
 - Root configuration classifies product and verification packages by operational ownership: scripts/agent_evals is now explicitly a verification root beside the Dagger quality package and test support. Full static scope covers tracked Python while behavioral metrics use product roots. [7]
 

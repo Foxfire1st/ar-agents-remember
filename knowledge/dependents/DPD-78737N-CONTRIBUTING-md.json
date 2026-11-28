@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9da11f4c449ceef388455616425442310157c9ad",
-    "commit": "8905801b8a5e761fe8e25ef79afa935b8833e58d",
+    "codeTree": "ab9944c2fdce9adb5f9a22f4ef8bba3e0cf66596",
+    "commit": "22bbb3620d00ff4c820d7b89ea1709c4fa2030bb",
     "role": "curator",
-    "statement": "Verified CONTRIBUTING.md against post-sync L13 code tree 9da11f4c449ceef388455616425442310157c9ad (synced onto DEP-L8 main 8905801b8a5e): Pyrefly contributor layout, registering mcp/tests/test_unified_tree_sitter_highlights.py in test-evidence-lanes.toml, and removing client @codemirror/lang-* dependencies leave contributor workflow, check commands, and tooling guidance completely accurate.",
-    "task": "261112-KNO-L13",
+    "statement": "Reconfirmed CONTRIBUTING.md on the L30 post-sync candidate: the 'A test under load' guidance (lines 261-266) states the wait-for-the-condition rule, the shared hang guard and the test-controlled clock; the pytest commands (lines 203-219), the Python 3.14 references (lines 61, 79, 81, 333) and the Pyrefly rail (lines 299, 329, 340) stand. Every verified link was re-recorded at the L30 candidate.",
+    "task": "261112-BUG-L30",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 33,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": ".githooks/_gate.sh"
     },
     {
-      "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
+      "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
       "kind": "file",
       "path": "mcp/tests/conftest.py"
     },
@@ -212,14 +212,17 @@
     }
   ],
   "writer": {
-    "at": "2026-11-28T06:19:30+01:00",
+    "at": "2026-11-28T13:37:28+01:00",
     "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L13",
-    "model": "gemini-4-neon-high",
+    "effort": "unknown",
+    "harness": "hermes",
+    "leaf": "261112-BUG-L30",
+    "model": "opencode-go:deepseek-v4.1-flash",
     "role": "curator",
-    "seat": "def410de-2687-53a7-bf31-50157129b105",
-    "task": "261112-KNO"
+    "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "the launch receipt does not hold the effort"
+    }
   }
 }

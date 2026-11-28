@@ -1,0 +1,3124 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L30",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-28T14:03:19+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L30",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "curator",
+      "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "reviewer": {
+      "at": "2026-11-28T14:03:19+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L30",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "85a1e247-85b9-5ba4-aa3f-abbc24f87603",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 4,
+    "tree": "9fe224fb187f3519fa8981263fd9be9db5f2ada7",
+    "verdictRef": "notes/reports/reviewer/85a1e247-85b9-5ba4-aa3f-abbc24f87603/role-launch/L30-memory-review-verdict-R4.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0ENB9Q",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "Extended the reset-register account with PAGE_READS and OPEN_OBSERVATIONS and added their evidence row.",
+      "sources": [
+        {
+          "blob": "b3f8eb5812526cca0a67ceaa7d0f7155294f13fb",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0H8M6P",
+      "items": [
+        "sha256:662e805c201ff9064a60c399a35a52b58d3db5d8c32a7c9a9a5bbd0ea26970ad"
+      ],
+      "reason": "Insertion of one line: os.samestat identifies the held lock file.",
+      "subject": "hunk:sha256:662e805c201ff9064a60c399a35a52b58d3db5d8c32a7c9a9a5bbd0ea26970ad"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0JWS4X",
+      "items": [
+        "sha256:426d18be2dae2846fb27dc266cd7f15cc52f26a40f5370af3a1f3f1a6635c9c2"
+      ],
+      "reason": "Insertion of one line: the standard-library logging import the new debug logger needs.",
+      "subject": "hunk:sha256:426d18be2dae2846fb27dc266cd7f15cc52f26a40f5370af3a1f3f1a6635c9c2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0WZG3E",
+      "items": [
+        "sha256:292bac6ad8254d63a2376afde40e81a8343d5c8107da35a73e4a5c02195146e1"
+      ],
+      "reason": "Modification: the review-model import is narrowed to ReviewSurfaceRequest; the removed result names moved with their helpers to _review_answer_helpers.py and are imported from there.",
+      "subject": "hunk:sha256:292bac6ad8254d63a2376afde40e81a8343d5c8107da35a73e4a5c02195146e1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1SYZBY",
+      "items": [
+        "sha256:040aa3546852325f0f40f75adbe3501dfe84cad7ba85a87c67824f22805e3b98"
+      ],
+      "reason": "Reviewed against the candidate: the MCP route overview's ownership account still holds; the change adds a clear() reset to PageReads inside the kernel the overview routes, and its prose leaves that to the file cards.",
+      "sources": [
+        {
+          "blob": "17911ee6da7c146c6b92d29133a4c9d44ac939ce",
+          "path": "mcp/src/agents_remember/kernel/read_cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-26THDW",
+      "items": [
+        "sha256:749e2b22cdac3f058e6cb5a7b71b41d282cd03cc19dfc589da2d13a5cc95e7df"
+      ],
+      "reason": "Modification of two lines in both replan points: each uses ReplanEvent, whose second wait sets waiting_again.",
+      "subject": "hunk:sha256:749e2b22cdac3f058e6cb5a7b71b41d282cd03cc19dfc589da2d13a5cc95e7df"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-28PAE3",
+      "items": [
+        "sha256:ba7f9104d311e2b86b305ab5297479b8b04d5ec899bfe77ccb08f1e08f093646"
+      ],
+      "reason": "Modification: the code re-capture failure is logged at warning before the witness returns False; the refusal itself is unchanged.",
+      "subject": "hunk:sha256:ba7f9104d311e2b86b305ab5297479b8b04d5ec899bfe77ccb08f1e08f093646"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2EQH37",
+      "items": [
+        "sha256:8681d5dfc9bb542027599747faa6ebdc4140df361f0b6c550a316bed1a245569"
+      ],
+      "reason": "Insertion of one line: the barrier timeout now comes from the shared hang guard.",
+      "subject": "hunk:sha256:8681d5dfc9bb542027599747faa6ebdc4140df361f0b6c550a316bed1a245569"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2N1F7K",
+      "items": [
+        "sha256:ee6b9ac74894e4f7fdb7c6a9eb4e633d9cd968b238d7bc01ad03ac3514ee00bf"
+      ],
+      "reason": "Insertion of four lines: the shared-cache test imports the capacities and the recorded-answer constructor.",
+      "subject": "hunk:sha256:ee6b9ac74894e4f7fdb7c6a9eb4e633d9cd968b238d7bc01ad03ac3514ee00bf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2XNZYR",
+      "items": [
+        "sha256:42f9debd1795694f1fe96a6a46fa53e229cd53550c3aa029bfccbd4809cbe8d3"
+      ],
+      "reason": "Modification: the first page's modes are captured once and asserted; the assertion text now carries the page value.",
+      "subject": "hunk:sha256:42f9debd1795694f1fe96a6a46fa53e229cd53550c3aa029bfccbd4809cbe8d3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3NSGXJ",
+      "items": [
+        "sha256:318d81c48d5a2ead3d523d4deca47ac1b8bc977c7d4b3a1a3e34da589b2d0430"
+      ],
+      "reason": "Reviewed: the fixed sleeps and untrue load-independent notes are gone and the waits observe the exact net job; the card's join account is unchanged.",
+      "sources": [
+        {
+          "blob": "21807c2e4a4fe8f70e6bbf4bec7777df6e245c98",
+          "path": "mcp/tests/test_master_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_master_preparation.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4EFA7X",
+      "items": [
+        "sha256:ba929559fad60877be30dae9e9fab94685d2e69546807c52072ea240b9d44291"
+      ],
+      "reason": "Extended the scanner account with the OpenObservations/PageReads empty-collection vocabulary.",
+      "sources": [
+        {
+          "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+          "path": "mcp/tests/test_suite_load_independence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_suite_load_independence.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4F2KF8",
+      "items": [
+        "sha256:ccac269196a64b6cfac5145b6f732e0987437bacfb377de7e4820659404ba2cb"
+      ],
+      "reason": "Modification: PAGE_READS joins the kernel import so the test can hold a leaked open.",
+      "subject": "hunk:sha256:ccac269196a64b6cfac5145b6f732e0987437bacfb377de7e4820659404ba2cb"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4GRR6W",
+      "items": [
+        "sha256:cadeffe026ecf390d364f5f203fb0f6ba8eab746c19ee878b5f25dc8172d5f35"
+      ],
+      "reason": "Changed: docs/reference/worktrees-c09.md was re-confirmed at the L30 post-sync candidate (revision 19). The branch-file read's fallback warning at review_external_git_movement.py:797 is diagnostic only -- the movement verdict still comes from the measured git evidence, never from the branch label; every worktree transition the document states still stands.",
+      "revision": 19,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-51KRSK",
+      "items": [
+        "sha256:1b6bf7109004fad0ff0b1633f2dc0228dc15760d328c2c1ba3e1099bfa55196e"
+      ],
+      "reason": "Reviewed: the opened fixture owns its producer and releases the build after the page joins; the comparison replacement and shared-cache case keep the card's opening-answer account.",
+      "sources": [
+        {
+          "blob": "6d244914f14e62caca2edd404b77dbc98e40f41b",
+          "path": "mcp/tests/test_review_opening_answers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_opening_answers.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5FR8JD",
+      "items": [
+        "sha256:5b7e82aca40ef5a7f05ecd979913f7656a5c71658722ff76234e236ffb7ac5ee"
+      ],
+      "reason": "Insertion of three lines: the test class holds the watcher task so a test can start it after installing the observer.",
+      "subject": "hunk:sha256:5b7e82aca40ef5a7f05ecd979913f7656a5c71658722ff76234e236ffb7ac5ee"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-616WWM",
+      "items": [
+        "sha256:8dc21ff2b01d3e18a03311857d7154356ab29282a6ed8cb206f4824694c4a388"
+      ],
+      "reason": "Modification: the assertion tightens to computed-only now that the page owns its build; the never-read-for-another-comparison property is unchanged.",
+      "subject": "hunk:sha256:8dc21ff2b01d3e18a03311857d7154356ab29282a6ed8cb206f4824694c4a388"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-642AW8",
+      "items": [
+        "sha256:bc0ba2e04f5ef425a9ac4b4397fe9b28d413dbd58a679815c74a3f99d69ed8bd"
+      ],
+      "reason": "Insertion of two lines: the module logger is bound; no behaviour.",
+      "subject": "hunk:sha256:bc0ba2e04f5ef425a9ac4b4397fe9b28d413dbd58a679815c74a3f99d69ed8bd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6BN3VG",
+      "items": [
+        "sha256:fed77ca72e80cacd199dbd215871c45639e52bd60c30c29be1c7e1f633e89b7e"
+      ],
+      "reason": "Authored the new file card for the extracted input, key and answer-policy helpers.",
+      "sources": [
+        {
+          "blob": "d0d2c33e28c7e3e3e86757491d81fd1e4895fc2a",
+          "path": "mcp/src/agents_remember/application/_review_answer_helpers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/_review_answer_helpers.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6PRGCM",
+      "items": [
+        "sha256:b3a333fcc709175bc6562b9a67e4ca6f98231764a76e213b705b478a16f56c16"
+      ],
+      "reason": "Insertion of one line: the test starts the watcher after patching, so the first batch is observed.",
+      "subject": "hunk:sha256:b3a333fcc709175bc6562b9a67e4ca6f98231764a76e213b705b478a16f56c16"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6S84HZ",
+      "items": [
+        "sha256:d4d68a7134efe80435ed422ff0711e5442b9ac161b27e9142936ecef0f664298"
+      ],
+      "reason": "Changed: CONTRIBUTING.md's 'A test under load' guidance (lines 261-266) states the wait-for-the-condition rule, the shared hang guard and the test-controlled clock; the pytest commands (lines 203-219), the Python 3.14 references (lines 61, 79, 81, 333) and the Pyrefly rail (lines 299, 329, 340) stand. Every verified link was re-recorded at the L30 candidate.",
+      "revision": 33,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6VB2TT",
+      "items": [
+        "sha256:6ea12560bd7a313f9438ddbc8e1c214516ab866e2aa7ddacf17220befc068273"
+      ],
+      "reason": "Insertion of two lines: the test holds a BuildToken and the flight it expects the page to join.",
+      "subject": "hunk:sha256:6ea12560bd7a313f9438ddbc8e1c214516ab866e2aa7ddacf17220befc068273"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6VRPZA",
+      "items": [
+        "sha256:c072c592bed1d3d1c707caed6ed94040755a238f5fbb9318ffbda23c2a5b00bc"
+      ],
+      "reason": "Reviewed: arming is observed and each wait uses a fresh stream; the card's publication account is unchanged.",
+      "sources": [
+        {
+          "blob": "9a514b50abecd0d608eebf01730a18b765937efd",
+          "path": "mcp/tests/test_review_publication_watch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_publication_watch.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6WBHAG",
+      "items": [
+        "sha256:b224358e3d8eb2201e054e84db0b940a9c9c998bf0b90201b799cf9f0d718fa4"
+      ],
+      "reason": "Modification: the detail store's reuse owner is bound to the opening store's cache and the detail capacity; no policy changes.",
+      "subject": "hunk:sha256:b224358e3d8eb2201e054e84db0b940a9c9c998bf0b90201b799cf9f0d718fa4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:9080b128b77ad7f119255942b413602825731eff58731947f1168d6f48f112a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_working_view_has_no_cache_and_no_freshness_check"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:9080b128b77ad7f119255942b413602825731eff58731947f1168d6f48f112a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_working_view_has_no_cache_and_no_freshness_check"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-D121D0"
+        },
+        {
+          "after": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:ad3fb13cf791df7da962a6a53e271a8925fc00ef9a90e8c26ba01456499792ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_working_content_edit_with_the_same_status_letter_is_seen"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:ad3fb13cf791df7da962a6a53e271a8925fc00ef9a90e8c26ba01456499792ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_working_content_edit_with_the_same_status_letter_is_seen"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-GEQF6H"
+        },
+        {
+          "after": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-QXF71E"
+        },
+        {
+          "after": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:d62a59ae127ecd8fc7a616c49dc7036921f3a0cbde31dbbdb9d49259d12cc005",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:d62a59ae127ecd8fc7a616c49dc7036921f3a0cbde31dbbdb9d49259d12cc005",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "id": "RLZ-3JP7V8"
+        },
+        {
+          "after": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "before": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "id": "RLZ-AV44SX"
+        },
+        {
+          "after": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "before": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "id": "RLZ-E0PH8P"
+        },
+        {
+          "after": {
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
+            "content": "sha256:2004ff3886977e74a42ca44019dd8aa47b7256e3bc806fc648423fd938eb54b1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_comparison.py"
+          },
+          "before": {
+            "blob": "c8209dfd718c466ad4760db6e31ad58ce07da41c",
+            "content": "sha256:2004ff3886977e74a42ca44019dd8aa47b7256e3bc806fc648423fd938eb54b1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_comparison.py"
+          },
+          "id": "RLZ-EJJDVZ"
+        },
+        {
+          "after": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:02b767f1f46bf741ace21a6f9ce36c232a357d8ce04664488c4102720ee804bc",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:02b767f1f46bf741ace21a6f9ce36c232a357d8ce04664488c4102720ee804bc",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "id": "RLZ-HMXXXB"
+        },
+        {
+          "after": {
+            "blob": "e0b01acc6b0b0e8115470252183355d66ed69532",
+            "content": "sha256:cd6017160224f936e99e5adc880091541acb6e56d9fd9b5e0c3a790148f6522f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "9f3f72b24783db8cff755775b7ee2ca0a7c3dd34",
+            "content": "sha256:fb8ea8975d85858a0c283c2859e3d4ae9f9946b9ddd3ce3ef7a63d3ce30e584c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-SZGGGM"
+        },
+        {
+          "after": {
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+            "content": "sha256:377b8061e6d276047099ff2173f98e2702f5b1ebf3b04eef22bf3d04ece5c7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+          },
+          "before": {
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+            "content": "sha256:377b8061e6d276047099ff2173f98e2702f5b1ebf3b04eef22bf3d04ece5c7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+          },
+          "id": "RLZ-Z68Z1X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-740JKH",
+      "items": [
+        "sha256:ffec04f7cb853fec59b660a2c447f64353b354db1c3650d036d3930090f1e2b3"
+      ],
+      "reason": "Examined RLZ-SZGGGM: the cache now warns on an unreadable snapshot before returning None; the landed change-set counters rule is unchanged.",
+      "revision": 2,
+      "subject": "INV-7TMGB0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-75AC2C",
+      "items": [
+        "sha256:d557a404509878221e19f5376036cbaaee4e1ca12c2d1d76c1d016718b8993cc"
+      ],
+      "reason": "Re-authored the detail-store sentence for the shared opening-store changeset cache, noted that _keepable_tree_view now lives in _review_answer_helpers.py, and added the evidence row for the shared cache.",
+      "sources": [
+        {
+          "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+          "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_answer_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7AA1EY",
+      "items": [
+        "sha256:56a8ffe8fa7a34a53af6e5c2fd1c2f5a93a9cb365691f74367bedf2005155f03"
+      ],
+      "reason": "Modification: the comment now states the client serves without the lifespan, matching the opened fixture.",
+      "subject": "hunk:sha256:56a8ffe8fa7a34a53af6e5c2fd1c2f5a93a9cb365691f74367bedf2005155f03"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7ASEF3",
+      "items": [
+        "sha256:82e016cd6a7931c062fca54c4a244f798ab758eae52842a4378f14f44ed5f14a"
+      ],
+      "reason": "Modification: the second read awaits the stream directly under the hang guard; the baseline value assertion is unchanged.",
+      "subject": "hunk:sha256:82e016cd6a7931c062fca54c4a244f798ab758eae52842a4378f14f44ed5f14a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7CXNRF",
+      "items": [
+        "sha256:eaf7734b994d3a005746bfa827e77fcad96c79f87a6ae469d416fdf6320e4c45"
+      ],
+      "reason": "Deletion of forty-eight lines: _unmeasured_open, _keepable_summary, _keepable_persisted_tree and _expected_reads moved verbatim to _review_answer_helpers.py; the owning module imports them.",
+      "subject": "hunk:sha256:eaf7734b994d3a005746bfa827e77fcad96c79f87a6ae469d416fdf6320e4c45"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-7R4F7B",
+      "items": [
+        "sha256:a17458178fa776633f5cfdd5c23d35e50721e6c04675a22cc927ff831237d185"
+      ],
+      "reason": "Examined all members: L30 adds PAGE_READS and OPEN_OBSERVATIONS reset rows and makes the pytest temporary root honour TMPDIR; the joint guarantee that test processes isolate mutable owners and machine resources still holds.",
+      "revision": 5,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8296PZ",
+      "items": [
+        "sha256:ec8d9061f014f517043f9f7abc1be26b2bb183e1d8242bdab9c557a88a2c9eff"
+      ],
+      "reason": "Modification: the waited-on write is asserted from the saved grades instead of a monotonic elapsed time; the lock-wait property is unchanged.",
+      "subject": "hunk:sha256:ec8d9061f014f517043f9f7abc1be26b2bb183e1d8242bdab9c557a88a2c9eff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8EAP3H",
+      "items": [
+        "sha256:b2bf127f779d72f8a364c2fa8aca4b840d22901b14b1967abe7aff43111fb12e"
+      ],
+      "reason": "Modification: the protected read waits for the writer's contention Future instead of sleeping; the interleaving assertion is unchanged.",
+      "subject": "hunk:sha256:b2bf127f779d72f8a364c2fa8aca4b840d22901b14b1967abe7aff43111fb12e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+            "content": "sha256:203f27e7b72fb43eab41260b960e3adb641a562a3263d237c92045471b83dd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained resource bounds > bounds retained bodies and pure preparation across a long navigation history"
+            },
+            "path": "dashboard/src/data/taskDocuments.test.tsx"
+          },
+          "before": {
+            "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+            "content": "sha256:203f27e7b72fb43eab41260b960e3adb641a562a3263d237c92045471b83dd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained resource bounds > bounds retained bodies and pure preparation across a long navigation history"
+            },
+            "path": "dashboard/src/data/taskDocuments.test.tsx"
+          },
+          "id": "PRF-B3E3M3"
+        },
+        {
+          "after": {
+            "blob": "aaae1218d723c1746079d0f422f8783c7ca9f6bc",
+            "content": "sha256:d79229bd826dbb01d9a472fee2cc8701a79baf5ad8e348457819c7a0c9e7a5ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_body_lru_has_count_and_byte_bounds"
+            },
+            "path": "mcp/tests/test_task_document_body_cache.py"
+          },
+          "before": {
+            "blob": "aaae1218d723c1746079d0f422f8783c7ca9f6bc",
+            "content": "sha256:d79229bd826dbb01d9a472fee2cc8701a79baf5ad8e348457819c7a0c9e7a5ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_body_lru_has_count_and_byte_bounds"
+            },
+            "path": "mcp/tests/test_task_document_body_cache.py"
+          },
+          "id": "PRF-P8RVGJ"
+        },
+        {
+          "after": {
+            "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+            "content": "sha256:a50f0bcfaa382d9300fb37e15719c221f91e81c5fa98136d353a971ca7994022",
+            "locator": {
+              "kind": "symbol",
+              "name": "ends the request with its last waiter and never rejoins an aborted one"
+            },
+            "path": "dashboard/src/data/readOwnership.test.ts"
+          },
+          "before": {
+            "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+            "content": "sha256:a50f0bcfaa382d9300fb37e15719c221f91e81c5fa98136d353a971ca7994022",
+            "locator": {
+              "kind": "symbol",
+              "name": "ends the request with its last waiter and never rejoins an aborted one"
+            },
+            "path": "dashboard/src/data/readOwnership.test.ts"
+          },
+          "id": "PRF-RFWFGB"
+        },
+        {
+          "after": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_long_read_also_bounds_its_pending_values_and_input_observations"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "before": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_long_read_also_bounds_its_pending_values_and_input_observations"
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "id": "PRF-STKKBV"
+        },
+        {
+          "after": {
+            "blob": "0bb1170f54e90690a584bee1e7a994c9ecf74ca2",
+            "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BoundedReads"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_scheduler.py"
+          },
+          "before": {
+            "blob": "0bb1170f54e90690a584bee1e7a994c9ecf74ca2",
+            "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BoundedReads"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_scheduler.py"
+          },
+          "id": "RLZ-3EA1M2"
+        },
+        {
+          "after": {
+            "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+            "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConditionalReads.load"
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "before": {
+            "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+            "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConditionalReads.load"
+            },
+            "path": "dashboard/src/data/conditionalReads.ts"
+          },
+          "id": "RLZ-800XVT"
+        },
+        {
+          "after": {
+            "blob": "6e02c0e7424012cb0e4a480c83a7e2c2d25647cd",
+            "content": "sha256:8f98dbabb9eea53ff32c18265b12ea977b5d9d9c9703da6d92f0ee6bb2dbd742",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedCache"
+            },
+            "path": "dashboard/src/data/boundedCache.ts"
+          },
+          "before": {
+            "blob": "6e02c0e7424012cb0e4a480c83a7e2c2d25647cd",
+            "content": "sha256:8f98dbabb9eea53ff32c18265b12ea977b5d9d9c9703da6d92f0ee6bb2dbd742",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedCache"
+            },
+            "path": "dashboard/src/data/boundedCache.ts"
+          },
+          "id": "RLZ-AREP9K"
+        },
+        {
+          "after": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "before": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "id": "RLZ-EZ1D8Q"
+        },
+        {
+          "after": {
+            "blob": "e0b01acc6b0b0e8115470252183355d66ed69532",
+            "content": "sha256:cd6017160224f936e99e5adc880091541acb6e56d9fd9b5e0c3a790148f6522f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "9f3f72b24783db8cff755775b7ee2ca0a7c3dd34",
+            "content": "sha256:fb8ea8975d85858a0c283c2859e3d4ae9f9946b9ddd3ce3ef7a63d3ce30e584c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-T4017A"
+        },
+        {
+          "after": {
+            "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+            "content": "sha256:4ef96577968fa196bc17bc5619ab1a3bc88ce0f360e9ba9a23629771e1597db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentBodyCache"
+            },
+            "path": "mcp/src/agents_remember/serving/task_document_cache.py"
+          },
+          "before": {
+            "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+            "content": "sha256:4ef96577968fa196bc17bc5619ab1a3bc88ce0f360e9ba9a23629771e1597db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentBodyCache"
+            },
+            "path": "mcp/src/agents_remember/serving/task_document_cache.py"
+          },
+          "id": "RLZ-ZVHCDM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8JKJSD",
+      "items": [
+        "sha256:9a6f2160fe164bc684f8803f67a59e7fa319bd388ae72e644f2aea6199d505c0"
+      ],
+      "reason": "Examined RLZ-T4017A: the cache keeps its named LRU capacity and adds a warning only; the retained-store rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-GDWJKR"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7TMGB0",
+          "revision": 2
+        },
+        {
+          "id": "INV-BRGWKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-C1RTSG",
+          "revision": 3
+        },
+        {
+          "id": "INV-GDWJKR",
+          "revision": 1
+        },
+        {
+          "id": "INV-M46Y3E",
+          "revision": 1
+        },
+        {
+          "id": "INV-NPEQB1",
+          "revision": 1
+        },
+        {
+          "id": "INV-QK8XNM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WNHAWD",
+          "revision": 2
+        },
+        {
+          "id": "INV-YTPBCF",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNXX7H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-8JN5GB",
+      "items": [
+        "sha256:1a09f4c74002dccb482ce338d2343fa29d4f8522a6e4d8c8768c0c278a46bf74"
+      ],
+      "reason": "Examined all members: the changeset cache gains a warning on its existing unreadable-snapshot path and the recorded-answer store shares a cache; the bounded-cache joint guarantee is unchanged.",
+      "revision": 5,
+      "subject": "FAM-EASWS6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8PSTKB",
+      "items": [
+        "sha256:6d3dacb434013eba75a34d3c751c6d65f06cf9eafabb2e7950dbb651645876e4"
+      ],
+      "reason": "Insertion of one line: the module logger is bound; no behaviour.",
+      "subject": "hunk:sha256:6d3dacb434013eba75a34d3c751c6d65f06cf9eafabb2e7950dbb651645876e4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8R0P94",
+      "items": [
+        "sha256:937856a60c0553eb4e772b31bcffb0274ddade545e1876477a8ef584daafc653"
+      ],
+      "reason": "Deletion of nineteen lines: _additions_kept moved verbatim to _review_answer_helpers.py; the owning module imports it.",
+      "subject": "hunk:sha256:937856a60c0553eb4e772b31bcffb0274ddade545e1876477a8ef584daafc653"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-92MEPJ",
+      "items": [
+        "sha256:655763e0a34efd63ebc9f503b9337e14f09e077255554a8b344a7efb18e4d7a3"
+      ],
+      "reason": "Deletion of one line: file_identity moved to _review_answer_helpers.py and is imported from there.",
+      "subject": "hunk:sha256:655763e0a34efd63ebc9f503b9337e14f09e077255554a8b344a7efb18e4d7a3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-93ZE9C",
+      "items": [
+        "sha256:dcc9967fec521b2af9055e5efe8f55d74beb7789e1ba63985ec1fa73f25cdb30"
+      ],
+      "reason": "Modification: the second read starts inside a task that sets started, and the test waits for that event before cancelling; the reap assertion is unchanged.",
+      "subject": "hunk:sha256:dcc9967fec521b2af9055e5efe8f55d74beb7789e1ba63985ec1fa73f25cdb30"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "PRF-G0D88M"
+        },
+        {
+          "after": {
+            "blob": "b3f8eb5812526cca0a67ceaa7d0f7155294f13fb",
+            "content": "sha256:6911d6d4327adf2c79e4bf69304f9b0922e6fc4ef61de471438758ea5d7b5ec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
+            "content": "sha256:43fbbfffd393a5b7dc479cc6d752f49087954ac2604cbb2867e35dda0edeaae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        },
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "RLZ-RS88T2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-98MYFS",
+      "items": [
+        "sha256:6ae04b356034acbaedc644525ef5e1f11ed7c06ca3518a21345ab12470c2af54"
+      ],
+      "reason": "Re-anchored RLZ-1563PY at the moved census symbol: two process-state classes joined the closed census, each with one treatment and a reason; the rule is unchanged.",
+      "revision": 2,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9N5GV5",
+      "items": [
+        "sha256:fb9675bcc3e0b69ecc9a2a5e242e580de2673a7c92b4ec9b35a2b5fe15d7847d"
+      ],
+      "reason": "Modification: the page test starts the build, waits for the entered and waiting events, and releases and joins both threads in the finally.",
+      "subject": "hunk:sha256:fb9675bcc3e0b69ecc9a2a5e242e580de2673a7c92b4ec9b35a2b5fe15d7847d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:9d63e36ce56e7b59b7775386d903d71553ef0e2e333db646e9ef3724ade05eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_timing_scan_reports_patterns"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:9d63e36ce56e7b59b7775386d903d71553ef0e2e333db646e9ef3724ade05eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_timing_scan_reports_patterns"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "PRF-9D69PZ"
+        },
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:9bbfb09d0b16b067a99d7a25949ea7efe69ba7382ea8eff5a2f51f14ba396695",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_python_waits_are_load_independent"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:9bbfb09d0b16b067a99d7a25949ea7efe69ba7382ea8eff5a2f51f14ba396695",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_python_waits_are_load_independent"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "PRF-X4T1BQ"
+        },
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:a8f343d679e6744bf4fc58c1fefa1c2b7d7a090fb739567e23c6276902f3923a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:83b0e0aa6ac965f4e77a37238c2fad9308b83c0bc1de605f84a07768db04ea8a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "RLZ-JPKMED"
+        },
+        {
+          "after": {
+            "blob": "ea6923d301abe7065f0cd1533c6a573153c2bf56",
+            "content": "sha256:bfb986f19d961531c930783cdf41fd740db301a58487b75e57db9ce99ff4d655",
+            "locator": {
+              "kind": "symbol",
+              "name": "scan"
+            },
+            "path": "dashboard/src/test/loadIndependence.test.ts"
+          },
+          "before": {
+            "blob": "ea6923d301abe7065f0cd1533c6a573153c2bf56",
+            "content": "sha256:bfb986f19d961531c930783cdf41fd740db301a58487b75e57db9ce99ff4d655",
+            "locator": {
+              "kind": "symbol",
+              "name": "scan"
+            },
+            "path": "dashboard/src/test/loadIndependence.test.ts"
+          },
+          "id": "RLZ-K87BJE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9NX8EB",
+      "items": [
+        "sha256:fa5d3befc00af433989b9dd05151e3b8e2823cceb7754b59bd5b4fbb094ac22c"
+      ],
+      "reason": "Examined the scanner proofs and RLZ-JPKMED: the empty-collection vocabulary gained OpenObservations and PageReads; the rule that timing/state classes are rejected until named still holds.",
+      "revision": 1,
+      "subject": "INV-5VQQ6S"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AK9Q50",
+      "items": [
+        "sha256:becadb9dfeb1160e6d0b079f9afa98f20433ac4c96c9f940bdbfc27de87c51d8"
+      ],
+      "reason": "Reviewed: PageReads.clear is a new reset entry point that empties held opens and wakes waiters; the cancellation account is unchanged.",
+      "sources": [
+        {
+          "blob": "17911ee6da7c146c6b92d29133a4c9d44ac939ce",
+          "path": "mcp/src/agents_remember/kernel/read_cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/read_cancellation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
+            "content": "sha256:64d70515f2e6e264a6c3f1105be60d3622c0a764e1c2d22d59f43c0993404207",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 431
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "before": {
+            "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
+            "content": "sha256:64d70515f2e6e264a6c3f1105be60d3622c0a764e1c2d22d59f43c0993404207",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 431
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-2FEMJA"
+        },
+        {
+          "after": {
+            "blob": "4b86ad071981d024098f34d2130160eb29323359",
+            "content": "sha256:4ca5a986ac868368ba6b09193860a9894262cd3855c1c5a69b55b47fb659a6d6",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "before": {
+            "blob": "290b1706199f355bb0dbb5bf0e98d93c8fe2d675",
+            "content": "sha256:462692ac5786c51ec6d3b4183b7a091f10cb2c32eb53076bb83d54bb4a119587",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "id": "RLZ-3NCW5Y"
+        },
+        {
+          "after": {
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "content": "sha256:dcb8284fcc1232af8fd4ffcb07378fc99d243cff2c098333a64a2622d9037709",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "7ac7ead51848e324fa02d45df50cc60f1d323709",
+            "content": "sha256:dcb8284fcc1232af8fd4ffcb07378fc99d243cff2c098333a64a2622d9037709",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-6VTKE9"
+        },
+        {
+          "after": {
+            "blob": "064ba8eef496a0ead7249fe8290284da086d6fa0",
+            "content": "sha256:d1f0faa020aa67209e501c1092e6e2831d6fe8b981b0bc4da9bd0d6b6e3ba3f5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": ".githooks/pre-commit"
+          },
+          "before": {
+            "blob": "064ba8eef496a0ead7249fe8290284da086d6fa0",
+            "content": "sha256:d1f0faa020aa67209e501c1092e6e2831d6fe8b981b0bc4da9bd0d6b6e3ba3f5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": ".githooks/pre-commit"
+          },
+          "id": "RLZ-87JBY9"
+        },
+        {
+          "after": {
+            "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
+            "content": "sha256:ae567a364dc0f50d8eff1c90069a47cd12515f3fd2995e160ca642105c8c4ec2",
+            "locator": {
+              "end": 891,
+              "kind": "line_range",
+              "start": 884
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "before": {
+            "blob": "c6db9462ea5be8d931ef5515d12b7894d8931064",
+            "content": "sha256:ae567a364dc0f50d8eff1c90069a47cd12515f3fd2995e160ca642105c8c4ec2",
+            "locator": {
+              "end": 891,
+              "kind": "line_range",
+              "start": 884
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-XE5WW1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AKPRG4",
+      "items": [],
+      "noProofRecorded": true,
+      "reason": "Examined all five realizations at the candidate tree: the pre-commit header states the measured post-repair cold and warm times (~134 s each) and peak combined RSS (~3.75 GiB cold, ~3.60 GiB warm); CONTRIBUTING.md states the concurrent Python and dashboard rails with incremental tsc -b; the MCP-tools and settings references state the 900 s commit-check bound and the sync-commit-check-failed contract. The rule's meaning is unchanged, and no test is recorded as proving it.",
+      "revision": 1,
+      "subject": "INV-RXGZM9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AYTCQJ",
+      "items": [
+        "sha256:560dbbdc208518a3e405b852d7a18743a83855ae76c2d4363f23ca685672fa8d"
+      ],
+      "reason": "Insertion of one line: the waits module supplies the hang guard and the async condition wait.",
+      "subject": "hunk:sha256:560dbbdc208518a3e405b852d7a18743a83855ae76c2d4363f23ca685672fa8d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BB1W3J",
+      "items": [
+        "sha256:4acff2438651fe292d1b7e824681713c2ab7ea49ec045a16efa9e833f54d2bdd"
+      ],
+      "reason": "Reviewed: the serving route account still holds; the change adds a diagnostic warning in changeset_cache and drops the bound opened callback on clear.",
+      "sources": [
+        {
+          "blob": "e0b01acc6b0b0e8115470252183355d66ed69532",
+          "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+        },
+        {
+          "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+          "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+        },
+        {
+          "blob": "2dbe1f082a44b2664045a8667028f9da7ef4eb56",
+          "path": "mcp/src/agents_remember/serving/review_open_observation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BSDYP7",
+      "items": [
+        "sha256:a517740cadb3f61a5f67ecebb49bb96be090661ef17b74d91df270ee50a37979"
+      ],
+      "reason": "Modification: the fcntl.flock probe and the protected read are installed together; the writer thread starts inside the patches and is joined in the finally.",
+      "subject": "hunk:sha256:a517740cadb3f61a5f67ecebb49bb96be090661ef17b74d91df270ee50a37979"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C23MKF",
+      "items": [
+        "sha256:e69017c6f9c577d581fd0c7713b5cebefd90b849994e1e7f819ea803e583fecf"
+      ],
+      "reason": "Modification: the test starts the watcher inside the patched awatch, waits for the first batch, and releases the second only after the early-registration assertion.",
+      "subject": "hunk:sha256:e69017c6f9c577d581fd0c7713b5cebefd90b849994e1e7f819ea803e583fecf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C2K5SR",
+      "items": [
+        "sha256:0409df8806f41e4bfd3ad0f32ad262d702502a118ec56ddf7270cb1744da6076"
+      ],
+      "reason": "Modification: the comment now says the page computes each answer for N; behaviour is unchanged.",
+      "subject": "hunk:sha256:0409df8806f41e4bfd3ad0f32ad262d702502a118ec56ddf7270cb1744da6076"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CAXVSW",
+      "items": [
+        "sha256:e3ed700872077c83b024ae8cfa46645786b4feecc1f5c979aad77f851dcbb250"
+      ],
+      "reason": "Deletion of two lines: the session lookup moved above the flood so the test can freeze the rate budget's clock; the diagnostics assertion is unchanged.",
+      "subject": "hunk:sha256:e3ed700872077c83b024ae8cfa46645786b4feecc1f5c979aad77f851dcbb250"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CE64MN",
+      "items": [
+        "sha256:81cea01f22d0399cb99c856928544da5355840f9583ebac4f0ea0eb9a94aa31f"
+      ],
+      "reason": "Added the signal-held grade-lock sentence.",
+      "sources": [
+        {
+          "blob": "66d120cb48f030eafa99a10e8e8f8ccda2764120",
+          "path": "mcp/tests/test_explainer_server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_server.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CET4S6",
+      "items": [
+        "sha256:8a88f1d539f377ebee63fc2f515fc8c3dbc24481246091b265a9f52b2984b232"
+      ],
+      "reason": "Modification: the import brings the cache, generation and explainer modules the new test counts.",
+      "subject": "hunk:sha256:8a88f1d539f377ebee63fc2f515fc8c3dbc24481246091b265a9f52b2984b232"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CF9641",
+      "items": [
+        "sha256:78f373da42098ca913fcc370cf7a73dd6a17d59c3584f4b46d7258906b512014"
+      ],
+      "reason": "Insertion of eleven lines: the test observes the readiness wait, counts the three route waiters and sets an event when all are parked.",
+      "subject": "hunk:sha256:78f373da42098ca913fcc370cf7a73dd6a17d59c3584f4b46d7258906b512014"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CT58WE",
+      "items": [
+        "sha256:3a97e10ceda0732fa34a54887a3a2f2f41ea81abae36d6750b023e63aebca233"
+      ],
+      "reason": "Reviewed: the ReplanEvent waits replace fixed sleeps; the card's watch-plan account is unchanged.",
+      "sources": [
+        {
+          "blob": "42477f9a7d9b8ddeca7beaaf8d7e284e612bae8a",
+          "path": "mcp/tests/test_projection_watch_plan_native.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_projection_watch_plan_native.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CX1QGZ",
+      "items": [
+        "sha256:52ed428572e59c768060d40128392c480dd7b027b3ac284bbb5fa5093624c12f"
+      ],
+      "reason": "Insertion of one line: the waits module supplies the hang guard.",
+      "subject": "hunk:sha256:52ed428572e59c768060d40128392c480dd7b027b3ac284bbb5fa5093624c12f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DA126N",
+      "items": [
+        "sha256:6f67daf2e45363d056144a9f2621942368798f81158d4bd32d601ec13b84b52b"
+      ],
+      "reason": "Added the frozen-ledger-clock sentence to the malformed-flood case.",
+      "sources": [
+        {
+          "blob": "1a7e5ac9b755cc762a217ff201bb0104b1bd61dd",
+          "path": "mcp/tests/test_canvas_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_host.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DTWC47",
+      "items": [
+        "sha256:ff52162010cd4c4c591c75a882bcfcf6b1ca02f8734a0e7a8226745bb71d5c79"
+      ],
+      "reason": "Insertion of one line: the shared file_lock module provides the lock path and acquisition the test observes.",
+      "subject": "hunk:sha256:ff52162010cd4c4c591c75a882bcfcf6b1ca02f8734a0e7a8226745bb71d5c79"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DTYMCC",
+      "items": [
+        "sha256:13caca3a6132a1f5423b4ed8bc714b031d56cc496c209004c90218aae265bcad"
+      ],
+      "reason": "Modification: the loop's body is wrapped so a cancelled pending read is always awaited; the replacement assertion is unchanged.",
+      "subject": "hunk:sha256:13caca3a6132a1f5423b4ed8bc714b031d56cc496c209004c90218aae265bcad"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DXAK8M",
+      "items": [
+        "sha256:7a915f5a0fe23c3c8d758cff46636a049b6584498fd56d871c3f0c5ccd889a11"
+      ],
+      "reason": "Insertion of fifteen lines: the from-import block of the helpers extracted to _review_answer_helpers.py; every helper is used and the module gained no public name.",
+      "subject": "hunk:sha256:7a915f5a0fe23c3c8d758cff46636a049b6584498fd56d871c3f0c5ccd889a11"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E31N73",
+      "items": [
+        "sha256:9dcca1d1d86f60f95d25e383a815f2a3e42184f68475d354e4a6fa2f511234d7"
+      ],
+      "reason": "Insertion of eighteen lines: three debug-log helpers that name why a recorded answer was not retained or was dropped; the reuse decisions and return values are unchanged.",
+      "subject": "hunk:sha256:9dcca1d1d86f60f95d25e383a815f2a3e42184f68475d354e4a6fa2f511234d7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E5ZPSH",
+      "items": [
+        "sha256:4af93f7761a218bc6d1188e85dcb65201d1da6e2fd3bbdac050b18a6d8b94838"
+      ],
+      "reason": "Reviewed: the queue, cancellation and page-build waits are event waits; the card's account is unchanged.",
+      "sources": [
+        {
+          "blob": "50151e795f6521a61adf8424682cd66c2faf5592",
+          "path": "mcp/tests/test_review_detail_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_detail_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EDQPEC",
+      "items": [
+        "sha256:bca0e5a37299d6c1f9d987658f6a423c34ab79521a8509dcaa02f4d522809995"
+      ],
+      "reason": "Deletion of twenty-eight lines: _comparison_sources_of moved verbatim to _review_answer_helpers.py; the owning module imports it.",
+      "subject": "hunk:sha256:bca0e5a37299d6c1f9d987658f6a423c34ab79521a8509dcaa02f4d522809995"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:2eba54eac478ab9bdb53a04759957812ea188fe9a806fb5ff5fb820a66eb664a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_language_set_derives_extractor_version_and_isolates_caches"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "before": {
+            "blob": "3bcf61065b321f937b927f8332b5e2ec0ac2fd07",
+            "content": "sha256:2eba54eac478ab9bdb53a04759957812ea188fe9a806fb5ff5fb820a66eb664a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_language_set_derives_extractor_version_and_isolates_caches"
+            },
+            "path": "mcp/tests/test_language_set_and_tags_engine.py"
+          },
+          "id": "PRF-34323P"
+        },
+        {
+          "after": {
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+            "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            },
+            "path": "mcp/tests/test_definition_scope.py"
+          },
+          "before": {
+            "blob": "b2c00f59dd52e547c0d75406a8ae3dbf48532c13",
+            "content": "sha256:bcc57bda76ca4e1e8a20ed6920d6b9cbaa5e76fdb67e82cef5282823381fedd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            },
+            "path": "mcp/tests/test_definition_scope.py"
+          },
+          "id": "PRF-KKCVFF"
+        },
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "PRF-QVTX06"
+        },
+        {
+          "after": {
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "f62096205c7dbdabc641bd1cf26187b9877506e4",
+            "content": "sha256:dfcc66c200be6d511036ff995c376a75c09796bb49bece74e701ad980da398af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-133F10"
+        },
+        {
+          "after": {
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+            "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchors_in"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+          },
+          "before": {
+            "blob": "7a000ebbf2efeb5c99ea08a813841b11e0f0385e",
+            "content": "sha256:1fd780bfd9bca719fd0f87ba3d01d1c553254cc737633b1b31ec08623966a936",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchors_in"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+          },
+          "id": "RLZ-13QRXE"
+        },
+        {
+          "after": {
+            "blob": "9141d7bc7562ab2a0993a72e24350837aa976bb1",
+            "content": "sha256:532acff7c58e2f084ccd4982fb64445a9a5fa15e41da9c3078eba6b2bc84f0fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation_key"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+          },
+          "before": {
+            "blob": "9141d7bc7562ab2a0993a72e24350837aa976bb1",
+            "content": "sha256:532acff7c58e2f084ccd4982fb64445a9a5fa15e41da9c3078eba6b2bc84f0fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation_key"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+          },
+          "id": "RLZ-AH6JWP"
+        },
+        {
+          "after": {
+            "blob": "b3f8eb5812526cca0a67ceaa7d0f7155294f13fb",
+            "content": "sha256:6911d6d4327adf2c79e4bf69304f9b0922e6fc4ef61de471438758ea5d7b5ec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
+            "content": "sha256:43fbbfffd393a5b7dc479cc6d752f49087954ac2604cbb2867e35dda0edeaae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-CSYDPS"
+        },
+        {
+          "after": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:c0e3394a53290c8171a867ea8fc2adfd4c0a6041267932a2abb369b4686d014e",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_language_set"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "4945196d4a4a48d9476359c926badc3677d386f3",
+            "content": "sha256:c0e3394a53290c8171a867ea8fc2adfd4c0a6041267932a2abb369b4686d014e",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_language_set"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-DCWCE7"
+        },
+        {
+          "after": {
+            "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+            "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "before": {
+            "blob": "fd738ffb4aa110448e53219e6f331bd6ccd9265e",
+            "content": "sha256:7522d61fdfa8e8863e6da87c7893caea6df598c2f33a74c6def1c6e1620c4a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "id": "RLZ-ERPK83"
+        },
+        {
+          "after": {
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "319a8e12ec26ac9bac4b298d311243f03c81008d",
+            "content": "sha256:fb1665688859c39cbbcc874fa9d4b33ca9cefda6d23ebb071e962a4eb4c8a20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-N05T9E"
+        },
+        {
+          "after": {
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "eaf75af67bb868917b528f00fb17ab594b35f480",
+            "content": "sha256:80ae7f07f26fffe80e3d7fa2af2d32e6f9fec21fd9ffdc7b04b36e532a569455",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects.qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-NTFR29"
+        },
+        {
+          "after": {
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
+            "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageSet"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "before": {
+            "blob": "78d6999c56bf48257fbd829f8ffd2d3c101261b3",
+            "content": "sha256:b5104488f73bca90658f1a892654ad61c63613e338e59b70163a3fb984adef9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LanguageSet"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/language_set.py"
+          },
+          "id": "RLZ-ZVVM86"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EG3VNV",
+      "items": [
+        "sha256:5eb6abbd50877efbc17b9ba34d8312dababce6e1743713ff8f7fd70e1c941796"
+      ],
+      "reason": "Examined RLZ-CSYDPS: the LanguageSet cache registration moved with the census and still names one treatment; the rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-KQ8BKK"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EHS0HH",
+      "items": [
+        "sha256:54c4012e5828a293fad49c71aad2acb9cda3924310cb4a125e63fef876a97444"
+      ],
+      "reason": "Insertion of three lines: the gate records the read's flight so the release only happens for the build's own flight.",
+      "subject": "hunk:sha256:54c4012e5828a293fad49c71aad2acb9cda3924310cb4a125e63fef876a97444"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EJVBD1",
+      "items": [
+        "sha256:7a1ab44a733875dfa750ed23d40515496a7a67961571a520c3269094a4338e2c"
+      ],
+      "reason": "Insertion of one line: a Future carries whether the writer contended on the reader's lock.",
+      "subject": "hunk:sha256:7a1ab44a733875dfa750ed23d40515496a7a67961571a520c3269094a4338e2c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ENCKRE",
+      "items": [
+        "sha256:ccea016d4ef5954fb7c9c73388622450f4568bc6f95d000b37927586bdb09a0e"
+      ],
+      "reason": "Reviewed: the unreadable-snapshot path now warns before returning None; cache admission, keys and capacities are unchanged.",
+      "sources": [
+        {
+          "blob": "e0b01acc6b0b0e8115470252183355d66ed69532",
+          "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_cache.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EXPQVV",
+      "items": [
+        "sha256:7d379c6e7b57c2cc9c91a821ce007e729102eb0a51e427f2d8a006f61685a9f5"
+      ],
+      "reason": "Deletion of six lines: the pre-created read, the yield and the two sleeps are gone; the stream is read directly after the delivery event.",
+      "subject": "hunk:sha256:7d379c6e7b57c2cc9c91a821ce007e729102eb0a51e427f2d8a006f61685a9f5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EYTQAF",
+      "items": [
+        "sha256:1f743045bdff7373c19584e36addb56422daf31fe4692192a946fd3ad12b6178"
+      ],
+      "reason": "Changed: docs/design/python-pytest-bootstrap.md was re-confirmed at the L30 post-sync candidate (revision 49). _TEMPORARY only drops dir=\"/tmp\", so the temporary root honours TMPDIR (the system default when unset), and the shared hang guard bounds its waits; the bootstrap design remains accurate.",
+      "revision": 49,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F0FBRH",
+      "items": [
+        "sha256:21ddbfddeeb72977513009bc58589d1cdbb84d74e4494ebd6a5aed2eb87bb883"
+      ],
+      "reason": "Insertion of ten lines: a debug-log helper _memory_recheck_refused wraps the existing recheck so a refusal names its code; the guard's decision is unchanged.",
+      "subject": "hunk:sha256:21ddbfddeeb72977513009bc58589d1cdbb84d74e4494ebd6a5aed2eb87bb883"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-559QV5",
+          "revision": 1
+        },
+        {
+          "id": "INV-5FFC2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-AVRNNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-EW1ST5",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJDERT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KQ8BKK",
+          "revision": 1
+        },
+        {
+          "id": "INV-MMN8G0",
+          "revision": 1
+        },
+        {
+          "id": "INV-TFPK5R",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYP9YD",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FGV01V",
+      "items": [
+        "sha256:787fa072651c0d31c720da8340e2ea008b969ee67b4bc2add786efd94ee7e14d"
+      ],
+      "reason": "Examined all members: only the LanguageSet process-cache registration moved with global_state.py; the catalog's joint guarantee is unchanged.",
+      "revision": 3,
+      "subject": "FAM-CSVQBJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G2XJ3Q",
+      "items": [
+        "sha256:a3f433c4454fad73a9d5adade2d0e6d1c5b87fb024ee808db5a5977e32a356d8"
+      ],
+      "reason": "Modification: the reuse import gains the default capacity the new test asserts.",
+      "subject": "hunk:sha256:a3f433c4454fad73a9d5adade2d0e6d1c5b87fb024ee808db5a5977e32a356d8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G60GPW",
+      "items": [
+        "sha256:542bb30f0c9bf6abb6750c3ff878b11b895cd7cc8afe88e97499c1f4e624b26d"
+      ],
+      "reason": "Insertion of four lines: the test captures the watcher's awatch and the two events that gate the first batch.",
+      "subject": "hunk:sha256:542bb30f0c9bf6abb6750c3ff878b11b895cd7cc8afe88e97499c1f4e624b26d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G6YRHM",
+      "items": [
+        "sha256:8808b09f9c39e8e12cca134e0b843e900feca5efdda1f1d28bb302d36586bcad"
+      ],
+      "reason": "Added the contention-wait sentence.",
+      "sources": [
+        {
+          "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
+          "path": "mcp/tests/test_f07_missing_lock_cursor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_f07_missing_lock_cursor.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GC2CFK",
+      "items": [
+        "sha256:f7feea65c2dc178182ea29fdaf7e936ed2565942a15d84c8066cd181e26dbb88"
+      ],
+      "reason": "Modification: the dashboard test wraps its collaborators in try/finally, shuts the review trees down and unbinds the opened callback; the port assertions are unchanged.",
+      "subject": "hunk:sha256:f7feea65c2dc178182ea29fdaf7e936ed2565942a15d84c8066cd181e26dbb88"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GN4VMA",
+      "items": [
+        "sha256:26852a900cd6365daf50bc8334f290d31aba71e7891ecfb4fb45a3f26d2d5b5e"
+      ],
+      "reason": "Modification: the pre-created read and its settle sleep are replaced by a comment; the next line reads the stream directly.",
+      "subject": "hunk:sha256:26852a900cd6365daf50bc8334f290d31aba71e7891ecfb4fb45a3f26d2d5b5e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GPS399",
+      "items": [
+        "sha256:822878062004f17f838c4cfbb559da07a710ccb16f4231cb6b241fe3a2ec993b"
+      ],
+      "reason": "Reviewed: the barrier now takes the shared hang guard; the card's pool-bound account is unchanged.",
+      "sources": [
+        {
+          "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+          "path": "mcp/tests/test_held_reset_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_reset_delivery.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GR85TR",
+      "items": [
+        "sha256:a4235c19225127b590c37dfc83714c794049379e7a6f78f3980928da66ad3343"
+      ],
+      "reason": "Insertion of one line: the module is patched through its own name so the observer sees arming.",
+      "subject": "hunk:sha256:a4235c19225127b590c37dfc83714c794049379e7a6f78f3980928da66ad3343"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": {
+            "blob": "a907aca999f76a86a75a4df37951dfc0386af1e4",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "id": "PRF-2G5A48"
+        },
+        {
+          "after": {
+            "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
+            "content": "sha256:35e7bfcccbd13acb41a5a0e20411fa30d33a1be6e48f139eb3b2444702f31788",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "before": {
+            "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
+            "content": "sha256:f224a986002695228a44630d4bfd7f2c73207f59e0d708b7ec5301008f2a2fbe",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "id": "RLZ-88MZ91"
+        },
+        {
+          "after": {
+            "blob": "b3f8eb5812526cca0a67ceaa7d0f7155294f13fb",
+            "content": "sha256:6911d6d4327adf2c79e4bf69304f9b0922e6fc4ef61de471438758ea5d7b5ec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "dfa8ded259614efd8b19e1e37a2cb1f6e5724525",
+            "content": "sha256:43fbbfffd393a5b7dc479cc6d752f49087954ac2604cbb2867e35dda0edeaae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-FXCVRG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HEGC71",
+      "items": [
+        "sha256:d01166417d88164dc4c06e9d092ede3d4298aafca061b7a92043aee608f536e1"
+      ],
+      "reason": "Examined RLZ-88MZ91 and re-anchored RLZ-FXCVRG at the moved census symbol: the temporary root now honours TMPDIR; the zero-tree-sitter-deps rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-CSJ1ZD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HG4509",
+      "items": [
+        "sha256:024d23ae69a4f747d1de4220b685f8c298f33f551dee5b4bb2d04238d3c4f36a"
+      ],
+      "reason": "Modification: the test holds the leaf lock in a child process and observes the writer's acquisition with a non-blocking flock probe, releasing the holder from the observer; the grade assertion is unchanged.",
+      "subject": "hunk:sha256:024d23ae69a4f747d1de4220b685f8c298f33f551dee5b4bb2d04238d3c4f36a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HRAHT7",
+      "items": [
+        "sha256:b328590c9ec94f1ccaf8671fdb3a0a63cebbf2ce2f7b6ae7559d87ac6c57d110"
+      ],
+      "reason": "Modification: the gate releases only the build's own flight; the reader's wait still parks until then.",
+      "subject": "hunk:sha256:b328590c9ec94f1ccaf8671fdb3a0a63cebbf2ce2f7b6ae7559d87ac6c57d110"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HRNKJS",
+      "items": [
+        "sha256:54911368a15d38043f6b08bde8b4cbd861908962a703a9503efcea5f2b82ed15"
+      ],
+      "reason": "Insertion of three lines: the opening store's reuse owner is held in a local so the detail store can share its changeset cache.",
+      "subject": "hunk:sha256:54911368a15d38043f6b08bde8b4cbd861908962a703a9503efcea5f2b82ed15"
+    },
+    {
+      "considered": [
+        "FAM-98S8TF",
+        "FAM-3FTGSA",
+        "FAM-EASWS6"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-HV94HQ",
+      "items": [
+        "sha256:e2cba57c60fb317926919215b59fadde6781c3492035b1956354a4a4c87d47f8"
+      ],
+      "reason": "No family's joint guarantee states this rule. It binds the product code that makes a test's event exist together with every timing-sensitive test in the suite, so its routable surface spans the routes of several families, while each family examined covers only one test hull, one process-isolation duty or one retained-store obligation.",
+      "revision": 1,
+      "subject": "membership:INV-7AAS8F"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J2QCW2",
+      "items": [
+        "sha256:64adaefda70c1257c8d2d25b4683a1b64c411162e0ca0e3c445ba15cc05952fa"
+      ],
+      "reason": "Insertion of one line: the test imports the observation registry it must unbind in cleanup.",
+      "subject": "hunk:sha256:64adaefda70c1257c8d2d25b4683a1b64c411162e0ca0e3c445ba15cc05952fa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J31VPN",
+      "items": [
+        "sha256:bdd18cbe02edb32713e9cc8883a31298c53eccb8d0b04cab4a23818a3dbf2ba7"
+      ],
+      "reason": "Insertion of one line: the standard-library logging import the new warning needs.",
+      "subject": "hunk:sha256:bdd18cbe02edb32713e9cc8883a31298c53eccb8d0b04cab4a23818a3dbf2ba7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J4A8CA",
+      "items": [
+        "sha256:1798e461eec1a27cba9e727fdb8090d3d0709e6ab5a2420aa9d04bed0b3ee845"
+      ],
+      "reason": "Whole-file addition of 247 lines: the pure input-naming, keepability, key and answer-policy helpers extracted from review_answer_preparation; the owning module imports them and the public behaviour is unchanged.",
+      "subject": "hunk:sha256:1798e461eec1a27cba9e727fdb8090d3d0709e6ab5a2420aa9d04bed0b3ee845"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JQ5F56",
+      "items": [
+        "sha256:7fcd1242775f3c43dbb72e3f250cfb91dae3c4c5e6c6040d3729c0936ecaea6e"
+      ],
+      "reason": "Insertion of four lines: the build runs inside a cancellable read token, so the page's flight is the one it joins.",
+      "subject": "hunk:sha256:7fcd1242775f3c43dbb72e3f250cfb91dae3c4c5e6c6040d3729c0936ecaea6e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K0DY3J",
+      "items": [
+        "sha256:d5b10427aef518a95738378db9f590683dc2d7d3a477cb223638c47d18686a63"
+      ],
+      "reason": "Reviewed: the subscribe/anext waits use the test's own signal and cleanup closes the stream; the card already records the shared-hang-guard waits.",
+      "sources": [
+        {
+          "blob": "0610f7084563d993c933f5f5a126e166ddfddd1d",
+          "path": "mcp/tests/test_review_memory_watch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_memory_watch.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K3DD2P",
+      "items": [
+        "sha256:8dbf092084b17cb25c415165bfc354e8887ac25adfeb2d0e3d07ae47085025e3"
+      ],
+      "reason": "Reviewed: the new reset case proves clear() and the process-state reset drop the bound callback and held opens; the card's observation account is unchanged.",
+      "sources": [
+        {
+          "blob": "9ccd2f2caae5248f4c1e6a98556daab9b0d77976",
+          "path": "mcp/tests/test_review_open_observation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_open_observation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KQ1SV0",
+      "items": [
+        "sha256:a32e5e0361eb78c0f4544b8cea6c4c16b1c47acf50b66cf079aea77a2c3c1810"
+      ],
+      "reason": "Reviewed: clear() now also drops the bound opened callback; the observation-per-open account is unchanged.",
+      "sources": [
+        {
+          "blob": "2dbe1f082a44b2664045a8667028f9da7ef4eb56",
+          "path": "mcp/src/agents_remember/serving/review_open_observation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/review_open_observation.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KRDV1N",
+      "items": [
+        "sha256:6c59e0a3a9dbf7ed0001826034fb6919f0a7c7e1f2a3c44ce88a4d50a7778fa2"
+      ],
+      "reason": "Closed: the shared temporary directory now honours TMPDIR (mcp/tests/conftest.py:44), so the recorded literal-/tmp cause is gone.",
+      "revision": 3,
+      "subject": "WKN-AVZ1GA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KRMAJ2",
+      "items": [
+        "sha256:7ccd23e8b51c872e9b39b2368baf55beebd49dda84a3a3817fcd5ed057e7572b"
+      ],
+      "reason": "Insertion of one line: the reset entry point the new case exercises.",
+      "subject": "hunk:sha256:7ccd23e8b51c872e9b39b2368baf55beebd49dda84a3a3817fcd5ed057e7572b"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-48C3DS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VQQ6S",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZAMFR",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-MBNWVV",
+      "items": [
+        "sha256:659c37badaa6b7ab0e36ed379318f822807e0e0f80d61f044910231a2c72c1b9"
+      ],
+      "reason": "Examined all members: the repaired waits and frozen clocks keep the joint guarantee that test observations use guards, controlled time and real producer opportunities.",
+      "revision": 2,
+      "subject": "FAM-98S8TF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MEC63S",
+      "items": [
+        "sha256:468ce25a777387d57bcf74e972a7114eeb0991149cd824f5269c6e232d194eaa"
+      ],
+      "reason": "Insertion of one line: the standard-library logging import the new warning needs.",
+      "subject": "hunk:sha256:468ce25a777387d57bcf74e972a7114eeb0991149cd824f5269c6e232d194eaa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MVB17Y",
+      "items": [
+        "sha256:63196ea83560673be38891a2ed771599415ffbfa0d76817bb3408ce01c9755b4"
+      ],
+      "reason": "Modification: the lock file is captured once so the observer can compare the exact inode.",
+      "subject": "hunk:sha256:63196ea83560673be38891a2ed771599415ffbfa0d76817bb3408ce01c9755b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MYH3YQ",
+      "items": [
+        "sha256:3610423e53b9b055dcd416faaa2b770b67ed8fd8745c8c6513be067a7bbf30d8"
+      ],
+      "reason": "Deletion of two lines: DirectoryRead and ListingRead moved to _review_answer_helpers.py with the function that uses them.",
+      "subject": "hunk:sha256:3610423e53b9b055dcd416faaa2b770b67ed8fd8745c8c6513be067a7bbf30d8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MZQRPK",
+      "items": [
+        "sha256:055bfc48c18d614218c60bf72983fb8ba6abf94eb9e9a4000a5a61507eccf949"
+      ],
+      "reason": "Insertion of one line: fcntl lets the test probe the held lock without blocking.",
+      "subject": "hunk:sha256:055bfc48c18d614218c60bf72983fb8ba6abf94eb9e9a4000a5a61507eccf949"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:5c738541ebcebefb5c54b397c881ae93421a101ecff354e2f5b4ec0845707c9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_recorded_tree_is_never_served_from_the_kept_answer"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "before": {
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:5c738541ebcebefb5c54b397c881ae93421a101ecff354e2f5b4ec0845707c9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_recorded_tree_is_never_served_from_the_kept_answer"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "id": "PRF-KVT76Z"
+        },
+        {
+          "after": {
+            "blob": "e62f978ce1eb5cac679d49cc002bf00db0f5b091",
+            "content": "sha256:f676efd0fce110dd583509783e998c7838c8d3d212487161933f3350a2677f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_answer_is_byte_identical_to_a_fresh_computation"
+            },
+            "path": "mcp/tests/test_review_answer_reuse.py"
+          },
+          "before": {
+            "blob": "e62f978ce1eb5cac679d49cc002bf00db0f5b091",
+            "content": "sha256:f676efd0fce110dd583509783e998c7838c8d3d212487161933f3350a2677f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_answer_is_byte_identical_to_a_fresh_computation"
+            },
+            "path": "mcp/tests/test_review_answer_reuse.py"
+          },
+          "id": "PRF-MWVS30"
+        },
+        {
+          "after": {
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+            "content": "sha256:c68f6c87500aa4bd7ecd39b9ebb9fd6b0f6c3deff649c0655e83b0907d93192d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedReviewAnswers"
+            },
+            "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+          },
+          "before": {
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedReviewAnswers"
+            },
+            "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+          },
+          "id": "RLZ-9VH1AA"
+        },
+        {
+          "after": {
+            "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+            "content": "sha256:0938dc28f6a177e03a2b6c8935759a24b0a0bfdabbc50e4459a3c161d9a2c4ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedAnswerReuse"
+            },
+            "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+          },
+          "before": {
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:be5e918b7e5825f69452b7cce5bfcadc636a21070b3e62e8ebf7c208b9b01e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedAnswerReuse"
+            },
+            "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+          },
+          "id": "RLZ-V4HXV2"
+        },
+        {
+          "after": {
+            "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+            "content": "sha256:c4866907e0c2184039e7c5d32238e955def26a603b5cb608ff88e058e3596a55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trees_still_readable"
+            },
+            "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+          },
+          "before": {
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+            "content": "sha256:c4866907e0c2184039e7c5d32238e955def26a603b5cb608ff88e058e3596a55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trees_still_readable"
+            },
+            "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+          },
+          "id": "RLZ-XFDNYB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N0S3KM",
+      "items": [
+        "sha256:2a94887898f09292972f640143b3145ee4c1b6b40b7f69836a92a9311711edfc"
+      ],
+      "reason": "Examined RLZ-9VH1AA and RLZ-V4HXV2: the detail store shares the opening store's cache and a refused value names its gate in the debug log; the recorded-answer guarantees are unchanged.",
+      "revision": 2,
+      "subject": "INV-YTPBCF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N5B9J1",
+      "items": [
+        "sha256:6afd3c1db81c2165ee1d3685e3b7621462a9bf63fd53172ac937e3517867a2fa"
+      ],
+      "reason": "Modification: the branch-file fallback logs its OSError and still falls back to git; the movement verdict is unchanged.",
+      "subject": "hunk:sha256:6afd3c1db81c2165ee1d3685e3b7621462a9bf63fd53172ac937e3517867a2fa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ND90M4",
+      "items": [
+        "sha256:823c8f0146bb6248aa66b2162117cb4e891e6d80350cda8f64dc957a5ee37bfa"
+      ],
+      "reason": "Insertion of two lines: the Literal import annotates the overridden wait and patch installs the registration observer.",
+      "subject": "hunk:sha256:823c8f0146bb6248aa66b2162117cb4e891e6d80350cda8f64dc957a5ee37bfa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NKJ666",
+      "items": [
+        "sha256:4b52053d3c29cacbb0b8c00b96e9c0bc082553ca5e89b5ce1c4d78845a60f663"
+      ],
+      "reason": "Insertion of one line: the import brings the observation registry into the reset test.",
+      "subject": "hunk:sha256:4b52053d3c29cacbb0b8c00b96e9c0bc082553ca5e89b5ce1c4d78845a60f663"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NY5FZB",
+      "items": [
+        "sha256:49afe612a39da809c8d92aab106579ba88cfbbe8794fbdae82f5ee9579ee4be6"
+      ],
+      "reason": "Reviewed against the candidate: the application route account still holds; the new _review_answer_helpers.py card is authored under this route and the changed product files gain diagnostics and the shared detail cache only.",
+      "sources": [
+        {
+          "blob": "d0d2c33e28c7e3e3e86757491d81fd1e4895fc2a",
+          "path": "mcp/src/agents_remember/application/_review_answer_helpers.py"
+        },
+        {
+          "blob": "35f67ab02fdb95aeaf6847cd8c476a18b1926b9b",
+          "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+        },
+        {
+          "blob": "60eb0084dcb099002c709f6e71ee291de8f1f9c1",
+          "path": "mcp/src/agents_remember/application/review_comparison_preparation.py"
+        },
+        {
+          "blob": "a2864ce07e1bc61868867d5f6520ab6a85482c27",
+          "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P17YYZ",
+      "items": [
+        "sha256:79aa4d96d3cce301b210794b41e6dd09f8c7b9da6e2dfba5580ffe0edbb1605e"
+      ],
+      "reason": "Modification: the comment now says the explicitly driven queue reuses the detail; no behaviour change.",
+      "subject": "hunk:sha256:79aa4d96d3cce301b210794b41e6dd09f8c7b9da6e2dfba5580ffe0edbb1605e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P3Z55X",
+      "items": [
+        "sha256:53d10038d0ae6466d886421a13da512a252200f8f2dec5ecb01b60eb26a4bfc9"
+      ],
+      "reason": "Reviewed: the tests route account still holds; the repaired waits and the TMPDIR change stay inside the file cards.",
+      "sources": [
+        {
+          "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
+          "path": "mcp/tests/conftest.py"
+        },
+        {
+          "blob": "1a7e5ac9b755cc762a217ff201bb0104b1bd61dd",
+          "path": "mcp/tests/test_canvas_host.py"
+        },
+        {
+          "blob": "66d120cb48f030eafa99a10e8e8f8ccda2764120",
+          "path": "mcp/tests/test_explainer_server.py"
+        },
+        {
+          "blob": "5de886db4e457d2f2a9f79e21adb3c3adb8e4d39",
+          "path": "mcp/tests/test_f07_missing_lock_cursor.py"
+        },
+        {
+          "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+          "path": "mcp/tests/test_held_reset_delivery.py"
+        },
+        {
+          "blob": "21807c2e4a4fe8f70e6bbf4bec7777df6e245c98",
+          "path": "mcp/tests/test_master_preparation.py"
+        },
+        {
+          "blob": "ded659932ba78e67a324c8d6b96eafa3ccc3f146",
+          "path": "mcp/tests/test_projection_readiness.py"
+        },
+        {
+          "blob": "42477f9a7d9b8ddeca7beaaf8d7e284e612bae8a",
+          "path": "mcp/tests/test_projection_watch_plan_native.py"
+        },
+        {
+          "blob": "50151e795f6521a61adf8424682cd66c2faf5592",
+          "path": "mcp/tests/test_review_detail_preparation.py"
+        },
+        {
+          "blob": "0610f7084563d993c933f5f5a126e166ddfddd1d",
+          "path": "mcp/tests/test_review_memory_watch.py"
+        },
+        {
+          "blob": "9ccd2f2caae5248f4c1e6a98556daab9b0d77976",
+          "path": "mcp/tests/test_review_open_observation.py"
+        },
+        {
+          "blob": "6d244914f14e62caca2edd404b77dbc98e40f41b",
+          "path": "mcp/tests/test_review_opening_answers.py"
+        },
+        {
+          "blob": "9a514b50abecd0d608eebf01730a18b765937efd",
+          "path": "mcp/tests/test_review_publication_watch.py"
+        },
+        {
+          "blob": "aefef944fcdb4fee0d80f0f2cc1ee8237f72e9c8",
+          "path": "mcp/tests/test_review_record_history.py"
+        },
+        {
+          "blob": "f40a3a8a81aedab18a40612b4b76c14ee44e0a88",
+          "path": "mcp/tests/test_suite_load_independence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P7WBBB",
+      "items": [
+        "sha256:fa7d1a9bf497473f6eb117a07dd625b57a5e3bb08e25ec5c6f98f3883740d19c"
+      ],
+      "reason": "Deletion of fourteen lines: _reads_from_its_record moved verbatim to _review_answer_helpers.py; the owning module imports it.",
+      "subject": "hunk:sha256:fa7d1a9bf497473f6eb117a07dd625b57a5e3bb08e25ec5c6f98f3883740d19c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P8JE89",
+      "items": [
+        "sha256:a006297ba21746fc253e74701e249a246f9ee0ebc0b9b751a0cee4da77016eda"
+      ],
+      "reason": "Reviewed: the read modes move in the message only; the card's record-history account is unchanged.",
+      "sources": [
+        {
+          "blob": "aefef944fcdb4fee0d80f0f2cc1ee8237f72e9c8",
+          "path": "mcp/tests/test_review_record_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_record_history.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PJZG1F",
+      "items": [
+        "sha256:25e6403f4f2de83354285e1631b12ff3780736037ce8c3c769a5ee208ffd828f"
+      ],
+      "reason": "Corrected the temporary-root sentence: the pytest temporary directory honours TMPDIR and no longer names /tmp.",
+      "sources": [
+        {
+          "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
+          "path": "mcp/tests/conftest.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/conftest.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PP3839",
+      "items": [
+        "sha256:7e71ec6738f2207f0a58aaacaea1a9aa4b758c1d5a78a2d6ee64f61cdd1a65fe"
+      ],
+      "reason": "Reviewed: the test now joins the exact readiness event through the shared guard; the card's account is unchanged.",
+      "sources": [
+        {
+          "blob": "ded659932ba78e67a324c8d6b96eafa3ccc3f146",
+          "path": "mcp/tests/test_projection_readiness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_projection_readiness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PRKPVM",
+      "items": [
+        "sha256:b35146bd54d2dcd26a9375493a0c0121f44af4851c5c9f85517f4826c0969ea6"
+      ],
+      "reason": "Insertion of one line: the event wait uses the shared hang guard.",
+      "subject": "hunk:sha256:b35146bd54d2dcd26a9375493a0c0121f44af4851c5c9f85517f4826c0969ea6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PT8X76",
+      "items": [
+        "sha256:dca25795fc0fff320ec66aec2e84f76df1608d5940b9092bd37a09cc71924929"
+      ],
+      "reason": "Insertion of one line: clear() now also drops the bound opened callback; the observation-per-open rule is unchanged.",
+      "subject": "hunk:sha256:dca25795fc0fff320ec66aec2e84f76df1608d5940b9092bd37a09cc71924929"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q0K8KZ",
+      "items": [
+        "sha256:74db7989ecfb164ed7f24efadc98bb6e4d10ba9e3ac126d88ecbd1282c4a26bb"
+      ],
+      "reason": "Modification: the replacement and unrelated-file assertions run inside a try/finally that cancels and drains the pending read.",
+      "subject": "hunk:sha256:74db7989ecfb164ed7f24efadc98bb6e4d10ba9e3ac126d88ecbd1282c4a26bb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QBRD2P",
+      "items": [
+        "sha256:4730ee8971b86c69bdeb34f725f636a2df7509b92dcb313fa267b7681f28936c"
+      ],
+      "reason": "Deletion of fifty-five lines: _keepable_tree_view, _answer_name, _tree_key and the detail-store capacity constants moved verbatim to _review_answer_helpers.py; the owning module imports them.",
+      "subject": "hunk:sha256:4730ee8971b86c69bdeb34f725f636a2df7509b92dcb313fa267b7681f28936c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
+            "content": "sha256:ee6f124a8665b090980a38b3f49843e9c37801611b7796d966354ab4af3e7119",
+            "locator": {
+              "kind": "symbol",
+              "name": "_discard_owned"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "before": {
+            "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
+            "content": "sha256:ee6f124a8665b090980a38b3f49843e9c37801611b7796d966354ab4af3e7119",
+            "locator": {
+              "kind": "symbol",
+              "name": "_discard_owned"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "id": "RLZ-78DR39"
+        },
+        {
+          "after": {
+            "blob": "34e17f298861636a07b44574213d6f2bdbd94246",
+            "content": "sha256:a0dd624fc6e57dbac7d615a97e121b7d1b6b50109c85d2577b8f24e1da89b736",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "before": {
+            "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
+            "content": "sha256:392958e289fc4943b85841a499c65872cdbb858f8fc031e0eef5c80aa92b54bd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "id": "RLZ-KZ3BQD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QD32Z0",
+      "items": [
+        "sha256:a2496a2ba77451459092be3da5f17a422eb418255e158350d015384d98fe54f9"
+      ],
+      "reason": "Examined RLZ-KZ3BQD: the isolated environment now derives its temporary root from TMPDIR; the rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-TMKNRV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QPD3S5",
+      "items": [
+        "sha256:fe3802af6df381cc09712af0d3aae62fb31f09b282931a473c5d364a34194a26"
+      ],
+      "reason": "Modification: the test takes a monkeypatch so the arming observer can be installed.",
+      "subject": "hunk:sha256:fe3802af6df381cc09712af0d3aae62fb31f09b282931a473c5d364a34194a26"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R1Z12R",
+      "items": [
+        "sha256:beef96b9b1c720d9d94a5bcadb747639aa45f252524c4645db486569256ecfc5"
+      ],
+      "reason": "Modification: the fixed 0.02 s park becomes a wait for all three routes to be parked, bounded by the hang guard.",
+      "subject": "hunk:sha256:beef96b9b1c720d9d94a5bcadb747639aa45f252524c4645db486569256ecfc5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R6P4AQ",
+      "items": [
+        "sha256:b274427d486c40fb181b02b7bdf3b21ff0786775525da48485ec031f345e9b97"
+      ],
+      "reason": "Modification: the replacement wait's timeout becomes 5 s; the assertion still reads the next publication.",
+      "subject": "hunk:sha256:b274427d486c40fb181b02b7bdf3b21ff0786775525da48485ec031f345e9b97"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R89JXK",
+      "items": [
+        "sha256:55adf72bccaeded9931d3981893d43407d05d324ce22f6385f6bc5e694ba802b"
+      ],
+      "reason": "Modification: the finally block sets the entered event and joins the writer; the wait is still bounded by the hang guard.",
+      "subject": "hunk:sha256:55adf72bccaeded9931d3981893d43407d05d324ce22f6385f6bc5e694ba802b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RBE4KF",
+      "items": [
+        "sha256:32e30539be73ef736450c387bca7a531e75f2fcb7f515409e89524eaa8bf3ff7"
+      ],
+      "reason": "Modification: the fixed settle sleep becomes a wait until the native watch armed on the publication directory.",
+      "subject": "hunk:sha256:32e30539be73ef736450c387bca7a531e75f2fcb7f515409e89524eaa8bf3ff7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RC2N5R",
+      "items": [
+        "sha256:a8bb7bc8b6ae06eeadf97c75fa6be5c62b6c333954855dec875957d6d6ec18be"
+      ],
+      "reason": "Modification: the test takes a monkeypatch so the lock observer can be installed for the call.",
+      "subject": "hunk:sha256:a8bb7bc8b6ae06eeadf97c75fa6be5c62b6c333954855dec875957d6d6ec18be"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RPB22J",
+      "items": [
+        "sha256:2f4369ae73f2a12a900945cc435be0d431e36fed1f0021139ec064c30d3ae973"
+      ],
+      "reason": "Modification: the detail store is constructed with the opening store's reuse owner and cache plus its own answer capacity; the argument list changes and no policy does.",
+      "subject": "hunk:sha256:2f4369ae73f2a12a900945cc435be0d431e36fed1f0021139ec064c30d3ae973"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S8QH9M",
+      "items": [
+        "sha256:54eba1143c5bd790dc927eeb59c437b63335f20fe2864572a7f2798cc1cdc66a"
+      ],
+      "reason": "Insertion of seven lines: a diagnostic warning is logged when a stored object body cannot be read; the parsed bodies and the refusal path are unchanged.",
+      "subject": "hunk:sha256:54eba1143c5bd790dc927eeb59c437b63335f20fe2864572a7f2798cc1cdc66a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SHD3P9",
+      "items": [
+        "sha256:bc5a97e2a32c36776497f4aea05adb45a06c519eaf5ebb90c53eedadd2bcaded"
+      ],
+      "reason": "Deletion of six lines: the local until helper is gone; the module uses the shared async_wait_until.",
+      "subject": "hunk:sha256:bc5a97e2a32c36776497f4aea05adb45a06c519eaf5ebb90c53eedadd2bcaded"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SVCJKK",
+      "items": [
+        "sha256:bb8518224b3d3483503880636a7cd47472c1160683d4e01d35a726f565f9f33d"
+      ],
+      "reason": "Modification: the threading import gives way to concurrent.futures.Future; time is no longer imported.",
+      "subject": "hunk:sha256:bb8518224b3d3483503880636a7cd47472c1160683d4e01d35a726f565f9f33d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T9ESC1",
+      "items": [
+        "sha256:7d1db0c820277b310e00cf85dd0eb620fd83ebfd34860096cff44c0716b54234"
+      ],
+      "reason": "Deletion of two lines: dataset_identity and KnowledgeStorageError moved to _review_answer_helpers.py and are imported from there.",
+      "subject": "hunk:sha256:7d1db0c820277b310e00cf85dd0eb620fd83ebfd34860096cff44c0716b54234"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0SSZQM",
+          "revision": 1
+        },
+        {
+          "id": "INV-6NJ5ZH",
+          "revision": 1
+        },
+        {
+          "id": "INV-E27J2R",
+          "revision": 3
+        },
+        {
+          "id": "INV-GV3950",
+          "revision": 1
+        },
+        {
+          "id": "INV-W48HES",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TK7TW2",
+      "items": [
+        "sha256:a27fca64ee14c85739521770311634a280fe2db76505473b0b508c06962edefd"
+      ],
+      "reason": "Examined all members: the delivery barrier now uses the shared hang guard; the held-message delivery guarantee is unchanged.",
+      "revision": 1,
+      "subject": "FAM-Y44NA4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TPT5Q9",
+      "items": [
+        "sha256:6c899b33199f38a6beaa29431e2cdf3427036ca84ff150c6179de162b8ad1005"
+      ],
+      "reason": "Modification: the build thread starts after the reader is prepared and is joined under the hang guard in the finally.",
+      "subject": "hunk:sha256:6c899b33199f38a6beaa29431e2cdf3427036ca84ff150c6179de162b8ad1005"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TY2A01",
+      "items": [
+        "sha256:f95ab92f15267464d4a1bec90bad6d0b3b3fc7ea79dfe6eb54cff1b5c462a92a"
+      ],
+      "reason": "Deletion of one line: the fixed hold time is gone; the holder now waits on its stdin.",
+      "subject": "hunk:sha256:f95ab92f15267464d4a1bec90bad6d0b3b3fc7ea79dfe6eb54cff1b5c462a92a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VABSGS",
+      "items": [
+        "sha256:554e8e670d5f345ea00f61bda92710f8ece0a7f6a72408e6ff0d6786bd65f017"
+      ],
+      "reason": "Reviewed: the branch-file fallback logs its OSError and still falls back to git; the card's movement account is unchanged.",
+      "sources": [
+        {
+          "blob": "a2864ce07e1bc61868867d5f6520ab6a85482c27",
+          "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_external_git_movement.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WH1ECA",
+      "items": [
+        "sha256:15916c3b28788241e1b1a7c2fae94852e959fa4305e5bb85036ad20cc739fbed"
+      ],
+      "reason": "Insertion of nine lines: the observer yields the first native batch, waits until the test releases it, then forwards the rest.",
+      "subject": "hunk:sha256:15916c3b28788241e1b1a7c2fae94852e959fa4305e5bb85036ad20cc739fbed"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WZQY9P",
+      "items": [
+        "sha256:aedb551dea6655e8b73d778f1e713c7a7eb9b0a8adf6a9cb0cb10de204a9292d"
+      ],
+      "reason": "Deletion of forty-nine lines: _index_inputs, _whole_review, _reviewed_comparison and _listed_comparison moved verbatim to _review_answer_helpers.py; the owning module imports them.",
+      "subject": "hunk:sha256:aedb551dea6655e8b73d778f1e713c7a7eb9b0a8adf6a9cb0cb10de204a9292d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y5ZVDW",
+      "items": [
+        "sha256:038e7e1f0d34a08d7bd69b0f31c0ae2d994b3bcd87cde008d49311423a91da26"
+      ],
+      "reason": "Deletion of one line: leaf_generation_root moved to _review_answer_helpers.py and is imported from there.",
+      "subject": "hunk:sha256:038e7e1f0d34a08d7bd69b0f31c0ae2d994b3bcd87cde008d49311423a91da26"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y7TES7",
+      "items": [
+        "sha256:dd38c0da5ff2e65e8a24310acc5ce7be55ba05bcfe9976b7e4de8952681961bb"
+      ],
+      "reason": "Insertion of one line: the observer replaces the readiness condition's wait without changing its behaviour.",
+      "subject": "hunk:sha256:dd38c0da5ff2e65e8a24310acc5ce7be55ba05bcfe9976b7e4de8952681961bb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YDZ0XA",
+      "items": [
+        "sha256:e584ca50bb1870952a3893a8dbe62316ad5853a3cd3ded8321dc7ecc77012399"
+      ],
+      "reason": "Reviewed: the file gains a debug log on its existing refusal and recapture paths; ComparisonInputWitness still decides as its card says.",
+      "sources": [
+        {
+          "blob": "60eb0084dcb099002c709f6e71ee291de8f1f9c1",
+          "path": "mcp/src/agents_remember/application/review_comparison_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_comparison_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YEDMPJ",
+      "items": [
+        "sha256:ed8b00547f0ce18ac510e60ccda56f873ee5c4e10342fc91d59b31a882db4313"
+      ],
+      "reason": "Modification: teardown only cancels a watcher that was started; the runner may be None.",
+      "subject": "hunk:sha256:ed8b00547f0ce18ac510e60ccda56f873ee5c4e10342fc91d59b31a882db4313"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YM91P5",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "Reviewed: the testing route account still holds; the census gained the two rows the file card now names.",
+      "sources": [
+        {
+          "blob": "b3f8eb5812526cca0a67ceaa7d0f7155294f13fb",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+            "content": "sha256:498e2230f4d0d1d9a2420f201e088c673584d734cc100d95b232a93823637131",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+            },
+            "path": "mcp/tests/test_held_reset_delivery.py"
+          },
+          "before": {
+            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "content": "sha256:3bec52de2587cc21d4b76576f8ed25ea7d0c220759bc7cd682ef2d7a63987f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pass_overlaps_distinct_recipients_and_stays_at_the_pool_bound"
+            },
+            "path": "mcp/tests/test_held_reset_delivery.py"
+          },
+          "id": "PRF-V1F1TS"
+        },
+        {
+          "after": {
+            "blob": "7e6e01951a0b577ed8ae2095c56799a08e806175",
+            "content": "sha256:1e293258715d9f8277b2153b87be1fde7e3bd4e2d54e23fd741c18c54899605d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldResetDeliveryTests.test_an_indexed_wait_survives_a_new_scheduler_and_is_retired_after_ack"
+            },
+            "path": "mcp/tests/test_held_reset_delivery.py"
+          },
+          "before": {
+            "blob": "186f7510e2be16ed3a3e3883dc0d4a4f5efd3774",
+            "content": "sha256:1e293258715d9f8277b2153b87be1fde7e3bd4e2d54e23fd741c18c54899605d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldResetDeliveryTests.test_an_indexed_wait_survives_a_new_scheduler_and_is_retired_after_ack"
+            },
+            "path": "mcp/tests/test_held_reset_delivery.py"
+          },
+          "id": "PRF-VSR0RJ"
+        },
+        {
+          "after": {
+            "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+            "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "note_held_receipt"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "before": {
+            "blob": "62ddc6a89f3db5fa8fc8924d81489360224fbec6",
+            "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "note_held_receipt"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "id": "RLZ-57SV7G"
+        },
+        {
+          "after": {
+            "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+            "content": "sha256:daeb6f6d09d0aa60d68fa610156348f9060ccdbe9776e07e48a49965ba431326",
+            "locator": {
+              "kind": "symbol",
+              "name": "drain_reset_entry"
+            },
+            "path": "mcp/src/agents_remember/cli/held_reset_delivery.py"
+          },
+          "before": {
+            "blob": "9e3bd986acbd30a3aa412aad2428b3ed63a65e6c",
+            "content": "sha256:daeb6f6d09d0aa60d68fa610156348f9060ccdbe9776e07e48a49965ba431326",
+            "locator": {
+              "kind": "symbol",
+              "name": "drain_reset_entry"
+            },
+            "path": "mcp/src/agents_remember/cli/held_reset_delivery.py"
+          },
+          "id": "RLZ-TVX5BM"
+        },
+        {
+          "after": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:563d3dadbdb2eb2b399769faecf0c4a9b7682af5fb15fdf957949367bb45c926",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_due_pass"
+            },
+            "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+          },
+          "before": {
+            "blob": "df830f82f80638614a8d3e852d375ca9c14e0799",
+            "content": "sha256:563d3dadbdb2eb2b399769faecf0c4a9b7682af5fb15fdf957949367bb45c926",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_due_pass"
+            },
+            "path": "mcp/src/agents_remember/serving/held_reset_scheduler.py"
+          },
+          "id": "RLZ-W8H49A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YWG55Z",
+      "items": [
+        "sha256:d1d3ca60a677bb395b64e7bd32677ef0fe2bd64034c27b7729eb34dd717ac8f2"
+      ],
+      "reason": "Examined PRF-V1F1TS: the delivery pass keeps the pool bound and the barrier now shares the hang guard; the bounded post-reset delivery rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-6NJ5ZH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YX3C2Y",
+      "items": [
+        "sha256:8fff0f442ca55bd2575fd959b739b052c23a40c194f8ddd3c8f804093b26647e"
+      ],
+      "reason": "Modification of three lines in both replan waits: a fixed 0.05 s park becomes a wait for the second plan decision, bounded by the hang guard.",
+      "subject": "hunk:sha256:8fff0f442ca55bd2575fd959b739b052c23a40c194f8ddd3c8f804093b26647e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZB5PRC",
+      "items": [
+        "sha256:0eafd6afabdcc44d4b5b8421222761ec628b38d4014dac5bf24e64d918873305"
+      ],
+      "reason": "Insertion of two lines: os and select support the lock-contention observer.",
+      "subject": "hunk:sha256:0eafd6afabdcc44d4b5b8421222761ec628b38d4014dac5bf24e64d918873305"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZNX0HN",
+      "items": [
+        "sha256:3a2bfd8cf46681ac837067f64fef0d5b7daff4a49d5bb6c7083025c35190276b"
+      ],
+      "reason": "Insertion of one line: the standard-library logging import the module logger needs.",
+      "subject": "hunk:sha256:3a2bfd8cf46681ac837067f64fef0d5b7daff4a49d5bb6c7083025c35190276b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZRHXJ4",
+      "items": [
+        "sha256:82adeeedd6a7bbf8bcf42892e973c35000bb2975ca9d883737e4b95956dab572"
+      ],
+      "reason": "Added the debug-log sentence and its evidence row for unretained and dropped answers.",
+      "sources": [
+        {
+          "blob": "694424fbc6d2ec72cfaaeed77034785bd8fcfceb",
+          "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/review_answer_reuse.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZTAM4H",
+      "items": [
+        "sha256:34b01262d25adbd84509488faf58d74675c5ac1b58418061e5eda9a72f647ca3"
+      ],
+      "reason": "Modification: the memory-recheck guard now calls the logging helper; the same refusal still makes the witness return False.",
+      "subject": "hunk:sha256:34b01262d25adbd84509488faf58d74675c5ac1b58418061e5eda9a72f647ca3"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:90a6ea2b7bfbdb493c87787929a98ffb575a533b13e298a081f4f52a80f693d6",
+      "record": "DPD-78737N",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-28T12:49:19+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:ca1a3616fa5ee9a3e7879a44d3d0621ce26c6188e4d0dde3cf1f03c45a3a85d8",
+      "record": "DPD-78737N",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-28T13:37:28+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:c43561e31ad5bd13f607a09b590bc8d9a51535c5be75163a20bb827290992731",
+      "record": "DPD-9K25G8",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-28T12:24:22+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:d50838b4bec20d95fa2406b30ff4b867702ffed1f7a9c5c3c5b13fab3b5a52d1",
+      "record": "DPD-9K25G8",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-28T13:37:28+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:73a04de58c4dbfd325f583cb37b8fde7c47164079f0c311c0ce80717036479d1",
+      "record": "DPD-ZT8YY7",
+      "revision": 47,
+      "writer": {
+        "at": "2026-11-28T12:49:19+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:1f34617b55d1046cf25552ff22405753a9d8a683d18bce8b112e5ea8c6330d47",
+      "record": "DPD-ZT8YY7",
+      "revision": 49,
+      "writer": {
+        "at": "2026-11-28T13:37:28+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:e7a2caf18305971d06caa1eaf1e767846a8e0581e34b9283d11cdeb13c1608b7",
+      "record": "INV-7AAS8F",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-28T12:24:22+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:e6656e5230bbf60c4c6db43cb0ea2f3a5b02559a15091b5db2d84a1a8a0e5cc8",
+      "record": "WKN-AVZ1GA",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-28T13:37:28+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L30",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "c2e93ba2-7616-50f5-b76c-2c7406e66551",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    }
+  ]
+}

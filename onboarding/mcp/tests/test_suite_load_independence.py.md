@@ -21,7 +21,8 @@ allowed, and the shared waits owner is excluded from the repository sweep.
 
 The process-state scanner detects empty module collections, `global` declarations, supported
 cache decorators and assignments to known class attributes, resolving import aliases where those
-patterns use them. Its exact discovered set must match the register with no duplicates or stale rows.
+patterns use them. Its empty-collection vocabulary includes the `OpenObservations` and `PageReads`
+owners. Its exact discovered set must match the register with no duplicates or stale rows.
 The syntactic scan is deliberately bounded: it does not discover every mutation, alias or dynamic
 state allocation, and a reasoned marker is an explicit exception rather than a runtime proof.
 

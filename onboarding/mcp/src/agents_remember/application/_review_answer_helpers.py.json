@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/_review_answer_helpers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helpers resolve a recorded comparison's inputs, keys and answer predicates without state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d2c33e28c7e3e3e86757491d81fd1e4895fc2a",
+            "content": "sha256:67620bf2cf8f6ae2db76429e14361892db5a42695a04b08e79acab86423e70a5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

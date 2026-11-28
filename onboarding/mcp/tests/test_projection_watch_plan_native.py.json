@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
+        "blob": "42477f9a7d9b8ddeca7beaaf8d7e284e612bae8a",
         "content": "sha256:d9be33bea8acc1019715b3278354546442b7aba46e81bb73afad7a3859972610",
         "locator": {
           "kind": "symbol",
@@ -19,14 +19,33 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "42477f9a7d9b8ddeca7beaaf8d7e284e612bae8a",
+        "content": "sha256:8fa6b40a43c2e23f981092572f45902ebdef3a0d97ec87fa171fdcf75b261fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReplanEvent"
+        }
+      },
+      "id": "RLZ-H833WX",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The event records the watch's second wait, so the test waits for the re-plan it needs rather than for a fixed interval.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The watch plan parks on the real condition and registers no synthetic early signal, so the inputs it names are the ones the watcher reports",
       "targets": [
         {
           "anchor": {
-            "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
+            "blob": "42477f9a7d9b8ddeca7beaaf8d7e284e612bae8a",
             "content": "sha256:a774858599333555a062eebeb8e767eb46489b045030f279a57446960c88af84",
             "locator": {
               "kind": "symbol",

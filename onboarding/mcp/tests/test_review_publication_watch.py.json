@@ -1,17 +1,37 @@
 {
   "path": "mcp/tests/test_review_publication_watch.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a514b50abecd0d608eebf01730a18b765937efd",
+        "content": "sha256:a8b94ff83352e2dda569e999b925708ad2266a628193d4f4fb1a5c9cd6da0f98",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_arming"
+        }
+      },
+      "id": "RLZ-WFCEDC",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The wait is for the native watch to arm, and each wait uses a fresh stream, so no event is drained or slept away before the assertion.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "A saved-page publication reaches a connected reader without recursive task watching",
       "targets": [
         {
           "anchor": {
-            "blob": "ce7d0b60fa0d30ebcc90cf99f16e1617453f02ae",
-            "content": "sha256:9ba8a17ead529eb7b8445e233d1064b6f96c2e7e50a6963be62514bdcd5087e6",
+            "blob": "9a514b50abecd0d608eebf01730a18b765937efd",
+            "content": "sha256:254219e2bd25c2ad2d76dd447762919e5caf52b5189962e2f0b38e4e2939fffd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_future_frame_and_ready_replacement_are_observed_and_worker_reaped"
+              "end": 107,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "test"

@@ -36,14 +36,16 @@
       ]
     },
     "8": {
-      "note": "The source regression queues a genuine native edit during registration and asserts distinct baseline/update events.\n\nAnchor: `test_change_during_registration_is_not_swallowed_by_baseline`",
+      "note": "The source regression queues a genuine native edit during registration and asserts distinct baseline/update events.",
       "targets": [
         {
           "anchor": {
-            "blob": "7affd86e47174aeb76d681ea7caf92ee25b61e02",
-            "content": "sha256:1129013437fecf202674aa5569134ba8798c05f2601600f7b1c2d7d5ab6a67e7",
+            "blob": "0610f7084563d993c933f5f5a126e166ddfddd1d",
+            "content": "sha256:3e53ac6a8e2f312c03682e4b38507063232a625a40ee4a9de842ed23cda12676",
             "locator": {
-              "kind": "file"
+              "end": 195,
+              "kind": "line_range",
+              "start": 163
             },
             "path": "mcp/tests/test_review_memory_watch.py"
           },
@@ -52,14 +54,16 @@
       ]
     },
     "9": {
-      "note": "The source HTTP-disconnect regression requires worker exit before serving shutdown.\n\nAnchor: `test_real_http_disconnect_retires_native_watch_before_server_shutdown`",
+      "note": "The source HTTP-disconnect regression requires worker exit before serving shutdown.",
       "targets": [
         {
           "anchor": {
-            "blob": "7affd86e47174aeb76d681ea7caf92ee25b61e02",
-            "content": "sha256:1129013437fecf202674aa5569134ba8798c05f2601600f7b1c2d7d5ab6a67e7",
+            "blob": "0610f7084563d993c933f5f5a126e166ddfddd1d",
+            "content": "sha256:849cc6455cb559e77adb3e2f8f1c9c3e6a54ed96a0df3f11567e9a5c5b664885",
             "locator": {
-              "kind": "file"
+              "end": 513,
+              "kind": "line_range",
+              "start": 454
             },
             "path": "mcp/tests/test_review_memory_watch.py"
           },

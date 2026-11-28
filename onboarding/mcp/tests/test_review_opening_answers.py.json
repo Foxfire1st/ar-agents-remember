@@ -1,13 +1,51 @@
 {
   "path": "mcp/tests/test_review_opening_answers.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6d244914f14e62caca2edd404b77dbc98e40f41b",
+        "content": "sha256:accfc459a02b0a7d1ca5a052106d68235042bba80a605b2927cd08e1d594ff44",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_detail_read_reuses_warm_repository_layouts_without_cold_git_discovery"
+        }
+      },
+      "facet": "A first detail read reuses the warmed repository layouts instead of discovering them cold.",
+      "id": "PRF-HAHTEK",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6d244914f14e62caca2edd404b77dbc98e40f41b",
+        "content": "sha256:9a3ea174aff61eab4e307acd6f1f71849d021e29b3d517adedb52fd2ff2bcc4b",
+        "locator": {
+          "kind": "symbol",
+          "name": "opened"
+        }
+      },
+      "id": "RLZ-A0TM5C",
+      "invariant": "INV-7AAS8F",
+      "origin": {
+        "handoffEntry": "BUG-R30@v1",
+        "leaf": "261112-BUG-L30"
+      },
+      "rationale": "The fixture now unbinds the product's first-open producer, owns the build token and releases the build only after the page joins that exact flight; this is where the opening nodes' shared cause lived and where the repair is enforced.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The build computes exactly what the page opens with, and the page reads all of it",
       "targets": [
         {
           "anchor": {
-            "blob": "ce78cb50347b744caeca7c9da9f2961be97ae63d",
+            "blob": "6d244914f14e62caca2edd404b77dbc98e40f41b",
             "content": "sha256:0bc9ff9b27ee2fbf140e668023cf1b91ccda9cd07e6ae1deb58131652c724496",
             "locator": {
               "kind": "symbol",
