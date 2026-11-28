@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
+            "blob": "23172839ccb8409c0149f5e5d870c2145820206a",
             "content": "sha256:09ddf7997e7441f52d855ad48ef90df41fc343122a77b4d00054467b218e6505",
             "locator": {
               "kind": "symbol",
@@ -87,12 +87,12 @@
       ]
     },
     "5": {
-      "note": "Test source preserves unrelated same-label prose and requested-vs-observed destination.\n\nAnchor: `test_host_default_successor_model_is_observed_without_losing_requested_provenance`",
+      "note": "Test source preserves unrelated same-label prose and requested-vs-observed destination.",
       "targets": [
         {
           "anchor": {
-            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
-            "content": "sha256:6f5f239f1f87086f445b7f9172f69fa82ee1ac768715b07b4f7515fc77982635",
+            "blob": "23172839ccb8409c0149f5e5d870c2145820206a",
+            "content": "sha256:0ca97e3fda5f08a9c54f2f90a90af3220bdcd473daa1932fd1faf8da5f1ed4bc",
             "locator": {
               "kind": "file"
             },

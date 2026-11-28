@@ -46,7 +46,9 @@ No configured external Domain Documentation source governs this repository-owned
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
+
 - Full/targeted inputs and diagnostic-only CRAP threshold [1]
+
 - Evidence paths separated from policy arguments [2]
 
 ### Cross-Repo References

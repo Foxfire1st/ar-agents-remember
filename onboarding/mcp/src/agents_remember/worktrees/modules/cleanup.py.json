@@ -201,8 +201,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
-            "content": "sha256:d5159f063f2f98ec01bef3fd5b281f84c45c8e1788408fdf8c714117bb10aa95",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
+            "content": "sha256:fbdc0993337cde839297b6294f1b9ee42cf6c1a613fd9cbd50bbcdf4f44b9e20",
             "locator": {
               "kind": "symbol",
               "name": "amend_contract"
@@ -298,8 +298,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
-            "content": "sha256:d5159f063f2f98ec01bef3fd5b281f84c45c8e1788408fdf8c714117bb10aa95",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
+            "content": "sha256:fbdc0993337cde839297b6294f1b9ee42cf6c1a613fd9cbd50bbcdf4f44b9e20",
             "locator": {
               "kind": "symbol",
               "name": "amend_contract"
@@ -438,7 +438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea71527a9b6b80a5e74d755a85faecd50cdf1e8c",
+            "blob": "21a6ca6536be67c71cdb6a819a9124cc0b76a7db",
             "content": "sha256:3777083fe6e327eb6a60e84791e88233774c55272932bbfe0568cf59e67b072e",
             "locator": {
               "kind": "symbol",

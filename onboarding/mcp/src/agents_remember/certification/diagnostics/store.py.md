@@ -56,7 +56,9 @@ No Domain Documentation source is configured for this memory root. CCR-R13@v2 (f
 - The store revalidates the frozen records defined in the diagnostics models. [4]
 
 
+
 - The run controller publishes attempt and terminal results exclusively through this store. [5]
+
 
 
 

@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:c62ba313ec8e1897c8d6c6a9aac87c79e09e0cd21032d209030964a9a2c9aeaa",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:78334e01841f3edf7966468e2fc130757a77aa97da9d16493a05166347a87698",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:8a42883742de5bb67811b56bd75ca2056b7f40e55427162b5f9bb007effca913",
             "locator": {
               "kind": "symbol",
@@ -78,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:c4d00ddb632af514dd84a2a1df82481bbc8b8a9d9495b9766b7a923f86662a9e",
             "locator": {
-              "end": 547,
+              "end": 548,
               "kind": "line_range",
-              "start": 540
+              "start": 541
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -91,12 +91,12 @@
         },
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:97baf7cb74933938fd44dff425ea36a1ba3a56a4886eecc5bf01021e3eb82fda",
             "locator": {
-              "end": 555,
+              "end": 556,
               "kind": "line_range",
-              "start": 550
+              "start": 551
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

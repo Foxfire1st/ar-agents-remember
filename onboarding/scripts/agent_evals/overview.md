@@ -30,5 +30,8 @@ Start with `run_curator.py` and `trials.py` for a concrete command, `trial_setup
 
 - Disposable setup binds host, actor state, source authority and native repositories before actor launch. [2]
 
+
 - Captures and grades retain explicit evidence identities and semantic unknowns. [3]
+
+
 - Accounting and regrading retain observed attempts and separate tooling checks from measurement results. [4]

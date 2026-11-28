@@ -53,7 +53,9 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
+
 - `_reconciled_closeout_record` reconciles actual mutations and derives their two recovery commit cells. [2]
+
 - `_cancellable_closeout_facts` combines protected-output and private-preparation facts for cancellation. [3]
 
 The source file is the direct evidence for this file-specific ownership boundary.

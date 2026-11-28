@@ -126,5 +126,8 @@ No meaningful cross-repo references found.
 
 - The shared runner defines the timeout bands and default. Git fact probes choose and pass their own timeout values. \[8] [8]
 
+
 - Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. [1]
+
+
 - The shared Git runner applies caller-selected bounds and isolated repository environment. [5]

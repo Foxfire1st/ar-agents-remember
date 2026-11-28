@@ -75,7 +75,9 @@ No Domain Documentation source is configured for this memory root; the governing
 CCR-R09@v3 requirement packet and the 260831-CCR-L27 successor repair manifest, recorded in the
 leaf task and Update History below.
 
+
 - The vocabulary must project one typed readiness semantics with no entry point translating red or unavailable facts into pass/skip/generic failure. [1]
+
 
 ### Repo-Internal References
 

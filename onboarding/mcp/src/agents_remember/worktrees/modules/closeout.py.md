@@ -220,7 +220,7 @@ pytest subprocess. This is intentionally different from ordinary `commit_if_dirt
 stages and honors hooks for memory and other non-certified commits.
 
 **Why stage at all.** Every rail of the wrapper reads the index: `derive_scope` lists what ruff and
-pyright are given with `git ls-files`, and `diff_coverage` diffs the base against the tracked tree.
+Pyrefly are given with `git ls-files`, and `diff_coverage` diffs the base against the tracked tree.
 Closeout commits with `git add -A`, so until it staged first, any file the task **created** — as
 opposed to edited — went into the commit without a single rail reading a line of it, and the gate
 reported green having never seen it. Leaf 3's `abc7cbcc` shipped four files that way. The index cut
@@ -300,7 +300,7 @@ always has.
 - The end-of-closeout contract write splits in two: `amend_contract(replace(contract, <free-text
   commits, notes and strategies>), ContractCells(human_review_status="approved",
   closeout_status="completed", integration_status=..., cleanup=...))`. The four vocabulary cells go
-  through the typed record so pyright checks them; `replace` carries only the fields that have no
+  through the typed record so Pyrefly checks them; `replace` carries only the fields that have no
   vocabulary to be checked against. The reopen logic itself is unchanged.
 
 The successful closed result appends any no-pass sentence from the memory closeout outcome.
@@ -628,7 +628,9 @@ On converted memory three places of this module ask the mandatory invariant gate
 - Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. A stored-gate refusal names STORED_GATE_WAY_OUT and no gate_list or other deciding tool; inherited nextTool/nextArgs/nextRequiredArgs are removed, while the preview retains its coded blocker and summary; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority. [38]
 
 
+
 - `ContractCells` and `amend_contract` define the contract-cell amendment API.  Anchor: `ContractCells` [19]
+
 
 - Registered calls keep the daily call record independently of closeout publication. [36]
 

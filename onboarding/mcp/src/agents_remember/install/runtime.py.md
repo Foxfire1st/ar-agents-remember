@@ -13,7 +13,9 @@ The current source facts below are the operative account. Original paragraphs, e
 - Every accepted install removes the three retired coordinator startup files. [19]
 
 
+
 - The install result carries the MCP settings copy outcome. [20]
+
 
 
 - Whole-file exclusive transfer precedes old-file removal; permission closure and its OSError report follow it. [12]

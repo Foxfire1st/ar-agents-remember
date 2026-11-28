@@ -10,7 +10,7 @@ The repository's fast pre-commit tier entry. It hands the `fast` tier to `.githo
 
 ## Code Commentary
 
-The header records the measured cost on a clean checkout at moderate load: about 134 seconds cold and 134 seconds warm. Pyright dominates at about 123 seconds; the concurrent dashboard rail falls from about 71 seconds cold to about 4 seconds warm and overlaps Pyright. The peak combined resident set is about 3.75 GiB cold and 3.60 GiB warm. The script resolves its own directory and executes `_gate.sh fast` with that one argument; it performs no check itself and keeps no state.
+The header records the measured cost on a clean checkout: about 11.4 seconds cold and 10.8 seconds warm. Pyrefly completes the full pass in about 1.8 seconds (down from about 198 seconds under Pyright), and the concurrent dashboard rail runs in parallel. The peak combined resident set is about 1.09 GiB cold and 0.95 GiB warm. The script resolves its own directory and executes `_gate.sh fast` with that one argument; it performs no check itself and keeps no state.
 
 ## Relationships
 
@@ -19,4 +19,5 @@ The header records the measured cost on a clean checkout at moderate load: about
 ## Evidence
 
 - The hook executes the fast tier over the staged content and its header states the measured cold and warm times and peak combined RSS. [1]
+
 - The fast tier is the shared hook body's `run_fast_checks`, which the landing and sync commit checks invoke. [2]

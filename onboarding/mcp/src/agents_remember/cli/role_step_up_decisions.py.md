@@ -26,4 +26,5 @@ This is launch metadata published by the canonical task owner, not evidence that
 - Test source exercises failed/lost decision acknowledgment, deduplication and receipt loss. [4]
 
 
+
 - Test source preserves unrelated same-label prose and requested-vs-observed destination. [5]

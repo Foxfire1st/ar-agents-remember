@@ -6,14 +6,14 @@
     ],
     "justification": "Proved by PyrightScopeConfigurationTests and prevents bare Pyright runs from scanning nested mcp/.venv or dashboard/node_modules for hours or matching tracked .dagger/ Python files in [tool.pyright] exclude."
   },
-  "applicability": "Root pyproject.toml [tool.pyright] configuration for bare Pyright and editor runs across the checkout.",
+  "applicability": "Root pyproject.toml [tool.pyrefly] configuration for bare Pyrefly and editor runs across the checkout.",
   "conditions": [
-    "include remains [\".\"] so the checkout's tracked Python files stay in scope.",
-    "Every exclude entry uses a depth-independent **/ pattern and matches zero tracked Python files from git ls-files '*.py'."
+    "project-includes remains [\".\", \".dagger\"] with disable-project-excludes-heuristics = true so tracked Python files including .dagger/ stay in scope.",
+    "Every project-excludes entry uses a depth-independent **/ pattern and matches zero tracked Python files from git ls-files '*.py'."
   ],
   "exclusions": [
-    "Blanket dot-folder patterns such as .* or **/.* in [tool.pyright] exclude, because tracked Python files live under .dagger/ (Pyright 1.1.414+'s own default dot-folder exclude applies independently).",
-    "Explicit file-list command-line invocations in .githooks/_gate.sh and quality_plan.py, which replace include while still applying exclude."
+    "Blanket dot-folder patterns such as .* or **/.* in [tool.pyrefly] project-excludes, because tracked Python files live under .dagger/.",
+    "Explicit file-list command-line invocations in .githooks/_gate.sh and quality_plan.py, which pass --force-exclude against the same project-excludes list."
   ],
   "id": "INV-EQMWCB",
   "origin": {
@@ -28,20 +28,20 @@
     "leaf": "261112-BUG-L49",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Root pyproject.toml [tool.pyright] excludes virtual environments, dependency trees, build outputs, and caches at any depth without a blanket dot-folder pattern so [tool.pyright] exclude matches zero tracked Python files (including .dagger/) and validate_quality_config keeps passing.",
+  "statement": "Root pyproject.toml [tool.pyrefly] sets project-includes = [\".\", \".dagger\"] and disable-project-excludes-heuristics = true while excluding virtual environments, dependency trees, build outputs, and caches at any depth without a blanket dot-folder pattern so [tool.pyrefly] project-excludes matches zero tracked Python files (including .dagger/) and validate_quality_config keeps passing.",
   "supersedes": [],
-  "title": "Root [tool.pyright] excludes nested environments and keeps tracked Python",
+  "title": "Root [tool.pyrefly] excludes nested environments and keeps tracked Python",
   "writer": {
-    "at": "2026-11-26T10:37:02+01:00",
+    "at": "2026-11-28T03:29:43+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L49",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
-    "task": "261112-BUG"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

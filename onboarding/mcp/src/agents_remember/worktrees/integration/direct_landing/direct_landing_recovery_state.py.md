@@ -73,7 +73,9 @@ the current working-candidate behavior; historical entries below retain their or
 - Prepared and committed intent convergence retain exact ref/tree checks. [3]
 - Shared snapshots exclude cache data while retaining actual objects. [4]
 
+
 - Recovery tests reject code/ref/content drift and accept cache absence or damage. [5]
+
 
 
 ### Cross-Repo References

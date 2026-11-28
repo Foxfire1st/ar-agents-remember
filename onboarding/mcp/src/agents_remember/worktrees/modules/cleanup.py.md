@@ -219,7 +219,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 - `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. [11]
 
+
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [12]
+
 
 > Retained earlier citation wording: - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [17]
 
@@ -294,7 +296,9 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 `cleanup_result` is now a thin wrapper that returns `with_outside_scratch_reconcile(_cleanup_result(args), dry_run=args.dry_run)`, so every run also sweeps the product parent and carries `outsideScratchReconcile` on the payload when the sweep removed or reported a root. `terminal_group.py` includes `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` under the `outside_scratch` key on both leaf and series paths, removing the recorded root and reporting `would_remove` on preview. `_already_completed_cleanup` takes `dry_run` and delegates residue reclamation to `retry_terminal_group`; any remaining blocker (task folder, live seat, checkout, or outside scratch root) returns return code 2 with state `blocked`, summary "Cleanup is already recorded but its task resources could not be removed.", `directories`, `blockers`, and optional `agentArchive` or `outsideScratch`. After the completed contract is published and read back, `_publish_cleanup` calls `write_completion_record(contract, updated, operation="worktree_cleanup")`, the completion evidence a successor's sweep reads in place of the contract the group takes away.
 
+
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [17]
+
 
 
 

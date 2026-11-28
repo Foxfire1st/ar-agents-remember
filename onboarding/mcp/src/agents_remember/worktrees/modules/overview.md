@@ -204,7 +204,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Focused worktree tests exercise the facade and operation payloads. [21]
 
+
 - Historical MIK-R38 reference account, not the current R55.9 permission: the earlier tests included standalone success. Current missing-master/row cases assert refusal before any write; no test execution is inferred here. [22]
+
 
 
 

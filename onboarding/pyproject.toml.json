@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
-        "content": "sha256:825106d5478be11877b9146fad40d29c577e0236e0dd951ddcd2fe4d99c8a59c",
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
+        "content": "sha256:008118c11012ad848e7e7939f0b59c1cfc5f6506296e15c5ccd9d151dff13c44",
         "locator": {
-          "end": 61,
+          "end": 63,
           "kind": "line_range",
           "start": 48
         }
@@ -17,13 +17,13 @@
         "handoffEntry": "BUG-R49@v1 §2",
         "leaf": "261112-BUG-L49"
       },
-      "rationale": "Keeps [tool.pyright] exclude disjoint from all tracked Python paths so explicit CLI file lists from .githooks/_gate.sh and quality_plan.py drop zero tracked files due to pyproject.toml exclude.",
+      "rationale": "Keeps [tool.pyrefly] project-excludes disjoint from all tracked Python paths (with project-includes = [\".\", \".dagger\"] and disable-project-excludes-heuristics = true) so explicit --force-exclude CLI file lists from .githooks/_gate.sh and quality_plan.py drop zero tracked files.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
-        "content": "sha256:2d0f6dbdbaf4abb0114b7ceca77a4e51ac320645e9bf18620a0311a7963fde84",
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
+        "content": "sha256:f07a3ba9cee17b720f70bc5892678231981209f3fb15cc27dc7c73dcb244fd47",
         "locator": {
           "kind": "file"
         }
@@ -39,10 +39,29 @@
     },
     {
       "anchor": {
-        "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
-        "content": "sha256:c52effc4e6649046105dc941380599b927ba77733716afbde79ddd981773f69a",
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
+        "content": "sha256:9c98c2a1a32b5b7e8126acbe8e95104fc3d6a70961930e6721469aa23f06f6fc",
         "locator": {
-          "end": 61,
+          "end": 102,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-J8BDZ5",
+      "invariant": "INV-Y212FN",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §1",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Declares the sole repository [tool.pyrefly] configuration replacing [tool.pyright], mapping project-includes (including .dagger), explicit project-excludes disjoint from tracked Python files, search-path for all execution environments, basic-level inference settings, global override rules, and the four per-path model_construct sub-configs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
+        "content": "sha256:93d34e96490d4e9d8dde4d690e35d76d047ddf18232fa4ec484e3112a53547f1",
+        "locator": {
+          "end": 63,
           "kind": "line_range",
           "start": 43
         }
@@ -53,17 +72,17 @@
         "handoffEntry": "BUG-R49@v1 §1",
         "leaf": "261112-BUG-L49"
       },
-      "rationale": "Declares the [tool.pyright] scope comment (noting Pyright's independent default dot-folder exclude), include=['.'], and nested **/ exclude patterns while omitting blanket dot-folder patterns so [tool.pyright] exclude matches zero tracked Python files including .dagger/.",
+      "rationale": "Declares [tool.pyrefly] with project-includes = [\".\", \".dagger\"], disable-project-excludes-heuristics = true, and twelve nested **/ project-excludes patterns without blanket dot-folder patterns so project-excludes matches zero tracked Python files including .dagger/.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
         "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
         "locator": {
-          "end": 340,
+          "end": 371,
           "kind": "line_range",
-          "start": 340
+          "start": 371
         }
       },
       "id": "RLZ-WMQ90H",
@@ -77,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
         "content": "sha256:491f64c08426768394069607b3be0fb9b7d786a7920b9f6f8f01cd6b8d1cf425",
         "locator": {
-          "end": 339,
+          "end": 370,
           "kind": "line_range",
-          "start": 339
+          "start": 370
         }
       },
       "id": "RLZ-YH43T3",
@@ -93,6 +112,25 @@
       },
       "rationale": "The root declares the current unit selected-case ceiling of10000; the adjacent dated raise preserves the historical decision without replacing the declaration.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
+        "content": "sha256:168478cc5c8cf55e8a986fda39158b85568d38aab21c78de2db09f49aefb6611",
+        "locator": {
+          "end": 102,
+          "kind": "line_range",
+          "start": 77
+        }
+      },
+      "id": "RLZ-ZNG478",
+      "invariant": "INV-R3NNHK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §2",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Pins the only repository-level error-code disables (bad-override-mutable-attribute, bad-override-param-name) and the four per-path missing-argument sub-configs for model_construct partial-fixture test files.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -101,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:3f785072c8662339c2ce7645dfdaa60c854a628ac37c2c86b1e0efa4ab3e7162",
             "locator": {
               "end": 42,
@@ -118,48 +156,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
             "locator": {
-              "end": 127,
+              "end": 158,
               "kind": "line_range",
-              "start": 127
+              "start": 158
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:81b16cca85b0b25e4e7e136558f566f01f0171aafbc8a615cab157dbcc6ef180",
             "locator": {
-              "end": 256,
+              "end": 287,
               "kind": "line_range",
-              "start": 256
+              "start": 287
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
             "locator": {
-              "end": 305,
+              "end": 336,
               "kind": "line_range",
-              "start": 284
+              "start": 315
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:dd5577851fe3fe9c37895c6012bac452dccdd62d9ae4ee4be581195e6f85d39d",
             "locator": {
-              "end": 372,
+              "end": 403,
               "kind": "line_range",
-              "start": 365
+              "start": 396
             }
           },
           "kind": "code"
@@ -171,12 +209,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 339
+              "start": 370
             }
           },
           "kind": "code"
@@ -188,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 326
+              "start": 357
             }
           },
           "kind": "code"
@@ -201,14 +239,14 @@
       ]
     },
     "2": {
-      "note": "Type-checker scope, depth-independent environment/cache exclusions (avoiding blanket dot-folder rules because tracked Python lives under `.dagger/`, while noting Pyright's independent default dot-folder exclude), and import environments.\n\nAnchor: `[tool.pyright]`",
+      "note": "Pyrefly scope (`project-includes = [\".\", \".dagger\"]`, `disable-project-excludes-heuristics = true`), depth-independent environment/cache exclusions disjoint from tracked Python, `search-path`, basic-level inference settings with `unbound-name` enabled, and four per-path `model_construct` sub-configs.\n\nAnchor: `[tool.pyrefly]`",
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
-            "content": "sha256:f4b724ec87d2093bf206e92a1aafcf83cb964109bf0d76948979b0e8ae4c1cf0",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
+            "content": "sha256:9c98c2a1a32b5b7e8126acbe8e95104fc3d6a70961930e6721469aa23f06f6fc",
             "locator": {
-              "end": 71,
+              "end": 102,
               "kind": "line_range",
               "start": 43
             }
@@ -222,12 +260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:0b7752e4ab285b8c7ade467fb41317d79db47b5b60bd546f4a38f1032a5c6a53",
             "locator": {
-              "end": 94,
+              "end": 125,
               "kind": "line_range",
-              "start": 73
+              "start": 104
             }
           },
           "kind": "code"
@@ -239,12 +277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:1f442416c90f39b61a1a4bb12cf74370eb23b32e31060fec454ec836aa198973",
             "locator": {
-              "end": 125,
+              "end": 156,
               "kind": "line_range",
-              "start": 96
+              "start": 127
             }
           },
           "kind": "code"
@@ -256,12 +294,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
             "locator": {
-              "end": 127,
+              "end": 158,
               "kind": "line_range",
-              "start": 127
+              "start": 158
             }
           },
           "kind": "code"
@@ -273,12 +311,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:331472d306f84d398f4d71b5d60885acb789c82768c86b21862a6110a7745f4c",
             "locator": {
-              "end": 340,
+              "end": 371,
               "kind": "line_range",
-              "start": 127
+              "start": 158
             }
           },
           "kind": "code"
@@ -290,12 +328,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:3c474735527fc75e1b5d70fe5af5f6575b5f9ed4cfce0e11f930dd6eeb1978d8",
             "locator": {
-              "end": 208,
+              "end": 239,
               "kind": "line_range",
-              "start": 194
+              "start": 225
             }
           },
           "kind": "code"
@@ -307,12 +345,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:48767497e5fb0fa14513f5c759a89e3fd2492913705a6b01f3e3304c6e9f352f",
             "locator": {
-              "end": 249,
+              "end": 280,
               "kind": "line_range",
-              "start": 221
+              "start": 252
             }
           },
           "kind": "code"
@@ -324,12 +362,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:d5bb04ae02b170c0f8e9b8906f1cc58f832a292ddc281709514a9062a0f86314",
             "locator": {
-              "end": 392,
+              "end": 423,
               "kind": "line_range",
-              "start": 392
+              "start": 423
             }
           },
           "kind": "code"

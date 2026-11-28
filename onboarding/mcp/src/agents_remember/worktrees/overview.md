@@ -351,7 +351,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Retained continuation validates the staged merge against both recorded parents. [110]
 - The closeout validator and landing routes use their respective knowledge gate entry points. [61]
+
 - Direct landing keeps and settles its history closing per generation. [62]
+
 - The worktree helper names the leaf's line when it reports a cutover refusal. [66]
 
 - Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]

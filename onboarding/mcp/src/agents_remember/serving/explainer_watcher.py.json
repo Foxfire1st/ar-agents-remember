@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+        "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
         "content": "sha256:3a958740f2b496e18948e735ee18666dea0164240a389475d993318356934c11",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+        "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
         "content": "sha256:0f3046fae84a5c4dd17044830ef3b2ca5dc95c660762c890a95e453ef322d2aa",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
-        "content": "sha256:a8f640825d54ddc4a97ae7b582b73bb6788f53737463055e420415a7fd48f504",
+        "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
+        "content": "sha256:6935feac8041763e5d1977cd29e39872b5910d0711022bd5274398a44cff3604",
         "locator": {
           "kind": "symbol",
           "name": "leaf_seats"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+        "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
         "content": "sha256:2c7fdde139d4d033b119c11886d1163c708c8851610d5c618955008e8c4deb7d",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+        "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
         "content": "sha256:560d87c63b501aaadeccefe91bad9a3ef4730187bcf5669e7b88c8540d818b83",
         "locator": {
           "kind": "symbol",
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
             "content": "sha256:883f0507d022e253d0234a6623872ac6876caf5bda7938c63090357b8852812c",
             "locator": {
               "end": 328,
@@ -115,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
             "content": "sha256:560d87c63b501aaadeccefe91bad9a3ef4730187bcf5669e7b88c8540d818b83",
             "locator": {
               "end": 648,
@@ -132,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
             "content": "sha256:e7a6f04090ae284310738915bed4d084db0377faea6c65c13e1a0245955c1a2a",
             "locator": {
               "end": 698,
@@ -149,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
             "content": "sha256:75f71c92320597b00dc7a07454e193497afef7c9fbdf2f2ce1ed547b425b8a08",
             "locator": {
               "end": 542,
@@ -166,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
             "content": "sha256:2c7fdde139d4d033b119c11886d1163c708c8851610d5c618955008e8c4deb7d",
             "locator": {
               "end": 909,
@@ -179,12 +179,12 @@
       ]
     },
     "6": {
-      "note": "Seat discovery lists watched leaves' own folders rather than walking the task tree\n\nAnchor: `def leaf_seats(`",
+      "note": "Seat discovery lists watched leaves' own folders rather than walking the task tree",
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
-            "content": "sha256:a8f640825d54ddc4a97ae7b582b73bb6788f53737463055e420415a7fd48f504",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
+            "content": "sha256:f69276a6d67522a5063a01de556060de9c8d9b6a27f760453fef58b65743e222",
             "locator": {
               "end": 1167,
               "kind": "line_range",
@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cf7008b2b215ecbf1e7d652827078c07e80c88",
+            "blob": "650359ea3471433f1c3c5e62278eeea45f144c12",
             "content": "sha256:2c7fdde139d4d033b119c11886d1163c708c8851610d5c618955008e8c4deb7d",
             "locator": {
               "kind": "symbol",

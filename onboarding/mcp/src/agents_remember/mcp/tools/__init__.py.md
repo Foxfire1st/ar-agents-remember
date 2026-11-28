@@ -83,7 +83,7 @@ reachable from the same boundary as the publication's.
   and `PUBLIC_TOOLS` define that public surface.
 - `_tool_payload` is re-exported with `from .base import _tool_payload as
   _tool_payload` so the conformance test's `tools._tool_payload` attribute
-  access resolves and Ruff/Pyright treat it as an intentional re-export.
+  access resolves and Ruff/Pyrefly treat it as an intentional re-export.
 
 ### Role Runtime and Scope
 

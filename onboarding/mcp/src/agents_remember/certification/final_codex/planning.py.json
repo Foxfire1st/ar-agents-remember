@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "397da6f6ac539bb3ac13cb07bb94a89aa3d7aa48",
-            "content": "sha256:93b72421e6fb94a55699fb9fb435cdb6537bb062c916a8e6a6759a696abd2cea",
+            "blob": "043b0f5a294914b3a6ceef233d75b056134ca46f",
+            "content": "sha256:b2a07d69064ca32756ad4ebca18161a1ddc5239ad2ac3df5acebecb71462f46f",
             "locator": {
               "kind": "symbol",
               "name": "compile_final_codex_plan_record"
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68eaba832a9f4dc8c2c8f44dab07864807affaa5",
+            "blob": "5665ede7d10b3501cc568c99b8234479c3cbbe04",
             "content": "sha256:9f15389a1fe945e412a282a6e8b734884ef1ebb6a9b96e71cbdd755d83f9b2a6",
             "locator": {
               "kind": "symbol",

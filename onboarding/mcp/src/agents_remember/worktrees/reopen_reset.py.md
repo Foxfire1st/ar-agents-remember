@@ -14,4 +14,5 @@ The owner restores a reopened leaf's candidate state from its recorded base so a
 
 ## Evidence
 
+
 - The file realizes its current contract at the corrected candidate. [1]

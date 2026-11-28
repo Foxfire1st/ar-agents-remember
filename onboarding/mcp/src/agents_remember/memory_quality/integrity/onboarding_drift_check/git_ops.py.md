@@ -29,4 +29,5 @@ Git subprocesses still cannot consume MCP stdio transport input, but the guarant
 
 ### Repo-Internal References
 
+
 - The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup. [3]

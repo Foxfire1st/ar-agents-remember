@@ -38,7 +38,7 @@ check.py; they do not duplicate scope logic.
 ### Ordered plan
 
 quality_steps constructs one ordered rail list from CheckConfig. The fixed source rails are Ruff,
-Ruff format, Pyright, file size, layering, and durable evidence lifecycle validation, with causal
+Ruff format, Pyrefly, file size, layering, and durable evidence lifecycle validation, with causal
 preflight when requested. Radon CC and MI are explicitly report-only. Pytest is last so earlier
 source failures cannot be hidden behind suite output.
 
@@ -80,7 +80,9 @@ None. This behavior is repository-owned.
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
+
 - Immutable inputs and no coverage-floor setting [1]
+
 
 - Ordered fixed checks and pytest plan [2]
 - Admitted exact selection and coverage arguments [3]

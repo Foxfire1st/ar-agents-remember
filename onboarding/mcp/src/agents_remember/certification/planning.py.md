@@ -47,9 +47,13 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - Compilation rejects invalid registries and binds every selected gate to the exact candidate. [1]
+
 - External plans are authorized only by byte-equivalent canonical reconstruction. [2]
+
 - Each gate plan includes all earlier profile gates as barriers plus deterministic rails and waves. [3]
+
 - Compiled rails preserve ownership, authority, applicability, evidence, dependency, and artifact contracts. [4]
 
 ### Cross-Repo References

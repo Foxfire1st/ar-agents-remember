@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "17c064d81db68c239ef23b6b5db4a497df3e553e",
-    "commit": "2e09518f0610cfc33b5773b40f8c83f2243380a3",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "Verified docs/reference/worktrees-c09.md against 17c064d8: worktree lifecycle, closeout, integration, and cleanup contracts remain accurate after KNO-R05@v3.",
-    "task": "261112-KNO-L5",
+    "statement": "Audited docs/reference/worktrees-c09.md at post-sync code tree 0b0419690d12: touched stands_on files (closeout.py, direct_landing.py, direct_landing_execution.py, knowledge_gate.py, landing.py, cleanup.py, application/knowledge_gate/landing.py) received only behavior-preserving typing adjustments for Pyrefly 1.5.0; worktree/closeout rules remain accurate.",
+    "task": "261125-DEP-L8",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -169,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+        "blob": "bbb1a4961a2a8061215547e5911b36278115ab75",
         "content": "sha256:1dc6f2f24e5bab62fc6c0e7867ad5b32ddcf8beab9f504b32c1e843967994deb",
         "locator": {
           "kind": "symbol",
@@ -269,7 +269,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
     },
     {
-      "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+      "blob": "1984ff1fb0dbee4c610262f9906fb75e37f74d7b",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
     },
@@ -290,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-27T06:21:49+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L5",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9912e621-bf86-5308-9af5-d32e5077e25a",
-    "task": "261112-KNO"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

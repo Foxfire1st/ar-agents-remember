@@ -23,7 +23,14 @@ Owns checked preview, evidence/message/tool-call move-out, and whole-folder remo
 
 ## Evidence
 
+
 - `preview_group_removal` dispatches legacy series groups, checks recursive directory permission blockers (including any leftover `provider-runtime` tree), and combines outside-scratch and dry-run move-out checks. [1]
+
+
 - `remove_terminal_group` collects reports and tool calls, removes outside scratch and report locators, and removes the whole `worktree_group` directly via `filesystem.remove_tree`. [2]
+
+
 - `_group_observation` guards against symlinked parents, non-directory paths, the repo's shared worktree root, and unwritable parents, reporting `already-absent` when missing. [3]
+
+
 - `prepare_terminal_group` sequences removal preview, terminal agent archiving/blocker checks, and live move-out into a `GroupPreparation` result. [4]

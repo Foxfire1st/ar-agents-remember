@@ -205,9 +205,15 @@ No configured domain documentation could be checked.
 - - The tool returns the latest worklist. [63]
 - - A converted tree's page carries `currentness` at the walk's code tree, computed once per page beside its proofs. [64]
 
+
 - A named tree flags the stale invariant and keeps it visible. [65]
+
+
 - Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable. [66]
+
+
 - A failing step never refuses the view. [67]
+
 
 
 

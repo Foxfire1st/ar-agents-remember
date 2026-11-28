@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "blob": "3c4821576a911e4eb0b0e6f6c1a09a21b99a5fb9",
             "content": "sha256:73fecf2fcaf885a255c5ab6e1ebdcad92e6ebb0d91d811a54adc62fcb59796c1",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "blob": "3c4821576a911e4eb0b0e6f6c1a09a21b99a5fb9",
             "content": "sha256:b1306db7754608d08bb78f7fffb745b93549b97e8ec4768f2952dc768f35d366",
             "locator": {
               "kind": "symbol",
@@ -147,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "blob": "3c4821576a911e4eb0b0e6f6c1a09a21b99a5fb9",
             "content": "sha256:e113360aa383773e104c0fd9091ff426ff29e6f141dd2ea2cf97855cee996d57",
             "locator": {
               "kind": "symbol",
@@ -164,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
-            "content": "sha256:3d2e12e7b138b8fac08c42c152e6769bf679496a0cb3ea7c112ca9743b4c68c4",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
+            "content": "sha256:86758b18db8c79d08d86621a6e03aea9d92bbcda4206c4eacc3f9e9acbf0e951",
             "locator": {
               "kind": "symbol",
               "name": "_attempt_record"
@@ -176,8 +176,8 @@
         },
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
-            "content": "sha256:b2ccf95e060006fd7d34540883975fb404bd7d78f69e74d78f98bc7be62dfc37",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
+            "content": "sha256:0aab0a54706c1f2f8c99190d5061c440fed4f6c93a6fa121fc6f7def5a8e8f87",
             "locator": {
               "kind": "symbol",
               "name": "_draft"

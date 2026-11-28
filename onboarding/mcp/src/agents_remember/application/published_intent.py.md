@@ -182,7 +182,9 @@ No configured domain documentation could be checked.
 - **MIK-R01: an index that is not the selected tree's is a named seed failure.** [16]
 - **MIK-R05: a path seed's `registration_absent` refusal carries its route chain.** [19]
 
+
 - The published-intent case: the resolved committed tree, captured dirty working tree (`codeState=working-tree`), `treeScope`, and no resolved tree. [22]
+
 
 - **A page from a partial index is never presented as complete.** [23]
 
@@ -240,5 +242,6 @@ No meaningful cross-repo references found.
 - The refusal and item shapes this route renders without re-spelling. [37]
 
 - Selection derives its external index from a converted directory without editing the memory. [50]
+
 
 - Published intent delegates its source pair to the held code-tree owner. That owner uses the shared Git runner for the HEAD tree and checkout status before it selects the commit tree or captures a dirty worktree. [34]

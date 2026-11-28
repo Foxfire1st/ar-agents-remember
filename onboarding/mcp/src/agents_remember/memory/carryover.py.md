@@ -88,7 +88,9 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
+
 - Candidate comparison and explicit review selection. [1]
+
 
 - Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes selected candidates into the open recovery leaf without committing; closeout commits the judged tree. [2]
 

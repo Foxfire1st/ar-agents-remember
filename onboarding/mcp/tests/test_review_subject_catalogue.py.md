@@ -36,4 +36,5 @@ a withdrawal disclosure, not a current assertion or a renamed guarantee.
 - The retained family test is renamed and now asserts present, nonempty statement operands on both sides of the recorded joint guarantee. [17]
 - Catalogue loading installs raising guards on both comparison bindings and then lists entries. This is negative coverage against entering comparison, not a performed comparison. [14]
 
+
 - RowStore writes text-tree fixture content and rebuilds its dataset through build_index, without the retired production admission plane or direct index-table inserts. [16]

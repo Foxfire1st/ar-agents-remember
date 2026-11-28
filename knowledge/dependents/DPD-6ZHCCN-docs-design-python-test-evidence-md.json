@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56daf6642402898075d164df4e26178499116006",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "docs/design/python-test-evidence.md remains accurate on synced base 65911c75 / candidate 56daf664 because L33's Dagger runner-environment and dropped-selector changes in clean_executor.py and gate.py leave the CertifyingTestEvidence authority boundary and enforcing function owners unchanged.",
-    "task": "261112-BUG-L33",
+    "statement": "Audited docs/design/python-test-evidence.md at post-sync code tree 0b0419690d12: touched stands_on files (quality/gate.py, code_quality/quality_plan.py) switched the Gate-1 typecheck step to Pyrefly without altering enforcing-rail semantics or test-evidence authority; all claims remain accurate.",
+    "task": "261125-DEP-L8",
     "uncommitted": true
   },
   "document": "docs/design/python-test-evidence.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+      "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
     },
@@ -77,14 +77,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:39:05+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

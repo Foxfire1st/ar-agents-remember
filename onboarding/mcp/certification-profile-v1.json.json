@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
-        "content": "sha256:a828c59946627f996e006a9d91b62e0905c4b66ea0629d2881a2e2e5579330fe",
+        "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+        "content": "sha256:201776107b419205bdccae70cba28319b7e3eeaed354ae1009109c832b2c7be1",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
-        "content": "sha256:a828c59946627f996e006a9d91b62e0905c4b66ea0629d2881a2e2e5579330fe",
+        "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+        "content": "sha256:201776107b419205bdccae70cba28319b7e3eeaed354ae1009109c832b2c7be1",
         "locator": {
           "kind": "file"
         }
@@ -34,6 +34,23 @@
       },
       "rationale": "The shipped rail list is where a rail exists or does not: `rails` declares each `identity.railId` with its gate, artifacts and execution adapter, and `provider-runtime-integration` is no longer among them. This is the readable declaration of the retirement, at a path the memory writer accepts.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+        "content": "sha256:201776107b419205bdccae70cba28319b7e3eeaed354ae1009109c832b2c7be1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VY12CQ",
+      "invariant": "INV-8B9XTK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §3",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Replaces the Gate-1 pyright rail with the neutral python-typecheck rail running Pyrefly and refreshes lockDigest, toolchainDigest, runtimeDigest, and profileDigest.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -42,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
             "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
             "locator": {
               "end": 34,
@@ -59,8 +76,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
-            "content": "sha256:0266388258b99258c637377d61608f9037534fb37bc3451ab94e91c19c6afe5c",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+            "content": "sha256:d8141564dd1540b88a68774c3dd43cbb38c240117cde299fd0938f382a7bc9f3",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -76,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
-            "content": "sha256:63b6fff9be82127cf16c77ac0ce0033ab33ec0f6f7f5626b9e3eeaa25cb01615",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+            "content": "sha256:2aba773a95c2c56a107438c1f04f32ae78af026c926d60be1ecedb6d663c2ca6",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -93,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
-            "content": "sha256:db184c36e3c8755a38fbe31e8e2112568c357833bfb47bc8041492df3f52b4f8",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+            "content": "sha256:f42e45e65c96cc54a994e02ad8e1df14e9f7d08e825f27c99ba90560c380c953",
             "locator": {
               "end": 528,
               "kind": "line_range",
@@ -110,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
-            "content": "sha256:4218a7eb4a43e1687045cc2f07b4e748286c12fa8be5c5c76e4311fbd2cb8379",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
+            "content": "sha256:70780cfab95e5a1e66b29d2824dbc6cdd04d1b760de72287d04466b40ddad645",
             "locator": {
-              "end": 3261,
+              "end": 3263,
               "kind": "line_range",
-              "start": 2659
+              "start": 2661
             }
           },
           "kind": "code"
@@ -127,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
             "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
             "locator": {
-              "end": 3262,
+              "end": 3264,
               "kind": "line_range",
-              "start": 3262
+              "start": 3264
             }
           },
           "kind": "code"
@@ -144,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
             "content": "sha256:cedc8b41b5a7c649564198b11581c36de8c8b488bfdda0e173395a34244cae35",
             "locator": {
               "end": 111,
@@ -161,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+            "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
             "content": "sha256:ca64002ece853249f4343852bcbf757afdeee5e334b8d20ed0e417e43dd793fe",
             "locator": {
               "end": 1485,

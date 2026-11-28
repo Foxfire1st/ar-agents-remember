@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:b3a3593be8e3bc8d6ca55cbdc2e87ae8ac7b4d4480cfba11c8562abe6f17f233",
             "locator": {
-              "end": 324,
+              "end": 323,
               "kind": "line_range",
-              "start": 317
+              "start": 316
             },
             "path": ".githooks/_gate.sh"
           },
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
             "content": "sha256:d1239c912abee5456ba73fdd307891463ec886dcfb5f2ed325957ba7114f2ab8",
             "locator": {
-              "end": 201,
+              "end": 203,
               "kind": "line_range",
-              "start": 193
+              "start": 195
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
           },

@@ -83,7 +83,9 @@ The following source-backed definitions and producer seams retain the broader re
 
 
 
+
 - WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing. [134]
+
 
 
 
@@ -104,7 +106,9 @@ The following source-backed definitions and producer seams retain the broader re
 
 - **Retained historical source account — superseded by the current contract:** The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains. Anchor: `_project_terminal_contract_status` [141]
 
+
 - **Retained historical source account — superseded by the current contract:** The wire-vocabulary module retains its R10 doctrine docstring; this range is doctrine text, not proof that any executor ran. [142]
+
 
 
 - **Retained historical source account — superseded by the current contract:** RecoveryOperation is a separate guidance recovery vocabulary, not the context-facing NextOperation alias. [143]

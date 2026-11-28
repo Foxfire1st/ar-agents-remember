@@ -76,8 +76,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c161a418d730c73c197cf147883a87948d97f8e0",
-            "content": "sha256:248d1aae20300d5167d7bf66fc2191b16fc2f4f3bb410e7524fb8b402426a89f",
+            "blob": "23172839ccb8409c0149f5e5d870c2145820206a",
+            "content": "sha256:056abeb8ad6c8099df0b9c9ac8dbed2134b9b4cce01593aa71d0de689c34b50d",
             "locator": {
               "kind": "symbol",
               "name": "test_unreadable_review_launches_base_with_warning"

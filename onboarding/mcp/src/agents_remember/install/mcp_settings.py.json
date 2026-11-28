@@ -124,12 +124,12 @@
       ]
     },
     "6": {
-      "note": "The install result carries the copy report.\n\nAnchor: `\"copy_mcp_settings\"` (or `` `install_runtime_from_config` ``)",
+      "note": "The install result carries the copy report.",
       "targets": [
         {
           "anchor": {
-            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
-            "content": "sha256:e2520405fa74b6f276a3af0653398460cc3f2b32870af00a006231309fd8a67a",
+            "blob": "81d0835e29e069f9ba1dc94ec0249b30ecee232a",
+            "content": "sha256:f45243c77133dc164ca5b7e08b2b56183a9adf5b7d8741e16f2253224c21128b",
             "locator": {
               "end": 722,
               "kind": "line_range",

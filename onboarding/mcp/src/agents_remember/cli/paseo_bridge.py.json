@@ -216,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
             "content": "sha256:33870b954aab173b125241809fd916b0f653e3897b25cc46e3c3fde5de239196",
             "locator": {
               "kind": "symbol",
@@ -233,8 +233,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
-            "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
+            "content": "sha256:82342e3701ede4a47bc9859fd14c1e792d1dc5ff0c363fac4b55de067ec11210",
             "locator": {
               "kind": "symbol",
               "name": "test_unconfigured_or_never_started_runtime_refuses_before_any_process"
@@ -250,12 +250,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "blob": "d8b06bc9d325f167827e664cbfff1fcb1e23d2f2",
             "content": "sha256:3b8af58ec78e297588eec4751d1b8fec24f819da57cbf06628ff2d25a642eefd",
             "locator": {
-              "end": 682,
+              "end": 685,
               "kind": "line_range",
-              "start": 575
+              "start": 578
             },
             "path": "mcp/tests/test_paseo_bridge.py"
           },

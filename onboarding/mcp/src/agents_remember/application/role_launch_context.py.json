@@ -268,8 +268,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
-            "content": "sha256:a19b473c50720880480268ef37eefc789f2eba7e4b3f0943c6fe21c25d2c6550",
+            "blob": "2b5a1b0cda1b430e64756ce5aaa3403ba1edcadd",
+            "content": "sha256:726eca0a2eedab6f9784e2c2d0ef0bca7da79d3dd1369ec234710e993d6677f4",
             "locator": {
               "kind": "symbol",
               "name": "test_bootstrap_is_a_launcher_role_with_no_document_and_no_parent"
@@ -280,7 +280,7 @@
         },
         {
           "anchor": {
-            "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
+            "blob": "2b5a1b0cda1b430e64756ce5aaa3403ba1edcadd",
             "content": "sha256:9cb44c2a72c48d01b91466132b1293139dc1f96e1767d85357504566e6e24b7e",
             "locator": {
               "kind": "symbol",

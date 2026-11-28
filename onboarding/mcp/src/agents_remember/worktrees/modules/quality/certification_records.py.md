@@ -49,7 +49,9 @@ External domain documentation is not configured.
 
 - Freeze the complete profile and registered memory authority before Gate 1. [1]
 - Admission persistence preserves the stored admission provenance. [2]
+
 - Published candidate and complete profile plan must agree before recording. [3]
+
 - The selected journal is bounded and validated before atomic replacement. [4]
 - Result and certificate publication reopens nested evidence and original objects. [5]
 - Map a terminal gate catalog into typed rail results (payload-bound). [6]

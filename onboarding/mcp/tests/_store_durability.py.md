@@ -58,4 +58,5 @@ The exact source declarations below establish the current behavior; this invento
 
 No separate cross-repository authority is established by this file.
 
+
 - An append opportunity is a real held-lock refusal on the correct inode or a completed write. [7]

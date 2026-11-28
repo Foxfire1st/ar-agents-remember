@@ -37,7 +37,9 @@ None.
 
 The approved CCR-R14@v3 requirement packet and the leaf doc 14_final-real-codex-certification govern this module; task-artifact paths are not repo-relative citations, so clauses are recorded as prose here.
 
+
 - The plan record compiles only from the exact canonical registry compilation for a certifying profile planning the Gate-1..4 prefix. [1]
+
 
 ### Repo-Internal References
 

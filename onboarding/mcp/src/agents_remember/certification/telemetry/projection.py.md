@@ -62,7 +62,9 @@ citations, so this fact is recorded as prose here.
 
 ### Repo-Internal References
 
+
 - The fold turns the durable event stream into one lossless boundary/gate projection. [1]
+
 - The projection model is digest-bound and requires exactly five gates. [2]
 - Per-gate fold branches reconstruct rail history, catalogs, certificate decisions, blocking, and invalidation from events alone. [3]
 - Gate history for one gate is exposed without a full-stream fold. [4]

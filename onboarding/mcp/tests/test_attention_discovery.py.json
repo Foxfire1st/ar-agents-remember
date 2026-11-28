@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7a9e878e1d2e8a8b1aea5a07d9ccfb54ba3f47d4",
-        "content": "sha256:b9bc10d327b9189e6774f94ef72afa584d789c191f0dbc37998527c4ae577fda",
+        "blob": "093b9cfb9cc6c673c2a0f2d80fc6b63f6b4028c2",
+        "content": "sha256:fb1114d08fc302ea7935591583a67b2be762421aa5ea833ad33526768cfb3f77",
         "locator": {
           "kind": "symbol",
           "name": "test_held_discovery_shares_one_entry_allowance_at_two_sizes"
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a9e878e1d2e8a8b1aea5a07d9ccfb54ba3f47d4",
-        "content": "sha256:b3a14634966776bb754f02f22dff1e2a18de5fa549d8ac4cd095888f0ac0e403",
+        "blob": "093b9cfb9cc6c673c2a0f2d80fc6b63f6b4028c2",
+        "content": "sha256:aa1c6eaae38f6e02b82e8555b1e923cf58439a3685f4c0679ee18cb4f7a41e59",
         "locator": {
           "kind": "file"
         }

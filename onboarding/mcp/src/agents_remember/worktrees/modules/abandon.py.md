@@ -77,7 +77,7 @@ is unchanged.
   causes a subsequent `start` call to recreate rather than reattach. `"abandoned"` is a member of
   `worktree_contract.CleanupStatus`, and the write must go through `ContractCells` /
   `amend_contract` — no `replace` call here may carry a `cleanup=` keyword, because typeshed's
-  `**changes: Any` means pyright would check nothing.
+  `**changes: Any` means Pyrefly would check nothing.
 - The docstring points at the `l-01-agent-lifecycles` skill's
   read-only/abandon exit as the lifecycle entry that drives this operation.
 
@@ -183,7 +183,9 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 
 - Successful abandon and exact terminal replay retain terminal atomic-series release in their admitted paths. The outer wrapper reconciles outside scratch and attaches a successful ancestry-based landed-work observation. Anchor: `abandon_result` [1]
 
+
 - The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
 
 - The current module exposes `abandon_result` at this ownership boundary.  Anchor: `abandon_result` [12]
 

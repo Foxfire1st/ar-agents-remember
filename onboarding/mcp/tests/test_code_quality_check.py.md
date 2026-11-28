@@ -39,7 +39,9 @@ No configured domain evidence applies to the file-local claims above.
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 - Run git. [1]
+
 - Write sample repository. [2]
+
 
 ### Cross-Repo References
 

@@ -73,7 +73,11 @@ registry/rail/wave primitives come from `certification/models.py` and `certifica
 (the earlier R11 foundation), and graph validation from `repository_profiles/validation.py`.
 
 - Exact one-selection resolution with typed missing/ambiguous findings. [1]
+
 - Compile exact Gates 1-4 without claiming the framework-owned Gate 5. [2]
+
+
 - Gate compilation binds applicable rails, artifacts and semantic inputs. [3]
+
 - Plan admission refuses bytes that differ from the sole canonical compilation. [4]
 - Render an exact journal selection after full original-object and artifact readback. [5]

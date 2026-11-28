@@ -54,7 +54,9 @@ directly before falling back to a standalone bridge call outside the scope.
 
 - Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values. [4]
 
+
 - Checks absent settings or home server-id start no process. [5]
+
 
 - Exercises different/missing connected server identity and named refusal with reconnect disabled. [6]
 

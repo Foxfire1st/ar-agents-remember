@@ -199,12 +199,12 @@
       ]
     },
     "5": {
-      "note": "Lost-receipt recovery and clean reuse are exercised with real temporary repositories.\n\nAnchor: `_recover_after_interrupted_receipt` `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
+      "note": "Lost-receipt recovery and clean reuse are exercised with real temporary repositories.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
-            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
+            "blob": "5f309a954c1d0f772ebe361f91741b0c53b4ef35",
+            "content": "sha256:3c4282ac90ff35468ba8f4d98c0698e6a019df79b677980deaae0ad16efb2d54",
             "locator": {
               "kind": "file"
             },

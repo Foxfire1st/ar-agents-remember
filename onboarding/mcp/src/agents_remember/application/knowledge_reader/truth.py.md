@@ -103,7 +103,9 @@ No additional work is asserted by this card.
 
 - The facet projection removes legacy stored state words and keeps kind-specific lifecycle values. [14]
 - Family member summaries receive indexed revision state and writer alongside code currentness. [15]
+
 - The record list returns summaries by kind with indexed state and writer. [6]
+
 
 ### Docs References
 
@@ -128,7 +130,9 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - Outgoing links, or the reason they could not be read (F11). Anchor: `_outgoing` `_links_of` [4]
+
 
 
 - MIK-R20's census report; an unknown census by membership. [7]

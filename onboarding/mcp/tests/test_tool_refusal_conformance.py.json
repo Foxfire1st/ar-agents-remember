@@ -99,7 +99,7 @@
       ]
     },
     "14": {
-      "note": "The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes.\n\nAnchor: source",
+      "note": "The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes.",
       "targets": [
         {
           "anchor": {
@@ -140,8 +140,8 @@
         },
         {
           "anchor": {
-            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:e5a0d4ef00333378854ac4e5ddf5b4da92eaeb8354c47cff3dfe1b0337b37539",
+            "blob": "2959895bcaa7731db7b61a82a290094350cefb15",
+            "content": "sha256:ef647cb7b2d8c8b1e5dd05f77cc3117ff171f63f8b010c832b2eaa711a92e283",
             "locator": {
               "end": 129,
               "kind": "line_range",

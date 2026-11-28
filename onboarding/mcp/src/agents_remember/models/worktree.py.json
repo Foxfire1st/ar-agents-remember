@@ -649,7 +649,7 @@
       ]
     },
     "134": {
-      "note": "WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing.\n\nAnchor: `LANDING_KEPT_KEYS`; `WorktreeStatusResponse`; `_replace_operation_status`; `test_registered_status_keeps_retired_history_and_direct_landing_controls`",
+      "note": "WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing.",
       "targets": [
         {
           "anchor": {
@@ -685,8 +685,8 @@
         },
         {
           "anchor": {
-            "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
-            "content": "sha256:6a86cdbd5161f0e53900a23d532161675711182505821de57a00e4f218e1f889",
+            "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
+            "content": "sha256:602fc0cfece2831b0fec39c494cc833cd449ace9cc3acc878ea371b4d17171bc",
             "locator": {
               "kind": "file"
             },
@@ -825,12 +825,12 @@
       ]
     },
     "142": {
-      "note": "The wire-vocabulary module retains its R10 doctrine docstring; this range is doctrine text, not proof that any executor ran.\n\nAnchor: `source range`",
+      "note": "**Retained historical source account — superseded by the current contract:** The wire-vocabulary module retains its R10 doctrine docstring; this range is doctrine text, not proof that any executor ran.",
       "targets": [
         {
           "anchor": {
-            "blob": "15c68f6a8e19769232a26cff91782bfb3ac84c78",
-            "content": "sha256:2f13579b34140256663a2880060eb60f856ef02e03a1199d0846414eeefbec90",
+            "blob": "48266d467bccfa32bf6be116e3c57ef0813fedef",
+            "content": "sha256:71b70c57f546963691696dffdf16ae0dc13a273596f4d71c4d204411694944ee",
             "locator": {
               "end": 92,
               "kind": "line_range",
@@ -1206,7 +1206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:a8c59dd9cd49221e6fcb1c78bb77c70a87f29c79ec148a35487848dbfbe550f5",
             "locator": {
               "end": 81,

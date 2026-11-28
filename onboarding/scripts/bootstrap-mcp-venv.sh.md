@@ -68,7 +68,9 @@ No external source is required for the repository-owned bootstrap sequence.
 
 
 
+
 - Hook environment selection retains its separate local-then-shared policy and probes minor-line runtime and quality imports before selection. [4]
+
 
 
 

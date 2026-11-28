@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-        "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+        "blob": "8523622c29830697532e04aa8a2449229bde4575",
+        "content": "sha256:4d050d5cc7c3f6e452dca86a37f05c4b68e9f8761eb62d3ee820751fb86adae7",
         "locator": {
           "kind": "symbol",
           "name": "strict_leaf_doc"
@@ -22,12 +22,12 @@
   ],
   "references": {
     "10": {
-      "note": "The lookup inside a nested recording, and the rows it replays to the caller.\n\nAnchor: `strict_leaf_doc`",
+      "note": "The lookup inside a nested recording, and the rows it replays to the caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "11": {
-      "note": "Every JSON file of the folder is read; a broken file that names the leaf is collected.\n\nAnchor: `_unreadable_claims`",
+      "note": "Every JSON file of the folder is read; a broken file that names the leaf is collected.",
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:d03ff7754fdb4e0ea88666ceb7d348e0aff60c9d3bf5932f56eb38a0e4dfac6c",
             "locator": {
               "kind": "file"
             }
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
             "content": "sha256:329403bb2284b09fd60023f9ac15b24f680ea165054166fcbb67930a1edc513d",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
             "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
             "locator": {
               "kind": "symbol",
@@ -138,8 +138,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
-            "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
+            "content": "sha256:7c9efee4157d810766180640290499424be59fdb33f2d2270efbf2b78efe019b",
             "locator": {
               "end": 86,
               "kind": "line_range",
@@ -155,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "blob": "8523622c29830697532e04aa8a2449229bde4575",
             "content": "sha256:6c6eed5cd59a5acbab521b55ccf23cc26f352d62fde96281210a51fecf21706e",
             "locator": {
               "end": 29,

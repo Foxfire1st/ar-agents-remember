@@ -255,12 +255,12 @@
         },
         {
           "anchor": {
-            "blob": "a90988dd7c752913513e1b9ce2eb199cc091f0fc",
+            "blob": "8a2e7bdd5741cfa0145d123c23599a5f9074ca14",
             "content": "sha256:41d917281ef64a736a8b3ef1ceaf0572229be114e57aa359a9e859b894acd9e0",
             "locator": {
-              "end": 443,
+              "end": 446,
               "kind": "line_range",
-              "start": 405
+              "start": 408
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },

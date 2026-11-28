@@ -91,8 +91,12 @@ No configured live documentation source was available for this pass.
 
 
 - The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. [10]
+
 - Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable. [11]
+
+
 - A failing step degrades to a reason and never refuses the read. [12]
+
 
 
 ### Cross-Repo References

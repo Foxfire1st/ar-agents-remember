@@ -38,7 +38,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Bridge derives one canonical five gate authority from the real profile. [1]
+
 - Bridge admit currentness reread accepts and refuses movement. [2]
 
 ### Cross-Repo References

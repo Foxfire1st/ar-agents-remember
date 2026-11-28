@@ -191,7 +191,9 @@ repository sources below, not a source registry or a copied code comment as inde
 - The family badge maps the shared guarantee onto badge words [17]
 - Member intent and membership are the shared facts directly [18]
 - The shared intent, presence and wording functions decide revision, retired-presence and same-revision authored-text changes. [19]
+
 - Family enrichment returns the context untouched without trees/entries; opened-lane failures mark returned family/member facts unknown, not a dataset-review mode. [2]
+
 - The shared intent, presence and wording functions decide revision, retired-presence and same-revision authored-text changes. [20]
 - The shared intent, presence and wording functions decide revision, retired-presence and same-revision authored-text changes. [21]
 - Shared Fact retains established/unknown/not_established states and prioritizes unresolved reasons from non-establishing entries. [3]

@@ -86,7 +86,9 @@ No configured live documentation source was available for this pass.
 - No task owner: every question refused with the reason. [5]
 
 
+
 - The strict leaf-document lookup it reuses (L11). [6]
+
 
 
 - The task owner's tool entry point.

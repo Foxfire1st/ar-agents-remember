@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
+            "blob": "6ae29e92abcd7bcd49d823ae09c14f2d47324f42",
             "content": "sha256:8630c8805d8080430c06fd321008cf2923ef4ae5b36f3e64bb268c28284200cf",
             "locator": {
               "kind": "symbol",
@@ -118,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
+            "blob": "6ae29e92abcd7bcd49d823ae09c14f2d47324f42",
             "content": "sha256:b2ac5179f6916e246edeb14e99b23765dcef0a00365de10b9d5824267c9f7125",
             "locator": {
               "end": 458,
@@ -131,8 +131,8 @@
         },
         {
           "anchor": {
-            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
-            "content": "sha256:864e6b889911eed86e6243fd3e5a2981aa29873e1adee8c3377ced5b153af3a1",
+            "blob": "6ae29e92abcd7bcd49d823ae09c14f2d47324f42",
+            "content": "sha256:2ab613b8f69efd56319eabfe7d0a682d374e6e260c6cab1e3a88ed890ba4d5d3",
             "locator": {
               "kind": "file"
             },
@@ -147,12 +147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e023be295e4e2a4abeead2f42f49a53c88f36a7",
+            "blob": "12df9eb6ff6f77f6562e679634a7e61591789d15",
             "content": "sha256:79c0d59db6d93b68aa53b2669223d644641ccdc0b40cf63850058ea3bf9c96cb",
             "locator": {
-              "end": 284,
+              "end": 315,
               "kind": "line_range",
-              "start": 284
+              "start": 315
             },
             "path": "pyproject.toml"
           },
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57ad82a42e3ebc4aad6f63acead602fdeb9e2282",
+            "blob": "314dc07a7b0145de29c6c580489828b6f8bc9d9e",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",

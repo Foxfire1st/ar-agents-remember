@@ -25,7 +25,7 @@
 
 ### Conventions
 
-- `CodeTree` is a `Protocol` with `label`, `has_file` and `has_directory`, so tests pass a literal `CodePathSet`. Any future structural implementation must add `has_directory`; pyright catches the omission.
+- `CodeTree` is a `Protocol` with `label`, `has_file` and `has_directory`, so tests pass a literal `CodePathSet`. Any future structural implementation must add `has_directory`; Pyrefly catches the omission.
 - Paths are POSIX and repository-relative on both readers, so the directory and Git readers yield identical trees (a route test asserts it).
 
 ### Invariants And Boundaries

@@ -18,7 +18,9 @@ Each command requires an explicit settings file and reads only that file's `pase
 
 - `add_arguments` declares the three commands, each with a required `--config`, and `--accept-harness-home-change` on `provision` alone. [1]
 
+
 - `run` reads the named settings file's `paseoRuntime` block, refuses with exit two before any operation when it is missing or unusable, dispatches the command and prints one JSON report. [2]
+
 
 - Runs all three commands without the block and checks named refusal, exit two and no process operation. [3]
 
@@ -29,5 +31,6 @@ The three commands take the release and the Node from the packaged contract, and
 - The command dispatch over the shared host modules. [4]
 
 - The argument surface the three commands keep: a required `--config` on each, and `--accept-harness-home-change` on `provision` only. [5]
+
 
 - `run` routes `provision --accept-harness-home-change` to the accepting provisioning and marks an unverifiable process record's harness homes unknown. [6]

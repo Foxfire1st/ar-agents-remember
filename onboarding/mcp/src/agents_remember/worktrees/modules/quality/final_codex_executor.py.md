@@ -59,7 +59,9 @@ No Domain Documentation source is configured for this memory root. CCR-R14@v3 re
 
 - The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. [2]
 
+
 - Validate a complete terminal catalog and publish one immutable gate disposition. [3]
+
 
 - The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. [4]
 

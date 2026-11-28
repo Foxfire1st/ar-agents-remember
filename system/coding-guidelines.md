@@ -459,7 +459,7 @@ and its ledger. The exemplar that clears the bar is
 
 ## Before a handover
 
-Before each freeze, run the focused tests for the changed behavior and the fast commit-hook checks on a clean copy of the bytes being frozen. Use a shared clone at the base with the candidate tree read in, under umask 022. Follow [the registered tools and commands](tools.md#transaction-boundary): generated-copy checks, Ruff, Ruff format and Pyright; when the candidate changes the dashboard, also its code generation, lint and type check. Use the command sections in that file for the exact invocation and environment.
+Before each freeze, run the focused tests for the changed behavior and the fast commit-hook checks on a clean copy of the bytes being frozen. Use a shared clone at the base with the candidate tree read in, under umask 022. Follow [the registered tools and commands](tools.md#transaction-boundary): generated-copy checks, Ruff, Ruff format and Pyrefly; when the candidate changes the dashboard, also its code generation, lint and type check. Use the command sections in that file for the exact invocation and environment.
 
 Repair failures before freezing and check the resulting bytes. The freeze report names each check,
 its result and the clean copy's Git tree, bound to the handed-over candidate. Review rounds use

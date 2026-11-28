@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+        "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
         "content": "sha256:69f1aaebcea6f1b3133687e6992aeca1a2ba1288b7bc4d3f165f51073bd9d391",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+        "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
         "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+        "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
         "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+            "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
             "content": "sha256:6c85226fa9283ef36a9623c2a9ce579274cda10ebc93e6e1f7e281c66f06e030",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+            "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
             "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
             "locator": {
               "kind": "symbol",
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+            "blob": "9ea6f2a0bc7dc170c41c2fadf405b5471b9422a1",
             "content": "sha256:69f1aaebcea6f1b3133687e6992aeca1a2ba1288b7bc4d3f165f51073bd9d391",
             "locator": {
               "kind": "symbol",

@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "blob": "eec3603c25934205a0b50a0943b1bdb15a9b0571",
             "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
             "locator": {
-              "end": 890,
+              "end": 891,
               "kind": "line_range",
-              "start": 838
+              "start": 839
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

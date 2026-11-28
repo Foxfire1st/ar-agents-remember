@@ -87,7 +87,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 No configured sibling repository is required for this module.
 
+
 - The benchmark wrappers use the canonical Git command and pass the work directory and timeout through runner options. \[6] [6]
 
+
+
 - The one Git runner both call sites go through, and the option object that carries `work_dir` and the timeout class. [3]
+
+
 - `git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple the runner strips with. [4]

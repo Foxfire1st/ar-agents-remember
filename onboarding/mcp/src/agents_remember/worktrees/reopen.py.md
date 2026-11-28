@@ -58,7 +58,9 @@ These current source spans identify the implementation owners and the specific a
 
 
 
+
 - Contract reset preserves identity while clearing two-output provenance. [23]
+
 - Frozen observation, task plans, and canonical publication remain coordinated. [24]
 
 

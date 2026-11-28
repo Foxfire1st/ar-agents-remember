@@ -402,7 +402,9 @@ The following complete predecessor retains useful explanations, old observations
 
 
 
+
 - Realization and proof entries upserted in the sidecar. [35]
+
 - A rerun removes only this owner's unnamed entries. [36]
 
 - A named test yields a proof, awaits a curator facet, or is reported unresolvable. A bare test file needs a test name. [37]

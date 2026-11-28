@@ -77,18 +77,24 @@ None.
 
 ### Repo-Internal References
 
+
 - The fixed-step lines defer their recursive count walks to the steps that read them. [6]
+
 - The hook-batch subcommand renders every tier payload from one derived scope. [7]
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
+
 - Exact selection reasons and incomplete ownership [1]
+
 - Production-only diagnostic review threshold label [2]
 - Diagnostic diff inputs without a floor [3]
 - Project-relative TypeScript file resolution [4]
 - Read-only provenance reporting dispatch [5]
 
+
 - Dashboard oxlint scope provenance and missing-config refusal. [8]
+
 
 ### Docs References
 

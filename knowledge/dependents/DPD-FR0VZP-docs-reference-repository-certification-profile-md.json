@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e222729eff1bc2f2e9c731b34d63e99e891f19e8",
-    "commit": "17d808f3ce4cae0b192c731958c11539029ff627",
+    "codeTree": "0b0419690d12100ee208d0d34680df87b9edb6fb",
+    "commit": "995a84835c85c216acc71e6f2ff0802b326792d1",
     "role": "curator",
-    "statement": "Verified docs/reference/repository-certification-profile.md against frozen L12 tree e222729eff1b: adding --all to Dagger candidate base languages warm in .dagger/src/agents_remember_quality/main.py leaves certification profile format, gates, and clean-room rules accurate.",
-    "task": "261112-KNO-L12",
+    "statement": "Audited docs/reference/repository-certification-profile.md at post-sync code tree 0b0419690d12: touched stands_on files (mcp/certification-profile-v1.json, mcp/pyproject.toml, repository_profiles/canonical.py, planning.py, quality/gate.py) renamed the Gate-1 rail to python-typecheck and added behavior-preserving typing adjustments; profile schema specification remains tool-neutral and accurate.",
+    "task": "261125-DEP-L8",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/certification/repository_profiles/canonical.py"
     },
     {
-      "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+      "blob": "3683b6e8c2f7a92bb72d566dd6d0a282aa198c78",
       "kind": "file",
       "path": "mcp/src/agents_remember/certification/repository_profiles/planning.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "8ab5d2b2dc678c92e0a73447de503acace158402",
+      "blob": "f73735bea917e96b9b5cc762dbf04109a6fd4715",
       "kind": "file",
       "path": "mcp/certification-profile-v1.json"
     },
@@ -128,20 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "40a6f29a9ddf52edadf21fd29ad9aa6e12868787",
+      "blob": "a78c5cbc4186f45b1736dc3dc2b431b1df996348",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
   ],
   "writer": {
-    "at": "2026-11-28T01:52:22+01:00",
+    "at": "2026-11-28T04:34:14+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L12",
+    "leaf": "261125-DEP-L8",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e4757655-3ff1-523d-8720-9b5776ea3a8b",
-    "task": "261112-KNO"
+    "seat": "40e76d23-43e0-5148-8dbe-ec857dd4f623",
+    "task": "261125-DEP"
   }
 }

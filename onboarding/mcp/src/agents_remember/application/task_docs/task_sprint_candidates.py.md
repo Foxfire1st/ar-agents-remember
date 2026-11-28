@@ -37,6 +37,8 @@ This ordering preserves sprint identity when retirement removes the last graphle
 
 ## Evidence
 
+
 - The detach candidate removes the rows, aliases and node, refuses to empty the graph and rebuilds a valid document. [1]
+
 - A node with a touching edge cannot be detached. [2]
 - The error family of the linkage operations. [3]

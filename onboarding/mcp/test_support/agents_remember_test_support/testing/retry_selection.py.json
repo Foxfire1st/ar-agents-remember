@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Delta commands retain canonical collection roots and pass one explicit affected path per module.\n\nAnchor: `_pytest_step`",
+      "note": "Delta commands retain canonical collection roots and pass one explicit affected path per module.",
       "targets": [
         {
           "anchor": {
-            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
-            "content": "sha256:fe5869a9629919b2caeebeb0a03041b0547e3836ee41b732b423348749e3c02d",
+            "blob": "66499e42c6a8b8064331468ed849ddf9768a2831",
+            "content": "sha256:0805f699a4e08789cfb5b15f65ee637d5c2828b056f05958d5a8fbdd4186d704",
             "locator": {
               "kind": "file"
             },

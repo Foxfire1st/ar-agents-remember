@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+        "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
         "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+        "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
         "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
             "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
             "locator": {
               "kind": "symbol",
@@ -111,12 +111,12 @@
       ]
     },
     "3": {
-      "note": "Validate a complete terminal catalog and publish one immutable gate disposition.\n\nAnchor: \"def compile_gate_result_manifest\"",
+      "note": "Validate a complete terminal catalog and publish one immutable gate disposition.",
       "targets": [
         {
           "anchor": {
-            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
-            "content": "sha256:cf66e3b2e5eaf8978a1b4158f48a4f19d13be247bd3aa2b4377791cd5980da82",
+            "blob": "53da4db7ab7ace199d98736c753398dbfc9fd53b",
+            "content": "sha256:49bdc916aac16a9f1d7cf4c027628028c561e3106aab7171ea986f8e0519359b",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "blob": "3c4821576a911e4eb0b0e6f6c1a09a21b99a5fb9",
             "content": "sha256:c24f0d0e1cc55976bf6d664fec116c62bcb4119011fe7162f35a8fbc809e29b4",
             "locator": {
               "kind": "symbol",
@@ -194,24 +194,24 @@
         },
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
             "content": "sha256:28a125c4d7fe8cf761c96c43f68513b45023fe2ec0ad69cf8d0d2836677da9a5",
             "locator": {
-              "end": 545,
+              "end": 547,
               "kind": "line_range",
-              "start": 535
+              "start": 537
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
             "content": "sha256:9c2f072cab9ebcbb04c5977590ef653a405351658b40bcb0ed0e2e9572fa831b",
             "locator": {
-              "end": 563,
+              "end": 565,
               "kind": "line_range",
-              "start": 547
+              "start": 549
             }
           },
           "kind": "code"
@@ -236,7 +236,7 @@
         },
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
             "content": "sha256:43b97fce4896279ede72f42c4f8e369050c933363cd1140eaf9c56f69d4023c0",
             "locator": {
               "end": 195,
@@ -253,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
             "content": "sha256:ae8142f729a9f97f7a553e4412f400dcdd22bfce8a2810ada5ffc866234d924f",
             "locator": {
               "end": 329,
@@ -265,7 +265,7 @@
         },
         {
           "anchor": {
-            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "blob": "6d6f987dc34df93ecf8e236f1d0fa1074debeeca",
             "content": "sha256:9913aee99313f1a7f7ac7b311c32c06db98de9926d14b86dcf7d5e6bc76bf7d8",
             "locator": {
               "end": 430,

@@ -50,7 +50,9 @@ The rest of the path is unchanged, except that an apply records this generation'
 
 - Preview admission and memory preparation use the exact admitted parent. [25]
 
+
 - Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect. [28]
+
 
 ## Historical provider-surface wording
 

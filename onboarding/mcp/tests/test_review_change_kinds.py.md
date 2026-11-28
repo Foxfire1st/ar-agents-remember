@@ -118,12 +118,16 @@ No cross-repo boundary is crossed by this file.
 - The fixture inventory describes the members’ change kinds and three families. [1]
 - The world: a live leaf over four Git trees. [2]
 - Every occurrence's kind from the recorded comparison, and the shared member. [3]
+
 - Returned members only, and the failure states that are unknown, never unchanged. [4]
+
 
 - The family cases check binary file-entry coverage, a stale-at-base re-anchor, a retired record, unresolved ranges and an unread sidecar alongside established implementation. [5]
 
 
+
 - The total, the derived facts and the dataset review. [6]
+
 
 
 

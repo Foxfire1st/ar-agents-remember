@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+        "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
         "content": "sha256:78119eb809028149425bac4f248a8d987f4e3a4dfc0f308aa183fbdfb2f6ce0e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+        "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
         "content": "sha256:78119eb809028149425bac4f248a8d987f4e3a4dfc0f308aa183fbdfb2f6ce0e",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
             "content": "sha256:78119eb809028149425bac4f248a8d987f4e3a4dfc0f308aa183fbdfb2f6ce0e",
             "locator": {
               "kind": "symbol",
@@ -84,12 +84,12 @@
       ]
     },
     "3": {
-      "note": "Validate a complete terminal catalog and publish one immutable gate disposition.\n\nAnchor: \"def compile_gate_result_manifest\"",
+      "note": "Validate a complete terminal catalog and publish one immutable gate disposition.",
       "targets": [
         {
           "anchor": {
-            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
-            "content": "sha256:cf66e3b2e5eaf8978a1b4158f48a4f19d13be247bd3aa2b4377791cd5980da82",
+            "blob": "53da4db7ab7ace199d98736c753398dbfc9fd53b",
+            "content": "sha256:49bdc916aac16a9f1d7cf4c027628028c561e3106aab7171ea986f8e0519359b",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "blob": "9e5df1137cddccc036870fccf7c2d77c5b6a8af5",
             "content": "sha256:069c43ba7fc094b43e3a20bd58bc3b1ef58d2c46ea07c16528e13641b8b37cfe",
             "locator": {
               "kind": "symbol",
@@ -140,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25ba236f61eba957ca185a802b3e74140a390ac3",
+            "blob": "ae0d26c488be603a7d98ed66d1d8f8674d6915b1",
             "content": "sha256:fe5cc6780811476e8324e74090cf0be095f86929c3a5c69d675cfbb54d8f17e6",
             "locator": {
               "kind": "symbol",
@@ -170,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
             "content": "sha256:51056314c7bca395c54b0101dc3f0a7b9f0db61687c234c3235dd41d14ca52af",
             "locator": {
               "end": 197,
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
             "content": "sha256:2aedc78e7ea59dcb914e7d09acfae1f7cac2317a13da94f5fbb831148218cdda",
             "locator": {
               "kind": "symbol",
@@ -198,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
             "content": "sha256:198b72f287311aaf88ac3b1fd2b243c3fe6dc3210f7db7cb327984a166048bcf",
             "locator": {
               "kind": "symbol",
@@ -214,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
             "content": "sha256:4df37ebd88c4ab7753debb683337401b8d6398a599aeb913be109fea374f75e0",
             "locator": {
               "end": 354,
@@ -226,7 +226,7 @@
         },
         {
           "anchor": {
-            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "blob": "de50edeeaa41f81a5cbbb3d4aebdcb1c78768069",
             "content": "sha256:de522b50d64f3de22b802816d323eaf34f105da857b09e0c2813b76974d3992c",
             "locator": {
               "end": 260,

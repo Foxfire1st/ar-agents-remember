@@ -72,4 +72,5 @@ No cross-repo boundary is crossed by this file.
 - Retired records are never live. [12]
 
 - The `unit-regression` lane selects `mcp/tests/test_knowledge_index_surfaces.py`. [13]
+
 - Unconditional roots and validator details come from the domain-unit result. The mounted answer supplies the fitting validation window and cut status. [14]

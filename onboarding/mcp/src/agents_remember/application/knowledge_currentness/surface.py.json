@@ -39,12 +39,12 @@
       ]
     },
     "11": {
-      "note": "Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable.\n\nAnchor: `test_knowledge_read_without_a_named_tree_pairs_resolved_code_and_stays_unverifiable_without_root`",
+      "note": "Without `codeTreeId`, a resolved code root auto-pairs while an absent code root stays unverifiable.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             },
@@ -55,12 +55,12 @@
       ]
     },
     "12": {
-      "note": "A failing step degrades to a reason and never refuses the read.\n\nAnchor: `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read`",
+      "note": "A failing step degrades to a reason and never refuses the read.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             },

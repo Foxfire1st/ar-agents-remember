@@ -122,7 +122,9 @@ No external Domain Documentation source is configured for this memory repo.
 - Git ancestry proof uses the worktree module Git adapter. [8]
 - Task document JSON/markdown reconciliation uses the task document service. [9]
 
+
 - Focused tests pin a named master's row completion and two-document rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row under the demotion rule, the dry run, the standalone cases and every refusal before any write. [10]
+
 
 ### Cross-Repo References
 

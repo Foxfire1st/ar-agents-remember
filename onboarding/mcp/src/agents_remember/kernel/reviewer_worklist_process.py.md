@@ -130,7 +130,9 @@ moment the flight is created until its thread has reaped the child.
 - The checks of the returned document and error. [10]
 - One request: digest, join, wait, leave, and a copy for a sharer. [11]
 
+
 - Joining: a cancelled flight is absent, and the bound applies only to a new flight. [12]
+
 
 - Leaving: the last requester of an unfinished flight cancels it. [13]
 - Waiting: cancellation, the request's deadline and the flight's error. 
@@ -140,7 +142,9 @@ moment the flight is created until its thread has reaped the child.
 - Draining the pipes in slices, the deadline, and the exit statuses. 
 - Shutdown stops every active child. 
 
+
 - The deadline is overload while waiting and a failure once a child ran. [20]
+
 
 - The child ends its whole group, or itself alone when it leads none. [21]
 - The child's handlers, alarm, parent-death signal and parent check. [22]

@@ -122,12 +122,12 @@
         },
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
             "content": "sha256:5888a3849044750fc90692e577d0dcdb3379c238072c72637419ac0ab3d79988",
             "locator": {
-              "end": 768,
+              "end": 767,
               "kind": "line_range",
-              "start": 714
+              "start": 713
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -293,12 +293,12 @@
       ]
     },
     "22": {
-      "note": "The published-intent case: the resolved committed tree, captured dirty working tree (`codeState=working-tree`), `treeScope`, and no resolved tree.\n\nAnchor: `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree`",
+      "note": "The published-intent case: the resolved committed tree, captured dirty working tree (`codeState=working-tree`), `treeScope`, and no resolved tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "806172fbe85d36dca89c5b791a1eec9dbd202747",
-            "content": "sha256:658c44f05748270350733a0bf283061775e5c3b224fc81086442d39657f652d7",
+            "blob": "c7bf5f92752d5c7050f25a9ca2eef255baad2a78",
+            "content": "sha256:f5acc23970b7392834113dc2e507e7e724fac0851ff5ce16b2bb76db3ed5e64c",
             "locator": {
               "kind": "file"
             },
@@ -569,7 +569,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
             "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "end": 234,
@@ -620,8 +620,8 @@
         },
         {
           "anchor": {
-            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
-            "content": "sha256:cff56c1e48688443de04b3a25b57a097726ea2116abbea17f7e6c5cdbc188862",
+            "blob": "b93298d71ae31a3cf1981642149e0a113a41bb32",
+            "content": "sha256:234c84472beb5252d91423db6cc46bb97b20eeb045fc8c15974e2f55733484eb",
             "locator": {
               "kind": "file"
             },
@@ -911,7 +911,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36c03d3ccd4444f50f14d99bf202049614349479",
+            "blob": "c9ea5e59144137567efd4d48dbec29c997a58a16",
             "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
               "kind": "symbol",

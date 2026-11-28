@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/certification/replay/scenarios.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "98411503501ffc1ac5fcc5d221f4fda83253c577",
+        "content": "sha256:ca9833bc166f33a95549e4b8a701fddcf95d88cb4ae6babeb4186f54a13580f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_evaluate_04"
+        }
+      },
+      "id": "RLZ-NEN1HS",
+      "invariant": "INV-8B9XTK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §3",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Matches Gate-1 typecheck failures against the neutral python-typecheck rail identity in replay acceptance scenario r17-scenario-04.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The replay scenario catalog records each required scenario and its expected views.\n\nAnchor: \"REPLAY_ACCEPTANCE_SCENARIOS: tuple[ReplayScenarioExpectation, ...] = (\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9e25b8013f41d8d17d243942f7757b21a3704f36",
-            "content": "sha256:cf666e233d6cfdc1120e205b9897dbd9a0ca4623e71c5756251b10ccb814c225",
+            "blob": "98411503501ffc1ac5fcc5d221f4fda83253c577",
+            "content": "sha256:65880b915f0bb4c48af30a94ebc07b92be1fb32d46c3effb9a06b2688533a1c1",
             "locator": {
               "end": 172,
               "kind": "line_range",
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e25b8013f41d8d17d243942f7757b21a3704f36",
+            "blob": "98411503501ffc1ac5fcc5d221f4fda83253c577",
             "content": "sha256:d3e079cdd3ec65ee1fe2d5e9fd7d97d633795cefe2b2ea8ef6acd624a7bf7d9f",
             "locator": {
               "end": 190,

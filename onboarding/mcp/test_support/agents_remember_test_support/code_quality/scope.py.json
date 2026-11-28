@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+        "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
         "content": "sha256:68a01705c9a4aa29c44c7b37c19c89244fc2500c117ed7ae7a7409909cac3a99",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+        "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
         "content": "sha256:2f579ef8ac8b0575a7de3e930144c274d0ea80bdb2b5f8cd610b05daa54658bf",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,24 @@
       },
       "rationale": "Invokes dashboard/node_modules/.bin/oxlint --format json . and delegates to parse_oxlint_result_files to return distinct files with findings while verifying number_of_files > 0.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
+        "content": "sha256:180034bc767c1eb40e029e3cab1e52160386f38e9f4c3ba537f78a8e71e5e520",
+        "locator": {
+          "kind": "symbol",
+          "name": "derive_scope"
+        }
+      },
+      "id": "RLZ-Y4NDV4",
+      "invariant": "INV-8B9XTK",
+      "origin": {
+        "handoffEntry": "DEP-R08@v1 §3",
+        "leaf": "261125-DEP-L8"
+      },
+      "rationale": "Validates [tool.pyrefly] in pyproject.toml and checks that project-excludes stay disjoint from git-tracked Python files including .dagger/.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:3bbad010941cad21e84f78b436af8fbd08a177be8ce0ae2b5560796519dd29c3",
             "locator": {
               "kind": "symbol",
@@ -55,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:f61cf8f9a051b605a4575cddd0ff12ed2045d6f2c788d24ed4784e861ffd2bde",
             "locator": {
               "kind": "symbol",
@@ -71,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:0d15ec019e8a822f90eac4740726277fd4e1bef233cc87256d03ec0789f8a973",
             "locator": {
               "kind": "symbol",
@@ -87,8 +105,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
-            "content": "sha256:91c2962c345f6ec7e5a8c9f9838f8f1cd561080bfca11150e66560b9e20115f1",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
+            "content": "sha256:bb601b5ea180d2c4a77d57322461331028acb5429b5ebfb3ca19ddfe83349400",
             "locator": {
               "kind": "symbol",
               "name": "validate_quality_config"
@@ -99,15 +117,15 @@
       ]
     },
     "12": {
-      "note": "Defines the function `validate_pyright_venv` (lines 264-284) — Reject a declared virtual environment that cannot resolve in this checkout.",
+      "note": "Defines the function `validate_pyrefly_interpreter` (lines 264-286) — Reject a declared Python interpreter path that cannot resolve in this checkout.",
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
-            "content": "sha256:94e66fa6279c4437b73bb678a7455ac04a3223b988684d2508cb7e21233c5561",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
+            "content": "sha256:511036efe61db17f91e64ff3c0263907bb03e5b678db9b5fc1f34e5d5dbe0236",
             "locator": {
               "kind": "symbol",
-              "name": "validate_pyright_venv"
+              "name": "validate_pyrefly_interpreter"
             }
           },
           "kind": "code"
@@ -119,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:d382669768a07f99e99f41584b221ba06043e4be30a2381fe40e6fbe34601d77",
             "locator": {
               "kind": "symbol",
@@ -135,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:f5e4340dc1c4be7e4da6e7aa9acf9b2fd570dffe017fa01dbb6b6ca948a425fa",
             "locator": {
               "kind": "symbol",
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:f2f1105a368fd063c587ec79a2ae0a62f6b6d0d4ce0b731e962c2c061fa67e28",
             "locator": {
               "kind": "symbol",
@@ -167,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:68a01705c9a4aa29c44c7b37c19c89244fc2500c117ed7ae7a7409909cac3a99",
             "locator": {
               "kind": "symbol",
@@ -178,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:2f579ef8ac8b0575a7de3e930144c274d0ea80bdb2b5f8cd610b05daa54658bf",
             "locator": {
               "kind": "symbol",
@@ -194,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:48c19448e593e3e733bd86184f990840c64d1350a664699f7ef9e88ac67516a2",
             "locator": {
               "kind": "symbol",
@@ -210,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:9647933b4d176855f456b1911a12cd9a35bb0ed8c3d6945738a0ba3a9a28894a",
             "locator": {
               "kind": "symbol",
@@ -226,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:6b5a839a64815aec79d579f2a2e13f81b23f975e6dc0fefa6115cf1916d54b1c",
             "locator": {
               "kind": "symbol",
@@ -242,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:b4cdc4d251aebe414bda3e93bc4a67d332d22915c36a503992de95bbe9516257",
             "locator": {
               "kind": "symbol",
@@ -258,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:180034bc767c1eb40e029e3cab1e52160386f38e9f4c3ba537f78a8e71e5e520",
             "locator": {
               "kind": "symbol",
@@ -274,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:87fd19fefbf93b5fb1177a66cfdedea69d634d3b9e164c6b187f69c70e497c5d",
             "locator": {
               "kind": "symbol",
@@ -290,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:6f7ef2f04075b8d8ddfcc690c775b60da05dcc7f2349294a6e7ede1faa95135a",
             "locator": {
               "kind": "symbol",
@@ -306,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:1b149f18bf004fdcce1c3d4c51dfc279f97372d9aaa6e3dc2514d5381f00c0a6",
             "locator": {
               "kind": "symbol",
@@ -322,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:0fb57324146830ee4e139dfe2e256928de0cbce4e17a8b07ffab0b962c603f8b",
             "locator": {
               "kind": "symbol",
@@ -338,7 +356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:fb609be146f921a68023d00ef0b8ba9b767d6cb73f5b3b0f03c786cfc8263654",
             "locator": {
               "kind": "symbol",
@@ -354,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:b88d6fe1d31a393ddcd2f6e0a70d4f01485447f15b478aba9957d4490d98c47c",
             "locator": {
               "kind": "symbol",
@@ -370,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+            "blob": "b5ba7e5440f0aa9e5da7cc351082a9f9c5dd75ab",
             "content": "sha256:55ad5cc3088a5f8cda472bca1e93ed045dfaf68942c41a330b8ef2a3fc79a2d0",
             "locator": {
               "kind": "symbol",

@@ -11,4 +11,5 @@ Summarizes the compared memory changes by kind and projects changed decision rec
 ## Evidence
 
 - Counts describe the compared result's named change groups. [1]
+
 - The decision summary is projected from the compared records. [2]

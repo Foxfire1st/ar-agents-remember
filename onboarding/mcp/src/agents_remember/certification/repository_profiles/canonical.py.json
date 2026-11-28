@@ -85,12 +85,12 @@
       ]
     },
     "4": {
-      "note": "The canonical profile is what planning digests into immutable per-gate plans.\n\nAnchor: `compile_repository_profile_plan`",
+      "note": "The canonical profile is what planning digests into immutable per-gate plans.",
       "targets": [
         {
           "anchor": {
-            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
-            "content": "sha256:aeea039733c6233290f045041f66ad773e2ce673a2a121ff32b6b840e6f237e7",
+            "blob": "3683b6e8c2f7a92bb72d566dd6d0a282aa198c78",
+            "content": "sha256:1500da6b475143abcdf7fb0f6f0eaba182ad9dbf57fdc443e604b385df04e3a4",
             "locator": {
               "kind": "file"
             },

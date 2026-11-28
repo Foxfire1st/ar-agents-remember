@@ -30,13 +30,17 @@ Shared Git generation history keeps the latest counts, fixed-size alternate-path
 
 
 
+
 - The app's result and layout LRUs have configurable capacity. The shared object-history LRU has its own 1,024-entry capacity. [2]
 
 
 
 
 
+
+
 - Observed ref-keyed and working reads re-observe their inputs. A route may retain a typed refusal on a matching unknown working stamp. An immutable ID hit skips object and presentation probes. The explicit master range can also use its bounded disk store. [3]
+
 
 
 

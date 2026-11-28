@@ -173,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "blob": "c342f13d3ac7fe1d7129ca151fbea6fccf137461",
             "content": "sha256:0826e274eebc2a479127eb632e954f795115e62dcbef168541e48ae02741f1dd",
             "locator": {
               "kind": "symbol",
@@ -185,8 +185,8 @@
         },
         {
           "anchor": {
-            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
-            "content": "sha256:287659b2d7482e5941614c4aea41bfa38d185e3995846373377e5cb8a0005dc2",
+            "blob": "c342f13d3ac7fe1d7129ca151fbea6fccf137461",
+            "content": "sha256:74aad63d85424531deb2fb1b39cd13efe3b0933862fb1bfe655e187b7c81047e",
             "locator": {
               "kind": "symbol",
               "name": "_detached_data"
@@ -285,7 +285,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "blob": "17c9045bc3e6501e838db24257ba659f0c1a716e",
             "content": "sha256:e7d7d7f5222fba7c3e9868cdf89c95ccccc5994dd595fb93ad432fe783b0eb11",
             "locator": {
               "kind": "symbol",
@@ -297,7 +297,7 @@
         },
         {
           "anchor": {
-            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "blob": "17c9045bc3e6501e838db24257ba659f0c1a716e",
             "content": "sha256:2b210e22397bcbb2de02727b1307d66e3d68968cae6faa1de711857b129e60ca",
             "locator": {
               "kind": "symbol",
@@ -475,12 +475,12 @@
       ]
     },
     "9": {
-      "note": "The current module exposes `SprintLinkageError` and `SprintLinkageRequest` at this ownership boundary; the call context `SprintLinkageCall` is declared in the linkage module.\n\nAnchor: `SprintLinkageError` `SprintLinkageRequest` `SprintLinkageCall`",
+      "note": "The current module exposes `SprintLinkageError` and `SprintLinkageRequest` at this ownership boundary; the call context `SprintLinkageCall` is declared in the linkage module.",
       "targets": [
         {
           "anchor": {
-            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
-            "content": "sha256:9041e41487456b36794daf760d52093587bfc568530d64d831cf9852f4f3015f",
+            "blob": "c342f13d3ac7fe1d7129ca151fbea6fccf137461",
+            "content": "sha256:aa862ac38792e7e674de08dfeb686c10e20ed1ac42545c20950720bdfb433ed2",
             "locator": {
               "kind": "file"
             },

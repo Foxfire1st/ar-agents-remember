@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "35c02f5b5d840efa69de6f84133a9477f7fe7b19",
-        "content": "sha256:8781ac28d48703dbe18e73e9915cce1ebbdf2fd747f2dff0769d23c4cbb36a41",
+        "blob": "064ba8eef496a0ead7249fe8290284da086d6fa0",
+        "content": "sha256:d1f0faa020aa67209e501c1092e6e2831d6fe8b981b0bc4da9bd0d6b6e3ba3f5",
         "locator": {
           "end": 8,
           "kind": "line_range",
@@ -17,7 +17,7 @@
         "handoffEntry": "BUG-R29@v1 §5",
         "leaf": "261112-BUG-L29"
       },
-      "rationale": "Replaces the stale under-half-a-minute warm checkout claim with the measured post-repair cold/warm times (~134s) and peak combined RSS (~3.75 GiB cold, ~3.60 GiB warm).",
+      "rationale": "Records the measured clean-checkout fast-tier pre-commit times (~11.4 s cold, ~10.8 s warm; Pyrefly ~1.8 s full pass down from ~198 s under Pyright) and peak combined RSS (~1.09 GiB cold, ~0.95 GiB warm).",
       "role": "presentation"
     }
   ],
@@ -27,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35c02f5b5d840efa69de6f84133a9477f7fe7b19",
-            "content": "sha256:4b158fe89e45b2bf5cf5899341e12bf96e91383612eb863d3661de46a369718d",
+            "blob": "064ba8eef496a0ead7249fe8290284da086d6fa0",
+            "content": "sha256:2be1ef418e4c47fa4f38b04d4f2cb59460bdcaff9fc839181ad18d745e3de085",
             "locator": {
               "end": 17,
               "kind": "line_range",
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46653fc3ec6aa815ad183d6d4f98717c548241b6",
+            "blob": "659a38ec04220822e81341aef0f77c0357f31b6e",
             "content": "sha256:a516755da52b662b8e6a94d5b479c2d5681e2c5d578408b294a0014e46e9a608",
             "locator": {
-              "end": 370,
+              "end": 369,
               "kind": "line_range",
-              "start": 359
+              "start": 358
             },
             "path": ".githooks/_gate.sh"
           },
